@@ -1,0 +1,944 @@
+Un rendez-vous avec Diane - Guide vérifié des fins
+
+Ce guide correspond à la version HTML finale actuelle. Il utilise uniquement le texte visible des boutons. Suivez chaque route exactement dans l’ordre. Si le même bouton apparaît plusieurs fois de suite, cliquez dessus autant de fois.
+
+La version courte n’est disponible que le mardi et le jeudi, mais ne l’utilisez que lorsque ce guide le demande explicitement.
+
+BASE 1 - DÉBUT COMMUN
+1. J’ai 18 ans ou plus.
+2. Je les ai déjà lues. Je commence tout de suite.
+3. Quand pouvez-vous la voir ?
+
+BASE 2 - ROUTE COURTE DU MARDI JUSQU’À LA MAISON
+Utilisez la BASE 1, puis cliquez sur :
+1. Mardi.
+2. En avant pour l’histoire !
+3. Y aller directement.
+4. Proposer d’aller manger, dans ce cas.
+5. Une bouteille de Rioja espagnol (£12)
+6. Passer au menu des plats.
+7. Des raviolis—vous essayez d’économiser (£7)
+8. Commencer le repas.
+9. Vous discutez de votre repas.
+10. Vous continuez à bavarder.
+11. Vous continuez à bavarder.
+12. Vous continuez à bavarder.
+13. Vous continuez à bavarder.
+14. Vous continuez à bavarder.
+15. Santé.
+16. Oui, prenons un dessert.
+17. Tiramisu (£5 chacun)
+18. Les bonbons sont délicieux et vite engloutis.
+19. Un simple café filtre (1 £ pièce)
+20. Vous continuez à bavarder.
+21. Vous quittez le restaurant et rejoignez le théâtre.
+22. Réfléchissez-y.
+23. Ou préfères-vous jouer la version courte du jeu ?
+24. Oui, je vais jouer la version courte.
+25. Voyons ce qui va se passer !
+26. Vous trouvez la clé.
+27. Vous l’embrassez.
+28. Vous faites entrer Diane.
+29. Un petit mug de vrai café filtre ?
+30. Vous buvez le café.
+31. Que ferez-vous ensuite ?
+32. Vous vous rendez au salon.
+33. Que ferez-vous ensuite ?
+34. Alors elle ne dit rien.
+
+BASE 3 - ROUTE DU SAMEDI JUSQU’À LA MAISON
+Utilisez la BASE 1, puis cliquez sur :
+1. Samedi.
+2. En avant pour l’histoire !
+3. Y aller directement.
+4. Lui dire que vous aimeriez être de son côté de la table.
+5. D’accord.
+6. Une bouteille de Pinot Grigio italien (£10)
+7. Passer au menu des plats.
+8. Tortelloni, comme Diane (£9)
+9. Commencer le repas.
+10. Vous discutez de votre repas.
+11. Vous continuez à manger.
+12. Qu’est-ce que ce sera ?
+13. Lui demander si elle a envie de faire pipi ?
+14. Vous commandez deux cafés.
+15. Vous lui souris.
+16. Vous entrez dans le théâtre.
+17. Vous entrez dans le théâtre.
+18. Vous regardez la pièce.
+19. Repenser à comment vous vous êtes rencontrés ?
+20. Concentrez-vous sur la pièce.
+21. Continuer à regarder la pièce.
+22. Continuer à regarder la pièce.
+23. Continuer à regarder la pièce.
+24. Continuer à regarder la pièce.
+25. Concentrez-vous sur la pièce.
+26. Concentrez-vous sur la pièce.
+27. Vous regardez Diane.
+28. Vous parlez de la pièce.
+29. Utiliser un coup de chance ?
+30. Vous l’attendez.
+31. Vous sortez sur le balcon.
+32. Il est temps de retourner voir la pièce.
+33. Vous retournez à vos places.
+34. Le deuxième acte commence.
+35. Continuer à regarder la pièce.
+36. L’actrice sait vraiment jouer quelqu’un qui n’en peut plus.
+37. Vous appréciez la pièce.
+38. La pièce continue.
+39. Les lumières s’éteignent.
+40. La pièce continue.
+41. La pièce touche presque à sa fin.
+42. Vous vous levez pour quitter le théâtre.
+43. En attendant, tout le monde sort de la salle.
+44. Faire le gentleman et demander à Diane ce qu’elle veut faire.
+45. Vous vous dirigez vers la porte des artistes.
+46. — et se diriger vers la porte des artistes.
+47. Vous attendez Molly.
+48. Vous attendez Molly.
+49. Vous serrez la main à Molly et à son amie.
+50. Alors, qu’est-ce que ce sera ?
+51. Partir se promener.
+52. Vous continuez à marcher.
+53. Vous arrivez au bord de la rivière.
+54. Vous dites qu’il n’y a vraiment pas le temps.
+55. Vous continuez à marcher.
+56. Vous continuez à marcher.
+57. Vous continuez à marcher.
+58. De quoi allez-vous parler ?
+59. De rien en particulier.
+60. OK.
+61. Vous vous dépêchez.
+62. Hourra !
+63. Vous vous arrêtez net.
+64. Vous continuez à marcher.
+65. Vous vous dépêchez.
+66. Vous achetez les boissons.
+67. Vous allez au bar.
+68. Vous discutez gaiement.
+69. Vous discutez gaiement.
+70. Vous continuez à discuter.
+71. Non, je commence à manquer d’argent.
+72. Non, je n’ai pas les moyens.
+73. Vous finissez votre verre.
+74. Oui, vous avez largement le temps.
+75. Vous cherchez l’arrêt de bus.
+76. Vous continuez d’attendre.
+77. Réfléchissez-y.
+78. Prendre un taxi ?
+79. Trouver un taxi.
+80. Vous attendez.
+81. Vous continuez d’attendre.
+82. Vous êtes en tête de la file.
+83. Le taxi s’engage sur la route principale.
+84. Passer votre bras autour d’elle ?
+85. Le trajet continue.
+86. Vous êtes à peu près à mi-chemin.
+87. Presque arrivé.
+88. Le taxi continue jusqu’à chez vous.
+89. Vous descendez.
+90. Vous trouvez la clé.
+91. Vous l’embrassez.
+92. Ils se serrent la main.
+93. Un petit mug de vrai café filtre ?
+94. Vous buvez le café.
+95. Il monte à l’étage.
+96. Que ferez-vous ensuite ?
+97. Alors elle ne dit rien.
+
+BASE 4 - ROUTE COMPLÈTE DU MARDI AVEC UNE PAUSE PIPI PRIVÉE PLUS TÔT, JUSQU’À LA MAISON
+Utilisez la BASE 1, puis cliquez sur :
+1. Mardi.
+2. En avant pour l’histoire !
+3. Acheter quelque chose.
+4. Une bouteille d’eau hors de prix (£3)
+5. Retour à la boutique.
+6. Filer directement au théâtre.
+7. Proposer d’aller manger, dans ce cas.
+8. Une bouteille de Rioja espagnol (£12)
+9. Passer au menu des plats.
+10. Tortelloni, comme Diane (£9)
+11. Commencer le repas.
+12. Vous discutez de votre repas.
+13. Vous continuez à manger.
+14. Qu’est-ce que ce sera ?
+15. Parler de trains ?
+16. Oh là là !
+17. Continue à bavarder.
+18. Le serveur débarrasse vos assiettes.
+19. Santé.
+20. Non, passons directement aux cafés ; les desserts, c’est toujours une dépense inutile.
+21. Un expresso (1,50 £ pièce)
+22. Vous continuez à bavarder.
+23. Vous quittez le restaurant et rejoignez le théâtre.
+24. Réfléchissez-y.
+25. Essayer de la retenir ?
+26. Vous prenez vos places dans la salle.
+27. Vous regardez la pièce.
+28. Repenser à comment vous vous êtes rencontrés ?
+29. Concentrez-vous sur la pièce.
+30. Continuer à regarder la pièce.
+31. Continuer à regarder la pièce.
+32. Continuer à regarder la pièce.
+33. Lui prendre la main ?
+34. Continuer à regarder la pièce.
+35. Concentrez-vous sur la pièce.
+36. Concentrez-vous sur la pièce.
+37. Vous regardez Diane.
+38. Vous parlez de la pièce.
+39. Lui dire que vous avez envie d’aller aux toilettes ?
+40. Vous sortez sur le balcon.
+41. Vous continuez à bavarder.
+42. Il est temps de retourner voir la pièce.
+43. Vous retournez à vos places.
+44. Le deuxième acte commence.
+45. Vous rapprocher d’elle ?
+46. Continuer à regarder la pièce.
+47. L’actrice sait vraiment jouer quelqu’un qui n’en peut plus.
+48. Vous appréciez la pièce.
+49. La pièce continue.
+50. Les lumières s’éteignent.
+51. La pièce continue.
+52. La pièce touche presque à sa fin.
+53. Vous vous levez pour quitter le théâtre.
+54. En attendant, tout le monde sort de la salle.
+55. Retrouver Molly à la porte des artistes et peut-être prendre un verre ailleurs ?
+56. — et se diriger vers la porte des artistes.
+57. Vous attendez Molly.
+58. Vous attendez Molly.
+59. Vous serrez la main à Molly et à son amie.
+60. Alors, qu’est-ce que ce sera ?
+61. Partir se promener.
+62. Vous continuez à marcher.
+63. Vous arrivez au bord de la rivière.
+64. Quelle bonne idée.
+65. Vous buvez vos cafés.
+66. Elle se blottit contre vous.
+67. Vous êtes assis à côté de Diane.
+68. Vous discutez gaiement.
+69. « Tu plaisantes ! J’adore ça. »
+70. Vous continuez à marcher.
+71. Vous continuez à marcher.
+72. Vous continuez à marcher.
+73. Vous vous en réjouissez.
+74. Parler de trains.
+75. Elle vous fait avancer.
+76. OK.
+77. Comment ?
+78. Lui trouver un endroit où aller.
+79. Elle ne peut pas rester en place.
+80. Merci, dit-elle.
+81. Vous continuez à marcher.
+82. Hourra !
+83. Mais vous passez devant sans vous arrêter.
+84. Vous vous dépêchez.
+85. Vous achetez les boissons.
+86. Vous allez au bar.
+87. Vous discutez gaiement.
+88. Vous discutez gaiement.
+89. Vous continuez à discuter.
+90. Oui, je vais payer une autre tournée.
+91. C’est votre tournée, mais assez bon marché grâce aux offres spéciales.
+92. Santé !
+93. Bonne idée.
+94. Retourner au jardin de la brasserie.
+95. Vous finissez votre verre.
+96. Vous vous préparez à partir.
+97. Et vous vous dirigez vers l’arrêt de bus.
+98. Vous continuez d’attendre.
+99. Réfléchissez-y.
+100. Prendre un taxi ?
+101. Trouver un taxi.
+102. Vous vous calez confortablement.
+103. Le taxi s’engage sur la route principale.
+104. Passer votre bras autour d’elle ?
+105. Le trajet continue.
+106. Vous êtes à peu près à mi-chemin.
+107. Presque arrivé.
+108. Le taxi continue jusqu’à chez vous.
+109. Vous descendez.
+110. Vous trouvez la clé.
+111. Vous l’embrassez.
+112. Ils se serrent la main.
+113. Un petit mug de vrai café filtre ?
+114. Vous buvez le café.
+115. Il monte à l’étage.
+116. Que ferez-vous ensuite ?
+117. Alors elle ne dit rien.
+
+BASE 5 - ROUTE COURTE DU JEUDI JUSQU’À LA MAISON
+Utilisez la BASE 1, puis cliquez sur :
+1. Jeudi.
+2. En avant pour l’histoire !
+3. Y aller directement.
+4. Lui dire que vous étiez vraiment impatients de vous retrouver.
+5. D’accord.
+6. Une bouteille de Rioja espagnol (£12)
+7. Passer au menu des plats.
+8. Des raviolis—vous essayez d’économiser (£7)
+9. Commencer le repas.
+10. Vous discutez de votre repas.
+11. Vous continuez à bavarder.
+12. Vous continuez à bavarder.
+13. Vous continuez à bavarder.
+14. Vous continuez à bavarder.
+15. Vous continuez à bavarder.
+16. Santé.
+17. Oui, prenons un dessert.
+18. Tiramisu (£5 chacun)
+19. Les bonbons sont délicieux et vite engloutis.
+20. Un expresso (1,50 £ pièce)
+21. Vous continuez à bavarder.
+22. Vous quittez le restaurant et rejoignez le théâtre.
+23. Réfléchissez-y.
+24. Ou préfères-vous jouer la version courte du jeu ?
+25. Oui, je vais jouer la version courte.
+26. Voyons ce qui va se passer !
+27. Vous trouvez la clé.
+28. Vous l’embrassez.
+29. Vous faites entrer Diane.
+30. Un petit mug de vrai café filtre ?
+31. Vous buvez le café.
+32. Que ferez-vous ensuite ?
+33. Vous vous rendez au salon.
+34. Que ferez-vous ensuite ?
+35. Alors elle ne dit rien.
+
+BASE 6 - ROUTE COURTE DU MARDI JUSQU’À LA SCÈNE DE CHLOE À LA MAISON
+Utilisez la BASE 1, puis cliquez sur :
+1. Mardi.
+2. En avant pour l’histoire !
+3. Y aller directement.
+4. Proposer d’aller manger, dans ce cas.
+5. Une bouteille de Rioja espagnol (£12)
+6. Passer au menu des plats.
+7. Spaghetti bolognaise (£8)
+8. Commencer le repas.
+9. Vous discutez de votre repas.
+10. Vous vous concentrez sur votre repas.
+11. Vous continuez à bavarder.
+12. Vous continuez à bavarder.
+13. Vous continuez à bavarder.
+14. Santé.
+15. Oui, prenons un dessert.
+16. Tiramisu (£5 chacun)
+17. Les bonbons sont délicieux et vite engloutis.
+18. Un simple café filtre (1 £ pièce)
+19. Vous continuez à bavarder.
+20. Vous quittez le restaurant et rejoignez le théâtre.
+21. Réfléchissez-y.
+22. Ou préfères-vous jouer la version courte du jeu ?
+23. Oui, je vais jouer la version courte.
+24. Voyons ce qui va se passer !
+25. Vous trouvez la clé.
+26. Vous l’embrassez.
+27. C’est très civilisé.
+
+BASE 7 - ROUTE DU SAMEDI AVEC STEAK JUSQU’À LA SCÈNE D’AMANDA À LA MAISON
+Utilisez la BASE 1, puis cliquez sur :
+1. Samedi.
+2. En avant pour l’histoire !
+3. Y aller directement.
+4. Lui dire que vous adorez sa robe.
+5. D’accord.
+6. Une bouteille de Pinot Grigio italien (£10)
+7. Passer au menu des plats.
+8. Vous n’aimez pas vraiment la cuisine italienne, alors vous commandez un steak (£14)
+9. Bien cuit.
+10. Vous prenez une gorgée d’eau.
+11. Vous discutez de votre repas.
+12. Vous continuez à bavarder.
+13. Vous continuez à bavarder.
+14. Qu’est-ce que ce sera ?
+15. Lui demander si elle a envie de faire pipi ?
+16. Vous commandez deux cafés.
+17. Vous lui souris.
+18. Vous entrez dans le théâtre.
+19. Vous entrez dans le théâtre.
+20. Vous regardez la pièce.
+21. Repenser à comment vous vous êtes rencontrés ?
+22. Concentrez-vous sur la pièce.
+23. Continuer à regarder la pièce.
+24. Continuer à regarder la pièce.
+25. Continuer à regarder la pièce.
+26. Continuer à regarder la pièce.
+27. Concentrez-vous sur la pièce.
+28. Concentrez-vous sur la pièce.
+29. Vous regardez Diane.
+30. Vous parlez de la pièce.
+31. Utiliser un coup de chance ?
+32. Vous l’attendez.
+33. Vous sortez sur le balcon.
+34. Il est temps de retourner voir la pièce.
+35. Vous retournez à vos places.
+36. Le deuxième acte commence.
+37. Continuer à regarder la pièce.
+38. L’actrice sait vraiment jouer quelqu’un qui n’en peut plus.
+39. Vous appréciez la pièce.
+40. La pièce continue.
+41. Les lumières s’éteignent.
+42. La pièce continue.
+43. La pièce touche presque à sa fin.
+44. Vous vous levez pour quitter le théâtre.
+45. En attendant, tout le monde sort de la salle.
+46. Faire le gentleman et demander à Diane ce qu’elle veut faire.
+47. Vous vous dirigez vers la porte des artistes.
+48. — et se diriger vers la porte des artistes.
+49. Vous attendez Molly.
+50. Vous attendez Molly.
+51. Vous serrez la main à Molly et à son amie.
+52. Alors, qu’est-ce que ce sera ?
+53. Partir se promener.
+54. Vous continuez à marcher.
+55. Vous arrivez au bord de la rivière.
+56. Vous dites qu’il n’y a vraiment pas le temps.
+57. Vous continuez à marcher.
+58. Vous continuez à marcher.
+59. Vous continuez à marcher.
+60. De quoi allez-vous parler ?
+61. De rien en particulier.
+62. OK.
+63. Vous vous dépêchez.
+64. Hourra !
+65. Vous vous arrêtez net.
+66. Vous continuez à marcher.
+67. Vous vous dépêchez.
+68. Vous achetez les boissons.
+69. Non, je garde mes coups de chance. Vous allez au bar.
+70. Vous bavardez ensemble.
+71. Vous discutez gaiement.
+72. Vous discutez gaiement.
+73. Vous continuez à discuter.
+74. Non, je commence à manquer d’argent.
+75. Non, je n’ai pas les moyens.
+76. Vous finissez votre verre.
+77. Vous vous préparez à partir.
+78. Et vous vous dirigez vers l’arrêt de bus.
+79. Vous continuez d’attendre.
+80. Réfléchissez-y.
+81. Prendre un taxi ?
+82. Trouver un taxi.
+83. Vous attendez.
+84. Vous continuez d’attendre.
+85. Vous êtes en tête de la file.
+86. Le taxi s’engage sur la route principale.
+87. Passer votre bras autour d’elle ?
+88. Le trajet continue.
+89. Vous êtes à peu près à mi-chemin.
+90. Presque arrivé.
+91. Le taxi continue jusqu’à chez vous.
+92. Vous descendez.
+93. Vous trouvez la clé.
+94. Vous l’embrassez.
+95. Vous avez la maison pour vous seul.
+96. Un petit mug de vrai café filtre ?
+97. Vous buvez le café.
+98. Que ferez-vous ensuite ?
+99. Vous vous rendez au salon.
+100. Vous pensez que votre frère est sorti avec des amis.
+
+BOUCLE DES BOISSONS À LA MAISON
+Pour le quatrième prix et le premier prix, utilisez cette boucle après la BASE 3.
+Commencez par faire cette boucle initiale une fois :
+- Lui proposer un autre verre ?
+- Vous allez à la cuisine.
+- Santé !
+- Vous continuez à explorer et à discuter.
+Ensuite, la boucle répétée devient :
+- Lui apporter un autre verre ?
+- Vous allez à la cuisine.
+- Santé !
+- Vous continuez à explorer et à discuter.
+Pour le QUATRIÈME PRIX, cliquez une fois sur la boucle initiale, puis 7 fois sur la boucle répétée.
+Pour le PREMIER PRIX, cliquez une fois sur la boucle initiale, puis 15 fois sur la boucle répétée.
+
+TROISIÈME PRIX
+Utilisez la BASE 2, puis cliquez sur :
+1. Lui demander si elle a envie de faire pipi ?
+2. Vous lui passez un bras autour des épaules.
+3. Non, je suis bien comme ça.
+4. Elle n’arrête pas de regarder la porte.
+5. Elle n’arrive pas à rester en place.
+6. Elle n’arrive pas à rester en place.
+7. Parler de timbres ?
+8. Vous ouvrez l’album de timbres.
+9. Elle replie une jambe sur le canapé.
+10. Vous continuez.
+11. Vous passez un bras autour d’elle et la serrez contre vous.
+12. En avant pour les timbres !
+13. Vous lui pressez la main.
+14. Vous passez à un nouvel album.
+15. Vous lui passez un bras autour des épaules.
+16. Vous tournez les pages.
+17. Vous parcourez l’album en vitesse avant qu’elle puisse vous interrompre.
+18. Vous continuez.
+19. Vous fermez l’album.
+20. Et maintenant ?
+21. Elle quitte la pièce en vitesse et monte les escaliers en courant.
+22. Vous l’attendez.
+23. Lui caresser les jambes ?
+24. Elle essaie de se dégager.
+25. Vous attendez une réponse.
+26. Main dans la main.
+Texte de fin : VOUS AVEZ REMPORTÉ LE 3E PRIX !
+
+QUATRIÈME PRIX
+Utilisez la BASE 3. Cliquez ensuite une fois sur la boucle initiale des boissons, puis 7 fois sur la boucle répétée. Après le dernier « Vous continuez à explorer et à discuter. », cliquez sur :
+1. L’embrasser ?
+2. Oui, je joue un coup de chance !
+3. Vous attendez de voir ce qui va se passer.
+4. On verra bien !
+5. Lui caresser les seins ?
+6. Et maintenant ?
+7. Vous retirez votre main et la glissez vers ses fesses.
+8. Et maintenant ?
+9. La raccompagner à pied en espérant s’amuser en chemin.
+10. Bien sûr que je vais le lui dire. Je suis un gentleman.
+11. Vous vous préparez à partir.
+12. Je vais être galant et la raccompagner chez elle.
+13. Je vais être galant et la raccompagner chez elle.
+14. Vous quittez la maison avec elle.
+15. Vous passez devant une boîte aux lettres, puis un abribus.
+16. Vous continuez à marcher.
+17. Vous continuez à marcher.
+18. Elle vous presse d’avancer.
+19. Réfléchissez-y.
+20. Lui suggérer de se soulager derrière le mur ?
+21. Vous promettez.
+22. Vous faites semblant de regarder ailleurs.
+23. Et elle peut sentir à quel point vous êtes excité.
+Texte de fin : VOUS AVEZ REMPORTÉ LE 4E PRIX !
+
+PREMIER PRIX
+Utilisez la BASE 3. Cliquez ensuite une fois sur la boucle initiale des boissons, puis 15 fois sur la boucle répétée. Après le dernier « Vous continuez à explorer et à discuter. », cliquez sur :
+1. L’embrasser ?
+2. Oui, je joue un coup de chance !
+3. Vous attendez de voir ce qui va se passer.
+4. On verra bien !
+5. Lui caresser les seins ?
+6. Vous allez vous asseoir sur le canapé.
+7. Vous lui passez un bras autour des épaules.
+8. Vous vous préparez à la raccompagner chez elle.
+9. Non, je ne crois pas que je vais en parler.
+10. Je vais être galant et la raccompagner chez elle.
+11. Je vais être galant et la raccompagner chez elle.
+12. Vous quittez la maison avec elle.
+13. Vous passez devant une boîte aux lettres, puis un abribus.
+14. Vous essayez de maintenir la conversation.
+15. Vous vous dépêchez de la rattraper.
+16. Vous regardez, émerveillé.
+17. Qu’allez-vous faire ?
+18. Lui offrir un mouchoir ?
+19. Vous lui donnez un mouchoir.
+20. Quelques minutes plus tard, elle vous rejoint.
+21. Réfléchissez-y.
+22. Lui dire que ça vous a excité ?
+23. Vous lui caressez les cheveux.
+24. Vous continuez à marcher.
+25. Vous hochez la tête.
+Texte de fin : VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX!
+
+CINQUIÈME PRIX
+Utilisez la BASE 5, puis cliquez sur :
+1. L’embrasser ?
+2. Oui, je joue un coup de chance !
+3. Vous attendez de voir ce qui va se passer.
+4. On verra bien !
+5. Lui caresser les fesses ?
+6. Explorer ses jambes ?
+7. Réfléchissez-y.
+8. Lui enlever sa jupe ?
+9. Triomphe !
+10. Vous vous rapprochez d’elle à nouveau.
+11. Vous allez vous asseoir à côté de Diane.
+12. Vous ramassez la jupe.
+13. Garder la jupe ?
+14. Vous gardez la jupe.
+15. Vous gardez la jupe.
+16. Proposer un marché ?
+17. Vous lui rendez la jupe.
+18. Et vous suivez.
+19. Elle abaisse l’abattant.
+20. Vous regardez, émerveillé.
+21. Vous vous étreignez.
+22. Comment vous en êtes-vous sorti ?
+Texte de fin : VOUS AVEZ REMPORTÉ LE 5E PRIX !
+
+DEUXIÈME PRIX
+Utilisez la BASE 4. Le point essentiel de cette base est que Diane ait déjà eu une urgence privée près des buissons au bord de la rivière avant d’arriver chez vous.
+Depuis le canapé, cliquez d’abord sur cette section préparatoire :
+1. L’embrasser ?
+2. Vous vous embrassez à nouveau, vos langues se frôlant.
+3. Vous lui passez un bras autour des épaules.
+4. Tout va bien dans ce monde.
+5. Explorer sa poitrine ?
+6. Oui, j’aimerais lui défaire son soutien-gorge.
+7. Vous vous embrassez.
+8. Vous l’embrassez.
+9. Vous faites glisser votre main sur son ventre.
+10. Vous caressez à nouveau sa poitrine.
+11. Lui proposer un autre verre ?
+12. Vous lui passez le bras autour des épaules.
+13. Pour explorer ?
+14. Elle se rapproche de vous.
+15. Explorer sa poitrine ?
+16. Non, je ne vais pas encore lui défaire son soutien-gorge.
+17. Vous caressez à nouveau sa poitrine.
+18. Le moment de prendre des décisions.
+Puis cliquez sur :
+1. Parler de quelque chose ?
+2. Parler des toilettes ?
+3. Vous lui prenez la main et l’attirez sur vos genoux.
+4. Vous allez à la cuisine.
+5. Vous buvez votre vin.
+6. Vous vous blottissez l’un contre l’autre.
+7. Oui, promis.
+8. Vous promettez.
+9. Diane se retient de toutes ses forces !
+10. Vous lui faites un câlin.
+11. Elle secoue la tête, perplexe.
+12. Vous la serrez dans vos bras.
+13. Elle s’assoit sur les toilettes.
+14. Vous attendez.
+15. Vous respirez à nouveau.
+16. Vous descendez.
+17. —ça—
+Texte de fin : VOUS AVEZ GAGNÉ LE 2E PRIX !
+
+LOT DE CONSOLATION : HISTOIRE DU SALON
+Utilisez la BASE 4. Important : n’utilisez pas ici la route courte du mardi. Diane doit déjà avoir eu cette urgence privée avant d’arriver chez vous.
+Depuis le canapé, cliquez sur :
+1. L’embrasser ?
+2. Vous vous embrassez à nouveau, vos langues se frôlant.
+3. Vous lui passez un bras autour des épaules.
+4. Tout va bien dans ce monde.
+5. Explorer sa poitrine ?
+6. Non, je ne vais pas encore lui défaire son soutien-gorge.
+7. Vous caressez à nouveau sa poitrine.
+8. Lui proposer un autre verre ?
+9. Vous lui passez le bras autour des épaules.
+10. Pour explorer ?
+11. Elle se rapproche de vous.
+12. Explorer sa poitrine ?
+13. Non, je ne vais pas encore lui défaire son soutien-gorge.
+14. Vous caressez à nouveau sa poitrine.
+15. Lui proposer un autre verre ?
+16. Vous lui passez le bras autour des épaules.
+17. Pour explorer ?
+18. Elle se rapproche de vous.
+19. Explorer sa poitrine ?
+20. Non, je ne vais pas encore lui défaire son soutien-gorge.
+21. Vous caressez à nouveau sa poitrine.
+22. Le moment de prendre des décisions.
+23. Parler de quelque chose ?
+24. Parler des toilettes ?
+25. Vous lui prenez la main et l’attirez sur vos genoux.
+26. Vous allez à la cuisine.
+27. Vous buvez votre vin.
+28. Vous vous blottissez l’un contre l’autre.
+29. L’attirer sur vos genoux et lui demander de vous dire.
+30. Oui, promis.
+31. Elle s’arrête.
+32. Vous lui caressez les cheveux.
+33. Elle ouvre votre braguette.
+34. Elle vous caresse.
+35. Vous la laissez partir.
+Texte de fin : VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !
+
+PRIX DE CONSOLATION : ROUTE DU MARDI AU PAVILION
+Cette route est listée séparément parce qu’elle dépend de plusieurs vérifications d’état précises près du Pavilion dans la route du mardi. Cliquez sur :
+1. J’ai 18 ans ou plus.
+2. Je les ai déjà lues. Je commence tout de suite.
+3. Quand pouvez-vous la voir ?
+4. Mardi.
+5. En avant pour l’histoire !
+6. Acheter quelque chose.
+7. Une bouteille d’eau hors de prix (£3)
+8. Retour à la boutique.
+9. Filer directement au théâtre.
+10. Proposer d’aller manger, dans ce cas.
+11. Une bouteille de Rioja espagnol (£12)
+12. Passer au menu des plats.
+13. Tortelloni, comme Diane (£9)
+14. Commencer le repas.
+15. Vous discutez de votre repas.
+16. Vous continuez à manger.
+17. Qu’est-ce que ce sera ?
+18. Parler de trains ?
+19. Oh là là !
+20. Continue à bavarder.
+21. Le serveur débarrasse vos assiettes.
+22. Santé.
+23. Oui, prenons un dessert.
+24. Panna cotta (£4 chacun)
+25. Les bonbons sont vite engloutis.
+26. Un simple café filtre (1 £ pièce)
+27. Vous continuez à bavarder.
+28. Vous quittez le restaurant et rejoignez le théâtre.
+29. Réfléchissez-y.
+30. Lui dire que vous aussi vous avez envie ?
+31. Elle revient et vous prenez vos places dans la salle.
+32. Vous regardez la pièce.
+33. Repenser à comment vous vous êtes rencontrés ?
+34. Concentrez-vous sur la pièce.
+35. Continuer à regarder la pièce.
+36. Continuer à regarder la pièce.
+37. Continuer à regarder la pièce.
+38. Lui prendre la main ?
+39. Continuer à regarder la pièce.
+40. Concentrez-vous sur la pièce.
+41. Concentrez-vous sur la pièce.
+42. Vous regardez Diane.
+43. Vous parlez de la pièce.
+44. Lui demander si elle a envie de faire pipi ?
+45. Vous sortez sur le balcon.
+46. Vous continuez à bavarder.
+47. Il est temps de retourner voir la pièce.
+48. Vous retournez à vos places.
+49. Le deuxième acte commence.
+50. Vous rapprocher d’elle ?
+51. Continuer à regarder la pièce.
+52. L’actrice sait vraiment jouer quelqu’un qui n’en peut plus.
+53. Vous appréciez la pièce.
+54. La pièce continue.
+55. Les lumières s’éteignent.
+56. La pièce continue.
+57. La pièce touche presque à sa fin.
+58. Vous vous levez pour quitter le théâtre.
+59. En attendant, tout le monde sort de la salle.
+60. Retrouver Molly à la porte des artistes et peut-être prendre un verre ailleurs ?
+61. — et se diriger vers la porte des artistes.
+62. Vous attendez Molly.
+63. Vous attendez Molly.
+64. Vous serrez la main à Molly et à son amie.
+65. Alors, qu’est-ce que ce sera ?
+66. Partir se promener.
+67. Vous continuez à marcher.
+68. Vous arrivez au bord de la rivière.
+69. Quelle bonne idée.
+70. Vous buvez vos cafés.
+71. Elle se blottit contre vous.
+72. Vous êtes assis à côté de Diane.
+73. Vous discutez gaiement.
+74. Vous vous levez tous et reprenez votre promenade.
+75. Vous continuez à marcher.
+76. Vous continuez à marcher.
+77. Vous continuez à marcher.
+78. De quoi allez-vous parler ?
+79. De rien en particulier.
+80. OK.
+81. Vous vous dépêchez.
+82. Hourra !
+83. Vous continuez à marcher.
+84. Vous vous dépêchez.
+85. Vous achetez les boissons.
+86. Oui, je vais jouer un coup de chance.
+87. OK.
+88. Elle boit sa bière.
+89. Vous discutez gaiement.
+90. Vous discutez gaiement.
+91. Vous continuez à discuter.
+92. Oui, je vais payer une autre tournée.
+93. C’est votre tournée, mais assez bon marché grâce aux offres spéciales.
+94. Santé !
+95. Bonne idée.
+96. Retourner au jardin de la brasserie.
+97. Vous finissez votre verre.
+98. Non, il n’y a pas vraiment le temps.
+99. Vous cherchez l’arrêt de bus.
+100. Vous continuez d’attendre.
+101. Réfléchissez-y.
+102. Continuer à attendre le bus ?
+103. Que choisissez-vous ?
+104. Vous voulez rester et observer la fille à l’arrêt de bus voisin, qui semble au bord de craquer.
+105. Vous dites à Diane que vous ne voyez nulle part où aller.
+106. Vous continuez d’attendre.
+107. Vous ne vous y attendiez pas.
+108. Oui, j’en ai envie.
+109. Où est-elle allée ?
+110. Vers le Pavillon ? Elle espère peut-être pouvoir entrer pour utiliser les toilettes des femmes.
+111. Je ne pourrai pas la regarder dans le club, alors à quoi bon.
+112. Ira-t-elle à gauche ?
+113. Vous grimpez ces marches en vitesse.
+114. Vous regardez en retenant votre souffle.
+115. Elle regarde autour d’elle.
+116. Oh là là !
+117. Vous rentrez chez vous.
+118. Quoi qu’il en soit—
+Texte de fin : VOUS AVEZ REMPORTÉ UN PRIX DE CONSOLATION !
+
+PRIX DE CONSOLATION : ROUTE DU JEUDI PAR LE PASSAGE SOUTERRAIN
+Il s’agit d’une autre route du jeudi menant au même écran de prix de consolation. Elle exige plusieurs choix précis : ne pas acheter l’eau au début, utiliser une opportunité de chance pour empêcher Diane d’aller aux toilettes au Pavilion, puis la suivre dans le passage souterrain quand elle fuit l’arrêt de bus. Cliquez sur :
+1. J’ai 18 ans ou plus.
+2. Je les ai déjà lues. Je commence tout de suite.
+3. Quand pouvez-vous la voir ?
+4. Jeudi.
+5. En avant pour l’histoire !
+6. Y aller directement.
+7. Proposer d’aller manger, dans ce cas.
+8. Une bouteille de Rioja espagnol (£12)
+9. Passer au menu des plats.
+10. Tortelloni, comme Diane (£9)
+11. Commencer le repas.
+12. Vous discutez de votre repas.
+13. Vous continuez à manger.
+14. Qu’est-ce que ce sera ?
+15. Parler de trains ?
+16. Oh là là !
+17. Continue à bavarder.
+18. Le serveur débarrasse vos assiettes.
+19. Santé.
+20. Oui, prenons un dessert.
+21. Panna cotta (£4 chacun)
+22. Les bonbons sont vite engloutis.
+23. Un simple café filtre (1 £ pièce)
+24. Vous continuez à bavarder.
+25. Vous quittez le restaurant et rejoignez le théâtre.
+26. Réfléchissez-y.
+27. Lui dire que vous aussi vous avez envie ?
+28. Elle revient et vous prenez vos places dans la salle.
+29. Vous regardez la pièce.
+30. Repenser à comment vous vous êtes rencontrés ?
+31. Concentrez-vous sur la pièce.
+32. Continuer à regarder la pièce.
+33. Continuer à regarder la pièce.
+34. Continuer à regarder la pièce.
+35. Lui prendre la main ?
+36. Continuer à regarder la pièce.
+37. Concentrez-vous sur la pièce.
+38. Concentrez-vous sur la pièce.
+39. Vous regardez Diane.
+40. Vous parlez de la pièce.
+41. Lui demander si elle a envie de faire pipi ?
+42. Vous sortez sur le balcon.
+43. Vous continuez à bavarder.
+44. Il est temps de retourner voir la pièce.
+45. Vous retournez à vos places.
+46. Le deuxième acte commence.
+47. Vous rapprocher d’elle ?
+48. Continuer à regarder la pièce.
+49. L’actrice sait vraiment jouer quelqu’un qui n’en peut plus.
+50. Vous appréciez la pièce.
+51. La pièce continue.
+52. Les lumières s’éteignent.
+53. La pièce continue.
+54. La pièce touche presque à sa fin.
+55. Vous vous levez pour quitter le théâtre.
+56. En attendant, tout le monde sort de la salle.
+57. Retrouver Molly à la porte des artistes et peut-être prendre un verre ailleurs ?
+58. — et se diriger vers la porte des artistes.
+59. Vous attendez Molly.
+60. Vous attendez Molly.
+61. Vous serrez la main à Molly et à son amie.
+62. Qu’est-ce que ce sera ?
+63. Partir se promener.
+64. Vous continuez à marcher.
+65. Vous arrivez au bord de la rivière.
+66. Quelle bonne idée.
+67. Vous buvez vos cafés.
+68. Elle se blottit contre vous.
+69. Vous êtes assis à côté de Diane.
+70. Vous discutez gaiement.
+71. Vous vous levez tous et reprenez votre promenade.
+72. Vous continuez à marcher.
+73. Vous continuez à marcher.
+74. Vous continuez à marcher.
+75. Vous continuez à marcher.
+76. Vous continuez à marcher.
+77. On marche et on bavarde.
+78. On bavarde et on marche.
+79. Hourra !
+80. Vous continuez à marcher.
+81. Vous vous dépêchez.
+82. Vous achetez les boissons.
+83. Oui, je vais jouer un coup de chance.
+84. OK.
+85. Elle boit sa bière.
+86. Vous discutez gaiement.
+87. Vous discutez gaiement.
+88. Vous continuez à discuter.
+89. Oui, je vais payer une autre tournée.
+90. C’est votre tournée, mais assez bon marché grâce aux offres spéciales.
+91. Santé !
+92. Bonne idée.
+93. Retourner au jardin de la brasserie.
+94. Et puis vient l’heure de partir.
+95. Non, il n’y a pas vraiment le temps.
+96. Vous cherchez l’arrêt de bus.
+97. Vous continuez d’attendre.
+98. Réfléchissez-y.
+99. Continuer à attendre le bus ?
+100. Que choisissez-vous ?
+101. Vous voulez rester et observer la fille à l’arrêt de bus voisin, qui semble au bord de craquer.
+102. Vous dites à Diane que vous ne voyez nulle part où aller.
+103. Le bus ne devrait plus tarder.
+104. Le bus apparaît enfin au loin.
+105. Vous ne vous y attendiez pas.
+106. Oui, j’en ai envie.
+107. Où est-elle allée ?
+108. Dans le passage souterrain sous la route, qui la ramènera vers le centre-ville ?
+109. Longer le couloir ?
+110. Vous marquez une pause, puis avancez lentement.
+111. Mais vous entendez à nouveau des pas.
+112. Elle ne bouge pas.
+113. Oh là là !
+114. Et avant que vous ayez pu vous ressaisir—
+115. Vous n’avez pas gagné, mais au moins—
+Texte de fin : VOUS AVEZ REMPORTÉ UN PRIX DE CONSOLATION !
+
+PRIX DE CONSOLATION DE CHLOE
+Utilisez la BASE 6. Chloe est déjà présente dans la scène à la maison. Puis cliquez sur :
+1. Elle glousse nerveusement.
+2. Vous bavardez tous les quatre.
+3. Elle glousse nerveusement de nouveau.
+4. Qu’est-ce que ça pourrait être ?
+5. Oh là là !
+6. Elle pouffe nerveusement, puis se mord les lèvres en regardant autour d’elle.
+7. Vous vous sentez un peu gêné pour Chloe, qui visiblement n’ose pas « quitter la pièce » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.
+8. Vous partez avec Diane.
+9. Non, je ne crois pas que je vais en parler.
+10. Je vais être galant et la raccompagner chez elle.
+11. Je vais être galant et la raccompagner chez elle.
+12. Vous quittez la maison avec elle.
+13. Vous passez devant une boîte aux lettres, puis un abribus.
+14. Vous continuez à marcher.
+15. Vous continuez à marcher.
+16. Elle vous presse d’avancer.
+17. Vous reprenez le chemin du retour.
+18. C’est dommage que tout soit déjà fini.
+19. Vous vous glissez dans l’ombre.
+20. Oui, il m’en reste un.
+21. Continuer.
+22. Se baisser hors de vue.
+23. Et puis…
+24. Oh là là !
+Texte de fin : VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !
+
+FIN DE CONSOLATION D’AMANDA
+Utilisez la BASE 7. Votre frère est maintenant arrivé avec ses amies. Puis cliquez sur :
+1. Zut alors !
+2. Vous faites les présentations, Diane et vous.
+3. Vous aidez à préparer les boissons.
+4. Oh là là !
+5. Non, je vais chercher le livre de Diane.
+6. Vous vous dirigez vers votre chambre.
+7. Vous ne voulez pas faire attendre Diane, et vous aimeriez voir comment s’en sort Amanda. Alors vous allez chercher le livre.
+8. Retourner dans votre chambre ?
+9. Vous attendez pour voir ce qui se passe.
+10. Mais vous avez une vue de choix.
+11. Si seulement vous pouviez regarder !
+12. Oui, pourquoi pas !
+13. Voir ce qui se passe.
+14. Oh là là !
+15. Vous continuez à regarder.
+16. C’est un rendez-vous !
+17. —et donc—
+Texte de fin : CE QUI EST UN SACRÉ LOT DE CONSOLATION !
+
+FINS D’ÉCHEC COURANTES
+Ce sont des fins terminales, mais pas des fins avec prix :
+- « Je n’ai pas 18 ans. » met fin au jeu dès l’écran d’âge.
+- Manquer d’argent peut déclencher « AU REVOIR ! LA PARTIE EST TERMINÉE. »
+- Si l’intimité descend trop bas, Diane peut mettre fin au rendez-vous.
+- Dans certaines branches, utiliser une opportunité de chance quand il n’en reste plus peut vous disqualifier.
+- Si vous laissez un accident public aller trop loin, le rendez-vous peut aussi se terminer immédiatement.

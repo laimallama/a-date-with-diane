@@ -1,0 +1,1190 @@
+Guía de escenas ocultas
+
+Esta guía cubre escenas ocultas opcionales, no finales oficiales.
+Las rutas de premios y premios de consolación siguen estando en la guía principal de finales.
+Usa primero las bases de abajo y después sigue los pasos extra indicados en cada escena.
+
+Bases
+
+Base 1: Base para el recuerdo en el teatro
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Comprar algo.
+7. Una botella de agua a precio de oro (£3)
+8. Volver a la tienda.
+9. Ir directamente al teatro.
+10. Decir que entonces entremos a comer.
+11. Una botella de Rioja español (£12)
+12. Pasar a los platos.
+13. Tortelloni, igual que Diane (£9)
+14. Empezar a comer.
+15. Charláis sobre la cena.
+16. Sigues comiendo.
+17. ¿Qué va a ser?
+18. ¿Hablar de trenes?
+19. ¡Vaya!
+20. Seguís charlando.
+21. El camarero se lleva los platos.
+22. Salud.
+23. No, vamos directamente al café; los postres siempre son un derroche de dinero.
+24. Un espresso (£1.50 cada uno)
+25. Seguís charlando.
+26. Salís del restaurante y entráis al teatro.
+27. Piénsatelo.
+28. ¿Intentar detenerla?
+29. Ocupáis vuestros asientos en el auditorio.
+30. Ves la obra.
+
+Base 2: Base del banco junto al río
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Comprar algo.
+7. Una botella de agua a precio de oro (£3)
+8. Volver a la tienda.
+9. Ir directamente al teatro.
+10. Decir que entonces entremos a comer.
+11. Una botella de Rioja español (£12)
+12. Pasar a los platos.
+13. Tortelloni, igual que Diane (£9)
+14. Empezar a comer.
+15. Charláis sobre la cena.
+16. Sigues comiendo.
+17. ¿Qué va a ser?
+18. ¿Hablar de trenes?
+19. ¡Vaya!
+20. Seguís charlando.
+21. El camarero se lleva los platos.
+22. Salud.
+23. No, vamos directamente al café; los postres siempre son un derroche de dinero.
+24. Un espresso (£1.50 cada uno)
+25. Seguís charlando.
+26. Salís del restaurante y entráis al teatro.
+27. Piénsatelo.
+28. ¿Intentar detenerla?
+29. Ocupáis vuestros asientos en el auditorio.
+30. Ves la obra.
+31. ¿En cómo os conocisteis?
+32. Concéntrate en la obra.
+33. Seguir viendo la obra sin más.
+34. Seguir viendo la obra.
+35. Seguir viendo la obra.
+36. ¿Cogerle la mano?
+37. Seguir viendo la obra.
+38. Concéntrate en la obra.
+39. Concéntrate en la obra.
+40. Miras a Diane.
+41. Charláis sobre la obra.
+42. ¿Decirle que tú tienes que ir?
+43. Salís al balcón.
+44. Seguís charlando.
+45. Es hora de volver a la obra.
+46. Volvéis a vuestros asientos.
+47. Comienza el segundo acto.
+48. ¿Acercarte más a ella?
+49. Seguir viendo la obra.
+50. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+51. Estás disfrutando de la obra.
+52. La obra continúa.
+53. Las luces se atenúan.
+54. La obra continúa.
+55. La obra está a punto de terminar.
+56. Os levantáis para salir del teatro.
+57. Mientras tanto, todo el mundo va saliendo del auditorio.
+58. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+59. —y te encaminas hacia la puerta de artistas.
+60. Esperas a Molly.
+61. Esperas a Molly.
+62. Le das la mano a Molly y a su amiga.
+63. ¿Con cuál te quedas?
+64. Dar el paseo.
+65. Sigues caminando.
+66. Llegáis al río.
+67. Qué buena idea.
+68. Os tomáis los cafés.
+69. Ella se acerca más a ti.
+70. Estás sentado junto a Diane.
+71. Charláis animadamente.
+
+Base 3: Base de la decisión urgente junto al río
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Comprar algo.
+7. Una botella de agua a precio de oro (£3)
+8. Volver a la tienda.
+9. Ir directamente al teatro.
+10. Decir que entonces entremos a comer.
+11. Una botella de Rioja español (£12)
+12. Pasar a los platos.
+13. Tortelloni, igual que Diane (£9)
+14. Empezar a comer.
+15. Charláis sobre la cena.
+16. Sigues comiendo.
+17. ¿Qué va a ser?
+18. ¿Hablar de trenes?
+19. ¡Vaya!
+20. Seguís charlando.
+21. El camarero se lleva los platos.
+22. Salud.
+23. No, vamos directamente al café; los postres siempre son un derroche de dinero.
+24. Un espresso (£1.50 cada uno)
+25. Seguís charlando.
+26. Salís del restaurante y entráis al teatro.
+27. Piénsatelo.
+28. ¿Intentar detenerla?
+29. Ocupáis vuestros asientos en el auditorio.
+30. Ves la obra.
+31. ¿En cómo os conocisteis?
+32. Concéntrate en la obra.
+33. Seguir viendo la obra sin más.
+34. Seguir viendo la obra.
+35. Seguir viendo la obra.
+36. ¿Cogerle la mano?
+37. Seguir viendo la obra.
+38. Concéntrate en la obra.
+39. Concéntrate en la obra.
+40. Miras a Diane.
+41. Charláis sobre la obra.
+42. ¿Decirle que tú tienes que ir?
+43. Salís al balcón.
+44. Seguís charlando.
+45. Es hora de volver a la obra.
+46. Volvéis a vuestros asientos.
+47. Comienza el segundo acto.
+48. ¿Acercarte más a ella?
+49. Seguir viendo la obra.
+50. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+51. Estás disfrutando de la obra.
+52. La obra continúa.
+53. Las luces se atenúan.
+54. La obra continúa.
+55. La obra está a punto de terminar.
+56. Os levantáis para salir del teatro.
+57. Mientras tanto, todo el mundo va saliendo del auditorio.
+58. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+59. —y te encaminas hacia la puerta de artistas.
+60. Esperas a Molly.
+61. Esperas a Molly.
+62. Le das la mano a Molly y a su amiga.
+63. ¿Con cuál te quedas?
+64. Dar el paseo.
+65. Sigues caminando.
+66. Llegáis al río.
+67. Qué buena idea.
+68. Os tomáis los cafés.
+69. Ella se acerca más a ti.
+70. Estás sentado junto a Diane.
+71. Charláis animadamente.
+72. «¡No hablarás en serio! Yo estoy disfrutando muchísimo.»
+73. Sigues caminando.
+74. Sigues caminando.
+75. Sigues caminando.
+76. Eso te parece de perlas.
+77. Hablar de trenes.
+78. Ella te arrastra hacia delante.
+79. Vale.
+80. ¿Cómo?
+
+Base 4: Base del baño público abierto del martes
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Ir sin más.
+7. Decir que entonces entremos a comer.
+8. Una botella de Rioja español (£12)
+9. Pasar a los platos.
+10. Lasaña de verduras (£8)
+11. Empezar a comer.
+12. Charláis sobre la cena.
+13. Seguís charlando.
+14. Que no se te suba a la cabeza.
+15. Seguís charlando.
+16. Seguís charlando.
+17. Salud.
+18. No, vamos directamente al café; los postres siempre son un derroche de dinero.
+19. Un espresso (£1.50 cada uno)
+20. Seguís charlando.
+21. Salís del restaurante y entráis al teatro.
+22. Piénsatelo.
+23. ¿Intentar detenerla?
+24. Ocupáis vuestros asientos en el auditorio.
+25. Ves la obra.
+26. ¿En cómo os conocisteis?
+27. Concéntrate en la obra.
+28. Seguir viendo la obra sin más.
+29. Seguir viendo la obra.
+30. Seguir viendo la obra.
+31. ¿Cogerle la mano?
+32. Seguir viendo la obra.
+33. Concéntrate en la obra.
+34. Concéntrate en la obra.
+35. Miras a Diane.
+36. Charláis sobre la obra.
+37. ¿Decirle que tú tienes que ir?
+38. Salís al balcón.
+39. Seguís charlando.
+40. Es hora de volver a la obra.
+41. Volvéis a vuestros asientos.
+42. Comienza el segundo acto.
+43. ¿Acercarte más a ella?
+44. Seguir viendo la obra.
+45. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+46. Estás disfrutando de la obra.
+47. La obra continúa.
+48. Las luces se atenúan.
+49. La obra continúa.
+50. La obra está a punto de terminar.
+51. Os levantáis para salir del teatro.
+52. Mientras tanto, todo el mundo va saliendo del auditorio.
+53. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+54. —y te encaminas hacia la puerta de artistas.
+55. Esperas a Molly.
+56. Esperas a Molly.
+57. Le das la mano a Molly y a su amiga.
+58. ¿Con cuál te quedas?
+59. Dar el paseo.
+60. Sigues caminando.
+61. Llegáis al río.
+62. Le dices que de verdad no hay tiempo.
+63. Sigues caminando.
+64. Sigues caminando.
+65. Sigues caminando.
+66. Eso te parece de perlas.
+67. Hablar de trenes.
+68. Ella te arrastra hacia delante.
+69. Vale.
+70. Te das prisa.
+71. ¡Hurra!
+
+Base 5: Base del puente el jueves
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Jueves.
+5. ¡Continuar con la historia!
+6. Ir sin más.
+7. Decir que entonces entremos a comer.
+8. Una botella de Rioja español (£12)
+9. Pasar a los platos.
+10. Tortelloni, igual que Diane (£9)
+11. Empezar a comer.
+12. Charláis sobre la cena.
+13. Sigues comiendo.
+14. ¿Qué va a ser?
+15. ¿Hablar de trenes?
+16. ¡Vaya!
+17. Seguís charlando.
+18. El camarero se lleva los platos.
+19. Salud.
+20. Sí, vamos a pedir postre.
+21. Panna cotta (£4 cada uno)
+22. Los postres los acabáis en un momento.
+23. Un café de filtro normal (£1 cada uno)
+24. Seguís charlando.
+25. Salís del restaurante y entráis al teatro.
+26. Piénsatelo.
+27. ¿Intentar detenerla?
+28. Ocupáis vuestros asientos en el auditorio.
+29. Ves la obra.
+30. ¿En cómo os conocisteis?
+31. Concéntrate en la obra.
+32. Seguir viendo la obra sin más.
+33. Seguir viendo la obra.
+34. Seguir viendo la obra.
+35. ¿Cogerle la mano?
+36. Seguir viendo la obra.
+37. Concéntrate en la obra.
+38. Concéntrate en la obra.
+39. Miras a Diane.
+40. Charláis sobre la obra.
+41. ¿Decirle que tú tienes que ir?
+42. Salís al balcón.
+43. Seguís charlando.
+44. Es hora de volver a la obra.
+45. Volvéis a vuestros asientos.
+46. Comienza el segundo acto.
+47. ¿Acercarte más a ella?
+48. Seguir viendo la obra.
+49. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+50. Estás disfrutando de la obra.
+51. La obra continúa.
+52. Las luces se atenúan.
+53. La obra continúa.
+54. La obra está a punto de terminar.
+55. Os levantáis para salir del teatro.
+56. Mientras tanto, todo el mundo va saliendo del auditorio.
+57. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+58. —y te encaminas hacia la puerta de artistas.
+59. Esperas a Molly.
+60. Esperas a Molly.
+61. Le das la mano a Molly y a su amiga.
+62. ¿Qué va a ser?
+63. Dar el paseo.
+64. Sigues caminando.
+65. Llegáis al río.
+66. Qué buena idea.
+67. Os tomáis los cafés.
+68. Ella se acerca más a ti.
+69. Estás sentado junto a Diane.
+70. Charláis animadamente.
+
+Base 6: Base de Molly y Bruno en el sendero del martes
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Comprar algo.
+7. Una botella de agua a precio de oro (£3)
+8. Volver a la tienda.
+9. Ir directamente al teatro.
+10. Decir que entonces entremos a comer.
+11. Una botella de Rioja español (£12)
+12. Pasar a los platos.
+13. Tortelloni, igual que Diane (£9)
+14. Empezar a comer.
+15. Charláis sobre la cena.
+16. Sigues comiendo.
+17. ¿Qué va a ser?
+18. ¿Hablar de trenes?
+19. ¡Vaya!
+20. Seguís charlando.
+21. El camarero se lleva los platos.
+22. Salud.
+23. No, vamos directamente al café; los postres siempre son un derroche de dinero.
+24. Un espresso (£1.50 cada uno)
+25. Seguís charlando.
+26. Salís del restaurante y entráis al teatro.
+27. Piénsatelo.
+28. ¿Intentar detenerla?
+29. Ocupáis vuestros asientos en el auditorio.
+30. Ves la obra.
+31. ¿En cómo os conocisteis?
+32. Concéntrate en la obra.
+33. Seguir viendo la obra sin más.
+34. Seguir viendo la obra.
+35. Seguir viendo la obra.
+36. ¿Cogerle la mano?
+37. Seguir viendo la obra.
+38. Concéntrate en la obra.
+39. Concéntrate en la obra.
+40. Miras a Diane.
+41. Charláis sobre la obra.
+42. ¿Decirle que tú tienes que ir?
+43. Salís al balcón.
+44. Seguís charlando.
+45. Es hora de volver a la obra.
+46. Volvéis a vuestros asientos.
+47. Comienza el segundo acto.
+48. ¿Acercarte más a ella?
+49. Seguir viendo la obra.
+50. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+51. Estás disfrutando de la obra.
+52. La obra continúa.
+53. Las luces se atenúan.
+54. La obra continúa.
+55. La obra está a punto de terminar.
+56. Os levantáis para salir del teatro.
+57. Mientras tanto, todo el mundo va saliendo del auditorio.
+58. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+59. —y te encaminas hacia la puerta de artistas.
+60. Esperas a Molly.
+61. Esperas a Molly.
+62. Le das la mano a Molly y a su amiga.
+63. ¿Con cuál te quedas?
+64. Ir al pub.
+65. Entráis en el pub.
+66. Te acercas a la barra.
+67. Charláis animadamente.
+68. Charláis animadamente.
+69. Seguís charlando.
+70. Sí, voy a pedir otra ronda.
+71. Te toca pagar ronda, aunque sale barata gracias a las ofertas especiales.
+72. ¡Salud!
+73. Sigues con tu copa.
+74. Sí, otra copa no vendría mal.
+75. Apuras la copa.
+76. Salís del pub.
+77. Llegáis al río.
+78. Qué buena idea.
+79. Os tomáis los cafés.
+80. Ella se acerca más a ti.
+81. Estás sentado junto a Diane.
+82. Charláis animadamente.
+83. Todos os levantáis y continuáis el paseo.
+84. Sigues caminando.
+85. Sigues caminando.
+86. Sigues caminando.
+87. ¿De qué vas a hablar?
+88. Hablar de trenes.
+89. Ella te arrastra hacia delante.
+
+Base 7: Base de alta urgencia de Molly y Bruno en el sendero
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Ir sin más.
+7. Decir que entonces entremos a comer.
+8. Una botella de vino de Borgoña, el mejor vino de la carta (£20)
+9. Pasar a los platos.
+10. Tortelloni, igual que Diane (£9)
+11. Empezar a comer.
+12. Charláis sobre la cena.
+13. Sigues comiendo.
+14. ¿Qué va a ser?
+15. ¿Preguntarle si tiene ganas de hacer pis?
+16. Pedís dos cafés.
+17. Le sonríes.
+18. Entráis al teatro.
+19. Entráis al teatro.
+20. Ves la obra.
+21. ¿En cómo os conocisteis?
+22. Concéntrate en la obra.
+23. Seguir viendo la obra sin más.
+24. Seguir viendo la obra.
+25. Seguir viendo la obra.
+26. ¿Cogerle la mano?
+27. Seguir viendo la obra.
+28. Concéntrate en la obra.
+29. Concéntrate en la obra.
+30. Miras a Diane.
+31. Charláis sobre la obra.
+32. ¿Decirle que tú tienes que ir?
+33. Salís al balcón.
+34. Seguís charlando.
+35. Es hora de volver a la obra.
+36. Volvéis a vuestros asientos.
+37. Comienza el segundo acto.
+38. ¿Acercarte más a ella?
+39. Seguir viendo la obra.
+40. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+41. Estás disfrutando de la obra.
+42. La obra continúa.
+43. Las luces se atenúan.
+44. La obra continúa.
+45. La obra está a punto de terminar.
+46. Os levantáis para salir del teatro.
+47. Mientras tanto, todo el mundo va saliendo del auditorio.
+48. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+49. —y te encaminas hacia la puerta de artistas.
+50. Esperas a Molly.
+51. Esperas a Molly.
+52. Le das la mano a Molly y a su amiga.
+53. ¿Con cuál te quedas?
+54. Ir al pub.
+55. Entráis en el pub.
+56. Te acercas a la barra.
+57. Charláis animadamente.
+58. Charláis animadamente.
+59. Seguís charlando.
+60. Sí, voy a pedir otra ronda.
+61. Te toca pagar ronda, aunque sale barata gracias a las ofertas especiales.
+62. ¡Salud!
+63. Sigues con tu copa.
+64. Sí, otra copa no vendría mal.
+65. Apuras la copa.
+66. Salís del pub.
+67. Llegáis al río.
+68. Qué buena idea.
+69. Os tomáis los cafés.
+70. Ella se acerca más a ti.
+71. Estás sentado junto a Diane.
+72. Charláis animadamente.
+73. «¡No hablarás en serio! Yo estoy disfrutando muchísimo.»
+74. Sigues caminando.
+75. Sigues caminando.
+76. Sigues caminando.
+77. Eso te parece de perlas.
+78. Hablar de trenes.
+79. Ella te arrastra hacia delante.
+
+Base 8: Base de los baños públicos junto al río del sábado
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Sábado.
+5. ¡Continuar con la historia!
+6. Ir sin más.
+7. Decirle que te encanta el vestido.
+8. Vale.
+9. Una botella de Pinot Grigio italiano (£10)
+10. Pasar a los platos.
+11. La comida italiana no te convence del todo, así que pides un filete (£14)
+12. Muy hecho.
+13. Bebes un sorbo de agua.
+14. Charláis sobre la cena.
+15. Seguís charlando.
+16. Seguís charlando.
+17. ¿Qué va a ser?
+18. ¿Preguntarle si tiene ganas de hacer pis?
+19. Pedís dos cafés.
+20. Le sonríes.
+21. Entráis al teatro.
+22. Entráis al teatro.
+23. Ves la obra.
+24. ¿En cómo os conocisteis?
+25. Concéntrate en la obra.
+26. Seguir viendo la obra sin más.
+27. Seguir viendo la obra.
+28. Seguir viendo la obra.
+29. Seguir viendo la obra sin más.
+30. Concéntrate en la obra.
+31. Concéntrate en la obra.
+32. Miras a Diane.
+33. Charláis sobre la obra.
+34. ¿Usar un golpe de suerte?
+35. La esperas.
+36. Salís al balcón.
+37. Es hora de volver a la obra.
+38. Volvéis a vuestros asientos.
+39. Comienza el segundo acto.
+40. Seguir viendo la obra sin más.
+41. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+42. Estás disfrutando de la obra.
+43. La obra continúa.
+44. Las luces se atenúan.
+45. La obra continúa.
+46. La obra está a punto de terminar.
+47. Os levantáis para salir del teatro.
+48. Mientras tanto, todo el mundo va saliendo del auditorio.
+49. Ser un caballero y preguntarle a Diane qué quiere hacer.
+50. Te diriges a la puerta de artistas.
+51. —y te encaminas hacia la puerta de artistas.
+52. Esperas a Molly.
+53. Esperas a Molly.
+54. Le das la mano a Molly y a su amiga.
+55. ¿Con cuál te quedas?
+56. Ir al pub.
+57. Entráis en el pub.
+58. Te acercas a la barra.
+59. Charláis animadamente.
+60. Charláis animadamente.
+61. Seguís charlando.
+62. Sí, voy a pedir otra ronda.
+63. Te toca pagar ronda, aunque sale barata gracias a las ofertas especiales.
+64. ¡Salud!
+65. Salís del pub.
+66. Llegáis al río.
+67. Tan buena idea que te ofreces a pagarlos tú.
+68. Os tomáis los cafés.
+69. Ella se acerca más a ti.
+70. Estás sentado junto a Diane.
+71. Charláis animadamente.
+72. Todos os levantáis y continuáis el paseo.
+73. Sigues caminando.
+74. Sigues caminando.
+75. Sigues caminando.
+76. Eso te parece de perlas.
+77. Hablar de trenes.
+78. Ella te arrastra hacia delante.
+79. Vale.
+80. Te das prisa.
+81. ¿Llegáis a tiempo?
+
+Base 9: Base de la morena en la cola del autobús
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Comprar algo.
+7. Una botella de agua a precio de oro (£3)
+8. Volver a la tienda.
+9. Ir directamente al teatro.
+10. Decir que entonces entremos a comer.
+11. Una botella de Chardonnay australiano (£15)
+12. Pasar a los platos.
+13. Tortelloni, igual que Diane (£9)
+14. Empezar a comer.
+15. Charláis sobre la cena.
+16. Sigues comiendo.
+17. ¿Qué va a ser?
+18. ¿Hablar de trenes?
+19. ¡Vaya!
+20. Seguís charlando.
+21. El camarero se lleva los platos.
+22. Salud.
+23. No, vamos directamente al café; los postres siempre son un derroche de dinero.
+24. Un espresso (£1.50 cada uno)
+25. Seguís charlando.
+26. Salís del restaurante y entráis al teatro.
+27. Piénsatelo.
+28. ¿Intentar detenerla?
+29. Ocupáis vuestros asientos en el auditorio.
+30. Ves la obra.
+31. ¿En cómo os conocisteis?
+32. Concéntrate en la obra.
+33. Seguir viendo la obra sin más.
+34. Seguir viendo la obra.
+35. Seguir viendo la obra.
+36. ¿Cogerle la mano?
+37. Seguir viendo la obra.
+38. Concéntrate en la obra.
+39. Concéntrate en la obra.
+40. Miras a Diane.
+41. Charláis sobre la obra.
+42. ¿Decirle que tú tienes que ir?
+43. Salís al balcón.
+44. Seguís charlando.
+45. Es hora de volver a la obra.
+46. Volvéis a vuestros asientos.
+47. Comienza el segundo acto.
+48. ¿Acercarte más a ella?
+49. Seguir viendo la obra.
+50. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+51. Estás disfrutando de la obra.
+52. La obra continúa.
+53. Las luces se atenúan.
+54. La obra continúa.
+55. La obra está a punto de terminar.
+56. Os levantáis para salir del teatro.
+57. Mientras tanto, todo el mundo va saliendo del auditorio.
+58. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+59. —y te encaminas hacia la puerta de artistas.
+60. Esperas a Molly.
+61. Esperas a Molly.
+62. Le das la mano a Molly y a su amiga.
+63. ¿Con cuál te quedas?
+64. Dar el paseo.
+65. Sigues caminando.
+66. Llegáis al río.
+67. Qué buena idea.
+68. Os tomáis los cafés.
+69. Ella se acerca más a ti.
+70. Estás sentado junto a Diane.
+71. Charláis animadamente.
+72. «¡No hablarás en serio! Yo estoy disfrutando muchísimo.»
+73. Sigues caminando.
+74. Sigues caminando.
+75. Sigues caminando.
+76. Eso te parece de perlas.
+77. Hablar de trenes.
+78. Ella te arrastra hacia delante.
+79. Vale.
+80. ¿Cómo?
+81. Encontrarle un sitio donde ir.
+82. No puede estarse quieta.
+83. Gracias, dice ella.
+84. Sigues caminando.
+85. ¡Hurra!
+86. Pero pasas de largo.
+87. Te das prisa.
+88. Compras las bebidas.
+89. Te acercas a la barra.
+90. Charláis animadamente.
+91. Charláis animadamente.
+92. Seguís charlando.
+93. Sí, pediré otra ronda.
+94. Te toca pagar la ronda, aunque sale bastante barata por las ofertas especiales.
+95. ¡Salud!
+96. Buena idea.
+97. Volver al jardín de la cervecería.
+98. Apuras la copa.
+99. Te preparas para irte.
+100. Y os dirigís a la parada del autobús.
+101. Sigues esperando.
+102. Piénsatelo.
+
+Base 10: Base de la decisión detrás de la autocaravana
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Martes.
+5. ¡Continuar con la historia!
+6. Comprar algo.
+7. Una botella de agua a precio de oro (£3)
+8. Volver a la tienda.
+9. Ir directamente al teatro.
+10. Decir que entonces entremos a comer.
+11. Una botella de Rioja español (£12)
+12. Pasar a los platos.
+13. Tortelloni, igual que Diane (£9)
+14. Empezar a comer.
+15. Charláis sobre la cena.
+16. Sigues comiendo.
+17. ¿Qué va a ser?
+18. ¿Hablar de trenes?
+19. ¡Vaya!
+20. Seguís charlando.
+21. El camarero se lleva los platos.
+22. Salud.
+23. Sí, vamos a pedir postre.
+24. Panna cotta (£4 cada uno)
+25. Los postres los acabáis en un momento.
+26. Un café de filtro normal (£1 cada uno)
+27. Seguís charlando.
+28. Salís del restaurante y entráis al teatro.
+29. Piénsatelo.
+30. ¿Decirle que tú también tienes que ir?
+31. Ella vuelve y ocupáis vuestros asientos en el auditorio.
+32. Ves la obra.
+33. ¿En cómo os conocisteis?
+34. Concéntrate en la obra.
+35. Seguir viendo la obra sin más.
+36. Seguir viendo la obra.
+37. Seguir viendo la obra.
+38. ¿Cogerle la mano?
+39. Seguir viendo la obra.
+40. Concéntrate en la obra.
+41. Concéntrate en la obra.
+42. Miras a Diane.
+43. Charláis sobre la obra.
+44. ¿Preguntarle si tiene ganas de hacer pis?
+45. Salís al balcón.
+46. Seguís charlando.
+47. Es hora de volver a la obra.
+48. Volvéis a vuestros asientos.
+49. Comienza el segundo acto.
+50. ¿Acercarte más a ella?
+51. Seguir viendo la obra.
+52. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+53. Estás disfrutando de la obra.
+54. La obra continúa.
+55. Las luces se atenúan.
+56. La obra continúa.
+57. La obra está a punto de terminar.
+58. Os levantáis para salir del teatro.
+59. Mientras tanto, todo el mundo va saliendo del auditorio.
+60. ¿Quedar con Molly en la puerta del escenario y quizá tomar algo en otro sitio?
+61. —y te encaminas hacia la puerta de artistas.
+62. Esperas a Molly.
+63. Esperas a Molly.
+64. Le das la mano a Molly y a su amiga.
+65. ¿Con cuál te quedas?
+66. Dar el paseo.
+67. Sigues caminando.
+68. Llegáis al río.
+69. Qué buena idea.
+70. Os tomáis los cafés.
+71. Ella se acerca más a ti.
+72. Estás sentado junto a Diane.
+73. Charláis animadamente.
+74. Todos os levantáis y continuáis el paseo.
+75. Sigues caminando.
+76. Sigues caminando.
+77. Sigues caminando.
+78. ¿De qué vas a hablar?
+79. De nada en particular.
+80. Vale.
+81. Te das prisa.
+82. ¡Hurra!
+83. Sigues caminando.
+84. Te das prisa.
+85. Compras las bebidas.
+86. Sí, usaré un golpe de suerte.
+87. Vale.
+88. Ella se bebe su cerveza.
+89. Charláis animadamente.
+90. Charláis animadamente.
+91. Seguís charlando.
+92. Sí, pediré otra ronda.
+93. Te toca pagar la ronda, aunque sale bastante barata por las ofertas especiales.
+94. ¡Salud!
+95. Buena idea.
+96. Volver al jardín de la cervecería.
+97. Apuras la copa.
+98. No, la verdad es que no hay tiempo.
+99. Buscas la parada del autobús.
+100. Sigues esperando.
+101. Piénsatelo.
+102. ¿Seguir esperando el autobús?
+103. ¿Qué va a ser?
+104. Sí, hay unos aseos al otro lado del aparcamiento —y seguramente estarán cerrados (¡aunque no hace falta decírselo!)
+105. Cruzáis juntos el aparcamiento.
+106. Cruzas el aparcamiento a paso rápido.
+107. La esperas.
+108. Miras a tu alrededor.
+109. Se meten detrás de la autocaravana.
+
+Base 11: Base de la cámara oculta
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Jueves.
+5. ¡Continuar con la historia!
+6. Ir sin más.
+7. Decirle que tenías muchas ganas de volveros a ver.
+8. Vale.
+9. Una botella de Rioja español (£12)
+10. Pasar a los platos.
+11. Lasaña de verduras (£8)
+12. Empezar a comer.
+13. Charláis sobre la cena.
+14. Seguís charlando.
+15. Que no se te suba a la cabeza.
+16. Seguís charlando.
+17. Seguís charlando.
+18. Salud.
+19. Sí, vamos a pedir postre.
+20. Tiramisú (£5 cada uno)
+21. Los postres están deliciosos y los acabáis en un momento.
+22. Un café de filtro normal (£1 cada uno)
+23. Seguís charlando.
+24. Salís del restaurante y entráis al teatro.
+25. Piénsatelo.
+26. ¿O prefieres jugar la versión corta del juego?
+27. Sí, jugaré la versión corta.
+28. ¡A ver qué pasa!
+29. Encuentras la llave.
+30. Le das un beso.
+31. Se estrechan la mano.
+32. ¿Una taza pequeña de café de filtro de verdad?
+33. Te bebes el café.
+34. Todo es muy agradable.
+35. ¿Qué va a ser?
+36. Preguntarle si tiene ganas de hacer pis.
+37. Ella sigue charlando.
+38. El álbum es muy interesante.
+39. ¿Ofrecerle más café?
+40. Sale de la habitación.
+41. Sí, probaré un golpe de suerte.
+42. Vamos a ver.
+
+Base 12: Base del pórtico de la iglesia del jueves
+1. Tengo 18 años o más.
+2. Ya las he leído. Empiezo directamente con el juego.
+3. ¿Cuándo puedes verla?
+4. Jueves.
+5. ¡Continuar con la historia!
+6. Ir sin más.
+7. Decir que entonces entremos a comer.
+8. Una botella de Pinot Grigio italiano (£10)
+9. Pasar a los platos.
+10. La comida italiana no te convence del todo, así que pides un filete (£14)
+11. ¡Poco hecho y jugoso!
+12. Brindáis con sendas copas de agua.
+13. Charláis sobre la cena.
+14. Seguís charlando.
+15. Seguís charlando.
+16. ¿Qué va a ser?
+17. ¿Preguntarle si tiene ganas de hacer pis?
+18. Pedís dos cafés.
+19. Le sonríes.
+20. Entráis al teatro.
+21. Entráis al teatro.
+22. Ves la obra.
+23. ¿En cómo os conocisteis?
+24. Concéntrate en la obra.
+25. Seguir viendo la obra sin más.
+26. Seguir viendo la obra.
+27. Seguir viendo la obra.
+28. Seguir viendo la obra sin más.
+29. Concéntrate en la obra.
+30. Concéntrate en la obra.
+31. Miras a Diane.
+32. Charláis sobre la obra.
+33. ¿Usar un golpe de suerte?
+34. La esperas.
+35. Salís al balcón.
+36. Es hora de volver a la obra.
+37. Volvéis a vuestros asientos.
+38. Comienza el segundo acto.
+39. Seguir viendo la obra sin más.
+40. La actriz sabe de verdad cómo interpretar a alguien que está a punto de mearse.
+41. Estás disfrutando de la obra.
+42. La obra continúa.
+43. Las luces se atenúan.
+44. La obra continúa.
+45. La obra está a punto de terminar.
+46. Os levantáis para salir del teatro.
+47. Mientras tanto, todo el mundo va saliendo del auditorio.
+48. Ser un caballero y preguntarle a Diane qué quiere hacer.
+49. Te diriges al vestíbulo.
+50. Esperas a sus amigas.
+51. No, no me lo puedo permitir.
+52. ¿Con cuál te quedas?
+53. ¿Qué va a ser?
+54. Ir al pub.
+55. Entráis en el pub.
+56. Te acercas a la barra.
+57. Charláis animadamente.
+58. Charláis animadamente.
+59. Seguís charlando.
+60. Sí, voy a pedir otra ronda.
+61. Te toca pagar ronda, aunque sale barata gracias a las ofertas especiales.
+62. ¡Salud!
+63. Sigues con tu copa.
+64. Sí, otra copa no vendría mal.
+65. Y entonces llega el momento de marcharse.
+66. Llegáis al río.
+67. Le dices que de verdad no hay tiempo.
+68. Sigues caminando.
+69. Sigues caminando.
+70. Sigues caminando.
+71. Seguís caminando.
+72. Seguís caminando.
+73. Andando y charlando.
+74. Charlando y andando.
+75. Justo como esperabas.
+76. Sigues caminando.
+77. Te das prisa.
+78. —directo a la parada del autobús.
+79. Llegáis a la parada del autobús.
+80. Sigues esperando.
+81. Piénsatelo.
+82. ¿Seguir esperando el autobús?
+83. ¿Qué va a ser?
+84. Quieres quedarte a observar a la chica de la parada de autobús de al lado, que parece que no aguanta más.
+85. Le dices a Diane que no se te ocurre ningún sitio.
+86. El autobús está a punto de llegar.
+87. Por fin aparece el autobús a lo lejos.
+88. Esperas a que se marche.
+89. El trayecto continúa.
+90. El trayecto continúa.
+91. El trayecto continúa.
+92. El trayecto continúa.
+93. El trayecto continúa.
+94. Ya casi has llegado.
+
+Escenas
+
+Escena oculta 1: Recuerdo en el teatro de la primera vez que viste a Diane
+Entrada: Empieza durante el primer acto, cuando te distraes en el teatro.
+Usa la base 1: Base para el recuerdo en el teatro.
+Después pulsa:
+1. ¿En cómo os conocisteis?
+2. Concéntrate en la obra.
+Resultado: Es un recuerdo. No termina la partida y vuelve a la obra.
+Salida: La ruta vuelve a la escena del teatro.
+
+Escena oculta 2: Encontrar el baño portátil oculto para Diane
+Entrada: Empieza en el banco junto al río, cuando Diane ya no consigue estarse quieta.
+Usa la base 2: Base del banco junto al río.
+Después pulsa:
+1. Sí, intentaré ayudarla. Me alegra usar uno de mis golpes de suerte para echarle una mano.
+2. ¿Decirle que vas a hacer pis?
+3. Por supuesto.
+4. Te reúnes con los demás.
+Resultado: Diane puede usar el baño portátil. La ruta continúa después.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 3: Ofrecer el baño portátil de forma demasiado directa
+Entrada: Es la variante del baño portátil en el mismo banco junto al río.
+Usa la base 2: Base del banco junto al río.
+Después pulsa:
+1. Sí, intentaré ayudarla. Me alegra usar uno de mis golpes de suerte para echarle una mano.
+2. ¿Preguntarle si necesita hacer pis?
+3. Bueno, al menos lo intentaste.
+4. Salís del café.
+Resultado: Diane se avergüenza demasiado para admitir que lo necesita. La ruta continúa.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 4: Robert te lleva a espiar a Diane y Molly bajo el puente
+Entrada: Es una rama del jueves junto al río, después de que Diane y Molly insinúen que van a bajar al sendero junto al agua.
+Usa la base 5: Base del puente el jueves.
+Después pulsa:
+1. «¡No hablarás en serio! Yo estoy disfrutando muchísimo.»
+2. Sigues caminando.
+3. Sigues caminando.
+4. Sigues caminando.
+5. Sí, usaré un golpe de suerte.
+6. Miras conteniendo el aliento.
+7. Miras casi sin atreverte a respirar.
+8. Esperas a las chicas.
+Resultado: Robert te ayuda a encontrar un punto de observación, y ves a Diane y después a Molly bajo el puente.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 5: Ver a Molly detrás del contenedor de obra
+Entrada: Es una rama del martes junto al río, después de que Molly y Bruno se separan para bajar al sendero.
+Usa la base 6: Base de Molly y Bruno en el sendero del martes.
+Después pulsa:
+1. ¿Adónde van?
+2. Sí, voy a arriesgar un golpe de suerte.
+3. Sigues mirando.
+4. Vuelves al camino.
+Resultado: Ves primero a Bruno y luego a Molly detrás del contenedor; después Diane se burla de ti.
+Salida: La ruta sigue hacia los baños públicos junto al río.
+
+Escena oculta 6: Diane se escapa mientras miras a Molly
+Entrada: Es la variante de alta urgencia de la escena del sendero del martes, después de que Molly y Bruno se separan para bajar al sendero.
+Usa la base 7: Base de alta urgencia de Molly y Bruno en el sendero.
+Después pulsa:
+1. ¿Adónde van?
+2. Sí, voy a arriesgar un golpe de suerte.
+3. Sigues mirando.
+4. Vuelves al camino.
+5. ¿Es el final de la cita?
+6. Seguís caminando con los brazos alrededor de la cintura del otro.
+Resultado: Sigues viendo a Bruno y Molly, pero Diane está tan apurada que se escapa a hacer pis mientras estás distraído.
+Salida: La ruta sigue hacia los baños públicos junto al río.
+
+Escena oculta 7: Diane va detrás de los arbustos junto al río
+Entrada: Empieza cuando Diane admite que quizá no llegue hasta el Pavilion.
+Usa la base 3: Base de la decisión urgente junto al río.
+Después pulsa:
+1. Encontrarle un sitio donde ir.
+2. No puede estarse quieta.
+3. Gracias, dice ella.
+Resultado: Diane hace pis de urgencia detrás de los arbustos. La ruta continúa.
+Salida: La ruta sigue hacia los baños públicos junto al río.
+
+Escena oculta 8: Diane no aguanta en las escaleras del sendero
+Entrada: Empieza en la misma decisión urgente junto al río, después de decir que tú también necesitas ir.
+Usa la base 3: Base de la decisión urgente junto al río.
+Después pulsa:
+1. Decirle que tú también necesitas ir.
+2. ¿Bajar al camino de sirga?
+3. —y mirar.
+4. Le coges la mano.
+Resultado: Diane no aguanta en las escaleras y, si las condiciones encajan, después cuenta una experiencia antigua en la que se mojó.
+Salida: La ruta vuelve al paseo después de la confesión de Diane.
+
+Escena oculta 9: Tú y Diane vais juntos detrás de los arbustos
+Entrada: Empieza en la decisión urgente junto al río después de decir que tú también necesitas ir.
+Usa la base 3: Base de la decisión urgente junto al río.
+Después pulsa:
+1. Decirle que tú también necesitas ir.
+2. ¿Meterse entre los arbustos?
+3. Así está mejor, dice ella.
+Resultado: Los dos vais detrás de arbustos separados. La ruta continúa.
+Salida: La ruta sigue hacia los baños públicos junto al río.
+
+Escena oculta 10: El agujero para espiar en el baño público y las bragas abandonadas
+Entrada: Empieza cuando envías a Diane hacia los baños públicos junto al río en lugar de buscar arbustos.
+Usa la base 3: Base de la decisión urgente junto al río.
+Después pulsa:
+1. Decirle que hay un baño justo más adelante.
+2. ¿Lo estarán?
+3. ¡Hurra!
+4. Ella se separa de ti y corre hacia el baño de mujeres.
+5. Haces pis.
+6. Sí, usaré un golpe de suerte.
+7. ¡Vaya!
+8. ¡Se las habrá mojado!
+9. Y entonces—
+10. Vaya.
+11. Nunca lo sabrás.
+Resultado: Es una rama voyeur que acaba mal la cita. No es un final con premio.
+Salida: La ruta termina en un game over sin premio.
+
+Escena oculta 11: El agujero para espiar del baño público y las medias de Diane
+Entrada: Empieza en el paseo del martes junto al río, cuando los baños públicos siguen abiertos y Diane entra antes de llegar a su límite absoluto.
+Usa la base 4: Base del baño público abierto del martes.
+Después pulsa:
+1. Subís hacia los baños; ella va al de mujeres, tú al de hombres.
+2. No, aquí no usaré ninguno.
+3. Sí, usaré un golpe de suerte.
+4. ¡Vaya!
+5. ¡Vaya fastidio!
+6. ¿Deberías?
+7. Te apresuras a salir.
+8. Pero es hora de seguir andando.
+Resultado: La oportunidad de suerte te lleva al agujero, pero Diane ha elegido otra cabina. Si sigues mirando, la ves en el lavabo arreglándose las medias.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 12: Diane va detrás del baño cerrado
+Entrada: Es una rama del sábado en los baños públicos junto al río, justo después de que el encargado los cierra.
+Usa la base 8: Base de los baños públicos junto al río del sábado.
+Después pulsa:
+1. La miras.
+2. Compadécete de ella y pregúntale si puede aguantar.
+3. Le dices que se meta detrás del baño cerrado y tú harás guardia.
+4. Continúas.
+Resultado: Le sugieres ir detrás del baño cerrado y montas guardia mientras ella va.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 13: Turnarse detrás del baño cerrado
+Entrada: Usa el mismo punto de decisión del baño cerrado del sábado, pero le dices a Diane que tú también necesitas ir.
+Usa la base 8: Base de los baños públicos junto al río del sábado.
+Después pulsa:
+1. La miras.
+2. Compadécete de ella y pregúntale si puede aguantar.
+3. Dile que tú también tienes ganas.
+4. Continúas.
+Resultado: Diane pasa primero detrás del edificio; luego vas tú y ves lo que ha dejado.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 14: Pedirle a Diane que aguante en el baño cerrado
+Entrada: Usa el mismo punto de decisión del baño cerrado del sábado, pero eliges la opción egoísta.
+Usa la base 8: Base de los baños públicos junto al río del sábado.
+Después pulsa:
+1. La miras.
+2. Compadécete de ella y pregúntale si puede aguantar.
+3. Pídele que aguante, porque lo estás disfrutando.
+4. ¡Ay, no!
+Resultado: Diane se queda asqueada, va detrás del edificio sin ti y la cita acaba mal.
+Salida: La ruta termina en un game over sin premio.
+
+Escena oculta 15: Diane usa el urinario de caballeros
+Entrada: Es una rama exclusiva del sábado en los baños públicos junto al río, cuando Diane está muy apurada y el encargado acaba de cerrar.
+Usa la base 8: Base de los baños públicos junto al río del sábado.
+Después pulsa:
+1. La miras.
+2. Ve a hablar con el conserje antes de que se marche.
+3. Entras.
+4. Ella se acerca al urinario y se sube la falda por delante.
+5. Sigues caminando.
+Resultado: El encargado abre el baño de caballeros, la cabina no se puede usar y Diane acaba usando un urinario contigo presente.
+Salida: La ruta vuelve al paseo junto al río.
+
+Escena oculta 16: Ver a la morena detrás de la autocaravana
+Entrada: Empieza en la cola del autobús, después de elegir Chardonnay y acabar tú también apurado.
+Usa la base 9: Base de la morena en la cola del autobús.
+Después pulsa:
+1. ¿Seguir esperando el autobús?
+2. Sigues esperando.
+3. Sigues esperando.
+4. Te diriges hacia el aparcamiento.
+5. Te metes en las sombras.
+6. Las sigues a una distancia prudencial.
+Resultado: Ves a la morena hacer pis de urgencia detrás de la autocaravana. La ruta continúa si Diane sigue allí.
+Salida: La ruta vuelve a la cola del autobús.
+
+Escena oculta 17: Diane y la morena detrás de la autocaravana
+Entrada: Empieza después de que Diane y la morena no encuentran un baño abierto cerca de la parada.
+Usa la base 10: Base de la decisión detrás de la autocaravana.
+Después pulsa:
+1. ¿Asomarte por detrás de la autocaravana?
+2. Las esperas.
+Resultado: Espías por detrás de la autocaravana y ves a las dos chicas. La ruta continúa hacia la parada de taxis.
+Salida: La ruta continúa hacia la cola de taxis.
+
+Escena oculta 18: Espiar por debajo de la autocaravana
+Entrada: Usa el mismo punto de decisión de la autocaravana, pero eliges el ángulo más arriesgado.
+Usa la base 10: Base de la decisión detrás de la autocaravana.
+Después pulsa:
+1. ¿Mirar por debajo de la autocaravana?
+Resultado: Ves a las dos chicas desde abajo. En algunas rutas puede convertirse en una rama de fracaso.
+Salida: En esta ruta verificada continúa hacia la cola de taxis.
+
+Escena oculta 19: No mirar a Diane y Debbie
+Entrada: Usa el mismo punto de decisión de la autocaravana, pero decides no mirar.
+Usa la base 10: Base de la decisión detrás de la autocaravana.
+Después pulsa:
+1. ¿Ser un caballero y ganarte puntos a tu favor absteniéndote de mirar?
+2. Te vas a casa.
+Resultado: Diane se marcha con Debbie. Es un game over sin premio.
+Salida: La ruta termina inmediatamente.
+
+Escena oculta 20: Vistazo en el pórtico de la iglesia
+Entrada: Es una ruta muy estrecha del jueves, después de que Diane baja sola del autobús y usas tu última oportunidad de suerte para volver a buscarla.
+Usa la base 12: Base del pórtico de la iglesia del jueves.
+Después pulsa:
+1. Usas un golpe de suerte.
+2. Así que has usado un golpe de suerte.
+3. Suspiras con decepción.
+4. El juego ha terminado.
+Resultado: Ves a Diane junto al pórtico de la iglesia después de que ha hecho pis allí con urgencia. La ruta termina justo después.
+Salida: La ruta termina en un game over sin premio.
+
+Escena oculta 21: La cámara oculta de tu hermano en el baño
+Entrada: Empieza en tu casa en la ruta corta del jueves, después de que Diane suba y uses una oportunidad de suerte.
+Usa la base 11: Base de la cámara oculta.
+Después pulsa:
+1. Pero miras.
+2. Y ella ya no está.
+3. Hmm.
+Resultado: Tú y tu hermano veis la cámara del baño. Es un game over sin premio.
+Salida: La ruta termina cuando Diane se marcha.

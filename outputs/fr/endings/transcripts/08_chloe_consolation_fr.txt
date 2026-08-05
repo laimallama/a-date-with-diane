@@ -1,0 +1,485 @@
+Prix de consolation de Chloe
+
+Vous avez rencontré Diane par hasard alors que vous aviez tous les deux raté le bus, et vous avez partagé un taxi pour rentrer. Elle a accepté de sortir avec vous un soir.
+
+Vous lui avez téléphoné et elle a dit qu’elle aimerait vraiment voir la pièce « Outside Edge ». Mais vous l’avez déjà vue ! Avant que vous puissiez proposer autre chose, elle a mentionné qu’une de ses amies jouait dedans et qu’elle voulait la voir avant la fin des représentations — c’était la dernière occasion.
+
+Vous avez accepté de l’emmener voir la pièce et ne lui avez pas dit que vous l’aviez déjà vue.
+
+(Quand pouvez-vous la voir ?)
+
+La pièce ne se joue plus que pendant une semaine.
+
+DIANE : Je pourrais te retrouver demain, mardi, si tu veux. Je suis occupée mercredi, mais je pourrais jeudi — il faudrait juste que je vienne directement du travail. Samedi serait possible aussi. Qu’est-ce qui t’arrange le mieux ?
+
+Que choisissez-vous ?
+
+(Mardi.)
+
+VOUS : J’aimerais te voir dès que possible ! Alors demain, mardi, s’il te plaît !
+
+DIANE : C’est sympa. J’ai hâte.
+
+Vous avez gagné 5 points d’intimité.
+
+(En avant pour l’histoire !)
+
+Vous retrouvez Diane à 18 h 15. Vous l’emmenez voir une pièce, mais vous avez convenu de vous retrouver au préalable dans un restaurant italien qui fait partie du théâtre.
+
+(Y aller directement.)
+
+Vous la retrouvez au théâtre.
+
+Vous entrez dans le hall et regardez une ou deux affiches. Le temps est un peu maussade — le soleil est passé derrière les nuages. Vous n’attendez pas longtemps avant de la voir arriver dans la rue. Elle entre dans le hall et vous sourit en vous apercevant.
+
+Elle porte une jupe rouge à pois mi-longue, avec une ceinture, des collants, un chemisier blanc et un petit veston rouge. Elle est vraiment très bien.
+
+(Proposer d’aller manger, dans ce cas.)
+
+【BIENVENUE À LA PIZZERIA PISA】
+
+Une carafe d’eau offerte avec chaque repas.
+
+Vous entrez dans le restaurant. Vous vous asseyez à la table et le serveur apporte les menus. Vous ne voulez pas d’entrées, mais Diane demande un jus d’orange pour se désaltérer.
+
+Elle accroche sa veste au dossier de sa chaise. Vous observez la façon dont son chemisier met en valeur sa poitrine, et vous vous demandez si vous aurez l’occasion de l’explorer plus tard dans la soirée.
+
+Pendant que vous étudiez le menu italien, vous choisissez une bouteille de vin. Laquelle sera-ce ?
+
+(Une bouteille de Rioja espagnol (£12))
+
+Vous commandez une bouteille de Rioja.
+
+(Passer au menu des plats.)
+
+Diane choisit les tortelloni (£9). Et vous ?
+
+Vous demandez une carafe d’eau le temps de parcourir le menu. Le serveur apporte l’eau et Diane vous en sert à tous les deux pendant que vous décidez quoi manger. Qu’est-ce que ce sera ?
+
+(Spaghetti bolognaise (£8))
+
+Vous commandez ses tortelloni et vos spaghettis bolognaise.
+
+(Commencer le repas.)
+
+Le serveur apporte le vin et vous versez un beau grand verre pour vous et un beau grand verre pour elle.
+
+DIANE : Santé !
+
+VOUS : Santé !
+
+Vous buvez tous les deux une bonne gorgée de vin. Vous bavardez de ci, de là. Puis les plats arrivent.
+
+DIANE : Ça a l’air délicieux. J’adore les pâtes.
+
+(Vous discutez de votre repas.)
+
+Vous mangez tous les deux, et c’est vraiment très bon. Vous buvez une gorgée de vin, elle en boit une, et elle reprend un peu d’eau.
+
+Votre spaghetti bolognaise est sans doute très bon. Mais c’était à peine une idée raisonnable de commander ça. Vous n’avez jamais regardé quelqu’un manger des spaghettis en face de vous ?
+
+Vous avez perdu 5 points d’intimité.
+
+VOUS : Il est bon, le tortelloni ?
+
+DIANE : Oui. Et ton spaghetti ? Il a l’air très coloré, en tout cas.
+
+[Elle retient un fou rire alors qu’un bout de bolognaise tombe sur votre chemise.]
+
+VOUS : Oups !
+
+(Vous vous concentrez sur votre repas.)
+
+VOUS : Tu travailles où ?
+
+DIANE : Eh bien, je suis agent immobilier. Il y a un bureau juste en face de l’église.
+
+VOUS : Ah oui, je vois lequel.
+
+DIANE : Oui. Mais c’est très calme en ce moment. Je pense à aller à Londres.
+
+VOUS : Oh ! Tu vas partir. [Vous prenez un air triste.]
+
+DIANE: Ce ne sera pas avant longtemps. Et de toute façon, tu me connais à peine.[Vous remplissez les deux verres de vin, avec la sensation que la conversation ne mène nulle part.]
+
+Vous avez perdu 1 points d’intimité.
+
+(Vous continuez à bavarder.)
+
+VOUS : Tu vas souvent au théâtre ?
+
+DIANE : Oui, j’adore le théâtre, j’ai moi-même fait de la comédie.
+
+VOUS : Tu connais cette pièce ?
+
+DIANE : Pas grand-chose, juste que mon amie Molly y joue, et j’ai vraiment hâte de la voir. On a joué ensemble dans une pièce quand elle faisait du théâtre amateur. J’espère qu’on pourra aller prendre un verre avec elle après.
+
+(Vous continuez à bavarder.)
+
+DIANE : Quels sont tes centres d’intérêt — en dehors du théâtre, bien sûr ?
+
+VOUS : J’aime marcher, randonner, vraiment sur de longues distances.
+
+DIANE : Oh, j’adore ça. En fait, j’adore le grand air.
+
+Vous avez gagné 2 points d’intimité.
+
+VOUS : L’année dernière, un ami et moi avons fait le Coast to Coast Path à pied, d’un bout à l’autre de l’Angleterre. Ça nous a pris une semaine.
+
+[Vous remplissez les deux verres de vin. Vous imaginez une longue balade à la campagne avec Diane, sans toilettes publiques en vue.]
+
+(Vous continuez à bavarder.)
+
+VOUS : On finit le vin ? Il n’en reste plus beaucoup.
+
+DIANE : Eh bien, ce serait dommage de le gaspiller.
+
+Vous versez le reste, environ un tiers de verre chacun.
+
+(Santé.)
+
+Avez-vous le temps pour un dessert ?
+
+(Oui, prenons un dessert.)
+
+Vous demandez la carte des desserts et demandez à Diane si elle veut quelque chose.
+
+DIANE : Choisis toi-même. Je prendrai la même chose que toi.
+
+(Tiramisu (£5 chacun))
+
+Vous commandez deux tiramisus.
+
+Les desserts arrivent rapidement. Diane vous sourit en mangeant son tiramisu.
+
+Vous avez gagné 15 points d’intimité.
+
+(Les bonbons sont délicieux et vite engloutis.)
+
+DIANE : On a le temps pour un café ?
+
+VOUS : Oh, il nous reste encore plus d’une demi-heure avant la pièce. Largement le temps.
+
+DIANE : Tant mieux. Je vais les commander. Tu veux quoi ?
+
+Qu’est-ce que ce sera ?
+
+(Un simple café filtre (1 £ pièce))
+
+Vous commandez deux cafés.
+
+DIANE : Merci. Un café ordinaire pour moi.
+
+(Vous continuez à bavarder.)
+
+Vous finissez le vin tous les deux. Les cafés arrivent, et vous les buvez.
+
+Le serveur apporte l’addition et vous réglez.
+
+DIANE : Il est sept heures vingt. On ferait mieux d’y aller pour la pièce. Tu as les billets ?
+
+VOUS : Oh oui, je les ai pris tout à l’heure.
+
+Elle semble pensive. Vous pouvez deviner ce qui lui passe par la tête.
+
+(Vous quittez le restaurant et rejoignez le théâtre.)
+
+【BIENVENUE AU THÉÂTRE DU WATERFRONT】
+
+Le haut-parleur retentit : le spectacle commencera dans 10 minutes.
+
+Il est 19 h 20. Vous êtes dans le hall du théâtre. Diane semble pensive, comme si quelque chose lui trottait dans la tête.
+
+[Elle rougit timidement.]
+
+DIANE : Au fait, j’ai le temps d’aller aux toilettes ?
+
+Qu’allez-vous répondre ?
+
+(Réfléchissez-y.)
+
+Vous êtes dans le hall du théâtre. Diane vous a demandé si elle avait le temps d’aller aux toilettes.
+
+La soirée commence ici ! Qu’allez-vous répondre ?
+
+(Ou préfères-vous jouer la version courte du jeu ?)
+
+【BIENVENUE DANS LA VERSION COURTE】
+
+Le mardi et le jeudi, il est possible de jouer une version courte du jeu. Cela vous emmène directement chez vous en fin de soirée. Vous pouvez y recourir si vous avez déjà joué plusieurs fois et que vous ne souhaitez pas revivre toute la pièce. Notez que certaines options ne sont pas disponibles dans cette version. Et vous ne pouvez utiliser qu’1 coup de chance.
+
+(Oui, je vais jouer la version courte.)
+
+Vous passez une excellente soirée avec Diane. Vous allez voir la pièce, puis vous retrouvez ses amis après.
+
+Bien sûr, vous buvez tous les deux quelques verres, à deux et avec ses amis, au théâtre et au pub. Et vous profitez d’une agréable promenade le long de la rivière. À deux reprises, vous sentez qu’elle a envie de faire pipi, mais à chaque fois elle trouve des toilettes sans trop de mal. Cela dit, une certaine façon de se trémousser sur son siège à un moment donné vous a mis l’eau à la bouche.
+
+Vous quittez enfin ses amis, prenez un taxi pour rentrer, et elle accepte de monter prendre un café. Après tout, vous êtes assez intimes maintenant, et vous sentez qu’elle pourrait bien avoir à nouveau envie d’aller aux toilettes.
+
+(Voyons ce qui va se passer !)
+
+Vous êtes sur le pas de la porte et cherchez votre clé à tâtons.
+
+Diane attend là, patiemment.
+
+(Vous trouvez la clé.)
+
+Vous arrivez chez vous. Vous partages la maison avec votre frère cadet et vous ne savez pas s’il sera là. Il faudra s’en remettre au hasard.
+
+Vous déverrouilles la porte et fais entrer Diane dans la maison.
+
+Vous la prenez dans vos bras.
+
+(Vous l’embrassez.)
+
+Votre frère est à la maison. Sa petite amie, Chloe, est avec lui, alors vous vous saluez tous et Diane est présentée à votre frère et à Chloe.
+
+(C’est très civilisé.)
+
+Un ami de votre frère est avec lui. Il a l’air un peu déçu que vous les ayez dérangés.
+
+Vous n’aviez jamais rencontré Chloe auparavant. Ce n’est pas une petite amie attitrée. Mais elle et votre frère viennent de terminer leurs examens de fin d’études et sont sortis boire quelques verres pour fêter ça.
+
+CHLOE : On est allés au pub. Ma mère va me tuer.
+
+FRÈRE : Quelques cidres ne font pas de mal. De toute façon, c’est une occasion spéciale. On prépare du café — vous en voulez ?
+
+Votre frère vous prépare de grands mugs de café soluble. Vous regardez Chloe.
+
+Elle a 18 ans, assez petite, et porte une courte jupe écossaise avec des collants noirs, du genre coupés à la cheville. Elle paraît assez timide.
+
+(Elle glousse nerveusement.)
+
+Vous allez dans la cuisine. Votre frère prépare de grands mugs de café soluble pour Diane et vous.
+
+Diane a manifestement envie d’aller aux toilettes. Elle se balance d’un pied sur l’autre.
+
+(Vous bavardez tous les quatre.)
+
+Vous demandez à votre frère comment se sont passés les examens. Il dit que ça s’est très bien passé, Chloe aussi. C’est pour ça qu’ils fêtent ça.
+
+Chloe dit qu’elle espère aller à l’université à l’automne.
+
+FRÈRE : Je sais qu’il ne faut pas vendre la peau de l’ours avant de l’avoir tué, mais on a pensé qu’on devrait fêter la fin des révisions.
+
+CHLOE : Je n’avais jamais bu autant de cidre.
+
+(Elle glousse nerveusement de nouveau.)
+
+FRÈRE : On passe au salon ?
+
+Les filles vont dans le salon avec leurs cafés. Vous et votre frère préparez les vôtres.
+
+Diane n’arrête pas de regarder autour d’elle.
+
+Vous voyez Chloe chuchoter quelque chose à Diane, comme si elle lui posait une question. Diane secoue la tête.
+
+(Qu’est-ce que ça pourrait être ?)
+
+Vous quatre discutez et buvez vos cafés. Vous vous asseyez sur le canapé avec Diane. Chloe s’installe dans le fauteuil, votre frère perché sur l’accoudoir.
+
+Diane croise les jambes et regarde autour d’elle. Elle semble avoir la tête ailleurs.
+
+Vous regardez Chloe. Elle n’arrête pas de regarder autour d’elle et semble mal à l’aise. Elle n’arrête pas de se tortiller sur son siège.
+
+Ce cidre commence peut-être à faire son effet.
+
+(Oh là là !)
+
+Diane vous donne un coup de coude. « Je ferais peut-être mieux de partir », dit-elle doucement. « Laisse ton frère et Chloe seuls. »
+
+Vous acquiescez. « Dans une minute », dites-vous. « On va juste finir nos cafés. »
+
+Vous regardez Chloe. Elle n’arrive pas à rester tranquille et n’arrête pas de bouger les jambes. Elle a clairement très envie de faire pipi.
+
+CHLOE : J’ai bu combien de cidres ?
+
+(Elle pouffe nerveusement, puis se mord les lèvres en regardant autour d’elle.)
+
+Peut-être que Chloe était sur le point de demander où sont les toilettes, mais elle a été déstabilisée en vous rencontrant. Peut-être qu’elle est trop timide pour demander en société. Elle est pourtant clairement au bord de se faire pipi dessus.
+
+Vous maintiens la conversation pour qu’elle n’ait pas l’occasion de l’interrompre.
+
+Chloe est assise sur ses mains, les genoux qui montent et descendent frénétiquement. Elle est devenue bien silencieuse.
+
+Qu’est-ce que vous allez faire ? Vous voulez rester et regarder, mais Diane pense que vous devriez partir.
+
+(Vous vous sentez un peu gêné pour Chloe, qui visiblement n’ose pas « quitter la pièce » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.)
+
+Diane se lève pour partir. Vous dites que vous allez la raccompagner chez elle.
+
+Les autres se lèvent pour vous dire au revoir. Chloe se tortille, mais essaie de le cacher.
+
+(Vous partez avec Diane.)
+
+Vous vous dirigez vers la porte d’entrée.
+
+Vous entendez des pas dans la pièce du dessus. Ce doit être votre frère. Donc il n’y a personne dans la salle de bains.
+
+Vous ne savez pas si Diane s’en rend compte. Peut-être que oui, peut-être que non.
+
+Allez-vous le lui dire ?
+
+(Non, je ne crois pas que je vais en parler.)
+
+Vous êtes à la porte d’entrée avec Diane, prêt à lui dire bonne nuit. Vous avez passé une excellente soirée. Elle habite tout près et vous n’avez pas besoin de la raccompagner.
+
+Mais—
+
+Vous voyez bien qu’elle a envie de faire pipi. Vous aimeriez voir comment elle s’en sort.
+
+Qu’est-ce que ce sera ?
+
+(Je vais être galant et la raccompagner chez elle.)
+
+Vous êtes à la porte d’entrée.
+
+Elle vous embrasse et vous serre dans ses bras.
+
+La partie excitante de la soirée semble terminée.
+
+(Je vais être galant et la raccompagner chez elle.)
+
+Vous vous préparez à quitter la maison. Vous ouvrez la porte d’entrée.
+
+(Vous quittez la maison avec elle.)
+
+Vous raccompagnez Diane chez elle. Elle n’habite pas loin, peut-être à un kilomètre.
+
+DIANE : Il ne fait plus aussi chaud qu’avant, n’est-ce pas.
+
+Vous marchez main dans la main.
+
+Vous descendez jusqu’au bout de votre rue, puis tournez à gauche dans la suivante.
+
+(Vous passez devant une boîte aux lettres, puis un abribus.)
+
+Vous et Diane remontez la rue, main dans la main.
+
+L’air frais de la nuit produit son effet inévitable.
+
+Vous arrivez dans un endroit plus retiré. Vous vous arrêtez et vous étreignez. Vous vous embrassez, votre main sur ses fesses, la serrant contre vous, et sa main descend pour vous rapprocher elle aussi.
+
+Vous avez gagné 5 points d’intimité.
+
+Vous glissez une main vers l’avant, caressant ses seins à travers son chemisier.
+
+Vous la sentez se trémousser.
+
+DIANE : Allez, il se fait tard.
+
+(Vous continuez à marcher.)
+
+Vous remontez la rue avec Diane, main dans la main.
+
+Vous passez devant une école.
+
+Vous vous arrêtez un instant à l’abri du portail de l’école. Vous vous embrassez.
+
+Vous avez gagné 5 points d’intimité.
+
+Elle dit « Allez, il se fait tard. »
+
+(Vous continuez à marcher.)
+
+Vous remontez la rue avec Diane, main dans la main.
+
+Vous passez devant quelques maisons, puis arrivez à une église.
+
+Vous voulez vous arrêter à l’abri du porche de l’église pour vous embrasser, mais Diane vous presse d’avancer.
+
+« J’aurais dû aller aux toilettes avant de quitter la maison », dit-elle d’un air désolé.
+
+(Elle vous presse d’avancer.)
+
+Vous arrivez chez Diane. Vous vous embrassez et elle vous fait un câlin.
+
+C’est la fin de la soirée.
+
+(Vous reprenez le chemin du retour.)
+
+C’était une super soirée. Vous reprends le chemin de chez vous, le cœur léger et plein d’entrain.
+
+En marchant, vous repenses aux bons moments de la soirée.
+
+(C’est dommage que tout soit déjà fini.)
+
+Soudain, sur le chemin du retour, vous entendez des pas pressés dans votre direction.
+
+Une fille apparaît de l’autre côté de la rue.
+
+C’est Chloe, la petite amie de votre frère, et elle est vraiment pressée !
+
+(Vous vous glissez dans l’ombre.)
+
+Vous restez où vous êtes, retenant presque votre souffle, accroupi bas pour que Chloe ne vous voie pas. Sa maison n’est qu’à une vingtaine de mètres, dans une petite rue qui donne sur la route. Il n’y a pas l’air d’avoir beaucoup de lumières allumées.
+
+Elle se dépêche de rejoindre sa maison. Elle sonne à la porte et reste là à sautiller d’un pied sur l’autre.
+
+Elle se détourne de la porte, comme pour vérifier si quelqu’un traîne dans les parages, puis glisse une main entre les jambes, se tenant fermement. Elle piétine sur place en décrivant un petit cercle.
+
+Ce serait génial si sa mère n’entendait pas la sonnette!
+
+Il vous reste des coups de chance ? Peut-être que la sonnette est en panne ?
+
+(Oui, il m’en reste un.)
+
+Personne ne répond à la sonnette. Elle doit être en panne. Aïe aïe aïe !
+
+Chloe fait les cent pas, une main franchement posée entre les jambes, manifestement au bord de craquer. Soudain elle s’assoit sur un petit banc et reste là, toujours en se tenant, se balançant frénétiquement d’avant en arrière. Elle se lève et sonne à nouveau, l’autre main encore à l’entrejambe. Elle se tourne vers vous et croise les jambes brusquement, se tient à deux mains, et se penche en avant, comme si une petite fuite venait de lui échapper. Elle se tient maintenant en permanence, si fort que le devant de sa jupe écossaise se retrouve partiellement soulevé.
+
+Soudain elle se déplace vers le côté du bâtiment, plus près de l’endroit où vous vous tenez. Elle regarde autour d’elle et saisit le bas de sa jupe comme si elle s’apprêtait à s’accroupir pour faire pipi.
+
+Elle entend une voiture remonter la rue adjacente, repose précipitamment sa jupe en place, et retourne vers la porte. Elle peut à peine marcher droite.
+
+(Continuer.)
+
+Chloe sonne à nouveau. Personne ne répond.
+
+Elle tourne en rond en petit cercle, une main fermement à l’entrejambe.
+
+Elle sonne à nouveau. Personne ne répond.
+
+Elle s’assoit sur le petit banc en sautillant de haut en bas.
+
+Elle fait les cent pas. Elle se déplace à nouveau vers le côté du bâtiment. Elle regarde autour d’elle, puis commence à retrousser sa jupe.
+
+Dans votre excitation, vous cassez une brindille de l’arbre derrière lequel vous vous cachez.
+
+Elle se retourne et vous regarde droit dans les yeux.
+
+(Se baisser hors de vue.)
+
+Elle ne vous a pas vu. Il fait sombre là où vous êtes, mais vous pouvez la voir dans la lumière qui vient de la maison.
+
+Elle fait une petite danse en levant les genoux, puis une révérence et plaque ses deux mains sur son entrejambe. Vous imaginez une giclée de pipi qui lui dégouline le long de la jambe.
+
+Elle retourne à la porte. Elle sonne à nouveau. Personne ne répond. Elle croise une jambe bien serrée sur l’autre.
+
+Elle s’assoit sur le banc, penchée en avant, se balançant de haut en bas. Sa main semble être glissée juste sous sa jupe.
+
+Elle fait les cent pas, puis marche, à moitié court, vers le côté du bâtiment, juste de l’autre côté de la rue par rapport à vous. Elle semble étonnamment proche.
+
+(Et puis…)
+
+Soudain elle s’arrête net. Elle se penche légèrement en avant. Vous l’entendez haleter : « Oh non ! »
+
+Il semble y avoir quelques gouttes par terre à ses pieds. Est-ce votre imagination ?
+
+Les quelques gouttes sont devenues une petite flaque. La flaque s’élargit et commence à couler en un mince filet sur le pavé.
+
+Chloe retire sa main de son entrejambe et cache son visage dans ses paumes, comme pour dissimuler sa honte à elle-même. Ses jambes sont toujours serrées l’une contre l’autre, mais vous imaginez le pipi qui lui dégouline le long des collants.
+
+Finalement le filet se tarit. Chloe émet un petit sanglot, comme si elle pleurait. Elle s’éloigne lentement de la flaque, sort un mouchoir en papier et commence à s’essuyer les jambes.
+
+Elle va s’asseoir sur le banc, comme pour rassembler ses esprits. Puis elle se dirige vers la porte. Cette fois elle frappe. Une minute plus tard une lumière s’allume. Sa mère vient ouvrir la porte. Chloe entre.
+
+(Oh là là !)
+
+PAS DE CHANCE !
+
+Vous avez emmené Diane en rendez-vous, pris plaisir à la regarder avoir de plus en plus envie de faire pipi, et êtes parvenu à une belle intimité avec elle—suffisamment pour qu’elle vous promette un autre rendez-vous.
+
+Et voilà que vous avez vu la petite amie de votre frère, Chloe, se faire complètement pipi dessus, en privé, sans qu’elle sache que vous étiez au courant. Elle ne vous en tiendra donc pas rigueur.
+
+VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !

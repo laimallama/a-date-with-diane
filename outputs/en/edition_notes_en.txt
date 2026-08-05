@@ -1,0 +1,35 @@
+Notes on this edition of A Date with Diane
+
+This edition began with an old standalone HTML text game called A Date with Diane. The original author is unknown. The game appears to come from an older period of personal web games, probably from the late 1990s or early 2000s, judging by the plain HTML structure, the simple JavaScript, the text based interface, and the cultural details inside the story.
+
+The setting and language strongly suggest a British background. The story uses pounds, buses, pubs, theatre foyers, and a style of comic adult embarrassment that feels very British. The play, the restaurant, the bus stop, the pub, and the home scenes all give the game a small scale social world rather than a generic fantasy setting. That is part of its charm.
+
+The original game already had a strong concept. It was a branching adult text game built around a date with Diane, with a focus on desperation, embarrassment, intimacy, missed chances, and the player trying to guide the evening toward different outcomes. The best part of the writing was not polished literary prose, but its distinctive voice. It was cheeky, practical, slightly old fashioned, and very attentive to timing, location, queues, drinks, toilets, and social awkwardness. This edition tries to preserve that voice.
+
+The goal of the revision was not to rewrite the game into a new style. The goal was to make the existing game feel complete, readable, playable, and properly preserved. Basic grammar, punctuation, spelling, capitalization, quotation marks, and formatting were corrected where they distracted from the experience. The original rhythm and personality were kept as much as possible.
+
+The interface was rebuilt into a cleaner text game presentation. The old picture related placeholders and grey picture request text were removed, since this edition is intended to be text only. The large redundant header was removed so the game screen itself becomes the focus. The choice buttons, status display, typography, spacing, and layout were redesigned to feel more polished while still remaining simple.
+
+A back button was added. It allows the player to return to the previous step while restoring the game state from that point. This was important because the game has many hidden values and branching states. Going back without restoring those values would have made the game unreliable.
+
+The status display was cleaned up and reorganized. The visible values now show the money and body state resources more clearly. The hidden Shyness value was made visible because it affects several branches and endings. Negative point display issues were fixed so gains and losses are shown correctly.
+
+Several story branches were audited. Some unused or redundant fragments from the original file were removed. Some complete unused branches were connected where they fit the story naturally. Branches such as the lounge story content were adjusted so they made sense in context. Character naming and continuity issues were corrected where needed.
+
+A number of small bugs and inconsistencies were fixed. These included unreachable or misleading branches, state values that did not match the story, endings that needed clearer routes, punctuation problems in generated text, inconsistent button labels, and places where the game text and guide text did not match. The under 18 screen was also adjusted so the game variables are not shown there.
+
+The English version was kept as the source version. Chinese, Spanish, and French versions were then made as separate playable HTML files. Bilingual versions were also made for Chinese and English, Spanish and English, and French and English. These bilingual editions allow the player to switch language during play while keeping the same game state.
+
+The translations were not treated as literal word by word conversions. They were localized so the dialogue and fetish related language would feel natural in each language. Chinese in particular was revised carefully to avoid machine translation style, unnatural toilet wording, awkward punctuation, and overly literal expressions. Spanish and French were also checked for natural adult text game phrasing, local punctuation, and suitable vocabulary.
+
+A complete endings guide was created. The game has many variables, hidden conditions, and branches that can easily mislead the player, so the guide was not written from memory. Each ending route was tested by replaying the game logic. The guide lists practical click by click paths and explains when a route uses a base path, a short version, or a special branch. The guide was made in English, Chinese, Spanish, and French.
+
+The ending routes were found by reading the JavaScript, tracing the branch functions, identifying the ending screens, checking the variables that control access to them, and then replaying the routes through scripted verification. When an ending could not be reached by a simple obvious path, the state requirements were inspected directly. This made it possible to distinguish between real endings, failed routes, consolation endings, and unused or obsolete material.
+
+Transcript files were also created. These are not guides. They are novel like route records for each verified ending. Each transcript follows one playable path and includes the story text in order, with the chosen button text shown in parentheses and location headings shown in corner brackets. The opening age check and rules page are omitted so the transcript begins directly with the story. Transcript folders were produced for all four languages.
+
+An additional hidden scenes guide was created for optional mid route scenes and non Prize failure branches. These scenes are separate from the official endings guide. The output folders are organized so playable HTML files and edition notes stay at the top level, endings material is kept in the endings folder, and hidden scene material is kept in the hidden_scenes folder.
+
+A small maintenance folder was kept. It contains the aligned text data, route verification tools, and scripts for generating guides and transcripts. This makes future small edits possible without rebuilding everything from scratch. The maintenance files are not needed just to play the game, but they are useful if the text, translations, guides, or transcripts need to be updated later.
+
+This edition is best understood as a restoration and completion rather than a remake. The original game supplied the concept, the branch structure, the characters, and the voice. The revision cleaned the presentation, repaired the logic, completed the usable endings, improved readability, created translations, and documented the routes. The intention was to let the original personality of the game come through more clearly.

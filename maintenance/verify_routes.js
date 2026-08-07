@@ -28,7 +28,9 @@ function stripTags(text) {
   return String(text)
     .replace(/<[^>]+>/g, "")
     .replace(/&nbsp;/g, " ")
+    .replace(/\u202f/g, "\uE000")
     .replace(/\s+/g, " ")
+    .replace(/\uE000/g, "\u202f")
     .trim();
 }
 

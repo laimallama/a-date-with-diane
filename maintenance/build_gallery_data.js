@@ -10,54 +10,56 @@ const HTML_PATHS = {
   cn: path.join(ROOT, "outputs/cn/dianedate_cn.html"),
   es: path.join(ROOT, "outputs/es/dianedate_es.html"),
   fr: path.join(ROOT, "outputs/fr/dianedate_fr.html"),
+  tw: path.join(ROOT, "outputs/tw/dianedate_tw.html"),
 };
 
 const BILINGUAL_HTML_PATHS = {
   cn: path.join(ROOT, "outputs/cn/dianedate_cn_bilingual.html"),
   es: path.join(ROOT, "outputs/es/dianedate_es_bilingual.html"),
   fr: path.join(ROOT, "outputs/fr/dianedate_fr_bilingual.html"),
+  tw: path.join(ROOT, "outputs/tw/dianedate_tw_bilingual.html"),
 };
 
 const ENDING_META = {
   third: {
     order: 1, stem: "01_third_prize",
-    title: { en: "Third Prize", cn: "三等奖", es: "Tercer premio", fr: "Troisième prix" },
+    title: { en: "Third Prize", cn: "三等奖", tw: "三等獎", es: "Tercer premio", fr: "Troisième prix" },
   },
   fourth: {
     order: 2, stem: "02_fourth_prize",
-    title: { en: "Fourth Prize", cn: "四等奖", es: "Cuarto premio", fr: "Quatrième prix" },
+    title: { en: "Fourth Prize", cn: "四等奖", tw: "四等獎", es: "Cuarto premio", fr: "Quatrième prix" },
   },
   first: {
     order: 3, stem: "03_first_prize",
-    title: { en: "First Prize", cn: "一等奖", es: "Primer premio", fr: "Premier prix" },
+    title: { en: "First Prize", cn: "一等奖", tw: "一等獎", es: "Primer premio", fr: "Premier prix" },
   },
   fifth: {
     order: 4, stem: "04_fifth_prize",
-    title: { en: "Fifth Prize", cn: "五等奖", es: "Quinto premio", fr: "Cinquième prix" },
+    title: { en: "Fifth Prize", cn: "五等奖", tw: "五等獎", es: "Quinto premio", fr: "Cinquième prix" },
   },
   second: {
     order: 5, stem: "05_second_prize",
-    title: { en: "Second Prize", cn: "二等奖", es: "Segundo premio", fr: "Deuxième prix" },
+    title: { en: "Second Prize", cn: "二等奖", tw: "二等獎", es: "Segundo premio", fr: "Deuxième prix" },
   },
   lounge: {
     order: 6, stem: "06_lounge_story_consolation",
-    title: { en: "Lounge Story Consolation Prize", cn: "客厅故事安慰奖", es: "Premio de consolación: historia del salón", fr: "Lot de consolation : histoire du salon" },
+    title: { en: "Lounge Story Consolation Prize", cn: "客厅故事安慰奖", tw: "客廳故事安慰獎", es: "Premio de consolación: historia del salón", fr: "Lot de consolation : histoire du salon" },
   },
   general: {
     order: 7, stem: "07a_consolation_tuesday_pavilion",
-    title: { en: "Consolation Prize: Tuesday Pavilion Route", cn: "安慰奖：周二凉亭路线", es: "Premio de consolación: ruta del martes del Pavilion", fr: "Prix de consolation : route du mardi au Pavilion" },
+    title: { en: "Consolation Prize: Tuesday Pavilion Route", cn: "安慰奖：周二凉亭路线", tw: "安慰獎：週二涼亭路線", es: "Premio de consolación: ruta del martes del Pavilion", fr: "Prix de consolation : route du mardi au Pavilion" },
   },
   generalThursday: {
     order: 8, stem: "07b_consolation_thursday_subway",
-    title: { en: "Consolation Prize: Thursday Subway Route", cn: "安慰奖：周四地下通道路线", es: "Premio de consolación: ruta del jueves por el paso subterráneo", fr: "Prix de consolation : route du jeudi par le passage souterrain" },
+    title: { en: "Consolation Prize: Thursday Subway Route", cn: "安慰奖：周四地下通道路线", tw: "安慰獎：週四地下通道路線", es: "Premio de consolación: ruta del jueves por el paso subterráneo", fr: "Prix de consolation : route du jeudi par le passage souterrain" },
   },
   chloe: {
     order: 9, stem: "08_chloe_consolation",
-    title: { en: "Chloe Consolation Prize", cn: "克洛伊安慰奖", es: "Premio de consolación de Chloe", fr: "Prix de consolation de Chloe" },
+    title: { en: "Chloe Consolation Prize", cn: "克洛伊安慰奖", tw: "克洛伊安慰獎", es: "Premio de consolación de Chloe", fr: "Prix de consolation de Chloe" },
   },
   amanda: {
     order: 10, stem: "09_amanda_consolation",
-    title: { en: "Amanda Consolation Prize", cn: "阿曼达安慰奖", es: "Premio de consolación de Amanda", fr: "Prix de consolation d'Amanda" },
+    title: { en: "Amanda Consolation Prize", cn: "阿曼达安慰奖", tw: "阿曼達安慰獎", es: "Premio de consolación de Amanda", fr: "Prix de consolation d'Amanda" },
   },
 };
 
@@ -129,12 +131,12 @@ function main() {
   const definitions = ctx.buildDefinitions(routes);
 
   const dataByLang = {};
-  for (const lang of ["en", "cn", "es", "fr"]) {
+  for (const lang of ["en", "cn", "es", "fr", "tw"]) {
     dataByLang[lang] = buildDataForLang(ctx, routes, definitions, lang);
   }
 
   injectIntoFile(HTML_PATHS.en, dataByLang.en);
-  for (const lang of ["cn", "es", "fr"]) {
+  for (const lang of ["cn", "es", "fr", "tw"]) {
     injectIntoFile(HTML_PATHS[lang], dataByLang[lang]);
     injectIntoFile(BILINGUAL_HTML_PATHS[lang], buildBilingualData(dataByLang.en, dataByLang[lang]));
   }
@@ -143,7 +145,7 @@ function main() {
   fs.writeFileSync(outPath, JSON.stringify(dataByLang, null, 2), "utf8");
 
   console.log(`Wrote ${outPath}`);
-  console.log("Injected gallery data into en, cn, es, fr (single + bilingual where applicable)");
+  console.log("Injected gallery data into en, cn, es, fr, tw (single + bilingual where applicable)");
   console.log(`Endings: ${dataByLang.en.endings.length}, Hidden scenes: ${dataByLang.en.hiddenScenes.length}`);
 }
 

@@ -22,16 +22,16 @@ const LEGACY_OUTPUT_DIRS = [
 const OPENING_GAMEPLAY_STEPS_TO_HIDE = 2;
 
 const routeMeta = {
-  third: { order: 1, enTitle: "Third Prize", cnTitle: "三等奖", esTitle: "Tercer premio", frTitle: "Troisième prix", stem: "01_third_prize" },
-  fourth: { order: 2, enTitle: "Fourth Prize", cnTitle: "四等奖", esTitle: "Cuarto premio", frTitle: "Quatrième prix", stem: "02_fourth_prize" },
-  first: { order: 3, enTitle: "First Prize", cnTitle: "一等奖", esTitle: "Primer premio", frTitle: "Premier prix", stem: "03_first_prize" },
-  fifth: { order: 4, enTitle: "Fifth Prize", cnTitle: "五等奖", esTitle: "Quinto premio", frTitle: "Cinquième prix", stem: "04_fifth_prize" },
-  second: { order: 5, enTitle: "Second Prize", cnTitle: "二等奖", esTitle: "Segundo premio", frTitle: "Deuxième prix", stem: "05_second_prize" },
-  lounge: { order: 6, enTitle: "Lounge Story Consolation Prize", cnTitle: "客厅故事安慰奖", esTitle: "Premio de consolación: historia del salón", frTitle: "Lot de consolation: histoire du salon", stem: "06_lounge_story_consolation" },
-  general: { order: 7, enTitle: "Consolation Prize: Tuesday Pavilion Route", cnTitle: "安慰奖：周二凉亭路线", esTitle: "Premio de consolación: ruta del martes del Pavilion", frTitle: "Prix de consolation : route du mardi au Pavilion", stem: "07a_consolation_tuesday_pavilion" },
-  generalThursday: { order: 7.5, enTitle: "Consolation Prize: Thursday Subway Route", cnTitle: "安慰奖：周四地下通道路线", esTitle: "Premio de consolación: ruta del jueves por el paso subterráneo", frTitle: "Prix de consolation : route du jeudi par le passage souterrain", stem: "07b_consolation_thursday_subway" },
-  chloe: { order: 8, enTitle: "Chloe Consolation Prize", cnTitle: "克洛伊安慰奖", esTitle: "Premio de consolación de Chloe", frTitle: "Prix de consolation de Chloe", stem: "08_chloe_consolation" },
-  amanda: { order: 9, enTitle: "Amanda Consolation Prize", cnTitle: "阿曼达安慰奖", esTitle: "Premio de consolación de Amanda", frTitle: "Prix de consolation d'Amanda", stem: "09_amanda_consolation" },
+  third: { order: 1, enTitle: "Third Prize", cnTitle: "三等奖", twTitle: "三等獎", esTitle: "Tercer premio", frTitle: "Troisième prix", stem: "01_third_prize" },
+  fourth: { order: 2, enTitle: "Fourth Prize", cnTitle: "四等奖", twTitle: "四等獎", esTitle: "Cuarto premio", frTitle: "Quatrième prix", stem: "02_fourth_prize" },
+  first: { order: 3, enTitle: "First Prize", cnTitle: "一等奖", twTitle: "一等獎", esTitle: "Primer premio", frTitle: "Premier prix", stem: "03_first_prize" },
+  fifth: { order: 4, enTitle: "Fifth Prize", cnTitle: "五等奖", twTitle: "五等獎", esTitle: "Quinto premio", frTitle: "Cinquième prix", stem: "04_fifth_prize" },
+  second: { order: 5, enTitle: "Second Prize", cnTitle: "二等奖", twTitle: "二等獎", esTitle: "Segundo premio", frTitle: "Deuxième prix", stem: "05_second_prize" },
+  lounge: { order: 6, enTitle: "Lounge Story Consolation Prize", cnTitle: "客厅故事安慰奖", twTitle: "客廳故事安慰獎", esTitle: "Premio de consolación: historia del salón", frTitle: "Lot de consolation: histoire du salon", stem: "06_lounge_story_consolation" },
+  general: { order: 7, enTitle: "Consolation Prize: Tuesday Pavilion Route", cnTitle: "安慰奖：周二凉亭路线", twTitle: "安慰獎：週二涼亭路線", esTitle: "Premio de consolación: ruta del martes del Pavilion", frTitle: "Prix de consolation : route du mardi au Pavilion", stem: "07a_consolation_tuesday_pavilion" },
+  generalThursday: { order: 7.5, enTitle: "Consolation Prize: Thursday Subway Route", cnTitle: "安慰奖：周四地下通道路线", twTitle: "安慰獎：週四地下通道路線", esTitle: "Premio de consolación: ruta del jueves por el paso subterráneo", frTitle: "Prix de consolation : route du jeudi par le passage souterrain", stem: "07b_consolation_thursday_subway" },
+  chloe: { order: 8, enTitle: "Chloe Consolation Prize", cnTitle: "克洛伊安慰奖", twTitle: "克洛伊安慰獎", esTitle: "Premio de consolación de Chloe", frTitle: "Prix de consolation de Chloe", stem: "08_chloe_consolation" },
+  amanda: { order: 9, enTitle: "Amanda Consolation Prize", cnTitle: "阿曼达安慰奖", twTitle: "阿曼達安慰獎", esTitle: "Premio de consolación de Amanda", frTitle: "Prix de consolation d'Amanda", stem: "09_amanda_consolation" },
 };
 
 const languages = {
@@ -61,6 +61,20 @@ const languages = {
       /你获得了[一二三四五]等奖！/,
       /你获得了(?:一个)?安慰奖！/,
       /说起来，这也算是个相当不错的安慰奖！/,
+    ],
+  },
+  tw: {
+    code: "tw",
+    htmlPath: "outputs/tw/dianedate_tw.html",
+    outDir: "outputs/tw/endings/transcripts",
+    title(meta) {
+      return meta.twTitle;
+    },
+    endingPatterns: [
+      /你真的獲得了一等獎！/,
+      /你獲得了[一二三四五]等獎！/,
+      /你獲得了(?:一個)?安慰獎！/,
+      /說起來，這也算是個相當不錯的安慰獎！/,
     ],
   },
   es: {
@@ -193,13 +207,14 @@ function removeUi(html) {
 function shouldQuoteEmphasis(text, langCode) {
   const clean = text.trim();
   if (!clean || clean.length > 140) return false;
-  if (/\b(points?|puntos?|点|分|timidez|intimidad|亲密度|害羞值)\b/i.test(clean)) return false;
+  if (/\b(points?|puntos?|点|分|點|timidez|intimidad|亲密度|親密度|害羞值)\b/i.test(clean)) return false;
   const lower = clean.toLowerCase();
   const stageStarts = [
     "almost ", "between ", "softly", "with ", "then ", "she ",
     "en voz baja", "con ", "poniéndose", "casi ", "entre ",
     "à voix", "doucement", "rouge", "glousse", "elle ", "vous l'entendez",
     "她", "几乎", "声音", "轻声", "脸红",
+    "幾乎", "聲音", "輕聲", "臉紅",
   ];
   if (langCode === "en" && lower.startsWith("he ")) return false;
   if (stageStarts.some((start) => lower.startsWith(start))) return false;
@@ -207,6 +222,7 @@ function shouldQuoteEmphasis(text, langCode) {
   const starts = {
     en: /^(i\b|i'm\b|i’m\b|why\b|it\b|we'll\b|we’ll\b|but\b|cheers!?$|that\b|shall\b|do\b|diane,|found\b|hurry\b|come on\b|give\b|you can\b|can i\b|what\b|oh\b|oooh\b|god\b|sorry\b)/i,
     cn: /^(对不起|我|你们先走|你当初|你倒|可总有|干杯|真的|我们|黛安|找到了|快点|走吧|抱抱我|天哪|老天|抱歉|真是)/,
+    tw: /^(對不起|我|你們先走|你當初|你倒|可總有|乾杯|真的|我們|黛安|找到了|快點|走吧|抱抱我|天哪|老天|抱歉|真是)/,
     es: /^(lo siento|no podía|¿|a ti\b|pero\b|¡salud|ha sido|he\b|me\b|sé(?:\s|$)|diane,|no encuentro|ya lo|date prisa|¡date prisa|os alcanzamos|necesito|venga|dame|ya ves|qué buena|¡oooh|lo necesitaba|¡dios|perdona)/i,
     fr: /^(je\b|j[’']|pourquoi|c[’']est|mais\b|santé|c[’']était|on s'assoit|on vous|vous savez|diane,|je ne trouve|trouvé|dépêche|dépêchez|allez|fais-moi|vous voyez|quelle bonne|désolée|oh mon|oooh|mon dieu)/i,
   };
@@ -220,6 +236,7 @@ function quoteForTranscript(text, langCode) {
   }
   if (langCode === "es") return `«${text}»`;
   if (langCode === "fr") return `« ${text} »`;
+  if (langCode === "tw") return `「${text}」`;
   return `“${text}”`;
 }
 
@@ -256,12 +273,12 @@ function capitaliseSpeakerBracket(text) {
 
 function polishTranscriptText(text, langCode) {
   let out = text.replace(
-    /((?:YOU|DIANE|MOLLY|BRUNO|ROBERT|CHLOE|AMANDA|Diane|Molly|Chloe|Amanda|TÚ|VOUS|你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达)\s*(?:[:：]| :))\s*(\[[^\]]+\])\s*(?:[:：]| :)\s*/g,
+    /((?:YOU|DIANE|MOLLY|BRUNO|ROBERT|CHLOE|AMANDA|Diane|Molly|Chloe|Amanda|TÚ|VOUS|你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达|布魯諾|羅伯特)\s*(?:[:：]| :))\s*(\[[^\]]+\])\s*(?:[:：]| :)\s*/g,
     (match, speaker, bracket) => `${speaker}${/：$/.test(speaker.trim()) ? "" : " "}${bracket} `,
   );
-  if (langCode === "cn") {
+  if (langCode === "cn" || langCode === "tw") {
     out = out
-      .replace(/(你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达)(\[[^\]]+\])：\s*/g, "$1：$2 ")
+      .replace(/(你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达|布魯諾|羅伯特)(\[[^\]]+\])：\s*/g, "$1：$2 ")
       .replace(/\]([\u3400-\u9fffA-Za-z0-9])/g, "] $1");
   } else {
     out = out.replace(/\]([A-Za-z0-9À-ÖØ-öø-ÿ¿¡])/g, "] $1");

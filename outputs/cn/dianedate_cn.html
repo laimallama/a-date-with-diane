@@ -175,15 +175,23 @@ a:hover { color: var(--accent); }
   text-align: left;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-#box li a:hover,
-.choice:hover,
-.back-button:hover,
 .choice.key-pressed {
   border-color: #c59c73;
   background: var(--choice-hover);
   color: var(--accent-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #box li a:hover,
+  .choice:hover,
+  .back-button:hover {
+    border-color: #c59c73;
+    background: var(--choice-hover);
+    color: var(--accent-dark);
+  }
 }
 
 .status-bar {
@@ -222,10 +230,12 @@ a:hover { color: var(--accent); }
   text-align: center;
 }
 
-.back-button:hover {
-  color: #fff;
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
+@media (hover: hover) and (pointer: fine) {
+  .back-button:hover {
+    color: #fff;
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
 }
 
 @media (max-width: 640px) {
@@ -569,6 +579,11 @@ function presentScreen() {
     if (prefersReducedMotion()) return;
     void box.offsetWidth;
     box.classList.add("screen-fade");
+    var clearFade = function () { try { box.classList.remove("screen-fade"); } catch (e2) {} };
+    if (typeof box.addEventListener === "function") {
+      box.addEventListener("animationend", clearFade, { once: true });
+    }
+    setTimeout(clearFade, 220);
   } catch (e) {}
 }
 
@@ -584,6 +599,17 @@ function goback() {
   try { document.getElementById('gameToolbar').style.display = (currentTag && currentTag !== "under18") ? '' : 'none'; } catch (e) {}
   syncGuideDisplay();
   presentScreen();
+}
+
+function pressGuidedChoice() {
+  if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
+  var btn = document.querySelector("#box button.choice.guide-highlight");
+  if (!btn || btn.offsetParent === null) return;
+  if (btn.classList.contains("key-pressed")) return;
+  btn.classList.add("key-pressed");
+  setTimeout(function () {
+    if (document.body.contains(btn)) { btn.click(); }
+  }, 120);
 }
 
 function pressChoiceByNumber(n) {
@@ -629,8 +655,9 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
+      if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
       e.preventDefault();
-      pressChoiceByNumber(1);
+      pressGuidedChoice();
       return;
     }
     if (/^[1-9]$/.test(e.key)) {
@@ -1699,8 +1726,8 @@ c("asklootalk","问她要不要去尿尿？");  }
 function
 asklootalk()
 {
-s("<LI><B>你疯了吗？</B>话题虽然冷下来了，但你根本没有理由问她要不要去上厕所。");
-s("<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，羞死你了！");
+s("<LI><B>你疯了吗？</B>就算没话聊了，你也没理由问她想不想尿尿。");
+s("<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，真是羞死你了！");
 s("<LI>幸好邻桌突然传来一阵响动，她没听见你说的话，于是让你再说一遍。");
 s("<LI>这次你说：“要不要来杯咖啡？”");
 s("<LI>黛安：好啊，我很想喝咖啡。就普通滴滤咖啡就行。"); proc += 60; 
@@ -1710,7 +1737,7 @@ function
 asklootalk1()
 {
 s("<LI>你们等着咖啡上来。也许你那句没被听见的问题，还是在她心里留下了一点影响，因为——");
-s("<LI>黛安：等咖啡的时候，我想去整理一下妆容，看戏之前先去一趟。");
+s("<LI>黛安：等咖啡的时候，我想去梳洗一下，看戏之前先收拾收拾。");
 s("<LI>她站起来，拎起手包，朝女厕所走去。"); 
 afterpee()
 s("<LI>两三分钟后她回来了，看起来轻松多了。"); 
@@ -1978,7 +2005,7 @@ s("<LI>黛安：我……我还来得及去趟厕所吗？");
 s("<LI>你打算怎么说？");
 c("theatreask","想想再说。"); }
 else
-{s("<LI>黛安：我刚才是在找卖节目单的。我去买一份。"); buyprogramme = 1; 
+{s("<LI>黛安：我刚才就在找卖节目单的。我去买一份。"); buyprogramme = 1; 
 s("<LI>她买了一份节目单。");
 c("theatre1","你们走进剧院。"); }}
 
@@ -2136,7 +2163,7 @@ theatre2()
 {
 s("<LI>你非常在意坐在身旁的这个漂亮女孩。她的裙子相当长，长及膝盖，但你能想象出裙子下面她的双腿。");
 s("<LI>你们一起看着演出。");
-s("<LI>这是一部以板球比赛为背景的喜剧。各对情侣相遇，队长的妻子准备着下午茶野餐，情侣们争吵拌嘴，就这样一幕幕演下去。");
+s("<LI>这是一部以板球比赛为背景的喜剧。各对情侣相遇，队长的妻子准备着下午茶野餐。情侣们争吵拌嘴，就这样一幕幕演下去。");
 s("<LI>但你之前看过这部戏，所以注意力开始飘散。</P>");
 s("<LI>你在想什么呢？");
 c("theatre3a","她里面穿了什么？");
@@ -2173,7 +2200,7 @@ theatre3c()
 s("<LI>你的思绪飘远了，回想起你们第一次相遇的时光。");
 s("<HR><LI><SPAN style='color: #CC0033'>那是一个深夜，你在公交站等车回家，这时注意到黛安站在队伍前面几个位置。吸引你目光的是，她明显已经快憋坏了。她坐立不安，在原地踱步，随着时间一分一分过去，她开始来回走动，一只手深深插进裤兜里。唯一的问题是，你自己也憋得难受，根本顾不上站在那里旁观，只好溜进停车场，赶紧撒了泡尿。</SPAN>");
 s("<LI><SPAN style='color: #CC0033'>你刚刚尿完，就听见一阵急促的脚步声——是黛安。她已经在解腰带了。你躲到一辆车后面，眼睁睁看着她把裤子拉下来，蹲到了一辆小巴后面。她真的是憋惨了！事后你与她保持着安全距离，跟着她回到公车站，却发现公车早就走了，把你们俩都落下了。于是你们共乘一辆出租车回家，一路聊着天。</SPAN>");
-s("<LI><HR>当然，她并不知道你偷看过她方便！");
+s("<LI><HR>当然，她并不知道你偷看过她尿尿！");
 c("theatre4","专心看戏。"); }
 
 function
@@ -3973,7 +4000,7 @@ urinal()
 s("<LI>黛安急匆匆地朝一个小便池走去，紧张地轻笑着，裙子前摆已经撩了起来。");
 s("<LI>黛安：这东西我从来搞不清楚该怎么用。");
 s("<LI>她犹豫着要不要转身，但还是决定横跨在小便池上，背对着你——大概觉得这样更省事吧。她微微弯腰，把内裤拨到了一边。");
-s("<LI>她几乎立刻就尿了。几滴尿液溅到地板上，随后尿流落进了小便池里；你看不见尿流本身，却能看到热气袅袅升起。你往后退了一步，侧身移开，这才真正看到了她的尿流——不是金黄色，而是银亮的，她就这么痛痛快快地尿着。她站在那里，神情专注，如释重负地喘着气。"); gourinal = 1; gopee = 1;
+s("<LI>她几乎立刻就尿了。几滴尿液溅到地板上，接着尿流落进了小便池里；你看不见尿流本身，却能看到热气袅袅升起。你往后退了一步，侧身移开，这才真正看到了她的尿流——不是金黄色，而是银亮的，她就这么痛痛快快地尿着。她站在那里，神情专注，如释重负地喘着气。"); gourinal = 1; gopee = 1;
 afterpee()
 s("<LI>最终，尿流渐渐细弱成涓涓滴滴，又有几滴溅在了地板上。她依然背对着你，往后退了一步，任由裙子落回原位，然后转过身来面对你。");
 s("<LI>她脸颊有些泛红，但脸上挂着一个带着几分无奈的大笑。她看起来并不介意你刚才在旁边看着，也没有多少羞涩。她走过来，双臂环住你，把头靠在你的肩上。这与其说是一个情欲的姿态，不如说更像是同伴间的一种亲近。"); getinti(25);
@@ -4269,7 +4296,7 @@ function
 pavilion()
 {
 s("<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>欢迎来到凉亭酒吧</SPAN></STRONG></H2>");
-s("<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每周二女士免费畅饮！</SPAN></STRONG></P>");
+s("<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每周二，女士免费畅饮！</SPAN></STRONG></P>");
 s("<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每周四，啤酒买一品脱送一品脱！</SPAN></STRONG></P>");
 s("<HR>");
 s("<LI>你们四个人走进凉亭酒吧。");
@@ -5874,7 +5901,7 @@ else
 if (blad >900)
 {emergency()}
 else
-{c("decisions","你们继续一边抚摸，一边聊着。")} }}
+{c("decisions","你们继续又摸又聊。")} }}
 
 
 function
@@ -9130,7 +9157,7 @@ function
 carpark3()
 {
 s("<LI>你和黛安回到了公共汽车站的队伍里。"); blad +=10
-s("<LI>黛安：<EM>（压低声音）</EM> 你刚才肯定偷看那个女孩方便了。");
+s("<LI>黛安：<EM>（压低声音）</EM> 你刚才肯定偷看那个女孩尿尿了。");
 s("<LI>你：什么？呃，额，没有，我是说，我是不小心看到她的。");
 if (inti < 75)
 {s("<LI>她用手肘碰了碰你，咧嘴笑道：“你这个小坏蛋”——然后轻轻地捏了一下你的屁股。"); getinti(12); 
@@ -9937,7 +9964,7 @@ s("<P><EM><SPAN style='color: #ff0000'>黛安看上去有点想上厕所。她�
 else if (blad < 500)
 s("<P><EM><SPAN style='color: #ff0000'>黛安有些坐不住了。也许只是坐得不舒服——也许是开始想去厕所了。</SPAN></EM></P>");  
 else if (blad < 525)
-s("<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉双腿，先这样，再那样。</SPAN></EM></P>");  
+s("<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉双腿，先往一边交叉，再换到另一边。</SPAN></EM></P>");  
 else if (blad < 550)
 s("<P><EM><SPAN style='color: #ff0000'>黛安身体前倾，双手放在膝盖上。</SPAN></EM></P>"); 
 else if (blad < 575)
@@ -10100,7 +10127,7 @@ s("<EM><SPAN style='color: #0000FF'>是你的错觉，还是莫莉开始有点�
 else if (mollyblad < 500)
 s("<EM><SPAN style='color: #0000FF'>莫莉微微挪动着身子。也许只是坐得不舒服——也许她开始想去厕所了。</SPAN></EM>");  
 else if (mollyblad < 525)
-s("<EM><SPAN style='color: #0000FF'>莫莉不停地交叉双腿，先这侧，再那侧。</SPAN></EM>");  
+s("<EM><SPAN style='color: #0000FF'>莫莉不停地交叉双腿，先往一边交叉，再换到另一边。</SPAN></EM>");  
 else if (mollyblad < 550)
 s("<EM><SPAN style='color: #0000FF'>莫莉看上去确实需要去洗手间了。她开始坐立不安，不停地交叉双腿。</SPAN></EM>"); 
 else if (mollyblad < 600)
@@ -10135,7 +10162,7 @@ s("<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安依偎在你�
 if (blad <650)
 s("<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安交叉了一下双腿，先换到一边，又换到另一边，但看上去还挺放松。</SPAN></EM></P>");
 else if (blad <667)
-s("<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安确实需要去厕所了。她不停地交叉双腿，先这侧，再那侧，却努力装出一副从容的样子，像是还在专心看相册。</SPAN></EM></P>"); 
+s("<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安确实需要去厕所了。她不停地交叉双腿，先往一边交叉，再换到另一边，却努力装出一副从容的样子，像是还在专心看相册。</SPAN></EM></P>"); 
 else if (blad <675)
 s("<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>她交叉了双腿，又松开了。她看起来有些不舒服。</SPAN></EM></P>"); 
 else if (blad <687)
@@ -10540,7 +10567,7 @@ if (thursday)
 {s("<LI>你成功地让她憋尿憋到极限，以至于在走回家的路上她实在忍不住，彻底尿湿了自己。"); blad = 0;}
 else
 {s("<LI>你成功地让她憋尿憋到极限，在走回家的路上她已经开始尿湿自己了。尽管她设法拨开了内裤，你也清楚那条内裤早已湿透。"); blad = 0;}
-s("<LI>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进去！");
+s("<LI>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进她家！");
 s("<HR>");
 s("<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>你真的获得了一等奖！</SPAN></div></STRONG></H1>"); }
 

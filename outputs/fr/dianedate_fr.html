@@ -173,15 +173,23 @@ a:hover { color: var(--accent); }
   text-align: left;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-#box li a:hover,
-.choice:hover,
-.back-button:hover,
 .choice.key-pressed {
   border-color: #c59c73;
   background: var(--choice-hover);
   color: var(--accent-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #box li a:hover,
+  .choice:hover,
+  .back-button:hover {
+    border-color: #c59c73;
+    background: var(--choice-hover);
+    color: var(--accent-dark);
+  }
 }
 
 .status-bar {
@@ -220,10 +228,12 @@ a:hover { color: var(--accent); }
   text-align: center;
 }
 
-.back-button:hover {
-  color: #fff;
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
+@media (hover: hover) and (pointer: fine) {
+  .back-button:hover {
+    color: #fff;
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
 }
 
 @media (max-width: 640px) {
@@ -565,6 +575,11 @@ function presentScreen() {
     if (prefersReducedMotion()) return;
     void box.offsetWidth;
     box.classList.add("screen-fade");
+    var clearFade = function () { try { box.classList.remove("screen-fade"); } catch (e2) {} };
+    if (typeof box.addEventListener === "function") {
+      box.addEventListener("animationend", clearFade, { once: true });
+    }
+    setTimeout(clearFade, 220);
   } catch (e) {}
 }
 
@@ -580,6 +595,17 @@ function goback() {
   try { document.getElementById('gameToolbar').style.display = (currentTag && currentTag !== "under18") ? '' : 'none'; } catch (e) {}
   syncGuideDisplay();
   presentScreen();
+}
+
+function pressGuidedChoice() {
+  if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
+  var btn = document.querySelector("#box button.choice.guide-highlight");
+  if (!btn || btn.offsetParent === null) return;
+  if (btn.classList.contains("key-pressed")) return;
+  btn.classList.add("key-pressed");
+  setTimeout(function () {
+    if (document.body.contains(btn)) { btn.click(); }
+  }, 120);
 }
 
 function pressChoiceByNumber(n) {
@@ -625,8 +651,9 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
+      if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
       e.preventDefault();
-      pressChoiceByNumber(1);
+      pressGuidedChoice();
       return;
     }
     if (/^[1-9]$/.test(e.key)) {
@@ -1165,14 +1192,14 @@ tuesdaydate()
 {
 s("<LI>VOUS : J'aimerais te voir dès que possible ! Alors demain, mardi, s'il te plaît !");
 s("<LI>DIANE : C'est sympa. J'ai hâte."); getinti(5); tuesday = 2;    
-c("start2","C'est parti pour le rendez-vous !"); }
+c("start2","C'est parti pour le rendez-vous !"); }
 
 function
 thursdaydate()
 {
 s("<LI>VOUS : Jeudi, ce serait bien, si ça te convient !");
 s("<LI>DIANE : D'accord. J'ai hâte. Je viendrai directement du travail."); getinti(-1); thursday = 2;    
-c("start2","C'est parti pour le rendez-vous !"); }
+c("start2","C'est parti pour le rendez-vous !"); }
 
 function
 saturdaydate()
@@ -1181,7 +1208,7 @@ s("<LI>VOUS : Le samedi, c'est toujours une super soirée pour sortir — alor
 s("<LI>DIANE : À ce moment-là, alors.");
 s("<LI>Elle semble légèrement déçue."); getinti(-1); saturday = 2;    
 s("<LI>Et vous découvrez que les billets de théâtre sont plus chers ce jour-là, ce qui réduit votre budget."); pounds -= 10; 
-c("start2","C'est parti pour le rendez-vous !"); }
+c("start2","C'est parti pour le rendez-vous !"); }
 
 function
 start2() 

@@ -18,7 +18,7 @@ The playable files are in [`outputs/`](outputs/), grouped by language.
 | `outputs/es` | Spanish |
 | `outputs/fr` | French |
 
-Each language folder contains a single-language HTML file, a bilingual HTML file (switches with English; not present for the English-only edition), edition notes, an endings guide with verified ending transcripts, and a hidden scenes guide with verified hidden-scene transcripts. Just open the `.html` file in a browser to play.
+All five are independent editions. Each language folder contains a single-language HTML file, a bilingual HTML file (switches with English; not present for the English-only edition), edition notes, an endings guide with verified ending transcripts, and a hidden scenes guide with verified hidden-scene transcripts. Just open the `.html` file in a browser to play.
 
 There are currently **10 verified endings** and **21 verified hidden scenes** per language.
 
@@ -30,9 +30,7 @@ The stats bar (Pounds, Bladder, and so on) is hidden and frozen at its starting 
 
 ## Maintaining
 
-The [`maintenance/`](maintenance/) folder is a compact ongoing toolkit: regenerate ending/hidden-scene guides and transcripts, rebuild Gallery route data, derive Traditional Chinese from Simplified Chinese, and keep `aligned_text.json` for cross-language consistency checks. One-time HTML port/fix installers are gone; those features already live in every playable file under `outputs/`.
-
-For maintenance conventions (prices, CN→TW pipeline, settled wording), start with [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). [`maintenance/README.txt`](maintenance/README.txt) is a shorter file-by-file toolkit reference.
+The [`maintenance/`](maintenance/) folder regenerates ending/hidden-scene guides and transcripts, rebuilds Gallery route data, and keeps `aligned_text.json` for cross-language checks. Conventions and settled wording: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). File list: [`maintenance/README.txt`](maintenance/README.txt).
 
 Typical regeneration after wording or route edits:
 
@@ -40,7 +38,6 @@ Typical regeneration after wording or route edits:
 node maintenance/write_verified_guides.js
 node maintenance/write_ending_transcripts.js
 node maintenance/write_hidden_scenes.js
-node maintenance/write_zh_tw.js
 ```
 
-If Gallery routes or titles changed, run `node maintenance/build_gallery_data.js` before `write_zh_tw.js`.
+If Gallery routes or titles changed, also run `node maintenance/build_gallery_data.js`.

@@ -11,7 +11,7 @@ Base 1 : Base du souvenir au théâtre
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -43,7 +43,7 @@ Base 2 : Base du banc au bord de la rivière
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -116,7 +116,7 @@ Base 3 : Base du choix urgent au bord de la rivière
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -198,7 +198,7 @@ Base 4 : Base des toilettes publiques ouvertes le mardi
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Y aller directement.
 7. Proposer d’aller manger, dans ce cas.
 8. Une bouteille de Rioja espagnol (£12)
@@ -271,7 +271,7 @@ Base 5 : Base du pont le jeudi
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Jeudi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Y aller directement.
 7. Proposer d’aller manger, dans ce cas.
 8. Une bouteille de Rioja espagnol (£12)
@@ -343,7 +343,7 @@ Base 6 : Base de Molly et Bruno sur le chemin de halage le mardi
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -434,7 +434,7 @@ Base 7 : Base très pressante de Molly et Bruno sur le chemin de halage
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Y aller directement.
 7. Proposer d’aller manger, dans ce cas.
 8. Une bouteille de bourgogne, le meilleur vin de la carte (£20)
@@ -515,7 +515,7 @@ Base 8 : Base des toilettes publiques au bord de la rivière le samedi
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Samedi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Y aller directement.
 7. Lui dire que vous adorez sa robe.
 8. D’accord.
@@ -598,7 +598,7 @@ Base 9 : Base de la brune dans la file du bus
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -702,7 +702,7 @@ Base 10 : Base du choix derrière le camping-car
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -813,7 +813,7 @@ Base 11 : Base de la caméra cachée
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Jeudi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Y aller directement.
 7. Lui dire que vous étiez vraiment impatients de vous retrouver.
 8. D’accord.
@@ -857,7 +857,7 @@ Base 12 : Base du porche de l'église le jeudi
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Jeudi.
-5. C’est parti pour le rendez-vous!
+5. C’est parti pour le rendez-vous !
 6. Y aller directement.
 7. Proposer d’aller manger, dans ce cas.
 8. Une bouteille de Pinot Grigio italien (£10)

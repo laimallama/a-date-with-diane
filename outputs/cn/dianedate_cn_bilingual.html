@@ -191,15 +191,23 @@ a:hover { color: var(--accent); }
   text-align: left;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-#box li a:hover,
-.choice:hover,
-.back-button:hover,
 .choice.key-pressed {
   border-color: #c59c73;
   background: var(--choice-hover);
   color: var(--accent-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #box li a:hover,
+  .choice:hover,
+  .back-button:hover {
+    border-color: #c59c73;
+    background: var(--choice-hover);
+    color: var(--accent-dark);
+  }
 }
 
 .status-bar {
@@ -266,10 +274,12 @@ a:hover { color: var(--accent); }
   text-align: center;
 }
 
-.back-button:hover {
-  color: #fff;
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
+@media (hover: hover) and (pointer: fine) {
+  .back-button:hover {
+    color: #fff;
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
 }
 
 @media (max-width: 640px) {
@@ -681,13 +691,13 @@ var alternateTranslations = {
   "<LI>DIANE: I love eating out. And I always like Italian food.": "<LI>黛安：我很喜欢出去吃饭，而且一直很爱意大利菜。",
   "<LI>The conversation is getting a little stilted. You try to think of something interesting to talk about.": "<LI>话题有些冷场了。你努力想找个有趣的话头。",
   "<LI>What are you going to talk about?": "<LI>你打算聊什么？",
-  "<LI><B>Are you mad?</B> The conversation may have dried up but you had no reason to ask her if she wanted a pee.": "<LI><B>你疯了吗？</B>话题虽然冷下来了，但你根本没有理由问她要不要去上厕所。",
-  "<LI>Perhaps you are some sort of pervert. Perhaps you imagine her fidgeting about, shifting up and down on the chair, crossing her legs, but too shy to tell you she wants to go to the loo. Maybe you even want her to get more and more desperate. If so, shame on you!": "<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，羞死你了！",
+  "<LI><B>Are you mad?</B> The conversation may have dried up but you had no reason to ask her if she wanted a pee.": "<LI><B>你疯了吗？</B>就算没话聊了，你也没理由问她想不想尿尿。",
+  "<LI>Perhaps you are some sort of pervert. Perhaps you imagine her fidgeting about, shifting up and down on the chair, crossing her legs, but too shy to tell you she wants to go to the loo. Maybe you even want her to get more and more desperate. If so, shame on you!": "<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，真是羞死你了！",
   "<LI>Luckily a sudden clatter at another table means she didn't hear you. So she asks you to repeat what you said.": "<LI>幸好邻桌突然传来一阵响动，她没听见你说的话，于是让你再说一遍。",
   "<LI>This time you say: 'Do you want a coffee?'": "<LI>这次你说：“要不要来杯咖啡？”",
   "<LI>DIANE: Yes, I'd love a coffee. Just an ordinary filter coffee.": "<LI>黛安：好啊，我很想喝咖啡。就普通滴滤咖啡就行。",
   "<LI>You wait for the coffees. Maybe your unheard question has had a subliminal effect, because—": "<LI>你们等着咖啡上来。也许你那句没被听见的问题，还是在她心里留下了一点影响，因为——",
-  "<LI>DIANE: While we're waiting for the coffees, I think I'll go and freshen up before the play.": "<LI>黛安：等咖啡的时候，我想去整理一下妆容，看戏之前先去一趟。",
+  "<LI>DIANE: While we're waiting for the coffees, I think I'll go and freshen up before the play.": "<LI>黛安：等咖啡的时候，我想去梳洗一下，看戏之前先收拾收拾。",
   "<LI>She gets up, takes her handbag and heads off to the Ladies.": "<LI>她站起来，拎起手包，朝女厕所走去。",
   "<LI>After two or three minutes she returns, looking very relaxed.": "<LI>两三分钟后她回来了，看起来轻松多了。",
   "<LI>You drink your coffees. The waiter comes and you settle your bill.": "<LI>你们喝完咖啡。服务员过来，你们结了账。",
@@ -784,7 +794,7 @@ var alternateTranslations = {
   "<LI>She blushes shyly.": "<LI>她害羞地脸红了。",
   "<LI>DIANE: Actually, have I got time to pop to the Ladies?": "<LI>黛安：我……我还来得及去趟厕所吗？",
   "<LI>What are you going to say?": "<LI>你打算怎么说？",
-  "<LI>DIANE: I was just looking for a programme seller. I'll buy one.": "<LI>黛安：我刚才是在找卖节目单的。我去买一份。",
+  "<LI>DIANE: I was just looking for a programme seller. I'll buy one.": "<LI>黛安：我刚才就在找卖节目单的。我去买一份。",
   "<LI>She buys a programme": "<LI>她买了一份节目单。",
   "<H2><STRONG>WELCOME TO THE SHORT VERSION</STRONG></H2>": "<H2><STRONG>欢迎来到短版流程。</STRONG></H2>",
   "<P>On Tuesdays and Thursdays there is an option to play a short version of the game. This takes you straight to your house later in the evening. You might sometimes wish to play this if you have played the game several times and perhaps don't want to sit through the play again. Note that a few options do not come into effect in this version. And you can only use 1 luckshot.</P>": "<P>周二和周四可以选择短版流程，直接跳到晚上稍后在你家里的部分。如果你已经玩过几次，不想再从头看一遍话剧，可以选择这个模式。请注意，部分选项在短版流程里不会出现，而且你只能使用1次幸运机会。</P>",
@@ -832,7 +842,7 @@ var alternateTranslations = {
   "<LI>The curtain goes up and the play begins.": "<LI>大幕拉开，演出开始了。",
   "<LI>You are very conscious of this pretty girl sitting next to you. The skirt is quite long, down to her knees, but you can imagine her legs beneath it.": "<LI>你非常在意坐在身旁的这个漂亮女孩。她的裙子相当长，长及膝盖，但你能想象出裙子下面她的双腿。",
   "<LI>You both watch the play": "<LI>你们一起看着演出。",
-  "<LI>It is a comedy set at a cricket match. The couples meet, and the captain's wife prepares the teatime picnic, and the couples argue, and so it goes on.": "<LI>这是一部以板球比赛为背景的喜剧。各对情侣相遇，队长的妻子准备着下午茶野餐，情侣们争吵拌嘴，就这样一幕幕演下去。",
+  "<LI>It is a comedy set at a cricket match. The couples meet, and the captain's wife prepares the teatime picnic, and the couples argue, and so it goes on.": "<LI>这是一部以板球比赛为背景的喜剧。各对情侣相遇，队长的妻子准备着下午茶野餐。情侣们争吵拌嘴，就这样一幕幕演下去。",
   "<LI>But you've seen it before, so your attention wanders</P>": "<LI>但你之前看过这部戏，所以注意力开始飘散。</P>",
   "<LI>What are you thinking about?": "<LI>你在想什么呢？",
   "<LI>Your mind has wandered and you are wondering what she might be wearing underneath. You've had a glimpse and that makes it all the more tantalising.": "<LI>你的思绪飘远了，开始琢磨她里面穿着什么。你已经瞥见了一丁点，这让你更加心痒难耐。",
@@ -847,7 +857,7 @@ var alternateTranslations = {
   "<LI>Your mind has wandered and you are thinking back to the time when you first met.": "<LI>你的思绪飘远了，回想起你们第一次相遇的时光。",
   "<HR><LI><SPAN style='color: #CC0033'>You were at the bus stop on the way home, late in the evening, when you noticed Diane a few places ahead of you in the queue. What caught your attention was that she was clearly dying for a pee. She was fidgeting about, walking on the spot and as the minutes passed she started pacing about, a hand deep in her trouser pocket. The only trouble was, that you were desperate yourself and rather than stand and watch had to retreat into the car park for an urgent pee.</SPAN>": "<HR><LI><SPAN style='color: #CC0033'>那是一个深夜，你在公交站等车回家，这时注意到黛安站在队伍前面几个位置。吸引你目光的是，她明显已经快憋坏了。她坐立不安，在原地踱步，随着时间一分一分过去，她开始来回走动，一只手深深插进裤兜里。唯一的问题是，你自己也憋得难受，根本顾不上站在那里旁观，只好溜进停车场，赶紧撒了泡尿。</SPAN>",
   "<LI><SPAN style='color: #CC0033'>You were just finishing when you heard hurrying footsteps and it was Diane. She was already unbuckling her belt. You stepped behind a car and were able to watch her as she pulled her trousers down and squatted behind a mini bus. She didn't half need to go! Afterwards you followed her back to the bus stop at a safe distance, only to find that the bus had left without the two of you. So you shared a taxi home, and chatted.</SPAN>": "<LI><SPAN style='color: #CC0033'>你刚刚尿完，就听见一阵急促的脚步声——是黛安。她已经在解腰带了。你躲到一辆车后面，眼睁睁看着她把裤子拉下来，蹲到了一辆小巴后面。她真的是憋惨了！事后你与她保持着安全距离，跟着她回到公车站，却发现公车早就走了，把你们俩都落下了。于是你们共乘一辆出租车回家，一路聊着天。</SPAN>",
-  "<LI><HR>Of course, she doesn't know that you watched her having that pee!": "<LI><HR>当然，她并不知道你偷看过她方便！",
+  "<LI><HR>Of course, she doesn't know that you watched her having that pee!": "<LI><HR>当然，她并不知道你偷看过她尿尿！",
   "<LI>The play has reached a very amusing scene. Everybody is laughing.": "<LI>话剧演到了一个非常有趣的场景，大家都在笑。",
   "<LI>You look across at Diane who is concentrating on the play": "<LI>你望向黛安，她正全神贯注地看着台上的演出。",
   "<LI>What will you do?": "<LI>你要怎么做？",
@@ -1569,7 +1579,7 @@ var alternateTranslations = {
   "<LI>Diane hurries towards one of the urinals. She is giggling nervously and has hitched her skirt up at the front.": "<LI>黛安急匆匆地朝一个小便池走去，紧张地轻笑着，裙子前摆已经撩了起来。",
   "<LI>DIANE: I never know which way to go on these.": "黛安：这东西我从来搞不清楚该怎么用。",
   "<LI>She seems to hesitate whether to turn round, but then, maybe because it is quicker, she decides to sort of straddle the urinal, with her back to you. She bends slightly forward as she pulls her panties aside.": "她犹豫着要不要转身，但还是决定横跨在小便池上，背对着你——大概觉得这样更省事吧。她微微弯腰，把内裤拨到了一边。",
-  "<LI>Almost immediately she is peeing. A few spurts splatter onto the floor but then she is peeing into the urinal; you can't see the pee stream, but you can see the steam rising. You step back a bit, and to the side, and now you can actually see her stream, silver rather than golden, as she really lets go. She stands there a picture of concentration, gasping with relief.": "<LI>她几乎立刻就尿了。几滴尿液溅到地板上，随后尿流落进了小便池里；你看不见尿流本身，却能看到热气袅袅升起。你往后退了一步，侧身移开，这才真正看到了她的尿流——不是金黄色，而是银亮的，她就这么痛痛快快地尿着。她站在那里，神情专注，如释重负地喘着气。",
+  "<LI>Almost immediately she is peeing. A few spurts splatter onto the floor but then she is peeing into the urinal; you can't see the pee stream, but you can see the steam rising. You step back a bit, and to the side, and now you can actually see her stream, silver rather than golden, as she really lets go. She stands there a picture of concentration, gasping with relief.": "<LI>她几乎立刻就尿了。几滴尿液溅到地板上，接着尿流落进了小便池里；你看不见尿流本身，却能看到热气袅袅升起。你往后退了一步，侧身移开，这才真正看到了她的尿流——不是金黄色，而是银亮的，她就这么痛痛快快地尿着。她站在那里，神情专注，如释重负地喘着气。",
   "<LI>Eventually the stream fades away to a trickle, and a bit more seems to splash onto the floor. Still, with her back to you, she steps back and lets her skirt fall into place. She turns towards you.": "<LI>最终，尿流渐渐细弱成涓涓滴滴，又有几滴溅在了地板上。她依然背对着你，往后退了一步，任由裙子落回原位，然后转过身来面对你。",
   "<LI>She is somewhat flushed but has a big rueful grin on her face. She seems to have no inhibitions or qualms about you having watched. She comes up to you and puts her arms around you, resting her head on your shoulder. It is not so much a sexy gesture as a comradely one.": "<LI>她脸颊有些泛红，但脸上挂着一个带着几分无奈的大笑。她看起来并不介意你刚才在旁边看着，也没有多少羞涩。她走过来，双臂环住你，把头靠在你的肩上。这与其说是一个情欲的姿态，不如说更像是同伴间的一种亲近。",
   "<LI>DIANE: Would you be an angel and wait outside while I tidy up?": "<LI>黛安：你能不能乖乖在外面等我一下，让我整理整理？",
@@ -1667,7 +1677,7 @@ var alternateTranslations = {
   "<LI>DIANE: I was banking on it for the loo.": "<LI>黛安：我就指着这里上厕所呢。",
   "<LI>She looks a bit concerned but doesn't say anything.": "<LI>她看起来有些担心，但什么也没说。",
   "<LI>DIANE: We wouldn't want to miss the bus.": "<LI>黛安：可不能错过巴士。",
-  "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>Free Beer for Ladies on Tuesday Nights!</SPAN></STRONG></P>": "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每周二女士免费畅饮！</SPAN></STRONG></P>",
+  "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>Free Beer for Ladies on Tuesday Nights!</SPAN></STRONG></P>": "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每周二，女士免费畅饮！</SPAN></STRONG></P>",
   "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>and two pints for the price of one on Thursdays!</SPAN></STRONG></P>": "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每周四，啤酒买一品脱送一品脱！</SPAN></STRONG></P>",
   "<LI>The four of you enter The Pavilion.": "<LI>你们四个人走进凉亭酒吧。",
   "<LI>It's quite busy, perhaps because there are several special offers on. It's obviously trying to compete with The Golden Stream.": "<LI>里面相当热闹，可能是因为有好几个特惠活动。这里显然在努力跟金流酒吧抢生意。",
@@ -3276,7 +3286,7 @@ var alternateTranslations = {
   "<LI>Diane looks a bit impatient.": "<LI>黛安看起来有些不耐烦。",
   "<LI>And the brunette is looking suspiciously in your direction": "<LI>而那个褐发女生正朝你这边投来怀疑的目光",
   "<LI>You are back in the bus queue with Diane.": "<LI>你和黛安回到了公共汽车站的队伍里。",
-  "<LI>DIANE: <EM>in a whisper</EM> I bet you watched that girl having a pee.": "<LI>黛安：<EM>（压低声音）</EM> 你刚才肯定偷看那个女孩方便了。",
+  "<LI>DIANE: <EM>in a whisper</EM> I bet you watched that girl having a pee.": "<LI>黛安：<EM>（压低声音）</EM> 你刚才肯定偷看那个女孩尿尿了。",
   "<LI>YOU: What? Um, er, well, no, I mean, I accidentally saw her.": "<LI>你：什么？呃，额，没有，我是说，我是不小心看到她的。",
   "<LI>She nudges you and grins. 'You're a naughty boy,' she says—and gives your bum a little fondle.": "<LI>她用手肘碰了碰你，咧嘴笑道：“你这个小坏蛋”——然后轻轻地捏了一下你的屁股。",
   "<LI>She shakes her head and says nothing.": "<LI>她摇了摇头，什么也没说。",
@@ -3559,7 +3569,7 @@ var alternateTranslations = {
   "<P><EM><SPAN style='color: #ff0000'>Diane doesn't look like she has to pee yet.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安现在看起来还不需要上厕所。</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane looks like she might want a pee. You can tell that because she seems a little bit fidgety, but nothing much, so you can't be sure.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有点想上厕所。她有些坐立不安，但还不明显，所以你也拿不准。</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane is shifting about a bit. Maybe she's just uncomfortable—or maybe she's beginning to need the loo.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安有些坐不住了。也许只是坐得不舒服——也许是开始想去厕所了。</SPAN></EM></P>",
-  "<P><EM><SPAN style='color: #ff0000'>Diane keeps crossing her legs, first one way, then the other.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉双腿，先这样，再那样。</SPAN></EM></P>",
+  "<P><EM><SPAN style='color: #ff0000'>Diane keeps crossing her legs, first one way, then the other.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉双腿，先往一边交叉，再换到另一边。</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane leans forward on the seat, her hands on her knees.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安身体前倾，双手放在膝盖上。</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane definitely appears to be in need of a bathroom. She is beginning to fidget about, and keeps crossing her legs.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安明显是需要去洗手间了。她开始坐立不安，双腿也不停地交叉夹紧。</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane crosses her legs and looks around. She seems to be thinking of something.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>黛安交叉着双腿，四处张望。她好像心里在想着什么。</SPAN></EM></P>",
@@ -3621,7 +3631,7 @@ var alternateTranslations = {
   "<P><EM><SPAN style='color: #ff0000'>DIANE IS ON THE VERGE OF WETTING HERSELF. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>黛安已经快要尿裤子了。她用渴求的眼神望着你。你打算帮她吗？</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Is it your imagination or is Molly beginning to need a pee? She just seems a little bit fidgety.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>是你的错觉，还是莫莉开始有点尿意了？她只是看起来有点坐立不安。</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is shifting about a bit. Maybe she's just uncomfortable—or maybe she's beginning to need the loo.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉微微挪动着身子。也许只是坐得不舒服——也许她开始想去厕所了。</SPAN></EM>",
-  "<EM><SPAN style='color: #0000FF'>Molly keeps crossing her legs, first one way, then the other.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉不停地交叉双腿，先这侧，再那侧。</SPAN></EM>",
+  "<EM><SPAN style='color: #0000FF'>Molly keeps crossing her legs, first one way, then the other.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉不停地交叉双腿，先往一边交叉，再换到另一边。</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly definitely appears to be in need of a bathroom. She is beginning to fidget about, and keeps crossing her legs.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉看上去确实需要去洗手间了。她开始坐立不安，不停地交叉双腿。</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly needs the toilet. She's quietly squeezing her legs together once in a while. She seems a bit fidgety but seems to be trying to forget about the urge; but you can tell she needs to go because she keeps moving her feet.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉需要去厕所了。她时不时悄悄夹紧双腿，看起来有些烦躁，却像是在努力把尿意抛诸脑后——不过你看得出来她憋着，因为她的脚一直不安分地移来移去。</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly really needs a pee! She's constantly squeezing her legs together and rubs them once in a while.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉真的很急，想上厕所！她不停地夹紧双腿，偶尔还来回磨蹭。</SPAN></EM>",
@@ -3636,7 +3646,7 @@ var alternateTranslations = {
   "<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉已经憋到了极限。她用一只手死死捂住裆部，双腿夹得死紧。她表情痛苦，拼命克制着自己不要尿裤子。</SPAN></EM>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane is cuddled up next to you, looking at the album.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安依偎在你身边，和你一起看相册。</SPAN></EM></P>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane crosses her legs. First one way, then the other. But she seems quite relaxed.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安交叉了一下双腿，先换到一边，又换到另一边，但看上去还挺放松。</SPAN></EM></P>",
-  "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane definitely needs the toilet. She keeps crossing her legs, first one way, then the other. But she is trying to look calm, and interested in the album.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安确实需要去厕所了。她不停地交叉双腿，先这侧，再那侧，却努力装出一副从容的样子，像是还在专心看相册。</SPAN></EM></P>",
+  "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane definitely needs the toilet. She keeps crossing her legs, first one way, then the other. But she is trying to look calm, and interested in the album.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>黛安确实需要去厕所了。她不停地交叉双腿，先往一边交叉，再换到另一边，却努力装出一副从容的样子，像是还在专心看相册。</SPAN></EM></P>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>She crosses her legs. Then she uncrosses them again. She seems uncomfortable.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>她交叉了双腿，又松开了。她看起来有些不舒服。</SPAN></EM></P>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>She sits forward on the sofa, her hands under her thighs.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>她在沙发上往前坐，双手压在大腿下面。</SPAN></EM></P>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>She is drumming her knees together.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>她不停地并拢膝盖，反复磕碰着。</SPAN></EM></P>",
@@ -3774,7 +3784,7 @@ var alternateTranslations = {
   "<LI>You have struck gold. You have won First Prize!": "<LI>你这次真的撞大运了。你获得了一等奖！",
   "<LI>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.": "<LI>你成功地让她憋尿憋到极限，以至于在走回家的路上她实在忍不住，彻底尿湿了自己。",
   "<LI>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.": "<LI>你成功地让她憋尿憋到极限，在走回家的路上她已经开始尿湿自己了。尽管她设法拨开了内裤，你也清楚那条内裤早已湿透。",
-  "<LI>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!": "<LI>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进去！",
+  "<LI>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!": "<LI>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进她家！",
   "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>TRULY, YOU HAVE WON FIRST PRIZE!</SPAN></div></STRONG></H1>": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>你真的获得了一等奖！</SPAN></div></STRONG></H1>",
   "<LI>YOU: It's really exciting. I've never seen a girl wet herself before.": "<LI>你：真的好刺激。我从没见过女生尿湿自己。",
   "<LI>DIANE: <EM>after a pause</EM> Well, at least it's made one of us happy.": "<LI>黛安：<EM>（沉默片刻后）</EM> 好吧，至少这让我们其中一个人高兴了。",
@@ -4198,7 +4208,7 @@ var alternateTranslations = {
   "Yes, I'll play a luckshot!": "好，我要用一次幸运机会！",
   "No, I've no luckshots left.": "不了，我的幸运机会用完了。",
   "She smiles up at you.": "她抬头对你微微一笑。",
-  "You carry on exploring and talking.": "你们继续一边抚摸，一边聊着。",
+  "You carry on exploring and talking.": "你们继续又摸又聊。",
   "Ask if she wants another drink.": "问她要不要再来一杯。",
   "No, I'm happy as we are.": "不，就这样待着挺好的。",
   "You go to the kitchen.": "你去了厨房。",
@@ -4805,6 +4815,11 @@ function presentScreen() {
     if (prefersReducedMotion()) return;
     void box.offsetWidth;
     box.classList.add("screen-fade");
+    var clearFade = function () { try { box.classList.remove("screen-fade"); } catch (e2) {} };
+    if (typeof box.addEventListener === "function") {
+      box.addEventListener("animationend", clearFade, { once: true });
+    }
+    setTimeout(clearFade, 220);
   } catch (e) {}
 }
 
@@ -4820,6 +4835,17 @@ function goback() {
   try { document.getElementById('galleryToggle').style.display = (currentTag && currentTag !== "under18") ? '' : 'none'; } catch (e) {}
   syncGuideDisplay();
   presentScreen();
+}
+
+function pressGuidedChoice() {
+  if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
+  var btn = document.querySelector("#box button.choice.guide-highlight");
+  if (!btn || btn.offsetParent === null) return;
+  if (btn.classList.contains("key-pressed")) return;
+  btn.classList.add("key-pressed");
+  setTimeout(function () {
+    if (document.body.contains(btn)) { btn.click(); }
+  }, 120);
 }
 
 function pressChoiceByNumber(n) {
@@ -4870,8 +4896,9 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
+      if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
       e.preventDefault();
-      pressChoiceByNumber(1);
+      pressGuidedChoice();
       return;
     }
     if (/^[1-9]$/.test(e.key)) {

@@ -6,10 +6,12 @@ const EN_HTML = "outputs/en/dianedate_en.html";
 const CN_HTML = "outputs/cn/dianedate_cn.html";
 const ES_HTML = "outputs/es/dianedate_es.html";
 const FR_HTML = "outputs/fr/dianedate_fr.html";
+const TW_HTML = "outputs/tw/dianedate_tw.html";
 const EN_GUIDE = "outputs/en/endings/dianeguide_en.txt";
 const CN_GUIDE = "outputs/cn/endings/dianeguide_cn.txt";
 const ES_GUIDE = "outputs/es/endings/dianeguide_es.txt";
 const FR_GUIDE = "outputs/fr/endings/dianeguide_fr.txt";
+const TW_GUIDE = "outputs/tw/endings/dianeguide_tw.txt";
 const LEGACY_GUIDE_DIRS = [
   "outputs/en/guides",
   "outputs/cn/guides",
@@ -804,7 +806,9 @@ function stripTags(text) {
   return String(text)
     .replace(/<[^>]+>/g, "")
     .replace(/&nbsp;/g, " ")
+    .replace(/\u202f/g, "\uE000")
     .replace(/\s+/g, " ")
+    .replace(/\uE000/g, "\u202f")
     .trim();
 }
 
@@ -915,6 +919,12 @@ function ending(text, lang) {
       /你(?:获得|赢得)了[一二三四五]等奖！/,
       /你(?:获得|赢得)了(?:一个)?安慰奖！/,
       /说起来，这也算是个相当不错的安慰奖！/,
+    ],
+    tw: [
+      /你真的獲得了一等獎！/,
+      /你獲得了[一二三四五]等獎！/,
+      /你獲得了(?:一個)?安慰獎！/,
+      /說起來，這也算是個相當不錯的安慰獎！/,
     ],
     es: [
       /¡VERDADERAMENTE, HAS GANADO EL PRIMER PREMIO!/,
@@ -1112,6 +1122,70 @@ ${numbered(c.loungeTail)}
   return parts.join("\n").replace(/\n\n(结局文字：)/g, "\n$1").replace(/\n{3,}/g, "\n\n");
 }
 
+function taiwanGuide(data) {
+  const c = data.captures;
+  const e = data.endings;
+  const parts = [];
+  parts.push(`與黛安約會：已驗證結局攻略
+
+本攻略對應當前完成版HTML。步驟裡寫的都是玩家實際能看到的按鈕文字。請嚴格按順序點擊；如果同一句按鈕連續出現幾次，就連續按幾次。
+
+「短版流程」只在週二和週四可用，但只有攻略明確要求時才使用。
+`);
+
+  parts.push(section("基礎路線1：通用開局", numbered(c.common)));
+  parts.push(section("基礎路線2：週二短版，到達家中", `先走「基礎路線1」，然後按：\n${numbered(c.tuesdayShortHouse.slice(c.common.length))}`));
+  parts.push(section("基礎路線3：週六路線，到達家中", `先走「基礎路線1」，然後按：\n${numbered(c.saturdayHouse.slice(c.common.length))}`));
+  parts.push(section("基礎路線4：週二完整路線，先觸發一次私密緊急尿尿，再到達家中", `先走「基礎路線1」，然後按：\n${numbered(c.earlyBushHouse.slice(c.common.length))}`));
+  parts.push(section("基礎路線5：週四短版，到達家中", `先走「基礎路線1」，然後按：\n${numbered(c.thursdayFifthBase.slice(c.common.length))}`));
+  parts.push(section("基礎路線6：週二短版，到達克洛伊家中場景", `先走「基礎路線1」，然後按：\n${numbered(c.chloeBase.slice(c.common.length))}`));
+  parts.push(section("基礎路線7：週六牛排路線，到達阿曼達家中場景", `先走「基礎路線1」，然後按：\n${numbered(c.amandaBase.slice(c.common.length))}`));
+
+  parts.push(section("家中喝飲料循環", `四等獎和一等獎都要在「基礎路線3」之後使用這個循環。
+
+先按一次起始循環：
+${bullet(c.firstDrink)}
+
+之後循環按鈕會變成：
+${bullet(c.repeatDrink)}
+
+要拿四等獎：起始循環按1次，然後重複循環按7次。
+要拿一等獎：起始循環按1次，然後重複循環按15次。`));
+
+  parts.push(section("三等獎", `走完「基礎路線2」，然後按：\n${numbered(c.thirdTail)}\n\n結局文字：${e.third}`));
+  parts.push(section("四等獎", `走完「基礎路線3」。然後把起始喝飲料循環按1次，重複喝飲料循環按7次。最後一次按完「${c.repeatDrink.at(-1)}」之後，繼續按：\n${numbered(c.fourthTail)}\n\n結局文字：${e.fourth}`));
+  parts.push(section("一等獎", `走完「基礎路線3」。然後把起始喝飲料循環按1次，重複喝飲料循環按15次。最後一次按完「${c.repeatDrink.at(-1)}」之後，繼續按：\n${numbered(c.firstTail)}\n\n結局文字：${e.first}`));
+  parts.push(section("五等獎", `走完「基礎路線5」，然後按：\n${numbered(c.fifthTail)}\n\n結局文字：${e.fifth}`));
+  parts.push(section("二等獎", `走完「基礎路線4」。這條基礎路線的關鍵是：黛安在到你家之前，已經私下在河邊樹叢後面方便過一次。
+
+到家後從沙發處先按這一段：
+${numbered(c.secondSetup)}
+
+然後按：
+${numbered(c.secondTail)}
+
+結局文字：${e.second}`));
+  parts.push(section("客廳故事安慰獎", `走完「基礎路線4」。注意：這裡不能走週二短版。黛安必須在到你家之前已經觸發過河邊那次私密緊急尿尿。
+
+到家後從沙發處按：
+${numbered(c.loungeTail)}
+
+結局文字：${e.lounge}`));
+  parts.push(section("安慰獎：週二涼亭路線", `這條路線單獨列出，因為它依賴週二路線裡涼亭酒吧附近的幾個精確狀態判斷。按：\n${numbered(c.generalRoute)}\n\n結局文字：${e.general}`));
+  parts.push(section("安慰獎：週四地下通道路線", `這是通往同一個安慰獎畫面的另一條週四路線。它需要幾個精確選擇，包括開場不買水、在涼亭酒吧用幸運機會阻止黛安去廁所，以及她逃離公車站後跟著她穿過地下通道。按：\n${numbered(c.generalThursdayRoute)}\n\n結局文字：${e.generalThursday}`));
+  parts.push(section("克洛伊安慰獎", `走完「基礎路線6」。此時克洛伊已經出現在家中場景裡。然後按：\n${numbered(c.chloeTail)}\n\n結局文字：${e.chloe}`));
+  parts.push(section("阿曼達安慰獎", `走完「基礎路線7」。此時你弟弟已經帶朋友來到家裡。然後按：\n${numbered(c.amandaTail)}\n\n結局文字：${e.amanda}`));
+  parts.push(`常見失敗結局
+這些是終止結局，但不是獎項結局：
+- 「我未滿18歲。」會在年齡確認頁直接結束。
+- 錢不夠時，可能觸發「再見！遊戲結束。」
+- 親密度太低時，黛安可能會直接結束約會。
+- 在某些分支裡，沒有幸運機會還繼續使用，可能會被取消資格。
+- 如果讓公開尿濕失控，也可能立刻結束約會。
+`);
+  return parts.join("\n").replace(/\n\n(結局文字：)/g, "\n$1").replace(/\n{3,}/g, "\n\n");
+}
+
 function spanishGuide(data) {
   const c = data.captures;
   const e = data.endings;
@@ -1252,10 +1326,11 @@ function buildLocalizedData(htmlPath, lang) {
 const cnData = buildLocalizedData(CN_HTML, "cn");
 const esData = buildLocalizedData(ES_HTML, "es");
 const frData = buildLocalizedData(FR_HTML, "fr");
+const twData = buildLocalizedData(TW_HTML, "tw");
 [...LEGACY_GUIDE_DIRS, ...LEGACY_GUIDE_FILES].forEach((target) => {
   fs.rmSync(target, { recursive: true, force: true });
 });
-[EN_GUIDE, CN_GUIDE, ES_GUIDE, FR_GUIDE].forEach((file) => {
+[EN_GUIDE, CN_GUIDE, ES_GUIDE, FR_GUIDE, TW_GUIDE].forEach((file) => {
   fs.mkdirSync(require("path").dirname(file), { recursive: true });
 });
 
@@ -1263,16 +1338,19 @@ writeTextFile(EN_GUIDE, plainEnglishTxt(englishGuide(enData)), "en");
 writeTextFile(CN_GUIDE, chineseGuide(cnData), "cn");
 writeTextFile(ES_GUIDE, spanishGuide(esData), "es");
 writeTextFile(FR_GUIDE, frenchGuide(frData), "fr");
+writeTextFile(TW_GUIDE, taiwanGuide(twData), "tw");
 
 for (const [key, route] of Object.entries(routes)) {
   const en = captureLabelsAndTags(EN_HTML, route);
   const cn = captureLabelsByTags(CN_HTML, en.tags);
   const es = captureLabelsByTags(ES_HTML, en.tags);
   const fr = captureLabelsByTags(FR_HTML, en.tags);
-  console.log(`OK ${key}: EN="${ending(en.text, "en")}" CN="${ending(cn.text, "cn")}" ES="${ending(es.text, "es")}" FR="${ending(fr.text, "fr")}"`);
+  const tw = captureLabelsByTags(TW_HTML, en.tags);
+  console.log(`OK ${key}: EN="${ending(en.text, "en")}" CN="${ending(cn.text, "cn")}" ES="${ending(es.text, "es")}" FR="${ending(fr.text, "fr")}" TW="${ending(tw.text, "tw")}"`);
 }
 
 console.log(`Wrote ${EN_GUIDE}`);
 console.log(`Wrote ${CN_GUIDE}`);
 console.log(`Wrote ${ES_GUIDE}`);
 console.log(`Wrote ${FR_GUIDE}`);
+console.log(`Wrote ${TW_GUIDE}`);

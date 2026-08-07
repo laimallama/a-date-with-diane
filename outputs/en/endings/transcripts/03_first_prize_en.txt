@@ -244,7 +244,7 @@ You look at Diane and she looks at you. You both smile.
 
 You gained 1 intimacy point.
 
-Diane whispers to you: The one playing the girl who's gone off sulking, that's Molly, my friend.
+DIANE: [Whispers to you] The one playing the girl who's gone off sulking, that's Molly, my friend.
 
 Diane doesn't look like she has to pee yet.
 
@@ -274,7 +274,9 @@ On the way you pass the Ladies room. Lots of women are dashing in there and you 
 
 You wonder whether Diane needs to go.
 
-YOU: Cheers! I hope you're enjoying the play. [You clink glasses and drink the wine.]
+YOU: Cheers! I hope you're enjoying the play.
+
+You clink glasses and drink the wine.
 
 (You chat about the play.)
 
@@ -282,27 +284,27 @@ You notice Diane glancing at the Ladies room. The queue is beginning to stretch 
 
 You would like her to wait. What can you say?
 
-(Use a luck-shot?)
+(Use a luckshot?)
 
-You notice her glancing towards the Ladies. So you play a Luck-card.
+You notice her glancing towards the Ladies. So you play a luckshot.
 
-Why did you play this card? There was a queue there anyway.
+Why did you play it? There was a queue there anyway.
 
 Or perhaps you wanted to see her fidgeting in the queue. In which case, shame on you!
 
-In fact, the queue didn't seem too bad, and was no longer snaking out of the door. Diane has noticed this. She touches your arm.
+In fact, from here the queue didn't seem too bad—it was no longer snaking out of the door. Diane has noticed this. She touches your arm.
 
 DIANE: I'm just going to powder my nose. I won't be a minute.
 
 (You wait for her.)
 
-You've played a luckshot and Diane has gone to the Ladies. The queue seemed to have disappeared.
+You've played a luckshot and Diane has gone to the Ladies. From the foyer the queue looked as if it had cleared.
 
-Diane has popped to the Ladies. But it's Saturday night and the theatre is almost full. To make matters worse, one or two girls who were drinking in the town have popped in here to use the facilities. As a result there is quite a queue again.
+But it's Saturday night and the theatre is almost full. To make matters worse, one or two girls who were drinking in the town have popped in here to use the facilities. By the time she gets there, there is quite a queue after all.
 
-She joins the queue, which has started to snake out the door again. After a few minutes it has progressed and she is inside the Ladies, but there is quite a crowd there, and one of the cubicles is out of order. A girl who was behind her, and who was really hopping up and down, has also begged her to let her go first.
+She joins it—snaking out of the door once more. After a few minutes it has progressed and she is inside the Ladies, but there is quite a crowd there, and one of the cubicles is out of order. A girl who was behind her, and who was really hopping up and down, has also begged her to let her go first.
 
-After waiting about five minutes Diane decides she can't waste any more of the interval and returns to you. She is too embarrassed to tell you that she hasn't had a pee.
+After waiting about five minutes Diane decides she can't waste any more of the interval and returns to you.
 
 Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.
 
@@ -328,7 +330,9 @@ You walk past the Ladies room. There is no longer a queue.
 
 Diane doesn't glance towards the Ladies room.
 
-YOU: I'm looking forward to the second Act. You offer her your arm and she links up.
+YOU: I'm looking forward to the second Act.
+
+You offer her your arm and she links up.
 
 You gained 2 intimacy points.
 
@@ -638,7 +642,7 @@ The council caretaker has just shut and padlocked the doors to both the Ladies a
 
 Diane looks at the toilet.
 
-That place looks disgusting. I'd have to be desperate to use it.
+DIANE: That place looks disgusting. I'd have to be desperate to use it.
 
 (You walk on.)
 
@@ -682,7 +686,7 @@ Bruno is buying the drinks. He orders a beer for you, a lager for Diane and real
 
 You help carry the drinks back to your table. Then you pop to the Gents for a pee.
 
-You join the others at the table. They ask you about yourself and you chat. You all say "Cheers!" and clink your glasses.
+You join the others at the table. They ask you about yourself and you chat. You all say, "Cheers!" and clink your glasses.
 
 (You chat away.)
 
@@ -846,7 +850,7 @@ You settle back in the taxi. After your time with Molly and her friend, you are 
 
 It's quite warm in the taxi. You wish you'd bought some water.
 
-[Remember: you can only use one luckshot beyond this stage.]
+Remember, you can only use one luckshot beyond this stage.
 
 (The taxi pulls away onto the main road.)
 
@@ -860,7 +864,7 @@ What will it be?
 
 You put your arm round her. She responds, nestling up to you, her head on your shoulder.
 
-[Thanks for a lovely evening] she whispers.
+"Thanks for a lovely evening," she whispers.
 
 You gained 15 intimacy points.
 
@@ -982,7 +986,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1010,7 +1014,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1038,7 +1042,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1066,7 +1070,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1094,7 +1098,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1122,7 +1126,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1150,7 +1154,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1178,7 +1182,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1206,7 +1210,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1234,7 +1238,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1262,7 +1266,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1290,7 +1294,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1318,7 +1322,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1346,7 +1350,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1374,7 +1378,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1402,7 +1406,7 @@ You go to get a couple of glasses of wine.
 
 (You go to the kitchen.)
 
-You pour two glasses of white wine. She says "Cheers!" and drinks about a third.
+You pour two glasses of white wine. She says, "Cheers!" and drinks about a third.
 
 You cuddle up together.
 
@@ -1424,7 +1428,9 @@ What will it be?
 
 You kiss her. She responds but quite quickly she breaks away and sits forward on the sofa. She turns towards you, blushing slightly.
 
-DIANE: Actually, d'you mind if I use your loo? [She stands up, trying to look casual.]
+DIANE: Actually, d'you mind if I use your loo?
+
+She stands up, trying to look casual.
 
 YOU: Of course. The bathroom's just up the top of the stairs, then first on the right. The light-switch is just inside the door.
 
@@ -1470,7 +1476,7 @@ Her breasts are small but perfectly formed. Their softness sends a frisson of de
 
 You gained 6 intimacy points.
 
-[Even as you embrace you can feel her shifting up and down.]
+Even as you embrace you can feel her shifting up and down.
 
 She breaks away and says, "Shall we sit down?"
 
@@ -1504,7 +1510,7 @@ You are at your front door with Diane, ready to say goodnight. You've had a grea
 
 But—
 
-She's really desperate for the loo. She can't stand still, and seems a bit hesitant as she moves towards the front door. She doesn't seem keen on you walking her home and keeps saying "I must be going!"
+She's really desperate for the loo. She can't stand still, and seems a bit hesitant as she moves towards the front door. She doesn't seem keen on you walking her home and keeps saying, "I must be going!"
 
 What will it be?
 
@@ -1528,7 +1534,7 @@ While you get ready she is walking up and down in the little porch. Her hands ar
 
 Suddenly she does a little curtsey and hurriedly crosses one leg over the other.
 
-She turns to you, red with embarrassment, and gasps [Where's your toilet?] You tell her, and she hurries back into the house.
+She turns to you, red with embarrassment, and gasps, "Where's your toilet?" You tell her, and she hurries back into the house.
 
 (You leave the house with her.)
 
@@ -1556,7 +1562,7 @@ Diane is only answering in monosyllables. She is hurrying forward, slightly bent
 
 She has one hand deep in her dress pocket.
 
-Suddenly she stops in her tracks and shoves a hand to her crotch. She gasps "Oh God!" Then hurries on ahead of you.
+Suddenly she stops in her tracks and shoves a hand to her crotch. She gasps, "Oh God!" Then hurries on ahead of you.
 
 She is about ten yards ahead of you. Suddenly she stops again, looks frantically left and right.
 

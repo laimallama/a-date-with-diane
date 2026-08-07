@@ -22,7 +22,7 @@ DIANE : C’est sympa. J’ai hâte.
 
 Vous avez gagné 5 points d’intimité.
 
-(En avant pour l’histoire !)
+(C’est parti pour le rendez-vous!)
 
 Vous retrouvez Diane à 18 h 15. Vous l’emmenez voir une pièce, mais vous avez convenu de vous retrouver au préalable dans un restaurant italien qui fait partie du théâtre.
 
@@ -132,7 +132,7 @@ Vous avez gagné 8 points d’intimité.
 
 Le premier bouton de son chemisier est ouvert, et alors qu’elle se penche en avant, vous entrevoyez le creux entre ses seins et un soutien-gorge blanc en dentelle.
 
-[Vous remplissez les deux verres de vin.]
+Vous remplissez les deux verres de vin.
 
 DIANE : Merci !
 
@@ -208,7 +208,7 @@ Le haut-parleur retentit : le spectacle commencera dans 10 minutes.
 
 Il est 19 h 20. Vous êtes dans le hall du théâtre. Diane semble pensive, comme si quelque chose lui trottait dans la tête.
 
-[Elle rougit timidement.]
+Elle rougit timidement.
 
 DIANE : Au fait, j’ai le temps d’aller aux toilettes ?
 
@@ -406,7 +406,9 @@ Elle vous suit de l’autre côté de la pièce jusqu’à la bibliothèque. Ell
 
 DIANE : Au fait, où sont les —
 
-VOUS : Le voilà ! [Vous sortez l’album et retournes vous asseoir sur le canapé. Elle vient s’installer à côté de vous.]
+VOUS : Le voilà !
+
+Vous sortez l’album et retournes vous asseoir sur le canapé. Elle vient s’installer à côté de vous.
 
 (Vous ouvrez l’album de timbres.)
 
@@ -462,7 +464,7 @@ VOUS : J’espère que tu ne t’ennuies pas ?
 
 DIANE : Oh non, c’est vraiment intéressant.
 
-Bon, vous avez bien profité. Vous voyez bien qu’elle veut « quitter la pièce ». Vous n’allez pas lui en donner l’occasion ?
+Bon, vous avez bien profité. Vous voyez bien qu’elle veut « se soulager ». Vous n’allez pas lui en donner l’occasion ?
 
 (En avant pour les timbres !)
 
@@ -568,7 +570,7 @@ Elle a son sac à main sur les genoux, comme si elle était prête à se lever d
 
 (Vous fermez l’album.)
 
-Vous fermez l’album. Elle dit « C’était vraiment intéressant », et s’apprête à se lever.
+Vous fermez l’album. Elle dit : « C’était vraiment intéressant, » et s’apprête à se lever.
 
 Mais vous vous penchez et passez votre bras gauche autour d’elle. Vous l’embrassez.
 
@@ -638,7 +640,7 @@ Elle ne semble pas très enthousiaste et tente de se dégager. Vous vous demande
 
 Mais tandis que votre main remonte, vous comprenez pourquoi. En atteignant ses fesses, sa culotte, elle tente de se dégager encore une fois, mais vous la retenez.
 
-VOUS: [en la regardant avec stupeur] Diane, ta culotte est toute mouillée.
+VOUS: [En la regardant avec stupeur] Diane, ta culotte est toute mouillée.
 
 Elle rougit jusqu’aux oreilles. Vous ne vous souvenez pas d’avoir jamais vu des joues aussi rouges. Elle tente de se détourner, puis enfouit la tête dans votre épaule.
 

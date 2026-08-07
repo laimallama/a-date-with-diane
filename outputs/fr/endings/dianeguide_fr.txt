@@ -12,7 +12,7 @@ BASE 1 - DÉBUT COMMUN
 BASE 2 - ROUTE COURTE DU MARDI JUSQU’À LA MAISON
 Utilisez la BASE 1, puis cliquez sur :
 1. Mardi.
-2. En avant pour l’histoire !
+2. C’est parti pour le rendez-vous!
 3. Y aller directement.
 4. Proposer d’aller manger, dans ce cas.
 5. Une bouteille de Rioja espagnol (£12)
@@ -49,7 +49,7 @@ Utilisez la BASE 1, puis cliquez sur :
 BASE 3 - ROUTE DU SAMEDI JUSQU’À LA MAISON
 Utilisez la BASE 1, puis cliquez sur :
 1. Samedi.
-2. En avant pour l’histoire !
+2. C’est parti pour le rendez-vous!
 3. Y aller directement.
 4. Lui dire que vous aimeriez être de son côté de la table.
 5. D’accord.
@@ -149,7 +149,7 @@ Utilisez la BASE 1, puis cliquez sur :
 BASE 4 - ROUTE COMPLÈTE DU MARDI AVEC UNE PAUSE PIPI PRIVÉE PLUS TÔT, JUSQU’À LA MAISON
 Utilisez la BASE 1, puis cliquez sur :
 1. Mardi.
-2. En avant pour l’histoire !
+2. C’est parti pour le rendez-vous!
 3. Acheter quelque chose.
 4. Une bouteille d’eau hors de prix (£3)
 5. Retour à la boutique.
@@ -269,7 +269,7 @@ Utilisez la BASE 1, puis cliquez sur :
 BASE 5 - ROUTE COURTE DU JEUDI JUSQU’À LA MAISON
 Utilisez la BASE 1, puis cliquez sur :
 1. Jeudi.
-2. En avant pour l’histoire !
+2. C’est parti pour le rendez-vous!
 3. Y aller directement.
 4. Lui dire que vous étiez vraiment impatients de vous retrouver.
 5. D’accord.
@@ -307,7 +307,7 @@ Utilisez la BASE 1, puis cliquez sur :
 BASE 6 - ROUTE COURTE DU MARDI JUSQU’À LA SCÈNE DE CHLOE À LA MAISON
 Utilisez la BASE 1, puis cliquez sur :
 1. Mardi.
-2. En avant pour l’histoire !
+2. C’est parti pour le rendez-vous!
 3. Y aller directement.
 4. Proposer d’aller manger, dans ce cas.
 5. Une bouteille de Rioja espagnol (£12)
@@ -337,7 +337,7 @@ Utilisez la BASE 1, puis cliquez sur :
 BASE 7 - ROUTE DU SAMEDI AVEC STEAK JUSQU’À LA SCÈNE D’AMANDA À LA MAISON
 Utilisez la BASE 1, puis cliquez sur :
 1. Samedi.
-2. En avant pour l’histoire !
+2. C’est parti pour le rendez-vous!
 3. Y aller directement.
 4. Lui dire que vous adorez sa robe.
 5. D’accord.
@@ -404,7 +404,7 @@ Utilisez la BASE 1, puis cliquez sur :
 66. Vous continuez à marcher.
 67. Vous vous dépêchez.
 68. Vous achetez les boissons.
-69. Non, je garde mes coups de chance. Vous allez au bar.
+69. Non, je garde mes coups de chance.
 70. Vous bavardez ensemble.
 71. Vous discutez gaiement.
 72. Vous discutez gaiement.
@@ -651,7 +651,7 @@ Cette route est listée séparément parce qu’elle dépend de plusieurs vérif
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Mardi.
-5. En avant pour l’histoire !
+5. C’est parti pour le rendez-vous!
 6. Acheter quelque chose.
 7. Une bouteille d’eau hors de prix (£3)
 8. Retour à la boutique.
@@ -773,7 +773,7 @@ Il s’agit d’une autre route du jeudi menant au même écran de prix de conso
 2. Je les ai déjà lues. Je commence tout de suite.
 3. Quand pouvez-vous la voir ?
 4. Jeudi.
-5. En avant pour l’histoire !
+5. C’est parti pour le rendez-vous!
 6. Y aller directement.
 7. Proposer d’aller manger, dans ce cas.
 8. Une bouteille de Rioja espagnol (£12)
@@ -894,7 +894,7 @@ Utilisez la BASE 6. Chloe est déjà présente dans la scène à la maison. Puis
 4. Qu’est-ce que ça pourrait être ?
 5. Oh là là !
 6. Elle pouffe nerveusement, puis se mord les lèvres en regardant autour d’elle.
-7. Vous vous sentez un peu gêné pour Chloe, qui visiblement n’ose pas « quitter la pièce » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.
+7. Vous vous sentez un peu gêné pour Chloe, qui visiblement n’ose pas « se soulager » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.
 8. Vous partez avec Diane.
 9. Non, je ne crois pas que je vais en parler.
 10. Je vais être galant et la raccompagner chez elle.
@@ -914,7 +914,7 @@ Utilisez la BASE 6. Chloe est déjà présente dans la scène à la maison. Puis
 24. Oh là là !
 Texte de fin : VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !
 
-FIN DE CONSOLATION D’AMANDA
+PRIX DE CONSOLATION D’AMANDA
 Utilisez la BASE 7. Votre frère est maintenant arrivé avec ses amies. Puis cliquez sur :
 1. Zut alors !
 2. Vous faites les présentations, Diane et vous.

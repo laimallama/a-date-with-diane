@@ -12,7 +12,7 @@ BASE 1 - INICIO COMÚN
 BASE 2 - RUTA CORTA DEL MARTES HASTA LA CASA
 Usa la BASE 1 y luego pulsa:
 1. Martes.
-2. ¡Continuar con la historia!
+2. ¡Empezar la cita!
 3. Ir sin más.
 4. Decir que entonces entremos a comer.
 5. Una botella de Rioja español (£12)
@@ -49,7 +49,7 @@ Usa la BASE 1 y luego pulsa:
 BASE 3 - RUTA DEL SÁBADO HASTA LA CASA
 Usa la BASE 1 y luego pulsa:
 1. Sábado.
-2. ¡Continuar con la historia!
+2. ¡Empezar la cita!
 3. Ir sin más.
 4. Decirle que ojalá estuvieras en su lado de la mesa.
 5. Vale.
@@ -149,7 +149,7 @@ Usa la BASE 1 y luego pulsa:
 BASE 4 - RUTA COMPLETA DEL MARTES CON UNA MEADA PRIVADA ANTERIOR, HASTA LA CASA
 Usa la BASE 1 y luego pulsa:
 1. Martes.
-2. ¡Continuar con la historia!
+2. ¡Empezar la cita!
 3. Comprar algo.
 4. Una botella de agua a precio de oro (£3)
 5. Volver a la tienda.
@@ -269,7 +269,7 @@ Usa la BASE 1 y luego pulsa:
 BASE 5 - RUTA CORTA DEL JUEVES HASTA LA CASA
 Usa la BASE 1 y luego pulsa:
 1. Jueves.
-2. ¡Continuar con la historia!
+2. ¡Empezar la cita!
 3. Ir sin más.
 4. Decirle que tenías muchas ganas de volveros a ver.
 5. Vale.
@@ -307,7 +307,7 @@ Usa la BASE 1 y luego pulsa:
 BASE 6 - RUTA CORTA DEL MARTES HASTA LA ESCENA DE CHLOE EN CASA
 Usa la BASE 1 y luego pulsa:
 1. Martes.
-2. ¡Continuar con la historia!
+2. ¡Empezar la cita!
 3. Ir sin más.
 4. Decir que entonces entremos a comer.
 5. Una botella de Rioja español (£12)
@@ -337,7 +337,7 @@ Usa la BASE 1 y luego pulsa:
 BASE 7 - RUTA DEL SÁBADO CON BISTEC HASTA LA ESCENA DE AMANDA EN CASA
 Usa la BASE 1 y luego pulsa:
 1. Sábado.
-2. ¡Continuar con la historia!
+2. ¡Empezar la cita!
 3. Ir sin más.
 4. Decirle que te encanta el vestido.
 5. Vale.
@@ -404,7 +404,7 @@ Usa la BASE 1 y luego pulsa:
 66. Sigues caminando.
 67. Te das prisa.
 68. Compras las bebidas.
-69. No, me quedo con mis golpes de suerte. Vas a la barra.
+69. No, me quedo con mis golpes de suerte.
 70. Charláis juntos.
 71. Charláis animadamente.
 72. Charláis animadamente.
@@ -651,7 +651,7 @@ Esta ruta se lista aparte porque depende de varios controles de estado exactos e
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -773,7 +773,7 @@ Esta es otra ruta del jueves hacia la misma pantalla de premio de consolación. 
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Jueves.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decir que entonces entremos a comer.
 8. Una botella de Rioja español (£12)
@@ -894,7 +894,7 @@ Usa la BASE 6. Chloe ya está en la escena de la casa. Luego pulsa:
 4. ¿Qué podría ser?
 5. ¡Vaya!
 6. Suelta una risita nerviosa, luego se muerde el labio y echa un vistazo por la habitación.
-7. Sientes un poco de vergüenza ajena por Chloe, que claramente no se atreve a «salir de la habitación» mientras estáis todos ahí. Así que te vas ahora con Diane, dejando a Chloe y a tu hermano solos.
+7. Sientes un poco de vergüenza ajena por Chloe, que claramente no se atreve a «aliviarse» mientras estáis todos ahí. Así que te vas ahora con Diane, dejando a Chloe y a tu hermano solos.
 8. Te vas con Diane.
 9. No, creo que no voy a mencionarlo.
 10. Seré un caballero y la acompañaré a casa.
@@ -914,7 +914,7 @@ Usa la BASE 6. Chloe ya está en la escena de la casa. Luego pulsa:
 24. ¡Vaya!
 Texto del final: ¡HAS GANADO UN PREMIO DE CONSOLACIÓN!
 
-FINAL DE CONSOLACIÓN DE AMANDA
+PREMIO DE CONSOLACIÓN DE AMANDA
 Usa la BASE 7. Tu hermano ya ha llegado a casa con sus amigas. Luego pulsa:
 1. ¡Maldición!
 2. Tú y Diane os presentáis.

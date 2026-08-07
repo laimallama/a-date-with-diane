@@ -38,7 +38,11 @@ DIANE: Lo siento, es que tengo que ir. Me estoy meando. ¿Hay algún sitio donde
 
 TÚ: La verdad es que yo también tengo que hacer pis. ¿Por qué no vamos turnándonos para meternos detrás del edificio?
 
-DIANE: ¿Por qué no? [Mira a su alrededor.] Ese caminito lateral debería ir bien. ¿Te importa si voy yo primero? Me estoy meando.
+DIANE: ¿Por qué no?
+
+Mira a su alrededor.
+
+DIANE: Ese caminito lateral debería ir bien. ¿Te importa si voy yo primero? Me estoy meando.
 
 Has ganado 15 puntos de intimidad.
 

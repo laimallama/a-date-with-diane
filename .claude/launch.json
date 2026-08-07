@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "diane-en",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "outputs/en"],
+      "port": 8743
+    },
+    {
+      "name": "diane-es",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8744", "--directory", "outputs/es"],
+      "port": 8744
+    },
+    {
+      "name": "diane-fr",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8745", "--directory", "outputs/fr"],
+      "port": 8745
+    },
+    {
+      "name": "diane-cn",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8746", "--directory", "outputs/cn"],
+      "port": 8746
+    },
+    {
+      "name": "diane-tw",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8747", "--directory", "outputs/tw"],
+      "port": 8747
+    }
+  ]
+}

@@ -220,7 +220,7 @@ The tannoy rings out: the performance will begin in 10 minutes.
 
 It is 7.20. You are in the theatre foyer. Diane is looking thoughtful as if there is something on her mind.
 
-[She blushes shyly.]
+She blushes shyly.
 
 DIANE: Actually, have I got time to pop to the Ladies?
 
@@ -354,7 +354,7 @@ You look at Diane and she looks at you. You both smile.
 
 You gained 1 intimacy point.
 
-Diane whispers to you: The one playing the girl who's gone off sulking, that's Molly, my friend.
+DIANE: [Whispers to you] The one playing the girl who's gone off sulking, that's Molly, my friend.
 
 Diane doesn't look like she has to pee yet.
 
@@ -384,7 +384,9 @@ On the way you pass the Ladies room. Lots of women are dashing in there and you 
 
 You wonder whether Diane needs to go.
 
-YOU: Cheers! I hope you're enjoying the play. [You clink glasses and drink the wine.]
+YOU: Cheers! I hope you're enjoying the play.
+
+You clink glasses and drink the wine.
 
 (You chat about the play.)
 
@@ -404,7 +406,9 @@ You gained 3 intimacy points.
 
 There is a little balcony just beyond the bar.
 
-YOU: Shall we go out here for a few minutes, away from the throng? [She agrees.]
+YOU: Shall we go out here for a few minutes, away from the throng?
+
+She agrees.
 
 Because you mentioned the loo, you lost 2 shyness points.
 
@@ -438,7 +442,9 @@ You walk past the Ladies room. There is no longer a queue.
 
 Diane doesn't glance towards the Ladies room.
 
-YOU: I'm looking forward to the second Act. You offer her your arm and she links up.
+YOU: I'm looking forward to the second Act.
+
+You offer her your arm and she links up.
 
 You gained 2 intimacy points.
 
@@ -844,17 +850,19 @@ The four of you enter The Pavilion.
 
 It's quite busy, perhaps because there are several special offers on. It's obviously trying to compete with The Golden Stream.
 
-DIANE: I'm just going to pop to the loo. I won't be long.[She goes to the Ladies.]
+DIANE: I'm just going to pop to the loo. I won't be long.
+
+She goes to the Ladies.
 
 You curse inwardly. Any chance of a luckshot?
 
 (Yes, I'll play a luckshot.)
 
-You want to stop Diane going to the loo. You've decided to use a luck-shot.
+You want to stop Diane going to the loo. You've decided to use a luckshot.
 
 (OK.)
 
-You want to stop Diane going to the loo. You are using a luck-shot.
+You want to stop Diane going to the loo. You are using a luckshot.
 
 She's gone to the Ladies. There's quite a queue in there. She wants to go but isn't desperate so she puts it off and comes back.
 
@@ -868,7 +876,7 @@ Bruno is buying the drinks. He orders a beer for you, a lager for Diane and real
 
 You help carry the drinks back to your table. Then you pop to the Gents for a pee.
 
-You join the others at the table. They ask you about yourself and you chat. You all say "Cheers!" and clink your glasses.
+You join the others at the table. They ask you about yourself and you chat. You all say, "Cheers!" and clink your glasses.
 
 (You chat away.)
 
@@ -1016,7 +1024,11 @@ You are still waiting for the bus.
 
 A girl at the next bus stop seems unable to stand still. She's wearing a little miniskirt that really emphasises her shifting legs. She crosses her legs one way, then the other. Then she stands on one leg.
 
-DIANE: [Whispers in your ear] I'm dying to go to the loo. Is there anywhere I can go? [She blushes and looks sheepish] I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.
+DIANE: [Whispers in your ear] I'm dying to go to the loo. Is there anywhere I can go?
+
+She blushes and looks sheepish.
+
+DIANE: I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.
 
 You look around and consider.
 

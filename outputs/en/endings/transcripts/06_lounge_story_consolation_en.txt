@@ -208,7 +208,7 @@ The tannoy rings out: the performance will begin in 10 minutes.
 
 It is 7.20. You are in the theatre foyer. Diane is looking thoughtful as if there is something on her mind.
 
-[She blushes shyly.]
+She blushes shyly.
 
 DIANE: Actually, have I got time to pop to the Ladies?
 
@@ -222,7 +222,7 @@ The evening begins here! What are you going to say?
 
 (Try to stop her?)
 
-[She's asked you if there's time to pop to the Ladies.]
+She's asked you if there's time to pop to the Ladies.
 
 YOU: Oh, I'm not sure. Our seats are in the middle of a row; and people really are going into the theatre now.
 
@@ -232,11 +232,11 @@ YOU: Talking of intervals, perhaps I'd better order some drinks for then.
 
 You order 2 glasses of wine for the interval.
 
-[You return to her. She is looking irritable. The time you've taken to order the drinks, she could easily have been to the loo.]
+You return to her. She is looking irritable. The time you've taken to order the drinks, she could easily have been to the loo.
 
 You lost 7 intimacy points.
 
-[And you've forgotten to buy a programme.]
+And you've forgotten to buy a programme.
 
 You lost 2 intimacy points.
 
@@ -348,7 +348,7 @@ You look at Diane and she looks at you. You both smile.
 
 You gained 1 intimacy point.
 
-Diane whispers to you: The one playing the girl who's gone off sulking, that's Molly, my friend.
+DIANE: [Whispers to you] The one playing the girl who's gone off sulking, that's Molly, my friend.
 
 Diane keeps crossing her legs, first one way, then the other.
 
@@ -378,7 +378,9 @@ On the way you pass the Ladies room. Lots of women are dashing in there and you 
 
 You wonder whether Diane needs to go.
 
-YOU: Cheers! I hope you're enjoying the play. [You clink glasses and drink the wine.]
+YOU: Cheers! I hope you're enjoying the play.
+
+You clink glasses and drink the wine.
 
 (You chat about the play.)
 
@@ -398,7 +400,9 @@ You walk past the still crowded Ladies and into the peaceful Gents. You have a p
 
 You return to her. There is a little balcony just beyond the bar.
 
-YOU: Shall we go out here for a few minutes, away from the throng? [She agrees.]
+YOU: Shall we go out here for a few minutes, away from the throng?
+
+She agrees.
 
 She bites her lip. She really wanted to go to the Ladies, but has missed the chance to ask.
 
@@ -436,7 +440,9 @@ Diane seems to glance at the Ladies, as if considering; she bites her lip but ca
 
 Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.
 
-YOU: I'm looking forward to the second Act. You offer her your arm and she links up.
+YOU: I'm looking forward to the second Act.
+
+You offer her your arm and she links up.
 
 You gained 2 intimacy points.
 
@@ -656,7 +662,7 @@ Diane doesn't seem very keen.
 
 Molly's up and buys burgers for herself and her friend, and coffees for all four of you.
 
-Diane says "Thank you" but seems unenthusiastic. Then she says she'll get some sugar and she goes back to the burger van.
+Diane says, "Thank you" but seems unenthusiastic. Then she says she'll get some sugar and she goes back to the burger van.
 
 MOLLY: Funny, I didn't think she took sugar.
 
@@ -768,7 +774,9 @@ She's walking slightly bent forward, and in short quick steps, as if trying to h
 
 YOU: You've gone a bit quiet, Diane. Have I said something to annoy you?
 
-DIANE: No, not at all.[She holds your hand again and you walk on.]
+DIANE: No, not at all.
+
+She holds your hand again and you walk on.
 
 It looks as if she needs the toilet, but doesn't like to say. You gained 2 shyness points.
 
@@ -792,7 +800,11 @@ She is looking at you with a lovely smile.
 
 YOU: I'm hoping to go down to the North Yorkshire Moors Railway next week. I don't suppose you'd be interested in coming along?
 
-DIANE: I'd love to. [She gives your hand a squeeze and looks at you] Perhaps I could make some sandwiches and we could have a picnic.
+DIANE: I'd love to.
+
+She gives your hand a squeeze and looks at you.
+
+DIANE: Perhaps I could make some sandwiches and we could have a picnic.
 
 You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. It is the first time you have kissed her and she lingers over it. You can taste her lips. You kiss again.
 
@@ -934,7 +946,7 @@ Bruno is buying the drinks. He orders a beer for you, a lager for Diane and real
 
 You help carry the drinks back to your table. Then you pop to the Gents for a pee.
 
-You join the others at the table. They ask you about yourself and you chat. You all say "Cheers!" and clink your glasses.
+You join the others at the table. They ask you about yourself and you chat. You all say, "Cheers!" and clink your glasses.
 
 (You chat away.)
 
@@ -1024,7 +1036,7 @@ Bruno goes up to the bar and gets four halves of Riddles Ambernectar. It's a lov
 
 You drink up and get ready to leave. Molly and Diane look at each other.
 
-Molly looks at Diane. You hear her whisper "D'you need the loo?" but Diane shakes her head.
+Molly looks at Diane. You hear her whisper, "D'you need the loo?" but Diane shakes her head.
 
 (You get ready to leave.)
 
@@ -1100,7 +1112,7 @@ DIANE: Thank you. That's sweet of you. I'll drink the rest in a minute.
 
 You gained 1 intimacy point.
 
-[Remember: you can only use one luckshot beyond this stage.]
+Remember, you can only use one luckshot beyond this stage.
 
 (The taxi pulls away onto the main road.)
 
@@ -1114,7 +1126,7 @@ What will it be?
 
 You put your arm round her. She responds, nestling up to you, her head on your shoulder.
 
-[Thanks for a lovely evening] she whispers.
+"Thanks for a lovely evening," she whispers.
 
 You gained 15 intimacy points.
 
@@ -1130,7 +1142,9 @@ Her skirt has ridden up a bit, revealing the lace of her slip.
 
 YOU: I like your petticoat. D'you always wear one?
 
-DIANE: Not always, but sometimes. I quite like them. I think this one's pretty. [She reaches down and pulls the hem of her skirt up, showing you all the lace of her slip. It seems quite a sexy move. Then she pushes the hem back into place and turns to kiss you.]
+DIANE: Not always, but sometimes. I quite like them. I think this one's pretty.
+
+She reaches down and pulls the hem of her skirt up, showing you all the lace of her slip. It seems quite a sexy move. Then she pushes the hem back into place and turns to kiss you.
 
 You gained 10 intimacy points.
 
@@ -1438,7 +1452,11 @@ DIANE: I'd have been glad of anywhere. I was dying to go. So embarrassing when t
 
 YOU: Were you desperate?
 
-DIANE: You know I was. Anyway, I want to go again now. [She stands up, blushes and laughs] I hope your toilet's open?
+DIANE: You know I was. Anyway, I want to go again now.
+
+She stands up, blushes and laughs.
+
+DIANE: I hope your toilet's open?
 
 (You take her hand and pull her down onto your knee.)
 
@@ -1532,7 +1550,7 @@ She's sitting beside you. You've got an arm round her, she's holding your other 
 
 She pauses, as if thinking back through the years. Then—
 
-DIANE: A few months ago three girlfriends and I went on a hen party to Holland. We'd drunk quite a lot and were walking back to the hotel. We all wanted a wee, but one of my mates was really desperate. We saw this toilet over the road but it was just a men's, with urinals. Anyway, Linda was desperate and she said "This'll do" and went and pulled her knickers to one side and let go in the urinals. We were laughing like anything and the other two girls went as well. I wanted to go as well, really badly by now, but the trouble is I was wearing trousers.
+DIANE: A few months ago three girlfriends and I went on a hen party to Holland. We'd drunk quite a lot and were walking back to the hotel. We all wanted a wee, but one of my mates was really desperate. We saw this toilet over the road but it was just a men's, with urinals. Anyway, Linda was desperate and she said, "This'll do" and went and pulled her knickers to one side and let go in the urinals. We were laughing like anything and the other two girls went as well. I wanted to go as well, really badly by now, but the trouble is I was wearing trousers.
 
 YOU: Why was that a problem?
 
@@ -1546,7 +1564,11 @@ DIANE: It was one of those grotty wall-like urinals so I couldn't sort of sit on
 
 YOU: Did you wet yourself?
 
-DIANE: [Giggles] No, I squatted and peed a flood. Mind you—[she puts one hand on your shoulder, the other on your trousers, brushing your hard erection]—my knickers were pretty wet. I think you'd have enjoyed it.
+DIANE: [Giggles] No, I squatted and peed a flood. Mind you—
+
+She puts one hand on your shoulder, the other on your trousers, brushing your hard erection.
+
+DIANE: —my knickers were pretty wet. I think you'd have enjoyed it.
 
 Diane's head is resting on your chest as she finishes her little story.
 

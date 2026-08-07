@@ -52,7 +52,7 @@ Quelques minutes plus tard, vous vous levez tous pour continuer.
 
 Diane semble jeter un coup d’œil vers le Portaloo mais ne dit rien. Elle doit regretter d’avoir dit qu’elle n’avait pas besoin d’y aller.
 
-Elle n’a pas le courage de vous dire qu’elle a vraiment besoin du Portaloo.
+Elle n’a pas le courage de vous dire qu’elle a vraiment besoin du Portaloo. Vous gagnez 5 points de timidité.
 
 (Vous quittez le café.)
 

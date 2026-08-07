@@ -1,0 +1,10 @@
+{
+  "baseline": "3e622f4",
+  "policy": "Roll back bulk Spanish/French fluency finalize (dca84fd → a689148). Keep current CN/TW/EN as after CN directed rollback.",
+  "baseline_chat_anchor": "Immediately before user prompt to start Spanish fluency audit after CN finalize push (commit 3e622f4 / Finalize CN/TW after fluency regression review).",
+  "restored": {
+    "aligned_es_fr_entries": 458,
+    "outputs": ["outputs/es/**", "outputs/fr/**"]
+  },
+  "note": "No directed post-polish ES/FR overlays re-applied (unlike CN). Pre-polish directed multilingual fixes already present in baseline."
+}

@@ -76,7 +76,7 @@ Use BASE 1, then press:
 26. Concentrate on the play.
 27. You look at Diane.
 28. You chat about the play.
-29. Use a luck-shot?
+29. Use a luckshot?
 30. You wait for her.
 31. You go out onto the balcony.
 32. Time to return to the play.
@@ -366,7 +366,7 @@ Use BASE 1, then press:
 28. Concentrate on the play.
 29. You look at Diane.
 30. You chat about the play.
-31. Use a luck-shot?
+31. Use a luckshot?
 32. You wait for her.
 33. You go out onto the balcony.
 34. Time to return to the play.
@@ -404,7 +404,7 @@ Use BASE 1, then press:
 66. You walk on.
 67. You hurry along.
 68. You buy the drinks.
-69. No, I'll hold onto my luckshots. You go to the bar.
+69. No, I'll hold onto my luckshots.
 70. You chat together.
 71. You chat away.
 72. You chat away.
@@ -894,7 +894,7 @@ Use BASE 6. Chloe is already in the house scene. Then press:
 4. What could it be?
 5. Gosh!
 6. She giggles nervously, then bites her lips, looking round the room.
-7. You feel a bit embarrassed for Chloe, who clearly doesn't feel she can "leave the room" while you're all there. So you leave now with Diane, leaving Chloe and your brother alone.
+7. You feel a bit embarrassed for Chloe, who clearly doesn't feel she can "spend a penny" while you're all there. So you leave now with Diane, leaving Chloe and your brother alone.
 8. You leave with Diane.
 9. No, I don't think I'll mention it.
 10. I'll be a gentleman and see her home.
@@ -914,7 +914,7 @@ Use BASE 6. Chloe is already in the house scene. Then press:
 24. Gosh!
 Ending text: YOU HAVE WON A CONSOLATION PRIZE!
 
-AMANDA CONSOLATION ENDING
+AMANDA CONSOLATION PRIZE
 Use BASE 7. Your brother has now arrived with his friends. Then press:
 1. Curses!
 2. You and Diane introduce yourselves.

@@ -132,7 +132,7 @@ You gained 8 intimacy points.
 
 The top button of her blouse is undone, and as she leans forward you get a glimpse of the valley between her breasts, and a lacy white bra.
 
-[You top up both the wine glasses.]
+You top up both the wine glasses.
 
 DIANE: Thank you!
 
@@ -208,7 +208,7 @@ The tannoy rings out: the performance will begin in 10 minutes.
 
 It is 7.20. You are in the theatre foyer. Diane is looking thoughtful as if there is something on her mind.
 
-[She blushes shyly.]
+She blushes shyly.
 
 DIANE: Actually, have I got time to pop to the Ladies?
 
@@ -406,7 +406,9 @@ She follows you across the room to the bookcase. She seems glad to move about. S
 
 DIANE: Actually, where's the—
 
-YOU: Here it is! [You produce the album and take it back to the sofa. She comes and sits beside you.]
+YOU: Here it is!
+
+You produce the album and take it back to the sofa. She comes and sits beside you.
 
 (You open the stamp album.)
 
@@ -462,7 +464,7 @@ YOU: I hope you're not bored?
 
 DIANE: Oh no, it's really interesting.
 
-Look, you've had your fun. You can tell she wants to "leave the room". Aren't you going to give her a chance?
+Look, you've had your fun. You can tell she wants to "spend a penny". Aren't you going to give her a chance?
 
 (On with the stamps!)
 

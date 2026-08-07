@@ -99,7 +99,7 @@ const saturdayTheatre = common.concat([
   "Concentrate on the play.",
   "You look at Diane.",
   "You chat about the play.",
-  "Use a luck-shot?",
+  "Use a luckshot?",
   "You wait for her.",
   "You go out onto the balcony.",
   "Time to return to the play.",
@@ -286,7 +286,7 @@ const amandaBase = common.concat([
   "Concentrate on the play.",
   "You look at Diane.",
   "You chat about the play.",
-  "Use a luck-shot?",
+  "Use a luckshot?",
   "You wait for her.",
   "You go out onto the balcony.",
   "Time to return to the play.",
@@ -324,7 +324,7 @@ const amandaBase = common.concat([
   "You walk on.",
   "You hurry along.",
   "You buy the drinks.",
-  "No, I’ll hold onto my luckshots. You go to the bar.",
+  "No, I’ll hold onto my luckshots.",
   "You chat together.",
   "You chat away.",
   "You chat away.",
@@ -720,7 +720,7 @@ const chloeTail = [
   "What could it be?",
   "Gosh!",
   "She giggles nervously, then bites her lips, looking round the room.",
-  "You feel a bit embarrassed for Chloe, who clearly doesn’t feel she can “leave the room” while you’re all there. So you leave now with Diane, leaving Chloe and your brother alone.",
+  "You feel a bit embarrassed for Chloe, who clearly doesn’t feel she can “spend a penny” while you’re all there. So you leave now with Diane, leaving Chloe and your brother alone.",
   "You leave with Diane.",
   "No, I don’t think I’ll mention it.",
   "I’ll be a gentleman and see her home.",
@@ -911,9 +911,9 @@ function ending(text, lang) {
       /WHICH IS A PRETTY GOOD CONSOLATION PRIZE!/,
     ],
     cn: [
-      /你真的获得了一等奖！/,
-      /你获得了[一二三四五]等奖！/,
-      /你获得了(?:一个)?安慰奖！/,
+      /你真的(?:获得|赢得)了一等奖！/,
+      /你(?:获得|赢得)了[一二三四五]等奖！/,
+      /你(?:获得|赢得)了(?:一个)?安慰奖！/,
       /说起来，这也算是个相当不错的安慰奖！/,
     ],
     es: [
@@ -1036,7 +1036,7 @@ Ending text: ${e.lounge}`));
   parts.push(section("CONSOLATION PRIZE - TUESDAY PAVILION ROUTE", `This route is standalone because it depends on several exact Tuesday state checks around the Pavilion. Press:\n${numbered(c.generalRoute)}\n\nEnding text: ${e.general}`));
   parts.push(section("CONSOLATION PRIZE - THURSDAY SUBWAY ROUTE", `This is a separate Thursday route to the same consolation prize screen. It requires several exact choices, including skipping the opening water purchase, blocking Diane at the Pavilion with a luckshot, and following her through the subway after she flees the bus stop. Press:\n${numbered(c.generalThursdayRoute)}\n\nEnding text: ${e.generalThursday}`));
   parts.push(section("CHLOE CONSOLATION PRIZE", `Use BASE 6. Chloe is already in the house scene. Then press:\n${numbered(c.chloeTail)}\n\nEnding text: ${e.chloe}`));
-  parts.push(section("AMANDA CONSOLATION ENDING", `Use BASE 7. Your brother has now arrived with his friends. Then press:\n${numbered(c.amandaTail)}\n\nEnding text: ${e.amanda}`));
+  parts.push(section("AMANDA CONSOLATION PRIZE", `Use BASE 7. Your brother has now arrived with his friends. Then press:\n${numbered(c.amandaTail)}\n\nEnding text: ${e.amanda}`));
   parts.push(`COMMON FAILURE ENDINGS
 These are terminal outcomes but not prize endings:
 - "I'm not over 18." ends the game at the age screen.
@@ -1100,7 +1100,7 @@ ${numbered(c.loungeTail)}
   parts.push(section("安慰奖：周二凉亭路线", `这条路线单独列出，因为它依赖周二路线里凉亭酒吧附近的几个精确状态判断。按：\n${numbered(c.generalRoute)}\n\n结局文字：${e.general}`));
   parts.push(section("安慰奖：周四地下通道路线", `这是通往同一个安慰奖画面的另一条周四路线。它需要几个精确选择，包括开场不买水、在凉亭酒吧用幸运机会阻止黛安去厕所，以及她逃离公交站后跟着她穿过地下通道。按：\n${numbered(c.generalThursdayRoute)}\n\n结局文字：${e.generalThursday}`));
   parts.push(section("克洛伊安慰奖", `走完“基础路线6”。此时克洛伊已经出现在家中场景里。然后按：\n${numbered(c.chloeTail)}\n\n结局文字：${e.chloe}`));
-  parts.push(section("阿曼达安慰结局", `走完“基础路线7”。此时你弟弟已经带朋友来到家里。然后按：\n${numbered(c.amandaTail)}\n\n结局文字：${e.amanda}`));
+  parts.push(section("阿曼达安慰奖", `走完“基础路线7”。此时你弟弟已经带朋友来到家里。然后按：\n${numbered(c.amandaTail)}\n\n结局文字：${e.amanda}`));
   parts.push(`常见失败结局
 这些是终止结局，但不是奖项结局：
 - “我未满18岁。”会在年龄确认页直接结束。
@@ -1156,7 +1156,7 @@ Texto del final: ${e.lounge}`));
   parts.push(section("PREMIO DE CONSOLACIÓN: RUTA DEL MARTES DEL PAVILION", `Esta ruta se lista aparte porque depende de varios controles de estado exactos en la ruta del martes cerca del Pavilion. Pulsa:\n${numbered(c.generalRoute)}\n\nTexto del final: ${e.general}`));
   parts.push(section("PREMIO DE CONSOLACIÓN: RUTA DEL JUEVES POR EL PASO SUBTERRÁNEO", `Esta es otra ruta del jueves hacia la misma pantalla de premio de consolación. Requiere varias elecciones exactas: saltarte la compra inicial de agua, impedir con una oportunidad de suerte que Diane vaya al baño en el Pavilion y seguirla por el paso subterráneo cuando huye de la parada del autobús. Pulsa:\n${numbered(c.generalThursdayRoute)}\n\nTexto del final: ${e.generalThursday}`));
   parts.push(section("PREMIO DE CONSOLACIÓN DE CHLOE", `Usa la BASE 6. Chloe ya está en la escena de la casa. Luego pulsa:\n${numbered(c.chloeTail)}\n\nTexto del final: ${e.chloe}`));
-  parts.push(section("FINAL DE CONSOLACIÓN DE AMANDA", `Usa la BASE 7. Tu hermano ya ha llegado a casa con sus amigas. Luego pulsa:\n${numbered(c.amandaTail)}\n\nTexto del final: ${e.amanda}`));
+  parts.push(section("PREMIO DE CONSOLACIÓN DE AMANDA", `Usa la BASE 7. Tu hermano ya ha llegado a casa con sus amigas. Luego pulsa:\n${numbered(c.amandaTail)}\n\nTexto del final: ${e.amanda}`));
   parts.push(`FINALES DE FRACASO COMUNES
 Son finales terminales, pero no son finales con premio:
 - “No soy mayor de 18.” termina el juego en la pantalla de edad.
@@ -1212,7 +1212,7 @@ Texte de fin : ${e.lounge}`));
   parts.push(section("PRIX DE CONSOLATION : ROUTE DU MARDI AU PAVILION", `Cette route est listée séparément parce qu’elle dépend de plusieurs vérifications d’état précises près du Pavilion dans la route du mardi. Cliquez sur :\n${numbered(c.generalRoute)}\n\nTexte de fin : ${e.general}`));
   parts.push(section("PRIX DE CONSOLATION : ROUTE DU JEUDI PAR LE PASSAGE SOUTERRAIN", `Il s’agit d’une autre route du jeudi menant au même écran de prix de consolation. Elle exige plusieurs choix précis : ne pas acheter l’eau au début, utiliser une opportunité de chance pour empêcher Diane d’aller aux toilettes au Pavilion, puis la suivre dans le passage souterrain quand elle fuit l’arrêt de bus. Cliquez sur :\n${numbered(c.generalThursdayRoute)}\n\nTexte de fin : ${e.generalThursday}`));
   parts.push(section("PRIX DE CONSOLATION DE CHLOE", `Utilisez la BASE 6. Chloe est déjà présente dans la scène à la maison. Puis cliquez sur :\n${numbered(c.chloeTail)}\n\nTexte de fin : ${e.chloe}`));
-  parts.push(section("FIN DE CONSOLATION D’AMANDA", `Utilisez la BASE 7. Votre frère est maintenant arrivé avec ses amies. Puis cliquez sur :\n${numbered(c.amandaTail)}\n\nTexte de fin : ${e.amanda}`));
+  parts.push(section("PRIX DE CONSOLATION D’AMANDA", `Utilisez la BASE 7. Votre frère est maintenant arrivé avec ses amies. Puis cliquez sur :\n${numbered(c.amandaTail)}\n\nTexte de fin : ${e.amanda}`));
   parts.push(`FINS D’ÉCHEC COURANTES
 Ce sont des fins terminales, mais pas des fins avec prix :
 - « Je n’ai pas 18 ans. » met fin au jeu dès l’écran d’âge.

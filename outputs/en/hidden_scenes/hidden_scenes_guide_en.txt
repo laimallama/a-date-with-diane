@@ -544,7 +544,7 @@ Base 8: Saturday riverside public toilet setup
 31. Concentrate on the play.
 32. You look at Diane.
 33. You chat about the play.
-34. Use a luck-shot?
+34. Use a luckshot?
 35. You wait for her.
 36. You go out onto the balcony.
 37. Time to return to the play.
@@ -885,7 +885,7 @@ Base 12: Thursday church lych gate setup
 30. Concentrate on the play.
 31. You look at Diane.
 32. You chat about the play.
-33. Use a luck-shot?
+33. Use a luckshot?
 34. You wait for her.
 35. You go out onto the balcony.
 36. Time to return to the play.

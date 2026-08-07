@@ -22,7 +22,7 @@ DIANE : C’est sympa. J’ai hâte.
 
 Vous avez gagné 5 points d’intimité.
 
-(En avant pour l’histoire !)
+(C’est parti pour le rendez-vous!)
 
 Vous retrouvez Diane à 18 h 15. Vous l’emmenez voir une pièce, mais vous avez convenu de vous retrouver au préalable dans un restaurant italien qui fait partie du théâtre.
 
@@ -208,7 +208,7 @@ Le haut-parleur retentit : le spectacle commencera dans 10 minutes.
 
 Il est 19 h 20. Vous êtes dans le hall du théâtre. Diane semble pensive, comme si quelque chose lui trottait dans la tête.
 
-[Elle rougit timidement.]
+Elle rougit timidement.
 
 DIANE : Au fait, j’ai le temps d’aller aux toilettes ?
 
@@ -222,7 +222,7 @@ La soirée commence ici ! Qu’allez-vous répondre ?
 
 (Essayer de la retenir ?)
 
-[Elle vous a demandé si elle avait le temps d’aller aux toilettes.]
+Elle vous a demandé si elle avait le temps d’aller aux toilettes.
 
 VOUS : Oh, je ne suis pas sûr. Nos sièges sont au milieu d’une rangée, et les gens entrent vraiment dans la salle en ce moment.
 
@@ -232,11 +232,11 @@ VOUS : En parlant d’entracte, je ferais peut-être mieux de commander des bo
 
 Vous commandez 2 verres de vin pour l’entracte.
 
-[Vous revenez vers elle. Elle a l’air irritée. Le temps que vous avez mis à commander les boissons, elle aurait eu largement le temps d’aller aux toilettes.]
+Vous revenez vers elle. Elle a l’air irritée. Le temps que vous avez mis à commander les boissons, elle aurait eu largement le temps d’aller aux toilettes.
 
 Vous avez perdu 7 points d’intimité.
 
-[Et vous avez oublié d’acheter un programme.]
+Et vous avez oublié d’acheter un programme.
 
 Vous avez perdu 2 points d’intimité.
 
@@ -348,7 +348,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-Diane vous chuchote : Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane n’arrête pas de croiser les jambes, dans un sens puis dans l’autre.
 
@@ -378,7 +378,9 @@ Sur le chemin, vous passez devant les toilettes des femmes. Beaucoup de femmes s
 
 Vous vous demandez si Diane a envie d’aller aux toilettes.
 
-VOUS : Santé ! J’espère que tu apprécies la pièce. [Vous trinquez et buvez le vin.]
+VOUS : Santé ! J’espère que tu apprécies la pièce.
+
+Vous trinquez et buvez le vin.
 
 (Vous parlez de la pièce.)
 
@@ -398,7 +400,9 @@ Vous passez devant les toilettes des femmes encore bondées et entrez dans les p
 
 Vous revenez la rejoindre. Il y a un petit balcon juste au-delà du bar.
 
-VOUS : Et si on sortait là quelques minutes, loin de la foule ? [Elle accepte.]
+VOUS : Et si on sortait là quelques minutes, loin de la foule ?
+
+Elle accepte.
 
 Elle se mord la lèvre. Elle avait vraiment envie d’aller aux toilettes, mais elle a raté l’occasion de le demander.
 
@@ -436,7 +440,9 @@ Diane semble jeter un coup d’œil vers les toilettes des femmes, comme si elle
 
 Diane aurait bien besoin d’aller aux toilettes pendant l’entracte mais est trop timide pour le mentionner. Vous gagnez 1 point de timidité.
 
-VOUS : J’ai hâte de voir le deuxième acte. Tu lui offres ton bras et elle le prend.
+VOUS : J’ai hâte de voir le deuxième acte.
+
+Vous lui offrez votre bras et elle le prend.
 
 Vous avez gagné 2 points d’intimité.
 
@@ -656,7 +662,7 @@ Diane ne semble pas très enthousiaste.
 
 Molly se lève et achète des burgers pour elle et son amie, et des cafés pour vous quatre.
 
-Diane dit « Merci » mais semble peu enthousiaste. Puis elle dit qu’elle va chercher du sucre et retourne au camion.
+Diane dit : « Merci » mais semble peu enthousiaste. Puis elle dit qu’elle va chercher du sucre et retourne au camion.
 
 MOLLY : Tiens, je ne croyais pas qu’elle prenait du sucre.
 
@@ -768,7 +774,9 @@ Elle marche légèrement penchée en avant, à petits pas rapides, comme si elle
 
 VOUS : Tu es bien silencieuse, Diane. Est-ce que j’ai dit quelque chose qui t’a contrariée ?
 
-DIANE: Non, pas du tout.[Elle reprend votre main et vous continuez à marcher.]
+DIANE: Non, pas du tout.
+
+Elle reprend votre main et vous continuez à marcher.
 
 On dirait qu’elle a besoin d’aller aux toilettes, mais elle n’ose pas le dire. Vous gagnez 2 points de timidité.
 
@@ -792,7 +800,11 @@ Elle vous regarde avec un beau sourire.
 
 VOUS : J’espère aller au North Yorkshire Moors Railway la semaine prochaine. Ça ne vous tenterait pas de venir ?
 
-DIANE : J’adorerais. [Elle vous serre la main et vous regarde.] Je pourrais peut-être préparer des sandwiches et on pourrait faire un pique-nique.
+DIANE : J’adorerais.
+
+Elle vous serre la main et vous regarde.
+
+DIANE : Je pourrais peut-être préparer des sandwiches et on pourrait faire un pique-nique.
 
 Vous acquiescez d’un signe de tête. Vous vous arrêtez tous les deux et vous vous regardez. Vous passez votre bras autour d’elle, l’attirez lentement vers vous et l’embrassez. C’est la première fois que vous l’embrassez et elle s’attarde sur ce baiser. Vous sentez le goût de ses lèvres. Vous vous embrassez de nouveau.
 
@@ -934,7 +946,7 @@ C’est Bruno qui offre la tournée. Il commande une bière pour vous, une lager
 
 Vous aidez à porter les verres jusqu’à la table. Puis vous filez aux toilettes des hommes faire pipi.
 
-Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant « Santé ! » et vous trinquez.
+Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant : « Santé ! » et vous trinquez.
 
 (Vous discutez gaiement.)
 
@@ -1100,7 +1112,7 @@ DIANE : Merci, c’est gentil. Je boirai le reste dans un instant.
 
 Vous avez gagné 1 points d’intimité.
 
-[À noter : vous ne pouvez utiliser qu’un seul coup de chance au-delà de cette étape.]
+À noter, vous ne pouvez utiliser qu’un seul coup de chance au-delà de cette étape.
 
 (Le taxi s’engage sur la route principale.)
 
@@ -1114,7 +1126,7 @@ Qu’est-ce que ce sera ?
 
 Vous passez le bras autour d’elle. Elle se blottit contre vous, la tête sur votre épaule.
 
-[Merci pour cette belle soirée], chuchote-t-elle.
+« Merci pour cette belle soirée », chuchote-t-elle.
 
 Vous avez gagné 15 points d’intimité.
 
@@ -1130,7 +1142,9 @@ Sa jupe a remonté un peu, laissant apparaître la dentelle de sa combinaison.
 
 VOUS : J’aime bien votre fond de robe. Vous en portez toujours un ?
 
-DIANE : Pas toujours, mais parfois. J’aime assez ça. Je trouve celui-là joli. [Elle tend la main et remonte le bas de sa jupe, vous montrant toute la dentelle de sa combinaison. Le geste est plutôt sexy. Puis elle remet sa jupe en place et se tourne pour vous embrasser.]
+DIANE : Pas toujours, mais parfois. J’aime assez ça. Je trouve celui-là joli.
+
+Elle tend la main et remonte le bas de sa jupe, vous montrant toute la dentelle de sa combinaison. Le geste est plutôt sexy. Puis elle remet sa jupe en place et se tourne pour vous embrasser.
 
 Vous avez gagné 10 points d’intimité.
 
@@ -1402,7 +1416,11 @@ DIANE : J’aurais pu aller n’importe où. J’en pouvais vraiment plus. C�
 
 VOUS : Tu en pouvais vraiment plus.
 
-DIANE : Tu le sais très bien. Bref, là j’ai de nouveau envie. [Elle se lève, rougit et rit.] J’espère que tes toilettes sont disponibles ?
+DIANE : Tu le sais très bien. Bref, là j’ai de nouveau envie.
+
+Elle se lève, rougit et rit.
+
+DIANE : J’espère que tes toilettes sont disponibles ?
 
 (Vous lui prenez la main et l’attirez sur vos genoux.)
 
@@ -1510,7 +1528,11 @@ Diane marque une pause, comme si elle se demandait jusqu’où aller dans les d�
 
 VOUS : Je veux dire, t’avais l’air comment ?
 
-DIANE : Comme ça. [Elle fait une démonstration, sautillant sur le siège, la main glissée entre les jambes.] Enfin, peut-être pas tout à fait comme ça, mais pas loin.
+DIANE : Comme ça.
+
+Elle fait une démonstration, sautillant sur le siège, la main glissée entre les jambes.
+
+DIANE : Enfin, peut-être pas tout à fait comme ça, mais pas loin.
 
 VOUS : Tu y es arrivée à temps ?
 
@@ -1526,11 +1548,15 @@ DIANE : Bon, OK. Qu’est-ce que ça risque ? Je suis arrivée à la salle d
 
 VOUS : Continue.
 
-DIANE : [elle fait une petite grimace avant de continuer] Les toilettes sont au fond de la salle de bains. Je savais que j’aurais pas le temps de baisser ma culotte, alors je suis juste entrée dans la douche et j’y suis restée — et je me suis lâchée.
+DIANE : [Elle fait une petite grimace avant de continuer] Les toilettes sont au fond de la salle de bains. Je savais que j’aurais pas le temps de baisser ma culotte, alors je suis juste entrée dans la douche et j’y suis restée — et je me suis lâchée.
 
 VOUS : Tu as vraiment mouillé ta culotte.
 
-DIANE : J’ai vraiment mouillé ma culotte, comme tu dis. Je suis restée là sous la douche et — enfin, j’ai pas besoin de décrire ça. [Vous aimeriez bien qu’elle le fasse !] C’est pas grave, hein ? J’étais dans la salle de bains, sous la douche, j’ai pu la laver tout de suite, personne ne me voyait.
+DIANE : J’ai vraiment mouillé ma culotte, comme tu dis. Je suis restée là sous la douche et — enfin, j’ai pas besoin de décrire ça.
+
+(Vous aimeriez bien qu’elle le fasse !)
+
+DIANE : C’est pas grave, hein ? J’étais dans la salle de bains, sous la douche, j’ai pu la laver tout de suite, personne ne me voyait.
 
 VOUS : Tu ferais ça pour moi ?
 
@@ -1548,7 +1574,7 @@ DIANE : C’est vrai que j’ai vraiment envie de faire pipi. Pas besoin de me
 
 Elle s’agite de plus belle, comme si le rappel avait aggravé les choses. Vous lui donnez un baiser. Vous la regardez avec des yeux implorants.
 
-DIANE : [en riant] Bon, je te dois bien un service — alors, pourquoi pas.
+DIANE : [En riant] Bon, je te dois bien un service — alors, pourquoi pas.
 
 (Vous la serrez dans vos bras.)
 

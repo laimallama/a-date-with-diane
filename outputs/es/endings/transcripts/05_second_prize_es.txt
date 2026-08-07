@@ -22,7 +22,7 @@ DIANE: Qué bien. Tengo muchas ganas.
 
 Has ganado 5 puntos de intimidad.
 
-(¡Continuar con la historia!)
+(¡Empezar la cita!)
 
 Has quedado con Diane a las seis y cuarto. La llevas a una obra de teatro, pero habéis acordado encontraros antes en un restaurante italiano que forma parte del teatro.
 
@@ -208,7 +208,7 @@ Por megafonía se anuncia: la función comenzará en 10 minutos.
 
 Son las siete y veinte. Estás en el vestíbulo del teatro. Diane parece pensativa, como si tuviera algo en la cabeza.
 
-[Se ruboriza con timidez.]
+Se ruboriza con timidez.
 
 DIANE: Oye, ¿me da tiempo a ir un momento al baño de señoras?
 
@@ -222,7 +222,7 @@ Estás en el vestíbulo del teatro. Diane ha preguntado si le da tiempo a ir un 
 
 (¿Intentar detenerla?)
 
-[Te ha preguntado si le da tiempo a ir un momento al baño de señoras.]
+Te ha preguntado si le da tiempo a ir un momento al baño de señoras.
 
 TÚ: Hmm, no sé. Nuestros asientos están en mitad de una fila; y la gente ya está entrando al teatro.
 
@@ -232,11 +232,11 @@ TÚ: Hablando de descansos, igual debería pedir algo de beber para entonces.
 
 Pides 2 copas de vino para el descanso.
 
-[Vuelves con ella. Parece irritada. En el tiempo que has tardado en pedir las copas, le habría dado tiempo de sobra a ir al baño.]
+Vuelves con ella. Parece irritada. En el tiempo que has tardado en pedir las copas, le habría dado tiempo de sobra a ir al baño.
 
 Has perdido 7 puntos de intimidad.
 
-[Y además te has olvidado de comprar un programa.]
+Y además te has olvidado de comprar un programa.
 
 Has perdido 2 puntos de intimidad.
 
@@ -348,7 +348,7 @@ La miras y ella te mira. Los dos sonreís.
 
 Has ganado 1 puntos de intimidad.
 
-Diane te susurra: La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
+DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
 Diane no para de cruzar las piernas, primero de un lado, luego del otro.
 
@@ -378,7 +378,9 @@ De camino pasáis por delante del baño de mujeres. Muchas mujeres entran a toda
 
 Te preguntas si Diane tiene ganas de ir al baño.
 
-TÚ: ¡Salud! Espero que estés disfrutando de la obra. [Entrechocáis las copas y bebéis el vino.]
+TÚ: ¡Salud! Espero que estés disfrutando de la obra.
+
+Entrechocáis las copas y bebéis el vino.
 
 (Charláis sobre la obra.)
 
@@ -398,7 +400,9 @@ Pasas por delante del baño de mujeres, aún abarrotado, y entras en el tranquil
 
 Vuelves con ella. Hay un pequeño balcón justo más allá de la barra.
 
-TÚ: ¿Salimos aquí un momento, lejos del gentío? [Ella acepta.]
+TÚ: ¿Salimos aquí un momento, lejos del gentío?
+
+Ella acepta.
 
 Ella se muerde el labio. Tenía muchas ganas de ir al baño de mujeres, pero ha perdido la oportunidad de pedirlo.
 
@@ -436,7 +440,9 @@ Diane parece echar un vistazo al baño de mujeres, como si lo estuviera consider
 
 Diane tenía ganas de ir al baño en el descanso pero le daba demasiada vergüenza mencionarlo. Ganas 1 punto de timidez.
 
-TÚ: Tengo muchas ganas de ver el segundo acto. Le ofreces el brazo y ella se coge a él.
+TÚ: Tengo muchas ganas de ver el segundo acto.
+
+Le ofreces el brazo y ella se coge a él.
 
 Has ganado 2 puntos de intimidad.
 
@@ -656,7 +662,7 @@ Diane no parece muy entusiasmada.
 
 Molly se levanta y compra hamburguesas para ella y su amigo, y cafés para los cuatro.
 
-Diane dice «Gracias» pero parece poco entusiasmada. Luego dice que va a por azúcar y se acerca a la furgoneta.
+Diane dice, «Gracias» pero parece poco entusiasmada. Luego dice que va a por azúcar y se acerca a la furgoneta.
 
 MOLLY: Qué raro, yo no creía que tomara azúcar.
 
@@ -768,7 +774,9 @@ Camina ligeramente inclinada hacia delante y a pasitos cortos y rápidos, como s
 
 TÚ: Te has quedado un poco callada, Diane. ¿He dicho algo que te haya molestado?
 
-DIANE: No, para nada.[Te vuelve a coger de la mano y seguís caminando.]
+DIANE: No, para nada.
+
+Te vuelve a coger de la mano y seguís caminando.
 
 Parece que necesita el baño, pero no quiere decirlo. Ganas 2 puntos de timidez.
 
@@ -792,7 +800,11 @@ Te está mirando con una sonrisa preciosa.
 
 TÚ: Tengo pensado ir al Ferrocarril de los Páramos del Norte de Yorkshire la semana que viene. ¿Te interesaría venir?
 
-DIANE: Me encantaría. [Te aprieta la mano y te mira.] Podría preparar unos sándwiches y podríamos hacer un picnic.
+DIANE: Me encantaría.
+
+Te aprieta la mano y te mira.
+
+DIANE: Podría preparar unos sándwiches y podríamos hacer un picnic.
 
 Asientes. Los dos os detenéis y os miráis. Le pasas el brazo por los hombros, la atraes lentamente hacia ti y la besas. Es la primera vez que la besas y ella se recrea en el momento. Puedes saborear sus labios. Os besáis de nuevo.
 
@@ -934,7 +946,7 @@ Bruno invita a las bebidas. Pide una cerveza para ti, una lager para Diane y cer
 
 Ayudas a llevar las bebidas a vuestra mesa. Luego te escapas al servicio de caballeros a hacer pis.
 
-Te unes a los demás en la mesa. Te preguntan cosas sobre ti y charláis. Todos decís «¡Salud!» y chocáis las copas.
+Te unes a los demás en la mesa. Te preguntan cosas sobre ti y charláis. Todos decís, «¡Salud!» y chocáis las copas.
 
 (Charláis animadamente.)
 
@@ -1024,7 +1036,7 @@ Bruno se acerca a la barra y pide cuatro medias pintas de Riddles Ambernectar. E
 
 Acabáis de beber y os preparáis para iros. Molly y Diane se miran.
 
-Molly mira a Diane. La oyes susurrar «¿Tienes ganas de ir al baño?», pero Diane niega con la cabeza.
+Molly mira a Diane. La oyes susurrar, «¿Tienes ganas de ir al baño?», pero Diane niega con la cabeza.
 
 (Te preparas para irte.)
 
@@ -1100,7 +1112,7 @@ DIANE: Gracias, qué detalle. Me beberé el resto en un momento.
 
 Has ganado 1 puntos de intimidad.
 
-[Recuerda: solo puedes usar un golpe de suerte más a partir de esta fase.]
+Recuerda, solo puedes usar un golpe de suerte más a partir de esta fase.
 
 (El taxi sale a la carretera principal.)
 
@@ -1114,7 +1126,7 @@ Tienes ganas de recuperar el tiempo perdido.
 
 Le rodeas los hombros con el brazo. Ella responde acurrucándose contra ti, con la cabeza apoyada en tu hombro.
 
-[Gracias por una velada tan bonita], te susurra.
+«Gracias por una velada tan bonita», te susurra.
 
 Has ganado 15 puntos de intimidad.
 
@@ -1130,7 +1142,9 @@ La falda se le ha subido un poco, dejando ver el encaje de su enagua.
 
 TÚ: Me gusta tu enagua. ¿Siempre llevas una?
 
-DIANE: No siempre, pero a veces sí. Me gustan bastante. Esta me parece muy bonita. [Alarga la mano y tira del dobladillo de su falda hacia arriba, mostrándote todo el encaje de su enagua. Es un gesto de lo más seductor. Luego vuelve a colocar el dobladillo en su sitio y se gira para darte un beso.]
+DIANE: No siempre, pero a veces sí. Me gustan bastante. Esta me parece muy bonita.
+
+Alarga la mano y tira del dobladillo de su falda hacia arriba, mostrándote todo el encaje de su enagua. Es un gesto de lo más seductor. Luego vuelve a colocar el dobladillo en su sitio y se gira para darte un beso.
 
 Has ganado 10 puntos de intimidad.
 
@@ -1278,7 +1292,7 @@ Le desabrochas el resto de los botones de la blusa y la miras. El sujetador le q
 
 Le acaricias los pechos y luego pasas un dedo despacio alrededor de su pezón derecho.
 
-DIANE: [muy bajito] Qué rico.
+DIANE: [Muy bajito] Qué rico.
 
 (Os besáis.)
 
@@ -1402,7 +1416,11 @@ DIANE: Habría ido a cualquier sitio. Me estaba meando. Es tan vergonzoso cuando
 
 TÚ: ¿Tenías muchas ganas?
 
-DIANE: Ya sabes que sí. El caso es que ahora me vuelven a entrar ganas. [Se levanta, se ruboriza y se ríe.] Tu baño estará disponible, ¿no?
+DIANE: Ya sabes que sí. El caso es que ahora me vuelven a entrar ganas.
+
+Se levanta, se ruboriza y se ríe.
+
+DIANE: Tu baño estará disponible, ¿no?
 
 (Le coges la mano y la atraes hacia tu rodilla.)
 
@@ -1418,7 +1436,7 @@ DIANE: ¿Qué? ¿Aguantarme las ganas de ir al baño?
 
 TÚ: Mm.
 
-DIANE: [en un susurro] ¿Te excita? ¿Que tenga ganas de hacer pis?
+DIANE: [En un susurro] ¿Te excita? ¿Que tenga ganas de hacer pis?
 
 Asientes con la cabeza. Ella te mira un momento. Luego, con una sonrisa—
 
@@ -1488,7 +1506,7 @@ DIANE: Lo pasé bastante mal después de una fiesta la semana pasada. Tuvimos qu
 
 TÚ: Sí, ya me lo dijiste. Tuviste que esperar a que tu madre fuera a recogeros.
 
-DIANE: [pensándolo] ¿Si te lo cuento me dejas ir al baño?
+DIANE: [Pensándolo] ¿Si te lo cuento me dejas ir al baño?
 
 (Se lo prometes.)
 
@@ -1510,7 +1528,11 @@ Diane hace una pausa, como si sopesara cuánto contarte.
 
 TÚ: Me refiero a, ¿qué aspecto tenías?
 
-DIANE: Así. [Lo demuestra botando arriba y abajo en el asiento, con la mano metida entre las piernas.] Bueno, quizá no exactamente así, pero tampoco muy lejos.
+DIANE: Así.
+
+Lo demuestra botando arriba y abajo en el asiento, con la mano metida entre las piernas.
+
+DIANE: Bueno, quizá no exactamente así, pero tampoco muy lejos.
 
 TÚ: ¿Llegaste a tiempo?
 
@@ -1530,7 +1552,11 @@ DIANE: [Pone una carita antes de continuar.] El váter está en el lado opuesto 
 
 TÚ: Te measte de verdad las bragas.
 
-DIANE: Me mojé las bragas, como tú dices. Me quedé ahí en la ducha y... bueno, no hace falta que lo describa. [¡Cómo te gustaría que lo hiciera!] No es para tanto, ¿no? Estaba en el baño, en la ducha, podía lavarlas enseguida, nadie me vio.
+DIANE: Me mojé las bragas, como tú dices. Me quedé ahí en la ducha y... bueno, no hace falta que lo describa.
+
+(¡Cómo te gustaría que lo hiciera!)
+
+DIANE: No es para tanto, ¿no? Estaba en el baño, en la ducha, podía lavarlas enseguida, nadie me vio.
 
 TÚ: ¿Lo harías para mí?
 
@@ -1548,7 +1574,7 @@ DIANE: Vaya que si tengo ganas de hacer pis. No necesito que me lo recuerden.
 
 Ella se retuerce como si el recordatorio hubiera empeorado las cosas. Le das un beso. La miras con ojos suplicantes.
 
-DIANE: [riendo] Bueno, te debo un favor, así que ¿por qué no?
+DIANE: [Riendo] Bueno, te debo un favor, así que ¿por qué no?
 
 (Le das un abrazo.)
 
@@ -1578,7 +1604,7 @@ DIANE: Quizá te ayudaría si miraras a otro lado un momento.
 
 Te giras. Contienes la respiración. El corazón te late con fuerza. Esperas 15, quizá 20 segundos. Y entonces...
 
-DIANE: [muy bajito] OK.
+DIANE: [Muy bajito] OK.
 
 Te giras y miras. No ha pasado nada, no te has perdido nada, pero de repente aparece una mancha húmeda en sus bragas. Al principio parece extenderse hacia arriba hasta que la tela queda casi translúcida. Puedes ver la oscuridad de su vello púbico.
 

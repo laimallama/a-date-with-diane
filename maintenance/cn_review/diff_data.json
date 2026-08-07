@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "baseline_commit": "8d44c84",
+    "baseline_note": "CN before full fluency pass",
+    "current_note": "CN at generate time",
+    "count": 36,
+    "generated_from": "b113ea4"
+  },
+  "items": [
+    {
+      "id": "x00048",
+      "kind": "choice",
+      "en": "Buy something",
+      "old": "买点东西",
+      "new": "继续剧情！",
+      "old_raw": "买点东西",
+      "new_raw": "继续剧情！"
+    },
+    {
+      "id": "x00306",
+      "kind": "story",
+      "en": "DIANE: I love eating out. And I always like Italian food.",
+      "old": "黛安：我很喜欢下馆子。而且意大利菜我一直很爱。",
+      "new": "黛安：我很喜欢出去吃饭，而且一直很爱意大利菜。",
+      "old_raw": "<LI>黛安：我很喜欢下馆子。而且意大利菜我一直很爱。",
+      "new_raw": "<LI>黛安：我很喜欢出去吃饭，而且一直很爱意大利菜。"
+    },
+    {
+      "id": "x00315",
+      "kind": "choice",
+      "en": "Ask if she wants a pee?",
+      "old": "问她要不要上厕所？",
+      "new": "问她要不要去尿尿？",
+      "old_raw": "问她要不要上厕所？",
+      "new_raw": "问她要不要去尿尿？"
+    },
+    {
+      "id": "x00316",
+      "kind": "story",
+      "en": "Are you mad? The conversation may have dried up but you had no reason to ask her if she wanted a pee.",
+      "old": "你疯了吗？话题虽然冷下来了，但你根本没有理由问她要不要去上厕所。",
+      "new": "你疯了吗？就算没话聊了，你也没理由问她想不想尿尿。",
+      "old_raw": "<LI><B>你疯了吗？</B>话题虽然冷下来了，但你根本没有理由问她要不要去上厕所。",
+      "new_raw": "<LI><B>你疯了吗？</B>就算没话聊了，你也没理由问她想不想尿尿。"
+    },
+    {
+      "id": "x00317",
+      "kind": "story",
+      "en": "Perhaps you are some sort of pervert. Perhaps you imagine her fidgeting about, shifting up and down on the chair, crossing her legs, but too shy to tell you she wants to go to the loo. Maybe you even want her to get more and more desperate. If so, shame on you!",
+      "old": "也许你就是个变态。也许你幻想着她坐立不安、在椅子上扭来扭去、双腿交叉，却又不好意思开口说想去厕所。说不定你还巴不得她憋得越来越急。若真如此，真是羞死你了！",
+      "new": "也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，羞死你了！",
+      "old_raw": "<LI>也许你就是个变态。也许你幻想着她坐立不安、在椅子上扭来扭去、双腿交叉，却又不好意思开口说想去厕所。说不定你还巴不得她憋得越来越急。若真如此，真是羞死你了！",
+      "new_raw": "<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，羞死你了！"
+    },
+    {
+      "id": "x00318",
+      "kind": "story",
+      "en": "Luckily a sudden clatter at another table means she didn't hear you. So she asks you to repeat what you said.",
+      "old": "幸好这时候旁边桌子突然发出一阵嘈杂声，她没有听清你说的话。于是她让你再说一遍。",
+      "new": "幸好邻桌突然传来一阵响动，她没听见你说的话，于是让你再说一遍。",
+      "old_raw": "<LI>幸好这时候旁边桌子突然发出一阵嘈杂声，她没有听清你说的话。于是她让你再说一遍。",
+      "new_raw": "<LI>幸好邻桌突然传来一阵响动，她没听见你说的话，于是让你再说一遍。"
+    },
+    {
+      "id": "x00319",
+      "kind": "story",
+      "en": "This time you say: 'Do you want a coffee?'",
+      "old": "这次你说的是：“要来杯咖啡吗？”",
+      "new": "这次你说：“要不要来杯咖啡？”",
+      "old_raw": "<LI>这次你说的是：“要来杯咖啡吗？”",
+      "new_raw": "<LI>这次你说：“要不要来杯咖啡？”"
+    },
+    {
+      "id": "x00969",
+      "kind": "story",
+      "en": "You say you would like to go for the walk. There will be plenty of time for a drink when you get to the pavilion.",
+      "old": "你说想去散步。等到了亭子那边，喝东西的时间还多着呢。",
+      "new": "你说想去散步。等到了凉亭，想喝多久都行。",
+      "old_raw": "<LI>你说想去散步。等到了亭子那边，喝东西的时间还多着呢。",
+      "new_raw": "<LI>你说想去散步。等到了凉亭，想喝多久都行。"
+    },
+    {
+      "id": "x00971",
+      "kind": "story",
+      "en": "You set off to walk along the riverside to the Pavilion.",
+      "old": "你们沿着河边向亭子方向走去。",
+      "new": "你们沿河朝凉亭酒吧走去。",
+      "old_raw": "<LI>你们沿着河边向亭子方向走去。",
+      "new_raw": "<LI>你们沿河朝凉亭酒吧走去。"
+    },
+    {
+      "id": "x00973",
+      "kind": "story",
+      "en": "You say you would like to go for the walk. There will be plenty of time for a drink when you get to the pavilion.",
+      "old": "你说想去散步。等到了亭子那边，喝东西的时间还多着呢。",
+      "new": "你说想去散步。到了凉亭酒吧，有的是时间喝东西。",
+      "old_raw": "<LI>你说想去散步。等到了亭子那边，喝东西的时间还多着呢。",
+      "new_raw": "<LI>你说想去散步。到了凉亭酒吧，有的是时间喝东西。"
+    },
+    {
+      "id": "x00977",
+      "kind": "story",
+      "en": "You set off to walk along the riverside to the Pavilion.",
+      "old": "你们沿着河边向亭子方向走去。",
+      "new": "你们沿着河边朝凉亭酒吧走去。",
+      "old_raw": "<LI>你们沿着河边向亭子方向走去。",
+      "new_raw": "<LI>你们沿着河边朝凉亭酒吧走去。"
+    },
+    {
+      "id": "x01039",
+      "kind": "story",
+      "en": "You decide to drink up and set off to the Pavilion. There should be just time for a quick drink when you get there.",
+      "old": "你们决定喝完就出发前往亭子。到了那边应该还有时间再来一杯。",
+      "new": "你们决定喝完就出发前往凉亭酒吧。到了那边应该还有时间再来一杯。",
+      "old_raw": "<LI>你们决定喝完就出发前往亭子。到了那边应该还有时间再来一杯。",
+      "new_raw": "<LI>你们决定喝完就出发前往凉亭酒吧。到了那边应该还有时间再来一杯。"
+    },
+    {
+      "id": "x01049",
+      "kind": "story",
+      "en": "But it's now almost 10.30 and you need to be at the Pavilion by 11pm or soon after if Diane and you are going to catch your bus home. The others are going to walk with you, as they're staying quite near to the Pavilion.",
+      "old": "不过现在快十点半了，你和黛安如果想赶上回家的公车，就得在晚上十一点或稍后之前赶到亭子。其他人会陪你们一起走，因为他们住的地方就在亭子附近。",
+      "new": "但现在快十点半了。要是你和黛安想赶上回家的公交车，得在十一点左右或稍晚些到凉亭酒吧。其他人会和你们一起走，因为他们住得离凉亭酒吧很近。",
+      "old_raw": "<LI>不过现在快十点半了，你和黛安如果想赶上回家的公车，就得在晚上十一点或稍后之前赶到亭子。其他人会陪你们一起走，因为他们住的地方就在亭子附近。",
+      "new_raw": "<LI>但现在快十点半了。要是你和黛安想赶上回家的公交车，得在十一点左右或稍晚些到凉亭酒吧。其他人会和你们一起走，因为他们住得离凉亭酒吧很近。"
+    },
+    {
+      "id": "x01482",
+      "kind": "story",
+      "en": "DIANE: They're always closed when you need them. Still, we'll soon be at the pavilion.",
+      "old": "黛安：需要的时候总是关着。不过没关系，我们很快就到亭子那边了。",
+      "new": "黛安：每次需要时它们都关着。不过很快就到凉亭酒吧了。",
+      "old_raw": "<LI>黛安：需要的时候总是关着。不过没关系，我们很快就到亭子那边了。",
+      "new_raw": "<LI>黛安：每次需要时它们都关着。不过很快就到凉亭酒吧了。"
+    },
+    {
+      "id": "x01521",
+      "kind": "story",
+      "en": "DIANE: The caretaker's still there. Do you think he would reopen it for me?",
+      "old": "黛安：看守员还在那里。你觉得他会为我重新开门吗？",
+      "new": "黛安：管理员还在那里。你觉得他会为我重新开门吗？",
+      "old_raw": "<LI>黛安：看守员还在那里。你觉得他会为我重新开门吗？",
+      "new_raw": "<LI>黛安：管理员还在那里。你觉得他会为我重新开门吗？"
+    },
+    {
+      "id": "x01525",
+      "kind": "story",
+      "en": "DIANE: They're always closed when you need them. Still, we'll soon be at the pavilion.",
+      "old": "黛安：需要的时候总是关着。不过没关系，我们很快就到亭子那边了。",
+      "new": "黛安：需要的时候总是关着。不过没关系，我们很快就到凉亭酒吧了。",
+      "old_raw": "<LI>黛安：需要的时候总是关着。不过没关系，我们很快就到亭子那边了。",
+      "new_raw": "<LI>黛安：需要的时候总是关着。不过没关系，我们很快就到凉亭酒吧了。"
+    },
+    {
+      "id": "x01537",
+      "kind": "story",
+      "en": "Diane is desperate for a pee, but you don't really want to ask the caretaker to open the toilet. After all, why should you?",
+      "old": "黛安尿急得很，但你其实不太想去找看守员开门。再说，凭什么要你去？",
+      "new": "黛安尿急得很，但你其实不太想去找管理员开门。再说，凭什么要你去？",
+      "old_raw": "<LI>黛安尿急得很，但你其实不太想去找看守员开门。再说，凭什么要你去？",
+      "new_raw": "<LI>黛安尿急得很，但你其实不太想去找管理员开门。再说，凭什么要你去？"
+    },
+    {
+      "id": "x01538",
+      "kind": "story",
+      "en": "Suddenly Diane gets up and hurries over to the caretaker who is in his van, filling in some paperwork. You see her talking to him with her best feminine smile. He gets out of the van and unlocks the single disabled toilet. She hurries inside.",
+      "old": "黛安突然站起身，急匆匆地走向坐在货车里填写文件的看守员。你看见她对他展开最迷人的笑容。他从货车里出来，打开了那间单独的无障碍厕所。她赶紧走进去。",
+      "new": "黛安突然站起身，急匆匆地走向坐在货车里填写文件的管理员。你看见她对他展开最迷人的笑容。他从货车里出来，打开了那间单独的无障碍厕所。她赶紧走进去。",
+      "old_raw": "<LI>黛安突然站起身，急匆匆地走向坐在货车里填写文件的看守员。你看见她对他展开最迷人的笑容。他从货车里出来，打开了那间单独的无障碍厕所。她赶紧走进去。",
+      "new_raw": "<LI>黛安突然站起身，急匆匆地走向坐在货车里填写文件的管理员。你看见她对他展开最迷人的笑容。他从货车里出来，打开了那间单独的无障碍厕所。她赶紧走进去。"
+    },
+    {
+      "id": "x01539",
+      "kind": "story",
+      "en": "The caretaker smiles at you and shakes his head. A minute or two later Diane emerges, thanking him profusely. She rejoins you but does not take your arm.",
+      "old": "看守员对你笑了笑，摇摇头。一两分钟后黛安出来，连声向他道谢。她走回到你身边，却没有挽你的手臂。",
+      "new": "管理员对你笑了笑，摇摇头。一两分钟后黛安出来，连声向他道谢。她走回到你身边，却没有挽你的手臂。",
+      "old_raw": "<LI>看守员对你笑了笑，摇摇头。一两分钟后黛安出来，连声向他道谢。她走回到你身边，却没有挽你的手臂。",
+      "new_raw": "<LI>管理员对你笑了笑，摇摇头。一两分钟后黛安出来，连声向他道谢。她走回到你身边，却没有挽你的手臂。"
+    },
+    {
+      "id": "x01544",
+      "kind": "story",
+      "en": "You go up to the caretaker, and say 'Excuse me, I don't suppose there's any chance of letting us into the loo?'",
+      "old": "你走过去找看守员，说：“打扰一下，不知道能不能行个方便，让我们进厕所用一下。”",
+      "new": "你走过去找管理员，说：“打扰一下，不知道能不能行个方便，让我们进厕所用一下。”",
+      "old_raw": "<LI>你走过去找看守员，说：“打扰一下，不知道能不能行个方便，让我们进厕所用一下。”",
+      "new_raw": "<LI>你走过去找管理员，说：“打扰一下，不知道能不能行个方便，让我们进厕所用一下。”"
+    },
+    {
+      "id": "x01545",
+      "kind": "story",
+      "en": "CARETAKER: No way, mate. More than my job's worth. Can't you just go behind the block?",
+      "old": "看守员：不行，兄弟。这要是被发现我饭碗不保。你们不能直接去这栋楼后面解决一下吗？",
+      "new": "管理员：不行，兄弟。这要是被发现我饭碗不保。你们不能直接去这栋楼后面解决一下吗？",
+      "old_raw": "<LI>看守员：不行，兄弟。这要是被发现我饭碗不保。你们不能直接去这栋楼后面解决一下吗？",
+      "new_raw": "<LI>管理员：不行，兄弟。这要是被发现我饭碗不保。你们不能直接去这栋楼后面解决一下吗？"
+    },
+    {
+      "id": "x01547",
+      "kind": "story",
+      "en": "CARETAKER: What d'you think I am?",
+      "old": "看守员：你把我当什么人了？",
+      "new": "管理员：你把我当什么人了？",
+      "old_raw": "<LI>看守员：你把我当什么人了？",
+      "new_raw": "<LI>管理员：你把我当什么人了？"
+    },
+    {
+      "id": "x01549",
+      "kind": "story",
+      "en": "CARETAKER: thinks about it Well, I'll give you five minutes. It'll have to be the Gents, but there's a cubicle in there if the girl wants to go too. Just too risky fiddling about with the Ladies.",
+      "old": "看守员：想了想好吧，给你们五分钟。只能进男厕，不过里面有个隔间，她要去的话也可以用。开女厕所那边太麻烦，风险太大。",
+      "new": "管理员：想了想好吧，给你们五分钟。只能进男厕，不过里面有个隔间，她要去的话也可以用。开女厕所那边太麻烦，风险太大。",
+      "old_raw": "<LI>看守员：<EM>想了想</EM>好吧，给你们五分钟。只能进男厕，不过里面有个隔间，她要去的话也可以用。开女厕所那边太麻烦，风险太大。",
+      "new_raw": "<LI>管理员：<EM>想了想</EM>好吧，给你们五分钟。只能进男厕，不过里面有个隔间，她要去的话也可以用。开女厕所那边太麻烦，风险太大。"
+    },
+    {
+      "id": "x01565",
+      "kind": "story",
+      "en": "You meet her outside where she is grinning ruefully at you, and the caretaker is waiting to lock up.",
+      "old": "你出去找她，她正苦笑着看着你，看守员在一旁等着锁门。",
+      "new": "你出去找她，她正苦笑着看着你，管理员在一旁等着锁门。",
+      "old_raw": "<LI>你出去找她，她正苦笑着看着你，看守员在一旁等着锁门。",
+      "new_raw": "<LI>你出去找她，她正苦笑着看着你，管理员在一旁等着锁门。"
+    },
+    {
+      "id": "x01569b",
+      "kind": "story",
+      "en": "She seems to hesitate whether to turn round, but then, maybe because it is quicker, she decides to sort of straddle the urinal, with her back to you. She bends slightly forward, as she pulls her panties aside.",
+      "old": "她犹豫着要不要转身，但大概因为这样更快，还是决定横跨在小便池上，背对着你。她微微弯腰，把内裤拨到了一边。",
+      "new": "她犹豫着要不要转身，但大概觉得跨坐更快，还是决定跨坐在小便池上，背对着你。她微微弯腰，把内裤拨到了一边。",
+      "old_raw": "<LI>她犹豫着要不要转身，但大概因为这样更快，还是决定横跨在小便池上，背对着你。她微微弯腰，把内裤拨到了一边。",
+      "new_raw": "<LI>她犹豫着要不要转身，但大概觉得跨坐更快，还是决定跨坐在小便池上，背对着你。她微微弯腰，把内裤拨到了一边。"
+    },
+    {
+      "id": "x01574",
+      "kind": "story",
+      "en": "A minute later she joins you and the caretaker goes to lock up. Diane takes your arm and you move to join the others.",
+      "old": "一分钟后她走出来与你汇合，看门人进去锁门。黛安挽起你的手臂，你们一同走向其他人。",
+      "new": "一分钟后她走出来与你汇合，管理员进去锁门。黛安挽起你的手臂，你们一同走向其他人。",
+      "old_raw": "<LI>一分钟后她走出来与你汇合，看门人进去锁门。黛安挽起你的手臂，你们一同走向其他人。",
+      "new_raw": "<LI>一分钟后她走出来与你汇合，管理员进去锁门。黛安挽起你的手臂，你们一同走向其他人。"
+    },
+    {
+      "id": "x01580",
+      "kind": "story",
+      "en": "But they shut the toilets early on Saturdays and, just as you arrive, you see the caretaker emerge from the Ladies and lock the door.",
+      "old": "但这里的厕所周六提前关门，就在你们刚到的那一刻，你看见看门人从女厕所里走出来，把门锁上了。",
+      "new": "但这里的厕所周六提前关门，就在你们刚到的那一刻，你看见管理员从女厕所里走出来，把门锁上了。",
+      "old_raw": "但这里的厕所周六提前关门，就在你们刚到的那一刻，你看见看门人从女厕所里走出来，把门锁上了。",
+      "new_raw": "但这里的厕所周六提前关门，就在你们刚到的那一刻，你看见管理员从女厕所里走出来，把门锁上了。"
+    },
+    {
+      "id": "x02945",
+      "kind": "story",
+      "en": "You have your pee and then head on downstairs. As you get to the foot of the stairs you meet Diane, who has finished her phone call and is now going to the toilet.",
+      "old": "你尿了个痛快，然后下楼。走到楼梯口，正好碰见黛安——她打完电话了，正准备去上厕所。",
+      "new": "你上完厕所，随后下楼。走到楼梯口，正好碰见黛安——她打完电话了，正准备去上厕所。",
+      "old_raw": "<LI>你尿了个痛快，然后下楼。走到楼梯口，正好碰见黛安——她打完电话了，正准备去上厕所。",
+      "new_raw": "<LI>你上完厕所，随后下楼。走到楼梯口，正好碰见黛安——她打完电话了，正准备去上厕所。"
+    },
+    {
+      "id": "x02951",
+      "kind": "story",
+      "en": "You go to the bathroom and have a pee. When you come back downstairs Diane stands up, gives you a little grin, and heads upstairs.",
+      "old": "你去浴室尿了个痛快。回到楼下，黛安站起来，对你微微一笑，转身上楼去了。",
+      "new": "你去浴室上完厕所。回到楼下，黛安站起来，对你微微一笑，转身上楼去了。",
+      "old_raw": "<LI>你去浴室尿了个痛快。回到楼下，黛安站起来，对你微微一笑，转身上楼去了。",
+      "new_raw": "<LI>你去浴室上完厕所。回到楼下，黛安站起来，对你微微一笑，转身上楼去了。"
+    },
+    {
+      "id": "x03017",
+      "kind": "story",
+      "en": "You show her your photos from Fort William and the West Highland line. She says its one of her favourite journeys.",
+      "old": "你拿出威廉堡和西高地铁路线的照片给她看。她说这是她最喜欢的旅途之一。",
+      "new": "你给她看威廉堡和西高地线的照片。她说那是她最喜欢的旅程之一。",
+      "old_raw": "<LI>你拿出威廉堡和西高地铁路线的照片给她看。她说这是她最喜欢的旅途之一。",
+      "new_raw": "<LI>你给她看威廉堡和西高地线的照片。她说那是她最喜欢的旅程之一。"
+    },
+    {
+      "id": "x04348",
+      "kind": "story",
+      "en": "You head back towards the Pavilion. You look left, you look right. There's no sign of Diane.",
+      "old": "你往馆子方向折返。你向左看，向右看。黛安不见踪影。",
+      "new": "你往凉亭酒吧方向折返。你向左看，向右看。黛安不见踪影。",
+      "old_raw": "<LI>你往馆子方向折返。你向左看，向右看。黛安不见踪影。",
+      "new_raw": "<LI>你往凉亭酒吧方向折返。你向左看，向右看。黛安不见踪影。"
+    },
+    {
+      "id": "x04350",
+      "kind": "story",
+      "en": "You look across to the main entrance to the Pavilion. There is a bouncer at the door.",
+      "old": "你望向馆子的正门。门口站着一个保镖。",
+      "new": "你望向凉亭酒吧的正门。门口站着一个保安。",
+      "old_raw": "<LI>你望向馆子的正门。门口站着一个保镖。",
+      "new_raw": "<LI>你望向凉亭酒吧的正门。门口站着一个保安。"
+    },
+    {
+      "id": "x04352",
+      "kind": "story",
+      "en": "It's Diane. You stand back into the shadows and watch as she goes up to the door of the Pavilion.",
+      "old": "是黛安。你退回阴影里，看着她走向馆子门口。",
+      "new": "是黛安。你退回阴影里，看着她走向凉亭酒吧门口。",
+      "old_raw": "<LI>是黛安。你退回阴影里，看着她走向馆子门口。",
+      "new_raw": "<LI>是黛安。你退回阴影里，看着她走向凉亭酒吧门口。"
+    },
+    {
+      "id": "x04373",
+      "kind": "story",
+      "en": "But perhaps it's just as well. Because the doorman hasn't let her into the Pavilion.",
+      "old": "但也许也没什么。因为门卫根本没放她进馆子。",
+      "new": "但或许这样也好，因为门卫没让她进凉亭。",
+      "old_raw": "<LI>但也许也没什么。因为门卫根本没放她进馆子。",
+      "new_raw": "<LI>但或许这样也好，因为门卫没让她进凉亭。"
+    },
+    {
+      "id": "x04682",
+      "kind": "story",
+      "en": "Diane really needs a pee! She can't stand still, but shifts from foot to foot.",
+      "old": "黛安真的很急，想上厕所！她根本站不住，两只脚不停地换来换去。",
+      "new": "黛安真的急着尿尿！她站不住，两脚不停地来回挪动。",
+      "old_raw": "<P><EM><SPAN style='color: #ff0000'>黛安真的很急，想上厕所！她根本站不住，两只脚不停地换来换去。</SPAN></EM><P/>",
+      "new_raw": "<P><EM><SPAN style='color: #ff0000'>黛安真的急着尿尿！她站不住，两脚不停地来回挪动。</SPAN></EM><P/>"
+    },
+    {
+      "id": "x04753",
+      "kind": "story",
+      "en": "Molly really needs a pee! She can't stand still, but shifts from foot to foot.",
+      "old": "莫莉真的很尿急了！她根本站不住，两只脚不停地换来换去。",
+      "new": "莫莉真的很急！她根本站不住，两脚不停地来回挪动。",
+      "old_raw": "<EM><SPAN style='color: #0000FF'>莫莉真的很尿急了！她根本站不住，两只脚不停地换来换去。</SPAN></EM><P>",
+      "new_raw": "<EM><SPAN style='color: #0000FF'>莫莉真的很急！她根本站不住，两脚不停地来回挪动。</SPAN></EM><P>"
+    }
+  ]
+}

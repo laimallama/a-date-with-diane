@@ -38,7 +38,11 @@ Que choisissez-vous ?
 
 VOUS : En fait, j’aurais bien besoin de faire pipi moi aussi. Pourquoi on n’irait pas chacun notre tour derrière le bâtiment.
 
-DIANE : Pourquoi pas. [Elle regarde autour d’elle.] Ce petit chemin de côté devrait faire l’affaire. Ça t’ennuie si je passe en premier — je vais éclater.
+DIANE : Pourquoi pas.
+
+Elle regarde autour d’elle.
+
+DIANE : Ce petit chemin de côté devrait faire l’affaire. Ça t’ennuie si je passe en premier — je vais éclater.
 
 Vous avez gagné 15 points d’intimité.
 

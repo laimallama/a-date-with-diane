@@ -41,12 +41,11 @@ a:hover { color: var(--accent); }
 .game-shell {
   width: min(920px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 34px 0 44px;
+  padding: 36px 0;
 }
 
 #box {
   width: 100%;
-  min-height: 68vh;
   padding: clamp(22px, 4vw, 44px);
   border: 1px solid var(--line);
   background: var(--paper);
@@ -128,11 +127,25 @@ a:hover { color: var(--accent); }
 
 #box ul,
 #box .choices {
-  display: grid;
-  gap: 10px;
   margin: 1.45rem 0 0;
   padding: 0;
   list-style: none;
+}
+
+.choice + .choice {
+  margin-top: 10px;
+}
+
+/* Screen fade on step change */
+@keyframes diane-screen-fade {
+  from { opacity: .42; }
+  to { opacity: 1; }
+}
+#box.screen-fade {
+  animation: diane-screen-fade .18s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  #box.screen-fade { animation: none; }
 }
 
 #box li {
@@ -164,7 +177,8 @@ a:hover { color: var(--accent); }
 
 #box li a:hover,
 .choice:hover,
-.back-button:hover {
+.back-button:hover,
+.choice.key-pressed {
   border-color: #c59c73;
   background: var(--choice-hover);
   color: var(--accent-dark);
@@ -194,7 +208,7 @@ a:hover { color: var(--accent); }
 }
 
 .nav-row {
-  margin-top: 12px;
+  margin-top: 24px;
 }
 
 .back-button {
@@ -216,13 +230,10 @@ a:hover { color: var(--accent); }
   body { font-size: 16px; }
   .game-shell {
     width: 100%;
-    padding: 0;
+    padding: 10px 12px 16px;
   }
   #box {
-    min-height: calc(100vh - 108px);
-    border-left: 0;
-    border-right: 0;
-    box-shadow: none;
+    box-shadow: 0 10px 28px rgba(59, 43, 25, .10);
   }
 }
 .status-bar {
@@ -262,6 +273,174 @@ a:hover { color: var(--accent); }
     text-align: center;
     overflow-wrap: anywhere;
   }
+}
+
+.game-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  .game-toolbar {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.choice.guide-highlight {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent) inset;
+  background: #f7e2e5;
+}
+
+.gallery-button {
+  flex: 0 0 auto;
+  min-width: 94px;
+  padding: 9px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: #fff;
+  background: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .94rem;
+  cursor: pointer;
+}
+.gallery-button:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.gallery-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(35, 31, 32, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 50;
+}
+.gallery-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.gallery-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+  transform: translateY(14px) scale(.98);
+  transition: transform .25s ease;
+}
+.gallery-overlay.open .gallery-panel {
+  transform: translateY(0) scale(1);
+}
+.gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.gallery-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.gallery-close {
+  border: 1px solid var(--line);
+  background: var(--choice);
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: inherit;
+  cursor: pointer;
+}
+.gallery-close:hover {
+  border-color: #c59c73;
+  background: var(--choice-hover);
+}
+.gallery-scroll {
+  overflow-y: auto;
+  padding: 4px 20px 20px;
+}
+.gallery-section h3 {
+  margin: 16px 0 6px;
+  font-size: .95rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .95rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.gallery-row:hover {
+  background: var(--choice-hover);
+  color: var(--accent-dark);
+}
+
+.guide-toggle-button {
+  width: auto;
+  min-width: 120px;
+  padding: 11px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+.guide-toggle-on {
+  background: var(--choice);
+  color: var(--accent-dark);
+}
+.guide-toggle-off {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--line);
+}
+.guide-toggle-button:hover {
+  background: var(--choice-hover);
+  border-color: var(--accent-dark);
+}
+.nav-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Matched control sizing only (colors stay as each button already defines) */
+.gallery-button,
+.language-toggle,
+.back-button,
+.guide-toggle-button {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 </style>
 </head>
@@ -331,6 +510,9 @@ var steak = 0
 var undobra = 0
 
 var gameHistory = [];
+
+const GALLERY_DATA = {"endings":[{"id":"01_third_prize","order":1,"title":"Troisième prix","titleAlt":"Troisième prix","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofalooask","sofaarm","sofaarm1","sofadesp","sofadesp1","sofadesp2","sofastamps","stampalbum1","stampalbum1a","stampalbum2","stampalbum2a","stampalbum3","stampalbum3a","stampalbum4","stampalbum4a","stampalbum5","stampalbum5a","stampalbum6","stampalbum6a","stampalbum7","stampalbum8","dampness","legsz","legsz1","legsz2","legsz3"],"baseLength":2},{"id":"02_fourth_prize","order":2,"title":"Quatrième prix","titleAlt":"Quatrième prix","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","breasts2","bottom2","bottom2a","walkhomeX","bathroomfree","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhomedesp","walkhomedesp1","helphersquat","helphersquat1","helphersquat2","helphersquat3"],"baseLength":2},{"id":"03_first_prize","order":3,"title":"Premier prix","titleAlt":"Premier prix","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","sofasnog","sofasnog1","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","disaster0","disaster1","disaster2","disaster3","disaster4b","disaster5b","disaster6b","disaster7b","disaster8a","disaster9","disaster9a","triumph"],"baseLength":2},{"id":"04_fifth_prize","order":4,"title":"Cinquième prix","titleAlt":"Cinquième prix","tags":["start","start1a","start1b","thursdaydate","start2","gothere","flirt_l","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","bottom1","bottom1a","bottomthurs","skirtremove1","skirtremove1a","skirtremove1b","skirtremove1c","skirtremove1d","skirtremove1e","skirtremove1f","skirtremove1g","skirtdeal","skirtdeal1","skirtdeal2","gobathroom","gobathroom1","gobathroom2","gobathroom3"],"baseLength":2},{"id":"05_second_prize","order":5,"title":"Deuxième prix","titleAlt":"Deuxième prix","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts0","sofabreasts1","sofabreasts2","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","nicelydesp1","nicelydesp2","nicelydesp3","nicelydesp4","nicelydesp5","nicelydesp6","nicelydesp7","nicelydesp8","nicelydesp9","secondplace","secondplace1"],"baseLength":2},{"id":"06_lounge_story_consolation","order":6,"title":"Lot de consolation : histoire du salon","titleAlt":"Lot de consolation : histoire du salon","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","loungedesp","story","story1","story2","story3","story4","story5"],"baseLength":2},{"id":"07a_consolation_tuesday_pavilion","order":7,"title":"Prix de consolation : route du mardi au Pavilion","titleAlt":"Prix de consolation : route du mardi au Pavilion","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue7","lastgamble","luckytrip28","searchdiane","search2","luckytrip28a","goleft","goleft1","goleft2","goleft3","goleft4","ending5","consolation"],"baseLength":2},{"id":"07b_consolation_thursday_subway","order":8,"title":"Prix de consolation : route du jeudi par le passage souterrain","titleAlt":"Prix de consolation : route du jeudi par le passage souterrain","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riversidepath","riversidepath10a","riversidepath11a","riversidepath12x","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue6a","busqueue7","lastgamble","luckytrip28","searchdiane","search3","passage","passage1","passage2a","passage2aa","passage2ab","passage2ac","consolation"],"baseLength":2},{"id":"08_chloe_consolation","order":9,"title":"Prix de consolation de Chloe","titleAlt":"Prix de consolation de Chloe","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyspagbol","eatmeal2","eatmeal2a","eatmeal2b","eatmeal2c","eatmeal2d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario4","scenario4a","scenario4b","scenario4c","scenario4d","scenario4e","scenario4f","gonow","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhome5","walkhome6","walkhome7","watching1","luckytrip19","watching3","watching4","watching5","watching6"],"baseLength":2},{"id":"09_amanda_consolation","order":10,"title":"Prix de consolation d'Amanda","titleAlt":"Prix de consolation d'Amanda","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion1","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario5","scenario6","scenario6a","scenario6b","scenario6c","goupstairs","goupstairs1","goupstairs2","goupstairs3","goupstairs4","goupstairs5","goupstairs6","luckytrip31","luckytrip31a","luckytrip31b","luckytrip31c","luckytrip31d","luckytrip31e"],"baseLength":2}],"hiddenScenes":[{"id":"01_theatre_flashback","order":1,"title":"Souvenir au théâtre de la première fois où vous avez vu Diane","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4"],"baseLength":30},{"id":"02_portaloo_ladies_first","order":2,"title":"Trouver les toilettes portatives cachées pour Diane","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","luckytrip16","luckytrip16a","luckytrip16a1","riverside7"],"baseLength":71},{"id":"03_portaloo_too_embarrassed","order":3,"title":"Proposer les toilettes portatives trop directement","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","luckytrip16","luckytrip16b","luckytrip16ba","riverside7"],"baseLength":71},{"id":"04_thursday_bridge_diane_molly","order":4,"title":"Robert vous emmène espionner Diane et Molly sous le pont","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riversidepath","luckytrip3","underbridge","underbridge2","underbridge3"],"baseLength":70},{"id":"05_molly_bruno_towpath","order":5,"title":"Regarder Molly derrière la benne de chantier","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","pubdrink9","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13","luckytrip4","luckytrip4a","luckytrip4b"],"baseLength":89},{"id":"06_diane_slips_away_while_watching_molly","order":6,"title":"Diane s'éclipse pendant que vous regardez Molly","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyburgundy","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","pubdrink9","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13","luckytrip4","luckytrip4a","luckytrip4b","luckytrip4c","luckytrip4d"],"baseLength":79},{"id":"07_riverside_bushes_diane","order":7,"title":"Diane va derrière les buissons au bord de la rivière","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b"],"baseLength":80},{"id":"08_riverside_towpath_landing","order":8,"title":"Diane ne tient plus dans les marches du chemin de halage","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane2a","together1","together1a","together1b"],"baseLength":80},{"id":"09_riverside_bushes_together","order":9,"title":"Vous et Diane allez tous les deux derrière les buissons","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane2a","together2","helpdiane1b"],"baseLength":80},{"id":"10_public_toilet_spyhole","order":10,"title":"Le trou d'espionnage des toilettes publiques et la culotte abandonnée","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane3a","riverside14","toiletopen","toiletopen1b","toiletopen1bb","luckytrip5","luckytrip5a","luckytrip5tue","luckytrip5tue1","luckytrip5tue2","gameover"],"baseLength":80},{"id":"11_public_toilet_spyhole_stockings","order":11,"title":"Le trou d'espionnage des toilettes publiques et les bas de Diane","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buylasagne","eatmeal4","eatmeal4a","eatmeal4b","eatmeal4c","eatmeal4d","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","toiletopen","toiletopen1c","toiletopen1c1","luckytrip5c","luckytrip5ca","luckytrip5cb","luckytrip5cc","luckytrip5cd","riverside15"],"baseLength":71},{"id":"12_closed_toilet_building_lookout","order":12,"title":"Diane va derrière les toilettes fermées","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2a","riverside15"],"baseLength":81},{"id":"13_closed_toilet_building_together","order":13,"title":"Se relayer derrière les toilettes fermées","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2b","riverside15"],"baseLength":81},{"id":"14_closed_toilet_building_bad_choice","order":14,"title":"Demander à Diane de tenir devant les toilettes fermées","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2c","gameover"],"baseLength":81},{"id":"15_riverside_gents_urinal","order":15,"title":"Diane utilise l'urinoir des hommes","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","justclosed2","justclosed3","urinal","riverside15"],"baseLength":81},{"id":"16_brunette_behind_camper","order":16,"title":"Regarder la brune derrière le camping-car","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buychardonnay","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","busqueue3","busqueue4","busqueue5","carpark","carpark1","carpark2"],"baseLength":102},{"id":"17_diane_brunette_camper_round","order":17,"title":"Diane et la brune derrière le camping-car","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepround","peepround1"],"baseLength":109},{"id":"18_diane_brunette_camper_under","order":18,"title":"Regarder sous le camping-car","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepunder"],"baseLength":109},{"id":"19_camper_gentleman_choice","order":19,"title":"Ne pas regarder Diane et Debbie","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","gentleman","gameover"],"baseLength":109},{"id":"20_church_lych_gate_glimpse","order":20,"title":"Aperçu sous le porche de l'église","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buypinot","eatmeal","buysteak","steak3","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","foyerbar1","foyerbar1a","foyerbar2","foyerbar3","stagedoor5","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","riverside2","riverside3","riverside7","riverside8","riverside9","riversidepath","riversidepath10a","riversidepath11a","riversidepath12x","riverside14","toiletclosed","riverside15","riverside16","riverside16a","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue6a","busqueue7","bushome","bushome1","bushome2","bushome3","bushome4","bushome5","bushome6","luckytrip17","luckytrip17a","luckytrip17b","gameover"],"baseLength":94},{"id":"21_hidden_camera","order":21,"title":"La caméra cachée de votre frère dans la salle de bains","tags":["start","start1a","start1b","thursdaydate","start2","gothere","flirt_l","winelist","buyrioja","eatmeal","buylasagne","eatmeal4","eatmeal4a","eatmeal4b","eatmeal4c","eatmeal4d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario2b","scenario2c","asklooneed","asklooneed1","asklooneed2","offercoffeeagain","offercoffeeagain1","luckytrip11","luckytrip11a","hiddencamera","hiddencamera1","gameover"],"baseLength":42}]};
+
 var gameStateVars = [
   "ulopen", "luckshots", "inti", "blad", "proc", "points", "pounds",
   "flirted", "tort", "tag", "lasagne", "ravioli", "pizza", "spagbol",
@@ -343,8 +525,10 @@ var gameStateVars = [
   "traintalking", "gourinal", "instantcoffee", "nicecoffee",
   "leavechloe", "triedbathroom", "brooch", "gobushes", "gobushes1",
   "gotoilet", "gobehindtoilet", "admitwetting", "gopee", "tiramisu",
-  "pannacotta", "icecream", "gettaxi", "steak", "undobra", "wine"
+  "pannacotta", "icecream", "gettaxi", "steak", "undobra", "wine",
+  "pregameCaughtUp", "currentTag"
 ];
+var currentTag = null;
 
 function snapshotGame() {
   var state = {};
@@ -363,16 +547,188 @@ function restoreGame(snapshot) {
   document.getElementById('box').innerHTML = snapshot.html;
 }
 
+
+
+
+function prefersReducedMotion() {
+  try {
+    return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  } catch (e) { return false; }
+}
+
+function presentScreen() {
+  try {
+    if (typeof window.scrollTo === "function") window.scrollTo(0, 0);
+    var box = document.getElementById("box");
+    if (!box) return;
+    box.classList.remove("screen-fade");
+    if (prefersReducedMotion()) return;
+    void box.offsetWidth;
+    box.classList.add("screen-fade");
+  } catch (e) {}
+}
+
 function goback() {
   if (!gameHistory.length) return;
   var snapshot = gameHistory.pop();
+  var g = guideHistory.pop();
   restoreGame(snapshot);
+  if (g) {
+    guideIndex = g.index;
+    guideActive = g.active;
+  }
+  try { document.getElementById('gameToolbar').style.display = (currentTag && currentTag !== "under18") ? '' : 'none'; } catch (e) {}
+  syncGuideDisplay();
+  presentScreen();
 }
 
-function backbutton() {
-  if (!gameHistory.length) return "";
-  return "<div class='nav-row'><button class='back-button' onclick='goback()'>Retour</button></div>";
+function pressChoiceByNumber(n) {
+  var all = document.querySelectorAll("#box button.choice");
+  var buttons = [];
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].offsetParent !== null) buttons.push(all[i]);
+  }
+  var idx = n - 1;
+  if (idx < 0 || idx >= buttons.length) return;
+  var btn = buttons[idx];
+  if (btn.classList.contains("key-pressed")) return;
+  btn.classList.add("key-pressed");
+  setTimeout(function () {
+    if (document.body.contains(btn)) { btn.click(); }
+  }, 120);
 }
+
+if (document.addEventListener) {
+  document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    var overlay = document.getElementById("galleryOverlay");
+    var galleryOpen = !!(overlay && overlay.classList.contains("open"));
+    if (e.key === "Escape") {
+      if (galleryOpen) { closeGallery(); }
+      return;
+    }
+    if (e.key === "g" || e.key === "G") {
+      if (galleryOpen) { closeGallery(); return; }
+      var galleryBtn = document.getElementById("galleryToggle");
+      if (galleryBtn && galleryBtn.offsetParent !== null) { openGallery(); }
+      return;
+    }
+    if (galleryOpen) return;
+    if (e.key === "b" || e.key === "B") {
+      if (document.querySelector(".back-button")) { goback(); }
+      return;
+    }
+    if (e.key === "h" || e.key === "H") {
+      if (document.querySelector(".guide-toggle-button")) { toggleGuideDisplay(); }
+      return;
+    }
+    if (e.key === "Enter") {
+      var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+      if (tag === "input" || tag === "textarea" || tag === "select") return;
+      e.preventDefault();
+      pressChoiceByNumber(1);
+      return;
+    }
+    if (/^[1-9]$/.test(e.key)) {
+      pressChoiceByNumber(parseInt(e.key, 10));
+      return;
+    }
+  });
+}
+
+function navRow() {
+  if (!gameHistory.length) return "";
+  var back = "<button class='back-button' onclick='goback()'>Retour</button>";
+  var toggle = guideActive ? "<button class='guide-toggle-button" + (guideOn ? " guide-toggle-on" : " guide-toggle-off") + "' onclick='toggleGuideDisplay()'>" + (guideOn ? "Guide : Activé" : "Guide : Désactivé") + "</button>" : "";
+  return "<div class='nav-row'>" + back + toggle + "</div>";
+}
+
+function toggleGuideDisplay() {
+  guideOn = !guideOn;
+  syncGuideDisplay();
+}
+
+function syncGuideDisplay() {
+  try {
+    var hls = document.querySelectorAll("button.choice.guide-highlight");
+    for (var i = 0; i < hls.length; i++) { hls[i].className = hls[i].className.replace(/\s*guide-highlight/, ""); }
+    if (guideOn) applyGuideHighlight();
+    var toggles = document.querySelectorAll(".guide-toggle-button");
+    for (var i = 0; i < toggles.length; i++) {
+      toggles[i].textContent = guideOn ? "Guide : Activé" : "Guide : Désactivé";
+      toggles[i].className = "guide-toggle-button" + (guideOn ? " guide-toggle-on" : " guide-toggle-off");
+    }
+  } catch (e) {}
+}
+
+var guideTags = null;
+var guideIndex = 0;
+var guideActive = false;
+var guideOn = false;
+var guideHistory = [];
+
+function initGuideFromStorage() {
+  try {
+    var raw = sessionStorage.getItem("dianeGuide");
+    if (!raw) return;
+    sessionStorage.removeItem("dianeGuide");
+    var data = JSON.parse(raw);
+    guideTags = data.tags;
+    guideIndex = 0;
+    guideActive = true;
+    guideOn = true;
+    var baseLength = data.baseLength || 0;
+    for (var i = 0; i < baseLength; i++) {
+      go(guideTags[i]);
+    }
+    syncGuideDisplay();
+  } catch (e) {}
+}
+
+if (document.addEventListener) {
+  document.addEventListener("DOMContentLoaded", initGuideFromStorage);
+}
+
+function applyGuideHighlight() {
+  if (!guideActive || guideIndex >= guideTags.length) return;
+  var expected = guideTags[guideIndex];
+  var buttons = document.getElementById("box").querySelectorAll("button.choice");
+  for (var i = 0; i < buttons.length; i++) {
+    var m = (buttons[i].getAttribute("onclick") || "").match(/go\(['"]([^'"]+)['"]\)/);
+    if (m && m[1] === expected) {
+      buttons[i].className += " guide-highlight";
+    }
+  }
+}
+
+function renderGalleryLists() {
+  var endingsHtml = GALLERY_DATA.endings.map(function (item, i) {
+    var title = item.title;
+    return "<button class='gallery-row' onclick=\"startGuidedRoute('endings'," + i + ")\">" + (i + 1) + ". " + title + "</button>";
+  }).join("");
+  var scenesHtml = GALLERY_DATA.hiddenScenes.map(function (item, i) {
+    var title = item.title;
+    return "<button class='gallery-row' onclick=\"startGuidedRoute('hiddenScenes'," + i + ")\">" + (i + 1) + ". " + title + "</button>";
+  }).join("");
+  document.getElementById("galleryEndings").innerHTML = endingsHtml;
+  document.getElementById("galleryHiddenScenes").innerHTML = scenesHtml;
+}
+
+function openGallery() {
+  renderGalleryLists();
+  document.getElementById("galleryOverlay").classList.add("open");
+}
+
+function closeGallery() {
+  document.getElementById("galleryOverlay").classList.remove("open");
+}
+
+function startGuidedRoute(kind, index) {
+  var item = GALLERY_DATA[kind][index];
+  sessionStorage.setItem("dianeGuide", JSON.stringify({ tags: item.tags, baseLength: item.baseLength }));
+  location.reload();
+}
+
 
 function hasCjk(text) {
   return /[\u3400-\u9fff]/.test(String(text));
@@ -475,7 +831,7 @@ function isEnglishSpeechAside(text) {
     .trim();
   if (!clean || /[\u3400-\u9fff]/.test(clean)) return false;
   if (/^(i|i’m|i'm|you|we|what|where|why|how|oh|oooh|god|give|sorry|stop|don’t|don't)\b/i.test(clean)) return false;
-  return /^(with|in|almost|after|before|aside|softly|ruefully|laughing|giggling|giggles|blushing|biting|hugging|looking|considering|between|very|quietly|she|he|you)\b/i.test(clean);
+  return /^(then\s+)?(with|in|almost|after|before|aside|softly|ruefully|laughing|giggling|giggles|blushing|biting|hugging|looking|considering|between|very|quietly|thinks|thinking|pauses|pausing|whispers|whispering|interrupting|joking|she|he|you)\b/i.test(clean);
 }
 
 function formatEnglishSpeechAside(text) {
@@ -490,7 +846,7 @@ function isRomanceSpeechAside(text) {
     .replace(/[\s.,!?;:¡¿]+$/g, "")
     .trim();
   if (!clean || /[\u3400-\u9fff]/.test(clean)) return false;
-  return /^(en voz baja|casi|tras|después|hace una pausa|pausa|pensativa|pensativo|sonriendo|susurr|la oyes|lo oyes|a voz baja|à voix|très doucement|presque|après|songeuse|pensive|vous l’entendez|vous l'entendez|elle marque|pause|puis elle|dans un murmure|en chuchotant)\b/i.test(clean);
+  return /^((?:luego|muy)\s+)?(en voz baja|casi|tras|después|hace una pausa|pausa|pensativa|pensativo|sonriendo|susurr|la oyes|lo oyes|a voz baja|à voix|très doucement|presque|après|songeuse|pensive|vous l’entendez|vous l'entendez|elle marque|pause|puis elle|dans un murmure|en chuchotant|se lo piensa|piensa|pensándolo|suavemente|bajito|interrumpiéndo|aparte|mirándo|ruboriz|con|bromeando|riendo|se ríe|poniéndose|mordiéndose|entre|te susurra|il réfléchit|réfléchit|elle fait une petite grimace avant de continuer|en riant|riant|l'interrompant|à part|en la regardant|en rougissant|avec|en plaisantant|vous chuchote|rouge écarlate|se mordant|elle glousse|glousse|doucement)\b/i.test(clean);
 }
 
 function formatRomanceSpeechAside(text) {
@@ -640,12 +996,10 @@ function s(t) {
 }
 
 
-function
-go(tag)
-{
-   gameHistory.push(snapshotGame());
-   var showStatus = tag !== "under18";
+var PREGAME_TAGS = ["under18", "start", "start1", "info", "start1a", "start1b", "tuesdaydate", "thursdaydate", "saturdaydate"];
+var pregameCaughtUp = false;
 
+function digestionTick() {
 if (proc > 10)
 {
 if (tuesday)
@@ -665,6 +1019,50 @@ else
 {proc -= 10; blad += 10; }}}
 else
 { blad += proc; proc = 0; }
+}
+
+function pregameCatchupTick() {
+if (proc > 10)
+{if (pannacotta)
+{proc -= 10; blad += 12; }
+else
+{proc -= 10; blad += 10; }}
+else
+{ blad += proc; proc = 0; }
+}
+
+function
+go(tag)
+{
+   try {
+     var kp = document.querySelectorAll("#box button.choice.key-pressed");
+     for (var ki = 0; ki < kp.length; ki++) { kp[ki].classList.remove("key-pressed"); }
+   } catch (e) {}
+   gameHistory.push(snapshotGame());
+   guideHistory.push({ index: guideIndex, active: guideActive });
+   if (guideActive) {
+      if (tag === guideTags[guideIndex]) {
+         guideIndex++;
+         if (guideIndex >= guideTags.length) { guideActive = false; }
+      } else {
+         guideActive = false;
+      }
+   }
+   currentTag = tag;
+   var showToolbar = tag !== "under18";
+   try { document.getElementById('gameToolbar').style.display = showToolbar ? '' : 'none'; } catch (e) {}
+   var showStats = PREGAME_TAGS.indexOf(tag) === -1;
+
+if (showStats) {
+   if (!pregameCaughtUp) {
+      pregameCaughtUp = true;
+      pregameCatchupTick();
+      pregameCatchupTick();
+      pregameCatchupTick();
+      pregameCatchupTick();
+   }
+   digestionTick();
+}
 
    document.getElementById('box').innerHTML = "";
    eval(tag + "()");
@@ -672,20 +1070,25 @@ else
       ulopen = 0;
       document.getElementById('box').innerHTML += "</div>";
    }
-   if (!showStatus) return;
-   document.getElementById('box').innerHTML +=
-      "<aside class='status-bar'>" +
-      "<div class='status-row status-row-main'>" +
-      "<span>Argent (£) <b>" + pounds + "</b></span>" +
-      "<span>Coups de chance <b>" + luckshots + "</b></span>" +
-      "<span>Intimité <b>" + inti + "</b></span>" +
-      "</div>" +
-      "<div class='status-row status-row-money'>" +
-      "<span>Liquide en transit <b>" + proc + "ml</b></span>" +
-      "<span>Vessie <b>" + blad + "ml</b></span>" +
-      "<span>Timidité <b>" + points + "</b></span>" +
-      "</div>" +
-      "</aside>" + backbutton();
+   if (!showToolbar) { presentScreen(); return; }
+   if (showStats) {
+      document.getElementById('box').innerHTML +=
+         "<aside class='status-bar'>" +
+         "<div class='status-row status-row-main'>" +
+         "<span>Argent (£) <b>" + pounds + "</b></span>" +
+         "<span>Coups de chance <b>" + luckshots + "</b></span>" +
+         "<span>Intimité <b>" + inti + "</b></span>" +
+         "</div>" +
+         "<div class='status-row status-row-money'>" +
+         "<span>Liquide en transit <b>" + proc + "ml</b></span>" +
+         "<span>Vessie <b>" + blad + "ml</b></span>" +
+         "<span>Timidité <b>" + points + "</b></span>" +
+         "</div>" +
+         "</aside>";
+   }
+   document.getElementById('box').innerHTML += navRow();
+   syncGuideDisplay();
+   presentScreen();
 }
 
 
@@ -762,14 +1165,14 @@ tuesdaydate()
 {
 s("<LI>VOUS : J'aimerais te voir dès que possible ! Alors demain, mardi, s'il te plaît !");
 s("<LI>DIANE : C'est sympa. J'ai hâte."); getinti(5); tuesday = 2;    
-c("start2","En avant pour l'histoire !"); }
+c("start2","C'est parti pour le rendez-vous !"); }
 
 function
 thursdaydate()
 {
 s("<LI>VOUS : Jeudi, ce serait bien, si ça te convient !");
 s("<LI>DIANE : D'accord. J'ai hâte. Je viendrai directement du travail."); getinti(-1); thursday = 2;    
-c("start2","En avant pour l'histoire !"); }
+c("start2","C'est parti pour le rendez-vous !"); }
 
 function
 saturdaydate()
@@ -778,7 +1181,7 @@ s("<LI>VOUS : Le samedi, c'est toujours une super soirée pour sortir — alor
 s("<LI>DIANE : À ce moment-là, alors.");
 s("<LI>Elle semble légèrement déçue."); getinti(-1); saturday = 2;    
 s("<LI>Et vous découvrez que les billets de théâtre sont plus chers ce jour-là, ce qui réduit votre budget."); pounds -= 10; 
-c("start2","En avant pour l'histoire !"); }
+c("start2","C'est parti pour le rendez-vous !"); }
 
 function
 start2() 
@@ -1047,7 +1450,7 @@ s("<LI>Votre pizza est excellente. Plein de pepperoni bien épicé, des poivrons
 s("<LI>VOUS : Tu te souviens de la première fois qu'on s'est rencontrés ?");
 s("<LI>DIANE : C'est difficile d'oublier ça ! Quelle coïncidence qu'on ait tous les deux raté le dernier bus. J'étais vraiment contente que tu sois là — je ne suis pas sûre d'avoir eu assez sur moi pour payer le taxi.");
 s("<LI>VOUS : Comment tu as fait pour rater le bus ?");
-s("<LI>DIANE : <EM>Elle rougit et vous sourit</EM>. Tu sais très bien pourquoi j'ai raté le bus. C'était tellement embarrassant !");
+s("<LI>Elle rougit et vous sourit.");s("<LI>DIANE : Tu sais très bien pourquoi j'ai raté le bus. C'était tellement embarrassant !");
 c("eatmeal1b","Vous continuez à bavarder");  }
 
 function
@@ -1060,7 +1463,7 @@ s("<LI>VOUS : Eh bien, je suis allé dans le parking…");
 s("<LI>DIANE : Heureusement qu'on ne s'est pas croisés ! Ça aurait été encore plus gênant.");
 s("<LI>VOUS : Oui.");
 s("<P><SPAN style='color: #ff3333'>Bien sûr, vous savez exactement pourquoi elle a raté le bus, parce que vous l'aviez vue. Elle avait une envie pressante de faire pipi et s'était sauvée de l'arrêt de bus à la recherche d'un endroit où aller. Elle s'était glissée derrière un minibus et, à son retour à l'arrêt, le bus était parti. Vous espérez bien la voir dans cet état à nouveau.</SPAN>");
-s("<P><EM>Vous remplissez les deux verres de vin.</EM>");  proc += 50; 
+s("<P>Vous remplissez les deux verres de vin.");  proc += 50; 
 s("<LI>DIANE : Merci !");
 c("eatmeal1c","Vous continuez à bavarder");  }
 
@@ -1079,7 +1482,7 @@ s("<LI>DIANE : Quels sont tes centres d'intérêt — en dehors du théâtre, 
 s("<LI>VOUS : Je fais beaucoup de vélo.");
 s("<LI>DIANE : Oh, j'adore ça. En fait, j'adore le grand air.");
 s("<LI>VOUS : L'année dernière j'ai fait le Coast to Coast à vélo, d'un bout à l'autre de l'Angleterre. Ça m'a pris deux jours.");
-s("<EM>Vous remplissez les deux verres de vin.</EM>");  proc += 50; 
+s("Vous remplissez les deux verres de vin.");  proc += 50; 
 s("<LI>DIANE : Santé !");
 c("eatmeal7","Vous continuez à bavarder");  }
 
@@ -1100,7 +1503,7 @@ s("<LI>Vous mangez tous les deux, et c'est vraiment très bon. Vous buvez une go
 s("<LI>Votre spaghetti bolognaise est sans doute très bon. Mais c'était à peine une idée raisonnable de commander ça. Vous n'avez jamais regardé quelqu'un manger des spaghettis en face de vous ?");  getinti(-5);
 s("<LI>VOUS : Il est bon, le tortelloni ?");
 s("<LI>DIANE : Oui. Et ton spaghetti ? Il a l'air très coloré, en tout cas.");
-s("<LI><EM>Elle retient un fou rire alors qu'un bout de bolognaise tombe sur votre chemise</EM>");
+s("<LI>Elle retient un fou rire alors qu'un bout de bolognaise tombe sur votre chemise.");
 s("<LI>VOUS : Oups !");
 c("eatmeal2b","Vous vous concentrez sur votre repas");  }
 
@@ -1112,7 +1515,7 @@ s("<LI>DIANE : Eh bien, je suis agent immobilier. Il y a un bureau juste en fa
 s("<LI>VOUS : Ah oui, je vois lequel.");
 s("<LI>DIANE : Oui. Mais c'est très calme en ce moment. Je pense à aller à Londres.");
 s("<LI>VOUS : Oh ! Tu vas partir. <EM>(Vous prenez un air triste.)</EM>");
-s("<LI>DIANE : Ce ne sera pas avant longtemps. Et de toute façon, tu me connais à peine.<P><EM>Vous remplissez les deux verres de vin, avec la sensation que la conversation ne mène nulle part.</EM>");  proc += 50; getinti(-1);
+s("<LI>DIANE : Ce ne sera pas avant longtemps. Et de toute façon, tu me connais à peine.");s("<P>Vous remplissez les deux verres de vin, avec la sensation que la conversation ne mène nulle part.");  proc += 50; getinti(-1);
 c("eatmeal2c","Vous continuez à bavarder");  }
 
 function
@@ -1131,7 +1534,7 @@ s("<LI>DIANE : Quels sont tes centres d'intérêt — en dehors du théâtre, 
 s("<LI>VOUS : J'aime marcher, randonner, vraiment sur de longues distances.");
 s("<LI>DIANE : Oh, j'adore ça. En fait, j'adore le grand air."); getinti(2);
 s("<LI>VOUS : L'année dernière, un ami et moi avons fait le Coast to Coast Path à pied, d'un bout à l'autre de l'Angleterre. Ça nous a pris une semaine.");
-s("<LI><EM>Vous remplissez les deux verres de vin. Vous imaginez une longue balade à la campagne avec Diane, sans toilettes publiques en vue.</EM>");  proc += 50;  
+s("<LI>Vous remplissez les deux verres de vin. Vous imaginez une longue balade à la campagne avec Diane, sans toilettes publiques en vue.");  proc += 50;  
 c("eatmeal7","Vous continuez à bavarder");  }
 
 function
@@ -1184,7 +1587,7 @@ s("<LI>Elle hoche la tête. Vous vous penchez au-dessus de la table et lui tende
 s("<LI>DIANE : C'est vraiment délicieux. Je me demande quelle sauce c'est. Tu veux goûter le mien ?");  
 s("<LI>Elle se penche en avant et vous tend une fourchette de ses tortelloni, que vous mangez directement à la fourchette. Elle reste penchée vers vous, vous souriant."); getinti(8);
 s("<LI>Le premier bouton de son chemisier est ouvert, et alors qu'elle se penche en avant, vous entrevoyez le creux entre ses seins et un soutien-gorge blanc en dentelle.");
-s("<LI><EM>Vous remplissez les deux verres de vin.</EM>");  proc += 50; 
+s("<LI>Vous remplissez les deux verres de vin.");  proc += 50; 
 s("<LI>DIANE : Merci !");
 c("eatmeal3e","Vous continuez à bavarder");  }
 
@@ -1212,9 +1615,9 @@ eatmeal4a()
 s("<LI>Vous mangez tous les deux, et c'est vraiment très bon. Vous buvez une gorgée de vin, elle en boit une, et elle reprend un peu d'eau.");
 s("<LI>Votre lasagne aux légumes est sans doute très bonne. Mais vous étiez tellement déconcerté, distrait par la présence de Diane en face de vous, que vous l'avez commandée par erreur. Vous pensiez qu'il y aurait de la viande dedans."); 
 s("<LI>Grosse erreur !");
-s("<LI>DIANE : Je ne savais pas que tu étais végétarien. <EM>Elle vous regarde avec de grands yeux.</EM>");
+s("<LI>DIANE : Je ne savais pas que tu étais végétarien.");s("<LI>Elle vous regarde avec de grands yeux.");
 s("<LI>VOUS : Eh bien, euh, pas tout à fait. Mais je pense vraiment qu’il n’est pas bon de manger de la viande tout le temps. J’aime la viande, mais quand je pense aux pauvres animaux…");
-s("<LI>DIANE : C'est exactement ce que je ressens ! <EM>Elle vous sourit, les yeux brillants d'émotion. Ce n'était peut-être pas si mauvais comme choix, finalement.</EM>");  getinti(10);
+s("<LI>DIANE : C'est exactement ce que je ressens !");s("<LI>Elle vous sourit, les yeux brillants d'émotion. Ce n'était peut-être pas si mauvais comme choix, finalement.");  getinti(10);
 c("eatmeal4b","Vous continuez à bavarder");  }
 
 function
@@ -1241,7 +1644,7 @@ eatmeal4d()
 {
 s("<LI>VOUS : Quels sont tes centres d'intérêt — en dehors du théâtre, bien sûr ?");
 s("<LI>DIANE : Oh, j'aime être dehors. Et en été, j'aime descendre vers la côte. Molly et moi, on est assez portées sur les sports nautiques.");
-s("<LI><EM>Vous avalez votre salive</EM>.");
+s("<LI>Vous avalez votre salive.");
 s("<LI>DIANE : Rien de trop exotique, mais j'aime vraiment le ski nautique. Tu fais des sports nautiques, toi ?");
 s("<LI>VOUS : Je n'en ai jamais vraiment eu l'occasion, mais j'aimerais bien un jour.");  
 s("<LI>DIANE : Tu dois venir nous rejoindre. Tu en veux encore ? J'en reprendrais bien un peu aussi."); proc += 40; getinti(2);
@@ -1322,7 +1725,7 @@ s("<LI>DIANE : Comment est ton travail ?");
 s("<LI>Vous lui parlez de votre travail et lui dis que vous passez un entretien pour une promotion demain.");
 s("<LI>DIANE : Oh, il faut fêter ça. Juste un demi-verre, quand même."); proc += 40; 
 s("<LI>VOUS : Merci…");
-s("<LI>DIANE : À ton entretien ! <EM>Elle lève son verre de vin.</EM>");  
+s("<LI>DIANE : À ton entretien !");s("<LI>Elle lève son verre de vin.");  
 s("<LI>Et elle vous envoie un baiser de l'autre côté de la table."); getinti(3);
 c("eatmeal5d","Vous lui souriez");  }
 
@@ -1409,7 +1812,7 @@ s("<LI>Vous mangez tous les deux, et c'est vraiment très bon. Vous buvez une go
 s("<LI>VOUS : Comment tu trouves ton tortelloni ?");
 s("<LI>DIANE : Plutôt bon. Et ton steak ?");
 s("<LI>VOUS : Bon. J'aime toujours un bon steak.");
-s("<LI>DIANE : Cela dit, je crois que j'avais plus soif que faim. <EM>Elle boit encore un peu de vin.</EM>");
+s("<LI>DIANE : Cela dit, je crois que j'avais plus soif que faim.");s("<LI>Elle boit encore un peu de vin.");
 c("eatmeal6b","Vous continuez à bavarder");  }
 
 function
@@ -1566,7 +1969,7 @@ s("<P><STRONG>Le haut-parleur retentit : le spectacle commencera dans 10 minut
 s("<HR>");
 s("<LI>Il est 19 h 20. Vous êtes dans le hall du théâtre. Diane semble pensive, comme si quelque chose lui trottait dans la tête.");  
 if (blad > 320)
-{s("<LI><EM>Elle rougit timidement.</EM>"); 
+{s("<LI>Elle rougit timidement."); 
 s("<LI>DIANE : Au fait, j'ai le temps d'aller aux toilettes ?");  
 s("<LI>Qu'allez-vous répondre ?");
 c("theatreask","Réfléchissez-y."); }
@@ -1639,7 +2042,7 @@ c("theatre1","Elle revient et vous prenez vos places dans la salle"); }
 function
 stopher()
 {
-s("<LI><EM>Elle vous a demandé si elle avait le temps d'aller aux toilettes.</EM>");
+s("<LI>Elle vous a demandé si elle avait le temps d'aller aux toilettes.");
 s("<LI>VOUS : Oh, je ne suis pas sûr. Nos sièges sont au milieu d'une rangée, et les gens entrent vraiment dans la salle en ce moment.");  
 s("<LI>DIANE : Ce n'est pas grave. J'irai à l'entracte.");  
 s("<LI>VOUS : En parlant d'entracte, je ferais peut-être mieux de commander des boissons pour ce moment-là.</P>");
@@ -1648,8 +2051,8 @@ if (pounds >= 10)
    s("Vous commandez 2 verres de vin pour l'entracte.");    wine = 1;    pounds -= 10; }
 else 
 s("<LI>Vous n'avez pas assez d'argent !");
-s("<LI><EM>Vous revenez vers elle. Elle a l'air irritée. Le temps que vous avez mis à commander les boissons, elle aurait eu largement le temps d'aller aux toilettes.</EM>"); getinti(-7);
-s("<LI><EM>Et vous avez oublié d'acheter un programme.</EM>"); getinti(-2);
+s("<LI>Vous revenez vers elle. Elle a l'air irritée. Le temps que vous avez mis à commander les boissons, elle aurait eu largement le temps d'aller aux toilettes."); getinti(-7);
+s("<LI>Et vous avez oublié d'acheter un programme."); getinti(-2);
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Mais cela renforce sa timidité à l'idée de « demander à y aller ». Vous gagnez 5 points de timidité.</SPAN></EM></P>"); points += 5;
 c("theatre1","Vous prenez vos places dans la salle"); }
 
@@ -1920,7 +2323,7 @@ s("<LI>Diane semble sentir que votre esprit est ailleurs.");
 s("<LI>Vous regardez la pièce avec plus d'attention. Elle est vraiment très drôle");
 s("<LI>Vous vous demandez ce qu'est devenue la fille qui boude dans la voiture. Elle vous plaisait bien. Ah oui — vous vous souvenez de ce qui se passe !");
 s("<LI>Vous regardez Diane et elle vous regarde. Vous souriez tous les deux."); getinti(1);
-s("<LI>Diane vous chuchote : Celle qui joue la fille partie bouder, c'est Molly, mon amie.");
+s("<LI>DIANE : <EM>en chuchotant</EM> Celle qui joue la fille partie bouder, c'est Molly, mon amie.");
 sitting_desp()  
 c("theatre10","Concentrez-vous sur la pièce."); }
 
@@ -1942,7 +2345,7 @@ s("<LI>Deux verres de vin ont été déposés pour vous à une table au fond.");
 s("<LI>DIANE : Oh, je suis contente que tu aies commandé à l'avance. Bien joué !"); getinti(5);
 s("<LI>Sur le chemin, vous passez devant les toilettes des femmes. Beaucoup de femmes s'y engouffrent en courant et vous apercevez une queue qui se forme.");
 s("<LI>Vous vous demandez si Diane a envie d'aller aux toilettes.");
-s("<LI>VOUS : Santé ! J'espère que tu apprécies la pièce. <EM>Vous trinquez et buvez le vin.</EM>"); proc += 85;
+s("<LI>VOUS : Santé ! J'espère que tu apprécies la pièce.");s("<LI>Vous trinquez et buvez le vin."); proc += 85;
 c("interval1","Vous parlez de la pièce"); } 
 
 function
@@ -1969,7 +2372,7 @@ c("keepquiet1","Vous sirotez votre vin en attendant qu'elle revienne."); }
 else 
 {s("<LI>DIANE : Ça va, merci. Il y a toujours une queue épouvantable pour les toilettes des femmes à l'entracte dans ce théâtre."); getinti(3);
 s("<LI>Il y a un petit balcon juste au-delà du bar.");
-s("<LI>VOUS : Et si on sortait là quelques minutes, loin de la foule ? <EM>Elle accepte.</EM>");
+s("<LI>VOUS : Et si on sortait là quelques minutes, loin de la foule ?");s("<LI>Elle accepte.");
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Avoir mentionné les toilettes vous fait perdre 2 points de timidité.</SPAN></EM></P>"); points -= 2;
 c("interval2","Vous sortez sur le balcon."); } }
 
@@ -1993,7 +2396,7 @@ keepquiet1()
 if (saturday)
 {s("<LI>Diane est allée aux toilettes des femmes. Mais c'est samedi soir et le théâtre est presque plein. Pour ne rien arranger, une ou deux filles qui buvaient en ville sont venues se servir des toilettes. Il en résulte une belle queue.");
 s("<LI>Diane rejoint la queue, qui serpente jusqu'à la porte. Au bout de quelques minutes, elle a avancé et elle se retrouve à l'intérieur des toilettes des femmes, mais il y a encore beaucoup de monde, et l'une des cabines est hors service. Une fille qui était derrière elle, et qui sautillait vraiment d'un pied sur l'autre, l'a également suppliée de la laisser passer en premier.");
-s("<LI>Après avoir attendu environ cinq minutes, Diane décide qu'elle ne peut plus gaspiller l'entracte et revient vers vous. Elle est trop gênée pour vous dire qu'elle n'a pas réussi à faire pipi."); 
+s("<LI>Après avoir attendu environ cinq minutes, Diane décide qu'elle ne peut plus gaspiller l'entracte et revient vers vous."); 
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane est trop gênée pour vous dire qu'elle n'a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.</SPAN></EM></P>"); points += 7;} 
 else
 {s("<LI>Diane revient des toilettes et finit son verre de vin. Elle vous rejoint sur le balcon.");
@@ -2010,7 +2413,7 @@ s("<LI>VOUS : Ça te dérange si je fais juste un saut aux toilettes ? Assur
 s("<LI>Elle sourit et accepte.");
 s("<LI>Vous passez devant les toilettes des femmes encore bondées et entrez dans les paisibles toilettes des hommes. Vous faites pipi, puis vous traînez encore une minute ou deux — pas assez longtemps pour attirer l'attention, mais en sachant que Diane ne peut pas filer aux toilettes pendant qu'elle garde votre verre."); 
 s("<LI>Vous revenez la rejoindre. Il y a un petit balcon juste au-delà du bar.");
-s("<LI>VOUS : Et si on sortait là quelques minutes, loin de la foule ? <EM>Elle accepte.</EM>");
+s("<LI>VOUS : Et si on sortait là quelques minutes, loin de la foule ?");s("<LI>Elle accepte.");
 if (blad >550)
 {s("<LI>Elle se mord la lèvre. Elle avait vraiment envie d'aller aux toilettes, mais elle a raté l'occasion de le demander.");
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Vous gagnez 5 points de timidité.</SPAN></EM></P>"); points += 5; 
@@ -2023,9 +2426,9 @@ luckytrip1()
 {
 if (luckshots >= 1) 
 {s("<LI>Vous la voyez jeter un regard vers les toilettes des femmes. Alors vous jouez un coup de chance."); luckshots--; 
-s("<LI>Pourquoi avez-vous joué cette carte ? Il y avait la queue de toute façon.");
+s("<LI>Pourquoi l'avez-vous joué ? Il y avait la queue de toute façon.");
 s("<LI>Ou peut-être vouliez-vous la voir se trémousser dans la queue. Auquel cas, honte à vous !");
-s("<LI>En fait, la queue n'avait pas l'air si longue que ça, et ne serpentait plus jusqu'à la porte. Diane s'en est rendu compte. Elle vous touche le bras.");
+s("<LI>En fait, d'ici, la queue n'avait pas l'air si longue que ça — elle ne serpentait plus jusqu'à la porte. Diane s'en est rendu compte. Elle vous touche le bras.");
 s("<LI>DIANE : Je vais juste me repoudrer le nez. J'en ai pour une seconde."); 
 c("luckytrip1a","Vous l'attendez."); } 
 else
@@ -2035,15 +2438,15 @@ c("gameover","Vous êtes disqualifié."); } }
 function
 luckytrip1a()
 {
-s("<LI>Vous avez joué un coup de chance et Diane est allée aux toilettes des femmes. La queue semblait s'être évaporée.");
+s("<LI>Vous avez joué un coup de chance et Diane est allée aux toilettes des femmes. Depuis le foyer, la queue avait l'air d'avoir disparu.");
 if (thursday)
 {s("<LI>Mais à mi-chemin, quelqu'un l'appelle par son prénom. Deux vieilles amies l'ont aperçue et s'avancent pour la saluer. Vous les voyez bavarder pendant plusieurs minutes. Puis Diane les amène vous les présenter. Vous parlez tous les quatre de la pièce. Les deux autres connaissent Molly, elles discutent de sa prestation avec beaucoup d'enthousiasme. Finalement, vous sortez tous sur le balcon.");
 s("<LI>Diane semble avoir complètement oublié qu'elle avait envie d'aller aux toilettes. Elle était ravie de voir ses amies et promet de les recontacter bientôt. Elles disent qu'elles viennent régulièrement ici le jeudi soir. Vous leur dites au revoir.");
 c("interval3","Vous sortez sur le balcon."); }
 else if (saturday)
-{s("<LI>Diane est allée aux toilettes des femmes. Mais c'est samedi soir et le théâtre est presque plein. Pour ne rien arranger, une ou deux filles qui buvaient en ville sont venues utiliser les toilettes. Il y a donc encore une belle queue.");
-s("<LI>Elle rejoint la queue, qui a recommencé à serpenter jusqu'à la porte. Au bout de quelques minutes, elle a avancé et elle se retrouve à l'intérieur des toilettes des femmes, mais il y a vraiment du monde, et l'une des cabines est hors service. Une fille qui était derrière elle, et qui sautillait vraiment d'un pied sur l'autre, l'a également suppliée de la laisser passer en premier.");
-s("<LI>Après avoir attendu environ cinq minutes, Diane décide qu'elle ne peut plus gaspiller l'entracte et revient vers vous. Elle est trop gênée pour vous dire qu'elle n'a pas réussi à faire pipi.");  
+{s("<LI>Mais c'est samedi soir et le théâtre est presque plein. Pour ne rien arranger, une ou deux filles qui buvaient en ville sont venues utiliser les toilettes. Quand elle y arrive, il y a encore une belle queue.");
+s("<LI>Elle s'y met — qui serpente à nouveau jusqu'à la porte. Au bout de quelques minutes, elle a avancé et elle se retrouve à l'intérieur des toilettes des femmes, mais il y a vraiment du monde, et l'une des cabines est hors service. Une fille qui était derrière elle, et qui sautillait vraiment d'un pied sur l'autre, l'a également suppliée de la laisser passer en premier.");
+s("<LI>Après avoir attendu environ cinq minutes, Diane décide qu'elle ne peut plus gaspiller l'entracte et revient vers vous.");  
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane est trop gênée pour vous dire qu'elle n'a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.</SPAN></EM></P>"); points += 7;
 c("interval3","Vous sortez sur le balcon."); }
 else
@@ -2087,7 +2490,8 @@ if (blad > 525)
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane aurait bien besoin d'aller aux toilettes pendant l'entracte mais est trop timide pour le mentionner. Vous gagnez 1 point de timidité.</SPAN></EM></P>"); points += 1;} 
 else 
 {s("<LI>Diane ne jette pas un regard vers les toilettes des femmes."); } 
-s("<LI>VOUS : J'ai hâte de voir le deuxième acte. Tu lui offres ton bras et elle le prend."); getinti(2);
+s("<LI>VOUS : J'ai hâte de voir le deuxième acte.");
+s("<LI>Vous lui offrez votre bras et elle le prend."); getinti(2);
 c("act2a","Vous retournez à vos places."); }
 
 function
@@ -2209,7 +2613,7 @@ else if (blad > 500)
 else
 {s("<LI>Diane serre votre main et rit avec vous."); 
 if (inti >50) 
-{s("<LI>Elle se penche et vous chuchote à l'oreille : <EM>J'ai déjà vu Molly comme ça plusieurs fois dans la vraie vie.</EM>"); getinti(2); }
+{s("<LI>Elle se penche et vous chuchote à l'oreille : « J'ai déjà vu Molly comme ça plusieurs fois dans la vraie vie. »"); getinti(2); }
 else
 {s("<LI>Diane rit du jeu de son amie."); }}
 s("<LI>Vous avez vraiment adoré cette scène.");
@@ -2221,7 +2625,7 @@ act2f()
 s("<LI>Il y a encore une légère pause pour un changement de décor.");
 sitting_desp()  
 if (blad > 650)
-{s("<LI>Diane se tourne vers vous et chuchote : <EM>Vous savez combien de temps va durer cet entracte ?</EM>");
+{s("<LI>Diane se tourne vers vous et chuchote : « Vous savez combien de temps va durer cet entracte ? »");
 s("<LI>VOUS : Je crois que c'est juste un changement de décor. Probablement une minute à peine.");
 s("<LI>Elle a pris son sac et le tient sur ses genoux. Elle fait semblant de chercher un mouchoir mais regarde autour d'elle.");
 s("<LI>DIANE : Je me demande s'il y a le temps de—"); }
@@ -2319,7 +2723,7 @@ s("<LI>Vous avez tout gâché. Qu'est-ce qui vous a pris ? Vous vouliez la voi
 c("gameover","Bonne nuit !"); }
 else
 {s("<LI>DIANE : Mais Molly, alors ? Je ne peux vraiment pas partir sans la voir. On peut la retrouver dans le foyer."); getinti(-3);
-s("<LI>Diane remonte l'allée du théâtre, suivant le reste du public vers le foyer. Vous la suivez d'un pas ou deux. Vous passez devant les toilettes des femmes et Diane s'arrête, disant <EM>Je vais juste passer là. Je te rejoins dans le foyer dans deux minutes.</EM>"); 
+s("<LI>Diane remonte l'allée du théâtre, suivant le reste du public vers le foyer. Vous la suivez d'un pas ou deux. Vous passez devant les toilettes des femmes et Diane s'arrête, disant : « Je vais juste passer là. Je te rejoins dans le foyer dans deux minutes. »"); 
 s("<LI>Il ne vous reste plus qu'à l'imaginer là-dedans, relevant précipitamment sa jupe, baissant sa culotte et — ne vous emballez pas trop.");
 afterpee()
 s("<LI>Vous cherchez un endroit à l'écart de la foule.");
@@ -2355,8 +2759,8 @@ foyerbar1()
 {
 s("<LI>Vous êtes dans le foyer du théâtre. Diane appelle Molly sur son portable.");
 s("<LI>DIANE : Elle dit qu'elle va passer prendre un verre avec nous ici dans environ 15 minutes.");
-s("<LI>VOUS : Je vais nous chercher à boire. <EM>Vous allez au bar et prenez une bière pour vous et une lager pour Diane.</EM>"); proc += 150; 
-s("<LI>DIANE : Santé ! J'avais vraiment soif. <EM>Vous buvez tous les deux, puis vous discutez quelques minutes.</EM>");
+s("<LI>VOUS : Je vais nous chercher à boire.");s("<LI>Vous allez au bar et prenez une bière pour vous et une lager pour Diane."); proc += 150; 
+s("<LI>DIANE : Santé ! J'avais vraiment soif.");s("<LI>Vous buvez tous les deux, puis vous discutez quelques minutes.");
 if (blad > 550) 
 {s("<LI>DIANE : Pendant qu'on attend, je vais juste aller me rafraîchir. Je n'en ai pas pour longtemps.");
 afterpee()
@@ -2468,7 +2872,7 @@ s("<LI>Une minute plus tard, Molly apparaît avec un ami. Vous vous approchez, v
 s("<LI>MOLLY : C'est bien Diane, ça.");
 s("<LI>Vous discutez tous les trois et vous lui dites combien vous avez aimé la pièce. Deux ou trois minutes plus tard, Diane revient, avec un sourire penaud. Elle et Molly s'embrassent.");
 afterpee()
-s("<LI>DIANE : Désolée pour ça. <EM>Vous l'entendez chuchoter à Molly</EM> J'en pouvais vraiment plus !");
+s("<LI>DIANE : Désolée pour ça.");s("<LI>Vous l'entendez chuchoter à Molly.");s("<LI>DIANE : J'en pouvais vraiment plus !");
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle est gênée d'avoir dû se précipiter aux toilettes. Vous gagnez 2 points de timidité.</SPAN></EM></P>"); points += 2; }
 else
 {s("<LI>Au bout de quelques minutes, Molly sort par la porte des artistes. Elle et Diane s'embrassent."); }
@@ -2534,9 +2938,9 @@ choosewalk1()
 {
 s("<LI>Vous dites que vous préférez partir à pied. Il y aura largement le temps de prendre un verre une fois arrivés au pavillon.");
 if (blad < 550)
-{s("<LI>DIANE : Quel goujat ! <EM>Elle a l'air un peu vexée, mais sans plus.</EM>"); getinti(-5); mollyblad = 75}
+{s("<LI>DIANE : Quel goujat !");s("<LI>Elle a l'air un peu vexée, mais sans plus."); getinti(-5); mollyblad = 75}
 else if (blad < 625)
-{s("<LI>DIANE : Pfff. Tu aurais pu me soutenir un peu. <EM>Elle fait la moue et fait la tête.</EM>");  getinti(-15); }
+{s("<LI>DIANE : Pfff. Tu aurais pu me soutenir un peu.");s("<LI>Elle fait la moue et fait la tête.");  getinti(-15); }
 else
 {s("<LI>Diane est vraiment contrariée par votre décision, mais elle se mord les lèvres et ne dit rien à personne."); getinti(-25); }
 s("<LI>Vous vous mettez en route pour longer la berge jusqu'au Pavillon.");
@@ -2557,7 +2961,7 @@ s("<LI>VOUS : Oh, ce serait bien de boire quelque chose d'abord ; j'ai bien 
 if (blad < 550)
 {s("<LI>DIANE : Voilà un vrai ami."); getinti(15); }
 else if (blad < 625)
-{s("<LI>DIANE : Mon héros ! <EM>Elle prend votre bras.</EM>");  getinti(25); }
+{s("<LI>DIANE : Mon héros !");s("<LI>Elle prend votre bras.");  getinti(25); }
 else
 {s("<LI>Diane est vraiment ravie de votre décision et vous regarde avec gratitude. Elle vous murmure un tout petit « Merci » et vous tient la main…"); getinti(35); }
 s("<LI>Vous traversez la route en direction du pub.");
@@ -2586,9 +2990,9 @@ s("<LI>Vous aidez à porter les verres jusqu'à la table. Puis vous filez aux to
 if (blad >525 )
 {s("<LI>En ressortant, vous croisez Diane qui entre aux toilettes des femmes. Elle vous fait un petit sourire. Vous voudriez bien la suivre.");
 afterpee() 
-s("<LI>Vous rejoignez les deux autres à la table. Ils vous posent des questions sur vous et vous bavardez. Quelques minutes plus tard, Diane vous rejoint. Vous levez vos verres et dites « Santé ! »");  mollyproc -=30; mollyblad += 30; }
+s("<LI>Vous rejoignez les deux autres à la table. Ils vous posent des questions sur vous et vous bavardez. Quelques minutes plus tard, Diane vous rejoint. Vous levez vos verres et dites : « Santé ! »");  mollyproc -=30; mollyblad += 30; }
 else
-{s("<LI>Vous rejoignez les autres à la table. Molly vous pose des questions sur vous et vous bavardez. Vous trinquez en disant « Santé ! »");}
+{s("<LI>Vous rejoignez les autres à la table. Molly vous pose des questions sur vous et vous bavardez. Vous trinquez en disant : « Santé ! »");}
 c("pubdrink2","Vous discutez gaiement."); }
 
 function
@@ -2753,12 +3157,12 @@ riverside3aa()
 {
 s("<LI>Molly se lève et achète des burgers pour elle et son amie, et des cafés pour vous quatre."); proc += 100; mollyproc += 100; 
 if (blad > 580)
-{s("<LI>Diane dit « Merci » mais semble peu enthousiaste. Puis elle dit qu'elle va chercher du sucre et retourne au camion.");
+{s("<LI>Diane dit : « Merci » mais semble peu enthousiaste. Puis elle dit qu'elle va chercher du sucre et retourne au camion.");
 s("<LI>MOLLY : Tiens, je ne croyais pas qu'elle prenait du sucre.");
 s("<LI>Vous voyez Diane chuchoter quelque chose à la femme derrière le comptoir. La femme secoue la tête. Diane revient vers vous en forçant un sourire.");
 s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane demande discrètement à la femme s'il y a des « commodités » et vous gagnez plusieurs points de timidité.</SPAN></EM></P>"); points += 5;}
 else
-{s("<LI>Diane aide Molly avec la commande et rapporte les cafés pour vous et pour elle. <EM>Quelle bonne idée,</EM> dit-elle.");}
+{s("<LI>Diane aide Molly avec la commande et rapporte les cafés pour vous et pour elle. « Quelle bonne idée, » dit-elle.");}
 c("riverside4","Vous buvez vos cafés."); } 
 
 function
@@ -2766,13 +3170,13 @@ riverside3ab()
 {
 s("<LI>Vous achetez de beaux grands cafés pour vous quatre."); proc += 145; mollyproc += 145; pounds -= 6;
 if (blad > 570)
-{s("<LI>Diane dit « Merci » mais semble peu enthousiaste. Puis elle dit qu'elle va chercher du sucre et retourne au camion.");
+{s("<LI>Diane dit : « Merci » mais semble peu enthousiaste. Puis elle dit qu'elle va chercher du sucre et retourne au camion.");
 s("<LI>MOLLY : Tiens, je ne croyais pas qu'elle prenait du sucre.");
 s("<LI>Vous voyez Diane chuchoter quelque chose à la femme derrière le comptoir. La femme secoue la tête. Diane revient vers vous en forçant un sourire.");
 s("<LI>Elle semble un peu contrariée que vous ayez acheté les cafés."); getinti(-10);
 s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane demande discrètement à la femme s'il y a des « commodités » et vous gagnez plusieurs points de timidité.</SPAN></EM></P>"); points += 8;}
 else
-{s("<LI>Diane aide Molly avec la commande et rapporte les cafés pour vous et pour elle. <EM>Quelle bonne idée,</EM> dit-elle."); getinti(17);}
+{s("<LI>Diane aide Molly avec la commande et rapporte les cafés pour vous et pour elle. « Quelle bonne idée, » dit-elle."); getinti(17);}
 c("riverside4","Vous buvez vos cafés."); } 
 
 function
@@ -2882,7 +3286,7 @@ luckytrip16a1()
 {
 s("<LI>VOUS : Les dames d'abord.");
 s("<LI>DIANE : T'es sûr ? Merci. Je n'en ai pas pour longtemps. Fais le guet, tu veux bien ? Je ne fais jamais confiance aux verrous de ces trucs-là.");
-s("<LI>Elle entre dans le Portaloo et ferme la porte. Vous n'avez plus qu'à imaginer ce qui se passe à l'intérieur. Au bout d'une minute environ, elle ressort, dit « À toi » et attend votre retour.");
+s("<LI>Elle entre dans le Portaloo et ferme la porte. Vous n'avez plus qu'à imaginer ce qui se passe à l'intérieur. Au bout d'une minute environ, elle ressort, dit : « À toi » et attend votre retour.");
 s("<LI>Vous entrez à votre tour et faites pipi. Diane vous attend à votre retour. Elle sourit de toutes ses dents et prend votre bras.");
 s("<LI>DIANE : Soulagé ? C'est plutôt sordide là-dedans, non ? Mais tu es un héros, toi, de trouver des toilettes à une fille quand elle en a besoin.");
 s("<LI>Elle se retourne, vous donne un baiser, vous tapote les fesses et repart en vous souriant."); getinti(+25);  
@@ -2921,7 +3325,7 @@ luckytrip16ba()
 s("<LI>Quelques minutes plus tard, vous vous levez tous pour continuer.");
 if (points >23)
 {s("<LI>Diane semble jeter un coup d'œil vers le Portaloo mais ne dit rien. Elle doit regretter d'avoir dit qu'elle n'avait pas besoin d'y aller.");
-s("<P><EM><SPAN style='color: #FFCC00'>Elle n'a pas le courage de vous dire qu'elle a vraiment besoin du Portaloo.</SPAN></EM></P>"); points += 5; } 
+s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Elle n'a pas le courage de vous dire qu'elle a vraiment besoin du Portaloo. Vous gagnez 5 points de timidité.</SPAN></EM></P>"); points += 5; }
 else
 {s("<LI>Diane s'approche discrètement de Molly et lui chuchote quelque chose. Molly hoche la tête.");
 s("<LI>MOLLY : On va juste aux toilettes, nous les filles. On vous rejoint.");
@@ -3014,9 +3418,9 @@ if (blad > 625)
 {s("<LI>Vous marchez avec Diane, mais elle est devenue très silencieuse. Quand vous lui parlez, elle répond brièvement ou par monosyllabes, et elle a lâché votre main."); mollyproc -=30; mollyblad += 30
 s("<LI>Elle marche légèrement penchée en avant, à petits pas rapides, comme si elle essayait de vous faire presser le pas.");
 s("<LI>VOUS : Tu es bien silencieuse, Diane. Est-ce que j'ai dit quelque chose qui t'a contrariée ?");
-s("<LI>DIANE : Non, pas du tout.<EM> Elle reprend votre main et vous continuez à marcher.</EM>");
+s("<LI>DIANE : Non, pas du tout.");s("<LI>Elle reprend votre main et vous continuez à marcher.");
 if (inti >80)
-{s("<LI>DIANE : À vrai dire, j'ai vraiment envie d'aller aux toilettes.<EM>Elle vous adresse un sourire penaud.</EM>");
+{s("<LI>DIANE : À vrai dire, j'ai vraiment envie d'aller aux toilettes.");s("<LI>Elle vous adresse un sourire penaud.");
 s("<LI>VOUS : On devrait être au Pavillon dans quelques minutes.");
 s("<LI>DIANE : Oui. Je peux attendre.");
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admet qu'elle a vraiment envie de faire pipi. Vous perdez 2 points de timidité.</SPAN></EM></P>"); points -= 2;}
@@ -3102,7 +3506,7 @@ s("<LI>VOUS : Je ne prévois pas de partir à l'étranger cette année. Mais j
 s("<LI>DIANE : Oh, c'est vrai. On y a passé des vacances en famille il y a environ 5 ans et on a pris le train. C'était même un train à vapeur.");
 s("<LI>Elle vous regarde avec un beau sourire.");
 s("<LI>VOUS : J'espère aller au North Yorkshire Moors Railway la semaine prochaine. Ça ne vous tenterait pas de venir ?"); traintalking = 1;
-s("<LI>DIANE : J'adorerais. <EM>Elle vous serre la main et vous regarde.</EM> Je pourrais peut-être préparer des sandwiches et on pourrait faire un pique-nique.");
+s("<LI>DIANE : J'adorerais.");s("<LI>Elle vous serre la main et vous regarde.");s("<LI>DIANE : Je pourrais peut-être préparer des sandwiches et on pourrait faire un pique-nique.");
 s("<LI>Vous acquiescez d'un signe de tête. Vous vous arrêtez tous les deux et vous vous regardez. Vous passez votre bras autour d'elle, l'attirez lentement vers vous et l'embrassez. C'est la première fois que vous l'embrassez et elle s'attarde sur ce baiser. Vous sentez le goût de ses lèvres. Vous vous embrassez de nouveau."); getinti(25);
 if (blad > 700)
 {
@@ -3129,7 +3533,7 @@ if (mollyblad > 600 )
 {s("<LI>Molly et Bruno, qui marchaient devant vous, se sont arrêtés brusquement. Ils ont tous les deux l'air un peu penauds.");
 s("<LI>Ils se regardent.");
 s("<LI>BRUNO : On peut vous rejoindre dans un moment ? On a juste quelque chose à régler. On vous retrouve dans 5 minutes.");
-s("<LI>Vous dites « Bien sûr » et vous continuez. En vous retournant, vous voyez Molly commencer à descendre les marches, avec Bruno derrière elle.");
+s("<LI>Vous dites : « Bien sûr » et vous continuez. En vous retournant, vous voyez Molly commencer à descendre les marches, avec Bruno derrière elle.");
 c("riverside13","Où vont-elles ?"); }
 else
 {s("<LI>Vous continuez à marcher, main dans la main avec Diane.");
@@ -3141,7 +3545,7 @@ riverside13()
 s("<LI>Molly et Bruno se sont éclipsés et sont descendus par les marches vers le chemin de halage. Ils sont hors de vue. Vous vous demandez si Molly avait envie de faire pipi. Vous aimeriez jeter un coup d'œil par-dessus le parapet, mais vous ne pouvez évidemment pas avec Diane à vos côtés.");
 s("<LI>DIANE : Où sont-ils allés ?");
 s("<LI>VOUS : Je ne suis pas sûr. Il y a une sorte de chemin de halage là en bas.");
-s("<LI>DIANE : Oh. <EM>La pièce est sans doute tombée.</EM>");
+s("<LI>DIANE : Oh.");s("<LI>La pièce est sans doute tombée.");
 s("<LI>Vous n'aurez qu'à laisser libre cours à votre imagination. À moins que vous ne vouliez tenter un coup de chance, bien sûr.");
 c("riverside13b","Non, je garde mes coups de chance.");
 c("luckytrip4","Oui, je vais tenter un coup de chance."); }
@@ -3169,7 +3573,7 @@ if (tuesday)
 else
 {s("<LI>Même de là où vous êtes, vous voyez son jet arquer contre le mur. Molly regarde poliment ailleurs mais, à sa posture — les genoux à demi croisés — on dirait qu'elle aussi aurait bien envie d'y aller.");}
 s("<LI>Bruno secoue et remonte sa fermeture éclair, puis revient vers Molly. Elle lui tend son sac à main à tenir et s'avance comme pour se diriger vers le mur.");
-s("<LI>Diane dit « Allez, viens », et vous touche le bras comme pour vous entraîner. Mais vous n'allez pas rater ça. Si elle a pu regarder Bruno, vous pouvez bien regarder Molly !");
+s("<LI>Diane dit : « Allez, viens », et vous touche le bras comme pour vous entraîner. Mais vous n'allez pas rater ça. Si elle a pu regarder Bruno, vous pouvez bien regarder Molly !");
 c("luckytrip4a","Vous continuez à regarder."); }}
 
 function
@@ -3322,7 +3726,7 @@ if (saturday)
 s("<LI>Elle est déjà en train de pisser. Elle doit tenir sa culotte de côté car elle est toujours debout, les jambes écartées, et depuis l'endroit où vous vous trouvez, quelques marches plus bas, la tête juste au niveau du sol du palier, vous voyez réellement la vapeur s'élever tandis que son pipi éclabousse le sol. Après la première décharge urgente, le jet se stabilise et elle ajuste légèrement sa position.");
 s("<LI>Tandis que le jet s'atténue, vous descendez discrètement les marches suivantes. Vous aviez vraiment besoin de faire pipi vous aussi, alors vous le faites, puis vous remontez.");
 s("<LI>Vous remarquez la grande flaque dans le coin du palier en passant, puis rejoignez Diane qui attend en haut des marches. Elle a sorti un mouchoir en papier et semble essuyer ses jambes, mais elle se redresse dès qu'elle vous voit."); gobushes = 1; gopee = 1;
-s("<LI>Elle est terriblement embarrassée. <EM>Je suis désolée,</EM> dit-elle, <EM>je ne pouvais plus attendre.</EM>");
+s("<LI>Elle est terriblement embarrassée. « Je suis désolée, » dit-elle, « je ne pouvais plus attendre. »");
 afterpee()
 s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane est vraiment embarrassée par sa pause pipi d'urgence, mais elle sera moins timide à l'avenir. Vous perdez 2 points de timidité.</SPAN></EM></P>"); points -= 2;
 c("together1b","Vous lui prenez la main.");}
@@ -3331,7 +3735,7 @@ else
 s("<LI>Elle est déjà en train de pisser. Elle doit tenir sa culotte de côté — elle porte vraiment des bas, alors — car elle est toujours debout, les jambes écartées, et depuis l'endroit où vous vous trouvez, quelques marches plus bas, la tête juste au niveau du sol du palier, vous voyez réellement la vapeur s'élever tandis que son pipi éclabousse le sol. Après la première décharge urgente, le jet se stabilise et elle ajuste légèrement sa position.");
 s("<LI>Tandis que le jet s'atténue, vous descendez discrètement les marches suivantes. Vous aviez vraiment besoin de faire pipi vous aussi, alors vous le faites, puis vous remontez.");
 s("<LI>Vous remarquez la grande flaque dans le coin du palier en passant, puis rejoignez Diane qui attend en haut des marches. Elle a sorti un mouchoir en papier et semble essuyer ses jambes, mais elle se redresse dès qu'elle vous voit."); gobushes = 1; gopee = 1;
-s("<LI>Elle est terriblement embarrassée. <EM>Je suis désolée,</EM> dit-elle, <EM>je ne pouvais plus attendre.</EM>");
+s("<LI>Elle est terriblement embarrassée. « Je suis désolée, » dit-elle, « je ne pouvais plus attendre. »");
 afterpee()
 s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane est vraiment embarrassée par sa pause pipi d'urgence, mais elle sera moins timide à l'avenir. Vous perdez 3 points de timidité.</SPAN></EM></P>"); points -= 3;
 c("together1b","Vous lui prenez la main."); }}
@@ -3361,7 +3765,7 @@ s("<LI>Vous avez tous les deux envie de faire pipi.");
 s("<LI>DIANE : On peut juste se glisser derrière ces buissons, non ? Il y a quelqu'un qui arrive ?");
 s("<LI>VOUS : Attends une seconde. Il y a un cycliste qui arrive.");
 s("<LI>Vous attendez que le cycliste passe. Vous voyez que Diane s'efforce de toutes ses forces d'avoir l'air naturelle tandis qu'il passe, avec des « Bonsoir » mutuels. Puis—");
-s("<LI>DIANE : Il est parti ? <EM>Elle est penchée en avant, les mains sur les genoux, à le regarder disparaître au bout du chemin.</EM>");
+s("<LI>DIANE : Il est parti ?");s("<LI>Elle est penchée en avant, les mains sur les genoux, à le regarder disparaître au bout du chemin.");
 s("<LI>Vous vous frayez tous les deux un chemin dans les hautes herbes jusqu'aux buissons clairsemés. Elle vous désigne un buisson d'un geste, tandis qu'elle va derrière un autre. Vous ouvrez votre braguette et commencez à pisser. Vous en aviez vraiment besoin.");
 s("<LI>Vous apercevez Diane en train de relever sa jupe alors qu'elle se glisse derrière l'autre buisson. Les buissons ne font qu'un peu plus d'un mètre de haut et ne sont pas très épais. Sa tête et ses épaules restent visibles, mais à ses mouvements vous devinez qu'elle cherche un endroit pour se soulager. Puis sa tête disparaît de votre vue tandis qu'elle s'accroupit."); gobushes = 1; gopee = 1;
 if (saturday)
@@ -3419,7 +3823,7 @@ s("<LI>DIANE : Elles sont toujours fermées quand on en a besoin. Bon, on sera
 c("riverside15","Vous continuez à marcher."); }
 else
 {s("<LI>Diane regarde les toilettes.");
-s("<LI>Ça a l'air dégoûtant. Heureusement que je n'en ai pas besoin.");
+s("<LI>DIANE : Ça a l'air dégoûtant. Heureusement que je n'en ai pas besoin.");
 c("riverside15","Vous continuez à marcher."); }} 
 
 function
@@ -3456,7 +3860,7 @@ function
 toiletclosed2b()
 {
 s("<LI>VOUS : En fait, j'aurais bien besoin de faire pipi moi aussi. Pourquoi on n'irait pas chacun notre tour derrière le bâtiment.");
-s("<LI>DIANE : Pourquoi pas. <EM>Elle regarde autour d'elle.</EM> Ce petit chemin de côté devrait faire l'affaire. Ça t'ennuie si je passe en premier — je vais éclater."); getinti (+15);
+s("<LI>DIANE : Pourquoi pas.");s("<LI>Elle regarde autour d'elle.");s("<LI>DIANE : Ce petit chemin de côté devrait faire l'affaire. Ça t'ennuie si je passe en premier — je vais éclater."); getinti (+15);
 s("<LI>Vous la regardez se diriger vers le côté du bâtiment et s'engager prudemment sur le chemin longeant les toilettes des femmes. Elle commence déjà à relever sa jupe quand elle disparaît de votre vue."); gobehindtoilet = 1; gopee = 1;
 afterpee()
 s("<LI>Quelques minutes plus tard, elle revient. « À ton tour » dit-elle en souriant, et vous allez aussi derrière le bâtiment. Vous remarquez une grande flaque qui s'étend encore sur le chemin.");
@@ -3493,7 +3897,7 @@ s("<LI>DIANE : Elles sont toujours fermées quand on en a besoin. Bon, on sera
 c("riverside15","Vous continuez à marcher."); }
 else
 {s("<LI>Diane regarde les toilettes.");
-s("<LI>Cet endroit a l'air dégoûtant. Il faudrait vraiment que je sois au bout du rouleau pour l'utiliser.");
+s("<LI>DIANE : Cet endroit a l'air dégoûtant. Il faudrait vraiment que je sois au bout du rouleau pour l'utiliser.");
 c("riverside15","Vous continuez à marcher."); }} 
 
 function
@@ -3563,7 +3967,8 @@ function
 urinal()
 {
 s("<LI>Diane se précipite vers l'un des urinoirs. Elle glousse nerveusement et a relevé sa jupe sur le devant.");
-s("<LI>DIANE : Je ne sais jamais dans quel sens me mettre sur ces trucs-là. Elle semble hésiter à se retourner, mais finalement, peut-être parce que c'est plus rapide, elle décide d'enjamber l'urinoir, dos à vous. Elle se penche légèrement en avant en écartant sa culotte sur le côté.");
+s("<LI>DIANE : Je ne sais jamais dans quel sens me mettre sur ces trucs-là.");
+s("<LI>Elle semble hésiter à se retourner, mais finalement, peut-être parce que c'est plus rapide, elle décide d'enjamber l'urinoir, dos à vous. Elle se penche légèrement en avant en écartant sa culotte sur le côté.");
 s("<LI>Presque aussitôt elle commence à pisser. Quelques jets éclaboussent le sol mais ensuite elle pisse dans l'urinoir ; vous ne voyez pas le jet, mais vous voyez la vapeur monter. Vous reculez un peu sur le côté, et vous pouvez maintenant voir son jet, argenté plutôt que doré, tandis qu'elle se lâche vraiment. Elle reste là, image de concentration, haletante de soulagement."); gourinal = 1; gopee = 1;
 afterpee()
 s("<LI>Le jet finit par se réduire à un filet, et encore quelques gouttes semblent éclabousser le sol. Toujours dos à vous, elle recule et laisse retomber sa jupe. Elle se tourne vers vous.");
@@ -3798,7 +4203,7 @@ function
 helpdiane4a()
 {
 s("<LI>Vous imaginez Diane en train de se faire pipi dessus, le pipi qui ruisselle le long de ses jambes, éclabousse ses chaussures, forme une flaque à ses pieds — tout comme dans les vidéos pornos que vous avez vues.");
-s("<LI>Alors vous secouez la tête et dites <EM>Oh, je ne sais pas vraiment ce qui vaut mieux.</EM>");
+s("<LI>Alors vous secouez la tête et dites : « Oh, je ne sais pas vraiment ce qui vaut mieux. »");
 s("<LI>Elle vous regarde un instant avec incrédulité, puis lève les yeux vers Bruno et Molly plus haut sur le chemin.");
 s("<LI>DIANE : Oh, zut alors. Allez, rejoignez les autres devant.");
 s("<LI>Elle se dirige vers le bord du chemin où poussent de hautes herbes et quelques buissons bas. Vous restez immobile à la regarder. Elle se retourne et vous voit. <B>Allez-y !</B> dit-elle. <B>Je vous rattraperai.</B> Vous n'avez d'autre choix que de repartir rejoindre les autres. Molly rit quand vous lui expliquez que Diane a disparu un instant."); 
@@ -3827,7 +4232,7 @@ s("<LI>Vous continuez à marcher. Vous apercevez les lumières vives du Pavillon
 if (leavepub2)
 {s("<LI>Mais il est passé 23 heures et vous n'avez pas le temps de prendre un verre ici. En fait, c'est l'heure de la fermeture et les clients finissent leurs derniers verres, la plupart s'en vont déjà.");
 if (blad >710)
-{s("<LI>Vous entendez Diane lâcher un <EM>Oh non !</EM> soufflé en voyant que le Pavillon est fermé.");}
+{s("<LI>Vous entendez Diane lâcher un « Oh non ! » soufflé en voyant que le Pavillon est fermé.");}
 else
 {s("<LI>Vous ne vous attendiez pas à ce qu'il soit ouvert.");}
 s("<LI>Alors vous vous dirigez —");
@@ -3866,18 +4271,18 @@ s("<HR>");
 s("<LI>Vous entrez tous les quatre dans le Pavillon.");
 s("<LI>Il y a pas mal de monde, sans doute à cause des promotions en cours. Le Pavillon essaie visiblement de rivaliser avec le Golden Stream.");
 if (blad >825)
-{s("(<LI>Diane est absolument au bord de se faire pipi dessus. Dès qu'elle a aperçu le Pavillon, elle a couru devant, et quand vous arrivez elle est déjà aux toilettes des femmes. Molly la suit.");
+{s("<LI>Diane est absolument au bord de se faire pipi dessus. Dès qu'elle a aperçu le Pavillon, elle a couru devant, et quand vous arrivez elle est déjà aux toilettes des femmes. Molly la suit.");
 c("pavilion0","Vous allez au bar."); }
 else if (blad >700)
 {s("<LI>Diane a une envie folle de faire pipi. Dès que vous arrivez au Pavillon, elle prétexte quelque chose et file aux toilettes des femmes. Molly l'accompagne.");
 s("<LI>Vous ragez intérieurement. Une chance de tenter un coup de chance ?");
 c("luckytrip8","Oui, je vais jouer un coup de chance.");
-c("pavilion1","Non, je garde mes coups de chance. Vous allez au bar."); }
+c("pavilion1","Non, je garde mes coups de chance."); }
 else if (blad >500)
-{s("<LI>DIANE : Je vais juste faire un saut aux toilettes. J'en ai pour une minute.<EM> Elle se dirige vers les toilettes des femmes.</EM>");
+{s("<LI>DIANE : Je vais juste faire un saut aux toilettes. J'en ai pour une minute.");s("<LI>Elle se dirige vers les toilettes des femmes.");
 s("<LI>Vous ragez intérieurement. Une chance de tenter un coup de chance ?");
 c("luckytrip8","Oui, je vais jouer un coup de chance.");
-c("pavilion1","Non, je garde mes coups de chance. Vous allez au bar."); }
+c("pavilion1","Non, je garde mes coups de chance."); }
 else
 {s("<LI>Vous allez tous à une table dans le jardin du pub.");
 c("pavilion2","Vous allez au bar."); }}
@@ -3913,7 +4318,7 @@ s("<LI>DIANE : Oh là là ! Je n'arriverai jamais à finir tout ça.") }
 else
 {s("<LI>C'est Bruno qui offre la tournée. Il commande une bière pour vous, une lager pour Diane et une ale pour lui et Molly. Ils ont tous les deux soif. Molly prend une pinte."); proc += 120; mollyproc += 200; }
 s("<LI>Vous aidez à porter les verres jusqu'à la table. Puis vous filez aux toilettes des hommes faire pipi.");
-s("<LI>Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant « Santé ! » et vous trinquez.");  mollyproc -=30; mollyblad += 30; 
+s("<LI>Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant : « Santé ! » et vous trinquez.");  mollyproc -=30; mollyblad += 30; 
 c("pavilion3","Vous discutez gaiement."); }
 
 function
@@ -4144,7 +4549,7 @@ luckytrip3()
 {
 if (luckshots >= 1) 
 {s("<LI>Les filles sont descendues sur le chemin de halage, probablement parce que Diane a envie de faire pipi. Vous aimeriez regarder mais vous êtes en compagnie. Alors vous avez joué un coup de chance."); luckshots--; 
-s("<LI>Robert vous touche le bras. <EM>Vous voulez regarder, moi aussi je veux regarder.</EM> Il se dépêche le long du chemin, avec vous juste derrière. Il est aussi impatient que vous !");
+s("<LI>Robert vous touche le bras. « Vous voulez regarder, moi aussi je veux regarder. » Il se dépêche le long du chemin, avec vous juste derrière. Il est aussi impatient que vous !");
 s("<LI>ROBERT : Elle devra aller sous le pont. C'est le seul endroit où personne ne peut la voir.");
 s("<LI>Vous ne traversez pas le pont mais continuez au-delà sur une trentaine de mètres. Vous regardez autour de vous. À quelques pas se trouve un petit renfoncement dans le mur. Vous vous y glissez, presque sur la pointe des pieds, et constatez que vous avez une vue dégagée sur le chemin de halage en contrebas. Il y a un lampadaire de sécurité en bas.");
 s("<LI>Les filles arrivent tout juste sous le pont. Elles regardent autour d'elles, mais un cycliste solitaire pédale lentement sur le chemin.");
@@ -4172,7 +4577,7 @@ s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane va faire pip
 afterpee()
 s("<LI>Elle finit par terminer. Elle ne s'essuie pas, mais remonte déjà sa culotte alors qu'elle se relève, puis tire ses collants vers le haut. Sa jupe retombe à sa place mais elle a encore les mains dessous pour ajuster ses collants. Puis, regardant à nouveau à gauche et à droite, elle retrousse sa jupe presque jusqu'à la taille et ajuste sa combinaison, laissant enfin tout retomber à sa place.");
 s("<LI>Elle avance de quelques pas, s'éloignant de la grande flaque brillante qu'elle a laissée. Elle se remet en ordre.");
-s("<LI>Vous êtes sur le point de vous éloigner, mais Robert pose légèrement une main sur votre bras. <EM>Quand l'une y va, l'autre y va toujours</EM>, chuchote-t-il. Molly est en train de déboucler sa ceinture.");
+s("<LI>Vous êtes sur le point de vous éloigner, mais Robert pose légèrement une main sur votre bras. « Quand l'une y va, l'autre y va toujours », chuchote-t-il. Molly est en train de déboucler sa ceinture.");
 c("underbridge2","Vous regardez, à peine capable de respirer."); }
 
 
@@ -4313,7 +4718,7 @@ if (blad >775)
 s("<LI>DIANE : Écoute, je suis désolée, mais avant d'aller où que ce soit il faut <STRONG>absolument</STRONG> que je trouve des toilettes. Je ne veux pas tomber—tomber malade sur le chemin du retour. Il y a un endroit où je peux aller ?"); 
 s("<LI>Diane est absolument au bord de se faire pipi dessus. Y a-t-il un endroit où elle peut aller ? Qu'est-ce que ce sera ?");
 s("<LI>Il y a des toilettes de l'autre côté du parking — elles sont probablement fermées (mais inutile de lui dire ça !)");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle admet qu'elle a désespérément envie de faire pipi. Vous perdez plusieurs points.</SPAN></EM></P>"); points -= 5;
+s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle admet qu'elle a désespérément envie de faire pipi. Vous perdez plusieurs points de timidité.</SPAN></EM></P>"); points -= 5;
 c("queue1b","Lui dire qu'il y a des toilettes de l'autre côté du parking.");
 c("watchdesperate","Secouer la tête d'un air impuissant.");}
 else
@@ -4337,7 +4742,7 @@ function
 taxihome2()
 {
 s("<LI>Vous êtes encore à quatre ou cinq personnes du devant de la file.");
-s("<LI>La fille en mini-jupe n'arrête pas de croiser les jambes et d'esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d'elle. Vous l'entendez marmonner à son petit ami : <EM>Pourquoi tu ne m'as pas laissée aller aux toilettes avant qu'on parte ? J'en peux vraiment plus.</EM>");
+s("<LI>La fille en mini-jupe n'arrête pas de croiser les jambes et d'esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d'elle. Vous l'entendez marmonner à son petit ami : « Pourquoi tu ne m'as pas laissée aller aux toilettes avant qu'on parte ? J'en peux vraiment plus. »");
 if (blad >700)
 {s("<LI>Diane semble un peu distraite et ne cesse de regarder autour d'elle. Vous lui demandez si ça va.");
 s("<LI>DIANE : Mmm. <EM>puis elle vous chuchote</EM> J'aurais bien besoin de toilettes. Il n'y a pas des WC dans le coin, par hasard ?");
@@ -4366,7 +4771,7 @@ c("taxihome3","Vous continuez d'attendre."); }
 function
 taxihome3()
 {
-s("<LI>Vous êtes maintenant assez près du devant de la file. La fille en mini-jupe n'est pas contente du tout. <EM>C'est facile pour toi,</EM> marmonne-t-elle à son petit ami, <EM>mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes stupides caprices.</EM>");
+s("<LI>Vous êtes maintenant assez près du devant de la file. La fille en mini-jupe n'est pas contente du tout. « C'est facile pour toi, » marmonne-t-elle à son petit ami, « mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes stupides caprices. »");
 s("<LI>La fille monte dans un taxi avec son ami. Vous vous demandez si elle tiendra jusqu'à la maison.");
 queue_desp() 
 c("taxihome4","Vous êtes en tête de la file."); }
@@ -4382,7 +4787,7 @@ s("<LI>VOUS : Dis-moi si tu en veux encore.");
 s("<LI>DIANE : Merci, c'est gentil. Je boirai le reste dans un instant.");  getinti(1); }
 else
 {s("<LI>Il fait assez chaud dans le taxi. Vous regrettez de ne pas avoir acheté de l'eau."); } 
-s("<P><EM>À noter : vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.</EM>");
+s("<P>À noter, vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.");
 c("taxihome4a","Le taxi s'engage sur la route principale."); }
 
 function
@@ -4406,7 +4811,7 @@ function
 taxiarmround()
 {
 s("<LI>Vous passez le bras autour d'elle. Elle se blottit contre vous, la tête sur votre épaule.");
-s("<LI><EM>Merci pour cette belle soirée</EM>, chuchote-t-elle."); getinti (15);
+s("<LI>« Merci pour cette belle soirée », chuchote-t-elle."); getinti (15);
 s("<LI>Vous vous penchez l'un vers l'autre et vous échangez un baiser, un seul. Puis elle se love de nouveau contre vous, la tête sur votre épaule.");
 c("taxihome5","Le trajet continue."); }
 
@@ -4420,7 +4825,7 @@ if (saturday)
 else
 {s("<LI>Sa jupe a remonté un peu, laissant apparaître la dentelle de sa combinaison.");
 s("<LI>VOUS : J'aime bien votre fond de robe. Vous en portez toujours un ?");
-s("<LI>DIANE : Pas toujours, mais parfois. J'aime assez ça. Je trouve celui-là joli. <EM>Elle tend la main et remonte le bas de sa jupe, vous montrant toute la dentelle de sa combinaison. Le geste est plutôt sexy. Puis elle remet sa jupe en place et se tourne pour vous embrasser.</EM>"); getinti(10); }
+s("<LI>DIANE : Pas toujours, mais parfois. J'aime assez ça. Je trouve celui-là joli.");s("<LI>Elle tend la main et remonte le bas de sa jupe, vous montrant toute la dentelle de sa combinaison. Le geste est plutôt sexy. Puis elle remet sa jupe en place et se tourne pour vous embrasser."); getinti(10); }
 s("<LI>DIANE : J'ai vraiment passé une agréable soirée."); 
 c("taxihome6","Vous êtes à peu près à mi-chemin."); }
 
@@ -4459,7 +4864,7 @@ else
 {s("<LI>Elle remet pudiquement le bas de sa jupe en place."); }
 s("<LI>Vous posez la main sur sa jambe, juste au-dessus du genou, et la faites lentement glisser vers le haut.");
 s("<LI>Elle se penche aussitôt pour écarter votre main.");
-s("<LI><EM>Le chauffeur peut nous voir</EM>, siffle-t-elle.");
+s("<LI>« Le chauffeur peut nous voir », siffle-t-elle.");
 if (inti >100)
 {s("<LI>Elle vous adresse un petit sourire en coin."); getinti (5); }
 else
@@ -4683,7 +5088,7 @@ s("<LI>Vous maintiens la conversation pour qu'elle n'ait pas l'occasion de l'int
 s("<LI>Chloe est assise sur ses mains, les genoux qui montent et descendent frénétiquement. Elle est devenue bien silencieuse.");
 s("<LI>Qu'est-ce que vous allez faire ? Vous voulez rester et regarder, mais Diane pense que vous devriez partir.");
 c("scenario4g","Rester et regarder.");
-c("gonow","Vous vous sentez un peu gêné pour Chloe, qui visiblement n'ose pas « quitter la pièce » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.");
+c("gonow","Vous vous sentez un peu gêné pour Chloe, qui visiblement n'ose pas « se soulager » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.");
 c("luckytrip21","Vous ne savez pas, alors tentez un coup de chance."); }
 
 function
@@ -4873,7 +5278,7 @@ function
 scenario6c()
 {
 s("<LI>Toby redescend l'escalier et, dès qu'il entre dans la pièce, Amanda se dirige vers la porte.");
-s("<LI>Mais avant qu'elle n'y arrive, Thomas lui passe devant en disant « j'ai vraiment envie de pisser » et quitte la pièce à toute vitesse.");
+s("<LI>Mais avant qu'elle n'y arrive, Thomas lui passe devant en disant : « j'ai vraiment envie de pisser » et quitte la pièce à toute vitesse.");
 s("<LI>Amanda se détourne, l'air plutôt contrariée, en se mordant la lèvre. Les mains dans les poches de son jean, elle recommence à aller d'un tableau à l'autre. À chaque fois qu'elle en regarde un, elle se penche en avant, un genou fléchi.");
 s("<LI>Mais Diane mentionne alors un livre qu'elle souhaite emprunter.");
 s("<LI>Vous vous demandez si ça vaut le coup de jouer un coup de chance.");
@@ -4913,7 +5318,7 @@ c("scenario6d","Et—"); }
 function
 goupstairs()
 {
-s("<LI>Vous auriez bien aimé observer Amanda, mais Diane a demandé le livre dont vous aviez parlé. Alors vous dites « je vais juste le chercher » et montez dans votre chambre. Diane vous sourit."); getinti (10);
+s("<LI>Vous auriez bien aimé observer Amanda, mais Diane a demandé le livre dont vous aviez parlé. Alors vous dites : « je vais juste le chercher » et montez dans votre chambre. Diane vous sourit."); getinti (10);
 s("<LI>Votre chambre est juste en face de la salle de bains. Quand vous arrivez en haut de l'escalier, la chasse d'eau se déclenche et Thomas sort de la salle de bains. Vous échangez un sourire et il descend l'escalier.");
 c("goupstairs1","Vous vous dirigez vers votre chambre."); }
 
@@ -4944,7 +5349,7 @@ c("goupstairs4","Vous attendez pour voir ce qui se passe."); }
 function
 goupstairs4()
 {
-s("<LI>Vous entendez Amanda dire « C'est laquelle, la salle de bains ? » Elles regardent autour d'elles, puis Bella dit « La voilà. C'est moi la première ! »");
+s("<LI>Vous entendez Amanda dire « C'est laquelle, la salle de bains ? » Elles regardent autour d'elles, puis Bella dit : « La voilà. C'est moi la première ! »");
 s("<LI>Bella entre dans la salle de bains, tandis qu'Amanda s'exclame « Oh, dépêche-toi. J'en peux plus ! » Et Bella ferme la porte, laissant Amanda dehors, le visage crispé d'angoisse.");
 s("<LI>Elle commence à faire les cent pas et, croyant que personne ne la voit, se serre franchement l'entrejambe.");
 c("goupstairs5","Mais vous avez une vue de choix."); }
@@ -4953,7 +5358,7 @@ function
 goupstairs5()
 {
 s("<LI>Amanda trépigne devant la porte de la salle de bains. Elle a une main fermement pressée entre les cuisses, se retenant de toute évidence.");
-s("<LI>Elle frappe à la porte de la salle de bains en criant <EM>Dépêche-vous !</EM> à son amie. Elle se détourne et recommence à faire les cent pas.");
+s("<LI>Elle frappe à la porte de la salle de bains en criant : « Dépêche-vous ! » à son amie. Elle se détourne et recommence à faire les cent pas.");
 s("<LI>Vous la regardez frapper de nouveau à la porte. Elle peut à peine se tenir droite. Elle tourne en rond en petits cercles."); 
 if (instantcoffee)
 {s("<LI>Elle a les deux mains sur l'entrejambe, se retenant de toutes ses forces. Vous n'aviez jamais vu une fille se retenir à deux mains, et vous êtes vraiment excité.");}
@@ -5026,10 +5431,10 @@ c("luckytrip31e","—et donc—"); }
 function
 luckytrip31e()
 {
-s("<LI><STRONG>MALCHANCE !</STRONG>");
+s("<LI><B>MALCHANCE !</B>");
 s("<LI>Vous avez contrarié Diane et vous risquez de ne pas avoir d'autre rendez-vous avec elle.");
 s("<LI>Mais vous avez vu Amanda faire pipi en urgence absolue — et vous avez arrangé un rendez-vous avec elle.");
-s("<LI><STRONG>CE QUI EST UN SACRÉ LOT DE CONSOLATION !</STRONG>"); }
+s("<LI><B>CE QUI EST UN SACRÉ LOT DE CONSOLATION !</B>"); }
  
 
 
@@ -5167,7 +5572,7 @@ offertowalkhome()
 {
 s("<LI>VOUS : Je te raccompagne ?");
 s("<LI>Elle a l'air un peu vexée, comme si vous la mettais à la porte.");
-s("<LI>DIANE : Non, c'est juste au coin de la rue. On se voit la semaine prochaine. <EM>Elle vous fait la bise et disparaît.</EM>");
+s("<LI>DIANE : Non, c'est juste au coin de la rue. On se voit la semaine prochaine.");s("<LI>Elle vous fait la bise et disparaît.");
 c("gameover","Oh là là."); }
 
 function
@@ -5181,7 +5586,7 @@ else if (blad >700)
 {s("<LI>En fait, vous voyez bien qu'elle est au bord de se faire pipi dessus. Elle n'arrive pas à tenir en place, et même assise elle s'agite sans cesse. Mais votre frère n'arrête pas de lui parler et de lui montrer des choses, et elle n'ose visiblement pas l'interrompre."); }
 else
 {s("<LI>Mais vous n'en êtes pas sûr."); }
-s("<LI>Alors, quand votre frère s'éloigne de l'ordinateur quelques secondes pour aller chercher quelque chose, vous glissez à voix basse à Diane : <EM>Diane, si vous avez besoin des toilettes, c'est juste en haut de l'escalier.</EM>");
+s("<LI>Alors, quand votre frère s'éloigne de l'ordinateur quelques secondes pour aller chercher quelque chose, vous glissez à voix basse à Diane : « Diane, si vous avez besoin des toilettes, c'est juste en haut de l'escalier. »");
 if (blad >600 )
 {s("<LI>Elle devient cramoisie. Vous essayez d'être serviable (j'espère), mais vous l'avez mise dans l'embarras. Ça la gêne vraiment que vous ayez remarqué qu'elle a envie de faire pipi. Elle essaie de s'arrêter de gigoter.");
 s("<LI>Et probablement malgré elle, elle dit :"); }
@@ -5280,7 +5685,7 @@ s("<LI>DIANE : Je ferais mieux d'y aller.");
 s("<LI>VOUS : Je te raccompagne.");
 s("<LI>DIANE : C'est pas la peine, c'est juste au bout de la rue.");
 if (blad >600)
-{s("<LI>VOUS : Bien sûr que je te raccompagne. L'air frais me fera du bien. <EM>Vous pensez qu'elle a de toute façon envie de faire pipi, et vous aimeriez voir comment elle s'en sort.</EM>");
+{s("<LI>VOUS : Bien sûr que je te raccompagne. L'air frais me fera du bien.");s("<LI>Vous pensez qu'elle a de toute façon envie de faire pipi, et vous aimeriez voir comment elle s'en sort.");
 c("walkhomeX","Vous vous préparez à la raccompagner chez elle."); }
 else
 {s("<LI>Vous lui souhaites bonne nuit avec un baiser.");
@@ -5336,9 +5741,9 @@ s("<LI>Bon sang ! Il a installé une caméra cachée dans la salle de bains, r
 s("<LI>Vous n'approuvez pas, bien sûr.");
 c("hiddencamera","Mais vous regardez."); }
 else
-{s("<LI>Soudain vous entendez qu'on vous appelle. Vous allez au pied de l'escalier — Diane regarde en bas, l'air embêté. <EM>Je ne trouve pas l'interrupteur,</EM> dit-elle.");
+{s("<LI>Soudain vous entendez qu'on vous appelle. Vous allez au pied de l'escalier — Diane regarde en bas, l'air embêté. « Je ne trouve pas l'interrupteur, » dit-elle.");
 s("<LI>VOUS : Il est derrière la porte. Le cordon qui pend.");
-s("<LI>Vous commencez à monter l'escalier, mais à mi-chemin elle dit <EM>Trouvé,</EM> et la lumière de la salle de bains s'allume. La porte se referme et vous entendez le verrou tourner.");
+s("<LI>Vous commencez à monter l'escalier, mais à mi-chemin elle dit : « Trouvé, » et la lumière de la salle de bains s'allume. La porte se referme et vous entendez le verrou tourner.");
 s("<LI>Vous montez l'escalier sur la pointe des pieds. Vous entendez le froissement de ses vêtements, puis un fort tintement quand elle commence à faire pipi.");
 if (blad >700)
 {s("<LI>Après quelques secondes, il y a comme une pause et vous entendez un vrai soupir de soulagement. Puis le jet reprend de plus belle. Ça dure bien une bonne demi-minute, et après les dernières gouttes vous entendez un « Ouf ». Elle en avait vraiment besoin !"); }
@@ -5363,7 +5768,7 @@ s("<LI>Elle paraît tout à fait sage, assise là en train de faire pipi. Encore
 s("<LI>Votre frère bascule rapidement l'ordinateur portable sur quelque chose de plus innocent dès que vous entendez la chasse d'eau, et vous vous apprêtez à voir Diane redescendre.");  
 s("<LI>DIANE : Je ferais mieux de rentrer. Il se fait tard.");
 afterpee()
-s("<LI>Vous proposez de la raccompagner chez elle mais elle dit de ne pas s'en faire, c'est juste au bout de la rue. Elle dit au revoir et se réjouit de vous revoir la semaine prochaine. Vous vous embrassez et vous la serrez dans vos bras —");
+s("<LI>Vous proposez de la raccompagner chez elle mais elle dit de ne pas s'en faire, c'est juste au bout de la rue. Elle dit au revoir et se réjouit de vous revoir la semaine prochaine.");s("<LI>Vous vous embrassez et vous la serrez dans vos bras —");
 c("hiddencamera1","et elle est partie."); }
 
 function
@@ -5382,7 +5787,7 @@ s("<LI>Diane est assise sur le canapé ; vous allez vous asseoir à côté d'e
 if (blad <600)
 {s("<LI>DIANE : Merci pour cette belle soirée.");}
 else if (blad <700)
-{s("<LI>VOUS : Merci pour cette belle soirée. <EM>Elle te sourit mais semble avoir l'esprit ailleurs.</EM>"); }
+{s("<LI>VOUS : Merci pour cette belle soirée.");s("<LI>Elle te sourit mais semble avoir l'esprit ailleurs."); }
 else
 {s("Elle semble un peu tendue."); }
 sitting_desp()
@@ -5423,7 +5828,7 @@ if (blad <560)
 c("sofasnog","Vous vous embrassez à nouveau, vos langues se frôlant."); }
 else
 {s("<LI>Vous l'embrassez. Elle répond à votre baiser mais se dégage assez vite et se redresse sur le bord du canapé. Elle se tourne vers vous, légèrement rougie.");
-s("<LI>DIANE : Au fait, ça t'ennuie si j'utilise tes toilettes ? <EM>Elle se lève en essayant d'avoir l'air désinvolte.</EM>");
+s("<LI>DIANE : Au fait, ça t'ennuie si j'utilise tes toilettes ?");s("<LI>Elle se lève en essayant d'avoir l'air désinvolte.");
 s("<LI>VOUS : Bien sûr. La salle de bains est juste en haut de l'escalier, puis la première à droite. L'interrupteur est juste à l'intérieur de la porte.");
 s("<LI>DIANE : J'en ai pour une seconde.");
 s("<LI>Elle sort de la pièce.");
@@ -5443,7 +5848,7 @@ c("gameover","Bonne nuit !"); }
 function
 sofasat()
 {
-s("<LI>Vous servez deux verres de vin blanc. Elle dit <EM>Santé !</EM> et en boit environ un tiers."); proc += 100; 
+s("<LI>Vous servez deux verres de vin blanc. Elle dit : « Santé ! » et en boit environ un tiers."); proc += 100; 
 s("<LI>Vous vous blottissez l'un contre l'autre.");
 c("sofasat1","Santé !"); }
 
@@ -5603,12 +6008,12 @@ s("<LI>VOUS : Ces toilettes au bord de la rivière avaient l'air bien glauques
 if (gobehindtoilet)
 {s("<LI>DIANE : Et fermées en plus. J'aurais accepté n'importe quoi. J'en pouvais vraiment plus. C'est tellement gênant quand ça arrive lors d'un rendez-vous. Surtout un premier rendez-vous.");
 s("<LI>VOUS : Tu en pouvais vraiment plus.");
-s("<LI>DIANE : Tu le sais très bien. Bref, là j'ai de nouveau envie. <EM>Elle se lève, rougit et rit.</EM> J'espère que tes toilettes sont disponibles ?");
+s("<LI>DIANE : Tu le sais très bien. Bref, là j'ai de nouveau envie.");s("<LI>Elle se lève, rougit et rit.");s("<LI>DIANE : J'espère que tes toilettes sont disponibles ?");
 c("sofatoilet1","Vous lui prenez la main et l'attirez sur vos genoux.");  }
 else if (gopee) 
 {s("<LI>DIANE : J'aurais pu aller n'importe où. J'en pouvais vraiment plus. C'est tellement gênant quand ça arrive lors d'un rendez-vous. Surtout un premier rendez-vous.");
 s("<LI>VOUS : Tu en pouvais vraiment plus.");
-s("<LI>DIANE : Tu le sais très bien. Bref, là j'ai de nouveau envie. <EM>Elle se lève, rougit et rit.</EM> J'espère que tes toilettes sont disponibles ?");
+s("<LI>DIANE : Tu le sais très bien. Bref, là j'ai de nouveau envie.");s("<LI>Elle se lève, rougit et rit.");s("<LI>DIANE : J'espère que tes toilettes sont disponibles ?");
 c("sofatoilet1","Vous lui prenez la main et l'attirez sur vos genoux.");  }
 else
 {s("<LI>DIANE : Mmmm. En parlant de toilettes, les tiennes, elles sont où ?");
@@ -5655,7 +6060,7 @@ s("<LI>Vous êtes assis ensemble sur le canapé. Diane est blottie contre vous."
 if (blad > 725)
 {s("<LI>Elle s'agite. Elle se balance d'avant en arrière sur le siège, puis rapproche vivement les genoux.");
 s("<LI>DIANE : Je peux aller aux petits coins, s'il te plaît ?");
-s("<LI>VOUS : Pas tout de suite. Dans un petit moment. <EM>Tu passes la main le long de ses jambes, de ses cuisses.</EM>");
+s("<LI>VOUS : Pas tout de suite. Dans un petit moment.");s("<LI>Tu passes la main le long de ses jambes, de ses cuisses.");
 s("<LI>Elle serre les jambes et se met à chantonner : « J'ai envie, j'ai envie. »");
 s("<LI>Puis elle lève vers vous de grands yeux : « Pourquoi tu aimes autant ça, me voir me retenir ? »"); } 
 else
@@ -5710,7 +6115,7 @@ nicelydesp3()
 {
 s("<LI>Diane marque une pause, comme si elle se demandait jusqu'où aller dans les détails.");
 s("<LI>VOUS : Je veux dire, t'avais l'air comment ?");
-s("<LI>DIANE : Comme ça. <EM> Elle fait une démonstration, sautillant sur le siège, la main glissée entre les jambes.</EM> Enfin, peut-être pas tout à fait comme ça, mais pas loin.");
+s("<LI>DIANE : Comme ça.");s("<LI>Elle fait une démonstration, sautillant sur le siège, la main glissée entre les jambes.");s("<LI>DIANE : Enfin, peut-être pas tout à fait comme ça, mais pas loin.");
 s("<LI>VOUS : Tu y es arrivée à temps ?");
 s("<LI>DIANE : Tout juste. Ma mère savait que j'allais craquer, alors elle a conduit vite, et dès qu'on est arrivées j'ai bondi hors de la voiture et filé aux toilettes.");
 s("<LI>VOUS : Tu es arrivée à temps ?");
@@ -5724,7 +6129,7 @@ s("<LI>DIANE : Bon, OK. Qu’est-ce que ça risque ? Je suis arrivée à la 
 s("<LI>VOUS : Continue.");
 s("<LI>DIANE : <EM>elle fait une petite grimace avant de continuer</EM> Les toilettes sont au fond de la salle de bains. Je savais que j'aurais pas le temps de baisser ma culotte, alors je suis juste entrée dans la douche et j'y suis restée — et je me suis lâchée.");
 s("<LI>VOUS : Tu as vraiment mouillé ta culotte.");
-s("<LI>DIANE : J'ai vraiment mouillé ma culotte, comme tu dis. Je suis restée là sous la douche et — enfin, j'ai pas besoin de décrire ça. <EM>(Vous aimeriez bien qu'elle le fasse !)</EM> C'est pas grave, hein ? J'étais dans la salle de bains, sous la douche, j'ai pu la laver tout de suite, personne ne me voyait.");
+s("<LI>DIANE : J'ai vraiment mouillé ma culotte, comme tu dis. Je suis restée là sous la douche et — enfin, j'ai pas besoin de décrire ça.");s("<LI>(Vous aimeriez bien qu'elle le fasse !)");s("<LI>DIANE : C'est pas grave, hein ? J'étais dans la salle de bains, sous la douche, j'ai pu la laver tout de suite, personne ne me voyait.");
 s("<LI>VOUS : Tu ferais ça pour moi ?");
 s("<LI>DIANE : Quoi !");
 s("<LI>VOUS : Tu te ferais pipi dessus, dans la salle de bains, pour moi, comme une petite faveur spéciale ?");
@@ -5838,7 +6243,7 @@ else
 {s("<LI>VOUS : L'album est par là, si tu veux y jeter un œil.");
 s("<LI>Elle vous suit de l'autre côté de la pièce jusqu'à la bibliothèque. Elle semble contente de se dégourdir les jambes. Elle se balance d'un pied sur l'autre pendant que vous cherchez l'album. Elle se penche en avant, les mains posées sur les genoux.");
 s("<LI>DIANE : Au fait, où sont les —");
-s("<LI>VOUS : Le voilà ! <EM>Vous sortez l'album et retournes vous asseoir sur le canapé. Elle vient s'installer à côté de vous.</EM>");
+s("<LI>VOUS : Le voilà !");s("<LI>Vous sortez l'album et retournes vous asseoir sur le canapé. Elle vient s'installer à côté de vous.");
 c("stampalbum1","Vous ouvrez l'album de timbres."); }}
 
  
@@ -6204,7 +6609,7 @@ else
 {s("<LI>VOUS : L'album est par là, si tu veux y jeter un œil.");
 s("<LI>Elle vous suit de l'autre côté de la pièce jusqu'à la bibliothèque. Elle semble contente de se dégourdir les jambes. Elle se balance d'un pied sur l'autre pendant que vous cherchez l'album. Elle se penche en avant, les mains posées sur les genoux.");
 s("<LI>DIANE : Au fait, où sont les —");
-s("<LI>VOUS : Le voilà ! <EM>Vous sortez l'album et retournes vous asseoir sur le canapé. Elle vient s'installer à côté de vous.</EM>");
+s("<LI>VOUS : Le voilà !");s("<LI>Vous sortez l'album et retournes vous asseoir sur le canapé. Elle vient s'installer à côté de vous.");
 c("sofatrains1","Vous ouvrez l'album photo."); }}
 
 function
@@ -6293,8 +6698,8 @@ s("<LI>Vous traversez la pièce pour aller chercher la broche. Diane se lève.")
 s("<LI>DIANE : Je dois y aller. Je vais juste—.");
 s("<LI>VOUS : <EM>l'interrompant</EM> J'ai quelque chose pour toi.");
 s("<LI>Vous revenez et le lui donnez. Elle s'est rassise sur le canapé et enfile sa veste.");
-s("<LI>DIANE : Oh, elle est magnifique ! Merci. <EM>Elle vous embrasse et est sur le point de dire autre chose mais—</EM>"); getinti(+15);
-s("<LI>VOUS : Je vais te raccompagner. On va sortir discrètement pour ne pas réveiller mon frère. <EM>Vous lui ouvrez la porte.</EM>"); 
+s("<LI>DIANE : Oh, elle est magnifique ! Merci.");s("<LI>Elle vous embrasse et est sur le point de dire autre chose mais—"); getinti(+15);
+s("<LI>VOUS : Je vais te raccompagner. On va sortir discrètement pour ne pas réveiller mon frère.");s("<LI>Vous lui ouvrez la porte."); 
 c("walkhomeX","Vous vous préparez à la raccompagner chez elle."); }
 else
 {s("<LI>Vous avez oublié d'acheter la broche.");
@@ -6375,7 +6780,7 @@ gotoilet1()
 {
 s("<LI>Pendant que Diane est au téléphone, vous en profitez pour monter faire pipi vous-même.");
 s("<LI>Vous faites pipi puis redescends. En arrivant au pied des escaliers, vous croisez Diane, qui a fini son appel et monte maintenant aux toilettes.");
-s("<LI>Elle vous fait un grand sourire tandis que vous vous écartes pour lui laisser le passage. <EM>Oooh ! J'en peux plus !</EM> dit-elle en riant, et elle monte les escaliers en courant.");
+s("<LI>Elle vous fait un grand sourire tandis que vous vous écartes pour lui laisser le passage. « Oooh ! J'en peux plus ! » dit-elle en riant, et elle monte les escaliers en courant.");
 s("<LI>Vous voudriez bien pouvoir la suivre.");
 afterpee()
 c("walkhomeX","Mais il est l'heure pour elle de rentrer, et la soirée touche à sa fin."); }
@@ -6386,7 +6791,7 @@ givechancec()
 s("<LI>VOUS : Diane, ça te dérange si je vais vite aux toilettes une seconde ?");
 s("<LI>DIANE : Bien sûr. J'irai peut-être moi-même, d'ailleurs, quand tu reviendras."); getinti (15); 
 s("<LI>Vous allez à la salle de bains et faites pipi. Quand vous redescendez, Diane se lève, vous fait un petit sourire complice et monte à l'étage.");
-s("<LI>Quand elle revient, elle dit « Ça fait du bien » mais il est temps pour elle de partir.");
+s("<LI>Quand elle revient, elle dit : « Ça fait du bien » mais il est temps pour elle de partir.");
 afterpee()
 c("walkhomeX","Elle se prépare à partir."); }
 
@@ -6460,7 +6865,7 @@ else
 s("DIANE : Oh non, c'est vraiment intéressant.");
 s("<HR>");
 if (blad > 650)
-{s("<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut « quitter la pièce ». Vous n'allez pas lui en donner l'occasion ?");
+{s("<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut « se soulager ». Vous n'allez pas lui en donner l'occasion ?");
 c("givechance","D'accord, je vais être gentil."); }
 c("stampalbum3","En avant pour les timbres !"); }}
 
@@ -6483,7 +6888,7 @@ else
 s("DIANE : Oh non, c'est vraiment intéressant.");
 s("<HR>");
 if (blad > 650 )
-{s("<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut « quitter la pièce ». Vous n'allez pas lui en donner l'occasion ?");
+{s("<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut « se soulager ». Vous n'allez pas lui en donner l'occasion ?");
 c("givechance","D'accord, je vais être gentil."); }
 c("sofatrains3","En avant pour les trains !"); }}
 
@@ -6564,7 +6969,7 @@ if (blad >750)
 s("<LI>Vous lui montrez les timbres du Liechtenstein, une série complète des émissions des années 1960. Et vous lui montrez ceux de Maurice. Il y en a pas mal, car c'est l'une de vos spécialités.");
 s("<LI>Vous ne pouvez pas détacher les yeux de ses genoux, qui se serrent et se desserrent sans arrêt.");
 if (points <19)
-{s("<LI>Elle sent votre regard et vous touche le bras. Elle dit <EM>Dépêchez-vous avec l'album. J'ai besoin d'aller aux toilettes.</EM>"); }
+{s("<LI>Elle sent votre regard et vous touche le bras. Elle dit : « Dépêchez-vous avec l'album. J'ai besoin d'aller aux toilettes. »"); }
 else
 {s("Elle sent votre regard, serre les cuisses et essaie de cesser de gigoter. Elle ne dit rien."); }}
 else
@@ -6779,7 +7184,7 @@ stampalbum6a()
 if (blad >900)
 {emergency()}
 else
-{s("<LI>Vous fermez l'album. Elle dit <EM>C'était vraiment intéressant,</EM> et s'apprête à se lever.");
+{s("<LI>Vous fermez l'album. Elle dit : « C'était vraiment intéressant, » et s'apprête à se lever.");
 s("<LI>Mais vous vous penchez et passez votre bras gauche autour d'elle. Vous l'embrassez."); 
 if (tuesday)
 {s("<LI>Vous avancez votre main libre et la posez sur son genou. Vous remontez sous sa jupe jusqu'à trouver le haut de ses bas et la délicieuse douceur de sa jambe au-delà. L'élastique ferme de son porte-jarretelles offre un contraste encore plus savoureux.");}
@@ -6805,8 +7210,8 @@ if (brooch)
 {s("<LI>VOUS : Oh, j'ai quelque chose pour toi. Je vais le chercher.");
 s("<LI>Vous allez dans la cuisine. Il y a une petite broche que vous aviez achetée plus tôt. Rien de précieux, mais assez jolie.");
 s("<LI>Vous revenez et le lui donnez. Elle s'est rassise sur le canapé et enfile sa veste.");
-s("<LI>DIANE : Oh, elle est magnifique ! Merci. <EM>Elle vous embrasse et est sur le point de dire autre chose mais—</EM>"); getinti(+15);
-s("<LI>VOUS : Je vais te raccompagner. On va sortir discrètement pour ne pas réveiller mon frère. <EM>Vous lui ouvrez la porte.</EM>"); 
+s("<LI>DIANE : Oh, elle est magnifique ! Merci.");s("<LI>Elle vous embrasse et est sur le point de dire autre chose mais—"); getinti(+15);
+s("<LI>VOUS : Je vais te raccompagner. On va sortir discrètement pour ne pas réveiller mon frère.");s("<LI>Vous lui ouvrez la porte."); 
 c("walkhomeX","Vous vous préparez à la raccompagner chez elle."); }
 else
 {s("<LI>Vous l'attirez à vous et l'embrassez. Même dans les bras l'un de l'autre, vous sentez qu'elle se balance d'un pied sur l'autre.");
@@ -6825,7 +7230,7 @@ else
 s("<LI>Même en les touchant, vous sentez ses jambes s'agiter sans cesse.");
 s("<LI>Vous lui montrez les photos de Yeovil Junction."); 
 s("<LI>Vous lui montrez vos photos de Zagreb et lui parlez des vieux trains cabossés juste après la guerre civile."); 
-s("<LI>Vous fermez l'album. Elle dit <EM>C'était vraiment intéressant,</EM> et s'apprête à se lever.");
+s("<LI>Vous fermez l'album. Elle dit : « C'était vraiment intéressant, » et s'apprête à se lever.");
 s("<LI>Mais vous vous penchez et passez votre bras gauche autour d'elle. Vous l'embrassez.");
 albumdesp()
 c("stampalbum7","Presque terminé !"); }
@@ -6890,7 +7295,7 @@ else
 {s("<LI>Vous glissez la main sous sa robe, touchant ses jambes nues pour la dernière fois."); }
 s("<LI>Elle ne semble pas très enthousiaste et tente de se dégager. Vous vous demandez pourquoi, car vous étiez si proches quelques minutes auparavant.");
 s("<LI>Mais tandis que votre main remonte, vous comprenez pourquoi. En atteignant ses fesses, sa culotte, elle tente de se dégager encore une fois, mais vous la retenez.");
-s("<LI>VOUS : <EM>en la regardant avec stupeur</EM> Diane, ta culotte est toute mouillée.");
+s("<LI>VOUS : <EM>en la regardant avec stupeur</EM> Diane, ta culotte est toute mouillée."); blad = 0;
 s("<LI>Elle rougit jusqu'aux oreilles. Vous ne vous souvenez pas d'avoir jamais vu des joues aussi rouges. Elle tente de se détourner, puis enfouit la tête dans votre épaule.");
 c("legsz2","Vous attendez une réponse."); } 
 
@@ -7107,8 +7512,8 @@ s("<LI>Vous l'embrassez avec passion, vos langues se mêlant l'une à l'autre.")
 s("<LI>Vous vous écartez et vous vous regardez. Vous avancez la main et touches prudemment ses seins.");
 s("<LI>Ses seins sont petits mais parfaitement formés. Leur douceur vous envoie un frisson de désir, et vous voulez aller plus loin. Elle respire fort, les yeux fermés."); getinti(6);
 if (blad > 700)
-{s("<EM><LI>Même en la serrant dans vos bras, vous la sentez se dandiner sans cesse.</EM>"); 
-s("<LI>Elle se dégage et dit <EM>On s'assoit ?</EM>");
+{s("<LI>Même en la serrant dans vos bras, vous la sentez se dandiner sans cesse."); 
+s("<LI>Elle se dégage et dit : « On s'assoit ? »");
 c("sofasnog","Vous allez vous asseoir sur le canapé.");}
 else
 {s("<LI>Vous explores ses seins plus fermement, les prenant doucement en coupe l'un après l'autre dans votre main."); getinti(2);
@@ -7372,12 +7777,12 @@ if (inti > 157)
 s("<LI>Vous la regardez. « Je peux regarder ? », vous entendez-vous dire. Elle secoue la tête avec un sourire amusé devant votre folie, tire le bas de sa jupe légèrement en arrière et s'assied quelques centimètres plus loin sur les toilettes.");
 s("<LI>Vous avez une vue imprenable sur son jet, d'un doré saisissant, qui s'incurve jusque dans la cuvette. Vous aimeriez y poser la main, sentir comme c'est chaud, mais c'est peut-être pour une autre fois."); blad = 0;
 s("<LI>Elle fait pipi pendant presque une minute, mais le jet finit par faiblir, il y a un bref sursaut final, et c'est terminé.");
-s("<LI>DIANE : J'en avais vraiment besoin. <EM>Elle arrache un morceau de papier toilette, s'essuie rapidement, puis se lève et remonte sa culotte bleu clair.</EM>");
+s("<LI>DIANE : J'en avais vraiment besoin.");s("<LI>Elle arrache un morceau de papier toilette, s'essuie rapidement, puis se lève et remonte sa culotte bleu clair.");
 s("<LI>Elle commence ensuite à remonter ses collants, mais avant même d'avoir fini, elle est dans vos bras pendant que vous l'embrassez sur la bouche, le visage, le cou. Vous lui dites à quel point c'était merveilleux."); 
 c("gobathroom2","Vous vous étreignez."); }
 else
 {s("<LI>Elle réalise que vous la regardez, rougit légèrement et rabaisse encore plus le bas de sa jupe. Elle est penchée en avant, les mains sur les genoux. Vous ne voyez plus le jet, mais le bruit de son pipi à plein régime est merveilleux. Au bout d'un moment il faiblit et elle murmure « Presque fini » — mais il y en a encore un peu avant que ça se tarisse dans le silence. Ça a dû durer une bonne minute. Elle arrache un morceau de papier toilette, tend la main et s'essuie."); blad = 0;
-s("<LI><EM>J'en avais vraiment besoin,</EM> dit-elle, et en se levant, elle remonte sa culotte. Est-ce votre imagination, ou y a-t-il une petite tache d'humidité dessus ?");
+s("<LI>« J'en avais vraiment besoin, » dit-elle, et en se levant, elle remonte sa culotte. Est-ce votre imagination, ou y a-t-il une petite tache d'humidité dessus ?");
 s("<LI>Vous vous penchez et l'embrassez, même pendant qu'elle tire sur ses collants, sentant la légère odeur acidulée de son urine monter des toilettes.");
 c("gobathroomx","Elle tire la chasse d'eau."); }}
 
@@ -7454,7 +7859,7 @@ c("bottom2","Réessayez !"); }
 function
 breasts1b()
 {
-s("<LI>Vous levez la main et touchez à nouveau ses seins. Elle s'écarte et dit <EM>On s'assoit ?</EM>");
+s("<LI>Vous levez la main et touchez à nouveau ses seins. Elle s'écarte et dit : « On s'assoit ? »");
 c("sofasnog","Vous allez vous asseoir sur le canapé.");}
 
 function
@@ -7463,8 +7868,8 @@ bottom2()
 s("<LI>Vous l'embrassez avec passion, vos langues se mêlant l'une à l'autre.");
 s("<LI>Vous la tenez, votre main droite glissant vers le bas jusqu'à empoigner ses fesses, la maintenant contre vous. Vous explorez ses fesses pendant quelques secondes mais vous voulez aller plus loin. Elle respire fort, les yeux fermés."); getinti(10);
 if (blad > 700)
-{s("<EM><LI>Même en la serrant dans vos bras, vous la sentez se dandiner sans cesse.</EM>"); 
-s("<LI>Elle se dégage et dit <EM>On s'assoit ?</EM>");
+{s("<LI>Même en la serrant dans vos bras, vous la sentez se dandiner sans cesse."); 
+s("<LI>Elle se dégage et dit : « On s'assoit ? »");
 c("sofasnog","Vous allez vous asseoir sur le canapé.");}
 else
 {s("<LI>Vous explorez ses fesses plus fermement, puis descendez légèrement la main."); getinti(2);
@@ -7548,7 +7953,7 @@ afterpee() }
 else
 {s("<LI>Vous sentez qu'elle aimerait filer aux toilettes, mais vous arrivez à maintenir la conversation et elle ne peut pas vous couper."); }}
 else if (blad > 830)
-{s("<LI>Elle a vraiment très envie d'aller aux toilettes. Elle n'arrive pas à rester en place, et semble un peu hésitante en se dirigeant vers la porte d'entrée. Elle n'a pas l'air enchantée à l'idée que vous la raccompagniez et ne cesse de répéter <EM>Il faut vraiment que j'y aille !</EM>."); }
+{s("<LI>Elle a vraiment très envie d'aller aux toilettes. Elle n'arrive pas à rester en place, et semble un peu hésitante en se dirigeant vers la porte d'entrée. Elle n'a pas l'air enchantée à l'idée que vous la raccompagniez et ne cesse de répéter « Il faut vraiment que j'y aille ! »."); }
 else
 {s("<LI>Elle sourit, l'air détendu."); }
 s("<LI>Qu'est-ce que ce sera ?");
@@ -7598,7 +8003,7 @@ else if (blad > 920)
 s("<LI>VOUS : Oh, mais je dois te raccompagner. J'en ai pour une minute.");
 s("<LI>Pendant que vous vous préparez, elle fait les cent pas dans le petit vestibule. Les mains crispées le long du corps. Elle se mord la lèvre.");
 s("<LI>Soudain, elle fait une petite révérence et croise précipitamment une jambe sur l'autre.");
-s("<LI>Elle se tourne vers vous, rouge de gêne, et souffle <EM>Où sont vos toilettes ?</EM>. Vous le lui indiquez, et elle se précipite à l'intérieur.");
+s("<LI>Elle se tourne vers vous, rouge de gêne, et souffle : « Où sont vos toilettes ? ». Vous le lui indiquez, et elle se précipite à l'intérieur.");
 c("walkhome1b","Vous l'attendez."); }
 c("walkhome1a","Vous quittez la maison avec elle."); }
 
@@ -7636,7 +8041,7 @@ else
 {s("<LI>Vous arrivez dans un endroit plus retiré. Vous vous arrêtez et vous étreignez. Vous vous embrassez, votre main sur ses fesses, la serrant contre vous, et sa main descend pour vous rapprocher elle aussi."); getinti(5);
 s("<LI>Vous glissez une main vers l'avant, caressant ses seins à travers son chemisier.");
 if (blad > 800)
-{s("<LI>Même pendant que vous vous embrassez, elle piétine sur place. Elle se dégage, haletant <EM>Il est tard. Il faut que je rentre.</EM>"); }
+{s("<LI>Même pendant que vous vous embrassez, elle piétine sur place. Elle se dégage, haletant : « Il est tard. Il faut que je rentre. »"); }
 else if (blad > 670)
 {s("<LI>Vous la sentez se trémousser.");
 s("<LI>DIANE : Allez, il se fait tard."); } 
@@ -7651,7 +8056,7 @@ s("<LI>Vous remontez la rue avec Diane, main dans la main."); blad +=10
 s("<LI>Vous passez devant une école.");
 s("<LI>Vous vous arrêtez un instant à l'abri du portail de l'école. Vous vous embrassez."); getinti(5);  
 if (blad > 670 && blad <= 800)
-{s("<LI>Elle dit « Allez, il se fait tard. »"); }
+{s("<LI>Elle dit : « Allez, il se fait tard. »"); }
 else if (blad > 800)
 {s("<LI>Même pendant que vous vous embrassez, vous la sentez se trémousser, comme si elle piétinait sur place. Elle s'interrompt et vous presse d'avancer."); }
 else
@@ -7851,8 +8256,8 @@ s("<LI>Diane grimace, elle n'en peut plus. Elle avance à toute allure, mi-coura
 if (blad >975)
 {disaster()}
 else
-{s("<LI>Vous essayez d'être compatissant, en disant « Ne t'inquiète pas, on y est presque » et d'autres banalités du même genre.");
-s("<LI>Elle reprend votre main en disant « Désolée pour ça. Je ne dois pas être très bonne compagnie. »");
+{s("<LI>Vous essayez d'être compatissant, en disant : « Ne t'inquiète pas, on y est presque » et d'autres banalités du même genre.");
+s("<LI>Elle reprend votre main en disant : « Désolée pour ça. Je ne dois pas être très bonne compagnie. »");
 s("<LI>Si seulement elle savait !");
 s("<LI>Elle vous presse d'avancer.");
 if (blad > 825 )
@@ -8054,12 +8459,12 @@ sofatalka()
 {
 s("<LI>Diane vous regarde avec un certain amusement.");
 if (blad >550)
-{s("Elle dit : <EM>J'ai besoin d'aller aux toilettes là.</EM>");
+{s("Elle dit : « J'ai besoin d'aller aux toilettes là. »");
 s("<LI>VOUS : Je peux venir avec toi ?");
 s("<LI>Elle vous regarde un instant, comme si elle réfléchissait.");
 s("<LI>DIANE : Tu regardes toutes tes petites amies faire pipi ?");
 s("<LI>VOUS : Si elles m'y autorisent.");
-s("<LI>Diane rit. <EM>Allez, viens,</EM> dit-elle en se levant. Vous la suivez dans l'escalier.");
+s("<LI>Diane rit. « Allez, viens, » dit-elle en se levant. Vous la suivez dans l'escalier.");
 s("<LI>Vous regrettez un peu de ne pas l'avoir fait patienter un peu plus longtemps, mais vous vous en contenterez.");
 c("sofatalkb","Vous la suivez dans la salle de bains."); }
 else
@@ -8088,12 +8493,12 @@ function
 sofatalkc()
 {
 s("<LI>Après quelques secondes, elle urine d'un jet régulier. Vous regrettez de ne pas avoir une meilleure vue."); 
-s("<LI>Diane lève les yeux vers vous. <EM>Vous voyez bien que j'en avais besoin,</EM> dit-elle.");
-s("<LI>Vous la regardez fixement. <EM>Je peux regarder ?</EM>, vous entendez-vous dire. Elle secoue la tête comme si elle souriait de votre folie, remonte légèrement l'ourlet de sa robe et se recale de quelques centimètres en arrière sur les toilettes.");
+s("<LI>Diane lève les yeux vers vous. « Vous voyez bien que j'en avais besoin, » dit-elle.");
+s("<LI>Vous la regardez fixement. « Je peux regarder ? », vous entendez-vous dire. Elle secoue la tête comme si elle souriait de votre folie, remonte légèrement l'ourlet de sa robe et se recale de quelques centimètres en arrière sur les toilettes.");
 s("<LI>Vous avez une vue imprenable sur son jet, d'un doré saisissant, qui s'incurve jusque dans la cuvette. Vous aimeriez y poser la main, sentir comme c'est chaud, mais c'est peut-être pour une autre fois."); blad = 0;
 s("<LI>Elle fait pipi pendant presque une minute, mais le jet finit par faiblir, il y a un bref sursaut final, et c'est terminé.");
-s("<LI>DIANE : C'est tellement mieux. <EM> Elle arrache un morceau de papier toilette et s'essuie rapidement, puis se lève et enfile sa culotte blanche.</EM>");
-s("<LI>Elle remonte sa culotte et laisse retomber sa robe, en vous souriant. <EM>Vous avez aimé ça ?</EM>, demande-t-elle. Vous lui dites à quel point c'était merveilleux."); 
+s("<LI>DIANE : C'est tellement mieux.");s("<LI>Elle arrache un morceau de papier toilette et s'essuie rapidement, puis se lève et enfile sa culotte blanche.");
+s("<LI>Elle remonte sa culotte et laisse retomber sa robe, en vous souriant. « Vous avez aimé ça ? », demande-t-elle. Vous lui dites à quel point c'était merveilleux."); 
 c("gobathroom2","Vous vous étreignez."); } 
 
 function
@@ -8110,7 +8515,7 @@ else
 s("<LI>DIANE : J'étais tellement gênée. Tu avais promis de ne pas regarder.");
 s("<LI>VOUS : Je n'ai pas regardé. Mais il y avait quelque chose, je ne sais pas…<EM>Vous marquez une pause</EM>"); }
 s("<LI>VOUS : Est-ce que tu as déjà attendu trop longtemps ?");
-s("<LI>DIANE : Parfois. <EM>Elle vous regarde d'un air pensif, puis se redresse sur le canapé.</EM> Si on va papoter, on devrait prendre un autre verre de vin ?"); 
+s("<LI>DIANE : Parfois.");s("<LI>Elle vous regarde d'un air pensif, puis se redresse sur le canapé.");s("<LI>DIANE : Si on va papoter, on devrait prendre un autre verre de vin ?"); 
 c("sofatalk2","Vous allez chercher du vin à la cuisine."); }
 
 function
@@ -8146,7 +8551,7 @@ c("sofatalk4","Vous demandez ce qui s'est passé."); }
 function
 sofatalk4()
 {
-s("<LI>Elle s'arrête. Puis elle murmure <EM>Fais-moi un câlin,</EM> et ramène ses jambes sur le canapé. Vous passez un bras autour d'elle, votre main libre effleurant sa jambe.");
+s("<LI>Elle s'arrête. Puis elle murmure : « Fais-moi un câlin, » et ramène ses jambes sur le canapé. Vous passez un bras autour d'elle, votre main libre effleurant sa jambe.");
 s("<LI>Elle parle tout doucement.");
 storytime1()
 s("<LI>VOUS : J'aurais tellement voulu être là.");
@@ -8435,7 +8840,7 @@ busqueue3()
 s("<LI>Vous attendez toujours le bus."); blad +=15
 s("<LI>Une fille à l'arrêt voisin n'arrive visiblement pas à tenir en place. Elle porte une petite minijupe qui met bien en valeur ses jambes agitées. Elle croise les jambes d'un côté, puis de l'autre. Puis se retrouve sur une jambe.");
 if (blad > 660)
-{s("<P><LI>DIANE : <EM>vous chuchote à l'oreille</EM> J'ai une envie pressante d'aller aux toilettes. Il y a un endroit où je peux y aller ? <EM>Elle rougit, l'air penaud.</EM> Je ne crois pas que je tiendrais jusqu'à la maison en bus — je comptais y aller avant qu'on arrive ici, mais je n'avais pas prévu que le Pavillon serait fermé.");
+{s("<P><LI>DIANE : <EM>vous chuchote à l'oreille</EM> J'ai une envie pressante d'aller aux toilettes. Il y a un endroit où je peux y aller ?");s("<LI>Elle rougit, l'air penaud.");s("<LI>DIANE : Je ne crois pas que je tiendrais jusqu'à la maison en bus — je comptais y aller avant qu'on arrive ici, mais je n'avais pas prévu que le Pavillon serait fermé.");
 s("<LI>Vous regardez autour de vous et réfléchissez.");
 c("queue1a","Que choisissez-vous ?"); }
 else
@@ -8475,7 +8880,7 @@ s("<LI>Vous regardez autour de vous. Vous ne voyez nulle part où elle pourrait 
 s("<LI>VOUS : Je ne vois rien. Tu peux tenir jusqu'à la maison ?");
 s("<LI>DIANE : Je suppose que je n'ai pas le choix.");
 s("<LI>Elle n'a pas l'air ravie et cesse de vous tenir la main."); getinti(-15);
-s("<LI>Soudain elle dit, <EM>Je vais rattraper Molly ; je connais son adresse. À bientôt</EM> et elle disparaît.");
+s("<LI>Soudain elle dit, « Je vais rattraper Molly ; je connais son adresse. À bientôt » et elle disparaît.");
 s("<LI>Et la brune monte dans un bus qui démarre aussitôt.");
 c("gameover","Oh !"); }
 
@@ -8496,7 +8901,7 @@ s("<LI>Diane ne semble pas très enthousiaste mais vous rebroussez chemin et tro
 c("onbus","Vous attendez que le bus reparte."); }
 else
 {s("<LI>Vous traversez le parking en vitesse.");
-s("<LI>DIANE : Désolée pour ça. C'est toute cette bière. <EM>Elle vous serre le bras. Elle est vraiment reconnaissante que vous vous occupiez d'elle.</EM>"); getinti(5);
+s("<LI>DIANE : Désolée pour ça. C'est toute cette bière.");s("<LI>Elle vous serre le bras. Elle est vraiment reconnaissante que vous vous occupiez d'elle."); getinti(5);
 c("carparka0","Vous traversez le parking en vitesse");}}}
 
 function
@@ -8529,7 +8934,7 @@ onbus2()
 s("<LI>Le bus n'a toujours pas bougé. Diane gigote sur sa place. Elle croise les jambes d'un côté, puis de l'autre.");
 s("<LI>Enfin, le chauffeur monte à bord.");
 s("<LI>DIANE : Il était temps."); getinti(-5);
-s("<P><EM>À noter : vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.</EM>");
+s("<P>À noter, vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.");
 c("bushome","Le moteur démarre."); }
 
 
@@ -8542,7 +8947,7 @@ if (merlot)
 {s("<LI>Vous attendez qu'elle revienne. Vous pensiez qu'elle serait de retour aussitôt. Mais les toilettes étaient ouvertes finalement, pour la saison estivale. Mauvais calcul !");
 afterpee()
 s("<LI>Au bout de deux ou trois minutes, elle revient. Elle prend votre bras.");
-s("<LI>DIANE : Voilà qui est mieux. Maintenant je peux profiter du trajet du retour. Merci. <EM>Elle vous donne un baiser.</EM>"); getinti(5);
+s("<LI>DIANE : Voilà qui est mieux. Maintenant je peux profiter du trajet du retour. Merci.");s("<LI>Elle vous donne un baiser."); getinti(5);
 s("<LI>Vous lui rendez son baiser. Vous passez la main dans son dos pour lui attraper les fesses, la serrant contre vous.");
 s("<LI>Vous entendez des pas pressés dans votre direction. C’est la blonde de l’arrêt de bus. Elle s’arrête en vous voyant et dit discrètement à DIANE : « Les toilettes sont encore ouvertes ? » Diane répond que oui, et la blonde marmonne « Dieu merci » avant de repartir en hâte. Vous vous imaginez son état quand elle y arrive — peut-être quelques gouttes de pipi qui s’échappent avant même qu’elle atteigne le cabinet, la lutte pour faire descendre sa culotte à temps…");
 s("<LI>DIANE : Allez, il faut rentrer."); 
@@ -8551,14 +8956,15 @@ else if (chardonnay)
 {s("<LI>Vous attendez qu'elle revienne. Vous pensiez qu'elle serait de retour aussitôt. Mais les toilettes étaient ouvertes finalement, pour la saison estivale. Mauvais calcul !");
 afterpee()
 s("<LI>Au bout de deux ou trois minutes, elle revient. Elle prend votre bras.");
-s("<LI>DIANE : Voilà qui est mieux. Maintenant je peux profiter du trajet du retour. Merci. <EM>Elle vous donne un baiser.</EM>"); getinti(5);
+s("<LI>DIANE : Voilà qui est mieux. Maintenant je peux profiter du trajet du retour. Merci.");s("<LI>Elle vous donne un baiser."); getinti(5);
 s("<LI>Vous revenez vers l'arrêt de bus. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu'un et vous regardez. La petite blonde de la file d'attente est là, en train de faire pipi. Sa mini-jupe est retroussée autour de la taille, sa culotte blanche autour des genoux, tandis qu'un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.");
 s("<LI>DIANE : Je crois qu'elle en avait encore plus besoin que moi. Allez — vous ne pouvez pas rester là à regarder.");
 c("taxihome1","Vous retournez vers la station de taxis."); }
 else if (pinot)
 {s("<LI>Vous attendez qu'elle revienne. Vous pensiez qu'elle serait de retour aussitôt. Mais les toilettes devaient bien être ouvertes finalement. Mauvais calcul !");
 s("<LI>Au bout de trois ou quatre minutes, elle revient. Elle prend votre bras.");
-s("<LI>DIANE : Voilà qui est mieux. Maintenant je peux profiter du trajet du retour. Merci. <EM>Elle vous donne un baiser.</EM> Les toilettes étaient fermées — enfin, ça semblait sombre et barricadé. Bref, il n'y avait personne alors je me suis soulagée derrière une voiture. Heureusement que vous n'étiez pas là ! <EM>Elle glousse et vous sourit malicieusement.</EM>"); getinti(5);
+s("<LI>DIANE : Voilà qui est mieux. Maintenant je peux profiter du trajet du retour. Merci.");s("<LI>Elle vous donne un baiser.");s("<LI>DIANE : Les toilettes étaient fermées — enfin, ça semblait sombre et barricadé. Bref, il n'y avait personne alors je me suis soulagée derrière une voiture. Heureusement que vous n'étiez pas là !");
+s("<LI>Elle glousse et vous sourit malicieusement."); getinti(5);
 afterpee()
 s("<LI>Vous ragez intérieurement.");
 s("<LI>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez un bruit. La petite blonde de la file d'attente est là, en train de faire pipi. Sa mini-jupe est retroussée autour de la taille, sa culotte blanche autour des genoux, tandis qu'un jet coule sur le sol. Quand elle vous voit, elle pousse un hoquet de gêne et tente de remonter sa culotte, mais son jet est si puissant qu'elle doit se rasseoir en accroupie");
@@ -8577,11 +8983,11 @@ s("<LI>Vous regardez autour de vous. Diane est au bord de se faire pipi dessus. 
 s("<LI>Vous lui suggérez d'aller se cacher derrière un camping-car. C'est alors que vous entendez des pas pressés dans votre direction. C'est la fille en mini-jupe que vous aviez vue dans la file d'attente du bus. Elle a le visage rouge et l'air inquiet."); 
 s("<LI>LA FILLE <EM>à Diane</EM> : Il y a des toilettes là-bas ?");
 s("<LI>DIANE : Oui, mais c'est fermé. Je viens d'essayer.");
-s("<LI>LA FILLE : Mon Dieu, je n'en peux vraiment plus. <EM>Elle peut à peine se tenir debout, elle trépigne sur place, les mains crispées.</EM>");
+s("<LI>LA FILLE : Mon Dieu, je n'en peux vraiment plus.");s("<LI>Elle peut à peine se tenir debout, elle trépigne sur place, les mains crispées.");
 s("<LI>DIANE : Moi aussi j'ai besoin d'y aller. On pourrait peut-être se glisser derrière ce camping-car. Mon copain montera la garde.");
-s("<LI>LA FILLE : N'importe quoi. Encore une minute et je vais me faire pipi dessus. <EM>Elle plaque une main sur son entrejambe, se mord la lèvre et détourne les yeux. Elles s'éloignent ensemble.</EM> On peut lui faire confiance ?");
+s("<LI>LA FILLE : N'importe quoi. Encore une minute et je vais me faire pipi dessus.");s("<LI>Elle plaque une main sur son entrejambe, se mord la lèvre et détourne les yeux. Elles s'éloignent ensemble.");s("<LI>LA FILLE : On peut lui faire confiance ?");
 s("<LI>DIANE : Probablement pas, mais—");
-s("<LI>LA FILLE : Je m'en fous. <EM>Elle tripote déjà sa jupe.</EM> Je me fiche que le monde entier me regarde.");
+s("<LI>LA FILLE : Je m'en fous.");s("<LI>Elle tripote déjà sa jupe.");s("<LI>LA FILLE : Je me fiche que le monde entier me regarde.");
 c("carparka3","Elles disparaissent derrière le camping-car");} 
 
 function
@@ -8621,7 +9027,7 @@ gentleman()
 s("<LI>Vous montez la garde pendant que Diane et la fille font pipi. Vous ne cherchez pas à regarder.");
 s("<LI>Ça me dépasse pourquoi vous jouez à ce jeu, mais c'est votre choix."); blad = 0;
 s("<LI>Elles prennent un bon moment et vous entendez des chuchotements avant qu'elles réapparaissent. Vous les raccompagnez poliment jusqu'à la route. Diane et vous allez à la station de taxis.");
-s("<LI>DIANE : Zut. <EM>Elle bavarde discrètement avec la brune. Puis—</EM>");
+s("<LI>DIANE : Zut.");s("<LI>Elle bavarde discrètement avec la brune. Puis—");
 s("<LI>DIANE : En fait, ça vous dérange si je rentre avec Debbie ? On habite dans la même rue toutes les deux et on a plein de choses à se dire. Merci beaucoup pour cette belle soirée. À la semaine prochaine.");
 s("<LI>Elle vous chuchote : « Debbie a eu un petit accident, alors elle préfère que les autres ne le sachent pas. Je vais la raccompagner chez elle en taxi. » Elle vous donne un joli baiser — et disparaît.");
 c("gameover","Vous rentrez chez vous."); }
@@ -8754,7 +9160,7 @@ s("<LI>Elle regarde à nouveau l'horaire. Ça lui donne sans doute une excuse po
 s("<LI>DIANE : Il est où, ce bus ?");
 s("<LI>VOUS : Il devrait arriver d'une minute à l'autre.");
 s("<LI>Vous passez un bras autour d'elle, mais elle s'échappe aussitôt pour retourner au bord du trottoir. Elle n'arrive pas à tenir en place. Vous ne pouvez pas en détacher les yeux — et vous avez une érection.");
-s("<LI>Diane vous tient la main, un peu à contrecœur. <EM>Mon Dieu, j'ai vraiment une envie pressante !</EM> dit-elle. Elle trépigne sur place, puis croise les jambes.");}
+s("<LI>Diane vous tient la main, un peu à contrecœur. « Mon Dieu, j'ai vraiment une envie pressante ! » dit-elle. Elle trépigne sur place, puis croise les jambes.");}
 else
 {queue_desp()
 s("<LI>Tout le monde commence à s'impatienter."); }
@@ -8878,7 +9284,7 @@ function
 passage2a()
 {
 s("<LI>Des pas s'approchent. Un jeune couple traverse la place, se hâtant vers le centre-ville."); 
-s("<LI>Diane laisse retomber sa jupe. Elle fait semblant d'utiliser son téléphone portable. Le couple lui dit « Bonsoir » et elle répond « Bonsoir ».");
+s("<LI>Diane laisse retomber sa jupe. Elle fait semblant d'utiliser son téléphone portable. Le couple lui dit : « Bonsoir » et elle répond « Bonsoir ».");
 s("<LI>Le couple passe son chemin, et Diane avance de quelques mètres vers les poubelles. Mais elle s'arrête, légèrement penchée en avant.");
 c("passage2aa","Elle ne bouge pas."); }
 
@@ -8888,7 +9294,7 @@ passage2aa()
 s("<LI>Le couple a disparu.");
 s("<LI>Vous attendez que Diane baisse sa culotte pour faire pipi. Mais non. Elle ne bouge pas.");
 s("<LI>Et puis vous le voyez, scintillant au clair de lune — une petite flaque qui s'écoule depuis ses pieds.");
-s("<LI>Elle reste là, tournée vers le mur, une main sur le visage. Vous entendez le léger crépitement du pipi. La pauvre n'a pas pu se retenir une seconde de plus — elle est en train de se faire pipi dessus.");
+s("<LI>Elle reste là, tournée vers le mur, une main sur le visage. Vous entendez le léger crépitement du pipi. La pauvre n'a pas pu se retenir une seconde de plus — elle est en train de se faire pipi dessus."); blad = 0;
 s("<LI>Vous regardez dans la pénombre. Vous regrettez qu'il fasse si sombre, mais vous voyez ses collants briller tandis que le pipi ruisselle le long de ses jambes.");
 c("passage2ab","Oh là là !"); }
 
@@ -9034,7 +9440,7 @@ s("<LI>À quelques mètres des poubelles, elle s'arrête net et plaque fermement
 s("<LI>Puis elle se met à courir et, avant même d'atteindre les poubelles, elle commence à relever sa jupe.");
 s("<LI>Elle jette un rapide coup d'œil alentour pour s'assurer que la voie est libre, puis tire sa culotte vers le bas et s'accroupit à demi.");
 s("<LI>Le pipi jaillit dès que sa culotte est dégagée, et depuis votre position vous pouvez le voir éclabousser le sol. Comme épuisée, elle pose une main sur la poubelle pour se stabiliser. Après quelques secondes, elle s'accroupit plus bas.");
-s("<LI>Elle pisse pendant ce qui semble être presque une minute entière. Puis elle se relève lentement, remonte sa culotte rose et commence à rajuster sa jupe et son fond de robe. Et avec un frisson de plus, vous constatez qu'elle porte vraiment des bas, avec un porte-jarretelles blanc.");
+s("<LI>Elle pisse pendant ce qui semble être presque une minute entière. Puis elle se relève lentement, remonte sa culotte rose et commence à rajuster sa jupe et son fond de robe. Et avec un frisson de plus, vous constatez qu'elle porte vraiment des bas, avec un porte-jarretelles blanc."); blad = 0;
 c("goleft3","Elle regarde autour d'elle."); }
 
 function
@@ -9287,7 +9693,7 @@ s("<LI>DIANE : Ça m'aiderait peut-être si tu regardais ailleurs un instant."
 s("<LI>Vous regardez ailleurs, et quelques secondes plus tard elle murmure un tout petit « OK ». Vous vous retournez.");
 s("<LI>Sa robe est remontée à mi-cuisses. Rien ne semble se passer — mais soudain un filet de pipi commence à couler le long de sa jambe.");
 s("<LI>Quelques secondes plus tard, un jet de pipi commence à jaillir entre ses jambes, éclaboussant dans la baignoire. Son jet est si bien formé qu'on a peine à croire qu'il traverse sa culotte, et pourtant si. Un mince filet continue de couler le long d'une de ses jambes. Dans la baignoire, il s'écoule autour de ses pieds, d'un jaune saisissant, presque doré.");
-s("<LI>Au bout d'une trentaine de secondes, le jet s'éteint. Elle se penche pour ouvrir le robinet et rincer son urine ; puis, en gloussant, elle sort de la baignoire.");
+s("<LI>Au bout d'une trentaine de secondes, le jet s'éteint. Elle se penche pour ouvrir le robinet et rincer son urine ; puis, en gloussant, elle sort de la baignoire."); blad = 0;
 s("<LI>Diane s'est fait pipi dessus. Pour vous. Vous voyez que sa culotte est trempée.");
 s("<LI>Elle vous regarde timidement. Vous vous avancez, prenez sa main, puis l'embrassez sur les lèvres."); 
 s("<LI>Diane sourit. « Tu as aimé ça ? » demande-t-elle doucement. Vous hochez la tête. Elle se lève et fait glisser sa culotte blanche, puis vous demande de sortir de la salle de bains pendant qu'elle se remet en ordre.");
@@ -9315,7 +9721,7 @@ s("<LI>DIANE : <EM>très doucement</EM> OK.");
 s("<LI>Vous vous retournez et vous regardez. Rien ne s'est passé — vous n'avez rien raté — mais soudain une tache humide apparaît sur sa culotte. Elle semble d'abord remonter, jusqu'à ce que le tissu paraisse presque translucide. Vous distinguez la toison sombre de son pubis.");
 s("<LI>L'entrejambe de sa culotte est mouillé et un filet de pipi commence à s'échapper d'un côté. En quelques secondes, c'est un vrai jet qui semble d'abord s'accumuler dans sa culotte avant de la traverser directement. C'est peut-être le cidre qu'elle a bu, mais il est d'un doré saisissant.");
 s("<LI>Diane lève les yeux vers vous avec un rire embarrassé. Elle rougit. Elle baisse à nouveau les yeux. Son pipi tinte dans la cuvette.");
-s("<LI>Finalement, le jet ralentit jusqu'à n'être plus qu'un mince filet, et elle pousse un petit soupir de soulagement.");
+s("<LI>Finalement, le jet ralentit jusqu'à n'être plus qu'un mince filet, et elle pousse un petit soupir de soulagement."); blad = 0;
 c("nicelydesp9","Vous respirez à nouveau."); }
  
 function
@@ -9391,7 +9797,7 @@ if (squat)
 s("Vous la regardez. « Je peux regarder ? », vous vous entendez dire. Elle secoue la tête comme si votre folie l'amusait, tire un peu l'ourlet de sa jupe vers l'arrière et s'assied quelques centimètres plus en arrière sur la cuvette.");
 s("Vous avez une vue imprenable sur son jet, d'un doré saisissant, qui s'arque jusqu'à la cuvette. Vous aimeriez y poser la main, pour sentir à quel point c'est chaud, mais c'est peut-être pour une autre fois.");
 s("Elle pisse pendant presque une minute mais le jet finit par faiblir, un bref sursaut tardif, et le spectacle est terminé.");
-s("DIANE : J'en avais besoin. <EM>Elle arrache un bout de papier, s'essuie rapidement, puis se lève et remonte sa culotte bleu clair.</EM>");
+s("DIANE : J'en avais besoin.");s("<LI>Elle arrache un bout de papier, s'essuie rapidement, puis se lève et remonte sa culotte bleu clair.");
 s("Elle commence alors à remonter ses collants, mais avant même d'avoir terminé elle est dans vos bras tandis que vous l'embrassez sur la bouche, le visage, le cou. Vous lui dites à quel point c'était merveilleux."); 
 c("ontoilet2","Vous vous étreignez."); }
 else
@@ -9672,7 +10078,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane ne tient pas en place et fait les c
 else if (blad < 875 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane est tellement au bord qu'elle a du mal à rester debout. Elle a l'air absolument malheureuse.</SPAN></EM>");
 else if (blad < 900)
-s("<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>Oh, j'aimerais tellement qu'il y ait des toilettes quelque part !<EM> marmonne-t-elle.</EM>");
+s("<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle.");
 else if (blad < 925 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane tourne en rond en faisant de petites révérences à chaque pas. Vous vous demandez si quelques gouttes ne lui ont pas déjà échappé.</SPAN></EM>");
 else
@@ -9903,7 +10309,7 @@ else if (icecream)
 {s("<P><LI>DIANE : Quand j'avais dix-huit ans, en première année à la fac, pendant la semaine d'intégration où tout le monde sort boire. Je n'avais pas l'habitude de l'alcool et on avait tous pas mal bu, de la bière aussi. Sur le chemin du retour, j'allais craquer tellement j'avais envie, je ne savais plus quoi faire.");
 s("<LI>VOUS : Tu as réussi à te retenir ?"); }
 else
-{s("<P><LI>DIANE : Il y a quelques mois, trois copines et moi sommes parties en enterrement de vie de jeune fille en Hollande. On avait pas mal bu et on rentrait à pied à l'hôtel. On avait toutes envie de faire pipi, mais l'une d'elles était vraiment à bout. On a aperçu des toilettes de l'autre côté de la rue, mais c'était des toilettes pour hommes, avec des urinoirs. Bref, Linda n'en pouvait plus et elle a dit « Ça fera l'affaire » — elle a écarté sa culotte sur le côté et s'est soulagée dans les urinoirs. On riait comme des folles et les deux autres filles y sont allées aussi. Moi aussi j'avais vraiment très envie à ce stade, mais le problème c'est que je portais un pantalon.");  
+{s("<P><LI>DIANE : Il y a quelques mois, trois copines et moi sommes parties en enterrement de vie de jeune fille en Hollande. On avait pas mal bu et on rentrait à pied à l'hôtel. On avait toutes envie de faire pipi, mais l'une d'elles était vraiment à bout. On a aperçu des toilettes de l'autre côté de la rue, mais c'était des toilettes pour hommes, avec des urinoirs. Bref, Linda n'en pouvait plus et elle a dit : « Ça fera l'affaire » — elle a écarté sa culotte sur le côté et s'est soulagée dans les urinoirs. On riait comme des folles et les deux autres filles y sont allées aussi. Moi aussi j'avais vraiment très envie à ce stade, mais le problème c'est que je portais un pantalon.");  
 s("<LI>VOUS : Pourquoi c'était un problème ?"); }}
 
 
@@ -9916,7 +10322,7 @@ s("VOUS : <EM>(en la serrant dans vos bras)</EM> Tu t’es vraiment fait pipi 
 s("DIANE : Oh oui. Complètement mouillée. Mon jean, ma culotte, tout le long de la jambe…");}
 else if (pannacotta)
 {s("<P><LI>DIANE : Finalement c'est devenu tellement urgent que j'ai lâché d'un coup « Où sont les toilettes ? » avant de me précipiter vers la salle de bains. J'y suis tout juste arrivée et j'ai claqué la porte, mais je ne trouvais pas l'interrupteur et il faisait noir comme dans un four. J'étais dans un tel état — je ne sais pas pourquoi je te raconte ça — je ne voyais pas où étaient les toilettes, et—");
-s("<EM>Elle passe ses bras autour de vous et vous parle doucement à l'oreille :</EM>");
+s("<LI>Elle passe ses bras autour de vous et vous parle doucement à l'oreille :");
 s("<LI>Je me suis retrouvée au milieu de la salle de bains et — j'ai mouillé ma culotte. J'ai fini par trouver l'interrupteur, mais ma culotte était tellement trempée que j'ai dû la cacher sous une armoire.");}
 else if (icecream)
 {s("<P><LI>DIANE : On est tout juste rentrées à la coloc, mais mon amie cherchait les clés à tâtons et je trépignais dans l'entrée. Je ne pouvais tout simplement plus attendre. C'était comme les chutes du Niagara — dans mon jean aussi. Complètement mouillée. Cela dit, tout le monde était ivre et ça les a fait mourir de rire. Moi j'étais mortifiée — je ne savais pas comment affronter les autres le lendemain matin, mais personne n'en a jamais reparlé."); 
@@ -9925,15 +10331,15 @@ s("DIANE : Oh oui. Complètement mouillée. Mon jean, ma culotte, tout le long
 else
 {s("<P><LI>DIANE : Ces urinoirs crasseux en forme de mur — impossible de s'y asseoir. Bref, je pensais pouvoir tenir jusqu'à l'hôtel, mais j'allais bientôt craquer. Les autres riaient, et quand je me suis glissée dans une ruelle pour baisser ma fermeture éclair, l'une d'elles a sorti un appareil photo. Je ne voulais pas me retrouver sur Webshots, alors je me suis retenue — littéralement, j'avais la main dans la poche, si on peut dire. C'est devenu tellement critique que quelques jets ont commencé à couler le long de ma jambe et j'ai dû me cacher derrière un vieux camion.");
 s("VOUS : Tu t'es fait pipi dessus ?");
-s("<LI>DIANE : <EM>glousse</EM> Non, je me suis accroupie et j'ai pissé un torrent. Cela dit — <EM>elle pose une main sur votre épaule, l'autre sur votre pantalon, effleurant votre érection</EM> — ma culotte était bien mouillée. Je pense que ça t'aurait plu."); }}
+s("<LI>DIANE : <EM>glousse</EM> Non, je me suis accroupie et j'ai pissé un torrent. Cela dit —");s("<LI>Elle pose une main sur votre épaule, l'autre sur votre pantalon, effleurant votre érection.");s("<LI>DIANE : — ma culotte était bien mouillée. Je pense que ça t'aurait plu."); }}
  
 function
 emergency()
 {
-s("<LI>Diane vous interrompt soudain et se lève. <EM>Désolée, il faut que j'aille aux toilettes. Vous pouvez me dire où c'est ?</EM> dit-elle, et elle quitte la pièce à la hâte.");
+s("<LI>Diane vous interrompt soudain et se lève. « Désolée, il faut que j'aille aux toilettes. Vous pouvez me dire où c'est ? » dit-elle, et elle quitte la pièce à la hâte.");
 s("<LI>Vous l'écoutez gravir l'escalier en courant et entrer dans la salle de bains à l'étage. Quelques secondes plus tard, vous entendez le bruit de son pipi tandis qu'elle se soulage. Ensuite la chasse d'eau tire et elle redescend, un sourire penaud aux lèvres.");
 afterpee()
-s("<LI><EM>Désolée pour ça,</EM> dit-elle, vous laissant l'embrasser et la serrer dans vos bras. Mais il est temps pour elle de rentrer.");
+s("<LI>« Désolée pour ça, » dit-elle, vous laissant l'embrasser et la serrer dans vos bras. Mais il est temps pour elle de rentrer.");
 c("walkhomeX","Elle se prépare à partir."); }
 
 function
@@ -9952,7 +10358,7 @@ if (saturday)
 {s("<LI>Elle a une main enfoncée dans la poche de sa robe.");}
 else
 {s("<LI>Son visage est crispé de douleur. Elle serre son bas-ventre."); }
-s("<LI>Soudain elle s'arrête net et plaque une main sur son entrejambe. Elle laisse échapper un <EM>Oh mon Dieu !</EM> Puis elle se dépêche de vous dépasser.");
+s("<LI>Soudain elle s'arrête net et plaque une main sur son entrejambe. Elle laisse échapper un « Oh mon Dieu ! » Puis elle se dépêche de vous dépasser.");
 s("<LI>Elle est à une dizaine de mètres devant vous. Soudain elle s'arrête de nouveau, regarde frénétiquement à gauche et à droite.");
 s("<LI>Elle se trouve près d'une benne, chargée de vieilles briques. En deux pas, elle s'est glissée derrière.");
 c("disaster1","Vous vous dépêchez de la rattraper."); } 
@@ -10097,7 +10503,7 @@ disaster8a()
 s("<LI>DIANE : Je suis vraiment désolée. Je ne sais pas ce que tu dois penser de moi.");
 s("<LI>VOUS : Arrête de t'excuser. De toute façon, tu n'es pas la seule à te sentir un peu gênée.");
 s("<LI>DIANE : Qu'est-ce que tu veux dire ?");
-s("<LI>Vous vous arrêtez et l'attirez contre vous. Vous l'embrassez et vous lui dites : <EM>Je sais que tu es gênée et tout ça, mais ça m'a fait ça.</EM> Et vous prenez sa main et vous la posez à l'avant de votre pantalon.");
+s("<LI>Vous vous arrêtez et l'attirez contre vous. Vous l'embrassez et vous lui dites : « Je sais que tu es gênée et tout ça, mais ça m'a fait ça. » Et vous prenez sa main et vous la posez à l'avant de votre pantalon.");
 s("<LI>Votre sexe est si dur qu'il déborde presque de la ceinture de votre pantalon. Elle ne retire pas sa main.");
 c("disaster9","Vous lui caressez les cheveux."); }
 
@@ -10124,12 +10530,12 @@ c("triumph","Vous hochez la tête.");}
 function
 triumph()
 {
-s("<STRONG>FÉLICITATIONS !");
-s("<LI>Vous avez décroché le jackpot. Vous avez remporté le premier prix !</STRONG>");
+s("<LI><B>FÉLICITATIONS !</B>");
+s("<LI>Vous avez décroché le jackpot. Vous avez remporté le premier prix !");
 if (thursday)
-{s("<LI>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle n'a pas pu se retenir et s'est complètement fait pipi dessus.");}
+{s("<LI>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle n'a pas pu se retenir et s'est complètement fait pipi dessus."); blad = 0;}
 else
-{s("<LI>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle a commencé à se mouiller. Même si elle a réussi à écarter sa culotte sur le côté, vous savez qu'elle est déjà trempée.");}
+{s("<LI>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle a commencé à se mouiller. Même si elle a réussi à écarter sa culotte sur le côté, vous savez qu'elle est déjà trempée."); blad = 0;}
 s("<LI>Mais elle ne vous en veut pas. Au contraire, ça vous a rapprochés, et elle vous a invité à entrer !");
 s("<HR>");
 s("<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX !</SPAN></div></STRONG></H1>"); }
@@ -10189,7 +10595,29 @@ c("gameover","Oh là là."); }
 
 </script>
 
+<div id="galleryOverlay" class="gallery-overlay">
+  <div class="gallery-panel">
+    <div class="gallery-header">
+      <h2>Galerie</h2>
+      <button class="gallery-close" onclick="closeGallery()">Fermer</button>
+    </div>
+    <div class="gallery-scroll">
+      <div class="gallery-section">
+        <h3>Fins</h3>
+        <div id="galleryEndings" class="gallery-list"></div>
+      </div>
+      <div class="gallery-section">
+        <h3>Scènes cachées</h3>
+        <div id="galleryHiddenScenes" class="gallery-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="game-shell">
+  <div id="gameToolbar" class="game-toolbar" style="display:none">
+    <button id="galleryToggle" class="gallery-button" onclick="openGallery()" type="button">Galerie</button>
+  </div>
   <div id="box">
     <p>Ce jeu contient du contenu pour adultes. Quel âge avez-vous ?</p>
     <div class="choices">
@@ -10198,6 +10626,7 @@ c("gameover","Oh là là."); }
     </div>
   </div>
 </div>
+
 
 </body>
 

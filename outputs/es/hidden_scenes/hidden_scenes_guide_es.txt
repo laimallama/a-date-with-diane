@@ -11,7 +11,7 @@ Base 1: Base para el recuerdo en el teatro
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -43,7 +43,7 @@ Base 2: Base del banco junto al río
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -116,7 +116,7 @@ Base 3: Base de la decisión urgente junto al río
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -198,7 +198,7 @@ Base 4: Base del baño público abierto del martes
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decir que entonces entremos a comer.
 8. Una botella de Rioja español (£12)
@@ -271,7 +271,7 @@ Base 5: Base del puente el jueves
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Jueves.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decir que entonces entremos a comer.
 8. Una botella de Rioja español (£12)
@@ -343,7 +343,7 @@ Base 6: Base de Molly y Bruno en el sendero del martes
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -434,7 +434,7 @@ Base 7: Base de alta urgencia de Molly y Bruno en el sendero
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decir que entonces entremos a comer.
 8. Una botella de vino de Borgoña, el mejor vino de la carta (£20)
@@ -515,7 +515,7 @@ Base 8: Base de los baños públicos junto al río del sábado
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Sábado.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decirle que te encanta el vestido.
 8. Vale.
@@ -598,7 +598,7 @@ Base 9: Base de la morena en la cola del autobús
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -702,7 +702,7 @@ Base 10: Base de la decisión detrás de la autocaravana
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Martes.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Comprar algo.
 7. Una botella de agua a precio de oro (£3)
 8. Volver a la tienda.
@@ -813,7 +813,7 @@ Base 11: Base de la cámara oculta
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Jueves.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decirle que tenías muchas ganas de volveros a ver.
 8. Vale.
@@ -857,7 +857,7 @@ Base 12: Base del pórtico de la iglesia del jueves
 2. Ya las he leído. Empiezo directamente con el juego.
 3. ¿Cuándo puedes verla?
 4. Jueves.
-5. ¡Continuar con la historia!
+5. ¡Empezar la cita!
 6. Ir sin más.
 7. Decir que entonces entremos a comer.
 8. Una botella de Pinot Grigio italiano (£10)

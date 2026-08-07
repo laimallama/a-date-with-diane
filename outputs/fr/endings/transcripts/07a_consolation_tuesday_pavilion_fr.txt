@@ -22,7 +22,7 @@ DIANE : C’est sympa. J’ai hâte.
 
 Vous avez gagné 5 points d’intimité.
 
-(En avant pour l’histoire !)
+(C’est parti pour le rendez-vous!)
 
 Vous retrouvez Diane à 18 h 15. Vous l’emmenez voir une pièce, mais vous avez convenu de vous retrouver au préalable dans un restaurant italien qui fait partie du théâtre.
 
@@ -220,7 +220,7 @@ Le haut-parleur retentit : le spectacle commencera dans 10 minutes.
 
 Il est 19 h 20. Vous êtes dans le hall du théâtre. Diane semble pensive, comme si quelque chose lui trottait dans la tête.
 
-[Elle rougit timidement.]
+Elle rougit timidement.
 
 DIANE : Au fait, j’ai le temps d’aller aux toilettes ?
 
@@ -354,7 +354,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-Diane vous chuchote : Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane n’a pas encore l’air d’avoir envie de faire pipi.
 
@@ -384,7 +384,9 @@ Sur le chemin, vous passez devant les toilettes des femmes. Beaucoup de femmes s
 
 Vous vous demandez si Diane a envie d’aller aux toilettes.
 
-VOUS : Santé ! J’espère que tu apprécies la pièce. [Vous trinquez et buvez le vin.]
+VOUS : Santé ! J’espère que tu apprécies la pièce.
+
+Vous trinquez et buvez le vin.
 
 (Vous parlez de la pièce.)
 
@@ -404,7 +406,9 @@ Vous avez gagné 3 points d’intimité.
 
 Il y a un petit balcon juste au-delà du bar.
 
-VOUS : Et si on sortait là quelques minutes, loin de la foule ? [Elle accepte.]
+VOUS : Et si on sortait là quelques minutes, loin de la foule ?
+
+Elle accepte.
 
 Avoir mentionné les toilettes vous fait perdre 2 points de timidité.
 
@@ -438,7 +442,9 @@ Vous passez devant les toilettes des femmes. Il n’y a plus de queue.
 
 Diane ne jette pas un regard vers les toilettes des femmes.
 
-VOUS : J’ai hâte de voir le deuxième acte. Tu lui offres ton bras et elle le prend.
+VOUS : J’ai hâte de voir le deuxième acte.
+
+Vous lui offrez votre bras et elle le prend.
 
 Vous avez gagné 2 points d’intimité.
 
@@ -664,7 +670,7 @@ DIANE : Oh oui, un café serait parfait !
 
 Molly se lève et achète des burgers pour elle et son amie, et des cafés pour vous quatre.
 
-Diane aide Molly avec la commande et rapporte les cafés pour vous et pour elle. « Quelle bonne idée », dit-elle.
+Diane aide Molly avec la commande et rapporte les cafés pour vous et pour elle. « Quelle bonne idée, » dit-elle.
 
 (Vous buvez vos cafés.)
 
@@ -844,7 +850,9 @@ Vous entrez tous les quatre dans le Pavillon.
 
 Il y a pas mal de monde, sans doute à cause des promotions en cours. Le Pavillon essaie visiblement de rivaliser avec le Golden Stream.
 
-DIANE : Je vais juste faire un saut aux toilettes. J’en ai pour une minute.[Elle se dirige vers les toilettes des femmes.]
+DIANE : Je vais juste faire un saut aux toilettes. J’en ai pour une minute.
+
+Elle se dirige vers les toilettes des femmes.
 
 Vous ragez intérieurement. Une chance de tenter un coup de chance ?
 
@@ -868,7 +876,7 @@ C’est Bruno qui offre la tournée. Il commande une bière pour vous, une lager
 
 Vous aidez à porter les verres jusqu’à la table. Puis vous filez aux toilettes des hommes faire pipi.
 
-Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant « Santé ! » et vous trinquez.
+Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant : « Santé ! » et vous trinquez.
 
 (Vous discutez gaiement.)
 
@@ -1016,7 +1024,11 @@ Vous attendez toujours le bus.
 
 Une fille à l’arrêt voisin n’arrive visiblement pas à tenir en place. Elle porte une petite minijupe qui met bien en valeur ses jambes agitées. Elle croise les jambes d’un côté, puis de l’autre. Puis se retrouve sur une jambe.
 
-DIANE : [vous chuchote à l’oreille] J’ai une envie pressante d’aller aux toilettes. Il y a un endroit où je peux y aller ? [Elle rougit, l’air penaud.] Je ne crois pas que je tiendrais jusqu’à la maison en bus — je comptais y aller avant qu’on arrive ici, mais je n’avais pas prévu que le Pavillon serait fermé.
+DIANE : [Vous chuchote à l’oreille] J’ai une envie pressante d’aller aux toilettes. Il y a un endroit où je peux y aller ?
+
+Elle rougit, l’air penaud.
+
+DIANE : Je ne crois pas que je tiendrais jusqu’à la maison en bus — je comptais y aller avant qu’on arrive ici, mais je n’avais pas prévu que le Pavillon serait fermé.
 
 Vous regardez autour de vous et réfléchissez.
 

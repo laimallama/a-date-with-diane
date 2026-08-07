@@ -22,7 +22,7 @@ DIANE: Vale. Tengo muchas ganas. Vendré directamente del trabajo.
 
 Has perdido 1 puntos de intimidad.
 
-(¡Continuar con la historia!)
+(¡Empezar la cita!)
 
 Has quedado con Diane a las seis y cuarto. La llevas a una obra de teatro, pero habéis acordado encontraros antes en un restaurante italiano que forma parte del teatro.
 
@@ -204,7 +204,7 @@ Por megafonía se anuncia: la función comenzará en 10 minutos.
 
 Son las siete y veinte. Estás en el vestíbulo del teatro. Diane parece pensativa, como si tuviera algo en la cabeza.
 
-[Se ruboriza con timidez.]
+Se ruboriza con timidez.
 
 DIANE: Oye, ¿me da tiempo a ir un momento al baño de señoras?
 
@@ -330,7 +330,7 @@ La miras y ella te mira. Los dos sonreís.
 
 Has ganado 1 puntos de intimidad.
 
-Diane te susurra: La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
+DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
 Diane no parece que tenga ganas de hacer pis todavía.
 
@@ -360,7 +360,9 @@ De camino pasáis por delante del baño de mujeres. Muchas mujeres entran a toda
 
 Te preguntas si Diane tiene ganas de ir al baño.
 
-TÚ: ¡Salud! Espero que estés disfrutando de la obra. [Entrechocáis las copas y bebéis el vino.]
+TÚ: ¡Salud! Espero que estés disfrutando de la obra.
+
+Entrechocáis las copas y bebéis el vino.
 
 (Charláis sobre la obra.)
 
@@ -380,7 +382,9 @@ Has ganado 3 puntos de intimidad.
 
 Hay un pequeño balcón justo más allá de la barra.
 
-TÚ: ¿Salimos aquí un momento, lejos del gentío? [Ella acepta.]
+TÚ: ¿Salimos aquí un momento, lejos del gentío?
+
+Ella acepta.
 
 Por mencionar el baño, pierdes 2 puntos de timidez.
 
@@ -414,7 +418,9 @@ Pasáis por delante del baño de mujeres. Ya no hay cola.
 
 Diane no dirige la mirada hacia el baño de mujeres.
 
-TÚ: Tengo muchas ganas de ver el segundo acto. Le ofreces el brazo y ella se coge a él.
+TÚ: Tengo muchas ganas de ver el segundo acto.
+
+Le ofreces el brazo y ella se coge a él.
 
 Has ganado 2 puntos de intimidad.
 
@@ -478,7 +484,7 @@ Te ríes con el resto del público. Le aprietas la mano a Diane y la miras.
 
 Diane te aprieta la mano y se ríe contigo.
 
-Se inclina hacia ti y te susurra al oído: «He visto a Molly así varias veces en la vida real»
+Se inclina hacia ti y te susurra al oído: «He visto a Molly así varias veces en la vida real.»
 
 Has ganado 2 puntos de intimidad.
 
@@ -632,7 +638,7 @@ DIANE: ¡Ay, sí, un café estaría genial!
 
 Molly se levanta y compra hamburguesas para ella y su amigo, y cafés para los cuatro.
 
-Diane ayuda a Molly con el pedido y trae los cafés para ti y para ella. «Qué buena idea», dice.
+Diane ayuda a Molly con el pedido y trae los cafés para ti y para ella. «Qué buena idea,» dice.
 
 (Os tomáis los cafés.)
 
@@ -802,7 +808,9 @@ Los cuatro entráis en El Pabellón.
 
 Está bastante animado, quizá porque hay varias ofertas especiales. Es evidente que intenta competir con The Golden Stream.
 
-DIANE: Solo voy un momento al baño. No tardo.[Va al baño de mujeres.]
+DIANE: Solo voy un momento al baño. No tardo.
+
+Va al baño de mujeres.
 
 Maldices para tus adentros. ¿Alguna oportunidad para un golpe de suerte?
 
@@ -828,7 +836,7 @@ DIANE: ¡Oooh! Nunca me voy a beber todo esto.
 
 Ayudas a llevar las bebidas a vuestra mesa. Luego te escapas al servicio de caballeros a hacer pis.
 
-Te unes a los demás en la mesa. Te preguntan cosas sobre ti y charláis. Todos decís «¡Salud!» y chocáis las copas.
+Te unes a los demás en la mesa. Te preguntan cosas sobre ti y charláis. Todos decís, «¡Salud!» y chocáis las copas.
 
 (Charláis animadamente.)
 
@@ -964,7 +972,11 @@ Tú sigues esperando el autobús.
 
 Una chica en la parada de al lado parece incapaz de quedarse quieta. Lleva una minifalda que realza mucho el vaivén de sus piernas. Las cruza de un lado, luego del otro. Después se apoya en una sola pierna.
 
-DIANE: [te susurra al oído] Me muero por ir al baño. ¿Hay algún sitio cerca? [Se ruboriza, visiblemente apurada.] Creo que no voy a aguantar el trayecto en autobús; contaba con ir antes de llegar aquí, pero no había contado con que el Pavilion estaría cerrado.
+DIANE: [Te susurra al oído] Me muero por ir al baño. ¿Hay algún sitio cerca?
+
+Se ruboriza, visiblemente apurada.
+
+DIANE: Creo que no voy a aguantar el trayecto en autobús; contaba con ir antes de llegar aquí, pero no había contado con que el Pavilion estaría cerrado.
 
 Miras a tu alrededor y valoras la situación.
 
@@ -1080,7 +1092,7 @@ Vuelve a mirar alrededor, y entonces ves un destello de enagua blanca mientras e
 
 Se oyen pasos que se acercan. Una pareja joven cruza la plaza en dirección al centro.
 
-Diane deja caer la falda en su sitio. Finge estar mirando el móvil. La pareja le dice «Hola» y ella responde «Hola».
+Diane deja caer la falda en su sitio. Finge estar mirando el móvil. La pareja le dice, «Hola» y ella responde «Hola».
 
 La pareja pasa de largo y Diane avanza un par de metros hacia los contenedores. Pero entonces se detiene, ligeramente inclinada hacia adelante.
 

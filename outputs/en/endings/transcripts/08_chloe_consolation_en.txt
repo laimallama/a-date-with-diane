@@ -84,7 +84,7 @@ YOU: Is the tortelloni good?
 
 DIANE: Yes. Is your spaghetti? It certainly looks colourful.
 
-[She suppresses a giggle as a blob of bolognese drops onto your shirt.]
+She suppresses a giggle as a blob of bolognese drops onto your shirt.
 
 YOU: Oops!
 
@@ -100,7 +100,9 @@ DIANE: Yes. But things are very quiet at the moment. I'm thinking of going to Lo
 
 YOU: Oh! You're going away. [Look sad.]
 
-DIANE: It won't be for ages. And anyway, you hardly know me.[You top up both the wine glasses, but with the feeling the conversation is going nowhere.]
+DIANE: It won't be for ages. And anyway, you hardly know me.
+
+You top up both the wine glasses, but with the feeling the conversation is going nowhere.
 
 You lost 1 intimacy point.
 
@@ -126,7 +128,7 @@ You gained 2 intimacy points.
 
 YOU: Last year a friend and I walked the Coast to Coast Path, right across England. It took us a week.
 
-[You top up both the wine glasses. You imagine a long country walk with Diane, with no public toilets in sight.]
+You top up both the wine glasses. You imagine a long country walk with Diane, with no public toilets in sight.
 
 (You carry on chatting.)
 
@@ -190,7 +192,7 @@ The tannoy rings out: the performance will begin in 10 minutes.
 
 It is 7.20. You are in the theatre foyer. Diane is looking thoughtful as if there is something on her mind.
 
-[She blushes shyly.]
+She blushes shyly.
 
 DIANE: Actually, have I got time to pop to the Ladies?
 
@@ -232,7 +234,7 @@ You take her in your arms.
 
 (You give her a kiss.)
 
-Your brother is at home. His girlfriend, Chloe is with him so you all say "Hello" and Diane is introduced to both your brother and Chloe.
+Your brother is at home. His girlfriend, Chloe is with him so you all say, "Hello" and Diane is introduced to both your brother and Chloe.
 
 (It's all very civilised.)
 
@@ -304,7 +306,7 @@ Chloe is sitting on her hands, her knees moving urgently up and down. She's gone
 
 What will it be? You want to stay and watch, but Diane thinks you should go.
 
-(You feel a bit embarrassed for Chloe, who clearly doesn't feel she can "leave the room" while you're all there. So you leave now with Diane, leaving Chloe and your brother alone.)
+(You feel a bit embarrassed for Chloe, who clearly doesn't feel she can "spend a penny" while you're all there. So you leave now with Diane, leaving Chloe and your brother alone.)
 
 Diane gets up to leave. You say you'll walk her home.
 
@@ -378,7 +380,7 @@ You stop briefly in the shelter of the school gate. You kiss.
 
 You gained 5 intimacy points.
 
-She says "Come on, it's getting late."
+She says, "Come on, it's getting late."
 
 (You walk on.)
 
@@ -462,7 +464,7 @@ She paces about, then walks, half runs to the side of the building, just over th
 
 (And then...)
 
-Suddenly she stops in her tracks. She bends slightly forward. You hear her gasp "Oh no!"
+Suddenly she stops in her tracks. She bends slightly forward. You hear her gasp, "Oh no!"
 
 There seem to be a few drops of rain by her feet. Is it your imagination?
 

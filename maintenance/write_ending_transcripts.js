@@ -31,7 +31,7 @@ const routeMeta = {
   general: { order: 7, enTitle: "Consolation Prize: Tuesday Pavilion Route", cnTitle: "安慰奖：周二凉亭路线", esTitle: "Premio de consolación: ruta del martes del Pavilion", frTitle: "Prix de consolation : route du mardi au Pavilion", stem: "07a_consolation_tuesday_pavilion" },
   generalThursday: { order: 7.5, enTitle: "Consolation Prize: Thursday Subway Route", cnTitle: "安慰奖：周四地下通道路线", esTitle: "Premio de consolación: ruta del jueves por el paso subterráneo", frTitle: "Prix de consolation : route du jeudi par le passage souterrain", stem: "07b_consolation_thursday_subway" },
   chloe: { order: 8, enTitle: "Chloe Consolation Prize", cnTitle: "克洛伊安慰奖", esTitle: "Premio de consolación de Chloe", frTitle: "Prix de consolation de Chloe", stem: "08_chloe_consolation" },
-  amanda: { order: 9, enTitle: "Amanda Consolation Ending", cnTitle: "阿曼达安慰结局", esTitle: "Final de consolación de Amanda", frTitle: "Fin de consolation d'Amanda", stem: "09_amanda_consolation" },
+  amanda: { order: 9, enTitle: "Amanda Consolation Prize", cnTitle: "阿曼达安慰奖", esTitle: "Premio de consolación de Amanda", frTitle: "Prix de consolation d'Amanda", stem: "09_amanda_consolation" },
 };
 
 const languages = {

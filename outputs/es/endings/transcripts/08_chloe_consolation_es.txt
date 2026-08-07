@@ -22,7 +22,7 @@ DIANE: Qué bien. Tengo muchas ganas.
 
 Has ganado 5 puntos de intimidad.
 
-(¡Continuar con la historia!)
+(¡Empezar la cita!)
 
 Has quedado con Diane a las seis y cuarto. La llevas a una obra de teatro, pero habéis acordado encontraros antes en un restaurante italiano que forma parte del teatro.
 
@@ -84,7 +84,7 @@ TÚ: ¿Está bueno el tortelloni?
 
 DIANE: Sí. ¿Y tus espaguetis? Desde luego tienen mucho colorido.
 
-[Ella reprime una risita cuando un pegote de boloñesa cae sobre tu camisa.]
+Ella reprime una risita cuando un pegote de boloñesa cae sobre tu camisa.
 
 TÚ: ¡Uy!
 
@@ -100,7 +100,9 @@ DIANE: Sí. Pero ahora mismo hay muy poco movimiento. Estoy pensando en irme a L
 
 TÚ: ¡Ah! Te vas a ir. [Pon cara de pena.]
 
-DIANE: No será hasta dentro de mucho. Y además, apenas me conoces.[Rellenas las dos copas de vino, aunque con la sensación de que la conversación no lleva a ningún lado.]
+DIANE: No será hasta dentro de mucho. Y además, apenas me conoces.
+
+Rellenas las dos copas de vino, aunque con la sensación de que la conversación no lleva a ningún lado.
 
 Has perdido 1 puntos de intimidad.
 
@@ -126,7 +128,7 @@ Has ganado 2 puntos de intimidad.
 
 TÚ: El año pasado un amigo y yo hicimos la ruta Costa a Costa a pie, de punta a punta de Inglaterra. Nos llevó una semana.
 
-[Rellenas las dos copas de vino. Te imaginas una larga caminata por el campo con Diane, sin un baño público a la vista.]
+Rellenas las dos copas de vino. Te imaginas una larga caminata por el campo con Diane, sin un baño público a la vista.
 
 (Seguís charlando.)
 
@@ -190,7 +192,7 @@ Por megafonía se anuncia: la función comenzará en 10 minutos.
 
 Son las siete y veinte. Estás en el vestíbulo del teatro. Diane parece pensativa, como si tuviera algo en la cabeza.
 
-[Se ruboriza con timidez.]
+Se ruboriza con timidez.
 
 DIANE: Oye, ¿me da tiempo a ir un momento al baño de señoras?
 
@@ -304,7 +306,7 @@ Chloe está sentada sobre sus manos, con las rodillas subiendo y bajando sin par
 
 ¿Qué va a ser? Tú quieres quedarte y mirar, pero Diane cree que deberíais iros.
 
-(Sientes un poco de vergüenza ajena por Chloe, que claramente no se atreve a «salir de la habitación» mientras estáis todos ahí. Así que te vas ahora con Diane, dejando a Chloe y a tu hermano solos.)
+(Sientes un poco de vergüenza ajena por Chloe, que claramente no se atreve a «aliviarse» mientras estáis todos ahí. Así que te vas ahora con Diane, dejando a Chloe y a tu hermano solos.)
 
 Diane se levanta para marcharse. Dices que la acompañarás a casa.
 
@@ -378,7 +380,7 @@ Os detenéis un momento al abrigo de la verja del colegio. Os besáis.
 
 Has ganado 5 puntos de intimidad.
 
-Ella dice «Vamos, que se está haciendo tarde.»
+Ella dice, «Vamos, que se está haciendo tarde.»
 
 (Sigues caminando.)
 

@@ -26,7 +26,7 @@ Has perdido 1 puntos de intimidad.
 
 Y descubres que las entradas del teatro son más caras ese día, así que te queda menos dinero.
 
-(¡Continuar con la historia!)
+(¡Empezar la cita!)
 
 Has quedado con Diane a las seis y cuarto. La llevas a una obra de teatro, pero habéis acordado encontraros antes en un restaurante italiano que forma parte del teatro.
 
@@ -244,7 +244,7 @@ La miras y ella te mira. Los dos sonreís.
 
 Has ganado 1 puntos de intimidad.
 
-Diane te susurra: La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
+DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
 Diane no parece que tenga ganas de hacer pis todavía.
 
@@ -274,7 +274,9 @@ De camino pasáis por delante del baño de mujeres. Muchas mujeres entran a toda
 
 Te preguntas si Diane tiene ganas de ir al baño.
 
-TÚ: ¡Salud! Espero que estés disfrutando de la obra. [Entrechocáis las copas y bebéis el vino.]
+TÚ: ¡Salud! Espero que estés disfrutando de la obra.
+
+Entrechocáis las copas y bebéis el vino.
 
 (Charláis sobre la obra.)
 
@@ -286,23 +288,23 @@ Te gustaría que esperara. ¿Qué podrías decirle?
 
 La notas mirando hacia el baño de mujeres. Así que juegas un golpe de suerte.
 
-¿Por qué has jugado esta carta? De todas formas había cola.
+¿Por qué lo has jugado? De todas formas había cola.
 
 O quizá querías verla nerviosa en la cola. ¡En ese caso, qué malo eres!
 
-Lo cierto es que la cola no parecía tan mala y ya no se asomaba por la puerta. Diane se ha dado cuenta. Te toca el brazo.
+Lo cierto es que, desde aquí, la cola no parecía tan mala: ya no se asomaba por la puerta. Diane se ha dado cuenta. Te toca el brazo.
 
 DIANE: Voy a retocarme el maquillaje un momento. Enseguida vuelvo.
 
 (La esperas.)
 
-Has jugado un golpe de suerte y Diane ha ido al baño de mujeres. La cola parecía haber desaparecido.
+Has jugado un golpe de suerte y Diane ha ido al baño de mujeres. Desde el vestíbulo, la cola parecía haberse disuelto.
 
-Diane se ha ido al baño de mujeres. Pero es sábado por la noche y el teatro está casi lleno. Para colmo, un par de chicas que estaban bebiendo por el centro se han colado aquí a usar los servicios. El resultado es, de nuevo, una cola considerable.
+Pero es sábado por la noche y el teatro está casi lleno. Para colmo, un par de chicas que estaban bebiendo por el centro se han colado aquí a usar los servicios. Para cuando ella llega, hay de nuevo una cola considerable.
 
-Se pone en la cola, que ha vuelto a serpentear por la puerta. Al cabo de unos minutos avanza y ya está dentro del baño de mujeres, pero sigue habiendo mucha gente, y uno de los cubículos está fuera de servicio. Una chica que estaba detrás de ella, que no paraba de bailar de un pie a otro, le ha suplicado que la deje pasar primero.
+Se pone en ella: otra vez serpenteando por la puerta. Al cabo de unos minutos avanza y ya está dentro del baño de mujeres, pero sigue habiendo mucha gente, y uno de los cubículos está fuera de servicio. Una chica que estaba detrás de ella, que no paraba de bailar de un pie a otro, le ha suplicado que la deje pasar primero.
 
-Después de esperar unos cinco minutos, Diane decide que no puede desperdiciar más tiempo del intermedio y vuelve contigo. Le da demasiada vergüenza contarte que no ha conseguido hacer pis.
+Después de esperar unos cinco minutos, Diane decide que no puede desperdiciar más tiempo del intermedio y vuelve contigo.
 
 Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.
 
@@ -328,7 +330,9 @@ Pasáis por delante del baño de mujeres. Ya no hay cola.
 
 Diane no dirige la mirada hacia el baño de mujeres.
 
-TÚ: Tengo muchas ganas de ver el segundo acto. Le ofreces el brazo y ella se coge a él.
+TÚ: Tengo muchas ganas de ver el segundo acto.
+
+Le ofreces el brazo y ella se coge a él.
 
 Has ganado 2 puntos de intimidad.
 
@@ -638,7 +642,7 @@ El conserje del ayuntamiento acaba de cerrar y poner el candado a las puertas de
 
 Diane mira el aseo.
 
-Ese sitio tiene una pinta horrible. Tendría que estar muy desesperada para usarlo.
+DIANE: Ese sitio tiene una pinta horrible. Tendría que estar muy desesperada para usarlo.
 
 (Sigues caminando.)
 
@@ -682,7 +686,7 @@ Bruno invita a las bebidas. Pide una cerveza para ti, una lager para Diane y cer
 
 Ayudas a llevar las bebidas a vuestra mesa. Luego te escapas al servicio de caballeros a hacer pis.
 
-Te unes a los demás en la mesa. Te preguntan cosas sobre ti y charláis. Todos decís «¡Salud!» y chocáis las copas.
+Te unes a los demás en la mesa. Te preguntan cosas sobre ti y charláis. Todos decís, «¡Salud!» y chocáis las copas.
 
 (Charláis animadamente.)
 
@@ -834,7 +838,7 @@ La chica de la minifalda no para de cruzar las piernas y de doblarse un poco hac
 
 (Sigues esperando.)
 
-Estáis casi al principio de la cola. La chica de la minifalda está de muy mal humor. «A ti te da igual», le murmura a su novio, «pero un día me voy a mear encima, todo por tus estúpidos jueguecitos.»
+Estáis casi al principio de la cola. La chica de la minifalda está de muy mal humor. «A ti te da igual,» le murmura a su novio, «pero un día me voy a mear encima, todo por tus estúpidos jueguecitos.»
 
 La chica sube a un taxi con su amiga. Te preguntas si llegará a casa a tiempo.
 
@@ -846,7 +850,7 @@ Te acomodas en el taxi. Después del rato que habéis pasado con Molly y su amig
 
 Hace bastante calor dentro del taxi. Ojalá hubieras comprado algo de agua.
 
-[Recuerda: solo puedes usar un golpe de suerte más a partir de esta fase.]
+Recuerda, solo puedes usar un golpe de suerte más a partir de esta fase.
 
 (El taxi sale a la carretera principal.)
 
@@ -860,7 +864,7 @@ Tienes ganas de recuperar el tiempo perdido.
 
 Le rodeas los hombros con el brazo. Ella responde acurrucándose contra ti, con la cabeza apoyada en tu hombro.
 
-[Gracias por una velada tan bonita], te susurra.
+«Gracias por una velada tan bonita», te susurra.
 
 Has ganado 15 puntos de intimidad.
 
@@ -982,7 +986,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1010,7 +1014,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1038,7 +1042,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1066,7 +1070,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1094,7 +1098,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1122,7 +1126,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1150,7 +1154,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1178,7 +1182,7 @@ Vas a buscar un par de copas de vino.
 
 (Vas a la cocina.)
 
-Sirves dos copas de vino blanco. Ella dice «¡Salud!» y se bebe casi un tercio.
+Sirves dos copas de vino blanco. Ella dice, «¡Salud!» y se bebe casi un tercio.
 
 Os arrimáis el uno al otro.
 
@@ -1200,7 +1204,9 @@ Su sujetador es blanco con encaje en la parte superior. Con la postura en que es
 
 La besas. Ella responde pero enseguida se aparta y se sienta hacia delante en el sofá. Se vuelve hacia ti, sonrojándose ligeramente.
 
-DIANE: Oye, ¿te importa si uso tu baño? [Se levanta intentando parecer tranquila.]
+DIANE: Oye, ¿te importa si uso tu baño?
+
+Se levanta intentando parecer tranquila.
 
 TÚ: Claro que no. El baño está justo al subir las escaleras, la primera puerta a la derecha. El interruptor está justo al entrar.
 
@@ -1354,7 +1360,7 @@ Os detenéis un momento al abrigo de la verja del colegio. Os besáis.
 
 Has ganado 5 puntos de intimidad.
 
-Ella dice «Vamos, que se está haciendo tarde.»
+Ella dice, «Vamos, que se está haciendo tarde.»
 
 (Sigues caminando.)
 

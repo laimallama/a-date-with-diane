@@ -61,9 +61,11 @@ function replaceAll(text, replacements) {
 }
 
 const generalTaiwanFixes = [
+  ["叫不准", "叫不準"],
   ["公交車", "公車"],
   ['--body-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;', '--body-font: "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans CJK TC", Arial, Helvetica, sans-serif;'],
   ['--ui-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;', '--ui-font: "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans CJK TC", Arial, Helvetica, sans-serif;'],
+  ['body.lang-en .language-toggle {\n  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;\n}', 'body.lang-en .language-toggle {\n  font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans CJK TC", Arial, Helvetica, sans-serif;\n}'],
   ["公共汽車", "公車"],
   ["公交站", "公車站"],
   ["公共汽車站", "公車站"],
@@ -77,7 +79,7 @@ const generalTaiwanFixes = [
   ["洗手間", "廁所"],
   ["廁所有人", "廁所有人"],
   ["連褲襪", "褲襪"],
-  ["長筒襪", "長襪"],
+  // Keep 長筒襪 — shortening to 長襪 loses the stocking sense.
   ["吊襪帶", "吊襪帶"],
   ["意面", "義大利麵"],
   ["意麵", "義大利麵"],
@@ -129,8 +131,10 @@ const generalTaiwanFixes = [
   ["你的錢", "你的錢"],
   ["膀胱儀表", "膀胱指標"],
   ["她腹中的水分", "她腹中的水分"],
-  ["低聲", "小聲"],
+  ["低聲說", "小聲說"],
   ["輕聲", "輕聲"],
+  // Repair: broad 低聲→小聲 used to mangle 壓低聲音 → 壓小聲音.
+  ["壓小聲音", "壓低聲音"],
   ["難為情", "不好意思"],
   ["不好意思", "不好意思"],
   ["出租", "計程"],
@@ -141,8 +145,17 @@ const generalTaiwanFixes = [
   ["公交", "公車"],
   ["軟體", "軟體"],
   ["硬盤", "硬碟"],
+  ["筆記本電腦", "筆電"],
   ["筆記本", "筆電"],
   ["膝上型電腦", "筆電"],
+  ["相冊", "相簿"],
+  ["屏幕", "螢幕"],
+  ["咱們", "我們"],
+  ["里瞧", "裡瞧"],
+  ["里看", "裡看"],
+  ["內褲里", "內褲裡"],
+  ["另一本冊子", "另一本相簿"],
+  ["一本冊子", "一本相簿"],
   ["手提包", "手提包"],
   ["手包", "手提包"],
   ["馬桶", "馬桶"],
@@ -376,12 +389,54 @@ const phraseFixes = [
   ["另一只手", "另一隻手"],
   ["空著的那只手", "空著的那隻手"],
   ["空出的那只手", "空出的那隻手"],
+  ["一個勁兒地", "一個勁地"],
+  ["一個勁兒", "一個勁"],
+  ["有會兒", "有一陣子"],
+  ["這會兒", "這時候"],
+  ["那會兒", "那時候"],
+  ["咋辦", "怎麼辦"],
+  ["衛生間", "洗手間"],
+  ["馬桶圈", "馬桶座"],
+  ["難為情", "不好意思"],
   ["兩只輪流托著", "兩邊輪流托著"],
 ];
+
+
+const taiwanVoiceFixesPath = path.join(__dirname, "taiwan_voice_fixes.json");
+const taiwanVoiceFixes = fs.existsSync(taiwanVoiceFixesPath)
+  ? JSON.parse(fs.readFileSync(taiwanVoiceFixesPath, "utf8")).fixes.map((x) => [x.from, x.to])
+  : [];
+
+/** Unify dialogue quotes to Taiwan 「」 (nested 『』). Leave English “...” alone. */
+function unifyTaiwanQuotes(text) {
+  if (!text || (!/[“”]/.test(text) && !/[「」]/.test(text))) return text;
+  let out = text.replace(/“([^”]*)”/g, (full, inner) => {
+    if (!/[\u4e00-\u9fff]/.test(inner)) return full;
+    return `「${inner}」`;
+  });
+  // Nested corner quotes → 『』
+  const chars = [];
+  let depth = 0;
+  for (const ch of out) {
+    if (ch === "「") {
+      chars.push(depth === 0 ? "「" : "『");
+      depth += 1;
+      continue;
+    }
+    if (ch === "」") {
+      chars.push(depth >= 2 ? "』" : "」");
+      depth = Math.max(0, depth - 1);
+      continue;
+    }
+    chars.push(ch);
+  }
+  return chars.join("");
+}
 
 function applyTaiwanStyle(text) {
   let out = replaceAll(text, generalTaiwanFixes);
   out = replaceAll(out, phraseFixes);
+  out = replaceAll(out, taiwanVoiceFixes);
   out = out
     .replace(/([一-龥])[ \t]+([A-Za-z0-9£])/g, "$1$2")
     .replace(/([A-Za-z0-9£])[ \t]+([一-龥])/g, "$1$2")
@@ -484,11 +539,43 @@ function applyTaiwanStyle(text) {
     .replace(/變量/g, "變數")
     .replace(/繁體繁體中文/g, "繁體中文")
     .replace(/繁體中文雙語/g, "繁體中文雙語");
-  return out;
+  return unifyTaiwanQuotes(out);
 }
 
 function convertToZhTw(text) {
-  return applyTaiwanStyle(swiftConvert(text));
+  return patchTwRuntimeQuotes(applyTaiwanStyle(swiftConvert(text)));
+}
+
+/** TW runtime: Chinese dialogue smart-quotes → 「」, keep English “”. */
+function patchTwRuntimeQuotes(text) {
+  const oldSmarten = `function smartenText(text) {
+  return String(text)
+    .replace(/(^|[\\s([{—-])'(\\d{2}s\\b)/g, "$1’$2")
+    .replace(/"([^"]+)"/g, "“$1”")
+    .replace(/([A-Za-z0-9])'([A-Za-z0-9])/g, "$1’$2")
+    .replace(/(^|[\\s([{—-])'([^']+)'/g, "$1“$2”")
+    .replace(/(^|[\\s([{—-])'(?=\\w)/g, "$1‘")
+    .replace(/'/g, "’");
+}`;
+  const newSmarten = `function smartenText(text) {
+  return String(text)
+    .replace(/(^|[\\s([{—-])'(\\d{2}s\\b)/g, "$1’$2")
+    .replace(/"([^"]+)"/g, function (m, inner) {
+      return /[\\u4e00-\\u9fff]/.test(inner) ? "「" + inner + "」" : "“" + inner + "”";
+    })
+    .replace(/([A-Za-z0-9])'([A-Za-z0-9])/g, "$1’$2")
+    .replace(/(^|[\\s([{—-])'([^']+)'/g, function (m, lead, inner) {
+      return lead + (/[\\u4e00-\\u9fff]/.test(inner) ? "「" + inner + "」" : "“" + inner + "”");
+    })
+    .replace(/(^|[\\s([{—-])'(?=\\w)/g, "$1‘")
+    .replace(/'/g, "’");
+}`;
+  let out = text.includes(oldSmarten) ? text.replace(oldSmarten, newSmarten) : text;
+  out = out.replace(
+    /if \(!noPunctuation && !\/\[\.!\?…:;\)"'”’\\-—。！？；：）】》»\]\$\/\.test\(visible\)\) \{/,
+    'if (!noPunctuation && !/[.!?…:;)"\'”’\\-—。！？；：）】》»」』]$/.test(visible)) {'
+  );
+  return out;
 }
 
 function convertManyToZhTw(values) {
@@ -530,8 +617,13 @@ function updateAlignedText() {
   }
   const converted = convertManyToZhTw(values);
   for (const entry of entries) delete entry["zh-tw"];
+  const overridePath = path.join(__dirname, "taiwan_voice_overrides.json");
+  const overrides = fs.existsSync(overridePath)
+    ? JSON.parse(fs.readFileSync(overridePath, "utf8")).overrides || {}
+    : {};
   for (let i = 0; i < indexed.length; i++) {
-    indexed[i].tw = converted[i];
+    const id = indexed[i].id;
+    indexed[i].tw = unifyTaiwanQuotes(overrides[id] || converted[i]);
   }
   if (!Array.isArray(data)) {
     data.source_files = data.source_files || {};

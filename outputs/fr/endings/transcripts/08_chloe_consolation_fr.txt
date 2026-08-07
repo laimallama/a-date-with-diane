@@ -22,7 +22,7 @@ DIANE : C’est sympa. J’ai hâte.
 
 Vous avez gagné 5 points d’intimité.
 
-(En avant pour l’histoire !)
+(C’est parti pour le rendez-vous!)
 
 Vous retrouvez Diane à 18 h 15. Vous l’emmenez voir une pièce, mais vous avez convenu de vous retrouver au préalable dans un restaurant italien qui fait partie du théâtre.
 
@@ -84,7 +84,7 @@ VOUS : Il est bon, le tortelloni ?
 
 DIANE : Oui. Et ton spaghetti ? Il a l’air très coloré, en tout cas.
 
-[Elle retient un fou rire alors qu’un bout de bolognaise tombe sur votre chemise.]
+Elle retient un fou rire alors qu’un bout de bolognaise tombe sur votre chemise.
 
 VOUS : Oups !
 
@@ -100,7 +100,9 @@ DIANE : Oui. Mais c’est très calme en ce moment. Je pense à aller à Londr
 
 VOUS : Oh ! Tu vas partir. [Vous prenez un air triste.]
 
-DIANE: Ce ne sera pas avant longtemps. Et de toute façon, tu me connais à peine.[Vous remplissez les deux verres de vin, avec la sensation que la conversation ne mène nulle part.]
+DIANE: Ce ne sera pas avant longtemps. Et de toute façon, tu me connais à peine.
+
+Vous remplissez les deux verres de vin, avec la sensation que la conversation ne mène nulle part.
 
 Vous avez perdu 1 points d’intimité.
 
@@ -126,7 +128,7 @@ Vous avez gagné 2 points d’intimité.
 
 VOUS : L’année dernière, un ami et moi avons fait le Coast to Coast Path à pied, d’un bout à l’autre de l’Angleterre. Ça nous a pris une semaine.
 
-[Vous remplissez les deux verres de vin. Vous imaginez une longue balade à la campagne avec Diane, sans toilettes publiques en vue.]
+Vous remplissez les deux verres de vin. Vous imaginez une longue balade à la campagne avec Diane, sans toilettes publiques en vue.
 
 (Vous continuez à bavarder.)
 
@@ -190,7 +192,7 @@ Le haut-parleur retentit : le spectacle commencera dans 10 minutes.
 
 Il est 19 h 20. Vous êtes dans le hall du théâtre. Diane semble pensive, comme si quelque chose lui trottait dans la tête.
 
-[Elle rougit timidement.]
+Elle rougit timidement.
 
 DIANE : Au fait, j’ai le temps d’aller aux toilettes ?
 
@@ -304,7 +306,7 @@ Chloe est assise sur ses mains, les genoux qui montent et descendent frénétiqu
 
 Qu’est-ce que vous allez faire ? Vous voulez rester et regarder, mais Diane pense que vous devriez partir.
 
-(Vous vous sentez un peu gêné pour Chloe, qui visiblement n’ose pas « quitter la pièce » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.)
+(Vous vous sentez un peu gêné pour Chloe, qui visiblement n’ose pas « se soulager » tant que vous êtes tous là. Alors vous partez avec Diane, laissant Chloe et votre frère seuls.)
 
 Diane se lève pour partir. Vous dites que vous allez la raccompagner chez elle.
 
@@ -378,7 +380,7 @@ Vous vous arrêtez un instant à l’abri du portail de l’école. Vous vous em
 
 Vous avez gagné 5 points d’intimité.
 
-Elle dit « Allez, il se fait tard. »
+Elle dit : « Allez, il se fait tard. »
 
 (Vous continuez à marcher.)
 

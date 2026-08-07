@@ -1,4 +1,4 @@
-Fin de consolation d'Amanda
+Prix de consolation d'Amanda
 
 Vous avez rencontré Diane par hasard alors que vous aviez tous les deux raté le bus, et vous avez partagé un taxi pour rentrer. Elle a accepté de sortir avec vous un soir.
 
@@ -26,7 +26,7 @@ Vous avez perdu 1 points d’intimité.
 
 Et vous découvrez que les billets de théâtre sont plus chers ce jour-là, ce qui réduit votre budget.
 
-(En avant pour l’histoire !)
+(C’est parti pour le rendez-vous!)
 
 Vous retrouvez Diane à 18 h 15. Vous l’emmenez voir une pièce, mais vous avez convenu de vous retrouver au préalable dans un restaurant italien qui fait partie du théâtre.
 
@@ -100,7 +100,9 @@ DIANE : Plutôt bon. Et ton steak ?
 
 VOUS : Bon. J’aime toujours un bon steak.
 
-DIANE : Cela dit, je crois que j’avais plus soif que faim. [Elle boit encore un peu de vin.]
+DIANE : Cela dit, je crois que j’avais plus soif que faim.
+
+Elle boit encore un peu de vin.
 
 (Vous continuez à bavarder.)
 
@@ -268,7 +270,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-Diane vous chuchote : Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane n’a pas encore l’air d’avoir envie de faire pipi.
 
@@ -298,7 +300,9 @@ Sur le chemin, vous passez devant les toilettes des femmes. Beaucoup de femmes s
 
 Vous vous demandez si Diane a envie d’aller aux toilettes.
 
-VOUS : Santé ! J’espère que tu apprécies la pièce. [Vous trinquez et buvez le vin.]
+VOUS : Santé ! J’espère que tu apprécies la pièce.
+
+Vous trinquez et buvez le vin.
 
 (Vous parlez de la pièce.)
 
@@ -310,23 +314,23 @@ Vous aimeriez qu’elle attende. Qu’allez-vous lui dire ?
 
 Vous la voyez jeter un regard vers les toilettes des femmes. Alors vous jouez un coup de chance.
 
-Pourquoi avez-vous joué cette carte ? Il y avait la queue de toute façon.
+Pourquoi l’avez-vous joué ? Il y avait la queue de toute façon.
 
 Ou peut-être vouliez-vous la voir se trémousser dans la queue. Auquel cas, honte à vous !
 
-En fait, la queue n’avait pas l’air si longue que ça, et ne serpentait plus jusqu’à la porte. Diane s’en est rendu compte. Elle vous touche le bras.
+En fait, d’ici, la queue n’avait pas l’air si longue que ça — elle ne serpentait plus jusqu’à la porte. Diane s’en est rendu compte. Elle vous touche le bras.
 
 DIANE : Je vais juste me repoudrer le nez. J’en ai pour une seconde.
 
 (Vous l’attendez.)
 
-Vous avez joué un coup de chance et Diane est allée aux toilettes des femmes. La queue semblait s’être évaporée.
+Vous avez joué un coup de chance et Diane est allée aux toilettes des femmes. Depuis le foyer, la queue avait l’air d’avoir disparu.
 
-Diane est allée aux toilettes des femmes. Mais c’est samedi soir et le théâtre est presque plein. Pour ne rien arranger, une ou deux filles qui buvaient en ville sont venues utiliser les toilettes. Il y a donc encore une belle queue.
+Mais c’est samedi soir et le théâtre est presque plein. Pour ne rien arranger, une ou deux filles qui buvaient en ville sont venues utiliser les toilettes. Quand elle y arrive, il y a encore une belle queue.
 
-Elle rejoint la queue, qui a recommencé à serpenter jusqu’à la porte. Au bout de quelques minutes, elle a avancé et elle se retrouve à l’intérieur des toilettes des femmes, mais il y a vraiment du monde, et l’une des cabines est hors service. Une fille qui était derrière elle, et qui sautillait vraiment d’un pied sur l’autre, l’a également suppliée de la laisser passer en premier.
+Elle s’y met — qui serpente à nouveau jusqu’à la porte. Au bout de quelques minutes, elle a avancé et elle se retrouve à l’intérieur des toilettes des femmes, mais il y a vraiment du monde, et l’une des cabines est hors service. Une fille qui était derrière elle, et qui sautillait vraiment d’un pied sur l’autre, l’a également suppliée de la laisser passer en premier.
 
-Après avoir attendu environ cinq minutes, Diane décide qu’elle ne peut plus gaspiller l’entracte et revient vers vous. Elle est trop gênée pour vous dire qu’elle n’a pas réussi à faire pipi.
+Après avoir attendu environ cinq minutes, Diane décide qu’elle ne peut plus gaspiller l’entracte et revient vers vous.
 
 Diane est trop gênée pour vous dire qu’elle n’a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.
 
@@ -352,7 +356,9 @@ Vous passez devant les toilettes des femmes. Il n’y a plus de queue.
 
 Diane ne jette pas un regard vers les toilettes des femmes.
 
-VOUS : J’ai hâte de voir le deuxième acte. Tu lui offres ton bras et elle le prend.
+VOUS : J’ai hâte de voir le deuxième acte.
+
+Vous lui offrez votre bras et elle le prend.
 
 Vous avez gagné 2 points d’intimité.
 
@@ -662,7 +668,7 @@ Le gardien municipal vient de fermer et de cadenasser les portes des toilettes f
 
 Diane regarde les toilettes.
 
-Cet endroit a l’air dégoûtant. Il faudrait vraiment que je sois au bout du rouleau pour l’utiliser.
+DIANE : Cet endroit a l’air dégoûtant. Il faudrait vraiment que je sois au bout du rouleau pour l’utiliser.
 
 (Vous continuez à marcher.)
 
@@ -696,11 +702,13 @@ Vous entrez tous les quatre dans le Pavillon.
 
 Il y a pas mal de monde, sans doute à cause des promotions en cours. Le Pavillon essaie visiblement de rivaliser avec le Golden Stream.
 
-DIANE : Je vais juste faire un saut aux toilettes. J’en ai pour une minute.[Elle se dirige vers les toilettes des femmes.]
+DIANE : Je vais juste faire un saut aux toilettes. J’en ai pour une minute.
+
+Elle se dirige vers les toilettes des femmes.
 
 Vous ragez intérieurement. Une chance de tenter un coup de chance ?
 
-(Non, je garde mes coups de chance. Vous allez au bar.)
+(Non, je garde mes coups de chance.)
 
 Diane et Molly sont toutes les deux passées aux toilettes des femmes. Elles vous rejoignent dans le jardin du pub.
 
@@ -714,7 +722,7 @@ C’est Bruno qui offre la tournée. Il commande une bière pour vous, une lager
 
 Vous aidez à porter les verres jusqu’à la table. Puis vous filez aux toilettes des hommes faire pipi.
 
-Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant « Santé ! » et vous trinquez.
+Vous rejoignez les autres à la table. Ils vous posent des questions sur vous et vous bavardez. Vous levez tous vos verres en disant : « Santé ! » et vous trinquez.
 
 (Vous discutez gaiement.)
 
@@ -858,7 +866,7 @@ La fille en mini-jupe n’arrête pas de croiser les jambes et d’esquisser de 
 
 (Vous continuez d’attendre.)
 
-Vous êtes maintenant assez près du devant de la file. La fille en mini-jupe n’est pas contente du tout. « C’est facile pour toi », marmonne-t-elle à son petit ami, « mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes stupides caprices. »
+Vous êtes maintenant assez près du devant de la file. La fille en mini-jupe n’est pas contente du tout. « C’est facile pour toi, » marmonne-t-elle à son petit ami, « mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes stupides caprices. »
 
 La fille monte dans un taxi avec son ami. Vous vous demandez si elle tiendra jusqu’à la maison.
 
@@ -870,7 +878,7 @@ Vous vous installez confortablement dans le taxi. Après votre soirée avec Moll
 
 Il fait assez chaud dans le taxi. Vous regrettez de ne pas avoir acheté de l’eau.
 
-[À noter : vous ne pouvez utiliser qu’un seul coup de chance au-delà de cette étape.]
+À noter, vous ne pouvez utiliser qu’un seul coup de chance au-delà de cette étape.
 
 (Le taxi s’engage sur la route principale.)
 
@@ -884,7 +892,7 @@ Qu’est-ce que ce sera ?
 
 Vous passez le bras autour d’elle. Elle se blottit contre vous, la tête sur votre épaule.
 
-[Merci pour cette belle soirée], chuchote-t-elle.
+« Merci pour cette belle soirée », chuchote-t-elle.
 
 Vous avez gagné 15 points d’intimité.
 
@@ -1048,7 +1056,7 @@ Amanda ne cesse de regarder vers la porte comme si elle attendait impatiemment l
 
 Toby redescend l’escalier et, dès qu’il entre dans la pièce, Amanda se dirige vers la porte.
 
-Mais avant qu’elle n’y arrive, Thomas lui passe devant en disant « j’ai vraiment envie de pisser » et quitte la pièce à toute vitesse.
+Mais avant qu’elle n’y arrive, Thomas lui passe devant en disant : « j’ai vraiment envie de pisser » et quitte la pièce à toute vitesse.
 
 Amanda se détourne, l’air plutôt contrariée, en se mordant la lèvre. Les mains dans les poches de son jean, elle recommence à aller d’un tableau à l’autre. À chaque fois qu’elle en regarde un, elle se penche en avant, un genou fléchi.
 
@@ -1058,7 +1066,7 @@ Vous vous demandez si ça vaut le coup de jouer un coup de chance.
 
 (Non, je vais chercher le livre de Diane.)
 
-Vous auriez bien aimé observer Amanda, mais Diane a demandé le livre dont vous aviez parlé. Alors vous dites « je vais juste le chercher » et montez dans votre chambre. Diane vous sourit.
+Vous auriez bien aimé observer Amanda, mais Diane a demandé le livre dont vous aviez parlé. Alors vous dites : « je vais juste le chercher » et montez dans votre chambre. Diane vous sourit.
 
 Vous avez gagné 10 points d’intimité.
 
@@ -1086,7 +1094,7 @@ Vous avez une vue directe sur la salle de bains depuis le palier.
 
 (Vous attendez pour voir ce qui se passe.)
 
-Vous entendez Amanda dire « C’est laquelle, la salle de bains ? » Elles regardent autour d’elles, puis Bella dit « La voilà. C’est moi la première ! »
+Vous entendez Amanda dire « C’est laquelle, la salle de bains ? » Elles regardent autour d’elles, puis Bella dit : « La voilà. C’est moi la première ! »
 
 Bella entre dans la salle de bains, tandis qu’Amanda s’exclame « Oh, dépêche-toi. J’en peux plus ! » Et Bella ferme la porte, laissant Amanda dehors, le visage crispé d’angoisse.
 
@@ -1096,7 +1104,7 @@ Elle commence à faire les cent pas et, croyant que personne ne la voit, se serr
 
 Amanda trépigne devant la porte de la salle de bains. Elle a une main fermement pressée entre les cuisses, se retenant de toute évidence.
 
-Elle frappe à la porte de la salle de bains en criant « Dépêche-vous ! » à son amie. Elle se détourne et recommence à faire les cent pas.
+Elle frappe à la porte de la salle de bains en criant : « Dépêche-vous ! » à son amie. Elle se détourne et recommence à faire les cent pas.
 
 Vous la regardez frapper de nouveau à la porte. Elle peut à peine se tenir droite. Elle tourne en rond en petits cercles.
 

@@ -22,7 +22,7 @@ DIANE: Qué bien. Tengo muchas ganas.
 
 Has ganado 5 puntos de intimidad.
 
-(¡Continuar con la historia!)
+(¡Empezar la cita!)
 
 Has quedado con Diane a las seis y cuarto. La llevas a una obra de teatro, pero habéis acordado encontraros antes en un restaurante italiano que forma parte del teatro.
 
@@ -132,7 +132,7 @@ Has ganado 8 puntos de intimidad.
 
 El primer botón de su blusa está desabrochado, y cuando se inclina hacia delante atisbas el surco entre sus pechos y un sujetador de encaje blanco.
 
-[Rellenas las dos copas de vino.]
+Rellenas las dos copas de vino.
 
 DIANE: ¡Gracias!
 
@@ -208,7 +208,7 @@ Por megafonía se anuncia: la función comenzará en 10 minutos.
 
 Son las siete y veinte. Estás en el vestíbulo del teatro. Diane parece pensativa, como si tuviera algo en la cabeza.
 
-[Se ruboriza con timidez.]
+Se ruboriza con timidez.
 
 DIANE: Oye, ¿me da tiempo a ir un momento al baño de señoras?
 
@@ -406,7 +406,9 @@ Te sigue por la habitación hasta la estantería. Parece contenta de poder mover
 
 DIANE: Por cierto, ¿dónde está el—?
 
-TÚ: ¡Aquí está! [Sacas el álbum y volvéis al sofá. Ella se sienta a tu lado.]
+TÚ: ¡Aquí está!
+
+Sacas el álbum y volvéis al sofá. Ella se sienta a tu lado.
 
 (Abres el álbum de sellos.)
 
@@ -462,7 +464,7 @@ TÚ: Espero que no te estés aburriendo, ¿verdad?
 
 DIANE: Oh, no, es muy interesante.
 
-Venga, ya te has divertido bastante. Se nota que necesita «salir de la habitación». ¿No vas a darle la oportunidad?
+Venga, ya te has divertido bastante. Se nota que necesita «aliviarse». ¿No vas a darle la oportunidad?
 
 (¡A por los sellos!)
 
@@ -568,7 +570,7 @@ Tiene el bolso en el regazo, como si estuviera lista para levantarse en cuanto t
 
 (Cierras el álbum.)
 
-Cierras el álbum. Ella dice «Ha sido muy interesante», y está a punto de levantarse.
+Cierras el álbum. Ella dice, «Ha sido muy interesante,» y está a punto de levantarse.
 
 Pero te inclinas y le pasas el brazo izquierdo por encima. La besas.
 
@@ -638,7 +640,7 @@ Ella no parece muy entusiasmada e intenta alejarse. Te preguntas por qué, si ha
 
 Pero al subir la mano un poco más, entiendes la razón. Cuando llegas a su trasero, a sus bragas, ella intenta soltarse una vez más, pero tú la retienes.
 
-TÚ: [mirándola con asombro] Diane, tienes las bragas completamente húmedas.
+TÚ: [Mirándola con asombro] Diane, tienes las bragas completamente húmedas.
 
 Ella se pone colorada hasta las orejas de vergüenza. No recuerdas haberle visto las mejillas tan rojas nunca. Intenta girarse, pero acaba hundiendo la cara en tu hombro.
 

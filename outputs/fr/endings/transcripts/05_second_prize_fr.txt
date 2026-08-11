@@ -422,7 +422,7 @@ Vous êtes sur le balcon. Le haut-parleur vient d’annoncer que la pièce repre
 
 Diane se tient tout près de vous. Vous la regardez.
 
-[Elle est debout, une jambe à demi croisée sur l’autre.]
+Diane est debout, une jambe à demi croisée sur l’autre.
 
 VOUS : Je suppose qu’on ferait mieux de rentrer à nos places. J’appréciais vraiment ta compagnie ici.
 
@@ -834,7 +834,11 @@ DIANE : C’est encore loin ?
 
 VOUS : Non, pas vraiment. Cinq minutes environ. Ça va ?
 
-DIANE : Mm—[Elle marque une pause]—En fait, j’ai absolument envie d’aller aux toilettes. C’est vraiment urgent. Sans Bruno, j’irais me cacher derrière les buissons, mais je me sens un peu gênée avec lui là. Je ne sais pas quoi faire.
+DIANE : Mm—
+
+Elle marque une pause.
+
+DIANE : En fait, j’ai absolument envie d’aller aux toilettes. C’est vraiment urgent. Sans Bruno, j’irais me cacher derrière les buissons, mais je me sens un peu gênée avec lui là. Je ne sais pas quoi faire.
 
 Vous marchez encore un moment. Puis Diane s’arrête.
 
@@ -1498,7 +1502,9 @@ DIANE : Qu’est-ce que tu veux dire ?
 
 VOUS : Tu as déjà attendu trop longtemps pour aller aux toilettes — genre, tu étais vraiment à bout ?
 
-DIANE : Des fois. J’imagine que tout le monde a vécu ça. En fait —[elle s’interrompt.]
+DIANE : Des fois. J’imagine que tout le monde a vécu ça. En fait —
+
+Elle s’interrompt.
 
 VOUS : Et alors?
 
@@ -1548,7 +1554,9 @@ DIANE : Bon, OK. Qu’est-ce que ça risque ? Je suis arrivée à la salle d
 
 VOUS : Continue.
 
-DIANE : [Elle fait une petite grimace avant de continuer] Les toilettes sont au fond de la salle de bains. Je savais que j’aurais pas le temps de baisser ma culotte, alors je suis juste entrée dans la douche et j’y suis restée — et je me suis lâchée.
+Elle fait une petite grimace avant de continuer.
+
+DIANE : Les toilettes sont au fond de la salle de bains. Je savais que j’aurais pas le temps de baisser ma culotte, alors je suis juste entrée dans la douche et j’y suis restée — et je me suis lâchée.
 
 VOUS : Tu as vraiment mouillé ta culotte.
 

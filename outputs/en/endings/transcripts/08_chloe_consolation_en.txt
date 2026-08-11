@@ -98,7 +98,9 @@ YOU: Oh, I know that one.
 
 DIANE: Yes. But things are very quiet at the moment. I'm thinking of going to London.
 
-YOU: Oh! You're going away. [Look sad.]
+YOU: Oh! You're going away.
+
+You look sad.
 
 DIANE: It won't be for ages. And anyway, you hardly know me.
 

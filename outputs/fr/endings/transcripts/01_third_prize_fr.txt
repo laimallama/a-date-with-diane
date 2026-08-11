@@ -640,7 +640,9 @@ Elle ne semble pas très enthousiaste et tente de se dégager. Vous vous demande
 
 Mais tandis que votre main remonte, vous comprenez pourquoi. En atteignant ses fesses, sa culotte, elle tente de se dégager encore une fois, mais vous la retenez.
 
-VOUS: [En la regardant avec stupeur] Diane, ta culotte est toute mouillée.
+Vous la regardez avec stupeur.
+
+VOUS : Diane, ta culotte est toute mouillée.
 
 Elle rougit jusqu’aux oreilles. Vous ne vous souvenez pas d’avoir jamais vu des joues aussi rouges. Elle tente de se détourner, puis enfouit la tête dans votre épaule.
 

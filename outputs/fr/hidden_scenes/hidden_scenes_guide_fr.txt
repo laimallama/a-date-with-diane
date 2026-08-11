@@ -1160,12 +1160,13 @@ Puis cliquez sur :
 Résultat : Vous voyez les deux filles par-dessous. Sur certaines routes, cela peut devenir une branche d'échec.
 Sortie : Dans cette route vérifiée, cela continue vers la file de taxis.
 
-Scène cachée 19: Attrapé par le petit ami de la brune
+Scène cachée 19: Surpris par le petit ami de la brune
 Entrée : Cela utilise le même point de choix du camping-car, mais vous décidez de rester immobile et de risquer le coup plutôt que d'utiliser une opportunité de chance pour vous cacher.
 Utilisez la base 10 : Base du choix derrière le camping-car.
 Puis cliquez sur :
 1. Jeter un œil par-dessous le camping-car ?
 2. Rester immobile et tenter votre chance ?
+3. Oh là là !
 Résultat : Le petit ami de la brune vous surprend en train de regarder. Il vous frappe et les filles vous regardent avec dégoût. C'est un game over sans prix.
 Sortie : La route se termine par un game over sans prix.
 

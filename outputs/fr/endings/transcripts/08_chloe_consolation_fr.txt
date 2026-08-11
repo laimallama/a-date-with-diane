@@ -98,7 +98,9 @@ VOUS : Ah oui, je vois lequel.
 
 DIANE : Oui. Mais c’est très calme en ce moment. Je pense à aller à Londres.
 
-VOUS : Oh ! Tu vas partir. [Vous prenez un air triste.]
+VOUS : Oh ! Tu vas partir.
+
+Vous prenez un air triste.
 
 DIANE: Ce ne sera pas avant longtemps. Et de toute façon, tu me connais à peine.
 

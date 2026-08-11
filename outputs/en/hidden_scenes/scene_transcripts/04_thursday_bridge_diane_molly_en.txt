@@ -68,7 +68,9 @@ The girls are standing close to some steps. They lead down onto a path, a bit li
 
 MOLLY: We're just popping down here for a minute. We'll catch you up in a couple of minutes.
 
-ROBERT: Do you want us to come along too? [There is a hint of mischief in his voice.]
+ROBERT: Do you want us to come along too?
+
+There's a hint of mischief in his voice.
 
 MOLLY: No! We'll catch you up.
 

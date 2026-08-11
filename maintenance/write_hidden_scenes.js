@@ -1290,8 +1290,8 @@ function buildDefinitions(routes) {
       title: {
         en: "Caught by the Brunette's Boyfriend",
         cn: "被褐发女生的男友抓包",
-        es: "Atrapado por el novio de la morena",
-        fr: "Attrapé par le petit ami de la brune",
+        es: "Pillado por el novio de la morena",
+        fr: "Surpris par le petit ami de la brune",
         tw: "被褐髮女生的男友抓包"
       },
       entry: {
@@ -1315,7 +1315,7 @@ function buildDefinitions(routes) {
         fr: "La route se termine par un game over sans prix.",
         tw: "路線會進入非獎項失敗結局。"
       },
-      tags: ["peepunder", "peepunderrisk"],
+      tags: ["peepunder", "peepunderrisk", "gameover"],
     },
     {
       stem: "19_camper_gentleman_choice",

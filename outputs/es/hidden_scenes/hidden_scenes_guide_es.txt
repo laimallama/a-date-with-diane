@@ -1160,12 +1160,13 @@ Después pulsa:
 Resultado: Ves a las dos chicas desde abajo. En algunas rutas puede convertirse en una rama de fracaso.
 Salida: En esta ruta verificada continúa hacia la cola de taxis.
 
-Escena oculta 19: Atrapado por el novio de la morena
+Escena oculta 19: Pillado por el novio de la morena
 Entrada: Usa el mismo punto de decisión de la autocaravana, pero decides quedarte quieto y arriesgarte en lugar de usar una oportunidad de suerte para esconderte.
 Usa la base 10: Base de la decisión detrás de la autocaravana.
 Después pulsa:
 1. ¿Mirar por debajo de la autocaravana?
 2. ¿Quedarte quieto y confiar en tu suerte?
+3. ¡Ay, no!
 Resultado: El novio de la morena te pilla mirando. Te pega y las chicas te miran con asco. Es un game over sin premio.
 Salida: La ruta termina en un game over sin premio.
 

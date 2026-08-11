@@ -68,7 +68,9 @@ Les filles se tiennent près de quelques marches. Elles descendent sur un chemin
 
 MOLLY : On descend juste là une minute. On vous rattrape dans deux minutes.
 
-ROBERT : Vous voulez qu’on vienne aussi ? [Il y a une pointe de malice dans sa voix.]
+ROBERT : Vous voulez qu’on vienne aussi ?
+
+Il y a une pointe de malice dans sa voix.
 
 MOLLY : Non ! On vous rattrape.
 

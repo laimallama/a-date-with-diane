@@ -422,7 +422,7 @@ You are out on the balcony. The tannoy has announced that the play recommences i
 
 Diane is standing close beside you. You look at her.
 
-[She is standing with one leg half crossed over the other.]
+Diane stands with one leg half-crossed over the other.
 
 YOU: I suppose we'd better be getting back to our seats. I was enjoying your company out here.
 
@@ -834,7 +834,11 @@ DIANE: How much further is it?
 
 YOU: Not far. Five minutes or so. You okay?
 
-DIANE: Mm—[She pauses]—Actually, I'm absolutely dying to go to the toilet. It's really bad. If it wasn't for Bruno I'd pop behind the bushes, but I feel a bit awkward with him being here. I don't know what to do.
+DIANE: Mm—
+
+She pauses.
+
+DIANE: Actually, I'm absolutely dying to go to the toilet. It's really bad. If it wasn't for Bruno I'd pop behind the bushes, but I feel a bit awkward with him being here. I don't know what to do.
 
 You walk on for a while. Then Diane stops.
 
@@ -1498,7 +1502,9 @@ DIANE: What d'you mean?
 
 YOU: Have you ever waited too long for the loo, I mean, got really desperate?
 
-DIANE: Sometimes. I suppose everyone has. Actually—[she pauses.]
+DIANE: Sometimes. I suppose everyone has. Actually—
+
+She pauses.
 
 YOU: Go on?
 
@@ -1548,7 +1554,9 @@ DIANE: Well, OK. What's the harm? I got to the bathroom. I was wearing a frock�
 
 YOU: Go on.
 
-DIANE: [She pulls a little face before continuing] The toilet is actually on the far side of the bathroom. I knew I wouldn't be able to get my pants down in time, so I just stepped into the shower and stood there—and let it go.
+She pulls a little face before continuing.
+
+DIANE: The toilet is actually on the far side of the bathroom. I knew I wouldn't be able to get my pants down in time, so I just stepped into the shower and stood there—and let it go.
 
 YOU: You really wet your knickers.
 

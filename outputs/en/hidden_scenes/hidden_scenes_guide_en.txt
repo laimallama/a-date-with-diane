@@ -1166,6 +1166,7 @@ Use base 10: Camper van decision setup.
 Then press:
 1. Peep underneath the camper van?
 2. Stay put and hope for the best?
+3. Oh dear!
 Result: The brunette's boyfriend catches you watching. He hits you and the girls look at you in disgust. This is a non-Prize game over.
 Exit: The route ends in a non-Prize game over.
 

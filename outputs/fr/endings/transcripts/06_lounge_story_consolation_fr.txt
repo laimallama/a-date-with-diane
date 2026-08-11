@@ -422,7 +422,7 @@ Vous êtes sur le balcon. Le haut-parleur vient d’annoncer que la pièce repre
 
 Diane se tient tout près de vous. Vous la regardez.
 
-[Elle est debout, une jambe à demi croisée sur l’autre.]
+Diane est debout, une jambe à demi croisée sur l’autre.
 
 VOUS : Je suppose qu’on ferait mieux de rentrer à nos places. J’appréciais vraiment ta compagnie ici.
 
@@ -834,7 +834,11 @@ DIANE : C’est encore loin ?
 
 VOUS : Non, pas vraiment. Cinq minutes environ. Ça va ?
 
-DIANE : Mm—[Elle marque une pause]—En fait, j’ai absolument envie d’aller aux toilettes. C’est vraiment urgent. Sans Bruno, j’irais me cacher derrière les buissons, mais je me sens un peu gênée avec lui là. Je ne sais pas quoi faire.
+DIANE : Mm—
+
+Elle marque une pause.
+
+DIANE : En fait, j’ai absolument envie d’aller aux toilettes. C’est vraiment urgent. Sans Bruno, j’irais me cacher derrière les buissons, mais je me sens un peu gênée avec lui là. Je ne sais pas quoi faire.
 
 Vous marchez encore un moment. Puis Diane s’arrête.
 

@@ -1156,10 +1156,20 @@ Entry: This uses the same camper van decision point, but you choose the riskier 
 Use base 10: Camper van decision setup.
 Then press:
 1. Peep underneath the camper van?
+2. Use a luckshot to duck out of sight before you're seen?
 Result: You see both girls from underneath. On some routes this can become a failure branch.
 Exit: On this verified route it continues to the taxi queue.
 
-Hidden Scene 19: Not Watching Diane and Debbie
+Hidden Scene 19: Caught by the Brunette's Boyfriend
+Entry: This uses the same camper van decision point, but you choose to stay put and risk it instead of spending a luckshot to duck out of sight.
+Use base 10: Camper van decision setup.
+Then press:
+1. Peep underneath the camper van?
+2. Stay put and hope for the best?
+Result: The brunette's boyfriend catches you watching. He hits you and the girls look at you in disgust. This is a non-Prize game over.
+Exit: The route ends in a non-Prize game over.
+
+Hidden Scene 20: Not Watching Diane and Debbie
 Entry: This uses the same camper van decision point, but you decide not to watch.
 Use base 10: Camper van decision setup.
 Then press:
@@ -1168,7 +1178,7 @@ Then press:
 Result: Diane leaves with Debbie. This is a non-Prize game over.
 Exit: The route ends immediately.
 
-Hidden Scene 20: Church Lych Gate Glimpse
+Hidden Scene 21: Church Lych Gate Glimpse
 Entry: This is a very narrow Thursday route after Diane gets off the bus alone and you use your last luckshot to walk back after her.
 Use base 12: Thursday church lych gate setup.
 Then press:
@@ -1179,7 +1189,7 @@ Then press:
 Result: You glimpse Diane at the church lych gate after she has had an urgent pee there. The route ends immediately afterwards.
 Exit: The route ends in a non-Prize game over.
 
-Hidden Scene 21: Your Brother's Hidden Bathroom Camera
+Hidden Scene 22: Your Brother's Hidden Bathroom Camera
 Entry: This begins at your house on the Thursday short route, after Diane goes upstairs and you use a luckshot.
 Use base 11: Hidden camera setup.
 Then press:

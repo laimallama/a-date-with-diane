@@ -956,7 +956,7 @@ You chat about this and you chat about that. You tell Molly how you enjoyed her 
 
 MOLLY: It's a gift of a part, really. A lovely little cameo.
 
-Diane doesn't look like she has to pee yet.
+Diane seems perfectly relaxed for now, with no sign that she needs the loo.
 
 (You chat away.)
 
@@ -986,7 +986,7 @@ BRUNO: It's all part of method acting. But it was funny.
 
 There is a slight pause in the conversation. Maybe time for some drinks?
 
-Diane doesn't look like she has to pee yet.
+There's no sign yet that Diane needs the toilet.
 
 (Yes, I'll buy another round of drinks.)
 
@@ -1008,7 +1008,7 @@ You chat about this and you chat about that.
 
 Perhaps you'd like to buy another bottle of water in case you get thirsty on the way home?
 
-Diane doesn't look like she has to pee yet.
+Diane looks quite comfortable at the moment; no need for the loo yet, as far as you can tell.
 
 (Good idea.)
 
@@ -1204,7 +1204,7 @@ What will it be?
 
 You make a cafetiere of nice coffee. The fragrance fills the kitchen.
 
-Diane doesn't look like she has to pee yet.
+Diane seems perfectly at ease for now, with no obvious need for the loo.
 
 While you make the coffee, your brother shows Diane some of the pictures and photos on the walls.
 
@@ -1232,7 +1232,7 @@ Diane is sitting on the sofa; you go and sit beside her. You put an arm round he
 
 DIANE: Thank you for a lovely evening.
 
-Diane doesn't look like she has to pee yet.
+There's no sign yet that Diane needs the toilet.
 
 (What will you do next?)
 

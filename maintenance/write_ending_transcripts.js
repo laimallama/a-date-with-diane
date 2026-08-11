@@ -25,13 +25,13 @@ const routeMeta = {
   third: { order: 1, enTitle: "Third Prize", cnTitle: "三等奖", twTitle: "三等獎", esTitle: "Tercer premio", frTitle: "Troisième prix", stem: "01_third_prize" },
   fourth: { order: 2, enTitle: "Fourth Prize", cnTitle: "四等奖", twTitle: "四等獎", esTitle: "Cuarto premio", frTitle: "Quatrième prix", stem: "02_fourth_prize" },
   first: { order: 3, enTitle: "First Prize", cnTitle: "一等奖", twTitle: "一等獎", esTitle: "Primer premio", frTitle: "Premier prix", stem: "03_first_prize" },
-  fifth: { order: 4, enTitle: "Fifth Prize", cnTitle: "五等奖", twTitle: "五等獎", esTitle: "Quinto premio", frTitle: "Cinquième prix", stem: "04_fifth_prize" },
-  second: { order: 5, enTitle: "Second Prize", cnTitle: "二等奖", twTitle: "二等獎", esTitle: "Segundo premio", frTitle: "Deuxième prix", stem: "05_second_prize" },
-  lounge: { order: 6, enTitle: "Lounge Story Consolation Prize", cnTitle: "客厅故事安慰奖", twTitle: "客廳故事安慰獎", esTitle: "Premio de consolación: historia del salón", frTitle: "Lot de consolation: histoire du salon", stem: "06_lounge_story_consolation" },
-  general: { order: 7, enTitle: "Consolation Prize: Tuesday Pavilion Route", cnTitle: "安慰奖：周二凉亭路线", twTitle: "安慰獎：週二涼亭路線", esTitle: "Premio de consolación: ruta del martes del Pavilion", frTitle: "Prix de consolation : route du mardi au Pavilion", stem: "07a_consolation_tuesday_pavilion" },
-  generalThursday: { order: 7.5, enTitle: "Consolation Prize: Thursday Subway Route", cnTitle: "安慰奖：周四地下通道路线", twTitle: "安慰獎：週四地下通道路線", esTitle: "Premio de consolación: ruta del jueves por el paso subterráneo", frTitle: "Prix de consolation : route du jeudi par le passage souterrain", stem: "07b_consolation_thursday_subway" },
-  chloe: { order: 8, enTitle: "Chloe Consolation Prize", cnTitle: "克洛伊安慰奖", twTitle: "克洛伊安慰獎", esTitle: "Premio de consolación de Chloe", frTitle: "Prix de consolation de Chloe", stem: "08_chloe_consolation" },
-  amanda: { order: 9, enTitle: "Amanda Consolation Prize", cnTitle: "阿曼达安慰奖", twTitle: "阿曼達安慰獎", esTitle: "Premio de consolación de Amanda", frTitle: "Prix de consolation d'Amanda", stem: "09_amanda_consolation" },
+  second: { order: 4, enTitle: "Second Prize", cnTitle: "二等奖", twTitle: "二等獎", esTitle: "Segundo premio", frTitle: "Deuxième prix", stem: "05_second_prize" },
+  lounge: { order: 5, enTitle: "Lounge Story Consolation Prize", cnTitle: "客厅故事安慰奖", twTitle: "客廳故事安慰獎", esTitle: "Premio de consolación: historia del salón", frTitle: "Lot de consolation: histoire du salon", stem: "06_lounge_story_consolation" },
+  fifth: { order: 6, enTitle: "Fifth Prize", cnTitle: "五等奖", twTitle: "五等獎", esTitle: "Quinto premio", frTitle: "Cinquième prix", stem: "04_fifth_prize" },
+  chloe: { order: 7, enTitle: "Chloe Consolation Prize", cnTitle: "克洛伊安慰奖", twTitle: "克洛伊安慰獎", esTitle: "Premio de consolación de Chloe", frTitle: "Prix de consolation de Chloe", stem: "08_chloe_consolation" },
+  amanda: { order: 8, enTitle: "Amanda Consolation Prize", cnTitle: "阿曼达安慰奖", twTitle: "阿曼達安慰獎", esTitle: "Premio de consolación de Amanda", frTitle: "Prix de consolation d'Amanda", stem: "09_amanda_consolation" },
+  general: { order: 9, enTitle: "Tuesday Pavilion Route Consolation Prize", cnTitle: "周二凉亭路线安慰奖", twTitle: "週二涼亭路線安慰獎", esTitle: "Premio de consolación: ruta del martes del Pavilion", frTitle: "Prix de consolation : route du mardi au Pavilion", stem: "07a_consolation_tuesday_pavilion" },
+  generalThursday: { order: 10, enTitle: "Thursday Subway Route Consolation Prize", cnTitle: "周四地下通道路线安慰奖", twTitle: "週四地下通道路線安慰獎", esTitle: "Premio de consolación: ruta del jueves por el paso subterráneo", frTitle: "Prix de consolation : route du jeudi par le passage souterrain", stem: "07b_consolation_thursday_subway" },
 };
 
 const languages = {
@@ -127,7 +127,7 @@ function loadRoutes() {
 function loadGame(htmlPath) {
   const source = fs.readFileSync(htmlPath, "utf8");
   const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
-  const initialBox = (source.match(/<div id="box">([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
+  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
     .replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {

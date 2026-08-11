@@ -956,7 +956,7 @@ Charláis de una cosa y de otra. Le dices a Molly lo mucho que disfrutaste de su
 
 MOLLY: Es un papel regalado, la verdad. Un cameo precioso.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 (Charláis animadamente.)
 
@@ -986,7 +986,7 @@ BRUNO: Es parte del método de interpretación. Pero fue gracioso.
 
 Hay una pequeña pausa en la conversación. ¿Quizá es hora de tomar algo?
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 (Sí, pediré otra ronda.)
 
@@ -1008,7 +1008,7 @@ Charláis de una cosa y de otra.
 
 ¿Quizá te apetezca comprar otra botella de agua por si tienes sed de camino a casa?
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane se la ve tranquila; no parece que tenga ganas de ir al baño todavía.
 
 (Buena idea.)
 
@@ -1204,7 +1204,7 @@ Le presentas a Diane a tu hermano. Él está tomando una copa de vino y pregunta
 
 Preparas una cafetera de prensa con un café buenísimo. El aroma llena la cocina.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 Mientras preparas el café, tu hermano le muestra a Diane algunos de los cuadros y fotos de las paredes.
 
@@ -1232,7 +1232,7 @@ Diane está sentada en el sofá; te vas a sentar a su lado. Le pasas un brazo po
 
 DIANE: Gracias por una noche tan bonita.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 (¿Qué harás ahora?)
 

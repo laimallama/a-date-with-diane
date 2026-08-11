@@ -1156,10 +1156,20 @@ Entrée : Cela utilise le même point de choix du camping-car, mais vous choisis
 Utilisez la base 10 : Base du choix derrière le camping-car.
 Puis cliquez sur :
 1. Jeter un œil par-dessous le camping-car ?
+2. Utiliser une opportunité de chance pour vous cacher avant d’être vu ?
 Résultat : Vous voyez les deux filles par-dessous. Sur certaines routes, cela peut devenir une branche d'échec.
 Sortie : Dans cette route vérifiée, cela continue vers la file de taxis.
 
-Scène cachée 19: Ne pas regarder Diane et Debbie
+Scène cachée 19: Attrapé par le petit ami de la brune
+Entrée : Cela utilise le même point de choix du camping-car, mais vous décidez de rester immobile et de risquer le coup plutôt que d'utiliser une opportunité de chance pour vous cacher.
+Utilisez la base 10 : Base du choix derrière le camping-car.
+Puis cliquez sur :
+1. Jeter un œil par-dessous le camping-car ?
+2. Rester immobile et tenter votre chance ?
+Résultat : Le petit ami de la brune vous surprend en train de regarder. Il vous frappe et les filles vous regardent avec dégoût. C'est un game over sans prix.
+Sortie : La route se termine par un game over sans prix.
+
+Scène cachée 20: Ne pas regarder Diane et Debbie
 Entrée : Cela utilise le même point de choix du camping-car, mais vous décidez de ne pas regarder.
 Utilisez la base 10 : Base du choix derrière le camping-car.
 Puis cliquez sur :
@@ -1168,7 +1178,7 @@ Puis cliquez sur :
 Résultat : Diane part avec Debbie. C'est un game over sans prix.
 Sortie : La route se termine immédiatement.
 
-Scène cachée 20: Aperçu sous le porche de l'église
+Scène cachée 21: Aperçu sous le porche de l'église
 Entrée : C'est une route très étroite du jeudi, après que Diane descend seule du bus et que vous utilisez votre dernière opportunité de chance pour revenir la chercher.
 Utilisez la base 12 : Base du porche de l'église le jeudi.
 Puis cliquez sur :
@@ -1179,7 +1189,7 @@ Puis cliquez sur :
 Résultat : Vous apercevez Diane sous le porche de l'église après qu'elle y a fait pipi en urgence. La route se termine juste après.
 Sortie : La route se termine par un game over sans prix.
 
-Scène cachée 21: La caméra cachée de votre frère dans la salle de bains
+Scène cachée 22: La caméra cachée de votre frère dans la salle de bains
 Entrée : Cela commence chez vous dans la route courte du jeudi, après que Diane monte et que vous utilisez une opportunité de chance.
 Utilisez la base 11 : Base de la caméra cachée.
 Puis cliquez sur :

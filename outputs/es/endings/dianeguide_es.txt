@@ -538,32 +538,6 @@ Usa la BASE 3. Luego pulsa el bucle inicial de bebidas una vez y el bucle repeti
 25. Asientes con la cabeza.
 Texto del final: ¡VERDADERAMENTE, HAS GANADO EL PRIMER PREMIO!
 
-QUINTO PREMIO
-Usa la BASE 5 y luego pulsa:
-1. ¿Besarla?
-2. ¡Sí, jugaré un golpe de suerte!
-3. Esperas a ver qué pasa.
-4. ¡Ya veremos!
-5. ¿Acariciarle el trasero?
-6. ¿Explorar sus piernas?
-7. Piénsatelo.
-8. ¿Quitarle la falda?
-9. ¡Triunfo!
-10. Te acercas a ella de nuevo.
-11. Vas a sentarte junto a Diane.
-12. Recoges la falda.
-13. ¿Quedarte con la falda?
-14. Te quedas con la falda.
-15. Te quedas con la falda.
-16. ¿Llegar a un trato?
-17. Le das la falda.
-18. Y tú la sigues.
-19. Ella baja la tapa del váter.
-20. Observas maravillado.
-21. Os abrazáis.
-22. ¿Cómo te ha ido?
-Texto del final: ¡HAS GANADO EL 5.º PREMIO!
-
 SEGUNDO PREMIO
 Usa la BASE 4. La clave de esta base es que Diane ya haya tenido una emergencia privada junto a los arbustos del río antes de llegar a tu casa.
 Desde el sofá, pulsa primero esta sección preparatoria:
@@ -644,6 +618,81 @@ Desde el sofá, pulsa:
 34. Ella te acaricia.
 35. La dejas ir.
 Texto del final: ¡HAS GANADO UN PREMIO DE CONSOLACIÓN!
+
+QUINTO PREMIO
+Usa la BASE 5 y luego pulsa:
+1. ¿Besarla?
+2. ¡Sí, jugaré un golpe de suerte!
+3. Esperas a ver qué pasa.
+4. ¡Ya veremos!
+5. ¿Acariciarle el trasero?
+6. ¿Explorar sus piernas?
+7. Piénsatelo.
+8. ¿Quitarle la falda?
+9. ¡Triunfo!
+10. Te acercas a ella de nuevo.
+11. Vas a sentarte junto a Diane.
+12. Recoges la falda.
+13. ¿Quedarte con la falda?
+14. Te quedas con la falda.
+15. Te quedas con la falda.
+16. ¿Llegar a un trato?
+17. Le das la falda.
+18. Y tú la sigues.
+19. Ella baja la tapa del váter.
+20. Observas maravillado.
+21. Os abrazáis.
+22. ¿Cómo te ha ido?
+Texto del final: ¡HAS GANADO EL 5.º PREMIO!
+
+PREMIO DE CONSOLACIÓN DE CHLOE
+Usa la BASE 6. Chloe ya está en la escena de la casa. Luego pulsa:
+1. Suelta una risita nerviosa.
+2. Los cuatro charláis.
+3. Suelta otra risita nerviosa.
+4. ¿Qué podría ser?
+5. ¡Vaya!
+6. Suelta una risita nerviosa, luego se muerde el labio y echa un vistazo por la habitación.
+7. Sientes un poco de vergüenza ajena por Chloe, que claramente no se atreve a «aliviarse» mientras estáis todos ahí. Así que te vas ahora con Diane, dejando a Chloe y a tu hermano solos.
+8. Te vas con Diane.
+9. No, creo que no voy a mencionarlo.
+10. Seré un caballero y la acompañaré a casa.
+11. Seré un caballero y la acompañaré a casa.
+12. Sales de la casa con ella.
+13. Pasáis junto a un buzón y luego una parada de autobús.
+14. Sigues caminando.
+15. Sigues caminando.
+16. Ella te mete prisa.
+17. Pones rumbo a casa.
+18. Qué lástima que haya terminado todo.
+19. Te metes en las sombras.
+20. Sí, me queda uno.
+21. Continúa.
+22. Agáchate para no ser visto.
+23. Y entonces...
+24. ¡Vaya!
+Texto del final: ¡HAS GANADO UN PREMIO DE CONSOLACIÓN!
+
+PREMIO DE CONSOLACIÓN DE AMANDA
+Usa la BASE 7. Tu hermano ya ha llegado a casa con sus amigas. Luego pulsa:
+1. ¡Maldición!
+2. Tú y Diane os presentáis.
+3. Ayudas con las bebidas.
+4. ¡Vaya!
+5. No, iré a buscar el libro de Diane.
+6. Te diriges hacia tu habitación.
+7. No quieres hacer esperar a Diane, y te gustaría ver cómo le va a Amanda. Así que vas a por el libro.
+8. ¿Volver a tu habitación?
+9. Esperas a ver qué pasa.
+10. Pero tienes una vista de primera fila.
+11. ¡Ojalá pudieras ver!
+12. Sí, ¿por qué no?
+13. Ver qué pasa.
+14. ¡Vaya!
+15. Sigues mirando.
+16. ¡Es una cita!
+17. —y así—
+Texto del final: ¡QUE NO ES MAL PREMIO DE CONSOLACIÓN!
 
 PREMIO DE CONSOLACIÓN: RUTA DEL MARTES DEL PAVILION
 Esta ruta se lista aparte porque depende de varios controles de estado exactos en la ruta del martes cerca del Pavilion. Pulsa:
@@ -885,55 +934,6 @@ Esta es otra ruta del jueves hacia la misma pantalla de premio de consolación. 
 114. Y antes de que puedas recomponerte—
 115. No has ganado, pero al menos—
 Texto del final: ¡HAS GANADO UN PREMIO DE CONSOLACIÓN!
-
-PREMIO DE CONSOLACIÓN DE CHLOE
-Usa la BASE 6. Chloe ya está en la escena de la casa. Luego pulsa:
-1. Suelta una risita nerviosa.
-2. Los cuatro charláis.
-3. Suelta otra risita nerviosa.
-4. ¿Qué podría ser?
-5. ¡Vaya!
-6. Suelta una risita nerviosa, luego se muerde el labio y echa un vistazo por la habitación.
-7. Sientes un poco de vergüenza ajena por Chloe, que claramente no se atreve a «aliviarse» mientras estáis todos ahí. Así que te vas ahora con Diane, dejando a Chloe y a tu hermano solos.
-8. Te vas con Diane.
-9. No, creo que no voy a mencionarlo.
-10. Seré un caballero y la acompañaré a casa.
-11. Seré un caballero y la acompañaré a casa.
-12. Sales de la casa con ella.
-13. Pasáis junto a un buzón y luego una parada de autobús.
-14. Sigues caminando.
-15. Sigues caminando.
-16. Ella te mete prisa.
-17. Pones rumbo a casa.
-18. Qué lástima que haya terminado todo.
-19. Te metes en las sombras.
-20. Sí, me queda uno.
-21. Continúa.
-22. Agáchate para no ser visto.
-23. Y entonces...
-24. ¡Vaya!
-Texto del final: ¡HAS GANADO UN PREMIO DE CONSOLACIÓN!
-
-PREMIO DE CONSOLACIÓN DE AMANDA
-Usa la BASE 7. Tu hermano ya ha llegado a casa con sus amigas. Luego pulsa:
-1. ¡Maldición!
-2. Tú y Diane os presentáis.
-3. Ayudas con las bebidas.
-4. ¡Vaya!
-5. No, iré a buscar el libro de Diane.
-6. Te diriges hacia tu habitación.
-7. No quieres hacer esperar a Diane, y te gustaría ver cómo le va a Amanda. Así que vas a por el libro.
-8. ¿Volver a tu habitación?
-9. Esperas a ver qué pasa.
-10. Pero tienes una vista de primera fila.
-11. ¡Ojalá pudieras ver!
-12. Sí, ¿por qué no?
-13. Ver qué pasa.
-14. ¡Vaya!
-15. Sigues mirando.
-16. ¡Es una cita!
-17. —y así—
-Texto del final: ¡QUE NO ES MAL PREMIO DE CONSOLACIÓN!
 
 FINALES DE FRACASO COMUNES
 Son finales terminales, pero no son finales con premio:

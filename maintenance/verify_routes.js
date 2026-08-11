@@ -6,7 +6,7 @@ const source = fs.readFileSync(htmlPath, "utf8");
 const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
 
 function makeGame() {
-  const initialBox = (source.match(/<div id="box">([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
+  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
     .replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {

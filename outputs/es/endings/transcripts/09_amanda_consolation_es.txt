@@ -272,7 +272,7 @@ Has ganado 1 puntos de intimidad.
 
 DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 (Concéntrate en la obra.)
 
@@ -388,7 +388,7 @@ Te imaginas a Diane así dentro de una hora o dos. Pero luego desechas el pensam
 
 Miras a Diane, a tu lado.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 Vuelves a mirar al escenario.
 
@@ -420,7 +420,7 @@ Te ha encantado esa escena.
 
 Hay una pequeña pausa para un cambio de escena.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane se la ve tranquila; no parece que tenga ganas de ir al baño todavía.
 
 DIANE: ¡Qué bien ha estado Molly!
 
@@ -512,7 +512,7 @@ Los dos estáis esperando en la puerta de artistas.
 
 Os quedáis charlando sobre la obra y lo mucho que os ha gustado. Diane está muy tranquila, con ganas de ver a su amiga.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 (Esperas a Molly.)
 
@@ -732,7 +732,7 @@ Charláis de una cosa y de otra. Le dices a Molly lo mucho que disfrutaste de su
 
 MOLLY: Es un papel regalado, la verdad. Un cameo precioso.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 (Charláis animadamente.)
 
@@ -762,7 +762,7 @@ BRUNO: Es parte del método de interpretación. Pero fue gracioso.
 
 Hay una pequeña pausa en la conversación. ¿Quizá es hora de tomar algo?
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane se la ve tranquila; no parece que tenga ganas de ir al baño todavía.
 
 (No, se me está acabando el dinero.)
 
@@ -808,7 +808,7 @@ Hay varias personas más, entre ellas algunas que estaban en el Pabellón.
 
 Y Molly y su amiga siguen con vosotros, charlando mientras os dan las buenas noches.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 (Sigues esperando.)
 
@@ -854,7 +854,7 @@ Hay bastante cola para los taxis, llena de noctámbulos del sábado que vuelven 
 
 Una o dos chicas no paran de moverse, claramente ansiosas por llegar a casa por al menos un buen motivo. Justo delante de ti hay una chica menuda con minifalda que es incapaz de quedarse quieta.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 Charláis mientras esperáis.
 
@@ -870,7 +870,7 @@ Estáis casi al principio de la cola. La chica de la minifalda está de muy mal 
 
 La chica sube a un taxi con su amiga. Te preguntas si llegará a casa a tiempo.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane se la ve tranquila; no parece que tenga ganas de ir al baño todavía.
 
 (Estás el primero en la cola.)
 
@@ -982,7 +982,7 @@ Le pones un buen vaso de agua. Tiene sed y se bebe la mitad de un trago.
 
 Te tomas el café de pie en la cocina.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 Dejas el café, tomas la mano de Diane y la atraes suavemente hacia ti. Os besáis.
 

@@ -142,6 +142,24 @@
       "tw": "<LI>遊戲有很多不同走向，最好從頭到尾多玩幾遍。但週二和週四也能玩較短的版本。"
     },
     {
+      "id": "x00014a",
+      "kind": "story",
+      "en": "<LI>There's a Gallery feature as well, on the top left, with guided walks through to the various endings and a few hidden scenes. Handy if you get stuck, or just fancy a look around. A few keys worth knowing: G opens the Gallery (Esc closes it), H turns the Guide on or off once you've started one, B goes Back, and the number keys pick your choices. Enter follows the highlighted Guide choice, but only while the Guide is on.",
+      "cn": "<LI>另外还有个剧情图鉴，在左上角，里面有通往各结局和若干隐藏场景的引导路线。卡住了可以看看，想自己逛逛也行。几个好用的快捷键：按G可以打开图鉴（按Esc关闭）；进入引导后，按H可开关引导提示；按B返回上一步；数字键则可用来选相应的选项。Enter键会跟着重亮的引导选项走，不过只有在引导开启时才管用。",
+      "es": "<LI>También hay una Galería, arriba a la izquierda, con recorridos guiados hacia los distintos finales y algunas escenas ocultas: viene bien si te atascas, o si simplemente quieres echar un vistazo. Unas teclas útiles: G abre la Galería (Esc la cierra), H activa o desactiva la Guía una vez empezada, B vuelve atrás, y las teclas numéricas eligen opciones. Intro sigue la opción resaltada de la Guía, pero solo mientras la Guía esté activada.",
+      "fr": "<LI>Il y a aussi une Galerie, en haut à gauche, avec des parcours guidés vers les différentes fins et quelques scènes cachées. Pratique si vous bloquez, ou si vous avez juste envie de jeter un œil. Quelques touches utiles : G ouvre la Galerie (Échap la ferme), H active ou désactive le Guide une fois lancé, B revient en arrière, et les touches numériques choisissent les options. Entrée suit le choix Guide surligné, mais seulement tant que le Guide est activé.",
+      "tw": "<LI>另外還有個劇情圖鑒，在左上角，裡面有通往各結局和若干隱藏場景的引導路線。卡住了可以看看，想自己逛逛也行。幾個好用的快捷鍵：按G可以打開圖鑒（按Esc關閉）；進入引導後，按H可開關引導提示；按B返回上一步；數字鍵則可用來選相應的選項。Enter鍵會跟著反白的引導選項走，不過只有在引導開啟時才管用。"
+    },
+    {
+      "id": "x00014b",
+      "kind": "story",
+      "en": "<LI>B takes you back a page and restores everything to how it was: stats, choices, the lot. That works in Guide mode too. You can switch the Guide off with H and turn it back on if you're still following the path; if you choose differently and leave the path, the Guide drops out, unless you go Back to a point where you were still on track.",
+      "cn": "<LI>按B会回到上一页，并把当时的所有状态一并恢复。引导模式里也可以回退。引导可以关掉；若你仍按引导路线走，还可以再打开。但若选了别的选项走偏了，引导就会消失，除非再退回到之前还在路线上的节点。",
+      "es": "<LI>B te lleva una página atrás y restaura todo tal como estaba: estadísticas, decisiones, todo. También funciona en el modo Guía. Puedes apagar la Guía con H y volver a encenderla si sigues en la ruta; si eliges otra cosa y te sales del camino, la Guía desaparece, a menos que vuelvas atrás hasta un punto en el que aún estuvieras en la ruta.",
+      "fr": "<LI>B vous ramène d'une page en arrière et restaure tout comme c'était : statistiques, choix, le reste. Cela fonctionne aussi en mode Guide. Vous pouvez couper le Guide avec H et le rallumer si vous êtes encore sur le parcours ; si vous choisissez autrement et quittez le chemin, le Guide disparaît, sauf si vous revenez en arrière jusqu'à un point où vous étiez encore sur la bonne voie.",
+      "tw": "<LI>按B會回到上一頁，並把當時的所有狀態一併恢復。引導模式裡也可以回退。引導可以關掉；若你仍按引導路線走，還可以再打開。但若選了別的選項走偏了，引導就會消失，除非再退回到之前還在路線上的節點。"
+    },
+    {
       "id": "x00015",
       "kind": "choice",
       "tag": "start1a",
@@ -2989,10 +3007,10 @@
       "id": "x00317",
       "kind": "story",
       "en": "<LI>Perhaps you are some sort of pervert. Perhaps you imagine her fidgeting about, shifting up and down on the chair, crossing her legs, but too shy to tell you she wants to go to the loo. Maybe you even want her to get more and more desperate. If so, shame on you!",
-      "cn": "<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，真是羞死你了！",
+      "cn": "<LI>也许你有点变态。也许你幻想她在椅子上坐立不安、扭来扭去、双腿交叉，却害羞得不敢说想尿尿。说不定你还盼着她越来越憋不住。要真是这样，可算羞死你了！",
       "es": "<LI>Quizá eres una especie de pervertido. Quizá la imaginas removiéndose inquieta en la silla, subiéndose y bajándose, cruzando las piernas, pero demasiado tímida para decirte que le urge ir al baño. Puede que incluso quieras que le entren más y más ganas. ¡Si es así, a ver si te da vergüenza!",
       "fr": "<LI>Vous êtes peut-être une sorte de pervers. Vous l'imaginez peut-être en train de gigoter sur sa chaise, de se trémousser, de croiser les jambes, trop timide pour vous dire qu'elle a envie d'aller aux toilettes. Vous voulez peut-être même qu'elle soit de plus en plus à bout. Si c'est le cas, honte à vous !",
-      "tw": "<LI>也許你有點變態。也許你幻想她在椅子上坐立不安、扭來扭去、雙腿交叉，卻害羞得不敢說想尿尿。搞不好你還盼著她越來越憋不住。要真是這樣，真是羞死你了！"
+      "tw": "<LI>也許你有點變態。也許你幻想她在椅子上坐立不安、扭來扭去、雙腿交叉，卻害羞得不敢說想尿尿。搞不好你還盼著她越來越憋不住。要真是這樣，可算羞死你了！"
     },
     {
       "id": "x00318",
@@ -3044,10 +3062,10 @@
       "id": "x00323",
       "kind": "story",
       "en": "<LI>DIANE: While we're waiting for the coffees, I think I'll go and freshen up before the play.",
-      "cn": "<LI>黛安：等咖啡的时候，我想去梳洗一下，看戏之前先收拾收拾。",
+      "cn": "<LI>黛安：等咖啡的时候，我想在看戏前去梳洗一下。",
       "es": "<LI>DIANE: Mientras esperamos los cafés, creo que voy a arreglarme un poco antes de la obra.",
       "fr": "<LI>DIANE : En attendant les cafés, je vais aller me rafraîchir un peu avant la pièce.",
-      "tw": "<LI>黛安：等咖啡的時候，我想去梳洗一下，看戲之前先收拾收拾。"
+      "tw": "<LI>黛安：等咖啡的時候，我想在看戲前去梳洗一下。"
     },
     {
       "id": "x00324",
@@ -22020,7 +22038,7 @@
       "cn": "<LI>她拉过一把椅子坐了下来。即使坐着也是坐立不安，双手放在大腿上，腿先交叉一个方向，再换另一个方向。",
       "es": "<LI>Acerca una silla y se sienta. Aunque sentada no para de moverse. Tiene las manos sobre los muslos, cruza las piernas de un lado, luego del otro.",
       "fr": "<LI>Elle tire une chaise et s'assoit. Même assise, elle s'agite. Elle pose les mains sur ses cuisses, croise les jambes d'un côté, puis de l'autre.",
-      "tw": "<LI>她拉過一把椅子坐下，即使坐在也一直扭動。她雙手放在大腿上，雙腿先往一邊交叉，再換另一邊。"
+      "tw": "<LI>她拉過一把椅子坐下，即使坐在也一直扭動。她雙手放在大腿上，雙腿先往一邊，再換另一邊。"
     },
     {
       "id": "x02354",
@@ -23655,7 +23673,7 @@
       "kind": "choice",
       "tag": "decisions",
       "en": "You carry on exploring and talking.",
-      "cn": "你们继续又摸又聊。",
+      "cn": "你们继续卿卿我我。",
       "es": "Seguís explorando y charlando.",
       "fr": "Vous continuez à explorer et à discuter.",
       "tw": "你們接著探索，繼續聊天。"
@@ -43592,10 +43610,10 @@
       "id": "x04653",
       "kind": "story",
       "en": "<P><EM><SPAN style='color: #ff0000'>Diane keeps crossing her legs, first one way, then the other.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉双腿，先往一边交叉，再换到另一边。</SPAN></EM></P>",
+      "cn": "<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉双腿，先往一边，再换到另一边。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Diane no para de cruzar las piernas, primero de un lado, luego del otro.</SPAN></EM></P>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane n'arrête pas de croiser les jambes, dans un sens puis dans l'autre.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉雙腿，先往一邊交叉，再換到另一邊。</SPAN></EM></P>"
+      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安一直在交叉雙腿，先往一邊，再換到另一邊。</SPAN></EM></P>"
     },
     {
       "id": "x04654",

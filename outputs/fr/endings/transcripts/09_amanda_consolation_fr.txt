@@ -272,7 +272,7 @@ Vous avez gagné 1 points d’intimité.
 
 DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane semble tout à fait détendue pour l’instant, rien n’indique qu’elle ait besoin d’y aller.
 
 (Concentrez-vous sur la pièce.)
 
@@ -388,7 +388,7 @@ Vous imaginez Diane comme ça, dans une heure ou deux. Mais vous repoussez la pe
 
 Vous regardez Diane à côté de vous.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 Vous reportez votre regard vers la scène.
 
@@ -420,7 +420,7 @@ Vous avez vraiment adoré cette scène.
 
 Il y a encore une légère pause pour un changement de décor.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane a l’air bien tranquille en ce moment, aucun signe qu’elle ait besoin d’y aller.
 
 DIANE : Elle était pas géniale, Molly !
 
@@ -512,7 +512,7 @@ Vous attendez tous les deux à la porte des artistes.
 
 Vous bavardez de la pièce et de ce que vous en avez pensé. Diane est très détendue et se réjouit de voir son amie.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Diane semble tout à fait détendue pour le moment, rien n’indique qu’elle ait besoin d’y aller.
 
 (Vous attendez Molly.)
 
@@ -732,7 +732,7 @@ Vous bavardez de choses et d’autres. Vous dites à Molly combien vous avez app
 
 MOLLY : C’est vraiment un rôle en or. Un délicieux petit caméo.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 (Vous discutez gaiement.)
 
@@ -762,7 +762,7 @@ BRUNO : C’est tout l’esprit du jeu de méthode. Mais c’était drôle qua
 
 Il y a une légère pause dans la conversation. Peut-être le moment de commander d’autres boissons ?
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane a l’air bien tranquille en ce moment, aucun signe qu’elle ait besoin d’y aller.
 
 (Non, je commence à manquer d’argent.)
 
@@ -808,7 +808,7 @@ Il y a déjà plusieurs personnes, dont certaines qui étaient au Pavillon.
 
 Et Molly et son amie sont encore avec vous, à bavarder en vous souhaitant bonne nuit.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Diane semble tout à fait détendue pour le moment, rien n’indique qu’elle ait besoin d’y aller.
 
 (Vous continuez d’attendre.)
 
@@ -854,7 +854,7 @@ Il y a pas mal de monde dans la file des taxis, avec les noctambules du samedi s
 
 Une ou deux filles s’agitent, manifestement pressées de rentrer — et pour au moins une bonne raison. Juste devant vous se trouve une jeune femme toute menue en mini-jupe qui n’arrive vraiment pas à tenir en place.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 Vous bavardez en attendant.
 
@@ -870,7 +870,7 @@ Vous êtes maintenant assez près du devant de la file. La fille en mini-jupe n�
 
 La fille monte dans un taxi avec son ami. Vous vous demandez si elle tiendra jusqu’à la maison.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Diane a l’air bien tranquille, aucun signe qu’elle ait besoin d’y aller pour le moment.
 
 (Vous êtes en tête de la file.)
 
@@ -982,7 +982,7 @@ Vous lui donnez un beau verre d’eau. Elle a soif et en boit la moitié d’un 
 
 Vous buvez votre café, debout dans la cuisine.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Diane semble tout à fait détendue pour le moment, rien n’indique qu’elle ait besoin d’y aller.
 
 Vous posez votre café, prenez la main de Diane et l’attirez doucement vers vous. Vous vous embrassez.
 

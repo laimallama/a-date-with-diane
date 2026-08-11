@@ -538,32 +538,6 @@ Use BASE 3. Then press the starter drinking loop once and the repeat drinking lo
 25. You nod.
 Ending text: TRULY, YOU HAVE WON FIRST PRIZE!
 
-FIFTH PRIZE
-Use BASE 5, then press:
-1. Kiss her?
-2. Yes, I'll play a luckshot!
-3. You wait to see what happens.
-4. We shall see!
-5. Fondle her bottom?
-6. Explore her legs?
-7. Think about it.
-8. Take off her skirt?
-9. Triumph!
-10. You move towards her again.
-11. You go and sit by Diane.
-12. You pick up the skirt.
-13. Hold onto the skirt?
-14. You hold onto the skirt.
-15. You hold onto the skirt.
-16. Do a deal?
-17. You hand her the skirt.
-18. And you follow.
-19. She puts the seat down.
-20. You watch in wonder.
-21. You embrace.
-22. How have you done?
-Ending text: YOU HAVE WON 5TH PRIZE!
-
 SECOND PRIZE
 Use BASE 4. This base is the Tuesday route where Diane has already had one private emergency pee by the riverside bushes before she comes back to your house.
 From the sofa, first press this setup section:
@@ -645,7 +619,82 @@ From the sofa, press:
 35. You let her go.
 Ending text: YOU HAVE WON A CONSOLATION PRIZE!
 
-CONSOLATION PRIZE - TUESDAY PAVILION ROUTE
+FIFTH PRIZE
+Use BASE 5, then press:
+1. Kiss her?
+2. Yes, I'll play a luckshot!
+3. You wait to see what happens.
+4. We shall see!
+5. Fondle her bottom?
+6. Explore her legs?
+7. Think about it.
+8. Take off her skirt?
+9. Triumph!
+10. You move towards her again.
+11. You go and sit by Diane.
+12. You pick up the skirt.
+13. Hold onto the skirt?
+14. You hold onto the skirt.
+15. You hold onto the skirt.
+16. Do a deal?
+17. You hand her the skirt.
+18. And you follow.
+19. She puts the seat down.
+20. You watch in wonder.
+21. You embrace.
+22. How have you done?
+Ending text: YOU HAVE WON 5TH PRIZE!
+
+CHLOE CONSOLATION PRIZE
+Use BASE 6. Chloe is already in the house scene. Then press:
+1. She giggles nervously.
+2. The four of you chat.
+3. She giggles nervously again.
+4. What could it be?
+5. Gosh!
+6. She giggles nervously, then bites her lips, looking round the room.
+7. You feel a bit embarrassed for Chloe, who clearly doesn't feel she can "spend a penny" while you're all there. So you leave now with Diane, leaving Chloe and your brother alone.
+8. You leave with Diane.
+9. No, I don't think I'll mention it.
+10. I'll be a gentleman and see her home.
+11. I'll be a gentleman and see her home.
+12. You leave the house with her.
+13. You walk past a letterbox and then a bus shelter.
+14. You walk on.
+15. You walk on.
+16. She hurries you along.
+17. You turn for home.
+18. It just seems a shame it's all over.
+19. You step into the shadows.
+20. Yes, I've got one left.
+21. Carry on.
+22. Duck out of sight.
+23. And then...
+24. Gosh!
+Ending text: YOU HAVE WON A CONSOLATION PRIZE!
+
+AMANDA CONSOLATION PRIZE
+Use BASE 7. Your brother has now arrived with his friends. Then press:
+1. Curses!
+2. You and Diane introduce yourselves.
+3. You help with the drinks.
+4. Gosh!
+5. No, I'll fetch Diane's book.
+6. You go towards your room.
+7. You don't want to keep Diane waiting, and you'd like to see how Amanda is getting on. So you get the book.
+8. Go back into your room?
+9. You wait to see what happens.
+10. But you've got a grandstand view.
+11. Don't you wish you could watch!
+12. Yes, why not!
+13. See what happens.
+14. Gosh!
+15. You carry on watching.
+16. It's a date!
+17. —and so—
+Ending text: WHICH IS A PRETTY GOOD CONSOLATION PRIZE!
+
+TUESDAY PAVILION ROUTE CONSOLATION PRIZE
 This route is standalone because it depends on several exact Tuesday state checks around the Pavilion. Press:
 1. I'm 18 or over.
 2. I've already read them. I'll get straight on with the game.
@@ -767,7 +816,7 @@ This route is standalone because it depends on several exact Tuesday state check
 118. Nevertheless—
 Ending text: YOU HAVE WON A CONSOLATION PRIZE!
 
-CONSOLATION PRIZE - THURSDAY SUBWAY ROUTE
+THURSDAY SUBWAY ROUTE CONSOLATION PRIZE
 This is a separate Thursday route to the same consolation prize screen. It requires several exact choices, including skipping the opening water purchase, blocking Diane at the Pavilion with a luckshot, and following her through the subway after she flees the bus stop. Press:
 1. I'm 18 or over.
 2. I've already read them. I'll get straight on with the game.
@@ -885,55 +934,6 @@ This is a separate Thursday route to the same consolation prize screen. It requi
 114. And before you can compose yourself—
 115. You haven't won, but at least—
 Ending text: YOU HAVE WON A CONSOLATION PRIZE!
-
-CHLOE CONSOLATION PRIZE
-Use BASE 6. Chloe is already in the house scene. Then press:
-1. She giggles nervously.
-2. The four of you chat.
-3. She giggles nervously again.
-4. What could it be?
-5. Gosh!
-6. She giggles nervously, then bites her lips, looking round the room.
-7. You feel a bit embarrassed for Chloe, who clearly doesn't feel she can "spend a penny" while you're all there. So you leave now with Diane, leaving Chloe and your brother alone.
-8. You leave with Diane.
-9. No, I don't think I'll mention it.
-10. I'll be a gentleman and see her home.
-11. I'll be a gentleman and see her home.
-12. You leave the house with her.
-13. You walk past a letterbox and then a bus shelter.
-14. You walk on.
-15. You walk on.
-16. She hurries you along.
-17. You turn for home.
-18. It just seems a shame it's all over.
-19. You step into the shadows.
-20. Yes, I've got one left.
-21. Carry on.
-22. Duck out of sight.
-23. And then...
-24. Gosh!
-Ending text: YOU HAVE WON A CONSOLATION PRIZE!
-
-AMANDA CONSOLATION PRIZE
-Use BASE 7. Your brother has now arrived with his friends. Then press:
-1. Curses!
-2. You and Diane introduce yourselves.
-3. You help with the drinks.
-4. Gosh!
-5. No, I'll fetch Diane's book.
-6. You go towards your room.
-7. You don't want to keep Diane waiting, and you'd like to see how Amanda is getting on. So you get the book.
-8. Go back into your room?
-9. You wait to see what happens.
-10. But you've got a grandstand view.
-11. Don't you wish you could watch!
-12. Yes, why not!
-13. See what happens.
-14. Gosh!
-15. You carry on watching.
-16. It's a date!
-17. —and so—
-Ending text: WHICH IS A PRETTY GOOD CONSOLATION PRIZE!
 
 COMMON FAILURE ENDINGS
 These are terminal outcomes but not prize endings:

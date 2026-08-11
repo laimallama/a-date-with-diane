@@ -956,7 +956,7 @@ Vous bavardez de choses et d’autres. Vous dites à Molly combien vous avez app
 
 MOLLY : C’est vraiment un rôle en or. Un délicieux petit caméo.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane semble tout à fait détendue pour l’instant, rien n’indique qu’elle ait besoin d’y aller.
 
 (Vous discutez gaiement.)
 
@@ -986,7 +986,7 @@ BRUNO : C’est tout l’esprit du jeu de méthode. Mais c’était drôle qua
 
 Il y a une légère pause dans la conversation. Peut-être le moment de commander d’autres boissons ?
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 (Oui, je vais payer une autre tournée.)
 
@@ -1008,7 +1008,7 @@ Vous parlez de ceci, vous parlez de cela.
 
 Vous voudriez peut-être acheter une autre bouteille d’eau au cas où vous auriez soif sur le chemin du retour ?
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane a l’air bien tranquille en ce moment, aucun signe qu’elle ait besoin d’y aller.
 
 (Bonne idée.)
 
@@ -1204,7 +1204,7 @@ Qu’est-ce que ce sera ?
 
 Vous préparez une cafetière de bon café. Le parfum envahit la cuisine.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Diane semble tout à fait détendue pour le moment, rien n’indique qu’elle ait besoin d’y aller.
 
 Pendant que vous préparez le café, votre frère montre à Diane quelques-uns des tableaux et photos accrochés aux murs.
 
@@ -1232,7 +1232,7 @@ Diane est assise sur le canapé ; vous allez vous asseoir à côté d’elle. 
 
 DIANE : Merci pour cette belle soirée.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 (Que ferez-vous ensuite ?)
 

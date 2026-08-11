@@ -1156,10 +1156,20 @@ Entrada: Usa el mismo punto de decisión de la autocaravana, pero eliges el áng
 Usa la base 10: Base de la decisión detrás de la autocaravana.
 Después pulsa:
 1. ¿Mirar por debajo de la autocaravana?
+2. ¿Usar una oportunidad de suerte para esconderte antes de que te vean?
 Resultado: Ves a las dos chicas desde abajo. En algunas rutas puede convertirse en una rama de fracaso.
 Salida: En esta ruta verificada continúa hacia la cola de taxis.
 
-Escena oculta 19: No mirar a Diane y Debbie
+Escena oculta 19: Atrapado por el novio de la morena
+Entrada: Usa el mismo punto de decisión de la autocaravana, pero decides quedarte quieto y arriesgarte en lugar de usar una oportunidad de suerte para esconderte.
+Usa la base 10: Base de la decisión detrás de la autocaravana.
+Después pulsa:
+1. ¿Mirar por debajo de la autocaravana?
+2. ¿Quedarte quieto y confiar en tu suerte?
+Resultado: El novio de la morena te pilla mirando. Te pega y las chicas te miran con asco. Es un game over sin premio.
+Salida: La ruta termina en un game over sin premio.
+
+Escena oculta 20: No mirar a Diane y Debbie
 Entrada: Usa el mismo punto de decisión de la autocaravana, pero decides no mirar.
 Usa la base 10: Base de la decisión detrás de la autocaravana.
 Después pulsa:
@@ -1168,7 +1178,7 @@ Después pulsa:
 Resultado: Diane se marcha con Debbie. Es un game over sin premio.
 Salida: La ruta termina inmediatamente.
 
-Escena oculta 20: Vistazo en el pórtico de la iglesia
+Escena oculta 21: Vistazo en el pórtico de la iglesia
 Entrada: Es una ruta muy estrecha del jueves, después de que Diane baja sola del autobús y usas tu última oportunidad de suerte para volver a buscarla.
 Usa la base 12: Base del pórtico de la iglesia del jueves.
 Después pulsa:
@@ -1179,7 +1189,7 @@ Después pulsa:
 Resultado: Ves a Diane junto al pórtico de la iglesia después de que ha hecho pis allí con urgencia. La ruta termina justo después.
 Salida: La ruta termina en un game over sin premio.
 
-Escena oculta 21: La cámara oculta de tu hermano en el baño
+Escena oculta 22: La cámara oculta de tu hermano en el baño
 Entrada: Empieza en tu casa en la ruta corta del jueves, después de que Diane suba y uses una oportunidad de suerte.
 Usa la base 11: Base de la cámara oculta.
 Después pulsa:

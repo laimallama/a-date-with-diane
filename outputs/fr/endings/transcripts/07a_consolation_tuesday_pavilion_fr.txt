@@ -356,7 +356,7 @@ Vous avez gagné 1 points d’intimité.
 
 DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane semble tout à fait détendue pour l’instant, rien n’indique qu’elle ait besoin d’y aller.
 
 (Concentrez-vous sur la pièce.)
 
@@ -488,7 +488,7 @@ Vous imaginez Diane comme ça, dans une heure ou deux. Mais vous repoussez la pe
 
 Vous regardez Diane à côté de vous.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 Vous reportez votre regard vers la scène.
 
@@ -522,7 +522,7 @@ Vous avez vraiment adoré cette scène.
 
 Il y a encore une légère pause pour un changement de décor.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Diane a l’air bien tranquille en ce moment, aucun signe qu’elle ait besoin d’y aller.
 
 DIANE : Elle était pas géniale, Molly !
 
@@ -606,7 +606,7 @@ Vous attendez tous les deux à la porte des artistes.
 
 Vous bavardez de la pièce et de ce que vous en avez pensé. Diane est très détendue et se réjouit de voir son amie.
 
-Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.
+Diane semble tout à fait détendue pour le moment, rien n’indique qu’elle ait besoin d’y aller.
 
 (Vous attendez Molly.)
 
@@ -704,7 +704,7 @@ Vous êtes assis sur le banc avec Diane, à bavarder avec Molly et son ami.
 
 Vous finissez vos cafés.
 
-Diane n’a pas encore l’air d’avoir envie de faire pipi.
+Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.
 
 Diane était un peu réticente à l’idée de s’asseoir, craignant de salir sa jupe sur le banc.
 

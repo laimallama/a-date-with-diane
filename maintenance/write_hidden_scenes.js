@@ -177,7 +177,7 @@ function loadRoutes() {
 function loadGame(htmlPath) {
   const source = fs.readFileSync(htmlPath, "utf8");
   const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
-  const initialBox = (source.match(/<div id="box">([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
+  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
     .replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {
@@ -1124,10 +1124,10 @@ function buildDefinitions(routes) {
       base: "riversideUrinal",
       title: {
         en: "Asking Diane to Hold On at the Closed Toilet",
-        cn: "在关门厕所前让黛安继续忍着",
+        cn: "在关门的厕所前让黛安继续憋着",
         es: "Pedirle a Diane que aguante en el baño cerrado",
         fr: "Demander à Diane de tenir devant les toilettes fermées",
-        tw: "在關門廁所前讓黛安繼續忍著"
+        tw: "在關門的廁所前讓黛安繼續憋著"
       },
       entry: {
         en: "This uses the same Saturday closed-toilet decision point, but you choose the selfish option.",
@@ -1282,7 +1282,40 @@ function buildDefinitions(routes) {
         fr: "Dans cette route vérifiée, cela continue vers la file de taxis.",
         tw: "在這條已驗證路線中，它會繼續到計程車隊伍。"
       },
-      tags: ["peepunder"],
+      tags: ["peepunder", "peepunderluck"],
+    },
+    {
+      stem: "22_caught_by_boyfriend",
+      base: "camperDecision",
+      title: {
+        en: "Caught by the Brunette's Boyfriend",
+        cn: "被褐发女生的男友抓包",
+        es: "Atrapado por el novio de la morena",
+        fr: "Attrapé par le petit ami de la brune",
+        tw: "被褐髮女生的男友抓包"
+      },
+      entry: {
+        en: "This uses the same camper van decision point, but you choose to stay put and risk it instead of spending a luckshot to duck out of sight.",
+        cn: "这个场景使用同一个房车选择点，但你选择原地不动、赌一把，而不是花一次幸运机会躲开。",
+        es: "Usa el mismo punto de decisión de la autocaravana, pero decides quedarte quieto y arriesgarte en lugar de usar una oportunidad de suerte para esconderte.",
+        fr: "Cela utilise le même point de choix du camping-car, mais vous décidez de rester immobile et de risquer le coup plutôt que d'utiliser une opportunité de chance pour vous cacher.",
+        tw: "這個場景使用同一個房車選擇點，但你選擇原地不動、賭一把，而不是花一次幸運機會躲開。"
+      },
+      result: {
+        en: "The brunette's boyfriend catches you watching. He hits you and the girls look at you in disgust. This is a non-Prize game over.",
+        cn: "褐发女生的男友抓到你在偷看。他打了你一拳，两个女生都用嫌恶的眼神看着你。这是非奖项失败结局。",
+        es: "El novio de la morena te pilla mirando. Te pega y las chicas te miran con asco. Es un game over sin premio.",
+        fr: "Le petit ami de la brune vous surprend en train de regarder. Il vous frappe et les filles vous regardent avec dégoût. C'est un game over sans prix.",
+        tw: "褐髮女生的男友抓到你在偷看。他打了你一拳，兩個女生都用嫌惡的眼神看著你。這是非獎項失敗結局。"
+      },
+      exit: {
+        en: "The route ends in a non-Prize game over.",
+        cn: "路线会进入非奖项失败结局。",
+        es: "La ruta termina en un game over sin premio.",
+        fr: "La route se termine par un game over sans prix.",
+        tw: "路線會進入非獎項失敗結局。"
+      },
+      tags: ["peepunder", "peepunderrisk"],
     },
     {
       stem: "19_camper_gentleman_choice",

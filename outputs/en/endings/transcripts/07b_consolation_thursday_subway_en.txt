@@ -1,4 +1,4 @@
-﻿Consolation Prize: Thursday Subway Route
+﻿Thursday Subway Route Consolation Prize
 
 You met Diane by chance when you both missed the bus, and shared a taxi home. She agreed to come out with you one evening.
 
@@ -332,7 +332,7 @@ You gained 1 intimacy point.
 
 DIANE: [Whispers to you] The one playing the girl who's gone off sulking, that's Molly, my friend.
 
-Diane doesn't look like she has to pee yet.
+Diane seems perfectly relaxed for now, with no sign that she needs the loo.
 
 (Concentrate on the play.)
 
@@ -460,7 +460,7 @@ You imagine Diane like that, in an hour or two's time. But then dismiss the thou
 
 You look at Diane beside you.
 
-Diane doesn't look like she has to pee yet.
+There's no sign yet that Diane needs the toilet.
 
 You look back at the stage.
 
@@ -494,7 +494,7 @@ You really enjoyed that scene.
 
 There is another slight pause for a scene change.
 
-Diane doesn't look like she has to pee yet.
+Diane looks quite comfortable at the moment; no need for the loo yet, as far as you can tell.
 
 DIANE: Wasn't Molly great!
 
@@ -574,7 +574,7 @@ You're both waiting at the stage door.
 
 You stand chatting about the play and how much you enjoyed it. Diane is very relaxed, looking forward to seeing her friend.
 
-Diane doesn't look like she has to pee yet.
+Diane seems perfectly at ease for now, with no obvious need for the loo.
 
 (You wait for Molly.)
 
@@ -672,7 +672,7 @@ You are sitting on the bench with Diane, chatting with Molly and her friend.
 
 You are finishing your coffees.
 
-Diane doesn't look like she has to pee yet.
+There's no sign yet that Diane needs the toilet.
 
 Diane was a bit reluctant to sit down, worrying that her skirt would get dirty on the bench.
 
@@ -704,7 +704,7 @@ You come to a waterfall. You all go to admire and watch it, as the water cascade
 
 The sound of the waterfall adds to the rippling of water and the coolness of the evening.
 
-Diane doesn't look like she has to pee yet.
+Diane looks quite relaxed standing there; nothing to suggest she needs to go yet.
 
 Robert is taking some photographs of the waterfall.
 

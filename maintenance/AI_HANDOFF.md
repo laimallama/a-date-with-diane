@@ -66,7 +66,7 @@ node maintenance/build_gallery_data.js
 
 ## UI (keep unless asked otherwise)
 
-- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On; otherwise Enter does nothing (normal play still uses `1` for the first choice).
+- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On; otherwise Enter does nothing (normal play still uses `1` for the first choice). These are also summarized in the in-game Notes (`start1`, `x00014a`/`x00014b`): Gallery top-left, keys, Back full-state restore, and Guide on/off/deviate rules.
 - Pregame screens freeze/hide stats until the date starts; catch-up digestion ticks on first story screen — don’t remove without re-verifying all routes.
 - Screen fade on step change (`.screen-fade`, ~0.18s) + scroll-to-top via `presentScreen()`; disabled under `prefers-reduced-motion`.
 - Choice number badges and sticky-Back experiments were rejected; don’t reintroduce.

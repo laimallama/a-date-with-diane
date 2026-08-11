@@ -823,7 +823,7 @@ function normalize(text) {
 function loadGame(htmlPath) {
   const source = fs.readFileSync(htmlPath, "utf8");
   const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
-  const initialBox = (source.match(/<div id="box">([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
+  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
     .replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {
@@ -1027,7 +1027,6 @@ For FIRST PRIZE, press the starter loop once, then the repeat loop 15 times.`));
   parts.push(section("THIRD PRIZE", `Use BASE 2, then press:\n${numbered(c.thirdTail)}\n\nEnding text: ${e.third}`));
   parts.push(section("FOURTH PRIZE", `Use BASE 3. Then press the starter drinking loop once and the repeat drinking loop 7 times. After the final "${c.repeatDrink.at(-1)}", press:\n${numbered(c.fourthTail)}\n\nEnding text: ${e.fourth}`));
   parts.push(section("FIRST PRIZE", `Use BASE 3. Then press the starter drinking loop once and the repeat drinking loop 15 times. After the final "${c.repeatDrink.at(-1)}", press:\n${numbered(c.firstTail)}\n\nEnding text: ${e.first}`));
-  parts.push(section("FIFTH PRIZE", `Use BASE 5, then press:\n${numbered(c.fifthTail)}\n\nEnding text: ${e.fifth}`));
   parts.push(section("SECOND PRIZE", `Use BASE 4. This base is the Tuesday route where Diane has already had one private emergency pee by the riverside bushes before she comes back to your house.
 
 From the sofa, first press this setup section:
@@ -1043,10 +1042,11 @@ From the sofa, press:
 ${numbered(c.loungeTail)}
 
 Ending text: ${e.lounge}`));
-  parts.push(section("CONSOLATION PRIZE - TUESDAY PAVILION ROUTE", `This route is standalone because it depends on several exact Tuesday state checks around the Pavilion. Press:\n${numbered(c.generalRoute)}\n\nEnding text: ${e.general}`));
-  parts.push(section("CONSOLATION PRIZE - THURSDAY SUBWAY ROUTE", `This is a separate Thursday route to the same consolation prize screen. It requires several exact choices, including skipping the opening water purchase, blocking Diane at the Pavilion with a luckshot, and following her through the subway after she flees the bus stop. Press:\n${numbered(c.generalThursdayRoute)}\n\nEnding text: ${e.generalThursday}`));
+  parts.push(section("FIFTH PRIZE", `Use BASE 5, then press:\n${numbered(c.fifthTail)}\n\nEnding text: ${e.fifth}`));
   parts.push(section("CHLOE CONSOLATION PRIZE", `Use BASE 6. Chloe is already in the house scene. Then press:\n${numbered(c.chloeTail)}\n\nEnding text: ${e.chloe}`));
   parts.push(section("AMANDA CONSOLATION PRIZE", `Use BASE 7. Your brother has now arrived with his friends. Then press:\n${numbered(c.amandaTail)}\n\nEnding text: ${e.amanda}`));
+  parts.push(section("TUESDAY PAVILION ROUTE CONSOLATION PRIZE", `This route is standalone because it depends on several exact Tuesday state checks around the Pavilion. Press:\n${numbered(c.generalRoute)}\n\nEnding text: ${e.general}`));
+  parts.push(section("THURSDAY SUBWAY ROUTE CONSOLATION PRIZE", `This is a separate Thursday route to the same consolation prize screen. It requires several exact choices, including skipping the opening water purchase, blocking Diane at the Pavilion with a luckshot, and following her through the subway after she flees the bus stop. Press:\n${numbered(c.generalThursdayRoute)}\n\nEnding text: ${e.generalThursday}`));
   parts.push(`COMMON FAILURE ENDINGS
 These are terminal outcomes but not prize endings:
 - "I'm not over 18." ends the game at the age screen.
@@ -1091,7 +1091,6 @@ ${bullet(c.repeatDrink)}
   parts.push(section("三等奖", `走完“基础路线2”，然后按：\n${numbered(c.thirdTail)}\n\n结局文字：${e.third}`));
   parts.push(section("四等奖", `走完“基础路线3”。然后把起始喝饮料循环按1次，重复喝饮料循环按7次。最后一次按完“${c.repeatDrink.at(-1)}”之后，继续按：\n${numbered(c.fourthTail)}\n\n结局文字：${e.fourth}`));
   parts.push(section("一等奖", `走完“基础路线3”。然后把起始喝饮料循环按1次，重复喝饮料循环按15次。最后一次按完“${c.repeatDrink.at(-1)}”之后，继续按：\n${numbered(c.firstTail)}\n\n结局文字：${e.first}`));
-  parts.push(section("五等奖", `走完“基础路线5”，然后按：\n${numbered(c.fifthTail)}\n\n结局文字：${e.fifth}`));
   parts.push(section("二等奖", `走完“基础路线4”。这条基础路线的关键是：黛安在到你家之前，已经私下在河边灌木丛后面方便过一次。
 
 到家后从沙发处先按这一段：
@@ -1107,10 +1106,11 @@ ${numbered(c.secondTail)}
 ${numbered(c.loungeTail)}
 
 结局文字：${e.lounge}`));
-  parts.push(section("安慰奖：周二凉亭路线", `这条路线单独列出，因为它依赖周二路线里凉亭酒吧附近的几个精确状态判断。按：\n${numbered(c.generalRoute)}\n\n结局文字：${e.general}`));
-  parts.push(section("安慰奖：周四地下通道路线", `这是通往同一个安慰奖画面的另一条周四路线。它需要几个精确选择，包括开场不买水、在凉亭酒吧用幸运机会阻止黛安去厕所，以及她逃离公交站后跟着她穿过地下通道。按：\n${numbered(c.generalThursdayRoute)}\n\n结局文字：${e.generalThursday}`));
+  parts.push(section("五等奖", `走完“基础路线5”，然后按：\n${numbered(c.fifthTail)}\n\n结局文字：${e.fifth}`));
   parts.push(section("克洛伊安慰奖", `走完“基础路线6”。此时克洛伊已经出现在家中场景里。然后按：\n${numbered(c.chloeTail)}\n\n结局文字：${e.chloe}`));
   parts.push(section("阿曼达安慰奖", `走完“基础路线7”。此时你弟弟已经带朋友来到家里。然后按：\n${numbered(c.amandaTail)}\n\n结局文字：${e.amanda}`));
+  parts.push(section("周二凉亭路线安慰奖", `这条路线单独列出，因为它依赖周二路线里凉亭酒吧附近的几个精确状态判断。按：\n${numbered(c.generalRoute)}\n\n结局文字：${e.general}`));
+  parts.push(section("周四地下通道路线安慰奖", `这是通往同一个安慰奖画面的另一条周四路线。它需要几个精确选择，包括开场不买水、在凉亭酒吧用幸运机会阻止黛安去厕所，以及她逃离公交站后跟着她穿过地下通道。按：\n${numbered(c.generalThursdayRoute)}\n\n结局文字：${e.generalThursday}`));
   parts.push(`常见失败结局
 这些是终止结局，但不是奖项结局：
 - “我未满18岁。”会在年龄确认页直接结束。
@@ -1155,7 +1155,6 @@ ${bullet(c.repeatDrink)}
   parts.push(section("三等獎", `走完「基礎路線2」，然後按：\n${numbered(c.thirdTail)}\n\n結局文字：${e.third}`));
   parts.push(section("四等獎", `走完「基礎路線3」。然後把起始喝飲料循環按1次，重複喝飲料循環按7次。最後一次按完「${c.repeatDrink.at(-1)}」之後，繼續按：\n${numbered(c.fourthTail)}\n\n結局文字：${e.fourth}`));
   parts.push(section("一等獎", `走完「基礎路線3」。然後把起始喝飲料循環按1次，重複喝飲料循環按15次。最後一次按完「${c.repeatDrink.at(-1)}」之後，繼續按：\n${numbered(c.firstTail)}\n\n結局文字：${e.first}`));
-  parts.push(section("五等獎", `走完「基礎路線5」，然後按：\n${numbered(c.fifthTail)}\n\n結局文字：${e.fifth}`));
   parts.push(section("二等獎", `走完「基礎路線4」。這條基礎路線的關鍵是：黛安在到你家之前，已經私下在河邊樹叢後面方便過一次。
 
 到家後從沙發處先按這一段：
@@ -1171,10 +1170,11 @@ ${numbered(c.secondTail)}
 ${numbered(c.loungeTail)}
 
 結局文字：${e.lounge}`));
-  parts.push(section("安慰獎：週二涼亭路線", `這條路線單獨列出，因為它依賴週二路線裡涼亭酒吧附近的幾個精確狀態判斷。按：\n${numbered(c.generalRoute)}\n\n結局文字：${e.general}`));
-  parts.push(section("安慰獎：週四地下通道路線", `這是通往同一個安慰獎畫面的另一條週四路線。它需要幾個精確選擇，包括開場不買水、在涼亭酒吧用幸運機會阻止黛安去廁所，以及她逃離公車站後跟著她穿過地下通道。按：\n${numbered(c.generalThursdayRoute)}\n\n結局文字：${e.generalThursday}`));
+  parts.push(section("五等獎", `走完「基礎路線5」，然後按：\n${numbered(c.fifthTail)}\n\n結局文字：${e.fifth}`));
   parts.push(section("克洛伊安慰獎", `走完「基礎路線6」。此時克洛伊已經出現在家中場景裡。然後按：\n${numbered(c.chloeTail)}\n\n結局文字：${e.chloe}`));
   parts.push(section("阿曼達安慰獎", `走完「基礎路線7」。此時你弟弟已經帶朋友來到家裡。然後按：\n${numbered(c.amandaTail)}\n\n結局文字：${e.amanda}`));
+  parts.push(section("週二涼亭路線安慰獎", `這條路線單獨列出，因為它依賴週二路線裡涼亭酒吧附近的幾個精確狀態判斷。按：\n${numbered(c.generalRoute)}\n\n結局文字：${e.general}`));
+  parts.push(section("週四地下通道路線安慰獎", `這是通往同一個安慰獎畫面的另一條週四路線。它需要幾個精確選擇，包括開場不買水、在涼亭酒吧用幸運機會阻止黛安去廁所，以及她逃離公車站後跟著她穿過地下通道。按：\n${numbered(c.generalThursdayRoute)}\n\n結局文字：${e.generalThursday}`));
   parts.push(`常見失敗結局
 這些是終止結局，但不是獎項結局：
 - 「我未滿18歲。」會在年齡確認頁直接結束。
@@ -1216,7 +1216,6 @@ Para el PRIMER PREMIO, pulsa el bucle inicial una vez y luego el bucle repetido 
   parts.push(section("TERCER PREMIO", `Usa la BASE 2 y luego pulsa:\n${numbered(c.thirdTail)}\n\nTexto del final: ${e.third}`));
   parts.push(section("CUARTO PREMIO", `Usa la BASE 3. Luego pulsa el bucle inicial de bebidas una vez y el bucle repetido de bebidas 7 veces. Después del último “${c.repeatDrink.at(-1)}”, pulsa:\n${numbered(c.fourthTail)}\n\nTexto del final: ${e.fourth}`));
   parts.push(section("PRIMER PREMIO", `Usa la BASE 3. Luego pulsa el bucle inicial de bebidas una vez y el bucle repetido de bebidas 15 veces. Después del último “${c.repeatDrink.at(-1)}”, pulsa:\n${numbered(c.firstTail)}\n\nTexto del final: ${e.first}`));
-  parts.push(section("QUINTO PREMIO", `Usa la BASE 5 y luego pulsa:\n${numbered(c.fifthTail)}\n\nTexto del final: ${e.fifth}`));
   parts.push(section("SEGUNDO PREMIO", `Usa la BASE 4. La clave de esta base es que Diane ya haya tenido una emergencia privada junto a los arbustos del río antes de llegar a tu casa.
 Desde el sofá, pulsa primero esta sección preparatoria:
 ${numbered(c.secondSetup)}
@@ -1227,10 +1226,11 @@ Texto del final: ${e.second}`));
 Desde el sofá, pulsa:
 ${numbered(c.loungeTail)}
 Texto del final: ${e.lounge}`));
-  parts.push(section("PREMIO DE CONSOLACIÓN: RUTA DEL MARTES DEL PAVILION", `Esta ruta se lista aparte porque depende de varios controles de estado exactos en la ruta del martes cerca del Pavilion. Pulsa:\n${numbered(c.generalRoute)}\n\nTexto del final: ${e.general}`));
-  parts.push(section("PREMIO DE CONSOLACIÓN: RUTA DEL JUEVES POR EL PASO SUBTERRÁNEO", `Esta es otra ruta del jueves hacia la misma pantalla de premio de consolación. Requiere varias elecciones exactas: saltarte la compra inicial de agua, impedir con una oportunidad de suerte que Diane vaya al baño en el Pavilion y seguirla por el paso subterráneo cuando huye de la parada del autobús. Pulsa:\n${numbered(c.generalThursdayRoute)}\n\nTexto del final: ${e.generalThursday}`));
+  parts.push(section("QUINTO PREMIO", `Usa la BASE 5 y luego pulsa:\n${numbered(c.fifthTail)}\n\nTexto del final: ${e.fifth}`));
   parts.push(section("PREMIO DE CONSOLACIÓN DE CHLOE", `Usa la BASE 6. Chloe ya está en la escena de la casa. Luego pulsa:\n${numbered(c.chloeTail)}\n\nTexto del final: ${e.chloe}`));
   parts.push(section("PREMIO DE CONSOLACIÓN DE AMANDA", `Usa la BASE 7. Tu hermano ya ha llegado a casa con sus amigas. Luego pulsa:\n${numbered(c.amandaTail)}\n\nTexto del final: ${e.amanda}`));
+  parts.push(section("PREMIO DE CONSOLACIÓN: RUTA DEL MARTES DEL PAVILION", `Esta ruta se lista aparte porque depende de varios controles de estado exactos en la ruta del martes cerca del Pavilion. Pulsa:\n${numbered(c.generalRoute)}\n\nTexto del final: ${e.general}`));
+  parts.push(section("PREMIO DE CONSOLACIÓN: RUTA DEL JUEVES POR EL PASO SUBTERRÁNEO", `Esta es otra ruta del jueves hacia la misma pantalla de premio de consolación. Requiere varias elecciones exactas: saltarte la compra inicial de agua, impedir con una oportunidad de suerte que Diane vaya al baño en el Pavilion y seguirla por el paso subterráneo cuando huye de la parada del autobús. Pulsa:\n${numbered(c.generalThursdayRoute)}\n\nTexto del final: ${e.generalThursday}`));
   parts.push(`FINALES DE FRACASO COMUNES
 Son finales terminales, pero no son finales con premio:
 - “No soy mayor de 18.” termina el juego en la pantalla de edad.
@@ -1272,7 +1272,6 @@ Pour le PREMIER PRIX, cliquez une fois sur la boucle initiale, puis 15 fois sur 
   parts.push(section("TROISIÈME PRIX", `Utilisez la BASE 2, puis cliquez sur :\n${numbered(c.thirdTail)}\n\nTexte de fin : ${e.third}`));
   parts.push(section("QUATRIÈME PRIX", `Utilisez la BASE 3. Cliquez ensuite une fois sur la boucle initiale des boissons, puis 7 fois sur la boucle répétée. Après le dernier « ${c.repeatDrink.at(-1)} », cliquez sur :\n${numbered(c.fourthTail)}\n\nTexte de fin : ${e.fourth}`));
   parts.push(section("PREMIER PRIX", `Utilisez la BASE 3. Cliquez ensuite une fois sur la boucle initiale des boissons, puis 15 fois sur la boucle répétée. Après le dernier « ${c.repeatDrink.at(-1)} », cliquez sur :\n${numbered(c.firstTail)}\n\nTexte de fin : ${e.first}`));
-  parts.push(section("CINQUIÈME PRIX", `Utilisez la BASE 5, puis cliquez sur :\n${numbered(c.fifthTail)}\n\nTexte de fin : ${e.fifth}`));
   parts.push(section("DEUXIÈME PRIX", `Utilisez la BASE 4. Le point essentiel de cette base est que Diane ait déjà eu une urgence privée près des buissons au bord de la rivière avant d’arriver chez vous.
 Depuis le canapé, cliquez d’abord sur cette section préparatoire :
 ${numbered(c.secondSetup)}
@@ -1283,10 +1282,11 @@ Texte de fin : ${e.second}`));
 Depuis le canapé, cliquez sur :
 ${numbered(c.loungeTail)}
 Texte de fin : ${e.lounge}`));
-  parts.push(section("PRIX DE CONSOLATION : ROUTE DU MARDI AU PAVILION", `Cette route est listée séparément parce qu’elle dépend de plusieurs vérifications d’état précises près du Pavilion dans la route du mardi. Cliquez sur :\n${numbered(c.generalRoute)}\n\nTexte de fin : ${e.general}`));
-  parts.push(section("PRIX DE CONSOLATION : ROUTE DU JEUDI PAR LE PASSAGE SOUTERRAIN", `Il s’agit d’une autre route du jeudi menant au même écran de prix de consolation. Elle exige plusieurs choix précis : ne pas acheter l’eau au début, utiliser une opportunité de chance pour empêcher Diane d’aller aux toilettes au Pavilion, puis la suivre dans le passage souterrain quand elle fuit l’arrêt de bus. Cliquez sur :\n${numbered(c.generalThursdayRoute)}\n\nTexte de fin : ${e.generalThursday}`));
+  parts.push(section("CINQUIÈME PRIX", `Utilisez la BASE 5, puis cliquez sur :\n${numbered(c.fifthTail)}\n\nTexte de fin : ${e.fifth}`));
   parts.push(section("PRIX DE CONSOLATION DE CHLOE", `Utilisez la BASE 6. Chloe est déjà présente dans la scène à la maison. Puis cliquez sur :\n${numbered(c.chloeTail)}\n\nTexte de fin : ${e.chloe}`));
   parts.push(section("PRIX DE CONSOLATION D’AMANDA", `Utilisez la BASE 7. Votre frère est maintenant arrivé avec ses amies. Puis cliquez sur :\n${numbered(c.amandaTail)}\n\nTexte de fin : ${e.amanda}`));
+  parts.push(section("PRIX DE CONSOLATION : ROUTE DU MARDI AU PAVILION", `Cette route est listée séparément parce qu’elle dépend de plusieurs vérifications d’état précises près du Pavilion dans la route du mardi. Cliquez sur :\n${numbered(c.generalRoute)}\n\nTexte de fin : ${e.general}`));
+  parts.push(section("PRIX DE CONSOLATION : ROUTE DU JEUDI PAR LE PASSAGE SOUTERRAIN", `Il s’agit d’une autre route du jeudi menant au même écran de prix de consolation. Elle exige plusieurs choix précis : ne pas acheter l’eau au début, utiliser une opportunité de chance pour empêcher Diane d’aller aux toilettes au Pavilion, puis la suivre dans le passage souterrain quand elle fuit l’arrêt de bus. Cliquez sur :\n${numbered(c.generalThursdayRoute)}\n\nTexte de fin : ${e.generalThursday}`));
   parts.push(`FINS D’ÉCHEC COURANTES
 Ce sont des fins terminales, mais pas des fins avec prix :
 - « Je n’ai pas 18 ans. » met fin au jeu dès l’écran d’âge.

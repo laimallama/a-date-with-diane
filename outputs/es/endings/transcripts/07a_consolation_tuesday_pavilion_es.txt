@@ -356,7 +356,7 @@ Has ganado 1 puntos de intimidad.
 
 DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 (Concéntrate en la obra.)
 
@@ -488,7 +488,7 @@ Te imaginas a Diane así dentro de una hora o dos. Pero luego desechas el pensam
 
 Miras a Diane, a tu lado.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 Vuelves a mirar al escenario.
 
@@ -522,7 +522,7 @@ Te ha encantado esa escena.
 
 Hay una pequeña pausa para un cambio de escena.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane se la ve tranquila; no parece que tenga ganas de ir al baño todavía.
 
 DIANE: ¡Qué bien ha estado Molly!
 
@@ -606,7 +606,7 @@ Los dos estáis esperando en la puerta de artistas.
 
 Os quedáis charlando sobre la obra y lo mucho que os ha gustado. Diane está muy tranquila, con ganas de ver a su amiga.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
 (Esperas a Molly.)
 
@@ -704,7 +704,7 @@ Estás sentado en el banco con Diane, charlando con Molly y su amigo.
 
 Estáis terminando los cafés.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+De momento no hay señales de que Diane necesite el baño.
 
 Diane estaba un poco reacia a sentarse, preocupada por si la falda se le manchaba en el banco.
 

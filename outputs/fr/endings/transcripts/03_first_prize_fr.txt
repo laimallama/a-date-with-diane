@@ -36,7 +36,7 @@ Vous la retrouvez au théâtre.
 
 C’est une belle journée chaude et le soleil inonde la façade du théâtre. Vous regardez une ou deux affiches en attendant. Puis vous l’entendez appeler votre nom. Elle est déjà dans le hall et marche vers vous en souriant. D’après la direction d’où elle vient, il est évident qu’elle sort tout juste des toilettes des femmes.
 
-Elle porte une robe d’été à motifs noirs et blancs, avec des poches et une ceinture façon cuir. Elle est superbe.
+Elle porte une robe d’été à motifs noirs et blancs, avec des poches et une ceinture en cuir. Elle est superbe.
 
 DIANE : Bonjour ! Je suis arrivée un peu tôt pour prendre un verre avec mon amie qui joue dans la pièce. Elle vient juste de partir se préparer.
 
@@ -244,7 +244,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [en chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane semble tout à fait détendue pour l’instant, rien n’indique qu’elle ait besoin d’y aller.
 
@@ -1604,9 +1604,9 @@ Elle se tourne vers chez elle, mais ne vous regarde pas. Vous vous approchez dis
 
 Elle est terriblement embarrassée et au bord des larmes.
 
-DIANE : [Presque inaudible] Pardon. Pardon. Je n’ai pas pu me retenir.
+DIANE : [presque inaudible] Pardon. Pardon. Je n’ai pas pu me retenir.
 
-VOUS : [Doucement] Ce n’est rien. Il n’y a pas de quoi avoir honte.
+VOUS : [doucement] Ce n’est rien. Il n’y a pas de quoi avoir honte.
 
 DIANE : Je suis tellement gênée.
 
@@ -1636,7 +1636,7 @@ Vous lui prenez la main et la serrez. Elle répond à votre pression. Mais elle 
 
 Vous passez un bras autour d’elle et la serrez contre vous.
 
-DIANE : [Très doucement] Je me sens tellement gênée. Mais merci d’avoir si bien pris les choses.
+DIANE : [très doucement] Je me sens tellement gênée. Mais merci d’avoir si bien pris les choses.
 
 Vous la serrez dans vos bras. Qu’allez-vous dire ensuite ?
 
@@ -1666,7 +1666,7 @@ VOUS : Tu devais souffrir le martyre. Tu aurais dû le dire.
 
 DIANE : Je sais. J’ai essayé plusieurs fois d’en parler mais à chaque fois tu disais quelque chose et — je n’arrêtais pas de remettre ça à plus tard.
 
-DIANE : [Avec un petit rire] Au moins, je suis contente de ne pas avoir mis de collants.
+DIANE : [avec un petit rire] Au moins, je suis contente de ne pas avoir mis de collants.
 
 Elle esquisse un sourire en coin à cette idée.
 
@@ -1680,10 +1680,10 @@ DIANE : Tu veux entrer ?
 
 FÉLICITATIONS !
 
-Vous avez décroché le jackpot. Vous avez remporté le premier prix !
+Vous avez décroché le jackpot.
 
 Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle a commencé à se mouiller. Même si elle a réussi à écarter sa culotte sur le côté, vous savez qu’elle est déjà trempée.
 
 Mais elle ne vous en veut pas. Au contraire, ça vous a rapprochés, et elle vous a invité à entrer !
 
-VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX!
+VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX !

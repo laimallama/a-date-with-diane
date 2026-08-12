@@ -36,7 +36,7 @@ Has quedado con ella en el teatro.
 
 Es un día precioso y cálido con el sol bañando el teatro. Miras uno o dos carteles mientras esperas. Entonces la oyes llamarte por tu nombre. Ya está en el vestíbulo y se dirige hacia ti sonriendo. Por la dirección de la que viene, está claro que acaba de pasar por el baño de mujeres.
 
-Lleva un vestido veraniego estampado en blanco y negro, con bolsillos y un cinturón que parece de cuero. Está guapísima.
+Lleva un vestido veraniego estampado en blanco y negro, con bolsillos y un cinturón de cuero. Está guapísima.
 
 DIANE: ¡Hola! He llegado un poco antes para tomar algo con mi amiga que actúa en la obra. Acaba de irse a prepararse.
 
@@ -244,7 +244,7 @@ La miras y ella te mira. Los dos sonreís.
 
 Has ganado 1 puntos de intimidad.
 
-DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
+DIANE: [en un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
 Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 

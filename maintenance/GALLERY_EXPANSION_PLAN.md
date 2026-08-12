@@ -90,12 +90,13 @@ result is a confirmed list of **10 items** worth adding, below.
    **Category: 3 new hidden scenes, siblings of the existing Lounge Story entry** — see
    Gallery grouping section below for how these should actually be presented.
 
-10. **`watching5()`'s tiramisu branch.** Chloe waiting at her door — the *captured* branch has
-    her make it in time; the **missing tiramisu branch has her not make it**, a real
-    different outcome with its own emotional beat ("she bends slightly forward... Chloe
-    takes her hand away from her crotch and holds her face, as if trying to hide her shame
-    from herself... gives a little sob"). Not filler text, a genuinely different ending to
-    the same moment. **Category: new hidden scene, sibling of the existing Chloe scene.**
+10. **`watching5()`'s non-tiramisu branch.** Chloe waiting at her door — polarity note from
+    implementation: the *already-documented Chloe Consolation* route orders tiramisu and
+    captures the wet-at-the-door / sob beat that ends on the consolation screen. The
+    **missing sibling is the non-tiramisu branch**: she pulls down, squats, pees outside,
+    then her mum answers — game over ("A nice end to the evening, but—"). Same approach to
+    the door, different dessert flag, different outcome. **Category: new hidden scene /
+    Gallery sibling of the existing Chloe ending.**
 
 ## A bug to fix while in this neighborhood
 
@@ -244,8 +245,13 @@ above from this description rather than searching for the original scripts.
 
 ## Status
 
-Nothing from this plan has been implemented yet — this document is pure findings +
-design, written at conversation end. Single-language and bilingual EN/CN/TW/ES/FR files are
-otherwise clean and fully in parity as of commit `05cd299` (see `AI_HANDOFF.md` for the
-general standing conventions this project follows — read that first if this is your first
-time in the repo, this document assumes it).
+**In progress (EN-first, uncommitted):**
+- Gallery group expand/collapse UI is live in all 9 HTML files; Tuesday/Thursday consolations
+  are already one grouped ending (`07_consolation_day_routes`).
+- Confirmed EN label routes saved under `maintenance/routes_wip/`:
+  `lounge_hen`, `lounge_tira`, `lounge_panna`, `lounge_ice`, `chloe`, `chloe_sibling`.
+- Item 10 polarity corrected above (documented Chloe = tiramisu consolation; missing =
+  non-tiramisu gameover).
+- EN `carparka1` blonde→brunette continuity fix applied.
+- Still to do: Saturday car-park ending + items 1–6 flat scenes; wire routes into
+  `write_verified_guides.js` / transcripts / `build_gallery_data.js`; then CN/TW/ES/FR.

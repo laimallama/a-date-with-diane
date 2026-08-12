@@ -8,9 +8,9 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5013,
-    "story": 3882,
-    "choice": 1131
+    "total": 5022,
+    "story": 3892,
+    "choice": 1130
   },
   "entries": [
     {
@@ -82,82 +82,163 @@
       "id": "x00008",
       "kind": "story",
       "en": "<LI>There are five different successful endings, or 'winning results', rated in order. See if you can get them all!",
-      "cn": "<LI>共有五种不同的成功结局，会按奖励等级排列。看看你能不能全部达成！",
+      "cn": "<LI>共有五种不同的成功结局，也就是按等级排列的“获胜成果”。看看你能不能全部达成！",
       "es": "<LI>Hay cinco finales exitosos distintos, o «resultados ganadores», ordenados por categoría. ¡A ver si los consigues todos!",
       "fr": "<LI>Il existe cinq fins différentes réussies, ou « résultats gagnants », classées dans l'ordre. Essayez de toutes les obtenir !",
-      "tw": "<LI>共有五種成功結局（也就是不同等級的「獲勝成果」）。看看你能不能全部達成！"
+      "tw": "<LI>共有五種不同的成功結局，也就是按等級排列的「獲勝成果」。看看你能不能全部達成！"
     },
     {
       "id": "x00009",
       "kind": "story",
-      "en": "<LI>There are also a few compensation endings—and you might even be able to win a date with Amanda.",
-      "cn": "<LI>此外还有几个安慰奖结局——你甚至有机会和阿曼达约会。",
-      "es": "<LI>También hay algunos finales de consolación —e incluso podrías conseguir una cita con Amanda.",
-      "fr": "<LI>Il y a aussi quelques fins de consolation — et vous pourriez même décrocher un rendez-vous avec Amanda.",
-      "tw": "<LI>另外還有幾個安慰獎結局——你甚至有機會和阿曼達約會。"
+      "en": "<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.",
+      "cn": "<LI>此外还有几个安慰奖结局，你甚至有机会和阿曼达约会。",
+      "es": "<LI>También hay algunos finales de compensación, e incluso podrías conseguir una cita con Amanda.",
+      "fr": "<LI>Il y a aussi quelques fins de compensation, et vous pourriez même décrocher un rendez-vous avec Amanda.",
+      "tw": "<LI>另外還有幾個安慰獎結局，你甚至有機會和阿曼達約會。"
+    },
+    {
+      "id": "x05009",
+      "kind": "story",
+      "en": "<HR>",
+      "cn": "<HR>",
+      "es": "<HR>",
+      "fr": "<HR>",
+      "tw": "<HR>"
     },
     {
       "id": "x00010",
       "kind": "story",
-      "en": "<LI>The bladder meter says how much Diane's holding... what's in her tummy slowly flows to her bladder as time passes. Also, you get 3 luckshots that you should use WISELY when offered, and remember, they can bring BAD luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.",
-      "cn": "<LI>膀胱仪表显示黛安现在憋了多少尿……她腹中的水分会随着时间慢慢进入膀胱。另外，你有3次幸运机会。每次机会出现时，都要想清楚再用。别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，之后最多只能再用一次。",
-      "es": "<LI>El medidor de vejiga indica cuánto está aguantando Diane... el líquido que aún tiene en el cuerpo va pasando poco a poco a la vejiga con el tiempo. Además, tienes 3 golpes de suerte que debes usar CON CABEZA cuando tengas ocasión —y recuerda que también pueden traer MALA suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.",
-      "fr": "<LI>La jauge de vessie indique ce que Diane retient… le liquide en transit passe lentement dans sa vessie au fil du temps. Vous disposez également de 3 coups de chance, à utiliser JUDICIEUSEMENT lorsqu'on vous les propose — rappelez-vous qu'ils peuvent aussi apporter de la MALCHANCE ! Notez que vous ne pouvez en utiliser qu'un seul en fin de soirée, une fois que vous avez pris le bus ou le taxi pour rentrer.",
-      "tw": "<LI>膀胱指標顯示黛安憋了多少尿……隨著時間過去，她喝下的水會慢慢流進膀胱。另外，你有3次幸運機會，出現時要好好把握；別忘了，它們也可能帶來壞運氣！注意，坐上回家的公車或計程車後，最多只能再用一次。"
+      "en": "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.",
+      "cn": "<LI><strong>膀胱</strong>仪表显示黛安憋了多少。她<strong>肚子</strong>里的水分会随着时间慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
+      "es": "<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco a su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.",
+      "fr": "<LI>La jauge de <strong>vessie</strong> indique ce que Diane retient. Ce qu'il y a dans son <strong>ventre</strong> passe lentement dans sa <strong>vessie</strong> au fil du temps. Vous disposez également de <strong>3 coups de chance</strong>, à utiliser judicieusement lorsqu'on vous les propose — et rappelez-vous qu'ils peuvent aussi apporter de la malchance ! Notez que vous ne pouvez en utiliser qu'un seul en fin de soirée, une fois que vous avez pris le bus ou le taxi pour rentrer.",
+      "tw": "<LI><strong>膀胱</strong>指標顯示黛安憋了多少。她<strong>肚子</strong>裡的水分會隨著時間慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
     },
     {
       "id": "x00011",
       "kind": "story",
-      "en": "<LI>Don't expect to sleep with her on this first date—but you might get some fun if you play your cards right. And never forget: women are funny creatures.",
-      "cn": "<LI>别指望第一次约会就能和她上床——但如果你处理得当，也许还能享受到别样的乐趣。永远别忘了：女人总是让人捉摸不透。",
-      "es": "<LI>No esperes acostarte con ella en esta primera cita —pero puede que consigas algo de diversión si juegas bien tus cartas. Y nunca olvides: las mujeres son criaturas imprevisibles.",
-      "fr": "<LI>N'espérez pas coucher avec elle dès ce premier rendez-vous — mais vous pourriez bien vous amuser si vous jouez bien vos cartes. Et n'oubliez jamais : les femmes sont des créatures imprévisibles.",
-      "tw": "<LI>別指望第一次約會就能跟她上床——但要是你應對得當，說不定也能嘗到點別的樂趣。千萬別忘了：女人這種生物很有意思。"
+      "en": "<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.",
+      "cn": "<LI>别指望第一次约会就能和她上床，但如果你应对得当，也许还能尝到点乐子。永远别忘了：女人总是让人捉摸不透。",
+      "es": "<LI>No esperes acostarte con ella en esta primera cita, pero puede que consigas algo de diversión si juegas bien tus cartas. Y nunca olvides: las mujeres son criaturas imprevisibles.",
+      "fr": "<LI>N'espérez pas coucher avec elle dès ce premier rendez-vous, mais vous pourriez bien vous amuser si vous jouez bien vos cartes. Et n'oubliez jamais : les femmes sont des créatures imprévisibles.",
+      "tw": "<LI>別指望第一次約會就能跟她上床，但如果你應對得當，也許還能嘗到點樂子。千萬別忘了：女人這種生物很有意思。"
     },
     {
       "id": "x00012",
       "kind": "story",
-      "en": "<LI>As the evening progresses, your Intimacy points should rise, and they naturally affect what you can do. In some scenes, Shyness points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.",
-      "cn": "<LI>随着夜晚推进，亲密度通常会逐渐上升，也会影响你能做哪些事。有些剧情还会用到“害羞值”。你回到家时这个数值是多少，也会影响后续发展。有时高一点更有利，有时反而低一点更有利，所以它更像一张百搭牌。",
-      "es": "<LI>A medida que avance la noche, tus puntos de intimidad irán subiendo, y eso afectará de manera natural a lo que puedes hacer. En algunas escenas también entran en juego los puntos de timidez, y la cantidad que hayas ganado o perdido al llegar a casa puede influir en lo que ocurra. En algunos casos conviene tener una cifra alta; en otros, una cifra baja, así que funcionan a modo de comodín.",
-      "fr": "<LI>Au fil de la soirée, vos points d'intimité devraient augmenter et influencent naturellement ce que vous pouvez faire. Dans certaines scènes, les points de timidité entrent aussi en jeu, et le total accumulé ou perdu au moment de rentrer chez vous peut influer sur les événements. Dans certains scénarios, un chiffre élevé est un avantage ; dans d'autres, c'est un chiffre bas qui aide — cela fonctionne un peu comme une carte Joker.",
-      "tw": "<LI>隨著夜晚推進，親密度通常會逐漸上升，並自然影響你能做什麼。有些場景還會用到「害羞值」；你回家時的得失也會影響後續事件。有時數值高有利，有時低反而有利，所以它有點像一張百搭牌。"
+      "en": "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.",
+      "cn": "<LI>随着夜晚推进，你的<strong>亲密度</strong>通常会逐渐上升，也会自然影响你能做哪些事。有些场景还会用到<strong>害羞值</strong>；你回到家时这个数值的得失也会影响后续事件。有时高一点更有利，有时反而低一点更有利，所以它更像一张百搭牌。",
+      "es": "<LI>A medida que avance la noche, tus puntos de <strong>intimidad</strong> deberían subir, y eso afecta de manera natural a lo que puedes hacer. En algunas escenas también entran en juego los puntos de <strong>timidez</strong>, y la cantidad que hayas ganado o perdido al llegar a casa puede influir en lo que ocurra. En algunos casos conviene tener una cifra alta; en otros, una cifra baja, así que funcionan a modo de comodín.",
+      "fr": "<LI>Au fil de la soirée, vos points d'<strong>intimité</strong> devraient augmenter et influencent naturellement ce que vous pouvez faire. Dans certaines scènes, les points de <strong>timidité</strong> entrent aussi en jeu, et le total accumulé ou perdu au moment de rentrer chez vous peut influer sur les événements. Dans certains scénarios, un chiffre élevé est un avantage ; dans d'autres, c'est un chiffre bas qui aide — cela fonctionne un peu comme une carte Joker.",
+      "tw": "<LI>隨著夜晚推進，你的<strong>親密度</strong>通常會逐漸上升，也會自然影響你能做什麼。有些場景還會用到<strong>害羞值</strong>；你回家時這個數值的得失也會影響後續事件。有時高一點更有利，有時反而低一點更有利，所以它更像一張百搭牌。"
     },
     {
       "id": "x00013",
       "kind": "story",
-      "en": "<LI>Keep an eye on your money. You might want some for a taxi home at the end of the evening.",
-      "cn": "<LI>注意你的钱。晚上结束时你可能需要留一些打车回家。",
-      "es": "<LI>Vigila tu dinero. Puede que necesites algo para un taxi a casa al final de la noche.",
-      "fr": "<LI>Gardez un œil sur votre argent. Il vous en faudra peut-être pour prendre un taxi en fin de soirée.",
-      "tw": "<LI>留意一下你的錢。晚上結束時，最好留點錢搭計程車回家。"
+      "en": "<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.",
+      "cn": "<LI>开局你有<strong>£100</strong>。留意你的钱。晚上结束时你可能需要留一些打车回家。",
+      "es": "<LI>Empiezas con <strong>£100</strong>. Vigila tu dinero. Puede que necesites algo para un taxi a casa al final de la noche.",
+      "fr": "<LI>Vous commencez avec <strong>£100</strong>. Gardez un œil sur votre argent. Il vous en faudra peut-être pour prendre un taxi en fin de soirée.",
+      "tw": "<LI>開局你有<strong>£100</strong>。留意你的錢。晚上結束時，最好留點錢搭計程車回家。"
     },
     {
       "id": "x00014",
       "kind": "story",
       "en": "<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.",
-      "cn": "<LI>游戏里有不少分支，建议完整多玩几遍。周二和周四还可以选择短版流程，直接跳过前面的部分。",
-      "es": "<LI>Hay muchas variaciones, así que juega la partida completa varias veces. Los martes y jueves encontrarás también una versión más corta.",
+      "cn": "<LI>游戏里有不少分支，建议完整多玩几遍。但周二和周四也会提供较短的版本。",
+      "es": "<LI>Hay muchas variaciones, así que juega la partida completa varias veces. Pero los martes y jueves también encontrarás una versión más corta.",
       "fr": "<LI>Il y a beaucoup de variations, alors jouez jusqu'au bout plusieurs fois. Mais le mardi et le jeudi, vous trouverez également une version plus courte.",
-      "tw": "<LI>遊戲有很多不同走向，最好從頭到尾多玩幾遍。但週二和週四也能玩較短的版本。"
+      "tw": "<LI>遊戲有很多不同走向，最好從頭到尾多玩幾遍。但週二和週四也會提供較短的版本。"
     },
     {
-      "id": "x00014a",
+      "id": "x05010",
       "kind": "story",
-      "en": "<LI>There's a Gallery feature as well, on the top left, with guided walks through to the various endings and a few hidden scenes. Handy if you get stuck, or just fancy a look around. A few keys worth knowing: G opens the Gallery (Esc closes it), H turns the Guide on or off once you've started one, B goes Back, and the number keys pick your choices. Enter follows the highlighted Guide choice, but only while the Guide is on.",
-      "cn": "<LI>另外还有个剧情图鉴，在左上角，里面有通往各结局和若干隐藏场景的引导路线。卡住了可以看看，想自己逛逛也行。几个好用的快捷键：按G可以打开图鉴（按Esc关闭）；进入引导后，按H可开关引导提示；按B返回上一步；数字键则可用来选相应的选项。Enter键会跟着重亮的引导选项走，不过只有在引导开启时才管用。",
-      "es": "<LI>También hay una Galería, arriba a la izquierda, con recorridos guiados hacia los distintos finales y algunas escenas ocultas: viene bien si te atascas, o si simplemente quieres echar un vistazo. Unas teclas útiles: G abre la Galería (Esc la cierra), H activa o desactiva la Guía una vez empezada, B vuelve atrás, y las teclas numéricas eligen opciones. Intro sigue la opción resaltada de la Guía, pero solo mientras la Guía esté activada.",
-      "fr": "<LI>Il y a aussi une Galerie, en haut à gauche, avec des parcours guidés vers les différentes fins et quelques scènes cachées. Pratique si vous bloquez, ou si vous avez juste envie de jeter un œil. Quelques touches utiles : G ouvre la Galerie (Échap la ferme), H active ou désactive le Guide une fois lancé, B revient en arrière, et les touches numériques choisissent les options. Entrée suit le choix Guide surligné, mais seulement tant que le Guide est activé.",
-      "tw": "<LI>另外還有個劇情圖鑒，在左上角，裡面有通往各結局和若干隱藏場景的引導路線。卡住了可以看看，想自己逛逛也行。幾個好用的快捷鍵：按G可以打開圖鑒（按Esc關閉）；進入引導後，按H可開關引導提示；按B返回上一步；數字鍵則可用來選相應的選項。Enter鍵會跟著反白的引導選項走，不過只有在引導開啟時才管用。"
+      "en": "<HR>",
+      "cn": "<HR>",
+      "tw": "<HR>",
+      "es": "<HR>",
+      "fr": "<HR>"
     },
     {
-      "id": "x00014b",
+      "id": "x05011",
       "kind": "story",
-      "en": "<LI>B takes you back a page and restores everything to how it was: stats, choices, the lot. That works in Guide mode too. You can switch the Guide off with H and turn it back on if you're still following the path; if you choose differently and leave the path, the Guide drops out, unless you go Back to a point where you were still on track.",
-      "cn": "<LI>按B会回到上一页，并把当时的所有状态一并恢复。引导模式里也可以回退。引导可以关掉；若你仍按引导路线走，还可以再打开。但若选了别的选项走偏了，引导就会消失，除非再退回到之前还在路线上的节点。",
-      "es": "<LI>B te lleva una página atrás y restaura todo tal como estaba: estadísticas, decisiones, todo. También funciona en el modo Guía. Puedes apagar la Guía con H y volver a encenderla si sigues en la ruta; si eliges otra cosa y te sales del camino, la Guía desaparece, a menos que vuelvas atrás hasta un punto en el que aún estuvieras en la ruta.",
-      "fr": "<LI>B vous ramène d'une page en arrière et restaure tout comme c'était : statistiques, choix, le reste. Cela fonctionne aussi en mode Guide. Vous pouvez couper le Guide avec H et le rallumer si vous êtes encore sur le parcours ; si vous choisissez autrement et quittez le chemin, le Guide disparaît, sauf si vous revenez en arrière jusqu'à un point où vous étiez encore sur la bonne voie.",
-      "tw": "<LI>按B會回到上一頁，並把當時的所有狀態一併恢復。引導模式裡也可以回退。引導可以關掉；若你仍按引導路線走，還可以再打開。但若選了別的選項走偏了，引導就會消失，除非再退回到之前還在路線上的節點。"
+      "en": "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>",
+      "cn": "<p class='note-lead'>左上角还有个剧情图鉴，里面有通往奖励结局、安慰奖结局以及各种隐藏场景的引导路线。卡住了可以用，单纯想逛逛也行。有些行是下拉菜单：先点开，再选你要的变体。在手机或平板上请用屏幕上的按钮；在电脑上还可以用下面这些快捷键。</p>",
+      "tw": "<p class='note-lead'>左上角還有個劇情圖鑒，裡面有通往獎勵結局、安慰獎結局以及各種隱藏場景的引導路線。卡住了可以用，單純想逛逛也行。有些列是下拉選單：先點開，再選你要的變體。在手機或平板上請用畫面上的按鈕；在電腦上還可以用下面這些快捷鍵。</p>",
+      "es": "<p class='note-lead'>También hay una Galería arriba a la izquierda, con recorridos guiados por los finales de premio, los finales de consolación y varias escenas ocultas. Úsala si te atascas, o si simplemente quieres explorar. Algunas filas son desplegables: haz clic para abrirlas y luego elige la variante que quieras. En un teléfono o tableta, usa los botones de la pantalla; en un ordenador también tienes estas teclas de acceso rápido.</p>",
+      "fr": "<p class='note-lead'>Il y a aussi une Galerie en haut à gauche, avec des parcours guidés vers les fins de prix, les fins de consolation et diverses scènes cachées. Servez-vous-en si vous bloquez, ou si vous voulez simplement explorer. Certaines lignes sont des menus déroulants : cliquez pour les ouvrir, puis choisissez la variante voulue. Sur téléphone ou tablette, utilisez les boutons à l'écran ; sur ordinateur, vous avez aussi ces raccourcis clavier.</p>"
+    },
+    {
+      "id": "x05012",
+      "kind": "story",
+      "en": "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>",
+      "cn": "<p class='note-keys'><strong>G</strong>键打开剧情图鉴（<strong>Esc</strong>键关闭）。</p>",
+      "tw": "<p class='note-keys'><strong>G</strong> 鍵打開劇情圖鑒（<strong>Esc</strong> 鍵關閉）。</p>",
+      "es": "<p class='note-keys'><strong>G</strong> abre la Galería (<strong>Esc</strong> la cierra).</p>",
+      "fr": "<p class='note-keys'><strong>G</strong> ouvre la Galerie (<strong>Échap</strong> la ferme).</p>"
+    },
+    {
+      "id": "x05013",
+      "kind": "story",
+      "en": "<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>",
+      "cn": "<p class='note-keys note-cluster-end'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>",
+      "tw": "<p class='note-keys note-cluster-end'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>",
+      "es": "<p class='note-keys note-cluster-end'><strong>H</strong> activa o desactiva la Guía una vez que has empezado una.</p>",
+      "fr": "<p class='note-keys note-cluster-end'><strong>H</strong> active ou désactive le Guide une fois que vous en avez lancé un.</p>"
+    },
+    {
+      "id": "x05014",
+      "kind": "story",
+      "en": "<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>",
+      "cn": "<p class='note-keys'><strong>数字键</strong>用来选择选项。</p>",
+      "tw": "<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>",
+      "es": "<p class='note-keys'>Las <strong>teclas numéricas</strong> eligen tus opciones.</p>",
+      "fr": "<p class='note-keys'>Les <strong>touches numériques</strong> choisissent vos options.</p>"
+    },
+    {
+      "id": "x05015",
+      "kind": "story",
+      "en": "<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>",
+      "cn": "<p class='note-keys note-cluster-end'><strong>Enter</strong>键可选择高亮的引导选项，但只有在引导开启时才有效。按住<strong>Enter</strong>键可快进引导选项；松开即停。</p>",
+      "tw": "<p class='note-keys note-cluster-end'><strong>Enter</strong> 鍵可選擇反白的引導選項，但只有在引導開啟時才有效。按住 <strong>Enter</strong> 鍵可快進引導選項；放開即停。</p>",
+      "es": "<p class='note-keys note-cluster-end'><strong>Intro</strong> sigue la opción resaltada de la Guía, pero solo mientras la Guía esté activada. Mantén pulsado <strong>Intro</strong> un momento para avanzar rápido por las opciones guiadas; suéltalo para parar.</p>",
+      "fr": "<p class='note-keys note-cluster-end'><strong>Entrée</strong> suit le choix Guide surligné, mais seulement tant que le Guide est activé. Maintenez <strong>Entrée</strong> un instant pour avancer rapidement dans les choix guidés ; relâchez pour arrêter.</p>"
+    },
+    {
+      "id": "x05016",
+      "kind": "story",
+      "en": "<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>",
+      "cn": "<p class='note-lead'>若后悔某个选择，随时可以按“返回”按钮回到上一页；它会把一切都恢复——数值、选项，统统还原。引导模式里同样有效。</p>",
+      "tw": "<p class='note-lead'>若後悔某個選擇，隨時可以按「返回」按鈕回到上一頁；它會把一切都恢復——數值、選項，統統還原。引導模式裡同樣有效。</p>",
+      "es": "<p class='note-lead'>Puedes pulsar el botón «Atrás» para volver a la página anterior en cualquier momento si te arrepientes de una elección; restaura todo: estadísticas, decisiones, el lote. También funciona en el modo Guía.</p>",
+      "fr": "<p class='note-lead'>Vous pouvez appuyer sur le bouton « Retour » pour revenir à la page précédente à tout moment si vous regrettez un choix ; tout est restauré — statistiques, choix, le reste. Cela fonctionne aussi en mode Guide.</p>"
+    },
+    {
+      "id": "x05017",
+      "kind": "story",
+      "en": "<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the 'Back' button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>",
+      "cn": "<p class='note-keys note-cluster-end'><strong>B</strong>键的效果和“返回”按钮一样。按住<strong>B</strong>键可快速倒退；松开即停。</p>",
+      "tw": "<p class='note-keys note-cluster-end'><strong>B</strong> 鍵的效果和「返回」按鈕一樣。按住 <strong>B</strong> 鍵可快速倒退；放開即停。</p>",
+      "es": "<p class='note-keys note-cluster-end'><strong>B</strong> hace lo mismo que el botón «Atrás». Mantén pulsado <strong>B</strong> un momento para rebobinar rápido; suéltalo para parar.</p>",
+      "fr": "<p class='note-keys note-cluster-end'><strong>B</strong> fait la même chose que le bouton « Retour ». Maintenez <strong>B</strong> un instant pour rembobiner rapidement ; relâchez pour arrêter.</p>"
+    },
+    {
+      "id": "x05018",
+      "kind": "story",
+      "en": "<p class='note-lead'>While following an ending Guide, press the 'Skip to the good bit!' button (or press <strong>S</strong>) to jump ahead to the climax. Going 'Back' can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>",
+      "cn": "<p class='note-lead'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到高潮。用“返回”可以倒退过那个节点，但跳过按钮不会再出现，除非你从图鉴重新开始一条结局。</p>",
+      "tw": "<p class='note-lead'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到高潮。用「返回」可以倒退過那個節點，但跳過按鈕不會再出現，除非你從圖鑒重新開始一條結局。</p>",
+      "es": "<p class='note-lead'>Mientras sigues la Guía de un final, pulsa el botón «¡Saltar a lo bueno!» (o pulsa <strong>S</strong>) para saltar al clímax. Ir «Atrás» puede rebobinar más allá de ese punto, pero el botón de salto no volverá a aparecer hasta que empieces un final nuevo desde la Galería.</p>",
+      "fr": "<p class='note-lead'>Pendant un Guide de fin, appuyez sur le bouton « Passer aux moments forts ! » (ou appuyez sur <strong>S</strong>) pour sauter au climax. Un « Retour » peut remonter au-delà de ce point, mais le bouton de saut ne réapparaîtra pas tant que vous n'aurez pas relancé une fin depuis la Galerie.</p>"
+    },
+    {
+      "id": "x05019",
+      "kind": "story",
+      "en": "<p class='note-keys note-cluster-end'>Turning the Guide off also removes the skip button and stops fast-forward. You can turn the Guide back on if you're still on the path; if you choose differently and leave the path, the Guide drops out, unless you go 'Back' to a point where you were still on track.</p>",
+      "cn": "<p class='note-keys note-cluster-end'>关闭引导也会去掉跳过按钮并停止快进。若你仍在路线上，可以再打开引导；若选了别的选项偏离路线，引导就会退出，除非你“返回”到仍在路线上的节点。</p>",
+      "tw": "<p class='note-keys note-cluster-end'>關閉引導也會去掉跳過按鈕並停止快進。若你仍在路線上，可以再打開引導；若選了別的選項偏離路線，引導就會退出，除非你「返回」到仍在路線上的節點。</p>",
+      "es": "<p class='note-keys note-cluster-end'>Desactivar la Guía también quita el botón de salto y detiene el avance rápido. Puedes volver a activar la Guía si sigues en la ruta; si eliges otra cosa y te sales del camino, la Guía desaparece, a menos que vuelvas «Atrás» hasta un punto en el que aún estuvieras en la ruta.</p>",
+      "fr": "<p class='note-keys note-cluster-end'>Désactiver le Guide retire aussi le bouton de saut et arrête l'avance rapide. Vous pouvez rallumer le Guide si vous êtes encore sur le parcours ; si vous choisissez autrement et quittez le chemin, le Guide disparaît, sauf si vous faites « Retour » jusqu'à un point où vous étiez encore sur la bonne voie.</p>"
     },
     {
       "id": "x00015",
@@ -200,11 +281,11 @@
     {
       "id": "x00019",
       "kind": "story",
-      "en": "<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She has a lacy white bra, white panties, no slip and bare legs.",
-      "cn": "<LI>周六：黛安穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条仿皮腰带。内搭白色蕾丝胸罩和白色内裤，没有衬裙，光着腿。",
-      "es": "<LI>SÁBADO: Diane lleva un vestido veraniego estampado en blanco y negro, con bolsillos y un cinturón que parece de cuero. Lleva un sujetador blanco de encaje y unas bragas blancas, sin combinación y con las piernas al descubierto.",
-      "fr": "<LI>SAMEDI : Diane porte une robe d'été à motifs noirs et blancs, avec des poches et une ceinture façon cuir. En dessous, elle porte un soutien-gorge blanc en dentelle et une culotte blanche, sans fond de robe, jambes nues.",
-      "tw": "<LI>週六：黛安穿著一條黑白圖案洋裝，有些像夏裝，帶口袋，看來還配了條皮腰帶。她穿著白色蕾絲胸罩和白色內褲，沒有襯裙，光著腿。"
+      "en": "<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She has a lacy white bra, white panties, no slip and bare legs.",
+      "cn": "<LI>周六：黛安穿着一条轻便的黑白图案连衣裙，有些像夏装，带口袋，还配了一条皮腰带。内搭白色蕾丝胸罩和白色内裤，没有衬裙，光着腿。",
+      "es": "<LI>SÁBADO: Diane lleva un vestido estampado en blanco y negro, casi como un vestido de verano, con bolsillos y un cinturón de cuero. Lleva un sujetador blanco de encaje y unas bragas blancas, sin combinación y con las piernas al descubierto.",
+      "fr": "<LI>SAMEDI : Diane porte une robe à motifs noirs et blancs, presque comme une robe d'été, avec des poches et une ceinture en cuir. En dessous, elle porte un soutien-gorge blanc en dentelle et une culotte blanche, sans fond de robe, jambes nues.",
+      "tw": "<LI>週六：黛安穿著一條黑白圖案洋裝，有些像夏裝，帶口袋，還配了一條皮腰帶。她穿著白色蕾絲胸罩和白色內褲，沒有襯裙，光著腿。"
     },
     {
       "id": "x00020",
@@ -218,20 +299,11 @@
     {
       "id": "x00021",
       "kind": "story",
-      "en": "<LI><SPAN style='color: #ff0000'>Molly wears jeans and white panties.</SPAN>",
-      "cn": "<LI><SPAN style='color: #ff0000'>莫莉穿着牛仔裤和白色内裤。</SPAN>",
-      "es": "<LI><SPAN style='color: #ff0000'>Molly lleva vaqueros y bragas blancas.</SPAN>",
-      "fr": "<LI><SPAN style='color: #ff0000'>Molly porte un jean et une culotte blanche.</SPAN>",
-      "tw": "<LI><SPAN style='color: #ff0000'>莫莉穿著牛仔褲跟白色內褲。</SPAN>"
-    },
-    {
-      "id": "x00022",
-      "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>",
-      "tw": "<HR>"
+      "en": "<LI>Molly and Amanda wear jeans.",
+      "cn": "<LI>莫莉和阿曼达都穿牛仔裤。",
+      "es": "<LI>Molly y Amanda llevan vaqueros.",
+      "fr": "<LI>Molly et Amanda portent un jean.",
+      "tw": "<LI>莫莉和阿曼達都穿牛仔褲。"
     },
     {
       "id": "x00023",
@@ -243,23 +315,13 @@
       "tw": "<LI>克洛伊穿著一件短版格紋裙，搭配黑色褲襪。"
     },
     {
-      "id": "x00024",
+      "id": "x05020",
       "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>",
-      "tw": "<HR>"
-    },
-    {
-      "id": "x00025",
-      "kind": "choice",
-      "tag": "start1",
-      "en": "Back to main menu.",
-      "cn": "返回主菜单。",
-      "es": "Volver al menú principal.",
-      "fr": "Retour au menu principal.",
-      "tw": "返回主選單。"
+      "en": "<LI>Debbie wears a mini skirt.",
+      "cn": "<LI>黛比穿着超短裙。",
+      "tw": "<LI>黛比穿著超短裙。",
+      "es": "<LI>Debbie lleva una minifalda.",
+      "fr": "<LI>Debbie porte une mini-jupe."
     },
     {
       "id": "x00026",
@@ -602,11 +664,11 @@
     {
       "id": "x00062",
       "kind": "story",
-      "en": "<LI>She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She looks super.",
-      "cn": "<LI>她穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条仿皮腰带。她看起来美极了。",
-      "es": "<LI>Lleva un vestido veraniego estampado en blanco y negro, con bolsillos y un cinturón que parece de cuero. Está guapísima.",
-      "fr": "<LI>Elle porte une robe d'été à motifs noirs et blancs, avec des poches et une ceinture façon cuir. Elle est superbe.",
-      "tw": "<LI>她穿著一條輕便的黑白圖案連衣裙，帶口袋，腰間系著一條仿皮腰帶。她看起來美極了。"
+      "en": "<LI>She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She looks super.",
+      "cn": "<LI>她穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条皮腰带。她看起来美极了。",
+      "es": "<LI>Lleva un vestido veraniego estampado en blanco y negro, con bolsillos y un cinturón de cuero. Está guapísima.",
+      "fr": "<LI>Elle porte une robe d'été à motifs noirs et blancs, avec des poches et une ceinture en cuir. Elle est superbe.",
+      "tw": "<LI>她穿著一條輕便的黑白圖案連衣裙，帶口袋，腰間系著一條皮腰帶。她看起來美極了。"
     },
     {
       "id": "x00063",
@@ -3327,11 +3389,11 @@
     {
       "id": "x00351",
       "kind": "story",
-      "en": "<LI>DIANE: Oh, I don't think that's my sort of thing. I think they're such a waste of money—after all, four wheels are four wheels, aren't they, and just think of the global warming they cause. I had a boyfriend once who was just obsessed with cars, just wanted to drive around all day. I've never been so bored in my life.",
-      "cn": "<LI>黛安：哦，那不太合我的口味。我觉得买车简直是在浪费钱——毕竟，四个轮子就是四个轮子，对吧，而且想想它们造成的全球变暖。我以前有个男朋友就痴迷于汽车，整天只想开车兜风。那是我这辈子最无聊的时光。",
-      "es": "<LI>DIANE: Ah, no creo que sea lo mío. Me parece que son un gasto enorme de dinero; al fin y al cabo, cuatro ruedas son cuatro ruedas, ¿no?, y piensa en todo el calentamiento global que provocan. Tuve un novio una vez que estaba obsesionado con los coches, solo quería conducir todo el día. En mi vida me había aburrido tanto.",
-      "fr": "<LI>DIANE : Oh, je ne crois pas que ce soit vraiment mon truc. Je trouve que c'est tellement de l'argent gaspillé — après tout, quatre roues c'est quatre roues, non ? Et sans parler du réchauffement climatique que ça provoque. J'ai eu un petit ami qui était complètement obsédé par les voitures, il voulait juste rouler toute la journée. Je ne me suis jamais autant ennuyée de ma vie.",
-      "tw": "<LI>黛安：哦，我不太喜歡那種東西。我想車很浪費錢——反正不都是四個輪子嗎？再想想它們帶來的全球變暖。我以前有個男朋友痴迷汽車，整天只想開車兜風。我從沒那麼無聊過。"
+      "en": "<LI>DIANE: Oh, I don't think that's my sort of thing. I think they're such a waste of money. After all, four wheels are four wheels, aren't they? And just think of the global warming they cause! I had a boyfriend once who was just obsessed with cars, just wanted to drive around all day. I've never been so bored in my life.",
+      "cn": "<LI>黛安：哦，那不太合我的口味。我觉得买车简直是在浪费钱。毕竟，四个轮子就是四个轮子，对吧？而且想想它们造成的全球变暖！我以前有个男朋友就痴迷于汽车，整天只想开车兜风。那是我这辈子最无聊的时光。",
+      "es": "<LI>DIANE: Ah, no creo que sea lo mío. Me parece que son un gasto enorme de dinero. Al fin y al cabo, cuatro ruedas son cuatro ruedas, ¿no? ¡Y piensa en todo el calentamiento global que provocan! Tuve un novio una vez que estaba obsesionado con los coches, solo quería conducir todo el día. En mi vida me había aburrido tanto.",
+      "fr": "<LI>DIANE : Oh, je ne crois pas que ce soit vraiment mon truc. Je trouve que c'est tellement de l'argent gaspillé. Après tout, quatre roues c'est quatre roues, non ? Et juste à penser au réchauffement climatique que ça provoque ! J'ai eu un petit ami qui était complètement obsédé par les voitures, il voulait juste rouler toute la journée. Je ne me suis jamais autant ennuyée de ma vie.",
+      "tw": "<LI>黛安：哦，我不太喜歡那種東西。我想車很浪費錢。反正不都是四個輪子嗎？再想想它們帶來的全球變暖！我以前有個男朋友痴迷汽車，整天只想開車兜風。我從沒那麼無聊過。"
     },
     {
       "id": "x00352",
@@ -24944,7 +25006,7 @@
     {
       "id": "x02659",
       "kind": "story",
-      "en": "<LI>DIANE: It was pretty bad after a party last week. Three us had to leave at about midnight and our car broke down.",
+      "en": "<LI>DIANE: It was pretty bad after a party last week. Three of us had to leave at about midnight and our car broke down.",
       "cn": "<LI>黛安：上周参加完派对之后就挺惨的。我们三个人午夜左右得离开，结果车抛锚了。",
       "es": "<LI>DIANE: Lo pasé bastante mal después de una fiesta la semana pasada. Tuvimos que marcharnos tres a eso de medianoche y el coche se averió.",
       "fr": "<LI>DIANE : C'était vraiment galère après une soirée la semaine dernière. On était trois à devoir partir vers minuit et notre voiture est tombée en panne.",
@@ -24962,7 +25024,7 @@
     {
       "id": "x02661",
       "kind": "story",
-      "en": "<LI>DIANE: <EM>considering</EM>If I tell you will you let me go to the loo?",
+      "en": "<LI>DIANE: <EM>considering</EM> If I tell you, will you let me go to the loo?",
       "cn": "<LI>黛安：<EM>（考虑了一下）</EM> 如果我说了，你能让我去厕所吗？",
       "es": "<LI>DIANE: <EM>pensándolo</EM> ¿Si te lo cuento me dejas ir al baño?",
       "fr": "<LI>DIANE : <EM>pensive</EM> Si je te raconte, tu me laisseras aller aux toilettes ?",
@@ -27732,11 +27794,11 @@
     {
       "id": "x02952",
       "kind": "story",
-      "en": "<LI>When she comes back she says 'That feels better' but it is time for her to go.",
-      "cn": "<LI>她回来后说“舒服多了”，不过也到了该走的时候了。",
-      "es": "<LI>Cuando vuelve dice «Qué alivio» pero ya es hora de que se vaya.",
-      "fr": "<LI>Quand elle revient, elle dit « Ça fait du bien » mais il est temps pour elle de partir.",
-      "tw": "<LI>她回來時說「好多了」，但她也該走了。"
+      "en": "<LI>When she comes back she says, 'That feels better,' but it is time for her to go.",
+      "cn": "<LI>她回来后说，“舒服多了，”不过也到了该走的时候了。",
+      "es": "<LI>Cuando vuelve dice, «Qué alivio,» pero ya es hora de que se vaya.",
+      "fr": "<LI>Quand elle revient, elle dit : « Ça fait du bien, » mais il est temps pour elle de partir.",
+      "tw": "<LI>她回來後說，「舒服多了，」不過也到了該走的時候了。"
     },
     {
       "id": "x02953",
@@ -28110,11 +28172,11 @@
     {
       "id": "x02993",
       "kind": "story",
-      "en": "<LI>Look, you've had your fun. You can tell she wants to 'spend a penny'. Aren't you going to give her a chance?",
-      "cn": "<LI>行了，你也玩得够痛快了。看得出来她急着去“方便一下”，你难道不打算给她这个机会吗？",
-      "es": "<LI>Venga, ya te has divertido bastante. Se nota que necesita «aliviarse». ¿No vas a darle la oportunidad?",
-      "fr": "<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut « se soulager ». Vous n'allez pas lui en donner l'occasion ?",
-      "tw": "<LI>行了，你也玩夠了。看得出她急著去「方便一下」，還不給她這機會嗎？"
+      "en": "<LI>Look, you've had your fun. You can tell she wants to spend a penny. Aren't you going to give her a chance?",
+      "cn": "<LI>行了，你也玩得够痛快了。看得出来她急着去方便一下，你难道不打算给她这个机会吗？",
+      "es": "<LI>Venga, ya te has divertido bastante. Se nota que necesita aliviarse. ¿No vas a darle la oportunidad?",
+      "fr": "<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut se soulager. Vous n'allez pas lui en donner l'occasion ?",
+      "tw": "<LI>行了，你也玩夠了。看得出她急著去方便一下，還不給她這機會嗎？"
     },
     {
       "id": "x02994",
@@ -28240,11 +28302,11 @@
     {
       "id": "x03007",
       "kind": "story",
-      "en": "<LI>Look, you've had your fun. You can tell she wants to 'spend a penny'. Aren't you going to give her a chance?",
-      "cn": "<LI>行了，你也玩得够痛快了。看得出来她急着去“方便一下”，你难道不打算给她这个机会吗？",
-      "es": "<LI>Venga, ya te has divertido bastante. Se nota que necesita «aliviarse». ¿No vas a darle la oportunidad?",
-      "fr": "<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut « se soulager ». Vous n'allez pas lui en donner l'occasion ?",
-      "tw": "<LI>好了，你也玩夠了。你看得出她急著去「方便」，難道不該給她機會嗎？"
+      "en": "<LI>Look, you've had your fun. You can tell she wants to spend a penny. Aren't you going to give her a chance?",
+      "cn": "<LI>行了，你也玩得够痛快了。看得出来她急着去方便一下，你难道不打算给她这个机会吗？",
+      "es": "<LI>Venga, ya te has divertido bastante. Se nota que necesita aliviarse. ¿No vas a darle la oportunidad?",
+      "fr": "<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut se soulager. Vous n'allez pas lui en donner l'occasion ?",
+      "tw": "<LI>好了，你也玩夠了。你看得出她急著去方便，難道不該給她機會嗎？"
     },
     {
       "id": "x03008",
@@ -35015,11 +35077,11 @@
     {
       "id": "x03739",
       "kind": "story",
-      "en": "<LI>DIANE: Goodness no. I just couldn't wait. <EM>she giggles</EM> Lucky I was wearing a dress.",
-      "cn": "<LI>黛安：当然没有。我根本等不了。<EM>她笑起来</EM>幸好那天穿的是裙子。",
-      "es": "<LI>DIANE: Qué va. Es que no podía esperar. <EM>se ríe</EM> Menos mal que llevaba vestido.",
-      "fr": "<LI>DIANE : Oh non, pas du tout. Je ne pouvais vraiment plus attendre. <EM>elle glousse</EM> Heureusement que je portais une robe.",
-      "tw": "<LI>黛安：當然沒有。我完全等不了。（咯咯笑）幸好我穿著洋裝。"
+      "en": "<LI>DIANE: <EM>(giggles)</EM> Goodness no. I just couldn't wait. Lucky I was wearing a dress.",
+      "cn": "<LI>黛安：<EM>（笑）</EM> 当然没有。我根本等不了。幸好那天穿的是裙子。",
+      "es": "<LI>DIANE: <EM>(ríe)</EM> Qué va. Es que no podía esperar. Menos mal que llevaba vestido.",
+      "fr": "<LI>DIANE : <EM>(glousse)</EM> Oh non, pas du tout. Je ne pouvais vraiment plus attendre. Heureusement que je portais une robe.",
+      "tw": "<LI>黛安：<EM>（笑）</EM> 當然沒有。我根本等不了。幸好那天穿的是裙子。"
     },
     {
       "id": "x03740",
@@ -35383,19 +35445,19 @@
       "id": "x03779",
       "kind": "story",
       "en": "<P><LI><B>You've taken Diane out on a date, managed to get her really desperate on the way home.",
-      "cn": "<P><LI><B>你带黛安出去约会，还在回家的路上把她弄得尿急难耐。",
+      "cn": "<P><LI><B>你带黛安出去约会，还在回家的路上把她搞得尿急难耐。",
       "es": "<P><LI><B>Has llevado a Diane a una cita y has conseguido que esté a punto de hacerse pis de camino a casa.",
       "fr": "<P><LI><B>Vous avez emmené Diane en rendez-vous et vous avez réussi à la mettre dans une envie pressante terrible sur le chemin du retour.",
-      "tw": "<P><LI><B>你帶黛安出去約會，還在回家的路上把她弄得尿急難耐。"
+      "tw": "<P><LI><B>你帶黛安出去約會，還在回家的路上把她搞得尿急難耐。"
     },
     {
       "id": "x03780",
       "kind": "story",
       "en": "<P><LI><B>So desperate that she's had to take an emergency squat, which you were able to watch.",
-      "cn": "<P><LI><B>憋到她不得不在外面紧急蹲下来撒尿——还被你看了个正着。",
+      "cn": "<P><LI><B>憋到她急得随地小便，还被你看了个正着。",
       "es": "<P><LI><B>Tantas ganas tenía que ha tenido que agacharse de urgencia, y tú has podido mirarlo todo.",
       "fr": "<P><LI><B>Tellement pressée qu'elle a dû s'accroupir en urgence, et vous avez pu regarder.",
-      "tw": "<P><LI><B>她憋得不得不在外面緊急蹲下尿尿，而你看了個正著。"
+      "tw": "<P><LI><B>憋到她急得就地解決，還被你看了個正著。"
     },
     {
       "id": "x03781",
@@ -42655,11 +42717,20 @@
     {
       "id": "x04550",
       "kind": "story",
-      "en": "<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds. Then—",
-      "cn": "<LI>你转过身去。你屏住呼吸，心跳得很快。你等了十五秒，也许二十秒。然后——",
-      "es": "<LI>Te giras. Contienes la respiración. El corazón te late con fuerza. Esperas 15, quizá 20 segundos. Y entonces...",
-      "fr": "<LI>Vous vous détournez. Vous retenez votre souffle. Votre cœur bat à tout rompre. Vous attendez 15, peut-être 20 secondes. Et puis —",
-      "tw": "<LI>你轉過身去。你屏住呼吸，心跳得很快。你等了十五秒，說不定二十秒。然後——"
+      "en": "<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds.",
+      "cn": "<LI>你转过身去。你屏住呼吸，心跳得很快。你等了十五秒，也许二十秒。",
+      "es": "<LI>Te giras. Contienes la respiración. El corazón te late con fuerza. Esperas 15, quizá 20 segundos.",
+      "fr": "<LI>Vous vous détournez. Vous retenez votre souffle. Votre cœur bat à tout rompre. Vous attendez 15, peut-être 20 secondes.",
+      "tw": "<LI>你轉過身去。你屏住呼吸，心跳得很快。你等了十五秒，說不定二十秒。"
+    },
+    {
+      "id": "x04550a",
+      "kind": "story",
+      "en": "<LI>Then—",
+      "cn": "<LI>然后——",
+      "es": "<LI>Y entonces—",
+      "fr": "<LI>Puis—",
+      "tw": "<LI>然後——"
     },
     {
       "id": "x04551",
@@ -46004,65 +46075,56 @@
     {
       "id": "x04915",
       "kind": "story",
-      "en": "<STRONG>CONGRATULATIONS!",
-      "cn": "<STRONG>恭喜你！",
-      "es": "<STRONG>¡ENHORABUENA!",
-      "fr": "<STRONG>FÉLICITATIONS !",
-      "tw": "<STRONG>恭喜你！"
+      "en": "<LI><B>CONGRATULATIONS!</B>",
+      "cn": "<LI><B>恭喜你！</B>",
+      "es": "<LI><B>¡ENHORABUENA!</B>",
+      "fr": "<LI><B>FÉLICITATIONS !</B>",
+      "tw": "<LI><B>恭喜你！</B>"
     },
     {
       "id": "x04916",
       "kind": "story",
-      "en": "<LI>You have struck gold. You have won First Prize!</STRONG>",
-      "cn": "<LI>你这次真的撞大运了。你获得了一等奖！</STRONG>",
-      "es": "<LI>Lo has conseguido. ¡Has ganado el primer premio!</STRONG>",
-      "fr": "<LI>Vous avez décroché le jackpot. Vous avez remporté le premier prix !</STRONG>",
-      "tw": "<LI>你這次真的撞大運了。你獲得了一等獎！</STRONG>"
+      "en": "<P><LI><B>You have struck gold.",
+      "cn": "<P><LI><B>你这次真的撞大运了。",
+      "es": "<P><LI><B>Lo has conseguido.",
+      "fr": "<P><LI><B>Vous avez décroché le jackpot.",
+      "tw": "<P><LI><B>你這次真的撞大運了。"
     },
     {
       "id": "x04917",
       "kind": "story",
-      "en": "<LI>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.",
-      "cn": "<LI>你成功地让她憋尿憋到极限，以至于在走回家的路上她实在忍不住，彻底尿湿了自己。",
-      "es": "<LI>Has conseguido que tuviera tantas ganas de hacer pis que, durante el camino a casa, no pudo aguantar más y se lo ha hecho encima del todo.",
-      "fr": "<LI>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle n'a pas pu se retenir et s'est complètement fait pipi dessus.",
-      "tw": "<LI>你成功地讓她忍尿憋到極限，以至於在走回家的路上她實在忍不住，徹底尿濕了自己。"
+      "en": "<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.",
+      "cn": "<P><LI><B>你成功地让她憋尿憋到极限，以至于在走回家的路上她实在忍不住，彻底尿湿了自己。",
+      "es": "<P><LI><B>Has conseguido que tuviera tantas ganas de hacer pis que, durante el camino a casa, no pudo aguantar más y se lo ha hecho encima del todo.",
+      "fr": "<P><LI><B>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle n'a pas pu se retenir et s'est complètement fait pipi dessus.",
+      "tw": "<P><LI><B>你成功地讓她忍尿憋到極限，以至於在走回家的路上她實在忍不住，徹底尿濕了自己。"
     },
     {
       "id": "x04918",
       "kind": "story",
-      "en": "<LI>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.",
-      "cn": "<LI>你成功地让她憋尿憋到极限，在走回家的路上她已经开始尿湿自己了。尽管她设法拨开了内裤，你也清楚那条内裤早已湿透。",
-      "es": "<LI>Has conseguido que tuviera tantas ganas de hacer pis que, durante el camino a casa, ha empezado a mearse encima. Aunque logró apartarse las bragas a tiempo, sabes que ya están completamente empapadas.",
-      "fr": "<LI>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle a commencé à se mouiller. Même si elle a réussi à écarter sa culotte sur le côté, vous savez qu'elle est déjà trempée.",
-      "tw": "<LI>你成功地讓她忍尿憋到極限，在走回家的路上她已經開始尿濕自己了。儘管她設法撥開了內褲，你也清楚那條內褲早已濕透。"
+      "en": "<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.",
+      "cn": "<P><LI><B>你成功地让她憋尿憋到极限，在走回家的路上她已经开始尿湿自己了。尽管她设法拨开了内裤，你也清楚那条内裤早已湿透。",
+      "es": "<P><LI><B>Has conseguido que tuviera tantas ganas de hacer pis que, durante el camino a casa, ha empezado a mearse encima. Aunque logró apartarse las bragas a tiempo, sabes que ya están completamente empapadas.",
+      "fr": "<P><LI><B>Vous avez réussi à lui donner une envie si pressante de faire pipi que, sur le chemin du retour, elle a commencé à se mouiller. Même si elle a réussi à écarter sa culotte sur le côté, vous savez qu'elle est déjà trempée.",
+      "tw": "<P><LI><B>你成功地讓她忍尿憋到極限，在走回家的路上她已經開始尿濕自己了。儘管她設法撥開了內褲，你也清楚那條內褲早已濕透。"
     },
     {
       "id": "x04919",
       "kind": "story",
-      "en": "<LI>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!",
-      "cn": "<LI>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进她家！",
-      "es": "<LI>Pero ella no está enfadada contigo. De hecho, esto os ha acercado más, ¡y te ha invitado a entrar!",
-      "fr": "<LI>Mais elle ne vous en veut pas. Au contraire, ça vous a rapprochés, et elle vous a invité à entrer !",
-      "tw": "<LI>但她並沒有生你的氣。事實上，這反而讓你們更親近了，她還邀請你進她家！"
+      "en": "<P><LI><B>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!",
+      "cn": "<P><LI><B>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进她家！",
+      "es": "<P><LI><B>Pero ella no está enfadada contigo. De hecho, esto os ha acercado más, ¡y te ha invitado a entrar!",
+      "fr": "<P><LI><B>Mais elle ne vous en veut pas. Au contraire, ça vous a rapprochés, et elle vous a invité à entrer !",
+      "tw": "<P><LI><B>但她並沒有生你的氣。事實上，這反而讓你們更親近了，她還邀請你進她家！"
     },
     {
       "id": "x04920",
       "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>",
-      "tw": "<HR>"
-    },
-    {
-      "id": "x04921",
-      "kind": "story",
-      "en": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>TRULY, YOU HAVE WON FIRST PRIZE!</SPAN></div></STRONG></H1>",
-      "cn": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>你真的获得了一等奖！</SPAN></div></STRONG></H1>",
-      "es": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>¡VERDADERAMENTE, HAS GANADO EL PRIMER PREMIO!</SPAN></div></STRONG></H1>",
-      "fr": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX !</SPAN></div></STRONG></H1>",
-      "tw": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>你真的獲得了一等獎！</SPAN></div></STRONG></H1>"
+      "en": "<P><LI><B>TRULY, YOU HAVE WON FIRST PRIZE!",
+      "cn": "<P><LI><B>你真的获得了一等奖！",
+      "es": "<P><LI><B>¡DE VERDAD HAS GANADO EL PRIMER PREMIO!",
+      "fr": "<P><LI><B>VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX !",
+      "tw": "<P><LI><B>你真的獲得了一等獎！"
     },
     {
       "id": "x04922",

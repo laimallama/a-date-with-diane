@@ -20,8 +20,6 @@ YOU: I'd like to see you as soon as possible! So tomorrow, Tuesday, please!
 
 DIANE: That's nice. I'll look forward to it.
 
-You gained 5 intimacy points.
-
 (On with the story!)
 
 You're meeting Diane at 6.15. You're taking her to a play, but you've agreed to meet beforehand at an Italian restaurant that's part of the theatre.
@@ -860,7 +858,9 @@ So what are you going to do?
 
 You can tell she's terribly embarrassed. You put an arm round her waist, drawing her towards you. You give her a kiss.
 
-Then you turn to the others and call out to them. We'll catch you up in a minute. The others look back and wave acknowledgement.
+Then you turn to the others and call out to them: "We'll catch you up in a minute."
+
+The others look back and wave acknowledgement.
 
 YOU: See, they just think we're going for a cuddle. Just hold on a minute.
 

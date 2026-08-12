@@ -158,7 +158,12 @@ const languages = {
 
 function loadRoutes() {
   const source = fs.readFileSync(GUIDE_SOURCE, "utf8");
+  // Stop before guide capture/write side effects — gallery only needs route arrays.
+  const cut = source.search(/\nconst enData = buildCaptures/);
+  const trimmed = cut >= 0 ? source.slice(0, cut) : source;
   const localRequire = mod.createRequire(GUIDE_SOURCE);
+  const savedArgv = process.argv;
+  process.argv = [savedArgv[0], GUIDE_SOURCE];
   const context = {
     console: { log() {}, error: console.error },
     require: localRequire,
@@ -170,7 +175,15 @@ function loadRoutes() {
   context.global = context;
   context.globalThis = context;
   vm.createContext(context);
-  vm.runInContext(`${source}\nglobalThis.__routes = routes;`, context, { filename: GUIDE_SOURCE });
+  try {
+    vm.runInContext(
+      `${trimmed}\nglobalThis.__routes = (typeof galleryRoutes !== "undefined" ? galleryRoutes : routes);`,
+      context,
+      { filename: GUIDE_SOURCE }
+    );
+  } finally {
+    process.argv = savedArgv;
+  }
   return context.__routes;
 }
 

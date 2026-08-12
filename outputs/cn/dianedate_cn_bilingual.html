@@ -32,15 +32,15 @@
   --ink: #ede3d3;
   --muted: #a4917c;
   --line: #3c2f26;
-  --accent: #b5475a;
-  --accent-dark: #e2919d;
-  --accent-strong: #8a3040;
+  --accent: #d45468;
+  --accent-dark: #f2b6c0;
+  --accent-strong: #b33d52;
   --choice: #2b241e;
   --choice-hover: #3a2f26;
   --status: #241e18;
   --hover-border: #c9a06e;
   --highlight-bg: #3a1f26;
-  --em-color: #c9a3ae;
+  --em-color: #e0b4bf;
   --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
   --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
   --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
@@ -105,15 +105,36 @@ a:hover { color: var(--accent); }
 }
 
 #box p.notice {
-  margin: 1.15rem 0 1.2rem;
+  margin: 0 0 1em;
+}
+
+/* Mid-page points notices: same rhythm as story paragraphs */
+#box p:has(+ p.notice) {
+  margin-bottom: 1em;
 }
 
 #box p.ending-congrats {
-  margin: .25rem 0 .85rem;
+  margin: .25rem 0 1em;
   color: var(--accent-dark);
   font-size: clamp(1.25rem, 3vw, 1.65rem);
   line-height: 1.25;
 }
+
+#box p.note-lead {
+  margin: 0 0 .35em;
+  line-height: 1.45;
+}
+
+#box p.note-keys {
+  margin: 0 0 .35em;
+  line-height: 1.45;
+}
+
+/* Last line of a tight cluster → normal section gap after it */
+#box p.note-cluster-end {
+  margin-bottom: 1em;
+}
+
 
 #box p.venue-note {
   margin: .35rem 0 .4rem;
@@ -288,6 +309,25 @@ a:hover { color: var(--accent); }
   border-color: var(--line);
 }
 .guide-toggle-button:hover {
+  background: var(--choice-hover);
+  border-color: var(--accent-dark);
+}
+
+.climax-skip-button {
+  width: auto;
+  min-width: 140px;
+  padding: 11px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-family: var(--ui-font);
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background: var(--choice);
+  color: var(--accent-dark);
+}
+
+.climax-skip-button:hover {
   background: var(--choice-hover);
   border-color: var(--accent-dark);
 }
@@ -557,12 +597,29 @@ body.lang-en .lang-alt {
   background: var(--choice-hover);
   color: var(--accent-dark);
 }
+.gallery-group-toggle::after {
+  content: " ▸";
+  float: right;
+  opacity: .55;
+}
+.gallery-group-toggle.gallery-group-open::after {
+  content: " ▾";
+}
+.gallery-variants {
+  margin: 0 0 6px 10px;
+  padding-left: 10px;
+  border-left: 2px solid var(--line);
+}
+.gallery-variant {
+  font-size: .9rem;
+}
 
 /* Matched control sizing only (colors stay as each button already defines) */
 .gallery-button,
 .language-toggle,
 .back-button,
 .guide-toggle-button,
+.climax-skip-button,
 .theme-toggle-button {
   box-sizing: border-box;
   min-height: 44px;
@@ -576,23 +633,31 @@ body.lang-en .lang-alt {
 <script>
 
 var alternateTranslations = {
+  "<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.": "<LI>此外还有几个安慰奖结局，你甚至有机会和阿曼达约会。",
+  "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.": "<LI><strong>膀胱</strong>仪表显示黛安憋了多少。她<strong>肚子</strong>里的水分会随着时间慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
+  "<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.": "<LI>别指望第一次约会就能和她上床，但如果你应对得当，也许还能尝到点乐子。永远别忘了：女人总是让人捉摸不透。",
+  "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.": "<LI>随着夜晚推进，你的<strong>亲密度</strong>通常会逐渐上升，也会自然影响你能做哪些事。有些场景还会用到<strong>害羞值</strong>；你回到家时这个数值的得失也会影响后续事件。有时高一点更有利，有时反而低一点更有利，所以它更像一张百搭牌。",
+  "<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.": "<LI>开局你有<strong>£100</strong>。留意你的钱。晚上结束时你可能需要留一些打车回家。",
+  "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>": "<p class='note-lead'>左上角还有个剧情图鉴，里面有通往奖励结局、安慰奖结局以及各种隐藏场景的引导路线。卡住了可以用，单纯想逛逛也行。有些行是下拉菜单：先点开，再选你要的变体。在手机或平板上请用屏幕上的按钮；在电脑上还可以用下面这些快捷键。</p>",
+  "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>": "<p class='note-keys'><strong>G</strong>键打开剧情图鉴（<strong>Esc</strong>键关闭）。</p>",
+  "<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>": "<p class='note-keys note-cluster-end'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>",
+  "<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>": "<p class='note-keys'><strong>数字键</strong>用来选择选项。</p>",
+  "<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>": "<p class='note-keys note-cluster-end'><strong>Enter</strong>键可选择高亮的引导选项，但只有在引导开启时才有效。按住<strong>Enter</strong>键可快进引导选项；松开即停。</p>",
+  "<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>": "<p class='note-lead'>若后悔某个选择，随时可以按“返回”按钮回到上一页；它会把一切都恢复——数值、选项，统统还原。引导模式里同样有效。</p>",
+  "<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the 'Back' button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>": "<p class='note-keys note-cluster-end'><strong>B</strong>键的效果和“返回”按钮一样。按住<strong>B</strong>键可快速倒退；松开即停。</p>",
+  "<p class='note-lead'>While following an ending Guide, press the 'Skip to the good bit!' button (or press <strong>S</strong>) to jump ahead to the climax. Going 'Back' can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>": "<p class='note-lead'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到高潮。用“返回”可以倒退过那个节点，但跳过按钮不会再出现，除非你从图鉴重新开始一条结局。</p>",
+  "<p class='note-keys note-cluster-end'>Turning the Guide off also removes the skip button and stops fast-forward. You can turn the Guide back on if you're still on the path; if you choose differently and leave the path, the Guide drops out, unless you go 'Back' to a point where you were still on track.</p>": "<p class='note-keys note-cluster-end'>关闭引导也会去掉跳过按钮并停止快进。若你仍在路线上，可以再打开引导；若选了别的选项偏离路线，引导就会退出，除非你“返回”到仍在路线上的节点。</p>",
+  "<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She has a lacy white bra, white panties, no slip and bare legs.": "<LI>周六：黛安穿着一条轻便的黑白图案连衣裙，有些像夏装，带口袋，还配了一条皮腰带。内搭白色蕾丝胸罩和白色内裤，没有衬裙，光着腿。",
+  "<LI>Molly and Amanda wear jeans.": "<LI>莫莉和阿曼达都穿牛仔裤。",
+  "<LI>Debbie wears a mini skirt.": "<LI>黛比穿着超短裙。",
   "Sorry, you must be 18 or over to play this game.": "抱歉，您必须年满18岁才能游玩此游戏。",
   "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>A Date with Diane</SPAN></div></STRONG></H1>": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>与黛安约会</SPAN></div></STRONG></H1>",
   "<LI>The goal of the game is to get your girlfriend desperate on a date. It is not guaranteed! Along the way you may have other pleasures: see her take a pee, even go into the loo with her, have her tell you about a desperation experience, spot another desperate girl, etc. It's that simple. Intimacy points indicate how much she's into you, and she might abandon the date if they sink too low. She will also abandon the date if she wets herself in public—and will probably never see you again, so you mustn't let that happen.": "<LI>这个游戏的目标是让你的女朋友在约会时憋到尿急难耐。不过，这可不一定能成！一路上你还可能碰上别的刺激场面：偷看她撒尿，甚至陪她进厕所，听她讲自己憋尿的经历，或者撞见另一个憋得快不行的女孩子，等等。规则很简单，“亲密度”代表她有多喜欢你。如果亲密度降得太低，她可能会直接结束约会。如果她当众尿湿自己，她也会立刻走人——而且很可能再也不想见你了，所以千万别让事情失控到那一步。",
   "<STRONG>A few notes about the game</STRONG>": "<STRONG>关于游戏的几点说明</STRONG>",
-  "<LI>There are five different successful endings, or 'winning results', rated in order. See if you can get them all!": "<LI>共有五种不同的成功结局，会按奖励等级排列。看看你能不能全部达成！",
-  "<LI>There are also a few compensation endings—and you might even be able to win a date with Amanda.": "<LI>此外还有几个安慰奖结局——你甚至有机会和阿曼达约会。",
-  "<LI>The bladder meter says how much Diane's holding... what's in her tummy slowly flows to her bladder as time passes. Also, you get 3 luckshots that you should use WISELY when offered, and remember, they can bring BAD luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.": "<LI>膀胱仪表显示黛安现在憋了多少尿……她腹中的水分会随着时间慢慢进入膀胱。另外，你有3次幸运机会。每次机会出现时，都要想清楚再用。别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，之后最多只能再用一次。",
-  "<LI>Don't expect to sleep with her on this first date—but you might get some fun if you play your cards right. And never forget: women are funny creatures.": "<LI>别指望第一次约会就能和她上床——但如果你处理得当，也许还能享受到别样的乐趣。永远别忘了：女人总是让人捉摸不透。",
-  "<LI>As the evening progresses, your Intimacy points should rise, and they naturally affect what you can do. In some scenes, Shyness points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.": "<LI>随着夜晚推进，亲密度通常会逐渐上升，也会影响你能做哪些事。有些剧情还会用到“害羞值”。你回到家时这个数值是多少，也会影响后续发展。有时高一点更有利，有时反而低一点更有利，所以它更像一张百搭牌。",
-  "<LI>Keep an eye on your money. You might want some for a taxi home at the end of the evening.": "<LI>注意你的钱。晚上结束时你可能需要留一些打车回家。",
-  "<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.": "<LI>游戏里有不少分支，建议完整多玩几遍。周二和周四还可以选择短版流程，直接跳过前面的部分。",
-  "<LI>There's a Gallery feature as well, on the top left, with guided walks through to the various endings and a few hidden scenes. Handy if you get stuck, or just fancy a look around. A few keys worth knowing: G opens the Gallery (Esc closes it), H turns the Guide on or off once you've started one, B goes Back, and the number keys pick your choices. Enter follows the highlighted Guide choice, but only while the Guide is on.": "<LI>另外还有个剧情图鉴，在左上角，里面有通往各结局和若干隐藏场景的引导路线。卡住了可以看看，想自己逛逛也行。几个好用的快捷键：按G可以打开图鉴（按Esc关闭）；进入引导后，按H可开关引导提示；按B返回上一步；数字键则可用来选相应的选项。Enter键会跟着重亮的引导选项走，不过只有在引导开启时才管用。",
-  "<LI>B takes you back a page and restores everything to how it was: stats, choices, the lot. That works in Guide mode too. You can switch the Guide off with H and turn it back on if you're still following the path; if you choose differently and leave the path, the Guide drops out, unless you go Back to a point where you were still on track.": "<LI>按B会回到上一页，并把当时的所有状态一并恢复。引导模式里也可以回退。引导可以关掉；若你仍按引导路线走，还可以再打开。但若选了别的选项走偏了，引导就会消失，除非再退回到之前还在路线上的节点。",
+  "<LI>There are five different successful endings, or 'winning results', rated in order. See if you can get them all!": "<LI>共有五种不同的成功结局，也就是按等级排列的“获胜成果”。看看你能不能全部达成！",
+  "<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.": "<LI>游戏里有不少分支，建议完整多玩几遍。但周二和周四也会提供较短的版本。",
   "<LI>TUESDAY: Diane wears a knee-length red polka-dot skirt, with a belt, stockings, a white blouse and a little red jacket. She has a slip, stockings, white suspenders, pink panties with blue polka dots at front.": "<LI>周二：黛安穿着一条及膝的红色波点裙，配腰带、长筒袜、白色衬衫和一件小红外套。内搭衬裙、长筒袜、白色吊袜带，以及前面带蓝色波点的粉色内裤。",
   "<LI>THURSDAY: Diane wears a smart black pleated skirt, with a black blouse and a red jacket. She has a slip, tights and sky blue panties.": "<LI>周四：黛安穿着一条利落的黑色百褶裙，搭配黑色衬衫和红色外套。内搭衬裙、连裤袜和天蓝色内裤。",
-  "<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She has a lacy white bra, white panties, no slip and bare legs.": "<LI>周六：黛安穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条仿皮腰带。内搭白色蕾丝胸罩和白色内裤，没有衬裙，光着腿。",
-  "<LI><SPAN style='color: #ff0000'>Molly wears jeans and white panties.</SPAN>": "<LI><SPAN style='color: #ff0000'>莫莉穿着牛仔裤和白色内裤。</SPAN>",
   "<LI>Chloe wears a short tartan skirt and black tights.": "<LI>克洛伊穿着一条短款格纹裙，配黑色连裤袜。",
   "<LI>You met Diane by chance when you both missed the bus, and shared a taxi home. She agreed to come out with you one evening.": "<LI>你和黛安是偶然认识的——你们都错过了公车，于是合乘出租车回家。她答应改天晚上和你一起出去。",
   "<LI>You telephoned her and she said she would really like to see the play <EM>Outside Edge</EM>. But you've seen it already! Before you could suggest something else, she mentioned that one of her friends was appearing in it and she had been meaning to see it while it was still on, and this was the last chance.": "<LI>你打电话给她，她说很想去看一部叫《外缘》的话剧。但你已经看过了！还没等你提出别的安排，她就说有个朋友在里面演出，她一直想在停演前去看一次，再拖就赶不上了。",
@@ -615,7 +680,7 @@ var alternateTranslations = {
   "<LI>You might need to be a little careful with your money.": "<LI>你可能需要稍微节省一点。",
   "<LI>You're meeting her at the theatre.": "<LI>你要在剧院门口等她。",
   "<LI>It's a lovely warm day with the sun streaming onto the theatre. You look at one or two posters while you wait. Then you hear her call your name. She is already in the foyer and is walking towards you, smiling. From the direction she's coming from it's obvious she's just been to the Ladies.": "<LI>这是个暖洋洋的晴天，阳光洒在剧院外墙上。你等她时看了几张海报。然后听到她叫你的名字。她已经进了门厅，正笑着朝你走来。从她走来的方向看，她显然刚去过女厕所。",
-  "<LI>She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She looks super.": "<LI>她穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条仿皮腰带。她看起来美极了。",
+  "<LI>She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She looks super.": "<LI>她穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条皮腰带。她看起来美极了。",
   "<LI>DIANE: Hello! I got here a bit early so that I could have a drink with my friend who's acting in the play. She's just gone off to get ready.": "<LI>黛安：你好！我来得早了一点，这样可以先跟在剧里演出的朋友喝一杯。她刚去准备了。",
   "<LI>You go into the foyer, and look at one or two posters. It's a little bit gloomy as the sun has gone behind the clouds. You don't have to wait long before you see her walking along the street. She comes into the foyer and smiles when she sees you.": "<LI>你走进门厅，看了几张海报。太阳躲进云层，天有点阴。没等多久，你就看见她沿着街道走来。她走进门厅，看到你时笑了。",
   "<LI>She's wearing a knee-length red polka-dot skirt, with a belt, tights, a white blouse and a little red jacket. She looks great.": "<LI>她穿着一条及膝的红色波点裙，配腰带、连裤袜、白色衬衫和一件小红外套。她看起来棒极了。",
@@ -782,7 +847,7 @@ var alternateTranslations = {
   "<LI>YOU: Yes, but only because I knew I'd be drinking some wine. I really enjoy driving.": "<LI>你：是的，因为知道今晚要喝酒。我其实很喜欢开车。",
   "<LI>DIANE: Oh.": "<LI>黛安：哦。",
   "<LI>YOU: Yes. I really love cars. I've just bought a new BMW coupe. I bought it secondhand but it's a model I've really been looking out for and I got it at a tremendous price. You'll have to come out for a ride in it one day": "<LI>你：是啊，我超爱车。我刚买了一辆宝马双门轿跑。买的是二手的，但这款车我心仪已久，这次价格也非常划算。改天你一定要来坐坐。",
-  "<LI>DIANE: Oh, I don't think that's my sort of thing. I think they're such a waste of money—after all, four wheels are four wheels, aren't they, and just think of the global warming they cause. I had a boyfriend once who was just obsessed with cars, just wanted to drive around all day. I've never been so bored in my life.": "<LI>黛安：哦，那不太合我的口味。我觉得买车简直是在浪费钱——毕竟，四个轮子就是四个轮子，对吧，而且想想它们造成的全球变暖。我以前有个男朋友就痴迷于汽车，整天只想开车兜风。那是我这辈子最无聊的时光。",
+  "<LI>DIANE: Oh, I don't think that's my sort of thing. I think they're such a waste of money. After all, four wheels are four wheels, aren't they? And just think of the global warming they cause! I had a boyfriend once who was just obsessed with cars, just wanted to drive around all day. I've never been so bored in my life.": "<LI>黛安：哦，那不太合我的口味。我觉得买车简直是在浪费钱。毕竟，四个轮子就是四个轮子，对吧？而且想想它们造成的全球变暖！我以前有个男朋友就痴迷于汽车，整天只想开车兜风。那是我这辈子最无聊的时光。",
   "<LI>YOU: But they are useful—": "<LI>你：但车还是很实用的——",
   "<LI>DIANE: He didn't even want to go anywhere special. You'd go flying down one motorway, then another, then another. He'd rabbit on about this A-road and that B-road, and about how many miles he got to the gallon. And he never, ever wanted to stop, not even if you were bursting for the toilet. It put me off cars for life.": "<LI>黛安：他根本不想去什么特别的地方。就这条高速飞驰过去，再换另一条，再换另一条。他一路喋喋不休地讲这条A级公路、那条B级公路，说每加仑能跑多少英里。哪怕你急着上厕所、快憋疯了，他也永远不想停车。那次经历让我对汽车彻底死心了。",
   "<LI>DIANE: What do you do with your time off?": "<LI>黛安：那你平时空闲时间都做什么？",
@@ -2359,9 +2424,9 @@ var alternateTranslations = {
   "<LI>YOU: Have you ever waited too long for the loo, I mean, got really desperate?": "<LI>你：你有没有等厕所等太久，憋到尿急难忍那种？",
   "<LI>DIANE: Sometimes. I suppose everyone has. Actually—": "<LI>黛安：有过。我想大家都有吧。其实——",
   "<LI>YOU: Go on?": "<LI>你：然后呢？",
-  "<LI>DIANE: It was pretty bad after a party last week. Three us had to leave at about midnight and our car broke down.": "<LI>黛安：上周参加完派对之后就挺惨的。我们三个人午夜左右得离开，结果车抛锚了。",
+  "<LI>DIANE: It was pretty bad after a party last week. Three of us had to leave at about midnight and our car broke down.": "<LI>黛安：上周参加完派对之后就挺惨的。我们三个人午夜左右得离开，结果车抛锚了。",
   "<LI>YOU: Yes, you said. You had to wait for your mum to fetch you.": "<LI>你：对，你说过。你得等你妈妈来接你们。",
-  "<LI>DIANE: <EM>(considering)</EM>If I tell you will you let me go to the loo?": "<LI>黛安：<EM>（考虑了一下）</EM> 如果我说了，你能让我去厕所吗？",
+  "<LI>DIANE: <EM>(considering)</EM> If I tell you, will you let me go to the loo?": "<LI>黛安：<EM>（考虑了一下）</EM> 如果我说了，你能让我去厕所吗？",
   "<LI>DIANE: The car broke down. We were miles from anywhere and it was almost midnight.": "<LI>黛安：车抛锚了。我们离最近的地方也有好几英里，而且快午夜了。",
   "<LI>YOU: What, out in the country?": "<LI>你：什么，在乡下？",
   "<LI>DIANE: No, in some godawful suburb, on the edge of a dual carriageway. The country would have been easier, for obvious reasons. Anyway, I phoned my mum and she said she'd come and fetch us; it would be half an hour or so. But of course, we'd all been drinking—me, Jenny and Linda. Except Jenny's dad, of course, who was driving. He was going to have to wait with the car until the RAC came out.": "<LI>黛安：不，在一个破郊区，双向车道旁边。要是在乡下反而好办，你懂的。反正，我打电话给我妈，她说她来接我们，大概要半小时左右。但我们当然都喝了酒——我、珍妮和琳达。当然珍妮她爸除外，他是司机。他得留下来陪着车等道路救援人员。",
@@ -2523,7 +2588,7 @@ var alternateTranslations = {
   "<LI>YOU: Diane, d'you mind if I just pop to the loo a sec?": "<LI>你：黛安，我能去一下厕所吗，就一小会儿。",
   "<LI>DIANE: Sure. I might go myself, actually, when you get back.": "<LI>黛安：当然。其实等你回来，我可能也要去一趟。",
   "<LI>You go to the bathroom and have a pee. When you come back downstairs Diane stands up, gives you a little grin, and heads upstairs.": "<LI>你去浴室上完厕所。回到楼下，黛安站起来，对你微微一笑，转身上楼去了。",
-  "<LI>When she comes back she says, 'That feels better' but it is time for her to go.": "<LI>她回来后说“舒服多了”，不过也到了该走的时候了。",
+  "<LI>When she comes back she says, 'That feels better,' but it is time for her to go.": "<LI>她回来后说，“舒服多了，”不过也到了该走的时候了。",
   "<LI>You show her your stamps from Finland. And then those from Fiji. You explain which is rare and why you got them.": "<LI>你拿出芬兰的邮票给她看，然后是斐济的。你解释哪些是珍品，以及你当初怎么收到手的。",
   "<LI>She leans over to look more closely. You can see right down her blouse.": "<LI>她俯身凑近细看，你恰好能看进她衬衫领口里面。",
   "<LI>You show her the stamps for Gibraltar. There are quite a few as this is a speciality of yours.": "<LI>你给她展示直布罗陀的邮票，数量相当可观——这是你特别在行的收藏。",
@@ -2539,7 +2604,7 @@ var alternateTranslations = {
   "<LI>Her skirt rides up revealing lots of lovely leg.": "<LI>她的裙子往上滑，露出大截好看的腿。",
   "<LI>Suddenly she sits forward and looks around.": "<LI>她突然坐直了身子，四处张望。",
   "<LI>DIANE: <EM>(in a whisper)</EM> Where's the bathroom?": "<LI>黛安：<EM>（压低声音）</EM> 洗手间在哪儿？",
-  "<LI>Look, you've had your fun. You can tell she wants to 'spend a penny'. Aren't you going to give her a chance?": "<LI>行了，你也玩得够痛快了。看得出来她急着去“方便一下”，你难道不打算给她这个机会吗？",
+  "<LI>Look, you've had your fun. You can tell she wants to spend a penny. Aren't you going to give her a chance?": "<LI>行了，你也玩得够痛快了。看得出来她急着去方便一下，你难道不打算给她这个机会吗？",
   "<LI>Her skirt has ridden up even more and you can see lots of frilly slip and a bit of stocking top.": "<LI>她的裙子滑得更高了，荷叶边衬裙大片外露，还能看到一截丝袜顶端。",
   "<LI><SPAN style='color: #00ff00'> She smiles but changes position again, so she is sitting more upright.</SPAN>": "<LI><SPAN style='color: #00ff00'> 她微微一笑，却又换了个姿势，坐得更挺了。</SPAN>",
   "<LI>You show her your stamps from Iceland, Iran and Italy. You explain which is rare and why you got them.": "<LI>你给她展示冰岛、伊朗和意大利的邮票，解释哪些是珍品，以及你当初怎么收到手的。",
@@ -3004,9 +3069,6 @@ var alternateTranslations = {
   "<LI>DIANE: Thank goodness you couldn't. It's lucky we have a downstairs loo or there really would have been disaster. See you next week.": "<LI>黛安：幸好你没看见。多亏家里楼下有个厕所，不然真的要出大事了。下周见。",
   "<LI>DIANE: Oh, it got worse. Honestly, I was so bad I thought I was going to wet myself on the doorstep with you watching, so I dashed round the back. I couldn't wait.": "<LI>黛安：哦，后来还更糟呢。说真的，我当时憋得太厉害了，都觉得自己要在门口当着你的面尿出来，所以才赶紧跑到后面去。真的等不了了。",
   "<LI>YOU: Couldn't wait? Didn't you go in the back door?": "<LI>你：等不了？那你没从后门进去吗？",
-  "<LI>DIANE: Goodness no. I just couldn't wait.": "<LI>黛安：当然没有。我根本等不了。",
-  "<LI>She giggles.": "<LI>她笑起来。",
-  "<LI>DIANE: Lucky I was wearing a dress.": "<LI>黛安：幸好那天穿的是裙子。",
   "<LI>YOU: You mean you—": "<LI>你：你的意思是——",
   "<LI>DIANE: I just stood and did it.": "<LI>黛安：我就站在那里尿了。",
   "<LI>DIANE: I wet my knickers. It's no big deal, is it? It was dark, no one could see me, you couldn't see me. And I'd been wanting to go for ages. It's not the first time it's happened at the end of a night. As long as no one sees you there's no harm done. Anyway, I must dash. See you next week.": "<LI>黛安：我尿湿了内裤。没什么大不了的，对吧？天那么黑，没人看见我，你也没看见。而且我已经憋了好久了。这种事以前晚上回家时也发生过。只要没人看见，也没什么损失嘛。好了，我得走了。下周见。",
@@ -3037,8 +3099,8 @@ var alternateTranslations = {
   "<LI>Diane grins at you as she takes her bag. Then she puts her arms around you.": "<LI>黛安接过包，朝你咧嘴一笑。然后她伸手搂住你。",
   "<LI>'Phew!' she says. 'I didn't half need that. But you are a rotter—you said you wouldn't watch.'": "<LI>“呼！”她说，“真是憋坏了。你这坏蛋——你说好了不看的。”",
   "<LI>But she is smiling at you.": "<LI>但她是笑着说的。",
-  "<P><LI><B>You've taken Diane out on a date, managed to get her really desperate on the way home.": "<P><LI><B>你带黛安出去约会，还在回家的路上把她弄得尿急难耐。",
-  "<P><LI><B>So desperate that she's had to take an emergency squat, which you were able to watch.": "<P><LI><B>憋到她不得不在外面紧急蹲下来撒尿——还被你看了个正着。",
+  "<P><LI><B>You've taken Diane out on a date, managed to get her really desperate on the way home.": "<P><LI><B>你带黛安出去约会，还在回家的路上把她搞得尿急难耐。",
+  "<P><LI><B>So desperate that she's had to take an emergency squat, which you were able to watch.": "<P><LI><B>憋到她急得随地小便，还被你看了个正着。",
   "<P><LI><B>YOU HAVE WON 4TH PRIZE!": "<P><LI><B>你获得了四等奖！",
   "<LI>You arrive at Diane's house. You kiss and she gives you a hug.": "<LI>你们来到黛安家。你们接吻，她给了你一个拥抱。",
   "<LI>It's the end of the evening.": "<LI>今晚就到这里了。",
@@ -3572,7 +3634,7 @@ var alternateTranslations = {
   "<LI>She is wearing pink panties, with blue polka dots on the front. Her suspenders are plain white, but you can glimpse pink and blue decorations on her suspender belt.": "<LI>她穿着粉色内裤，正面印有蓝色波点。吊带袜扣是素白色的，但你能瞥见她的吊带腰带上有粉色和蓝色的小装饰。",
   "<LI>She is wearing light blue panties, with a couple of little pink bows at the front.": "<LI>她穿着浅蓝色内裤，正面缀着几个小粉色蝴蝶结。",
   "<LI>Nothing happens.": "<LI>什么都没发生。",
-  "<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds. Then—": "<LI>你转过身去。你屏住呼吸，心跳得很快。你等了十五秒，也许二十秒。然后——",
+  "<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds.": "<LI>你转过身去。你屏住呼吸，心跳得很快。你等了十五秒，也许二十秒。",
   "<LI>DIANE: <EM>(very quietly)</EM> OK.": "<LI>黛安：<EM>（极轻地）</EM> 好了。",
   "<LI>You turn and look. Nothing has happened—you haven't missed anything—but suddenly a damp patch appears on her panties. It seems at first to spread upwards, until the material seems almost translucent. You can see the darkness of her pubic hair.": "<LI>你转身望去。什么都还没发生——你没有错过任何东西——但忽然，她的内裤上浮现出一块湿迹。湿迹起初似乎向上蔓延，直到布料几乎变得半透明。你能看到她阴毛的深色轮廓。",
   "<LI>The gusset of her panties is wet and a trickle of pee begins to run out of one side. Within a few seconds there is a stream which seems at first to gather in her panties but then to run straight through. Perhaps it is the cider she was drinking, but it seems amazingly golden.": "<LI>她内裤的裆部已经湿了，一股细流从一侧渗出来。几秒钟内，尿流越来越大，起初似乎积聚在内裤里，随后便径直透了过去。也许是因为她喝的那些苹果酒，颜色黄得惊人，几乎泛着金色。",
@@ -3848,11 +3910,8 @@ var alternateTranslations = {
   "<LI>You are at her door. And—": "<LI>你们到了她家门口。然后——",
   "<LI>DIANE: Do you want to come in?": "<LI>黛安：要进来坐坐吗？",
   "<LI><B>CONGRATULATIONS!</B>": "<LI><B>恭喜你！</B>",
-  "<LI>You have struck gold. You have won First Prize!": "<LI>你这次真的撞大运了。你获得了一等奖！",
-  "<LI>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.": "<LI>你成功地让她憋尿憋到极限，以至于在走回家的路上她实在忍不住，彻底尿湿了自己。",
-  "<LI>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.": "<LI>你成功地让她憋尿憋到极限，在走回家的路上她已经开始尿湿自己了。尽管她设法拨开了内裤，你也清楚那条内裤早已湿透。",
-  "<LI>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!": "<LI>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进她家！",
-  "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>TRULY, YOU HAVE WON FIRST PRIZE!</SPAN></div></STRONG></H1>": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>你真的获得了一等奖！</SPAN></div></STRONG></H1>",
+  "<P><LI><B>You have struck gold.": "<P><LI><B>你这次真的撞大运了。",
+  "<P><LI><B>TRULY, YOU HAVE WON FIRST PRIZE!": "<P><LI><B>你真的获得了一等奖！",
   "<LI>YOU: It's really exciting. I've never seen a girl wet herself before.": "<LI>你：真的好刺激。我从没见过女生尿湿自己。",
   "<LI>DIANE: <EM>(after a pause)</EM> Well, at least it's made one of us happy.": "<LI>黛安：<EM>（沉默片刻后）</EM> 好吧，至少这让我们其中一个人高兴了。",
   "<LI>You are soon at her house. She gives you a quick kiss and is gone.": "<LI>很快就到了她家。她给了你一个匆匆的吻，便进去了。",
@@ -3875,7 +3934,6 @@ var alternateTranslations = {
   "I've already read them. I'll get straight on with the game.": "我已经看过了，直接开始游戏。",
   "Start the game.": "开始游戏。",
   "Further information.": "更多信息。",
-  "Back to main menu.": "返回主菜单。",
   "When can you see her?": "你什么时候能见到她？",
   "Tuesday": "周二",
   "Thursday": "周四",
@@ -4760,6 +4818,11 @@ var alternateTranslations = {
   "<LI>Her bra is white with lace along the top. You slip your fingers back down inside the loose cup, finding her nipple again.": "<LI>她的胸罩是白色的，顶边缀着蕾丝。你的手指再次滑进宽松的罩杯，重新找到了她的乳头。",
   "<LI>Her bra is white with lace along the top, and you're getting quite familiar with it by now, teasing a nipple through the loose lace.": "<LI>她的胸罩是白色的，顶边缀着蕾丝，你这会儿已经相当熟悉了，隔着松软的蕾丝逗弄着她的乳头。",
   "YOU: <EM>(hugging her)</EM> You really wet yourself?": "你：<EM>（抱着她）</EM>你真的尿湿自己了？",
+  "<LI>Then—": "<LI>然后——",
+  "<LI>DIANE: <EM>(giggles)</EM> Goodness no. I just couldn't wait. Lucky I was wearing a dress.": "<LI>黛安：<EM>（笑）</EM> 当然没有。我根本等不了。幸好那天穿的是裙子。",
+  "<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.": "<P><LI><B>你成功地让她憋尿憋到极限，以至于在走回家的路上她实在忍不住，彻底尿湿了自己。",
+  "<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.": "<P><LI><B>你成功地让她憋尿憋到极限，在走回家的路上她已经开始尿湿自己了。尽管她设法拨开了内裤，你也清楚那条内裤早已湿透。",
+  "<P><LI><B>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!": "<P><LI><B>但她并没有生你的气。事实上，这反而让你们更亲近了，她还邀请你进她家！",
 };
 var alternatePrefixTranslations = [
   [
@@ -4887,7 +4950,7 @@ var undobra = 0
 
 var gameHistory = [];
 
-const GALLERY_DATA = {"endings":[{"id":"03_first_prize","order":1,"title":"First Prize","titleAlt":"一等奖","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","sofasnog","sofasnog1","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","disaster0","disaster1","disaster2","disaster3","disaster4b","disaster5b","disaster6b","disaster7b","disaster8a","disaster9","disaster9a","triumph"],"baseLength":2},{"id":"05_second_prize","order":2,"title":"Second Prize","titleAlt":"二等奖","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts0","sofabreasts1","sofabreasts2","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","nicelydesp1","nicelydesp2","nicelydesp3","nicelydesp4","nicelydesp5","nicelydesp6","nicelydesp7","nicelydesp8","nicelydesp9","secondplace","secondplace1"],"baseLength":2},{"id":"01_third_prize","order":3,"title":"Third Prize","titleAlt":"三等奖","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofalooask","sofaarm","sofaarm1","sofadesp","sofadesp1","sofadesp2","sofastamps","stampalbum1","stampalbum1a","stampalbum2","stampalbum2a","stampalbum3","stampalbum3a","stampalbum4","stampalbum4a","stampalbum5","stampalbum5a","stampalbum6","stampalbum6a","stampalbum7","stampalbum8","dampness","legsz","legsz1","legsz2","legsz3"],"baseLength":2},{"id":"02_fourth_prize","order":4,"title":"Fourth Prize","titleAlt":"四等奖","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","breasts2","bottom2","bottom2a","walkhomeX","bathroomfree","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhomedesp","walkhomedesp1","helphersquat","helphersquat1","helphersquat2","helphersquat3"],"baseLength":2},{"id":"04_fifth_prize","order":5,"title":"Fifth Prize","titleAlt":"五等奖","tags":["start","start1a","start1b","thursdaydate","start2","gothere","flirt_l","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","bottom1","bottom1a","bottomthurs","skirtremove1","skirtremove1a","skirtremove1b","skirtremove1c","skirtremove1d","skirtremove1e","skirtremove1f","skirtremove1g","skirtdeal","skirtdeal1","skirtdeal2","gobathroom","gobathroom1","gobathroom2","gobathroom3"],"baseLength":2},{"id":"06_lounge_story_consolation","order":6,"title":"Lounge Story Consolation Prize","titleAlt":"客厅故事安慰奖","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","loungedesp","story","story1","story2","story3","story4","story5"],"baseLength":2},{"id":"08_chloe_consolation","order":7,"title":"Chloe Consolation Prize","titleAlt":"克洛伊安慰奖","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyspagbol","eatmeal2","eatmeal2a","eatmeal2b","eatmeal2c","eatmeal2d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario4","scenario4a","scenario4b","scenario4c","scenario4d","scenario4e","scenario4f","gonow","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhome5","walkhome6","walkhome7","watching1","luckytrip19","watching3","watching4","watching5","watching6"],"baseLength":2},{"id":"09_amanda_consolation","order":8,"title":"Amanda Consolation Prize","titleAlt":"阿曼达安慰奖","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion1","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario5","scenario6","scenario6a","scenario6b","scenario6c","goupstairs","goupstairs1","goupstairs2","goupstairs3","goupstairs4","goupstairs5","goupstairs6","luckytrip31","luckytrip31a","luckytrip31b","luckytrip31c","luckytrip31d","luckytrip31e"],"baseLength":2},{"id":"07a_consolation_tuesday_pavilion","order":9,"title":"Tuesday Pavilion Route Consolation Prize","titleAlt":"周二凉亭路线安慰奖","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue7","lastgamble","luckytrip28","searchdiane","search2","luckytrip28a","goleft","goleft1","goleft2","goleft3","goleft4","ending5","consolation"],"baseLength":2},{"id":"07b_consolation_thursday_subway","order":10,"title":"Thursday Subway Route Consolation Prize","titleAlt":"周四地下通道路线安慰奖","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riversidepath","riversidepath10a","riversidepath11a","riversidepath12x","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue6a","busqueue7","lastgamble","luckytrip28","searchdiane","search3","passage","passage1","passage2a","passage2aa","passage2ab","passage2ac","consolation"],"baseLength":2}],"hiddenScenes":[{"id":"01_theatre_flashback","order":1,"title":"Theatre Flashback to the First Time You Saw Diane","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4"],"baseLength":30,"titleAlt":"剧院里回想第一次见到黛安"},{"id":"02_portaloo_ladies_first","order":2,"title":"Finding the Hidden Portaloo for Diane","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","luckytrip16","luckytrip16a","luckytrip16a1","riverside7"],"baseLength":71,"titleAlt":"帮黛安找到隐藏的临时厕所"},{"id":"03_portaloo_too_embarrassed","order":3,"title":"Offering the Portaloo Too Directly","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","luckytrip16","luckytrip16b","luckytrip16ba","riverside7"],"baseLength":71,"titleAlt":"过于直接地提醒她临时厕所"},{"id":"04_thursday_bridge_diane_molly","order":4,"title":"Robert Shows You Diane and Molly Under the Bridge","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riversidepath","luckytrip3","underbridge","underbridge2","underbridge3"],"baseLength":70,"titleAlt":"罗伯特带你偷看桥下的黛安和莫莉"},{"id":"05_molly_bruno_towpath","order":5,"title":"Watching Molly Behind the Skip","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","pubdrink9","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13","luckytrip4","luckytrip4a","luckytrip4b"],"baseLength":89,"titleAlt":"偷看莫莉在废料箱后面撒尿"},{"id":"06_diane_slips_away_while_watching_molly","order":6,"title":"Diane Slips Away While You Watch Molly","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyburgundy","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","pubdrink9","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13","luckytrip4","luckytrip4a","luckytrip4b","luckytrip4c","luckytrip4d"],"baseLength":79,"titleAlt":"你偷看莫莉时黛安也悄悄离开"},{"id":"07_riverside_bushes_diane","order":7,"title":"Diane Goes Behind the Riverside Bushes","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b"],"baseLength":80,"titleAlt":"黛安去河边灌木后面方便"},{"id":"08_riverside_towpath_landing","order":8,"title":"Diane Cannot Wait on the Towpath Steps","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane2a","together1","together1a","together1b"],"baseLength":80,"titleAlt":"黛安在河边台阶上憋不住"},{"id":"09_riverside_bushes_together","order":9,"title":"You and Diane Both Go Behind the Bushes","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane2a","together2","helpdiane1b"],"baseLength":80,"titleAlt":"你和黛安一起去灌木后面方便"},{"id":"10_public_toilet_spyhole","order":10,"title":"The Public Toilet Spyhole and Discarded Panties","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane3a","riverside14","toiletopen","toiletopen1b","toiletopen1bb","luckytrip5","luckytrip5a","luckytrip5tue","luckytrip5tue1","luckytrip5tue2","gameover"],"baseLength":80,"titleAlt":"公共厕所里的偷看孔和遗落的内裤"},{"id":"11_public_toilet_spyhole_stockings","order":11,"title":"The Public Toilet Spyhole and Diane's Stockings","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buylasagne","eatmeal4","eatmeal4a","eatmeal4b","eatmeal4c","eatmeal4d","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","toiletopen","toiletopen1c","toiletopen1c1","luckytrip5c","luckytrip5ca","luckytrip5cb","luckytrip5cc","luckytrip5cd","riverside15"],"baseLength":71,"titleAlt":"公共厕所里的偷看孔和黛安的丝袜"},{"id":"12_closed_toilet_building_lookout","order":12,"title":"Diane Goes Behind the Closed Toilet Building","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2a","riverside15"],"baseLength":81,"titleAlt":"黛安绕到关门的厕所后面方便"},{"id":"13_closed_toilet_building_together","order":13,"title":"Taking Turns Behind the Closed Toilet Building","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2b","riverside15"],"baseLength":81,"titleAlt":"和黛安轮流到关门的厕所后面方便"},{"id":"14_closed_toilet_building_bad_choice","order":14,"title":"Asking Diane to Hold On at the Closed Toilet","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2c","gameover"],"baseLength":81,"titleAlt":"在关门的厕所前让黛安继续憋着"},{"id":"15_riverside_gents_urinal","order":15,"title":"Diane Uses the Gents Urinal","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","justclosed2","justclosed3","urinal","riverside15"],"baseLength":81,"titleAlt":"黛安使用男厕小便池"},{"id":"16_brunette_behind_camper","order":16,"title":"Watching the Brunette Behind the Camper Van","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buychardonnay","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","busqueue3","busqueue4","busqueue5","carpark","carpark1","carpark2"],"baseLength":102,"titleAlt":"看褐发女生在房车后面撒尿"},{"id":"17_diane_brunette_camper_round","order":17,"title":"Diane and the Brunette Behind the Camper Van","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepround","peepround1"],"baseLength":109,"titleAlt":"黛安和褐发女生一起到房车后面方便"},{"id":"18_diane_brunette_camper_under","order":18,"title":"Peeping Underneath the Camper Van","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepunder","peepunderluck"],"baseLength":109,"titleAlt":"从房车底下偷看"},{"id":"22_caught_by_boyfriend","order":19,"title":"Caught by the Brunette's Boyfriend","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepunder","peepunderrisk","gameover"],"baseLength":109,"titleAlt":"被褐发女生的男友抓包"},{"id":"19_camper_gentleman_choice","order":20,"title":"Not Watching Diane and Debbie","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","gentleman","gameover"],"baseLength":109,"titleAlt":"选择不偷看黛安和黛比"},{"id":"20_church_lych_gate_glimpse","order":21,"title":"Church Lych Gate Glimpse","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buypinot","eatmeal","buysteak","steak3","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","foyerbar1","foyerbar1a","foyerbar2","foyerbar3","stagedoor5","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","riverside2","riverside3","riverside7","riverside8","riverside9","riversidepath","riversidepath10a","riversidepath11a","riversidepath12x","riverside14","toiletclosed","riverside15","riverside16","riverside16a","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue6a","busqueue7","bushome","bushome1","bushome2","bushome3","bushome4","bushome5","bushome6","luckytrip17","luckytrip17a","luckytrip17b","gameover"],"baseLength":94,"titleAlt":"墓园门廊一瞥"},{"id":"21_hidden_camera","order":22,"title":"Your Brother's Hidden Bathroom Camera","tags":["start","start1a","start1b","thursdaydate","start2","gothere","flirt_l","winelist","buyrioja","eatmeal","buylasagne","eatmeal4","eatmeal4a","eatmeal4b","eatmeal4c","eatmeal4d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario2b","scenario2c","asklooneed","asklooneed1","asklooneed2","offercoffeeagain","offercoffeeagain1","luckytrip11","luckytrip11a","hiddencamera","hiddencamera1","gameover"],"baseLength":42,"titleAlt":"弟弟的浴室隐藏摄像头"}]};
+const GALLERY_DATA = {"endings":[{"id":"03_first_prize","order":1,"title":"First Prize","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","sofasnog","sofasnog1","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","disaster0","disaster1","disaster2","disaster3","disaster4b","disaster5b","disaster6b","disaster7b","disaster8a","disaster9","disaster9a","triumph"],"baseLength":2,"climaxIndex":177,"titleAlt":"一等奖"},{"id":"05_second_prize","order":2,"title":"Second Prize","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts0","sofabreasts1","sofabreasts2","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","nicelydesp1","nicelydesp2","nicelydesp3","nicelydesp4","nicelydesp5","nicelydesp6","nicelydesp7","nicelydesp8","nicelydesp9","secondplace","secondplace1"],"baseLength":2,"climaxIndex":144,"titleAlt":"二等奖"},{"id":"01_third_prize","order":3,"title":"Third Prize","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofalooask","sofaarm","sofaarm1","sofadesp","sofadesp1","sofadesp2","sofastamps","stampalbum1","stampalbum1a","stampalbum2","stampalbum2a","stampalbum3","stampalbum3a","stampalbum4","stampalbum4a","stampalbum5","stampalbum5a","stampalbum6","stampalbum6a","stampalbum7","stampalbum8","dampness","legsz","legsz1","legsz2","legsz3"],"baseLength":2,"climaxIndex":40,"titleAlt":"三等奖"},{"id":"02_fourth_prize","order":4,"title":"Fourth Prize","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","breasts2","bottom2","bottom2a","walkhomeX","bathroomfree","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhomedesp","walkhomedesp1","helphersquat","helphersquat1","helphersquat2","helphersquat3"],"baseLength":2,"climaxIndex":149,"titleAlt":"四等奖"},{"id":"04_fifth_prize","order":5,"title":"Fifth Prize","tags":["start","start1a","start1b","thursdaydate","start2","gothere","flirt_l","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","bottom1","bottom1a","bottomthurs","skirtremove1","skirtremove1a","skirtremove1b","skirtremove1c","skirtremove1d","skirtremove1e","skirtremove1f","skirtremove1g","skirtdeal","skirtdeal1","skirtdeal2","gobathroom","gobathroom1","gobathroom2","gobathroom3"],"baseLength":2,"climaxIndex":45,"titleAlt":"五等奖"},{"id":"09_amanda_consolation","order":6,"title":"Amanda Consolation Prize","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion1","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario5","scenario6","scenario6a","scenario6b","scenario6c","goupstairs","goupstairs1","goupstairs2","goupstairs3","goupstairs4","goupstairs5","goupstairs6","luckytrip31","luckytrip31a","luckytrip31b","luckytrip31c","luckytrip31d","luckytrip31e"],"baseLength":2,"climaxIndex":107,"titleAlt":"阿曼达安慰奖"},{"groupId":"08_chloe","order":7,"title":"Chloe Consolation Prizes","variants":[{"id":"08a_chloe_consolation","title":"Wet at the Door","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyspagbol","eatmeal2","eatmeal2a","eatmeal2b","eatmeal2c","eatmeal2d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario4","scenario4a","scenario4b","scenario4c","scenario4d","scenario4e","scenario4f","gonow","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhome5","walkhome6","walkhome7","watching1","luckytrip19","watching3","watching4","watching5","watching6"],"baseLength":2,"climaxIndex":48,"titleAlt":"门口没忍住"},{"id":"08b_chloe_outside","title":"Pees Outside","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buyspagbol","eatmeal2","eatmeal2a","eatmeal2b","eatmeal2c","eatmeal2d","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario4","scenario4a","scenario4b","scenario4c","scenario4d","scenario4e","scenario4f","gonow","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhome5","walkhome6","walkhome7","watching1","luckytrip19","watching3","watching4","watching5","gameover"],"baseLength":2,"climaxIndex":48,"titleAlt":"在门外解决"}],"titleAlt":"克洛伊安慰奖"},{"groupId":"07_consolation_day_routes","order":8,"title":"Day-Route Consolation Prizes","variants":[{"id":"07a_consolation_tuesday_pavilion","title":"Tuesday Pavilion Route","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue7","lastgamble","luckytrip28","searchdiane","search2","luckytrip28a","goleft","goleft1","goleft2","goleft3","goleft4","ending5","consolation"],"baseLength":2,"climaxIndex":108,"titleAlt":"周二凉亭路线"},{"id":"07b_consolation_thursday_subway","title":"Thursday Subway Route","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riversidepath","riversidepath10a","riversidepath11a","riversidepath12x","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue6a","busqueue7","lastgamble","luckytrip28","searchdiane","search3","passage","passage1","passage2a","passage2aa","passage2ab","passage2ac","consolation"],"baseLength":2,"climaxIndex":106,"titleAlt":"周四地下通道路线"},{"id":"07c_consolation_saturday_car_park","title":"Saturday Car Park Route","tags":["start","start1a","start1b","saturdaydate","start2","buysth","buywater","buysth","gothere","flirt_m","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","holdhand","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","keepquiet","interval2","interval3","act2","act2a","act2b","holdhand2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","luckytrip6","luckytrip6a","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue7","lastgamble","luckytrip28","searchdiane","search1","search1a","search1b","consolation"],"baseLength":2,"climaxIndex":105,"titleAlt":"周六停车场路线"}],"titleAlt":"按日路线安慰奖"},{"groupId":"06_lounge_story","order":9,"title":"Lounge Story Consolation Prizes","variants":[{"id":"06a_lounge_hen_party","title":"Hen Party","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","loungedesp","story","story1","story2","story3","story4","story5"],"baseLength":2,"climaxIndex":148,"titleAlt":"女生派对"},{"id":"06b_lounge_bus_boy","title":"Boy from School on the Bus","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","loungedesp","story","story1","story2","story3","story4","story5"],"baseLength":2,"climaxIndex":140,"titleAlt":"公交车上的男生"},{"id":"06c_lounge_chess_lesson","title":"Chess Lesson","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","loungedesp","story","story1","story2","story3","story4","story5"],"baseLength":2,"climaxIndex":150,"titleAlt":"下棋课"},{"id":"06d_lounge_freshers_week","title":"Freshers' Week","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buyicecream","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","loungedesp","story","story1","story2","story3","story4","story5"],"baseLength":2,"climaxIndex":150,"titleAlt":"迎新周"}],"titleAlt":"客厅故事安慰奖"}],"hiddenScenes":[{"id":"01_theatre_flashback","order":1,"title":"Theatre Flashback to the First Time You Saw Diane","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4"],"baseLength":30,"titleAlt":"剧院里回想第一次见到黛安"},{"groupId":"portaloo","title":"Riverside Portaloo","variants":[{"id":"02_portaloo_ladies_first","title":"Finding the Hidden Portaloo for Diane","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","luckytrip16","luckytrip16a","luckytrip16a1","riverside7"],"baseLength":71,"titleAlt":"帮黛安找到隐藏的临时厕所"},{"id":"03_portaloo_too_embarrassed","title":"Offering the Portaloo Too Directly","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","luckytrip16","luckytrip16b","luckytrip16ba","riverside7"],"baseLength":71,"titleAlt":"过于直接地提醒她临时厕所"}],"order":2,"titleAlt":"河边临时厕所"},{"id":"04_thursday_bridge_diane_molly","order":3,"title":"Robert Shows You Diane and Molly Under the Bridge","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riversidepath","luckytrip3","underbridge","underbridge2","underbridge3"],"baseLength":70,"titleAlt":"罗伯特带你偷看桥下的黛安和莫莉"},{"groupId":"molly_towpath","title":"Molly on the Towpath","variants":[{"id":"05_molly_bruno_towpath","title":"Watching Molly Behind the Skip","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","pubdrink9","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13","luckytrip4","luckytrip4a","luckytrip4b"],"baseLength":89,"titleAlt":"偷看莫莉在废料箱后面撒尿"},{"id":"06_diane_slips_away_while_watching_molly","title":"Diane Slips Away While You Watch Molly","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyburgundy","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","pubdrink9","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13","luckytrip4","luckytrip4a","luckytrip4b","luckytrip4c","luckytrip4d"],"baseLength":79,"titleAlt":"你偷看莫莉时黛安也悄悄离开"}],"order":4,"titleAlt":"纤道上的莫莉"},{"groupId":"riverside_bushes","title":"Behind the Riverside Bushes","variants":[{"id":"07_riverside_bushes_diane","title":"Diane Goes Behind the Riverside Bushes","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b"],"baseLength":80,"titleAlt":"黛安去河边灌木后面方便"},{"id":"09_riverside_bushes_together","title":"You and Diane Both Go Behind the Bushes","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane2a","together2","helpdiane1b"],"baseLength":80,"titleAlt":"你和黛安一起去灌木后面方便"}],"order":5,"titleAlt":"河边灌木后面"},{"id":"08_riverside_towpath_landing","order":6,"title":"Diane Cannot Wait on the Towpath Steps","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane2a","together1","together1a","together1b"],"baseLength":80,"titleAlt":"黛安在河边台阶上憋不住"},{"groupId":"spyhole","title":"Public Toilet Spyhole","variants":[{"id":"10_public_toilet_spyhole","title":"The Public Toilet Spyhole and Discarded Panties","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane3a","riverside14","toiletopen","toiletopen1b","toiletopen1bb","luckytrip5","luckytrip5a","luckytrip5tue","luckytrip5tue1","luckytrip5tue2","gameover"],"baseLength":80,"titleAlt":"公共厕所里的偷看孔和遗落的内裤"},{"id":"11_public_toilet_spyhole_stockings","title":"The Public Toilet Spyhole and Diane's Stockings","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyrioja","eatmeal","buylasagne","eatmeal4","eatmeal4a","eatmeal4b","eatmeal4c","eatmeal4d","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","toiletopen","toiletopen1c","toiletopen1c1","luckytrip5c","luckytrip5ca","luckytrip5cb","luckytrip5cc","luckytrip5cd","riverside15"],"baseLength":71,"titleAlt":"公共厕所里的偷看孔和黛安的丝袜"}],"order":7,"titleAlt":"公厕窥视孔"},{"groupId":"closed_toilet","title":"Closed Toilet Building","variants":[{"id":"12_closed_toilet_building_lookout","title":"Diane Goes Behind the Closed Toilet Building","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2a","riverside15"],"baseLength":81,"titleAlt":"黛安绕到关门的厕所后面方便"},{"id":"13_closed_toilet_building_together","title":"Taking Turns Behind the Closed Toilet Building","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2b","riverside15"],"baseLength":81,"titleAlt":"和黛安轮流到关门的厕所后面方便"},{"id":"14_closed_toilet_building_bad_choice","title":"Asking Diane to Hold On at the Closed Toilet","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","toiletclosed1","toiletclosed2c","gameover"],"baseLength":81,"titleAlt":"在关门的厕所前让黛安继续憋着"},{"id":"15_riverside_gents_urinal","title":"Diane Uses the Gents Urinal","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","riverside2","riverside3","riverside3ab","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","riverside14","justclosed","justclosed1","justclosed2","justclosed3","urinal","riverside15"],"baseLength":81,"titleAlt":"黛安使用男厕小便池"}],"order":8,"titleAlt":"关闭的厕所楼"},{"groupId":"camper","title":"Brunette by the Camper Van","variants":[{"id":"16_brunette_behind_camper","title":"Watching the Brunette Behind the Camper Van","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buychardonnay","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","busqueue3","busqueue4","busqueue5","carpark","carpark1","carpark2"],"baseLength":102,"titleAlt":"看褐发女生在房车后面撒尿"},{"id":"17_diane_brunette_camper_round","title":"Diane and the Brunette Behind the Camper Van","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepround","peepround1"],"baseLength":109,"titleAlt":"黛安和褐发女生一起到房车后面方便"},{"id":"18_diane_brunette_camper_under","title":"Peeping Underneath the Camper Van","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepunder","peepunderluck"],"baseLength":109,"titleAlt":"从房车底下偷看"},{"id":"19_camper_gentleman_choice","title":"Not Watching Diane and Debbie","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","gentleman","gameover"],"baseLength":109,"titleAlt":"选择不偷看黛安和黛比"},{"id":"22_caught_by_boyfriend","title":"Caught by the Brunette's Boyfriend","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","gotoo","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepunder","peepunderrisk","gameover"],"baseLength":109,"titleAlt":"被褐发女生的男友抓包"}],"order":9,"titleAlt":"房车旁的棕发女孩"},{"id":"20_church_lych_gate_glimpse","order":10,"title":"Church Lych Gate Glimpse","tags":["start","start1a","start1b","thursdaydate","start2","gothere","winelist","buypinot","eatmeal","buysteak","steak3","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","foyerbar1","foyerbar1a","foyerbar2","foyerbar3","stagedoor5","choosepub1","pubdrink","pubdrink1","pubdrink2","pubdrink3","pubdrink4","pubdrink4a","pubdrink5","pubdrink6","pubdrink7","pubdrink8","riverside2","riverside3","riverside7","riverside8","riverside9","riversidepath","riversidepath10a","riversidepath11a","riversidepath12x","riverside14","toiletclosed","riverside15","riverside16","riverside16a","busqueue","busqueue1","busqueue2","busqueue3","queue1a","watchblonde","busqueue6","busqueue6a","busqueue7","bushome","bushome1","bushome2","bushome3","bushome4","bushome5","bushome6","luckytrip17","luckytrip17a","luckytrip17b","gameover"],"baseLength":94,"titleAlt":"墓园门廊一瞥"},{"id":"21_hidden_camera","order":11,"title":"Your Brother's Hidden Bathroom Camera","tags":["start","start1a","start1b","thursdaydate","start2","gothere","flirt_l","winelist","buyrioja","eatmeal","buylasagne","eatmeal4","eatmeal4a","eatmeal4b","eatmeal4c","eatmeal4d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario2b","scenario2c","asklooneed","asklooneed1","asklooneed2","offercoffeeagain","offercoffeeagain1","luckytrip11","luckytrip11a","hiddencamera","hiddencamera1","gameover"],"baseLength":42,"titleAlt":"弟弟的浴室隐藏摄像头"},{"id":"26_train_photo_album","order":12,"title":"You Show Diane Your Train Photo Album","tags":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buyriesling","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofalooask","sofaarm","sofaarm1","sofadesp","sofadesp1","sofadesp2","sofatrains","sofatrains1","sofatrains1a","sofatrains2","sofatrains2a","sofatrains3","sofatrains3a","sofatrains4","sofatrains4a","sofatrains5","sofatrains5a","sofatrains6","sofatrains7","stampalbum7"],"baseLength":43,"titleAlt":"你给黛安看火车相册"},{"id":"23_brooch","order":13,"title":"Giving Diane the Brooch","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buybrooch","buysth","gothere","winelist","buyrioja","eatmeal","buyravioli","eatmeal3","eatmeal3a","eatmeal3b","eatmeal3c","eatmeal3d","eatmeal3e","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario1","coffeereal1","scenario1a","scenario1b","scenario1c","scenario3a","scenario3b","sofalooask","sofaarm","sofaarm1","sofadesp","sofadesp1","sofadesp2","sofastamps","stampalbum1","stampalbum1a","givechance","givebrooch","walkhomeX"],"baseLength":49,"titleAlt":"把胸针送给黛安"},{"groupId":"sofa_bathroom","title":"Diane in Your Bathroom","variants":[{"id":"25_lootogether","title":"You Follow Diane into the Loo","tags":["start","start1a","start1b","tuesdaydate","start2","buysth","buywater","buysth","gothere","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","eatmeal7b","espresso","eatmeal7c","gotheatre","theatreask","stopher","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","gotoo1","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","traintalka","riverside12","riverside13a","helpdiane","helpdiane1a","helpdiane1aa","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","sofadrink","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","nicelydesp1","nicelydesp2","nicelydesp3","nicelydesp4","nicelydesp5","lootogether","lootogether1","ontoilet","ontoilet1","lootogether2","lootogether3","gameover"],"baseLength":153,"titleAlt":"你跟着黛安进了厕所"},{"id":"27_bath_peeing","title":"Peeing in the Bath","tags":["start","start1a","start1b","saturdaydate","start2","buysth","buywater","buysth","gothere","flirt_m","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","holdhand","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","keepquiet","interval2","interval3","act2","act2a","act2b","holdhand2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","helpdiane","helpdiane2a","together2","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofaarm","sofaarm1","sofaarm2","sofasnog2","sofabreasts","sofabreasts0","sofabreasts1","sofabreasts2","sofabreasts3","sofabreasts4","decisions","sofapee2","sofatoilet","sofatoilet1","sofatoilet2","sofatoilet3","sofatoilet4","nicelydesp1","nicelydesp2","nicelydesp3","nicelydesp4","nicelydesp5","nicelydesp6","bathpee","bathpee1","secondplace","secondplace1"],"baseLength":146,"titleAlt":"在浴缸里尿"}],"order":14,"titleAlt":"黛安在你家浴室"},{"id":"24_phone_call","order":15,"title":"Diane Phones You the Next Morning","tags":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","holdhand","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","holdhand2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion1","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofakiss","luckytrip10","luckytrip10a","luckytrip10b","breasts1","breasts2","bottom2","bottom2a","sofasnog","sofasnog1","sofasat","sofasat1","decisions","walkhomeX","walkhomeXa","walkhomeXb","walkhome1","walkhome1a","walkhome2","walkhome3","walkhome4","walkhomedesp","walkhomedesp1","walkhomedesp2","walkhomedesp3","walkhomedesp5","walkhomedesp6","walkhomedesp7","showover","showover1","showover2","gameover"],"baseLength":168,"titleAlt":"次日清晨黛安来电"}]};
 
 var gameStateVars = [
   "ulopen", "luckshots", "inti", "blad", "proc", "points", "pounds",
@@ -4964,11 +5027,15 @@ function goback() {
   presentScreen();
 }
 
-function pressGuidedChoice() {
+function pressGuidedChoice(immediate) {
   if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
   var btn = document.querySelector("#box button.choice.guide-highlight");
   if (!btn || btn.offsetParent === null) return;
   if (btn.classList.contains("key-pressed")) return;
+  if (immediate) {
+    btn.click();
+    return;
+  }
   btn.classList.add("key-pressed");
   setTimeout(function () {
     if (document.body.contains(btn)) { btn.click(); }
@@ -4991,9 +5058,35 @@ function pressChoiceByNumber(n) {
   }, 120);
 }
 
+var enterHoldTimer = null;
+var enterFastTimer = null;
+var backHoldTimer = null;
+var backFastTimer = null;
+var HOLD_FF_DELAY_MS = 450;
+var HOLD_FF_INTERVAL_MS = 70;
+
+function clearEnterHold() {
+  if (enterHoldTimer) { clearTimeout(enterHoldTimer); enterHoldTimer = null; }
+  if (enterFastTimer) { clearInterval(enterFastTimer); enterFastTimer = null; }
+}
+
+function clearBackHold() {
+  if (backHoldTimer) { clearTimeout(backHoldTimer); backHoldTimer = null; }
+  if (backFastTimer) { clearInterval(backFastTimer); backFastTimer = null; }
+}
+
+function clearAllHolds() {
+  clearEnterHold();
+  clearBackHold();
+}
+
+function canSkipToClimax() {
+  return !!(guideActive && guideOn && !climaxSkipUsed && climaxIndex > guideIndex);
+}
+
 if (document.addEventListener) {
   document.addEventListener("keydown", function (e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     var overlay = document.getElementById("galleryOverlay");
     var galleryOpen = !!(overlay && overlay.classList.contains("open"));
     if (e.key === "Escape") {
@@ -5001,18 +5094,54 @@ if (document.addEventListener) {
       return;
     }
     if (e.key === "g" || e.key === "G") {
+      if (e.repeat) return;
       if (galleryOpen) { closeGallery(); return; }
       var galleryBtn = document.getElementById("galleryToggle");
       if (galleryBtn && galleryBtn.offsetParent !== null) { openGallery(); }
       return;
     }
     if (galleryOpen) return;
+    if (e.key === "Enter") {
+      var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+      if (tag === "input" || tag === "textarea" || tag === "select") return;
+      if (!(guideActive && guideOn)) return;
+      e.preventDefault();
+      if (e.repeat) return;
+      pressGuidedChoice();
+      clearEnterHold();
+      enterHoldTimer = setTimeout(function () {
+        enterHoldTimer = null;
+        enterFastTimer = setInterval(function () {
+          if (!(guideActive && guideOn)) { clearEnterHold(); return; }
+          pressGuidedChoice(true);
+        }, HOLD_FF_INTERVAL_MS);
+      }, HOLD_FF_DELAY_MS);
+      return;
+    }
+    if (e.repeat) return;
     if (e.key === "b" || e.key === "B") {
-      if (document.querySelector(".back-button")) { goback(); }
+      if (!document.querySelector(".back-button")) return;
+      e.preventDefault();
+      goback();
+      clearBackHold();
+      backHoldTimer = setTimeout(function () {
+        backHoldTimer = null;
+        backFastTimer = setInterval(function () {
+          if (!document.querySelector(".back-button") || !gameHistory.length) {
+            clearBackHold();
+            return;
+          }
+          goback();
+        }, HOLD_FF_INTERVAL_MS);
+      }, HOLD_FF_DELAY_MS);
       return;
     }
     if (e.key === "h" || e.key === "H") {
       if (document.querySelector(".guide-toggle-button")) { toggleGuideDisplay(); }
+      return;
+    }
+    if (e.key === "s" || e.key === "S") {
+      if (canSkipToClimax()) skipToClimax();
       return;
     }
     if (e.key === "l" || e.key === "L") {
@@ -5020,23 +5149,21 @@ if (document.addEventListener) {
       if (langBtn && langBtn.offsetParent !== null) { toggleLanguage(); }
       return;
     }
-    if (e.key === "Enter") {
-      var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
-      if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (!(typeof guideActive !== "undefined" && guideActive && typeof guideOn !== "undefined" && guideOn)) return;
-      e.preventDefault();
-      pressGuidedChoice();
-      return;
-    }
     if (/^[1-9]$/.test(e.key)) {
       pressChoiceByNumber(parseInt(e.key, 10));
       return;
     }
   });
+  document.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") clearEnterHold();
+    if (e.key === "b" || e.key === "B") clearBackHold();
+  });
+  window.addEventListener("blur", clearAllHolds);
 }
 
 function toggleGuideDisplay() {
   guideOn = !guideOn;
+  if (!guideOn) clearAllHolds();
   syncGuideDisplay();
 }
 
@@ -5078,7 +5205,34 @@ function syncGuideDisplay() {
       toggles[i].textContent = guideOn ? onText : offText;
       toggles[i].className = "guide-toggle-button" + (guideOn ? " guide-toggle-on" : " guide-toggle-off");
     }
+    syncSkipButton();
   } catch (e) {}
+}
+
+function climaxSkipLabel(lang) {
+  return lang === "alt" ? "跳到精彩部分！" : "Skip to the good bit!";
+}
+
+function syncSkipButton() {
+  var rows = document.querySelectorAll("#box .nav-row");
+  for (var r = 0; r < rows.length; r++) {
+    var row = rows[r];
+    var existing = row.querySelector(".climax-skip-button");
+    var layer = row.closest(".lang-alt") ? "alt" : (row.closest(".lang-en") ? "en" : currentLanguage);
+    if (canSkipToClimax()) {
+      if (!existing) {
+        var btn = document.createElement("button");
+        btn.className = "climax-skip-button";
+        btn.setAttribute("onclick", "skipToClimax()");
+        btn.textContent = climaxSkipLabel(layer);
+        row.appendChild(btn);
+      } else {
+        existing.textContent = climaxSkipLabel(layer);
+      }
+    } else if (existing) {
+      existing.parentNode.removeChild(existing);
+    }
+  }
 }
 
 var guideTags = null;
@@ -5086,6 +5240,21 @@ var guideIndex = 0;
 var guideActive = false;
 var guideOn = false;
 var guideHistory = [];
+var climaxIndex = -1;
+var climaxSkipUsed = false;
+
+function skipToClimax() {
+  if (!canSkipToClimax()) return;
+  climaxSkipUsed = true;
+  clearAllHolds();
+  var guard = 0;
+  // Same as hidden-scene base skip: each step is in history, so Back can rewind.
+  while (guideActive && guideIndex < climaxIndex && guard < 500) {
+    go(guideTags[guideIndex]);
+    guard++;
+  }
+  syncSkipButton();
+}
 
 function initGuideFromStorage() {
   try {
@@ -5098,6 +5267,8 @@ function initGuideFromStorage() {
     guideIndex = 0;
     guideActive = true;
     guideOn = true;
+    climaxIndex = (typeof data.climaxIndex === "number") ? data.climaxIndex : -1;
+    climaxSkipUsed = false;
     var baseLength = data.baseLength || 0;
     for (var i = 0; i < baseLength; i++) {
       go(guideTags[i]);
@@ -5135,14 +5306,39 @@ function applyGuideHighlight() {
   }
 }
 
+function galleryEntryTitle(item) {
+  return (currentLanguage === "en" ? item.title : (item.titleAlt || item.title));
+}
+
+function renderGalleryEntry(kind, item, index, number) {
+  var title = galleryEntryTitle(item);
+  if (item.variants && item.variants.length) {
+    var variantsHtml = item.variants.map(function (variant, vi) {
+      return "<button class='gallery-row gallery-variant' onclick=\"startGuidedRoute('" + kind + "'," + index + "," + vi + ")\">" + (vi + 1) + ". " + galleryEntryTitle(variant) + "</button>";
+    }).join("");
+    return "<div class='gallery-group'><button type='button' class='gallery-row gallery-group-toggle' onclick='toggleGalleryGroup(this)'>" + number + ". " + title + "</button><div class='gallery-variants' hidden>" + variantsHtml + "</div></div>";
+  }
+  return "<button class='gallery-row' onclick=\"startGuidedRoute('" + kind + "'," + index + ")\">" + number + ". " + title + "</button>";
+}
+
+function toggleGalleryGroup(btn) {
+  var panel = btn.nextElementSibling;
+  if (!panel) return;
+  if (panel.hasAttribute("hidden")) {
+    panel.removeAttribute("hidden");
+    btn.classList.add("gallery-group-open");
+  } else {
+    panel.setAttribute("hidden", "");
+    btn.classList.remove("gallery-group-open");
+  }
+}
+
 function renderGalleryLists() {
   var endingsHtml = GALLERY_DATA.endings.map(function (item, i) {
-    var title = (currentLanguage === 'en' ? item.title : item.titleAlt);
-    return "<button class='gallery-row' onclick=\"startGuidedRoute('endings'," + i + ")\">" + (i + 1) + ". " + title + "</button>";
+    return renderGalleryEntry("endings", item, i, i + 1);
   }).join("");
   var scenesHtml = GALLERY_DATA.hiddenScenes.map(function (item, i) {
-    var title = (currentLanguage === 'en' ? item.title : item.titleAlt);
-    return "<button class='gallery-row' onclick=\"startGuidedRoute('hiddenScenes'," + i + ")\">" + (i + 1) + ". " + title + "</button>";
+    return renderGalleryEntry("hiddenScenes", item, i, i + 1);
   }).join("");
   document.getElementById("galleryEndings").innerHTML = endingsHtml;
   document.getElementById("galleryHiddenScenes").innerHTML = scenesHtml;
@@ -5157,9 +5353,15 @@ function closeGallery() {
   document.getElementById("galleryOverlay").classList.remove("open");
 }
 
-function startGuidedRoute(kind, index) {
+function startGuidedRoute(kind, index, variantIndex) {
   var item = GALLERY_DATA[kind][index];
-  sessionStorage.setItem("dianeGuide", JSON.stringify({ tags: item.tags, baseLength: item.baseLength, lang: currentLanguage }));
+  if (item.variants) {
+    if (typeof variantIndex !== "number") return;
+    item = item.variants[variantIndex];
+  }
+  var payload = { tags: item.tags, baseLength: item.baseLength, lang: currentLanguage };
+  if (typeof item.climaxIndex === "number") payload.climaxIndex = item.climaxIndex;
+  sessionStorage.setItem("dianeGuide", JSON.stringify(payload));
   location.reload();
 }
 
@@ -5171,7 +5373,11 @@ function backbutton(lang) {
   var onText = lang === "alt" ? "引导：开启" : "Guide: On";
   var offText = lang === "alt" ? "引导：关闭" : "Guide: Off";
   var toggle = guideActive ? "<button class='guide-toggle-button" + (guideOn ? " guide-toggle-on" : " guide-toggle-off") + "' data-lang='" + lang + "' onclick='toggleGuideDisplay()'>" + (guideOn ? onText : offText) + "</button>" : "";
-  return "<div class='nav-row'>" + back + toggle + "</div>";
+  var skipLabel = lang === "alt" ? "跳到精彩部分！" : "Skip to the good bit!";
+  var skip = canSkipToClimax()
+    ? "<button class='climax-skip-button' onclick='skipToClimax()'>" + skipLabel + "</button>"
+    : "";
+  return "<div class='nav-row'>" + back + toggle + skip + "</div>";
 }
 
 function hasCjk(text) {
@@ -5283,7 +5489,12 @@ function isEnglishSpeechAside(text) {
 
 function formatEnglishSpeechAside(text) {
   var clean = String(text).replace(/[()]/g, "").replace(/[\s.,!?;:]+$/g, "").trim();
-  return clean ? clean.charAt(0).toUpperCase() + clean.slice(1) : clean;
+  if (!clean) return clean;
+  var raw = String(text).replace(/[()]/g, "").trim();
+  // Handoff: lowercase delivery cues unless the aside is a full sentence.
+  var fullSentence = /[.!?]$/.test(raw) && /\s/.test(clean);
+  if (fullSentence) return clean.charAt(0).toUpperCase() + clean.slice(1);
+  return clean.charAt(0).toLowerCase() + clean.slice(1);
 }
 
 function isRomanceSpeechAside(text) {
@@ -5298,7 +5509,11 @@ function isRomanceSpeechAside(text) {
 
 function formatRomanceSpeechAside(text) {
   var clean = String(text).replace(/[()]/g, "").replace(/[\s.,!?;:¡¿]+$/g, "").trim();
-  return clean ? clean.charAt(0).toUpperCase() + clean.slice(1) : clean;
+  if (!clean) return clean;
+  var raw = String(text).replace(/[()]/g, "").trim();
+  var fullSentence = /[.!?¡¿]$/.test(raw) && /\s/.test(clean);
+  if (fullSentence) return clean.charAt(0).toUpperCase() + clean.slice(1);
+  return clean.charAt(0).toLowerCase() + clean.slice(1);
 }
 
 function wrapEnglishSpeechAsides(html) {
@@ -5352,8 +5567,11 @@ function polishStoryHtml(html) {
   if (/^(A Date with Diane|与黛安约会|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
     return smartenHtml(html.replace(/^<h1\b/i, "<h1 class='game-title'"));
   }
-  if (/^<p>\s*<strong\b/i.test(html) && visible.length < 140) {
-    return smartenHtml(html.replace(/^<p\b/i, "<p class='venue-note'"));
+  if (/^<p(?:\s[^>]*)?>\s*<strong\b[^>]*>[\s\S]*<\/strong>\s*<\/p>\s*$/i.test(html) && visible.length < 140) {
+    // Don't restyle gameplay notices (intimacy/shyness) as venue banners.
+    if (!/\bnotice\b/i.test(html)) {
+      return smartenHtml(html.replace(/^<p\b/i, "<p class='venue-note'"));
+    }
   }
   if (!visible || !/^<p(?:\s|>)/i.test(html)) return smartenHtml(html);
   if (/^(CONGRATULATIONS!|恭喜你！|¡ENHORABUENA!|FÉLICITATIONS\s*!|FÉLICITATIONS !)$/i.test(visible)) {
@@ -5618,27 +5836,37 @@ function
 start1() 
 {
 s("<LI>There are five different successful endings, or 'winning results', rated in order. See if you can get them all!");
-s("<LI>There are also a few compensation endings—and you might even be able to win a date with Amanda.");
-s("<LI>The bladder meter says how much Diane's holding... what's in her tummy slowly flows to her bladder as time passes. Also, you get 3 luckshots that you should use WISELY when offered, and remember, they can bring BAD luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.");
-s("<LI>Don't expect to sleep with her on this first date—but you might get some fun if you play your cards right. And never forget: women are funny creatures.");
-s("<LI>As the evening progresses, your Intimacy points should rise, and they naturally affect what you can do. In some scenes, Shyness points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card."); 
-s("<LI>Keep an eye on your money. You might want some for a taxi home at the end of the evening.");
+s("<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.");
+s("<HR>");
+s("<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.");
+s("<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.");
+s("<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card."); 
+s("<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.");
 s("<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.");
-s("<LI>There's a Gallery feature as well, on the top left, with guided walks through to the various endings and a few hidden scenes. Handy if you get stuck, or just fancy a look around. A few keys worth knowing: G opens the Gallery (Esc closes it), H turns the Guide on or off once you've started one, B goes Back, and the number keys pick your choices. Enter follows the highlighted Guide choice, but only while the Guide is on.");
-s("<LI>B takes you back a page and restores everything to how it was: stats, choices, the lot. That works in Guide mode too. You can switch the Guide off with H and turn it back on if you're still following the path; if you choose differently and leave the path, the Guide drops out, unless you go Back to a point where you were still on track.");
+s("<HR>");
+s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
+s("<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>");
+s("<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>");
+s("<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>");
+s("<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>");
+s("<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the 'Back' button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>");
+s("<p class='note-lead'>While following an ending Guide, press the 'Skip to the good bit!' button (or press <strong>S</strong>) to jump ahead to the climax. Going 'Back' can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>");
+s("<p class='note-keys note-cluster-end'>Turning the Guide off also removes the skip button and stops fast-forward. You can turn the Guide back on if you're still on the path; if you choose differently and leave the path, the Guide drops out, unless you go 'Back' to a point where you were still on track.</p>");
 c("start1a","Start the game."); 
 c("info","Further information."); }
 
 function
 info()
-{s
+{
 s("<LI>TUESDAY: Diane wears a knee-length red polka-dot skirt, with a belt, stockings, a white blouse and a little red jacket. She has a slip, stockings, white suspenders, pink panties with blue polka dots at front.");
 s("<LI>THURSDAY: Diane wears a smart black pleated skirt, with a black blouse and a red jacket. She has a slip, tights and sky blue panties.");
-s("<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She has a lacy white bra, white panties, no slip and bare legs.");
+s("<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She has a lacy white bra, white panties, no slip and bare legs.");
 s("<HR>");
-s("<LI><SPAN style='color: #ff0000'>Molly wears jeans and white panties.</SPAN>"); 
+s("<LI>Molly and Amanda wear jeans.");
 s("<LI>Chloe wears a short tartan skirt and black tights.");
-c("start","Back to main menu."); }
+s("<LI>Debbie wears a mini skirt.");
+c("start1a","Start the game."); }
 
 
 function
@@ -5716,7 +5944,7 @@ gothere()
 s("<LI>You're meeting her at the theatre.");  
 if (saturday)
 {s("<LI>It's a lovely warm day with the sun streaming onto the theatre. You look at one or two posters while you wait. Then you hear her call your name. She is already in the foyer and is walking towards you, smiling. From the direction she's coming from it's obvious she's just been to the Ladies."); blad = 0;
-s("<LI>She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She looks super."); 
+s("<LI>She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She looks super."); 
 s("<LI>DIANE: Hello! I got here a bit early so that I could have a drink with my friend who's acting in the play. She's just gone off to get ready."); proc += 110;  
 c("flirt_l", "Say you've really been looking forward to seeing each other again.");    
 c("flirt_m", "Say you love the dress"); 
@@ -6255,7 +6483,7 @@ s("<LI>DIANE: Did you get the bus here?");
 s("<LI>YOU: Yes, but only because I knew I'd be drinking some wine. I really enjoy driving.");
 s("<LI>DIANE: Oh.");
 s("<LI>YOU: Yes. I really love cars. I've just bought a new BMW coupe. I bought it secondhand but it's a model I've really been looking out for and I got it at a tremendous price. You'll have to come out for a ride in it one day");
-s("<LI>DIANE: Oh, I don't think that's my sort of thing. I think they're such a waste of money—after all, four wheels are four wheels, aren't they, and just think of the global warming they cause. I had a boyfriend once who was just obsessed with cars, just wanted to drive around all day. I've never been so bored in my life."); 
+s("<LI>DIANE: Oh, I don't think that's my sort of thing. I think they're such a waste of money. After all, four wheels are four wheels, aren't they? And just think of the global warming they cause! I had a boyfriend once who was just obsessed with cars, just wanted to drive around all day. I've never been so bored in my life."); 
 s("<LI>YOU: But they are useful—");
 s("<LI>DIANE: He didn't even want to go anywhere special. You'd go flying down one motorway, then another, then another. He'd rabbit on about this A-road and that B-road, and about how many miles he got to the gallon. And he never, ever wanted to stop, not even if you were bursting for the toilet. It put me off cars for life."); getinti(-8); cartalking = 1;
 c("eatmeal5d","Remember not to mention cars again.");  } 
@@ -10703,9 +10931,9 @@ s("<LI>YOU: Have you ever waited too long for the loo, I mean, got really desper
 s("<LI>DIANE: Sometimes. I suppose everyone has. Actually—");
 s("<LI>She pauses.");
 s("<LI>YOU: Go on?");
-s("<LI>DIANE: It was pretty bad after a party last week. Three us had to leave at about midnight and our car broke down.");
+s("<LI>DIANE: It was pretty bad after a party last week. Three of us had to leave at about midnight and our car broke down.");
 s("<LI>YOU: Yes, you said. You had to wait for your mum to fetch you.");
-s("<LI>DIANE: <EM>(considering)</EM>If I tell you will you let me go to the loo?");
+s("<LI>DIANE: <EM>(considering)</EM> If I tell you, will you let me go to the loo?");
 c("nicelydesp2","You promise."); }
 
 function
@@ -11267,7 +11495,6 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 650)
 {s("<LI>Look, you've had your fun. You know she wants the loo. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind.");}
@@ -11401,7 +11628,7 @@ givechancec()
 s("<LI>YOU: Diane, d'you mind if I just pop to the loo a sec?");
 s("<LI>DIANE: Sure. I might go myself, actually, when you get back."); getinti (15); 
 s("<LI>You go to the bathroom and have a pee. When you come back downstairs Diane stands up, gives you a little grin, and heads upstairs.");
-s("<LI>When she comes back she says, 'That feels better' but it is time for her to go.");
+s("<LI>When she comes back she says, 'That feels better,' but it is time for her to go.");
 afterpee()
 c("walkhomeX","She gets ready to leave."); }
 
@@ -11424,7 +11651,6 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 650)
 {s("<LI>Look, you've had your fun. You know she wants the loo. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind.");}
@@ -11473,9 +11699,8 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 650)
-{s("<LI>Look, you've had your fun. You can tell she wants to 'spend a penny'. Aren't you going to give her a chance?");
+{s("<LI>Look, you've had your fun. You can tell she wants to spend a penny. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind."); }
 c("stampalbum3","On with the stamps!"); }}
 
@@ -11496,9 +11721,8 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 650 )
-{s("<LI>Look, you've had your fun. You can tell she wants to 'spend a penny'. Aren't you going to give her a chance?");
+{s("<LI>Look, you've had your fun. You can tell she wants to spend a penny. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind."); }
 c("sofatrains3","On with the trains!"); }}
 
@@ -11629,7 +11853,6 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 700)
 {s("<LI>Look, you've had your fun. The poor girl's dying for a wee. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind.");}
@@ -11659,7 +11882,6 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 700 )
 {s("<LI>Look, you've had your fun. The poor girl's dying for a wee. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind."); }
@@ -11720,7 +11942,6 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 700 )
 {s("<LI>Look, you've had your fun. She's absolutely dying for a wee. Aren't you going to give her a chance?");
 sitting_desp() 
@@ -11741,7 +11962,6 @@ c("toiletgo","I've no luckshots left."); }
 else 
 {s("YOU: I hope you're not bored?");
 s("DIANE: Oh no, it's really interesting.");
-s("<HR>");
 if (blad > 700)
 {s("<LI>Look, you've had your fun. She's absolutely dying for a wee. Aren't you going to give her a chance?");
 sitting_desp() 
@@ -11805,7 +12025,6 @@ else
 s("<LI>YOU: That's the lot!");
 s("<LI>DIANE: That was really interesting."); 
 s("<LI>She starts tidying herself, as if to get up.");
-s("<HR>"); 
 {s("<LI>Look, you've had your fun. A joke's a joke. She's dying for the loo but doesn't like to interrupt you. Aren't you going to give her a chance?");
 c("givechance","OK, I'll be kind.");}
 c("stampalbum7","What next?"); }}
@@ -12850,9 +13069,7 @@ s("<LI>DIANE: Thank goodness you couldn't. It's lucky we have a downstairs loo o
 else
 {s("<LI>DIANE: Oh, it got worse. Honestly, I was so bad I thought I was going to wet myself on the doorstep with you watching, so I dashed round the back. I couldn't wait.");
 s("<LI>YOU: Couldn't wait? Didn't you go in the back door?");
-s("<LI>DIANE: Goodness no. I just couldn't wait.");
-s("<LI>She giggles.");
-s("<LI>DIANE: Lucky I was wearing a dress.");
+s("<LI>DIANE: <EM>(giggles)</EM> Goodness no. I just couldn't wait. Lucky I was wearing a dress.");
 s("<LI>YOU: You mean you—");
 s("<LI>DIANE: I just stood and did it.");
 s("<LI>She pauses.");
@@ -14348,7 +14565,8 @@ function
 nicelydesp8()
 {
 s("<LI>DIANE: It might help if you looked away for a moment.");
-s("<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds. Then—");
+s("<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds.");
+s("<LI>Then—");
 s("<LI>DIANE: <EM>(very quietly)</EM> OK.");
 s("<LI>You turn and look. Nothing has happened—you haven't missed anything—but suddenly a damp patch appears on her panties. It seems at first to spread upwards, until the material seems almost translucent. You can see the darkness of her pubic hair.");
 s("<LI>The gusset of her panties is wet and a trickle of pee begins to run out of one side. Within a few seconds there is a stream which seems at first to gather in her panties but then to run straight through. Perhaps it is the cider she was drinking, but it seems amazingly golden.");
@@ -14555,20 +14773,20 @@ s("GOODBYE! THE GAME IS OVER."); }
  
 var despLineIndex = 0;
 var notYetSitting = new Array(
-  "黛安现在看起来还不需要上厕所。",
-  "黛安现在显得很放松，完全没有想上厕所的样子。",
-  "目前还看不出黛安有上厕所的意思。",
-  "黛安这会儿看起来挺自在的，没什么要上厕所的迹象。");
+  "Diane doesn't look like she has to pee yet.",
+  "Diane seems perfectly relaxed for now, with no sign that she needs the loo.",
+  "There's no sign yet that Diane needs the toilet.",
+  "Diane looks quite comfortable at the moment; no need for the loo yet, as far as you can tell.");
 var notYetStanding = new Array(
-  "黛安看起来还不需要上厕所。",
-  "黛安这会儿显得很放松，完全没有要上厕所的样子。",
-  "目前还看不出黛安有上厕所的意思。",
-  "黛安站在那儿挺自在的，没什么要上厕所的迹象。");
+  "Diane doesn't look like she has to pee yet.",
+  "Diane seems perfectly at ease for now, with no obvious need for the loo.",
+  "There's no sign yet that Diane needs the toilet.",
+  "Diane looks quite relaxed standing there; nothing to suggest she needs to go yet.");
 var notYetQueue = new Array(
-  "黛安看起来还没有尿意。",
-  "黛安这会儿看起来很放松，完全没有尿意的样子。",
-  "目前还看不出黛安有尿意。",
-  "黛安等得挺自在的，没什么尿急的迹象。");
+  "Diane doesn't look like she has to pee yet.",
+  "Diane seems fine for now, with no sign she needs the loo.",
+  "There's no sign yet that Diane needs the toilet.",
+  "Diane looks perfectly comfortable waiting; no need for the loo yet, as far as you can tell.");
 
 function  
 sitting_desp() 
@@ -15182,14 +15400,13 @@ function
 triumph()
 {
 s("<LI><B>CONGRATULATIONS!</B>");
-s("<LI>You have struck gold. You have won First Prize!");
+s("<P><LI><B>You have struck gold.");
 if (thursday)
-{s("<LI>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.");}
+{s("<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself."); blad = 0;}
 else
-{s("<LI>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.");}
-s("<LI>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!");
-s("<HR>");
-s("<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #c0c0c0'>TRULY, YOU HAVE WON FIRST PRIZE!</SPAN></div></STRONG></H1>"); }
+{s("<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking."); blad = 0;}
+s("<P><LI><B>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!");
+s("<P><LI><B>TRULY, YOU HAVE WON FIRST PRIZE!"); }
 
 
 function

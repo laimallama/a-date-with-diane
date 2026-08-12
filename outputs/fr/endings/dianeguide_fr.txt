@@ -536,7 +536,7 @@ Utilisez la BASE 3. Cliquez ensuite une fois sur la boucle initiale des boissons
 23. Vous lui caressez les cheveux.
 24. Vous continuez à marcher.
 25. Vous hochez la tête.
-Texte de fin : VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX!
+Texte de fin : VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX !
 
 DEUXIÈME PRIX
 Utilisez la BASE 4. Le point essentiel de cette base est que Diane ait déjà eu une urgence privée près des buissons au bord de la rivière avant d’arriver chez vous.

@@ -354,7 +354,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [en chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane semble tout à fait détendue pour l’instant, rien n’indique qu’elle ait besoin d’y aller.
 
@@ -1024,7 +1024,7 @@ Vous attendez toujours le bus.
 
 Une fille à l’arrêt voisin n’arrive visiblement pas à tenir en place. Elle porte une petite minijupe qui met bien en valeur ses jambes agitées. Elle croise les jambes d’un côté, puis de l’autre. Puis se retrouve sur une jambe.
 
-DIANE : [Vous chuchote à l’oreille] J’ai une envie pressante d’aller aux toilettes. Il y a un endroit où je peux y aller ?
+DIANE : [vous chuchote à l’oreille] J’ai une envie pressante d’aller aux toilettes. Il y a un endroit où je peux y aller ?
 
 Elle rougit, l’air penaud.
 

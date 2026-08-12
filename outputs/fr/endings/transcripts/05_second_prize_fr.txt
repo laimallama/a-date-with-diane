@@ -348,7 +348,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [en chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane n’arrête pas de croiser les jambes, dans un sens puis dans l’autre.
 
@@ -866,7 +866,7 @@ VOUS : Tu vois, ils croient juste qu’on s’accorde un câlin. Patiente enco
 
 Vous la prenez dans vos bras et regardez les autres disparaître au bout du chemin. Deux promeneurs de chiens attardés passent dans l’autre sens. Vous sentez Diane se dandiner frénétiquement.
 
-DIANE : [Presque dans un souffle] Vite, vite. Je n’en peux plus.
+DIANE : [presque dans un souffle] Vite, vite. Je n’en peux plus.
 
 (Elle ne peut pas rester en place.)
 
@@ -1296,7 +1296,7 @@ Vous défaites les autres boutons de son chemisier et la regardez. Son soutien-g
 
 Vous caressez ses seins, puis faites lentement glisser un doigt autour de son mamelon droit.
 
-DIANE : [Très doucement] C’est merveilleux.
+DIANE : [très doucement] C’est merveilleux.
 
 (Vous vous embrassez.)
 
@@ -1440,7 +1440,7 @@ DIANE : Quoi ? Attendre avant d’aller aux toilettes ?
 
 VOUS : Mmm.
 
-DIANE : [À voix basse] Ça t’excite ? Que j’aie envie de faire pipi ?
+DIANE : [à voix basse] Ça t’excite ? Que j’aie envie de faire pipi ?
 
 Vous hochez la tête. Elle vous regarde un moment. Puis, avec un sourire malicieux —
 
@@ -1512,7 +1512,7 @@ DIANE : C’était vraiment galère après une soirée la semaine dernière. O
 
 VOUS : Oui, tu m’en as parlé. Tu as dû attendre que ta mère vienne vous chercher.
 
-DIANE : [Pensive] Si je te raconte, tu me laisseras aller aux toilettes ?
+DIANE : [pensive] Si je te raconte, tu me laisseras aller aux toilettes ?
 
 (Vous promettez.)
 
@@ -1582,7 +1582,7 @@ DIANE : C’est vrai que j’ai vraiment envie de faire pipi. Pas besoin de me
 
 Elle s’agite de plus belle, comme si le rappel avait aggravé les choses. Vous lui donnez un baiser. Vous la regardez avec des yeux implorants.
 
-DIANE : [En riant] Bon, je te dois bien un service — alors, pourquoi pas.
+DIANE : [en riant] Bon, je te dois bien un service — alors, pourquoi pas.
 
 (Vous la serrez dans vos bras.)
 
@@ -1610,9 +1610,11 @@ Elle baisse les yeux, l’air de se concentrer.
 
 DIANE : Ça m’aiderait peut-être si tu regardais ailleurs un instant.
 
-Vous vous détournez. Vous retenez votre souffle. Votre cœur bat à tout rompre. Vous attendez 15, peut-être 20 secondes. Et puis —
+Vous vous détournez. Vous retenez votre souffle. Votre cœur bat à tout rompre. Vous attendez 15, peut-être 20 secondes.
 
-DIANE : [Très doucement] OK.
+Puis—
+
+DIANE : [très doucement] OK.
 
 Vous vous retournez et vous regardez. Rien ne s’est passé — vous n’avez rien raté — mais soudain une tache humide apparaît sur sa culotte. Elle semble d’abord remonter, jusqu’à ce que le tissu paraisse presque translucide. Vous distinguez la toison sombre de son pubis.
 

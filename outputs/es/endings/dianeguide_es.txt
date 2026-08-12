@@ -536,7 +536,7 @@ Usa la BASE 3. Luego pulsa el bucle inicial de bebidas una vez y el bucle repeti
 23. Le acaricias el pelo.
 24. Sigues caminando.
 25. Asientes con la cabeza.
-Texto del final: ¡VERDADERAMENTE, HAS GANADO EL PRIMER PREMIO!
+Texto del final: ¡DE VERDAD HAS GANADO EL PRIMER PREMIO!
 
 SEGUNDO PREMIO
 Usa la BASE 4. La clave de esta base es que Diane ya haya tenido una emergencia privada junto a los arbustos del río antes de llegar a tu casa.

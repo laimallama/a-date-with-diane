@@ -762,18 +762,46 @@ const amandaTail = [
   "—and so—",
 ];
 
+const loungeHen = earlyBushHouseBase.concat(loungeTail);
+const loungeTiramisu = require("./routes_wip/lounge_tira.json");
+const loungePanna = require("./routes_wip/lounge_panna.json");
+const loungeIce = require("./routes_wip/lounge_ice.json");
+const chloeSibling = require("./routes_wip/chloe_sibling.json");
+const generalSaturday = require("./routes_wip/sat_car_park.json");
+const broochRoute = require("./routes_wip/brooch.json");
+const phoneCallRoute = require("./routes_wip/phone_call.json");
+const lootogetherRoute = require("./routes_wip/lootogether.json");
+const sofatrainsRoute = require("./routes_wip/sofatrains.json");
+const bathpeeRoute = require("./routes_wip/bathpee.json");
+
+// Official prize endings (must end on a detected prize line — used by guide capture).
 const routes = {
   third: tuesdayShortHouse.concat(thirdTail),
   fourth: saturdayHouse.concat(firstDrink, flatRepeat(repeatDrink, 7), fourthTail),
   first: saturdayHouse.concat(firstDrink, flatRepeat(repeatDrink, 15), firstTail),
   fifth: thursdayFifthBase.concat(fifthTail),
   second: earlyBushHouseBase.concat(secondSetup, secondTail),
-  lounge: earlyBushHouseBase.concat(loungeTail),
+  lounge: loungeHen,
+  loungeHen,
+  loungeTiramisu,
+  loungePanna,
+  loungeIce,
   general: generalRoute,
   generalThursday: generalThursdayRoute,
+  generalSaturday,
   chloe: chloeBase.concat(chloeTail),
   amanda: amandaBase.concat(amandaTail),
 };
+
+// Full set for Gallery (includes game-over / mid-route hidden scenes).
+const galleryRoutes = Object.assign({}, routes, {
+  chloeSibling,
+  brooch: broochRoute,
+  phoneCall: phoneCallRoute,
+  lootogether: lootogetherRoute,
+  sofatrains: sofatrainsRoute,
+  bathpee: bathpeeRoute,
+});
 
 const guideSections = [
   { key: "common", prefix: [], route: common },
@@ -927,16 +955,16 @@ function ending(text, lang) {
       /說起來，這也算是個相當不錯的安慰獎！/,
     ],
     es: [
-      /¡VERDADERAMENTE, HAS GANADO EL PRIMER PREMIO!/,
+      /¡(?:VERDADERAMENTE, |DE VERDAD )HAS GANADO EL PRIMER PREMIO!/,
       /¡HAS GANADO UN PREMIO DE CONSOLACIÓN!/,
       /¡HAS GANADO EL \d\.(?:er|º) PREMIO!/,
       /¡QUE NO ES MAL PREMIO DE CONSOLACIÓN!/,
     ],
     fr: [
-      /VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX\s*!/,
-      /VOUS AVEZ REMPORTÉ UN (?:PRIX|LOT) DE CONSOLATION\s*!/,
-      /VOUS AVEZ (?:REMPORTÉ|GAGNÉ) LE \dE PRIX\s*!/,
-      /CE QUI EST UN SACRÉ LOT DE CONSOLATION\s*!/,
+      /VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX[\s\u202F]*!/,
+      /VOUS AVEZ REMPORTÉ UN (?:PRIX|LOT) DE CONSOLATION[\s\u202F]*!/,
+      /VOUS AVEZ (?:REMPORTÉ|GAGNÉ) LE \dE PRIX[\s\u202F]*!/,
+      /CE QUI EST UN SACRÉ LOT DE CONSOLATION[\s\u202F]*!/,
     ],
   };
   const patterns = byLang[lang] || byLang.en;

@@ -354,7 +354,7 @@ La miras y ella te mira. Los dos sonreís.
 
 Has ganado 1 puntos de intimidad.
 
-DIANE: [En un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
+DIANE: [en un susurro] La que hace de la chica que se ha ido a enfurruñarse, esa es Molly, mi amiga.
 
 Diane parece bastante relajada por ahora; nada indica que necesite ir al baño.
 
@@ -1024,7 +1024,7 @@ Tú sigues esperando el autobús.
 
 Una chica en la parada de al lado parece incapaz de quedarse quieta. Lleva una minifalda que realza mucho el vaivén de sus piernas. Las cruza de un lado, luego del otro. Después se apoya en una sola pierna.
 
-DIANE: [Te susurra al oído] Me muero por ir al baño. ¿Hay algún sitio cerca?
+DIANE: [te susurra al oído] Me muero por ir al baño. ¿Hay algún sitio cerca?
 
 Se ruboriza, visiblemente apurada.
 

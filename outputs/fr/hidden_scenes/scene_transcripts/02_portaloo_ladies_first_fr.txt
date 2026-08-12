@@ -32,7 +32,7 @@ Qu’allez-vous répondre ?
 
 On voit bien que Diane a vraiment envie de faire pipi et vous aimeriez l’aider en lui parlant du Portaloo. Mais vous ne voulez pas la mettre mal à l’aise. Alors —
 
-VOUS : [À voix basse] J’ai vraiment envie de faire pipi. Il y a un Portaloo juste au coin. Tu pourrais faire le guet pendant que je me faufile là-dedans ? Je ne crois pas que ce soit vraiment ouvert au public.
+VOUS : [à voix basse] J’ai vraiment envie de faire pipi. Il y a un Portaloo juste au coin. Tu pourrais faire le guet pendant que je me faufile là-dedans ? Je ne crois pas que ce soit vraiment ouvert au public.
 
 DIANE : Bien sûr — En fait, j’irais bien aussi.
 

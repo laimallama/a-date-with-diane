@@ -22,9 +22,7 @@ DIANE: See you then.
 
 She seems a tiny bit disappointed.
 
-You lost 1 intimacy point.
-
-And you discover the theatre tickets are more expensive that day, so your funds are reduced.
+And you discover the theatre tickets are more expensive that day, so your funds are reduced by £10.
 
 (On with the story!)
 
@@ -36,7 +34,7 @@ You're meeting her at the theatre.
 
 It's a lovely warm day with the sun streaming onto the theatre. You look at one or two posters while you wait. Then you hear her call your name. She is already in the foyer and is walking towards you, smiling. From the direction she's coming from it's obvious she's just been to the Ladies.
 
-She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and what looks like a leather belt. She looks super.
+She's wearing a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She looks super.
 
 DIANE: Hello! I got here a bit early so that I could have a drink with my friend who's acting in the play. She's just gone off to get ready.
 

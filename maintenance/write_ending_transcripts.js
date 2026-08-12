@@ -85,7 +85,7 @@ const languages = {
       return meta.esTitle;
     },
     endingPatterns: [
-      /¡VERDADERAMENTE, HAS GANADO EL PRIMER PREMIO!/,
+      /¡(?:VERDADERAMENTE, |DE VERDAD )HAS GANADO EL PRIMER PREMIO!/,
       /¡HAS GANADO UN PREMIO DE CONSOLACIÓN!/,
       /¡HAS GANADO EL \d\.(?:er|º) PREMIO!/,
       /¡QUE NO ES MAL PREMIO DE CONSOLACIÓN!/,
@@ -99,10 +99,10 @@ const languages = {
       return meta.frTitle;
     },
     endingPatterns: [
-      /VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX\s*!/,
-      /VOUS AVEZ REMPORTÉ UN (?:PRIX|LOT) DE CONSOLATION\s*!/,
-      /VOUS AVEZ (?:REMPORTÉ|GAGNÉ) LE \dE PRIX\s*!/,
-      /CE QUI EST UN SACRÉ LOT DE CONSOLATION\s*!/,
+      /VRAIMENT, VOUS AVEZ REMPORTÉ LE PREMIER PRIX[\s\u202F]*!/,
+      /VOUS AVEZ REMPORTÉ UN (?:PRIX|LOT) DE CONSOLATION[\s\u202F]*!/,
+      /VOUS AVEZ (?:REMPORTÉ|GAGNÉ) LE \dE PRIX[\s\u202F]*!/,
+      /CE QUI EST UN SACRÉ LOT DE CONSOLATION[\s\u202F]*!/,
     ],
   },
 };

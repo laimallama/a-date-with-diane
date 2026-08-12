@@ -36,7 +36,7 @@ Vous la retrouvez au théâtre.
 
 C’est une belle journée chaude et le soleil inonde la façade du théâtre. Vous regardez une ou deux affiches en attendant. Puis vous l’entendez appeler votre nom. Elle est déjà dans le hall et marche vers vous en souriant. D’après la direction d’où elle vient, il est évident qu’elle sort tout juste des toilettes des femmes.
 
-Elle porte une robe d’été à motifs noirs et blancs, avec des poches et une ceinture façon cuir. Elle est superbe.
+Elle porte une robe d’été à motifs noirs et blancs, avec des poches et une ceinture en cuir. Elle est superbe.
 
 DIANE : Bonjour ! Je suis arrivée un peu tôt pour prendre un verre avec mon amie qui joue dans la pièce. Elle vient juste de partir se préparer.
 
@@ -244,7 +244,7 @@ Vous regardez Diane et elle vous regarde. Vous souriez tous les deux.
 
 Vous avez gagné 1 points d’intimité.
 
-DIANE : [En chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
+DIANE : [en chuchotant] Celle qui joue la fille partie bouder, c’est Molly, mon amie.
 
 Diane semble tout à fait détendue pour l’instant, rien n’indique qu’elle ait besoin d’y aller.
 

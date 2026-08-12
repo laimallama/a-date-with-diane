@@ -1,14 +1,14 @@
 # A Date With Diane
 
-A restored, cleaned, translated, documented, and expanded edition of the original *A Date With Diane*, an old, single-file, JavaScript-driven adult branching text game.
+A restored, cleaned, translated, and expanded edition of the original *A Date With Diane*, an old, single-file, JavaScript-driven adult branching text game.
 
-This edition keeps the original narrative flavour while improving the playable experience. It fixes logic and wording issues, removes obsolete image placeholders, adds a back button with state restoration, adds an in-game Gallery for jumping straight to any ending or hidden scene with guided highlighting, adds a dark mode toggle, adds multiple language editions, and documents every verified ending and hidden scene.
+This edition keeps the original narrative flavour while improving the playable experience: clearer wording and logic, Back with full state restore, an in-game Gallery for endings and hidden scenes (with guided highlighting and Skip to the good bit), dark mode, and five language editions.
 
 **Adult content.** This is an 18+ text-based game with explicit and fetish-related material. The repository is private for that reason.
 
 ## Playing
 
-The playable files are in [`outputs/`](outputs/), grouped by language.
+Playable files are in [`outputs/`](outputs/), grouped by language.
 
 | Folder | Language |
 |---|---|
@@ -18,28 +18,29 @@ The playable files are in [`outputs/`](outputs/), grouped by language.
 | `outputs/es` | Spanish |
 | `outputs/fr` | French |
 
-All five are independent editions. Each language folder contains a single-language HTML file, a bilingual HTML file (switches with English; not present for the English-only edition), edition notes, an endings guide with verified ending transcripts, and a hidden scenes guide with verified hidden-scene transcripts. Just open the `.html` file in a browser to play.
+Each language folder contains:
 
-There are currently **10 verified endings** and **22 verified hidden scenes** per language.
+- `dianedate_*.html` — open in a browser to play (bilingual editions switch with English; EN is single-language only)
+- `edition_notes_*.txt` — notes on this edition
+- `transcripts/endings/` and `transcripts/hidden_scenes/` — **payoff transcripts**: the segment of each Gallery entry from where the ending or hidden scene really begins (same cut as Skip to the good bit / scene start). Gallery order, short filenames, leaf title as heading
 
-Every edition has a Gallery button (top of the page once the age gate is passed) listing every ending and hidden scene. Picking one restarts the game and highlights the correct button at each step, so you can play through it yourself rather than just reading a transcript. The existing Back button works through the whole replayed path, and picking a different entry always starts completely fresh.
+There are **no** separate click-path guide text files. The Gallery is the walkthrough.
 
-Pressing "b" is the same as clicking Back. During a guided walkthrough, a "Guide: On/Off" switch sits next to the Back button so you can turn the highlighting off and on as you like without losing your place; it only appears while a guide is active. Pressing "h" is the same as clicking that switch. Pressing "g" opens and closes the Gallery; Escape also closes it. In bilingual editions, "l" switches languages. Number keys 1-9 select the matching choice on screen, the same as clicking it.
+**Gallery** (after the age gate): pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**h**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the payoff transcripts start from. **Back** (**b**) restores full state. **g** / Escape open and close the Gallery. Bilingual: **l** switches language. **1–9** select choices.
 
-A "Dark Mode: On/Off" button next to the Gallery button switches the page between light and dark themes. It's a per-session toggle only — it resets to light mode the next time you open the file.
+**Dark Mode: On/Off** is session-only (resets on a fresh load).
 
-The stats bar (Pounds, Bladder, and so on) is hidden and frozen at its starting values while you're on the title screen, the notes, further information, and the day-choice screens. It appears once the date itself begins ("On with the story!") and starts changing from there.
+The stats bar stays hidden/frozen on title, notes, further information, and day-choice screens, then appears when the date begins (“On with the story!”).
 
 ## Maintaining
 
-The [`maintenance/`](maintenance/) folder regenerates ending/hidden-scene guides and transcripts, rebuilds Gallery route data, and keeps `aligned_text.json` for cross-language checks. Conventions and settled wording: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). File list: [`maintenance/README.txt`](maintenance/README.txt).
+Toolkit and conventions: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md).
 
-Typical regeneration after wording or route edits:
+All ending/extra Gallery route label sequences live in `write_verified_guides.js`; hidden-scene definitions live in `write_hidden_scenes.js`. There is no separate `routes/` folder.
 
 ```bash
-node maintenance/write_verified_guides.js
-node maintenance/write_ending_transcripts.js
-node maintenance/write_hidden_scenes.js
+node maintenance/write_verified_guides.js   # ending-route smoke test
+node maintenance/write_hidden_scenes.js     # hidden-scene definitions check
+node maintenance/build_gallery_data.js      # after Gallery route/title changes
+node maintenance/write_transcripts.js       # regenerate payoff transcripts
 ```
-
-If Gallery routes or titles changed, also run `node maintenance/build_gallery_data.js`.

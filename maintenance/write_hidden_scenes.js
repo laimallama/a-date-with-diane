@@ -5,15 +5,17 @@ const mod = require("module");
 
 const ROOT = path.resolve(__dirname, "..");
 const GUIDE_SOURCE = path.join(ROOT, "maintenance/write_verified_guides.js");
+// Clean legacy guide/hidden_scenes paths only — never touch outputs/*/transcripts/.
 const LEGACY_HIDDEN_OUTPUTS = [
+  path.join(ROOT, "outputs/en/hidden_scenes"),
+  path.join(ROOT, "outputs/cn/hidden_scenes"),
+  path.join(ROOT, "outputs/es/hidden_scenes"),
+  path.join(ROOT, "outputs/fr/hidden_scenes"),
+  path.join(ROOT, "outputs/tw/hidden_scenes"),
   path.join(ROOT, "outputs/en/hidden_scene_transcripts_en"),
   path.join(ROOT, "outputs/cn/hidden_scene_transcripts_cn"),
   path.join(ROOT, "outputs/es/hidden_scene_transcripts_es"),
   path.join(ROOT, "outputs/fr/hidden_scene_transcripts_fr"),
-  path.join(ROOT, "outputs/en/transcripts/hidden_scenes"),
-  path.join(ROOT, "outputs/cn/transcripts/hidden_scenes"),
-  path.join(ROOT, "outputs/es/transcripts/hidden_scenes"),
-  path.join(ROOT, "outputs/fr/transcripts/hidden_scenes"),
   path.join(ROOT, "outputs/en/hidden_scenes_guide_en.txt"),
   path.join(ROOT, "outputs/cn/hidden_scenes_guide_cn.txt"),
   path.join(ROOT, "outputs/es/hidden_scenes_guide_es.txt"),
@@ -22,144 +24,20 @@ const LEGACY_HIDDEN_OUTPUTS = [
   path.join(ROOT, "outputs/cn/guides/hidden_scenes_guide_cn.txt"),
   path.join(ROOT, "outputs/es/guides/hidden_scenes_guide_es.txt"),
   path.join(ROOT, "outputs/fr/guides/hidden_scenes_guide_fr.txt"),
-  path.join(ROOT, "outputs/en/hidden_scenes/transcripts"),
-  path.join(ROOT, "outputs/cn/hidden_scenes/transcripts"),
-  path.join(ROOT, "outputs/es/hidden_scenes/transcripts"),
-  path.join(ROOT, "outputs/fr/hidden_scenes/transcripts"),
-  path.join(ROOT, "outputs/en/hidden_scenes/code_fragments"),
-  path.join(ROOT, "outputs/cn/hidden_scenes/code_fragments"),
-  path.join(ROOT, "outputs/es/hidden_scenes/code_fragments"),
-  path.join(ROOT, "outputs/fr/hidden_scenes/code_fragments"),
-  path.join(ROOT, "outputs/tw/hidden_scenes/code_fragments"),
 ];
 
 const languages = {
-  en: {
-    htmlPath: path.join(ROOT, "outputs/en/dianedate_en.html"),
-    guidePath: path.join(ROOT, "outputs/en/hidden_scenes/hidden_scenes_guide_en.txt"),
-    transcriptDir: path.join(ROOT, "outputs/en/hidden_scenes/scene_transcripts"),
-    heading: "Hidden Scenes Guide",
-    intro: [
-      "This guide covers optional hidden scenes rather than official endings.",
-      "The official Prize and Consolation Prize routes remain in the main endings guide.",
-      "Use the bases below first, then follow the extra steps listed under each scene.",
-    ],
-    baseLabel: "Base",
-    baseHeading: "Bases",
-    sceneLabel: "Hidden Scene",
-    sceneHeading: "Scenes",
-    useBase: "Use base",
-    thenPress: "Then press:",
-    resultLabel: "Result:",
-    entryLabel: "Entry:",
-    exitLabel: "Exit:",
-    labelJoiner: " ",
-    baseJoiner: " ",
-    useJoiner: " ",
-    sentenceEnd: ".",
-  },
-  cn: {
-    htmlPath: path.join(ROOT, "outputs/cn/dianedate_cn.html"),
-    guidePath: path.join(ROOT, "outputs/cn/hidden_scenes/hidden_scenes_guide_cn.txt"),
-    transcriptDir: path.join(ROOT, "outputs/cn/hidden_scenes/scene_transcripts"),
-    heading: "隐藏场景指南",
-    intro: [
-      "这份指南收录的是可选隐藏场景，不是正式结局。",
-      "正式奖项和安慰奖路线仍然以主结局指南为准。",
-      "先按下面的基础路线走到指定位置，再按每个隐藏场景下面的额外步骤继续。",
-    ],
-    baseLabel: "基础路线",
-    baseHeading: "基础路线",
-    sceneLabel: "隐藏场景",
-    sceneHeading: "隐藏场景",
-    useBase: "使用基础路线",
-    thenPress: "然后按：",
-    resultLabel: "结果：",
-    entryLabel: "进入位置：",
-    exitLabel: "离开位置：",
-    labelJoiner: "",
-    baseJoiner: "",
-    useJoiner: "",
-    sentenceEnd: "。",
-  },
-  es: {
-    htmlPath: path.join(ROOT, "outputs/es/dianedate_es.html"),
-    guidePath: path.join(ROOT, "outputs/es/hidden_scenes/hidden_scenes_guide_es.txt"),
-    transcriptDir: path.join(ROOT, "outputs/es/hidden_scenes/scene_transcripts"),
-    heading: "Guía de escenas ocultas",
-    intro: [
-      "Esta guía cubre escenas ocultas opcionales, no finales oficiales.",
-      "Las rutas de premios y premios de consolación siguen estando en la guía principal de finales.",
-      "Usa primero las bases de abajo y después sigue los pasos extra indicados en cada escena.",
-    ],
-    baseLabel: "Base",
-    baseHeading: "Bases",
-    sceneLabel: "Escena oculta",
-    sceneHeading: "Escenas",
-    useBase: "Usa la base",
-    thenPress: "Después pulsa:",
-    resultLabel: "Resultado:",
-    entryLabel: "Entrada:",
-    exitLabel: "Salida:",
-    labelJoiner: " ",
-    baseJoiner: " ",
-    useJoiner: " ",
-    sentenceEnd: ".",
-  },
-  fr: {
-    htmlPath: path.join(ROOT, "outputs/fr/dianedate_fr.html"),
-    guidePath: path.join(ROOT, "outputs/fr/hidden_scenes/hidden_scenes_guide_fr.txt"),
-    transcriptDir: path.join(ROOT, "outputs/fr/hidden_scenes/scene_transcripts"),
-    heading: "Guide des scènes cachées",
-    intro: [
-      "Ce guide couvre les scènes cachées optionnelles, pas les fins officielles.",
-      "Les routes des prix et des prix de consolation restent dans le guide principal des fins.",
-      "Utilisez d'abord les bases ci-dessous, puis suivez les étapes supplémentaires indiquées pour chaque scène.",
-    ],
-    baseLabel: "Base",
-    baseHeading: "Bases",
-    sceneLabel: "Scène cachée",
-    sceneHeading: "Scènes",
-    useBase: "Utilisez la base",
-    thenPress: "Puis cliquez sur :",
-    resultLabel: "Résultat :",
-    entryLabel: "Entrée :",
-    exitLabel: "Sortie :",
-    labelJoiner: " ",
-    baseJoiner: " ",
-    useJoiner: " ",
-    sentenceEnd: ".",
-  },
-  tw: {
-    htmlPath: path.join(ROOT, "outputs/tw/dianedate_tw.html"),
-    guidePath: path.join(ROOT, "outputs/tw/hidden_scenes/hidden_scenes_guide_tw.txt"),
-    transcriptDir: path.join(ROOT, "outputs/tw/hidden_scenes/scene_transcripts"),
-    heading: "隱藏場景指南",
-    intro: [
-      "這份指南收錄的是可選隱藏場景，不是正式結局。",
-      "正式獎項和安慰獎路線仍然以主結局指南為準。",
-      "先按下面的基礎路線走到指定位置，再按每個隱藏場景下面的額外步驟繼續。",
-    ],
-    baseLabel: "基礎路線",
-    baseHeading: "基礎路線",
-    sceneLabel: "隱藏場景",
-    sceneHeading: "隱藏場景",
-    useBase: "使用基礎路線",
-    thenPress: "然後按：",
-    resultLabel: "結果：",
-    entryLabel: "進入位置：",
-    exitLabel: "離開位置：",
-    labelJoiner: "",
-    baseJoiner: "",
-    useJoiner: "",
-    sentenceEnd: "。",
-  },
+  en: { htmlPath: path.join(ROOT, "outputs/en/dianedate_en.html") },
+  cn: { htmlPath: path.join(ROOT, "outputs/cn/dianedate_cn.html") },
+  es: { htmlPath: path.join(ROOT, "outputs/es/dianedate_es.html") },
+  fr: { htmlPath: path.join(ROOT, "outputs/fr/dianedate_fr.html") },
+  tw: { htmlPath: path.join(ROOT, "outputs/tw/dianedate_tw.html") },
 };
 
 function loadRoutes() {
   const source = fs.readFileSync(GUIDE_SOURCE, "utf8");
-  // Stop before guide capture/write side effects — gallery only needs route arrays.
-  const cut = source.search(/\nconst enData = buildCaptures/);
+  // Stop before route smoke-test side effects — gallery only needs route arrays.
+  const cut = source.search(/\n\/\/ --- route smoke test/);
   const trimmed = cut >= 0 ? source.slice(0, cut) : source;
   const localRequire = mod.createRequire(GUIDE_SOURCE);
   const savedArgv = process.argv;
@@ -244,125 +122,27 @@ function removeUi(html) {
     .replace(/<div class=['"]nav-row['"]>[\s\S]*?<\/div>/g, "");
 }
 
-function shouldQuoteEmphasis(text, langCode) {
-  const clean = text.trim();
-  if (!clean || clean.length > 140) return false;
-  if (/\b(points?|puntos?|点|分|點|timidez|intimidad|亲密度|親密度|害羞值)\b/i.test(clean)) return false;
-  const lower = clean.toLowerCase();
-  const stageStarts = [
-    "almost ", "between ", "softly", "with ", "then ", "she ",
-    "en voz baja", "con ", "poniéndose", "casi ", "entre ",
-    "à voix", "doucement", "rouge", "glousse", "elle ", "vous l'entendez",
-    "她", "几乎", "声音", "轻声", "脸红",
-    "幾乎", "聲音", "輕聲", "臉紅",
-  ];
-  if (langCode === "en" && lower.startsWith("he ")) return false;
-  if (stageStarts.some((start) => lower.startsWith(start))) return false;
 
-  const starts = {
-    en: /^(i\b|i'm\b|i’m\b|why\b|it\b|if one\b|you want\b|we'll\b|we’ll\b|but\b|cheers!?$|that\b|shall\b|do\b|diane,|found\b|hurry\b|come on\b|give\b|you can\b|can i\b|what\b|oh\b|oooh\b|god\b|sorry\b)/i,
-    cn: /^(对不起|我|你们先走|你想|一个去了|你当初|你倒|可总有|干杯|真的|我们|黛安|找到了|快点|走吧|抱抱我|天哪|老天|抱歉|真是)/,
-    tw: /^(對不起|我|你們先走|你想|一個去了|你當初|你倒|可總有|乾杯|真的|我們|黛安|找到了|快點|走吧|抱抱我|天哪|老天|抱歉|真是)/,
-    es: /^(lo siento|no podía|¿|a ti\b|pero\b|si una\b|tú quieres\b|¡salud|ha sido|he\b|me\b|sé(?:\s|$)|diane,|no encuentro|ya lo|date prisa|¡date prisa|os alcanzamos|necesito|venga|dame|ya ves|qué buena|¡oooh|lo necesitaba|¡dios|perdona)/i,
-    fr: /^(je\b|j[’']|pourquoi|c[’']est|mais\b|si l'une\b|tu veux\b|vous voulez\b|santé|c[’']était|on s'assoit|on vous|vous savez|diane,|je ne trouve|trouvé|dépêche|dépêchez|allez|fais-moi|vous voyez|quelle bonne|désolée|oh mon|oooh|mon dieu)/i,
-  };
-  return (starts[langCode] || starts.en).test(clean);
-}
 
-function quoteForTranscript(text, langCode) {
-  if ((langCode === "es" || langCode === "fr") && text.endsWith(",")) {
-    const body = text.slice(0, -1);
-    return langCode === "es" ? `«${body}»,` : `« ${body} »,`;
-  }
-  if (langCode === "es") return `«${text}»`;
-  if (langCode === "fr") return `« ${text} »`;
-  if (langCode === "tw") return `「${text}」`;
-  return `“${text}”`;
-}
 
-function bracketForTranscript(text) {
-  const clean = String(text)
-    .trim()
-    .replace(/^[（(]\s*/, "")
-    .replace(/\s*[）)]$/, "");
-  return clean ? `[${clean}]` : "";
-}
 
-function quoteEmphasisForTranscript(html, langCode) {
-  return String(html).replace(/<(EM|B)>([\s\S]*?)<\/\1>/gi, (match, _tag, inner) => {
-    if (/<span\b/i.test(inner)) return match;
-    const text = stripTags(inner);
-    if (!text) return "";
-    if (_tag.toUpperCase() === "B") return text;
-    if (text === "Outside Edge") return quoteForTranscript(text, langCode);
-    if (shouldQuoteEmphasis(text, langCode)) return quoteForTranscript(text, langCode);
-    return bracketForTranscript(text);
-  });
-}
 
-function separateSpeakerStageDirections(html) {
-  return String(html);
-}
 
-function capitaliseSpeakerBracket(text) {
-  return text.replace(
-    /((?:YOU|DIANE|MOLLY|BRUNO|ROBERT|CHLOE|AMANDA):\s*)\[([a-z])([^\]]*)\]/g,
-    (match, speaker, first, rest) => `${speaker}[${first.toUpperCase()}${rest}]`,
-  );
-}
 
-function polishTranscriptText(text, langCode) {
-  let out = text.replace(
-    /((?:YOU|DIANE|MOLLY|BRUNO|ROBERT|CHLOE|AMANDA|Diane|Molly|Chloe|Amanda|TÚ|VOUS|你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达|布魯諾|羅伯特)\s*(?:[:：]| :))\s*(\[[^\]]+\])\s*(?:[:：]| :)\s*/g,
-    (match, speaker, bracket) => `${speaker}${/：$/.test(speaker.trim()) ? "" : " "}${bracket} `,
-  );
-  if (langCode === "cn" || langCode === "tw") {
-    out = out
-      .replace(/(你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达|布魯諾|羅伯特)(\[[^\]]+\])：\s*/g, "$1：$2 ")
-      .replace(/\]([\u3400-\u9fffA-Za-z0-9])/g, "] $1");
-    if (langCode === "cn") {
-      out = out
-        .replace(/说：\[你想看，我也想看\]\s*/g, "说：“你想看，我也想看。”")
-        .replace(/\[有一个就会有第二个\]，他低声耳语道。/g, "“有一个就会有第二个，”他低声耳语道。");
-    } else {
-      out = out
-        .replace(/說：\[你想看，我也想看\]\s*/g, "說：「你想看，我也想看。」")
-        .replace(/\[有一個就會有第二個\]，他低聲耳語道。/g, "「有一個就會有第二個，」他低聲耳語道。");
-    }
-  } else {
-    out = out.replace(/\]([A-Za-z0-9À-ÖØ-öø-ÿ¿¡])/g, "] $1");
-  }
-  if (langCode === "es") {
-    out = out.replace(/(susurra[^:\n]*:\s*)\[([^\]\n]+)\]/gi, "$1«$2»");
-  }
-  if (langCode === "fr") {
-    out = out.replace(/(chuchote[^:\n]*:\s*)\[([^\]\n]+)\]/gi, "$1« $2 »");
-  }
-  if (langCode === "en") {
-    out = capitaliseSpeakerBracket(out)
-      .replace(/\b1 intimacy pts\b/gi, "1 intimacy point")
-      .replace(/\b([0-9]+) intimacy pts\b/gi, "$1 intimacy points")
-      .replace(/“If one goes, the other always goes”\s+he whispers/g, "“If one goes, the other always goes,” he whispers")
-      .replace(/"If one goes, the other always goes"\s+he whispers/g, "\"If one goes, the other always goes,\" he whispers");
-  }
-  return out;
-}
-
-function visibleStory(html, langCode = "en") {
-  const text = quoteEmphasisForTranscript(separateSpeakerStageDirections(removeUi(html)), langCode)
+function visibleStory(html) {
+  let text = removeUi(html);
+  text = text
     .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, inner) => `\n\n【${stripTags(inner)}】\n\n`)
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<hr\s*\/?>/gi, "\n\n")
     .replace(/<\/(?:p|h1|h2|div)>/gi, "\n\n")
     .replace(/<[^>]+>/g, "");
-  const visible = decodeEntities(text)
+  return decodeEntities(text)
     .split(/\n/)
     .map((line) => line.replace(/[ \t]+/g, " ").trim())
-    .filter(Boolean)
-    .join("\n\n")
+    .join("\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
-  return polishTranscriptText(visible, langCode);
 }
 
 function normalize(text) {
@@ -373,9 +153,6 @@ function normalize(text) {
     .trim();
 }
 
-function plainEnglishTxt(text) {
-  return text.replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
-}
 
 function routeToTags(route, routes) {
   const game = loadGame(languages.en.htmlPath);
@@ -401,22 +178,7 @@ function runTag(game, tag, context) {
   return found.text;
 }
 
-function choiceTextsForTags(tags, lang, context, preludeTags = []) {
-  const game = loadGame(lang.htmlPath);
-  preludeTags.forEach((tag, index) => {
-    runTag(game, tag, `${context} prelude, step ${index + 1}`);
-  });
-  const texts = [];
-  tags.forEach((tag, index) => {
-    const text = runTag(game, tag, `${context}, step ${index + 1}`);
-    texts.push(text);
-  });
-  return texts;
-}
 
-function numberLines(items) {
-  return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
-}
 
 function buildDefinitions(routes) {
   const secondTags = routeToTags(routes.second, routes);
@@ -1434,72 +1196,13 @@ function buildDefinitions(routes) {
   return { bases, scenes };
 }
 
-function buildGuide(lang, bases, scenes) {
-  const parts = [lang.heading, "", ...lang.intro, "", lang.baseHeading, ""];
-  for (const base of Object.values(bases)) {
-    parts.push(`${lang.baseLabel}${lang.baseJoiner}${base.name[lang.code] || base.name.en}`);
-    parts.push(numberLines(choiceTextsForTags(base.tags, lang, base.name.en)));
-    parts.push("");
-  }
-  parts.push(lang.sceneHeading, "");
-  scenes.forEach((scene, index) => {
-    const sceneTitle = scene.title[lang.code] || scene.title.en;
-    parts.push((lang.code === "cn" || lang.code === "tw") ? `${lang.sceneLabel}${index + 1}：${sceneTitle}` : `${lang.sceneLabel} ${index + 1}: ${sceneTitle}`);
-    parts.push(`${lang.entryLabel}${lang.labelJoiner}${scene.entry[lang.code] || scene.entry.en}`);
-    parts.push(`${lang.useBase}${lang.useJoiner}${bases[scene.base].name[lang.code] || bases[scene.base].name.en}${lang.sentenceEnd}`);
-    parts.push(lang.thenPress);
-    parts.push(numberLines(choiceTextsForTags(scene.tags, lang, scene.title.en, bases[scene.base].tags)));
-    parts.push(`${lang.resultLabel}${lang.labelJoiner}${scene.result[lang.code] || scene.result.en}`);
-    parts.push(`${lang.exitLabel}${lang.labelJoiner}${scene.exit[lang.code] || scene.exit.en}`);
-    parts.push("");
-  });
-  return parts.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
-}
-
-function buildTranscript(lang, scene, bases) {
-  const game = loadGame(lang.htmlPath);
-  const base = bases[scene.base];
-  for (const tag of base.tags) runTag(game, tag, `${scene.title.en} base`);
-
-  const parts = [
-    scene.title[lang.code] || scene.title.en,
-    "",
-  ];
-
-  scene.tags.forEach((tag, index) => {
-    const page = visibleStory(game.box.innerHTML, lang.code);
-    const choiceText = runTag(game, tag, `${scene.title.en} scene step ${index + 1}`);
-    if (page) parts.push(page, "");
-    parts.push(`(${choiceText})`, "");
-  });
-
-  const finalPage = visibleStory(game.box.innerHTML, lang.code);
-  if (finalPage) parts.push(finalPage, "");
-  return parts.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
-}
-
-function writeTextFile(outPath, text, langCode) {
-  fs.writeFileSync(outPath, langCode === "en" ? `\uFEFF${text}` : text, "utf8");
-}
-
 function main() {
   const routes = loadRoutes();
   const definitions = buildDefinitions(routes);
   LEGACY_HIDDEN_OUTPUTS.forEach((target) => fs.rmSync(target, { recursive: true, force: true }));
-  for (const [code, lang] of Object.entries(languages)) {
-    lang.code = code;
-    fs.mkdirSync(path.dirname(lang.guidePath), { recursive: true });
-    const guide = buildGuide(lang, definitions.bases, definitions.scenes);
-    writeTextFile(lang.guidePath, code === "en" ? plainEnglishTxt(guide) : guide, code);
-    fs.rmSync(lang.transcriptDir, { recursive: true, force: true });
-    fs.mkdirSync(lang.transcriptDir, { recursive: true });
-    definitions.scenes.forEach((scene) => {
-      const filename = `${scene.stem}_${code}.txt`;
-      const transcript = buildTranscript(lang, scene, definitions.bases);
-      writeTextFile(path.join(lang.transcriptDir, filename), code === "en" ? plainEnglishTxt(transcript) : transcript, code);
-    });
-  }
-  console.log(`Wrote ${definitions.scenes.length} hidden scenes for ${Object.keys(languages).length} languages.`);
+  console.log(
+    `Verified ${definitions.scenes.length} hidden-scene definitions for Gallery (no guide/transcript files written).`
+  );
 }
 
 main();

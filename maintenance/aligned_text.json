@@ -85,7 +85,7 @@
       "cn": "<LI>共有五种不同的成功结局，也就是按等级排列的“获胜成果”。看看你能不能全部达成！",
       "es": "<LI>Hay cinco finales exitosos distintos, o «resultados ganadores», ordenados por categoría. ¡A ver si los consigues todos!",
       "fr": "<LI>Il existe cinq fins différentes réussies, ou « résultats gagnants », classées dans l'ordre. Essayez de toutes les obtenir !",
-      "tw": "<LI>共有五種不同的成功結局，也就是按等級排列的「獲勝成果」。看看你能不能全部達成！"
+      "tw": "<LI>一共有五種成功結局，也就是依等級排列的「得獎結局」。看看你能不能全部達成！"
     },
     {
       "id": "x00009",
@@ -112,7 +112,7 @@
       "cn": "<LI><strong>膀胱</strong>仪表显示黛安憋了多少。她<strong>肚子</strong>里的水分会随着时间慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
       "es": "<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco a su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.",
       "fr": "<LI>La jauge de <strong>vessie</strong> indique ce que Diane retient. Ce qu'il y a dans son <strong>ventre</strong> passe lentement dans sa <strong>vessie</strong> au fil du temps. Vous disposez également de <strong>3 coups de chance</strong>, à utiliser judicieusement lorsqu'on vous les propose — et rappelez-vous qu'ils peuvent aussi apporter de la malchance ! Notez que vous ne pouvez en utiliser qu'un seul en fin de soirée, une fois que vous avez pris le bus ou le taxi pour rentrer.",
-      "tw": "<LI><strong>膀胱</strong>指標顯示黛安憋了多少。她<strong>肚子</strong>裡的水分會隨著時間慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
+      "tw": "<LI><strong>膀胱</strong>數值顯示黛安憋了多少。她<strong>肚子</strong>裡的水分會隨著時間慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
     },
     {
       "id": "x00011",
@@ -121,7 +121,7 @@
       "cn": "<LI>别指望第一次约会就能和她上床，但如果你应对得当，也许还能尝到点乐子。永远别忘了：女人总是让人捉摸不透。",
       "es": "<LI>No esperes acostarte con ella en esta primera cita, pero puede que consigas algo de diversión si juegas bien tus cartas. Y nunca olvides: las mujeres son criaturas imprevisibles.",
       "fr": "<LI>N'espérez pas coucher avec elle dès ce premier rendez-vous, mais vous pourriez bien vous amuser si vous jouez bien vos cartes. Et n'oubliez jamais : les femmes sont des créatures imprévisibles.",
-      "tw": "<LI>別指望第一次約會就能跟她上床，但如果你應對得當，也許還能嘗到點樂子。千萬別忘了：女人這種生物很有意思。"
+      "tw": "<LI>別指望第一次約會就能跟她上床，但如果你應對得當，也許還能嚐到一點樂趣。千萬別忘了：女人總是讓人捉摸不透。"
     },
     {
       "id": "x00012",
@@ -139,7 +139,7 @@
       "cn": "<LI>开局你有<strong>£100</strong>。留意你的钱。晚上结束时你可能需要留一些打车回家。",
       "es": "<LI>Empiezas con <strong>£100</strong>. Vigila tu dinero. Puede que necesites algo para un taxi a casa al final de la noche.",
       "fr": "<LI>Vous commencez avec <strong>£100</strong>. Gardez un œil sur votre argent. Il vous en faudra peut-être pour prendre un taxi en fin de soirée.",
-      "tw": "<LI>開局你有<strong>£100</strong>。留意你的錢。晚上結束時，最好留點錢搭計程車回家。"
+      "tw": "<LI>一開始你有<strong>£100</strong>。留意你的錢。晚上結束時，最好留點錢搭計程車回家。"
     },
     {
       "id": "x00014",
@@ -164,7 +164,7 @@
       "kind": "story",
       "en": "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>",
       "cn": "<p class='note-lead'>左上角还有个剧情图鉴，里面有通往奖励结局、安慰奖结局以及各种隐藏场景的引导路线。卡住了可以用，单纯想逛逛也行。有些行是下拉菜单：先点开，再选你要的变体。在手机或平板上请用屏幕上的按钮；在电脑上还可以用下面这些快捷键。</p>",
-      "tw": "<p class='note-lead'>左上角還有個劇情圖鑒，裡面有通往獎勵結局、安慰獎結局以及各種隱藏場景的引導路線。卡住了可以用，單純想逛逛也行。有些列是下拉選單：先點開，再選你要的變體。在手機或平板上請用畫面上的按鈕；在電腦上還可以用下面這些快捷鍵。</p>",
+      "tw": "<p class='note-lead'>左上角還有個劇情圖鑑，裡面有通往得獎結局、安慰獎結局以及各種隱藏場景的引導路線。卡住時可以用，只是想瀏覽也可以。有些項目是下拉選單：先點開，再選你要的變體。在手機或平板上請用畫面上的按鈕；在電腦上還可以用下面這些快捷鍵。</p>",
       "es": "<p class='note-lead'>También hay una Galería arriba a la izquierda, con recorridos guiados por los finales de premio, los finales de consolación y varias escenas ocultas. Úsala si te atascas, o si simplemente quieres explorar. Algunas filas son desplegables: haz clic para abrirlas y luego elige la variante que quieras. En un teléfono o tableta, usa los botones de la pantalla; en un ordenador también tienes estas teclas de acceso rápido.</p>",
       "fr": "<p class='note-lead'>Il y a aussi une Galerie en haut à gauche, avec des parcours guidés vers les fins de prix, les fins de consolation et diverses scènes cachées. Servez-vous-en si vous bloquez, ou si vous voulez simplement explorer. Certaines lignes sont des menus déroulants : cliquez pour les ouvrir, puis choisissez la variante voulue. Sur téléphone ou tablette, utilisez les boutons à l'écran ; sur ordinateur, vous avez aussi ces raccourcis clavier.</p>"
     },
@@ -173,7 +173,7 @@
       "kind": "story",
       "en": "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>",
       "cn": "<p class='note-keys'><strong>G</strong>键打开剧情图鉴（<strong>Esc</strong>键关闭）。</p>",
-      "tw": "<p class='note-keys'><strong>G</strong> 鍵打開劇情圖鑒（<strong>Esc</strong> 鍵關閉）。</p>",
+      "tw": "<p class='note-keys'><strong>G</strong> 鍵打開劇情圖鑑（<strong>Esc</strong> 鍵關閉）。</p>",
       "es": "<p class='note-keys'><strong>G</strong> abre la Galería (<strong>Esc</strong> la cierra).</p>",
       "fr": "<p class='note-keys'><strong>G</strong> ouvre la Galerie (<strong>Échap</strong> la ferme).</p>"
     },
@@ -227,7 +227,7 @@
       "kind": "story",
       "en": "<p class='note-lead'>While following an ending Guide, press the 'Skip to the good bit!' button (or press <strong>S</strong>) to jump ahead to the climax. Going 'Back' can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>",
       "cn": "<p class='note-lead'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到高潮。用“返回”可以倒退过那个节点，但跳过按钮不会再出现，除非你从图鉴重新开始一条结局。</p>",
-      "tw": "<p class='note-lead'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到高潮。用「返回」可以倒退過那個節點，但跳過按鈕不會再出現，除非你從圖鑒重新開始一條結局。</p>",
+      "tw": "<p class='note-lead'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到高潮。用「返回」可以倒退過那個節點，但跳過按鈕不會再出現，除非你從圖鑑重新開始一條結局。</p>",
       "es": "<p class='note-lead'>Mientras sigues la Guía de un final, pulsa el botón «¡Saltar a lo bueno!» (o pulsa <strong>S</strong>) para saltar al clímax. Ir «Atrás» puede rebobinar más allá de ese punto, pero el botón de salto no volverá a aparecer hasta que empieces un final nuevo desde la Galería.</p>",
       "fr": "<p class='note-lead'>Pendant un Guide de fin, appuyez sur le bouton « Passer aux moments forts ! » (ou appuyez sur <strong>S</strong>) pour sauter au climax. Un « Retour » peut remonter au-delà de ce point, mais le bouton de saut ne réapparaîtra pas tant que vous n'aurez pas relancé une fin depuis la Galerie.</p>"
     },
@@ -546,7 +546,7 @@
       "cn": "直接去那儿",
       "es": "Ir sin más",
       "fr": "Y aller directement",
-      "tw": "直接去那兒"
+      "tw": "直接去那裡"
     },
     {
       "id": "x00050",
@@ -668,7 +668,7 @@
       "cn": "<LI>她穿着一条轻便的黑白图案连衣裙，带口袋，腰间系着一条皮腰带。她看起来美极了。",
       "es": "<LI>Lleva un vestido veraniego estampado en blanco y negro, con bolsillos y un cinturón de cuero. Está guapísima.",
       "fr": "<LI>Elle porte une robe d'été à motifs noirs et blancs, avec des poches et une ceinture en cuir. Elle est superbe.",
-      "tw": "<LI>她穿著一條輕便的黑白圖案連衣裙，帶口袋，腰間系著一條皮腰帶。她看起來美極了。"
+      "tw": "<LI>她穿著一條輕便的黑白圖案連身裙，帶口袋，腰間繫著一條皮腰帶。她看起來美極了。"
     },
     {
       "id": "x00063",
@@ -697,7 +697,7 @@
       "cn": "说你喜欢那件连衣裙",
       "es": "Decirle que te encanta el vestido",
       "fr": "Lui dire que vous adorez sa robe",
-      "tw": "說你喜歡那件連衣裙"
+      "tw": "說你喜歡那件連身裙"
     },
     {
       "id": "x00066",
@@ -1399,7 +1399,7 @@
       "cn": "<LI>黛安朝你微微一笑。“吃牛排就该这样，”她赞许地说。",
       "es": "<LI>Diane te sonríe desde el otro lado de la mesa. «Es la única manera de comer un filete», dice con aprobación.",
       "fr": "<LI>Diane vous sourit depuis l'autre côté de la table. « C'est la seule façon de manger un steak », dit-elle d'un air approbateur.",
-      "tw": "<LI>黛安朝你微微一笑。「吃牛排就該這樣，」她贊許地說。"
+      "tw": "<LI>黛安朝你微微一笑。「吃牛排就該這樣，」她讚許地說。"
     },
     {
       "id": "x00140",
@@ -1409,7 +1409,7 @@
       "cn": "你们用水互相干杯。",
       "es": "Brindáis con sendas copas de agua.",
       "fr": "Vous trinquez avec un verre d'eau.",
-      "tw": "你們用水互相干杯。"
+      "tw": "你們用水互相乾杯。"
     },
     {
       "id": "x00141",
@@ -1667,7 +1667,7 @@
       "cn": "<LI>你：说来惭愧，跟你一样。我就是去了趟厕所，回来的时候车已经走了。",
       "es": "<LI>TÚ: Bueno, tengo que reconocer que fue lo mismo que a ti. Me escapé un momento al baño y cuando volví el autobús ya se había ido.",
       "fr": "<LI>VOUS : Eh bien, je dois admettre que c'était pareil pour moi. Je suis juste allé aux toilettes, et quand je suis revenu le bus était parti.",
-      "tw": "<LI>你：說來慚愧，跟你一樣。我就是去了趟洗手間，回來時車已經開走了。"
+      "tw": "<LI>你：說來慚愧，跟你一樣。我就是去了趟廁所，回來時車已經開走了。"
     },
     {
       "id": "x00168",
@@ -2133,7 +2133,7 @@
       "cn": "<LI>你给两只酒杯都续上了酒，脑子里浮现出和黛安一起在乡间长途徒步的画面——方圆几里，连个厕所都找不到。",
       "es": "<LI>Rellenas las dos copas de vino. Te imaginas una larga caminata por el campo con Diane, sin un baño público a la vista.",
       "fr": "<LI>Vous remplissez les deux verres de vin. Vous imaginez une longue balade à la campagne avec Diane, sans toilettes publiques en vue.",
-      "tw": "<LI>你替兩人的酒杯都續上了酒，腦子裡浮現出和黛安一起在鄉間長途徒步的畫面——方圓幾裡，連個廁所都找不到。"
+      "tw": "<LI>你替兩人的酒杯都續上了酒，腦子裡浮現出和黛安一起在鄉間長途徒步的畫面——方圓幾里，連個廁所都找不到。"
     },
     {
       "id": "x00218",
@@ -2298,7 +2298,7 @@
       "cn": "<LI>黛安：那里真的很美。我是和我朋友莫莉一起去的，就是我们今晚要去看她演出的那个。",
       "es": "<LI>DIANE: Es precioso de verdad. Fui con mi amiga Molly, la que vamos a ver esta noche.",
       "fr": "<LI>DIANE : C'est vraiment beau. J'y suis allée avec mon amie Molly, celle qu'on va voir ce soir.",
-      "tw": "<LI>黛安：那兒真美。我是和朋友莫莉去的，就是我們今晚要去看她演出的那位。"
+      "tw": "<LI>黛安：那裡真美。我是和朋友莫莉去的，就是我們今晚要去看她演出的那位。"
     },
     {
       "id": "x00236",
@@ -2399,7 +2399,7 @@
       "cn": "<LI>你：要不要尝一口？",
       "es": "<LI>TÚ: ¿Quieres probar?",
       "fr": "<LI>VOUS : Tu veux goûter ?",
-      "tw": "<LI>你：要不要嘗一口？"
+      "tw": "<LI>你：要不要嚐一口？"
     },
     {
       "id": "x00247",
@@ -2417,7 +2417,7 @@
       "cn": "<LI>黛安：真的好好吃哦。不知道是什么酱汁。要不要也尝尝我的？",
       "es": "<LI>DIANE: Está riquísimo de verdad. Me pregunto qué salsa lleva. ¿Quieres probar el mío?",
       "fr": "<LI>DIANE : C'est vraiment délicieux. Je me demande quelle sauce c'est. Tu veux goûter le mien ?",
-      "tw": "<LI>黛安：真好吃。不知道是什麼醬。你要別嘗嘗我的？"
+      "tw": "<LI>黛安：真好吃。不知道是什麼醬。你要別嚐嚐我的？"
     },
     {
       "id": "x00249",
@@ -2902,7 +2902,7 @@
       "cn": "<LI>黛安：好吃。是不是很棒？不过你约会的时候总是和对方点一样的东西吗？我觉得各自点不同的来尝尝挺好的嘛。",
       "es": "<LI>DIANE: Sí. Está muy bueno, ¿verdad? Pero ¿siempre pides lo mismo que tu acompañante? A mí me parece bonito que cada uno pruebe cosas distintas.",
       "fr": "<LI>DIANE : Oui. C'est bon, non ? Mais tu commandes toujours la même chose que la personne avec qui tu dînes ? Je trouve qu'il est bien d'essayer des choses différentes.",
-      "tw": "<LI>黛安：好吃。是不是很棒？不過你約會時總是和對方點一樣的東西嗎？我覺得各自點不同的來嘗嘗滿好的嘛。"
+      "tw": "<LI>黛安：好吃。是不是很棒？不過你約會時總是和對方點一樣的東西嗎？我覺得各自點不同的來嚐嚐滿好的嘛。"
     },
     {
       "id": "x00300",
@@ -3136,7 +3136,7 @@
       "cn": "<LI>她站起来，拎起手包，朝女厕所走去。",
       "es": "<LI>Se levanta, coge su bolso y se dirige al baño de mujeres.",
       "fr": "<LI>Elle se lève, prend son sac à main et se dirige vers les toilettes des femmes.",
-      "tw": "<LI>她站起身，拿起包包，往女洗手間走去。"
+      "tw": "<LI>她站起身，拿起包包，往女廁所走去。"
     },
     {
       "id": "x00325",
@@ -3393,7 +3393,7 @@
       "cn": "<LI>黛安：哦，那不太合我的口味。我觉得买车简直是在浪费钱。毕竟，四个轮子就是四个轮子，对吧？而且想想它们造成的全球变暖！我以前有个男朋友就痴迷于汽车，整天只想开车兜风。那是我这辈子最无聊的时光。",
       "es": "<LI>DIANE: Ah, no creo que sea lo mío. Me parece que son un gasto enorme de dinero. Al fin y al cabo, cuatro ruedas son cuatro ruedas, ¿no? ¡Y piensa en todo el calentamiento global que provocan! Tuve un novio una vez que estaba obsesionado con los coches, solo quería conducir todo el día. En mi vida me había aburrido tanto.",
       "fr": "<LI>DIANE : Oh, je ne crois pas que ce soit vraiment mon truc. Je trouve que c'est tellement de l'argent gaspillé. Après tout, quatre roues c'est quatre roues, non ? Et juste à penser au réchauffement climatique que ça provoque ! J'ai eu un petit ami qui était complètement obsédé par les voitures, il voulait juste rouler toute la journée. Je ne me suis jamais autant ennuyée de ma vie.",
-      "tw": "<LI>黛安：哦，我不太喜歡那種東西。我想車很浪費錢。反正不都是四個輪子嗎？再想想它們帶來的全球變暖！我以前有個男朋友痴迷汽車，整天只想開車兜風。我從沒那麼無聊過。"
+      "tw": "<LI>黛安：哦，我不太喜歡那種東西。我想車很浪費錢。反正不都是四個輪子嗎？再想想它們帶來的全球暖化！我以前有個男朋友痴迷汽車，整天只想開車兜風。我從沒那麼無聊過。"
     },
     {
       "id": "x00352",
@@ -3411,7 +3411,7 @@
       "cn": "<LI>黛安：他根本不想去什么特别的地方。就这条高速飞驰过去，再换另一条，再换另一条。他一路喋喋不休地讲这条A级公路、那条B级公路，说每加仑能跑多少英里。哪怕你急着上厕所、快憋疯了，他也永远不想停车。那次经历让我对汽车彻底死心了。",
       "es": "<LI>DIANE: Ni siquiera quería ir a ningún sitio especial. Ibas a toda velocidad por una autopista, luego otra y luego otra. Él no paraba de hablar de esta carretera A y aquella carretera B, y de cuántos kilómetros hacía por litro. Y nunca quería parar, aunque estuvieras a punto de mearte encima. Me quitó las ganas de coches para siempre.",
       "fr": "<LI>DIANE : Il ne voulait même pas aller quelque part de précis. On fonçait sur une autoroute, puis une autre, puis encore une autre. Il n'arrêtait pas de jacasser sur telle route A et telle route B, et sur sa consommation au litre. Et il ne voulait jamais s'arrêter — même quand on était à deux doigts de se faire pipi dessus. Ça m'a dégoûtée des voitures pour la vie.",
-      "tw": "<LI>黛安：他根本不想去什麼特別的地方。就這條高速飛馳過去，再換另一條，再換另一條。他一路喋喋不休地講這條A級公路、那條B級公路，說每加侖能跑多少英裡。哪怕你急著上廁所、快憋瘋了，他也永遠不想停車。那次經歷讓我對汽車徹底死心了。"
+      "tw": "<LI>黛安：他根本不想去什麼特別的地方。就這條高速飛馳過去，再換另一條，再換另一條。他一路喋喋不休地講這條A級公路、那條B級公路，說每加侖能跑多少英里。哪怕你急著上廁所、快憋瘋了，他也永遠不想停車。那次經歷讓我對汽車徹底死心了。"
     },
     {
       "id": "x00354",
@@ -3815,7 +3815,7 @@
       "cn": "<LI>黛安：大多数人都挺好的。不过今天这两位一看就挺难缠。他们走到哪儿都不会满意的。",
       "es": "<LI>DIANE: La mayoría son majos. Los de hoy, en cambio, eran un par de pesados. No estarán contentos en ningún sitio.",
       "fr": "<LI>DIANE : La plupart sont sympas. Ceux d'aujourd'hui avaient l'air de vrais râleurs, par contre. Rien ne les satisfera jamais, où qu'ils aillent.",
-      "tw": "<LI>黛安：大多數人都挺好。不過今天這兩位一看就挺難纏。他們走到哪兒都不會滿意的。"
+      "tw": "<LI>黛安：大多數人都挺好。不過今天這兩位一看就挺難纏。他們走到哪裡都不會滿意的。"
     },
     {
       "id": "x00397",
@@ -4475,7 +4475,7 @@
       "cn": "<LI>黛安：我……我还来得及去趟厕所吗？",
       "es": "<LI>DIANE: Oye, ¿me da tiempo a ir un momento al baño de señoras?",
       "fr": "<LI>DIANE : Au fait, j'ai le temps d'aller aux toilettes ?",
-      "tw": "<LI>黛安：其實，我還有時間去趟女洗手間嗎？"
+      "tw": "<LI>黛安：其實，我還有時間去趟女廁所嗎？"
     },
     {
       "id": "x00467",
@@ -4615,7 +4615,7 @@
       "cn": "<LI>你们在剧院大厅。黛安问她是否来得及去趟厕所。",
       "es": "<LI>Estás en el vestíbulo del teatro. Diane ha preguntado si le da tiempo a ir un momento al baño de señoras.",
       "fr": "<LI>Vous êtes dans le hall du théâtre. Diane vous a demandé si elle avait le temps d'aller aux toilettes.",
-      "tw": "<LI>你們在劇場大廳。黛安問自己是否還有時間去趟女洗手間。"
+      "tw": "<LI>你們在劇場大廳。黛安問自己是否還有時間去趟女廁所。"
     },
     {
       "id": "x00482",
@@ -4710,7 +4710,7 @@
       "cn": "<LI>她走进了女厕所。你只能在脑海里想象她在里面的样子——裙子卷到腰间，连裤袜和内裤褪到膝盖，就这样坐在那里，尿液淅淅沥沥地流进马桶……",
       "es": "<LI>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, las medias y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...",
       "fr": "<LI>Elle disparaît aux toilettes des femmes. Vous n'avez plus qu'à l'imaginer là-dedans, la jupe relevée autour de la taille, ses collants et sa culotte autour des genoux pendant qu'elle est assise, son pipi tintant dans la cuvette…",
-      "tw": "<LI>她進了女洗手間。你只能想像她在裡頭的樣子：裙子撩到腰間，褲襪和內褲褪到膝頭，坐在那裡，尿聲淅淅瀝瀝地落進馬桶……"
+      "tw": "<LI>她進了女廁所。你只能想像她在裡頭的樣子：裙子撩到腰間，褲襪和內褲褪到膝頭，坐在那裡，尿聲淅淅瀝瀝地落進馬桶……"
     },
     {
       "id": "x00492",
@@ -4892,7 +4892,7 @@
       "cn": "<LI>她走进了女厕所，你则去了男厕。你听到她推开隔间门的一声砰响。你只能想象隔壁那面墙的另一边——她把裙子卷到腰间，内裤褪到膝盖，就这样坐在那里，尿液淅淅沥沥地流进马桶……",
       "es": "<LI>Ella desaparece en el baño de señoras, tú entras en el de caballeros. Oyes cómo da un portazo al meterse en un cubículo. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...",
       "fr": "<LI>Elle disparaît aux toilettes des femmes, vous allez aux toilettes des hommes. Vous entendez une porte claquer quand elle entre dans une cabine. Vous n'avez plus qu'à l'imaginer de l'autre côté du mur, la jupe relevée autour de la taille, sa culotte autour des genoux pendant qu'elle est assise, son pipi tintant dans la cuvette…",
-      "tw": "<LI>她進了女洗手間，你則去了男洗手間。你聽見她進隔間時門砰地一響。你只能想像隔牆另一邊的她：裙子撩到腰間，內褲褪到膝頭，坐在那裡，尿聲淅淅瀝瀝地落進馬桶……"
+      "tw": "<LI>她進了女廁所，你則去了男廁所。你聽見她進隔間時門砰地一響。你只能想像隔牆另一邊的她：裙子撩到腰間，內褲褪到膝頭，坐在那裡，尿聲淅淅瀝瀝地落進馬桶……"
     },
     {
       "id": "x00512",
@@ -5177,7 +5177,7 @@
       "cn": "<LI>你非常在意坐在身旁的这个漂亮女孩。她的裙子相当长，长及膝盖，但你能想象出裙子下面她的双腿。",
       "es": "<LI>Eres muy consciente de la guapa chica que tienes al lado. La falda es bastante larga, le llega a las rodillas, pero puedes imaginarte sus piernas debajo.",
       "fr": "<LI>Vous êtes très conscient de cette jolie fille assise à côté de vous. La jupe est assez longue, lui tombant jusqu'aux genoux, mais vous pouvez imaginer ses jambes en dessous.",
-      "tw": "<LI>坐在身旁的漂亮女生讓你格外留意。她的裙子很長，長及膝蓋，但你能想象裙子下面的雙腿。"
+      "tw": "<LI>坐在身旁的漂亮女生讓你格外留意。她的裙子很長，長及膝蓋，但你能想像裙子下面的雙腿。"
     },
     {
       "id": "x00543",
@@ -5503,7 +5503,7 @@
       "cn": "<LI>她对你微笑，轻轻捏了一下你的手，身子往你这边靠近了一些。",
       "es": "<LI>Te sonríe y te aprieta la mano. Se acerca un poco más a ti.",
       "fr": "<LI>Elle vous sourit et serre votre main. Elle se rapproche de vous.",
-      "tw": "<LI>她對你微笑，輕輕捏了一下你的手，身子往你這兒靠近了一些。"
+      "tw": "<LI>她對你微笑，輕輕捏了一下你的手，身子往你這裡靠近了一些。"
     },
     {
       "id": "x00578",
@@ -5549,7 +5549,7 @@
       "cn": "<LI>她对你微笑，主动伸手握住了你的手，身子往你这边靠近了一些。",
       "es": "<LI>Te sonríe, alarga la mano y te coge la tuya. Se acerca un poco más a ti.",
       "fr": "<LI>Elle vous sourit, tend la main et prend la vôtre. Elle se rapproche de vous.",
-      "tw": "<LI>她對你微笑，主動伸手握住了你的手，身子往你這兒靠近了一些。"
+      "tw": "<LI>她對你微笑，主動伸手握住了你的手，身子往你這裡靠近了一些。"
     },
     {
       "id": "x00583",
@@ -5976,7 +5976,7 @@
       "cn": "<LI><B>你疯了吗？</B>这里可是高档剧院，不是你家附近电影院的最后一排。",
       "es": "<LI><B>¿Estás loco?</B> Esto es un teatro de categoría, no la última fila del cine del barrio.",
       "fr": "<LI><B>Vous êtes fou ?</B> C'est un théâtre chic, pas le fond de votre cinéma de quartier.",
-      "tw": "<LI><B>你瘋了嗎？這兒可是高檔劇院，不是你家附近電影院的最後一排。"
+      "tw": "<LI><B>你瘋了嗎？這裡可是高檔劇院，不是你家附近電影院的最後一排。"
     },
     {
       "id": "x00629",
@@ -6446,7 +6446,7 @@
       "cn": "<LI>她朝女厕所方向走去，消失在人群里。那里排着队，她离开了好几分钟。",
       "es": "<LI>Desaparece en dirección al baño de mujeres. Había cola y tarda varios minutos.",
       "fr": "<LI>Elle disparaît en direction des toilettes des femmes. Il y avait la queue et elle est partie plusieurs minutes.",
-      "tw": "<LI>她往女廁方向走去，消失在人群中。那兒排著隊，她去了好幾分鐘。"
+      "tw": "<LI>她往女廁方向走去，消失在人群中。那裡排著隊，她去了好幾分鐘。"
     },
     {
       "id": "x00678",
@@ -6694,7 +6694,7 @@
       "cn": "<LI>其实从这边看，队伍没那么长——已经没有再排到门外了。黛安也注意到了这一点，她碰了碰你的手臂。",
       "es": "<LI>Lo cierto es que, desde aquí, la cola no parecía tan mala: ya no se asomaba por la puerta. Diane se ha dado cuenta. Te toca el brazo.",
       "fr": "<LI>En fait, d'ici, la queue n'avait pas l'air si longue que ça — elle ne serpentait plus jusqu'à la porte. Diane s'en est rendu compte. Elle vous touche le bras.",
-      "tw": "<LI>其實從這兒看，隊伍沒那麼糟——已經不再排到門外了。黛安也注意到了，碰了碰你的手臂。"
+      "tw": "<LI>其實從這裡看，隊伍沒那麼糟——已經不再排到門外了。黛安也注意到了，碰了碰你的手臂。"
     },
     {
       "id": "x00704",
@@ -6741,7 +6741,7 @@
       "cn": "<LI>你使用了一次幸运机会，黛安去了女厕所。从门厅这边看，队伍好像已经散了。",
       "es": "<LI>Has jugado un golpe de suerte y Diane ha ido al baño de mujeres. Desde el vestíbulo, la cola parecía haberse disuelto.",
       "fr": "<LI>Vous avez joué un coup de chance et Diane est allée aux toilettes des femmes. Depuis le foyer, la queue avait l'air d'avoir disparu.",
-      "tw": "<LI>你用了一次幸運機會，黛安去了女洗手間。從大廳看，隊伍似乎已經散了。"
+      "tw": "<LI>你用了一次幸運機會，黛安去了女廁所。從大廳看，隊伍似乎已經散了。"
     },
     {
       "id": "x00709",
@@ -6778,7 +6778,7 @@
       "cn": "<LI>但今天是周六晚上，剧院几乎座无虚席。更糟糕的是，又有一两个在城里喝酒的女孩跑进来借用洗手间。等她走到近前，女厕所前还是排起了长队。",
       "es": "<LI>Pero es sábado por la noche y el teatro está casi lleno. Para colmo, un par de chicas que estaban bebiendo por el centro se han colado aquí a usar los servicios. Para cuando ella llega, hay de nuevo una cola considerable.",
       "fr": "<LI>Mais c'est samedi soir et le théâtre est presque plein. Pour ne rien arranger, une ou deux filles qui buvaient en ville sont venues utiliser les toilettes. Quand elle y arrive, il y a encore une belle queue.",
-      "tw": "<LI>可這是週六晚上，劇院幾乎坐滿了。更糟的是，一兩個在城裡喝酒的女生也進來借廁所。等她到那兒時，果然早就排起了長隊。"
+      "tw": "<LI>可這是週六晚上，劇院幾乎坐滿了。更糟的是，一兩個在城裡喝酒的女生也進來借廁所。等她到那裡時，果然早就排起了長隊。"
     },
     {
       "id": "x00713",
@@ -6787,7 +6787,7 @@
       "cn": "<LI>她加入队伍——长队又一次排到了门外。过了几分钟，队伍总算往前挪了些，她终于进了女厕所，但里面还是挤着不少人，而且还有一个隔间坏了。排在她后面的一个女孩子急得直跺脚，苦苦央求黛安让自己先上。",
       "es": "<LI>Se pone en la cola — otra vez serpenteando por la puerta. Al cabo de unos minutos avanza y ya está dentro del baño de mujeres, pero sigue habiendo mucha gente, y uno de los cubículos está fuera de servicio. Una chica que estaba detrás de ella, que no paraba de bailar de un pie a otro, le ha suplicado que la deje pasar primero.",
       "fr": "<LI>Elle s'y joint — la file serpente à nouveau jusqu'à la porte. Au bout de quelques minutes, elle a avancé et elle se retrouve à l'intérieur des toilettes des femmes, mais il y a vraiment du monde, et l'une des cabines est hors service. Une fille qui était derrière elle, et qui sautillait vraiment d'un pied sur l'autre, l'a également suppliée de la laisser passer en premier.",
-      "tw": "<LI>她加入隊伍——隊又一次排到了門外。幾分鐘後隊伍往前挪了，她進了女洗手間，但裡頭仍擠滿了人，還有一間隔間壞了。排在她後面的一個女生急得直跺腳，求她先讓自己進去。"
+      "tw": "<LI>她加入隊伍——隊又一次排到了門外。幾分鐘後隊伍往前挪了，她進了女廁所，但裡頭仍擠滿了人，還有一間隔間壞了。排在她後面的一個女生急得直跺腳，求她先讓自己進去。"
     },
     {
       "id": "x00714",
@@ -6843,7 +6843,7 @@
       "cn": "<LI>你们来到阳台上。你走到边缘，倚着栏杆，望向公园那边。",
       "es": "<LI>Estáis en el balcón. Os acercáis al borde y os apoyáis en la barandilla mirando el parque.",
       "fr": "<LI>Vous êtes sur le balcon. Vous vous approchez du bord et vous appuyez sur la rambarde, regardant par-dessus le parc.",
-      "tw": "<LI>你們來到陽台上。你走到邊緣，倚著欄桿，望向公園那兒。"
+      "tw": "<LI>你們來到陽台上。你走到邊緣，倚著欄桿，望向公園那裡。"
     },
     {
       "id": "x00720",
@@ -6971,7 +6971,7 @@
       "cn": "<LI>你走过女厕所门口，队伍已经散了。",
       "es": "<LI>Pasáis por delante del baño de mujeres. Ya no hay cola.",
       "fr": "<LI>Vous passez devant les toilettes des femmes. Il n'y a plus de queue.",
-      "tw": "<LI>你們經過女洗手間門口，已經不用排隊了。"
+      "tw": "<LI>你們經過女廁所門口，已經不用排隊了。"
     },
     {
       "id": "x00734",
@@ -7248,7 +7248,7 @@
       "cn": "<LI>她对你微笑，轻轻捏了一下你的手，身子往你这边靠近了一些。",
       "es": "<LI>Te sonríe y te aprieta la mano. Se acerca un poco más a ti.",
       "fr": "<LI>Elle vous sourit et serre votre main. Elle se rapproche de vous.",
-      "tw": "<LI>她對你微笑，輕輕捏了一下你的手，身子往你這兒靠近了一些。"
+      "tw": "<LI>她對你微笑，輕輕捏了一下你的手，身子往你這裡靠近了一些。"
     },
     {
       "id": "x00763",
@@ -7294,7 +7294,7 @@
       "cn": "<LI>她对你微笑，主动伸手握住了你的手，身子往你这边靠近了一些。",
       "es": "<LI>Te sonríe, alarga la mano y te coge la tuya. Se acerca un poco más a ti.",
       "fr": "<LI>Elle vous sourit, tend la main et prend la vôtre. Elle se rapproche de vous.",
-      "tw": "<LI>她對你微笑，主動伸手握住了你的手，身子往你這兒靠近了一些。"
+      "tw": "<LI>她對你微笑，主動伸手握住了你的手，身子往你這裡靠近了一些。"
     },
     {
       "id": "x00768",
@@ -7340,7 +7340,7 @@
       "cn": "<LI>她对你微微一笑，任由你的手放在那里。过了一会儿，她握住你的手，轻轻捏了一下。",
       "es": "<LI>Ella te sonríe y deja que tu mano repose ahí. Al cabo de un rato te coge la mano y te la aprieta un poco",
       "fr": "<LI>Elle vous sourit et laisse votre main reposer là. Au bout d'un moment, elle prend votre main et la serre doucement.",
-      "tw": "<LI>她朝你笑笑，任由你的手放在那兒。過了一會兒，她握住你的手，輕輕捏了一下。"
+      "tw": "<LI>她朝你笑笑，任由你的手放在那裡。過了一會兒，她握住你的手，輕輕捏了一下。"
     },
     {
       "id": "x00773",
@@ -8000,7 +8000,7 @@
       "cn": "去大厅里和莫莉碰面，也许在那里喝几杯啤酒，再和黛安一起走去凉亭酒吧。",
       "es": "Subir al vestíbulo y quedar allí con Molly, quizá tomar unas cervezas antes de ir a pie al Pabellón con Diane.",
       "fr": "Monter dans le foyer rejoindre Molly, prendre peut-être quelques bières avant une promenade jusqu'au Pavillon avec Diane.",
-      "tw": "去大廳跟莫莉碰面，也許先在那兒喝幾杯啤酒，再和黛安走去Pavilion酒吧。"
+      "tw": "去大廳跟莫莉碰面，也許先在那裡喝幾杯啤酒，再和黛安走去Pavilion酒吧。"
     },
     {
       "id": "x00845",
@@ -8039,7 +8039,7 @@
       "cn": "<LI>你：我们去大厅吧，应该能在那里见到你的朋友。",
       "es": "<LI>TÚ: ¿Subimos al vestíbulo? Allí deberíamos poder quedar con tus amigas.",
       "fr": "<LI>VOUS : Et si on montait dans le foyer ? On devrait pouvoir y retrouver tes amis.",
-      "tw": "<LI>你：我們去大廳吧，應該能在那兒見到你的朋友。"
+      "tw": "<LI>你：我們去大廳吧，應該能在那裡見到你的朋友。"
     },
     {
       "id": "x00849",
@@ -8076,7 +8076,7 @@
       "cn": "<LI>黛安：那莫莉怎么办？我不可能不见她就走。你先去凉亭吧，也许我们晚点在那里碰上你。",
       "es": "<LI>DIANE: ¿Pero qué hay de ver a Molly? No podría irme sin verla. Tú vete al Pabellón y a lo mejor nos vemos allí.",
       "fr": "<LI>DIANE : Mais Molly, alors ? Je ne peux vraiment pas partir sans la voir. Vas-y devant au Pavillon, on te rejoindra peut-être là-bas.",
-      "tw": "<LI>黛安：可莫莉怎麼辦？我不可能不見她就走。你先去Pavilion酒吧吧，說不定我們會在那兒碰上。"
+      "tw": "<LI>黛安：可莫莉怎麼辦？我不可能不見她就走。你先去Pavilion酒吧吧，說不定我們會在那裡碰上。"
     },
     {
       "id": "x00853",
@@ -8195,7 +8195,7 @@
       "cn": "<LI>你们走上大厅，黛安直奔女厕所——你看得出来她真的很急！你脑海里浮现出她冲进最近那个隔间、两腿有些打颤地把内裤往下扯的画面……",
       "es": "<LI>Subís al vestíbulo. Diane se mete en el baño de mujeres… ¡da la impresión de que le urgía bastante! Te la imaginas corriendo al cubículo más cercano, quizá dando saltitos mientras se baja las bragas…",
       "fr": "<LI>Vous montez vers le foyer. Diane file aux toilettes des femmes — vous sentez bien qu'elle en avait vraiment besoin ! Vous l'imaginez se précipiter dans la cabine la plus proche, peut-être en sautillant sur place pendant qu'elle baisse sa culotte…",
-      "tw": "<LI>你們上到大廳，黛安直奔女廁——你看得出來她真的很急！你想象她衝進最近的隔間，雙腿打著顫把內褲往下拉……"
+      "tw": "<LI>你們上到大廳，黛安直奔女廁——你看得出來她真的很急！你想像她衝進最近的隔間，雙腿打著顫把內褲往下拉……"
     },
     {
       "id": "x00866",
@@ -8250,7 +8250,7 @@
       "cn": "<LI>黛安：我挺渴的，在大厅喝一杯正好。我相信莫莉会在那儿跟我们碰面的。",
       "es": "<LI>DIANE: Tengo bastante sed, así que una copa en el vestíbulo estaría bien. Seguro que Molly nos encuentra allí.",
       "fr": "<LI>DIANE : J'ai bien soif, alors un verre dans le foyer serait sympa. Je suis sûre que Molly nous y retrouvera.",
-      "tw": "<LI>黛安：我挺渴的，在前廳喝一杯挺不錯。我相信莫莉會來那兒找我們。"
+      "tw": "<LI>黛安：我挺渴的，在前廳喝一杯挺不錯。我相信莫莉會來那裡找我們。"
     },
     {
       "id": "x00872",
@@ -8297,7 +8297,7 @@
       "cn": "<LI>黛安：她说大约15分钟后过来跟我们喝一杯。",
       "es": "<LI>DIANE: Dice que vendrá a tomar algo con nosotros aquí en unos 15 minutos.",
       "fr": "<LI>DIANE : Elle dit qu'elle va passer prendre un verre avec nous ici dans environ 15 minutes.",
-      "tw": "<LI>黛安：她說大概十五分鐘後會來這兒和我們喝一杯。"
+      "tw": "<LI>黛安：她說大概十五分鐘後會來這裡和我們喝一杯。"
     },
     {
       "id": "x00877",
@@ -8351,7 +8351,7 @@
       "cn": "<LI>她去了女厕所。几分钟后回来，神情轻松了许多。她坐在你旁边，跟你聊起了这部戏。",
       "es": "<LI>Se va hacia el baño de mujeres. Al cabo de un par de minutos vuelve con cara de alivio. Se sienta a tu lado y charla sobre la obra.",
       "fr": "<LI>Elle se dirige vers les toilettes des femmes. Au bout de quelques minutes, elle revient l'air détendu. Elle s'assoit à côté de vous et parle de la pièce.",
-      "tw": "<LI>她去了女洗手間。幾分鐘後回來，神情放鬆了許多。她坐在你旁邊，聊起那出戲。"
+      "tw": "<LI>她去了女廁所。幾分鐘後回來，神情放鬆了許多。她坐在你旁邊，聊起那出戲。"
     },
     {
       "id": "x00881",
@@ -8556,7 +8556,7 @@
       "cn": "<LI>你们打算步行去凉亭酒吧。但布鲁诺问大家要不要先喝一杯。马路对面有家不错的酒吧，啤酒比这里大厅的好多了。",
       "es": "<LI>Vais a ir andando hasta el Pabellón. Pero Bruno pregunta si todos queréis tomar algo rápido antes. Hay un pub muy agradable justo al otro lado de la calle, con mucha mejor cerveza que aquí en el vestíbulo.",
       "fr": "<LI>Vous allez marcher jusqu'au Pavillon. Mais Bruno demande si vous souhaitez tous prendre un verre rapide d'abord. Il y a un joli pub juste de l'autre côté de la rue, avec une bien meilleure bière que celle du foyer.",
-      "tw": "<LI>你們正要走去Pavilion酒吧，布魯諾卻問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比大廳這兒的好多了。"
+      "tw": "<LI>你們正要走去Pavilion酒吧，布魯諾卻問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比大廳這裡的好多了。"
     },
     {
       "id": "x00903",
@@ -8678,7 +8678,7 @@
       "cn": "<LI>不过，侧面一扇消防门也开着，不少人从那边出去。那扇门直通街道。",
       "es": "<LI>Sin embargo, también han abierto una de las salidas de emergencia del lateral, por donde está saliendo mucha gente. Da directamente a la calle.",
       "fr": "<LI>Cependant, une sortie de secours sur le côté a aussi été ouverte, et beaucoup de gens sortent par là. Elle donne directement sur la rue.",
-      "tw": "<LI>不過側面的一扇消防門也開了，不少人從那兒出去，門外就是街道。"
+      "tw": "<LI>不過側面的一扇消防門也開了，不少人從那裡出去，門外就是街道。"
     },
     {
       "id": "x00916",
@@ -8696,7 +8696,7 @@
       "cn": "<LI>黛安没想到你要走这边，有些惊讶，跟在你后面。她原本以为要从大厅出去的。她看起来有点不高兴，但什么也没说。",
       "es": "<LI>Diane se sorprende de que vayáis por aquí. Se queda rezagada. Esperaba salir por el vestíbulo. Pone cara de pocos amigos pero no dice nada.",
       "fr": "<LI>Diane est surprise que vous preniez ce chemin. Elle suit derrière. Elle s'attendait à sortir par le foyer. Elle a l'air un peu contrariée mais ne dit rien.",
-      "tw": "<LI>黛安沒想到你走這兒，驚訝地跟在後面。她原以為要從大廳出去。她看上去有點不快，但沒說什麼。"
+      "tw": "<LI>黛安沒想到你走這裡，驚訝地跟在後面。她原以為要從大廳出去。她看上去有點不快，但沒說什麼。"
     },
     {
       "id": "x00918",
@@ -8906,7 +8906,7 @@
       "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她因为匆忙冲去厕所而感到难为情。你获得了2点害羞值。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Le da vergüenza haber tenido que salir corriendo al baño. Ganas 2 puntos de timidez.</SPAN></EM></P>",
       "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle est gênée d'avoir dû se précipiter aux toilettes. Vous gagnez 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她因剛才匆匆跑去洗手間而覺得不好意思。你獲得2點害羞值。</SPAN></EM></P>"
+      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她因剛才匆匆跑去廁所而覺得不好意思。你獲得2點害羞值。</SPAN></EM></P>"
     },
     {
       "id": "x00939",
@@ -9045,7 +9045,7 @@
       "cn": "<LI>那就由你来决定了。你选哪个？你猜黛安可能想去酒吧，这样她就能顺便用女厕所——你也不想惹她不高兴，对吧？",
       "es": "<LI>Así que la decisión es tuya. ¿Qué va a ser? Sospechas que Diane querría ir al pub para poder usar el baño de mujeres... y no querrías molestarla, ¿verdad?",
       "fr": "<LI>Le choix vous appartient. Qu'est-ce que ce sera ? Vous soupçonnez Diane de vouloir aller au pub pour pouvoir se rendre aux toilettes des femmes — et vous ne voudriez pas la contrarier, n'est-ce pas.",
-      "tw": "<LI>那就由你決定。選哪個？你猜黛安可能想去酒吧，好順便去女洗手間——你也不想惹她不高興，對吧？"
+      "tw": "<LI>那就由你決定。選哪個？你猜黛安可能想去酒吧，好順便去女廁所——你也不想惹她不高興，對吧？"
     },
     {
       "id": "x00954",
@@ -9508,7 +9508,7 @@
       "cn": "<LI>你帮忙把饮料端回桌子，然后顺路去了趟男厕。",
       "es": "<LI>Ayudas a llevar las bebidas a vuestra mesa. Luego te escapas al servicio de caballeros a hacer pis.",
       "fr": "<LI>Vous aidez à porter les verres jusqu'à la table. Puis vous filez aux toilettes des hommes faire pipi.",
-      "tw": "<LI>你幫忙把飲料端回桌上，然後去男洗手間撒了泡尿。"
+      "tw": "<LI>你幫忙把飲料端回桌上，然後去男廁所撒了泡尿。"
     },
     {
       "id": "x01001",
@@ -9691,7 +9691,7 @@
       "cn": "<LI>布鲁诺：有一次排练，他甚至叫莫莉午饭时间不准去厕所，结果等到排那场戏的时候，她是真的憋得不行了。",
       "es": "<LI>BRUNO: En un ensayo incluso le dijo a Molly que no fuera al baño a la hora de comer, así que cuando llegamos a esa escena ella de verdad que tenía que ir.",
       "fr": "<LI>BRUNO : Lors d'une répétition, il a même dit à Molly de ne pas aller aux toilettes à l'heure du déjeuner, si bien que lorsqu'on en est arrivés à cette scène, elle en avait vraiment besoin.",
-      "tw": "<LI>布魯諾：有次排練，他甚至叫莫莉午休別去洗手間，結果演那場戲時，她是真的憋急了。"
+      "tw": "<LI>布魯諾：有次排練，他甚至叫莫莉午休別去廁所，結果演那場戲時，她是真的憋急了。"
     },
     {
       "id": "x01021",
@@ -9875,7 +9875,7 @@
       "cn": "<LI>黛安：我去一下厕所，马上回来。",
       "es": "<LI>DIANE: Voy un momento al baño de mujeres.",
       "fr": "<LI>DIANE : Je vais juste aux toilettes une minute.",
-      "tw": "<LI>黛安：我去一下洗手間，立刻回來。"
+      "tw": "<LI>黛安：我去一下廁所，立刻回來。"
     },
     {
       "id": "x01041",
@@ -9903,7 +9903,7 @@
       "cn": "<LI>莫莉喝啤酒都是一品脱一杯。你不禁想，待会儿她是不是也会憋得坐立不安呢。",
       "es": "<LI>Molly está bebiendo pintas. Te preguntas si también la verás removerse inquieta en la silla.",
       "fr": "<LI>Molly boit des pintes. Vous vous demandez si vous la verrez se trémousser elle aussi.",
-      "tw": "<LI>莫莉喝啤酒都是一品脫一杯。你不禁想，待會兒她是不是也會憋得坐立不安呢。"
+      "tw": "<LI>莫莉喝啤酒都是一品脫一杯。你不禁想，待會她是不是也會憋得坐立不安呢。"
     },
     {
       "id": "x01044",
@@ -9940,7 +9940,7 @@
       "cn": "<LI>黛安：我去一下厕所，马上回来。",
       "es": "<LI>DIANE: Voy un momento al baño de mujeres.",
       "fr": "<LI>DIANE : Je vais juste aux toilettes une minute.",
-      "tw": "<LI>黛安：我去一下洗手間，立刻回來。"
+      "tw": "<LI>黛安：我去一下廁所，立刻回來。"
     },
     {
       "id": "x01048",
@@ -10061,7 +10061,7 @@
       "cn": "<LI>布鲁诺：这里有些挺有意思的啤酒。他们有利克斯顿造水坑啤酒，我挺想试试。莫莉呢？",
       "es": "<LI>BRUNO: Hay cervezas interesantes aquí. Tienen una Leakstons Puddlemaker. Me apetecería probarla. ¿Molly?",
       "fr": "<LI>BRUNO : Il y a des bières intéressantes ici. Ils ont un Leakstons Puddlemaker. J'aimerais bien goûter. Molly ?",
-      "tw": "<LI>布魯諾：這裡有些有意思的啤酒。他們有一款Leakstons Puddlemaker，我滿想嘗嘗。莫莉？"
+      "tw": "<LI>布魯諾：這裡有些有意思的啤酒。他們有一款Leakstons Puddlemaker，我滿想嚐嚐。莫莉？"
     },
     {
       "id": "x01061",
@@ -10107,7 +10107,7 @@
       "cn": "<LI>莫莉：我去一下厕所。",
       "es": "<LI>MOLLY: Voy un momento al baño.",
       "fr": "<LI>MOLLY : Je file juste aux toilettes.",
-      "tw": "<LI>莫莉：我去一下洗手間。"
+      "tw": "<LI>莫莉：我去一下廁所。"
     },
     {
       "id": "x01066",
@@ -10792,7 +10792,7 @@
       "cn": "<LI>你确信她已经尿急难耐。但附近根本没有厕所——而且在这么多人面前，她开口提这件事也实在难为情。",
       "es": "<LI>Estás seguro de que se está meando. Pero no hay ningún baño cerca —y va a ser difícil que ella lo mencione estando en compañía.",
       "fr": "<LI>Vous êtes sûr qu'elle a désespérément envie de faire pipi. Mais il n'y a pas de toilettes dans les parages — et ça va être difficile pour elle d'en parler devant tout le monde.",
-      "tw": "<LI>你確信她已經憋得厲害。但附近沒有洗手間，而且當著這麼多人的面，她很難開口提。"
+      "tw": "<LI>你確信她已經憋得厲害。但附近沒有廁所，而且當著這麼多人的面，她很難開口提。"
     },
     {
       "id": "x01141",
@@ -11054,7 +11054,7 @@
       "cn": "<LI>她走进移动厕所，把门关上。你只能在外面自己想象。大约一分钟后她出来了，说“轮到你了”，然后站在那里等你回来。",
       "es": "<LI>Ella entra en el Portaloo y cierra la puerta. Solo puedes imaginarte lo que pasa dentro. Al cabo de un minuto más o menos sale, dice «Tu turno» y se queda esperando a que vuelvas.",
       "fr": "<LI>Elle entre dans le Portaloo et ferme la porte. Vous n'avez plus qu'à imaginer ce qui se passe à l'intérieur. Au bout d'une minute environ, elle ressort, dit « À toi » et attend votre retour.",
-      "tw": "<LI>她進了移動廁所，關上門。你只能自己想象裡頭的情形。大約一分鐘後她出來，說「輪到你了」，然後站著等你回來。"
+      "tw": "<LI>她進了移動廁所，關上門。你只能自己想像裡頭的情形。大約一分鐘後她出來，說「輪到你了」，然後站著等你回來。"
     },
     {
       "id": "x01169",
@@ -11072,7 +11072,7 @@
       "cn": "<LI>黛安：舒服多了？里面挺糟糕的，是吧。不过你真是个英雄，女孩子需要厕所的时候你就能帮她找到一个。",
       "es": "<LI>DIANE: ¿Mejor? Bastante cutrecillo por dentro, ¿eh? Pero eres un héroe, encontrarle a una chica un baño cuando lo necesita.",
       "fr": "<LI>DIANE : Soulagé ? C'est plutôt sordide là-dedans, non ? Mais tu es un héros, toi, de trouver des toilettes à une fille quand elle en a besoin.",
-      "tw": "<LI>黛安：好多了？裡頭滿糟，是吧？不過你真是英雄，在女生需要洗手間時還幫她找到一個。"
+      "tw": "<LI>黛安：好多了？裡頭滿糟，是吧？不過你真是英雄，在女生需要廁所時還幫她找到一個。"
     },
     {
       "id": "x01171",
@@ -11173,7 +11173,7 @@
       "cn": "<LI>你：黛安，如果你想上厕所，转角那边就有个移动厕所。",
       "es": "<LI>TÚ: Diane, si necesitas el baño, hay un baño portátil justo a la vuelta de la esquina.",
       "fr": "<LI>VOUS : Diane, si tu as envie d'aller aux toilettes, il y a un Portaloo juste au coin.",
-      "tw": "<LI>你：黛安，如果你想上廁所，轉角那兒就有個移動廁所。"
+      "tw": "<LI>你：黛安，如果你想上廁所，轉角那裡就有個移動廁所。"
     },
     {
       "id": "x01182",
@@ -11255,7 +11255,7 @@
       "cn": "<LI>黛安似乎朝移动厕所那边瞥了一眼，却什么都没说。她一定在后悔刚才说自己不需要去。",
       "es": "<LI>Diane parece echar un vistazo hacia el baño portátil, pero no dice nada. Debe de estar arrepintiéndose de haber dicho que no necesitaba ir.",
       "fr": "<LI>Diane semble jeter un coup d'œil vers le Portaloo mais ne dit rien. Elle doit regretter d'avoir dit qu'elle n'avait pas besoin d'y aller.",
-      "tw": "<LI>黛安似乎瞥了移動洗手間一眼，卻什麼也沒說。她一定後悔剛才說自己不需要去。"
+      "tw": "<LI>黛安似乎瞥了移動廁所一眼，卻什麼也沒說。她一定後悔剛才說自己不需要去。"
     },
     {
       "id": "x01191",
@@ -11328,7 +11328,7 @@
       "cn": "<LI>你：如果有人想上厕所，转角那边有个移动厕所。",
       "es": "<LI>TÚ: Si alguien necesita el baño, hay un baño portátil a la vuelta de la esquina.",
       "fr": "<LI>VOUS : Si quelqu'un a envie d'aller aux toilettes, il y a un Portaloo au coin.",
-      "tw": "<LI>你：如果有人想上廁所，轉角那兒有個移動廁所。"
+      "tw": "<LI>你：如果有人想上廁所，轉角那裡有個移動廁所。"
     },
     {
       "id": "x01199",
@@ -12207,7 +12207,7 @@
       "cn": "<LI>黛安：确实很美。大约5年前我们一家在那里度假，也坐了那条线。还是蒸汽火车呢。",
       "es": "<LI>DIANE: Oh, lo es. Hace unos 5 años hicimos allí unas vacaciones en familia y recorrimos esa línea. Además era un tren de vapor.",
       "fr": "<LI>DIANE : Oh, c'est vrai. On y a passé des vacances en famille il y a environ 5 ans et on a pris le train. C'était même un train à vapeur.",
-      "tw": "<LI>黛安：哦，那裡很美。大概五年前我們一家去那兒度假，也坐了那條線。還是蒸汽火車呢。"
+      "tw": "<LI>黛安：哦，那裡很美。大概五年前我們一家去那裡度假，也坐了那條線。還是蒸汽火車呢。"
     },
     {
       "id": "x01293",
@@ -12261,7 +12261,7 @@
       "cn": "<LI>你点头表示同意。两人都停下脚步，对视着。你搂住她，慢慢将她拉近，然后吻了她。这是你第一次吻她，她久久没有离开。你能感觉到她嘴唇的温度。你们又吻了一次。",
       "es": "<LI>Asientes. Los dos os detenéis y os miráis. Le pasas el brazo por los hombros, la atraes lentamente hacia ti y la besas. Es la primera vez que la besas y ella se recrea en el momento. Puedes saborear sus labios. Os besáis de nuevo.",
       "fr": "<LI>Vous acquiescez d'un signe de tête. Vous vous arrêtez tous les deux et vous vous regardez. Vous passez votre bras autour d'elle, l'attirez lentement vers vous et l'embrassez. C'est la première fois que vous l'embrassez et elle s'attarde sur ce baiser. Vous sentez le goût de ses lèvres. Vous vous embrassez de nouveau.",
-      "tw": "<LI>你點頭。你們停下來，望著彼此。你摟住她，緩緩把她拉近，吻了她。這是你第一次吻她，她停留了很久。你嘗到她唇上的味道，又吻了她一次。"
+      "tw": "<LI>你點頭。你們停下來，望著彼此。你摟住她，緩緩把她拉近，吻了她。這是你第一次吻她，她停留了很久。你嚐到她唇上的味道，又吻了她一次。"
     },
     {
       "id": "x01297",
@@ -12389,7 +12389,7 @@
       "cn": "他们要去哪儿？",
       "es": "¿Adónde van?",
       "fr": "Où vont-elles ?",
-      "tw": "他們要去哪兒？"
+      "tw": "他們要去哪裡？"
     },
     {
       "id": "x01311",
@@ -12462,7 +12462,7 @@
       "cn": "<LI>你只能靠自己的想象了。当然，除非你想用一次幸运机会。",
       "es": "<LI>Tendrás que dejarlo todo a tu imaginación. A menos que quieras usar un golpe de suerte, claro.",
       "fr": "<LI>Vous n'aurez qu'à laisser libre cours à votre imagination. À moins que vous ne vouliez tenter un coup de chance, bien sûr.",
-      "tw": "<LI>你只能靠自己的想象了。當然，除非你想用一次幸運機會。"
+      "tw": "<LI>你只能靠自己的想像了。當然，除非你想用一次幸運機會。"
     },
     {
       "id": "x01318",
@@ -12547,7 +12547,7 @@
       "cn": "<LI>小路在这里向左微微弯曲，靠近一段参差不齐的矮墙。只需穿过几步粗糙的草地就能走到墙边往下望。出于好奇，黛安就这么做了，你也跟着过去。",
       "es": "<LI>El camino tuerce un poco hacia la izquierda aquí, junto a una pared bastante irregular. Solo hay que dar unos pocos pasos por un terreno descuidado para llegar a la pared y asomarse. Diane lo hace por curiosidad, y tú la sigues.",
       "fr": "<LI>Le chemin tourne légèrement à gauche ici, le long d'un mur assez irrégulier. Il suffit de quelques pas dans l'herbe rase pour atteindre le mur et regarder par-dessus. Par curiosité, Diane le fait, et vous la suivez.",
-      "tw": "<LI>小路在這兒略向左彎，貼著一段不規則的牆。跨過幾步粗草就能到牆邊往下看。黛安好奇地這麼做了，你也跟過去。"
+      "tw": "<LI>小路在這裡略向左彎，貼著一段不規則的牆。跨過幾步粗草就能到牆邊往下看。黛安好奇地這麼做了，你也跟過去。"
     },
     {
       "id": "x01327",
@@ -12583,7 +12583,7 @@
       "cn": "<LI>即便隔着这段距离，你也能看到他的尿流弧线打在墙上。莫莉礼貌地望向另一边，但看她的姿势——双膝半交叉——感觉她自己也憋着呢。",
       "es": "<LI>Incluso desde donde estáis podéis ver el chorro de su pis arqueándose contra la pared. Molly mira educadamente hacia otro lado, pero por su postura —con las piernas medio cruzadas por las rodillas— parece que ella también podría tener ganas.",
       "fr": "<LI>Même de là où vous êtes, vous voyez son jet arquer contre le mur. Molly regarde poliment ailleurs mais, à sa posture — les genoux à demi croisés — on dirait qu'elle aussi aurait bien envie d'y aller.",
-      "tw": "<LI>即使站在這兒，你也看見他的尿流在牆上划出一道弧線。莫莉禮貌地看向另一邊，但她雙膝半交叉的姿勢，像是她自己也想去。"
+      "tw": "<LI>即使站在這裡，你也看見他的尿流在牆上划出一道弧線。莫莉禮貌地看向另一邊，但她雙膝半交叉的姿勢，像是她自己也想去。"
     },
     {
       "id": "x01331",
@@ -12638,7 +12638,7 @@
       "cn": "<LI>莫莉环顾四周，然后腰带还未系好，就沿着纤道朝你这边走了几码，走到一个建筑工人遗留的小型废料箱旁边。她躲到箱子后面，夹在箱子和墙壁之间——布鲁诺看不到她，但你能。",
       "es": "<LI>Molly mira a su alrededor. Entonces, todavía con el cinturón desabrochado, camina unos metros por el camino de sirga hacia ti, hasta donde unos obreros han dejado un pequeño contenedor. Se mete detrás de él, entre el contenedor y la pared, donde Bruno no puede verla... pero tú sí.",
       "fr": "<LI>Molly regarde autour d'elle. Puis, sa ceinture toujours défaite, elle avance de quelques mètres le long du chemin de halage dans votre direction, jusqu'à une petite benne que des ouvriers ont laissée là. Elle se glisse derrière, entre la benne et le mur, là où Bruno ne peut pas la voir — mais vous, si.",
-      "tw": "<LI>莫莉環顧四周，然後腰帶還未系好，就沿著纖道朝你這邊走了幾碼，走到一個建築工人遺留的小型廢料箱旁邊。她躲到箱子後面，夾在箱子和牆壁之間——布魯諾看不到她，但你能。"
+      "tw": "<LI>莫莉環顧四周，然後腰帶還未繫好，就沿著纖道朝你這邊走了幾碼，走到一個建築工人遺留的小型廢料箱旁邊。她躲到箱子後面，夾在箱子和牆壁之間——布魯諾看不到她，但你能。"
     },
     {
       "id": "x01337",
@@ -12656,7 +12656,7 @@
       "cn": "<LI>她尿了将近一分钟，然后站直身子，把白色内裤拉上来整理好，再拉上牛仔裤拉链。她一边系着腰带，一边从废料箱后面走出来，重新走向布鲁诺。",
       "es": "<LI>Hace pis durante casi un minuto y luego, al incorporarse, se sube las bragas blancas y las ajusta, después se sube los vaqueros y cierra la cremallera. Todavía abrochándose el cinturón, sale de detrás del contenedor y se reúne con Bruno.",
       "fr": "<LI>Elle fait pipi pendant près d'une bonne minute, puis se redresse, remonte sa culotte blanche en la rajustant, et tire et ferme son jean. Sa ceinture encore à moitié bouclée, elle ressort de derrière la benne et rejoint Bruno.",
-      "tw": "<LI>她尿了將近一分鐘，然後站直身子，把白色內褲拉上來整理好，再拉上牛仔褲拉鍊。她一邊系著腰帶，一邊從廢料箱後面走出來，重新走向布魯諾。"
+      "tw": "<LI>她尿了將近一分鐘，然後站直身子，把白色內褲拉上來整理好，再拉上牛仔褲拉鍊。她一邊繫著腰帶，一邊從廢料箱後面走出來，重新走向布魯諾。"
     },
     {
       "id": "x01339",
@@ -12967,7 +12967,7 @@
       "cn": "<LI>她站在那里，身体微微前倾，双手深深插在裙子口袋里，像是在偷偷按住自己。她焦急地望着你。",
       "es": "<LI>Está ahí parada, ligeramente inclinada hacia delante, con las manos metidas hasta el fondo en los bolsillos del vestido. Parece que se está aguantando a escondidas. Te mira con ojos angustiados.",
       "fr": "<LI>Elle se tient là, légèrement penchée en avant, les mains enfoncées dans les poches de sa robe. On dirait qu'elle se retient discrètement. Elle vous regarde avec des yeux inquiets.",
-      "tw": "<LI>她站在那兒，微微前傾，雙手深插在裙子口袋裡，像在偷偷捂著自己。她憂心地看著你。"
+      "tw": "<LI>她站在那裡，微微前傾，雙手深插在裙子口袋裡，像在偷偷捂著自己。她憂心地看著你。"
     },
     {
       "id": "x01373",
@@ -13089,7 +13089,7 @@
       "cn": "告诉她前面就有厕所。",
       "es": "Decirle que hay un baño justo más adelante.",
       "fr": "Lui dire qu'il y a des toilettes juste devant.",
-      "tw": "告訴她前面就有洗手間。"
+      "tw": "告訴她前面就有廁所。"
     },
     {
       "id": "x01386",
@@ -13291,7 +13291,7 @@
       "cn": "<LI>你四处打量了一番。你们能去哪儿？",
       "es": "<LI>Miras a tu alrededor. ¿Adónde vais a ir?",
       "fr": "<LI>Vous regardez autour de vous. Où allez-vous aller ?",
-      "tw": "<LI>你四處打量了一番。你們能去哪兒？"
+      "tw": "<LI>你四處打量了一番。你們能去哪裡？"
     },
     {
       "id": "x01408",
@@ -13868,7 +13868,7 @@
       "cn": "<LI>但还开着吗？市政管理员已经关了灯，正准备锁门。",
       "es": "<LI>¿Pero seguirá abierto? El conserje del ayuntamiento ha apagado las luces y está a punto de cerrar las puertas.",
       "fr": "<LI>Mais est-ce encore ouvert ? Le gardien municipal vient d'éteindre les lumières et est en train de verrouiller les portes.",
-      "tw": "<LI>可洗手間還開著嗎？市政管理員已經關了燈，正要鎖門。"
+      "tw": "<LI>可廁所還開著嗎？市政管理員已經關了燈，正要鎖門。"
     },
     {
       "id": "x01470",
@@ -13915,7 +13915,7 @@
       "cn": "<LI>一看见厕所，黛安就跑在了前头。你看见她走到标着“女厕所”的门前，却发现门已经关上了。她明显很失望，转身时把一只手夹到两腿之间。她在原地来回走了几步，像是在找什么入口。",
       "es": "<LI>En cuanto lo ve, Diane echa a correr hacia delante. La ves acercarse a la puerta marcada como Señoras solo para encontrarla cerrada. Está muy decepcionada y la ves meterse una mano entre las piernas al darse la vuelta. Por un momento deambula de un lado a otro, como si buscara la manera de entrar.",
       "fr": "<LI>Dès qu'elle les aperçoit, Diane court en avant. Vous la voyez se diriger vers la porte marquée « Femmes » pour la trouver close. Elle est vraiment déçue et vous la voyez glisser une main entre ses jambes en se détournant. Elle fait quelques pas en tous sens, comme si elle cherchait un moyen d'entrer.",
-      "tw": "<LI>一看見洗手間，黛安就跑到前面。她來到標著「女洗手間」的門前，卻發現門關著。她很失望，轉身時把一隻手夾在兩腿之間。她來回走了幾步，像是在找路進去。"
+      "tw": "<LI>一看見廁所，黛安就跑到前面。她來到標著「女廁所」的門前，卻發現門關著。她很失望，轉身時把一隻手夾在兩腿之間。她來回走了幾步，像是在找路進去。"
     },
     {
       "id": "x01475",
@@ -14007,7 +14007,7 @@
       "cn": "<LI>黛安看了看那间厕所。",
       "es": "<LI>Diane mira el aseo.",
       "fr": "<LI>Diane regarde les toilettes.",
-      "tw": "<LI>黛安看了看那間洗手間。"
+      "tw": "<LI>黛安看了看那間廁所。"
     },
     {
       "id": "x01485",
@@ -14157,7 +14157,7 @@
       "cn": "<LI>你：黛安，你去厕所后面解决一下不就好了。周围没什么人，我帮你望风。你去吧，我在这儿等你。",
       "es": "<LI>TÚ: Diane, ¿por qué no te metes detrás del edificio? No hay nadie por aquí y yo haré de vigilante de todas formas. Te espero aquí.",
       "fr": "<LI>VOUS : Diane, pourquoi tu n'irais pas juste derrière le bâtiment ? Il n'y a personne et je ferai le guet de toute façon. Je t'attendrai ici.",
-      "tw": "<LI>你：黛安，你就到這棟樓後面去吧。周圍沒什麼人，我幫你望風。你去吧，我在這兒等你。"
+      "tw": "<LI>你：黛安，你就到這棟樓後面去吧。周圍沒什麼人，我幫你望風。你去吧，我在這裡等你。"
     },
     {
       "id": "x01501",
@@ -14285,7 +14285,7 @@
       "cn": "<LI>黛安：真是难以置信。头一次约会，我憋尿憋得要命，你竟然还巴望着我尿湿内裤。好——我去厕所后面了，你给我滚远点。",
       "es": "<LI>DIANE: No me lo puedo creer. Estoy aquí meándome encima en una primera cita, y encima tú quieres que moje las bragas. Pues mira... me voy detrás del edificio y tú te puedes ir a la mierda.",
       "fr": "<LI>DIANE : J'y crois pas. Me voilà à mourir d'envie d'aller aux toilettes lors d'un premier rendez-vous, et toi tu veux carrément que je me mouille la culotte. Eh bien — je vais derrière le bâtiment et tu peux aller te faire voir.",
-      "tw": "<LI>黛安：真是難以置信。頭一次約會，我憋尿憋得要命，你竟然還巴望著我尿濕內褲。好——我去洗手間後面了，你給我滾遠點。"
+      "tw": "<LI>黛安：真是難以置信。頭一次約會，我憋尿憋得要命，你竟然還巴望著我尿濕內褲。好——我去廁所後面了，你給我滾遠點。"
     },
     {
       "id": "x01513",
@@ -14331,7 +14331,7 @@
       "cn": "<LI>黛安一看见就倒吸一口气，“不会吧！”她急忙跑向标着女厕所的门，却见那男人刚刚锁上，只好转身回来。她明显很失落，转身时你看见她把一只手用力夹在两腿之间。她回到你身边，满脸沮丧。",
       "es": "<LI>En cuanto lo ve, Diane suelta un «¡Ay, no!». Se apresura hacia la puerta marcada como Señoras, pero se da la vuelta al ver que el hombre acaba de cerrarla con llave. Está muy decepcionada y la ves meterse una mano entre las piernas al darse la vuelta. Vuelve hacia ti con cara de desconsuelo.",
       "fr": "<LI>Dès qu'elle les aperçoit, Diane laisse échapper un « Oh non ! ». Elle se précipite vers la porte marquée « Femmes », mais fait demi-tour en voyant que le gardien vient juste de la verrouiller. Elle est vraiment déçue et vous la voyez glisser une main entre ses jambes en se détournant. Elle revient vers vous, le visage défait.",
-      "tw": "<LI>黛安一看見就倒吸一口氣：「噢，不！」她衝向標著女洗手間的門，卻發現那人剛鎖上門，只好折回來。她很失望，轉身時把一隻手夾在兩腿之間。她回到你身邊，滿臉苦相。"
+      "tw": "<LI>黛安一看見就倒吸一口氣：「噢，不！」她衝向標著女廁所的門，卻發現那人剛鎖上門，只好折回來。她很失望，轉身時把一隻手夾在兩腿之間。她回到你身邊，滿臉苦相。"
     },
     {
       "id": "x01518",
@@ -14367,7 +14367,7 @@
       "cn": "<LI>黛安：管理员还在那里。你觉得他会为我重新开门吗？",
       "es": "<LI>DIANE: El conserje sigue ahí. ¿Crees que volvería a abrirlo por mí?",
       "fr": "<LI>DIANE : Le gardien est encore là. Tu crois qu'il voudrait bien me rouvrir les toilettes ?",
-      "tw": "<LI>黛安：管理員還在那兒。你認為他會為我重新開門嗎？"
+      "tw": "<LI>黛安：管理員還在那裡。你認為他會為我重新開門嗎？"
     },
     {
       "id": "x01522",
@@ -14423,7 +14423,7 @@
       "cn": "<LI>黛安看了看那间厕所。",
       "es": "<LI>Diane mira el aseo.",
       "fr": "<LI>Diane regarde les toilettes.",
-      "tw": "<LI>黛安看了看那間洗手間。"
+      "tw": "<LI>黛安看了看那間廁所。"
     },
     {
       "id": "x01528",
@@ -14517,7 +14517,7 @@
       "cn": "<LI>黛安尿急得很，但你其实不太想去找管理员开门。再说，凭什么要你去？",
       "es": "<LI>Diane se está meando, pero tú la verdad es que no tienes muchas ganas de pedirle al conserje que abra el baño. Al fin y al cabo, ¿por qué tendrías que hacerlo?",
       "fr": "<LI>Diane a vraiment très envie de faire pipi, mais vous n'avez pas vraiment envie d'aller demander au gardien d'ouvrir les toilettes. Après tout, pourquoi le feriez-vous ?",
-      "tw": "<LI>黛安急著想尿，可你並不想請管理員開洗手間。畢竟，你為什麼要這麼做？"
+      "tw": "<LI>黛安急著想尿，可你並不想請管理員開廁所。畢竟，你為什麼要這麼做？"
     },
     {
       "id": "x01538",
@@ -14654,7 +14654,7 @@
       "cn": "<LI>黛安走进男厕。你跟了进去——她也许没料到，但你本来就有权进去，所以她什么也没说。",
       "es": "<LI>Diane entra en el baño de caballeros. Tú la sigues —puede que no lo esperara, pero al fin y al cabo tú tienes todo el derecho a entrar, así que ella no dice nada.",
       "fr": "<LI>Diane entre dans les toilettes des hommes. Vous la suivez — elle ne s'y attendait peut-être pas, mais vous avez le droit d'y aller, après tout, alors elle ne dit rien.",
-      "tw": "<LI>黛安進了男洗手間。你跟進去——她也許沒料到，但你本來就有權進來，所以什麼也沒說。"
+      "tw": "<LI>黛安進了男廁所。你跟進去——她也許沒料到，但你本來就有權進來，所以什麼也沒說。"
     },
     {
       "id": "x01553",
@@ -14681,7 +14681,7 @@
       "cn": "<LI>你尽快尿完。黛安在原地来回走动。你回头瞥了一眼，她把手深深塞进连衣裙的口袋里，很显然是在死死憋着。",
       "es": "<LI>Haces pis lo más rápido que puedes. Diane va de un lado a otro. Miras por encima del hombro. Tiene una mano metida bien adentro en el bolsillo del vestido, claramente aguantándose.",
       "fr": "<LI>Vous faites pipi aussi vite que possible. Diane fait les cent pas. Vous jetez un coup d'œil par-dessus votre épaule. Elle a une main enfoncée dans la poche de sa robe, se retenant manifestement.",
-      "tw": "<LI>你盡快解決完。黛安在原地踱步。你回頭一瞥，她把手深深插在連衣裙口袋裡，看來在拼命忍著。"
+      "tw": "<LI>你盡快解決完。黛安在原地踱步。你回頭一瞥，她把手深深插在連身裙口袋裡，看來在拼命忍著。"
     },
     {
       "id": "x01556",
@@ -14736,7 +14736,7 @@
       "cn": "<LI>黛安冲进隔间，砰地关上门。门缝离地面有段距离，你能看见她的双腿——她一边摸索着脱衣服，一边急得直跺脚。你只能靠想象，但裙子和衬裙的窸窣声，随后那声响亮的尿流冲击声和溅落声，已经让人浮想联翩。接着传来一声清晰可闻的如释重负的长叹。",
       "es": "<LI>Diane entra a la carrera en la cabina y da un portazo. La puerta no llega al suelo y puedes ver sus piernas, pisando en el sitio mientras trastea con la ropa. No te queda más remedio que imaginártelo, pero el susurro de su falda y enagua, y luego el fuerte silbido y chapoteo de su pis dejan muy poco a la imaginación. Se oye un jadeo audible de alivio.",
       "fr": "<LI>Diane se précipite dans le cabinet et claque la porte. La porte ne touche pas le sol et vous pouvez voir ses jambes, trépignant sur place pendant qu'elle s'affaire sur ses vêtements. Vous n'avez qu'à l'imaginer là, mais le froissement de sa jupe et de son jupon, puis le fort sifflement et le clapotis de son pipi ne laissent guère place à l'imagination. On entend distinctement un soupir de soulagement.",
-      "tw": "<LI>黛安衝進隔間，砰地關上門。門縫離地面有段距離，你能看見她的雙腿——她一邊摸索著脫衣服，一邊急得直跺腳。你只能靠想象，但裙子和襯裙的窸窣聲，接著那聲響亮的尿流衝擊聲和濺落聲，已讓人浮想聯翩。接著傳來一聲清晰可聞的如釋重負的長嘆。"
+      "tw": "<LI>黛安衝進隔間，砰地關上門。門縫離地面有段距離，你能看見她的雙腿——她一邊摸索著脫衣服，一邊急得直跺腳。你只能靠想像，但裙子和襯裙的窸窣聲，接著那聲響亮的尿流衝擊聲和濺落聲，已讓人浮想聯翩。接著傳來一聲清晰可聞的如釋重負的長嘆。"
     },
     {
       "id": "x01562",
@@ -14892,7 +14892,7 @@
       "cn": "<LI>令你惊讶的是，厕所是开着的。她原来完全可以在这里上厕所的。",
       "es": "<LI>Para tu sorpresa, el baño está abierto. Podría haber entrado aquí después de todo.",
       "fr": "<LI>À votre surprise, les toilettes sont ouvertes. Elle aurait pu y aller finalement.",
-      "tw": "<LI>令你驚訝的是，廁所開著。她本來可以在這兒上的。"
+      "tw": "<LI>令你驚訝的是，廁所開著。她本來可以在這裡上的。"
     },
     {
       "id": "x01578",
@@ -14976,7 +14976,7 @@
       "cn": "<LI>她走进了女厕所。她大概觉得现在去是明智之举，省得之后闹出什么尴尬。",
       "es": "<LI>Entra en el baño de señoras. Seguramente le pareció sensato ir ahora y evitar cualquier aprieto después.",
       "fr": "<LI>Elle entre dans les toilettes des femmes. Elle a sans doute jugé prudent d'y aller maintenant pour éviter tout embarras plus tard.",
-      "tw": "<LI>她進了女洗手間。她大概覺得現在去比較明智，免得之後尷尬。"
+      "tw": "<LI>她進了女廁所。她大概覺得現在去比較明智，免得之後尷尬。"
     },
     {
       "id": "x01587",
@@ -15069,7 +15069,7 @@
       "cn": "你们走向厕所；她去女厕所，你去男厕。",
       "es": "Subís hacia los baños; ella va al de mujeres, tú al de hombres.",
       "fr": "Vous vous dirigez vers les toilettes ; elle va vers les toilettes des femmes, vous vers les toilettes des hommes.",
-      "tw": "你們走向洗手間；她去女洗手間，你去男洗手間。"
+      "tw": "你們走向廁所；她去女廁所，你去男廁所。"
     },
     {
       "id": "x01597",
@@ -15164,7 +15164,7 @@
       "cn": "<LI>厕所看起来好像是开着的。但走到门口，你看见了一块牌子。",
       "es": "<LI>El baño parecía estar abierto. Pero al llegar a la puerta ves un letrero.",
       "fr": "<LI>Les toilettes semblaient être ouvertes. Mais en approchant de la porte, vous apercevez un panneau.",
-      "tw": "<LI>洗手間似乎開著，但你來到門口時看見一塊牌子。"
+      "tw": "<LI>廁所似乎開著，但你來到門口時看見一塊牌子。"
     },
     {
       "id": "x01607",
@@ -15257,7 +15257,7 @@
       "cn": "<LI>黛安冲进了女厕所。她急得很，你听到隔间的门砰地一声关上了。你走进男厕。",
       "es": "<LI>Diane ha entrado corriendo al baño de mujeres. Tiene muchísima prisa y oyes cómo da un portazo en un cubículo. Tú entras en el de caballeros.",
       "fr": "<LI>Diane s'est précipitée dans les toilettes des femmes. Elle est vraiment pressée et vous entendez la porte d'une cabine claquer. Vous entrez dans les toilettes des hommes.",
-      "tw": "<LI>黛安衝進女洗手間。她急得很，你聽見隔間門砰地關上。你進了男洗手間。"
+      "tw": "<LI>黛安衝進女廁所。她急得很，你聽見隔間門砰地關上。你進了男廁所。"
     },
     {
       "id": "x01617",
@@ -15492,7 +15492,7 @@
       "cn": "<LI>你把眼睛凑近那个小孔，视线穿过去，正对着女厕所里的一个隔间。",
       "es": "<LI>Acercas el ojo al agujero. Estás mirando al interior de uno de los cubículos del baño de mujeres.",
       "fr": "<LI>Vous collez votre œil contre le trou. Vous regardez à l'intérieur d'une des cabines des toilettes des femmes.",
-      "tw": "<LI>你把眼睛湊到洞邊，正看進女洗手間的一個隔間。"
+      "tw": "<LI>你把眼睛湊到洞邊，正看進女廁所的一個隔間。"
     },
     {
       "id": "x01642",
@@ -16351,7 +16351,7 @@
       "cn": "<LI>黛安：我去一下洗手间，马上回来。",
       "es": "<LI>DIANE: Solo voy un momento al baño. No tardo.",
       "fr": "<LI>DIANE : Je vais juste faire un saut aux toilettes. J'en ai pour une minute.",
-      "tw": "<LI>黛安：我去一下洗手間，立刻回來。"
+      "tw": "<LI>黛安：我去一下廁所，立刻回來。"
     },
     {
       "id": "x04968",
@@ -16462,7 +16462,7 @@
       "cn": "<LI>没有人说什么，但你只能猜测黛安没能及时赶到厕所。",
       "es": "<LI>Nadie dice nada, pero solo puedes suponer que Diane no llegó al baño de mujeres a tiempo.",
       "fr": "<LI>Personne ne dit rien, mais vous ne pouvez que supposer que Diane n'a pas réussi à arriver aux toilettes des femmes à temps.",
-      "tw": "<LI>誰都沒說什麼，但你只能猜測黛安沒能及時趕到女洗手間。"
+      "tw": "<LI>誰都沒說什麼，但你只能猜測黛安沒能及時趕到女廁所。"
     },
     {
       "id": "x01746",
@@ -16784,7 +16784,7 @@
       "cn": "<LI>莫莉：哦，好啊。这里真的很舒服，让人放松。再说了，你看看特惠活动，我的那份是免费的——那就来一品脱吧。",
       "es": "<LI>MOLLY: Oh, sí, por favor. Aquí se está muy bien y tranquilo. Además, mira las ofertas especiales. La mía sale gratis, así que me pido una pinta.",
       "fr": "<LI>MOLLY : Oh, oui s'il te plaît. C'est agréable et reposant ici. Et puis regarde les offres spéciales — le mien sera gratuit, alors je prends une pinte.",
-      "tw": "<LI>莫莉：噢，好啊。這兒很舒服，很放鬆。再說看看這些特價，我這杯是免費的——我要一品脫。"
+      "tw": "<LI>莫莉：噢，好啊。這裡很舒服，很放鬆。再說看看這些特價，我這杯是免費的——我要一品脫。"
     },
     {
       "id": "x01781",
@@ -17015,7 +17015,7 @@
       "cn": "<LI>布鲁诺：这里有些很有意思的啤酒。他们有里德尔斯琥珀花蜜啤酒，我很想尝尝。莫莉，你呢？",
       "es": "<LI>BRUNO: Aquí tienen cervezas interesantes. Tienen una Riddles Ambernectar. Me apetecería bastante probarla. ¿Molly?",
       "fr": "<LI>BRUNO : Il y a des bières intéressantes ici. Ils ont une Riddles Ambernectar. J'aurais bien envie de goûter ça. Molly ?",
-      "tw": "<LI>布魯諾：這兒有些很有意思的啤酒。他們有里德爾斯琥珀花蜜啤酒，我很想嘗嘗。莫莉，你呢？"
+      "tw": "<LI>布魯諾：這裡有些很有意思的啤酒。他們有里德爾斯琥珀花蜜啤酒，我很想嚐嚐。莫莉，你呢？"
     },
     {
       "id": "x01806",
@@ -17061,7 +17061,7 @@
       "cn": "<LI>黛安：我们女生还有时间去一下厕所吗？",
       "es": "<LI>DIANE: ¿Tenemos tiempo las chicas de ir un momento al baño?",
       "fr": "<LI>DIANE : On a le temps d'aller aux toilettes, nous les filles ?",
-      "tw": "<LI>黛安：我們女生還有時間去趟洗手間嗎？"
+      "tw": "<LI>黛安：我們女生還有時間去趟廁所嗎？"
     },
     {
       "id": "x01811",
@@ -17109,7 +17109,7 @@
       "cn": "莫莉看着黛安。你听见她低声问道：“你要去厕所吗？”但黛安摇了摇头。",
       "es": "Molly mira a Diane. La oyes susurrar «¿Tienes ganas de ir al baño?», pero Diane niega con la cabeza.",
       "fr": "Molly regarde Diane. Vous l'entendez lui chuchoter « T'as besoin d'aller aux toilettes ? » mais Diane secoue la tête.",
-      "tw": "莫莉看著黛安。你聽見她低聲問：「你要去洗手間嗎？」但黛安搖搖頭。"
+      "tw": "莫莉看著黛安。你聽見她低聲問：「你要去廁所嗎？」但黛安搖搖頭。"
     },
     {
       "id": "x01816",
@@ -17248,7 +17248,7 @@
       "cn": "<LI>黛安和莫莉去了厕所，而你使用了一次幸运机会。",
       "es": "<LI>Diane y Molly han ido al baño y has usado un golpe de suerte.",
       "fr": "<LI>Diane et Molly sont allées aux toilettes et vous avez joué un coup de chance.",
-      "tw": "<LI>黛安和莫莉去了洗手間，而你用了一次幸運機會。"
+      "tw": "<LI>黛安和莫莉去了廁所，而你用了一次幸運機會。"
     },
     {
       "id": "x01831",
@@ -17295,7 +17295,7 @@
       "cn": "<LI>黛安和莫莉正向女厕所走去。你很想看看如果阻止她们会发生什么，于是使用了一次幸运机会。",
       "es": "<LI>Diane y Molly se dirigen al baño de mujeres. Te gustaría ver qué pasaría si las detuvieras. Así que has usado un golpe de suerte.",
       "fr": "<LI>Diane et Molly se dirigent vers les toilettes des femmes. Vous aimeriez voir ce qui se passerait si vous les arrêtiez. Alors vous avez joué un coup de chance.",
-      "tw": "<LI>黛安和莫莉正向女洗手間走去。你很想看看如果阻止她們會發生什麼，於是使用了一次幸運機會。"
+      "tw": "<LI>黛安和莫莉正向女廁所走去。你很想看看如果阻止她們會發生什麼，於是使用了一次幸運機會。"
     },
     {
       "id": "x01836",
@@ -17487,7 +17487,7 @@
       "cn": "不，先留着，待会儿再用。",
       "es": "No, lo guardaré para más tarde.",
       "fr": "Non, je garde ça pour plus tard.",
-      "tw": "不，先留著，待會兒再用。"
+      "tw": "不，先留著，待會再用。"
     },
     {
       "id": "x01857",
@@ -17544,7 +17544,7 @@
       "cn": "也许待会儿你还有机会看黛安。",
       "es": "Quizá tengas otra oportunidad de ver a Diane más adelante.",
       "fr": "Vous aurez peut-être l'occasion d'observer Diane plus tard.",
-      "tw": "也許待會兒你還有機會看黛安。"
+      "tw": "也許待會你還有機會看黛安。"
     },
     {
       "id": "x01863",
@@ -17792,7 +17792,7 @@
       "cn": "<LI>你们两人悄悄沿着小路快步向前，直到走到另一段台阶处。你们觉得大概可以在这里等那两个女孩。",
       "es": "<LI>Los dos subís por el camino en silencio, tan deprisa como podéis, hasta llegar a otro tramo de escaleras. Decidís que probablemente podéis esperar a las chicas allí.",
       "fr": "<LI>Vous remontez le chemin tranquillement, aussi vite que possible, jusqu'à atteindre un autre escalier. Vous décidez que vous pouvez sans doute attendre les filles ici.",
-      "tw": "<LI>你們兩人悄悄沿著小路快步向前，直到走到另一段台階處。你們覺得約莫可以在這兒等那兩個女生。"
+      "tw": "<LI>你們兩人悄悄沿著小路快步向前，直到走到另一段台階處。你們覺得約莫可以在這裡等那兩個女生。"
     },
     {
       "id": "x01890",
@@ -17895,7 +17895,7 @@
       "cn": "<LI>你想阻止黛安去洗手间。你正在使用一次幸运机会。",
       "es": "<LI>Quieres evitar que Diane vaya al baño. Estás usando un golpe de suerte.",
       "fr": "<LI>Vous voulez empêcher Diane d'aller aux toilettes. Vous utilisez un coup de chance.",
-      "tw": "<LI>你想阻止黛安去洗手間，所以用了幸運機會。"
+      "tw": "<LI>你想阻止黛安去廁所，所以用了幸運機會。"
     },
     {
       "id": "x01901",
@@ -17932,7 +17932,7 @@
       "cn": "<LI>黛安：队排得太长了。我待会儿再去吧。",
       "es": "<LI>DIANE: Hay una cola enorme. Ya iré después.",
       "fr": "<LI>DIANE : Il y a vraiment une queue interminable. J'irai plus tard.",
-      "tw": "<LI>黛安：隊排得太長了。我待會兒再去吧。"
+      "tw": "<LI>黛安：隊排得太長了。我待會再去吧。"
     },
     {
       "id": "x01905",
@@ -17969,7 +17969,7 @@
       "cn": "<LI>那里还有其他几个人，包括一些在凉亭酒吧里见过的面孔。",
       "es": "<LI>Hay varias personas más, entre ellas algunas que estaban en el Pabellón.",
       "fr": "<LI>Il y a déjà plusieurs personnes, dont certaines qui étaient au Pavillon.",
-      "tw": "<LI>那兒還有其他幾個人，包括一些在Pavilion酒吧裡見過的面孔。"
+      "tw": "<LI>那裡還有其他幾個人，包括一些在Pavilion酒吧裡見過的面孔。"
     },
     {
       "id": "x01909",
@@ -18042,7 +18042,7 @@
       "cn": "<LI>你在想要不要打一辆出租车。会花掉你二十英镑，但也许能有机会邀她进去坐坐。",
       "es": "<LI>Te preguntas si deberías pedir un taxi. Te costará 20 £, pero quizá así tengas ocasión de invitarla a subir.",
       "fr": "<LI>Vous vous demandez si vous ne devriez pas prendre un taxi. Ça vous coûtera 20 £, mais vous aurez peut-être l'occasion de l'inviter à entrer.",
-      "tw": "<LI>你在想要不要打一輛計程車。會花掉你二十英鎊，但也許能有機會邀她進去坐坐。"
+      "tw": "<LI>你在想要不要叫一輛計程車。會花掉你二十英鎊，但也許能有機會邀她進去坐坐。"
     },
     {
       "id": "x01917",
@@ -18153,7 +18153,7 @@
       "cn": "<LI>你：我们打辆出租车吧？",
       "es": "<LI>TÚ: ¿Cogemos un taxi?",
       "fr": "<LI>VOUS : On prend un taxi ?",
-      "tw": "<LI>你：我們打輛計程車吧？"
+      "tw": "<LI>你：我們叫輛計程車吧？"
     },
     {
       "id": "x01929",
@@ -18171,7 +18171,7 @@
       "cn": "<LI>你：当然，没问题。出租车站就在那边。",
       "es": "<LI>TÚ: Claro, sin problema. La parada de taxis está justo ahí.",
       "fr": "<LI>VOUS : Bien sûr. Pas de problème. La station de taxi est juste là-bas.",
-      "tw": "<LI>你：當然，沒問題。計程車站就在那兒。"
+      "tw": "<LI>你：當然，沒問題。計程車站就在那裡。"
     },
     {
       "id": "x01931",
@@ -18216,7 +18216,7 @@
       "cn": "<LI>停车场对面有几间厕所——不过大概已经关门了（但没必要告诉她这个！）",
       "es": "<LI>Hay unos aseos al otro lado del aparcamiento, y probablemente estarán cerrados (¡aunque no hace falta decírselo!).",
       "fr": "<LI>Il y a des toilettes de l'autre côté du parking — elles sont probablement fermées (mais inutile de lui dire ça !)",
-      "tw": "<LI>停車場對面有洗手間——大概會關門，不過沒必要告訴她！"
+      "tw": "<LI>停車場對面有廁所——大概會關門，不過沒必要告訴她！"
     },
     {
       "id": "x01936",
@@ -18356,7 +18356,7 @@
       "cn": "<LI>黛安：嗯。<EM>然后凑近你耳边低声说</EM> 我想找个厕所。附近不知道有没有厕所？",
       "es": "<LI>DIANE: Mmm. <EM>luego te susurra</EM> Necesito un baño. ¿No habrá un aseo de mujeres por aquí?",
       "fr": "<LI>DIANE : Mmm. <EM>puis elle vous chuchote</EM> J'aurais bien besoin de toilettes. Il n'y a pas des WC dans le coin, par hasard ?",
-      "tw": "<LI>黛安：嗯……她湊近你耳邊小聲說：「我想去洗手間。附近有女洗手間嗎？」"
+      "tw": "<LI>黛安：嗯……她湊近你耳邊小聲說：「我想去廁所。附近有女廁所嗎？」"
     },
     {
       "id": "x01951",
@@ -18404,7 +18404,7 @@
       "cn": "<LI>你：这个时间点洗手间应该都关门了吧。",
       "es": "<LI>TÚ: Supongo que a estas horas todos los baños estarán cerrados.",
       "fr": "<LI>VOUS : À cette heure-ci, je pense que tous les WC sont fermés.",
-      "tw": "<LI>你：這個時間點洗手間應該都關門了吧。"
+      "tw": "<LI>你：這個時間點廁所應該都關門了吧。"
     },
     {
       "id": "x01956",
@@ -18541,7 +18541,7 @@
       "cn": "<LI>黛安：谢谢你，你真贴心。剩下的我待会儿再喝。",
       "es": "<LI>DIANE: Gracias, qué detalle. Me beberé el resto en un momento.",
       "fr": "<LI>DIANE : Merci, c'est gentil. Je boirai le reste dans un instant.",
-      "tw": "<LI>黛安：謝謝你，你真貼心。剩下的我待會兒再喝。"
+      "tw": "<LI>黛安：謝謝你，你真貼心。剩下的我待會再喝。"
     },
     {
       "id": "x01971",
@@ -18718,7 +18718,7 @@
       "cn": "<LI>你能看进她裙子的领口，看见她蕾丝内衣。你多希望能把手伸进她的裙子里，但这里大概不是合适的地方。不过你还是轻轻地用手指在她胸上拨弄着。",
       "es": "<LI>Puedes ver el escote de su vestido y el encaje de su sujetador. Te mueres por colarle la mano dentro del vestido, pero este probablemente no sea el momento. Aun así, mueves los dedos con suavidad alrededor de su pecho.",
       "fr": "<LI>Vous plongez les yeux dans son décolleté, apercevant son soutien-gorge en dentelle. Vous aimeriez glisser la main dans sa robe, mais ce n'est sans doute pas le moment. Vous bougez quand même vos doigts doucement autour de son sein.",
-      "tw": "<LI>你能看進她裙子的領口，看見她蕾絲內衣。你多希望能把手伸進她的裙子裡，但這兒約莫不是合適的地方。不過你還是輕輕地用手指在她胸上撥弄著。"
+      "tw": "<LI>你能看進她裙子的領口，看見她蕾絲內衣。你多希望能把手伸進她的裙子裡，但這裡約莫不是合適的地方。不過你還是輕輕地用手指在她胸上撥弄著。"
     },
     {
       "id": "x01990",
@@ -19413,7 +19413,7 @@
       "cn": "<LI>黛安：谢谢。不过别的先放一边，我得先去趟厕所。你家厕所在哪儿？",
       "es": "<LI>DIANE: Gracias. Pero antes de nada, tengo que ir un momento al aseo. ¿Dónde está?",
       "fr": "<LI>DIANE : Merci. Mais avant toute chose, j'ai besoin de faire pipi. Où sont tes toilettes ?",
-      "tw": "<LI>黛安：謝謝。但別的先不說，我得先去趟洗手間。你家洗手間在哪兒？"
+      "tw": "<LI>黛安：謝謝。但別的先不說，我得先去趟廁所。你家廁所在哪裡？"
     },
     {
       "id": "x02065",
@@ -19700,7 +19700,7 @@
       "cn": "<LI>克洛伊18岁，身形娇小，穿着一条短格子裙和黑色无足连裤袜。她看起来相当腼腆，也许是因为发现这里已经有客人而感到有些不自在。",
       "es": "<LI>Chloe tiene 18 años, es bastante menuda y lleva una falda escocesa corta con unas medias negras cortadas a la altura del tobillo. Parece bastante tímida. Quizá le molesta encontrar visitas en casa.",
       "fr": "<LI>Chloe a 18 ans, assez petite, et porte une courte jupe écossaise avec des collants noirs, du genre coupés à la cheville. Elle paraît assez timide. Peut-être qu'elle est contrariée de trouver des invités déjà là.",
-      "tw": "<LI>克洛伊十八歲，嬌小，穿著短格紋裙和黑色踩腳襪。她看來相當害羞，也許發現這兒已有客人讓她不太高興。"
+      "tw": "<LI>克洛伊十八歲，嬌小，穿著短格紋裙和黑色踩腳襪。她看來相當害羞，也許發現這裡已有客人讓她不太高興。"
     },
     {
       "id": "x02096",
@@ -19969,7 +19969,7 @@
       "cn": "<LI>也许克洛伊正想开口问厕所在哪，却被你撞上打乱了节奏。也许她在人前太害羞开不了口。但她现在尿急得厉害，这是肯定的。",
       "es": "<LI>Quizá Chloe iba a preguntar por el baño pero se cortó al verte. Quizá le da demasiada vergüenza preguntar delante de todos. Desde luego se está meando.",
       "fr": "<LI>Peut-être que Chloe était sur le point de demander où sont les toilettes, mais elle a été déstabilisée en vous rencontrant. Peut-être qu'elle est trop timide pour demander en société. Elle est pourtant clairement au bord de se faire pipi dessus.",
-      "tw": "<LI>也許克洛伊本來想問洗手間在哪兒，卻被見到你打斷了。也許她當著大家的面不好意思問。但她顯然急著想尿。"
+      "tw": "<LI>也許克洛伊本來想問廁所在哪裡，卻被見到你打斷了。也許她當著大家的面不好意思問。但她顯然急著想尿。"
     },
     {
       "id": "x02125",
@@ -20156,7 +20156,7 @@
       "cn": "<LI>克洛伊：厕所在哪里？",
       "es": "<LI>CHLOE: ¿Dónde está el baño?",
       "fr": "<LI>CHLOE : Où sont les toilettes ?",
-      "tw": "<LI>克洛伊：洗手間在哪裡？"
+      "tw": "<LI>克洛伊：廁所在哪裡？"
     },
     {
       "id": "x02145",
@@ -20848,7 +20848,7 @@
       "cn": "<LI>这时托比说他憋得快爆了，一溜烟冲上楼去找洗手间。",
       "es": "<LI>Mientras tanto, Toby dice que se está meando y sale disparado escaleras arriba hacia el baño.",
       "fr": "<LI>Pendant ce temps, Toby dit qu'il n'en peut plus et monte en vitesse aux toilettes.",
-      "tw": "<LI>這時托比說他快憋不住了，衝上樓去上洗手間。"
+      "tw": "<LI>這時托比說他快憋不住了，衝上樓去上廁所。"
     },
     {
       "id": "x02219",
@@ -20876,7 +20876,7 @@
       "cn": "<LI>阿曼达一直从一幅画晃到另一幅画前，看起来根本站不住。另外三个人也都有些坐立不安，托马斯把一只手插进了裤兜里。毕竟，他们刚刚在外面喝了不少。",
       "es": "<LI>Amanda no para de moverse de cuadro en cuadro. Parece que no puede quedarse quieta. Los otros tres también parecen un poco incómodos, y Thomas tiene una mano en el bolsillo del pantalón. Al fin y al cabo, han salido a tomar unas copas.",
       "fr": "<LI>Amanda n'arrête pas de passer d'un tableau à l'autre. On dirait qu'elle ne peut pas rester en place. Les trois autres semblent également un peu mal à l'aise, et Thomas a la main dans sa poche de pantalon. Après tout, ils ont été boire quelques verres.",
-      "tw": "<LI>阿曼達一直從一幅畫走到另一幅畫前，看來根本站不住。其他三人也有些不自在，托馬斯一隻手插在褲兜裡。畢竟他們剛在外面喝了幾杯。"
+      "tw": "<LI>阿曼達一直從一幅畫走到另一幅畫前，看來根本站不住。其他三人也有些不自在，托馬斯一隻手插在褲袋裡。畢竟他們剛在外面喝了幾杯。"
     },
     {
       "id": "x02222",
@@ -21034,7 +21034,7 @@
       "cn": "<LI>但那本书在你卧室里。你要上去拿，还是留在这儿看阿曼达？",
       "es": "<LI>Pero el libro está en tu habitación. ¿Vas a buscarlo o te quedas aquí mirando a Amanda?",
       "fr": "<LI>Mais le livre est dans votre chambre. Allez-vous le chercher, ou restez-vous ici à observer Amanda ?",
-      "tw": "<LI>可書在你臥室。你去拿，還是留在這兒看阿曼達？"
+      "tw": "<LI>可書在你臥室。你去拿，還是留在這裡看阿曼達？"
     },
     {
       "id": "x02239",
@@ -21128,7 +21128,7 @@
       "cn": "<LI>你的房间就在厕所对面。走到楼梯顶端时，冲水声响起，托马斯从浴室里走出来。你们相视一笑，他便下楼去了。",
       "es": "<LI>Tu habitación está justo enfrente del baño. Cuando llegas a lo alto de las escaleras, la cisterna se descarga y Thomas sale del baño. Os sonreís y él baja las escaleras.",
       "fr": "<LI>Votre chambre est juste en face de la salle de bains. Quand vous arrivez en haut de l'escalier, la chasse d'eau se déclenche et Thomas sort de la salle de bains. Vous échangez un sourire et il descend l'escalier.",
-      "tw": "<LI>你的房間就在洗手間對面。來到樓梯頂端時，衝水聲響起，托馬斯從浴室裡走出來。你們相視一笑，他便下樓去了。"
+      "tw": "<LI>你的房間就在廁所對面。來到樓梯頂端時，衝水聲響起，托馬斯從浴室裡走出來。你們相視一笑，他便下樓去了。"
     },
     {
       "id": "x02249",
@@ -21223,7 +21223,7 @@
       "cn": "<LI>你听到有人急匆匆地上楼，听起来像是阿曼达和贝拉赶着去厕所。",
       "es": "<LI>Has oído pasos apresurados subiendo la escalera. Parece que Amanda y Bella corren al baño.",
       "fr": "<LI>Vous avez entendu des pas se précipiter dans l'escalier. On dirait qu'Amanda et Bella se dépêchent d'aller aux toilettes.",
-      "tw": "<LI>你聽到有人急匆匆地上樓，聽起來像是阿曼達和貝拉趕著去洗手間。"
+      "tw": "<LI>你聽到有人急匆匆地上樓，聽起來像是阿曼達和貝拉趕著去廁所。"
     },
     {
       "id": "x02259",
@@ -21260,7 +21260,7 @@
       "cn": "<LI>你听到阿曼达说“哪个是厕所？”她们四下张望，然后贝拉说“在这儿，我先进！”",
       "es": "<LI>Oyes a Amanda preguntar «¿Cuál es el baño?». Miran alrededor; entonces Bella dice «¡Aquí está. Yo la primera!»",
       "fr": "<LI>Vous entendez Amanda dire « C'est laquelle, la salle de bains ? » Elles regardent autour d'elles, puis Bella dit « La voilà. C'est moi la première ! »",
-      "tw": "<LI>你聽到阿曼達說「哪個是廁所？」她們四下張看，接著貝拉說「在這兒，我先進！」"
+      "tw": "<LI>你聽到阿曼達說「哪個是廁所？」她們四下張看，接著貝拉說「在這裡，我先進！」"
     },
     {
       "id": "x02263",
@@ -21455,7 +21455,7 @@
       "cn": "<LI>她冲进厕所，把门锁上了。",
       "es": "<LI>Se precipita al baño y cierra la puerta con llave.",
       "fr": "<LI>Elle se précipite dans la salle de bains et ferme la porte à clé.",
-      "tw": "<LI>她衝進洗手間，把門鎖上了。"
+      "tw": "<LI>她衝進廁所，把門鎖上了。"
     },
     {
       "id": "x02284",
@@ -21593,7 +21593,7 @@
       "cn": "<LI>你想起还得拿那本书，便开始找，找了一会儿才找到。你从卧室走出来，正好碰上阿曼达从厕所里出来。",
       "es": "<LI>Recuerdas que tenías que buscar un libro. Así que te pones a buscarlo. Tardas un rato. Por fin lo encuentras y sales del dormitorio justo cuando Amanda está saliendo del baño.",
       "fr": "<LI>Vous vous rappelez que vous deviez prendre un livre. Vous le cherchez donc. Ça prend un moment. Vous finissez par le trouver et vous sortez de la chambre juste au moment où Amanda sort de la salle de bains.",
-      "tw": "<LI>你想起還得拿那本書，便開始找，找了一會兒才找到。你從臥室走出來，正好碰上阿曼達從洗手間裡出來。"
+      "tw": "<LI>你想起還得拿那本書，便開始找，找了一會兒才找到。你從臥室走出來，正好碰上阿曼達從廁所裡出來。"
     },
     {
       "id": "x02299",
@@ -21778,7 +21778,7 @@
       "cn": "<LI>你注意到黛安的眼神飞快地往楼上扫了一眼。你猜她可能想去厕所——但她知道楼上正有人在用。",
       "es": "<LI>Notas que Diane mira un momento hacia el techo. Te preguntas si necesita ir al baño, pero sabrá que está ocupado.",
       "fr": "<LI>Vous remarquez que le regard de Diane monte brièvement vers le plafond. Vous vous demandez si elle a besoin d'aller aux toilettes — mais elle sait que c'est occupé.",
-      "tw": "<LI>你注意到黛安的眼神短暫地往樓上掃了一眼。你猜她可能想去洗手間，但她知道裡頭有人。"
+      "tw": "<LI>你注意到黛安的眼神短暫地往樓上掃了一眼。你猜她可能想去廁所，但她知道裡頭有人。"
     },
     {
       "id": "x02319",
@@ -21871,7 +21871,7 @@
       "cn": "<LI>黛安看起来真的很想去洗手间。她两脚交替挪动，勉强保持着礼貌的笑容在听你说话。",
       "es": "<LI>Diane tiene toda la pinta de estar muerta de ganas de hacer pis. Se mueve de un pie al otro. Escucha con educación forzada.",
       "fr": "<LI>Diane a vraiment l'air d'avoir envie de faire pipi. Elle se balance d'un pied sur l'autre. Elle écoute avec une politesse de façade.",
-      "tw": "<LI>黛安看來真想去洗手間。她兩腳換著重心，勉強禮貌地聽著。"
+      "tw": "<LI>黛安看來真想去廁所。她兩腳換著重心，勉強禮貌地聽著。"
     },
     {
       "id": "x02329",
@@ -22377,7 +22377,7 @@
       "cn": "<LI>投入到她连去洗手间都顾不上了。",
       "es": "<LI>Tanto que está aplazando ir al baño.",
       "fr": "<LI>Tellement qu'elle remet à plus tard son passage aux toilettes.",
-      "tw": "<LI>她看得太投入，連去洗手間都一拖再拖。"
+      "tw": "<LI>她看得太投入，連去廁所都一拖再拖。"
     },
     {
       "id": "x02383",
@@ -22655,7 +22655,7 @@
       "cn": "<LI>黛安：<EM>（轻声地）</EM> 其实，如果你不介意的话，我想去趟洗手间。就在楼梯顶上，你说的那个？",
       "es": "<LI>DIANE: <EM>muy bajito</EM> La verdad, voy a escaparme un momento al baño, ¿te importa? ¿Justo al subir las escaleras, dijiste?",
       "fr": "<LI>DIANE : <EM>très doucement</EM> En fait, je vais juste faire un saut aux toilettes, si ça ne t'ennuie pas ? C'est juste en haut de l'escalier, tu m'as dit ?",
-      "tw": "<LI>黛安：（輕聲）其實，如果你不介意，我想去趟洗手間。你說是在樓梯頂上？"
+      "tw": "<LI>黛安：（輕聲）其實，如果你不介意，我想去趟廁所。你說是在樓梯頂上？"
     },
     {
       "id": "x02413",
@@ -22794,7 +22794,7 @@
       "cn": "<LI>你觉得她反正也很需要上厕所，而且你很想看看接下来会怎样。",
       "es": "<LI>De todas formas crees que tiene ganas de hacer pis, y te gustaría ver cómo se las arregla.",
       "fr": "<LI>Vous pensez qu'elle a de toute façon envie de faire pipi, et vous aimeriez voir comment elle s'en sort.",
-      "tw": "<LI>你覺得她反正也很需要上洗手間，而且你很想看看接下來會怎樣。"
+      "tw": "<LI>你覺得她反正也很需要上廁所，而且你很想看看接下來會怎樣。"
     },
     {
       "id": "x02427",
@@ -22832,7 +22832,7 @@
       "cn": "<LI>黛安已经上楼去卫生间了。",
       "es": "<LI>Diane ha subido al baño.",
       "fr": "<LI>Diane est montée à l'étage pour aller à la salle de bains.",
-      "tw": "<LI>黛安已經上樓去洗手間了。"
+      "tw": "<LI>黛安已經上樓去廁所了。"
     },
     {
       "id": "x02431",
@@ -22888,7 +22888,7 @@
       "cn": "不，幸运机会就算了。让她安安静静去方便吧。",
       "es": "No, no jugaré un golpe de suerte. Que la chica haga pis tranquila.",
       "fr": "Non, je ne joue pas un coup de chance. Laissons la fille faire pipi tranquille.",
-      "tw": "不，我不用幸運機會。讓她安安靜靜去上洗手間吧。"
+      "tw": "不，我不用幸運機會。讓她安安靜靜去上廁所吧。"
     },
     {
       "id": "x02437",
@@ -22925,7 +22925,7 @@
       "cn": "<LI>黛安上楼去卫生间了。",
       "es": "<LI>Diane ha subido al baño.",
       "fr": "<LI>Diane est montée à l'étage pour aller à la salle de bains.",
-      "tw": "<LI>黛安上樓去洗手間了。"
+      "tw": "<LI>黛安上樓去廁所了。"
     },
     {
       "id": "x02441",
@@ -22981,7 +22981,7 @@
       "cn": "<LI>黛安上楼去卫生间了。",
       "es": "<LI>Diane ha subido al baño.",
       "fr": "<LI>Diane est montée à l'étage pour aller à la salle de bains.",
-      "tw": "<LI>黛安上樓去洗手間了。"
+      "tw": "<LI>黛安上樓去廁所了。"
     },
     {
       "id": "x02447",
@@ -24320,7 +24320,7 @@
       "cn": "<LI>黛安坐立不安。她显然已经憋得很急，想去厕所，只是在等一个合适的时机开口。",
       "es": "<LI>Diane no puede quedarse quieta. Está claramente muerta de ganas de ir al baño, y solo busca el momento oportuno para pedirlo.",
       "fr": "<LI>Diane ne tient pas en place. Elle a manifestement une envie pressante d'aller aux toilettes et cherche juste le bon moment pour le demander.",
-      "tw": "<LI>黛安坐立不安。她顯然已經憋得很急，想去洗手間，只是在等一個合適的時機開口。"
+      "tw": "<LI>黛安坐立不安。她顯然已經憋得很急，想去廁所，只是在等一個合適的時機開口。"
     },
     {
       "id": "x02590",
@@ -24516,7 +24516,7 @@
       "cn": "<LI>黛安：嗯嗯。说到厕所，你家的在哪儿？",
       "es": "<LI>DIANE: Mmm. Hablando de baños, ¿dónde está el tuyo?",
       "fr": "<LI>DIANE : Mmmm. En parlant de toilettes, les tiennes, elles sont où ?",
-      "tw": "<LI>黛安：嗯嗯。說到廁所，你家的在哪兒？"
+      "tw": "<LI>黛安：嗯嗯。說到廁所，你家的在哪裡？"
     },
     {
       "id": "x02607",
@@ -24918,7 +24918,7 @@
       "cn": "<LI>黛安：你真想知道？说完你能让我去厕所吗？",
       "es": "<LI>DIANE: ¿De verdad quieres saberlo? ¿Me dejarás ir al baño cuando te lo haya contado?",
       "fr": "<LI>DIANE : Tu veux vraiment savoir ? Tu me laisseras aller aux toilettes quand je t'aurai raconté ?",
-      "tw": "<LI>黛安：你真想知道？那我告訴你之後，你會讓我去洗手間嗎？"
+      "tw": "<LI>黛安：你真想知道？那我告訴你之後，你會讓我去廁所嗎？"
     },
     {
       "id": "x02650",
@@ -25047,7 +25047,7 @@
       "cn": "<LI>黛安：车抛锚了。我们离最近的地方也有好几英里，而且快午夜了。",
       "es": "<LI>DIANE: El coche se averió. Estábamos a kilómetros de cualquier sitio y era casi medianoche.",
       "fr": "<LI>DIANE : La voiture est tombée en panne. On était au milieu de nulle part et il était presque minuit.",
-      "tw": "<LI>黛安：車拋錨了。我們離最近的地方也有好幾英裡，再說快午夜了。"
+      "tw": "<LI>黛安：車拋錨了。我們離最近的地方也有好幾英里，再說快午夜了。"
     },
     {
       "id": "x02664",
@@ -25541,7 +25541,7 @@
       "cn": "<LI>黛安：对了，你家厕所在哪儿？",
       "es": "<LI>DIANE: Por cierto, ¿dónde tienes el baño?",
       "fr": "<LI>DIANE : Au fait, où sont tes toilettes ?",
-      "tw": "<LI>黛安：對了，你家廁所在哪兒？"
+      "tw": "<LI>黛安：對了，你家廁所在哪裡？"
     },
     {
       "id": "x02714",
@@ -25810,7 +25810,7 @@
       "cn": "<LI>黛安：你去拿的时候，我去趟厕所。",
       "es": "<LI>DIANE: Mientras lo buscas, me escapo un momento al baño.",
       "fr": "<LI>DIANE : Pendant que tu vas le chercher, je vais faire un saut aux toilettes.",
-      "tw": "<LI>黛安：你去拿時，我去趟洗手間。"
+      "tw": "<LI>黛安：你去拿時，我去趟廁所。"
     },
     {
       "id": "x02743",
@@ -25903,7 +25903,7 @@
       "cn": "<LI>黛安去洗手间了。你希望有什么事情能阻止她。",
       "es": "<LI>Diane ha ido a hacer pis. Esperas que algo ocurra para impedírselo.",
       "fr": "<LI>Diane est partie faire pipi. Vous espérez que quelque chose l'empêchera d'y arriver.",
-      "tw": "<LI>黛安去上洗手間了。你希望有什麼事能阻止她。"
+      "tw": "<LI>黛安去上廁所了。你希望有什麼事能阻止她。"
     },
     {
       "id": "x02752",
@@ -25931,7 +25931,7 @@
       "cn": "<LI>黛安去洗手间了。你希望有什么事情能阻止她。",
       "es": "<LI>Diane ha ido a hacer pis. Esperas que algo ocurra para impedírselo.",
       "fr": "<LI>Diane est partie faire pipi. Vous espérez que quelque chose l'empêchera d'y arriver.",
-      "tw": "<LI>黛安去上洗手間了。你希望有什麼事能阻止她。"
+      "tw": "<LI>黛安去上廁所了。你希望有什麼事能阻止她。"
     },
     {
       "id": "x02755",
@@ -25978,7 +25978,7 @@
       "cn": "<LI>黛安起身告辞，说要去趟厕所。",
       "es": "<LI>Diane se levanta para excusarse e ir un momento al baño.",
       "fr": "<LI>Diane se lève pour s'excuser et aller faire un tour aux toilettes.",
-      "tw": "<LI>黛安起身，藉口要去趟洗手間。"
+      "tw": "<LI>黛安起身，藉口要去趟廁所。"
     },
     {
       "id": "x02760",
@@ -26146,7 +26146,7 @@
       "cn": "<LI>黛安起身告辞，说要去趟厕所。你希望有什么事情能阻止她。",
       "es": "<LI>Diane se levanta para excusarse e ir un momento al baño. Esperas que algo ocurra para impedírselo.",
       "fr": "<LI>Diane se lève pour s'excuser et aller faire un tour aux toilettes. Vous espérez que quelque chose l'empêchera d'y arriver.",
-      "tw": "<LI>黛安起身告辭，說要去趟洗手間。你希望有什麼事情能阻止她。"
+      "tw": "<LI>黛安起身告辭，說要去趟廁所。你希望有什麼事情能阻止她。"
     },
     {
       "id": "x02778",
@@ -26426,7 +26426,7 @@
       "cn": "<LI>黛安起身告辞，说要去趟厕所。你希望有什么事情能阻止她。",
       "es": "<LI>Diane se levanta para excusarse e ir un momento al baño. Esperas que algo ocurra para impedírselo.",
       "fr": "<LI>Diane se lève pour s'excuser et aller faire un tour aux toilettes. Vous espérez que quelque chose l'empêchera d'y arriver.",
-      "tw": "<LI>黛安起身告辭，說要去趟洗手間。你希望有什麼事情能阻止她。"
+      "tw": "<LI>黛安起身告辭，說要去趟廁所。你希望有什麼事情能阻止她。"
     },
     {
       "id": "x02808",
@@ -26482,7 +26482,7 @@
       "cn": "<LI>黛安起身告辞，说要去趟厕所。你希望有什么事情能阻止她。",
       "es": "<LI>Diane se levanta para excusarse e ir un momento al baño. Esperas que algo ocurra para impedírselo.",
       "fr": "<LI>Diane se lève pour s'excuser et aller faire un tour aux toilettes. Vous espérez que quelque chose l'empêchera d'y arriver.",
-      "tw": "<LI>黛安起身告辭，說要去趟洗手間。你希望有什麼事情能阻止她。"
+      "tw": "<LI>黛安起身告辭，說要去趟廁所。你希望有什麼事情能阻止她。"
     },
     {
       "id": "x02814",
@@ -26538,7 +26538,7 @@
       "cn": "<LI>黛安起身告辞，说要去趟厕所。你希望有什么事情能阻止她。",
       "es": "<LI>Diane se levanta para excusarse e ir un momento al baño. Esperas que algo ocurra para impedírselo.",
       "fr": "<LI>Diane se lève pour s'excuser et aller faire un tour aux toilettes. Vous espérez que quelque chose l'empêchera d'y arriver.",
-      "tw": "<LI>黛安起身告辭，說要去趟洗手間。你希望有什麼事情能阻止她。"
+      "tw": "<LI>黛安起身告辭，說要去趟廁所。你希望有什麼事情能阻止她。"
     },
     {
       "id": "x02820",
@@ -26816,7 +26816,7 @@
       "cn": "<LI>黛安：你去拿的时候，我去趟厕所。",
       "es": "<LI>DIANE: Mientras lo buscas, me escapo un momento al baño.",
       "fr": "<LI>DIANE : Pendant que tu vas le chercher, je vais faire un saut aux toilettes.",
-      "tw": "<LI>黛安：你去拿時，我去趟洗手間。"
+      "tw": "<LI>黛安：你去拿時，我去趟廁所。"
     },
     {
       "id": "x02850",
@@ -26825,7 +26825,7 @@
       "cn": "<LI>你告诉她厕所在哪儿，她说去一下马上回来，便离开了房间。你弟弟一直在浴室里，不过你觉得他可能已经出来了。也许还是值得用一次幸运机会？",
       "es": "<LI>Le dices dónde está y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?",
       "fr": "<LI>Vous lui indiquez où c'est et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais vous pensez qu'il a peut-être fini maintenant. Ça vaut peut-être encore le coup de tenter un coup de chance ?",
-      "tw": "<LI>你告訴她廁所在哪兒，她說去一下馬上回來，便離開了房間。你弟弟一直在浴室裡，但你覺得他也許已經出來了。也許還是該用一次幸運機會？"
+      "tw": "<LI>你告訴她廁所在哪裡，她說去一下馬上回來，便離開了房間。你弟弟一直在浴室裡，但你覺得他也許已經出來了。也許還是該用一次幸運機會？"
     },
     {
       "id": "x02851",
@@ -27091,7 +27091,7 @@
       "cn": "<LI>黛安：其实，在我们看得太起劲之前——浴室在哪儿？",
       "es": "<LI>DIANE: A decir verdad, antes de que nos liemos demasiado con el libro, ¿dónde está el baño?",
       "fr": "<LI>DIANE : En fait, avant qu'on s'absorbe trop dans le livre, où sont les toilettes ?",
-      "tw": "<LI>黛安：其實，在我們看得太起勁之前——浴室在哪兒？"
+      "tw": "<LI>黛安：其實，在我們看得太起勁之前——浴室在哪裡？"
     },
     {
       "id": "x02879",
@@ -27789,7 +27789,7 @@
       "cn": "<LI>你去浴室上完厕所。回到楼下，黛安站起来，对你微微一笑，转身上楼去了。",
       "es": "<LI>Vas al baño y haces pis. Cuando vuelves a bajar Diane se levanta, te dedica una sonrisita pícara y sube las escaleras.",
       "fr": "<LI>Vous allez à la salle de bains et faites pipi. Quand vous redescendez, Diane se lève, vous fait un petit sourire complice et monte à l'étage.",
-      "tw": "<LI>你去浴室上完洗手間。回到樓下，黛安站起來，對你微微一笑，轉身上樓去了。"
+      "tw": "<LI>你去浴室上完廁所。回到樓下，黛安站起來，對你微微一笑，轉身上樓去了。"
     },
     {
       "id": "x02952",
@@ -27862,7 +27862,7 @@
       "cn": "<LI>黛安：其实，在我们看得太起劲之前——浴室在哪儿？",
       "es": "<LI>DIANE: A decir verdad, antes de que nos liemos demasiado con el libro, ¿dónde está el baño?",
       "fr": "<LI>DIANE : En fait, avant qu'on s'absorbe trop dans le livre, où sont les toilettes ?",
-      "tw": "<LI>黛安：其實，在我們看得太起勁之前——浴室在哪兒？"
+      "tw": "<LI>黛安：其實，在我們看得太起勁之前——浴室在哪裡？"
     },
     {
       "id": "x02960",
@@ -27927,7 +27927,7 @@
       "cn": "<LI>好了，你已经玩够了。你知道她想去厕所。难道你就不打算给她个机会吗？",
       "es": "<LI>Venga, ya te has divertido bastante. Sabes que necesita ir al baño. ¿No vas a darle la oportunidad?",
       "fr": "<LI>Bon, vous avez bien profité. Vous savez qu'elle a envie d'aller aux toilettes. Vous n'allez pas lui en donner l'occasion ?",
-      "tw": "<LI>你已經玩夠了。你知道她想去洗手間，難道不打算給她機會嗎？"
+      "tw": "<LI>你已經玩夠了。你知道她想去廁所，難道不打算給她機會嗎？"
     },
     {
       "id": "x02967",
@@ -28111,7 +28111,7 @@
       "cn": "<LI>黛安：<EM>（压低声音）</EM> 洗手间在哪儿？",
       "es": "<LI>DIANE: <EM>en un susurro</EM> ¿Dónde está el baño?",
       "fr": "<LI>DIANE : <EM>en chuchotant</EM> Où sont les toilettes ?",
-      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪兒？"
+      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪裡？"
     },
     {
       "id": "x02987",
@@ -28241,7 +28241,7 @@
       "cn": "<LI>黛安：<EM>（压低声音）</EM> 洗手间在哪儿？",
       "es": "<LI>DIANE: <EM>en un susurro</EM> ¿Dónde está el baño?",
       "fr": "<LI>DIANE : <EM>en chuchotant</EM> Où sont les toilettes ?",
-      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪兒？"
+      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪裡？"
     },
     {
       "id": "x03001",
@@ -28490,7 +28490,7 @@
       "cn": "<LI>黛安：我需要去一下。你家浴室在哪儿？",
       "es": "<LI>DIANE: Tengo que ir un momento. ¿Dónde está el baño?",
       "fr": "<LI>DIANE : J'ai besoin d'aller… quelque part. Où sont vos toilettes ?",
-      "tw": "<LI>黛安：我需要去一下。你家浴室在哪兒？"
+      "tw": "<LI>黛安：我需要去一下。你家浴室在哪裡？"
     },
     {
       "id": "x03028",
@@ -28602,7 +28602,7 @@
       "cn": "<LI>黛安：我需要去一下。你家浴室在哪儿？",
       "es": "<LI>DIANE: Tengo que ir un momento. ¿Dónde está el baño?",
       "fr": "<LI>DIANE : J'ai besoin d'aller… quelque part. Où sont vos toilettes ?",
-      "tw": "<LI>黛安：我需要去一下。你家浴室在哪兒？"
+      "tw": "<LI>黛安：我需要去一下。你家浴室在哪裡？"
     },
     {
       "id": "x03040",
@@ -28932,7 +28932,7 @@
       "cn": "<LI>黛安：失陪一下，厕所在哪儿？",
       "es": "<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?",
       "fr": "<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?",
-      "tw": "<LI>黛安：失陪一下，廁所在哪兒？"
+      "tw": "<LI>黛安：失陪一下，廁所在哪裡？"
     },
     {
       "id": "x03076",
@@ -29089,7 +29089,7 @@
       "cn": "<LI>黛安：失陪一下，厕所在哪儿？",
       "es": "<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?",
       "fr": "<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?",
-      "tw": "<LI>黛安：失陪一下，廁所在哪兒？"
+      "tw": "<LI>黛安：失陪一下，廁所在哪裡？"
     },
     {
       "id": "x03093",
@@ -29401,7 +29401,7 @@
       "cn": "<LI>黛安：不好意思，我需要去一下厕所，在哪儿啊？",
       "es": "<LI>DIANE: Lo siento, pero necesito ir al baño. ¿Dónde está?",
       "fr": "<LI>DIANE : Excusez-moi, mais j'ai besoin d'aller aux toilettes. Où sont-elles ?",
-      "tw": "<LI>黛安：抱歉，我得去趟洗手間。在哪兒？"
+      "tw": "<LI>黛安：抱歉，我得去趟廁所。在哪裡？"
     },
     {
       "id": "x03127",
@@ -29743,7 +29743,7 @@
       "cn": "<LI>黛安：不好意思，我真的得去了。卫生间在哪儿？",
       "es": "<LI>DIANE: Lo siento, de verdad tengo que irme ya. ¿Dónde está el baño?",
       "fr": "<LI>DIANE : Désolée, il faut vraiment que j'y aille maintenant. Où sont les toilettes ?",
-      "tw": "<LI>黛安：不好意思，我真的得去了。洗手間在哪兒？"
+      "tw": "<LI>黛安：不好意思，我真的得去了。廁所在哪裡？"
     },
     {
       "id": "x03164",
@@ -29863,7 +29863,7 @@
       "cn": "<LI>好了，你也玩得差不多了。玩笑归玩笑，她憋得急着要上厕所，却不好意思打断你。你就不打算放她一马吗？",
       "es": "<LI>Mira, ya te has divertido bastante. Una broma es una broma. Ella está que se mea y no quiere interrumpirte. ¿No vas a darle una oportunidad?",
       "fr": "<LI>Bon, vous vous êtes bien amusé. Une plaisanterie reste une plaisanterie. Elle meurt d'envie d'aller aux toilettes mais n'ose pas vous interrompre. Vous n'allez pas lui donner sa chance ?",
-      "tw": "<LI>你已經玩夠了。玩笑歸玩笑，她急著想上洗手間，卻不想打斷你。難道不該給她機會嗎？"
+      "tw": "<LI>你已經玩夠了。玩笑歸玩笑，她急著想上廁所，卻不想打斷你。難道不該給她機會嗎？"
     },
     {
       "id": "x03177",
@@ -30120,7 +30120,7 @@
       "cn": "<LI>你脑海里浮现出她一看到马桶就隔着裙子死死捂住胯下，拼命憋着，好不容易才撑到把内裤脱下来的画面。",
       "es": "<LI>Te la imaginas agarrándose la entrepierna a través de la falda en cuanto ve el inodoro, luchando por aguantar el tiempo justo para bajarse las bragas.",
       "fr": "<LI>Vous l'imaginez agripper son entrejambe à travers sa jupe à la vue des toilettes, luttant pour se retenir le temps de baisser sa culotte.",
-      "tw": "<LI>你想象她一看到馬桶就隔著裙子死死捂住襠下，拼命忍到總算脫下內褲的樣子。"
+      "tw": "<LI>你想像她一看到馬桶就隔著裙子死死捂住襠下，拼命忍到總算脫下內褲的樣子。"
     },
     {
       "id": "x03203",
@@ -30506,7 +30506,7 @@
       "cn": "<P><LI><B>而且你还发现她在厕所里尿湿了内裤。",
       "es": "<P><LI><B>Y encima has descubierto que se ha mojado las bragas en el baño.",
       "fr": "<P><LI><B>Et vous avez alors découvert qu'elle s'est fait pipi dessus aux toilettes.",
-      "tw": "<P><LI><B>而且你發現她在洗手間裡尿濕了內褲。"
+      "tw": "<P><LI><B>而且你發現她在廁所裡尿濕了內褲。"
     },
     {
       "id": "x03245",
@@ -30997,7 +30997,7 @@
       "cn": "<LI>黛安问了洗手间在哪儿。",
       "es": "<LI>Diane ha preguntado dónde está el baño.",
       "fr": "<LI>Diane a demandé où sont les toilettes.",
-      "tw": "<LI>黛安問了廁所在哪兒。"
+      "tw": "<LI>黛安問了廁所在哪裡。"
     },
     {
       "id": "x03298",
@@ -31025,7 +31025,7 @@
       "cn": "<LI>黛安上楼去卫生间了。",
       "es": "<LI>Diane ha subido al baño.",
       "fr": "<LI>Diane est montée à l'étage pour aller à la salle de bains.",
-      "tw": "<LI>黛安上樓去洗手間了。"
+      "tw": "<LI>黛安上樓去廁所了。"
     },
     {
       "id": "x03301",
@@ -31203,7 +31203,7 @@
       "cn": "<LI>你暗自猜想她现在有多急着想上厕所。",
       "es": "<LI>Te preguntas cuántas ganas tendrá de ir al baño.",
       "fr": "<LI>Vous vous demandez à quel point elle a envie d'aller aux toilettes.",
-      "tw": "<LI>你想知道她到底有多急著想上洗手間。"
+      "tw": "<LI>你想知道她到底有多急著想上廁所。"
     },
     {
       "id": "x03320",
@@ -31750,7 +31750,7 @@
       "cn": "<LI>她没有系腰带，裙子只靠一个小扣子固定着。解开它相当容易。但什么也没发生。",
       "es": "<LI>No lleva cinturón, pero la falda está sujeta por un pequeño broche. Es bastante fácil de abrir. Pero no pasa nada.",
       "fr": "<LI>Elle ne porte pas de ceinture, mais la jupe est maintenue par un petit crochet. C'est assez facile à défaire. Mais rien ne se passe.",
-      "tw": "<LI>她沒系腰帶，裙子只靠一個小扣子固定著。解開它挺容易。但什麼也沒發生。"
+      "tw": "<LI>她沒繫腰帶，裙子只靠一個小扣子固定著。解開它挺容易。但什麼也沒發生。"
     },
     {
       "id": "x03379",
@@ -32126,7 +32126,7 @@
       "cn": "<LI>黛安：快给我。我快憋死了，真的要上厕所。",
       "es": "<LI>DIANE: Venga ya. Me estoy meando encima. En serio.",
       "fr": "<LI>DIANE : Allez. Je vais craquer, il faut vraiment que j'aille aux toilettes. Je t'assure.",
-      "tw": "<LI>黛安：快點，我快憋死了，真的得去洗手間。"
+      "tw": "<LI>黛安：快點，我快憋死了，真的得去廁所。"
     },
     {
       "id": "x03420",
@@ -32448,7 +32448,7 @@
       "cn": "<LI>黛安真的很需要上厕所。",
       "es": "<LI>Diane necesita el baño urgentemente.",
       "fr": "<LI>Diane a vraiment besoin d'aller aux toilettes.",
-      "tw": "<LI>黛安真的急著想上洗手間。"
+      "tw": "<LI>黛安真的急著想上廁所。"
     },
     {
       "id": "x03455",
@@ -32548,7 +32548,7 @@
       "cn": "<LI>她的衬裙卷进去了，她把它塞好、整了整裙子，拉链还没拉完就急忙冲出了房间。",
       "es": "<LI>La enagua se le ha enganchado, así que la mete por dentro y se arregla la falda, luego, todavía cerrando la cremallera, sale a toda prisa de la habitación.",
       "fr": "<LI>Son fond de robe s'est retroussé, elle le rentre et remet sa jupe bien droite, puis, encore en train de fermer la fermeture éclair, quitte la pièce à la hâte.",
-      "tw": "<LI>她的內裙卷上去了，所以塞回去，理好裙子，拉鍊還沒拉好就匆匆離開房間。"
+      "tw": "<LI>她的內裙捲上去了，所以塞回去，理好裙子，拉鍊還沒拉好就匆匆離開房間。"
     },
     {
       "id": "x03466",
@@ -32823,7 +32823,7 @@
       "cn": "<LI>她说：<EM>我真的太需要了。</EM>然后站起身，把内裤拉上。是你的错觉吗，还是上面真的有一小片湿润？",
       "es": "<LI><EM>Lo necesitaba de verdad,</EM> dice y, poniéndose de pie, se sube las bragas. ¿Será tu imaginación o hay una pequeña mancha de humedad en ellas?",
       "fr": "<LI><EM>J'en avais vraiment besoin,</EM> dit-elle, et en se levant, elle remonte sa culotte. Est-ce votre imagination, ou y a-t-il une petite tache d'humidité dessus ?",
-      "tw": "<LI>「我太需要這個了。」她說著站起來，拉上內褲。是你的想象嗎，還是內褲上真的有一小片濕痕？"
+      "tw": "<LI>「我太需要這個了。」她說著站起來，拉上內褲。是你的想像嗎，還是內褲上真的有一小片濕痕？"
     },
     {
       "id": "x03495",
@@ -32860,7 +32860,7 @@
       "cn": "<LI>黛安：你是不是每个女朋友都要盯着她们上厕所看？",
       "es": "<LI>DIANE: ¿Acompañas al baño a todas tus novias?",
       "fr": "<LI>DIANE : Tu regardes toutes tes petites amies aux toilettes ?",
-      "tw": "<LI>黛安：你會看所有女朋友上洗手間嗎？"
+      "tw": "<LI>黛安：你會看所有女朋友上廁所嗎？"
     },
     {
       "id": "x03499",
@@ -32951,7 +32951,7 @@
       "cn": "<LI>她把你请出洗手间，自己留在里面洗手、整理连裤袜。然后她下楼来到客厅陪你。",
       "es": "<LI>Te hace salir del baño mientras ella se lava las manos y se coloca bien las medias. Luego baja a reunirse contigo en el salón.",
       "fr": "<LI>Elle vous pousse doucement hors des toilettes pendant qu'elle se lave les mains et rajuste ses collants. Puis elle descend vous rejoindre dans le salon.",
-      "tw": "<LI>她把你請出洗手間，自己洗手、整理褲襪。接著下樓來客廳找你。"
+      "tw": "<LI>她把你請出廁所，自己洗手、整理褲襪。接著下樓來客廳找你。"
     },
     {
       "id": "x03509",
@@ -32996,7 +32996,7 @@
       "cn": "<LI>今晚过得很愉快，能跟她一起进洗手间更是意外之喜。但说实话吧：",
       "es": "<LI>Has tenido una noche estupenda y haber entrado al baño con ella ha sido un regalo inesperado. Pero reconócelo:",
       "fr": "<LI>Vous avez passé une soirée formidable, et l'accompagner aux toilettes a été un bonus inattendu. Mais avouez-le :",
-      "tw": "<LI>今晚很愉快，和她一起進洗手間更是意外之喜。但承認吧："
+      "tw": "<LI>今晚很愉快，和她一起進廁所更是意外之喜。但承認吧："
     },
     {
       "id": "x03514",
@@ -33134,7 +33134,7 @@
       "cn": "<LI>黛安：你真坏。其实吧，我坐在这儿夹着腿实在挺傻的，还不如回家去上厕所。不早了，下周见吧。",
       "es": "<LI>DIANE: Eres un travieso. La verdad es que me siento un poco tonta aquí sentada con las piernas cruzadas cuando podría irme a casa y usar el baño. Es bastante tarde y te veo la semana que viene.",
       "fr": "<LI>DIANE : Tu es coquin. En fait, je me sens un peu bête à rester là à croiser les jambes alors que je pourrais rentrer chez moi et aller aux toilettes. Il est assez tard, à la semaine prochaine.",
-      "tw": "<LI>黛安：你真壞。其實我坐在這兒夾著腿，明明可以回家上洗手間，感覺滿傻的。很晚了，下周見吧。"
+      "tw": "<LI>黛安：你真壞。其實我坐在這裡夾著腿，明明可以回家上廁所，感覺滿傻的。很晚了，下周見吧。"
     },
     {
       "id": "x03529",
@@ -33180,7 +33180,7 @@
       "cn": "<LI>她已经快忍不住了，时间可不等人。",
       "es": "<LI>Está a punto de mearse. No tienes todo el día.",
       "fr": "<LI>Elle est au bord de se faire pipi dessus. Vous n'avez pas toute la journée.",
-      "tw": "<LI>她急著想去洗手間，你沒多少時間了。"
+      "tw": "<LI>她急著想去廁所，你沒多少時間了。"
     },
     {
       "id": "x03534",
@@ -33903,7 +33903,7 @@
       "cn": "<LI>她转向你，满脸通红，喘着气问：“你家厕所在哪儿？”你告诉她，她急忙跑回屋里。",
       "es": "<LI>Se vuelve hacia ti, roja de vergüenza, y te suelta jadeando <EM>¿Dónde está tu baño?</EM> Se lo dices, y ella vuelve a entrar en casa corriendo.",
       "fr": "<LI>Elle se tourne vers vous, rouge de gêne, et souffle <EM>Où sont vos toilettes ?</EM>. Vous le lui indiquez, et elle se précipite à l'intérieur.",
-      "tw": "<LI>她轉向你，滿臉通紅，喘著氣問：「你家廁所在哪兒？」你告訴她，她趕忙跑回屋裡。"
+      "tw": "<LI>她轉向你，滿臉通紅，喘著氣問：「你家廁所在哪裡？」你告訴她，她趕忙跑回屋裡。"
     },
     {
       "id": "x03612",
@@ -34243,7 +34243,7 @@
       "cn": "<LI>你感觉她很想去厕所，却不好意思开口。",
       "es": "<LI>Tienes la sensación de que necesita ir al baño pero no se atreve a decirlo.",
       "fr": "<LI>Vous avez l'impression qu'elle a envie d'aller aux toilettes, mais qu'elle n'ose pas le dire.",
-      "tw": "<LI>你覺得她想去洗手間，卻不好意思說。"
+      "tw": "<LI>你覺得她想去廁所，卻不好意思說。"
     },
     {
       "id": "x03649",
@@ -34334,7 +34334,7 @@
       "cn": "<LI>黛安：我憋得要死，早就该在出门前去趟厕所的。",
       "es": "<LI>DIANE: Me estoy meando, literalmente. Tendría que haber ido antes de salir de casa.",
       "fr": "<LI>DIANE : J'ai une envie folle d'aller aux toilettes. J'aurais dû y aller avant de partir.",
-      "tw": "<LI>黛安：我憋得要死，早就該在出門前去趟洗手間的。"
+      "tw": "<LI>黛安：我憋得要死，早就該在出門前去趟廁所的。"
     },
     {
       "id": "x03659",
@@ -34574,7 +34574,7 @@
       "cn": "<LI>不知怎么你们总算走到了她家。“再见，”她急促地喘了一声，随即绕到房子后面消失了。剩下你在门口，只能靠想象猜测后面发生了什么。",
       "es": "<LI>De algún modo llegáis a su casa. «Adiós», jadea, y desaparece por el camino de entrada hacia la parte trasera de la casa. Te quedas imaginando lo que ocurre allí.",
       "fr": "<LI>Vous arrivez tant bien que mal chez elle. « Au revoir ! » souffle-t-elle, et elle disparaît dans l'allée et contourne la maison par derrière. Vous n'avez plus qu'à imaginer la suite.",
-      "tw": "<LI>不知怎麼你們總算走到了她家。「再見，」她急促地喘了一聲，隨即繞到房子後面消失了。剩下你在門口，只能靠想象猜測後面發生了什麼。"
+      "tw": "<LI>不知怎麼你們總算走到了她家。「再見，」她急促地喘了一聲，隨即繞到房子後面消失了。剩下你在門口，只能靠想像猜測後面發生了什麼。"
     },
     {
       "id": "x03685",
@@ -34889,7 +34889,7 @@
       "cn": "<LI>黛安：<EM>（紧张地轻笑了一声）</EM> 对不起——我那时候快憋疯了，急着要上厕所。",
       "es": "<LI>DIANE: <EM>con una risita nerviosa</EM> Lo siento, es que tenía unas ganas tremendas de ir al baño.",
       "fr": "<LI>DIANE : <EM>avec un petit rire nerveux</EM> Pardon — j'avais une envie folle d'aller aux toilettes.",
-      "tw": "<LI>黛安：（緊張地輕笑）對不起，我當時急著想上洗手間。"
+      "tw": "<LI>黛安：（緊張地輕笑）對不起，我當時急著想上廁所。"
     },
     {
       "id": "x03719",
@@ -35444,20 +35444,20 @@
     {
       "id": "x03779",
       "kind": "story",
-      "en": "<P><LI><B>You've taken Diane out on a date, managed to get her really desperate on the way home.",
-      "cn": "<P><LI><B>你带黛安出去约会，还在回家的路上把她搞得尿急难耐。",
+      "en": "<P><LI><B>You've taken Diane out on a date and managed to get her really desperate on the way home.",
+      "cn": "<P><LI><B>你带黛安出去约会，并让她在回家的路上憋得够呛。",
       "es": "<P><LI><B>Has llevado a Diane a una cita y has conseguido que esté a punto de hacerse pis de camino a casa.",
       "fr": "<P><LI><B>Vous avez emmené Diane en rendez-vous et vous avez réussi à la mettre dans une envie pressante terrible sur le chemin du retour.",
-      "tw": "<P><LI><B>你帶黛安出去約會，還在回家的路上把她搞得尿急難耐。"
+      "tw": "<P><LI><B>你帶黛安出去約會，還讓她在回家的路上憋得夠嗆。"
     },
     {
       "id": "x03780",
       "kind": "story",
       "en": "<P><LI><B>So desperate that she's had to take an emergency squat, which you were able to watch.",
-      "cn": "<P><LI><B>憋到她急得随地小便，还被你看了个正着。",
+      "cn": "<P><LI><B>憋到她急着随地小便，又被你看了个正着。",
       "es": "<P><LI><B>Tantas ganas tenía que ha tenido que agacharse de urgencia, y tú has podido mirarlo todo.",
       "fr": "<P><LI><B>Tellement pressée qu'elle a dû s'accroupir en urgence, et vous avez pu regarder.",
-      "tw": "<P><LI><B>憋到她急得就地解決，還被你看了個正著。"
+      "tw": "<P><LI><B>憋到她急著就地解決，又被你看了個正著。"
     },
     {
       "id": "x03781",
@@ -35909,7 +35909,7 @@
       "cn": "<LI>克洛伊把手从裆部移开，捂住自己的脸，像是想把羞耻藏起来不让自己看见。双腿仍然死死地夹着，但你完全可以想象尿液正顺着她的裤袜往下流。",
       "es": "<LI>Chloe aparta la mano de la entrepierna y se cubre la cara, como intentando esconder su vergüenza de sí misma. Tiene las piernas todavía muy apretadas, pero puedes imaginarte el pis corriéndole por las medias.",
       "fr": "<LI>Chloe retire sa main de son entrejambe et cache son visage dans ses paumes, comme pour dissimuler sa honte à elle-même. Ses jambes sont toujours serrées l'une contre l'autre, mais vous imaginez le pipi qui lui dégouline le long des collants.",
-      "tw": "<LI>克洛伊把手從襠部移開，捂住臉，彷彿想躲開自己的羞恥。她雙腿還緊緊夾著，但你能想象尿正沿著她的褲襪流下。"
+      "tw": "<LI>克洛伊把手從襠部移開，捂住臉，彷彿想躲開自己的羞恥。她雙腿還緊緊夾著，但你能想像尿正沿著她的褲襪流下。"
     },
     {
       "id": "x03830",
@@ -36770,7 +36770,7 @@
       "cn": "<LI>真不赖啊。黛安明明急着要去厕所，却偏偏拖着，因为她知道这能让你兴奋。",
       "es": "<LI>Qué maravilla. Diane tiene ganas de ir al baño, pero lo está retrasando, sabiendo que te excita.",
       "fr": "<LI>C'est pas génial, ça. Diane a envie d'aller aux toilettes, mais elle retarde le moment, sachant que ça vous excite.",
-      "tw": "<LI>是不是很棒？黛安想去洗手間，卻因為知道這會讓你興奮而拖著。"
+      "tw": "<LI>是不是很棒？黛安想去廁所，卻因為知道這會讓你興奮而拖著。"
     },
     {
       "id": "x03921",
@@ -36818,7 +36818,7 @@
       "cn": "<LI>你：你愿意让我陪你一起进厕所吗？",
       "es": "<LI>TÚ: ¿Me dejarías entrar al baño contigo?",
       "fr": "<LI>VOUS : Tu me laisserais t'accompagner aux toilettes ?",
-      "tw": "<LI>你：你願意讓我陪你一起進洗手間嗎？"
+      "tw": "<LI>你：你願意讓我陪你一起進廁所嗎？"
     },
     {
       "id": "x03926",
@@ -37843,7 +37843,7 @@
       "cn": "<LI>黛安：在继续之前，我得先去一下厕所。我很快就回来。",
       "es": "<LI>DIANE: Antes de seguir, tengo que escaparme un momento al baño. En un segundo vuelvo.",
       "fr": "<LI>DIANE : Avant qu'on aille plus loin, il faut que je file aux toilettes. J'en ai pour deux secondes.",
-      "tw": "<LI>黛安：接著之前，我得先去趟洗手間，很快就回來。"
+      "tw": "<LI>黛安：接著之前，我得先去趟廁所，很快就回來。"
     },
     {
       "id": "x04036",
@@ -38097,7 +38097,7 @@
       "cn": "<LI>黛安憋尿憋得难受，但你对此相当乐在其中，根本没费心去帮她找厕所。你能说出口的最好的话就是“我也想不到哪里有厕所”。",
       "es": "<LI>Diane está que se mea, pero a ti eso te conviene y no te has molestado en buscarle un sitio adonde ir. «No se me ocurre nada» es lo mejor que puedes decir.",
       "fr": "<LI>Diane est au bord de se faire pipi dessus mais ça vous arrange plutôt, aussi ne vous êtes-vous pas donné la peine de lui trouver des toilettes. « Je ne vois rien » est tout ce que vous trouvez à dire.",
-      "tw": "<LI>黛安憋得難受，你卻很享受，根本沒費心替她找廁所。你能說的最好一句就是：「我也想不到哪兒有廁所。」"
+      "tw": "<LI>黛安憋得難受，你卻很享受，根本沒費心替她找廁所。你能說的最好一句就是：「我也想不到哪裡有廁所。」"
     },
     {
       "id": "x04063",
@@ -38170,7 +38170,7 @@
       "cn": "<P><LI>黛安：<EM>（凑到你耳边悄声说）</EM> 我快憋死了，想去厕所。附近有地方可以去吗？",
       "es": "<P><LI>DIANE: <EM>(te susurra al oído)</EM> Me muero por ir al baño. ¿Hay algún sitio cerca?",
       "fr": "<P><LI>DIANE : <EM>vous chuchote à l'oreille</EM> J'ai une envie pressante d'aller aux toilettes. Il y a un endroit où je peux y aller ?",
-      "tw": "<P><LI>黛安：（湊到你耳邊小聲說）我快憋不住了。附近有地方能去洗手間嗎？"
+      "tw": "<P><LI>黛安：（湊到你耳邊小聲說）我快憋不住了。附近有地方能去廁所嗎？"
     },
     {
       "id": "x04994",
@@ -38188,7 +38188,7 @@
       "cn": "<LI>黛安：我觉得我坚持不到公共汽车到站——本来打算来这儿之前去一趟的，没想到凉亭酒吧已经关门了。",
       "es": "<LI>DIANE: Creo que no voy a aguantar el trayecto en autobús; contaba con ir antes de llegar aquí, pero no había contado con que el Pavilion estaría cerrado.",
       "fr": "<LI>DIANE : Je ne crois pas que je tiendrais jusqu'à la maison en bus — je comptais y aller avant qu'on arrive ici, mais je n'avais pas prévu que le Pavillon serait fermé.",
-      "tw": "<LI>黛安：我覺得我堅持不到公車到站——本來打算來這兒之前去一趟的，沒想到Pavilion酒吧已經關門了。"
+      "tw": "<LI>黛安：我覺得我堅持不到公車到站——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。"
     },
     {
       "id": "x04071",
@@ -38633,7 +38633,7 @@
       "cn": "<LI>黛安：他磨蹭这么久，我早就去趟厕所回来了，不是吗？",
       "es": "<LI>DIANE: Con el tiempo que nos hace esperar, podría haber ido al baño, ¿verdad?",
       "fr": "<LI>DIANE : Le temps qu'il met, j'aurais eu le temps d'aller aux toilettes, non ?",
-      "tw": "<LI>黛安：他等這麼久，我本來可以去趟洗手間回來，不是嗎？"
+      "tw": "<LI>黛安：他等這麼久，我本來可以去趟廁所回來，不是嗎？"
     },
     {
       "id": "x04118",
@@ -39688,7 +39688,7 @@
       "cn": "<LI>那女孩：真的好尴尬。我当时尿憋得快爆了，酒吧里的厕所又关着。说真的，我根本不可能忍到终点站，只好和朋友们说要去停车场方便一下。这种事我平时根本不会做，但当时真的是十万火急。她们说会帮我留住那班车，结果那个司机太没耐心了。",
       "es": "<LI>LA CHICA: Es muy vergonzoso. Tenía unas ganas tremendas de ir al baño. El servicio del pub estaba cerrado. De verdad, no habría aguantado el trayecto, así que les dije a mis amigas que me metía un momento en el aparcamiento. No es algo que haría normalmente, pero es que era una emergencia. Dijeron que retendrían el autobús, pero algunos conductores son tan impacientes…",
       "fr": "<LI>LA FILLE : C'est vraiment gênant. J'avais une envie folle d'aller aux toilettes. Les WC du pub étaient fermés. Franchement, je n'aurais pas tenu jusqu'au bout du trajet, alors j'ai dit à mes amies que j'allais faire un saut dans le parking. C'est pas mon genre d'habitude, mais là c'était vraiment une urgence. Elles avaient dit qu'elles retiendraient le bus, mais certains chauffeurs sont tellement impatients.",
-      "tw": "<LI>女生：太尷尬了。我急著想尿，酒吧洗手間又關了。說真的，我根本撐不到車程結束，只好跟朋友說我去停車場方便一下。我平時絕不會這樣做，但當時真是急了。她們說會讓車等我，可有些公車司機實在太沒耐心。"
+      "tw": "<LI>女生：太尷尬了。我急著想尿，酒吧廁所又關了。說真的，我根本撐不到車程結束，只好跟朋友說我去停車場方便一下。我平時絕不會這樣做，但當時真是急了。她們說會讓車等我，可有些公車司機實在太沒耐心。"
     },
     {
       "id": "x04223",
@@ -39919,7 +39919,7 @@
       "cn": "<LI>黛安：那辆车到底在哪儿？",
       "es": "<LI>DIANE: Pero ¿dónde está ese autobús?",
       "fr": "<LI>DIANE : Il est où, ce bus ?",
-      "tw": "<LI>黛安：那輛車到底在哪兒？"
+      "tw": "<LI>黛安：那輛車到底在哪裡？"
     },
     {
       "id": "x04248",
@@ -40104,7 +40104,7 @@
       "cn": "<LI>黛安已经消失不见，急着找厕所去了。你很想知道她接下来会怎样。",
       "es": "<LI>Diane ha desaparecido buscando un baño a toda prisa. Tienes curiosidad por saber cómo le va.",
       "fr": "<LI>Diane a disparu, à la recherche urgente de toilettes. Vous voulez voir comment ça se passe pour elle.",
-      "tw": "<LI>黛安不見了，急著找洗手間。你想看看她會怎樣。"
+      "tw": "<LI>黛安不見了，急著找廁所。你想看看她會怎樣。"
     },
     {
       "id": "x04268",
@@ -40132,7 +40132,7 @@
       "cn": "她去哪儿了？",
       "es": "¿Adónde fue?",
       "fr": "Où est-elle allée ?",
-      "tw": "她去哪兒了？"
+      "tw": "她去哪裡了？"
     },
     {
       "id": "x04271",
@@ -40244,7 +40244,7 @@
       "cn": "<LI>她走到标着“女厕所”的那扇门前，但门是锁着的。她推了推，推不开。",
       "es": "<LI>Se acerca a la puerta marcada como Señoras, pero está cerrada con llave. Tira de ella pero no abre.",
       "fr": "<LI>Elle s'approche de la porte marquée Femmes, mais elle est fermée à clé. Elle essaie d'ouvrir — rien à faire.",
-      "tw": "<LI>她來到標著「女洗手間」的那扇門前，但門是鎖著的。她推了推，推不開。"
+      "tw": "<LI>她來到標著「女廁所」的那扇門前，但門是鎖著的。她推了推，推不開。"
     },
     {
       "id": "x04283",
@@ -41062,7 +41062,7 @@
       "cn": "<LI>你只能自己想象她在里面的样子——急匆匆冲进隔间，手忙脚乱地往下拽内裤，差一点就来不及了……",
       "es": "<LI>Solo puedes imaginártela ahí dentro, corriendo hacia un cubículo, luchando por bajarse las bragas a tiempo...",
       "fr": "<LI>Vous n’avez plus qu’à l’imaginer là-dedans, se ruant dans une cabine, se débattant pour descendre sa culotte à temps…",
-      "tw": "<LI>你只能自己想象她在裡的樣子——急匆忙衝進隔間，手忙腳亂地往下拽內褲，差一點就來不及了……"
+      "tw": "<LI>你只能自己想像她在裡的樣子——急匆忙衝進隔間，手忙腳亂地往下拽內褲，差一點就來不及了……"
     },
     {
       "id": "x04371",
@@ -41799,7 +41799,7 @@
       "cn": "<LI>公车靠站停下。黛安的站到了。你家还在一英里外，所以你没有下车。",
       "es": "<LI>El autobús para en su parada. Tú vives como un kilómetro más adelante, así que no te bajas todavía.",
       "fr": "<LI>Le bus s'arrête à son arrêt. Vous habitez à environ un kilomètre et demi de là, donc vous ne descendez pas encore.",
-      "tw": "<LI>公車靠站停下。黛安的站到了。你家還在一英裡外，所以你沒有下車。"
+      "tw": "<LI>公車靠站停下。黛安的站到了。你家還在一英里外，所以你沒有下車。"
     },
     {
       "id": "x04451",
@@ -42087,7 +42087,7 @@
       "cn": "<LI>你家还有将近一英里，但你憋尿憋得实在难受，决定在下一站就下车。",
       "es": "<LI>Todavía te queda casi un kilómetro para llegar a casa, pero tienes tantas ganas de mear que decides bajarte en la próxima parada.",
       "fr": "<LI>Il vous reste encore plus d'un kilomètre avant chez vous, mais vous avez tellement envie de pisser que vous décidez de descendre au prochain arrêt.",
-      "tw": "<LI>你家還有將近一英裡，不過你忍尿憋得實在難受，決定在下一站就下車。"
+      "tw": "<LI>你家還有將近一英里，不過你忍尿憋得實在難受，決定在下一站就下車。"
     },
     {
       "id": "x04482",
@@ -42096,7 +42096,7 @@
       "cn": "<LI>其实黛安刚走，你就把手塞进裤兜里，死死捏住自己。",
       "es": "<LI>De hecho, en cuanto Diane se fue te metiste la mano en el bolsillo del pantalón para apretarte la polla.",
       "fr": "<LI>En fait, dès que Diane fut partie, vous avez glissé une main dans votre poche de pantalon pour tenir votre bite.",
-      "tw": "<LI>其實黛安剛走，你就把手塞進褲兜裡，死死捏住自己。"
+      "tw": "<LI>其實黛安剛走，你就把手塞進褲袋裡，死死捏住自己。"
     },
     {
       "id": "x04483",
@@ -42381,7 +42381,7 @@
       "cn": "<LI>她突然转身急匆匆地跑出客厅，冲上楼梯去了浴室。你只能在脑海中想象里面的情形。马桶冲水声响过，她出来了。",
       "es": "<LI>De repente se da la vuelta y sale corriendo del salón, subiendo las escaleras al baño. Solo puedes imaginártela allí dentro. Se oye la cisterna y sale.",
       "fr": "<LI>Soudain, elle se retourne et sort précipitamment du salon, puis monte les escaliers en courant vers la salle de bains. Vous ne pouvez qu'imaginer ce qu'elle fait là-dedans. La chasse d'eau tire et elle ressort.",
-      "tw": "<LI>她突然轉身急匆匆地跑出客廳，衝上樓梯去了浴室。你只能在腦海中想象裡面的情形。馬桶衝水聲響過，她出來了。"
+      "tw": "<LI>她突然轉身急匆匆地跑出客廳，衝上樓梯去了浴室。你只能在腦海中想像裡面的情形。馬桶衝水聲響過，她出來了。"
     },
     {
       "id": "x04514",
@@ -43079,7 +43079,7 @@
       "cn": "<LI>黛安实在憋不住了，即便你就站在那里目瞪口呆地盯着她，她一坐上马桶几乎立刻就开始尿。她把裙摆往前推了推，想留一点矜持，但其实遮不住多少。",
       "es": "<LI>Diane tenía muchísimas ganas, así que, incluso contigo ahí mirándola boquiabierto, empieza a mear casi en cuanto se sienta en el váter. Empuja el bajo de la falda hacia delante para guardar algo de pudor, pero no disimula mucho.",
       "fr": "<LI>Diane en avait vraiment besoin, alors — même avec vous planté là à la regarder bouche bée — elle commence à faire pipi presque aussitôt qu'elle s'assoit sur les toilettes. Elle rabat le bas de sa jupe vers l'avant pour garder un semblant de pudeur, mais ça ne cache pas grand-chose.",
-      "tw": "<LI>黛安真的很急，即使你站在那兒盯著，她剛坐上馬桶就開始尿。她把裙擺往前推，想保留一點點體面，卻遮不住多少。"
+      "tw": "<LI>黛安真的很急，即使你站在那裡盯著，她剛坐上馬桶就開始尿。她把裙擺往前推，想保留一點點體面，卻遮不住多少。"
     },
     {
       "id": "x04589",
@@ -43299,7 +43299,7 @@
       "cn": "<LI>她将你赶出洗手间，自己在里面洗手、整理连裤袜，然后出来与你在门厅汇合。",
       "es": "<LI>Te hace salir del baño mientras ella se lava las manos y se arregla las medias. Luego sale a reunirse contigo en el recibidor.",
       "fr": "<LI>Elle vous fait sortir des toilettes pendant qu'elle se lave les mains et rajuste ses collants. Puis elle ressort pour vous rejoindre dans l'entrée.",
-      "tw": "<LI>她把你請出洗手間，自己洗手、整理褲襪，隨後出來到大廳找你。"
+      "tw": "<LI>她把你請出廁所，自己洗手、整理褲襪，隨後出來到大廳找你。"
     },
     {
       "id": "x04612",
@@ -43465,7 +43465,7 @@
       "cn": "<LI>她吻了你一下，起身走向厕所。你只能在这里想象她在里面的样子。",
       "es": "<LI>Te da un beso, se levanta y se va al baño. Solo puedes imaginártela ahí dentro.",
       "fr": "<LI>Elle vous donne un baiser, se lève et file aux toilettes. Vous n'avez plus qu'à l'imaginer là-dedans.",
-      "tw": "<LI>她吻了你一下，起身走向廁所。你只能在這裡想象她在裡的樣子。"
+      "tw": "<LI>她吻了你一下，起身走向廁所。你只能在這裡想像她在裡的樣子。"
     },
     {
       "id": "x04630",
@@ -43666,7 +43666,7 @@
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有点想上厕所。她有些坐立不安，但还不明显，所以你也拿不准。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Parece que a Diane le están entrando ganas de hacer pis. Se nota porque está un poco inquieta, pero apenas, así que tampoco puedes estar seguro.</SPAN></EM></P>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane semble avoir un peu envie de faire pipi. On le devine à une légère agitation, mais rien de très marqué — impossible d'en être sûr.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有些想上洗手間。她有些坐立不安，但還不明顯，所以你也拿不準。</SPAN></EM></P>"
+      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有些想上廁所。她有些坐立不安，但還不明顯，所以你也拿不準。</SPAN></EM></P>"
     },
     {
       "id": "x04652",
@@ -44025,7 +44025,7 @@
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安急着要去厕所，憋得极度难受。她根本站不住，不停地踱来踱去。趁她以为没人看见的时候，一只手悄悄伸向裆部。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Diane no aguanta más las ganas de ir al baño. No puede quedarse en un sitio y va de un lado a otro. Cuando cree que nadie la mira, se lleva una mano a la entrepierna.</SPAN></EM></P>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Elle ne tient pas en place et fait les cent pas. Sa main part vers l'entrejambe quand elle croit que personne ne la regarde.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安急著想上洗手間，根本站不住，不停踱步。她以為沒人看時，悄悄把一隻手伸向襠部。</SPAN></EM></P>"
+      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安急著想上廁所，根本站不住，不停踱步。她以為沒人看時，悄悄把一隻手伸向襠部。</SPAN></EM></P>"
     },
     {
       "id": "x04692",
@@ -44070,7 +44070,7 @@
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有点想去厕所了。她有些坐立不安，但你也说不准。</SPAN></EM>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Parece que Diane podría necesitar el baño. Se la ve un poco inquieta, pero no puedes estar seguro.</SPAN></EM>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane semble peut-être avoir envie d'aller aux toilettes. Elle paraît un tout petit peu agitée, mais vous n'êtes pas sûr(e).</SPAN></EM>",
-      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有些想去洗手間了。她有些坐立不安，但你也說不准。</SPAN></EM>"
+      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安看上去有些想去廁所了。她有些坐立不安，但你也說不準。</SPAN></EM>"
     },
     {
       "id": "x04697",
@@ -44205,7 +44205,7 @@
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安已经憋到了极限。你又瞥见她偷偷捂住裆部，但察觉到你在看时她立刻把手移开了。</SPAN></EM>“要是哪里有个厕所就好了！”<EM>她喃喃自语道。</EM>",
       "es": "<P><EM><SPAN style='color: #ff0000'>DIANE NO AGUANTA MÁS. La ves aguantarse a escondidas otra vez, pero aparta la mano en cuanto se da cuenta de que la estás mirando. </SPAN></EM>¡Ojalá hubiera un baño por aquí cerca!<EM>, murmura.</EM>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>Oh, j'aimerais tellement qu'il y ait des toilettes quelque part !<EM> marmonne-t-elle.</EM>",
-      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安急得要命。你又瞥見她偷偷捂住自己，可發現你在看後立刻把手拿開。「要是哪兒有洗手間就好了！」她嘟囔道。"
+      "tw": "<P><EM><SPAN style='color: #ff0000'>黛安急得要命。你又瞥見她偷偷捂住自己，可發現你在看後立刻把手拿開。「要是哪裡有廁所就好了！」她嘟囔道。"
     },
     {
       "id": "x04712",
@@ -44249,7 +44249,7 @@
       "cn": "<EM><SPAN style='color: #0000FF'>莫莉微微挪动着身子。也许只是坐得不舒服——也许她开始想去厕所了。</SPAN></EM>",
       "es": "<EM><SPAN style='color: #0000FF'>Molly no para de moverse. Quizá es que está incómoda, o quizá le están empezando a entrar ganas de ir al baño.</SPAN></EM>",
       "fr": "<EM><SPAN style='color: #0000FF'>Molly gigote un peu. Peut-être qu'elle est juste mal à l'aise — ou peut-être qu'elle commence à avoir envie d'aller aux toilettes.</SPAN></EM>",
-      "tw": "<EM><SPAN style='color: #0000FF'>莫莉微微挪動著身子。也許只是坐得不舒服——也許她開始想去洗手間了。</SPAN></EM>"
+      "tw": "<EM><SPAN style='color: #0000FF'>莫莉微微挪動著身子。也許只是坐得不舒服——也許她開始想去廁所了。</SPAN></EM>"
     },
     {
       "id": "x04717",
@@ -45077,7 +45077,7 @@
       "cn": "<LI>黛安突然打断你，站了起来，说：<EM>抱歉，我必须去一下厕所。你能告诉我在哪里吗？</EM>然后便匆匆离开房间。",
       "es": "<LI>Diane de repente te interrumpe y se pone de pie. <EM>Lo siento, tengo que ir al baño. ¿Me puedes decir dónde está?</EM> dice, y sale rápidamente de la habitación.",
       "fr": "<LI>Diane vous interrompt soudain et se lève. <EM>Désolée, il faut que j'aille aux toilettes. Vous pouvez me dire où c'est ?</EM> dit-elle, et elle quitte la pièce à la hâte.",
-      "tw": "<LI>黛安突然打斷你，站起來說：「抱歉，我必須去廁所。你能告訴我在哪兒嗎？」接著匆匆離開房間。"
+      "tw": "<LI>黛安突然打斷你，站起來說：「抱歉，我必須去廁所。你能告訴我在哪裡嗎？」接著匆匆離開房間。"
     },
     {
       "id": "x04807",
@@ -45782,7 +45782,7 @@
       "cn": "<LI>她把手伸进裙底，把连裤袜往下卷，脱了下来。",
       "es": "<LI>Mete la mano bajo la falda, se baja las medias y se las quita.",
       "fr": "<LI>Elle glisse la main sous sa jupe, fait descendre ses collants et les retire.",
-      "tw": "<LI>她把手伸進裙底，把褲襪往下卷，脫了下來。"
+      "tw": "<LI>她把手伸進裙底，把褲襪往下捲，脫了下來。"
     },
     {
       "id": "x04884",
@@ -46085,10 +46085,10 @@
       "id": "x04916",
       "kind": "story",
       "en": "<P><LI><B>You have struck gold.",
-      "cn": "<P><LI><B>你这次真的撞大运了。",
+      "cn": "<P><LI><B>你真的撞大运了。",
       "es": "<P><LI><B>Lo has conseguido.",
       "fr": "<P><LI><B>Vous avez décroché le jackpot.",
-      "tw": "<P><LI><B>你這次真的撞大運了。"
+      "tw": "<P><LI><B>你真的走大運了。"
     },
     {
       "id": "x04917",

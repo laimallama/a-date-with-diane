@@ -4,12 +4,22 @@ Read this before editing. Ship text lives in `outputs/`. Toolkit lives in `maint
 
 ## What this project is
 
-Restored multi-language edition of the old HTML branching adult text game *A Date With Diane*: cleaned wording/logic, Back with state restore, in-game Gallery + guides/transcripts, dark mode, five playable languages.
+Restored multi-language edition of the old HTML branching adult text game *A Date With Diane*: cleaned wording/logic, Back with state restore, in-game Gallery (guided walkthroughs + Skip to the good bit), dark mode, five playable languages.
 
 **Languages (all independent):** `en`, `cn`, `tw`, `es`, `fr` under `outputs/{lang}/`.
 TW is Traditional Chinese with Taiwan-flavoured wording — edit it like ES/FR, not as a derivative of CN.
 
-Each folder has: playable HTML (+ bilingual except EN), edition notes, endings guide + transcripts (10), hidden-scenes guide + transcripts (22).
+Each language folder ships:
+
+- playable HTML (`dianedate_*.html`; bilingual with English except EN)
+- `edition_notes_*.txt`
+- payoff transcripts under `transcripts/endings/` and `transcripts/hidden_scenes/`
+
+There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. Transcripts record only the **payoff** of each ending/hidden scene — from where that route’s distinctive climax or scene actually begins (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
+
+Gallery currently documents **15 ending leaves** and **27 hidden-scene leaves** per language.
+
+All Gallery route label sequences live inline in `write_verified_guides.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
 ## Raw HTML vs rendered text
 
@@ -46,70 +56,61 @@ Categories 2 and 3 never get parens or italics in any language — they're just 
 
 **Titles/play names are a completely separate rule, not affected by any of the above:** EN uses `<EM>italics</EM>` (e.g. `<EM>The Importance of Being Earnest</EM>` — note the "The"; `<EM>Outside Edge</EM>`). CN/TW use `《》` book-title marks with **no** `<EM>` at all (`《不可儿戏》`/`《不可兒戲》`, `《外缘》`/`《外緣》`). ES/FR use guillemets `« »` with no `<EM>` (`«La importancia de llamarse Ernesto»`, `« L'Importance d'être Constant »`). "Gwendolen" (not "Gwendoline") is the correct spelling for the *Earnest* character in all languages that use the Latin name as-is.
 
-**Transcripts use a completely different, independent convention:** `maintenance/write_ending_transcripts.js` / `write_hidden_scenes.js` render any surviving `<EM>`/`<B>` as `[bracketed]` text (via `bracketForTranscript`, which strips whatever parens were in the HTML source first) — this is unrelated to the HTML-source rule above. Don't try to make the two consistent; they're for different mediums.
-
 ## Bilingual files are a second copy — treat fixes as two jobs, not one
 
 `outputs/{lang}/dianedate_{lang}_bilingual.html` (all except EN) embeds its **own independent copy** of every English `s()`/`c()` call plus a giant `alternateTranslations = { "<exact EN string>": "<translated string>", ... }` dictionary (`translateAlt()` does an exact-match lookup, falling back to `alternatePrefixTranslations` prefix-matching, falling back to returning the English unchanged if nothing matches — a silent, easy-to-miss failure mode).
 
-**"Bilingual should be exactly the same as the single-language file, just two of them together" is a hard standing rule from the project owner.** Any wording, formatting, or logic fix made to a single-language file (including EN) must be ported to the bilingual EN source **and** the bilingual dictionary too, or the bilingual edition silently drifts out of parity. This has bitten this project more than once — features (peepunder ambient lines, the sofaloop drinking-loop variety) were fixed in single-language files and simply never ported to bilingual for a long stretch before being caught.
+**"Bilingual should be exactly the same as the single-language file, just two of them together" is a hard standing rule from the project owner.** Any wording, formatting, or logic fix made to a single-language file (including EN) must be ported to the bilingual EN source **and** the bilingual dictionary too, or the bilingual edition silently drifts out of parity.
 
 When splitting an `s()` call in a bilingual file (per the stage-direction rules above):
 1. Find and split the EN source line the same way as the single-language fix.
 2. Find the **old** dictionary entry keyed by the old (unsplit) EN string, delete it.
 3. Add one new dictionary entry per new split line: `"<new EN line>": "<translated line>"`.
-4. **Watch for duplicate keys.** Splitting tends to produce short, generic reusable English fragments (`"<LI>She pauses."`, `"<LI>DIANE: Yes."`) that may already exist as a dictionary key elsewhere, or that you yourself add more than once across different fixes with *different* translations. Since `alternateTranslations` is a flat JS object literal, a duplicate key silently overwrites the earlier one at parse time (last one in the file wins) — so two unrelated scenes can end up showing the same, wrong, translated line. After any batch of dictionary edits, check for new duplicate keys:
-   ```js
-   const raw = fs.readFileSync(path,'utf8').match(/var alternateTranslations = (\{[\s\S]*?\n\});/)[1];
-   const counts = {};
-   [...raw.matchAll(/^\s*"((?:[^"\\]|\\.)*)":/gm)].forEach(m => counts[m[1]] = (counts[m[1]]||0)+1);
-   Object.entries(counts).filter(([,c]) => c>1).forEach(x => console.log(x));
-   ```
-   If you find a genuine new duplicate, consolidate to one canonical value and delete the rest — don't leave stale duplicate lines even if the "last wins" behavior happens to resolve correctly, since it's confusing for the next editor.
-5. **Watch for the `<LI>`-prefix trap.** A dictionary key sometimes includes the leading `<LI>` as part of the string and sometimes doesn't, depending on how the original `s()` call was written. If you add a fix keyed on the wrong variant, you create a dead, unused entry while the real lookup (with the actual `<LI>` state) stays stale. Always grep the *exact* text the live `s()` call passes, not what you assume it should be.
-6. Verify with `.innerHTML`, not `.innerText`/`textContent`, when checking a live render in the browser — `.innerText` silently strips the very tags (`<em>`, parens) you're trying to verify.
-
-Small, generic dictionary values (interjections like `"Mmm."`, `"Yes."`) legitimately being identical to the English is normal and not a bug — check the actual rendered meaning, not just whether EN and translated text happen to match.
+4. **Watch for duplicate keys.** Splitting tends to produce short, generic reusable English fragments that may already exist as a dictionary key. A duplicate key silently overwrites earlier ones. After dictionary edits, check for duplicates.
+5. **Watch for the `<LI>`-prefix trap.** Always grep the *exact* text the live `s()` call passes.
+6. Verify with `.innerHTML`, not `.innerText`/`textContent`.
 
 ## Editing playable text
 
 1. Find the line (`rg`), read surrounding HTML context.
-2. If English changes, update **all** language HTMLs that need it (single-language **and** bilingual — see above), plus `maintenance/aligned_text.json`.
-3. CN and TW are separate: a CN wording fix does **not** auto-update TW — edit `outputs/tw/` yourself when TW should change. Function names (e.g. `sofasat1`, `admission`, `taxihome2`) are identical across every language file, which makes them the reliable way to locate the corresponding text in another language when you know the English line but not its translation.
-4. Regenerate guides/transcripts/gallery if player-facing route or title text changed (see toolkit table below).
-5. Syntax-check every touched HTML file before calling it done: `node -e "new Function(fs.readFileSync(path,'utf8').match(/<script>([\s\S]*)<\/script>/)[1])"` (extract the `<script>` body and try to compile it). This catches broken JS from a bad find/replace without needing a browser.
-6. For text extraction/replacement, always pull the "old" search string directly out of the file (`.read()` + `.find()`/slicing or `grep -n`) rather than retyping it by hand. This codebase is full of non-ASCII punctuation that looks identical in a terminal but isn't the same byte: full-width CJK `（）：`, French narrow no-break space ` `, curly apostrophes `’` (U+2019) vs straight `'`. A hand-typed "old" string that looks right will silently fail to match (count 0) or, worse, match the wrong thing.
-7. When doing a multi-line JS replacement, sanity-check brace balance first: `old.count('{') - old.count('}') == new.count('{') - new.count('}')`.
+2. If English changes, update **all** language HTMLs that need it (single-language **and** bilingual), plus `maintenance/aligned_text.json`.
+3. CN and TW are separate — a CN wording fix does **not** auto-update TW.
+4. Re-run route smoke tests / rebuild Gallery / regenerate transcripts if routes or Gallery titles changed (see toolkit below).
+5. Syntax-check touched HTML: extract the `<script>` body and `new Function(...)`.
+6. Pull search strings from the file; don’t retype non-ASCII punctuation by hand.
+7. For multi-line JS replacements, check brace balance.
 
 `aligned_text.json` is a cross-language index for checks — it does **not** build HTML.
 
 ## Maintenance toolkit
 
-| File | Role |
+| Path | Role |
 |------|------|
-| `write_verified_guides.js` | Ending guides for en/cn/tw/es/fr |
-| `write_ending_transcripts.js` | Ending transcripts (10 each) |
-| `write_hidden_scenes.js` | Hidden-scene guides + transcripts (22 each) |
-| `build_gallery_data.js` | Rebuild/inject `GALLERY_DATA` (all langs + bilingual) |
-| `check_endings.js` / `verify_routes.js` | Shared routes / single-route replay |
-| `gallery_data.json` | Generated gallery snapshot (don't hand-edit) |
+| `AI_HANDOFF.md` | This file — conventions + toolkit map |
+| `write_verified_guides.js` | Ending-route smoke test (en/cn/tw/es/fr); holds **all** ending/extra route label sequences (bases/tails + expanded Gallery routes); **no guide `.txt` output** |
+| `write_hidden_scenes.js` | Hidden-scene definitions for Gallery; verify only from `main` |
+| `write_transcripts.js` | Payoff transcripts → `outputs/{lang}/transcripts/{endings,hidden_scenes}/` (from climax/scene start) |
+| `build_gallery_data.js` | Rebuild/inject `GALLERY_DATA` into all HTML (+ bilingual) |
+| `check_endings.js` | Shared early-bush base + helpers |
+| `verify_routes.js` | Replay one route against an HTML file |
+| `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
 | `aligned_text.json` | Aligned EN/CN/TW/ES/FR strings |
 
-Regen after wording/route edits:
+After wording/route edits:
 
 ```bash
 node maintenance/write_verified_guides.js
-node maintenance/write_ending_transcripts.js
 node maintenance/write_hidden_scenes.js
 ```
 
-If Gallery routes/titles or route button text changed:
+If Gallery routes/titles changed:
 
 ```bash
 node maintenance/build_gallery_data.js
+node maintenance/write_transcripts.js
 ```
 
-`write_verified_guides.js` replaying all 10 endings for all 5 languages without error is the fastest smoke test that a batch of text edits didn't break route logic — run it after every batch, not just at the end.
+`write_verified_guides.js` green across all five languages is the fastest smoke test after a text batch.
 
 ## Settled wording (don't reopen unless asked)
 
@@ -122,25 +123,16 @@ node maintenance/build_gallery_data.js
 - **Urinal straddle (`x01569b`):** EN comma before aside (`…urinal, with her back to you`), no em dash. CN/TW: **横跨/橫跨**, aside after `——`, prefer **更省事**. ES `ponerse a horcajadas…`; FR `enjamber l'urinoir…`.
 - **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
 - **Play still on (`x00027`):** **停演** wording (`…想在停演前去看一次…`), not **下演**.
-- **Stage directions / asides:** see the dedicated section above — this is the most recently settled and most frequently re-litigated convention in the project; don't reopen the delivery-cue vs. action-vs-mid-dialogue split without being asked.
 
-## UI (keep unless asked otherwise)
+## UI / Gallery conventions
 
-- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On; otherwise Enter does nothing (normal play still uses `1` for the first choice). These are also summarized in the in-game Notes (`start1`, `x00014a`/`x00014b`): Gallery top-left, keys, Back full-state restore, and Guide on/off/deviate rules.
-- **Dark mode:** a `toggleTheme()` button (`Dark Mode: On/Off`) sets `data-theme` on `<html>`. It is a **runtime-only** toggle — deliberately **not** persisted via `localStorage` or any other storage, so it resets to light on every fresh load. Don't add persistence unless explicitly asked; this was a considered choice, not an oversight. (Gallery guide state, unrelated to theme, does use `sessionStorage` — that's fine to keep as-is, it only survives a same-tab reload, not a new tab/session.)
-- Pregame screens freeze/hide stats until the date starts; catch-up digestion ticks on first story screen — don't remove without re-verifying all routes.
-- Screen fade on step change (`.screen-fade`, ~0.18s) + scroll-to-top via `presentScreen()`; disabled under `prefers-reduced-motion`.
-- Choice number badges and sticky-Back experiments were rejected; don't reintroduce.
-- **Bilingual guide highlighting:** because both language layers (`div.lang.lang-en` / `div.lang.lang-alt`) render simultaneously in the DOM (only one is CSS-hidden at a time), any code that does `document.querySelectorAll("button.choice")` will find duplicate buttons across both layers. `applyGuideHighlight()` and related functions guard against this with an `offsetParent !== null` visibility check — don't remove it, and apply the same guard if you add new code that queries `.choice` buttons in a bilingual file. Similarly, `setLanguage()`/`toggleLanguage()` call `syncGuideDisplay()` at the end so an active guide's highlight follows the language switch instead of getting stuck on the now-hidden layer — keep that call if you touch language switching.
+- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On. **S** / Skip to the good bit jumps to `climaxIndex` (same cut as payoff transcripts).
+- **Dark mode:** runtime-only (`data-theme`); **not** persisted in `localStorage`. Gallery guide state may use `sessionStorage` across same-tab reload — fine to keep.
+- Pregame screens freeze/hide stats until the date starts.
+- **Bilingual guide highlighting:** guard `querySelectorAll("button.choice")` with `offsetParent !== null`; `setLanguage()`/`toggleLanguage()` must call `syncGuideDisplay()`.
 
 ## Do / don't
 
-**Do:** targeted user-directed edits; keep HTML + `aligned_text.json` in sync; regenerate guides when routes change; port every fix to bilingual (source + dictionary), not just single-language.
+**Do:** targeted user-directed edits; keep HTML + `aligned_text.json` in sync; rebuild Gallery + regenerate transcripts when routes/titles change; port every fix to bilingual (source + dictionary).
 
-**Don't:** bulk "fluency" rewrites without an explicit ask; treat TW as auto-generated from CN; force-push history unless asked; edit only one language when the English source issue affects all; assume a fix that landed in single-language files also landed in bilingual — check.
-
-## Status
-
-`main` ships the five-language restored edition (10 endings / 22 hidden scenes each, incl. the luckshot-gated "caught by the brunette's boyfriend" scene) with dark mode and full stage-direction formatting parity across all 5 single-language files **and** all 4 bilingual files (source text + translation dictionaries). Dark mode persists across the Gallery's `location.reload()` via `sessionStorage` (not `localStorage` — still resets on a genuinely new tab). All 4 bilingual `alternateTranslations` dictionaries had their duplicate-key translation conflicts resolved (see the dedicated section above — watch for this recurring any time a stage-direction line gets split, since splitting tends to produce short reusable English fragments that collide). Last verified: all 9 game HTML files pass a JS syntax check and `write_verified_guides.js` replays all 10 endings clean in all 5 languages. Pushed to `origin/main` at commit `05cd299`.
-
-**Open work, not yet started:** a full reachability audit found the Gallery documents only 466 of 721 reachable scene functions. A curated list of 10 specific, verified-worthy additions (6 whole undiscovered scenes + 4 unexercised story variants hiding inside already-"documented" functions, e.g. `storytime()` has 4 completely different stories gated by dessert choice and only 1 is ever shown) plus a proposed Gallery UI change (grouped entries with sub-choices, so variant families don't bloat the flat list) is fully written up in [`maintenance/GALLERY_EXPANSION_PLAN.md`](GALLERY_EXPANSION_PLAN.md) — read that before starting any Gallery-content work, it has exact function names, exact text, and an explicit "don't re-investigate these" list from things already checked and rejected this session.
+**Don't:** bulk "fluency" rewrites without an explicit ask; treat TW as auto-generated from CN; force-push history unless asked; edit only one language when the English source issue affects all; assume a single-language fix also landed in bilingual.

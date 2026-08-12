@@ -56,9 +56,9 @@ Se vuelve hacia casa, pero no te mira. Te acercas a ella en silencio y le rodeas
 
 Está muerta de vergüenza y a punto de echarse a llorar.
 
-DIANE: [casi en un susurro] Lo siento. Lo siento. Es que no podía aguantar más.
+DIANE: (casi en un susurro) Lo siento. Lo siento. Es que no podía aguantar más.
 
-TÚ: [suavemente] No pasa nada. No tienes nada de qué avergonzarte.
+TÚ: (suavemente) No pasa nada. No tienes nada de qué avergonzarte.
 
 DIANE: Estoy muy avergonzada.
 
@@ -88,7 +88,7 @@ Le coges la mano y se la aprietas. Ella responde. Pero sigue sin decir nada y pa
 
 Le pasas un brazo por los hombros y la acercas a ti.
 
-DIANE: [muy en voz baja] Me siento muy avergonzada. Pero gracias por tomártelo tan bien.
+DIANE: (muy en voz baja) Me siento muy avergonzada. Pero gracias por tomártelo tan bien.
 
 Le das un abrazo. ¿Qué vas a decir ahora?
 
@@ -118,7 +118,7 @@ TÚ: Debías de estar sufriendo lo indecible. Tendría que haberlo dicho.
 
 DIANE: Ya lo sé. Intentaba mencionarlo pero cada vez que lo hacía decías algo y... lo iba aplazando.
 
-DIANE: [con una media carcajada] Al menos me alegra no haber llevado medias.
+DIANE: (con una media carcajada) Al menos me alegra no haber llevado medias.
 
 Intenta esbozar una media sonrisa al pensarlo.
 

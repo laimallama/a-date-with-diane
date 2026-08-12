@@ -56,9 +56,9 @@ She turns towards home, but doesn't look at you. You go quietly up to her and pu
 
 She is desperately embarrassed and on the verge of tears.
 
-DIANE: [Almost inaudibly] I'm sorry. I'm sorry. I just couldn't wait.
+DIANE: (almost inaudibly) I'm sorry. I'm sorry. I just couldn't wait.
 
-YOU: [Softly] It's all right. It's nothing to be ashamed of.
+YOU: (softly) It's all right. It's nothing to be ashamed of.
 
 DIANE: I'm so embarrassed.
 
@@ -88,7 +88,7 @@ You hold her hand and squeeze it. She responds. But she is still not speaking an
 
 You put an arm round her and hold her close to you.
 
-DIANE: [Very quietly] I feel so embarrassed. But thank you for being so nice about it.
+DIANE: (very quietly) I feel so embarrassed. But thank you for being so nice about it.
 
 You give her a hug. What are you going to say next?
 
@@ -118,7 +118,7 @@ YOU: You must have been in agony. You should have said.
 
 DIANE: I know. I kept trying to mention it but every time you seemed to say something and—I kept putting it off.
 
-DIANE: [With a half laugh] At least I'm glad I wasn't wearing tights.
+DIANE: (with a half laugh) At least I'm glad I wasn't wearing tights.
 
 She tries a half grin at the thought.
 

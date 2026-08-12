@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Payoff-only transcripts from Gallery routes.
+ * Climax transcripts from Gallery routes.
  * Starts at climaxIndex (endings) or baseLength (hidden scenes) —
  * the same cut as in-game "Skip to the good bit!" / scene start.
  * In-file title = Gallery leaf title (variant only).
@@ -86,7 +86,7 @@ function flattenLeaves(items, kind) {
           id: v.id,
           title: v.title,
           tags: v.tags,
-          payoffStart: kind === "ending" ? v.climaxIndex : v.baseLength,
+          climaxStart: kind === "ending" ? v.climaxIndex : v.baseLength,
         });
       }
     } else {
@@ -95,7 +95,7 @@ function flattenLeaves(items, kind) {
         id: item.id,
         title: item.title,
         tags: item.tags,
-        payoffStart: kind === "ending" ? item.climaxIndex : item.baseLength,
+        climaxStart: kind === "ending" ? item.climaxIndex : item.baseLength,
       });
     }
   }
@@ -203,6 +203,25 @@ function bracketForTranscript(text) {
   return clean ? `[${clean}]` : "";
 }
 
+function isStageEmphasis(text) {
+  const clean = String(text).trim();
+  if (!clean) return false;
+  const lower = clean.toLowerCase();
+  const stageStarts = [
+    "almost ", "between ", "softly", "with ", "then ", "she ",
+    "en voz baja", "con ", "poniéndose", "casi ", "entre ",
+    "à voix", "doucement", "rouge", "glousse", "elle ", "vous l'entendez",
+    "她", "几乎", "声音", "轻声", "脸红",
+    "幾乎", "聲音", "輕聲", "臉紅",
+  ];
+  if (stageStarts.some((start) => lower.startsWith(start))) return true;
+  // Single-token manner cues that transcripts keep as [Aside]
+  if (/^(giggles?|laughs?|laughing|whispering|whispers?|quietly|softly|aside|blushing|interrupting|joking|thinks?\b|nervously|ruefully)/i.test(clean)) {
+    return true;
+  }
+  return false;
+}
+
 function quoteEmphasisForTranscript(html, langCode) {
   return String(html).replace(/<(EM|B)>([\s\S]*?)<\/\1>/gi, (match, _tag, inner) => {
     if (/<span\b/i.test(inner)) return match;
@@ -211,7 +230,9 @@ function quoteEmphasisForTranscript(html, langCode) {
     if (_tag.toUpperCase() === "B") return text;
     if (text === "Outside Edge") return quoteForTranscript(text, langCode);
     if (shouldQuoteEmphasis(text, langCode)) return quoteForTranscript(text, langCode);
-    return bracketForTranscript(text);
+    // Stage / manner asides → [brackets]. Spoken stress (*you*) stays plain.
+    if (isStageEmphasis(text)) return bracketForTranscript(text);
+    return text;
   });
 }
 
@@ -278,10 +299,10 @@ function findChoiceByTag(options, tag) {
   return options.find((o) => o.tag === tag);
 }
 
-function buildPayoffTranscript(leaf, lang) {
-  const { tags, payoffStart, id } = leaf;
-  if (typeof payoffStart !== "number" || payoffStart < 0 || payoffStart >= tags.length) {
-    throw new Error(`${id}: invalid payoffStart ${payoffStart} (tags=${tags.length})`);
+function buildClimaxTranscript(leaf, lang) {
+  const { tags, climaxStart, id } = leaf;
+  if (typeof climaxStart !== "number" || climaxStart < 0 || climaxStart >= tags.length) {
+    throw new Error(`${id}: invalid climaxStart ${climaxStart} (tags=${tags.length})`);
   }
 
   const game = loadGame(lang.htmlPath);
@@ -295,7 +316,7 @@ function buildPayoffTranscript(leaf, lang) {
         `Tag not found for ${id} @${index} (${tag})\nAvailable:\n${options.map((o) => `- ${o.tag}: ${o.text}`).join("\n")}\n\nPage:\n${visibleStory(game.box.innerHTML, lang.code).slice(0, 1200)}`,
       );
     }
-    if (index >= payoffStart) {
+    if (index >= climaxStart) {
       const page = visibleStory(game.box.innerHTML, lang.code);
       if (page) parts.push(page, "");
       parts.push(`(${found.text})`, "");
@@ -359,25 +380,25 @@ function main() {
       ...enLeaf,
       title: endingLeaves[i].title,
       tags: enLeaf.tags,
-      payoffStart: enLeaf.payoffStart,
+      climaxStart: enLeaf.climaxStart,
     }));
     const hiddens = hiddenLeavesEn.map((enLeaf, i) => ({
       ...enLeaf,
       title: hiddenLeaves[i].title,
       tags: enLeaf.tags,
-      payoffStart: enLeaf.payoffStart,
+      climaxStart: enLeaf.climaxStart,
     }));
 
     for (const leaf of endings) {
       const slug = ENDING_SLUGS[leaf.id];
-      const text = buildPayoffTranscript(leaf, lang);
+      const text = buildClimaxTranscript(leaf, lang);
       const outPath = path.join(outDirFor("ending", code), `${slug}_${code}.txt`);
       writeTextFile(outPath, text, code);
       written++;
     }
     for (const leaf of hiddens) {
       const slug = HIDDEN_SLUGS[leaf.id];
-      const text = buildPayoffTranscript(leaf, lang);
+      const text = buildClimaxTranscript(leaf, lang);
       const outPath = path.join(outDirFor("hidden", code), `${slug}_${code}.txt`);
       writeTextFile(outPath, text, code);
       written++;
@@ -385,7 +406,7 @@ function main() {
     console.log(`OK ${code}: ${endings.length} endings + ${hiddens.length} hidden`);
   }
 
-  console.log(`Wrote ${written} payoff transcript files.`);
+  console.log(`Wrote ${written} climax transcript files.`);
 }
 
 if (require.main === module) main();

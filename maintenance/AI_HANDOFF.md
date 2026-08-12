@@ -13,9 +13,9 @@ Each language folder ships:
 
 - playable HTML (`dianedate_*.html`; bilingual with English except EN)
 - `edition_notes_*.txt`
-- payoff transcripts under `transcripts/endings/` and `transcripts/hidden_scenes/`
+- climax transcripts under `transcripts/endings/` and `transcripts/hidden_scenes/`
 
-There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. Transcripts record only the **payoff** of each ending/hidden scene — from where that route’s distinctive climax or scene actually begins (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
+There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax (or hidden-scene start) of each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
 
 Gallery currently documents **15 ending leaves** and **27 hidden-scene leaves** per language.
 
@@ -47,10 +47,11 @@ Historically the game embedded stage directions mid-sentence like `SPEAKER: <EM>
    She pauses.
    DIANE: I've been wanting to go for ages...
    ```
+4. **Spoken stress in dialogue** (contrastive or intensified word: *you*, *have*, *dying*) — `<EM>…</EM>`, not `<STRONG>`. Reserve `<STRONG>` for headings, venue banners, tannoy, full-line shouts, and points notices.
 
 **Per-language rendering of category 1 (kept parenthetical cues) only:**
 - EN / ES / FR: plain italics + parens, e.g. `(quietly)`.
-- CN / TW: italics + **full-width** parens `（）`, not ASCII `()`. This is the general CN/TW convention for *any* surviving `<EM>` aside, not just cues.
+- CN / TW: italics + **full-width** parens `（）`, not ASCII `()`. This is the general CN/TW convention for *any* surviving `<EM>` aside, not just cues. **No spaces** around the cue: `黛安：（苦中带笑）还好…` — tight `：（` and no space after `）` before dialogue. Do not mirror EN’s `(quietly) Lucky…` spacing.
 
 Categories 2 and 3 never get parens or italics in any language — they're just narration.
 
@@ -75,7 +76,7 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 1. Find the line (`rg`), read surrounding HTML context.
 2. If English changes, update **all** language HTMLs that need it (single-language **and** bilingual), plus `maintenance/aligned_text.json`.
 3. CN and TW are separate — a CN wording fix does **not** auto-update TW.
-4. Re-run route smoke tests / rebuild Gallery / regenerate transcripts if routes or Gallery titles changed (see toolkit below).
+4. Re-run route smoke tests; rebuild Gallery if routes/titles changed; regenerate transcripts after climax wording or `write_transcripts.js` changes (see toolkit below).
 5. Syntax-check touched HTML: extract the `<script>` body and `new Function(...)`.
 6. Pull search strings from the file; don’t retype non-ASCII punctuation by hand.
 7. For multi-line JS replacements, check brace balance.
@@ -89,7 +90,7 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 | `AI_HANDOFF.md` | This file — conventions + toolkit map |
 | `write_verified_guides.js` | Ending-route smoke test (en/cn/tw/es/fr); holds **all** ending/extra route label sequences (bases/tails + expanded Gallery routes); **no guide `.txt` output** |
 | `write_hidden_scenes.js` | Hidden-scene definitions for Gallery; verify only from `main` |
-| `write_transcripts.js` | Payoff transcripts → `outputs/{lang}/transcripts/{endings,hidden_scenes}/` (from climax/scene start) |
+| `write_transcripts.js` | Climax transcripts → `outputs/{lang}/transcripts/{endings,hidden_scenes}/` (from climax/scene start) |
 | `build_gallery_data.js` | Rebuild/inject `GALLERY_DATA` into all HTML (+ bilingual) |
 | `check_endings.js` | Shared early-bush base + helpers |
 | `verify_routes.js` | Replay one route against an HTML file |
@@ -107,6 +108,11 @@ If Gallery routes/titles changed:
 
 ```bash
 node maintenance/build_gallery_data.js
+```
+
+After climax wording or transcript-writer changes (also after Gallery rebuild):
+
+```bash
 node maintenance/write_transcripts.js
 ```
 
@@ -123,16 +129,20 @@ node maintenance/write_transcripts.js
 - **Urinal straddle (`x01569b`):** EN comma before aside (`…urinal, with her back to you`), no em dash. CN/TW: **横跨/橫跨**, aside after `——`, prefer **更省事**. ES `ponerse a horcajadas…`; FR `enjamber l'urinoir…`.
 - **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
 - **Play still on (`x00027`):** **停演** wording (`…想在停演前去看一次…`), not **下演**.
+- **Status-bar tummy (`proc`):** EN `Tummy`; CN/TW `肚子`; ES `Vientre`; FR `Ventre`. Match the notes’ body word — do not revive mechanic glosses (`待转化水分`, `Líquido en tránsito`, etc.).
+- **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy.
 
 ## UI / Gallery conventions
 
-- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On. **S** / Skip to the good bit jumps to `climaxIndex` (same cut as payoff transcripts).
+- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On. **S** / Skip to the good bit jumps to `climaxIndex` (same cut as climax transcripts).
+- **Theme:** light stays wine-on-parchment; dark uses pale straw gold for accents + CTA fills (`--on-accent` = dark ink on straw). Tokens in each `outputs/*/dianedate_*.html` `:root` / `[data-theme="dark"]`.
 - **Dark mode:** runtime-only (`data-theme`); **not** persisted in `localStorage`. Gallery guide state may use `sessionStorage` across same-tab reload — fine to keep.
 - Pregame screens freeze/hide stats until the date starts.
+- **Points notices** (intimacy via `getinti`, shyness/bladder status lines): `<p class='notice'><strong>…</strong></p>` — bold, **no** `<EM>` and **no** orange `#FF9966` spans. Port to every mono + bilingual (source `s()` + dictionary keys/values) and `aligned_text.json`.
 - **Bilingual guide highlighting:** guard `querySelectorAll("button.choice")` with `offsetParent !== null`; `setLanguage()`/`toggleLanguage()` must call `syncGuideDisplay()`.
 
 ## Do / don't
 
-**Do:** targeted user-directed edits; keep HTML + `aligned_text.json` in sync; rebuild Gallery + regenerate transcripts when routes/titles change; port every fix to bilingual (source + dictionary).
+**Do:** targeted user-directed edits; keep HTML + `aligned_text.json` in sync; rebuild Gallery when routes/titles change; regenerate transcripts after climax wording or transcript-writer changes; port every fix to bilingual (source + dictionary).
 
 **Don't:** bulk "fluency" rewrites without an explicit ask; treat TW as auto-generated from CN; force-push history unless asked; edit only one language when the English source issue affects all; assume a single-language fix also landed in bilingual.

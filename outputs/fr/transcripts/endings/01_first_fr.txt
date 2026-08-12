@@ -56,9 +56,9 @@ Elle se tourne vers chez elle, mais ne vous regarde pas. Vous vous approchez dis
 
 Elle est terriblement embarrassée et au bord des larmes.
 
-DIANE : [presque inaudible] Pardon. Pardon. Je n’ai pas pu me retenir.
+DIANE : (presque inaudible) Pardon. Pardon. Je n’ai pas pu me retenir.
 
-VOUS : [doucement] Ce n’est rien. Il n’y a pas de quoi avoir honte.
+VOUS : (doucement) Ce n’est rien. Il n’y a pas de quoi avoir honte.
 
 DIANE : Je suis tellement gênée.
 
@@ -88,7 +88,7 @@ Vous lui prenez la main et la serrez. Elle répond à votre pression. Mais elle 
 
 Vous passez un bras autour d’elle et la serrez contre vous.
 
-DIANE : [très doucement] Je me sens tellement gênée. Mais merci d’avoir si bien pris les choses.
+DIANE : (très doucement) Je me sens tellement gênée. Mais merci d’avoir si bien pris les choses.
 
 Vous la serrez dans vos bras. Qu’allez-vous dire ensuite ?
 
@@ -118,7 +118,7 @@ VOUS : Tu devais souffrir le martyre. Tu aurais dû le dire.
 
 DIANE : Je sais. J’ai essayé plusieurs fois d’en parler mais à chaque fois tu disais quelque chose et — je n’arrêtais pas de remettre ça à plus tard.
 
-DIANE : [avec un petit rire] Au moins, je suis contente de ne pas avoir mis de collants.
+DIANE : (avec un petit rire) Au moins, je suis contente de ne pas avoir mis de collants.
 
 Elle esquisse un sourire en coin à cette idée.
 

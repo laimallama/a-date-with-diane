@@ -12,6 +12,7 @@
   --accent: #9b2f3f;
   --accent-dark: #6f1f2c;
   --accent-strong: #6f1f2c;
+  --on-accent: #ffffff;
   --choice: #fff;
   --choice-hover: #fff3df;
   --status: #f1e7d8;
@@ -28,17 +29,18 @@
     color-scheme: dark;
     --paper: #221c17;
     --ink: #ede3d3;
-    --muted: #a4917c;
+    --muted: #948b82;
     --line: #3c2f26;
-    --accent: #d45468;
-    --accent-dark: #f2b6c0;
-    --accent-strong: #b33d52;
+    --accent: #f0d060;
+    --accent-dark: #f0d060;
+    --accent-strong: #f6e48a;
+    --on-accent: #221c17;
     --choice: #2b241e;
     --choice-hover: #3a2f26;
     --status: #241e18;
-    --hover-border: #c9a06e;
-    --highlight-bg: #3a1f26;
-    --em-color: #e0b4bf;
+    --hover-border: #c9a94a;
+    --highlight-bg: #3a3220;
+    --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
     --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
@@ -63,7 +65,7 @@ body {
 }
 
 a { color: inherit; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
 
 .game-shell {
   width: min(920px, calc(100% - 32px));
@@ -227,16 +229,15 @@ a:hover { color: var(--accent); }
 .choice.key-pressed {
   border-color: var(--hover-border);
   background: var(--choice-hover);
-  color: var(--accent-dark);
+  color: var(--ink);
 }
 
 @media (hover: hover) and (pointer: fine) {
   #box li a:hover,
-  .choice:hover,
-  .back-button:hover {
+  .choice:hover {
     border-color: var(--hover-border);
     background: var(--choice-hover);
-    color: var(--accent-dark);
+    color: var(--ink);
   }
 }
 
@@ -270,7 +271,7 @@ a:hover { color: var(--accent); }
 .back-button {
   width: auto;
   min-width: 120px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   border-color: var(--accent);
   text-align: center;
@@ -278,7 +279,7 @@ a:hover { color: var(--accent); }
 
 @media (hover: hover) and (pointer: fine) {
   .back-button:hover {
-    color: #fff;
+    color: var(--on-accent);
     background: var(--accent-strong);
     border-color: var(--accent-strong);
   }
@@ -359,7 +360,7 @@ a:hover { color: var(--accent); }
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   font-family: Georgia, "Times New Roman", serif;
   font-size: .94rem;
@@ -1124,15 +1125,15 @@ function wrapChineseSpeechAsides(html) {
   return String(html)
     .replace(/(：)\s*<em>([^<]{1,48})<\/em>\s*[。.!?！？]?/g, function (match, colon, aside) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。.!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? colon + "<em>（" + clean + "）</em> " : match;
+      return isChineseSpeechAside(aside) ? colon + "<em>（" + clean + "）</em>" : match;
     })
     .replace(/(：[^<]{0,180})<em>([^<]{1,80})<\/em>(\s*(?:[—-]|[\u3400-\u9fffA-Za-z0-9]))/g, function (match, prefix, aside, after) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。.!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? prefix + "<em>（" + clean + "）</em>" + after : match;
+      return isChineseSpeechAside(aside) ? prefix + "<em>（" + clean + "）</em>" + String(after).replace(/^\s+/, "") : match;
     })
     .replace(/([\u3400-\u9fffA-Za-z]+)\s*<em>([^<]{1,48})<\/em>\s*：/g, function (match, speaker, aside) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。.!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? speaker + "：<em>（" + clean + "）</em> " : match;
+      return isChineseSpeechAside(aside) ? speaker + "：<em>（" + clean + "）</em>" : match;
     });
 }
 
@@ -1405,7 +1406,7 @@ if (showStats) {
          "<span>Intimidad <b>" + inti + "</b></span>" +
          "</div>" +
          "<div class='status-row status-row-money'>" +
-         "<span>Líquido en tránsito <b>" + proc + "ml</b></span>" +
+         "<span>Vientre <b>" + proc + "ml</b></span>" +
          "<span>Vejiga <b>" + blad + "ml</b></span>" +
          "<span>Timidez <b>" + points + "</b></span>" +
          "</div>" +
@@ -1457,7 +1458,7 @@ s("<HR>");
 s("<p class='note-lead'>También hay una Galería arriba a la izquierda, con recorridos guiados por los finales de premio, los finales de consolación y varias escenas ocultas. Úsala si te atascas, o si simplemente quieres explorar. Algunas filas son desplegables: haz clic para abrirlas y luego elige la variante que quieras. En un teléfono o tableta, usa los botones de la pantalla; en un ordenador también tienes estas teclas de acceso rápido.</p>");
 s("<p class='note-keys'><strong>G</strong> abre la Galería (<strong>Esc</strong> la cierra).</p>");
 s("<p class='note-keys note-cluster-end'><strong>H</strong> activa o desactiva la Guía una vez que has empezado una.</p>");
-s("<p class='note-keys'>Las <strong>teclas numéricas</strong> eligen tus opciones.</p>");
+s("<p class='note-keys'>Usa las <strong>teclas numéricas</strong> para elegir tus opciones.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Intro</strong> sigue la opción resaltada de la Guía, pero solo mientras la Guía esté activada. Mantén pulsado <strong>Intro</strong> un momento para avanzar rápido por las opciones guiadas; suéltalo para parar.</p>");
 s("<p class='note-lead'>Puedes pulsar el botón «Atrás» para volver a la página anterior en cualquier momento si te arrepientes de una elección; restaura todo: estadísticas, decisiones, el lote. También funciona en el modo Guía.</p>");
 s("<p class='note-keys note-cluster-end'><strong>B</strong> hace lo mismo que el botón «Atrás». Mantén pulsado <strong>B</strong> un momento para rebobinar rápido; suéltalo para parar.</p>");
@@ -1793,7 +1794,7 @@ c("eatmeal1b","Seguís charlando");  }
 function
 eatmeal1b()
 {
-s("<LI>DIANE: ¿Y cómo fue que <STRONG>tú</STRONG> perdiste el último autobús a casa?");
+s("<LI>DIANE: ¿Y cómo fue que <EM>tú</EM> perdiste el último autobús a casa?");
 s("<LI>TÚ: Bueno, tengo que reconocer que fue lo mismo que a ti. Me escapé un momento al baño y cuando volví el autobús ya se había ido.");
 s("<LI>DIANE: ¿En serio? ¿Encontraste un baño a esas horas?");
 s("<LI>TÚ: Bueno, fui al aparcamiento…");
@@ -2360,7 +2361,7 @@ lethergo()
 s("<LI>TÚ: Claro que te da tiempo. Me aseguraré de que no empiecen sin ti. Y mientras estás, compro un programa.");
 s("<LI>DIANE: Gracias. No tardo nada."); getinti(4);
 s("<LI>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, las medias y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</strong></p>"); points -= 5;
 afterpee()
 s("<LI>Te acercas al vendedor de programas:");
 
@@ -2390,7 +2391,7 @@ else
 s("<LI>¡No tienes suficiente dinero!");
 s("<LI>Vuelves con ella. Parece irritada. En el tiempo que has tardado en pedir las copas, le habría dado tiempo de sobra a ir al baño."); getinti(-7);
 s("<LI>Y además te has olvidado de comprar un programa."); getinti(-2);
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Pero sí aumenta su timidez a la hora de pedir permiso para ir. Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5;
+s("<p class='notice'><strong>Pero sí aumenta su timidez a la hora de pedir permiso para ir. Ganas 5 puntos de timidez.</strong></p>"); points += 5;
 c("theatre1","Ocupáis vuestros asientos en el auditorio"); }
 
 function
@@ -2399,7 +2400,7 @@ gotoo()
 s("<LI>TÚ: Seguro que da tiempo. Yo también voy. Igual hasta da tiempo a pedir algo para el descanso.");
 s("<LI>DIANE: Gracias. Qué bien. Nos vemos aquí en un par de minutos."); getinti(2);
 s("<LI>Ella desaparece en el baño de señoras, tú entras en el de caballeros. Oyes cómo da un portazo al meterse en un cubículo. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Los dos vais al baño. Pierdes 6 puntos de timidez.</SPAN></EM></P>"); points -= 6;
+s("<p class='notice'><strong>Los dos vais al baño. Pierdes 6 puntos de timidez.</strong></p>"); points -= 6;
 afterpee()
 s("<LI>Sales antes que ella y te acercas al vendedor de programas.");
 
@@ -2445,10 +2446,10 @@ s("<LI>Ella ha ido al baño de señoras, pero has usado un golpe de suerte.");
 if (thursday)
 {s("<LI>Vuelve enseguida —ni siquiera habías terminado de pedir el vino. Te mira con una sonrisa de resignación.");
 s("<LI>DIANE: Hay una cola enorme. No es urgente, así que esperaré al descanso."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Pero está avergonzada. Ganas 3 puntos de timidez.</SPAN></EM></P>"); points += 3;}
+s("<p class='notice'><strong>Pero está avergonzada. Ganas 3 puntos de timidez.</strong></p>"); points += 3;}
 else
 {s("<LI>Está fuera tres o cuatro minutos, y vuelve con aspecto muy relajado. Te sonríe. Tu golpe de suerte no ha funcionado."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</strong></p>"); points -= 5;
 afterpee() }
 c("theatre1","Ocupáis vuestros asientos en el auditorio"); }
 
@@ -2704,13 +2705,13 @@ if (blad > 450)
 {s("<LI>Ella se sonroja levemente y se hace un silencio.");
 s("<LI>DIANE: Ya lo sé. Siempre hay cola. Pero creo que iré de todas formas. Así estaré cómoda para el segundo acto. No dejes que nadie se beba mi vino.");
 s("<LI>Y se encamina hacia el baño de mujeres."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane va al baño durante el intermedio. Pierdes 4 puntos de timidez.</SPAN></EM></P>"); points -= 4;
+s("<p class='notice'><strong>Diane va al baño durante el intermedio. Pierdes 4 puntos de timidez.</strong></p>"); points -= 4;
 c("keepquiet1","Bebes vino y esperas a que vuelva."); }
 else 
 {s("<LI>DIANE: Estoy bien, gracias. En el intermedio siempre hay una cola horrible en el baño de mujeres de este teatro."); getinti(3);
 s("<LI>Hay un pequeño balcón justo más allá de la barra.");
 s("<LI>TÚ: ¿Salimos aquí un momento, lejos del gentío?");s("<LI>Ella acepta.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Por mencionar el baño, pierdes 2 puntos de timidez.</SPAN></EM></P>"); points -= 2;
+s("<p class='notice'><strong>Por mencionar el baño, pierdes 2 puntos de timidez.</strong></p>"); points -= 2;
 c("interval2","Salís al balcón."); } }
 
 function
@@ -2721,7 +2722,7 @@ s("<LI>Notas que Diane mira de reojo hacia el baño de mujeres.");
 if (blad > 450)
 {s("<LI>DIANE: A decir verdad, si no te importa, voy a escaparme un momento al baño antes del siguiente acto.");
 s("<LI>Desaparece en dirección al baño de mujeres. Había cola y tarda varios minutos."); 
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane va al baño durante el intermedio. Pierdes 2 puntos de timidez.</SPAN></EM></P>"); points -= 2;
+s("<p class='notice'><strong>Diane va al baño durante el intermedio. Pierdes 2 puntos de timidez.</strong></p>"); points -= 2;
 c("keepquiet1","Esperas a que vuelva."); }
 else
 {s("<LI>Ella no dice nada.");
@@ -2734,7 +2735,7 @@ if (saturday)
 {s("<LI>Diane se ha ido al baño de mujeres. Pero es sábado por la noche y el teatro está casi lleno. Para colmo, un par de chicas que estaban bebiendo por el centro se han colado aquí a usar los servicios. El resultado es una cola considerable.");
 s("<LI>Diane se pone en la cola, que serpentea hasta la puerta. Al cabo de unos minutos avanza y ya está dentro del baño de mujeres, pero sigue habiendo bastante gente, y uno de los cubículos está fuera de servicio. Una chica que estaba detrás de ella, que no paraba de bailar de un pie a otro, le ha suplicado que la deje pasar primero.");
 s("<LI>Después de esperar unos cinco minutos, Diane decide que no puede desperdiciar más tiempo del intermedio y vuelve contigo."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</SPAN></EM></P>"); points += 7;} 
+s("<p class='notice'><strong>Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</strong></p>"); points += 7;} 
 else
 {s("<LI>Diane regresa del baño y termina su copa de vino. Se reúne contigo en el balcón.");
 afterpee()
@@ -2753,7 +2754,7 @@ s("<LI>Vuelves con ella. Hay un pequeño balcón justo más allá de la barra.")
 s("<LI>TÚ: ¿Salimos aquí un momento, lejos del gentío?");s("<LI>Ella acepta.");
 if (blad >550)
 {s("<LI>Ella se muerde el labio. Tenía muchas ganas de ir al baño de mujeres, pero ha perdido la oportunidad de pedirlo.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5; 
+s("<p class='notice'><strong>Ganas 5 puntos de timidez.</strong></p>"); points += 5; 
 c("interval2","Salís al balcón."); } 
 else
 {c("interval2","Salís al balcón."); } }
@@ -2784,7 +2785,7 @@ else if (saturday)
 {s("<LI>Pero es sábado por la noche y el teatro está casi lleno. Para colmo, un par de chicas que estaban bebiendo por el centro se han colado aquí a usar los servicios. Para cuando ella llega, hay de nuevo una cola considerable.");
 s("<LI>Se pone en ella: otra vez serpenteando por la puerta. Al cabo de unos minutos avanza y ya está dentro del baño de mujeres, pero sigue habiendo mucha gente, y uno de los cubículos está fuera de servicio. Una chica que estaba detrás de ella, que no paraba de bailar de un pie a otro, le ha suplicado que la deje pasar primero.");
 s("<LI>Después de esperar unos cinco minutos, Diane decide que no puede desperdiciar más tiempo del intermedio y vuelve contigo.");  
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</SPAN></EM></P>"); points += 7;
+s("<p class='notice'><strong>Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</strong></p>"); points += 7;
 c("interval3","Salís al balcón."); }
 else
 {s("<LI>Desaparece por la puerta que pone «Señoras», dejándote solo con tu vino. Un par de minutos después regresa con cara de alivio.");
@@ -2824,7 +2825,7 @@ s("<LI>Cruzáis el vestíbulo de vuelta hacia vuestros asientos.");
 s("<LI>Pasáis por delante del baño de mujeres. Ya no hay cola.");  
 if (blad > 525)
 {s("<LI>Diane parece echar un vistazo al baño de mujeres, como si lo estuviera considerando; se muerde el labio pero sigue a tu lado."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane tenía ganas de ir al baño en el descanso pero le daba demasiada vergüenza mencionarlo. Ganas 1 punto de timidez.</SPAN></EM></P>"); points += 1;} 
+s("<p class='notice'><strong>Diane tenía ganas de ir al baño en el descanso pero le daba demasiada vergüenza mencionarlo. Ganas 1 punto de timidez.</strong></p>"); points += 1;} 
 else 
 {s("<LI>Diane no dirige la mirada hacia el baño de mujeres"); } 
 s("<LI>TÚ: Tengo muchas ganas de ver el segundo acto.");
@@ -2996,7 +2997,7 @@ s("<LI>Los personajes se enredan cada vez más");
 s("<LI>Entran y salen");
 if (blad > 650)
 {s("<LI>Diane parece bastante distraída. Está un poco inclinada hacia delante, con el bolso en el regazo."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane no puede estarse quieta. Se está meando durante la obra. Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5;}
+s("<p class='notice'><strong>Diane no puede estarse quieta. Se está meando durante la obra. Ganas 5 puntos de timidez.</strong></p>"); points += 5;}
 else if (blad > 550)
 {s("<LI>Diane no para de cambiar de postura."); }
 else
@@ -3074,13 +3075,13 @@ s("<LI>DIANE: ¡Oooh, qué bien que me preguntes!"); getinti(5);
 s("<LI>¿Qué va a ser?");
 if (blad > 600) 
 {s("<LI>DIANE: <EM>(en voz baja)</EM> La verdad es que me muero de ganas de ir al baño. Así que quizá podríamos tomar algo aquí primero. Así tendría oportunidad de pasarme por el aseo, ¿verdad? Y Molly nos encontrará en el vestíbulo.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Admite que «se está muriendo de ganas» de ir al baño. Pierdes 5 puntos de timidez.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>Admite que «se está muriendo de ganas» de ir al baño. Pierdes 5 puntos de timidez.</strong></p>"); points -= 5;
 s("<LI>Subís al vestíbulo. Diane se mete en el baño de mujeres… ¡da la impresión de que le urgía bastante! Te la imaginas corriendo al cubículo más cercano, quizá dando saltitos mientras se baja las bragas…");
 afterpee()
 s("<LI>Tú también vas a hacer pis, y luego la esperas en el vestíbulo. Al cabo de un minuto o así ella vuelve sonriendo.");
 if(inti > 85)
 {s("<LI>DIANE: Qué alivio. Me estaba meando.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Admite que tenía unas ganas locas de ir al baño. Pierdes 3 puntos de timidez.</SPAN></EM></P>"); points -= 3;}
+s("<p class='notice'><strong>Admite que tenía unas ganas locas de ir al baño. Pierdes 3 puntos de timidez.</strong></p>"); points -= 3;}
 else
 {s("<LI>Ella sonríe pero no dice nada."); }
 c("foyerbar1","Charlas en el vestíbulo."); }
@@ -3192,7 +3193,7 @@ s("<LI>Los dos estáis esperando en la puerta de artistas.");
 if (blad > 600)
 {s("<LI>Os quedáis charlando sobre la obra y lo mucho que os ha gustado. Pero Diane parece algo inquieta. Cruza las piernas de un lado, luego del otro, después se acerca a la puerta de artistas y vuelve otra vez. Aunque intenta aparentar que no pasa nada."); blad += 5;
 s("<LI>Tiene toda la pinta de necesitar el baño. Seguramente esperaba poder ir al del vestíbulo. ¡Fue una buena idea fijarse en la salida de emergencia!");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane no puede estarse quieta en la puerta de artistas. Ganas 4 puntos de timidez.</SPAN></EM></P>"); points += 4;}
+s("<p class='notice'><strong>Diane no puede estarse quieta en la puerta de artistas. Ganas 4 puntos de timidez.</strong></p>"); points += 4;}
 else
 {s("<LI>Os quedáis charlando sobre la obra y lo mucho que os ha gustado. Diane está muy tranquila, con ganas de ver a su amiga."); blad += 5;
 standing_desp()}
@@ -3210,7 +3211,7 @@ s("<LI>MOLLY: Eso es muy propio de Diane.");
 s("<LI>Los tres charláis y comentas lo mucho que te ha gustado la obra. Al cabo de dos o tres minutos vuelve Diane con una sonrisa avergonzada. Ella y Molly se abrazan y se dan dos besos.");
 afterpee()
 s("<LI>DIANE: Perdona.");s("<LI>La oyes susurrarle a Molly.");s("<LI>DIANE: ¡Me estaba meando encima!");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Le da vergüenza haber tenido que salir corriendo al baño. Ganas 2 puntos de timidez.</SPAN></EM></P>"); points += 2; }
+s("<p class='notice'><strong>Le da vergüenza haber tenido que salir corriendo al baño. Ganas 2 puntos de timidez.</strong></p>"); points += 2; }
 else
 {s("<LI>Al cabo de unos minutos Molly sale por la puerta de artistas. Ella y Diane se abrazan y se dan dos besos."); }
 c("stagedoor4","Le das la mano a Molly y a su amiga."); } 
@@ -3497,7 +3498,7 @@ if (blad > 580)
 {s("<LI>Diane dice, «Gracias» pero parece poco entusiasmada. Luego dice que va a por azúcar y se acerca a la furgoneta.");
 s("<LI>MOLLY: Qué raro, yo no creía que tomara azúcar.");
 s("<LI>Ves a Diane susurrarle algo a la mujer que atiende. La mujer niega con la cabeza. Diane vuelve contigo, forzando una sonrisa.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas varios puntos de timidez.</SPAN></EM></P>"); points += 5;}
+s("<p class='notice'><strong>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas 5 puntos de timidez.</strong></p>"); points += 5;}
 else
 {s("<LI>Diane ayuda a Molly con el pedido y trae los cafés para ti y para ella. «Qué buena idea,» dice.");}
 c("riverside4","Os tomáis los cafés."); } 
@@ -3511,7 +3512,7 @@ if (blad > 570)
 s("<LI>MOLLY: Qué raro, yo no creía que tomara azúcar.");
 s("<LI>Ves a Diane susurrarle algo a la mujer que atiende. La mujer niega con la cabeza. Diane vuelve contigo, forzando una sonrisa.");
 s("<LI>Parece un poco molesta contigo por haber pedido los cafés."); getinti(-10);
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas varios puntos de timidez.</SPAN></EM></P>"); points += 8;}
+s("<p class='notice'><strong>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas 8 puntos de timidez.</strong></p>"); points += 8;}
 else
 {s("<LI>Diane ayuda a Molly con el pedido y trae los cafés para ti y para ella. «Qué buena idea,» dice."); getinti(17);}
 c("riverside4","Os tomáis los cafés."); } 
@@ -3628,7 +3629,7 @@ s("<LI>Entras y haces pis. Diane te está esperando cuando sales. Te sonríe de 
 s("<LI>DIANE: ¿Mejor? Bastante cutrecillo por dentro, ¿eh? Pero eres un héroe, encontrarle a una chica un baño cuando lo necesita.");
 s("<LI>Se gira y te da un beso, te da una palmadita en el trasero y echa a andar, sonriéndote."); getinti(+25);  
 afterpee()
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Los dos usáis el Portaloo. Ganas muchos puntos de intimidad pero pierdes 10 puntos de timidez.</SPAN></EM></P>"); points -= 10;
+s("<p class='notice'><strong>Los dos usáis el Portaloo. Pierdes 10 puntos de timidez.</strong></p>"); points -= 10;
 c("riverside7","Te reúnes con los demás."); }
 
 function
@@ -3640,7 +3641,7 @@ s("<LI>Entras en el baño portátil y cierras la puerta. Haces pis y puede que e
 s("<LI>DIANE: ¿Mejor? Me toca a mí. Te veo con los demás.");
 s("<LI>Ella desaparece en el baño portátil. Vuelves con los demás y esperas a que regrese Diane."); getinti(-5);  
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Los dos usáis el baño portátil. Como fuiste el primero, pierdes unos puntos de intimidad y también pierdes 10 puntos de timidez.</SPAN></EM></P>"); points -= 10;
+s("<p class='notice'><strong>Los dos usáis el baño portátil. Como fuiste el primero, pierdes 10 puntos de timidez.</strong></p>"); points -= 10;
 c("riverside7","Es hora de reanudar el paseo."); }
 
 
@@ -3653,7 +3654,7 @@ s("<LI>La has puesto en un aprieto de verdad."); getinti(-15) ;
 s("<LI>Y así, contra su buen juicio, dice—");  
 s("<LI>DIANE: Estoy bien, gracias. De todas formas esos sitios no me gustan nada.");
 s("<LI>Y trata de dejar de moverse.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Le ofrecen la oportunidad de usar un baño portátil, pero está demasiado avergonzada para admitir que lo necesita. Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5;
+s("<p class='notice'><strong>Le ofrecen la oportunidad de usar un baño portátil, pero está demasiado avergonzada para admitir que lo necesita. Ganas 5 puntos de timidez.</strong></p>"); points += 5;
 c("luckytrip16ba","Bueno, al menos lo intentaste."); }
  
 function
@@ -3662,14 +3663,14 @@ luckytrip16ba()
 s("<LI>Unos minutos después os levantáis todos para seguir adelante.");
 if (points >23)
 {s("<LI>Diane parece echar un vistazo hacia el baño portátil, pero no dice nada. Debe de estar arrepintiéndose de haber dicho que no necesitaba ir.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>No se atreve a decirte que en realidad sí necesita el baño portátil. Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5; }
+s("<p class='notice'><strong>No se atreve a decirte que en realidad sí necesita el baño portátil. Ganas 5 puntos de timidez.</strong></p>"); points += 5; }
 else
 {s("<LI>Diane se acerca sigilosamente a Molly y le susurra algo. Molly asiente.");
 s("<LI>MOLLY: Las chicas vamos un momento al baño. Os alcanzamos enseguida.");
 s("<LI>Y las dos se dirigen al baño portátil. Como buenos caballeros, vosotros holgazaneáis y las esperáis justo fuera del café. Unos minutos después regresan, riendo."); mollyblad =0;
 s("<LI>MOLLY: ¡Uf, qué asco!");
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Pero al final se arma de valor y va, así que pierdes esos puntos de timidez.</SPAN></EM></P>"); points -= 5; }
+s("<p class='notice'><strong>Pero al final se arma de valor y va, así que pierdes esos puntos de timidez.</strong></p>"); points -= 5; }
 c("riverside7","Salís del café."); }
 
 function
@@ -3760,9 +3761,9 @@ if (inti >80)
 {s("<LI>DIANE: La verdad es que me estoy meando.");s("<LI>Te dirige una sonrisa resignada.");
 s("<LI>TÚ: En unos minutos deberíamos llegar al Pabellón.");
 s("<LI>DIANE: Sí. Puedo aguantar.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admite que se está meando. Pierdes 2 puntos de timidez.</SPAN></EM></P>"); points -= 2;}
+s("<p class='notice'><strong>Diane admite que se está meando. Pierdes 2 puntos de timidez.</strong></p>"); points -= 2;}
 else
-{s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Parece que necesita el baño, pero no quiere decirlo. Ganas 2 puntos de timidez.</SPAN></EM></P>"); points += 2;}
+{s("<p class='notice'><strong>Parece que necesita el baño, pero no quiere decirlo. Ganas 2 puntos de timidez.</strong></p>"); points += 2;}
 c("riverside11","Eso te parece de perlas."); }
 else
 {s("<LI>Caminas con Diane, de la mano.");
@@ -3862,7 +3863,7 @@ riverside12()
 s("<LI>Seguís caminando."); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
 {s("<LI>Diane parece muy ansiosa por llegar al Pabellón. Camina a pasitos rápidos y se muerde el labio, como si le urgiera muchísimo llegar al baño."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Diane tiene mucha prisa mientras camináis. Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5;}
+s("<p class='notice'><strong>Diane tiene mucha prisa mientras camináis. Ganas 5 puntos de timidez.</strong></p>"); points += 5;}
 else
 {s("<LI>Te preguntas si podríais parar a besaros."); }
 s("<LI>Pasáis junto a unos escalones que bajan al camino de sirga.");
@@ -3951,7 +3952,7 @@ else
 s("<LI>Vuelve caminando hacia ti con una sonrisa avergonzada.");
 s("<LI>DIANE: Llevaba un siglo muriéndome de ganas. Y luego ver a Bruno…");
 s("<LI>Te rodea la cintura con un brazo. Tú te giras hacia ella, la rodeas con los tuyos y la besas. Ella responde, tímidamente al principio, pero luego con calidez. Volvéis a besaros. Deslizas una mano hasta su trasero, acercándola más a ti. Ella pone la mano en tu trasero. Tu mano desciende un poco más, hasta la parte alta de su muslo, y al deslizarla hacia un lado crees notar el relieve de un liguero… aunque no estás seguro. Ella se aparta con una sonrisa."); getinti(15);
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane se va a hacer pis entre los arbustos, pero te lo pierdes. Pierdes 8 puntos de timidez.</SPAN></EM></P>"); points -= 8;
+s("<p class='notice'><strong>Diane se va a hacer pis entre los arbustos, pero te lo pierdes. Pierdes 8 puntos de timidez.</strong></p>"); points -= 8;
 c("luckytrip4d","Seguís caminando con los brazos alrededor de la cintura del otro."); }
 
 function
@@ -4007,7 +4008,7 @@ s("<LI>Puedes ver que está terriblemente avergonzada. Le rodeas la cintura con 
 s("<LI>Luego te giras hacia los otros y les llamas. <B>Os alcanzamos en un momento.</B> Los otros miran atrás y asienten con la mano.");
 s("<LI>TÚ: Ves, solo piensan que nos vamos a dar un abrazo. Aguanta un momento.");
 s("<LI>La rodeas con los brazos y observas cómo los otros desaparecen por el camino. Un par de paseadores nocturnos con sus perros pasan en dirección contraria. Puedes notar cómo Diane se mueve nerviosa contra ti.");
-s("<LI>DIANE: <EM>(casi en un susurro)</EM> Rápido, rápido. Estoy que reviento.");
+s("<LI>DIANE: <EM>(casi en un susurro)</EM> ¡Rápido, rápido! Estoy que reviento.");
 c("helpdiane1aa","No puede estarse quieta."); }
 
 function
@@ -4025,7 +4026,7 @@ else
 {s("<LI>A través de los arbustos tan poco espesos puedes ver el blanco de su combinación mientras está en cuclillas. Aunque (o quizá precisamente por eso) ves tan poco, todo te resulta tremendamente erótico. Al cabo de un minuto más o menos se levanta, se sube unas bragas azules y luego las medias; se queda allí unos momentos arreglándose la falda y la combinación."); 
 s("<LI>Por fin sale de detrás de los arbustos, todavía arreglándose la ropa. Apartas la mirada, como si hubieras estado haciéndolo todo el rato. Se acerca a ti y te dedica una sonrisa resignada."); getinti(15); }
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane se va detrás de los arbustos. Pierdes 6 puntos de timidez.</SPAN></EM></P>"); points -= 6;
+s("<p class='notice'><strong>Diane se va detrás de los arbustos. Pierdes 6 puntos de timidez.</strong></p>"); points -= 6;
 c("helpdiane1b","Gracias, dice ella."); }
 
 function
@@ -4065,7 +4066,7 @@ s("<LI>Cuando el chorro se apaga, bajas con sigilo los siguientes escalones. Tú
 s("<LI>Al pasar ves el gran charco en el rincón del rellano, y luego te reúnes con Diane, que te espera en lo alto de los escalones. Tiene un pañuelo de papel en la mano y parece estar secándose las piernas, aunque se incorpora en cuanto te ve."); gobushes = 1; gopee = 1;
 s("<LI>Está muy avergonzada. «Lo siento,» dice, «no podía esperar.»");
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 2 puntos de timidez.</SPAN></EM></P>"); points -= 2;
+s("<p class='notice'><strong>Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 2 puntos de timidez.</strong></p>"); points -= 2;
 c("together1b","Le coges la mano.");}
 else
 {s("<LI>Diane cruza a toda prisa hacia el rincón más alejado del rellano de cemento. Parece estar levantándose el vestido por delante. Cuando llega al rincón se detiene, inclinada ligeramente hacia adelante, y casi de inmediato oyes un suave sonido de salpicaduras.");
@@ -4074,7 +4075,7 @@ s("<LI>Cuando el chorro se apaga, bajas con sigilo los siguientes escalones. Tú
 s("<LI>Al pasar ves el gran charco en el rincón del rellano, y luego te reúnes con Diane, que te espera en lo alto de los escalones. Tiene un pañuelo de papel en la mano y parece estar secándose las piernas, aunque se incorpora en cuanto te ve."); gobushes = 1; gopee = 1;
 s("<LI>Está muy avergonzada. «Lo siento,» dice, «no podía esperar.»");
 afterpee()
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 3 puntos de timidez.</SPAN></EM></P>"); points -= 3;
+s("<p class='notice'><strong>Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 3 puntos de timidez.</strong></p>"); points -= 3;
 c("together1b","Le coges la mano."); }}
 
 function
@@ -4092,7 +4093,7 @@ else
 s("<LI>TÚ: ¿Qué pasó?");
 s("<LI>DIANE: Llegamos justo a la pensión, pero entonces mi amiga estuvo rebuscando las llaves y yo estaba dando saltitos en el portal. Ya no podía aguantar más. Fue como las cataratas del Niágara, encima en mis vaqueros. Me lo hice encima del todo. Aunque, eso sí, las demás estaban borrachas y les pareció un chiste enorme. Pero yo estaba muerta de vergüenza —no sabía cómo dar la cara por la mañana—, aunque nadie lo mencionó jamás."); admitwetting = 1;
 s("<LI>TÚ: A lo mejor estaban tan borrachas que se les había olvidado."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane confiesa una vez que se meó encima. Pierdes 10 puntos de timidez.</SPAN></EM></P>"); points -= 10;}
+s("<p class='notice'><strong>Diane confiesa una vez que se meó encima. Pierdes 10 puntos de timidez.</strong></p>"); points -= 10;}
 c("riverside15","Sigues caminando."); } 
 
 function
@@ -4111,7 +4112,7 @@ else
 {s("<LI>A través de los arbustos, tan delgados, puedes ver el blanco de su combinación mientras está en cuclillas. Aunque —o quizá precisamente porque— puedes ver tan poco, todo te resulta inmensamente erótico. Cuando terminas de hacer pis y subes la cremallera, das un par de pasos silenciosos hacia la derecha y puedes ver su trasero desnudo, agachada tan bajo que casi debe de rozar la hierba alta. Su falda y su enagua están recogidas alrededor de la cintura. Al cabo de un momento se pone de pie y de nuevo hay un destello rosa cuando se sube las bragas; se queda allí unos instantes arreglándose la falda y la combinación."); }
 s("<LI>Por fin sale de detrás de los arbustos, todavía arreglándose la ropa. Apartas la mirada, como si hubieras estado haciéndolo todo el rato. Se acerca a ti y te rodea con los dos brazos."); getinti(25);
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Los dos os metéis detrás de los arbustos. Pierdes 8 puntos de timidez.</SPAN></EM></P>"); points -= 8;
+s("<p class='notice'><strong>Los dos os metéis detrás de los arbustos. Pierdes 8 puntos de timidez.</strong></p>"); points -= 8;
 c("helpdiane1b","Así está mejor, dice ella."); }
 
 
@@ -4312,7 +4313,7 @@ s("<LI>Al final el chorro se apaga hasta convertirse en un hilillo, y alguna got
 s("<LI>Está algo colorada, pero con una gran sonrisa resignada en la cara. Parece no tener ningún reparo ni vergüenza porque la hayas visto. Se acerca a ti y te rodea con los brazos, apoyando la cabeza en tu hombro. No es tanto un gesto sensual como uno de camaradería."); getinti(25);
 s("<LI>DIANE: ¿Serías un cielo y esperarías fuera mientras me arreglo?");
 s("<LI>Un minuto después sale a reunirse contigo y el conserje va a cerrar. Diane te coge del brazo y os acercáis a los demás.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane usa el urinario. Pierdes 20 puntos de timidez.</SPAN></EM></P>"); points -= 20;
+s("<p class='notice'><strong>Diane usa el urinario. Pierdes 20 puntos de timidez.</strong></p>"); points -= 20;
 c("riverside15","Sigues caminando."); }
 
 function
@@ -4336,7 +4337,7 @@ c("riverside15","Sigues caminando."); }
 else
 {s("<LI>DIANE: Sí, me apetece arreglarme un poco. No tardo nada.");
 s("<LI>Entra en el baño de señoras. Seguramente le pareció sensato ir ahora y evitar cualquier aprieto después.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Pero en realidad le aumenta la timidez. Ganas 5 puntos de timidez.</SPAN></EM></P>"); points += 5; 
+s("<p class='notice'><strong>Pero en realidad le aumenta la timidez. Ganas 5 puntos de timidez.</strong></p>"); points += 5; 
 s("<LI>Tú entras en el de caballeros.");
 c("toiletopen1c","Haces pis."); }}
 else 
@@ -4744,7 +4745,7 @@ pavilion8()
 s("<LI>Son casi las 11. El camarero grita «¡Última ronda, por favor!».");
 if (blad >600)
 {s("<LI>Diane parece moverse un poco inquieta en su asiento.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane necesita ir al baño en El Pabellón. Ganas 3 puntos de timidez.</SPAN></EM></P>"); points += 3;} 
+s("<p class='notice'><strong>Diane necesita ir al baño en El Pabellón. Ganas 3 puntos de timidez.</strong></p>"); points += 3;} 
 else
 {s("<LI>Hay un ambiente agradable y relajado."); }
 s("<LI>Justo tenéis tiempo para una última copa antes de coger el autobús. ¿Qué va a ser?");
@@ -4910,7 +4911,7 @@ else
 {s("<LI>Diane tiene unas ganas terribles de hacer pis. No para de dar vueltas y sujeta su falda como si estuviera impaciente por levantársela a la primera oportunidad. Molly se ríe de ella."); }
 s("<LI>Por fin el ciclista desaparece de vista y Molly, que hace de vigía, levanta el pulgar. Diane de inmediato se sube la falda por detrás, hurga un momento bajo su enagua y se baja las bragas azul claro y los pantis de un solo movimiento. ¡Al menos ahora sabes que no lleva medias!");
 s("<LI>Se pone en cuclillas con cierto nerviosismo, mira inquieta a izquierda y derecha, y luego baja la vista hacia el suelo como si se concentrara. La combinación no está tan subida como la falda, así que le da algo de cobertura y no puedes ver el chorro. Pero en pocos segundos empieza a formarse un charco junto a sus pies, que se extiende por el sendero. ¡De verdad que no aguantaba más!"); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane hace pis, pero con Molly delante. Ganas 3 puntos de timidez.</SPAN></EM></P>"); points += 3;
+s("<p class='notice'><strong>Diane hace pis, pero con Molly delante. Ganas 3 puntos de timidez.</strong></p>"); points += 3;
 afterpee()
 s("<LI>Por fin termina. No se limpia, pero ya está subiéndose las bragas mientras se incorpora, y luego tira de los pantis hacia arriba. La falda le cae en su sitio, pero todavía tiene las manos por debajo ajustándose los pantis. Luego, mirando una vez más a izquierda y derecha, se sube la falda casi hasta la cintura y se arregla la combinación, dejando finalmente que ésta y la falda caigan de nuevo en su sitio.");
 s("<LI>Da unos pasos hacia delante, alejándose del gran charco brillante que ha dejado. Se está arreglando.");
@@ -5052,10 +5053,10 @@ s("<LI>TÚ: Claro, sin problema. La parada de taxis está justo ahí.");
 s("<LI>Camináis hacia la parada de taxis.");
 if (blad >775)
 {s("<LI>De repente Diane se para en seco. Está sonrojada y con el gesto crispado.");
-s("<LI>DIANE: Mira, lo siento, pero antes de ir a ningún sitio <STRONG>necesito</STRONG> encontrar un baño como sea. No quiero que me pase algo de camino a casa. ¿Hay algún sitio donde pueda ir?"); 
+s("<LI>DIANE: Mira, lo siento, pero antes de ir a ningún sitio necesito encontrar un baño como sea. No quiero que me pase algo de camino a casa. ¿Hay algún sitio donde pueda ir?"); 
 s("<LI>Diane está muriéndose de ganas de hacer pis. ¿Hay algún sitio adonde pueda ir? ¿Qué harás?");
 s("<LI>Hay unos aseos al otro lado del aparcamiento, y probablemente estarán cerrados (¡aunque no hace falta decírselo!).");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Admite que se está meando. Pierdes varios puntos de timidez.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>Admite que se está meando. Pierdes 5 puntos de timidez.</strong></p>"); points -= 5;
 c("queue1b","Dile que hay unos baños al otro lado del aparcamiento.");
 c("watchdesperate","Niegas con la cabeza sin saber qué hacer.");}
 else
@@ -5097,10 +5098,10 @@ s("<LI>DIANE: Supongo que sí.");
 s("<LI>TÚ: ¿Estás desesperada?");
 if (inti >100)
 {s("<LI>DIANE: No, tendré que cruzar las piernas.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Al menos puede bromear con ello. Pierdes 3 puntos de timidez.</SPAN></EM></P>"); points -= 3; }
+s("<p class='notice'><strong>Al menos puede bromear con ello. Pierdes 3 puntos de timidez.</strong></p>"); points -= 3; }
 else
 {s("<LI>DIANE: No, estoy bien.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> No tiene pinta de estar bien. Ganas 3 puntos de timidez.</SPAN></EM></P>"); points += 3; }
+s("<p class='notice'><strong>No tiene pinta de estar bien. Ganas 3 puntos de timidez.</strong></p>"); points += 3; }
 
 queue_desp() 
 c("taxihome3","Sigues esperando."); }
@@ -7114,7 +7115,7 @@ s("<LI>TÚ: Diane, llevas un rato moviéndote sin parar. ¿Necesitas ir al baño
 s("<LI>Ella se pone colorada como un tomate y deja de moverse. No dice nada.");
 s("<LI>De repente se levanta y sale de la habitación. La oyes entrar en el baño.");
 afterpee()
-s("<LI>Cuando baja sigue muy avergonzada. El momento se ha roto y has perdido muchos puntos de intimidad."); getinti (-50);
+s("<LI>Cuando baja sigue muy avergonzada. El momento se ha roto."); getinti (-50);
 c("gameover","Y ella se prepara para irse a casa."); }
 
 
@@ -8053,9 +8054,9 @@ skirtremove1c()
 s("<LI>Te sientas junto a Diane. Le rodeas los hombros con el brazo, pero ella apenas responde.");
 if (blad >750)
 {s("<LI>No puede estar quieta, casi bota arriba y abajo en el sofá. Tiene las manos entre las rodillas, y la enagua se le va subiendo de modo que puedes ver la parte más oscura en la parte superior de sus medias.");
-s("<LI>DIANE: Date prisa, date prisa.");
+s("<LI>DIANE: ¡Date prisa, date prisa!");
 s("<LI>TÚ: ¿Alguna vez has tenido tantas ganas de ir al baño?");
-s("<LI>DIANE: Sí, ahora.");
+s("<LI>DIANE: ¡Sí, ahora!");
 s("<LI>Se sienta sobre sus manos, moviéndose inquieta de un lado a otro."); }
 else
 {s("<LI>Diane se mueve un poco inquieta. Desde luego que tiene ganas de hacer pis.");
@@ -8080,7 +8081,7 @@ s("<LI>TÚ: Pero estás genial así.");
 s("<LI>DIANE: No puedo subir así. Podría cruzarme con tu hermano.");
 if (blad >750)
 {s("<LI>Está de pie, casi doblada en dos, con las manos entre las rodillas, saltando de un pie al otro.");
-s("<LI>DIANE: Venga ya. Me estoy meando encima. En serio."); }
+s("<LI>DIANE: ¡Venga ya! Me estoy meando encima. En serio."); }
 else
 {s("<LI>Cambia el peso de un pie al otro.");
 s("<LI>DIANE: Venga. Solo quiero ir al baño."); } 
@@ -8093,11 +8094,11 @@ skirtremove1f()
 s("<LI>Diane te suplica que le des la falda. Tú la retienes juguetonamente.");
 if (blad >750)
 {s("<LI>Tiene las manos entrelazadas delante. Apenas puede mantenerse erguida, tiene unas ganas de hacer pis tremendas.");
-s("<LI>DIANE: Venga. De verdad que tengo que ir. No querrás que me haga pis encima.");
+s("<LI>DIANE: ¡Venga! De verdad que tengo que ir. No querrás que me haga pis encima.");
 s("<LI>Mejor que no respondas a eso."); } 
 else
 {s("<LI>Intenta arrebatarte la falda.");
-s("<LI>DIANE: Venga. Dame mi falda."); } 
+s("<LI>DIANE: ¡Venga! Dame mi falda."); } 
 s("<LI>Madre mía, está de lo más sexy.");
 c("skirtremove1g","Te quedas con la falda."); }
 
@@ -8152,7 +8153,7 @@ s("<LI>DIANE: ¿Qué? Solo necesito mi falda y el baño.");
 s("<LI>TÚ: Te dejo la falda si me dejas acompañarte.");
 s("<LI>DIANE: ¿Qué? ¿Al baño?");
 s("<LI>TÚ: Mmm.");
-s("<LI>DIANE: Lo que sea, lo que sea."); 
+s("<LI>DIANE: ¡Lo que sea, lo que sea!"); 
 c("skirtdeal1","Le das la falda."); }
 
 function
@@ -10178,8 +10179,8 @@ function
 secondplace()
 {
 s("<LI>Diane baja las escaleras y la envuelves entre tus brazos. Tu mano se desliza por debajo de su falda, palpando su trasero ahora desnudo.");
-s("<LI>Deslizas la mano hacia delante, encontrando su lugar más íntimo, sabiendo que...");
-c("secondplace1","—eso—"); }
+s("<LI>Deslizas la mano hacia delante, encontrando su lugar más íntimo, sabiendo que—");
+c("secondplace1","Exacto."); }
 
 function
 secondplace1()
@@ -10750,7 +10751,7 @@ if (tiramisu)
 {s("<P><LI>DIANE: Bueno, cuando estaba en la universidad solía salir a la ciudad con mis amigas y a veces bebíamos un poco. Luego tenía que coger el autobús para volver a casa y casi siempre me entraban ganas de ir al baño hacia el final del trayecto. No era gran cosa porque solo había que andar media milla. Pero un día hacía un frío horrible y me fue directo a la vejiga y tenía unas ganas tremendas. El problema era que me había encontrado en el autobús con un chico del instituto y estaba charlando y quería acompañarme a casa. Me gustaba bastante, pero ese no era el momento. Si hubiera ido sola me habría metido entre los arbustos, pero con él delante no podía. Estaba apuradísima.");
 s("<LI>TÚ: ¿Qué pasó?"); }
 else if (pannacotta)
-{s("<P><LI>DIANE: Una de las peores veces fue hace unos años, cuando fui con mi familia a visitar a unos amigos. Había un chico un poco mayor que yo que me imponía bastante. El caso es que me llevó a otra habitación y me enseñó a jugar al ajedrez. El problema era que había tomado sidra en la comida y tenía <STRONG>unas ganas locas</STRONG> de hacer pis y no sabía cómo decírselo. No paraba de moverme y la falda se me iba subiendo, y notaba que él me miraba, y eso lo ponía todo peor.");
+{s("<P><LI>DIANE: Una de las peores veces fue hace unos años, cuando fui con mi familia a visitar a unos amigos. Había un chico un poco mayor que yo que me imponía bastante. El caso es que me llevó a otra habitación y me enseñó a jugar al ajedrez. El problema era que había tomado sidra en la comida y tenía unas ganas locas de hacer pis y no sabía cómo decírselo. No paraba de moverme y la falda se me iba subiendo, y notaba que él me miraba, y eso lo ponía todo peor.");
 s("<LI>TÚ: ¿Quizá le estaba excitando?");
 s("<LI>DIANE: A veces me lo he preguntado. En fin..."); } 
 else if (icecream)

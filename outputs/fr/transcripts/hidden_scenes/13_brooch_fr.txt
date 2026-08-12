@@ -26,7 +26,7 @@ Vous traversez la pièce pour aller chercher la broche. Diane se lève.
 
 DIANE : Je dois y aller. Je vais juste—.
 
-VOUS : [l’interrompant] J’ai quelque chose pour toi.
+VOUS : (l’interrompant) J’ai quelque chose pour toi.
 
 Vous revenez et le lui donnez. Elle s’est rassise sur le canapé et enfile sa veste.
 

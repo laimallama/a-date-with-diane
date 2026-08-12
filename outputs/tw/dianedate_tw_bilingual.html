@@ -12,6 +12,7 @@
   --accent: #9b2f3f;
   --accent-dark: #6f1f2c;
   --accent-strong: #6f1f2c;
+  --on-accent: #ffffff;
   --choice: #fff;
   --choice-hover: #fff3df;
   --status: #f1e7d8;
@@ -27,24 +28,25 @@
 }
 
 :root[data-theme="dark"] {
-  color-scheme: dark;
-  --paper: #221c17;
-  --ink: #ede3d3;
-  --muted: #a4917c;
-  --line: #3c2f26;
-  --accent: #d45468;
-  --accent-dark: #f2b6c0;
-  --accent-strong: #b33d52;
-  --choice: #2b241e;
-  --choice-hover: #3a2f26;
-  --status: #241e18;
-  --hover-border: #c9a06e;
-  --highlight-bg: #3a1f26;
-  --em-color: #e0b4bf;
-  --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
-  --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-  --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
-  --overlay-scrim: rgba(0, 0, 0, .7);
+    color-scheme: dark;
+    --paper: #221c17;
+    --ink: #ede3d3;
+    --muted: #948b82;
+    --line: #3c2f26;
+    --accent: #f0d060;
+    --accent-dark: #f0d060;
+    --accent-strong: #f6e48a;
+    --on-accent: #221c17;
+    --choice: #2b241e;
+    --choice-hover: #3a2f26;
+    --status: #241e18;
+    --hover-border: #c9a94a;
+    --highlight-bg: #3a3220;
+    --em-color: #e2c878;
+    --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+    --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
+    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
+    --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
 * { box-sizing: border-box; }
@@ -81,7 +83,7 @@ body.lang-en #box h2 {
 }
 
 a { color: inherit; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
 
 .game-shell {
   width: min(920px, calc(100% - 32px));
@@ -245,16 +247,15 @@ a:hover { color: var(--accent); }
 .choice.key-pressed {
   border-color: var(--hover-border);
   background: var(--choice-hover);
-  color: var(--accent-dark);
+  color: var(--ink);
 }
 
 @media (hover: hover) and (pointer: fine) {
   #box li a:hover,
-  .choice:hover,
-  .back-button:hover {
+  .choice:hover {
     border-color: var(--hover-border);
     background: var(--choice-hover);
-    color: var(--accent-dark);
+    color: var(--ink);
   }
 }
 
@@ -367,7 +368,7 @@ a:hover { color: var(--accent); }
 .back-button {
   width: auto;
   min-width: 120px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   border-color: var(--accent);
   text-align: center;
@@ -375,7 +376,7 @@ a:hover { color: var(--accent); }
 
 @media (hover: hover) and (pointer: fine) {
   .back-button:hover {
-    color: #fff;
+    color: var(--on-accent);
     background: var(--accent-strong);
     border-color: var(--accent-strong);
   }
@@ -447,7 +448,7 @@ a:hover { color: var(--accent); }
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   font-family: var(--ui-font);
   font-size: .94rem;
@@ -456,8 +457,9 @@ a:hover { color: var(--accent); }
 }
 
 .language-toggle:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
+  color: var(--on-accent);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
 }
 
 /* Toggle label is always the other language, so its font must follow the label, not the page. */
@@ -494,7 +496,7 @@ body.lang-en .lang-alt {
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   font-family: var(--ui-font);
   font-size: .94rem;
@@ -634,14 +636,14 @@ body.lang-en .lang-alt {
 
 var alternateTranslations = {
   "<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.": "<LI>另外還有幾個安慰獎結局，你甚至有機會和阿曼達約會。",
-  "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.": "<LI><strong>膀胱</strong>數值顯示黛安憋了多少。她<strong>肚子</strong>裡的水分會隨著時間慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。",
+  "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.": "<LI><strong>膀胱</strong>儀表顯示黛安憋著多少尿。<strong>肚子</strong>裡的水分會隨時間慢慢流進<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。",
   "<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.": "<LI>別指望第一次約會就能跟她上床，但如果你應對得當，也許還能嚐到一點樂趣。千萬別忘了：女人總是讓人捉摸不透。",
   "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.": "<LI>隨著夜晚推進，你的<strong>親密度</strong>通常會逐漸上升，也會自然影響你能做什麼。有些場景還會用到<strong>害羞值</strong>；你回家時這個數值的得失也會影響後續事件。有時高一點更有利，有時反而低一點更有利，所以它更像一張百搭牌。",
   "<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.": "<LI>一開始你有<strong>£100</strong>。留意你的錢。晚上結束時，最好留點錢搭計程車回家。",
   "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>": "<p class='note-lead'>左上角還有個劇情圖鑑，裡面有通往得獎結局、安慰獎結局以及各種隱藏場景的引導路線。卡住時可以用，只是想瀏覽也可以。有些項目是下拉選單：先點開，再選你要的變體。在手機或平板上請用畫面上的按鈕；在電腦上還可以用下面這些快捷鍵。</p>",
   "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>": "<p class='note-keys'><strong>G</strong> 鍵打開劇情圖鑑（<strong>Esc</strong> 鍵關閉）。</p>",
   "<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>": "<p class='note-keys note-cluster-end'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>",
-  "<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>": "<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>",
+  "<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>": "<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>",
   "<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>": "<p class='note-keys note-cluster-end'><strong>Enter</strong> 鍵可選擇反白的引導選項，但只有在引導開啟時才有效。按住 <strong>Enter</strong> 鍵可快進引導選項；放開即停。</p>",
   "<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>": "<p class='note-lead'>若後悔某個選擇，隨時可以按「返回」按鈕回到上一頁；它會把一切都恢復——數值、選項，統統還原。引導模式裡同樣有效。</p>",
   "<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the 'Back' button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>": "<p class='note-keys note-cluster-end'><strong>B</strong> 鍵的效果和「返回」按鈕一樣。按住 <strong>B</strong> 鍵可快速倒退；放開即停。</p>",
@@ -725,8 +727,8 @@ var alternateTranslations = {
   "<LI>YOU: Do you remember the first time we met?": "<LI>你：你還記得我們第一次見面嗎？",
   "<LI>DIANE: I can't really forget it, can I! Fancy us both missing the last bus home. I was really glad you were there—I'm not sure I had enough on me for the taxi fare home.": "<LI>黛安：那怎麼可能忘！我們倆都錯過了末班車，真沒想到。幸好你在——我那時候身上的錢好像不夠搭計程車回家。",
   "<LI>YOU: How did you come to miss the bus?": "<LI>你：你怎麼會錯過那班車的？",
-  "<LI>DIANE: <EM>(She blushes and grins at you)</EM>. You know perfectly well why I missed the bus. It was so embarrassing!": "<LI>黛安：<EM>（她臉紅了，朝你咧嘴一笑）</EM> 你明明知道我為什麼錯過車嘛。那真的超級尷尬！",
-  "<LI>DIANE: And how was it <STRONG>you</STRONG> managed to miss the last bus home?": "<LI>黛安：那<STRONG>你</STRONG>又是怎麼錯過末班車的？",
+  "<LI>DIANE: <EM>(She blushes and grins at you)</EM>. You know perfectly well why I missed the bus. It was so embarrassing!": "<LI>黛安：<EM>（她臉紅了，朝你咧嘴一笑）</EM>你明明知道我為什麼錯過車嘛。那真的超級尷尬！",
+  "<LI>DIANE: And how was it <EM>you</EM> managed to miss the last bus home?": "<LI>黛安：那<EM>你</EM>又是怎麼錯過末班車的？",
   "<LI>YOU: Well, I have to admit, it was like you. I just popped to the loo, and when I came back the bus had gone.": "<LI>你：說來慚愧，跟你一樣。我就是去了趟廁所，回來時車已經開走了。",
   "<LI>DIANE: Really? You found a loo at that hour? ": "<LI>黛安：真的？那個時間點你還找到廁所了？",
   "<LI>YOU: Well, I went in the car park...": "<LI>你：呃……我是去了停車場那邊……",
@@ -933,7 +935,7 @@ var alternateTranslations = {
   "<LI>YOU: Of course there's time. I'll make sure they don't start without you. And while you're away I'll buy a programme.": "<LI>你：當然來得及。我會確保他們不先開場的。你去的時候，我去買份節目單。",
   "<LI>DIANE: Thanks. I won't be long.": "<LI>黛安：謝謝，我很快就回來。",
   "<LI>She disappears into the Ladies. You just have to imagine her in there, her skirt hitched up around her waist, her tights and panties around her knees as she sits there, her pee tinkling into the toilet...": "<LI>她走進了女廁。你只能在腦海裡想像她在裡面的樣子——裙子捲到腰間，褲襪和內褲褪到膝蓋，就這樣坐在那裡，尿液淅淅瀝瀝地流進馬桶……",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane makes her first visit to the loo. You lost 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安第一次去了廁所。你失去了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane makes her first visit to the loo. You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>黛安第一次去了廁所。你失去了5點害羞值。</strong></p>",
   "<LI>You go over to the programme seller:": "<LI>你走向賣節目冊的人：。",
   "<LI>You buy a programme at £3.": "<LI>你花3英鎊買了一份節目單。",
   "<LI>You order 2 glasses of wine for the interval at £10.": "<LI>你預訂了中場休息時的2杯紅酒，共10英鎊。",
@@ -944,11 +946,11 @@ var alternateTranslations = {
   "You order 2 glasses of wine for the interval.": "你預訂了中場休息時的2杯紅酒。",
   "<LI>You return to her. She is looking irritable. The time you've taken to order the drinks, she could easily have been to the loo.": "<LI>你回到她身邊時，她看起來有點不高興。你剛才去點飲料花的時間，本來足夠她去一趟廁所。",
   "<LI>And you've forgotten to buy a programme.": "<LI>更糟的是，你還忘了買節目單。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But it does increase her shyness about 'asking to go'. You gained 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但這反而讓她在開口要求去廁所這件事上更不好意思了。你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>But it does increase her shyness about 'asking to go'. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>但這反而讓她在開口要求去廁所這件事上更不好意思了。你獲得了5點害羞值。</strong></p>",
   "<LI>YOU: I'm sure there's time. I'm going to go too. There might even be time to order drinks for the interval.": "<LI>你：我覺得來得及，我也要去一下。說不定還能順便訂中場的飲料呢。",
   "<LI>DIANE: Thanks. That'd be nice. Meet you here in a couple of mins.": "<LI>黛安：好的，那太棒了。幾分鐘後在這裡碰頭吧。",
   "<LI>She disappears into the Ladies, you go into the Gents. You hear a door slam as she goes into a cubicle. You just have to imagine her on the other side of the wall, her skirt hitched up around her waist, her panties around her knees as she sits there, her pee tinkling into the toilet...": "<LI>她走進了女廁，你則去了男廁。你聽到她推開隔間門的一聲砰響。你只能想像隔壁那面牆的另一邊——她把裙子捲到腰間，內褲褪到膝蓋，就這樣坐在那裡，尿液淅淅瀝瀝地流進馬桶……",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>You both go to the loo. You lost 6 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你們兩個都去了廁所。你失去了6點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>You both go to the loo. You lost 6 shyness points.</strong></p>": "<p class='notice'><strong>你們兩個都去了廁所。你失去了6點害羞值。</strong></p>",
   "<LI>You emerge before she does, and go over to the programme seller": "<LI>你比她先出來，走向賣節目冊的人。",
   "<LI>You buy a programme for £3.": "<LI>你花3英鎊買了一份節目單。",
   "<LI>You order 2 glasses of wine for the interval, which costs £10.": "<LI>你預訂了中場休息時的2杯紅酒，共10英鎊。",
@@ -960,7 +962,7 @@ var alternateTranslations = {
   "<LI>She's gone to the Ladies, but you've played a luckshot.": "<LI>她去了女廁，但你使用了一次幸運機會。",
   "<LI>She comes back very quickly—you hadn't even finished ordering the wine. She grins at you ruefully.": "<LI>她很快就回來了——你甚至還沒把酒訂完。她無奈地朝你苦笑了一下。",
   "<LI>DIANE: There's ever such a queue. It's not urgent, so I'll wait till the interval.": "<LI>黛安：裡面排了好長的隊呢。也不算特別急，等到中場再去吧。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But she is embarrassed. You gained 3 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但她有點不好意思。你獲得了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>But she is embarrassed. You gained 3 shyness points.</strong></p>": "<p class='notice'><strong>但她有點不好意思。你獲得了3點害羞值。</strong></p>",
   "<LI>She is gone three or four minutes, but then comes back looking very relaxed. She smiles at you. Your luckshot hasn't worked.": "<LI>她進去了三四分鐘，出來時神情相當輕鬆，還朝你微笑了一下。你的幸運機會沒奏效。",
   "<LI>You are sitting in the theatre waiting for the play to begin. You have nice seats in the stalls, in the middle of a row. The theatre is quite full.": "<LI>你們坐在劇院裡等待演出開始。你們的座位相當不錯，在正廳池座某排的中間位置，劇院裡相當熱鬧。",
   "<LI>Diane is reading the programme. She leans closer to you, so that you can read it too.": "<LI>黛安正翻看節目單，她往你這邊靠了過來，讓你也能一起看。",
@@ -1045,21 +1047,21 @@ var alternateTranslations = {
   "<LI>She blushes slightly and there is a pause.": "<LI>她微微紅了臉，沉默了一下。",
   "<LI>DIANE: I know. There always is a queue. But I think I'll go anyway. Then I'll be comfortable for the next act. Don't let anyone drink my wine.": "<LI>黛安：我知道，這裡每次都要排隊。不過我還是去一下吧，這樣看下一幕的時候才舒服。別讓人喝我的酒。",
   "<LI>And she heads off to the Ladies.": "<LI>說完她就朝女廁走去了。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes to the loo in the interval. You lost 4 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中場時間時去了廁所。你失去了4點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane goes to the loo in the interval. You lost 4 shyness points.</strong></p>": "<p class='notice'><strong>黛安在中場時間時去了廁所。你失去了4點害羞值。</strong></p>",
   "<LI>DIANE: I'm fine thanks. There's always such a dreadful queue for the Ladies in the interval at this theatre.": "<LI>黛安：沒事，謝謝。這個劇院中場休息時，廁所隊伍總是長得可怕。",
   "<LI>There is a little balcony just beyond the bar.": "<LI>吧台再往裡有一個小陽台。",
   "<LI>YOU: Shall we go out here for a few minutes, away from the throng? <EM>(She agrees.)</EM>": "<LI>你：我們去那裡站一下吧，避開這堆人？<EM>（她同意了。）</EM>",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Because you mentioned the loo, you lost 2 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 你提到了廁所，失去2點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Because you mentioned the loo, you lost 2 shyness points.</strong></p>": "<p class='notice'><strong>你提到了廁所，失去2點害羞值。</strong></p>",
   "<LI>You are both standing there drinking your wine.": "<LI>你們並排站著，喝著葡萄酒。",
   "<LI>You notice Diane glancing towards the Ladies.": "<LI>你注意到黛安朝女廁的方向張望了一眼。",
   "<LI>DIANE: Actually, if you don't mind I'll just pop to the loo before the next act.": "<LI>黛安：其實，如果你不介意的話，我想在下一幕開始前去一趟廁所。",
   "<LI>She disappears in the direction of the Ladies. There was a queue and she is away several minutes.": "<LI>她朝女廁方向走去，消失在人群裡。那裡排著隊，她離開了好幾分鐘。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes to the loo in the interval. You lost 2 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中場休息時去了廁所。你失去了2點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane goes to the loo in the interval. You lost 2 shyness points.</strong></p>": "<p class='notice'><strong>黛安在中場休息時去了廁所。你失去了2點害羞值。</strong></p>",
   "<LI>She doesn't say anything.": "<LI>她什麼都沒說。",
   "<LI>Diane has popped to the Ladies. But it's Saturday night and the theatre is almost full. To make matters worse, one or two girls who were drinking in the town have popped in here to use the facilities. As a result there is quite a queue.": "<LI>黛安去了女廁。但今天是週六晚上，劇院幾乎座無虛席。更糟糕的是，有一兩個在城裡喝酒的女生也跑進來借用廁所，女廁前排起了長隊。",
   "<LI>Diane joins the queue, which is snaking out the door. After a few minutes it has progressed and she is inside the Ladies, but there is quite a queue there, and one of the cubicles is out of order. A girl who was behind her, and who was really hopping up and down, has also begged her to let her go first.": "<LI>黛安加入隊伍，長隊已經排到了門外。過了幾分鐘，隊伍總算往前挪了些，她終於進了女廁，但裡面還是排著不少人，而且還有一個隔間壞了。排在她後面的一個女生急得直跺腳，苦苦央求黛安讓自己先上。",
   "<LI>After waiting about five minutes Diane decides she can't waste any more of the interval and returns to you.": "<LI>等了差不多五分鐘後，黛安覺得不能再浪費中場休息的時間，便回到你身邊。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安太不好意思了，沒有告訴你她其實並沒有……呃……上成廁所。你獲得了7點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</strong></p>": "<p class='notice'><strong>黛安太不好意思了，沒有告訴你她其實並沒有……呃……上成廁所。你獲得了7點害羞值。</strong></p>",
   "<LI>Diane returns from the loo and finishes her glass of wine. She joins you on the balcony.": "<LI>黛安從廁所回來，喝完了杯中的紅酒，走到陽台上與你匯合。",
   "<LI>YOU: It's good, isn't it? Are you enjoying it?": "<LI>你：演得不錯吧？你喜歡嗎？",
   "<LI>DIANE: I'm really enjoying it. What d'you think of Molly? I gather her part gets really funny in the second Act. And we should be able to meet her for a quick drink afterwards.": "<LI>黛安：我真的很喜歡。你覺得莫莉演得怎麼樣？聽說她的角色在第二幕會特別好笑。演出結束後我們應該能去找她喝一杯。",
@@ -1068,7 +1070,7 @@ var alternateTranslations = {
   "<LI>You walk past the still crowded Ladies and into the peaceful Gents. You have a pee, then linger a minute or so—not long enough to draw attention to yourself, but long enough to know that Diane can't head to the loo while she's guarding your drink.": "<LI>你經過依然擁擠的女廁，走進清靜的男廁。你撒了泡尿，又磨蹭了一會兒——時間不至於長到引人注意，但你心裡清楚，黛安守著你的酒，這時候根本沒法去廁所。",
   "<LI>You return to her. There is a little balcony just beyond the bar.": "<LI>你回到她身邊。吧台旁邊有個小陽台。",
   "<LI>She bites her lip. She really wanted to go to the Ladies, but has missed the chance to ask.": "<LI>她咬了咬嘴唇。她其實很想去女廁，卻錯過了開口的機會。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> You gained 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>你獲得了5點害羞值。</strong></p>",
   "<LI>You notice her glancing towards the Ladies. So you play a luckshot.": "<LI>你注意到她朝女廁所方向瞥了一眼，於是使用了一次幸運機會。",
   "<LI>Why did you play it? There was a queue there anyway.": "<LI>你為什麼要用這次機會？那裡本來就排著隊呢。",
   "<LI>Or perhaps you wanted to see her fidgeting in the queue. In which case, shame on you!": "<LI>還是說，你就是想看她在隊伍裡局促不安的樣子？如果是這樣——那你可真壞！",
@@ -1095,7 +1097,7 @@ var alternateTranslations = {
   "<LI>You walk back across the foyer to return to your seats.": "<LI>你們穿過大廳走回座位。",
   "<LI>You walk past the Ladies room. There is no longer a queue.": "<LI>你走過女廁門口，隊伍已經散了。",
   "<LI>Diane seems to glance at the Ladies, as if considering; she bites her lip but carries on with you.": "<LI>黛安朝女廁方向瞥了一眼，似乎在考慮什麼，咬了咬嘴唇，還是跟著你繼續走了。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中場時間時其實很想去廁所，但太不好意思開口了。你獲得了1點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</strong></p>": "<p class='notice'><strong>黛安在中場時間時其實很想去廁所，但太不好意思開口了。你獲得了1點害羞值。</strong></p>",
   "<LI>Diane doesn't glance towards the Ladies room": "<LI>黛安沒有朝女廁方向張望。",
   "<LI>YOU: I'm looking forward to the second Act.": "<LI>你：期待第二幕呢。",
   "<LI>You offer her your arm and she links up.": "<LI>你向她伸出手臂，她輓上你的臂彎。",
@@ -1155,7 +1157,7 @@ var alternateTranslations = {
   "<LI>The characters get more and more confused": "<LI>角色們越來越混亂。",
   "<LI>They come and they go": "<LI>他們進進出出。",
   "<LI>Diane seems rather distracted. She is leaning a bit forward, her handbag on her lap.": "<LI>黛安看起來有些心不在焉，身子微微前傾，手提包放在腿上。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane can't sit still. She's dying for a pee during the play. You gained 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安坐立難安。她在演出中途尿急得厲害，幾乎坐不住了。你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane can't sit still. She's dying for a pee during the play. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>黛安坐立難安。她在演出中途尿急得厲害，幾乎坐不住了。你獲得了5點害羞值。</strong></p>",
   "<LI>Diane keeps changing position.": "<LI>黛安不停地換姿勢。",
   "<LI>Diane is laughing along with everyone else": "<LI>黛安跟著所有人一起笑。",
   "<LI>The play comes to an end.": "<LI>演出結束了。",
@@ -1184,12 +1186,12 @@ var alternateTranslations = {
   "<LI>You look for a spot away from the crowd.": "<LI>你找了個離人群稍遠的地方站著。",
   "<LI>YOU: Diane, I think you want to see your friend. Should we go into the foyer or to the stage door?": "<LI>你：黛安，你想去見你朋友，對吧？我們去大廳，還是去後台門口？",
   "<LI>DIANE: Oooh, it's lovely to be asked!": "<LI>黛安：哎呀，你還會問我的意見，真好！",
-  "<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.": "<LI>黛安：<EM>（壓低聲音）</EM> 其實……我現在急得要命，想去廁所。要不我們先在這裡喝一杯？這樣我也能趁機去一下廁所。莫莉會來大廳找我們的。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她親口承認自己「急著去方便」。你失去了5點害羞值。</SPAN></EM></P>",
+  "<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.": "<LI>黛安：<EM>（壓低聲音）</EM>其實……我現在急得要命，想去廁所。要不我們先在這裡喝一杯？這樣我也能趁機去一下廁所。莫莉會來大廳找我們的。",
+  "<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>她親口承認自己「急著去方便」。你失去了5點害羞值。</strong></p>",
   "<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her panties down...": "<LI>你們走上大廳，黛安直奔女廁——你看得出來她真的很急！你腦海裡浮現出她衝進最近那個隔間、兩腿有些打顫地把內褲往下扯的畫面……",
   "<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.": "<LI>你自己也去了趟廁所，然後在大廳等她。過了一兩分鐘，她回來了，臉上帶著笑。",
   "<LI>DIANE: That feels better. I was dying to go.": "<LI>黛安：舒服多了。我剛才真的急死了。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>She admits she was dying for the loo. You lost 3 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她承認自己當時已經憋得坐立難安。你失去了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>She admits she was dying for the loo. You lost 3 shyness points.</strong></p>": "<p class='notice'><strong>她承認自己當時已經憋得坐立難安。你失去了3點害羞值。</strong></p>",
   "<LI>She smiles but doesn't say anything.": "<LI>她微微一笑，什麼都沒說。",
   "<LI>DIANE: I'm quite thirsty, so a drink in the foyer would be nice. I'm sure Molly will meet us there.": "<LI>黛安：我挺渴的，在大廳喝一杯正好。我相信莫莉會在那裡跟我們碰面的。",
   "<LI>DIANE: We could meet Molly at the stage door.": "<LI>黛安：我們可以在後台門等莫莉。",
@@ -1231,7 +1233,7 @@ var alternateTranslations = {
   "<LI>You're both waiting at the stage door.": "<LI>你們兩人在後台門口等候。",
   "<LI>You stand chatting about the play and how much you enjoyed it. But Diane seems a bit restless. She crosses her legs one way, then the other, then walks forward to the stage door, then back again. But she is trying to be quite nonchalant about it.": "<LI>你們站著聊這齣戲，聊得很開心。但黛安看起來有點坐立不安。她把腿夾緊，一會兒換個姿勢，走到後台門口又折回來，來來回回。不過她努力裝作若無其事的樣子。",
   "<LI>She looks like she needs the toilet. She was probably expecting to go to the one in the foyer. It was good thinking to see the emergency exit!": "<LI>看得出她憋著尿。她大概以為可以去大廳的廁所的。當時注意到了緊急出口，真是明智！",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane can't stand still at the stage door. You gained 4 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在後台門口站都站不住。你獲得了4點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane can't stand still at the stage door. You gained 4 shyness points.</strong></p>": "<p class='notice'><strong>黛安在後台門口站都站不住。你獲得了4點害羞值。</strong></p>",
   "<LI>You stand chatting about the play and how much you enjoyed it. Diane is very relaxed, looking forward to seeing her friend.": "<LI>你們站著聊這齣戲，聊得很開心。黛安十分放鬆，期待著見到她的朋友。",
   "<LI>Diane is fidgeting about, shifting from foot to foot. She stands on one leg, then moves around, all the while trying to chat. She can't stand still. Suddenly she stops in mid sentence, and blushes bright red.": "<LI>黛安不停地扭動身子，兩隻腳換來換去，一會兒單腿撐著，一會兒來回走兩步，同時努力維持著對話。她根本站不住。突然，她說到一半停了下來，臉一下子紅了。",
   "<LI>DIANE: I'm sorry. I need to go to the toilet. I thought we'd be going into the foyer and—You'll recognise Molly. Just wait here and I'll be back in a couple of minutes.": "<LI>黛安：對不起。我要去廁所。我以為我們會走大廳出去的——你認得出莫莉。就在這裡等我，我兩分鐘就回來。",
@@ -1240,7 +1242,7 @@ var alternateTranslations = {
   "<LI>MOLLY: That sounds like Diane.": "<LI>莫莉：這太像黛安了。",
   "<LI>The three of you chat and you say how much you enjoyed the play. After two or three minutes Diane returns, grinning ruefully. She and Molly hug and kiss.": "<LI>你們三人聊著，你說了說有多喜歡這齣戲。兩三分鐘後，黛安回來了，苦笑著。她和莫莉擁抱親吻。",
   "<LI>DIANE: Sorry about that. <EM>(You hear her whisper to Molly)</EM> I was desperate!": "<LI>黛安：抱歉啦。<EM>（你聽到她低聲對莫莉說）</EM>我憋死了！",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她因為匆忙衝去廁所而感到不好意思。你獲得了2點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</strong></p>": "<p class='notice'><strong>她因為匆忙衝去廁所而感到不好意思。你獲得了2點害羞值。</strong></p>",
   "<LI>After a couple of minutes Molly emerges from the stage door. She and Diane hug and kiss.": "<LI>過了幾分鐘，莫莉從後台門走了出來。她和黛安擁抱親吻。",
   "<LI>You are outside the stage door chatting with Molly and her friend.": "<LI>你們在後台門外與莫莉和她的朋友聊天。",
   "<LI>You are going to walk to the Pavilion. But Robert asks whether you would all like a quick drink first. There's a nice pub just over the road, but it is getting a trifle crowded.": "<LI>你們打算步行去Pavilion酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，不過現在人有點多了。",
@@ -1344,7 +1346,8 @@ var alternateTranslations = {
   "<LI>Diane says, 'Thank you' but seems unenthusiastic. Then she says she'll get some sugar and she goes back to the burger van.": "<LI>黛安說了聲「謝謝」，但看起來不太熱情。隨後她說要去拿些糖，便轉身走回漢堡攤。",
   "<LI>MOLLY: Funny, I didn't think she took sugar.": "<LI>莫莉：奇怪，我記得她不加糖的。",
   "<LI>You see Diane whisper something to the woman behind the bar. The woman shakes her head. Diane returns to you, forcing a smile.": "<LI>你看到黛安湊近攤後的女人，悄悄說了什麼。那女人搖了搖頭。黛安回到你身邊，勉強擠出一個微笑。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了一些害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 5 shyness points.</strong></p>": "<p class='notice'><strong>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了5點害羞值。</strong></p>",
+  "<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 8 shyness points.</strong></p>": "<p class='notice'><strong>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了8點害羞值。</strong></p>",
   "<LI>Diane helps Molly with the order and brings back the coffees for you and herself. 'What a good idea,' she says.": "<LI>黛安幫莫莉一起拿了東西，順便把你和她自己的咖啡也帶了回來。她說：「真是個好主意。」",
   "<LI>You buy nice big coffees for all four of you.": "<LI>你給你們四個人都買了大杯咖啡。",
   "<LI>She seems a bit annoyed with you for buying the coffees.": "<LI>她似乎因為你點了咖啡有點不高興。",
@@ -1386,7 +1389,7 @@ var alternateTranslations = {
   "<LI>You stand up to throw the paper cups into a refuse bin, and while doing so you notice a Portaloo tucked away round the corner.": "<LI>你站起來把紙杯扔進垃圾桶，這時無意間發現轉角處藏著一個移動廁所。",
   "<LI>The woman behind the counter probably doesn't want the public using it, but you see somebody come out of it, so it's obviously available.": "<LI>櫃台後面的女人大概不想讓外人使用它，但你看見有人從裡面走出來，說明其實是可以進去的。",
   "<LI>You can tell that Diane's dying for a pee and you would like to help her by telling her about the Portaloo. But you don't want to embarrass her. So—": "<LI>你看得出來黛安已經尿急難耐，很想告訴她移動廁所的事來幫她解圍。但你又不想讓她難堪。所以——",
-  "<LI>YOU: <EM>(quietly to her)</EM> I'm dying for a pee. There's a Portaloo round the corner. You couldn't keep a lookout for me if I sneak in there, could you? I don't think it's really for public use.": "<LI>你：<EM>（悄悄對她說）</EM> 我急著想上廁所。轉角那邊有個移動廁所。我偷偷溜進去的時候，你能幫我望風嗎？我覺得那好像不是給外人用的。",
+  "<LI>YOU: <EM>(quietly to her)</EM> I'm dying for a pee. There's a Portaloo round the corner. You couldn't keep a lookout for me if I sneak in there, could you? I don't think it's really for public use.": "<LI>你：<EM>（悄悄對她說）</EM>我急著想上廁所。轉角那邊有個移動廁所。我偷偷溜進去的時候，你能幫我望風嗎？我覺得那好像不是給外人用的。",
   "<LI>DIANE: Sure. Actually, I might go as well.": "<LI>黛安：當然——其實，我可能也要去一下。",
   "<LI>She gets up and walks with you towards the Portaloo.": "<LI>她站起來，和你一起朝移動廁所走去。",
   "<LI>DIANE: I'm glad you suggested this. I'm dying to go. Have been ever since we began the walk, really.": "<LI>黛安：幸好你提出來。我都急死了。說實話，從我們開始散步就一直這樣了。",
@@ -1398,28 +1401,28 @@ var alternateTranslations = {
   "<LI>You go in and have your pee. Diane is waiting for you when you return. She grins and takes your arm.": "<LI>你進去解了手。出來時黛安正等著你，她咧嘴一笑，輓住了你的手臂。",
   "<LI>DIANE: Better? Pretty grim in there, isn't it? But you are a hero, finding a girl a loo when she needs one.": "<LI>黛安：舒服多了？裡面挺糟糕的，是吧。不過你真是個英雄，女生需要廁所的時候你就能幫她找到一個。",
   "<LI>She turns and gives you a kiss, pats your bottom and walks along, smiling at you.": "<LI>她轉過身給了你一個吻，拍了拍你的屁股，笑著往前走去，不時回頭看你。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> You both use the Portaloo. You gained lots of intimacy points but lost 10 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>你們都使用了移動廁所。你獲得了不少親密度，但失去了10點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>You both use the Portaloo. You lost 10 shyness points.</strong></p>": "<p class='notice'><strong>你們都使用了移動廁所。你失去了10點害羞值。</strong></p>",
   "<LI>YOU: D'you mind if I go first?": "<LI>你：你介意讓我先進去嗎？",
   "<LI>DIANE: Go ahead. Don't be long.": "<LI>黛安：去吧，別太久。",
   "<LI>You go into the Portaloo and shut the door. You have a pee and she may well be crossing her legs outside, but you can't watch. After a minute you emerge.": "<LI>你走進移動廁所，把門關上。你解了手，外面的她說不定正在夾著雙腿等你，但你沒法看見。一分鐘後你走了出來。",
   "<LI>DIANE: Better? My turn. I'll meet you back with the others.": "<LI>黛安：舒服了？輪到我了。我去和其他人會合等你們。",
   "<LI>She disappears into the Portaloo. You make your way back to the others and wait for Diane to return.": "<LI>她進了移動廁所。你回到眾人那邊，等黛安回來。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> You both use the Portaloo. Because you went first, you lost a few intimacy points and 10 shyness points as well.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你們都使用了移動廁所。因為你先進去，你失去了一些親密度，同時也失去了10點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>You both use the Portaloo. Because you went first, you lost 10 shyness points.</strong></p>": "<p class='notice'><strong>你們都使用了移動廁所。因為你先進去，你失去了10點害羞值。</strong></p>",
   "<LI>YOU: Diane, if you want the loo there's a Portaloo just round the corner.": "<LI>你：黛安，如果你想上廁所，轉角那裡就有個移動廁所。",
   "<LI>She blushes. She's been trying not to fidget and didn't want anyone to know she was dying for the loo.": "<LI>她臉紅了。她一直在努力克制自己不扭來扭去，不想讓任何人知道她尿急得坐立難安。",
   "<LI>You've really embarrassed her.": "<LI>你真的讓她很難堪。",
   "<LI>And so, against her better judgement, she says—": "<LI>於是，她違背了自己的心意，說道——",
   "<LI>DIANE: I'm OK, thanks. I never like those places anyway.": "<LI>黛安：我沒事，謝謝。反正我從來不喜歡那種地方。",
   "<LI>And she tries to stop fidgeting.": "<LI>她努力讓自己別再扭來扭去。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> She's offered the chance to use a Portaloo but is too embarrassed to admit her need. You gained 5 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她明明有機會用移動廁所，卻因為太不好意思而不肯承認自己需要去。你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>She's offered the chance to use a Portaloo but is too embarrassed to admit her need. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>她明明有機會用移動廁所，卻因為太不好意思而不肯承認自己需要去。你獲得了5點害羞值。</strong></p>",
   "<LI>A few minutes later you all stand up to move on.": "<LI>幾分鐘後，你們都站起來準備繼續往前走。",
   "<LI>Diane seems to glance towards the Portaloo but says nothing. She must be regretting saying she didn't need to go.": "<LI>黛安似乎朝移動廁所那邊瞥了一眼，卻什麼都沒說。她一定在後悔剛才說自己不需要去。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>She can't summon up the courage to tell you she really does need the Portaloo. You gained 5 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她鼓不起勇氣告訴你她真的需要那個移動廁所。你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>She can't summon up the courage to tell you she really does need the Portaloo. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>她鼓不起勇氣告訴你她真的需要那個移動廁所。你獲得了5點害羞值。</strong></p>",
   "<LI>Diane sidles up to Molly and whispers something. Molly nods.": "<LI>黛安悄悄湊到莫莉身邊，小聲說了些什麼。莫莉點了點頭。",
   "<LI>MOLLY: We girls are just going to the loo. We'll catch you up.": "<LI>莫莉：我們女生去一下廁所。你們先走，我們跟上來。",
   "<LI>And they both head over to the Portaloo. Being gentlemen, you dawdle and wait for them just outside the cafe. A few minutes later they return, giggling.": "<LI>她們兩人朝移動廁所走去。你們很有紳士風度地在咖啡館外面慢慢等她們。幾分鐘後，她們回來了，咯咯笑個不停。",
   "<LI>MOLLY: Eee, that was gross!": "<LI>莫莉：呀，那裡面真是太惡心了！",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>But then she plucks up the courage to go, so those shyness points are gone.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>但她最終還是鼓起勇氣去了，所以你失去了相應的害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>But then she plucks up the courage to go, so those shyness points are gone.</strong></p>": "<p class='notice'><strong>但她最終還是鼓起勇氣去了，所以你失去了相應的害羞值。</strong></p>",
   "<LI>YOU: If anyone wants the loo, there's a Portaloo round the corner.": "<LI>你：如果有人想上廁所，轉角那裡有個移動廁所。",
   "<LI>Diane looks across at Molly. Molly nods.": "<LI>黛安看了看莫莉。莫莉點了點頭。",
   "<LI>MOLLY: We girls might just take advantage of it. We'll catch you up.": "<LI>莫莉：我們女生也許正好去用一下。你們先走，我們跟上來。",
@@ -1439,7 +1442,7 @@ var alternateTranslations = {
   "<LI>You tell him you hardly know her, that it is the first time you have gone out with her, and that you met her by chance at a bus stop.": "<LI>你告訴他你們其實不太熟，這是第一次約會出門，當初是在公車站偶然認識的。",
   "<LI>ROBERT: By chance? At a bus stop? Sounds a lucky meeting.": "<LI>羅伯特：偶然？在公車站？聽起來挺有緣的。",
   "<LI>You tell him the story, of how she had needed a pee, had gone into the car park for one, and by doing so had missed her bus. He chuckles, and remarks that she must have been desperate. You admit you had seen her fidgeting about at the bus stop.": "<LI>你把經過講給他聽——她當時尿急，跑到停車場撒了泡尿，結果錯過了公車。他低笑起來，感嘆說她當時一定憋得夠嗆。你承認你其實早就注意到她在公車站不停扭動身子了。",
-  "<LI>ROBERT: <EM>(almost under his breath)</EM> I think she wants to go now, doesn't she?": "<LI>羅伯特：<EM>（幾乎是在喃喃自語）</EM> 我覺得她現在又想去了，是吧。",
+  "<LI>ROBERT: <EM>(almost under his breath)</EM> I think she wants to go now, doesn't she?": "<LI>羅伯特：<EM>（幾乎是在喃喃自語）</EM>我覺得她現在又想去了，是吧。",
   "<LI>You nod. You walk on in silence, as if both thinking the same thoughts.": "<LI>你點點頭。兩人默默地繼續走著，彷彿心裡想的都是同一件事。",
   "<LI>ROBERT: What a great way to meet a girl.": "<LI>羅伯特：認識女生，這招可真不錯。",
   "<LI>You are walking with Diane. Bruno and Molly are walking a little in front of you.": "<LI>你和黛安一起走著。布魯諾和莫莉走在你們前面不遠處。",
@@ -1461,8 +1464,8 @@ var alternateTranslations = {
   "<LI>DIANE: Actually, I'm dying to go to the loo.<EM>(She gives you a rueful grin.)</EM>": "<LI>黛安：其實……我尿急得厲害。<EM>（她無奈地咧嘴一笑。）</EM>",
   "<LI>YOU: We should be at the Pavilion in a few minutes.": "<LI>你：再走幾分鐘就到涼亭了。",
   "<LI>DIANE: Yes. I can wait.": "<LI>黛安：嗯，我能撐住的。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admits she's dying for a pee. You lost 2 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安承認自己已經尿急難耐。你失去了2點害羞值。</SPAN></EM></P>",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>It looks as if she needs the toilet, but doesn't like to say. You gained 2 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>看起來她很想去廁所，卻不好意思開口說。你獲得了2點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane admits she's dying for a pee. You lost 2 shyness points.</strong></p>": "<p class='notice'><strong>黛安承認自己已經尿急難耐。你失去了2點害羞值。</strong></p>",
+  "<p class='notice'><strong>It looks as if she needs the toilet, but doesn't like to say. You gained 2 shyness points.</strong></p>": "<p class='notice'><strong>看起來她很想去廁所，卻不好意思開口說。你獲得了2點害羞值。</strong></p>",
   "<LI>You are walking along with Diane, hand in hand.": "<LI>你和黛安手牽著手走著。",
   "<LI>But the conversation has faltered.": "<LI>但兩人的對話陷入了停頓。",
   "<LI>You carry on walking.": "<LI>你們繼續向前走。",
@@ -1503,7 +1506,7 @@ var alternateTranslations = {
   "<LI>DIANE: Come on! I'm dying to spend a penny!": "<LI>黛安：快走啊！我急著去方便，快憋瘋了！",
   "<LI>DIANE: Come on!": "<LI>黛安：快點！",
   "<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet.": "<LI>黛安似乎非常急著想趕到Pavilion酒吧。她邁著急促的小碎步，咬著嘴唇，像是急著要去廁所。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Diane is in a real hurry as you walk. You gained 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>一路上黛安走得很急。你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>一路上黛安走得很急。你獲得了5點害羞值。</strong></p>",
   "<LI>You're wondering whether you could stop and kiss.": "<LI>你在想是否可以停下來親吻一下。",
   "<LI>You pass some steps up from the towpath.": "<LI>你們經過了幾級從纖道通往上方的台階。",
   "<LI>Molly and Bruno, who are walking ahead of you, have stopped suddenly. They both look a little bit sheepish.": "<LI>走在你們前面的莫莉和布魯諾突然停下來了。兩人看來都有些不好意思。",
@@ -1546,7 +1549,7 @@ var alternateTranslations = {
   "<LI>She walks back to you with a sheepish grin.": "<LI>她帶著一臉不好意思的笑走回到你身邊。",
   "<LI>DIANE: I've been dying to go. Then seeing Bruno going—": "<LI>黛安：我早就憋死了。然後看到布魯諾在那裡——",
   "<LI>She puts an arm round your waist. You turn towards her, put your arms round her and kiss her. She responds, nervously at first, but then warmly. You kiss again. You slip a hand down to her bottom, pulling her closer to you. She puts her hand on your bottom. Your hand slips further down, to her upper thigh, and moving it round to the side you think you discover the ridge of a suspender—but you can't be sure. She pulls away with a smile.": "<LI>她用一隻手臂摟著你的腰。你轉向她，雙臂抱住她，吻了上去。她回應著，起初有些緊張，隨後漸漸熱烈起來。你又親了一次。你的手悄悄滑向她的臀部，把她往懷裡拉近。她的手也落在你的臀部。你的手接著往下滑，滑到她大腿上部，轉向側面時，你隱約摸到了一條疑似吊襪帶的突起——但不能確定。她帶著微笑輕輕推開了你。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes for a pee in the bushes, but you miss it. You lost 8 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安跑去樹叢後面撒尿，但你沒趕上看。你失去了8點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane goes for a pee in the bushes, but you miss it. You lost 8 shyness points.</strong></p>": "<p class='notice'><strong>黛安跑去樹叢後面撒尿，但你沒趕上看。你失去了8點害羞值。</strong></p>",
   "<LI>You are walking on. You wonder how desperate she was. Finally—": "<LI>你們繼續往前走。你不禁想她剛才到底憋得有多厲害。終於——",
   "<LI>YOU: Better now?": "<LI>你：現在好多了？",
   "DIANE: Lots better!": "黛安：好多了！",
@@ -1576,7 +1579,7 @@ var alternateTranslations = {
   "<LI>Then you turn to the others and call out to them. <B>We'll catch you up in a minute.</B> The others look back and wave acknowledgement.": "<LI>然後你轉向另外兩人，朝他們喊道：<B>你們先走，我們一會兒就跟上。</B>另外兩人回頭看了看，揮手示意知道了。",
   "<LI>YOU: See, they just think we're going for a cuddle. Just hold on a minute.": "<LI>你：你看，他們只當我們要膩歪一下。再忍一分鐘就好。",
   "<LI>You put both arms round her and watch as the others disappear down the path. A couple of late night dog walkers go past in the other direction. You can feel Diane shifting urgently up and down.": "<LI>你用雙臂環住她，目送另外兩人消失在小路盡頭。這時一對遛狗的夜歸人從反方向走了過來。你能感覺到黛安在你懷裡急得微微扭動。",
-  "<LI>DIANE: <EM>(almost under her breath)</EM> Hurry up, hurry up. I'm bursting.": "<LI>黛安：<EM>（聲音幾乎壓成了耳語）</EM> 快點快點……我快憋不住了。",
+  "<LI>DIANE: <EM>(almost under her breath)</EM> Hurry up, hurry up! I'm bursting.": "<LI>黛安：<EM>（聲音幾乎壓成了耳語）</EM>快點快點！我快憋不住了。",
   "<LI>Finally the dog walkers are out of sight. Diane extracts herself from your arms and hurries to the side of the path where there is long grass and some low bushes. She is already hitching her skirt up, perhaps to avoid it getting dirty or wet with the undergrowth.": "<LI>遛狗的人終於走遠，消失在視線裡。黛安從你懷中掙脫出來，急忙跑向路邊一片長草和矮樹叢。她已經開始往上撩裙子——也許是為了不讓裙子被草叢弄髒或弄濕。",
   "<LI>The bushes are only about 4 feet high and not very thick, but she goes behind them. Her head and shoulders are all that are visible but from her movements you can tell she is hitching up her skirt. Then her head drops from view as she squats down.": "<LI>樹叢只有大約四英尺高，也不算太茂密，但她還是鑽到後面撒尿去了。你只能看到她的頭和肩膀，不過從她的動作能看出她在往上撩裙子。然後她的頭也沉了下去，消失在視線裡——她蹲下來了。",
   "<LI>Through the thinness of the bushes you can just make out some of the shape of her squatting form. You just wish you dared go nearer.": "<LI>透過稀疏的枝葉，你勉強能辨出她蹲著的輪廓。你真希望自己敢走近一點。",
@@ -1585,7 +1588,7 @@ var alternateTranslations = {
   "<LI>Finally she emerges from the bushes, still adjusting her clothes. You look away, as if you had been doing so all along. She comes up to you and puts both arms round you.": "<LI>她終於從樹叢後走出來，還在整理著衣服。你把目光移開，裝作一直在看別處。她走到你面前，雙臂摟上了你。",
   "<LI>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. After a minute or so she stands up, pulls up a pair of blue panties and then her tights; she stands there for a few moments adjusting her skirt and slip.": "<LI>透過稀疏的枝葉，你能看到她蹲在那裡，襯裙的白色隱約可見。也許正因為看得這麼少，你才覺得這一切無比撩人。大約一分鐘後她站起來，拉上藍色內褲，再拉上褲襪；她在那裡站了片刻，整理著裙子和襯裙。",
   "<LI>Finally she emerges from the bushes, still adjusting her clothes. You look away, as if you had been doing so all along. She comes up to you and gives you a rueful grin.": "<LI>她終於從樹叢後走出來，還在整理著衣服。你把目光移開，裝作一直在看別處。她走到你面前，苦笑著對你咧了咧嘴。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes behind the bushes. You lost 6 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安去樹叢後面撒尿了。你失去了6點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane goes behind the bushes. You lost 6 shyness points.</strong></p>": "<p class='notice'><strong>黛安去樹叢後面撒尿了。你失去了6點害羞值。</strong></p>",
   "You walk on together. Diane is really grateful to you.": "你們一起繼續往前走。黛安非常感激你。",
   "<LI>YOU: Actually, you're not the only one. I'm dying to go as well.": "<LI>你：其實你不是個人這樣——我也快憋不住了。",
   "<LI>DIANE: Really? Well, I suppose I'm not the only one making a fool of myself, then. Is there anywhere we can go?": "<LI>黛安：真的嗎？那好吧，看來出醜的不止我一個。附近有沒地方能讓我們上廁所？",
@@ -1602,21 +1605,21 @@ var alternateTranslations = {
   "<LI>As the stream dies away you creep quietly down the next few steps. You really did need a pee yourself, so you do that, and then return up the steps.": "<LI>等尿流慢慢停歇，你悄悄走下接下來的幾步台階。你自己也確實憋得難受，於是趁機也撒了泡尿，然後原路返回。",
   "<LI>You notice the large puddle in the corner of the landing as you pass, and then rejoin Diane, who is waiting at the top of the steps. She has a tissue out and seems to be wiping her legs, though she stands up as soon as she sees you.": "<LI>經過平台時，你注意到角落裡一大攤水跡，然後去找黛安——她在台階頂端等著你。她手裡拿著紙巾，似乎在擦腿，不過一見到你她就立刻站直了。",
   "<LI>She is ever so embarrassed. 'I'm sorry,' she says, 'I couldn't wait.'": "<LI>她窘迫極了。她說：「對不起，我真的沒忍住。」",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 2 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安對這次不得不在外面撒尿感到非常不好意思，不過經此一事，她以後不會再那麼放不開了。你失去了2點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 2 shyness points.</strong></p>": "<p class='notice'><strong>黛安對這次不得不在外面撒尿感到非常不好意思，不過經此一事，她以後不會再那麼放不開了。你失去了2點害羞值。</strong></p>",
   "<LI>Diane is dashing over to the far corner of the concrete landing. She seems to be hitching her dress up at the front. When gets to the corner she stops, slightly bent forward and almost immediately you hear a faint splashing sound.": "<LI>黛安快步衝向混凝土樓梯平台的遠角，似乎正把裙子前擺往上撩。她走到角落後停了下來，微微前傾，隨即你聽見了一陣細微的水聲。",
   "<LI>She is already peeing. She must be holding her panties aside—she really must be wearing stockings—because she is still standing there, legs apart. From where you are standing, down several steps and with your head just level with the landing floor, you can actually see the steam as her pee splashes onto the ground. After the first urgent release she settles into a steady stream and she adjusts her position slightly.": "<LI>她已經開始尿了。她肯定是把內褲撥到了一側——她果然穿的是長筒絲襪——因為她依然站在那裡，兩腿分開。從你所在的位置，往下幾級台階，頭部剛好與平台地面齊平，你竟能看到她的尿液濺到地面時升起的熱氣。最開始那陣急促的尿流過去後，她漸漸穩住，略微調整了一下站姿。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 3 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> 黛安對自己這次不得不在外面撒尿感到非常不好意思，但她以後不會再那麼羞澀了。你失去了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 3 shyness points.</strong></p>": "<p class='notice'><strong>黛安對自己這次不得不在外面撒尿感到非常不好意思，但她以後不會再那麼羞澀了。你失去了3點害羞值。</strong></p>",
   "<LI>You walk on together, hand in hand.": "<LI>你們手牽著手，一起繼續往前走。",
   "<LI>DIANE: God, it's a long time since I've been that desperate. I was really frightened I might wet myself.": "<LI>黛安：天哪，我好久好久沒有憋成那樣了。我真的很怕自己會尿褲子。",
   "<LI>You turn, put an arm round her and kiss her. You walk on, arms round each other.": "<LI>你轉過身，一隻手摟住她，吻了她一下。然後你們相互摟著繼續往前走。",
   "<LI>YOU: Have you ever—ever done that? Wet yourself?": "<LI>你：你有沒有……真的尿過褲子？",
-  "<LI>DIANE: <EM>(after a pause)</EM> Not since I was young. A friend of mine wet herself on a date once. Wouldn't that be awful? Anyway, let's find out where the others are.": "<LI>黛安：<EM>（停頓片刻後）</EM> 小時候以後就沒有了。我有個朋友約會時尿了褲子。那不是太糟糕了嗎？不管怎樣，我們去找找其他人在哪裡吧。",
+  "<LI>DIANE: <EM>(after a pause)</EM> Not since I was young. A friend of mine wet herself on a date once. Wouldn't that be awful? Anyway, let's find out where the others are.": "<LI>黛安：<EM>（停頓片刻後）</EM>小時候以後就沒有了。我有個朋友約會時尿了褲子。那不是太糟糕了嗎？不管怎樣，我們去找找其他人在哪裡吧。",
   "<LI>It looks as if that conversation will have to wait.": "<LI>看來那話題只能先擱一擱了。",
-  "<LI>DIANE: <EM>(considering)</EM> When I was eighteen, my first year at college, in Freshers week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.": "<LI>黛安：<EM>（回想著）</EM> 我十八歲那年，大學第一年，新生周，大家都出去喝酒。我那時不太能喝，但我們喝了不少，還喝了啤酒。回家路上我憋得要命，完全不知道該怎麼辦。",
+  "<LI>DIANE: <EM>(considering)</EM> When I was eighteen, my first year at college, in Freshers week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.": "<LI>黛安：<EM>（回想著）</EM>我十八歲那年，大學第一年，新生周，大家都出去喝酒。我那時不太能喝，但我們喝了不少，還喝了啤酒。回家路上我憋得要命，完全不知道該怎麼辦。",
   "<LI>YOU: What happened?": "<LI>你：後來怎麼了？",
   "<LI>DIANE: We just about got back to the digs, but then my mate was fumbling for the keys and I was hopping about in the lobby. I just couldn't wait any more. It was like Niagara Falls, in my jeans too. Completely wet myself. Mind you, everyone else was drunk and they just thought it a huge joke. But I was mortified—didn't know how to face anyone in the morning, but nobody ever mentioned it.": "<LI>黛安：我們好不容易才回到了宿舍，但室友一直在摸索鑰匙，我在門廊裡急得直跺腳。實在憋不住了。就像尼亞加拉瀑布——全尿在牛仔褲裡了。徹徹底底尿濕了自己。不過其他人都喝醉了，只覺得這是個天大的笑話。但我羞得要死——第二天早上根本不知道怎麼面對任何人，好在誰也沒再提起這件事。",
   "<LI>YOU: Maybe they were so drunk they'd forgotten it.": "<LI>你：也許他們都喝得太醉，完全忘了。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane confesses to a time when she wet herself. You lost 10 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安坦白了她曾經尿濕自己的往事。你失去了10點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane confesses to a time when she wet herself. You lost 10 shyness points.</strong></p>": "<p class='notice'><strong>黛安坦白了她曾經尿濕自己的往事。你失去了10點害羞值。</strong></p>",
   "<LI>You both need a pee.": "<LI>你們兩個都得去方便一下了。",
   "<LI>DIANE: We can just pop behind these bushes, can't we? Is there anyone coming?": "<LI>黛安：我們可以去那些樹叢後面方便一下，對吧？有沒人過來？",
   "<LI>YOU: Hang on one second. There's a cyclist coming along.": "<LI>你：等一下。有個騎腳踏車的人過來了。",
@@ -1626,7 +1629,7 @@ var alternateTranslations = {
   "<LI>You glimpse Diane hitching her skirt up as she goes behind the other bush. The bushes are only about 4 feet high and not very thick. Her head and shoulders are still visible but from her movements you can tell she is looking for a place to go. Then her head drops from view as she squats down.": "<LI>你瞥見黛安撩起裙子走到另一棵灌木後面。灌木只有大約四英尺高，枝葉並不茂密。她的頭和肩膀依然清晰可見，但從她的動作可以看出她正在找一個合適的地方。隨後，她的頭消失在視線之下，蹲了下去。",
   "<LI>Through the thinness of the bushes you can just make out some of the shape of her squatting form. But when you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Very soon she is giving her bottom a little shake and you stand back. You hear the rustling of her clothing as she pulls up her white panties and straightens her dress.": "<LI>透過稀疏的枝葉，你隱約能看出她蹲著的輪廓。當你自己尿完、拉上拉鍊時，悄悄往右挪了幾步，便能看見她光裸的臀部，蹲得極低，幾乎快碰到腳下的長草。不一會兒，她的小屁股輕輕抖了抖，你隨即退後幾步。你聽見她整理衣物的窸窣聲，接著她拉起白色內褲，理好裙子。",
   "<LI>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. When you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Her skirt and petticoat are hitched up around her waist. After a minute or so she stands up and again there is a flash of pink as she pulls up her panties; she stands there for a few moments adjusting her skirt and slip.": "<LI>透過稀疏的枝葉，你能看見她蹲在那裡時襯裙的白色。儘管（也或許正是因為）能看見的如此之少，你卻覺得一切都無比撩人。當你自己尿完、拉上拉鍊時，悄悄往右挪了幾步，便能看見她光裸的臀部，蹲得極低，幾乎快碰到腳邊的長草。她的裙子和襯裙都撩至腰間。大約過了一分鐘，她站起身，粉色內褲在拉起時一閃而過；她在那裡站了片刻，整理著裙子和襯裙。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>You both go behind the bushes. You lost 8 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>兩人兩人都去了樹叢後面撒尿。你失去了8點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>You both go behind the bushes. You lost 8 shyness points.</strong></p>": "<p class='notice'><strong>兩人兩人都去了樹叢後面撒尿。你失去了8點害羞值。</strong></p>",
   "<LI>YOU: Actually, I think there are some toilets just ahead. Just round the next corner.": "<LI>你：其實，我記得前面就有廁所。繞過下個彎就到了。",
   "<LI>DIANE: God, I hope they're open.": "<LI>黛安：天哪，希望還沒關門。",
   "<H2><STRONG><SPAN style='background: #ffff00; color: #c0c0c0'>RIVERSIDE PUBLIC TOILETS</SPAN></STRONG></H2>": "<H2><STRONG><SPAN style='background: #ffff00; color: #c0c0c0'>河畔公共廁所</SPAN></STRONG></H2>",
@@ -1713,7 +1716,7 @@ var alternateTranslations = {
   "<LI>She is somewhat flushed but has a big rueful grin on her face. She seems to have no inhibitions or qualms about you having watched. She comes up to you and puts her arms around you, resting her head on your shoulder. It is not so much a sexy gesture as a comradely one.": "<LI>她臉頰有些泛紅，但臉上掛著一個帶著幾分無奈的大笑。她看起來並不介意你剛才在旁邊看著，也沒有多少羞澀。她走過來，雙臂環住你，把頭靠在你的肩上。這與其說是一個情慾的姿態，不如說更像是同伴間的一種親近。",
   "<LI>DIANE: Would you be an angel and wait outside while I tidy up?": "<LI>黛安：你能不能乖乖在外面等我一下，讓我整理整理？",
   "<LI>A minute later she joins you and the caretaker goes to lock up. Diane takes your arm and you move to join the others.": "<LI>一分鐘後她走出來與你匯合，管理員進去鎖門。黛安輓起你的手臂，你們一同走向其他人。",
-  "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane uses the urinal. You lost 20 shyness points.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安使用了小便斗。你失去了20點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane uses the urinal. You lost 20 shyness points.</strong></p>": "<p class='notice'><strong>黛安使用了小便斗。你失去了20點害羞值。</strong></p>",
   "<LI>To your surprise the toilet is open. She could have gone here after all.": "<LI>令你驚訝的是，廁所是開著的。她原來完全可以在這裡上廁所的。",
   "<LI>To your surprise the toilet is still open. It looks pretty seedy, and probably isn't very wonderful inside, but needs must.": "<LI>令你驚訝的是，廁所居然還開著。看上去破敗不堪，裡面大概也好不到哪裡去，但有總比沒有強。",
   "But they shut the toilets early on Saturdays and, just as you arrive, you see the caretaker emerge from the Ladies and lock the door.": "但這裡的廁所週六提前關門，就在你們剛到的那一刻，你看見管理員從女廁裡走出來，把門鎖上了。",
@@ -1721,7 +1724,7 @@ var alternateTranslations = {
   "<LI>DIANE: No, I'm OK, thanks.": "<LI>黛安：不用了，我沒事，謝謝。",
   "<LI>DIANE: Yes, I'd like to tidy up a bit. I won't be a minute.": "<LI>黛安：好，我想進去整理一下，沒多久就好。",
   "<LI>She goes into the Ladies. She probably thought it sensible to go now and avoid any embarrassment later.": "<LI>她走進了女廁。她大概覺得現在去是明智之舉，省得之後鬧出什麼尷尬。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But it actually increases her shyness. You gained 5 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但這實際上讓她更害羞了。你獲得了5點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>But it actually increases her shyness. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>但這實際上讓她更害羞了。你獲得了5點害羞值。</strong></p>",
   "<LI>You go into the Gents.": "<LI>你走進了男廁。",
   "<LI>DIANE: Doesn't look very inviting, does it? I think I'll wait till the Pavilion.": "<LI>黛安：看起來不怎麼誘人，是吧。我還是等到涼亭那邊再去好了。",
   "<LI>DIANE: Yes, I think I'll pop in there, if that's okay. You going to go as well?": "<LI>黛安：好，我想進去一下，如果可以的話。你也要去嗎？",
@@ -1836,7 +1839,7 @@ var alternateTranslations = {
   "<LI>Perhaps you'd like to buy another bottle of water in case you get thirsty on the way home?": "<LI>也許你想再買一瓶水，以備回家路上口渴時用？",
   "<LI>It's almost 11 o'clock. The barman calls, 'Last orders, please.'": "<LI>快十一點了。酒保喊道：「最後點單了，請抓緊！」",
   "<LI>Diane seems to be shifting about a bit.": "<LI>黛安似乎有些坐立不安，動來動去的。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane needs the loo at The Pavilion. You gained 3 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在Pavilion酒吧裡尿急了。你獲得了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane needs the loo at The Pavilion. You gained 3 shyness points.</strong></p>": "<p class='notice'><strong>黛安在Pavilion酒吧裡尿急了。你獲得了3點害羞值。</strong></p>",
   "<LI>It's a nice relaxed atmosphere.": "<LI>氣氛輕鬆愉快。",
   "<LI>You've just time for a final drink before catching the bus. What will it be?": "<LI>趕公車之前還有時間來最後一杯。喝什麼好呢？",
   "<LI>BRUNO: There are some interesting beers here. They've got a Riddles Ambernectar. I'd quite like to try it. Molly?": "<LI>布魯諾：這裡有些很有意思的啤酒。他們有里德爾斯琥珀花蜜啤酒，我很想嚐嚐。莫莉，你呢？",
@@ -1883,7 +1886,7 @@ var alternateTranslations = {
   "<LI>Diane really does need a pee. She keeps walking about, and is holding her skirt as if anxious to hitch it up at the first opportunity. Molly is laughing at her.": "<LI>黛安真的急著想尿。她不停地來回走動，雙手抓著裙子，一副隨時準備撩起裙擺的模樣。莫莉在一旁偷笑。",
   "<LI>Finally the cyclist goes out of sight and Molly, who is keeping a lookout, gives a thumbs-up. Diane straight away hitches her skirt up at the rear, fumbles for a second beneath her petticoat and pulls her light blue panties and tights down in one movement. At least you now know she isn't wearing stockings!": "<LI>騎腳踏車的人終於消失在視野之外，負責望風的莫莉豎起大拇指。黛安立刻把裙子後擺撩起，在襯裙下面摸索了一秒，然後一口氣把淺藍色內褲和褲襪一起扯了下來。至少你現在知道她沒穿長筒襪了！",
   "<LI>She is straight into a slightly nervous squat, looks anxiously left and right, and then looks down at the ground as if concentrating. Her slip isn't as fully hitched up as her skirt so it does give her some cover and you can't see any stream. But within a few seconds a puddle is forming by her feet, and this runs across the towpath. She really needed to go!": "<LI>她馬上蹲下身子，有些緊張地左右張望，然後低下頭盯著地面，像是在集中精神。她的襯裙沒有裙擺撩得那麼高，多少遮住了一些，你看不見尿流。但沒幾秒鐘，她腳邊就出現了一攤水漬，順著纖道流了過去。她是真的憋急了！",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes for a pee, but with Molly. You gained 3 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安去上廁所了，但莫莉也在場。你獲得了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>Diane goes for a pee, but with Molly. You gained 3 shyness points.</strong></p>": "<p class='notice'><strong>黛安去上廁所了，但莫莉也在場。你獲得了3點害羞值。</strong></p>",
   "<LI>Eventually she is finished. She doesn't wipe, but is pulling her panties up even as she stands up, and then tugs up her tights. Her skirt falls back into place but she still has her hands underneath adjusting her tights. Then, once again looking left and right, she hitches her skirt up almost to her waist and adjusts her slip, finally letting that and the skirt fall back into place.": "<LI>終於，她尿完了。她沒有擦拭，站起身的同時就把內褲往上扯，然後拉好褲襪。裙子落回原位，但她還是把手伸進裙子裡繼續整理褲襪。之後，她再次左右張望，把裙子撩到幾乎腰間，重新整理襯裙，最後才讓襯裙和裙子一起落回原處。",
   "<LI>She moves forward a few feet, away from the large, glistening puddle she has left. She is tidying herself up.": "<LI>她向前走了幾步，離開了身後那攤閃亮的大水漬。她在整理自己的儀容。",
   "<LI>You are about to move away, but Robert lightly puts a hand on your arm. 'If one goes, the other always goes,' he whispers. Molly is unbuckling her belt.": "<LI>你正打算離開，羅伯特輕輕把手搭在你臂上。「有一個就會有第二個，」他低聲耳語道。莫莉正在解皮帶扣。",
@@ -1924,10 +1927,10 @@ var alternateTranslations = {
   "<LI>YOU: Sure. No problem. The taxi rank's just over there.": "<LI>你：當然，沒問題。計程車站就在那裡。",
   "<LI>You walk across towards the taxi rank.": "<LI>你們向計程車站走去。",
   "<LI>Suddenly Diane stops in her tracks. She is blushing and grimacing.": "<LI>冷不防，黛安停住了腳步。她滿臉通紅，眉頭緊皺。",
-  "<LI>DIANE: Look, I'm sorry, but before we go anywhere I just <STRONG>have</STRONG> to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?": "<LI>黛安：你聽我說，真的很抱歉，但在去任何地方之前，我<STRONG>一定</STRONG>得先找個廁所。我不想在回家的路上……出什麼狀況。附近有我能去的地方嗎？",
+  "<LI>DIANE: Look, I'm sorry, but before we go anywhere I just have to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?": "<LI>黛安：你聽我說，真的很抱歉，但在去任何地方之前，我一定得先找個廁所。我不想在回家的路上……出什麼狀況。附近有我能去的地方嗎？",
   "<LI>Diane is absolutely dying for a pee. Is there anywhere she can go? What will it be?": "<LI>黛安尿急難耐。附近有沒她能去的地方？該怎麼辦？",
   "<LI>There are some toilets across the car park—and they'll probably be closed (but no need to tell her that!)": "<LI>停車場對面有幾間廁所——不過大概已經關門了（但沒必要告訴她這個！）",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She admits she's desperate for a pee. You lost several shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她承認自己尿急難耐。你失去了一些害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>She admits she's desperate for a pee. You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>她承認自己尿急難耐。你失去了5點害羞值。</strong></p>",
   "<LI>You join the taxi queue.": "<LI>你加入了計程車等候隊伍。",
   "<LI>There's quite a queue for the taxis, with Saturday night revellers on their way home, or heading for the clubs. You join the queue.": "<LI>計程車隊伍排得相當長，週六夜裡的夜貓子們有的要回家，有的要去夜店。你也排進了隊伍。",
   "<LI>One or two of the girls are fidgeting about, clearly anxious to be home for at least one good reason. Just ahead of you is a petite girl in a mini skirt who just can't stand still.": "<LI>隊伍裡有一兩個女生坐立不安，顯然至少有一個迫切的理由想早點到家。就在你前面不遠處，有個穿迷你裙的嬌小女生怎麼都站不住。",
@@ -1944,9 +1947,9 @@ var alternateTranslations = {
   "<LI>DIANE: I suppose so.": "<LI>黛安：大概是吧。",
   "<LI>YOU: Are you desperate?": "<LI>你：你很尿急嗎？",
   "<LI>DIANE: No, I'll just have to cross my legs.": "<LI>黛安：還好，我只好夾緊腿撐著了。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> At least she can joke about it. You lost 3 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 至少她還能開玩笑。你失去了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>At least she can joke about it. You lost 3 shyness points.</strong></p>": "<p class='notice'><strong>至少她還能開玩笑。你失去了3點害羞值。</strong></p>",
   "<LI>DIANE: No, I'm fine.": "<LI>黛安：沒事，我沒問題。",
-  "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She doesn't look fine. You gained 3 shyness points.</SPAN></EM></P>": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她看來明明不太對勁。你獲得了3點害羞值。</SPAN></EM></P>",
+  "<p class='notice'><strong>She doesn't look fine. You gained 3 shyness points.</strong></p>": "<p class='notice'><strong>她看來明明不太對勁。你獲得了3點害羞值。</strong></p>",
   "<LI>You are quite near the front of the queue. The girl in the mini skirt is not at all happy. 'It's all right for you,' she mutters to her boyfriend, 'but one day I'm going to wet my pants, all because of your silly games.'": "<LI>你們已經快排到隊伍前面了。那個穿迷你裙的女生明顯越來越難受。她低聲對男友嘀咕：「你倒是沒事，可總有一天我會尿褲子的，全都是因為你那些蠢把戲。」",
   "<LI>The girl gets into a taxi with her friend. You wonder whether she'll make it home.": "<LI>那個女生和朋友鑽進了一輛計程車。你心想不知道她撐不撐得到家。",
   "<LI>You settle back in the taxi. After your time with Molly and her friend, you are glad to be alone with Diane at last.": "<LI>你在計程車裡靠坐下來。經歷了與莫莉和她朋友的那段時間，終於能和黛安單獨相處，你感到如釋重負。",
@@ -2244,7 +2247,7 @@ var alternateTranslations = {
   "<LI>You clink glasses and drink some wine. You give her a kiss and talk for a little while.": "<LI>你們碰了杯，抿了口酒，你吻了她一下，聊了一小會兒。",
   "<LI>DIANE: I'd better not. I have to go to work in the morning.": "<LI>黛安：我還是算了吧，明天還要上班呢。",
   "<LI>You drink the wine. You start moving back towards the lounge.": "<LI>你把酒喝完，起身往客廳走去。",
-  "<LI>DIANE: <EM>(very quietly)</EM> D'you mind if I use your bathroom? Just at the top of the stairs, you said?": "<LI>黛安：<EM>（壓低聲音）</EM> 可以借用一下你家浴室嗎？你說就在樓梯頂上，對吧？",
+  "<LI>DIANE: <EM>(very quietly)</EM> D'you mind if I use your bathroom? Just at the top of the stairs, you said?": "<LI>黛安：<EM>（壓低聲音）</EM>可以借用一下你家浴室嗎？你說就在樓梯頂上，對吧？",
   "<LI>YOU: Yes. The light-switch is just inside the door.": "<LI>你：對，燈的開關就在門裡面靠邊。",
   "<LI>DIANE: I won't be a minute.": "<LI>黛安：我馬上就好。",
   "<LI>You look at some pictures in the room.": "<LI>你在屋裡看看牆上的畫，打發時間。",
@@ -2252,9 +2255,9 @@ var alternateTranslations = {
   "<LI>DIANE: Oooh, that would be nice. Thanks.": "<LI>黛安：哦，那太好了，謝謝。",
   "<LI>You go over to the table to pour another small mugful. She gets up and follows you across.": "<LI>你來到桌邊又倒了一小杯。她站起身，跟著你走過來。",
   "<LI>She takes the mug and has a sip. Then she puts it down, looks around, and says to you—": "<LI>她接過杯子抿了一口，接著放下，環顧四周，對你說——",
-  "<LI>DIANE: <EM>(very quietly)</EM>I like your brother. But I like you more.": "<LI>黛安：<EM>（輕聲地）</EM> 我喜歡你弟弟。但我更喜歡你。",
+  "<LI>DIANE: <EM>(very quietly)</EM>I like your brother. But I like you more.": "<LI>黛安：<EM>（輕聲地）</EM>我喜歡你弟弟。但我更喜歡你。",
   "<LI>And she puts an arm round you and gives you a kiss.": "<LI>她伸手攬住你，吻了你一下。",
-  "<LI>DIANE: <EM>(very quietly)</EM> Actually, I will just pop to the loo, if you don't mind? Just at the top of the stairs, you said?": "<LI>黛安：<EM>（輕聲地）</EM> 其實，如果你不介意的話，我想去趟廁所。就在樓梯頂上，你說的那個？",
+  "<LI>DIANE: <EM>(very quietly)</EM> Actually, I will just pop to the loo, if you don't mind? Just at the top of the stairs, you said?": "<LI>黛安：<EM>（輕聲地）</EM>其實，如果你不介意的話，我想去趟廁所。就在樓梯頂上，你說的那個？",
   "<LI>DIANE: No thanks. I must be going soon.": "<LI>黛安：不用了，謝謝。我該走了。",
   "<LI>Diane looks at your brother's computer for a while longer.": "<LI>黛安又看了一下你弟弟的電腦。",
   "<LI>But time is getting on and your brother is becoming a bit of a bore.": "<LI>不過時間不早了，你弟弟開始有點讓人煩了。",
@@ -2388,7 +2391,7 @@ var alternateTranslations = {
   "<LI>YOU: Wait a few minutes.": "<LI>你：再等幾分鐘。",
   "<LI>DIANE: What? Delay going to the loo?": "<LI>黛安：什麼？讓我憋著不去廁所？",
   "<LI>YOU: Mm.": "<LI>你：嗯。",
-  "<LI>DIANE: <EM>(in a whisper)</EM> Does it excite you? Me needing a pee?": "<LI>黛安：<EM>（小聲說）</EM> 這讓你興奮嗎？我想上廁所這件事？",
+  "<LI>DIANE: <EM>(in a whisper)</EM> Does it excite you? Me needing a pee?": "<LI>黛安：<EM>（小聲說）</EM>這讓你興奮嗎？我想上廁所這件事？",
   "<LI>You nod. She looks at you for a minute. Then, with a grin—": "<LI>你點點頭。她盯著你看了一會兒，然後咧嘴一笑——",
   "<LI>DIANE: Get me a nice glass of wine and I'll wait.": "<LI>黛安：給我倒杯好酒，我就等。",
   "<LI>You go through to the kitchen.": "<LI>你去了廚房。",
@@ -2426,7 +2429,7 @@ var alternateTranslations = {
   "<LI>YOU: Go on?": "<LI>你：然後呢？",
   "<LI>DIANE: It was pretty bad after a party last week. Three of us had to leave at about midnight and our car broke down.": "<LI>黛安：上周參加完派對之後就挺慘的。我們三個人午夜左右得離開，結果車拋錨了。",
   "<LI>YOU: Yes, you said. You had to wait for your mum to fetch you.": "<LI>你：對，你說過。你得等你媽媽來接你們。",
-  "<LI>DIANE: <EM>(considering)</EM> If I tell you, will you let me go to the loo?": "<LI>黛安：<EM>（考慮了一下）</EM> 如果我說了，你能讓我去廁所嗎？",
+  "<LI>DIANE: <EM>(considering)</EM> If I tell you, will you let me go to the loo?": "<LI>黛安：<EM>（考慮了一下）</EM>如果我說了，你能讓我去廁所嗎？",
   "<LI>DIANE: The car broke down. We were miles from anywhere and it was almost midnight.": "<LI>黛安：車拋錨了。我們離最近的地方也有好幾英里，而且快午夜了。",
   "<LI>YOU: What, out in the country?": "<LI>你：什麼，在鄉下？",
   "<LI>DIANE: No, in some godawful suburb, on the edge of a dual carriageway. The country would have been easier, for obvious reasons. Anyway, I phoned my mum and she said she'd come and fetch us; it would be half an hour or so. But of course, we'd all been drinking—me, Jenny and Linda. Except Jenny's dad, of course, who was driving. He was going to have to wait with the car until the RAC came out.": "<LI>黛安：不，在一個破郊區，雙向車道旁邊。要是在鄉下反而好辦，你懂的。反正，我打電話給我媽，她說她來接我們，大概要半小時左右。但我們當然都喝了酒——我、珍妮和琳達。當然珍妮她爸除外，他是司機。他得留下來陪著車等道路救援人員。",
@@ -2453,7 +2456,7 @@ var alternateTranslations = {
   "<LI>YOU: It's something I'd love to see you do. It would be in private. No one else would know. And you do need a pee.": "<LI>你：這是我很想看到你做的事。會很私密的，沒有別人知道。而且你確實憋著了。",
   "<LI>DIANE: I certainly do need a pee. I don't need any reminding of that.": "<LI>黛安：我當然憋著了。不用你提醒。",
   "<LI>She is fidgeting up and down as if the reminder has made it worse. You give her a kiss. You look at her with pleading eyes.": "<LI>她坐立不安，上下扭動，彷彿這句提醒讓她更憋了。你吻了吻她，用懇求的眼神望著她。",
-  "<LI>DIANE: <EM>(laughing)</EM> Well, I owe you a favour—so, why not.": "<LI>黛安：<EM>（笑著）</EM> 好吧，我欠你個人情——那，為什麼不呢。",
+  "<LI>DIANE: <EM>(laughing)</EM> Well, I owe you a favour—so, why not.": "<LI>黛安：<EM>（笑著）</EM>好吧，我欠你個人情——那，為什麼不呢。",
   "<LI>DIANE: I do like you, but it's almost a first date. Maybe some other time. But you can come into the loo with me.": "<LI>黛安：我確實喜歡你，不過這還差不多是第一次約會。也許改天吧。不過你可以跟我一起進廁所。",
   "<LI>She's made you an offer you can't refuse!": "<LI>她給了你一個無法拒絕的提議！",
   "<LI>Diane can't sit still. She keeps changing position. One minute she is sitting beside you, her knees moving up and down, then she kneels on the sofa, then she sits sideways again, then she tries to break away.": "<LI>黛安坐不住了，不停地換姿勢。一下坐在你身旁，兩膝上下抖動；一下又跪在沙發上；一下再側身坐下；接著又想掙脫起身。",
@@ -2549,11 +2552,11 @@ var alternateTranslations = {
   "<LI>YOU: Diane, you're fidgeting about. Do you need the toilet?": "<LI>你：黛安，你一直在扭來扭去的。你是要上廁所嗎？",
   "<LI>She blushes bright red and stops fidgeting. She doesn't say anything.": "<LI>她臉一下子紅透了，扭動也停了下來，什麼話都沒說。",
   "<LI>Suddenly she gets up and leaves the room. You hear her go into the bathroom.": "<LI>她突然站起來走出了房間，你聽到她進了浴室。",
-  "<LI>When she comes down she is still very embarrassed. The mood has broken and you have lost lots of intimacy points.": "<LI>她下來的時候仍然非常尷尬。氣氛已經散了，你失去了很多親密度。",
+  "<LI>When she comes down she is still very embarrassed. The mood has broken.": "<LI>她下來的時候仍然非常尷尬。氣氛已經散了。",
   "<LI>YOU: I'm just going to get something.": "<LI>你：我去拿點東西。",
   "<LI>You go across the room to fetch the brooch. Diane stands up.": "<LI>你穿過房間去取那枚胸針。黛安站了起來。",
   "<LI>DIANE: I must be going. I'll just—.": "<LI>黛安：我得走了。我先去——",
-  "<LI>YOU: <EM>(interrupting her)</EM> I've got something for you.": "<LI>你：<EM>（打斷她）</EM> 我有東西要給你。",
+  "<LI>YOU: <EM>(interrupting her)</EM> I've got something for you.": "<LI>你：<EM>（打斷她）</EM>我有東西要給你。",
   "<LI>You return and give it to her. She has sat down on the sofa again and is putting on her jacket.": "<LI>你回來把它遞給她。她已經重新坐回沙發上，正在穿外套。",
   "<LI>DIANE: Oh, it's lovely! Thank you. <EM>(She gives you a kiss and is about to say something else but—)</EM>": "<LI>黛安：哦，真好看！謝謝你。<EM>（她給了你一個吻，正要說別的什麼，但——。）</EM>",
   "<LI>YOU: I'll walk you home. We'll creep out quietly so we don't wake my brother. <EM>(You open the door for her.)</EM>": "<LI>你：我送你回家吧。我們悄悄出去，別吵醒我弟弟。<EM>（你為她推開了門。）</EM>",
@@ -2570,7 +2573,7 @@ var alternateTranslations = {
   "<LU>Diane goes out the door.": "<LU>黛安走出了門。",
   "<LI>But just as she does so there is the ringing of a mobile phone.": "<LI>就在這時，一部行動電話響了起來。",
   "<LI>It's her phone, so she comes back into the room to answer it. It's her mum, asking why she isn't home yet.": "<LI>是她的手機，她於是走回房間接聽。是她媽媽，問她怎麼還沒到家。",
-  "<LI>DIANE: <EM>(aside, to you)</EM> It's my mum. She worries when I'm out after midnight. Thinks I'm still fifteen!": "<LI>黛安：<EM>（捂著話筒，悄聲對你說）</EM> 是我媽。我午夜後還在外面她就擔心。當我還是十五歲呢！",
+  "<LI>DIANE: <EM>(aside, to you)</EM> It's my mum. She worries when I'm out after midnight. Thinks I'm still fifteen!": "<LI>黛安：<EM>（捂著話筒，悄聲對你說）</EM>是我媽。我午夜後還在外面她就擔心。當我還是十五歲呢！",
   "<LI>But she chats away, shifting about on the seat as she does so.": "<LI>但她一直聊著，一邊聊一邊在座位上扭來扭去。",
   "<LI>Diane is speaking to her mum on the phone. You can't openly listen, so what do you do?": "<LI>黛安正在電話裡和她媽媽說話。你不好意思明目張膽地偷聽，那你做什麼？",
   "<LI>You sit beside her while she talks to her mum. You wonder why women have to talk so much.": "<LI>你坐在她旁邊，陪她煲電話粥。你心想，女人為什麼非要聊這麼久。",
@@ -2603,7 +2606,7 @@ var alternateTranslations = {
   "<LI>Her skirt rides up again, and you can see lots of frilly slip and a bit of stocking top.": "<LI>她的裙子又滑上去了，大片荷葉邊襯裙湧出來，還露出一截絲襪頂端。",
   "<LI>Her skirt rides up revealing lots of lovely leg.": "<LI>她的裙子往上滑，露出大截好看的腿。",
   "<LI>Suddenly she sits forward and looks around.": "<LI>她突然坐直了身子，四處張望。",
-  "<LI>DIANE: <EM>(in a whisper)</EM> Where's the bathroom?": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪裡？",
+  "<LI>DIANE: <EM>(in a whisper)</EM> Where's the bathroom?": "<LI>黛安：<EM>（壓低聲音）</EM>廁所在哪裡？",
   "<LI>Look, you've had your fun. You can tell she wants to spend a penny. Aren't you going to give her a chance?": "<LI>行了，你也玩得夠痛快了。看得出來她急著去方便一下，你難道不打算給她這個機會嗎？",
   "<LI>Her skirt has ridden up even more and you can see lots of frilly slip and a bit of stocking top.": "<LI>她的裙子滑得更高了，荷葉邊襯裙大片外露，還能看到一截絲襪頂端。",
   "<LI><SPAN style='color: #00ff00'> She smiles but changes position again, so she is sitting more upright.</SPAN>": "<LI><SPAN style='color: #00ff00'> 她微微一笑，卻又換了個姿勢，坐得更滿了。</SPAN>",
@@ -2728,7 +2731,7 @@ var alternateTranslations = {
   "<LI>She blushes bright red with embarrassment. You can't remember when you saw such blushing cheeks. She tries to turn away, then buries her head on your shoulder.": "<LI>她羞得滿臉通紅。你已經不記得上一次見她這麼臉紅是什麼時候了。她想轉過身去，最終卻把頭埋進了你的肩膀。",
   "<LI>Diane doesn't say anything; she is ever so embarrassed. Your hand is still under her skirt and you can feel the gusset of her panties to be wet through. You would like to look at them but you know she doesn't want that. After a little while you remove your hand.": "<LI>黛安一言不發，窘迫極了。你的手還在她的裙下，能清晰感覺得出她內褲的襠部已經全部濕透。你很想看一眼，不過你知道她不想這樣。過了一下，你把手抽了出來。",
   "<LI>She has stopped struggling. You hold her to you and stroke her hair. You ask her what happened.": "<LI>她不再掙扎了。你將她摟在懷裡，輕撫她的頭髮，問她發生了什麼。",
-  "<LI>DIANE: <EM>(almost inaudibly)</EM> I got to the loo but—but I couldn't get my pants down in time. I was ever so desperate. I'd been wanting to go for ages. All that lager and coffee and—and you wouldn't let me go—you've really embarrassed me.": "<LI>黛安：<EM>（聲音低得幾乎聽不見）</EM> 我到了廁所，但——但我來不及把內褲褪下來。我當時真的快忍不住了。已經憋了好久好久了。那麼多啤酒和咖啡，還有——還有你一直不讓我去——你真的讓我好丟臉。",
+  "<LI>DIANE: <EM>(almost inaudibly)</EM> I got to the loo but—but I couldn't get my pants down in time. I was ever so desperate. I'd been wanting to go for ages. All that lager and coffee and—and you wouldn't let me go—you've really embarrassed me.": "<LI>黛安：<EM>（聲音低得幾乎聽不見）</EM>我到了廁所，但——但我來不及把內褲褪下來。我當時真的快忍不住了。已經憋了好久好久了。那麼多啤酒和咖啡，還有——還有你一直不讓我去——你真的讓我好丟臉。",
   "<LI>YOU: I know, it's my fault. I'm sorry. But you know, Diane, it's nothing to be embarrassed about—for me it's really sexy.": "<LI>你：我知道，這是我的錯。對不起。不過你知道嗎，黛安，這沒什麼好不好意思的——對我來說真的很性感。",
   "<LI>DIANE: Really?": "<LI>黛安：真的？",
   "<LI>And after a hug and a kiss it is time to walk her home.": "<LI>擁抱一下，親吻一下，該送她回家了。",
@@ -2824,9 +2827,9 @@ var alternateTranslations = {
   "<LI>She breaks away and goes and sits on the sofa. You can hear the bathwater running out from your brother's bath—he won't be long now.": "<LI>她掙開你，去沙發上坐下。你能聽見樓上你弟弟放浴缸水的聲音——他快出來了。",
   "<LI>You sit beside Diane. You put an arm round her but she doesn't really respond.": "<LI>你在黛安旁邊坐下，伸手摟住她，不過她幾乎沒有回應。",
   "<LI>She can't sit still, is almost bouncing up and down on the sofa. Her hands are between her knees, her slip getting hitched up so you can see the darker bit at the top of her tights.": "<LI>她坐不住，在沙發上顛來顛去。她的雙手夾在膝蓋間，襯裙已經往上縮，你能看見褲襪頂端顏色更深的那一截。",
-  "<LI>DIANE: Hurry up, hurry up.": "<LI>黛安：快點，快點啊。",
+  "<LI>DIANE: Hurry up, hurry up!": "<LI>黛安：快點，快點啊！",
   "<LI>YOU: Have you ever been really desperate for the loo?": "<LI>你：你有沒過憋尿憋得特別難受、急著要去廁所的時候？",
-  "<LI>DIANE: Yes, now.": "<LI>黛安：有，就是現在。",
+  "<LI>DIANE: Yes, now!": "<LI>黛安：有，就是現在！",
   "<LI>She sits on her hands, fidgeting to and fro.": "<LI>她坐在自己手上，來回扭動身子。",
   "<LI>Diane is shifting about a bit. She definitely needs a pee.": "<LI>黛安在座位上蠕動不安。她明顯憋著尿。",
   "<LI>She nestles her head on your shoulder.": "<LI>她把頭靠在你肩上。",
@@ -2838,16 +2841,16 @@ var alternateTranslations = {
   "<LI>YOU: But you look super like that.": "<LI>你：可你這樣看起來超美的。",
   "<LI>DIANE: I can't go upstairs like this. I might bump into your brother.": "<LI>黛安：我不能這樣上樓，萬一撞上你弟弟怎麼辦。",
   "<LI>She is standing, almost bent double, her hands between her knees, hopping from foot to foot.": "<LI>她站在那裡，幾乎彎下腰來，雙手夾在膝蓋間，兩腳不停地交替跳動。",
-  "<LI>DIANE: Come on. I'm busting to go to the toilet. I really am.": "<LI>黛安：快給我。我快憋死了，真的要上廁所。",
+  "<LI>DIANE: Come on! I'm busting to go to the toilet. I really am.": "<LI>黛安：快給我！我快憋死了，真的要上廁所！",
   "<LI>She is shifting from foot to foot.": "<LI>她兩腳交替踩地，動個不停。",
   "<LI>DIANE: Come on. I just want to go to the loo.": "<LI>黛安：快點嘛，我就想去趟廁所。",
   "<LI>You grin at her mischievously. She is still half laughing too.": "<LI>你促狹地衝她咧嘴一笑。她也還是忍不住笑了。",
   "<LI>Diane is pleading with you to let her have her skirt. You playfully keep hold of it.": "<LI>黛安苦苦哀求你把裙子還給她。你嬉皮笑臉地就是不鬆手。",
   "<LI>She has her hands clasped in front of her. She can hardly stand upright, she needs to pee so badly.": "<LI>她雙手交握放在身前，憋尿憋得幾乎直不起腰來。",
-  "<LI>DIANE: Come on. I really have to go. You don't want me to wet myself.": "<LI>黛安：快點嘛。我真的憋不住了。你該不會想讓我尿褲子吧。",
+  "<LI>DIANE: Come on! I really have to go. You don't want me to wet myself.": "<LI>黛安：快點嘛！我真的憋不住了。你該不會想讓我尿褲子吧。",
   "<LI>You'd better not answer that one.": "<LI>這個問題你最好別回答。",
   "<LI>She tries to grab the skirt.": "<LI>她試圖搶過裙子。",
-  "<LI>DIANE: Come on. Let me have my skirt.": "<LI>黛安：快點嘛，把我的裙子還給我。",
+  "<LI>DIANE: Come on! Let me have my skirt.": "<LI>黛安：快點嘛！把我的裙子還給我。",
   "<LI>Gosh, she doesn't half look sexy.": "<LI>天哪，她看起來真的好性感。",
   "<LI>You're still holding her skirt. She giggles as she tries to snatch it from you. But you don't want to let it get beyond a joke. So what do you do?": "<LI>你還拿著她的裙子。她咯咯笑著想從你手中奪回去。但你也不想玩過頭。那你打算怎麼做？",
   "<LI>You allow her to take her skirt.": "<LI>你讓她把裙子拿走。",
@@ -2867,7 +2870,7 @@ var alternateTranslations = {
   "<LI>YOU: I'll let you have the skirt if you let me come with you.": "<LI>你：你讓我跟著你去，我就把裙子還給你。",
   "<LI>DIANE: What? Into the toilet?": "<LI>黛安：什麼？進廁所裡？",
   "<LI>YOU: Mmm.": "<LI>你：嗯。",
-  "<LI>DIANE: Anything, anything.": "<LI>黛安：行行行，什麼都行。",
+  "<LI>DIANE: Anything, anything!": "<LI>黛安：行行行，什麼都行！",
   "<LI>She starts to put the skirt on but is so desperate to pee she has to sit down halfway through. For a moment she bounces up and down on the seat, then stands up to pull the skirt fully on.": "<LI>她開始穿裙子，但因為憋尿憋得太急，穿到一半就不得不坐下來。她在座位上上下彈了片刻，才站起來把裙子完全穿好。",
   "<LI>Her slip has got caught up, so she tucks it in and straightens her skirt, then, still doing up the zip, hurries from the room.": "<LI>她的襯裙卷進去了，她把它塞好、整了整裙子，拉鍊還沒拉完就急忙衝出了房間。",
   "<LI>You follow Diane up the stairs. She rushes into the bathroom and tries to shut the door behind her. You are just in time to stop her.": "<LI>你跟著黛安上樓。她衝進浴室，想把門關上。你剛好及時伸手擋住了。",
@@ -2953,7 +2956,7 @@ var alternateTranslations = {
   "<LI>You are at the front door.": "<LI>你們在前門。",
   "Diane can't stand still. She's virtually walking on the spot.": "黛安根本站不住，幾乎已經在原地踏步了。",
   "<LI>Suddenly—": "<LI>突然——",
-  "<LI>DIANE: <EM>(blushing)</EM> I'm sorry, but I must go to the loo. I'm bursting.": "<LI>黛安：<EM>（滿臉通紅）</EM> 對不起，我得去一下廁所，我已經憋不住了。",
+  "<LI>DIANE: <EM>(blushing)</EM> I'm sorry, but I must go to the loo. I'm bursting.": "<LI>黛安：<EM>（滿臉通紅）</EM>對不起，我得去一下廁所，我已經憋不住了。",
   "<LI>And she hurries back into the room and up the stairs.": "<LI>她急忙跑回屋裡，衝上樓梯。",
   "<LI>A few minutes later she returns looking more relaxed, and grinning ruefully.": "<LI>過了幾分鐘她回來了，神情輕鬆多了，苦笑著咧開嘴。",
   "<LI>But she doesn't say anything.": "<LI>但她什麼都沒說。",
@@ -3053,14 +3056,14 @@ var alternateTranslations = {
   "<LI>You go home. The next morning you phone Diane to tell her how you enjoyed the date.": "<LI>你回家了。第二天早上，你給黛安打電話，告訴她你有多享受這次約會。",
   "<LI>You chat about this and that. Then—": "<LI>你們聊了些家常。然後——",
   "<LI>YOU: You rather dashed away at the end. I hope I hadn't upset you.": "<LI>你：你最後走得那麼急。希望我沒有惹你不高興。",
-  "<LI>DIANE: <EM>(with a nervous little giggle)</EM> I'm sorry—I was absolutely desperate for the loo.": "<LI>黛安：<EM>（緊張地輕笑了一聲）</EM> 對不起——我那時候快憋瘋了，急著要上廁所。",
-  "<LI>DIANE: <EM>(with another giggle)</EM> Just about.": "<LI>黛安：<EM>（又笑了一聲）</EM> 勉強算是吧。",
+  "<LI>DIANE: <EM>(with a nervous little giggle)</EM> I'm sorry—I was absolutely desperate for the loo.": "<LI>黛安：<EM>（緊張地輕笑了一聲）</EM>對不起——我那時候快憋瘋了，急著要上廁所。",
+  "<LI>DIANE: <EM>(with another giggle)</EM> Just about.": "<LI>黛安：<EM>（又笑了一聲）</EM>勉強算是吧。",
   "<LI>YOU: What d'you mean, 'Just about'?": "<LI>你：什麼叫「勉強算是」？",
-  "<LI>DIANE: <EM>(with a nervous little giggle)</EM> I'm sorry—I was just dying for the loo.": "<LI>黛安：<EM>（緊張地輕笑了一聲）</EM> 對不起——我那時候急得不行，太想去廁所了。",
-  "<LI>DIANE: <EM>(with another giggle)</EM> I was pretty glad to get there. See you next week.": "<LI>黛安：<EM>（又笑了一聲）</EM> 總算趕到了，還挺慶幸的。下周見。",
+  "<LI>DIANE: <EM>(with a nervous little giggle)</EM> I'm sorry—I was just dying for the loo.": "<LI>黛安：<EM>（緊張地輕笑了一聲）</EM>對不起——我那時候急得不行，太想去廁所了。",
+  "<LI>DIANE: <EM>(with another giggle)</EM> I was pretty glad to get there. See you next week.": "<LI>黛安：<EM>（又笑了一聲）</EM>總算趕到了，還挺慶幸的。下周見。",
   "<LI>DIANE: Well, it was late, wasn't it?": "<LI>黛安：唉，那時候很晚了嘛。",
   "<LI>DIANE: Yes, I'm sorry I had to dash. Honestly, I was bursting for a pee. I'd have stopped and said goodbye properly but, well, I couldn't wait.": "<LI>黛安：是的，對不起走得那麼急。說真的，我那時候憋得要爆了。要不是實在等不了，我會好好跟你道別的——唉，真憋不住了。",
-  "<LI>YOU: <EM>(joking)</EM> I hope you had your key ready.": "<LI>你：<EM>（開玩笑地）</EM> 希望你的鑰匙找得到吧。",
+  "<LI>YOU: <EM>(joking)</EM> I hope you had your key ready.": "<LI>你：<EM>（開玩笑地）</EM>希望你的鑰匙找得到吧。",
   "<LI>DIANE: Mmmm. Actually, I went behind the house. The front door key is a real pain so, as soon as I left you, I dashed round the back. There are some bins there and I just popped behind them—not the first time I've had a pee there, I can tell you.": "<LI>黛安：嗯……其實我是去屋後撒了泡尿。前門鑰匙太麻煩了，所以一離開你，我就直接跑到後面去了。那裡有幾個垃圾桶，我就躲到桶後面尿了一泡——我跟你說，那也不是第一次在那裡尿了。",
   "<LI>YOU: I wish I'd been there to watch.": "<LI>你：真希望我當時在場看看。",
   "<LI>DIANE: I'm glad you weren't! Anyway, I'll see you next week.": "<LI>黛安：幸好你不在！好了，下周見。",
@@ -3220,7 +3223,7 @@ var alternateTranslations = {
   "<LI>You pour out some more wine. She drinks. You are both getting slightly tipsy, in a gentle way.": "<LI>你又倒了些葡萄酒。她喝著，你們倆都有點微微醺了，那種軟綿綿的感覺。",
   "<LI>Diane is dying for a pee. The trouble is, you are bursting to go yourself.": "<LI>黛安快憋死了，急著要上廁所。麻煩的是，你自己也快憋不住了。",
   "<LI>YOU: Actually, I must go for a pee.": "<LI>你：其實，我得先去尿一下。",
-  "<LI>DIANE: <EM>(laughing)</EM> I won't let you!": "<LI>黛安：<EM>（笑著說）</EM> 我不讓你去！",
+  "<LI>DIANE: <EM>(laughing)</EM> I won't let you!": "<LI>黛安：<EM>（笑著說）</EM>我不讓你去！",
   "<LI>She seizes you but you eventually break away and hurry upstairs to the bathroom. You certainly needed a pee.": "<LI>她抱住你，但你最終還是掙脫出來，趕緊上樓去了浴室。你確實憋得夠嗆。",
   "<LI>When you come out Diane is waiting outside the door. She gives you a grin and dashes into the bathroom, shutting the door before you can gather your senses.": "<LI>你出來的時候，黛安正在門外等著。她朝你咧嘴一笑，衝進浴室，在你反應過來之前就把門關上了。",
   "<LI>And all you can do is listen to the urgent rustling of her clothing and then the loud sibilant tinkle of her pee.": "<LI>你只能站在外面聽著——先是她衣物急促的沙沙聲，接著是她尿液嘩嘩作響的清脆聲。",
@@ -3266,7 +3269,7 @@ var alternateTranslations = {
   "<LI>But she sits up for a moment, reaches behind beneath her blouse and undoes the clip of her bra. She nestles back onto your shoulder.": "<LI>但她還是坐起來，伸手到襯衫背後解開了胸罩的扣子，然後重新依偎回你的肩上。",
   "<LI>You undo the other buttons of her blouse, and look at her. Her bra is loose and you can slip your hand underneath, cupping her left breast, finding her nipple, and then the other breast. She's closed her eyes. You move her bra upwards a bit, revealing her rose pink nipples.": "<LI>你解開她襯衫其餘的紐扣，望向她。她的胸罩已經鬆開，你將手滑入其中，托住她的左乳，找到她的乳頭，再探向另一側。她閉上了眼睛。你將胸罩向上撥了一些，露出她玫瑰粉色的乳頭。",
   "<LI>You caress her breasts, then run a finger slowly round her right nipple.": "<LI>你愛撫著她的雙乳，接著用一根手指緩緩地繞著她的右側乳頭畫圈。",
-  "<LI>DIANE: <EM>(very quietly)</EM> That's lovely.": "<LI>黛安：<EM>（輕聲說道）</EM> 真好。",
+  "<LI>DIANE: <EM>(very quietly)</EM> That's lovely.": "<LI>黛安：<EM>（輕聲說道）</EM>真好。",
   "<LI>DIANE: We have to go in a few minutes.": "<LI>黛安：我們再過幾分鐘就得走了。",
   "<LI>It obviously isn't the time to undo her bra. You kiss and cuddle for a few minutes and then she sits up, getting ready to go.": "<LI>顯然現在不是解開她胸罩的時機。你們親吻、依偎了幾分鐘，然後她坐起來，準備離開。",
   "<LI>You caress one breast and then the other.": "<LI>你先愛撫一側乳房，再轉向另一側。",
@@ -3298,7 +3301,7 @@ var alternateTranslations = {
   "<LI>Diane leaps at the offer, says a quick 'Goodbye—see you around' to you, and leaves with her friend.": "<LI>黛安立刻答應了，匆匆對你說了句「再見，有緣再見」，便和朋友一起離開了。",
   "<LI>You are still waiting for the bus.": "<LI>你還在等公車。",
   "<LI>A girl at the next bus stop seems unable to stand still. She's wearing a little miniskirt that really emphasises her shifting legs. She crosses her legs one way, then the other. Then she stands on one leg.": "<LI>旁邊公車站上有個女生像是怎麼也站不住。她穿著一條迷你短裙，雙腿不停換來換去，動作格外顯眼。她先把腿往一邊交叉，又換到另一邊，最後乾脆單腳站著。",
-  "<P><LI>DIANE: <EM>(whispers in your ear)</EM> I'm dying to go to the loo. Is there anywhere I can go? <EM>(She blushes and looks sheepish)</EM> I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM> 我快憋死了，想去廁所。附近有地方可以去嗎？<EM>（她紅著臉，有些不好意思）</EM> 我覺得我堅持不到公車到站——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。",
+  "<P><LI>DIANE: <EM>(whispers in your ear)</EM> I'm dying to go to the loo. Is there anywhere I can go? <EM>(She blushes and looks sheepish)</EM> I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM>我快憋死了，想去廁所。附近有地方可以去嗎？<EM>（她紅著臉，有些不好意思）</EM>我覺得我堅持不到公車到站——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。",
   "<LI>You look around and consider.": "<LI>你環顧四周，想了想。",
   "<LI>You put your arm round Diane and she puts hers round you.": "<LI>你摟著黛安的肩膀，她也回摟著你。",
   "<LI>Diane is dying for a pee. Is there anywhere she can go?": "<LI>黛安尿急得厲害。附近有沒有她能去的地方？",
@@ -3415,7 +3418,7 @@ var alternateTranslations = {
   "<LI>Diane looks a bit impatient.": "<LI>黛安看來有些不耐煩。",
   "<LI>And the brunette is looking suspiciously in your direction": "<LI>而那個褐髮女生正朝你這邊投來懷疑的目光",
   "<LI>You are back in the bus queue with Diane.": "<LI>你和黛安回到了公車站的隊伍裡。",
-  "<LI>DIANE: <EM>(in a whisper)</EM> I bet you watched that girl having a pee.": "<LI>黛安：<EM>（壓低聲音）</EM> 你剛才肯定偷看那個女生尿尿了。",
+  "<LI>DIANE: <EM>(in a whisper)</EM> I bet you watched that girl having a pee.": "<LI>黛安：<EM>（壓低聲音）</EM>你剛才肯定偷看那個女生尿尿了。",
   "<LI>YOU: What? Um, er, well, no, I mean, I accidentally saw her.": "<LI>你：什麼？呃，額，沒有，我是說，我是不小心看到她的。",
   "<LI>She nudges you and grins. 'You're a naughty boy,' she says—and gives your bum a little fondle.": "<LI>她用手肘碰了碰你，咧嘴笑道：「你這個小壞蛋」——然後輕輕地捏了一下你的屁股。",
   "<LI>She shakes her head and says nothing.": "<LI>她搖了搖頭，什麼也沒說。",
@@ -3635,7 +3638,7 @@ var alternateTranslations = {
   "<LI>She is wearing light blue panties, with a couple of little pink bows at the front.": "<LI>她穿著淺藍色內褲，正面綴著幾個小粉色蝴蝶結。",
   "<LI>Nothing happens.": "<LI>什麼都沒發生。",
   "<LI>You turn away. You hold your breath. Your heart is pounding. You wait for 15, maybe 20 seconds.": "<LI>你轉過身去。你屏住呼吸，心跳得很快。你等了十五秒，說不定二十秒。",
-  "<LI>DIANE: <EM>(very quietly)</EM> OK.": "<LI>黛安：<EM>（極輕地）</EM> 好了。",
+  "<LI>DIANE: <EM>(very quietly)</EM> OK.": "<LI>黛安：<EM>（極輕地）</EM>好了。",
   "<LI>You turn and look. Nothing has happened—you haven't missed anything—but suddenly a damp patch appears on her panties. It seems at first to spread upwards, until the material seems almost translucent. You can see the darkness of her pubic hair.": "<LI>你轉身望去。什麼都還沒發生——你沒有錯過任何東西——但忽然，她的內褲上浮現出一塊濕跡。濕跡起初似乎向上蔓延，直到布料幾乎變得半透明。你能看到她陰毛的深色輪廓。",
   "<LI>The gusset of her panties is wet and a trickle of pee begins to run out of one side. Within a few seconds there is a stream which seems at first to gather in her panties but then to run straight through. Perhaps it is the cider she was drinking, but it seems amazingly golden.": "<LI>她內褲的襠部已經濕了，一股細流從一側滲出來。幾秒鐘內，尿流越來越大，起初似乎積聚在內褲裡，隨後便徑直透了過去。也許是因為她喝的那些蘋果酒，顏色黃得驚人，幾乎泛著金色。",
   "<LI>Diane looks up at you, laughing ruefully. She is blushing. She looks down again. Her pee tinkles into the toilet": "<LI>黛安抬頭看你，苦笑著，臉已經紅了。她又低下頭去。她的尿液叮叮噹噹地滴入馬桶。",
@@ -3645,7 +3648,7 @@ var alternateTranslations = {
   "<LI>And almost by instinct you let go her hand and slip your hand down, and touch her wet panties. They still seem slightly warm with her pee.": "<LI>幾乎出於本能，你鬆開她的手，將手悄悄滑下去，觸碰到她濕潤的內褲。內褲上似乎還帶著她尿液留下的一絲溫熱。",
   "<LI>Diane smiles. 'Did you enjoy that?' she asks quietly. You nod. She stands up and peels her panties down, and asks you to leave the toilet while she tidies herself up.": "<LI>黛安微笑著。「你喜歡嗎？」她輕聲問道。你點點頭。她站起身，將內褲褪下，讓你先出去，好讓她整理一下自己。",
   "<LI>Diane comes downstairs and you take her in your arms. Your hand slips up underneath her skirt, feeling her now naked bottom.": "<LI>黛安從樓上走下來，你張開雙臂將她攬入懷中。你的手悄悄滑進她的裙子底下，摸到了她那赤裸的屁股。",
-  "<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge—": "<LI>你將手滑向前方，觸碰到她最私密的地方，心裡清楚地知道——",
+  "<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge that—": "<LI>你將手滑向前方，觸碰到她最私密的地方，心裡清楚地知道——",
   "<P><LI><B>You've seen her so desperate that she's had to take an emergency squat.": "<P><LI><B>你曾親眼見到她憋得難以為繼，不得不就地蹲下解急。",
   "<P><LI><B>She's come home with you and got desperate again, knowing that it excites you.": "<P><LI><B>她跟你回家後又犯了尿急，知道這樣會讓你興奮。",
   "<P><LI><B>And she's let you go into the bathroom with her and she's wet her panties—just for you!": "<P><LI><B>她還讓你陪她進了浴室，就這樣尿濕了內褲——只為了你！",
@@ -3801,7 +3804,7 @@ var alternateTranslations = {
   "<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate for the loo. She can't stand on one spot but is pacing about. A hand goes to her crotch when she thinks no one is watching</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉已經憋到了極限。她根本站不住，只能來回踱步。趁以為沒人注意的時候，一隻手悄悄伸向襠部。</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉憋得不得不用手捂住襠部，只希望沒人能看到她這副狼狽的樣子。</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>莫莉已經完全憋不住了，看來在拼死掙扎，竭力不讓自己尿褲子。</SPAN></EM>",
-  "<LI>DIANE: <EM>(blushing bright red)</EM> Actually, I do need to go. I think, maybe, that it's getting late, it's time I went. I can wait till I get home. There's no need for you to walk me home.": "<LI>黛安：<EM>（臉紅得發燙）</EM> 其實……我確實需要去一下。我想，也許，時間不早了，是時候回去了。我可以忍到家再說。不用你送我。",
+  "<LI>DIANE: <EM>(blushing bright red)</EM> Actually, I do need to go. I think, maybe, that it's getting late, it's time I went. I can wait till I get home. There's no need for you to walk me home.": "<LI>黛安：<EM>（臉紅得發燙）</EM>其實……我確實需要去一下。我想，也許，時間不早了，是時候回去了。我可以忍到家再說。不用你送我。",
   "<LI>She blushes bright red, crossing her legs as she stands there.": "<LI>她臉紅得厲害，站在那裡雙腿交叉夾緊。",
   "<LI>DIANE: Actually, I'm dying to go. I should have gone earlier. Sorry about this, but maybe it's best if I just head off home now. It is quite late.": "<LI>黛安：說實話，我都快憋不住了。早該早點去的……真不好意思，我想還是回家比較好。反正也挺晚了。",
   "<LI>She bites her lip, looking worried and shifting from foot to foot.": "<LI>她咬著嘴唇，一臉擔憂，兩隻腳不停地換來換去。",
@@ -3815,7 +3818,7 @@ var alternateTranslations = {
   "<LI>The moon shines brightly.": "<LI>月光皎潔明亮。",
   "<LI>It's a lovely mild night.": "<LI>夜晚溫柔宜人。",
   "<P><LI>DIANE: Well, when I was in college I used to go up to town with my friends and often we'd drink a bit. Then I had to get the bus back home and I often wanted to go to the loo by the end of the journey. It didn't matter too much because it was only half a mile's walk. But one day it was bitterly cold and it seemed to go to my bladder and I was really desperate. Trouble was I'd met a boy from school on the bus and he was chatting and wanted to walk home with me. I really fancied him, but this wasn't the moment. If I'd been by myself I'd have popped into the bushes but I couldn't with him there. I was in agony.": "<P><LI>黛安：嗯，上大學的時候，我常和朋友進城玩，會喝點酒。然後坐公車回家，到站下車的時候往往很想去廁所。倒也還好，因為還有半英里的路要走。但有一天天氣特別冷，那股寒意像是直往膀胱裡鑽，我當時憋得難受極了。偏偏在車上碰到了一個認識的男生，他一路聊天，還要陪我走回家。我挺喜歡他的，但那一刻真的不是時候。要是我一個人，早就鑽到路邊草叢裡撒尿了，可有他在，根本沒辦法。我那時候難受極了。",
-  "<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was <STRONG>dying</STRONG> for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.": "<P><LI>黛安：記憶里最難熬的一次，是幾年前跟家人去拜訪朋友。那裡有個比我大幾歲的男生，我當時有點崇拜他。他把我帶到另一個房間教我下國際象棋。問題是，午飯喝了些蘋果酒，我<STRONG>憋得要死</STRONG>，特別想上廁所，又不知道怎麼開口。我坐在那裡不停扭動，裙子一直往上爬，我能感覺到他在看我，這讓我更加窘迫。",
+  "<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was dying for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.": "<P><LI>黛安：記憶里最難熬的一次，是幾年前跟家人去拜訪朋友。那裡有個比我大幾歲的男生，我當時有點崇拜他。他把我帶到另一個房間教我下國際象棋。問題是，午飯喝了些蘋果酒，我憋得要死，特別想上廁所，又不知道怎麼開口。我坐在那裡不停扭動，裙子一直往上爬，我能感覺到他在看我，這讓我更加窘迫。",
   "<LI>YOU: Perhaps it was turning him on?": "<LI>你：也許這反而讓他興奮了？",
   "<LI>DIANE: I've sometimes wondered. Anyway—": "<LI>黛安：我有時候也這麼想。總之——",
   "<P><LI>DIANE: When I was eighteen, my first year at college, in Freshers week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.": "<P><LI>黛安：十八歲那年，大學第一年，新生周，大家都出去喝酒。我那時候不太能喝，我們喝了不少，還有啤酒。回家的路上我憋得快要炸了，完全不知道該怎麼辦。",
@@ -3830,7 +3833,7 @@ var alternateTranslations = {
   "<P><LI>DIANE: We just about got back to the digs, but then my mate was fumbling for the keys and I was hopping about in the lobby. I just couldn't wait any more. It was like Niagara Falls, in my jeans too. Completely wet myself. Mind you, everyone else was drunk and they just thought it a huge joke. But I was mortified—didn't know how to face anyone in the morning, but nobody ever mentioned it.": "<P><LI>黛安：我們好不容易趕回住處，結果我朋友在門口摸索鑰匙，我急得在走廊裡直跳腳。真的一秒都忍不住了。嘩——就跟尼亞加拉大瀑布一樣，連牛仔褲都濕透了。徹徹底底尿褲子了。不過其他人都喝醉了，只覺得好笑極了。但我當時羞死了——第二天不知道怎麼面對大家，好在沒人提起這件事。",
   "<P><LI>DIANE: It was one of those grotty wall-like urinals so I couldn't sort of sit on it. Anyway I thought I could hold it until I got back to the hotel but I was soon bursting, the others were laughing and when I popped into an alley and started to unzip my jeans one took out a camera. I didn't want to be on Webshots so I held on—literally, I had my hand in my pocket, so to speak. It got so bad a few spurts began to run down my leg and I had to go behind an old lorry.": "<P><LI>黛安：那是那種惡心的掛牆式小便斗，根本沒法蹲。反正我以為自己能忍到回酒店，可沒多久就憋得不行了，其他人還在旁邊笑。我溜進一條小巷，剛開始拉褲子拉鍊，就有人掏出相機。我可不想照片上網，只能硬撐著——我可不是打比方，真的是把手插進褲袋捂住，就這麼頂著。後來憋得太厲害，幾滴尿液漏出來沿著腿流下去，我不得不躲到一輛舊卡車後面。",
   "YOU: Did you wet yourself?": "你：你尿濕自己了嗎？",
-  "<LI>DIANE: <EM>(giggles)</EM> No, I squatted and peed a flood. Mind you—<EM>(she puts one hand on your shoulder, the other on your trousers, brushing your hard erection)</EM>—my knickers were pretty wet. I think you'd have enjoyed it.": "<LI>黛安：<EM>（咯咯笑道）</EM> 沒有，我蹲下來尿了一大泡。不過——<EM>（她一隻手搭上你的肩膀，另一隻手放到你的褲子上，輕輕蹭過你硬起來的地方）</EM>——我內褲濕得很厲害。我覺得你會喜歡的。",
+  "<LI>DIANE: <EM>(giggles)</EM> No, I squatted and peed a flood. Mind you—<EM>(she puts one hand on your shoulder, the other on your trousers, brushing your hard erection)</EM>—my knickers were pretty wet. I think you'd have enjoyed it.": "<LI>黛安：<EM>（咯咯笑道）</EM>沒有，我蹲下來尿了一大泡。不過——<EM>（她一隻手搭上你的肩膀，另一隻手放到你的褲子上，輕輕蹭過你硬起來的地方）</EM>——我內褲濕得很厲害。我覺得你會喜歡的。",
   "<LI>Diane suddenly interrupts you and stands up. 'I'm sorry, I must go to the toilet. Can you tell me where it is?' she says, and hurries from the room.": "<LI>黛安突然打斷你，站了起來，說：「抱歉，我必須去一下廁所。你能告訴我在哪裡嗎？」然後便匆匆離開房間。",
   "<LI>You listen as she runs up the stairs and goes into the bathroom above. A few seconds later you hear the sound of tinkling as she relieves herself. Afterwards the toilet flushes and a then she comes back downstairs, grinning ruefully.": "<LI>你聽著她跑上樓梯，進了樓上的浴室。幾秒鐘後，傳來細細的尿聲。接著馬桶衝水，她重新下樓，臉上帶著幾分苦笑。",
   "<LI>'Sorry about that,' she says, allowing you to kiss and embrace her. But it is time for her to go home.": "<LI>她說：「抱歉啊。」任由你吻她、抱著她。但已經是她該回家的時候了。",
@@ -3863,12 +3866,12 @@ var alternateTranslations = {
   "<LI>She breaks into a run, away from you, towards home.": "<LI>她突然跑起來，背對著你，朝家的方向逃去。",
   "<LI>She turns towards home, but doesn't look at you. You go quietly up to her and put an arm round her shoulders.": "<LI>她轉身朝家的方向走去，卻不看你。你悄悄走上前，將手臂搭上她的肩膀。",
   "<LI>She is crying.": "<LI>她哭了。",
-  "<LI>DIANE: <EM>(Between sobs)</EM> I'm sorry, I'm sorry, I'm sorry.": "<LI>黛安：<EM>（哽咽著）</EM> 對不起，對不起，對不起。",
-  "<LI>YOU: <EM>(softly)</EM> It's all right. It could happen to anyone.": "<LI>你：<EM>（輕聲說）</EM> 沒事的。這種事誰都可能遇上。",
+  "<LI>DIANE: <EM>(Between sobs)</EM> I'm sorry, I'm sorry, I'm sorry.": "<LI>黛安：<EM>（哽咽著）</EM>對不起，對不起，對不起。",
+  "<LI>YOU: <EM>(softly)</EM> It's all right. It could happen to anyone.": "<LI>你：<EM>（輕聲說）</EM>沒事的。這種事誰都可能遇上。",
   "<LI>DIANE: I'm sorry. I'm so embarrassed.": "<LI>黛安：對不起，我太丟臉了。",
   "<LI>She is desperately embarrassed and on the verge of tears.": "<LI>她羞得無地自容，眼眶都紅了。",
-  "<LI>DIANE: <EM>(almost inaudibly)</EM> I'm sorry. I'm sorry. I just couldn't wait.": "<LI>黛安：<EM>（聲音細若蚊鳴）</EM> 對不起。對不起。我真的憋不住了。",
-  "<LI>YOU: <EM>(softly)</EM> It's all right. It's nothing to be ashamed of.": "<LI>你：<EM>（輕聲說）</EM> 沒事的，這沒什麼好羞恥的。",
+  "<LI>DIANE: <EM>(almost inaudibly)</EM> I'm sorry. I'm sorry. I just couldn't wait.": "<LI>黛安：<EM>（聲音細若蚊鳴）</EM>對不起。對不起。我真的憋不住了。",
+  "<LI>YOU: <EM>(softly)</EM> It's all right. It's nothing to be ashamed of.": "<LI>你：<EM>（輕聲說）</EM>沒事的，這沒什麼好羞恥的。",
   "<LI>DIANE: I'm so embarrassed.": "<LI>黛安：我太不好意思了。",
   "<LI>YOU: It's really turned me on, you know.": "<LI>你：說真的，這讓我很興奮，你知道嗎。",
   "<LI>You've told her it's turned you on.": "<LI>你告訴她，這讓你很興奮。",
@@ -3893,7 +3896,7 @@ var alternateTranslations = {
   "<LI>Diane rejoins you. She seems strangely vulnerable.": "<LI>黛安走回你身邊。她看來莫名地脆弱。",
   "<LI>You hold her hand and squeeze it. She responds. But she is still not speaking and seems on the verge of tears.": "<LI>你握住她的手，輕輕一捏。她有所回應。但她仍然沉默不語，看起來隨時要哭出來。",
   "<LI>You put an arm round her and hold her close to you.": "<LI>你摟住她，把她緊緊擁入懷中。",
-  "<LI>DIANE: <EM>(very quietly)</EM> I feel so embarrassed. But thank you for being so nice about it.": "<LI>黛安：<EM>（聲音極輕）</EM> 我真的好尷尬。但謝謝你對我這麼好。",
+  "<LI>DIANE: <EM>(very quietly)</EM> I feel so embarrassed. But thank you for being so nice about it.": "<LI>黛安：<EM>（聲音極輕）</EM>我真的好尷尬。但謝謝你對我這麼好。",
   "<LI>You give her a hug. What are you going to say next?": "<LI>你給了她一個擁抱。接下來你打算說什麼？",
   "<LI>You are only a few yards away from Diane's house. What are you going to do next?": "<LI>距離黛安家只剩幾步之遙。你接下來打算怎麼做？",
   "<LI>Think carefully about it. You are almost there. First Prize is within your grasp.": "<LI>好好想清楚。你幾乎已經到了。一等獎就在眼前，唾手可得。",
@@ -3904,8 +3907,8 @@ var alternateTranslations = {
   "<LI>You walk on, hand in hand. You are both feeling a little bit sheepish, but excited at the same time.": "<LI>你們手牽手往前走。都有點訕訕的，卻又同時有些興奮。",
   "<LI>YOU: You must have been in agony. You should have said.": "<LI>你：你一定難受極了。早該開口說的。",
   "<LI>DIANE: I know. I kept trying to mention it but every time you seemed to say something and—I kept putting it off.": "<LI>黛安：我知道。我好幾次想提起來，不過每次你好像都在說什麼——我就一直往後拖。",
-  "<LI>DIANE: <EM>(ruefully)</EM> At least I wasn't wearing trousers.": "<LI>黛安：<EM>（苦澀地）</EM> 好歹我穿的不是長褲。",
-  "<LI>DIANE: <EM>(with a half laugh)</EM> At least I'm glad I wasn't wearing tights.": "<LI>黛安：<EM>（苦中帶笑）</EM> 還好我沒穿褲襪，這點倒是慶幸。",
+  "<LI>DIANE: <EM>(ruefully)</EM> At least I wasn't wearing trousers.": "<LI>黛安：<EM>（苦澀地）</EM>好歹我穿的不是長褲。",
+  "<LI>DIANE: <EM>(with a half laugh)</EM> At least I'm glad I wasn't wearing tights.": "<LI>黛安：<EM>（苦中帶笑）</EM>還好我沒穿褲襪，這點倒是慶幸。",
   "<LI>She tries a half grin at the thought.": "<LI>她想到這裡，勉強扯了扯嘴角。",
   "<LI>You are at her door. And—": "<LI>你們到了她家門口。然後——",
   "<LI>DIANE: Do you want to come in?": "<LI>黛安：要進來坐坐嗎？",
@@ -3913,7 +3916,7 @@ var alternateTranslations = {
   "<P><LI><B>You have struck gold.": "<P><LI><B>你真的走大運了。",
   "<P><LI><B>TRULY, YOU HAVE WON FIRST PRIZE!": "<P><LI><B>你真的獲得了一等獎！",
   "<LI>YOU: It's really exciting. I've never seen a girl wet herself before.": "<LI>你：真的好刺激。我從沒見過女生尿濕自己。",
-  "<LI>DIANE: <EM>(after a pause)</EM> Well, at least it's made one of us happy.": "<LI>黛安：<EM>（沉默片刻後）</EM> 好吧，至少這讓我們其中一個人高興了。",
+  "<LI>DIANE: <EM>(after a pause)</EM> Well, at least it's made one of us happy.": "<LI>黛安：<EM>（沉默片刻後）</EM>好吧，至少這讓我們其中一個人高興了。",
   "<LI>You are soon at her house. She gives you a quick kiss and is gone.": "<LI>很快就到了她家。她給了你一個匆忙的吻，便進去了。",
   "<LI>As you walk back home you go past the skip. You stop and look around. You reach into the skip but her panties seem to have fallen into the debris. You give up.": "<LI>走回家的路上，你經過那個廢料箱。你停下來左右看看，把手伸進廢料箱，但她的內褲好像已經沉進雜物堆裡了。你放棄了。",
   "<LI>YOU: Don't worry. I didn't really see anything. Nobody will know.": "<LI>你：別擔心。我其實沒怎麼看清楚。沒人會知道的。",
@@ -4415,7 +4418,7 @@ var alternateTranslations = {
   "Fondle her legs?": "撫摸她的腿？",
   "She tries to break away.": "她試圖掙脫。",
   "You wait for a reply.": "你等著她回答。",
-  "Hand in Hand.": "攜手同行。",
+  "Hand in hand.": "攜手同行。",
   "You wait to see what happens": "你等著看接下來會發生什麼",
   "Let's see how she gets on!": "看看她能撐多久！",
   "You listen": "你側耳傾聽",
@@ -4628,7 +4631,7 @@ var alternateTranslations = {
   "You watch.": "你注視著。",
   "You go downstairs.": "你下了樓。",
   "You breathe again.": "你重新喘過氣來。",
-  "—that—": "——那——",
+  "Exactly.": "沒錯。",
   "She goes over to the toilet.": "她走向廁所。",
   "<B>You'd like to have seen her stream!</B>": "<B>你真想親眼看見她的尿流！</B>",
   "She pauses.": "她停下來。",
@@ -4751,7 +4754,7 @@ var alternateTranslations = {
   "<LI>THE GIRL: What the hell.": "<LI>女生：管他呢。",
   "<LI>The penny has probably clicked.": "<LI>她大概已經猜到了。",
   "<HR>": "<HR>",
-  "<LI>DIANE: <EM>(giggles)</EM> No, I squatted and peed a flood. Mind you—": "<LI>黛安：<EM>（咯咯笑道）</EM> 沒有，我蹲下來尿了一大泡。不過——",
+  "<LI>DIANE: <EM>(giggles)</EM> No, I squatted and peed a flood. Mind you—": "<LI>黛安：<EM>（咯咯笑道）</EM>沒有，我蹲下來尿了一大泡。不過——",
   "<LI>DIANE: I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<LI>黛安：我覺得我堅持不到公車到站——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。",
   "<LI>DIANE: You know perfectly well why I missed the bus. It was so embarrassing!": "<LI>黛安：你明明知道我為什麼錯過車嘛。那還真超級尷尬！",
   "<LI>She blushes and grins at you.": "<LI>她臉紅了，朝你咧嘴一笑。",
@@ -4761,7 +4764,7 @@ var alternateTranslations = {
   "<LI>She puts one hand on your shoulder, the other on your trousers, brushing your hard erection.": "<LI>她一隻手搭上你的肩膀，另一隻手放到你的褲子上，輕輕蹭過你硬起來的地方。",
   "<LI>THE GIRL: I don't care if the whole world's watching. ": "<LI>女生：就算全世界都盯著我看，我也不在乎了。",
   "<LI>You hear her whisper to Molly.": "<LI>你聽到她低聲對莫莉說。",
-  "<P><LI>DIANE: <EM>(whispers in your ear)</EM> I'm dying to go to the loo. Is there anywhere I can go?": "<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM> 我快憋死了，想去廁所。附近有地方可以去嗎？",
+  "<P><LI>DIANE: <EM>(whispers in your ear)</EM> I'm dying to go to the loo. Is there anywhere I can go?": "<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM>我快憋死了，想去廁所。附近有地方可以去嗎？",
   "<LI>Then you hear it—footsteps, close behind you, coming fast.": "<LI>就在這時你聽到了──腳步聲，就在身後，越來越近。",
   "Use a luckshot to duck out of sight before you're seen?": "用一次幸運機會及時躲開，不被發現？",
   "Stay put and hope for the best?": "待在原地，賭一把？",
@@ -4819,7 +4822,7 @@ var alternateTranslations = {
   "<LI>Her bra is white with lace along the top, and you're getting quite familiar with it by now, teasing a nipple through the loose lace.": "<LI>她的胸罩是白色的，頂邊綴著蕾絲，你這會兒已經相當熟悉了，隔著鬆軟的蕾絲逗弄著她的乳頭。",
   "YOU: <EM>(hugging her)</EM> You really wet yourself?": "你：<EM>（抱著她）</EM>你真的尿濕自己了？",
   "<LI>Then—": "<LI>然後——",
-  "<LI>DIANE: <EM>(giggles)</EM> Goodness no. I just couldn't wait. Lucky I was wearing a dress.": "<LI>黛安：<EM>（笑）</EM> 當然沒有。我根本等不了。幸好那天穿的是裙子。",
+  "<LI>DIANE: <EM>(giggles)</EM> Goodness no. I just couldn't wait. Lucky I was wearing a dress.": "<LI>黛安：<EM>（笑）</EM>當然沒有。我根本等不了。幸好那天穿的是裙子。",
   "<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she couldn't hold on, and has completely wet herself.": "<P><LI><B>你成功地讓她忍尿憋到極限，以至於在走回家的路上她實在忍不住，徹底尿濕了自己。",
   "<P><LI><B>You have managed to get her so desperate for a pee that, on the walk home, she has started to wet herself. Even though she managed to pull her panties aside you know that they are already soaking.": "<P><LI><B>你成功地讓她忍尿憋到極限，在走回家的路上她已經開始尿濕自己了。儘管她設法撥開了內褲，你也清楚那條內褲早已濕透。",
   "<P><LI><B>But she isn't cross with you. In fact, it has brought you closer together, and she has invited you in!": "<P><LI><B>但她並沒有生你的氣。事實上，這反而讓你們更親近了，她還邀請你進她家！",
@@ -5468,15 +5471,15 @@ function wrapChineseSpeechAsides(html) {
   return String(html)
     .replace(/(：)\s*<em>([^<]{1,48})<\/em>\s*[。!?！？]?/g, function (match, colon, aside) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? colon + "<em>（" + clean + "）</em> " : match;
+      return isChineseSpeechAside(aside) ? colon + "<em>（" + clean + "）</em>" : match;
     })
     .replace(/(：[^<]{0,180})<em>([^<]{1,80})<\/em>(\s*(?:[—-]|[\u3400-\u9fffA-Za-z0-9]))/g, function (match, prefix, aside, after) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? prefix + "<em>（" + clean + "）</em>" + after : match;
+      return isChineseSpeechAside(aside) ? prefix + "<em>（" + clean + "）</em>" + String(after).replace(/^\s+/, "") : match;
     })
     .replace(/([\u3400-\u9fffA-Za-z]+)\s*<em>([^<]{1,48})<\/em>\s*：/g, function (match, speaker, aside) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? speaker + "：<em>（" + clean + "）</em> " : match;
+      return isChineseSpeechAside(aside) ? speaker + "：<em>（" + clean + "）</em>" : match;
     });
 }
 
@@ -5789,7 +5792,7 @@ if (showStats) {
          "<span>親密度 <b>" + inti + "</b></span>" +
          "</div>" +
          "<div class='status-row status-row-money'>" +
-         "<span>待轉化水分 <b>" + proc + "ml</b></span>" +
+         "<span>肚子 <b>" + proc + "ml</b></span>" +
          "<span>膀胱 <b>" + blad + "ml</b></span>" +
          "<span>害羞值 <b>" + points + "</b></span>" +
          "</div>" +
@@ -5851,7 +5854,7 @@ s("<HR>");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
 s("<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>");
 s("<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
-s("<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>");
+s("<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>");
 s("<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>");
 s("<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the 'Back' button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>");
@@ -6187,7 +6190,7 @@ c("eatmeal1b","You carry on chatting");  }
 function
 eatmeal1b()
 {
-s("<LI>DIANE: And how was it <STRONG>you</STRONG> managed to miss the last bus home?");
+s("<LI>DIANE: And how was it <EM>you</EM> managed to miss the last bus home?");
 s("<LI>YOU: Well, I have to admit, it was like you. I just popped to the loo, and when I came back the bus had gone.");
 s("<LI>DIANE: Really? You found a loo at that hour? ");
 s("<LI>YOU: Well, I went in the car park...");
@@ -6755,7 +6758,7 @@ lethergo()
 s("<LI>YOU: Of course there's time. I'll make sure they don't start without you. And while you're away I'll buy a programme.");
 s("<LI>DIANE: Thanks. I won't be long."); getinti(4);
 s("<LI>She disappears into the Ladies. You just have to imagine her in there, her skirt hitched up around her waist, her tights and panties around her knees as she sits there, her pee tinkling into the toilet...");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane makes her first visit to the loo. You lost 5 shyness points.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>Diane makes her first visit to the loo. You lost 5 shyness points.</strong></p>"); points -= 5;
 afterpee()
 s("<LI>You go over to the programme seller:");
 
@@ -6785,7 +6788,7 @@ else
 s("<LI>You don't have enough money!");
 s("<LI>You return to her. She is looking irritable. The time you've taken to order the drinks, she could easily have been to the loo."); getinti(-7);
 s("<LI>And you've forgotten to buy a programme."); getinti(-2);
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But it does increase her shyness about 'asking to go'. You gained 5 shyness points.</SPAN></EM></P>"); points += 5;
+s("<p class='notice'><strong>But it does increase her shyness about 'asking to go'. You gained 5 shyness points.</strong></p>"); points += 5;
 c("theatre1","You take your seats in the auditorium"); }
 
 function
@@ -6794,7 +6797,7 @@ gotoo()
 s("<LI>YOU: I'm sure there's time. I'm going to go too. There might even be time to order drinks for the interval.");
 s("<LI>DIANE: Thanks. That'd be nice. Meet you here in a couple of mins."); getinti(2);
 s("<LI>She disappears into the Ladies, you go into the Gents. You hear a door slam as she goes into a cubicle. You just have to imagine her on the other side of the wall, her skirt hitched up around her waist, her panties around her knees as she sits there, her pee tinkling into the toilet...");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>You both go to the loo. You lost 6 shyness points.</SPAN></EM></P>"); points -= 6;
+s("<p class='notice'><strong>You both go to the loo. You lost 6 shyness points.</strong></p>"); points -= 6;
 afterpee()
 s("<LI>You emerge before she does, and go over to the programme seller");
 
@@ -6840,10 +6843,10 @@ s("<LI>She's gone to the Ladies, but you've played a luckshot.");
 if (thursday)
 {s("<LI>She comes back very quickly—you hadn't even finished ordering the wine. She grins at you ruefully.");
 s("<LI>DIANE: There's ever such a queue. It's not urgent, so I'll wait till the interval."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But she is embarrassed. You gained 3 shyness points.</SPAN></EM></P>"); points += 3;}
+s("<p class='notice'><strong>But she is embarrassed. You gained 3 shyness points.</strong></p>"); points += 3;}
 else
 {s("<LI>She is gone three or four minutes, but then comes back looking very relaxed. She smiles at you. Your luckshot hasn't worked."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane makes her first visit to the loo. You lost 5 shyness points.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>Diane makes her first visit to the loo. You lost 5 shyness points.</strong></p>"); points -= 5;
 afterpee() }
 c("theatre1","You take your seats in the auditorium"); }
 
@@ -7099,13 +7102,13 @@ if (blad > 450)
 {s("<LI>She blushes slightly and there is a pause.");
 s("<LI>DIANE: I know. There always is a queue. But I think I'll go anyway. Then I'll be comfortable for the next act. Don't let anyone drink my wine.");
 s("<LI>And she heads off to the Ladies."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes to the loo in the interval. You lost 4 shyness points.</SPAN></EM></P>"); points -= 4;
+s("<p class='notice'><strong>Diane goes to the loo in the interval. You lost 4 shyness points.</strong></p>"); points -= 4;
 c("keepquiet1","You sip wine and wait for her return."); }
 else 
 {s("<LI>DIANE: I'm fine thanks. There's always such a dreadful queue for the Ladies in the interval at this theatre."); getinti(3);
 s("<LI>There is a little balcony just beyond the bar.");
 s("<LI>YOU: Shall we go out here for a few minutes, away from the throng?");s("<LI>She agrees.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Because you mentioned the loo, you lost 2 shyness points.</SPAN></EM></P>"); points -= 2;
+s("<p class='notice'><strong>Because you mentioned the loo, you lost 2 shyness points.</strong></p>"); points -= 2;
 c("interval2","You go out onto the balcony."); } }
 
 function
@@ -7116,7 +7119,7 @@ s("<LI>You notice Diane glancing towards the Ladies.");
 if (blad > 450)
 {s("<LI>DIANE: Actually, if you don't mind I'll just pop to the loo before the next act.");
 s("<LI>She disappears in the direction of the Ladies. There was a queue and she is away several minutes."); 
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes to the loo in the interval. You lost 2 shyness points.</SPAN></EM></P>"); points -= 2;
+s("<p class='notice'><strong>Diane goes to the loo in the interval. You lost 2 shyness points.</strong></p>"); points -= 2;
 c("keepquiet1","You wait for her return."); }
 else
 {s("<LI>She doesn't say anything.");
@@ -7129,7 +7132,7 @@ if (saturday)
 {s("<LI>Diane has popped to the Ladies. But it's Saturday night and the theatre is almost full. To make matters worse, one or two girls who were drinking in the town have popped in here to use the facilities. As a result there is quite a queue.");
 s("<LI>Diane joins the queue, which is snaking out the door. After a few minutes it has progressed and she is inside the Ladies, but there is quite a queue there, and one of the cubicles is out of order. A girl who was behind her, and who was really hopping up and down, has also begged her to let her go first.");
 s("<LI>After waiting about five minutes Diane decides she can't waste any more of the interval and returns to you."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</SPAN></EM></P>"); points += 7;} 
+s("<p class='notice'><strong>Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</strong></p>"); points += 7;} 
 else
 {s("<LI>Diane returns from the loo and finishes her glass of wine. She joins you on the balcony.");
 afterpee()
@@ -7148,7 +7151,7 @@ s("<LI>You return to her. There is a little balcony just beyond the bar.");
 s("<LI>YOU: Shall we go out here for a few minutes, away from the throng?");s("<LI>She agrees.");
 if (blad >550)
 {s("<LI>She bites her lip. She really wanted to go to the Ladies, but has missed the chance to ask.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> You gained 5 shyness points.</SPAN></EM></P>"); points += 5; 
+s("<p class='notice'><strong>You gained 5 shyness points.</strong></p>"); points += 5; 
 c("interval2","You go out onto the balcony."); } 
 else
 {c("interval2","You go out onto the balcony."); } }
@@ -7179,7 +7182,7 @@ else if (saturday)
 {s("<LI>But it's Saturday night and the theatre is almost full. To make matters worse, one or two girls who were drinking in the town have popped in here to use the facilities. By the time she gets there, there is quite a queue after all.");
 s("<LI>She joins it—snaking out of the door once more. After a few minutes it has progressed and she is inside the Ladies, but there is quite a crowd there, and one of the cubicles is out of order. A girl who was behind her, and who was really hopping up and down, has also begged her to let her go first.");
 s("<LI>After waiting about five minutes Diane decides she can't waste any more of the interval and returns to you.");  
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</SPAN></EM></P>"); points += 7;
+s("<p class='notice'><strong>Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</strong></p>"); points += 7;
 c("interval3","You go out onto the balcony."); }
 else
 {s("<LI>She disappears through the door marked Ladies, leaving you lonely with your wine. A minute or two later she returns, looking content.");
@@ -7219,7 +7222,7 @@ s("<LI>You walk back across the foyer to return to your seats.");
 s("<LI>You walk past the Ladies room. There is no longer a queue.");  
 if (blad > 525)
 {s("<LI>Diane seems to glance at the Ladies, as if considering; she bites her lip but carries on with you."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</SPAN></EM></P>"); points += 1;} 
+s("<p class='notice'><strong>Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</strong></p>"); points += 1;} 
 else 
 {s("<LI>Diane doesn't glance towards the Ladies room"); } 
 s("<LI>YOU: I'm looking forward to the second Act.");
@@ -7391,7 +7394,7 @@ s("<LI>The characters get more and more confused");
 s("<LI>They come and they go");
 if (blad > 650)
 {s("<LI>Diane seems rather distracted. She is leaning a bit forward, her handbag on her lap."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane can't sit still. She's dying for a pee during the play. You gained 5 shyness points.</SPAN></EM></P>"); points += 5;}
+s("<p class='notice'><strong>Diane can't sit still. She's dying for a pee during the play. You gained 5 shyness points.</strong></p>"); points += 5;}
 else if (blad > 550)
 {s("<LI>Diane keeps changing position."); }
 else
@@ -7469,13 +7472,13 @@ s("<LI>DIANE: Oooh, it's lovely to be asked!"); getinti(5);
 sAlt("<LI>Which will it be?", "<LI>選哪個呢？");
 if (blad > 600) 
 {s("<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>"); points -= 5;
 s("<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her panties down...");
 afterpee()
 s("<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.");
 if(inti > 85)
 {s("<LI>DIANE: That feels better. I was dying to go.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>She admits she was dying for the loo. You lost 3 shyness points.</SPAN></EM></P>"); points -= 3;}
+s("<p class='notice'><strong>She admits she was dying for the loo. You lost 3 shyness points.</strong></p>"); points -= 3;}
 else
 {s("<LI>She smiles but doesn't say anything."); }
 c("foyerbar1","You chat in the foyer."); }
@@ -7587,7 +7590,7 @@ s("<LI>You're both waiting at the stage door.");
 if (blad > 600)
 {s("<LI>You stand chatting about the play and how much you enjoyed it. But Diane seems a bit restless. She crosses her legs one way, then the other, then walks forward to the stage door, then back again. But she is trying to be quite nonchalant about it."); blad += 5;
 s("<LI>She looks like she needs the toilet. She was probably expecting to go to the one in the foyer. It was good thinking to see the emergency exit!");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane can't stand still at the stage door. You gained 4 shyness points.</SPAN></EM></P>"); points += 4;}
+s("<p class='notice'><strong>Diane can't stand still at the stage door. You gained 4 shyness points.</strong></p>"); points += 4;}
 else
 {s("<LI>You stand chatting about the play and how much you enjoyed it. Diane is very relaxed, looking forward to seeing her friend."); blad += 5;
 standing_desp()}
@@ -7605,7 +7608,7 @@ s("<LI>MOLLY: That sounds like Diane.");
 s("<LI>The three of you chat and you say how much you enjoyed the play. After two or three minutes Diane returns, grinning ruefully. She and Molly hug and kiss.");
 afterpee()
 s("<LI>DIANE: Sorry about that.");s("<LI>You hear her whisper to Molly.");s("<LI>DIANE: I was desperate!");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</SPAN></EM></P>"); points += 2; }
+s("<p class='notice'><strong>She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</strong></p>"); points += 2; }
 else
 {s("<LI>After a couple of minutes Molly emerges from the stage door. She and Diane hug and kiss."); }
 c("stagedoor4","You shake hands with Molly and her friend"); } 
@@ -7892,7 +7895,7 @@ if (blad > 580)
 {s("<LI>Diane says, 'Thank you' but seems unenthusiastic. Then she says she'll get some sugar and she goes back to the burger van.");
 s("<LI>MOLLY: Funny, I didn't think she took sugar.");
 s("<LI>You see Diane whisper something to the woman behind the bar. The woman shakes her head. Diane returns to you, forcing a smile.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</SPAN></EM></P>"); points += 5;}
+s("<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 5 shyness points.</strong></p>"); points += 5;}
 else
 {s("<LI>Diane helps Molly with the order and brings back the coffees for you and herself. 'What a good idea,' she says.");}
 c("riverside4","You drink your coffees."); } 
@@ -7906,7 +7909,7 @@ if (blad > 570)
 s("<LI>MOLLY: Funny, I didn't think she took sugar.");
 s("<LI>You see Diane whisper something to the woman behind the bar. The woman shakes her head. Diane returns to you, forcing a smile.");
 s("<LI>She seems a bit annoyed with you for buying the coffees."); getinti(-10);
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</SPAN></EM></P>"); points += 8;}
+s("<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 8 shyness points.</strong></p>"); points += 8;}
 else
 {s("<LI>Diane helps Molly with the order and brings back the coffees for you and herself. 'What a good idea,' she says."); getinti(17);}
 c("riverside4","You drink your coffees."); } 
@@ -8023,7 +8026,7 @@ s("<LI>You go in and have your pee. Diane is waiting for you when you return. Sh
 s("<LI>DIANE: Better? Pretty grim in there, isn't it? But you are a hero, finding a girl a loo when she needs one.");
 s("<LI>She turns and gives you a kiss, pats your bottom and walks along, smiling at you."); getinti(+25);  
 afterpee()
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> You both use the Portaloo. You gained lots of intimacy points but lost 10 shyness points.</SPAN></EM></P>"); points -= 10;
+s("<p class='notice'><strong>You both use the Portaloo. You lost 10 shyness points.</strong></p>"); points -= 10;
 c("riverside7","You join the others."); }
 
 function
@@ -8035,7 +8038,7 @@ s("<LI>You go into the Portaloo and shut the door. You have a pee and she may we
 s("<LI>DIANE: Better? My turn. I'll meet you back with the others.");
 s("<LI>She disappears into the Portaloo. You make your way back to the others and wait for Diane to return."); getinti(-5);  
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> You both use the Portaloo. Because you went first, you lost a few intimacy points and 10 shyness points as well.</SPAN></EM></P>"); points -= 10;
+s("<p class='notice'><strong>You both use the Portaloo. Because you went first, you lost 10 shyness points.</strong></p>"); points -= 10;
 c("riverside7","Time to restart the walk."); }
 
 
@@ -8048,7 +8051,7 @@ s("<LI>You've really embarrassed her."); getinti(-15) ;
 s("<LI>And so, against her better judgement, she says—");  
 s("<LI>DIANE: I'm OK, thanks. I never like those places anyway.");
 s("<LI>And she tries to stop fidgeting.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> She's offered the chance to use a Portaloo but is too embarrassed to admit her need. You gained 5 shyness points.</SPAN></EM></P>"); points += 5;
+s("<p class='notice'><strong>She's offered the chance to use a Portaloo but is too embarrassed to admit her need. You gained 5 shyness points.</strong></p>"); points += 5;
 c("luckytrip16ba","Well, you did try."); }
  
 function
@@ -8057,14 +8060,14 @@ luckytrip16ba()
 s("<LI>A few minutes later you all stand up to move on.");
 if (points >23)
 {s("<LI>Diane seems to glance towards the Portaloo but says nothing. She must be regretting saying she didn't need to go.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>She can't summon up the courage to tell you she really does need the Portaloo. You gained 5 shyness points.</SPAN></EM></P>"); points += 5; }
+s("<p class='notice'><strong>She can't summon up the courage to tell you she really does need the Portaloo. You gained 5 shyness points.</strong></p>"); points += 5; }
 else
 {s("<LI>Diane sidles up to Molly and whispers something. Molly nods.");
 s("<LI>MOLLY: We girls are just going to the loo. We'll catch you up.");
 s("<LI>And they both head over to the Portaloo. Being gentlemen, you dawdle and wait for them just outside the cafe. A few minutes later they return, giggling."); mollyblad =0;
 s("<LI>MOLLY: Eee, that was gross!");
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>But then she plucks up the courage to go, so those shyness points are gone.</SPAN></EM></P>"); points -= 5; }
+s("<p class='notice'><strong>But then she plucks up the courage to go, so those shyness points are gone.</strong></p>"); points -= 5; }
 c("riverside7","You leave the cafe."); }
 
 function
@@ -8155,9 +8158,9 @@ if (inti >80)
 {s("<LI>DIANE: Actually, I'm dying to go to the loo.");s("<LI>She gives you a rueful grin.");
 s("<LI>YOU: We should be at the Pavilion in a few minutes.");
 s("<LI>DIANE: Yes. I can wait.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admits she's dying for a pee. You lost 2 shyness points.</SPAN></EM></P>"); points -= 2;}
+s("<p class='notice'><strong>Diane admits she's dying for a pee. You lost 2 shyness points.</strong></p>"); points -= 2;}
 else
-{s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>It looks as if she needs the toilet, but doesn't like to say. You gained 2 shyness points.</SPAN></EM></P>"); points += 2;}
+{s("<p class='notice'><strong>It looks as if she needs the toilet, but doesn't like to say. You gained 2 shyness points.</strong></p>"); points += 2;}
 c("riverside11","You're quite happy about that."); }
 else
 {s("<LI>You are walking along with Diane, hand in hand.");
@@ -8257,7 +8260,7 @@ riverside12()
 s("<LI>You carry on walking."); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
 {s("<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Diane is in a real hurry as you walk. You gained 5 shyness points.</SPAN></EM></P>"); points += 5;}
+s("<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>"); points += 5;}
 else
 {s("<LI>You're wondering whether you could stop and kiss."); }
 s("<LI>You pass some steps up from the towpath.");
@@ -8346,7 +8349,7 @@ else
 s("<LI>She walks back to you with a sheepish grin.");
 s("<LI>DIANE: I've been dying to go. Then seeing Bruno going—");
 s("<LI>She puts an arm round your waist. You turn towards her, put your arms round her and kiss her. She responds, nervously at first, but then warmly. You kiss again. You slip a hand down to her bottom, pulling her closer to you. She puts her hand on your bottom. Your hand slips further down, to her upper thigh, and moving it round to the side you think you discover the ridge of a suspender—but you can't be sure. She pulls away with a smile."); getinti(15);
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes for a pee in the bushes, but you miss it. You lost 8 shyness points.</SPAN></EM></P>"); points -= 8;
+s("<p class='notice'><strong>Diane goes for a pee in the bushes, but you miss it. You lost 8 shyness points.</strong></p>"); points -= 8;
 c("luckytrip4d","You walk on, arms round each other's waist."); }
 
 function
@@ -8406,7 +8409,7 @@ s("<LI>You can tell she's terribly embarrassed. You put an arm round her waist, 
 s("<LI>Then you turn to the others and call out to them. <B>We'll catch you up in a minute.</B> The others look back and wave acknowledgement.");
 s("<LI>YOU: See, they just think we're going for a cuddle. Just hold on a minute.");
 s("<LI>You put both arms round her and watch as the others disappear down the path. A couple of late night dog walkers go past in the other direction. You can feel Diane shifting urgently up and down.");
-s("<LI>DIANE: <EM>(almost under her breath)</EM> Hurry up, hurry up. I'm bursting.");
+s("<LI>DIANE: <EM>(almost under her breath)</EM> Hurry up, hurry up! I'm bursting.");
 c("helpdiane1aa","She can't stand still."); }
 
 function
@@ -8424,7 +8427,7 @@ else
 {s("<LI>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. After a minute or so she stands up, pulls up a pair of blue panties and then her tights; she stands there for a few moments adjusting her skirt and slip."); 
 s("<LI>Finally she emerges from the bushes, still adjusting her clothes. You look away, as if you had been doing so all along. She comes up to you and gives you a rueful grin."); getinti(15); }
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes behind the bushes. You lost 6 shyness points.</SPAN></EM></P>"); points -= 6;
+s("<p class='notice'><strong>Diane goes behind the bushes. You lost 6 shyness points.</strong></p>"); points -= 6;
 c("helpdiane1b","Thank you, she says."); }
 
 function
@@ -8465,7 +8468,7 @@ s("<LI>As the stream dies away you creep quietly down the next few steps. You re
 s("<LI>You notice the large puddle in the corner of the landing as you pass, and then rejoin Diane, who is waiting at the top of the steps. She has a tissue out and seems to be wiping her legs, though she stands up as soon as she sees you."); gobushes = 1; gopee = 1;
 s("<LI>She is ever so embarrassed. 'I'm sorry,' she says, 'I couldn't wait.'");
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 2 shyness points.</SPAN></EM></P>"); points -= 2;
+s("<p class='notice'><strong>Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 2 shyness points.</strong></p>"); points -= 2;
 c("together1b","You take her hand.");}
 else
 {s("<LI>Diane is dashing over to the far corner of the concrete landing. She seems to be hitching her dress up at the front. When gets to the corner she stops, slightly bent forward and almost immediately you hear a faint splashing sound.");
@@ -8474,7 +8477,7 @@ s("<LI>As the stream dies away you creep quietly down the next few steps. You re
 s("<LI>You notice the large puddle in the corner of the landing as you pass, and then rejoin Diane, who is waiting at the top of the steps. She has a tissue out and seems to be wiping her legs, though she stands up as soon as she sees you."); gobushes = 1; gopee = 1;
 s("<LI>She is ever so embarrassed. 'I'm sorry,' she says, 'I couldn't wait.'");
 afterpee()
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 3 shyness points.</SPAN></EM></P>"); points -= 3;
+s("<p class='notice'><strong>Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 3 shyness points.</strong></p>"); points -= 3;
 c("together1b","You take her hand."); }}
 
 function
@@ -8492,7 +8495,7 @@ else
 s("<LI>YOU: What happened?");
 s("<LI>DIANE: We just about got back to the digs, but then my mate was fumbling for the keys and I was hopping about in the lobby. I just couldn't wait any more. It was like Niagara Falls, in my jeans too. Completely wet myself. Mind you, everyone else was drunk and they just thought it a huge joke. But I was mortified—didn't know how to face anyone in the morning, but nobody ever mentioned it."); admitwetting = 1;
 s("<LI>YOU: Maybe they were so drunk they'd forgotten it."); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane confesses to a time when she wet herself. You lost 10 shyness points.</SPAN></EM></P>"); points -= 10;}
+s("<p class='notice'><strong>Diane confesses to a time when she wet herself. You lost 10 shyness points.</strong></p>"); points -= 10;}
 c("riverside15","You walk on."); } 
 
 function
@@ -8511,7 +8514,7 @@ else
 {s("<LI>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. When you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Her skirt and petticoat are hitched up around her waist. After a minute or so she stands up and again there is a flash of pink as she pulls up her panties; she stands there for a few moments adjusting her skirt and slip."); }
 s("<LI>Finally she emerges from the bushes, still adjusting her clothes. You look away, as if you had been doing so all along. She comes up to you and puts both arms round you."); getinti(25);
 afterpee()
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>You both go behind the bushes. You lost 8 shyness points.</SPAN></EM></P>"); points -= 8;
+s("<p class='notice'><strong>You both go behind the bushes. You lost 8 shyness points.</strong></p>"); points -= 8;
 c("helpdiane1b","That's better, she says."); }
 
 
@@ -8712,7 +8715,7 @@ s("<LI>Eventually the stream fades away to a trickle, and a bit more seems to sp
 s("<LI>She is somewhat flushed but has a big rueful grin on her face. She seems to have no inhibitions or qualms about you having watched. She comes up to you and puts her arms around you, resting her head on your shoulder. It is not so much a sexy gesture as a comradely one."); getinti(25);
 s("<LI>DIANE: Would you be an angel and wait outside while I tidy up?");
 s("<LI>A minute later she joins you and the caretaker goes to lock up. Diane takes your arm and you move to join the others.");
-s("<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane uses the urinal. You lost 20 shyness points.</SPAN></EM></P>"); points -= 20;
+s("<p class='notice'><strong>Diane uses the urinal. You lost 20 shyness points.</strong></p>"); points -= 20;
 c("riverside15","You walk on."); }
 
 function
@@ -8736,7 +8739,7 @@ c("riverside15","You walk on."); }
 else
 {s("<LI>DIANE: Yes, I'd like to tidy up a bit. I won't be a minute.");
 s("<LI>She goes into the Ladies. She probably thought it sensible to go now and avoid any embarrassment later.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But it actually increases her shyness. You gained 5 shyness points.</SPAN></EM></P>"); points += 5; 
+s("<p class='notice'><strong>But it actually increases her shyness. You gained 5 shyness points.</strong></p>"); points += 5; 
 s("<LI>You go into the Gents.");
 c("toiletopen1c","You have a pee."); }}
 else 
@@ -9144,7 +9147,7 @@ pavilion8()
 s("<LI>It's almost 11 o'clock. The barman calls, 'Last orders, please.'");
 if (blad >600)
 {s("<LI>Diane seems to be shifting about a bit.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane needs the loo at The Pavilion. You gained 3 shyness points.</SPAN></EM></P>"); points += 3;} 
+s("<p class='notice'><strong>Diane needs the loo at The Pavilion. You gained 3 shyness points.</strong></p>"); points += 3;} 
 else
 {s("<LI>It's a nice relaxed atmosphere."); }
 s("<LI>You've just time for a final drink before catching the bus. What will it be?");
@@ -9311,7 +9314,7 @@ else
 {s("<LI>Diane really does need a pee. She keeps walking about, and is holding her skirt as if anxious to hitch it up at the first opportunity. Molly is laughing at her."); }
 s("<LI>Finally the cyclist goes out of sight and Molly, who is keeping a lookout, gives a thumbs-up. Diane straight away hitches her skirt up at the rear, fumbles for a second beneath her petticoat and pulls her light blue panties and tights down in one movement. At least you now know she isn't wearing stockings!");
 s("<LI>She is straight into a slightly nervous squat, looks anxiously left and right, and then looks down at the ground as if concentrating. Her slip isn't as fully hitched up as her skirt so it does give her some cover and you can't see any stream. But within a few seconds a puddle is forming by her feet, and this runs across the towpath. She really needed to go!"); 
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes for a pee, but with Molly. You gained 3 shyness points.</SPAN></EM></P>"); points += 3;
+s("<p class='notice'><strong>Diane goes for a pee, but with Molly. You gained 3 shyness points.</strong></p>"); points += 3;
 afterpee()
 s("<LI>Eventually she is finished. She doesn't wipe, but is pulling her panties up even as she stands up, and then tugs up her tights. Her skirt falls back into place but she still has her hands underneath adjusting her tights. Then, once again looking left and right, she hitches her skirt up almost to her waist and adjusts her slip, finally letting that and the skirt fall back into place.");
 s("<LI>She moves forward a few feet, away from the large, glistening puddle she has left. She is tidying herself up.");
@@ -9453,10 +9456,10 @@ s("<LI>YOU: Sure. No problem. The taxi rank's just over there.");
 s("<LI>You walk across towards the taxi rank.");
 if (blad >775)
 {s("<LI>Suddenly Diane stops in her tracks. She is blushing and grimacing.");
-s("<LI>DIANE: Look, I'm sorry, but before we go anywhere I just <STRONG>have</STRONG> to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?"); 
+s("<LI>DIANE: Look, I'm sorry, but before we go anywhere I just have to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?"); 
 s("<LI>Diane is absolutely dying for a pee. Is there anywhere she can go? What will it be?");
 s("<LI>There are some toilets across the car park—and they'll probably be closed (but no need to tell her that!)");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She admits she's desperate for a pee. You lost several shyness points.</SPAN></EM></P>"); points -= 5;
+s("<p class='notice'><strong>She admits she's desperate for a pee. You lost 5 shyness points.</strong></p>"); points -= 5;
 c("queue1b","Tell her there are some toilets across the car park.");
 c("watchdesperate","Shake your head helplessly.");}
 else
@@ -9500,10 +9503,10 @@ s("<LI>DIANE: I suppose so.");
 s("<LI>YOU: Are you desperate?");
 if (inti >100)
 {s("<LI>DIANE: No, I'll just have to cross my legs.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> At least she can joke about it. You lost 3 shyness points.</SPAN></EM></P>"); points -= 3; }
+s("<p class='notice'><strong>At least she can joke about it. You lost 3 shyness points.</strong></p>"); points -= 3; }
 else
 {s("<LI>DIANE: No, I'm fine.");
-s("<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She doesn't look fine. You gained 3 shyness points.</SPAN></EM></P>"); points += 3; }
+s("<p class='notice'><strong>She doesn't look fine. You gained 3 shyness points.</strong></p>"); points += 3; }
 
 queue_desp() 
 c("taxihome3","You carry on waiting."); }
@@ -11523,7 +11526,7 @@ s("<LI>YOU: Diane, you're fidgeting about. Do you need the toilet?");
 s("<LI>She blushes bright red and stops fidgeting. She doesn't say anything.");
 s("<LI>Suddenly she gets up and leaves the room. You hear her go into the bathroom.");
 afterpee()
-s("<LI>When she comes down she is still very embarrassed. The mood has broken and you have lost lots of intimacy points."); getinti (-50);
+s("<LI>When she comes down she is still very embarrassed. The mood has broken."); getinti (-50);
 c("gameover","And she gets ready to go home."); }
 
 
@@ -12142,7 +12145,7 @@ s("<LI>DIANE: <EM>(almost inaudibly)</EM> I got to the loo but—but I couldn't 
 s("<LI>YOU: I know, it's my fault. I'm sorry. But you know, Diane, it's nothing to be embarrassed about—for me it's really sexy.");
 s("<LI>DIANE: Really?");
 s("<LI>And after a hug and a kiss it is time to walk her home.");
-c("legsz3","Hand in Hand."); }
+c("legsz3","Hand in hand."); }
 
 function
 legsz3()
@@ -12463,9 +12466,9 @@ skirtremove1c()
 s("<LI>You sit beside Diane. You put an arm round her but she doesn't really respond.");
 if (blad >750)
 {s("<LI>She can't sit still, is almost bouncing up and down on the sofa. Her hands are between her knees, her slip getting hitched up so you can see the darker bit at the top of her tights.");
-s("<LI>DIANE: Hurry up, hurry up.");
+s("<LI>DIANE: Hurry up, hurry up!");
 s("<LI>YOU: Have you ever been really desperate for the loo?");
-s("<LI>DIANE: Yes, now.");
+s("<LI>DIANE: Yes, now!");
 s("<LI>She sits on her hands, fidgeting to and fro."); }
 else
 {s("<LI>Diane is shifting about a bit. She definitely needs a pee.");
@@ -12490,7 +12493,7 @@ s("<LI>YOU: But you look super like that.");
 s("<LI>DIANE: I can't go upstairs like this. I might bump into your brother.");
 if (blad >750)
 {s("<LI>She is standing, almost bent double, her hands between her knees, hopping from foot to foot.");
-s("<LI>DIANE: Come on. I'm busting to go to the toilet. I really am."); }
+s("<LI>DIANE: Come on! I'm busting to go to the toilet. I really am."); }
 else
 {s("<LI>She is shifting from foot to foot.");
 s("<LI>DIANE: Come on. I just want to go to the loo."); } 
@@ -12503,11 +12506,11 @@ skirtremove1f()
 s("<LI>Diane is pleading with you to let her have her skirt. You playfully keep hold of it.");
 if (blad >750)
 {s("<LI>She has her hands clasped in front of her. She can hardly stand upright, she needs to pee so badly.");
-s("<LI>DIANE: Come on. I really have to go. You don't want me to wet myself.");
+s("<LI>DIANE: Come on! I really have to go. You don't want me to wet myself.");
 s("<LI>You'd better not answer that one."); } 
 else
 {s("<LI>She tries to grab the skirt.");
-s("<LI>DIANE: Come on. Let me have my skirt."); } 
+s("<LI>DIANE: Come on! Let me have my skirt."); } 
 s("<LI>Gosh, she doesn't half look sexy.");
 c("skirtremove1g","You hold onto the skirt."); }
 
@@ -12562,7 +12565,7 @@ s("<LI>DIANE: What? I just need my skirt and the toilet.");
 s("<LI>YOU: I'll let you have the skirt if you let me come with you.");
 s("<LI>DIANE: What? Into the toilet?");
 s("<LI>YOU: Mmm.");
-s("<LI>DIANE: Anything, anything."); 
+s("<LI>DIANE: Anything, anything!"); 
 c("skirtdeal1","You hand her the skirt"); }
 
 function
@@ -14591,8 +14594,8 @@ function
 secondplace()
 {
 s("<LI>Diane comes downstairs and you take her in your arms. Your hand slips up underneath her skirt, feeling her now naked bottom.");
-s("<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge—");
-c("secondplace1","—that—"); }
+s("<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge that—");
+c("secondplace1","Exactly."); }
 
 function
 secondplace1()
@@ -15175,7 +15178,7 @@ if (tiramisu)
 {s("<P><LI>DIANE: Well, when I was in college I used to go up to town with my friends and often we'd drink a bit. Then I had to get the bus back home and I often wanted to go to the loo by the end of the journey. It didn't matter too much because it was only half a mile's walk. But one day it was bitterly cold and it seemed to go to my bladder and I was really desperate. Trouble was I'd met a boy from school on the bus and he was chatting and wanted to walk home with me. I really fancied him, but this wasn't the moment. If I'd been by myself I'd have popped into the bushes but I couldn't with him there. I was in agony.");
 s("<LI>YOU: What happened?"); }
 else if (pannacotta)
-{s("<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was <STRONG>dying</STRONG> for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.");
+{s("<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was dying for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.");
 s("<LI>YOU: Perhaps it was turning him on?");
 s("<LI>DIANE: I've sometimes wondered. Anyway—"); } 
 else if (icecream)

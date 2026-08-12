@@ -32,7 +32,7 @@ Qu’allez-vous répondre ?
 
 On voit bien que Diane a vraiment envie de faire pipi et vous aimeriez l’aider en lui parlant du Portaloo. Mais vous ne voulez pas la mettre mal à l’aise. Alors —
 
-VOUS : [à voix basse] J’ai vraiment envie de faire pipi. Il y a un Portaloo juste au coin. Tu pourrais faire le guet pendant que je me faufile là-dedans ? Je ne crois pas que ce soit vraiment ouvert au public.
+VOUS : (à voix basse) J’ai vraiment envie de faire pipi. Il y a un Portaloo juste au coin. Tu pourrais faire le guet pendant que je me faufile là-dedans ? Je ne crois pas que ce soit vraiment ouvert au public.
 
 DIANE : Bien sûr — En fait, j’irais bien aussi.
 
@@ -64,7 +64,7 @@ Elle se retourne, vous donne un baiser, vous tapote les fesses et repart en vous
 
 Vous avez gagné 25 points d’intimité.
 
-Vous utilisez tous les deux le Portaloo. Vous gagnez beaucoup de points d’intimité mais perdez 10 points de timidité.
+Vous utilisez tous les deux le Portaloo. Vous perdez 10 points de timidité.
 
 (Vous rejoignez les autres.)
 

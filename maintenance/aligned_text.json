@@ -109,10 +109,10 @@
       "id": "x00010",
       "kind": "story",
       "en": "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.",
-      "cn": "<LI><strong>膀胱</strong>仪表显示黛安憋了多少。她<strong>肚子</strong>里的水分会随着时间慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
+      "cn": "<LI><strong>膀胱</strong>仪表显示黛安憋着多少尿。<strong>肚子</strong>里的水分会随时间慢慢流进<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
       "es": "<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco a su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.",
       "fr": "<LI>La jauge de <strong>vessie</strong> indique ce que Diane retient. Ce qu'il y a dans son <strong>ventre</strong> passe lentement dans sa <strong>vessie</strong> au fil du temps. Vous disposez également de <strong>3 coups de chance</strong>, à utiliser judicieusement lorsqu'on vous les propose — et rappelez-vous qu'ils peuvent aussi apporter de la malchance ! Notez que vous ne pouvez en utiliser qu'un seul en fin de soirée, une fois que vous avez pris le bus ou le taxi pour rentrer.",
-      "tw": "<LI><strong>膀胱</strong>數值顯示黛安憋了多少。她<strong>肚子</strong>裡的水分會隨著時間慢慢流到<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
+      "tw": "<LI><strong>膀胱</strong>儀表顯示黛安憋著多少尿。<strong>肚子</strong>裡的水分會隨時間慢慢流進<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
     },
     {
       "id": "x00011",
@@ -189,11 +189,11 @@
     {
       "id": "x05014",
       "kind": "story",
-      "en": "<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>",
+      "en": "<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>",
       "cn": "<p class='note-keys'><strong>数字键</strong>用来选择选项。</p>",
       "tw": "<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>",
-      "es": "<p class='note-keys'>Las <strong>teclas numéricas</strong> eligen tus opciones.</p>",
-      "fr": "<p class='note-keys'>Les <strong>touches numériques</strong> choisissent vos options.</p>"
+      "es": "<p class='note-keys'>Usa las <strong>teclas numéricas</strong> para elegir tus opciones.</p>",
+      "fr": "<p class='note-keys'>Utilisez les <strong>touches numériques</strong> pour choisir vos options.</p>"
     },
     {
       "id": "x05015",
@@ -1654,11 +1654,11 @@
     {
       "id": "x00166",
       "kind": "story",
-      "en": "<LI>DIANE: And how was it <STRONG>you</STRONG> managed to miss the last bus home?",
-      "cn": "<LI>黛安：那<STRONG>你</STRONG>又是怎么错过末班车的？",
-      "es": "<LI>DIANE: ¿Y cómo fue que <STRONG>tú</STRONG> perdiste el último autobús a casa?",
-      "fr": "<LI>DIANE : Et toi, comment tu as fait pour rater le dernier bus <STRONG>toi</STRONG> ?",
-      "tw": "<LI>黛安：那<STRONG>你</STRONG>又是怎麼錯過末班車的？"
+      "en": "<LI>DIANE: And how was it <EM>you</EM> managed to miss the last bus home?",
+      "cn": "<LI>黛安：那<EM>你</EM>又是怎么错过末班车的？",
+      "es": "<LI>DIANE: ¿Y cómo fue que <EM>tú</EM> perdiste el último autobús a casa?",
+      "fr": "<LI>DIANE : Et toi, comment tu as fait pour rater le dernier bus <EM>toi</EM> ?",
+      "tw": "<LI>黛安：那<EM>你</EM>又是怎麼錯過末班車的？"
     },
     {
       "id": "x00167",
@@ -4715,11 +4715,11 @@
     {
       "id": "x00492",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane makes her first visit to the loo. You lost 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安第一次去了洗手间。你失去了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane fait sa première visite aux toilettes. Vous perdez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安第一次去了廁所。你失去了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane makes her first visit to the loo. You lost 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安第一次去了洗手间。你失去了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane fait sa première visite aux toilettes. Vous perdez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安第一次去了廁所。你失去了5點害羞值。</strong></p>"
     },
     {
       "id": "x00493",
@@ -4851,11 +4851,11 @@
     {
       "id": "x00507",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But it does increase her shyness about 'asking to go'. You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但这反而让她在开口要求去厕所这件事上更不好意思了。你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Pero sí aumenta su timidez a la hora de pedir permiso para ir. Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Mais cela renforce sa timidité à l'idée de « demander à y aller ». Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但這反而讓她在開口要求去廁所這件事上更不好意思了。你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>But it does increase her shyness about 'asking to go'. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>但这反而让她在开口要求去厕所这件事上更不好意思了。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Pero sí aumenta su timidez a la hora de pedir permiso para ir. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Mais cela renforce sa timidité à l'idée de « demander à y aller ». Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>但這反而讓她在開口要求去廁所這件事上更不好意思了。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x00508",
@@ -4897,11 +4897,11 @@
     {
       "id": "x00512",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>You both go to the loo. You lost 6 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你们两个都去了厕所。你失去了6点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Los dos vais al baño. Pierdes 6 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Vous allez tous les deux aux toilettes. Vous perdez 6 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你們兩個都去了廁所。你失去了6點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>You both go to the loo. You lost 6 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>你们两个都去了厕所。你失去了6点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Los dos vais al baño. Pierdes 6 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Vous allez tous les deux aux toilettes. Vous perdez 6 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>你們兩個都去了廁所。你失去了6點害羞值。</strong></p>"
     },
     {
       "id": "x00513",
@@ -5081,11 +5081,11 @@
     {
       "id": "x00532",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But she is embarrassed. You gained 3 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但她有点难为情。你获得了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Pero está avergonzada. Ganas 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Mais elle est gênée. Vous gagnez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但她有點不好意思。你獲得了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>But she is embarrassed. You gained 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>但她有点难为情。你获得了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Pero está avergonzada. Ganas 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Mais elle est gênée. Vous gagnez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>但她有點不好意思。你獲得了3點害羞值。</strong></p>"
     },
     {
       "id": "x00533",
@@ -5099,11 +5099,11 @@
     {
       "id": "x00534",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane makes her first visit to the loo. You lost 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安第一次去了洗手间。你失去了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane fait sa première visite aux toilettes. Vous perdez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安第一次去了廁所。你失去了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane makes her first visit to the loo. You lost 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安第一次去了洗手间。你失去了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane fait sa première visite aux toilettes. Vous perdez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安第一次去了廁所。你失去了5點害羞值。</strong></p>"
     },
     {
       "id": "x00535",
@@ -6341,11 +6341,11 @@
     {
       "id": "x00667",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes to the loo in the interval. You lost 4 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中场休息时去了厕所。你失去了4点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane va al baño durante el intermedio. Pierdes 4 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane va aux toilettes pendant l'entracte. Vous perdez 4 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中場時間時去了廁所。你失去了4點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane goes to the loo in the interval. You lost 4 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安在中场休息时去了厕所。你失去了4点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane va al baño durante el intermedio. Pierdes 4 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane va aux toilettes pendant l'entracte. Vous perdez 4 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安在中場時間時去了廁所。你失去了4點害羞值。</strong></p>"
     },
     {
       "id": "x00668",
@@ -6396,11 +6396,11 @@
     {
       "id": "x00672",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Because you mentioned the loo, you lost 2 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 你提到了厕所，失去2点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Por mencionar el baño, pierdes 2 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Avoir mentionné les toilettes vous fait perdre 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 你提到了廁所，失去2點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Because you mentioned the loo, you lost 2 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>你提到了厕所，失去2点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Por mencionar el baño, pierdes 2 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Avoir mentionné les toilettes vous fait perdre 2 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>你提到了廁所，失去2點害羞值。</strong></p>"
     },
     {
       "id": "x00673",
@@ -6451,11 +6451,11 @@
     {
       "id": "x00678",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes to the loo in the interval. You lost 2 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中场休息时去了厕所。你失去了2点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane va al baño durante el intermedio. Pierdes 2 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane va aux toilettes pendant l'entracte. Vous perdez 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中場休息時去了廁所。你失去了2點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane goes to the loo in the interval. You lost 2 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安在中场休息时去了厕所。你失去了2点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane va al baño durante el intermedio. Pierdes 2 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane va aux toilettes pendant l'entracte. Vous perdez 2 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安在中場休息時去了廁所。你失去了2點害羞值。</strong></p>"
     },
     {
       "id": "x00679",
@@ -6516,11 +6516,11 @@
     {
       "id": "x00685",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安太难为情了，没有告诉你她其实并没有……呃……上成厕所。你获得了7点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane est trop gênée pour vous dire qu'elle n'a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安太不好意思了，沒有告訴你她其實並沒有……呃……上成廁所。你獲得了7點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安太难为情了，没有告诉你她其实并没有……呃……上成厕所。你获得了7点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane est trop gênée pour vous dire qu'elle n'a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安太不好意思了，沒有告訴你她其實並沒有……呃……上成廁所。你獲得了7點害羞值。</strong></p>"
     },
     {
       "id": "x00686",
@@ -6634,11 +6634,11 @@
     {
       "id": "x00697",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x00698",
@@ -6801,11 +6801,11 @@
     {
       "id": "x00715",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安太难为情了，没有告诉你她其实并没有……呃……上成厕所。你获得了7点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane est trop gênée pour vous dire qu'elle n'a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安太不好意思了，沒有告訴你她其實並沒有……呃……上成廁所。你獲得了7點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane is too embarrassed to tell you that she didn't—er—make use of her visit to the loo. You gained 7 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安太难为情了，没有告诉你她其实并没有……呃……上成厕所。你获得了7点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane está demasiado avergonzada para contarte que no llegó a… aprovechar su visita al baño. Ganas 7 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane est trop gênée pour vous dire qu'elle n'a pas… euh… vraiment profité de son passage aux toilettes. Vous gagnez 7 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安太不好意思了，沒有告訴你她其實並沒有……呃……上成廁所。你獲得了7點害羞值。</strong></p>"
     },
     {
       "id": "x00716",
@@ -6985,11 +6985,11 @@
     {
       "id": "x00735",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中场休息时其实很想去洗手间，但太不好意思开口了。你获得了1点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane tenía ganas de ir al baño en el descanso pero le daba demasiada vergüenza mencionarlo. Ganas 1 punto de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane aurait bien besoin d'aller aux toilettes pendant l'entracte mais est trop timide pour le mentionner. Vous gagnez 1 point de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在中場時間時其實很想去廁所，但太不好意思開口了。你獲得了1點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安在中场休息时其实很想去洗手间，但太不好意思开口了。你获得了1点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane tenía ganas de ir al baño en el descanso pero le daba demasiada vergüenza mencionarlo. Ganas 1 punto de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane aurait bien besoin d'aller aux toilettes pendant l'entracte mais est trop timide pour le mentionner. Vous gagnez 1 point de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安在中場時間時其實很想去廁所，但太不好意思開口了。你獲得了1點害羞值。</strong></p>"
     },
     {
       "id": "x00736",
@@ -7793,11 +7793,11 @@
     {
       "id": "x00822",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane can't sit still. She's dying for a pee during the play. You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安坐立难安。她在演出中途尿急得厉害，几乎坐不住了。你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane no puede estarse quieta. Se está meando durante la obra. Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane n'arrive pas à rester en place. Elle meurt d'envie de faire pipi pendant la pièce. Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安坐立難安。她在演出中途尿急得厲害，幾乎坐不住了。你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane can't sit still. She's dying for a pee during the play. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安坐立难安。她在演出中途尿急得厉害，几乎坐不住了。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane no puede estarse quieta. Se está meando durante la obra. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane n'arrive pas à rester en place. Elle meurt d'envie de faire pipi pendant la pièce. Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安坐立難安。她在演出中途尿急得厲害，幾乎坐不住了。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x00823",
@@ -8174,19 +8174,19 @@
       "id": "x00863",
       "kind": "story",
       "en": "<LI>DIANE: <EM>in a whisper</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.",
-      "cn": "<LI>黛安：<EM>（压低声音）</EM> 其实……我现在急得要命，想去洗手间。要不我们先在这里喝一杯？这样我也能趁机去一下厕所。莫莉会来大厅找我们的。",
+      "cn": "<LI>黛安：<EM>（压低声音）</EM>其实……我现在急得要命，想去洗手间。要不我们先在这里喝一杯？这样我也能趁机去一下厕所。莫莉会来大厅找我们的。",
       "es": "<LI>DIANE: <EM>en voz baja</EM> La verdad es que me muero de ganas de ir al baño. Así que quizá podríamos tomar algo aquí primero. Así tendría oportunidad de pasarme por el aseo, ¿verdad? Y Molly nos encontrará en el vestíbulo.",
       "fr": "<LI>DIANE : <EM>à voix basse</EM> En fait, j'ai vraiment très envie d'aller aux toilettes. Alors peut-être qu'on pourrait d'abord prendre un verre ici. Ça me donnerait l'occasion de passer aux WC, non ? Et Molly nous retrouvera dans le foyer.",
-      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 其實……我現在急得要命，想去廁所。要不我們先在這裡喝一杯？這樣我也能趁機去一下廁所。莫莉會來大廳找我們的。"
+      "tw": "<LI>黛安：<EM>（壓低聲音）</EM>其實……我現在急得要命，想去廁所。要不我們先在這裡喝一杯？這樣我也能趁機去一下廁所。莫莉會來大廳找我們的。"
     },
     {
       "id": "x00864",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她亲口承认自己“急着去方便”。你失去了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Admite que «se está muriendo de ganas» de ir al baño. Pierdes 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle avoue qu'elle a « très envie de faire pipi ». Vous perdez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她承認自己「急著去方便」。你失去5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她亲口承认自己“急着去方便”。你失去了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Admite que «se está muriendo de ganas» de ir al baño. Pierdes 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle avoue qu'elle a « très envie de faire pipi ». Vous perdez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她承認自己「急著去方便」。你失去5點害羞值。</strong></p>"
     },
     {
       "id": "x00865",
@@ -8218,11 +8218,11 @@
     {
       "id": "x00868",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>She admits she was dying for the loo. You lost 3 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她承认自己当时已经憋得坐立难安。你失去了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Admite que tenía unas ganas locas de ir al baño. Pierdes 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Elle avoue qu'elle mourait d'envie d'aller aux toilettes. Vous perdez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她承認自己當時已經憋得坐立難安。你失去了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She admits she was dying for the loo. You lost 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她承认自己当时已经憋得坐立难安。你失去了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Admite que tenía unas ganas locas de ir al baño. Pierdes 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle avoue qu'elle mourait d'envie d'aller aux toilettes. Vous perdez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她承認自己當時已經憋得坐立難安。你失去了3點害羞值。</strong></p>"
     },
     {
       "id": "x00869",
@@ -8793,11 +8793,11 @@
     {
       "id": "x00928",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane can't stand still at the stage door. You gained 4 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在后台门口站都站不住。你获得了4点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane no puede estarse quieta en la puerta de artistas. Ganas 4 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane ne tient pas en place à la porte des artistes. Vous gagnez 4 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在後台門口站都站不住。你獲得了4點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane can't stand still at the stage door. You gained 4 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安在后台门口站都站不住。你获得了4点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane no puede estarse quieta en la puerta de artistas. Ganas 4 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane ne tient pas en place à la porte des artistes. Vous gagnez 4 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安在後台門口站都站不住。你獲得了4點害羞值。</strong></p>"
     },
     {
       "id": "x00929",
@@ -8902,11 +8902,11 @@
     {
       "id": "x00938",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她因为匆忙冲去厕所而感到难为情。你获得了2点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Le da vergüenza haber tenido que salir corriendo al baño. Ganas 2 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle est gênée d'avoir dû se précipiter aux toilettes. Vous gagnez 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她因剛才匆匆跑去廁所而覺得不好意思。你獲得2點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她因为匆忙冲去厕所而感到难为情。你获得了2点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Le da vergüenza haber tenido que salir corriendo al baño. Ganas 2 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle est gênée d'avoir dû se précipiter aux toilettes. Vous gagnez 2 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她因剛才匆匆跑去廁所而覺得不好意思。你獲得2點害羞值。</strong></p>"
     },
     {
       "id": "x00939",
@@ -10378,11 +10378,11 @@
     {
       "id": "x01095",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安偷偷问那女人附近有没有能上厕所的地方，你获得了一些害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas varios puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane demande discrètement à la femme s'il y a des « commodités » et vous gagnez plusieurs points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了一些害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安偷偷问那女人附近有没有能上厕所的地方，你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane demande discrètement à la femme s'il y a des « commodités » et vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x01096",
@@ -10451,11 +10451,11 @@
     {
       "id": "x01103",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安偷偷问那女人附近有没有能上厕所的地方，你获得了一些害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas varios puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane demande discrètement à la femme s'il y a des « commodités » et vous gagnez plusieurs points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了一些害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 8 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安偷偷问那女人附近有没有能上厕所的地方，你获得了8点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane le pregunta en secreto a la mujer si hay algún «servicio» y ganas 8 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane demande discrètement à la femme s'il y a des « commodités » et vous gagnez 8 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安偷偷問那女人附近有沒有能上廁所的地方，你獲得了8點害羞值。</strong></p>"
     },
     {
       "id": "x01104",
@@ -10950,7 +10950,7 @@
       "id": "x01157",
       "kind": "story",
       "en": "<LI>YOU: <EM>quietly to her</EM> I'm dying for a pee. There's a Portaloo round the corner. You couldn't keep a lookout for me if I sneak in there, could you? I don't think it's really for public use.",
-      "cn": "<LI>你：<EM>（悄悄对她说）</EM> 我急着想上厕所。转角那边有个移动厕所。我偷偷溜进去的时候，你能帮我望风吗？我觉得那好像不是给外人用的。",
+      "cn": "<LI>你：<EM>（悄悄对她说）</EM>我急着想上厕所。转角那边有个移动厕所。我偷偷溜进去的时候，你能帮我望风吗？我觉得那好像不是给外人用的。",
       "es": "<LI>TÚ: <EM>en voz baja</EM> Me estoy meando. Hay un Portaloo a la vuelta de la esquina. ¿Me harías guardia si me cuelo ahí dentro? No creo que sea para uso público.",
       "fr": "<LI>VOUS : <EM>à voix basse</EM> J'ai vraiment envie de faire pipi. Il y a un Portaloo juste au coin. Tu pourrais faire le guet pendant que je me faufile là-dedans ? Je ne crois pas que ce soit vraiment ouvert au public.",
       "tw": "<LI>你：（悄悄對她說）我急著想尿。轉角有個移動廁所。我偷偷進去時，你能幫我望風嗎？我想那不是給公眾用的。"
@@ -11086,11 +11086,11 @@
     {
       "id": "x01172",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> You both use the Portaloo. You gained lots of intimacy points but lost 10 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>你们都使用了移动厕所。你获得了不少亲密度，但失去了10点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Los dos usáis el Portaloo. Ganas muchos puntos de intimidad pero pierdes 10 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Vous utilisez tous les deux le Portaloo. Vous gagnez beaucoup de points d'intimité mais perdez 10 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>你們都使用了移動廁所。你獲得了不少親密度，但失去了10點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>You both use the Portaloo. You lost 10 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>你们都使用了移动厕所。你失去了10点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Los dos usáis el Portaloo. Pierdes 10 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Vous utilisez tous les deux le Portaloo. Vous perdez 10 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>你們都使用了移動廁所。你失去了10點害羞值。</strong></p>"
     },
     {
       "id": "x01173",
@@ -11150,11 +11150,11 @@
     {
       "id": "x01179",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> You both use the Portaloo. Because you went first, you lost a few intimacy points and 10 shyness points as well.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你们都使用了移动厕所。因为你先进去，你失去了一些亲密度，同时也失去了10点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Los dos usáis el baño portátil. Como fuiste el primero, pierdes unos puntos de intimidad y también pierdes 10 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Vous utilisez tous les deux le Portaloo. Comme vous y êtes allé en premier, vous perdez quelques points d'intimité et perdez également 10 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你們都使用了移動廁所。因為你先進去，你失去了一些親密度，同時也失去了10點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>You both use the Portaloo. Because you went first, you lost 10 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>你们都使用了移动厕所。因为你先进去，你失去了10点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Los dos usáis el baño portátil. Como fuiste el primero, pierdes 10 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Vous utilisez tous les deux le Portaloo. Comme vous y êtes allé en premier, vous perdez 10 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>你們都使用了移動廁所。因為你先進去，你失去了10點害羞值。</strong></p>"
     },
     {
       "id": "x01180",
@@ -11223,11 +11223,11 @@
     {
       "id": "x01187",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> She's offered the chance to use a Portaloo but is too embarrassed to admit her need. You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她明明有机会用移动厕所，却因为太难为情而不肯承认自己需要去。你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Le ofrecen la oportunidad de usar un baño portátil, pero está demasiado avergonzada para admitir que lo necesita. Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> On lui propose d'utiliser un Portaloo mais elle est trop gênée pour admettre son besoin. Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她明明有機會用移動廁所，卻因為太不好意思而不肯承認自己需要去。你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She's offered the chance to use a Portaloo but is too embarrassed to admit her need. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她明明有机会用移动厕所，却因为太难为情而不肯承认自己需要去。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Le ofrecen la oportunidad de usar un baño portátil, pero está demasiado avergonzada para admitir que lo necesita. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>On lui propose d'utiliser un Portaloo mais elle est trop gênée pour admettre son besoin. Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她明明有機會用移動廁所，卻因為太不好意思而不肯承認自己需要去。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x01188",
@@ -11260,11 +11260,11 @@
     {
       "id": "x01191",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>She can't summon up the courage to tell you she really does need the Portaloo. You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她鼓不起勇气告诉你她真的需要那个移动厕所。你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>No se atreve a decirte que en realidad sí necesita el baño portátil. Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Elle n'a pas le courage de vous dire qu'elle a vraiment besoin du Portaloo. Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>她鼓不起勇氣告訴你她真的需要那個移動廁所。你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She can't summon up the courage to tell you she really does need the Portaloo. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她鼓不起勇气告诉你她真的需要那个移动厕所。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>No se atreve a decirte que en realidad sí necesita el baño portátil. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle n'a pas le courage de vous dire qu'elle a vraiment besoin du Portaloo. Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她鼓不起勇氣告訴你她真的需要那個移動廁所。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x01192",
@@ -11305,10 +11305,10 @@
     {
       "id": "x01196",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>But then she plucks up the courage to go, so those shyness points are gone.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>但她最终还是鼓起勇气去了，所以你失去了相应的害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Pero al final se arma de valor y va, así que pierdes esos puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Mais elle finit par trouver le courage d'y aller, donc vous perdez ces points de timidité.</SPAN></EM></P>",
+      "en": "<p class='notice'><strong>But then she plucks up the courage to go, so those shyness points are gone.</strong></p>",
+      "cn": "<p class='notice'><strong>但她最终还是鼓起勇气去了，所以你失去了相应的害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Pero al final se arma de valor y va, así que pierdes esos puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Mais elle finit par trouver le courage d'y aller, donc vous perdez ces points de timidité.</strong></p>",
       "tw": "<P><EM>但她最終還是鼓起勇氣去了，所以你失去了相應的害羞值。"
     },
     {
@@ -11534,10 +11534,10 @@
       "id": "x01221",
       "kind": "story",
       "en": "<LI>ROBERT: <EM>almost under his breath</EM> I think she wants to go now, doesn't she?",
-      "cn": "<LI>罗伯特：<EM>（几乎是在喃喃自语）</EM> 我觉得她现在又想去了，是吧。",
+      "cn": "<LI>罗伯特：<EM>（几乎是在喃喃自语）</EM>我觉得她现在又想去了，是吧。",
       "es": "<LI>ROBERT: <EM>casi en voz baja</EM> Creo que ahora también le urge ir, ¿verdad?",
       "fr": "<LI>ROBERT : <EM>presque entre ses dents</EM> Je crois qu'elle a envie d'y aller maintenant, non ?",
-      "tw": "<LI>羅伯特：（幾乎是在喃喃自語） 我覺得她現在又想去了，是吧。"
+      "tw": "<LI>羅伯特：（幾乎是在喃喃自語）我覺得她現在又想去了，是吧。"
     },
     {
       "id": "x01222",
@@ -11779,20 +11779,20 @@
     {
       "id": "x01246",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admits she's dying for a pee. You lost 2 points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安承认自己已经尿急难耐。你失去了2点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admite que se está meando. Pierdes 2 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane admet qu'elle a vraiment envie de faire pipi. Vous perdez 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安承認自己已經尿急難耐。你失去了2點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane admits she's dying for a pee. You lost 2 points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安承认自己已经尿急难耐。你失去了2点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane admite que se está meando. Pierdes 2 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane admet qu'elle a vraiment envie de faire pipi. Vous perdez 2 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安承認自己已經尿急難耐。你失去了2點害羞值。</strong></p>"
     },
     {
       "id": "x01247",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>It looks as if she needs the toilet, but doesn't like to say. You gained 2 points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>看起来她很想去厕所，却不好意思开口说。你获得了2点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Parece que necesita el baño, pero no quiere decirlo. Ganas 2 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>On dirait qu'elle a besoin d'aller aux toilettes, mais elle n'ose pas le dire. Vous gagnez 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>看起來她很想去廁所，卻不好意思開口說。你獲得了2點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>It looks as if she needs the toilet, but doesn't like to say. You gained 2 points.</strong></p>",
+      "cn": "<p class='notice'><strong>看起来她很想去厕所，却不好意思开口说。你获得了2点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Parece que necesita el baño, pero no quiere decirlo. Ganas 2 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>On dirait qu'elle a besoin d'aller aux toilettes, mais elle n'ose pas le dire. Vous gagnez 2 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>看起來她很想去廁所，卻不好意思開口說。你獲得了2點害羞值。</strong></p>"
     },
     {
       "id": "x01248",
@@ -12321,11 +12321,11 @@
     {
       "id": "x01303",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Diane is in a real hurry as you walk. You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>一路上黛安走得很急。你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Diane tiene mucha prisa mientras camináis. Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Diane est vraiment pressée pendant que vous marchez. Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>一路上黛安走得很急。你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>一路上黛安走得很急。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane tiene mucha prisa mientras camináis. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez. Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>一路上黛安走得很急。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x01304",
@@ -12817,10 +12817,10 @@
     {
       "id": "x01356",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes for a pee in the bushes, but you miss it. You lost 8 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安跑去灌木丛后面撒尿，但你没赶上看。你失去了8点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane se va a hacer pis entre los arbustos, pero te lo pierdes. Pierdes 8 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane va faire pipi dans les buissons, mais vous ratez ça. Vous perdez 8 points de timidité.</SPAN></EM></P>",
+      "en": "<p class='notice'><strong>Diane goes for a pee in the bushes, but you miss it. You lost 8 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安跑去灌木丛后面撒尿，但你没赶上看。你失去了8点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane se va a hacer pis entre los arbustos, pero te lo pierdes. Pierdes 8 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane va faire pipi dans les buissons, mais vous ratez ça. Vous perdez 8 points de timidité.</strong></p>",
       "tw": "<P><EM>黛安跑去樹叢後面撒尿，但你沒趕上看。你失去了8點害羞值。"
     },
     {
@@ -13140,11 +13140,11 @@
     {
       "id": "x01391",
       "kind": "story",
-      "en": "<LI>DIANE: <EM>almost under her breath</EM> Hurry up, hurry up. I'm bursting.",
-      "cn": "<LI>黛安：<EM>（声音几乎压成了耳语）</EM> 快点快点……我快憋不住了。",
-      "es": "<LI>DIANE: <EM>casi en un susurro</EM> Rápido, rápido. Estoy que reviento.",
-      "fr": "<LI>DIANE : <EM>presque dans un souffle</EM> Vite, vite. Je n'en peux plus.",
-      "tw": "<LI>黛安：<EM>（聲音幾乎壓成了耳語）</EM> 快點快點……我快憋不住了。"
+      "en": "<LI>DIANE: <EM>almost under her breath</EM> Hurry up, hurry up! I'm bursting.",
+      "cn": "<LI>黛安：<EM>（声音几乎压成了耳语）</EM>快点快点！我快憋不住了。",
+      "es": "<LI>DIANE: <EM>casi en un susurro</EM> ¡Rápido, rápido! Estoy que reviento.",
+      "fr": "<LI>DIANE : <EM>presque dans un souffle</EM> Vite, vite ! Je n'en peux plus.",
+      "tw": "<LI>黛安：<EM>（聲音幾乎壓成了耳語）</EM>快點快點！我快憋不住了。"
     },
     {
       "id": "x01392",
@@ -13231,10 +13231,10 @@
     {
       "id": "x01401",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes behind the bushes. You lost 6 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安去灌木丛后面撒尿了。你失去了6点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane se va detrás de los arbustos. Pierdes 6 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane se cache derrière les buissons. Vous perdez 6 points de timidité.</SPAN></EM></P>",
+      "en": "<p class='notice'><strong>Diane goes behind the bushes. You lost 6 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安去灌木丛后面撒尿了。你失去了6点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane se va detrás de los arbustos. Pierdes 6 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane se cache derrière les buissons. Vous perdez 6 points de timidité.</strong></p>",
       "tw": "<P><EM>黛安去樹叢後面撒尿了。你失去了6點害羞值。"
     },
     {
@@ -13435,11 +13435,11 @@
     {
       "id": "x01423",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 2 points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安对这次不得不在外面撒尿感到非常难为情，不过经此一事，她以后不会再那么放不开了。你失去了2点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 2 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane est vraiment embarrassée par sa pause pipi d'urgence, mais elle sera moins timide à l'avenir. Vous perdez 2 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安對這次在外面解決感到很不好意思，但以後不會再那麼害羞了。你失去2點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 2 points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安对这次不得不在外面撒尿感到非常难为情，不过经此一事，她以后不会再那么放不开了。你失去了2点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 2 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane est vraiment embarrassée par sa pause pipi d'urgence, mais elle sera moins timide à l'avenir. Vous perdez 2 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安對這次在外面解決感到很不好意思，但以後不會再那麼害羞了。你失去2點害羞值。</strong></p>"
     },
     {
       "id": "x01424",
@@ -13499,11 +13499,11 @@
     {
       "id": "x01430",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 3 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> 黛安对自己这次不得不在外面撒尿感到非常难为情，但她以后不会再那么羞涩了。你失去了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> Diane est vraiment embarrassée par sa pause pipi d'urgence, mais elle sera moins timide à l'avenir. Vous perdez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'> 黛安對自己這次不得不在外面撒尿感到非常不好意思，但她以後不會再那麼羞澀了。你失去了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane is really embarrassed about her emergency pee, but she won't be so shy in future. You lost 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安对自己这次不得不在外面撒尿感到非常难为情，但她以后不会再那么羞涩了。你失去了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane est vraiment embarrassée par sa pause pipi d'urgence, mais elle sera moins timide à l'avenir. Vous perdez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安對自己這次不得不在外面撒尿感到非常不好意思，但她以後不會再那麼羞澀了。你失去了3點害羞值。</strong></p>"
     },
     {
       "id": "x01431",
@@ -13555,7 +13555,7 @@
       "id": "x01436",
       "kind": "story",
       "en": "<LI>DIANE: <EM>after a pause</EM> Not since I was young. A friend of mine wet herself on a date once. Wouldn't that be awful? Anyway, let's find out where the others are.",
-      "cn": "<LI>黛安：<EM>（停顿片刻后）</EM> 小时候以后就没有了。我有个朋友约会时尿了裤子。那不是太糟糕了吗？不管怎样，咱们去找找其他人在哪儿吧。",
+      "cn": "<LI>黛安：<EM>（停顿片刻后）</EM>小时候以后就没有了。我有个朋友约会时尿了裤子。那不是太糟糕了吗？不管怎样，咱们去找找其他人在哪儿吧。",
       "es": "<LI>DIANE: <EM>tras una pausa</EM> Desde que era pequeña, no. Una amiga mía se meó encima una vez en una cita. Qué horror sería eso. En fin, vamos a ver dónde están los demás.",
       "fr": "<LI>DIANE : <EM>après une pause</EM> Pas depuis que j'étais jeune. Une amie à moi s'est fait pipi dessus lors d'un rendez-vous, une fois. Ce serait horrible, non ? Bon, allons retrouver les autres.",
       "tw": "<LI>黛安：（停頓後）長大後就沒過。我有個朋友曾在約會上尿褲子。那會不會很糟？不管怎樣，去找其他人吧。"
@@ -13573,7 +13573,7 @@
       "id": "x01438",
       "kind": "story",
       "en": "<LI>DIANE: <EM>considering</EM> When I was eighteen, my first year at college, in Freshers week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.",
-      "cn": "<LI>黛安：<EM>（回想着）</EM> 我十八岁那年，大学第一年，新生周，大家都出去喝酒。我那时不太能喝，但我们喝了不少，还喝了啤酒。回家路上我憋得要命，完全不知道该怎么办。",
+      "cn": "<LI>黛安：<EM>（回想着）</EM>我十八岁那年，大学第一年，新生周，大家都出去喝酒。我那时不太能喝，但我们喝了不少，还喝了啤酒。回家路上我憋得要命，完全不知道该怎么办。",
       "es": "<LI>DIANE: <EM>pensándolo</EM> Cuando tenía dieciocho años, mi primer año en la universidad, durante la semana de bienvenida, cuando todo el mundo sale a beber. No estaba acostumbrada al alcohol y bebimos bastante, cerveza también. De camino a casa estaba que reventaba, no sabía qué hacer.",
       "fr": "<LI>DIANE : <EM>songeuse</EM> J'avais dix-huit ans, c'était ma première année de fac, pendant la semaine d'intégration, quand tout le monde sort boire. Je n'avais pas l'habitude de l'alcool et on avait tous pas mal bu, de la bière aussi. Sur le chemin du retour j'avais une envie terrible de faire pipi, je ne savais vraiment plus quoi faire.",
       "tw": "<LI>黛安：（想了想）我十八歲那年，大學一年級的新生周，大家出去喝酒。我那時不太會喝，但還是喝了很多啤酒。回家路上我憋得要命，根本不知道怎麼辦。"
@@ -13608,11 +13608,11 @@
     {
       "id": "x01442",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane confesses to a time when she wet herself. You lost 10 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安坦白了她曾经尿湿自己的往事。你失去了10点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane confiesa una vez que se meó encima. Pierdes 10 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane avoue s'être un jour fait pipi dessus. Vous perdez 10 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安坦白了她曾經尿濕自己的往事。你失去了10點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane confesses to a time when she wet herself. You lost 10 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安坦白了她曾经尿湿自己的往事。你失去了10点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane confiesa una vez que se meó encima. Pierdes 10 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane avoue s'être un jour fait pipi dessus. Vous perdez 10 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安坦白了她曾經尿濕自己的往事。你失去了10點害羞值。</strong></p>"
     },
     {
       "id": "x01443",
@@ -13726,11 +13726,11 @@
     {
       "id": "x01454",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>You both go behind the bushes. You lost 8 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>你们两人都去了灌木丛后面撒尿。你失去了8点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Los dos os metéis detrás de los arbustos. Pierdes 8 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>Vous vous glissez tous les deux derrière les buissons. Vous perdez 8 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'>兩人兩人都去了樹叢後面撒尿。你失去了8點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>You both go behind the bushes. You lost 8 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>你们两人都去了灌木丛后面撒尿。你失去了8点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Los dos os metéis detrás de los arbustos. Pierdes 8 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Vous vous glissez tous les deux derrière les buissons. Vous perdez 8 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>兩人兩人都去了樹叢後面撒尿。你失去了8點害羞值。</strong></p>"
     },
     {
       "id": "x01455",
@@ -14869,11 +14869,11 @@
     {
       "id": "x01575",
       "kind": "story",
-      "en": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane uses the urinal. You lost 20 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安使用了小便池。你失去了20点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane usa el urinario. Pierdes 20 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>Diane utilise l'urinoir. Vous perdez 20 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM><SPAN style='background: #FF9966; color: #FFFFFF'>黛安使用了小便斗。你失去了20點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane uses the urinal. You lost 20 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安使用了小便池。你失去了20点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane usa el urinario. Pierdes 20 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane utilise l'urinoir. Vous perdez 20 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安使用了小便斗。你失去了20點害羞值。</strong></p>"
     },
     {
       "id": "x01576",
@@ -14981,11 +14981,11 @@
     {
       "id": "x01587",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> But it actually increases her shyness. You gained 5 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但这实际上让她更害羞了。你获得了5点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Pero en realidad le aumenta la timidez. Ganas 5 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Mais cela augmente en réalité sa timidité. Vous gagnez 5 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 但這實際上讓她更害羞了。你獲得了5點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>But it actually increases her shyness. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>但这实际上让她更害羞了。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Pero en realidad le aumenta la timidez. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Mais cela augmente en réalité sa timidité. Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>但這實際上讓她更害羞了。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x01588",
@@ -16947,11 +16947,11 @@
     {
       "id": "x01798",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane needs the loo at The Pavilion. You gained 3 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在凉亭酒吧里尿急了。你获得了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane necesita ir al baño en El Pabellón. Ganas 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane a envie de faire pipi au Pavillon. Vous gagnez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安在Pavilion酒吧裡尿急了。你獲得了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane needs the loo at The Pavilion. You gained 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安在凉亭酒吧里尿急了。你获得了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane necesita ir al baño en El Pabellón. Ganas 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane a envie de faire pipi au Pavillon. Vous gagnez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安在Pavilion酒吧裡尿急了。你獲得了3點害羞值。</strong></p>"
     },
     {
       "id": "x01799",
@@ -17706,11 +17706,11 @@
     {
       "id": "x01880",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane goes for a pee, but with Molly. You gained 3 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安去上厕所了，但莫莉也在场。你获得了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane hace pis, pero con Molly delante. Ganas 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Diane va faire pipi, mais avec Molly. Vous gagnez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 黛安去上廁所了，但莫莉也在場。你獲得了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>Diane goes for a pee, but with Molly. You gained 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安去上厕所了，但莫莉也在场。你获得了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane hace pis, pero con Molly delante. Ganas 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane va faire pipi, mais avec Molly. Vous gagnez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安去上廁所了，但莫莉也在場。你獲得了3點害羞值。</strong></p>"
     },
     {
       "id": "x01881",
@@ -18194,11 +18194,11 @@
     {
       "id": "x01933",
       "kind": "story",
-      "en": "<LI>DIANE: Look, I'm sorry, but before we go anywhere I just <STRONG>have</STRONG> to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?",
-      "cn": "<LI>黛安：你听我说，真的很抱歉，但在去任何地方之前，我<STRONG>一定</STRONG>得先找个厕所。我不想在回家的路上……出什么状况。附近有我能去的地方吗？",
-      "es": "<LI>DIANE: Mira, lo siento, pero antes de ir a ningún sitio <STRONG>necesito</STRONG> encontrar un baño como sea. No quiero que me pase algo de camino a casa. ¿Hay algún sitio donde pueda ir?",
-      "fr": "<LI>DIANE : Écoute, je suis désolée, mais avant d'aller où que ce soit il faut <STRONG>absolument</STRONG> que je trouve des toilettes. Je ne veux pas tomber—tomber malade sur le chemin du retour. Il y a un endroit où je peux aller ?",
-      "tw": "<LI>黛安：你聽我說，真的很抱歉，但在去任何地方之前，我<STRONG>一定</STRONG>得先找個廁所。我不想在回家的路上……出什麼狀況。附近有我能去的地方嗎？"
+      "en": "<LI>DIANE: Look, I'm sorry, but before we go anywhere I just have to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?",
+      "cn": "<LI>黛安：你听我说，真的很抱歉，但在去任何地方之前，我一定得先找个厕所。我不想在回家的路上……出什么状况。附近有我能去的地方吗？",
+      "es": "<LI>DIANE: Mira, lo siento, pero antes de ir a ningún sitio necesito encontrar un baño como sea. No quiero que me pase algo de camino a casa. ¿Hay algún sitio donde pueda ir?",
+      "fr": "<LI>DIANE : Écoute, je suis désolée, mais avant d'aller où que ce soit il faut absolument que je trouve des toilettes. Je ne veux pas tomber—tomber malade sur le chemin du retour. Il y a un endroit où je peux aller ?",
+      "tw": "<LI>黛安：你聽我說，真的很抱歉，但在去任何地方之前，我一定得先找個廁所。我不想在回家的路上……出什麼狀況。附近有我能去的地方嗎？"
     },
     {
       "id": "x01934",
@@ -18221,11 +18221,11 @@
     {
       "id": "x01936",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She admits she's desperate for a pee. You lost several shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她承认自己已经尿急难耐。你失去了一些害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Admite que se está meando. Pierdes varios puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle admet qu'elle a désespérément envie de faire pipi. Vous perdez plusieurs points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她承認自己尿急難耐。你失去了一些害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She admits she's desperate for a pee. You lost 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她承认自己已经尿急难耐。你失去了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Admite que se está meando. Pierdes 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle admet qu'elle a désespérément envie de faire pipi. Vous perdez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她承認自己尿急難耐。你失去了5點害羞值。</strong></p>"
     },
     {
       "id": "x01937",
@@ -18436,11 +18436,11 @@
     {
       "id": "x01959",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> At least she can joke about it. You lost 3 shyness points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 至少她还能开玩笑。你失去了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Al menos puede bromear con ello. Pierdes 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Au moins elle peut en plaisanter. Vous perdez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 至少她還能開玩笑。你失去了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>At least she can joke about it. You lost 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>至少她还能开玩笑。你失去了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Al menos puede bromear con ello. Pierdes 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Au moins elle peut en plaisanter. Vous perdez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>至少她還能開玩笑。你失去了3點害羞值。</strong></p>"
     },
     {
       "id": "x01960",
@@ -18454,11 +18454,11 @@
     {
       "id": "x01961",
       "kind": "story",
-      "en": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> She doesn't look fine. You gained 3 points.</SPAN></EM></P>",
-      "cn": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她看起来明明不太对劲。你获得了3点害羞值。</SPAN></EM></P>",
-      "es": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> No tiene pinta de estar bien. Ganas 3 puntos de timidez.</SPAN></EM></P>",
-      "fr": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> Elle n'a pas l'air d'aller si bien. Vous gagnez 3 points de timidité.</SPAN></EM></P>",
-      "tw": "<P><EM> <SPAN style='background: #FF9966; color: #FFFFFF'> 她看來明明不太對勁。你獲得了3點害羞值。</SPAN></EM></P>"
+      "en": "<p class='notice'><strong>She doesn't look fine. You gained 3 points.</strong></p>",
+      "cn": "<p class='notice'><strong>她看起来明明不太对劲。你获得了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>No tiene pinta de estar bien. Ganas 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle n'a pas l'air d'aller si bien. Vous gagnez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>她看來明明不太對勁。你獲得了3點害羞值。</strong></p>"
     },
     {
       "id": "x01962",
@@ -22532,10 +22532,10 @@
       "id": "x02399",
       "kind": "story",
       "en": "<LI>DIANE: <EM>very quietly</EM> D'you mind if I use your bathroom? Just at the top of the stairs, you said?",
-      "cn": "<LI>黛安：<EM>（压低声音）</EM> 可以借用一下你家浴室吗？你说就在楼梯顶上，对吧？",
+      "cn": "<LI>黛安：<EM>（压低声音）</EM>可以借用一下你家浴室吗？你说就在楼梯顶上，对吧？",
       "es": "<LI>DIANE: <EM>muy bajito</EM> ¿Te importa si uso tu baño? ¿Está justo al subir las escaleras, dijiste?",
       "fr": "<LI>DIANE : <EM>très doucement</EM> Ça ne t'ennuie pas si j'utilise ta salle de bains ? C'est juste en haut de l'escalier, tu m'as dit ?",
-      "tw": "<LI>黛安：（壓低聲音） 能借用一下你家浴室嗎？你說就在樓梯頂上，對吧？"
+      "tw": "<LI>黛安：（壓低聲音）能借用一下你家浴室嗎？你說就在樓梯頂上，對吧？"
     },
     {
       "id": "x02400",
@@ -22624,10 +22624,10 @@
       "id": "x02409",
       "kind": "story",
       "en": "<LI>DIANE: <EM>very quietly</EM>I like your brother. But I like you more.",
-      "cn": "<LI>黛安：<EM>（轻声地）</EM> 我喜欢你弟弟。但我更喜欢你。",
+      "cn": "<LI>黛安：<EM>（轻声地）</EM>我喜欢你弟弟。但我更喜欢你。",
       "es": "<LI>DIANE: <EM>muy bajito</EM> Me cae bien tu hermano. Pero tú me gustas más.",
       "fr": "<LI>DIANE : <EM>très doucement</EM> Ton frère est sympa. Mais toi, je t'aime encore plus.",
-      "tw": "<LI>黛安：<EM>（輕聲地）</EM> 我喜歡你弟弟。但我更喜歡你。"
+      "tw": "<LI>黛安：<EM>（輕聲地）</EM>我喜歡你弟弟。但我更喜歡你。"
     },
     {
       "id": "x02410",
@@ -22652,7 +22652,7 @@
       "id": "x02412",
       "kind": "story",
       "en": "<LI>DIANE: <EM>very quietly</EM> Actually, I will just pop to the loo, if you don't mind? Just at the top of the stairs, you said?",
-      "cn": "<LI>黛安：<EM>（轻声地）</EM> 其实，如果你不介意的话，我想去趟洗手间。就在楼梯顶上，你说的那个？",
+      "cn": "<LI>黛安：<EM>（轻声地）</EM>其实，如果你不介意的话，我想去趟洗手间。就在楼梯顶上，你说的那个？",
       "es": "<LI>DIANE: <EM>muy bajito</EM> La verdad, voy a escaparme un momento al baño, ¿te importa? ¿Justo al subir las escaleras, dijiste?",
       "fr": "<LI>DIANE : <EM>très doucement</EM> En fait, je vais juste faire un saut aux toilettes, si ça ne t'ennuie pas ? C'est juste en haut de l'escalier, tu m'as dit ?",
       "tw": "<LI>黛安：（輕聲）其實，如果你不介意，我想去趟廁所。你說是在樓梯頂上？"
@@ -24586,10 +24586,10 @@
       "id": "x02614",
       "kind": "story",
       "en": "<LI>DIANE: <EM>in a whisper</EM> Does it excite you? Me needing a pee?",
-      "cn": "<LI>黛安：<EM>（低声说）</EM> 这让你兴奋吗？我想上厕所这件事？",
+      "cn": "<LI>黛安：<EM>（低声说）</EM>这让你兴奋吗？我想上厕所这件事？",
       "es": "<LI>DIANE: <EM>en un susurro</EM> ¿Te excita? ¿Que tenga ganas de hacer pis?",
       "fr": "<LI>DIANE : <EM>à voix basse</EM> Ça t'excite ? Que j'aie envie de faire pipi ?",
-      "tw": "<LI>黛安：<EM>（小聲說）</EM> 這讓你興奮嗎？我想上廁所這件事？"
+      "tw": "<LI>黛安：<EM>（小聲說）</EM>這讓你興奮嗎？我想上廁所這件事？"
     },
     {
       "id": "x02615",
@@ -25025,7 +25025,7 @@
       "id": "x02661",
       "kind": "story",
       "en": "<LI>DIANE: <EM>considering</EM> If I tell you, will you let me go to the loo?",
-      "cn": "<LI>黛安：<EM>（考虑了一下）</EM> 如果我说了，你能让我去厕所吗？",
+      "cn": "<LI>黛安：<EM>（考虑了一下）</EM>如果我说了，你能让我去厕所吗？",
       "es": "<LI>DIANE: <EM>pensándolo</EM> ¿Si te lo cuento me dejas ir al baño?",
       "fr": "<LI>DIANE : <EM>pensive</EM> Si je te raconte, tu me laisseras aller aux toilettes ?",
       "tw": "<LI>黛安：（想了想）要是我說，你就讓我去廁所嗎？"
@@ -25217,7 +25217,7 @@
       "id": "x02680",
       "kind": "story",
       "en": "<LI>DIANE: <EM>she pulls a little face before continuing</EM> The toilet is actually on the far side of the bathroom. I knew I wouldn't be able to get my pants down in time, so I just stepped into the shower and stood there—and let it go.",
-      "cn": "<LI>黛安：<EM>（她皱了皱脸，才继续说）</EM> 厕所其实在浴室的另一头。我知道来不及把内裤脱下来了，就直接踩进淋浴间站着——忍不住了。",
+      "cn": "<LI>黛安：<EM>（她皱了皱脸，才继续说）</EM>厕所其实在浴室的另一头。我知道来不及把内裤脱下来了，就直接踩进淋浴间站着——忍不住了。",
       "es": "<LI>DIANE: <EM>(Pone una carita antes de continuar.)</EM> El váter está en el lado opuesto del baño. Sabía que no me daría tiempo a bajarme las bragas, así que me metí directamente en la ducha, me quedé ahí y me dejé ir.",
       "fr": "<LI>DIANE : <EM>elle fait une petite grimace avant de continuer</EM> Les toilettes sont au fond de la salle de bains. Je savais que j'aurais pas le temps de baisser ma culotte, alors je suis juste entrée dans la douche et j'y suis restée — et je me suis lâchée.",
       "tw": "<LI>黛安：（她做了個鬼臉，才繼續）廁所其實在浴室另一頭。我知道來不及脫內褲，就進淋浴間站著——直接尿出來了。"
@@ -25335,10 +25335,10 @@
       "id": "x02691",
       "kind": "story",
       "en": "<LI>DIANE: <EM>laughing</EM> Well, I owe you a favour—so, why not.",
-      "cn": "<LI>黛安：<EM>（笑着）</EM> 好吧，我欠你个人情——那，为什么不呢。",
+      "cn": "<LI>黛安：<EM>（笑着）</EM>好吧，我欠你个人情——那，为什么不呢。",
       "es": "<LI>DIANE: <EM>(riendo)</EM> Bueno, te debo un favor, así que ¿por qué no?",
       "fr": "<LI>DIANE : <EM>en riant</EM> Bon, je te dois bien un service — alors, pourquoi pas.",
-      "tw": "<LI>黛安：<EM>（笑著）</EM> 好吧，我欠你個人情——那，為什麼不呢。"
+      "tw": "<LI>黛安：<EM>（笑著）</EM>好吧，我欠你個人情——那，為什麼不呢。"
     },
     {
       "id": "x02692",
@@ -27266,11 +27266,11 @@
     {
       "id": "x02897",
       "kind": "story",
-      "en": "<LI>When she comes down she is still very embarrassed. The mood has broken and you have lost lots of intimacy points.",
-      "cn": "<LI>她下来的时候仍然非常尴尬。气氛已经散了，你失去了很多亲密度。",
-      "es": "<LI>Cuando baja sigue muy avergonzada. El momento se ha roto y has perdido muchos puntos de intimidad.",
-      "fr": "<LI>Quand elle redescend, elle est encore très embarrassée. L'ambiance s'est brisée et vous avez perdu beaucoup de points d'intimité.",
-      "tw": "<LI>她下來的時候仍然非常尷尬。氣氛已經散了，你失去了很多親密度。"
+      "en": "<LI>When she comes down she is still very embarrassed. The mood has broken.",
+      "cn": "<LI>她下来的时候仍然非常尴尬。气氛已经散了。",
+      "es": "<LI>Cuando baja sigue muy avergonzada. El momento se ha roto.",
+      "fr": "<LI>Quand elle redescend, elle est encore très embarrassée. L'ambiance s'est brisée.",
+      "tw": "<LI>她下來的時候仍然非常尷尬。氣氛已經散了。"
     },
     {
       "id": "x02898",
@@ -27313,10 +27313,10 @@
       "id": "x02902",
       "kind": "story",
       "en": "<LI>YOU: <EM>interrupting her</EM> I've got something for you.",
-      "cn": "<LI>你：<EM>（打断她）</EM> 我有东西要给你。",
+      "cn": "<LI>你：<EM>（打断她）</EM>我有东西要给你。",
       "es": "<LI>TÚ: <EM>interrumpiéndola</EM> Tengo algo para ti.",
       "fr": "<LI>VOUS : <EM>l'interrompant</EM> J'ai quelque chose pour toi.",
-      "tw": "<LI>你：<EM>（打斷她）</EM> 我有東西要給你。"
+      "tw": "<LI>你：<EM>（打斷她）</EM>我有東西要給你。"
     },
     {
       "id": "x02903",
@@ -27544,10 +27544,10 @@
       "id": "x02925",
       "kind": "story",
       "en": "<LI>DIANE: <EM>aside, to you</EM> It's my mum. She worries when I'm out after midnight. Thinks I'm still fifteen!",
-      "cn": "<LI>黛安：<EM>（捂着话筒，悄声对你说）</EM> 是我妈。我午夜后还在外面她就担心。当我还是十五岁呢！",
+      "cn": "<LI>黛安：<EM>（捂着话筒，悄声对你说）</EM>是我妈。我午夜后还在外面她就担心。当我还是十五岁呢！",
       "es": "<LI>DIANE: <EM>aparte, dirigiéndose a ti</EM> Es mi madre. Se preocupa cuando salgo después de medianoche. ¡Cree que aún tengo quince años!",
       "fr": "<LI>DIANE : <EM>à part, pour vous</EM> C'est ma mère. Elle s'inquiète quand je suis dehors après minuit. Elle croit que j'ai encore quinze ans !",
-      "tw": "<LI>黛安：<EM>（捂著話筒，悄聲對你說）</EM> 是我媽。我午夜後還在外面她就擔心。當我還是十五歲呢！"
+      "tw": "<LI>黛安：<EM>（捂著話筒，悄聲對你說）</EM>是我媽。我午夜後還在外面她就擔心。當我還是十五歲呢！"
     },
     {
       "id": "x02926",
@@ -28108,10 +28108,10 @@
       "id": "x02986",
       "kind": "story",
       "en": "<LI>DIANE: <EM>in a whisper</EM> Where's the bathroom?",
-      "cn": "<LI>黛安：<EM>（压低声音）</EM> 洗手间在哪儿？",
+      "cn": "<LI>黛安：<EM>（压低声音）</EM>洗手间在哪儿？",
       "es": "<LI>DIANE: <EM>en un susurro</EM> ¿Dónde está el baño?",
       "fr": "<LI>DIANE : <EM>en chuchotant</EM> Où sont les toilettes ?",
-      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪裡？"
+      "tw": "<LI>黛安：<EM>（壓低聲音）</EM>廁所在哪裡？"
     },
     {
       "id": "x02987",
@@ -28238,10 +28238,10 @@
       "id": "x03000",
       "kind": "story",
       "en": "<LI>DIANE: <EM>in a whisper</EM> Where's the bathroom?",
-      "cn": "<LI>黛安：<EM>（压低声音）</EM> 洗手间在哪儿？",
+      "cn": "<LI>黛安：<EM>（压低声音）</EM>洗手间在哪儿？",
       "es": "<LI>DIANE: <EM>en un susurro</EM> ¿Dónde está el baño?",
       "fr": "<LI>DIANE : <EM>en chuchotant</EM> Où sont les toilettes ?",
-      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 廁所在哪裡？"
+      "tw": "<LI>黛安：<EM>（壓低聲音）</EM>廁所在哪裡？"
     },
     {
       "id": "x03001",
@@ -30393,10 +30393,10 @@
       "id": "x03232",
       "kind": "story",
       "en": "<LI>YOU: <EM>looking at her in wonder</EM> Diane, your knickers are all damp.",
-      "cn": "<LI>你：<EM>（惊异地看着她）</EM> 黛安，你的内裤全湿了。",
+      "cn": "<LI>你：<EM>（惊异地看着她）</EM>黛安，你的内裤全湿了。",
       "es": "<LI>TÚ: <EM>mirándola con asombro</EM> Diane, tienes las bragas completamente húmedas.",
       "fr": "<LI>VOUS : <EM>en la regardant avec stupeur</EM> Diane, ta culotte est toute mouillée.",
-      "tw": "<LI>你：<EM>（驚異地看著她）</EM> 黛安，你的內褲全濕了。"
+      "tw": "<LI>你：<EM>（驚異地看著她）</EM>黛安，你的內褲全濕了。"
     },
     {
       "id": "x03233",
@@ -30439,7 +30439,7 @@
       "id": "x03237",
       "kind": "story",
       "en": "<LI>DIANE: <EM>almost inaudibly</EM> I got to the loo but—but I couldn't get my pants down in time. I was ever so desperate. I'd been wanting to go for ages. All that lager and coffee and—and you wouldn't let me go—you've really embarrassed me.",
-      "cn": "<LI>黛安：<EM>（声音低得几乎听不见）</EM> 我到了厕所，但——但我来不及把内裤褪下来。我当时真的快忍不住了。已经憋了好久好久了。那么多啤酒和咖啡，还有——还有你一直不让我去——你真的让我好丢脸。",
+      "cn": "<LI>黛安：<EM>（声音低得几乎听不见）</EM>我到了厕所，但——但我来不及把内裤褪下来。我当时真的快忍不住了。已经憋了好久好久了。那么多啤酒和咖啡，还有——还有你一直不让我去——你真的让我好丢脸。",
       "es": "<LI>DIANE: <EM>casi en un susurro</EM> Llegué al baño, pero… pero no me dio tiempo a bajarme las bragas. Tenía unas ganas horribles. Llevaba una eternidad aguantando. Con toda esa cerveza y el café y… y tú sin dejarme ir al baño… me has dejado en una situación muy violenta.",
       "fr": "<LI>DIANE : <EM>presque inaudible</EM> Je suis arrivée aux toilettes mais—mais je n'ai pas réussi à baisser ma culotte à temps. J'avais tellement envie. Ça faisait une éternité que je me retenais. Toute cette bière et ce café et—et vous ne me laissais pas y aller—vous m'avez vraiment mise dans l'embarras.",
       "tw": "<LI>黛安：（聲音低得幾乎聽不見）我到了廁所，可是——可是來不及脫下內褲。我當時真快憋不住了，早就想去。那麼多拉格跟咖啡，還有——還有你一直不讓我去——你真讓我丟臉。"
@@ -30475,7 +30475,7 @@
       "id": "x03241",
       "kind": "choice",
       "tag": "legsz3",
-      "en": "Hand in Hand.",
+      "en": "Hand in hand.",
       "cn": "携手同行。",
       "es": "De la mano.",
       "fr": "Main dans la main.",
@@ -31966,11 +31966,11 @@
     {
       "id": "x03402",
       "kind": "story",
-      "en": "<LI>DIANE: Hurry up, hurry up.",
-      "cn": "<LI>黛安：快点，快点啊。",
-      "es": "<LI>DIANE: Date prisa, date prisa.",
-      "fr": "<LI>DIANE : Dépêche-toi, dépêche-toi.",
-      "tw": "<LI>黛安：快點，快點啊。"
+      "en": "<LI>DIANE: Hurry up, hurry up!",
+      "cn": "<LI>黛安：快点，快点啊！",
+      "es": "<LI>DIANE: ¡Date prisa, date prisa!",
+      "fr": "<LI>DIANE : Dépêche-toi, dépêche-toi !",
+      "tw": "<LI>黛安：快點，快點啊！"
     },
     {
       "id": "x03403",
@@ -31984,11 +31984,11 @@
     {
       "id": "x03404",
       "kind": "story",
-      "en": "<LI>DIANE: Yes, now.",
-      "cn": "<LI>黛安：有，就是现在。",
-      "es": "<LI>DIANE: Sí, ahora.",
-      "fr": "<LI>DIANE : Oui, là.",
-      "tw": "<LI>黛安：有，就是現在。"
+      "en": "<LI>DIANE: Yes, now!",
+      "cn": "<LI>黛安：有，就是现在！",
+      "es": "<LI>DIANE: ¡Sí, ahora!",
+      "fr": "<LI>DIANE : Oui, là !",
+      "tw": "<LI>黛安：有，就是現在！"
     },
     {
       "id": "x03405",
@@ -32122,10 +32122,10 @@
     {
       "id": "x03419",
       "kind": "story",
-      "en": "<LI>DIANE: Come on. I'm busting to go to the toilet. I really am.",
-      "cn": "<LI>黛安：快给我。我快憋死了，真的要上厕所。",
-      "es": "<LI>DIANE: Venga ya. Me estoy meando encima. En serio.",
-      "fr": "<LI>DIANE : Allez. Je vais craquer, il faut vraiment que j'aille aux toilettes. Je t'assure.",
+      "en": "<LI>DIANE: Come on! I'm busting to go to the toilet. I really am.",
+      "cn": "<LI>黛安：快给我！我快憋死了，真的要上厕所！",
+      "es": "<LI>DIANE: ¡Venga ya! Me estoy meando encima. En serio.",
+      "fr": "<LI>DIANE : Allez ! Je vais craquer, il faut vraiment que j'aille aux toilettes. Je t'assure.",
       "tw": "<LI>黛安：快點，我快憋死了，真的得去廁所。"
     },
     {
@@ -32186,11 +32186,11 @@
     {
       "id": "x03426",
       "kind": "story",
-      "en": "<LI>DIANE: Come on. I really have to go. You don't want me to wet myself.",
-      "cn": "<LI>黛安：快点嘛。我真的憋不住了。你该不会想让我尿裤子吧。",
-      "es": "<LI>DIANE: Venga. De verdad que tengo que ir. No querrás que me haga pis encima.",
-      "fr": "<LI>DIANE : Allez. Il faut vraiment que j'y aille. Tu ne veux quand même pas que je me fasse pipi dessus.",
-      "tw": "<LI>黛安：快點嘛。我真的憋不住了。你該不會想讓我尿褲子吧。"
+      "en": "<LI>DIANE: Come on! I really have to go. You don't want me to wet myself.",
+      "cn": "<LI>黛安：快点嘛！我真的憋不住了。你该不会想让我尿裤子吧。",
+      "es": "<LI>DIANE: ¡Venga! De verdad que tengo que ir. No querrás que me haga pis encima.",
+      "fr": "<LI>DIANE : Allez ! Il faut vraiment que j'y aille. Tu ne veux quand même pas que je me fasse pipi dessus.",
+      "tw": "<LI>黛安：快點嘛！我真的憋不住了。你該不會想讓我尿褲子吧。"
     },
     {
       "id": "x03427",
@@ -32213,11 +32213,11 @@
     {
       "id": "x03429",
       "kind": "story",
-      "en": "<LI>DIANE: Come on. Let me have my skirt.",
-      "cn": "<LI>黛安：快点嘛，把我的裙子还给我。",
-      "es": "<LI>DIANE: Venga. Dame mi falda.",
-      "fr": "<LI>DIANE : Allez. Rends-moi ma jupe.",
-      "tw": "<LI>黛安：快點嘛，把我的裙子還給我。"
+      "en": "<LI>DIANE: Come on! Let me have my skirt.",
+      "cn": "<LI>黛安：快点嘛！把我的裙子还给我。",
+      "es": "<LI>DIANE: ¡Venga! Dame mi falda.",
+      "fr": "<LI>DIANE : Allez ! Rends-moi ma jupe.",
+      "tw": "<LI>黛安：快點嘛！把我的裙子還給我。"
     },
     {
       "id": "x03430",
@@ -32516,11 +32516,11 @@
     {
       "id": "x03462",
       "kind": "story",
-      "en": "<LI>DIANE: Anything, anything.",
-      "cn": "<LI>黛安：行行行，什么都行。",
-      "es": "<LI>DIANE: Lo que sea, lo que sea.",
-      "fr": "<LI>DIANE : Tout ce que tu veux, tout ce que tu veux.",
-      "tw": "<LI>黛安：行行行，什麼都行。"
+      "en": "<LI>DIANE: Anything, anything!",
+      "cn": "<LI>黛安：行行行，什么都行！",
+      "es": "<LI>DIANE: ¡Lo que sea, lo que sea!",
+      "fr": "<LI>DIANE : Tout ce que tu veux, tout ce que tu veux !",
+      "tw": "<LI>黛安：行行行，什麼都行！"
     },
     {
       "id": "x03463",
@@ -33708,7 +33708,7 @@
       "id": "x03590",
       "kind": "story",
       "en": "<LI>DIANE: <EM>blushing</EM> I'm sorry, but I must go to the loo. I'm bursting.",
-      "cn": "<LI>黛安：<EM>（满脸通红）</EM> 对不起，我得去一下厕所，我已经憋不住了。",
+      "cn": "<LI>黛安：<EM>（满脸通红）</EM>对不起，我得去一下厕所，我已经憋不住了。",
       "es": "<LI>DIANE: <EM>ruborizada</EM> Lo siento, pero tengo que ir al baño. No aguanto más.",
       "fr": "<LI>DIANE : <EM>en rougissant</EM> Désolée, mais il faut que j'aille aux toilettes. Je vais exploser.",
       "tw": "<LI>黛安：（臉紅著）對不起，我得上廁所，我快憋不住了。"
@@ -34886,7 +34886,7 @@
       "id": "x03718",
       "kind": "story",
       "en": "<LI>DIANE: <EM>with a nervous little giggle</EM> I'm sorry—I was absolutely desperate for the loo.",
-      "cn": "<LI>黛安：<EM>（紧张地轻笑了一声）</EM> 对不起——我那时候快憋疯了，急着要上厕所。",
+      "cn": "<LI>黛安：<EM>（紧张地轻笑了一声）</EM>对不起——我那时候快憋疯了，急着要上厕所。",
       "es": "<LI>DIANE: <EM>con una risita nerviosa</EM> Lo siento, es que tenía unas ganas tremendas de ir al baño.",
       "fr": "<LI>DIANE : <EM>avec un petit rire nerveux</EM> Pardon — j'avais une envie folle d'aller aux toilettes.",
       "tw": "<LI>黛安：（緊張地輕笑）對不起，我當時急著想上廁所。"
@@ -34904,10 +34904,10 @@
       "id": "x03720",
       "kind": "story",
       "en": "<LI>DIANE: <EM>with another giggle</EM> Just about.",
-      "cn": "<LI>黛安：<EM>（又笑了一声）</EM> 勉强算是吧。",
+      "cn": "<LI>黛安：<EM>（又笑了一声）</EM>勉强算是吧。",
       "es": "<LI>DIANE: <EM>con otra risita</EM> Por los pelos.",
       "fr": "<LI>DIANE : <EM>avec un autre petit rire</EM> Tout juste.",
-      "tw": "<LI>黛安：<EM>（又笑了一聲）</EM> 勉強算是吧。"
+      "tw": "<LI>黛安：<EM>（又笑了一聲）</EM>勉強算是吧。"
     },
     {
       "id": "x03721",
@@ -34932,10 +34932,10 @@
       "id": "x03723",
       "kind": "story",
       "en": "<LI>DIANE: <EM>with a nervous little giggle</EM> I'm sorry—I was just dying for the loo.",
-      "cn": "<LI>黛安：<EM>（紧张地轻笑了一声）</EM> 对不起——我那时候急得不行，太想去厕所了。",
+      "cn": "<LI>黛安：<EM>（紧张地轻笑了一声）</EM>对不起——我那时候急得不行，太想去厕所了。",
       "es": "<LI>DIANE: <EM>con una risita nerviosa</EM> Lo siento, es que me estaba meando de las ganas.",
       "fr": "<LI>DIANE : <EM>avec un petit rire nerveux</EM> Pardon — j'avais une envie terrible d'aller aux toilettes.",
-      "tw": "<LI>黛安：<EM>（緊張地輕笑了一聲）</EM> 對不起——我那時候急得不行，太想去廁所了。"
+      "tw": "<LI>黛安：<EM>（緊張地輕笑了一聲）</EM>對不起——我那時候急得不行，太想去廁所了。"
     },
     {
       "id": "x03724",
@@ -34950,7 +34950,7 @@
       "id": "x03725",
       "kind": "story",
       "en": "<LI>DIANE: <EM>with another giggle</EM> I was pretty glad to get there. See you next week.",
-      "cn": "<LI>黛安：<EM>（又笑了一声）</EM> 总算赶到了，还挺庆幸的。下周见。",
+      "cn": "<LI>黛安：<EM>（又笑了一声）</EM>总算赶到了，还挺庆幸的。下周见。",
       "es": "<LI>DIANE: <EM>con otra risita</EM> Qué alivio llegar a tiempo. Hasta la semana que viene.",
       "fr": "<LI>DIANE : <EM>avec un autre petit rire</EM> J'étais bien contente d'y arriver à temps. À la semaine prochaine.",
       "tw": "<LI>黛安：（又咯咯笑了一聲）我真高興趕到了。下週見。"
@@ -34997,7 +34997,7 @@
       "id": "x03730",
       "kind": "story",
       "en": "<LI>YOU: <EM>joking</EM> I hope you had your key ready.",
-      "cn": "<LI>你：<EM>（开玩笑地）</EM> 希望你的钥匙找得到吧。",
+      "cn": "<LI>你：<EM>（开玩笑地）</EM>希望你的钥匙找得到吧。",
       "es": "<LI>TÚ: <EM>bromeando</EM> Espero que tuvieras la llave a mano.",
       "fr": "<LI>VOUS : <EM>en plaisantant</EM> J'espère que tu avais ta clé à portée de main.",
       "tw": "<LI>你：（開玩笑）希望你打算好鑰匙了。"
@@ -35078,10 +35078,10 @@
       "id": "x03739",
       "kind": "story",
       "en": "<LI>DIANE: <EM>(giggles)</EM> Goodness no. I just couldn't wait. Lucky I was wearing a dress.",
-      "cn": "<LI>黛安：<EM>（笑）</EM> 当然没有。我根本等不了。幸好那天穿的是裙子。",
+      "cn": "<LI>黛安：<EM>（笑）</EM>当然没有。我根本等不了。幸好那天穿的是裙子。",
       "es": "<LI>DIANE: <EM>(ríe)</EM> Qué va. Es que no podía esperar. Menos mal que llevaba vestido.",
       "fr": "<LI>DIANE : <EM>(glousse)</EM> Oh non, pas du tout. Je ne pouvais vraiment plus attendre. Heureusement que je portais une robe.",
-      "tw": "<LI>黛安：<EM>（笑）</EM> 當然沒有。我根本等不了。幸好那天穿的是裙子。"
+      "tw": "<LI>黛安：<EM>（笑）</EM>當然沒有。我根本等不了。幸好那天穿的是裙子。"
     },
     {
       "id": "x03740",
@@ -36999,10 +36999,10 @@
       "id": "x03945",
       "kind": "story",
       "en": "<LI>DIANE: <EM>laughing</EM> I won't let you!",
-      "cn": "<LI>黛安：<EM>（笑着说）</EM> 我不让你去！",
+      "cn": "<LI>黛安：<EM>（笑着说）</EM>我不让你去！",
       "es": "<LI>DIANE: <EM>riendo</EM> ¡No te lo voy a permitir!",
       "fr": "<LI>DIANE : <EM>riant</EM> Je ne te laisserai pas y aller !",
-      "tw": "<LI>黛安：<EM>（笑著說）</EM> 我不讓你去！"
+      "tw": "<LI>黛安：<EM>（笑著說）</EM>我不讓你去！"
     },
     {
       "id": "x03946",
@@ -37691,10 +37691,10 @@
       "id": "x04019",
       "kind": "story",
       "en": "<LI>DIANE: <EM>very quietly</EM> That's lovely.",
-      "cn": "<LI>黛安：<EM>（轻声说道）</EM> 真好。",
+      "cn": "<LI>黛安：<EM>（轻声说道）</EM>真好。",
       "es": "<LI>DIANE: <EM>muy bajito</EM> Qué rico.",
       "fr": "<LI>DIANE : <EM>très doucement</EM> C'est merveilleux.",
-      "tw": "<LI>黛安：<EM>（輕聲說道）</EM> 真好。"
+      "tw": "<LI>黛安：<EM>（輕聲說道）</EM>真好。"
     },
     {
       "id": "x04020",
@@ -38167,7 +38167,7 @@
       "id": "x04070",
       "kind": "story",
       "en": "<P><LI>DIANE: <EM>whispers in your ear</EM> I'm dying to go to the loo. Is there anywhere I can go?",
-      "cn": "<P><LI>黛安：<EM>（凑到你耳边悄声说）</EM> 我快憋死了，想去厕所。附近有地方可以去吗？",
+      "cn": "<P><LI>黛安：<EM>（凑到你耳边悄声说）</EM>我快憋死了，想去厕所。附近有地方可以去吗？",
       "es": "<P><LI>DIANE: <EM>(te susurra al oído)</EM> Me muero por ir al baño. ¿Hay algún sitio cerca?",
       "fr": "<P><LI>DIANE : <EM>vous chuchote à l'oreille</EM> J'ai une envie pressante d'aller aux toilettes. Il y a un endroit où je peux y aller ?",
       "tw": "<P><LI>黛安：（湊到你耳邊小聲說）我快憋不住了。附近有地方能去廁所嗎？"
@@ -39768,10 +39768,10 @@
       "id": "x04231",
       "kind": "story",
       "en": "<LI>DIANE: <EM>in a whisper</EM> I bet you watched that girl having a pee.",
-      "cn": "<LI>黛安：<EM>（压低声音）</EM> 你刚才肯定偷看那个女孩尿尿了。",
+      "cn": "<LI>黛安：<EM>（压低声音）</EM>你刚才肯定偷看那个女孩尿尿了。",
       "es": "<LI>DIANE: <EM>en un susurro</EM> Seguro que has mirado a esa chica mientras hacía pis.",
       "fr": "<LI>DIANE : <EM>dans un murmure</EM> Je parie que vous avez regardé cette fille faire pipi.",
-      "tw": "<LI>黛安：<EM>（壓低聲音）</EM> 你剛才肯定偷看那個女生尿尿了。"
+      "tw": "<LI>黛安：<EM>（壓低聲音）</EM>你剛才肯定偷看那個女生尿尿了。"
     },
     {
       "id": "x04232",
@@ -42736,10 +42736,10 @@
       "id": "x04551",
       "kind": "story",
       "en": "<LI>DIANE: <EM>very quietly</EM> OK.",
-      "cn": "<LI>黛安：<EM>（极轻地）</EM> 好了。",
+      "cn": "<LI>黛安：<EM>（极轻地）</EM>好了。",
       "es": "<LI>DIANE: <EM>muy bajito</EM> OK.",
       "fr": "<LI>DIANE : <EM>très doucement</EM> OK.",
-      "tw": "<LI>黛安：<EM>（極輕地）</EM> 好了。"
+      "tw": "<LI>黛安：<EM>（極輕地）</EM>好了。"
     },
     {
       "id": "x04552",
@@ -42845,21 +42845,21 @@
     {
       "id": "x04563",
       "kind": "story",
-      "en": "<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge—",
+      "en": "<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge that—",
       "cn": "<LI>你将手滑向前方，触碰到她最私密的地方，心里清楚地知道——",
-      "es": "<LI>Deslizas la mano hacia delante, encontrando su lugar más íntimo, sabiendo que...",
-      "fr": "<LI>Vous glissez votre main vers l'avant, jusqu'à son endroit le plus secret, sachant —",
+      "es": "<LI>Deslizas la mano hacia delante, encontrando su lugar más íntimo, sabiendo que—",
+      "fr": "<LI>Vous glissez votre main vers l'avant, jusqu'à son endroit le plus secret, sachant que—",
       "tw": "<LI>你將手滑向前方，觸碰到她最私密的地方，心裡清楚地知道——"
     },
     {
       "id": "x04564",
       "kind": "choice",
       "tag": "secondplace1",
-      "en": "—that—",
-      "cn": "——那——",
-      "es": "—eso—",
-      "fr": "—ça—",
-      "tw": "——那——"
+      "en": "Exactly.",
+      "cn": "没错。",
+      "es": "Exacto.",
+      "fr": "Exactement.",
+      "tw": "沒錯。"
     },
     {
       "id": "x04565",
@@ -44641,16 +44641,16 @@
       "id": "x04760",
       "kind": "story",
       "en": "<LI>DIANE: <EM>blushing bright red</EM> Actually, I do need to go. I think, maybe, that it's getting late, it's time I went. I can wait till I get home. There's no need for you to walk me home.",
-      "cn": "<LI>黛安：<EM>（脸红得发烫）</EM> 其实……我确实需要去一下。我想，也许，时间不早了，是时候回去了。我可以忍到家再说。不用你送我。",
+      "cn": "<LI>黛安：<EM>（脸红得发烫）</EM>其实……我确实需要去一下。我想，也许，时间不早了，是时候回去了。我可以忍到家再说。不用你送我。",
       "es": "<LI>DIANE: <EM>poniéndose colorada como un tomate</EM> La verdad es que sí tengo que ir. Creo que, bueno, se está haciendo tarde, ya debería irme. Puedo aguantar hasta llegar a casa. No hace falta que me acompañes.",
       "fr": "<LI>DIANE : <EM>rouge écarlate</EM> En fait, j'ai besoin d'y aller. Je pense, peut-être, qu'il se fait tard, il est temps que je rentre. Je peux attendre d'être chez moi. Pas besoin de me raccompagner.",
-      "tw": "<LI>黛安：<EM>（臉紅得發燙）</EM> 其實……我確實需要去一下。我想，也許，時間不早了，是時候回去了。我可以忍到家再說。不用你送我。"
+      "tw": "<LI>黛安：<EM>（臉紅得發燙）</EM>其實……我確實需要去一下。我想，也許，時間不早了，是時候回去了。我可以忍到家再說。不用你送我。"
     },
     {
       "id": "x04761",
       "kind": "story",
       "en": "<LI>DIANE: <EM>blushing bright red, and crossing her legs as she stands there</EM> Actually, I'm dying to go. I should have gone earlier. Sorry about this, but maybe it's best if I just head off home now. It is quite late.",
-      "cn": "<LI>黛安：<EM>（脸红得厉害，站在那里双腿交叉夹紧）</EM> 说实话，我都快憋不住了。早该早点去的……真不好意思，我想还是回家比较好。反正也挺晚了。",
+      "cn": "<LI>黛安：<EM>（脸红得厉害，站在那里双腿交叉夹紧）</EM>说实话，我都快憋不住了。早该早点去的……真不好意思，我想还是回家比较好。反正也挺晚了。",
       "es": "<LI>DIANE: <EM>poniéndose colorada como un tomate y cruzando las piernas mientras está de pie</EM> La verdad es que me estoy meando. Tendría que haber ido antes. Lo siento, pero creo que lo mejor es que me vaya a casa ahora. Es bastante tarde.",
       "fr": "<LI>DIANE : <EM>rouge écarlate, les jambes croisées là où elle se tient</EM> En fait, j'ai terriblement envie d'y aller. J'aurais dû y aller avant. Désolée, mais je crois qu'il vaut mieux que je rentre maintenant. Il est vraiment tard.",
       "tw": "<LI>黛安：（臉漲得通紅，站著夾緊雙腿）其實我快憋不住了，早該早點去……真抱歉，可我想現在回家最好。也滿晚了。"
@@ -44659,7 +44659,7 @@
       "id": "x04762",
       "kind": "story",
       "en": "<LI>DIANE: <EM>biting her lip, looking worried and shifting from foot to foot</EM> I'm busting to go. All that lager—I don't suppose you've got another toilet, have you?",
-      "cn": "<LI>黛安：<EM>（咬着嘴唇，一脸担忧，两只脚不停地换来换去）</EM> 我都快憋炸了。喝了那么多啤酒——你们家不会还有另一个厕所吧？",
+      "cn": "<LI>黛安：<EM>（咬着嘴唇，一脸担忧，两只脚不停地换来换去）</EM>我都快憋炸了。喝了那么多啤酒——你们家不会还有另一个厕所吧？",
       "es": "<LI>DIANE: <EM>mordiéndose el labio, con cara de angustia y cambiando el peso de un pie al otro</EM> Tengo unas ganas horribles. Toda esa cerveza... ¿No tendrás otro baño por aquí?",
       "fr": "<LI>DIANE : <EM>se mordant la lèvre, l'air anxieux, se balançant d'un pied sur l'autre</EM> J'ai une envie folle d'y aller. Toute cette bière… Tu n'aurais pas d'autres toilettes, par hasard ?",
       "tw": "<LI>黛安：（咬唇，擔憂地一直換腳）我快憋爆了。喝了那麼多拉格——你們沒有另一個廁所吧？"
@@ -44884,10 +44884,10 @@
     {
       "id": "x04787",
       "kind": "story",
-      "en": "<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was <STRONG>dying</STRONG> for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.",
-      "cn": "<P><LI>黛安：记忆里最难熬的一次，是几年前跟家人去拜访朋友。那里有个比我大几岁的男生，我当时有点崇拜他。他把我带到另一个房间教我下国际象棋。问题是，午饭喝了些苹果酒，我<STRONG>憋得要死</STRONG>，特别想上厕所，又不知道怎么开口。我坐在那里不停扭动，裙子一直往上爬，我能感觉到他在看我，这让我更加窘迫。",
-      "es": "<P><LI>DIANE: Una de las peores veces fue hace unos años, cuando fui con mi familia a visitar a unos amigos. Había un chico un poco mayor que yo que me imponía bastante. El caso es que me llevó a otra habitación y me enseñó a jugar al ajedrez. El problema era que había tomado sidra en la comida y tenía <STRONG>unas ganas locas</STRONG> de hacer pis y no sabía cómo decírselo. No paraba de moverme y la falda se me iba subiendo, y notaba que él me miraba, y eso lo ponía todo peor.",
-      "fr": "<P><LI>DIANE : L'un des pires moments — il y a quelques années, j'étais allée avec ma famille rendre visite à des amis. Il y avait un type un peu plus âgé que moi et il m'impressionnait un peu. Bref, il m'a emmenée dans une autre pièce et m'a appris à jouer aux échecs. Le problème, c'est que j'avais bu du cidre au déjeuner et j'avais <STRONG>une envie folle</STRONG> de faire pipi sans savoir comment lui dire. Je n'arrêtais pas de gigoter et ma jupe ne cessait de remonter — je sentais qu'il me regardait, ce qui n'arrangeait pas les choses.",
+      "en": "<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was dying for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.",
+      "cn": "<P><LI>黛安：记忆里最难熬的一次，是几年前跟家人去拜访朋友。那里有个比我大几岁的男生，我当时有点崇拜他。他把我带到另一个房间教我下国际象棋。问题是，午饭喝了些苹果酒，我憋得要死，特别想上厕所，又不知道怎么开口。我坐在那里不停扭动，裙子一直往上爬，我能感觉到他在看我，这让我更加窘迫。",
+      "es": "<P><LI>DIANE: Una de las peores veces fue hace unos años, cuando fui con mi familia a visitar a unos amigos. Había un chico un poco mayor que yo que me imponía bastante. El caso es que me llevó a otra habitación y me enseñó a jugar al ajedrez. El problema era que había tomado sidra en la comida y tenía unas ganas locas de hacer pis y no sabía cómo decírselo. No paraba de moverme y la falda se me iba subiendo, y notaba que él me miraba, y eso lo ponía todo peor.",
+      "fr": "<P><LI>DIANE : L'un des pires moments — il y a quelques années, j'étais allée avec ma famille rendre visite à des amis. Il y avait un type un peu plus âgé que moi et il m'impressionnait un peu. Bref, il m'a emmenée dans une autre pièce et m'a appris à jouer aux échecs. Le problème, c'est que j'avais bu du cidre au déjeuner et j'avais une envie folle de faire pipi sans savoir comment lui dire. Je n'arrêtais pas de gigoter et ma jupe ne cessait de remonter — je sentais qu'il me regardait, ce qui n'arrangeait pas les choses.",
       "tw": "<P><LI>黛安：最糟的一次是幾年前，我和家人去拜訪朋友。那裡有個比我大一點點的男生，我有些崇拜他。他帶我去另一間房，教我下國際象棋。問題是午餐時我喝了蘋果酒，急著尿尿，卻不知道怎麼告訴他。我坐立不安，裙子不斷滑起，我知道他在看我，這讓我更難受。"
     },
     {
@@ -45047,10 +45047,10 @@
       "id": "x04805",
       "kind": "story",
       "en": "<LI>DIANE: <EM>giggles</EM> No, I squatted and peed a flood. Mind you—",
-      "cn": "<LI>黛安：<EM>（咯咯笑道）</EM> 没有，我蹲下来尿了一大泡。不过——",
+      "cn": "<LI>黛安：<EM>（咯咯笑道）</EM>没有，我蹲下来尿了一大泡。不过——",
       "es": "<LI>DIANE: <EM>(se ríe)</EM> No, me puse en cuclillas y me salió un chorro de pis enorme. Eso sí —",
       "fr": "<LI>DIANE : <EM>glousse</EM> Non, je me suis accroupie et j'ai pissé un torrent. Cela dit —",
-      "tw": "<LI>黛安：<EM>（咯咯笑道）</EM> 沒有，我蹲下來尿了一大泡。不過——"
+      "tw": "<LI>黛安：<EM>（咯咯笑道）</EM>沒有，我蹲下來尿了一大泡。不過——"
     },
     {
       "id": "x05008",
@@ -45452,19 +45452,19 @@
       "id": "x04847",
       "kind": "story",
       "en": "<LI>DIANE: <EM>Between sobs</EM> I'm sorry, I'm sorry, I'm sorry.",
-      "cn": "<LI>黛安：<EM>（哽咽着）</EM> 对不起，对不起，对不起。",
+      "cn": "<LI>黛安：<EM>（哽咽着）</EM>对不起，对不起，对不起。",
       "es": "<LI>DIANE: <EM>Entre sollozos</EM> Lo siento, lo siento, lo siento.",
       "fr": "<LI>DIANE : <EM>Entre deux sanglots</EM> Pardon, pardon, pardon.",
-      "tw": "<LI>黛安：<EM>（哽咽著）</EM> 對不起，對不起，對不起。"
+      "tw": "<LI>黛安：<EM>（哽咽著）</EM>對不起，對不起，對不起。"
     },
     {
       "id": "x04848",
       "kind": "story",
       "en": "<LI>YOU: <EM>softly</EM> It's all right. It could happen to anyone.",
-      "cn": "<LI>你：<EM>（轻声说）</EM> 没事的。这种事谁都可能遇上。",
+      "cn": "<LI>你：<EM>（轻声说）</EM>没事的。这种事谁都可能遇上。",
       "es": "<LI>TÚ: <EM>suavemente</EM> No pasa nada. Le puede ocurrir a cualquiera.",
       "fr": "<LI>VOUS : <EM>doucement</EM> Ce n'est rien. Ça peut arriver à n'importe qui.",
-      "tw": "<LI>你：<EM>（輕聲說）</EM> 沒事的。這種事誰都可能遇上。"
+      "tw": "<LI>你：<EM>（輕聲說）</EM>沒事的。這種事誰都可能遇上。"
     },
     {
       "id": "x04849",
@@ -45488,19 +45488,19 @@
       "id": "x04851",
       "kind": "story",
       "en": "<LI>DIANE: <EM>almost inaudibly</EM> I'm sorry. I'm sorry. I just couldn't wait.",
-      "cn": "<LI>黛安：<EM>（声音细若蚊鸣）</EM> 对不起。对不起。我真的憋不住了。",
+      "cn": "<LI>黛安：<EM>（声音细若蚊鸣）</EM>对不起。对不起。我真的憋不住了。",
       "es": "<LI>DIANE: <EM>casi en un susurro</EM> Lo siento. Lo siento. Es que no podía aguantar más.",
       "fr": "<LI>DIANE : <EM>presque inaudible</EM> Pardon. Pardon. Je n'ai pas pu me retenir.",
-      "tw": "<LI>黛安：<EM>（聲音細若蚊鳴）</EM> 對不起。對不起。我真的憋不住了。"
+      "tw": "<LI>黛安：<EM>（聲音細若蚊鳴）</EM>對不起。對不起。我真的憋不住了。"
     },
     {
       "id": "x04852",
       "kind": "story",
       "en": "<LI>YOU: <EM>softly</EM> It's all right. It's nothing to be ashamed of.",
-      "cn": "<LI>你：<EM>（轻声说）</EM> 没事的，这没什么好羞耻的。",
+      "cn": "<LI>你：<EM>（轻声说）</EM>没事的，这没什么好羞耻的。",
       "es": "<LI>TÚ: <EM>suavemente</EM> No pasa nada. No tienes nada de qué avergonzarte.",
       "fr": "<LI>VOUS : <EM>doucement</EM> Ce n'est rien. Il n'y a pas de quoi avoir honte.",
-      "tw": "<LI>你：<EM>（輕聲說）</EM> 沒事的，這沒什麼好羞恥的。"
+      "tw": "<LI>你：<EM>（輕聲說）</EM>沒事的，這沒什麼好羞恥的。"
     },
     {
       "id": "x04853",
@@ -45643,19 +45643,19 @@
       "id": "x04868",
       "kind": "story",
       "en": "<LI>DIANE: <EM>Between sobs</EM> I'm sorry, I'm sorry, I'm sorry.",
-      "cn": "<LI>黛安：<EM>（哽咽着）</EM> 对不起，对不起，对不起。",
+      "cn": "<LI>黛安：<EM>（哽咽着）</EM>对不起，对不起，对不起。",
       "es": "<LI>DIANE: <EM>Entre sollozos</EM> Lo siento, lo siento, lo siento.",
       "fr": "<LI>DIANE : <EM>Entre deux sanglots</EM> Pardon, pardon, pardon.",
-      "tw": "<LI>黛安：<EM>（哽咽著）</EM> 對不起，對不起，對不起。"
+      "tw": "<LI>黛安：<EM>（哽咽著）</EM>對不起，對不起，對不起。"
     },
     {
       "id": "x04869",
       "kind": "story",
       "en": "<LI>YOU: <EM>softly</EM> It's all right. It could happen to anyone.",
-      "cn": "<LI>你：<EM>（轻声说）</EM> 没事的。这种事谁都可能遇上。",
+      "cn": "<LI>你：<EM>（轻声说）</EM>没事的。这种事谁都可能遇上。",
       "es": "<LI>TÚ: <EM>suavemente</EM> No pasa nada. Le puede ocurrir a cualquiera.",
       "fr": "<LI>VOUS : <EM>doucement</EM> Ce n'est rien. Ça peut arriver à n'importe qui.",
-      "tw": "<LI>你：<EM>（輕聲說）</EM> 沒事的。這種事誰都可能遇上。"
+      "tw": "<LI>你：<EM>（輕聲說）</EM>沒事的。這種事誰都可能遇上。"
     },
     {
       "id": "x04870",
@@ -45679,19 +45679,19 @@
       "id": "x04872",
       "kind": "story",
       "en": "<LI>DIANE: <EM>almost inaudibly</EM> I'm sorry. I'm sorry. I just couldn't wait.",
-      "cn": "<LI>黛安：<EM>（声音细若蚊鸣）</EM> 对不起。对不起。我真的憋不住了。",
+      "cn": "<LI>黛安：<EM>（声音细若蚊鸣）</EM>对不起。对不起。我真的憋不住了。",
       "es": "<LI>DIANE: <EM>casi en un susurro</EM> Lo siento. Lo siento. Es que no podía aguantar más.",
       "fr": "<LI>DIANE : <EM>presque inaudible</EM> Pardon. Pardon. Je n'ai pas pu me retenir.",
-      "tw": "<LI>黛安：<EM>（聲音細若蚊鳴）</EM> 對不起。對不起。我真的憋不住了。"
+      "tw": "<LI>黛安：<EM>（聲音細若蚊鳴）</EM>對不起。對不起。我真的憋不住了。"
     },
     {
       "id": "x04873",
       "kind": "story",
       "en": "<LI>YOU: <EM>softly</EM> It's all right. It's nothing to be ashamed of.",
-      "cn": "<LI>你：<EM>（轻声说）</EM> 没事的，这没什么好羞耻的。",
+      "cn": "<LI>你：<EM>（轻声说）</EM>没事的，这没什么好羞耻的。",
       "es": "<LI>TÚ: <EM>suavemente</EM> No pasa nada. No tienes nada de qué avergonzarte.",
       "fr": "<LI>VOUS : <EM>doucement</EM> Ce n'est rien. Il n'y a pas de quoi avoir honte.",
-      "tw": "<LI>你：<EM>（輕聲說）</EM> 沒事的，這沒什麼好羞恥的。"
+      "tw": "<LI>你：<EM>（輕聲說）</EM>沒事的，這沒什麼好羞恥的。"
     },
     {
       "id": "x04874",
@@ -45843,10 +45843,10 @@
       "id": "x04890",
       "kind": "story",
       "en": "<LI>DIANE: <EM>very quietly</EM> I feel so embarrassed. But thank you for being so nice about it.",
-      "cn": "<LI>黛安：<EM>（声音极轻）</EM> 我真的好尴尬。但谢谢你对我这么好。",
+      "cn": "<LI>黛安：<EM>（声音极轻）</EM>我真的好尴尬。但谢谢你对我这么好。",
       "es": "<LI>DIANE: <EM>muy en voz baja</EM> Me siento muy avergonzada. Pero gracias por tomártelo tan bien.",
       "fr": "<LI>DIANE : <EM>très doucement</EM> Je me sens tellement gênée. Mais merci d'avoir si bien pris les choses.",
-      "tw": "<LI>黛安：<EM>（聲音極輕）</EM> 我真的好尷尬。但謝謝你對我這麼好。"
+      "tw": "<LI>黛安：<EM>（聲音極輕）</EM>我真的好尷尬。但謝謝你對我這麼好。"
     },
     {
       "id": "x04891",
@@ -46011,19 +46011,19 @@
       "id": "x04908",
       "kind": "story",
       "en": "<LI>DIANE: <EM>ruefully</EM> At least I wasn't wearing trousers.",
-      "cn": "<LI>黛安：<EM>（苦涩地）</EM> 好歹我穿的不是长裤。",
+      "cn": "<LI>黛安：<EM>（苦涩地）</EM>好歹我穿的不是长裤。",
       "es": "<LI>DIANE: <EM>con resignación</EM> Al menos no llevaba pantalones.",
       "fr": "<LI>DIANE : <EM>avec un sourire amer</EM> Au moins je ne portais pas de pantalon.",
-      "tw": "<LI>黛安：<EM>（苦澀地）</EM> 好歹我穿的不是長褲。"
+      "tw": "<LI>黛安：<EM>（苦澀地）</EM>好歹我穿的不是長褲。"
     },
     {
       "id": "x04909",
       "kind": "story",
       "en": "<LI>DIANE: <EM>with a half laugh</EM> At least I'm glad I wasn't wearing tights.",
-      "cn": "<LI>黛安：<EM>（苦中带笑）</EM> 还好我没穿连裤袜，这点倒是庆幸。",
+      "cn": "<LI>黛安：<EM>（苦中带笑）</EM>还好我没穿连裤袜，这点倒是庆幸。",
       "es": "<LI>DIANE: <EM>con una media carcajada</EM> Al menos me alegra no haber llevado medias.",
       "fr": "<LI>DIANE : <EM>avec un petit rire</EM> Au moins, je suis contente de ne pas avoir mis de collants.",
-      "tw": "<LI>黛安：<EM>（苦中帶笑）</EM> 還好我沒穿褲襪，這點倒是慶幸。"
+      "tw": "<LI>黛安：<EM>（苦中帶笑）</EM>還好我沒穿褲襪，這點倒是慶幸。"
     },
     {
       "id": "x04910",
@@ -46139,10 +46139,10 @@
       "id": "x04923",
       "kind": "story",
       "en": "<LI>DIANE: <EM>after a pause</EM> Well, at least it's made one of us happy.",
-      "cn": "<LI>黛安：<EM>（沉默片刻后）</EM> 好吧，至少这让我们其中一个人高兴了。",
+      "cn": "<LI>黛安：<EM>（沉默片刻后）</EM>好吧，至少这让我们其中一个人高兴了。",
       "es": "<LI>DIANE: <EM>tras una pausa</EM> Bueno, al menos a uno de los dos le ha alegrado el día.",
       "fr": "<LI>DIANE : <EM>après un silence</EM> Eh bien, au moins ça en a rendu un de nous deux heureux.",
-      "tw": "<LI>黛安：（沉默過了一下） 好吧，至少這讓我們其中一個人高興了。"
+      "tw": "<LI>黛安：（沉默過了一下）好吧，至少這讓我們其中一個人高興了。"
     },
     {
       "id": "x04924",

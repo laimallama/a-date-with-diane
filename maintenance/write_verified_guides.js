@@ -385,7 +385,7 @@ const thirdTail = [
   "Fondle her legs?",
   "She tries to break away.",
   "You wait for a reply.",
-  "Hand in Hand.",
+  "Hand in hand.",
 ];
 
 const fourthTail = [

@@ -32,7 +32,7 @@ What are you going to say?
 
 You can tell that Diane's dying for a pee and you would like to help her by telling her about the Portaloo. But you don't want to embarrass her. So—
 
-YOU: [Quietly to her] I'm dying for a pee. There's a Portaloo round the corner. You couldn't keep a lookout for me if I sneak in there, could you? I don't think it's really for public use.
+YOU: (quietly to her) I'm dying for a pee. There's a Portaloo round the corner. You couldn't keep a lookout for me if I sneak in there, could you? I don't think it's really for public use.
 
 DIANE: Sure. Actually, I might go as well.
 
@@ -64,7 +64,7 @@ She turns and gives you a kiss, pats your bottom and walks along, smiling at you
 
 You gained 25 intimacy points.
 
-You both use the Portaloo. You gained lots of intimacy points but lost 10 shyness points.
+You both use the Portaloo. You lost 10 shyness points.
 
 (You join the others.)
 

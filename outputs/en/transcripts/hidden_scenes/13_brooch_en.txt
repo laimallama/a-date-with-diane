@@ -26,7 +26,7 @@ You go across the room to fetch the brooch. Diane stands up.
 
 DIANE: I must be going. I'll just—.
 
-YOU: [Interrupting her] I've got something for you.
+YOU: (interrupting her) I've got something for you.
 
 You return and give it to her. She has sat down on the sofa again and is putting on her jacket.
 

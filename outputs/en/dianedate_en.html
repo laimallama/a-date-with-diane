@@ -12,6 +12,7 @@
   --accent: #9b2f3f;
   --accent-dark: #6f1f2c;
   --accent-strong: #6f1f2c;
+  --on-accent: #ffffff;
   --choice: #fff;
   --choice-hover: #fff3df;
   --status: #f1e7d8;
@@ -28,17 +29,18 @@
     color-scheme: dark;
     --paper: #221c17;
     --ink: #ede3d3;
-    --muted: #a4917c;
+    --muted: #948b82;
     --line: #3c2f26;
-    --accent: #d45468;
-    --accent-dark: #f2b6c0;
-    --accent-strong: #b33d52;
+    --accent: #f0d060;
+    --accent-dark: #f0d060;
+    --accent-strong: #f6e48a;
+    --on-accent: #221c17;
     --choice: #2b241e;
     --choice-hover: #3a2f26;
     --status: #241e18;
-    --hover-border: #c9a06e;
-    --highlight-bg: #3a1f26;
-    --em-color: #e0b4bf;
+    --hover-border: #c9a94a;
+    --highlight-bg: #3a3220;
+    --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
     --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
@@ -63,7 +65,7 @@ body {
 }
 
 a { color: inherit; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
 
 .game-shell {
   width: min(920px, calc(100% - 32px));
@@ -226,16 +228,15 @@ a:hover { color: var(--accent); }
 .choice.key-pressed {
   border-color: var(--hover-border);
   background: var(--choice-hover);
-  color: var(--accent-dark);
+  color: var(--ink);
 }
 
 @media (hover: hover) and (pointer: fine) {
   #box li a:hover,
-  .choice:hover,
-  .back-button:hover {
+  .choice:hover {
     border-color: var(--hover-border);
     background: var(--choice-hover);
-    color: var(--accent-dark);
+    color: var(--ink);
   }
 }
 
@@ -272,7 +273,7 @@ a:hover { color: var(--accent); }
 .back-button {
   width: auto;
   min-width: 120px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   border-color: var(--accent);
   text-align: center;
@@ -280,7 +281,7 @@ a:hover { color: var(--accent); }
 
 @media (hover: hover) and (pointer: fine) {
   .back-button:hover {
-    color: #fff;
+    color: var(--on-accent);
     background: var(--accent-strong);
     border-color: var(--accent-strong);
   }
@@ -432,7 +433,7 @@ a:hover { color: var(--accent); }
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   font-family: Georgia, "Times New Roman", serif;
   font-size: .94rem;
@@ -1121,15 +1122,15 @@ function wrapChineseSpeechAsides(html) {
   return String(html)
     .replace(/(：)\s*<em>([^<]{1,48})<\/em>\s*[。.!?！？]?/g, function (match, colon, aside) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。.!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? colon + "<em>（" + clean + "）</em> " : match;
+      return isChineseSpeechAside(aside) ? colon + "<em>（" + clean + "）</em>" : match;
     })
     .replace(/(：[^<]{0,180})<em>([^<]{1,80})<\/em>(\s*(?:[—-]|[\u3400-\u9fffA-Za-z0-9]))/g, function (match, prefix, aside, after) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。.!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? prefix + "<em>（" + clean + "）</em>" + after : match;
+      return isChineseSpeechAside(aside) ? prefix + "<em>（" + clean + "）</em>" + String(after).replace(/^\s+/, "") : match;
     })
     .replace(/([\u3400-\u9fffA-Za-z]+)\s*<em>([^<]{1,48})<\/em>\s*：/g, function (match, speaker, aside) {
       var clean = aside.replace(/[（）()]/g, "").replace(/[\s。.!?！？：:，,；;、]+$/g, "").trim();
-      return isChineseSpeechAside(aside) ? speaker + "：<em>（" + clean + "）</em> " : match;
+      return isChineseSpeechAside(aside) ? speaker + "：<em>（" + clean + "）</em>" : match;
     });
 }
 
@@ -1455,7 +1456,7 @@ s("<HR>");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
 s("<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>");
 s("<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
-s("<p class='note-keys'>The <strong>number keys</strong> pick your choices.</p>");
+s("<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>");
 s("<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>");
 s("<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the 'Back' button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>");
@@ -1791,7 +1792,7 @@ c("eatmeal1b","You carry on chatting");  }
 function
 eatmeal1b()
 {
-s("<LI>DIANE: And how was it <STRONG>you</STRONG> managed to miss the last bus home?");
+s("<LI>DIANE: And how was it <EM>you</EM> managed to miss the last bus home?");
 s("<LI>YOU: Well, I have to admit, it was like you. I just popped to the loo, and when I came back the bus had gone.");
 s("<LI>DIANE: Really? You found a loo at that hour? ");
 s("<LI>YOU: Well, I went in the car park...");
@@ -3496,7 +3497,7 @@ if (blad > 580)
 {s("<LI>Diane says, 'Thank you' but seems unenthusiastic. Then she says she'll get some sugar and she goes back to the burger van.");
 s("<LI>MOLLY: Funny, I didn't think she took sugar.");
 s("<LI>You see Diane whisper something to the woman behind the bar. The woman shakes her head. Diane returns to you, forcing a smile.");
-s("<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</strong></p>"); points += 5;}
+s("<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 5 shyness points.</strong></p>"); points += 5;}
 else
 {s("<LI>Diane helps Molly with the order and brings back the coffees for you and herself. 'What a good idea,' she says.");}
 c("riverside4","You drink your coffees."); } 
@@ -3510,7 +3511,7 @@ if (blad > 570)
 s("<LI>MOLLY: Funny, I didn't think she took sugar.");
 s("<LI>You see Diane whisper something to the woman behind the bar. The woman shakes her head. Diane returns to you, forcing a smile.");
 s("<LI>She seems a bit annoyed with you for buying the coffees."); getinti(-10);
-s("<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained several shyness points.</strong></p>"); points += 8;}
+s("<p class='notice'><strong>Diane secretly asks the woman whether there are any 'facilities', and you gained 8 shyness points.</strong></p>"); points += 8;}
 else
 {s("<LI>Diane helps Molly with the order and brings back the coffees for you and herself. 'What a good idea,' she says."); getinti(17);}
 c("riverside4","You drink your coffees."); } 
@@ -3627,7 +3628,7 @@ s("<LI>You go in and have your pee. Diane is waiting for you when you return. Sh
 s("<LI>DIANE: Better? Pretty grim in there, isn't it? But you are a hero, finding a girl a loo when she needs one.");
 s("<LI>She turns and gives you a kiss, pats your bottom and walks along, smiling at you."); getinti(+25);  
 afterpee()
-s("<p class='notice'><strong>You both use the Portaloo. You gained lots of intimacy points but lost 10 shyness points.</strong></p>"); points -= 10;
+s("<p class='notice'><strong>You both use the Portaloo. You lost 10 shyness points.</strong></p>"); points -= 10;
 c("riverside7","You join the others."); }
 
 function
@@ -3639,7 +3640,7 @@ s("<LI>You go into the Portaloo and shut the door. You have a pee and she may we
 s("<LI>DIANE: Better? My turn. I'll meet you back with the others.");
 s("<LI>She disappears into the Portaloo. You make your way back to the others and wait for Diane to return."); getinti(-5);  
 afterpee()
-s("<p class='notice'><strong>You both use the Portaloo. Because you went first, you lost a few intimacy points and 10 shyness points as well.</strong></p>"); points -= 10;
+s("<p class='notice'><strong>You both use the Portaloo. Because you went first, you lost 10 shyness points.</strong></p>"); points -= 10;
 c("riverside7","Time to restart the walk."); }
 
 
@@ -4011,7 +4012,7 @@ s("<LI>Then you turn to the others and call out to them: 'We'll catch you up in 
 s("<LI>The others look back and wave acknowledgement.");
 s("<LI>YOU: See, they just think we're going for a cuddle. Just hold on a minute.");
 s("<LI>You put both arms round her and watch as the others disappear down the path. A couple of late night dog walkers go past in the other direction. You can feel Diane shifting urgently up and down.");
-s("<LI>DIANE: <EM>(almost under her breath)</EM> Hurry up, hurry up. I'm bursting.");
+s("<LI>DIANE: <EM>(almost under her breath)</EM> Hurry up, hurry up! I'm bursting.");
 c("helpdiane1aa","She can't stand still."); }
 
 function
@@ -5058,10 +5059,10 @@ s("<LI>YOU: Sure. No problem. The taxi rank's just over there.");
 s("<LI>You walk across towards the taxi rank.");
 if (blad >775)
 {s("<LI>Suddenly Diane stops in her tracks. She is blushing and grimacing.");
-s("<LI>DIANE: Look, I'm sorry, but before we go anywhere I just <STRONG>have</STRONG> to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?"); 
+s("<LI>DIANE: Look, I'm sorry, but before we go anywhere I just have to find a toilet. I don't want to be—to be ill on the way home. Is there somewhere I can go?"); 
 s("<LI>Diane is absolutely dying for a pee. Is there anywhere she can go? What will it be?");
 s("<LI>There are some toilets across the car park—and they'll probably be closed (but no need to tell her that!)");
-s("<p class='notice'><strong>She admits she's desperate for a pee. You lost several shyness points.</strong></p>"); points -= 5;
+s("<p class='notice'><strong>She admits she's desperate for a pee. You lost 5 shyness points.</strong></p>"); points -= 5;
 c("queue1b","Tell her there are some toilets across the car park.");
 c("watchdesperate","Shake your head helplessly.");}
 else
@@ -7128,7 +7129,7 @@ s("<LI>YOU: Diane, you're fidgeting about. Do you need the toilet?");
 s("<LI>She blushes bright red and stops fidgeting. She doesn't say anything.");
 s("<LI>Suddenly she gets up and leaves the room. You hear her go into the bathroom.");
 afterpee()
-s("<LI>When she comes down she is still very embarrassed. The mood has broken and you have lost lots of intimacy points."); getinti (-50);
+s("<LI>When she comes down she is still very embarrassed. The mood has broken."); getinti (-50);
 c("gameover","And she gets ready to go home."); }
 
 
@@ -7747,7 +7748,7 @@ s("<LI>DIANE: <EM>(almost inaudibly)</EM> I got to the loo but—but I couldn't 
 s("<LI>YOU: I know, it's my fault. I'm sorry. But you know, Diane, it's nothing to be embarrassed about—for me it's really sexy.");
 s("<LI>DIANE: Really?");
 s("<LI>And after a hug and a kiss it is time to walk her home.");
-c("legsz3","Hand in Hand."); }
+c("legsz3","Hand in hand."); }
 
 function
 legsz3()
@@ -8068,9 +8069,9 @@ skirtremove1c()
 s("<LI>You sit beside Diane. You put an arm round her but she doesn't really respond.");
 if (blad >750)
 {s("<LI>She can't sit still, is almost bouncing up and down on the sofa. Her hands are between her knees, her slip getting hitched up so you can see the darker bit at the top of her tights.");
-s("<LI>DIANE: Hurry up, hurry up.");
+s("<LI>DIANE: Hurry up, hurry up!");
 s("<LI>YOU: Have you ever been really desperate for the loo?");
-s("<LI>DIANE: Yes, now.");
+s("<LI>DIANE: Yes, now!");
 s("<LI>She sits on her hands, fidgeting to and fro."); }
 else
 {s("<LI>Diane is shifting about a bit. She definitely needs a pee.");
@@ -8095,7 +8096,7 @@ s("<LI>YOU: But you look super like that.");
 s("<LI>DIANE: I can't go upstairs like this. I might bump into your brother.");
 if (blad >750)
 {s("<LI>She is standing, almost bent double, her hands between her knees, hopping from foot to foot.");
-s("<LI>DIANE: Come on. I'm busting to go to the toilet. I really am."); }
+s("<LI>DIANE: Come on! I'm busting to go to the toilet. I really am."); }
 else
 {s("<LI>She is shifting from foot to foot.");
 s("<LI>DIANE: Come on. I just want to go to the loo."); } 
@@ -8108,11 +8109,11 @@ skirtremove1f()
 s("<LI>Diane is pleading with you to let her have her skirt. You playfully keep hold of it.");
 if (blad >750)
 {s("<LI>She has her hands clasped in front of her. She can hardly stand upright, she needs to pee so badly.");
-s("<LI>DIANE: Come on. I really have to go. You don't want me to wet myself.");
+s("<LI>DIANE: Come on! I really have to go. You don't want me to wet myself.");
 s("<LI>You'd better not answer that one."); } 
 else
 {s("<LI>She tries to grab the skirt.");
-s("<LI>DIANE: Come on. Let me have my skirt."); } 
+s("<LI>DIANE: Come on! Let me have my skirt."); } 
 s("<LI>Gosh, she doesn't half look sexy.");
 c("skirtremove1g","You hold onto the skirt."); }
 
@@ -8167,7 +8168,7 @@ s("<LI>DIANE: What? I just need my skirt and the toilet.");
 s("<LI>YOU: I'll let you have the skirt if you let me come with you.");
 s("<LI>DIANE: What? Into the toilet?");
 s("<LI>YOU: Mmm.");
-s("<LI>DIANE: Anything, anything."); 
+s("<LI>DIANE: Anything, anything!"); 
 c("skirtdeal1","You hand her the skirt"); }
 
 function
@@ -10196,8 +10197,8 @@ function
 secondplace()
 {
 s("<LI>Diane comes downstairs and you take her in your arms. Your hand slips up underneath her skirt, feeling her now naked bottom.");
-s("<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge—");
-c("secondplace1","—that—"); }
+s("<LI>You slip your hand round to the front, finding her most secret of places, in the knowledge that—");
+c("secondplace1","Exactly."); }
 
 function
 secondplace1()
@@ -10780,7 +10781,7 @@ if (tiramisu)
 {s("<P><LI>DIANE: Well, when I was in college I used to go up to town with my friends and often we'd drink a bit. Then I had to get the bus back home and I often wanted to go to the loo by the end of the journey. It didn't matter too much because it was only half a mile's walk. But one day it was bitterly cold and it seemed to go to my bladder and I was really desperate. Trouble was I'd met a boy from school on the bus and he was chatting and wanted to walk home with me. I really fancied him, but this wasn't the moment. If I'd been by myself I'd have popped into the bushes but I couldn't with him there. I was in agony.");
 s("<LI>YOU: What happened?"); }
 else if (pannacotta)
-{s("<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was <STRONG>dying</STRONG> for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.");
+{s("<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was dying for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.");
 s("<LI>YOU: Perhaps it was turning him on?");
 s("<LI>DIANE: I've sometimes wondered. Anyway—"); } 
 else if (icecream)

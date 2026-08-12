@@ -21,7 +21,7 @@ const BILINGUAL_HTML_PATHS = {
 };
 
 // Gallery top-level order: 1st–5th, Amanda, Chloe, Day-route, Lounge
-// climaxStartTag: first guided choice of the ending payoff (Skip to climax jumps here).
+// climaxStartTag: first guided choice of the ending climax (Skip to climax jumps here).
 const ENDING_META = {
   first: {
     order: 1, stem: "03_first_prize",

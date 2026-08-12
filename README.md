@@ -1,10 +1,8 @@
-# A Date With Diane
+# A Date With Diane (Remastered)
 
-A restored, cleaned, translated, and expanded edition of the original *A Date With Diane*, an old, single-file, JavaScript-driven adult branching text game.
+This is a restored, cleaned, and expanded edition of the original *A Date With Diane*, an old omorashi text game.
 
 This edition keeps the original narrative flavour while improving the playable experience: clearer wording and logic, Back with full state restore, an in-game Gallery for endings and hidden scenes (with guided highlighting and Skip to the good bit), dark mode, and five language editions.
-
-**Adult content.** This is an 18+ text-based game with explicit and fetish-related material. The repository is private for that reason.
 
 ## Playing
 
@@ -14,7 +12,7 @@ Playable files are in [`outputs/`](outputs/), grouped by language.
 |---|---|
 | `outputs/en` | English |
 | `outputs/cn` | Simplified Chinese |
-| `outputs/tw` | Traditional Chinese (Taiwan-flavoured wording) |
+| `outputs/tw` | Traditional Chinese (Taiwan) |
 | `outputs/es` | Spanish |
 | `outputs/fr` | French |
 
@@ -22,11 +20,11 @@ Each language folder contains:
 
 - `dianedate_*.html` — open in a browser to play (bilingual editions switch with English; EN is single-language only)
 - `edition_notes_*.txt` — notes on this edition
-- `transcripts/endings/` and `transcripts/hidden_scenes/` — **payoff transcripts**: the segment of each Gallery entry from where the ending or hidden scene really begins (same cut as Skip to the good bit / scene start). Gallery order, short filenames, leaf title as heading
+- `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax (or hidden-scene start)—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
 
 There are **no** separate click-path guide text files. The Gallery is the walkthrough.
 
-**Gallery** (after the age gate): pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**h**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the payoff transcripts start from. **Back** (**b**) restores full state. **g** / Escape open and close the Gallery. Bilingual: **l** switches language. **1–9** select choices.
+**Gallery** (after the age gate): pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**h**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**b**) restores full state. **g** / Escape open and close the Gallery. Bilingual: **l** switches language. **1–9** select choices.
 
 **Dark Mode: On/Off** is session-only (resets on a fresh load).
 
@@ -42,5 +40,5 @@ All ending/extra Gallery route label sequences live in `write_verified_guides.js
 node maintenance/write_verified_guides.js   # ending-route smoke test
 node maintenance/write_hidden_scenes.js     # hidden-scene definitions check
 node maintenance/build_gallery_data.js      # after Gallery route/title changes
-node maintenance/write_transcripts.js       # regenerate payoff transcripts
+node maintenance/write_transcripts.js       # regenerate climax transcripts
 ```

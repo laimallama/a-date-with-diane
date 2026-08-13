@@ -17,9 +17,11 @@ Each language folder ships:
 
 There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax (or hidden-scene start) of each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
 
-Gallery currently documents **15 ending leaves** and **27 hidden-scene leaves** per language.
+Gallery currently documents **15 ending leaves** and **28 hidden-scene leaves** per language (leaf counts, not top-level group rows).
 
 All Gallery route label sequences live inline in `write_verified_guides.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
+
+The old archive dig (`dianedate27a.html`) is finished: remaining archive-only stubs are unreachable drafts and are not merge candidates.
 
 ## Raw HTML vs rendered text
 
@@ -96,6 +98,8 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 | `verify_routes.js` | Replay one route against an HTML file |
 | `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
 | `aligned_text.json` | Aligned EN/CN/TW/ES/FR strings |
+
+Do **not** leave scratch audit dumps in this folder (delete after use).
 
 After wording/route edits:
 

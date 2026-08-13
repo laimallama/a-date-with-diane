@@ -308,6 +308,9 @@ function buildDefinitions(routes) {
     "carparka3",
   ]);
 
+  // Non-Chardonnay bus wait: brunette slips off alone; luckshot follow (exclusive with leaf 16).
+  const luckshotBrunetteBus = generalTags.slice(0, generalTags.indexOf("busqueue6") + 1);
+
   const hiddenCamera = [
     "start", "start1a", "start1b", "thursdaydate", "start2", "gothere", "flirt_l",
     "winelist", "buyrioja", "eatmeal", "buylasagne", "eatmeal4", "eatmeal4a",
@@ -431,6 +434,16 @@ function buildDefinitions(routes) {
         tw: "9：公車站褐髮女生基礎路線"
       },
       tags: soloBrunetteBus,
+    },
+    luckshotBrunetteBus: {
+      name: {
+        en: "9b: Bus queue luckshot brunette setup",
+        cn: "9b：公交站幸运一击褐发女生基础路线",
+        es: "9b: Base de la morena con oportunidad de suerte en la cola",
+        fr: "9b : Base de la brune avec opportunité de chance dans la file",
+        tw: "9b：公車站幸運一擊褐髮女生基礎路線"
+      },
+      tags: luckshotBrunetteBus,
     },
     camperDecision: {
       name: {
@@ -961,14 +974,47 @@ function buildDefinitions(routes) {
       tags: ["justclosed1", "justclosed2", "justclosed3", "urinal", "riverside15"],
     },
     {
+      stem: "28_luckshot_brunette_camper",
+      base: "luckshotBrunetteBus",
+      title: {
+        en: "Watching the Brunette Behind the Camper Van",
+        cn: "偷看褐发女生在房车后面撒尿",
+        es: "Ver a la morena detrás de la autocaravana",
+        fr: "Regarder la brune derrière le camping-car",
+        tw: "偷看褐髮女生在房車後面撒尿"
+      },
+      entry: {
+        en: "This begins in the late bus queue when you still have a luckshot. The brunette leaves alone; Diane stays with you (not the Chardonnay path).",
+        cn: "这个场景从后段公交站开始，需要你还剩至少一次幸运机会。褐发女生独自离开，黛安仍在你身边（不是霞多丽那条线）。",
+        es: "Empieza en la cola del autobús cuando aún te queda una oportunidad de suerte. La morena se va sola; Diane se queda contigo (no es la ruta del Chardonnay).",
+        fr: "Cela commence dans la file du bus quand il vous reste une opportunité de chance. La brune part seule ; Diane reste avec vous (ce n'est pas la route du Chardonnay).",
+        tw: "這個場景從後段公車站開始，需要你還剩至少一次幸運機會。褐髮女生獨自離開，黛安仍在你身邊（不是霞多麗那條線）。"
+      },
+      result: {
+        en: "You lie that you need a pee, follow her, and watch her alone behind the camper van, then return to Diane.",
+        cn: "你谎称自己要小便，跟上她，独自在房车后面看她急尿，然后回到黛安身边。",
+        es: "Mientes diciendo que tienes que hacer pis, la sigues, la ves sola detrás de la autocaravana y vuelves con Diane.",
+        fr: "Vous mentez en disant que vous devez faire pipi, vous la suivez, vous la regardez seule derrière le camping-car, puis vous retournez auprès de Diane.",
+        tw: "你謊稱自己要小便，跟上她，獨自在房車後面看她急尿，然後回到黛安身邊。"
+      },
+      exit: {
+        en: "The route returns to the bus queue with Diane.",
+        cn: "路线会回到和黛安一起的公交队伍。",
+        es: "La ruta vuelve a la cola del autobús con Diane.",
+        fr: "La route revient à la file du bus avec Diane.",
+        tw: "路線會回到和黛安一起的公車隊伍。"
+      },
+      tags: ["luckytrip7", "carparkalone", "carpark2", "carpark3"],
+    },
+    {
       stem: "16_brunette_behind_camper",
       base: "soloBrunetteBus",
       title: {
-        en: "Watching the Brunette Behind the Camper Van",
-        cn: "看褐发女生在房车后面撒尿",
-        es: "Ver a la morena detrás de la autocaravana",
-        fr: "Regarder la brune derrière le camping-car",
-        tw: "看褐髮女生在房車後面撒尿"
+        en: "The Brunette Pees Where You Just Peed",
+        cn: "褐发女生尿在你刚尿过的地方",
+        es: "La morena hace pis donde acabas de hacer pis",
+        fr: "La brune fait pipi là où vous venez de faire pipi",
+        tw: "褐髮女生尿在你剛尿過的地方"
       },
       entry: {
         en: "This begins at the late bus queue after you have chosen Chardonnay and become desperate yourself.",
@@ -978,11 +1024,11 @@ function buildDefinitions(routes) {
         tw: "這個場景從後段公車站開始，需要你晚餐點霞多麗白葡萄酒，之後自己也憋急。"
       },
       result: {
-        en: "You see the brunette have an urgent pee behind the camper van. The route continues if Diane is still there.",
-        cn: "你会看到褐发女生在房车后面急着撒尿；如果黛安还在，路线会继续。",
-        es: "Ves a la morena hacer pis de urgencia detrás de la autocaravana. La ruta continúa si Diane sigue allí.",
-        fr: "Vous voyez la brune faire pipi en urgence derrière le camping-car. La route continue si Diane est encore là.",
-        tw: "你會看到褐髮女生在房車後面急著撒尿；如果黛安還在，路線會繼續。"
+        en: "You pee behind the camper van first; then the brunette squats in almost exactly the same spot. The route continues if Diane is still there.",
+        cn: "你先在房车后面撒尿；接着褐发女生几乎就蹲在同一处急尿。如果黛安还在，路线会继续。",
+        es: "Primero haces pis detrás de la autocaravana; luego la morena se agacha casi exactamente en el mismo sitio. La ruta continúa si Diane sigue allí.",
+        fr: "Vous faites d'abord pipi derrière le camping-car ; puis la brune s'accroupit presque exactement au même endroit. La route continue si Diane est encore là.",
+        tw: "你先在房車後面撒尿；接著褐髮女生幾乎就蹲在同一處急尿。如果黛安還在，路線會繼續。"
       },
       exit: {
         en: "The route returns to the bus queue.",
@@ -1096,11 +1142,11 @@ function buildDefinitions(routes) {
       stem: "19_camper_gentleman_choice",
       base: "camperDecision",
       title: {
-        en: "Not Watching Diane and Debbie",
-        cn: "选择不偷看黛安和黛比",
-        es: "No mirar a Diane y Debbie",
-        fr: "Ne pas regarder Diane et Debbie",
-        tw: "選擇不偷看黛安和黛比"
+        en: "Not Watching Diane and the Brunette",
+        cn: "选择不偷看黛安和褐发女生",
+        es: "No mirar a Diane y a la morena",
+        fr: "Ne pas regarder Diane et la brune",
+        tw: "選擇不偷看黛安和褐髮女生"
       },
       entry: {
         en: "This uses the same camper van decision point, but you decide not to watch.",
@@ -1110,11 +1156,11 @@ function buildDefinitions(routes) {
         tw: "這個場景使用同一個房車選擇點，但你選擇不偷看。"
       },
       result: {
-        en: "Diane leaves with Debbie. This is a non-Prize game over.",
-        cn: "黛安会和黛比一起离开。这是非奖项失败结局。",
-        es: "Diane se marcha con Debbie. Es un game over sin premio.",
-        fr: "Diane part avec Debbie. C'est un game over sans prix.",
-        tw: "黛安會和黛比一起離開。這是非獎項失敗結局。"
+        en: "Diane leaves with the brunette (Debbie). This is a non-Prize game over.",
+        cn: "黛安会和褐发女生（黛比）一起离开。这是非奖项失败结局。",
+        es: "Diane se marcha con la morena (Debbie). Es un game over sin premio.",
+        fr: "Diane part avec la brune (Debbie). C'est un game over sans prix.",
+        tw: "黛安會和褐髮女生（黛比）一起離開。這是非獎項失敗結局。"
       },
       exit: {
         en: "The route ends immediately.",

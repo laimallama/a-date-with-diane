@@ -505,7 +505,7 @@ const secondTail = [
   "You wait.",
   "You breathe again.",
   "You go downstairs.",
-  "—that—",
+  "Exactly.",
 ];
 
 const loungeTail = [
@@ -1995,7 +1995,7 @@ const bathpeeRoute = [
   "You watch.",
   "You wait.",
   "You go downstairs.",
-  "—that—",
+  "Exactly.",
 ];
 
 
@@ -2148,13 +2148,13 @@ function ending(text, lang) {
       /你真的(?:获得|赢得)了一等奖！/,
       /你(?:获得|赢得)了[一二三四五]等奖！/,
       /你(?:获得|赢得)了(?:一个)?安慰奖！/,
-      /说起来，这也算是个相当不错的安慰奖！/,
+      /这倒也算个相当不错的安慰奖！/,
     ],
     tw: [
       /你真的獲得了一等獎！/,
       /你獲得了[一二三四五]等獎！/,
       /你獲得了(?:一個)?安慰獎！/,
-      /說起來，這也算是個相當不錯的安慰獎！/,
+      /這倒也算個相當不錯的安慰獎！/,
     ],
     es: [
       /¡(?:VERDADERAMENTE, |DE VERDAD )HAS GANADO EL PRIMER PREMIO!/,

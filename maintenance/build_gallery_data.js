@@ -207,11 +207,11 @@ const EXTRA_HIDDEN = [
     routeKey: "bathpee",
     sceneStartTag: "bathpee",
     title: {
-      en: "Peeing in the Bath",
-      cn: "在浴缸里尿",
-      tw: "在浴缸裡尿",
-      es: "Orinar en la bañera",
-      fr: "Faire pipi dans la baignoire",
+      en: "Diane Peeing in the Bath",
+      cn: "黛安在浴缸里尿",
+      tw: "黛安在浴缸裡尿",
+      es: "Diane orina en la bañera",
+      fr: "Diane fait pipi dans la baignoire",
     },
   },
 ];
@@ -288,7 +288,9 @@ const HIDDEN_GROUPS = [
       es: "La morena junto a la autocaravana",
       fr: "La brune près du camping-car",
     },
+    // Solo watches first (luckshot, then Chardonnay "your spot"), then together-path forks.
     stems: [
+      "28_luckshot_brunette_camper",
       "16_brunette_behind_camper",
       "17_diane_brunette_camper_round",
       "18_diane_brunette_camper_under",
@@ -477,8 +479,8 @@ function buildDataForLang(ctx, routes, definitions, lang) {
   const hiddenLeaves = countLeaves(hiddenScenes);
   // 5 prizes + Amanda + Chloe×2 + Day×3 + Lounge×4
   if (endingLeaves !== 15) throw new Error(`Expected 15 ending leaves, got ${endingLeaves}`);
-  if (hiddenLeaves !== 22 + EXTRA_HIDDEN.length) {
-    throw new Error(`Expected ${22 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
+  if (hiddenLeaves !== 23 + EXTRA_HIDDEN.length) {
+    throw new Error(`Expected ${23 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
   }
 
   return { endings, hiddenScenes };

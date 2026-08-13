@@ -8,9 +8,9 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5026,
-    "story": 3896,
-    "choice": 1130
+    "total": 5067,
+    "story": 3927,
+    "choice": 1140
   },
   "entries": [
     {
@@ -225,11 +225,11 @@
     {
       "id": "x05018",
       "kind": "story",
-      "en": "<p class='note-lead'>While following an ending Guide, press the 'Skip to the good bit!' button (or press <strong>S</strong>) to jump ahead to the climax. Going 'Back' can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>",
-      "cn": "<p class='note-lead'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到高潮。用“返回”可以倒退过那个节点，但跳过按钮不会再出现，除非你从图鉴重新开始一条结局。</p>",
-      "tw": "<p class='note-lead'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到高潮。用「返回」可以倒退過那個節點，但跳過按鈕不會再出現，除非你從圖鑑重新開始一條結局。</p>",
-      "es": "<p class='note-lead'>Mientras sigues la Guía de un final, pulsa el botón «¡Saltar a lo bueno!» (o pulsa <strong>S</strong>) para saltar al clímax. Ir «Atrás» puede rebobinar más allá de ese punto, pero el botón de salto no volverá a aparecer hasta que empieces un final nuevo desde la Galería.</p>",
-      "fr": "<p class='note-lead'>Pendant un Guide de fin, appuyez sur le bouton « Passer aux moments forts ! » (ou appuyez sur <strong>S</strong>) pour sauter au climax. Un « Retour » peut remonter au-delà de ce point, mais le bouton de saut ne réapparaîtra pas tant que vous n'aurez pas relancé une fin depuis la Galerie.</p>"
+      "en": "<p class='note-lead'>While following an ending Guide, press the 'Skip to the good bit!' button (or press <strong>S</strong>) to jump ahead to the climax of the story. Going 'Back' can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>",
+      "cn": "<p class='note-lead'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到故事的高潮。用“返回”可以倒退过那个节点，但跳过按钮不会再出现，除非你从图鉴重新开始一条结局。</p>",
+      "tw": "<p class='note-lead'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到故事的高潮。用「返回」可以倒退過那個節點，但跳過按鈕不會再出現，除非你從圖鑑重新開始一條結局。</p>",
+      "es": "<p class='note-lead'>Mientras sigues la Guía de un final, pulsa el botón «¡Saltar a lo bueno!» (o pulsa <strong>S</strong>) para saltar al clímax de la historia. Ir «Atrás» puede rebobinar más allá de ese punto, pero el botón de salto no volverá a aparecer hasta que empieces un final nuevo desde la Galería.</p>",
+      "fr": "<p class='note-lead'>Pendant un Guide de fin, appuyez sur le bouton « Passer aux moments forts ! » (ou appuyez sur <strong>S</strong>) pour sauter au climax de l'histoire. Un « Retour » peut remonter au-delà de ce point, mais le bouton de saut ne réapparaîtra pas tant que vous n'aurez pas relancé une fin depuis la Galerie.</p>"
     },
     {
       "id": "x05019",
@@ -503,11 +503,11 @@
     {
       "id": "x00045",
       "kind": "story",
-      "en": "<LI>And you discover the theatre tickets are more expensive that day, so your funds are reduced.",
-      "cn": "<LI>而且你发现那天的演出票更贵，所以你的预算缩水了。",
-      "es": "<LI>Y descubres que las entradas del teatro son más caras ese día, así que te queda menos dinero.",
-      "fr": "<LI>Et vous découvrez que les billets de théâtre sont plus chers ce jour-là, ce qui réduit votre budget.",
-      "tw": "<LI>而且你發現那天的戲票更貴，所以你的預算縮水了。"
+      "en": "<LI>And you discover the theatre tickets are more expensive that day, so your funds are reduced by £10.",
+      "cn": "<LI>而且你发现那天的演出票更贵，所以你的预算少了10英镑。",
+      "es": "<LI>Y descubres que las entradas del teatro son más caras ese día, así que tus fondos se reducen en 10 £.",
+      "fr": "<LI>Et vous découvrez que les billets de théâtre sont plus chers ce jour-là, si bien que votre budget diminue de 10 £.",
+      "tw": "<LI>而且你發現那天的戲票更貴，所以你的預算少了10英鎊。"
     },
     {
       "id": "x00046",
@@ -13113,11 +13113,11 @@
     {
       "id": "x01388",
       "kind": "story",
-      "en": "<LI>Then you turn to the others and call out to them. <B>We'll catch you up in a minute.</B> The others look back and wave acknowledgement.",
-      "cn": "<LI>然后你转向另外两人，朝他们喊道：<B>你们先走，我们一会儿就跟上。</B>另外两人回头看了看，挥手示意知道了。",
-      "es": "<LI>Luego te giras hacia los otros y les llamas. <B>Os alcanzamos en un momento.</B> Los otros miran atrás y asienten con la mano.",
-      "fr": "<LI>Puis vous vous tournez vers les autres et vous les appelez. <B>On vous rattrape dans une minute.</B> Les autres se retournent et font signe qu'ils ont compris.",
-      "tw": "<LI>你轉向再說兩人喊道：「你們先走，我們一會兒就跟上。」他們回頭揮揮手，表示知道了。"
+      "en": "<LI>Then you turn to the others and call out to them: 'We'll catch you up in a minute.'",
+      "cn": "<LI>然后你转向另外两人，朝他们喊道：“你们先走，我们一会儿就跟上。”",
+      "es": "<LI>Luego te giras hacia los otros y les llamas: «Os alcanzamos en un momento.»",
+      "fr": "<LI>Puis vous vous tournez vers les autres et vous les appelez : « On vous rattrape dans une minute. »",
+      "tw": "<LI>然後你轉向另外兩人，朝他們喊道：「你們先走，我們一會兒就跟上。」"
     },
     {
       "id": "x01389",
@@ -15969,11 +15969,11 @@
     {
       "id": "x01693",
       "kind": "story",
-      "en": "<LI>She moves towards the side of the path where there is long grass and some low bushes. You stand still and watch her. She turns and sees you. <B>Go on!</B> she says. <B>I'll catch you up.</B> You have no option but to walk on and catch the others. Molly laughs when you tell her Diane has disappeared for a moment.",
-      "cn": "<LI>她朝小路一侧走去，那边有些高草和低矮的灌木丛。你站在原地看着她。她转过身看到你，说：<B>快走！</B>又补了一句：<B>我一会儿就追上你们。</B>你只好继续往前走，跟其他人汇合。当你告诉莫莉说黛安暂时消失了，莫莉笑了起来。",
-      "es": "<LI>Se dirige hacia el borde del camino, donde hay hierba alta y algunos arbustos bajos. Te quedas quieto mirándola. Ella se gira y te ve. <B>¡Venga, sigue!</B>, dice. <B>Ya te alcanzo.</B> No te queda más remedio que seguir andando y reunirte con los demás. Molly se ríe cuando le cuentas que Diane ha desaparecido un momento.",
-      "fr": "<LI>Elle se dirige vers le bord du chemin où poussent de hautes herbes et quelques buissons bas. Vous restez immobile à la regarder. Elle se retourne et vous voit. <B>Allez-y !</B> dit-elle. <B>Je vous rattraperai.</B> Vous n'avez d'autre choix que de repartir rejoindre les autres. Molly rit quand vous lui expliquez que Diane a disparu un instant.",
-      "tw": "<LI>她往小路一邊走去，那裡有高草和低矮灌木。你站著看她。她轉身看到你，說：「快走！我一會兒追上你們。」你只好繼續往前走，去跟別的人會合。你告訴莫莉黛安暫時不見了，莫莉笑了。"
+      "en": "<LI>She moves towards the side of the path where there is long grass and some low bushes. You stand still and watch her. She turns and sees you. 'Go on!' she says. 'I'll catch you up.' You have no option but to walk on and catch the others. Molly laughs when you tell her Diane has disappeared for a moment.",
+      "cn": "<LI>她朝小路一侧走去，那边有些高草和低矮的灌木丛。你站在原地看着她。她转过身看到你，说：“快走！”又补了一句：“我一会儿就追上你们。”你只好继续往前走，跟其他人汇合。当你告诉莫莉说黛安暂时消失了，莫莉笑了起来。",
+      "es": "<LI>Se dirige hacia el borde del camino, donde hay hierba alta y algunos arbustos bajos. Te quedas quieto mirándola. Ella se gira y te ve. «¡Venga, sigue!», dice. «Ya te alcanzo.» No te queda más remedio que seguir andando y reunirte con los demás. Molly se ríe cuando le cuentas que Diane ha desaparecido un momento.",
+      "fr": "<LI>Elle se dirige vers le bord du chemin où poussent de hautes herbes et quelques buissons bas. Vous restez immobile à la regarder. Elle se retourne et vous voit. « Allez-y ! » dit-elle. « Je vous rattraperai. » Vous n'avez d'autre choix que de repartir rejoindre les autres. Molly rit quand vous lui expliquez que Diane a disparu un instant.",
+      "tw": "<LI>她朝小路一側走去，那邊有些高草和低矮的樹叢。你站在原地看著她。她轉過身看到你，說：「快走！」又補了一句：「我一會兒就追上你們。」你只好繼續往前走，跟其他人匯合。當你告訴莫莉說黛安暫時消失了，莫莉笑了起來。"
     },
     {
       "id": "x01694",
@@ -18201,15 +18201,6 @@
       "tw": "<LI>黛安：你聽我說，真的很抱歉，但在去任何地方之前，我一定得先找個廁所。我不想在回家的路上……出什麼狀況。附近有我能去的地方嗎？"
     },
     {
-      "id": "x01934",
-      "kind": "story",
-      "en": "<LI>Diane is absolutely dying for a pee. Is there anywhere she can go? What will it be?",
-      "cn": "<LI>黛安尿急难耐。附近有没有她能去的地方？该怎么办？",
-      "es": "<LI>Diane está muriéndose de ganas de hacer pis. ¿Hay algún sitio adonde pueda ir? ¿Qué harás?",
-      "fr": "<LI>Diane est absolument au bord de se faire pipi dessus. Y a-t-il un endroit où elle peut aller ? Qu'est-ce que ce sera ?",
-      "tw": "<LI>黛安尿急難耐。附近有沒她能去的地方？該怎麼辦？"
-    },
-    {
       "id": "x01935",
       "kind": "story",
       "en": "<LI>There are some toilets across the car park—and they'll probably be closed (but no need to tell her that!)",
@@ -18555,11 +18546,11 @@
     {
       "id": "x01972",
       "kind": "story",
-      "en": "<P>Remember, you can only use one luckshot beyond this stage.",
-      "cn": "<P>提醒，在这个阶段之后，你只能再使用一次幸运机会。",
-      "es": "<P>Recuerda, solo puedes usar un golpe de suerte más a partir de esta fase.",
-      "fr": "<P>À noter, vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.",
-      "tw": "<P>記住，過了這階段只能再用一次幸運機會。"
+      "en": "<p class='notice'><strong>Remember, you can only use one luckshot beyond this stage.</strong></p>",
+      "cn": "<p class='notice'><strong>提醒，在这个阶段之后，你只能再使用一次幸运机会。</strong></p>",
+      "es": "<p class='notice'><strong>Recuerda, solo puedes usar un golpe de suerte más a partir de esta fase.</strong></p>",
+      "fr": "<p class='notice'><strong>À noter, vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.</strong></p>",
+      "tw": "<p class='notice'><strong>提醒，在這個階段之後，你只能再使用一次幸運機會。</strong></p>"
     },
     {
       "id": "x01973",
@@ -19587,10 +19578,10 @@
       "id": "x02083",
       "kind": "story",
       "en": "<LI>You haven't met Chloe before. She isn't a regular girlfriend. But she and your brother have just finished their college exams and have been out for a few drinks to celebrate.",
-      "cn": "<LI>你之前没见过克洛伊，她不是什么固定女友。不过她和你弟弟刚刚考完大学期末考试，出去喝了几杯庆祝一下。",
+      "cn": "<LI>你之前没见过克洛伊，她不是什么固定女友。不过她和你弟弟刚刚考完试，出去喝了几杯庆祝一下。",
       "es": "<LI>No habías conocido a Chloe antes. No es una novia formal. Pero ella y tu hermano acaban de terminar los exámenes del instituto y han salido a tomar unas copas para celebrarlo.",
       "fr": "<LI>Vous n'aviez jamais rencontré Chloe auparavant. Ce n'est pas une petite amie attitrée. Mais elle et votre frère viennent de terminer leurs examens de fin d'études et sont sortis boire quelques verres pour fêter ça.",
-      "tw": "<LI>你之前沒見過克洛伊，她不是什麼固定女友。不過她和你弟弟剛考完大學期末考試，出去喝了幾杯慶祝一下。"
+      "tw": "<LI>你之前沒見過克洛伊，她不是什麼固定女友。不過她和你弟弟剛考完試，出去喝了幾杯慶祝一下。"
     },
     {
       "id": "x02084",
@@ -19651,10 +19642,10 @@
       "id": "x02090",
       "kind": "story",
       "en": "<LI>You haven't met Chloe before. She isn't a regular girlfriend. But she and your brother have just finished their college exams and have been out for a few drinks to celebrate.",
-      "cn": "<LI>你之前没见过克洛伊，她不是什么固定女友。不过她和你弟弟刚刚考完大学期末考试，出去喝了几杯庆祝一下。",
+      "cn": "<LI>你之前没见过克洛伊，她不是什么固定女友。不过她和你弟弟刚刚考完试，出去喝了几杯庆祝一下。",
       "es": "<LI>No habías conocido a Chloe antes. No es una novia formal. Pero ella y tu hermano acaban de terminar los exámenes del instituto y han salido a tomar unas copas para celebrarlo.",
       "fr": "<LI>Vous n'aviez jamais rencontré Chloe auparavant. Ce n'est pas une petite amie attitrée. Mais elle et votre frère viennent de terminer leurs examens de fin d'études et sont sortis boire quelques verres pour fêter ça.",
-      "tw": "<LI>你以前沒見過克洛伊。她不是他的固定女友。但她和你弟弟剛考完大學考試，出去喝了幾杯慶祝。"
+      "tw": "<LI>你之前沒見過克洛伊，她不是什麼固定女友。不過她和你弟弟剛考完試，出去喝了幾杯慶祝一下。"
     },
     {
       "id": "x02091",
@@ -21682,10 +21673,10 @@
       "id": "x02308",
       "kind": "story",
       "en": "<LI><B>WHICH IS A PRETTY GOOD CONSOLATION PRIZE!</B>",
-      "cn": "<LI><B>说起来，这也算是个相当不错的安慰奖！</B>",
+      "cn": "<LI><B>这倒也算个相当不错的安慰奖！</B>",
       "es": "<LI><B>¡QUE NO ES MAL PREMIO DE CONSOLACIÓN!</B>",
       "fr": "<LI><B>CE QUI EST UN SACRÉ LOT DE CONSOLATION !</B>",
-      "tw": "<LI><B>說起來，這也算是個相當不錯的安慰獎！</B>"
+      "tw": "<LI><B>這倒也算個相當不錯的安慰獎！</B>"
     },
     {
       "id": "x02309",
@@ -25307,7 +25298,7 @@
     {
       "id": "x02687",
       "kind": "story",
-      "en": "<LI>Diane is amused by your request. 'You are an odd one' she says.",
+      "en": "<LI>Diane is amused by your request. 'You are an odd one,' she says.",
       "cn": "<LI>你的请求把黛安逗乐了。“你真是个怪人，”她说。",
       "es": "<LI>A Diane le hace gracia tu petición. «Qué raro estás hecho», dice.",
       "fr": "<LI>Diane trouve votre demande amusante. « T'es vraiment bizarre, toi », dit-elle.",
@@ -25564,7 +25555,7 @@
     {
       "id": "x02714",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but you think he might have finished by now. Maybe it's still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but you think he might have finished by now. Maybe it's still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说去一下马上回来，便离开了房间。你弟弟一直在浴室里，不过你觉得他可能已经出来了。也许还是值得用一次幸运机会？",
       "es": "<LI>Se lo dices y ella dice que no tardará nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?",
       "fr": "<LI>Vous lui indiquez les toilettes et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais vous pensez qu'il a peut-être fini maintenant. Ça vaut peut-être encore le coup de tenter un coup de chance ?",
@@ -25833,7 +25824,7 @@
     {
       "id": "x02743",
       "kind": "story",
-      "en": "<LI>You tell her where it is and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but you think he might have finished by now. Maybe it's still worth playing a luckshot?",
+      "en": "<LI>You tell her where it is. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but you think he might have finished by now. Maybe it's still worth playing a luckshot?",
       "cn": "<LI>你告诉她厕所在哪儿，她说去一下马上回来，便离开了房间。你弟弟一直在浴室里，不过你觉得他可能已经出来了。也许还是值得用一次幸运机会？",
       "es": "<LI>Le dices dónde está y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?",
       "fr": "<LI>Vous lui indiquez où c'est et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais vous pensez qu'il a peut-être fini maintenant. Ça vaut peut-être encore le coup de tenter un coup de chance ?",
@@ -26839,7 +26830,7 @@
     {
       "id": "x02850",
       "kind": "story",
-      "en": "<LI>You tell her where it is and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but you think he might have finished by now. Maybe it's still worth playing a luckshot?",
+      "en": "<LI>You tell her where it is. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but you think he might have finished by now. Maybe it's still worth playing a luckshot?",
       "cn": "<LI>你告诉她厕所在哪儿，她说去一下马上回来，便离开了房间。你弟弟一直在浴室里，不过你觉得他可能已经出来了。也许还是值得用一次幸运机会？",
       "es": "<LI>Le dices dónde está y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?",
       "fr": "<LI>Vous lui indiquez où c'est et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais vous pensez qu'il a peut-être fini maintenant. Ça vaut peut-être encore le coup de tenter un coup de chance ?",
@@ -27114,10 +27105,10 @@
     {
       "id": "x02879",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說立刻就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在還要用一次幸運機會嗎？"
     },
     {
@@ -27885,10 +27876,10 @@
     {
       "id": "x02960",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說馬上就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在用一次幸運機會還值得嗎？"
     },
     {
@@ -28134,10 +28125,10 @@
     {
       "id": "x02987",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說立刻就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在還要用一次幸運機會嗎？"
     },
     {
@@ -28264,10 +28255,10 @@
     {
       "id": "x03001",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說立刻就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在還要用一次幸運機會嗎？"
     },
     {
@@ -28513,10 +28504,10 @@
     {
       "id": "x03028",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說馬上就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在用一次幸運機會還值得嗎？"
     },
     {
@@ -28625,10 +28616,10 @@
     {
       "id": "x03040",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說馬上就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在用一次幸運機會還值得嗎？"
     },
     {
@@ -28948,17 +28939,17 @@
       "kind": "story",
       "en": "<LI>DIANE: Will you excuse me a moment? Where's the loo?",
       "cn": "<LI>黛安：失陪一下，厕所在哪儿？",
-      "es": "<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?",
-      "fr": "<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?",
+      "es": "<LI>DIANE: ¿Me dispensas un momento? ¿Dónde está el baño?",
+      "fr": "<LI>DIANE : Vous permettez un instant ? Où sont les toilettes ?",
       "tw": "<LI>黛安：失陪一下，廁所在哪裡？"
     },
     {
       "id": "x03076",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說立刻就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在還要用一次幸運機會嗎？"
     },
     {
@@ -29105,17 +29096,17 @@
       "kind": "story",
       "en": "<LI>DIANE: Will you excuse me a moment? Where's the loo?",
       "cn": "<LI>黛安：失陪一下，厕所在哪儿？",
-      "es": "<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?",
-      "fr": "<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?",
+      "es": "<LI>DIANE: ¿Me dispensas un momento? ¿Dónde está el baño?",
+      "fr": "<LI>DIANE : Vous permettez un instant ? Où sont les toilettes ?",
       "tw": "<LI>黛安：失陪一下，廁所在哪裡？"
     },
     {
       "id": "x03093",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說立刻就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在還要用一次幸運機會嗎？"
     },
     {
@@ -29424,10 +29415,10 @@
     {
       "id": "x03127",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說立刻就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在還要用一次幸運機會嗎？"
     },
     {
@@ -29545,10 +29536,10 @@
     {
       "id": "x03140",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. Your brother has been in the bathroom but he must have finished by now. Is it still worth playing a luckshot?",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?",
       "cn": "<LI>你告诉了她，她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？",
       "es": "<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
-      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
+      "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴了她，她說馬上就回來，便離開了房間。你弟弟之前一直在浴室，但現在應該出來了吧。現在用一次幸運機會還值得嗎？"
     },
     {
@@ -30725,11 +30716,40 @@
     {
       "id": "x03266",
       "kind": "story",
-      "en": "<LI>DIANE: It's late. Time I went home.",
+      "en": "<LI>DIANE: It's late. I'd better get home.",
       "cn": "<LI>黛安：太晚了。我该回家了。",
-      "es": "<LI>DIANE: Es tarde. Debería irme a casa.",
-      "fr": "<LI>DIANE : Il est tard. Il est temps que je rentre.",
+      "es": "<LI>DIANE: Es tarde. Más vale que me vaya a casa.",
+      "fr": "<LI>DIANE : Il est tard. Je ferais mieux de rentrer.",
       "tw": "<LI>黛安：太晚了。我該回家了。"
+    },
+    {
+      "id": "x03266a",
+      "kind": "story",
+      "en": "<LI>She enjoyed talking about trains earlier. Maybe you could delay her with that? Or you can just walk her home if you prefer.",
+      "cn": "<LI>她刚才聊火车聊得很开心。要不拿这个拖住她？或者你也可以直接送她回家。",
+      "es": "<LI>Antes le había gustado hablar de trenes. ¿Quizá podrías entretenerla con eso? O, si lo prefieres, puedes acompañarla a casa.",
+      "fr": "<LI>Elle a aimé parler de trains tout à l'heure. Peut-être pourriez-vous la retenir avec ça ? Ou vous pouvez simplement la raccompagner, si vous préférez.",
+      "tw": "<LI>她剛才聊火車聊得很開心。要不拿這個拖住她？或者你也可以直接送她回家。"
+    },
+    {
+      "id": "x03266b",
+      "kind": "choice",
+      "tag": "sofatrains",
+      "en": "Show her the album.",
+      "cn": "给她看相册。",
+      "es": "Enséñale el álbum.",
+      "fr": "Lui montrer l'album.",
+      "tw": "給她看相簿。"
+    },
+    {
+      "id": "x03266c",
+      "kind": "choice",
+      "tag": "walkhomeinsist",
+      "en": "Walk her home.",
+      "cn": "送她回家。",
+      "es": "Acompañarla a casa.",
+      "fr": "La raccompagner.",
+      "tw": "送她回家。"
     },
     {
       "id": "x03267",
@@ -30808,10 +30828,10 @@
     {
       "id": "x03275",
       "kind": "story",
-      "en": "<LI>DIANE: It's late. Time I went home.",
+      "en": "<LI>DIANE: It's late. I'd better get home.",
       "cn": "<LI>黛安：太晚了。我该回家了。",
-      "es": "<LI>DIANE: Es tarde. Debería irme a casa.",
-      "fr": "<LI>DIANE : Il est tard. Il est temps que je rentre.",
+      "es": "<LI>DIANE: Es tarde. Más vale que me vaya a casa.",
+      "fr": "<LI>DIANE : Il est tard. Je ferais mieux de rentrer.",
       "tw": "<LI>黛安：太晚了。我該回家了。"
     },
     {
@@ -30891,10 +30911,10 @@
     {
       "id": "x03284",
       "kind": "story",
-      "en": "<LI>DIANE: It's late. Time I went home.",
+      "en": "<LI>DIANE: It's late. I'd better get home.",
       "cn": "<LI>黛安：太晚了。我该回家了。",
-      "es": "<LI>DIANE: Es tarde. Debería irme a casa.",
-      "fr": "<LI>DIANE : Il est tard. Il est temps que je rentre.",
+      "es": "<LI>DIANE: Es tarde. Más vale que me vaya a casa.",
+      "fr": "<LI>DIANE : Il est tard. Je ferais mieux de rentrer.",
       "tw": "<LI>黛安：太晚了。我該回家了。"
     },
     {
@@ -30955,10 +30975,10 @@
     {
       "id": "x03291",
       "kind": "story",
-      "en": "<LI>DIANE: Mmm. It's late. Time I went home.",
+      "en": "<LI>DIANE: Mmm. It's late. I'd better get home.",
       "cn": "<LI>黛安：嗯。太晚了。我该回家了。",
-      "es": "<LI>DIANE: Mmm. Es tarde. Debería irme a casa.",
-      "fr": "<LI>DIANE : Mmm. Il est tard. Il est temps que je rentre.",
+      "es": "<LI>DIANE: Mmm. Es tarde. Más vale que me vaya a casa.",
+      "fr": "<LI>DIANE : Mmm. Il est tard. Je ferais mieux de rentrer.",
       "tw": "<LI>黛安：嗯。太晚了。我該回家了。"
     },
     {
@@ -31020,7 +31040,7 @@
     {
       "id": "x03298",
       "kind": "story",
-      "en": "<LI>You tell her and she says she won't be a minute and leaves the room. There's nobody in the bathroom, so she returns looking content. By then it's time to go, so she gives you a nice kiss and says she will see you next week.",
+      "en": "<LI>You tell her. She says she won't be a minute and leaves the room. There's nobody in the bathroom, so she returns looking content. By then it's time to go, so she gives you a nice kiss and says she will see you next week.",
       "cn": "<LI>你告诉她，她说一会儿就回来便离开了房间。浴室里没人，她回来时神情满足。这时也该走了，她甜甜地亲了你一下，说下周见。",
       "es": "<LI>Se lo dices y ella comenta que no tardará nada y sale de la habitación. El baño está libre, así que vuelve con cara de alivio. Para entonces ya es hora de irse, así que te da un buen beso y dice que te verá la semana que viene.",
       "fr": "<LI>Vous lui indiquez et elle dit qu'elle en a pour une seconde avant de quitter la pièce. La salle de bains est libre, et elle revient l'air satisfaite. Il est déjà l'heure de partir, alors elle vous donne un beau baiser et dit qu'elle vous verra la semaine prochaine.",
@@ -38249,11 +38269,11 @@
     {
       "id": "x04075",
       "kind": "story",
-      "en": "<LI>Diane is dying for a pee. Is there anywhere she can go?",
-      "cn": "<LI>黛安尿急得厉害。附近有没有她能去的地方？",
-      "es": "<LI>Diane tiene unas ganas terribles de hacer pis. ¿Hay algún sitio adonde pueda ir?",
-      "fr": "<LI>Diane a une envie pressante de faire pipi. Y a-t-il un endroit où elle peut aller ?",
-      "tw": "<LI>黛安急著想上廁所。附近有她能去的地方嗎？"
+      "en": "<LI>Is there anywhere she can go?",
+      "cn": "<LI>附近有没有她能去的地方？",
+      "es": "<LI>¿Hay algún sitio adonde pueda ir?",
+      "fr": "<LI>Y a-t-il un endroit où elle peut aller ?",
+      "tw": "<LI>附近有沒有她能去的地方？"
     },
     {
       "id": "x04076",
@@ -38702,11 +38722,11 @@
     {
       "id": "x04123",
       "kind": "story",
-      "en": "<P>Remember, you can only use one luckshot beyond this stage.",
-      "cn": "<P>提醒，在这个阶段之后，你只能再使用一次幸运机会。",
-      "es": "<P>Recuerda, solo puedes usar un golpe de suerte más a partir de esta fase.",
-      "fr": "<P>À noter, vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.",
-      "tw": "<P>提醒，在這個階段之後，你只能再使用一次幸運機會。"
+      "en": "<p class='notice'><strong>Remember, you can only use one luckshot beyond this stage.</strong></p>",
+      "cn": "<p class='notice'><strong>提醒，在这个阶段之后，你只能再使用一次幸运机会。</strong></p>",
+      "es": "<p class='notice'><strong>Recuerda, solo puedes usar un golpe de suerte más a partir de esta fase.</strong></p>",
+      "fr": "<p class='notice'><strong>À noter, vous ne pouvez utiliser qu'un seul coup de chance au-delà de cette étape.</strong></p>",
+      "tw": "<p class='notice'><strong>提醒，在這個階段之後，你只能再使用一次幸運機會。</strong></p>"
     },
     {
       "id": "x04124",
@@ -38839,11 +38859,11 @@
     {
       "id": "x04136",
       "kind": "story",
-      "en": "<LI>You walk back towards the bus stop. On the way you pass a camper van in the car park. You hear somebody and look. The petite blonde from the bus queue is there, having a pee. Her mini skirt is around her waist, her white panties round her knees, while a stream is running across the ground. When she sees you she hides her face in embarrassment.",
-      "cn": "<LI>你们往公交站方向走回去。途中经过停车场里一辆房车，你听到动静，回头一看——排队时见过的那个娇小金发女孩就蹲在那里撒尿。她的迷你裙撩到腰间，白色内裤褪到膝盖，一股尿流淌过地面。她看到你，立刻羞得埋下脸去。",
-      "es": "<LI>Volvéis caminando hacia la parada de autobús. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes algo y miras. La rubia menuda de la cola del autobús está allí, meando. Su minifalda le sube hasta la cintura y las bragas blancas le rodean las rodillas, mientras un chorro corre por el suelo. Al verte se tapa la cara de vergüenza.",
-      "fr": "<LI>Vous revenez vers l'arrêt de bus. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu'un et vous regardez. La petite blonde de la file d'attente est là, en train de faire pipi. Sa mini-jupe est retroussée autour de la taille, sa culotte blanche autour des genoux, tandis qu'un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.",
-      "tw": "<LI>你們走回公車站，路過停車場的一輛房車。你聽見人聲，看到排隊時那個嬌小金髮女生正尿尿。她的迷你裙撩到腰間，白色內褲在膝上，尿流淌過地面。她看到你，羞得捂住臉。"
+      "en": "<LI>You walk back towards the bus stop. On the way you pass a camper van in the car park. You hear somebody and look. The petite brunette from the bus queue is there, having a pee. Her mini skirt is around her waist, her white panties round her knees, while a stream is running across the ground. When she sees you she hides her face in embarrassment.",
+      "cn": "<LI>你们往公交站方向走回去。途中经过停车场里一辆房车，你听到动静，回头一看——排队时见过的那个娇小褐发女孩就蹲在那里撒尿。她的迷你裙撩到腰间，白色内裤褪到膝盖，一股尿流淌过地面。她看到你，立刻羞得埋下脸去。",
+      "es": "<LI>Volvéis caminando hacia la parada de autobús. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes algo y miras. La morena menuda de la cola del autobús está allí, meando. Su minifalda le sube hasta la cintura y las bragas blancas le rodean las rodillas, mientras un chorro corre por el suelo. Al verte se tapa la cara de vergüenza.",
+      "fr": "<LI>Vous revenez vers l'arrêt de bus. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu'un et vous regardez. La petite brune de la file d'attente est là, en train de faire pipi. Sa mini-jupe est retroussée autour de la taille, sa culotte blanche autour des genoux, tandis qu'un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.",
+      "tw": "<LI>你們往公車站方向走回去。途中經過停車場裡一輛房車，你聽到動靜，回頭一看——排隊時見過的那個嬌小褐髮女生就蹲在那裡撒尿。她的迷你裙撩到腰間，白色內褲褪到膝蓋，一股尿流淌過地面。她看到你，立刻羞得埋下臉去。"
     },
     {
       "id": "x04137",
@@ -38921,11 +38941,11 @@
     {
       "id": "x04143",
       "kind": "story",
-      "en": "<LI>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear a noise. The petite blonde from the bus queue is there, having a pee. Her mini skirt is around her waist, her white panties round her knees, while a stream is running across the ground. When she sees you she gasps with embarrassment and tries to pull up her panties, but she is in such full flow she has to go back into a squat",
-      "cn": "<LI>你们往出租车站方向走回去。途中经过停车场里一辆房车，你听到动静走近一看——排队时见过的那个娇小金发女孩正蹲在那里撒尿。她的迷你裙撩到腰间，白色内裤褪到膝盖，一股尿流淌过地面。她看到你，惊得倒吸一口气，满脸通红，想拉起内裤，却因为尿流正急根本停不下来，只好又蹲了回去。",
-      "es": "<LI>Volvéis caminando hacia la parada de taxis. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes un ruido. La rubia menuda de la cola del autobús está allí, meando. Su minifalda le sube hasta la cintura y las bragas blancas le rodean las rodillas, mientras un chorro corre por el suelo. Al verte suelta un grito ahogado de vergüenza e intenta subirse las bragas, pero el chorro es tan fuerte que tiene que volver a ponerse en cuclillas.",
-      "fr": "<LI>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez un bruit. La petite blonde de la file d'attente est là, en train de faire pipi. Sa mini-jupe est retroussée autour de la taille, sa culotte blanche autour des genoux, tandis qu'un jet coule sur le sol. Quand elle vous voit, elle pousse un hoquet de gêne et tente de remonter sa culotte, mais son jet est si puissant qu'elle doit se rasseoir en accroupie",
-      "tw": "<LI>你們往計程車站走回去，途中經過停車場的一輛房車。你聽見動靜——候車隊裡的那個嬌小金髮女生正在那裡尿尿。她的迷你裙撩到腰間，白色內褲褪到膝蓋，一股尿流淌在地上。她看到你，尷尬地倒吸一口氣，想拉起內褲，卻正尿得急，只好又蹲下。"
+      "en": "<LI>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear a noise. The petite brunette from the bus queue is there, having a pee. Her mini skirt is around her waist, her white panties round her knees, while a stream is running across the ground. When she sees you she gasps with embarrassment and tries to pull up her panties, but she is in such full flow she has to go back into a squat",
+      "cn": "<LI>你们往出租车站方向走回去。途中经过停车场里一辆房车，你听到动静走近一看——排队时见过的那个娇小褐发女孩正蹲在那里撒尿。她的迷你裙撩到腰间，白色内裤褪到膝盖，一股尿流淌过地面。她看到你，惊得倒吸一口气，满脸通红，想拉起内裤，却因为尿流正急根本停不下来，只好又蹲了回去。",
+      "es": "<LI>Volvéis caminando hacia la parada de taxis. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes un ruido. La morena menuda de la cola del autobús está allí, meando. Su minifalda le sube hasta la cintura y las bragas blancas le rodean las rodillas, mientras un chorro corre por el suelo. Al verte suelta un grito ahogado de vergüenza e intenta subirse las bragas, pero el chorro es tan fuerte que tiene que volver a ponerse en cuclillas.",
+      "fr": "<LI>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez un bruit. La petite brune de la file d'attente est là, en train de faire pipi. Sa mini-jupe est retroussée autour de la taille, sa culotte blanche autour des genoux, tandis qu'un jet coule sur le sol. Quand elle vous voit, elle pousse un hoquet de gêne et tente de remonter sa culotte, mais son jet est si puissant qu'elle doit se rasseoir en accroupie",
+      "tw": "<LI>你們往計程車站方向走回去。途中經過停車場裡一輛房車，你聽到動靜走近一看——排隊時見過的那個嬌小褐髮女生正蹲在那裡撒尿。她的迷你裙撩到腰間，白色內褲褪到膝蓋，一股尿流淌過地面。她看到你，驚得倒吸一口氣，滿臉通紅，想拉起內褲，卻因為尿流正急根本停不下來，只好又蹲了回去。"
     },
     {
       "id": "x04144",
@@ -38977,11 +38997,11 @@
     {
       "id": "x04149",
       "kind": "story",
-      "en": "<LI>You look around. Diane is dying for a pee. Maybe she could just go behind one of the cars in the car park.",
-      "cn": "<LI>你四下张望。黛安已经急得不行。也许她可以躲到停车场某辆车后面撒尿。",
-      "es": "<LI>Miras a tu alrededor. Diane se está meando. Quizá podría ir detrás de uno de los coches del aparcamiento.",
-      "fr": "<LI>Vous regardez autour de vous. Diane est au bord de se faire pipi dessus. Elle pourrait peut-être se soulager derrière l'une des voitures du parking.",
-      "tw": "<LI>你四下張望。黛安已經急得不行。也許她可以躲到停車場某輛車後面撒尿。"
+      "en": "<LI>You look around. Maybe she could just go behind one of the cars in the car park.",
+      "cn": "<LI>你四下张望。也许她可以躲到停车场某辆车后面撒尿。",
+      "es": "<LI>Miras a tu alrededor. Quizá podría ir detrás de uno de los coches del aparcamiento.",
+      "fr": "<LI>Vous regardez autour de vous. Elle pourrait peut-être se soulager derrière l'une des voitures du parking.",
+      "tw": "<LI>你四下張望。也許她可以躲到停車場某輛車後面撒尿。"
     },
     {
       "id": "x04150",
@@ -39848,22 +39868,13 @@
       "tw": "<LI>你還在等公車。"
     },
     {
-      "id": "x04238",
-      "kind": "story",
-      "en": "<LI>The bus is due soon.",
-      "cn": "<LI>公共汽车快来了。",
-      "es": "<LI>El autobús llega pronto.",
-      "fr": "<LI>Le bus arrive bientôt.",
-      "tw": "<LI>公車快來了。"
-    },
-    {
       "id": "x04239",
       "kind": "story",
-      "en": "<LI>Diane is just desperate to pee. She is hardly talking, but keeps pacing about. She is looking unhappy.",
-      "cn": "<LI>黛安已经尿急得厉害，根本没心思说话，只是不停地踱来踱去，脸上写满了难受。",
-      "es": "<LI>Diane está que se mea. Apenas habla y no para de ir de un lado a otro. Tiene cara de angustia.",
-      "fr": "<LI>Diane a désespérément envie de faire pipi. Elle parle à peine et n'arrête pas de faire les cent pas. Elle a l'air malheureuse.",
-      "tw": "<LI>黛安急著想上廁所，幾乎不說話，只是不停踱步，滿臉難受。"
+      "en": "<LI>Diane is hardly talking, but keeps pacing about. She is looking unhappy.",
+      "cn": "<LI>黛安根本没心思说话，只是不停地踱来踱去，脸上写满了难受。",
+      "es": "<LI>Diane apenas habla y no para de ir de un lado a otro. Tiene cara de angustia.",
+      "fr": "<LI>Diane parle à peine et n'arrête pas de faire les cent pas. Elle a l'air malheureuse.",
+      "tw": "<LI>黛安根本沒心思說話，只是不停地踱來踱去，臉上寫滿了難受。"
     },
     {
       "id": "x04240",
@@ -42817,7 +42828,7 @@
     {
       "id": "x04558",
       "kind": "story",
-      "en": "<LI>She looks shyly at you. You step forward and take her hand, then kiss her on the lips. 'My darling, that was wonderful' you say.",
+      "en": "<LI>She looks shyly at you. You step forward and take her hand, then kiss her on the lips. 'My darling, that was wonderful,' you say.",
       "cn": "<LI>她羞怯地看着你。你上前握住她的手，然后吻上她的嘴唇。“亲爱的，那真的太美了，”你说。",
       "es": "<LI>Te mira con timidez. Te acercas, le coges la mano y la besas en los labios. «Cariño mío, ha sido maravilloso», dices.",
       "fr": "<LI>Elle vous regarde timidement. Vous vous avancez, prenez sa main, puis l'embrassez sur les lèvres. « Ma chérie, c'était merveilleux », lui dites-vous.",
@@ -45469,7 +45480,7 @@
     {
       "id": "x04847",
       "kind": "story",
-      "en": "<LI>DIANE: <EM>Between sobs</EM> I'm sorry, I'm sorry, I'm sorry.",
+      "en": "<LI>DIANE: <EM>(between sobs)</EM> I'm sorry, I'm sorry, I'm sorry.",
       "cn": "<LI>黛安：<EM>（哽咽着）</EM>对不起，对不起，对不起。",
       "es": "<LI>DIANE: <EM>Entre sollozos</EM> Lo siento, lo siento, lo siento.",
       "fr": "<LI>DIANE : <EM>Entre deux sanglots</EM> Pardon, pardon, pardon.",
@@ -45660,7 +45671,7 @@
     {
       "id": "x04868",
       "kind": "story",
-      "en": "<LI>DIANE: <EM>Between sobs</EM> I'm sorry, I'm sorry, I'm sorry.",
+      "en": "<LI>DIANE: <EM>(between sobs)</EM> I'm sorry, I'm sorry, I'm sorry.",
       "cn": "<LI>黛安：<EM>（哽咽着）</EM>对不起，对不起，对不起。",
       "es": "<LI>DIANE: <EM>Entre sollozos</EM> Lo siento, lo siento, lo siento.",
       "fr": "<LI>DIANE : <EM>Entre deux sanglots</EM> Pardon, pardon, pardon.",
@@ -46373,6 +46384,346 @@
       "tw": "<LI>黛安：那講完之後你就讓我去？",
       "es": "<LI>DIANE: ¿Y después me dejarás ir al baño?",
       "fr": "<LI>DIANE : Et tu me laisseras aller aux toilettes après ?"
+    },
+    {
+      "id": "x_excuseme1_a",
+      "kind": "story",
+      "en": "<LI>Suddenly she sits forward and stands up, blushing slightly.",
+      "cn": "<LI>她忽然坐直身子站起来，微微脸红。",
+      "tw": "<LI>她忽然坐直身子站起來，微微臉紅。",
+      "es": "<LI>De pronto se incorpora y se pone en pie, sonrojándose un poco.",
+      "fr": "<LI>Soudain, elle se redresse et se lève, légèrement rougissante."
+    },
+    {
+      "id": "x_excuseme1_b",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?",
+      "cn": "<LI>黛安：对不起，我得去厕所。在哪儿？",
+      "tw": "<LI>黛安：對不起，我得去廁所。在哪裡？",
+      "es": "<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?",
+      "fr": "<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller aux toilettes. Où est-ce ?"
+    },
+    {
+      "id": "x_excuseme1_c",
+      "kind": "choice",
+      "tag": "excuseme1",
+      "en": "Wait for her to ask?",
+      "cn": "等她自己开口？",
+      "tw": "等她自己開口？",
+      "es": "¿Esperar a que pregunte?",
+      "fr": "Attendre qu'elle demande ?"
+    },
+    {
+      "id": "x_scenario8",
+      "kind": "story",
+      "en": "<LI>There is no sign of your brother. He's probably out with his friends—he's just finished college and is waiting for his results before going on to university. You ask Diane if she would like a glass of wine, but she says she'd prefer a coffee.",
+      "cn": "<LI>屋里不见你弟弟的踪影。他大概和朋友出去了——他刚考完试，正在等成绩，之后要上大学。你问黛安要不要来杯葡萄酒，她说更想喝咖啡。",
+      "tw": "<LI>屋裡不見你弟弟的蹤影。他大概和朋友出去了——他剛考完試，正在等成績，之後要上大學。你問黛安要不要來杯葡萄酒，她說更想喝咖啡。",
+      "es": "<LI>No hay rastro de tu hermano. Seguramente está con sus amigos: acaba de terminar el instituto y está esperando las notas antes de pasar a la universidad. Le preguntas a Diane si quiere una copa de vino, pero dice que prefiere un café.",
+      "fr": "<LI>Votre frère n'est nulle part en vue. Il est probablement sorti avec ses amis — il vient de terminer le lycée et attend ses résultats avant d'entrer à l'université. Vous demandez à Diane si elle veut un verre de vin, mais elle dit qu'elle préférerait un café."
+    },
+    {
+      "id": "x_morewater_choice",
+      "kind": "choice",
+      "tag": "morewater",
+      "en": "Buy a bottle of water for later?",
+      "cn": "再买瓶水以备后用？",
+      "tw": "再買瓶水以備後用？",
+      "es": "¿Comprar una botella de agua para más tarde?",
+      "fr": "Acheter une bouteille d'eau pour plus tard ?"
+    },
+    {
+      "id": "x_handupskirt_choice",
+      "kind": "choice",
+      "tag": "handupskirt",
+      "en": "Try slipping a hand under her skirt?",
+      "cn": "试着把手伸进她裙子里？",
+      "tw": "試著把手伸進她裙子裡？",
+      "es": "¿Intentar meterle la mano bajo la falda?",
+      "fr": "Essayer de glisser une main sous sa jupe ?"
+    },
+    {
+      "id": "x_morewater_a",
+      "kind": "story",
+      "en": "<LI>You go and buy a bottle of water. You will be able to offer her some later on!",
+      "cn": "<LI>你去买了一瓶水。待会儿还能递给她喝！",
+      "tw": "<LI>你去買了一瓶水。待會兒還能遞給她喝！",
+      "es": "<LI>Vas a comprar una botella de agua. ¡Podrás ofrecérsela más tarde!",
+      "fr": "<LI>Vous allez acheter une bouteille d'eau. Vous pourrez lui en offrir plus tard !"
+    },
+    {
+      "id": "x_morewater_b",
+      "kind": "story",
+      "en": "<LI>It's grossly overpriced.",
+      "cn": "<LI>贵得离谱。",
+      "tw": "<LI>貴得離譜。",
+      "es": "<LI>Está escandalosamente cara.",
+      "fr": "<LI>C'est scandaleusement cher."
+    },
+    {
+      "id": "x_morewater_c",
+      "kind": "story",
+      "en": "<LI>She's a bit put out at you leaving her.",
+      "cn": "<LI>你把她独自留下，她有点不高兴。",
+      "tw": "<LI>你把她獨自留下，她有點不高興。",
+      "es": "<LI>Le molesta un poco que la dejes sola.",
+      "fr": "<LI>Elle est un peu vexée que vous l'ayez laissée seule."
+    },
+    {
+      "id": "x_handupskirt_a",
+      "kind": "story",
+      "en": "<LI>You try to slip your hand under her skirt.",
+      "cn": "<LI>你试着把手伸进她裙子里。",
+      "tw": "<LI>你試著把手伸進她裙子裡。",
+      "es": "<LI>Intentas meterle la mano bajo la falda.",
+      "fr": "<LI>Vous essayez de glisser une main sous sa jupe."
+    },
+    {
+      "id": "x_handupskirt_b",
+      "kind": "story",
+      "en": "<LI>She giggles and pushes your hand away.",
+      "cn": "<LI>她咯咯笑着把你的手推开。",
+      "tw": "<LI>她咯咯笑著把你的手推開。",
+      "es": "<LI>Ella suelta una risita y te aparta la mano.",
+      "fr": "<LI>Elle rit et écarte votre main."
+    },
+    {
+      "id": "x_handupskirt_c",
+      "kind": "story",
+      "en": "<LI>DIANE: There are people watching!",
+      "cn": "<LI>黛安：有人在看呢！",
+      "tw": "<LI>黛安：有人在看呢！",
+      "es": "<LI>DIANE: ¡Hay gente mirando!",
+      "fr": "<LI>DIANE : Il y a des gens qui regardent !"
+    },
+    {
+      "id": "x05042",
+      "kind": "story",
+      "en": "<LI>The others look back and wave acknowledgement.",
+      "cn": "<LI>另外两人回头看了看，挥手示意知道了。",
+      "tw": "<LI>另外兩人回頭看了看，揮手示意知道了。",
+      "es": "<LI>Los otros miran atrás y asienten con la mano.",
+      "fr": "<LI>Les autres se retournent et font signe qu'ils ont compris."
+    },
+    {
+      "id": "x05043",
+      "kind": "story",
+      "en": "<LI>DIANE: Lots better!",
+      "cn": "<LI>黛安：好多了！",
+      "tw": "<LI>黛安：好多了！",
+      "es": "<LI>DIANE: ¡Mucho mejor!",
+      "fr": "<LI>DIANE : Beaucoup mieux !"
+    },
+    {
+      "id": "x05044",
+      "kind": "choice",
+      "tag": "stophergoing3",
+      "en": "Keep her on your knee.",
+      "cn": "就让她坐在腿上。",
+      "tw": "就讓她坐在腿上。",
+      "es": "Quédate con ella en el regazo.",
+      "fr": "La garder sur vos genoux."
+    },
+    {
+      "id": "x05045",
+      "kind": "story",
+      "en": "<LI>You don't get up. She looks at you, waiting, then realises you aren't going to the kitchen.",
+      "cn": "<LI>你没有起身。她看着你，等了一下，才明白你不打算去厨房。",
+      "tw": "<LI>你沒有起身。她看著你，等了一下，才明白你不打算去廚房。",
+      "es": "<LI>No te levantas. Ella te mira, a la espera, y entonces cae en que no vas a ir a la cocina.",
+      "fr": "<LI>Vous ne vous levez pas. Elle vous regarde, en attendant, puis comprend que vous n'allez pas à la cuisine."
+    },
+    {
+      "id": "x05046",
+      "kind": "story",
+      "en": "<LI>You slip your hand between her legs. She gives a little sigh as you touch her. She looks up at you.",
+      "cn": "<LI>你把手伸进她两腿之间。你碰到她时，她轻轻叹了一声，抬头看着你。",
+      "tw": "<LI>你把手伸進她兩腿之間。你碰到她時，她輕輕嘆了一聲，抬頭看著你。",
+      "es": "<LI>Le metes la mano entre las piernas. Suelta un pequeño suspiro al tocarla. Levanta la mirada hacia ti.",
+      "fr": "<LI>Vous glissez la main entre ses jambes. Elle pousse un petit soupir quand vous la touchez. Elle lève les yeux vers vous."
+    },
+    {
+      "id": "x05047",
+      "kind": "story",
+      "en": "<LI>DIANE: <EM>(in a whisper)</EM> Would you like me to take my tights off?",
+      "cn": "<LI>黛安：<EM>（低声说）</EM>要我把连裤袜褪下来吗？",
+      "tw": "<LI>黛安：<EM>（小聲說）</EM>要我把連褲襪褪下來嗎？",
+      "es": "<LI>DIANE: <EM>(en un susurro)</EM> ¿Quieres que me quite los pantis?",
+      "fr": "<LI>DIANE : <EM>(à voix basse)</EM> Tu veux que j'enlève mes collants ?"
+    },
+    {
+      "id": "x05048",
+      "kind": "story",
+      "en": "<LI>You nod. She stands up, slips her hands under her skirt and half hitches it up, and peels down her tights.",
+      "cn": "<LI>你点点头。她站起身，双手伸进裙摆把裙子撩起一半，把连裤袜褪了下来。",
+      "tw": "<LI>你點點頭。她站起身，雙手伸進裙擺把裙子撩起一半，把連褲襪褪了下來。",
+      "es": "<LI>Asientes. Se pone de pie, mete las manos bajo la falda, se la sube a medias y se baja los pantis.",
+      "fr": "<LI>Vous hochez la tête. Elle se lève, glisse les mains sous sa jupe, la retrousse à mi-hauteur et fait glisser ses collants."
+    },
+    {
+      "id": "x05049",
+      "kind": "story",
+      "en": "<LI>DIANE: <EM>(in a whisper)</EM> Would you like me to take my stockings off?",
+      "cn": "<LI>黛安：<EM>（低声说）</EM>要我把长筒袜褪下来吗？",
+      "tw": "<LI>黛安：<EM>（小聲說）</EM>要我把長筒襪褪下來嗎？",
+      "es": "<LI>DIANE: <EM>(en un susurro)</EM> ¿Quieres que me quite las medias?",
+      "fr": "<LI>DIANE : <EM>(à voix basse)</EM> Tu veux que j'enlève mes bas ?"
+    },
+    {
+      "id": "x05050",
+      "kind": "story",
+      "en": "<LI>You nod. She stands up, slips her hands under her skirt and half hitches it up, and peels down her stockings.",
+      "cn": "<LI>你点点头。她站起身，双手伸进裙摆把裙子撩起一半，把长筒袜褪了下来。",
+      "tw": "<LI>你點點頭。她站起身，雙手伸進裙擺把裙子撩起一半，把長筒襪褪了下來。",
+      "es": "<LI>Asientes. Se pone de pie, mete las manos bajo la falda, se la sube a medias y se baja las medias.",
+      "fr": "<LI>Vous hochez la tête. Elle se lève, glisse les mains sous sa jupe, la retrousse à mi-hauteur et fait glisser ses bas."
+    },
+    {
+      "id": "x05051",
+      "kind": "story",
+      "en": "<LI>She moves over and stands in front of you, pulling you towards her. Then she sits back down with you on the sofa.",
+      "cn": "<LI>她走到你面前站着，把你拉向她。然后她又和你一起坐回沙发上。",
+      "tw": "<LI>她走到你面前站著，把你拉向她。然後她又和你一起坐回沙發上。",
+      "es": "<LI>Se acerca y se queda de pie delante de ti, atrayéndote hacia ella. Luego vuelve a sentarse contigo en el sofá.",
+      "fr": "<LI>Elle s'avance et se tient devant vous, vous attirant vers elle. Puis elle se rassoit avec vous sur le canapé."
+    },
+    {
+      "id": "x05053",
+      "kind": "story",
+      "en": "<LI>You want to watch the brunette having her pee. You've decided to use a luckshot.",
+      "cn": "<LI>你想看那个褐发女生撒尿。你决定使用一次幸运机会。",
+      "tw": "<LI>你想看那個褐髮女生撒尿。你決定使用一次幸運機會。",
+      "es": "<LI>Quieres ver a la morena meando. Has decidido usar un golpe de suerte.",
+      "fr": "<LI>Vous voulez regarder la brune en train de faire pipi. Vous avez décidé d'utiliser un coup de chance."
+    },
+    {
+      "id": "x05054",
+      "kind": "story",
+      "en": "<LI>YOU: I'm bursting for a pee. I'm just popping into the car park.",
+      "cn": "<LI>你：我憋得不行。我去停车场一下。",
+      "tw": "<LI>你：我憋得不行。我去停車場一下。",
+      "es": "<LI>TÚ: Me estoy meando. Voy un momento al aparcamiento.",
+      "fr": "<LI>VOUS : J'ai vraiment envie de faire pipi. Je vais juste faire un saut au parking."
+    },
+    {
+      "id": "x05055",
+      "kind": "story",
+      "en": "<LI>You follow the girl into the car park.",
+      "cn": "<LI>你跟着那个女生进了停车场。",
+      "tw": "<LI>你跟著那個女生進了停車場。",
+      "es": "<LI>Sigues a la chica hasta el aparcamiento.",
+      "fr": "<LI>Vous suivez la fille dans le parking."
+    },
+    {
+      "id": "x05058",
+      "kind": "story",
+      "en": "<LI>Diane glances after the girl, then back at you. She doesn't look convinced.",
+      "cn": "<LI>黛安朝那个女生离去的方向瞥了一眼，又转回头看你。她显然没信。",
+      "tw": "<LI>黛安朝那個女生離去的方向瞥了一眼，又轉回頭看你。她顯然沒信。",
+      "es": "<LI>Diane mira hacia donde se ha ido la chica, luego te vuelve a mirar. No parece convencida.",
+      "fr": "<LI>Diane jette un coup d'œil dans la direction de la fille, puis se tourne vers vous. Elle n'a pas l'air convaincue."
+    },
+    {
+      "id": "x05059",
+      "kind": "story",
+      "en": "<LI>DIANE: The bus is due.",
+      "cn": "<LI>黛安：车快来了。",
+      "tw": "<LI>黛安：車快來了。",
+      "es": "<LI>DIANE: El autobús llega ya.",
+      "fr": "<LI>DIANE : Le bus ne devrait plus tarder."
+    },
+    {
+      "id": "x05060",
+      "kind": "story",
+      "en": "<LI>The brunette doesn't glance your way. She looks flushed and relieved, and quite unaware of you.",
+      "cn": "<LI>那个褐发女生看都没朝你这边看一眼。她脸色潮红，一副如释重负的样子，完全没察觉到你。",
+      "tw": "<LI>那個褐髮女生看都沒朝你這邊看一眼。她臉色潮紅，一副如釋重負的樣子，完全沒察覺到你。",
+      "es": "<LI>La morena ni siquiera te mira. Tiene las mejillas encendidas, el alivio en la cara, y no parece haberte visto.",
+      "fr": "<LI>La brune ne vous jette même pas un regard. Elle a les joues colorées, l'air soulagée, et ne semble pas vous avoir remarqué."
+    },
+    {
+      "id": "x05056",
+      "kind": "choice",
+      "tag": "carparkalone",
+      "en": "Keep a good lookout.",
+      "cn": "小心望风。",
+      "tw": "小心望風。",
+      "es": "Vigila bien.",
+      "fr": "Restez à l'affût."
+    },
+    {
+      "id": "x05057",
+      "kind": "story",
+      "en": "<LI>You keep to the shadows and follow her between the cars.",
+      "cn": "<LI>你贴着阴影，跟着她在车缝间穿行。",
+      "tw": "<LI>你貼著陰影，跟著她在車縫間穿行。",
+      "es": "<LI>Te mantienes en las sombras y la sigues entre los coches.",
+      "fr": "<LI>Vous restez dans l'ombre et la suivez entre les voitures."
+    },
+    {
+      "id": "x05063",
+      "kind": "choice",
+      "tag": "givechance1",
+      "en": "Offer the loo first?",
+      "cn": "先提一下厕所？",
+      "tw": "先提一下廁所？",
+      "es": "¿Ofrecerle el baño primero?",
+      "fr": "Proposer les toilettes d'abord ?"
+    },
+    {
+      "id": "x05064",
+      "kind": "story",
+      "en": "<LI>YOU: Are you OK? If you want the loo it's just at the top of the stairs.",
+      "cn": "<LI>你：你还好吗？要是想上厕所，就在楼梯顶上。",
+      "tw": "<LI>你：你還好嗎？要是想上廁所，就在樓梯頂上。",
+      "es": "<LI>TÚ: ¿Estás bien? Si quieres el baño, está arriba de las escaleras.",
+      "fr": "<LI>VOUS : Ça va ? Si vous voulez les toilettes, c'est juste en haut des escaliers."
+    },
+    {
+      "id": "x05065",
+      "kind": "story",
+      "en": "<LI>She blushes. She's really embarrassed that you can tell she can't sit still.",
+      "cn": "<LI>她脸红了。你看得出她坐不住，这让她很难为情。",
+      "tw": "<LI>她臉紅了。你看得出她坐不住，這讓她很不好意思。",
+      "es": "<LI>Se sonroja. Le da mucha vergüenza que notes que no puede quedarse quieta.",
+      "fr": "<LI>Elle rougit. Elle est vraiment gênée que vous ayez vu qu'elle n'arrive pas à tenir en place."
+    },
+    {
+      "id": "x05066",
+      "kind": "story",
+      "en": "<LI>So she tries to sit still.",
+      "cn": "<LI>于是她努力坐稳。",
+      "tw": "<LI>於是她努力坐穩。",
+      "es": "<LI>Así que intenta quedarse quieta.",
+      "fr": "<LI>Alors elle essaie de rester tranquille."
+    },
+    {
+      "id": "x05067",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm fine thanks.",
+      "cn": "<LI>黛安：我没事，谢谢。",
+      "tw": "<LI>黛安：我沒事，謝謝。",
+      "es": "<LI>DIANE: Estoy bien, gracias.",
+      "fr": "<LI>DIANE : Ça va, merci."
+    },
+    {
+      "id": "x05068",
+      "kind": "story",
+      "en": "<p class='notice'><strong>She's too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>她太难为情了，不肯承认自己需要上厕所。你获得了5点害羞值。</strong></p>",
+      "tw": "<p class='notice'><strong>她太不好意思了，不肯承認自己需要上廁所。你獲得了5點害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Está demasiado avergonzada para admitir que necesita el baño. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Elle est trop gênée pour admettre qu'elle a besoin des toilettes. Vous gagnez 5 points de timidité.</strong></p>"
+    },
+    {
+      "id": "x05069",
+      "kind": "choice",
+      "tag": "sofadesp2",
+      "en": "You keep talking.",
+      "cn": "你继续说下去。",
+      "tw": "你繼續說下去。",
+      "es": "Sigues hablando.",
+      "fr": "Vous continuez à parler."
     }
   ]
 }

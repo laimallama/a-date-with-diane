@@ -55,11 +55,12 @@ const HIDDEN_SLUGS = {
   "13_closed_toilet_building_together": "08b_closed_turns",
   "14_closed_toilet_building_bad_choice": "08c_closed_holdon",
   "15_riverside_gents_urinal": "08d_gents_urinal",
-  "16_brunette_behind_camper": "09a_camper_watch",
-  "17_diane_brunette_camper_round": "09b_camper_diane",
-  "18_diane_brunette_camper_under": "09c_camper_under",
-  "19_camper_gentleman_choice": "09d_camper_gentleman",
-  "22_caught_by_boyfriend": "09e_camper_caught",
+  "28_luckshot_brunette_camper": "09a_camper_watch",
+  "16_brunette_behind_camper": "09b_camper_your_spot",
+  "17_diane_brunette_camper_round": "09c_camper_diane",
+  "18_diane_brunette_camper_under": "09d_camper_under",
+  "19_camper_gentleman_choice": "09e_camper_gentleman",
+  "22_caught_by_boyfriend": "09f_camper_caught",
   "20_church_lych_gate_glimpse": "10_lych_gate",
   "21_hidden_camera": "11_hidden_camera",
   "26_train_photo_album": "12_train_album",
@@ -349,8 +350,8 @@ function main() {
   if (endingLeavesEn.length !== 15) {
     throw new Error(`Expected 15 ending leaves, got ${endingLeavesEn.length}`);
   }
-  if (hiddenLeavesEn.length !== 27) {
-    throw new Error(`Expected 27 hidden leaves, got ${hiddenLeavesEn.length}`);
+  if (hiddenLeavesEn.length !== 28) {
+    throw new Error(`Expected 28 hidden leaves, got ${hiddenLeavesEn.length}`);
   }
 
   for (const leaf of endingLeavesEn) {

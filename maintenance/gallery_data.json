@@ -931,7 +931,7 @@
       {
         "groupId": "07_consolation_day_routes",
         "order": 8,
-        "title": "Day-Route Consolation Prizes",
+        "title": "Outdoor Consolation Prizes",
         "variants": [
           {
             "id": "07a_consolation_tuesday_pavilion",
@@ -5497,7 +5497,7 @@
         "variants": [
           {
             "id": "08a_chloe_consolation",
-            "title": "门口没忍住",
+            "title": "门口失禁",
             "tags": [
               "start",
               "start1a",
@@ -5559,7 +5559,7 @@
           },
           {
             "id": "08b_chloe_outside",
-            "title": "在门外解决",
+            "title": "随地小便",
             "tags": [
               "start",
               "start1a",
@@ -5624,7 +5624,7 @@
       {
         "groupId": "07_consolation_day_routes",
         "order": 8,
-        "title": "按日路线安慰奖",
+        "title": "户外路线安慰奖",
         "variants": [
           {
             "id": "07a_consolation_tuesday_pavilion",
@@ -6002,7 +6002,7 @@
         "variants": [
           {
             "id": "06a_lounge_hen_party",
-            "title": "女生派对",
+            "title": "婚前派对",
             "tags": [
               "start",
               "start1a",
@@ -10317,7 +10317,7 @@
       {
         "groupId": "07_consolation_day_routes",
         "order": 8,
-        "title": "Premios de consolación por día",
+        "title": "Premios de consolación al aire libre",
         "variants": [
           {
             "id": "07a_consolation_tuesday_pavilion",
@@ -15010,7 +15010,7 @@
       {
         "groupId": "07_consolation_day_routes",
         "order": 8,
-        "title": "Prix de consolation selon le jour",
+        "title": "Prix de consolation en extérieur",
         "variants": [
           {
             "id": "07a_consolation_tuesday_pavilion",
@@ -19576,7 +19576,7 @@
         "variants": [
           {
             "id": "08a_chloe_consolation",
-            "title": "門口沒忍住",
+            "title": "門口失禁",
             "tags": [
               "start",
               "start1a",
@@ -19638,7 +19638,7 @@
           },
           {
             "id": "08b_chloe_outside",
-            "title": "在門外解決",
+            "title": "隨地小便",
             "tags": [
               "start",
               "start1a",
@@ -19703,7 +19703,7 @@
       {
         "groupId": "07_consolation_day_routes",
         "order": 8,
-        "title": "按日路線安慰獎",
+        "title": "戶外路線安慰獎",
         "variants": [
           {
             "id": "07a_consolation_tuesday_pavilion",
@@ -20081,7 +20081,7 @@
         "variants": [
           {
             "id": "06a_lounge_hen_party",
-            "title": "女生派對",
+            "title": "單身派對",
             "tags": [
               "start",
               "start1a",

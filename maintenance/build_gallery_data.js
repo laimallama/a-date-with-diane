@@ -58,8 +58,8 @@ const ENDING_META = {
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
       en: "Wet at the Door",
-      cn: "门口没忍住",
-      tw: "門口沒忍住",
+      cn: "门口失禁",
+      tw: "門口失禁",
       es: "Se moja en la puerta",
       fr: "Elle n’y arrive pas à la porte",
     },
@@ -69,8 +69,8 @@ const ENDING_META = {
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
       en: "Pees Outside",
-      cn: "在门外解决",
-      tw: "在門外解決",
+      cn: "随地小便",
+      tw: "隨地小便",
       es: "Orina fuera",
       fr: "Elle fait pipi dehors",
     },
@@ -93,7 +93,7 @@ const ENDING_META = {
   loungeHen: {
     order: 9, stem: "06a_lounge_hen_party",
     climaxStartTag: "loungedesp", // lounge story consolation
-    title: { en: "Hen Party", cn: "女生派对", tw: "女生派對", es: "Despedida de soltera", fr: "Enterrement de vie de jeune fille" },
+    title: { en: "Hen Party", cn: "婚前派对", tw: "單身派對", es: "Despedida de soltera", fr: "Enterrement de vie de jeune fille" },
   },
   loungeTiramisu: {
     order: 9, stem: "06b_lounge_bus_boy",
@@ -129,11 +129,11 @@ const ENDING_GROUPS = [
     groupId: "07_consolation_day_routes",
     order: 8,
     title: {
-      en: "Day-Route Consolation Prizes",
-      cn: "按日路线安慰奖",
-      tw: "按日路線安慰獎",
-      es: "Premios de consolación por día",
-      fr: "Prix de consolation selon le jour",
+      en: "Outdoor Consolation Prizes",
+      cn: "户外路线安慰奖",
+      tw: "戶外路線安慰獎",
+      es: "Premios de consolación al aire libre",
+      fr: "Prix de consolation en extérieur",
     },
     variantKeys: ["general", "generalThursday", "generalSaturday"],
   },

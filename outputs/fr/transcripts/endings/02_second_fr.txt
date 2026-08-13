@@ -18,7 +18,9 @@ Elle se lève, essayant de vous fausser compagnie, mais vous la retenez par la m
 
 Diane s’est rassise. Elle est assise sur ses mains, les genoux qui ne cessent de monter et descendre.
 
-Vous vous asseyez à côté d’elle et passez un bras autour d’elle. Vous dites : « Raconte-moi une histoire. »
+Vous vous asseyez à côté d’elle et passez un bras autour d’elle.
+
+VOUS : Raconte-moi une histoire.
 
 DIANE : Qu’est-ce que tu veux dire ?
 

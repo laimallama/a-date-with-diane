@@ -8,8 +8,8 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5022,
-    "story": 3892,
+    "total": 5026,
+    "story": 3896,
     "choice": 1130
   },
   "entries": [
@@ -13572,7 +13572,7 @@
     {
       "id": "x01438",
       "kind": "story",
-      "en": "<LI>DIANE: <EM>considering</EM> When I was eighteen, my first year at college, in Freshers week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.",
+      "en": "<LI>DIANE: <EM>considering</EM> When I was eighteen, my first year at college, in Freshers' Week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.",
       "cn": "<LI>黛安：<EM>（回想着）</EM>我十八岁那年，大学第一年，新生周，大家都出去喝酒。我那时不太能喝，但我们喝了不少，还喝了啤酒。回家路上我憋得要命，完全不知道该怎么办。",
       "es": "<LI>DIANE: <EM>pensándolo</EM> Cuando tenía dieciocho años, mi primer año en la universidad, durante la semana de bienvenida, cuando todo el mundo sale a beber. No estaba acostumbrada al alcohol y bebimos bastante, cerveza también. De camino a casa estaba que reventaba, no sabía qué hacer.",
       "fr": "<LI>DIANE : <EM>songeuse</EM> J'avais dix-huit ans, c'était ma première année de fac, pendant la semaine d'intégration, quand tout le monde sort boire. Je n'avais pas l'habitude de l'alcool et on avait tous pas mal bu, de la bière aussi. Sur le chemin du retour j'avais une envie terrible de faire pipi, je ne savais vraiment plus quoi faire.",
@@ -24715,10 +24715,10 @@
       "id": "x02628",
       "kind": "story",
       "en": "<LI>DIANE: I hope you appreciate what I'm doing. I'm dying for a wee.",
-      "cn": "<LI>黛安：你得好好感激我才行。我憋得厉害。",
+      "cn": "<LI>黛安：你得好好感激我才行。我真的好想尿尿。",
       "es": "<LI>DIANE: Espero que aprecies lo que estoy haciendo. Me estoy meando.",
       "fr": "<LI>DIANE : J'espère que tu apprécies ce que je fais. J'ai une envie terrible de faire pipi.",
-      "tw": "<LI>黛安：你得好好感激我才行。我憋得厲害。"
+      "tw": "<LI>黛安：你得好好感激我才行。我真的好想尿尿。"
     },
     {
       "id": "x02629",
@@ -24806,10 +24806,10 @@
       "id": "x02637",
       "kind": "story",
       "en": "<LI>You are cuddled up on the sofa. Diane is shifting about a little.",
-      "cn": "<LI>你们依偎在沙发上，黛安微微动来动去。",
+      "cn": "<LI>你们彼此搂着坐在沙发上，黛安有点坐不住了。",
       "es": "<LI>Estáis acurrucados en el sofá. Diane no para de moverse un poco.",
       "fr": "<LI>Vous êtes blottis sur le canapé. Diane commence à s'agiter légèrement.",
-      "tw": "<LI>你們依偎在沙發上，黛安有些坐不住。"
+      "tw": "<LI>你們彼此摟著坐在沙發上，黛安有點坐不住了。"
     },
     {
       "id": "x02638",
@@ -24906,10 +24906,10 @@
       "id": "x02648",
       "kind": "story",
       "en": "<LI>YOU: Have you ever been really desperate for a pee? I mean, have you ever, sort of, left it too late? Would you tell me about it?",
-      "cn": "<LI>你：你有没有过真的憋得很难受？我是说，有没有忍得太久，差点出事？愿不愿意跟我说说？",
+      "cn": "<LI>你：你有没有过特别急着要尿、憋得很惨的时候？我是说，有没有拖太久、几乎来不及的时候？能跟我讲讲吗？",
       "es": "<LI>TÚ: ¿Alguna vez has tenido muchísimas ganas de hacer pis? Me refiero a si alguna vez lo has dejado demasiado tarde. ¿Me lo contarías?",
       "fr": "<LI>VOUS : Tu as déjà eu vraiment très envie de faire pipi ? Genre, tu as déjà attendu trop longtemps ? Tu m'en parlerais ?",
-      "tw": "<LI>你：你有沒過真憋得很難受？我是說，有沒忍得太久，差點出事？願不願意跟我說說？"
+      "tw": "<LI>你：你有沒有過特別急著要尿、憋得很慘的時候？我是說，有沒有拖太久、幾乎來不及的時候？能跟我講講嗎？"
     },
     {
       "id": "x02649",
@@ -24961,11 +24961,20 @@
     {
       "id": "x02654",
       "kind": "story",
-      "en": "<LI>You sit beside her and put an arm round her. You say: 'Tell me a story.'",
-      "cn": "<LI>你坐到她身边，搂住她，说：“给我讲个故事。”",
-      "es": "<LI>Te sientas a su lado y la rodeas con el brazo. Le dices: «Cuéntame una historia».",
-      "fr": "<LI>Vous vous asseyez à côté d'elle et passez un bras autour d'elle. Vous dites : « Raconte-moi une histoire. »",
-      "tw": "<LI>你坐到她身邊，摟住她，說：「給我講個故事。」"
+      "en": "<LI>You sit beside her and put an arm round her.",
+      "cn": "<LI>你坐到她身边，搂住她。",
+      "es": "<LI>Te sientas a su lado y la rodeas con el brazo.",
+      "fr": "<LI>Vous vous asseyez à côté d'elle et passez un bras autour d'elle.",
+      "tw": "<LI>你坐到她身邊，摟住她。"
+    },
+    {
+      "id": "x02654_you_story",
+      "kind": "story",
+      "en": "<LI>YOU: Tell me a story.",
+      "cn": "<LI>你：给我讲个故事。",
+      "tw": "<LI>你：給我講個故事。",
+      "es": "<LI>TÚ: Cuéntame una historia.",
+      "fr": "<LI>VOUS : Raconte-moi une histoire."
     },
     {
       "id": "x02655",
@@ -25454,11 +25463,20 @@
     {
       "id": "x02704",
       "kind": "story",
-      "en": "<LI>You pull her down onto your lap. You kiss her. You say: 'Tell me a story.'",
-      "cn": "<LI>你把她拉下来坐在你腿上，吻了她，然后说：“给我讲个故事。”",
-      "es": "<LI>La atraes hacia tu regazo. La besas. Dices: «Cuéntame una historia».",
-      "fr": "<LI>Vous l'attirez sur vos genoux. Vous l'embrassez. Vous dites : « Raconte-moi une histoire. »",
-      "tw": "<LI>你把她拉下來坐在你腿上，吻了她，接著說：「給我講個故事。」"
+      "en": "<LI>You pull her down onto your lap. You kiss her.",
+      "cn": "<LI>你把她拉下来坐在你腿上，吻了她。",
+      "es": "<LI>La atraes hacia tu regazo. La besas.",
+      "fr": "<LI>Vous l'attirez sur vos genoux. Vous l'embrassez.",
+      "tw": "<LI>你把她拉下來坐在你腿上，吻了她。"
+    },
+    {
+      "id": "x02704_you_story",
+      "kind": "story",
+      "en": "<LI>YOU: Tell me a story.",
+      "cn": "<LI>你：给我讲个故事。",
+      "tw": "<LI>你：給我講個故事。",
+      "es": "<LI>TÚ: Cuéntame una historia.",
+      "fr": "<LI>VOUS : Raconte-moi une histoire."
     },
     {
       "id": "x02705",
@@ -25473,10 +25491,10 @@
       "id": "x02706",
       "kind": "story",
       "en": "<LI>YOU: Have you ever been really desperate for a pee? I mean, have you ever, sort of, left it too late? Would you tell me about it?",
-      "cn": "<LI>你：你有没有过真的憋得很难受？我是说，有没有忍得太久，差点出事？愿不愿意跟我说说？",
+      "cn": "<LI>你：你有没有过特别急着要尿、憋得很惨的时候？我是说，有没有拖太久、几乎来不及的时候？能跟我讲讲吗？",
       "es": "<LI>TÚ: ¿Alguna vez has tenido muchísimas ganas de hacer pis? Me refiero a si alguna vez lo has dejado demasiado tarde. ¿Me lo contarías?",
       "fr": "<LI>VOUS : Tu as déjà eu vraiment très envie de faire pipi ? Genre, tu as déjà attendu trop longtemps ? Tu m'en parlerais ?",
-      "tw": "<LI>你：你有沒有過真的憋得很難受？我是說，有沒有忍得太久，差點出事？願不願意跟我說說？"
+      "tw": "<LI>你：你有沒有過特別急著要尿、憋得很慘的時候？我是說，有沒有拖太久、幾乎來不及的時候？能跟我講講嗎？"
     },
     {
       "id": "x02707",
@@ -36860,7 +36878,7 @@
     {
       "id": "x03930",
       "kind": "story",
-      "en": "<LI>YOU: You know you told me earlier about that time in Freshers Week, when you—",
+      "en": "<LI>YOU: You know you told me earlier about that time in Freshers' Week, when you—",
       "cn": "<LI>你：你知道吗，你之前跟我说过新生周那次，你那时候——",
       "es": "<LI>TÚ: ¿Sabes que antes me contaste lo de aquella vez en la semana de bienvenida, cuando tú—",
       "fr": "<LI>VOUS : Tu sais, tu m'as parlé tout à l'heure de ce qui s'est passé pendant la semaine d'intégration, quand tu —",
@@ -43407,10 +43425,10 @@
       "id": "x04623",
       "kind": "story",
       "en": "<P><LI>Diane's head is resting on your chest as she finishes her little story.",
-      "cn": "<P><LI>黛安的头靠在你胸前，将那个小故事娓娓说完。",
+      "cn": "<P><LI>黛安把头枕在你胸前，讲完了她的小故事。",
       "es": "<P><LI>La cabeza de Diane descansa sobre tu pecho mientras termina su pequeña historia.",
       "fr": "<P><LI>La tête de Diane repose sur votre poitrine tandis qu'elle termine sa petite histoire.",
-      "tw": "<P><LI>黛安的頭靠在你胸前，將那個小故事娓娓說完。"
+      "tw": "<P><LI>黛安把頭枕在你胸前，講完了她的小故事。"
     },
     {
       "id": "x04624",
@@ -43564,10 +43582,10 @@
       "id": "x04640",
       "kind": "story",
       "en": "<LI>Finally she changes position, kneeling on the sofa beside you as she masturbates you to a climax. The cum shoots onto your bare stomach. Diane gets a tissue out of her bag and wipes you clean.",
-      "cn": "<LI>最后她换了个姿势，跪在你身旁的沙发上，替你手淫直至高潮。精液射到你裸露的腹部。黛安从包里取出纸巾，替你擦干净。",
-      "es": "<LI>Finalmente cambia de posición, se arrodilla en el sofá a tu lado mientras te masturba hasta el clímax. El semen te cae en el vientre desnudo. Diane saca un pañuelo del bolso y te limpia.",
+      "cn": "<LI>最后她换了个姿势，跪在你身旁的沙发上，用手把你撸到高潮。精液射在你光着的肚子上。黛安从包里取出纸巾，替你擦干净。",
+      "es": "<LI>Finalmente cambia de posición, se arrodilla en el sofá a tu lado mientras te masturba hasta el clímax. El semen te sale a chorros sobre la barriga desnuda. Diane saca un pañuelo del bolso y te limpia.",
       "fr": "<LI>Finalement elle change de position, s'agenouille sur le canapé à côté de vous et vous masturbe jusqu'à l'orgasme. Le sperme gicle sur votre ventre nu. Diane sort un mouchoir en papier de son sac et vous nettoie.",
-      "tw": "<LI>最後她換了個姿勢，跪在你身旁的沙發上，替你手淫直至高潮。精液射到你裸露的腹部。黛安從包裡取出紙巾，替你擦乾淨。"
+      "tw": "<LI>最後她換了個姿勢，跪在你身旁的沙發上，用手把你擼到高潮。精液射在你光著的肚子上。黛安從包裡取出紙巾，替你擦乾淨。"
     },
     {
       "id": "x04641",
@@ -43619,10 +43637,10 @@
       "id": "x04646",
       "kind": "story",
       "en": "<P><LI><B>And she's given you a handjob, while recounting one of her desperation secrets.",
-      "cn": "<P><LI><B>她还替你打飞机，同时讲述了一个她憋尿的秘密故事。",
-      "es": "<P><LI><B>Y te ha hecho una paja mientras te contaba uno de sus secretos más íntimos sobre las veces que no podía aguantar más.",
-      "fr": "<P><LI><B>Et elle vous a fait une branlette tout en vous confiant l'un de ses secrets de rétention.",
-      "tw": "<P><LI><B>她一邊講述自己忍尿的秘密，一邊替你手淫。"
+      "cn": "<P><LI><B>她还给你打了飞机，还分享了一段她憋尿的秘密经历。",
+      "es": "<P><LI><B>Y además te ha hecho una paja y te ha compartido una de sus experiencias secretas de retención.",
+      "fr": "<P><LI><B>Et elle vous a aussi fait une branlette, et partagé l'une de ses expériences secrètes de rétention.",
+      "tw": "<P><LI><B>她還給你打了手槍，還分享了一段她憋尿的秘密經歷。"
     },
     {
       "id": "x04647",
@@ -44867,10 +44885,10 @@
       "id": "x04785",
       "kind": "story",
       "en": "<P><LI>DIANE: Well, when I was in college I used to go up to town with my friends and often we'd drink a bit. Then I had to get the bus back home and I often wanted to go to the loo by the end of the journey. It didn't matter too much because it was only half a mile's walk. But one day it was bitterly cold and it seemed to go to my bladder and I was really desperate. Trouble was I'd met a boy from school on the bus and he was chatting and wanted to walk home with me. I really fancied him, but this wasn't the moment. If I'd been by myself I'd have popped into the bushes but I couldn't with him there. I was in agony.",
-      "cn": "<P><LI>黛安：嗯，上大学的时候，我常和朋友进城玩，会喝点酒。然后坐公共汽车回家，到站下车的时候往往很想去厕所。倒也还好，因为还有半英里的路要走。但有一天天气特别冷，那股寒意像是直往膀胱里钻，我当时憋得难受极了。偏偏在车上碰到了一个认识的男生，他一路聊天，还要陪我走回家。我挺喜欢他的，但那一刻真的不是时候。要是我一个人，早就钻到路边草丛里撒尿了，可有他在，根本没办法。我那会儿难受极了。",
+      "cn": "<P><LI>黛安：嗯，上大学的时候，我常和朋友进城玩，会喝点酒。然后我坐公共汽车回家，到站下车的时候往往就很想去厕所。这倒也还好，因为只有半英里的路要走。但有一天，天气特别冷，那股寒意像是直往膀胱里钻。我当时憋得难受极了，偏偏还在车上碰到了一个认识的男生。他一路上和我聊天，还要陪我走回家。我挺喜欢他的，但那一刻真的不是时候。要是独自一人，我早就躲进路边草丛里撒尿了，可有他在场根本不行。我那会儿难受极了。",
       "es": "<P><LI>DIANE: Bueno, cuando estaba en la universidad solía salir a la ciudad con mis amigas y a veces bebíamos un poco. Luego tenía que coger el autobús para volver a casa y casi siempre me entraban ganas de ir al baño hacia el final del trayecto. No era gran cosa porque solo había que andar media milla. Pero un día hacía un frío horrible y me fue directo a la vejiga y tenía unas ganas tremendas. El problema era que me había encontrado en el autobús con un chico del instituto y estaba charlando y quería acompañarme a casa. Me gustaba bastante, pero ese no era el momento. Si hubiera ido sola me habría metido entre los arbustos, pero con él delante no podía. Estaba apuradísima.",
       "fr": "<P><LI>DIANE : Bon, quand j'étais à la fac, je montais en ville avec mes amies et on buvait parfois un peu. Ensuite je devais prendre le bus pour rentrer et j'avais souvent envie d'aller aux toilettes à la fin du trajet. Ça n'avait pas trop d'importance car je n'avais qu'un kilomètre à faire à pied. Mais un jour il faisait un froid glacial et ça s'est répercuté direct sur ma vessie — j'avais vraiment une envie pressante. Le problème, c'est que j'avais rencontré un garçon de l'école dans le bus qui bavardait et voulait me raccompagner. Il me plaisait vraiment, mais c'était le plus mauvais moment qui soit. Toute seule, je serais allée dans les buissons, mais je ne pouvais pas avec lui là. J'étais au supplice.",
-      "tw": "<P><LI>黛安：嗯，上大學的時候，我常和朋友進城玩，會喝點酒。然後坐公車回家，到站下車的時候往往很想上廁所。倒也還好，因為還有半英里的路要走。但有一天天氣特別冷，那股寒意像是直往膀胱裡鑽，我當時憋得難受極了。偏偏在車上碰到了一個認識的男生，他一路聊天，還要陪我走回家。我挺喜歡他的，不過那一刻真的不是時候。要是我一個人，早就鑽到路邊草叢裡尿尿了，可有他在，根本沒辦法。我那時候難受極了。"
+      "tw": "<P><LI>黛安：嗯，上大學的時候，我常和朋友進城玩，會喝點酒。然後我坐公車回家，到站下車的時候往往就很想去廁所。這倒也還好，因為只有半英里的路要走。但有一天，天氣特別冷，那股寒意像是直往膀胱裡鑽。我當時憋得難受極了，偏偏還在車上碰到了一個認識的男生。他一路上和我聊天，還要陪我走回家。我挺喜歡他的，但那一刻真的不是時候。要是獨自一人，我早就躲進路邊草叢裡撒尿了，可有他在場根本不行。我那會兒難受極了。"
     },
     {
       "id": "x04786",
@@ -44911,7 +44929,7 @@
     {
       "id": "x04790",
       "kind": "story",
-      "en": "<P><LI>DIANE: When I was eighteen, my first year at college, in Freshers week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.",
+      "en": "<P><LI>DIANE: When I was eighteen, my first year at college, in Freshers' Week, when you all go out drinking. I wasn't used to the drink and we all had quite a lot, beer too. On the way home I was absolutely bursting, I didn't know what to do.",
       "cn": "<P><LI>黛安：十八岁那年，大学第一年，新生周，大家都出去喝酒。我那时候不太能喝，我们喝了不少，还有啤酒。回家的路上我憋得快要炸了，完全不知道该怎么办。",
       "es": "<P><LI>DIANE: Cuando tenía dieciocho años, mi primer año de universidad, en la semana de bienvenida, cuando todo el mundo sale de fiesta. No estaba acostumbrada a beber y todas tomamos bastante, también cerveza. De camino a casa estaba que me reventaba, no sabía qué hacer.",
       "fr": "<P><LI>DIANE : Quand j'avais dix-huit ans, en première année à la fac, pendant la semaine d'intégration où tout le monde sort boire. Je n'avais pas l'habitude de l'alcool et on avait tous pas mal bu, de la bière aussi. Sur le chemin du retour, j'allais craquer tellement j'avais envie, je ne savais plus quoi faire.",
@@ -44948,33 +44966,33 @@
       "id": "x04794",
       "kind": "story",
       "en": "<P><LI>DIANE: Well, I was really desperate and I couldn't get rid of him. By the time we reached my house it was so bad I had a hand in my coat pocket holding myself. I just tried to say 'Goodnight' but he kept wanting to talk. He must have realised—I mean, I couldn't stand still—I'm still embarrassed to think of it. Suddenly it started trickling down my leg and I sort of blurted out 'Goodnight' and dashed into the house. I just stood there in the hall and totally wet my jeans. Luckily everyone else had gone to bed but I dreaded meeting that boy for ages.",
-      "cn": "<P><LI>黛安：嗯，我当时真的快忍不住了，又没办法打发他走。等走到我家门口，已经憋到把一只手藏在外套口袋里按住自己了。我只想赶紧说声“晚安”，他却还要继续聊。他肯定看出来了——我是说，我根本站不住——现在想起来还是脸红。突然间，尿液开始沿着腿往下流，我几乎是脱口喊了一声“晚安”然后冲进了屋里。就这样站在门厅里，把牛仔裤彻底尿湿了。幸好其他人都已经睡了，但此后好长一段时间，我一想到要碰见那个男生就犯怵。",
+      "cn": "<P><LI>黛安：嗯，我当时真的快忍不住了，又没办法打发他走。等走到我家门口，已经憋到把一只手藏在外套口袋里按住自己了。我只想赶紧说声“晚安”，他却还要继续聊。他肯定看出来了——我是说，我根本站不稳——现在想起来还是羞死我了。突然间，尿开始沿着我的腿往下流，我几乎是脱口喊了一声“晚安”然后冲进了屋里。就这样站在门厅里，把牛仔裤彻底尿湿了。幸好其他人都已经睡了，但此后好长一段时间，我一想到要碰见那个男生就犯怵。",
       "es": "<P><LI>DIANE: Bueno, tenía unas ganas horribles y no conseguía deshacerme de él. Para cuando llegamos a mi casa estaba tan mal que llevaba la mano en el bolsillo del abrigo sujetándome. Intenté decirle «Buenas noches», pero él quería seguir hablando. Seguro que se dio cuenta: es que no podía quedarme quieta, y todavía me da vergüenza pensarlo. De repente empezó a chorrearme por la pierna y solté como pude un «Buenas noches» y salí corriendo hacia dentro. Me quedé ahí en el recibidor y me meé entera en los vaqueros. Por suerte todo el mundo se había ido a dormir, pero estuve mucho tiempo aterrorizada de encontrarme con ese chico.",
       "fr": "<P><LI>DIANE : Bon, j'avais vraiment une envie pressante et je n'arrivais pas à me débarrasser de lui. Quand on est arrivés devant chez moi, c'était tellement urgent que j'avais la main dans la poche de mon manteau pour me tenir. J'essayais juste de dire « Bonne nuit », mais il voulait continuer à parler. Il a dû s'en rendre compte — je n'arrivais pas à tenir en place — j'en ai encore honte rien que d'y penser. Tout d'un coup ça a commencé à couler le long de ma jambe et j'ai comme lâché un « Bonne nuit » avant de me précipiter dans la maison. Je me suis retrouvée dans l'entrée et j'ai complètement mouillé mon jean. Heureusement tout le monde était couché, mais pendant longtemps j'ai eu une peur bleue de revoir ce garçon.",
-      "tw": "<P><LI>黛安：嗯，我當時真的快忍不住了，又沒辦法打發他走。等走到我家門口，已經憋到把一隻手藏在外套口袋裡按住自己了。我只想趕緊說聲「晚安」，他但還要繼續聊。他肯定看出來了——我是說，我根本站不住——現在想起來還是臉紅。突然間，尿液開始沿著腿往下流，我幾乎是脫口喊了一聲「晚安」然後衝進了屋裡。就這樣站在大廳裡，把牛仔褲徹底尿濕了。幸好其他人都已經睡了，但此後好長一段時間，我一想到要碰見那個男生就犯怵。"
+      "tw": "<P><LI>黛安：嗯，我當時真的快忍不住了，又沒辦法打發他走。等走到我家門口，已經憋到把一隻手藏在外套口袋裡按住自己了。我只想趕緊說聲「晚安」，他但還要繼續聊。他肯定看出來了——我是說，我根本站不穩——現在想起來還是羞死我了。突然間，尿開始沿著我的腿往下流，我幾乎是脫口喊了一聲「晚安」然後衝進了屋裡。就這樣站在大廳裡，把牛仔褲徹底尿濕了。幸好其他人都已經睡了，但此後好長一段時間，我一想到要碰見那個男生就犯怵。"
     },
     {
       "id": "x04795",
       "kind": "story",
       "en": "YOU <EM>hugging her </EM>: You really wet yourself?",
-      "cn": "你<EM>抱着她</EM>：你真的尿湿自己了？",
+      "cn": "你<EM>抱着她</EM>：你真的尿裤子了？",
       "es": "<EM>abrazándola</EM> TÚ: ¿De verdad te measte encima?",
       "fr": "VOUS : <EM>(en la serrant dans vos bras)</EM> Tu t’es vraiment fait pipi dessus ?",
-      "tw": "你<EM>抱著她</EM>：你真的尿濕自己了？"
+      "tw": "你<EM>抱著她</EM>：你真的尿褲子了？"
     },
     {
       "id": "x04796",
       "kind": "story",
       "en": "DIANE: Oh yes. Completely wet myself. My jeans, my knickers, all down my leg...",
-      "cn": "黛安：哦，是啊。彻底尿湿了。我的牛仔裤、我的内裤，全湿到腿上了……",
+      "cn": "黛安：哦，是啊。彻底尿湿了。我的牛仔裤、内裤、腿上全湿了……",
       "es": "DIANE: Oh, sí. Completamente. Los vaqueros, las bragas, todo por la pierna...",
       "fr": "DIANE : Oh oui. Complètement mouillée. Mon jean, ma culotte, tout le long de la jambe…",
-      "tw": "黛安：哦，是啊。徹底尿濕了。我的牛仔褲、我的內褲，全濕到腿上了……"
+      "tw": "黛安：哦，是啊。徹底尿濕了。我的牛仔褲、內褲、腿上全濕了……"
     },
     {
       "id": "x04797",
       "kind": "story",
-      "en": "<P><LI>DIANE: Finally it got so bad I just blurted out 'Where's the toilet?' and dashed to the bathroom. I just about got there and slammed the door shut but then I couldn't find the light switch and it was pitch black. I was in such a state—I don't know why I'm telling you this—I couldn't see where the loo was, and—",
+      "en": "<P><LI>DIANE: Finally it got so bad I just blurted out 'Where's the toilet?' and dashed to the bathroom. I just about got there and slammed the door shut, but then I couldn't find the light switch, and it was pitch black. I was in such a state—I don't know why I'm telling you this—I couldn't see where the loo was, and—",
       "cn": "<P><LI>黛安：最后憋得实在不行，我脱口就问“厕所在哪”，然后冲进浴室。我勉强跑进去、把门猛地关上，可怎么都找不到灯的开关，漆黑一片。我那时候整个人都乱了——我也不知道为什么要跟你说这个——根本看不见厕所在哪，然后——",
       "es": "<P><LI>DIANE: Al final se puso tan mal que solté a bocajarro «¿Dónde está el baño?» y salí disparada. Llegué justo y cerré la puerta de golpe, pero entonces no encontraba el interruptor de la luz y estaba todo a oscuras. Estaba en tal estado —no sé por qué te estoy contando esto— que no veía dónde estaba el váter, y...",
       "fr": "<P><LI>DIANE : Finalement c'est devenu tellement urgent que j'ai lâché d'un coup « Où sont les toilettes ? » avant de me précipiter vers la salle de bains. J'y suis tout juste arrivée et j'ai claqué la porte, mais je ne trouvais pas l'interrupteur et il faisait noir comme dans un four. J'étais dans un tel état — je ne sais pas pourquoi je te raconte ça — je ne voyais pas où étaient les toilettes, et—",
@@ -44992,7 +45010,7 @@
     {
       "id": "x04799",
       "kind": "story",
-      "en": "<LI>I just stood in the middle of the bathroom and—wet my knickers. I eventually found the light switch but my knickers were so soaked I had to hide them under a cupboard",
+      "en": "<LI>I just stood in the middle of the bathroom and—wet my knickers. I eventually found the light switch but my knickers were so soaked I had to hide them under a cupboard.",
       "cn": "<LI>我就那么站在浴室中间——尿湿了内裤。后来终于找到灯的开关，但内裤已经湿透了，我只好把它藏到柜子底下。",
       "es": "<LI>Me quedé en medio del baño y... me mojé las bragas. Al final encontré el interruptor, pero las bragas estaban tan empapadas que tuve que esconderlas debajo de un armario",
       "fr": "<LI>Je me suis retrouvée au milieu de la salle de bains et — j'ai mouillé ma culotte. J'ai fini par trouver l'interrupteur, mais ma culotte était tellement trempée que j'ai dû la cacher sous une armoire.",
@@ -45011,19 +45029,19 @@
       "id": "x04801",
       "kind": "story",
       "en": "YOU <EM>hugging her </EM>: You really wet yourself?",
-      "cn": "你<EM>抱着她</EM>：你真的尿湿自己了？",
+      "cn": "你<EM>抱着她</EM>：你真的尿裤子了？",
       "es": "<EM>abrazándola</EM> TÚ: ¿De verdad te measte encima?",
       "fr": "VOUS : <EM>(en la serrant dans vos bras)</EM> Tu t’es vraiment fait pipi dessus ?",
-      "tw": "你<EM>抱著她</EM>：你真的尿濕自己了？"
+      "tw": "你<EM>抱著她</EM>：你真的尿褲子了？"
     },
     {
       "id": "x04802",
       "kind": "story",
       "en": "DIANE: Oh yes. Completely wet myself. My jeans, my knickers, all down my leg...",
-      "cn": "黛安：哦，是啊。彻底尿湿了。我的牛仔裤、我的内裤，全湿到腿上了……",
+      "cn": "黛安：哦，是啊。彻底尿湿了。我的牛仔裤、内裤、腿上全湿了……",
       "es": "DIANE: Oh, sí. Completamente. Los vaqueros, las bragas, todo por la pierna...",
       "fr": "DIANE : Oh oui. Complètement mouillée. Mon jean, ma culotte, tout le long de la jambe…",
-      "tw": "黛安：哦，是啊。徹底尿濕了。我的牛仔褲、我的內褲，全濕到腿上了……"
+      "tw": "黛安：哦，是啊。徹底尿濕了。我的牛仔褲、內褲、腿上全濕了……"
     },
     {
       "id": "x04803",
@@ -46337,6 +46355,24 @@
       "es": "<LI>Os besáis y le das un abrazo—",
       "fr": "<LI>Vous vous embrassez et vous la serrez dans vos bras —",
       "tw": "<LI>兩人吻了一下，你又摟了摟她——"
+    },
+    {
+      "id": "x_lounge_callback_you",
+      "kind": "story",
+      "en": "<LI>YOU: A story about what I just asked you.",
+      "cn": "<LI>你：就是讲我刚才问你的那件事。",
+      "tw": "<LI>你：就是講我剛才問你的那件事。",
+      "es": "<LI>TÚ: Ya sabes—lo que te pregunté hace un momento.",
+      "fr": "<LI>VOUS : Tu sais bien—ce que je t'ai demandé à l'instant."
+    },
+    {
+      "id": "x_lounge_callback_diane",
+      "kind": "story",
+      "en": "<LI>DIANE: And you'll let me go to the loo afterwards?",
+      "cn": "<LI>黛安：那讲完之后你就让我去？",
+      "tw": "<LI>黛安：那講完之後你就讓我去？",
+      "es": "<LI>DIANE: ¿Y después me dejarás ir al baño?",
+      "fr": "<LI>DIANE : Et tu me laisseras aller aux toilettes après ?"
     }
   ]
 }

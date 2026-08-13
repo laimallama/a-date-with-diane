@@ -18,7 +18,9 @@ She stands up, trying to break away from you, but you hold her hand.
 
 Diane has sat down again. She is sitting on her hands, her knees moving constantly up and down.
 
-You sit beside her and put an arm round her. You say: "Tell me a story."
+You sit beside her and put an arm round her.
+
+YOU: Tell me a story.
 
 DIANE: What d'you mean?
 

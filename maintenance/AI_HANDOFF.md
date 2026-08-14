@@ -25,7 +25,7 @@ The old archive dig (`dianedate27a.html`) is finished: remaining archive-only st
 
 ## Raw HTML vs rendered text
 
-Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapitalized choices, legacy `<LI>`/`<EM>`, etc.). A render-time pipeline (`polishStoryHtml`, `polishChoiceText`, `smartenHtml`, speech-aside wrappers, …) fixes that every display.
+Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapitalized choices, legacy `<LI>`/`<EM>`, etc.). A render-time pipeline (`polishStoryHtml`, `polishChoiceText`, `smartenHtml`, speech-aside wrappers, …) fixes that every display. **EN dialogue quotes:** write straight `'...'` (or straight `"..."`) in source; `smartenText` renders British singles `‘…’`. Do not hardcode American `“…”`. CJK quoted spans become `「…」`.
 
 **Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text.
 
@@ -134,16 +134,17 @@ node maintenance/write_transcripts.js
 - **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
 - **Play still on (`x00027`):** **停演** wording (`…想在停演前去看一次…`), not **下演**.
 - **Status-bar tummy (`proc`):** EN `Tummy`; CN/TW `肚子`; ES `Vientre`; FR `Ventre`. Match the notes’ body word — do not revive mechanic glosses (`待转化水分`, `Líquido en tránsito`, etc.).
-- **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy.
+- **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy. **Shyness** changes go through `adjpoints(±n)` and clamp at **0**; intimacy may still go negative.
 
 ## UI / Gallery conventions
 
-- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On. **S** / Skip to the good bit jumps to `climaxIndex` (same cut as climax transcripts).
-- **Theme:** light stays wine-on-parchment; dark uses pale straw gold for accents + CTA fills (`--on-accent` = dark ink on straw). Tokens in each `outputs/*/dianedate_*.html` `:root` / `[data-theme="dark"]`.
-- **Dark mode:** runtime-only (`data-theme`); **not** persisted in `localStorage`. Gallery guide state may use `sessionStorage` across same-tab reload — fine to keep.
+- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. Number-key / guided Enter flash: one pending pick only (`choiceKeyPending`); `#box.choice-key-armed` suppresses `.choice:hover` so keyboard wins over mouse. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On. **S** / Skip to the good bit jumps to `climaxIndex` (same cut as climax transcripts).
+- **Theme:** light stays wine-on-parchment; dark uses pale straw gold for accents + CTA fills (`--on-accent` = dark ink on straw); dark `--status` is `#2f2822` (above paper, near choice) so the attribute table reads as a panel; dark `--choice-hover` `#534433`; `--highlight-bg` `#4a4024`; `--guide-hover-bg` `#5f4c32` (hover fills stay below ink luminance). Hover/key-press text uses `--ink-on-hover` (dark: `#faf6ee`; light: same as ink) so straw text doesn’t wash into the hover tray. Guide + hover: fill → `--guide-hover-bg`, accent inset stays. Tokens in each `outputs/*/dianedate_*.html` `:root` / `[data-theme="dark"]`.
+- **Dark mode:** persists across refresh via `sessionStorage.dianeDarkMode` (`1`/`0`). Gallery guide reload keeps the same preference automatically. Boot opens on `start` (title); first `go("start")` does not push history, so Back is not offered on the title screen.
 - Pregame screens freeze/hide stats until the date starts.
 - **Points notices** (intimacy via `getinti`, shyness/bladder status lines): `<p class='notice'><strong>…</strong></p>` — bold, **no** `<EM>` and **no** orange `#FF9966` spans. Port to every mono + bilingual (source `s()` + dictionary keys/values) and `aligned_text.json`.
 - **Bilingual guide highlighting:** guard `querySelectorAll("button.choice")` with `offsetParent !== null`; `setLanguage()`/`toggleLanguage()` must call `syncGuideDisplay()`.
+- **Gallery names:** leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Peeing in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject. Chloe’s group is singular **Chloe Consolation Prize** (two variants of one prize, like Amanda); Outdoor / Lounge stay plural. Gallery rows hover/focus-visible with `--choice-hover` wash **and** `--accent` text (wine `#9b2f3f` light / gold dark — same token family as links/CTAs; brighter than heading `--accent-dark` so light-mode hover reads clearly). Rows are `appearance: none` buttons so WebKit honours `color`. Open groups: no wash — chevron ▾ plus revealed children mark open; wash is hover-only.
 
 ## Do / don't
 

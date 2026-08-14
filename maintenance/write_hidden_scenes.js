@@ -146,9 +146,10 @@ function visibleStory(html) {
 }
 
 function normalize(text) {
+  // Strip all quote marks (British ‘…’, American “…”, straight '…'/"…") so
+  // route labels still match polished choice text after smartenText.
   return stripTags(text)
-    .replace(/[“”]/g, '"')
-    .replace(/[‘’]/g, "'")
+    .replace(/[“”«»「」『』‘’'"]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -516,10 +517,10 @@ function buildDefinitions(routes) {
       base: "riversideBench",
       title: {
         en: "Finding the Hidden Portaloo for Diane",
-        cn: "帮黛安找到隐藏的临时厕所",
+        cn: "帮黛安找到隐藏的移动厕所",
         es: "Encontrar el baño portátil oculto para Diane",
         fr: "Trouver les toilettes portatives cachées pour Diane",
-        tw: "幫黛安找到隱藏的臨時廁所"
+        tw: "幫黛安找到隱藏的移動廁所"
       },
       entry: {
         en: "This begins at the riverside bench after Diane seems unable to sit still.",
@@ -530,10 +531,10 @@ function buildDefinitions(routes) {
       },
       result: {
         en: "Diane gets to use the Portaloo. The route continues afterwards.",
-        cn: "黛安会用上临时厕所，之后路线继续。",
+        cn: "黛安会用上移动厕所，之后路线继续。",
         es: "Diane puede usar el baño portátil. La ruta continúa después.",
         fr: "Diane peut utiliser les toilettes portatives. La route continue ensuite.",
-        tw: "黛安會用上臨時廁所，之後路線繼續。"
+        tw: "黛安會用上移動廁所，之後路線繼續。"
       },
       exit: {
         en: "The route rejoins the riverside walk.",
@@ -549,17 +550,17 @@ function buildDefinitions(routes) {
       base: "riversideBench",
       title: {
         en: "Offering the Portaloo Too Directly",
-        cn: "过于直接地提醒她临时厕所",
+        cn: "过于直接地提醒她移动厕所",
         es: "Ofrecer el baño portátil de forma demasiado directa",
         fr: "Proposer les toilettes portatives trop directement",
-        tw: "過於直接地提醒她臨時廁所"
+        tw: "過於直接地提醒她移動廁所"
       },
       entry: {
         en: "This is the alternative Portaloo branch at the same riverside bench.",
-        cn: "这是同一处河边长椅上的临时厕所变体分支。",
+        cn: "这是同一处河边长椅上的移动厕所变体分支。",
         es: "Es la variante del baño portátil en el mismo banco junto al río.",
         fr: "C'est la variante des toilettes portatives au même banc au bord de la rivière.",
-        tw: "這是同一處河邊長椅上的臨時廁所變體分支。"
+        tw: "這是同一處河邊長椅上的移動廁所變體分支。"
       },
       result: {
         en: "Diane is too embarrassed to admit she needs it. The route continues.",

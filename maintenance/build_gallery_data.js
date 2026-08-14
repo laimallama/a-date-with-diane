@@ -57,22 +57,22 @@ const ENDING_META = {
     order: 7, stem: "08a_chloe_consolation",
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
-      en: "Wet at the Door",
-      cn: "门口失禁",
-      tw: "門口失禁",
-      es: "Se moja en la puerta",
-      fr: "Elle n’y arrive pas à la porte",
+      en: "Chloe Wets Her Knickers",
+      cn: "克洛伊尿湿内裤",
+      tw: "克洛伊尿濕內褲",
+      es: "Chloe se moja las bragas",
+      fr: "Chloe mouille sa culotte",
     },
   },
   chloeSibling: {
     order: 7, stem: "08b_chloe_outside",
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
-      en: "Pees Outside",
-      cn: "随地小便",
-      tw: "隨地小便",
-      es: "Orina fuera",
-      fr: "Elle fait pipi dehors",
+      en: "Chloe Pees Beside Her House",
+      cn: "克洛伊在屋旁小便",
+      tw: "克洛伊在屋旁小便",
+      es: "Chloe orina al lado de su casa",
+      fr: "Chloe fait pipi à côté de sa maison",
     },
   },
   general: {
@@ -117,11 +117,11 @@ const ENDING_GROUPS = [
     groupId: "08_chloe",
     order: 7,
     title: {
-      en: "Chloe Consolation Prizes",
+      en: "Chloe Consolation Prize",
       cn: "克洛伊安慰奖",
       tw: "克洛伊安慰獎",
-      es: "Premios de consolación de Chloe",
-      fr: "Lots de consolation de Chloe",
+      es: "Premio de consolación de Chloe",
+      fr: "Prix de consolation de Chloe",
     },
     variantKeys: ["chloe", "chloeSibling"],
   },
@@ -222,8 +222,8 @@ const HIDDEN_GROUPS = [
     groupId: "portaloo",
     title: {
       en: "Riverside Portaloo",
-      cn: "河边临时厕所",
-      tw: "河邊臨時廁所",
+      cn: "河边移动厕所",
+      tw: "河邊移動廁所",
       es: "Baño portátil junto al río",
       fr: "Toilettes portatives au bord de l’eau",
     },

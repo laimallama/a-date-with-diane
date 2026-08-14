@@ -192,8 +192,8 @@ function quoteForTranscript(text, langCode) {
   }
   if (langCode === "es") return `«${text}»`;
   if (langCode === "fr") return `« ${text} »`;
-  if (langCode === "tw") return `「${text}」`;
-  return `“${text}”`;
+  if (langCode === "cn" || langCode === "tw") return `「${text}」`;
+  return `‘${text}’`;
 }
 
 function bracketForTranscript(text) {

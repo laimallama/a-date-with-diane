@@ -11050,11 +11050,11 @@
     {
       "id": "x01168",
       "kind": "story",
-      "en": "<LI>She goes into the Portaloo and shuts the door. You just have to imagine her in there. After a minute or so she comes out, says 'Your turn' and stands to wait for your return.",
-      "cn": "<LI>她走进移动厕所，把门关上。你只能在外面自己想象。大约一分钟后她出来了，说“轮到你了”，然后站在那里等你回来。",
-      "es": "<LI>Ella entra en el Portaloo y cierra la puerta. Solo puedes imaginarte lo que pasa dentro. Al cabo de un minuto más o menos sale, dice «Tu turno» y se queda esperando a que vuelvas.",
-      "fr": "<LI>Elle entre dans le Portaloo et ferme la porte. Vous n'avez plus qu'à imaginer ce qui se passe à l'intérieur. Au bout d'une minute environ, elle ressort, dit « À toi » et attend votre retour.",
-      "tw": "<LI>她進了移動廁所，關上門。你只能自己想像裡頭的情形。大約一分鐘後她出來，說「輪到你了」，然後站著等你回來。"
+      "en": "<LI>She goes into the Portaloo and shuts the door. You just have to imagine her in there. After a minute or so, she comes out, says, 'Your turn,' and stands waiting for you to come back.",
+      "cn": "<LI>她走进移动厕所，把门关上。你只能在外面自己想象。大约一分钟后，她出来了，说“轮到你了”，然后站在那里等你回来。",
+      "es": "<LI>Ella entra en el Portaloo y cierra la puerta. Solo puedes imaginarte lo que pasa dentro. Al cabo de un minuto más o menos, sale, dice «Tu turno» y se queda esperando a que vuelvas.",
+      "fr": "<LI>Elle entre dans le Portaloo et ferme la porte. Vous n'avez plus qu'à imaginer ce qui se passe à l'intérieur. Au bout d'une minute environ, elle ressort, dit : « À toi », et attend que vous reveniez.",
+      "tw": "<LI>她走進移動廁所，把門關上。你只能在外面自己想像。大約一分鐘後，她出來了，說「輪到你了」，然後站在那裡等你回來。"
     },
     {
       "id": "x01169",
@@ -14235,7 +14235,7 @@
     {
       "id": "x01507",
       "kind": "story",
-      "en": "<LI>A couple of minutes later she returns. “Your turn,” she smiles, and you go to the back of the building too. You notice a large puddle, still spreading further across the path.",
+      "en": "<LI>A couple of minutes later she returns. 'Your turn,' she smiles, and you go to the back of the building too. You notice a large puddle, still spreading further across the path.",
       "cn": "<LI>几分钟后她回来了。“换你了，”她微笑着说，你也走到厕所后面。你注意到地上有一大摊水渍，还在慢慢向小路蔓延。",
       "es": "<LI>Un par de minutos después vuelve. «Tu turno», dice sonriendo, y tú también vas a la parte trasera del edificio. Te fijas en un gran charco que todavía se sigue extendiendo por el camino.",
       "fr": "<LI>Quelques minutes plus tard, elle revient. « À ton tour » dit-elle en souriant, et vous allez aussi derrière le bâtiment. Vous remarquez une grande flaque qui s'étend encore sur le chemin.",
@@ -18325,7 +18325,7 @@
     {
       "id": "x01948",
       "kind": "story",
-      "en": "<LI>The girl in the mini skirt keeps crossing her legs and doing little “mini curtseys”. You can’t take your eyes off her. You hear her mutter to her boyfriend, <EM>Why didn't you let me go to the toilet before we left? I'm busting to go.</EM>",
+      "en": "<LI>The girl in the mini skirt keeps crossing her legs and doing little 'mini curtseys'. You can’t take your eyes off her. You hear her mutter to her boyfriend, <EM>Why didn't you let me go to the toilet before we left? I'm busting to go.</EM>",
       "cn": "<LI>那个穿迷你裙的女孩不停地并腿夹腿，还一次次弯起膝盖。你的眼睛根本挪不开。你听见她低声对男友抱怨：<EM>你当初为什么不让我出门前先去趟厕所？我现在急死了。</EM>",
       "es": "<LI>La chica de la minifalda no para de cruzar las piernas y de doblarse un poco hacia delante. No puedes apartar los ojos de ella. La oyes murmurar a su novio: <EM>¿Por qué no me dejaste ir al baño antes de salir? Me estoy meando.</EM>",
       "fr": "<LI>La fille en mini-jupe n'arrête pas de croiser les jambes et d'esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d'elle. Vous l'entendez marmonner à son petit ami : <EM>Pourquoi tu ne m'as pas laissée aller aux toilettes avant qu'on parte ? J'en peux vraiment plus.</EM>",
@@ -32775,7 +32775,7 @@
     {
       "id": "x03486",
       "kind": "story",
-      "en": "<LI>Diane looks up at you. “You can tell I needed to go,” she says.",
+      "en": "<LI>Diane looks up at you. 'You can tell I needed to go,' she says.",
       "cn": "<LI>黛安抬头看着你。“你看得出来我是真的憋坏了吧，”她说。",
       "es": "<LI>Diane levanta la vista hacia ti. «Ya ves que tenía ganas», dice.",
       "fr": "<LI>Diane lève les yeux vers vous. « Tu vois bien que j'en avais besoin », dit-elle.",
@@ -32784,7 +32784,7 @@
     {
       "id": "x03487",
       "kind": "story",
-      "en": "<LI>You gaze at her. “Can I watch?” you hear yourself say. She shakes her head as if smiling at your madness, pulls the hem of her skirt back a little and sits a couple of inches further back on the toilet.",
+      "en": "<LI>You gaze at her. 'Can I watch?' you hear yourself say. She shakes her head as if smiling at your madness, pulls the hem of her skirt back a little and sits a couple of inches further back on the toilet.",
       "cn": "<LI>你凝视着她。“我能看吗？”你听到自己说出这句话。她摇摇头，像是在笑你这个怪人，然后把裙摆往后撩了一点，在马桶上往后坐了几厘米。",
       "es": "<LI>La miras fijamente. «¿Puedo mirar?», te oyes decir. Ella sacude la cabeza como sonriendo ante tu locura, echa el bajo de la falda un poco hacia atrás y se sienta un par de centímetros más atrás en el váter.",
       "fr": "<LI>Vous la regardez. « Je peux regarder ? », vous entendez-vous dire. Elle secoue la tête avec un sourire amusé devant votre folie, tire le bas de sa jupe légèrement en arrière et s'assied quelques centimètres plus loin sur les toilettes.",
@@ -32848,7 +32848,7 @@
     {
       "id": "x03493",
       "kind": "story",
-      "en": "<LI>She realises you are watching, blushes slightly and pushes the hem of her skirt further down. She is leaning forward, her hands on her knees. You cannot see the stream anymore, but the sound of her pee now at full force is marvellous. After a while it lessens and she murmurs “Almost finished,” but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself.",
+      "en": "<LI>She realises you are watching, blushes slightly and pushes the hem of her skirt further down. She is leaning forward, her hands on her knees. You cannot see the stream anymore, but the sound of her pee now at full force is marvellous. After a while it lessens and she murmurs 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself.",
       "cn": "<LI>她意识到你在看她，微微泛红，把裙摆往下推得更低。她向前倾着身体，双手放在膝盖上。你已经看不到尿流了，但那汩汩作响的尿声此刻达到最强，听来真是美妙。过了一会儿声音渐渐弱了，她轻声说“快好了”，但随后又续了一小阵，才慢慢归于寂静。足足持续了整整一分钟。她扯了一张卫生纸，伸手擦了擦自己。",
       "es": "<LI>Se da cuenta de que la estás mirando, se sonroja ligeramente y empuja el bajo de la falda más abajo. Está inclinada hacia delante con las manos sobre las rodillas. Ya no puedes ver el chorro, pero el sonido de su pis ahora a plena potencia es magnífico. Al cabo de un rato disminuye y murmura «Ya casi», pero luego sigue un poco más.",
       "fr": "<LI>Elle réalise que vous la regardez, rougit légèrement et rabaisse encore plus le bas de sa jupe. Elle est penchée en avant, les mains sur les genoux. Vous ne voyez plus le jet, mais le bruit de son pipi à plein régime est merveilleux. Au bout d'un moment il faiblit et elle murmure « Presque fini » — mais il y en a encore un peu avant que ça se tarisse dans le silence. Ça a dû durer une bonne minute. Elle arrache un morceau de papier toilette, tend la main et s'essuie.",
@@ -43002,7 +43002,7 @@
     {
       "id": "x04577",
       "kind": "story",
-      "en": "<LI>Because she's pushed the hem of her skirt down you can't see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs “Almost finished,” but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. “I really needed that,” she says and, standing up, pulls up her panties and then her tights.",
+      "en": "<LI>Because she's pushed the hem of her skirt down you can't see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. 'I really needed that,' she says and, standing up, pulls up her panties and then her tights.",
       "cn": "<LI>裙摆遮住了视线，什么都看不见，但她尿流全力倾泻的声音实在妙不可言。过了一会儿，声音渐渐减弱，她轻声说“快好了”，但紧接着又持续了一小阵，最后才化为点滴，归于寂静。整个过程大概足足持续了一分钟。她抽了一张卫生纸，弯腰仔细擦拭。“我真是憋坏了，”她说着站起身，依次拉上内裤和连裤袜。",
       "es": "<LI>Como se ha bajado el dobladillo de la falda, no puedes verlo, pero el sonido de su chorro de pis a plena potencia es maravilloso. Al rato se va reduciendo y ella murmura «Ya casi», pero luego hay un poco más antes de que todo acabe en silencio. Debe de haber durado un minuto entero. Arranca un trozo de papel higiénico, se inclina y se limpia. «Lo necesitaba de verdad», dice y, poniéndose de pie, se sube las bragas y luego los pantis.",
       "fr": "<LI>Parce qu'elle a tiré l'ourlet de sa jupe vers le bas, vous ne voyez rien, mais le bruit de son jet maintenant à plein régime est merveilleux. Au bout d'un moment il diminue et elle murmure « Presque fini », avant qu'il en vienne encore un peu, puis le bruit s'éteint en un mince filet. Ça a dû durer une bonne minute. Elle arrache un bout de papier toilette, se penche et s'essuie. « J'en avais vraiment besoin », dit-elle, puis elle se lève, remonte sa culotte puis ses collants.",
@@ -43150,7 +43150,7 @@
     {
       "id": "x04593",
       "kind": "story",
-      "en": "Diane looks up at you. “You can tell I needed to go,” she says.",
+      "en": "Diane looks up at you. 'You can tell I needed to go,' she says.",
       "cn": "黛安抬头望着你。“你看得出来我有多需要了吧，”她说。",
       "es": "Diane te mira. «Se nota que lo necesitaba», dice.",
       "fr": "Diane lève les yeux vers vous. « Tu vois bien que j'en avais besoin », dit-elle.",
@@ -43159,7 +43159,7 @@
     {
       "id": "x04594",
       "kind": "story",
-      "en": "You gaze at her. “Can I watch?” you hear yourself say. She shakes her head as if smiling at your madness, pulls the hem of her skirt back a little and sits a couple of inches further back on the toilet.",
+      "en": "You gaze at her. 'Can I watch?' you hear yourself say. She shakes her head as if smiling at your madness, pulls the hem of her skirt back a little and sits a couple of inches further back on the toilet.",
       "cn": "你凝视着她。“我能看吗？”你听见自己说出口。她摇摇头，像是在笑你的荒唐，却将裙摆稍稍往后拉了拉，往马桶里坐深了几厘米。",
       "es": "La contemplas. «¿Puedo mirar?», te oyes decir. Ella sacude la cabeza como si le hiciera gracia tu locura, se baja un poco el dobladillo de la falda y se sienta un par de centímetros más atrás en el váter.",
       "fr": "Vous la regardez. « Je peux regarder ? », vous vous entendez dire. Elle secoue la tête comme si votre folie l'amusait, tire un peu l'ourlet de sa jupe vers l'arrière et s'assied quelques centimètres plus en arrière sur la cuvette.",
@@ -43223,7 +43223,7 @@
     {
       "id": "x04600",
       "kind": "story",
-      "en": "<LI>She realises you are watching, blushes slightly and pushes the hem of her skirt further towards her knees. You cannot see the stream anymore, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs “Almost finished,” but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. “I really needed that,” she says and, standing up, pulls up her panties and then her tights.",
+      "en": "<LI>She realises you are watching, blushes slightly and pushes the hem of her skirt further towards her knees. You cannot see the stream anymore, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. 'I really needed that,' she says and, standing up, pulls up her panties and then her tights.",
       "cn": "<LI>她察觉到你在看，微微红了脸，将裙摆往膝盖方向推了过去。尿流你再也看不见了，但她全力倾泻的声音实在妙不可言。过了一会儿，声音渐渐减弱，她轻声说“快好了”，但紧接着又持续了一小阵，最后才化为点滴，归于寂静。整个过程大概足足持续了一分钟。她抽了一张卫生纸，弯腰仔细擦拭。“我真是憋坏了，”她说着站起身，依次拉上内裤和连裤袜。",
       "es": "<LI>Se da cuenta de que la estás mirando, se ruboriza ligeramente y baja el dobladillo de la falda hacia las rodillas. Ya no puedes ver el chorro, pero el sonido de su pis a plena fuerza es maravilloso. Al cabo de un momento disminuye y ella murmura «Ya casi he terminado», aunque luego hay un poco más antes de que todo se apague en silencio. Debe de haber durado un minuto entero. Coge un trozo de papel higiénico, se agacha y se limpia. «Lo necesitaba de verdad», dice y, levantándose, se sube las bragas y luego las medias.",
       "fr": "<LI>Elle réalise que vous la regardez, rougit légèrement et tire l'ourlet de sa jupe vers ses genoux. Vous ne voyez plus le jet, mais le son de son pipi maintenant à plein régime est délicieux. Au bout d'un moment il faiblit et elle murmure « Presque fini » — puis il y en a encore un peu avant que cela ne s'éteigne en un filet silencieux. Ça a bien duré une minute entière. Elle arrache un morceau de papier toilette, se penche et s'essuie. « J'en avais vraiment besoin », dit-elle, et, en se levant, remonte sa culotte puis ses collants.",
@@ -45762,7 +45762,7 @@
     {
       "id": "x04878",
       "kind": "story",
-      "en": "<LI>Diane takes the tissue with a scarcely audible “thank you” and starts wiping her legs.",
+      "en": "<LI>Diane takes the tissue with a scarcely audible 'thank you' and starts wiping her legs.",
       "cn": "<LI>黛安接过纸巾，轻得几乎听不见地说了声“谢谢”，开始擦拭腿上的污迹。",
       "es": "<LI>Diane coge el pañuelo con un «gracias» apenas audible y empieza a limpiarse las piernas.",
       "fr": "<LI>Diane prend le mouchoir avec un « merci » à peine audible et commence à s'essuyer les jambes.",

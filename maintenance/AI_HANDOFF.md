@@ -15,9 +15,9 @@ Each language folder ships:
 - `edition_notes_*.txt`
 - climax transcripts under `transcripts/endings/` and `transcripts/hidden_scenes/`
 
-There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax (or hidden-scene start) of each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
+There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
 
-Gallery currently documents **15 ending leaves** and **28 hidden-scene leaves** per language (leaf counts, not top-level group rows).
+Gallery currently documents **15 ending leaves** and **29 hidden-scene leaves** per language (leaf counts, not top-level group rows).
 
 All Gallery route label sequences live inline in `write_verified_guides.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
@@ -25,7 +25,7 @@ The old archive dig (`dianedate27a.html`) is finished: remaining archive-only st
 
 ## Raw HTML vs rendered text
 
-Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapitalized choices, legacy `<LI>`/`<EM>`, etc.). A render-time pipeline (`polishStoryHtml`, `polishChoiceText`, `smartenHtml`, speech-aside wrappers, …) fixes that every display. **EN dialogue quotes:** write straight `'...'` (or straight `"..."`) in source; `smartenText` renders British singles `‘…’`. Do not hardcode American `“…”`. CJK quoted spans become `「…」`.
+Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapitalized choices, legacy `<LI>`/`<EM>`, etc.). A render-time pipeline (`polishStoryHtml`, `polishChoiceText`, `smartenHtml`, speech-aside wrappers, …) fixes that every display. **EN dialogue quotes:** write straight `'...'` (or straight `"..."`) in source; `smartenText` renders British singles `‘…’`. Do not hardcode American `“…”`. **CN** quoted spans become curly doubles `“…”`; **TW** quoted spans become `「…」`.
 
 **Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text.
 
@@ -130,6 +130,7 @@ node maintenance/write_transcripts.js
 - **Caretaker:** CN/TW **管理员** / **管理員** (council first-mention may stay **市政管理员**). Not 看守员/环卫工人/etc.
 - **Bouncer (Pavilion):** **保安**. Occasional **门卫** for English *doorman* — not the toilet caretaker.
 - **High bladder status:** `…两脚不停地来回挪动。` / `…兩腳不停地來回挪動。`
+- ***Can't stand still* (fidget):** CN/TW **站不定**, not **站不住** (后者偏站不稳/要垮). Keep **站不稳** only for physical unsteadiness (key in lock, *hardly stand upright*).
 - **Urinal straddle (`x01569b`):** EN comma before aside (`…urinal, with her back to you`), no em dash. CN/TW: **横跨/橫跨**, aside after `——`, prefer **更省事**. ES `ponerse a horcajadas…`; FR `enjamber l'urinoir…`.
 - **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
 - **Play still on (`x00027`):** **停演** wording (`…想在停演前去看一次…`), not **下演**.
@@ -144,7 +145,7 @@ node maintenance/write_transcripts.js
 - Pregame screens freeze/hide stats until the date starts.
 - **Points notices** (intimacy via `getinti`, shyness/bladder status lines): `<p class='notice'><strong>…</strong></p>` — bold, **no** `<EM>` and **no** orange `#FF9966` spans. Port to every mono + bilingual (source `s()` + dictionary keys/values) and `aligned_text.json`.
 - **Bilingual guide highlighting:** guard `querySelectorAll("button.choice")` with `offsetParent !== null`; `setLanguage()`/`toggleLanguage()` must call `syncGuideDisplay()`.
-- **Gallery names:** leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Peeing in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject. Chloe’s group is singular **Chloe Consolation Prize** (two variants of one prize, like Amanda); Outdoor / Lounge stay plural. Gallery rows hover/focus-visible with `--choice-hover` wash **and** `--accent` text (wine `#9b2f3f` light / gold dark — same token family as links/CTAs; brighter than heading `--accent-dark` so light-mode hover reads clearly). Rows are `appearance: none` buttons so WebKit honours `color`. Open groups: no wash — chevron ▾ plus revealed children mark open; wash is hover-only.
+- **Gallery names:** leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Pees in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject. Chloe’s group is singular **Chloe Consolation Prize** (two variants of one prize, like Amanda); Outdoor / Lounge stay plural. Gallery rows hover/focus-visible with `--choice-hover` wash **and** `--accent` text (wine `#9b2f3f` light / gold dark — same token family as links/CTAs; brighter than heading `--accent-dark` so light-mode hover reads clearly). Rows are `appearance: none` buttons so WebKit honours `color`. Open groups: no wash — chevron ▾ plus revealed children mark open; wash is hover-only.
 
 ## Do / don't
 

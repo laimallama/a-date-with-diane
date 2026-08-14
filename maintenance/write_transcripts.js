@@ -61,7 +61,8 @@ const HIDDEN_SLUGS = {
   "18_diane_brunette_camper_under": "09d_camper_under",
   "19_camper_gentleman_choice": "09e_camper_gentleman",
   "22_caught_by_boyfriend": "09f_camper_caught",
-  "20_church_lych_gate_glimpse": "10_lych_gate",
+  "20_church_lych_gate_glimpse": "10a_bus_luckshot",
+  "20b_rioja_bus_glimpse": "10b_bus_rioja",
   "21_hidden_camera": "11_hidden_camera",
   "26_train_photo_album": "12_train_album",
   "23_brooch": "13_brooch",
@@ -350,8 +351,8 @@ function main() {
   if (endingLeavesEn.length !== 15) {
     throw new Error(`Expected 15 ending leaves, got ${endingLeavesEn.length}`);
   }
-  if (hiddenLeavesEn.length !== 28) {
-    throw new Error(`Expected 28 hidden leaves, got ${hiddenLeavesEn.length}`);
+  if (hiddenLeavesEn.length !== 29) {
+    throw new Error(`Expected 29 hidden leaves, got ${hiddenLeavesEn.length}`);
   }
 
   for (const leaf of endingLeavesEn) {

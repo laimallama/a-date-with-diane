@@ -1,7 +1,6 @@
 const { runRoute } = require("./verify_routes.js");
 
 const baseStart = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
 ];

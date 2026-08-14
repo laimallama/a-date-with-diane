@@ -70,7 +70,7 @@ const ENDING_META = {
     title: {
       en: "Chloe Pees Beside Her House",
       cn: "克洛伊在屋旁小便",
-      tw: "克洛伊在屋旁小便",
+      tw: "克洛伊在屋旁尿尿",
       es: "Chloe orina al lado de su casa",
       fr: "Chloe fait pipi à côté de sa maison",
     },
@@ -83,7 +83,7 @@ const ENDING_META = {
   generalThursday: {
     order: 8, stem: "07b_consolation_thursday_subway",
     climaxStartTag: "searchdiane",
-    title: { en: "Thursday Subway Route", cn: "周四地下通道路线", tw: "週四地下通道路線", es: "Ruta del jueves por el paso subterráneo", fr: "Route du jeudi par le passage souterrain" },
+    title: { en: "Thursday Subway Route", cn: "周四地下通道路线", tw: "週四地下道路線", es: "Ruta del jueves por el paso subterráneo", fr: "Route du jeudi par le passage souterrain" },
   },
   generalSaturday: {
     order: 8, stem: "07c_consolation_saturday_car_park",
@@ -103,7 +103,7 @@ const ENDING_META = {
   loungePanna: {
     order: 9, stem: "06c_lounge_chess_lesson",
     climaxStartTag: "loungedesp",
-    title: { en: "Chess Lesson", cn: "下棋课", tw: "下棋課", es: "Lección de ajedrez", fr: "Leçon d’échecs" },
+    title: { en: "Chess Lesson", cn: "下棋课", tw: "西洋棋課", es: "Lección de ajedrez", fr: "Leçon d’échecs" },
   },
   loungeIce: {
     order: 9, stem: "06d_lounge_freshers_week",
@@ -207,9 +207,9 @@ const EXTRA_HIDDEN = [
     routeKey: "bathpee",
     sceneStartTag: "bathpee",
     title: {
-      en: "Diane Peeing in the Bath",
-      cn: "黛安在浴缸里尿",
-      tw: "黛安在浴缸裡尿",
+      en: "Diane Pees in the Bath",
+      cn: "黛安在浴缸里小便",
+      tw: "黛安在浴缸裡尿尿",
       es: "Diane orina en la bañera",
       fr: "Diane fait pipi dans la baignoire",
     },
@@ -223,7 +223,7 @@ const HIDDEN_GROUPS = [
     title: {
       en: "Riverside Portaloo",
       cn: "河边移动厕所",
-      tw: "河邊移動廁所",
+      tw: "河邊流動廁所",
       es: "Baño portátil junto al río",
       fr: "Toilettes portatives au bord de l’eau",
     },
@@ -245,7 +245,7 @@ const HIDDEN_GROUPS = [
     title: {
       en: "Behind the Riverside Bushes",
       cn: "河边灌木后面",
-      tw: "河邊灌木後面",
+      tw: "河邊樹叢後面",
       es: "Detrás de los arbustos del río",
       fr: "Derrière les buissons au bord de la rivière",
     },
@@ -256,8 +256,8 @@ const HIDDEN_GROUPS = [
     groupId: "spyhole",
     title: {
       en: "Public Toilet Spyhole",
-      cn: "公厕窥视孔",
-      tw: "公廁窺視孔",
+      cn: "公厕偷窥孔",
+      tw: "公廁偷窺孔",
       es: "Mirilla del baño público",
       fr: "Judas des toilettes publiques",
     },
@@ -267,10 +267,10 @@ const HIDDEN_GROUPS = [
     groupId: "closed_toilet",
     title: {
       en: "Closed Toilet Building",
-      cn: "关闭的厕所楼",
-      tw: "關閉的廁所樓",
-      es: "Edificio de baños cerrado",
-      fr: "Bâtiment des toilettes fermé",
+      cn: "关门的厕所",
+      tw: "關門的廁所",
+      es: "Baño cerrado",
+      fr: "Toilettes fermées",
     },
     stems: [
       "12_closed_toilet_building_lookout",
@@ -283,8 +283,8 @@ const HIDDEN_GROUPS = [
     groupId: "camper",
     title: {
       en: "Brunette by the Camper Van",
-      cn: "房车旁的棕发女孩",
-      tw: "房車旁的棕髮女孩",
+      cn: "房车旁的褐发女生",
+      tw: "房車旁的褐髮女生",
       es: "La morena junto a la autocaravana",
       fr: "La brune près du camping-car",
     },
@@ -297,6 +297,17 @@ const HIDDEN_GROUPS = [
       "19_camper_gentleman_choice",
       "22_caught_by_boyfriend",
     ],
+  },
+  {
+    groupId: "bus_stop",
+    title: {
+      en: "Diane Gets Off the Bus",
+      cn: "黛安下了公交车",
+      tw: "黛安下了公車",
+      es: "Diane baja del autobús",
+      fr: "Diane descend du bus",
+    },
+    stems: ["20_church_lych_gate_glimpse", "20b_rioja_bus_glimpse"],
   },
   {
     groupId: "sofa_bathroom",
@@ -323,7 +334,7 @@ const HIDDEN_TOP_ORDER = [
   "spyhole",
   "closed_toilet",
   "camper",
-  "20_church_lych_gate_glimpse",
+  "bus_stop",
   "21_hidden_camera",
   "26_train_photo_album",
   "23_brooch",
@@ -479,8 +490,8 @@ function buildDataForLang(ctx, routes, definitions, lang) {
   const hiddenLeaves = countLeaves(hiddenScenes);
   // 5 prizes + Amanda + Chloe×2 + Day×3 + Lounge×4
   if (endingLeaves !== 15) throw new Error(`Expected 15 ending leaves, got ${endingLeaves}`);
-  if (hiddenLeaves !== 23 + EXTRA_HIDDEN.length) {
-    throw new Error(`Expected ${23 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
+  if (hiddenLeaves !== 24 + EXTRA_HIDDEN.length) {
+    throw new Error(`Expected ${24 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
   }
 
   return { endings, hiddenScenes };

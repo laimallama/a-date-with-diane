@@ -29,7 +29,6 @@ const LEGACY_GUIDE_OUTPUTS = [
 ];
 
 const common = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
 ];
@@ -763,7 +762,6 @@ const amandaTail = [
 
 const loungeHen = earlyBushHouseBase.concat(loungeTail);
 const loungeTiramisu = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -912,7 +910,6 @@ const loungeTiramisu = [
   "You let her go.",
 ];
 const loungePanna = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -1071,7 +1068,6 @@ const loungePanna = [
   "You let her go.",
 ];
 const loungeIce = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -1230,7 +1226,6 @@ const loungeIce = [
   "You let her go.",
 ];
 const chloeSibling = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -1286,7 +1281,6 @@ const chloeSibling = [
   "A nice end to the evening, but—",
 ];
 const generalSaturday = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Saturday.",
@@ -1398,7 +1392,6 @@ const generalSaturday = [
   "Your date may have ended early, but it’s not been without its reward.",
 ];
 const broochRoute = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -1452,7 +1445,6 @@ const broochRoute = [
   "You get ready to walk her home.",
 ];
 const phoneCallRoute = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Saturday.",
@@ -1625,7 +1617,6 @@ const phoneCallRoute = [
   "And she hangs up.",
 ];
 const lootogetherRoute = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -1787,7 +1778,6 @@ const lootogetherRoute = [
   "You'd like to have seen her stream!",
 ];
 const sofatrainsRoute = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Tuesday.",
@@ -1846,7 +1836,6 @@ const sofatrainsRoute = [
   "Almost finished!",
 ];
 const bathpeeRoute = [
-  "I’m 18 or over.",
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
   "Saturday.",
@@ -2043,9 +2032,13 @@ function stripTags(text) {
 }
 
 function normalize(text) {
+  // Guides may use “…” / "…" while polishChoiceText renders British ‘…’.
+  // Strip all quote marks after folding curly→straight so inner quotes match too
+  // (e.g. "spend a penny" vs ‘spend a penny’).
   return stripTags(text)
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
+    .replace(/["']/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }

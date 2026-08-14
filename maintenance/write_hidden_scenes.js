@@ -185,12 +185,12 @@ function buildDefinitions(routes) {
   const secondTags = routeToTags(routes.second, routes);
   const generalTags = routeToTags(routes.general, routes);
 
-  const theatreFlashback = secondTags.slice(0, 30);
-  const riversideBench = secondTags.slice(0, 71);
-  const riversideEmergency = secondTags.slice(0, 80);
+  const theatreFlashback = secondTags.slice(0, 29);
+  const riversideBench = secondTags.slice(0, 70);
+  const riversideEmergency = secondTags.slice(0, 79);
 
   const openPublicToiletSpyhole = [
-    "start", "start1a", "start1b", "tuesdaydate", "start2", "gothere",
+    "start1a", "start1b", "tuesdaydate", "start2", "gothere",
     "winelist", "buyrioja", "eatmeal", "buylasagne", "eatmeal4",
     "eatmeal4a", "eatmeal4b", "eatmeal4c", "eatmeal4d", "eatmeal7",
     "eatmeal7a", "eatmeal7b", "espresso", "eatmeal7c", "gotheatre",
@@ -208,7 +208,7 @@ function buildDefinitions(routes) {
   ];
 
   const thursdayBridge = [
-    "start", "start1a", "start1b", "thursdaydate", "start2", "gothere",
+    "start1a", "start1b", "thursdaydate", "start2", "gothere",
     "winelist", "buyrioja", "eatmeal", "buytort", "eatmeal5", "eatmeal5a",
     "eatmeal5b", "eatmeal5c", "traintalk", "traintalk1", "traintalk2",
     "eatmeal7", "eatmeal7a", "puddings", "buypannacotta", "eatmeal7b",
@@ -225,7 +225,7 @@ function buildDefinitions(routes) {
   ];
 
   const mollyBrunoTowpath = [
-    "start", "start1a", "start1b", "tuesdaydate", "start2", "buysth",
+    "start1a", "start1b", "tuesdaydate", "start2", "buysth",
     "buywater", "buysth", "gothere", "winelist", "buyrioja", "eatmeal",
     "buytort", "eatmeal5", "eatmeal5a", "eatmeal5b", "eatmeal5c",
     "traintalk", "traintalk1", "traintalk2", "eatmeal7", "eatmeal7a",
@@ -246,7 +246,7 @@ function buildDefinitions(routes) {
   ];
 
   const mollyBrunoTowpathHigh = [
-    "start", "start1a", "start1b", "tuesdaydate", "start2", "gothere",
+    "start1a", "start1b", "tuesdaydate", "start2", "gothere",
     "winelist", "buyburgundy", "eatmeal", "buytort", "eatmeal5",
     "eatmeal5a", "eatmeal5b", "eatmeal5c", "asklootalk",
     "asklootalk1", "asklootalk2", "gotheatre", "theatre1", "theatre2",
@@ -265,8 +265,8 @@ function buildDefinitions(routes) {
     "traintalka", "riverside12",
   ];
 
-  const soloBrunetteBus = secondTags.slice(0, 102);
-  soloBrunetteBus[10] = "buychardonnay";
+  const soloBrunetteBus = secondTags.slice(0, 101);
+  soloBrunetteBus[9] = "buychardonnay";
 
   const riversideUrinalRoute = routes.amanda
     .slice(0, routes.amanda.indexOf("Which will it be?") + 1)
@@ -300,7 +300,7 @@ function buildDefinitions(routes) {
     ]);
   const riversideUrinal = routeToTags(riversideUrinalRoute, routes);
 
-  const camperDecision = generalTags.slice(0, 103).concat([
+  const camperDecision = generalTags.slice(0, 102).concat([
     "queue1b",
     "carparka",
     "carparka0",
@@ -313,7 +313,7 @@ function buildDefinitions(routes) {
   const luckshotBrunetteBus = generalTags.slice(0, generalTags.indexOf("busqueue6") + 1);
 
   const hiddenCamera = [
-    "start", "start1a", "start1b", "thursdaydate", "start2", "gothere", "flirt_l",
+    "start1a", "start1b", "thursdaydate", "start2", "gothere", "flirt_l",
     "winelist", "buyrioja", "eatmeal", "buylasagne", "eatmeal4", "eatmeal4a",
     "eatmeal4b", "eatmeal4c", "eatmeal4d", "eatmeal7", "eatmeal7a", "puddings",
     "buytiramisu", "eatmeal7b", "filtercoffee", "eatmeal7bb", "gotheatre",
@@ -324,7 +324,7 @@ function buildDefinitions(routes) {
   ];
 
   const churchLychGate = [
-    "start", "start1a", "start1b", "thursdaydate", "start2", "gothere",
+    "start1a", "start1b", "thursdaydate", "start2", "gothere",
     "winelist", "buypinot", "eatmeal", "buysteak", "steak3", "eatmeal6",
     "eatmeal6a", "eatmeal6b", "eatmeal6c", "eatmeal5c", "asklootalk",
     "asklootalk1", "asklootalk2", "gotheatre", "theatre1", "theatre2",
@@ -341,9 +341,31 @@ function buildDefinitions(routes) {
     "riversidepath12x", "riverside14", "toiletclosed", "riverside15",
     "riverside16", "riverside16a", "busqueue", "busqueue1", "busqueue2",
     "busqueue3", "queue1a", "watchblonde", "busqueue6", "busqueue6a",
-    "busqueue7", "bushome", "bushome1", "bushome2", "bushome3",
-    "bushome4", "bushome5", "bushome6",
+    "busqueue7", "bushome", "bushome1",
   ];
+
+  // Same Thursday setup, but Rioja so *you* are desperate on the bus home.
+  // Rioja keeps bladder lower at the post-theatre fork, so take stage-door (not foyer).
+  // Skipping the foyer pee also leaves bladder high at stagedoor5 → choosepub (not choosepub1),
+  // but lower again by the bus queue → busqueue4 path (not queue1a/watchblonde).
+  const busStopRioja = [];
+  for (const tag of churchLychGate) {
+    if (tag === "buypinot") {
+      busStopRioja.push("buyrioja");
+    } else if (tag === "foyerbar1") {
+      busStopRioja.push("stagedoor", "stagedoor1", "stagedoor2", "stagedoor3", "stagedoor4");
+    } else if (tag === "foyerbar1a" || tag === "foyerbar2" || tag === "foyerbar3") {
+      continue;
+    } else if (tag === "choosepub1") {
+      busStopRioja.push("choosepub");
+    } else if (tag === "queue1a") {
+      busStopRioja.push("busqueue4", "busqueue5");
+    } else if (tag === "watchblonde") {
+      continue;
+    } else {
+      busStopRioja.push(tag);
+    }
+  }
 
   const bases = {
     theatreFlashback: {
@@ -468,13 +490,23 @@ function buildDefinitions(routes) {
     },
     churchLychGate: {
       name: {
-        en: "12: Thursday church lych gate setup",
-        cn: "12：周四墓园门廊基础路线",
-        es: "12: Base del pórtico de la iglesia del jueves",
-        fr: "12 : Base du porche de l'église le jeudi",
-        tw: "12：週四墓園門廊基礎路線"
+        en: "12: Thursday bus-stop luckshot setup",
+        cn: "12：周四公交站幸运一击基础路线",
+        es: "12: Base de la parada del jueves (suerte)",
+        fr: "12 : Base de l'arrêt du jeudi (chance)",
+        tw: "12：週四公車站幸運一擊基礎路線"
       },
       tags: churchLychGate,
+    },
+    busStopRioja: {
+      name: {
+        en: "12b: Thursday bus-stop Rioja setup",
+        cn: "12b：周四公交站里奥哈基础路线",
+        es: "12b: Base de la parada del jueves (Rioja)",
+        fr: "12b : Base de l'arrêt du jeudi (Rioja)",
+        tw: "12b：週四公車站里奧哈基礎路線"
+      },
+      tags: busStopRioja,
     },
   };
 
@@ -520,7 +552,7 @@ function buildDefinitions(routes) {
         cn: "帮黛安找到隐藏的移动厕所",
         es: "Encontrar el baño portátil oculto para Diane",
         fr: "Trouver les toilettes portatives cachées pour Diane",
-        tw: "幫黛安找到隱藏的移動廁所"
+        tw: "幫黛安找到隱藏的流動廁所"
       },
       entry: {
         en: "This begins at the riverside bench after Diane seems unable to sit still.",
@@ -534,7 +566,7 @@ function buildDefinitions(routes) {
         cn: "黛安会用上移动厕所，之后路线继续。",
         es: "Diane puede usar el baño portátil. La ruta continúa después.",
         fr: "Diane peut utiliser les toilettes portatives. La route continue ensuite.",
-        tw: "黛安會用上移動廁所，之後路線繼續。"
+        tw: "黛安會用上流動廁所，之後路線繼續。"
       },
       exit: {
         en: "The route rejoins the riverside walk.",
@@ -550,17 +582,17 @@ function buildDefinitions(routes) {
       base: "riversideBench",
       title: {
         en: "Offering the Portaloo Too Directly",
-        cn: "过于直接地提醒她移动厕所",
+        cn: "过于直白地提起移动厕所",
         es: "Ofrecer el baño portátil de forma demasiado directa",
         fr: "Proposer les toilettes portatives trop directement",
-        tw: "過於直接地提醒她移動廁所"
+        tw: "過於直白地提起流動廁所"
       },
       entry: {
         en: "This is the alternative Portaloo branch at the same riverside bench.",
         cn: "这是同一处河边长椅上的移动厕所变体分支。",
         es: "Es la variante del baño portátil en el mismo banco junto al río.",
         fr: "C'est la variante des toilettes portatives au même banc au bord de la rivière.",
-        tw: "這是同一處河邊長椅上的移動廁所變體分支。"
+        tw: "這是同一處河邊長椅上的流動廁所變體分支。"
       },
       result: {
         en: "Diane is too embarrassed to admit she needs it. The route continues.",
@@ -619,7 +651,7 @@ function buildDefinitions(routes) {
         cn: "偷看莫莉在废料箱后面撒尿",
         es: "Ver a Molly detrás del contenedor de obra",
         fr: "Regarder Molly derrière la benne de chantier",
-        tw: "偷看莫莉在廢料箱後面撒尿"
+        tw: "偷看莫莉在工地貨櫃後面撒尿"
       },
       entry: {
         en: "This is a Tuesday riverside branch, after Molly and Bruno peel off down to the towpath.",
@@ -633,7 +665,7 @@ function buildDefinitions(routes) {
         cn: "你会先看到布鲁诺，再看到莫莉在废料箱后面撒尿，之后黛安会调侃你。",
         es: "Ves primero a Bruno y luego a Molly detrás del contenedor; después Diane se burla de ti.",
         fr: "Vous voyez d'abord Bruno, puis Molly derrière la benne, et Diane vous taquine ensuite.",
-        tw: "你會先看到布魯諾，再看到莫莉在廢料箱後面撒尿，之後黛安會調侃你。"
+        tw: "你會先看到布魯諾，再看到莫莉在工地貨櫃後面撒尿，之後黛安會調侃你。"
       },
       exit: {
         en: "The route continues toward the riverside public toilets.",
@@ -681,11 +713,11 @@ function buildDefinitions(routes) {
       stem: "07_riverside_bushes_diane",
       base: "riversideEmergency",
       title: {
-        en: "Diane Goes Behind the Riverside Bushes",
-        cn: "黛安去河边灌木后面方便",
-        es: "Diane va detrás de los arbustos junto al río",
-        fr: "Diane va derrière les buissons au bord de la rivière",
-        tw: "黛安去河邊灌木後面方便"
+        en: "Diane Pees Behind the Riverside Bushes",
+        cn: "黛安在河边灌木后面小便",
+        es: "Diane orina detrás de los arbustos junto al río",
+        fr: "Diane fait pipi derrière les buissons au bord de la rivière",
+        tw: "黛安在河邊樹叢後面尿尿"
       },
       entry: {
         en: "This begins when Diane admits she may not make it to the Pavilion.",
@@ -699,7 +731,7 @@ function buildDefinitions(routes) {
         cn: "黛安会在灌木后面急着方便一次，之后路线继续。",
         es: "Diane hace pis de urgencia detrás de los arbustos. La ruta continúa.",
         fr: "Diane fait pipi en urgence derrière les buissons. La route continue.",
-        tw: "黛安會在灌木後面急著方便一次，之後路線繼續。"
+        tw: "黛安會在樹叢後面急著方便一次，之後路線繼續。"
       },
       exit: {
         en: "The route continues toward the riverside public toilets.",
@@ -747,11 +779,11 @@ function buildDefinitions(routes) {
       stem: "09_riverside_bushes_together",
       base: "riversideEmergency",
       title: {
-        en: "You and Diane Both Go Behind the Bushes",
-        cn: "你和黛安一起去灌木后面方便",
-        es: "Tú y Diane vais juntos detrás de los arbustos",
-        fr: "Vous et Diane allez tous les deux derrière les buissons",
-        tw: "你和黛安一起去灌木後面方便"
+        en: "You and Diane Both Pee Behind the Bushes",
+        cn: "你和黛安都在灌木后面小便",
+        es: "Tú y Diane hacéis pis detrás de los arbustos",
+        fr: "Vous et Diane faites tous les deux pipi derrière les buissons",
+        tw: "你和黛安都在樹叢後面尿尿"
       },
       entry: {
         en: "This begins from the riverside emergency decision after you say you need to go too.",
@@ -765,7 +797,7 @@ function buildDefinitions(routes) {
         cn: "你们会分别到灌木后面方便，之后路线继续。",
         es: "Los dos vais detrás de arbustos separados. La ruta continúa.",
         fr: "Vous allez chacun derrière des buissons séparés. La route continue.",
-        tw: "你們會分別到灌木後面方便，之後路線繼續。"
+        tw: "你們會分別到樹叢後面方便，之後路線繼續。"
       },
       exit: {
         en: "The route continues toward the riverside public toilets.",
@@ -781,17 +813,17 @@ function buildDefinitions(routes) {
       base: "riversideEmergency",
       title: {
         en: "The Public Toilet Spyhole and Discarded Panties",
-        cn: "公共厕所里的偷看孔和遗落的内裤",
-        es: "El agujero para espiar en el baño público y las bragas abandonadas",
-        fr: "Le trou d'espionnage des toilettes publiques et la culotte abandonnée",
-        tw: "公共廁所裡的偷看孔和遺落的內褲"
+        cn: "公共厕所里的偷窥孔和遗落的内裤",
+        es: "La mirilla del baño público y las bragas abandonadas",
+        fr: "Le judas des toilettes publiques et la culotte abandonnée",
+        tw: "公共廁所裡的偷窺孔和遺落的內褲"
       },
       entry: {
         en: "This begins when you send Diane toward the riverside public toilets instead of finding bushes.",
         cn: "这个场景从你让黛安去河边公共厕所开始，而不是直接帮她找灌木。",
         es: "Empieza cuando envías a Diane hacia los baños públicos junto al río en lugar de buscar arbustos.",
         fr: "Cela commence quand vous envoyez Diane vers les toilettes publiques au lieu de chercher des buissons.",
-        tw: "這個場景從你讓黛安去河邊公共廁所開始，而不是直接幫她找灌木。"
+        tw: "這個場景從你讓黛安去河邊公共廁所開始，而不是直接幫她找樹叢。"
       },
       result: {
         en: "This is a voyeur branch that ends the date badly. It is not a Prize ending.",
@@ -814,10 +846,10 @@ function buildDefinitions(routes) {
     base: "openPublicToiletSpyhole",
     title: {
       en: "The Public Toilet Spyhole and Diane's Stockings",
-      cn: "公共厕所里的偷看孔和黛安的丝袜",
-      es: "El agujero para espiar del baño público y las medias de Diane",
-      fr: "Le trou d'espionnage des toilettes publiques et les bas de Diane",
-      tw: "公共廁所裡的偷看孔和黛安的絲襪"
+      cn: "公共厕所里的偷窥孔和黛安的丝袜",
+      es: "La mirilla del baño público y las medias de Diane",
+      fr: "Le judas des toilettes publiques et les bas de Diane",
+      tw: "公共廁所裡的偷窺孔和黛安的絲襪"
     },
       entry: {
         en: "This begins on the Tuesday riverside walk, when the public toilets are still open and Diane goes in before she is at her absolute limit.",
@@ -828,10 +860,10 @@ function buildDefinitions(routes) {
       },
       result: {
         en: "Your luckshot finds the spyhole, but Diane picked another cubicle. If you keep watching, you catch her at the washbasin adjusting her stockings.",
-        cn: "幸运机会让你找到了偷看孔，但黛安选了另一个隔间。如果你继续看，就会看到她在洗手台前整理丝袜。",
-        es: "La oportunidad de suerte te lleva al agujero, pero Diane ha elegido otra cabina. Si sigues mirando, la ves en el lavabo arreglándose las medias.",
-        fr: "L'opportunité de chance vous mène au trou, mais Diane a choisi une autre cabine. Si vous continuez à regarder, vous la voyez au lavabo en train d'ajuster ses bas.",
-        tw: "幸運機會讓你找到了偷看孔，但黛安選了另一個隔間。如果你繼續看，就會看到她在洗手台前整理絲襪。"
+        cn: "幸运机会让你找到了偷窥孔，但黛安选了另一个隔间。如果你继续看，就会看到她在洗手台前整理丝袜。",
+        es: "La oportunidad de suerte te lleva a la mirilla, pero Diane ha elegido otra cabina. Si sigues mirando, la ves en el lavabo arreglándose las medias.",
+        fr: "L'opportunité de chance vous mène au judas, mais Diane a choisi une autre cabine. Si vous continuez à regarder, vous la voyez au lavabo en train d'ajuster ses bas.",
+        tw: "幸運機會讓你找到了偷窺孔，但黛安選了另一個隔間。如果你繼續看，就會看到她在洗手台前整理絲襪。"
       },
       exit: {
         en: "The route rejoins the riverside walk.",
@@ -846,11 +878,11 @@ function buildDefinitions(routes) {
       stem: "12_closed_toilet_building_lookout",
       base: "riversideUrinal",
       title: {
-        en: "Diane Goes Behind the Closed Toilet Building",
-        cn: "黛安绕到关门的厕所后面方便",
-        es: "Diane va detrás del baño cerrado",
-        fr: "Diane va derrière les toilettes fermées",
-        tw: "黛安繞到關門的廁所後面方便"
+        en: "Diane Pees Behind the Closed Toilet Building",
+        cn: "黛安在关门的厕所后面小便",
+        es: "Diane orina detrás del baño cerrado",
+        fr: "Diane fait pipi derrière les toilettes fermées",
+        tw: "黛安在關門的廁所後面尿尿"
       },
       entry: {
         en: "This is a Saturday branch at the riverside public toilets, after the caretaker has just locked up.",
@@ -879,11 +911,11 @@ function buildDefinitions(routes) {
       stem: "13_closed_toilet_building_together",
       base: "riversideUrinal",
       title: {
-        en: "Taking Turns Behind the Closed Toilet Building",
-        cn: "和黛安轮流到关门的厕所后面方便",
-        es: "Turnarse detrás del baño cerrado",
-        fr: "Se relayer derrière les toilettes fermées",
-        tw: "和黛安輪流到關門的廁所後面方便"
+        en: "Taking Turns Peeing Behind the Closed Toilet Building",
+        cn: "和黛安轮流在关门的厕所后面小便",
+        es: "Turnarse a hacer pis detrás del baño cerrado",
+        fr: "Se relayer pour faire pipi derrière les toilettes fermées",
+        tw: "和黛安輪流在關門的廁所後面尿尿"
       },
       entry: {
         en: "This uses the same Saturday closed-toilet decision point, but you tell Diane you need to go too.",
@@ -949,7 +981,7 @@ function buildDefinitions(routes) {
         cn: "黛安使用男厕小便池",
         es: "Diane usa el urinario de caballeros",
         fr: "Diane utilise l'urinoir des hommes",
-        tw: "黛安使用男廁小便池"
+        tw: "黛安使用男廁小便斗"
       },
       entry: {
         en: "This is a Saturday-only branch at the riverside public toilets, after Diane is very desperate and the caretaker has just locked up.",
@@ -963,7 +995,7 @@ function buildDefinitions(routes) {
         cn: "管理员打开男厕，但隔间没法用，黛安只好当着你的面使用小便池。",
         es: "El encargado abre el baño de caballeros, la cabina no se puede usar y Diane acaba usando un urinario contigo presente.",
         fr: "Le gardien ouvre les toilettes des hommes, la cabine est inutilisable, et Diane finit par utiliser un urinoir pendant que vous êtes là.",
-        tw: "管理員打開男廁，但隔間沒法用，黛安只好當著你的面使用小便池。"
+        tw: "管理員打開男廁，但隔間沒法用，黛安只好當著你的面使用小便斗。"
       },
       exit: {
         en: "The route rejoins the riverside walk.",
@@ -978,11 +1010,11 @@ function buildDefinitions(routes) {
       stem: "28_luckshot_brunette_camper",
       base: "luckshotBrunetteBus",
       title: {
-        en: "Watching the Brunette Behind the Camper Van",
-        cn: "偷看褐发女生在房车后面撒尿",
-        es: "Ver a la morena detrás de la autocaravana",
-        fr: "Regarder la brune derrière le camping-car",
-        tw: "偷看褐髮女生在房車後面撒尿"
+        en: "Spying on the Brunette Behind the Camper Van",
+        cn: "偷看房车后面的褐发女生",
+        es: "Espiar a la morena detrás de la autocaravana",
+        fr: "Espionner la brune derrière le camping-car",
+        tw: "偷看房車後面的褐髮女生"
       },
       entry: {
         en: "This begins in the late bus queue when you still have a luckshot. The brunette leaves alone; Diane stays with you (not the Chardonnay path).",
@@ -996,7 +1028,7 @@ function buildDefinitions(routes) {
         cn: "你谎称自己要小便，跟上她，独自在房车后面看她急尿，然后回到黛安身边。",
         es: "Mientes diciendo que tienes que hacer pis, la sigues, la ves sola detrás de la autocaravana y vuelves con Diane.",
         fr: "Vous mentez en disant que vous devez faire pipi, vous la suivez, vous la regardez seule derrière le camping-car, puis vous retournez auprès de Diane.",
-        tw: "你謊稱自己要小便，跟上她，獨自在房車後面看她急尿，然後回到黛安身邊。"
+        tw: "你謊稱自己要尿尿，跟上她，獨自在房車後面看她急尿，然後回到黛安身邊。"
       },
       exit: {
         en: "The route returns to the bus queue with Diane.",
@@ -1012,10 +1044,10 @@ function buildDefinitions(routes) {
       base: "soloBrunetteBus",
       title: {
         en: "The Brunette Pees Where You Just Peed",
-        cn: "褐发女生尿在你刚尿过的地方",
+        cn: "褐发女生在你刚尿过的地方又尿一泡",
         es: "La morena hace pis donde acabas de hacer pis",
         fr: "La brune fait pipi là où vous venez de faire pipi",
-        tw: "褐髮女生尿在你剛尿過的地方"
+        tw: "褐髮女生在你剛尿過的地方又尿一泡"
       },
       entry: {
         en: "This begins at the late bus queue after you have chosen Chardonnay and become desperate yourself.",
@@ -1044,11 +1076,11 @@ function buildDefinitions(routes) {
       stem: "17_diane_brunette_camper_round",
       base: "camperDecision",
       title: {
-        en: "Diane and the Brunette Behind the Camper Van",
-        cn: "黛安和褐发女生一起到房车后面方便",
-        es: "Diane y la morena detrás de la autocaravana",
-        fr: "Diane et la brune derrière le camping-car",
-        tw: "黛安和褐髮女生一起到房車後面方便"
+        en: "Diane and the Brunette Pee Behind the Camper Van",
+        cn: "黛安和褐发女生在房车后面撒尿",
+        es: "Diane y la morena hacen pis detrás de la autocaravana",
+        fr: "Diane et la brune font pipi derrière le camping-car",
+        tw: "黛安和褐髮女生在房車後面撒尿"
       },
       entry: {
         en: "This begins after Diane and the brunette both fail to find an open toilet near the bus stop.",
@@ -1176,25 +1208,25 @@ function buildDefinitions(routes) {
       stem: "20_church_lych_gate_glimpse",
       base: "churchLychGate",
       title: {
-        en: "Church Lych Gate Glimpse",
-        cn: "墓园门廊一瞥",
-        es: "Vistazo en el pórtico de la iglesia",
-        fr: "Aperçu sous le porche de l'église",
-        tw: "墓園門廊一瞥"
+        en: "Diane Pees by the Church",
+        cn: "黛安在教堂旁小便",
+        es: "Diane orina junto a la iglesia",
+        fr: "Diane fait pipi près de l'église",
+        tw: "黛安在教堂旁尿尿"
       },
       entry: {
-        en: "This is a very narrow Thursday route after Diane gets off the bus alone and you use your last luckshot to walk back after her.",
-        cn: "这是一个非常窄的周四路线。黛安独自下公车后，你用最后一次幸运机会折返回去找她。",
-        es: "Es una ruta muy estrecha del jueves, después de que Diane baja sola del autobús y usas tu última oportunidad de suerte para volver a buscarla.",
-        fr: "C'est une route très étroite du jeudi, après que Diane descend seule du bus et que vous utilisez votre dernière opportunité de chance pour revenir la chercher.",
-        tw: "這是一個非常窄的週四路線。黛安獨自下公車後，你用最後一次幸運機會折返回去找她。"
+        en: "This is a narrow Thursday route: Diane gets off alone, desperate, and you spend a luckshot to walk back after her.",
+        cn: "这是一条很窄的周四路线：黛安独自下车、明显憋急，你用一次幸运机会折返回去跟。",
+        es: "Es una ruta estrecha del jueves: Diane baja sola y desesperada, y usas una oportunidad de suerte para volver tras ella.",
+        fr: "C'est une route étroite du jeudi : Diane descend seule, pressée, et vous utilisez une opportunité de chance pour revenir sur vos pas.",
+        tw: "這是一條很窄的週四路線：黛安獨自下車、明顯憋急，你用一次幸運機會折返回去跟。"
       },
       result: {
-        en: "You glimpse Diane at the church lych gate after she has had an urgent pee there. The route ends immediately afterwards.",
-        cn: "你会在教堂墓园门廊处瞥见黛安，她已经在那里急着尿过了。随后路线立刻结束。",
-        es: "Ves a Diane junto al pórtico de la iglesia después de que ha hecho pis allí con urgencia. La ruta termina justo después.",
-        fr: "Vous apercevez Diane sous le porche de l'église après qu'elle y a fait pipi en urgence. La route se termine juste après.",
-        tw: "你會在教堂墓園門廊處瞥見黛安，她已經在那裡急著尿過了。隨後路線立刻結束。"
+        en: "You glimpse Diane having an urgent pee in the church lych gate. The route ends immediately afterwards.",
+        cn: "你会瞥见黛安在教堂停柩门里急着方便。随后路线立刻结束。",
+        es: "Ves a Diane haciendo pis con urgencia en el lych gate de la iglesia. La ruta termina justo después.",
+        fr: "Vous apercevez Diane en train de faire pipi en urgence sous le porche d'église. La route se termine juste après.",
+        tw: "你會瞥見黛安在教堂停柩門裡急著方便。隨後路線立刻結束。"
       },
       exit: {
         en: "The route ends in a non-Prize game over.",
@@ -1203,7 +1235,40 @@ function buildDefinitions(routes) {
         fr: "La route se termine par un game over sans prix.",
         tw: "路線會進入非獎項失敗結局。"
       },
-      tags: ["luckytrip17", "luckytrip17a", "luckytrip17b", "gameover"],
+      tags: ["bushome2", "bushome3", "bushome4", "bushome5", "bushome6", "luckytrip17", "luckytrip17a", "luckytrip17b", "gameover"],
+    },
+    {
+      stem: "20b_rioja_bus_glimpse",
+      base: "busStopRioja",
+      title: {
+        en: "You Are Too Desperate to Walk Her Home",
+        cn: "你因尿急没法送她回家",
+        es: "Estás demasiado apurado para acompañarla a casa",
+        fr: "Vous êtes trop pressé pour la raccompagner",
+        tw: "你因尿急沒辦法送她回家"
+      },
+      entry: {
+        en: "Same Thursday bus home, but you drank Rioja: you are too desperate to get off with her, pee behind a bush, then walk back.",
+        cn: "同一条周四回家公交线，但你喝了里奥哈：自己憋得没法陪她下车，先在树丛后解决，再折返回去。",
+        es: "La misma vuelta en bus del jueves, pero bebiste Rioja: estás demasiado apurado para bajar con ella, haces pis detrás de un arbusto y luego vuelves.",
+        fr: "Même retour en bus le jeudi, mais vous avez bu du Rioja : trop pressé pour descendre avec elle, vous faites pipi derrière un buisson puis vous revenez.",
+        tw: "同一條週四回家公車線，但你喝了里奧哈：自己憋得沒辦法陪她下車，先在樹叢後解決，再折返回去。"
+      },
+      result: {
+        en: "You relieve yourself behind a bush and walk back toward her stop—but you only scare up a stray cat. No glimpse of Diane. The route ends immediately afterwards.",
+        cn: "你在树丛后解决后折返回她那站——却只惊起一只野猫，没瞥见黛安。随后路线立刻结束。",
+        es: "Te alivias detrás de un arbusto y vuelves hacia su parada, pero solo espantas a un gato callejero. Sin vislumbre de Diane. La ruta termina justo después.",
+        fr: "Vous vous soulagez derrière un buisson et revenez vers son arrêt — mais vous ne faites que faire fuir un chat errant. Pas d'aperçu de Diane. La route se termine juste après.",
+        tw: "你在樹叢後解決後折返回她那站——卻只驚起一隻野貓，沒瞥見黛安。隨後路線立刻結束。"
+      },
+      exit: {
+        en: "The route ends in a non-Prize game over.",
+        cn: "路线会进入非奖项失败结局。",
+        es: "La ruta termina en un game over sin premio.",
+        fr: "La route se termine par un game over sans prix.",
+        tw: "路線會進入非獎項失敗結局。"
+      },
+      tags: ["bushome2", "bushome3", "bushome4", "bushome5", "bushome6", "peestop1", "peestop2", "luckytrip17b", "gameover"],
     },
     {
       stem: "21_hidden_camera",

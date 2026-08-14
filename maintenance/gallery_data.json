@@ -6,7 +6,6 @@
         "order": 1,
         "title": "First Prize",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -197,14 +196,13 @@
           "triumph"
         ],
         "baseLength": 2,
-        "climaxIndex": 177
+        "climaxIndex": 176
       },
       {
         "id": "05_second_prize",
         "order": 2,
         "title": "Second Prize",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -361,14 +359,13 @@
           "secondplace1"
         ],
         "baseLength": 2,
-        "climaxIndex": 144
+        "climaxIndex": 143
       },
       {
         "id": "01_third_prize",
         "order": 3,
         "title": "Third Prize",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -433,14 +430,13 @@
           "legsz3"
         ],
         "baseLength": 2,
-        "climaxIndex": 40
+        "climaxIndex": 39
       },
       {
         "id": "02_fourth_prize",
         "order": 4,
         "title": "Fourth Prize",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -597,14 +593,13 @@
           "helphersquat3"
         ],
         "baseLength": 2,
-        "climaxIndex": 149
+        "climaxIndex": 148
       },
       {
         "id": "04_fifth_prize",
         "order": 5,
         "title": "Fifth Prize",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -666,14 +661,13 @@
           "gobathroom3"
         ],
         "baseLength": 2,
-        "climaxIndex": 45
+        "climaxIndex": 44
       },
       {
         "id": "09_amanda_consolation",
         "order": 6,
         "title": "Amanda Consolation Prize",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -795,7 +789,7 @@
           "luckytrip31e"
         ],
         "baseLength": 2,
-        "climaxIndex": 107
+        "climaxIndex": 106
       },
       {
         "groupId": "08_chloe",
@@ -806,7 +800,6 @@
             "id": "08a_chloe_consolation",
             "title": "Chloe Wets Her Knickers",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -862,13 +855,12 @@
               "watching6"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           },
           {
             "id": "08b_chloe_outside",
             "title": "Chloe Pees Beside Her House",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -924,7 +916,7 @@
               "gameover"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           }
         ]
       },
@@ -937,7 +929,6 @@
             "id": "07a_consolation_tuesday_pavilion",
             "title": "Tuesday Pavilion Route",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -1057,13 +1048,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 108
+            "climaxIndex": 107
           },
           {
             "id": "07b_consolation_thursday_subway",
             "title": "Thursday Subway Route",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "thursdaydate",
@@ -1180,13 +1170,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 106
+            "climaxIndex": 105
           },
           {
             "id": "07c_consolation_saturday_car_park",
             "title": "Saturday Car Park Route",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -1298,7 +1287,7 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 105
+            "climaxIndex": 104
           }
         ]
       },
@@ -1311,7 +1300,6 @@
             "id": "06a_lounge_hen_party",
             "title": "Hen Party",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -1468,13 +1456,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 148
+            "climaxIndex": 147
           },
           {
             "id": "06b_lounge_bus_boy",
             "title": "Boy from School on the Bus",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -1623,13 +1610,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 140
+            "climaxIndex": 139
           },
           {
             "id": "06c_lounge_chess_lesson",
             "title": "Chess Lesson",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -1788,13 +1774,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
             "title": "Freshers' Week",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -1953,7 +1938,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -1964,7 +1949,6 @@
         "order": 1,
         "title": "Theatre Flashback to the First Time You Saw Diane",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -1997,7 +1981,7 @@
           "theatre3c",
           "theatre4"
         ],
-        "baseLength": 30
+        "baseLength": 29
       },
       {
         "groupId": "portaloo",
@@ -2007,7 +1991,6 @@
             "id": "02_portaloo_ladies_first",
             "title": "Finding the Hidden Portaloo for Diane",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2083,13 +2066,12 @@
               "luckytrip16a1",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           },
           {
             "id": "03_portaloo_too_embarrassed",
             "title": "Offering the Portaloo Too Directly",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2165,7 +2147,7 @@
               "luckytrip16ba",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 2
@@ -2175,7 +2157,6 @@
         "order": 3,
         "title": "Robert Shows You Diane and Molly Under the Bridge",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -2254,7 +2235,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 70
+        "baseLength": 69
       },
       {
         "groupId": "molly_towpath",
@@ -2264,7 +2245,6 @@
             "id": "05_molly_bruno_towpath",
             "title": "Watching Molly Behind the Skip",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2358,13 +2338,12 @@
               "luckytrip4a",
               "luckytrip4b"
             ],
-            "baseLength": 89
+            "baseLength": 88
           },
           {
             "id": "06_diane_slips_away_while_watching_molly",
             "title": "Diane Slips Away While You Watch Molly",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2450,7 +2429,7 @@
               "luckytrip4c",
               "luckytrip4d"
             ],
-            "baseLength": 79
+            "baseLength": 78
           }
         ],
         "order": 4
@@ -2461,9 +2440,8 @@
         "variants": [
           {
             "id": "07_riverside_bushes_diane",
-            "title": "Diane Goes Behind the Riverside Bushes",
+            "title": "Diane Pees Behind the Riverside Bushes",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2547,13 +2525,12 @@
               "helpdiane1aa",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "09_riverside_bushes_together",
-            "title": "You and Diane Both Go Behind the Bushes",
+            "title": "You and Diane Both Pee Behind the Bushes",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2637,7 +2614,7 @@
               "together2",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           }
         ],
         "order": 5
@@ -2647,7 +2624,6 @@
         "order": 6,
         "title": "Diane Cannot Wait on the Towpath Steps",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -2732,7 +2708,7 @@
           "together1a",
           "together1b"
         ],
-        "baseLength": 80
+        "baseLength": 79
       },
       {
         "groupId": "spyhole",
@@ -2742,7 +2718,6 @@
             "id": "10_public_toilet_spyhole",
             "title": "The Public Toilet Spyhole and Discarded Panties",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2834,13 +2809,12 @@
               "luckytrip5tue2",
               "gameover"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "11_public_toilet_spyhole_stockings",
             "title": "The Public Toilet Spyhole and Diane's Stockings",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -2920,7 +2894,7 @@
               "luckytrip5cd",
               "riverside15"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 7
@@ -2931,9 +2905,8 @@
         "variants": [
           {
             "id": "12_closed_toilet_building_lookout",
-            "title": "Diane Goes Behind the Closed Toilet Building",
+            "title": "Diane Pees Behind the Closed Toilet Building",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -3019,13 +2992,12 @@
               "toiletclosed2a",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "13_closed_toilet_building_together",
-            "title": "Taking Turns Behind the Closed Toilet Building",
+            "title": "Taking Turns Peeing Behind the Closed Toilet Building",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -3111,13 +3083,12 @@
               "toiletclosed2b",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "14_closed_toilet_building_bad_choice",
             "title": "Asking Diane to Hold On at the Closed Toilet",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -3203,13 +3174,12 @@
               "toiletclosed2c",
               "gameover"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "15_riverside_gents_urinal",
             "title": "Diane Uses the Gents Urinal",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -3296,7 +3266,7 @@
               "urinal",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           }
         ],
         "order": 8
@@ -3307,9 +3277,8 @@
         "variants": [
           {
             "id": "28_luckshot_brunette_camper",
-            "title": "Watching the Brunette Behind the Camper Van",
+            "title": "Spying on the Brunette Behind the Camper Van",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -3419,13 +3388,12 @@
               "carpark2",
               "carpark3"
             ],
-            "baseLength": 105
+            "baseLength": 104
           },
           {
             "id": "16_brunette_behind_camper",
             "title": "The Brunette Pees Where You Just Peed",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -3534,13 +3502,12 @@
               "carpark1",
               "carpark2"
             ],
-            "baseLength": 102
+            "baseLength": 101
           },
           {
             "id": "17_diane_brunette_camper_round",
-            "title": "Diane and the Brunette Behind the Camper Van",
+            "title": "Diane and the Brunette Pee Behind the Camper Van",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -3652,13 +3619,12 @@
               "peepround",
               "peepround1"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "18_diane_brunette_camper_under",
             "title": "Peeping Underneath the Camper Van",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -3770,13 +3736,12 @@
               "peepunder",
               "peepunderluck"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "19_camper_gentleman_choice",
             "title": "Not Watching Diane and the Brunette",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -3888,13 +3853,12 @@
               "gentleman",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "22_caught_by_boyfriend",
             "title": "Caught by the Brunette's Boyfriend",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -4007,123 +3971,232 @@
               "peepunderrisk",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           }
         ],
         "order": 9
       },
       {
-        "id": "20_church_lych_gate_glimpse",
-        "order": 10,
-        "title": "Church Lych Gate Glimpse",
-        "tags": [
-          "start",
-          "start1a",
-          "start1b",
-          "thursdaydate",
-          "start2",
-          "gothere",
-          "winelist",
-          "buypinot",
-          "eatmeal",
-          "buysteak",
-          "steak3",
-          "eatmeal6",
-          "eatmeal6a",
-          "eatmeal6b",
-          "eatmeal6c",
-          "eatmeal5c",
-          "asklootalk",
-          "asklootalk1",
-          "asklootalk2",
-          "gotheatre",
-          "theatre1",
-          "theatre2",
-          "theatre3c",
-          "theatre4",
-          "theatre5",
-          "theatre6",
-          "theatre7",
-          "theatre8",
-          "theatre9",
-          "theatre10",
-          "interval",
-          "interval1",
-          "luckytrip1",
-          "luckytrip1a",
-          "interval3",
-          "act2",
-          "act2a",
-          "act2b",
-          "act2c",
-          "act2d",
-          "act2e",
-          "act2f",
-          "act2fa",
-          "act2g",
-          "act2h",
-          "leavetheatre",
-          "leavetheatre1",
-          "dianechoice",
-          "foyerbar1",
-          "foyerbar1a",
-          "foyerbar2",
-          "foyerbar3",
-          "stagedoor5",
-          "choosepub1",
-          "pubdrink",
-          "pubdrink1",
-          "pubdrink2",
-          "pubdrink3",
-          "pubdrink4",
-          "pubdrink4a",
-          "pubdrink5",
-          "pubdrink6",
-          "pubdrink7",
-          "pubdrink8",
-          "riverside2",
-          "riverside3",
-          "riverside7",
-          "riverside8",
-          "riverside9",
-          "riversidepath",
-          "riversidepath10a",
-          "riversidepath11a",
-          "riversidepath12x",
-          "riverside14",
-          "toiletclosed",
-          "riverside15",
-          "riverside16",
-          "riverside16a",
-          "busqueue",
-          "busqueue1",
-          "busqueue2",
-          "busqueue3",
-          "queue1a",
-          "watchblonde",
-          "busqueue6",
-          "busqueue6a",
-          "busqueue7",
-          "bushome",
-          "bushome1",
-          "bushome2",
-          "bushome3",
-          "bushome4",
-          "bushome5",
-          "bushome6",
-          "luckytrip17",
-          "luckytrip17a",
-          "luckytrip17b",
-          "gameover"
+        "groupId": "bus_stop",
+        "title": "Diane Gets Off the Bus",
+        "variants": [
+          {
+            "id": "20_church_lych_gate_glimpse",
+            "title": "Diane Pees by the Church",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buypinot",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "foyerbar1",
+              "foyerbar1a",
+              "foyerbar2",
+              "foyerbar3",
+              "stagedoor5",
+              "choosepub1",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "queue1a",
+              "watchblonde",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "luckytrip17",
+              "luckytrip17a",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 88
+          },
+          {
+            "id": "20b_rioja_bus_glimpse",
+            "title": "You Are Too Desperate to Walk Her Home",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buyrioja",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "stagedoor",
+              "stagedoor1",
+              "stagedoor2",
+              "stagedoor3",
+              "stagedoor4",
+              "stagedoor5",
+              "choosepub",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "busqueue4",
+              "busqueue5",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "peestop1",
+              "peestop2",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 89
+          }
         ],
-        "baseLength": 94
+        "order": 10
       },
       {
         "id": "21_hidden_camera",
         "order": 11,
         "title": "Your Brother's Hidden Bathroom Camera",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -4169,14 +4242,13 @@
           "hiddencamera1",
           "gameover"
         ],
-        "baseLength": 42
+        "baseLength": 41
       },
       {
         "id": "26_train_photo_album",
         "order": 12,
         "title": "You Show Diane Your Train Photo Album",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -4234,14 +4306,13 @@
           "sofatrains7",
           "stampalbum7"
         ],
-        "baseLength": 43
+        "baseLength": 42
       },
       {
         "id": "23_brooch",
         "order": 13,
         "title": "Giving Diane the Brooch",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -4294,7 +4365,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 49
+        "baseLength": 48
       },
       {
         "groupId": "sofa_bathroom",
@@ -4304,7 +4375,6 @@
             "id": "25_lootogether",
             "title": "You Follow Diane into the Loo",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -4465,13 +4535,12 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 153
+            "baseLength": 152
           },
           {
             "id": "27_bath_peeing",
-            "title": "Diane Peeing in the Bath",
+            "title": "Diane Pees in the Bath",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -4622,7 +4691,7 @@
               "secondplace",
               "secondplace1"
             ],
-            "baseLength": 146
+            "baseLength": 145
           }
         ],
         "order": 14
@@ -4632,7 +4701,6 @@
         "order": 15,
         "title": "Diane Phones You the Next Morning",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -4804,7 +4872,7 @@
           "showover2",
           "gameover"
         ],
-        "baseLength": 168
+        "baseLength": 167
       }
     ]
   },
@@ -4815,7 +4883,6 @@
         "order": 1,
         "title": "一等奖",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -5006,14 +5073,13 @@
           "triumph"
         ],
         "baseLength": 2,
-        "climaxIndex": 177
+        "climaxIndex": 176
       },
       {
         "id": "05_second_prize",
         "order": 2,
         "title": "二等奖",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -5170,14 +5236,13 @@
           "secondplace1"
         ],
         "baseLength": 2,
-        "climaxIndex": 144
+        "climaxIndex": 143
       },
       {
         "id": "01_third_prize",
         "order": 3,
         "title": "三等奖",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -5242,14 +5307,13 @@
           "legsz3"
         ],
         "baseLength": 2,
-        "climaxIndex": 40
+        "climaxIndex": 39
       },
       {
         "id": "02_fourth_prize",
         "order": 4,
         "title": "四等奖",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -5406,14 +5470,13 @@
           "helphersquat3"
         ],
         "baseLength": 2,
-        "climaxIndex": 149
+        "climaxIndex": 148
       },
       {
         "id": "04_fifth_prize",
         "order": 5,
         "title": "五等奖",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -5475,14 +5538,13 @@
           "gobathroom3"
         ],
         "baseLength": 2,
-        "climaxIndex": 45
+        "climaxIndex": 44
       },
       {
         "id": "09_amanda_consolation",
         "order": 6,
         "title": "阿曼达安慰奖",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -5604,7 +5666,7 @@
           "luckytrip31e"
         ],
         "baseLength": 2,
-        "climaxIndex": 107
+        "climaxIndex": 106
       },
       {
         "groupId": "08_chloe",
@@ -5615,7 +5677,6 @@
             "id": "08a_chloe_consolation",
             "title": "克洛伊尿湿内裤",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -5671,13 +5732,12 @@
               "watching6"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           },
           {
             "id": "08b_chloe_outside",
             "title": "克洛伊在屋旁小便",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -5733,7 +5793,7 @@
               "gameover"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           }
         ]
       },
@@ -5746,7 +5806,6 @@
             "id": "07a_consolation_tuesday_pavilion",
             "title": "周二凉亭路线",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -5866,13 +5925,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 108
+            "climaxIndex": 107
           },
           {
             "id": "07b_consolation_thursday_subway",
             "title": "周四地下通道路线",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "thursdaydate",
@@ -5989,13 +6047,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 106
+            "climaxIndex": 105
           },
           {
             "id": "07c_consolation_saturday_car_park",
             "title": "周六停车场路线",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -6107,7 +6164,7 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 105
+            "climaxIndex": 104
           }
         ]
       },
@@ -6120,7 +6177,6 @@
             "id": "06a_lounge_hen_party",
             "title": "婚前派对",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -6277,13 +6333,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 148
+            "climaxIndex": 147
           },
           {
             "id": "06b_lounge_bus_boy",
             "title": "公交车上的男生",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -6432,13 +6487,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 140
+            "climaxIndex": 139
           },
           {
             "id": "06c_lounge_chess_lesson",
             "title": "下棋课",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -6597,13 +6651,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
             "title": "迎新周",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -6762,7 +6815,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -6773,7 +6826,6 @@
         "order": 1,
         "title": "剧院里回想第一次见到黛安",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -6806,7 +6858,7 @@
           "theatre3c",
           "theatre4"
         ],
-        "baseLength": 30
+        "baseLength": 29
       },
       {
         "groupId": "portaloo",
@@ -6816,7 +6868,6 @@
             "id": "02_portaloo_ladies_first",
             "title": "帮黛安找到隐藏的移动厕所",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -6892,13 +6943,12 @@
               "luckytrip16a1",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           },
           {
             "id": "03_portaloo_too_embarrassed",
-            "title": "过于直接地提醒她移动厕所",
+            "title": "过于直白地提起移动厕所",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -6974,7 +7024,7 @@
               "luckytrip16ba",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 2
@@ -6984,7 +7034,6 @@
         "order": 3,
         "title": "罗伯特带你偷看桥下的黛安和莫莉",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -7063,7 +7112,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 70
+        "baseLength": 69
       },
       {
         "groupId": "molly_towpath",
@@ -7073,7 +7122,6 @@
             "id": "05_molly_bruno_towpath",
             "title": "偷看莫莉在废料箱后面撒尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -7167,13 +7215,12 @@
               "luckytrip4a",
               "luckytrip4b"
             ],
-            "baseLength": 89
+            "baseLength": 88
           },
           {
             "id": "06_diane_slips_away_while_watching_molly",
             "title": "你偷看莫莉时黛安也悄悄离开",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -7259,7 +7306,7 @@
               "luckytrip4c",
               "luckytrip4d"
             ],
-            "baseLength": 79
+            "baseLength": 78
           }
         ],
         "order": 4
@@ -7270,9 +7317,8 @@
         "variants": [
           {
             "id": "07_riverside_bushes_diane",
-            "title": "黛安去河边灌木后面方便",
+            "title": "黛安在河边灌木后面小便",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -7356,13 +7402,12 @@
               "helpdiane1aa",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "09_riverside_bushes_together",
-            "title": "你和黛安一起去灌木后面方便",
+            "title": "你和黛安都在灌木后面小便",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -7446,7 +7491,7 @@
               "together2",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           }
         ],
         "order": 5
@@ -7456,7 +7501,6 @@
         "order": 6,
         "title": "黛安在河边台阶上憋不住",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -7541,17 +7585,16 @@
           "together1a",
           "together1b"
         ],
-        "baseLength": 80
+        "baseLength": 79
       },
       {
         "groupId": "spyhole",
-        "title": "公厕窥视孔",
+        "title": "公厕偷窥孔",
         "variants": [
           {
             "id": "10_public_toilet_spyhole",
-            "title": "公共厕所里的偷看孔和遗落的内裤",
+            "title": "公共厕所里的偷窥孔和遗落的内裤",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -7643,13 +7686,12 @@
               "luckytrip5tue2",
               "gameover"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "11_public_toilet_spyhole_stockings",
-            "title": "公共厕所里的偷看孔和黛安的丝袜",
+            "title": "公共厕所里的偷窥孔和黛安的丝袜",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -7729,20 +7771,19 @@
               "luckytrip5cd",
               "riverside15"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 7
       },
       {
         "groupId": "closed_toilet",
-        "title": "关闭的厕所楼",
+        "title": "关门的厕所",
         "variants": [
           {
             "id": "12_closed_toilet_building_lookout",
-            "title": "黛安绕到关门的厕所后面方便",
+            "title": "黛安在关门的厕所后面小便",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -7828,13 +7869,12 @@
               "toiletclosed2a",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "13_closed_toilet_building_together",
-            "title": "和黛安轮流到关门的厕所后面方便",
+            "title": "和黛安轮流在关门的厕所后面小便",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -7920,13 +7960,12 @@
               "toiletclosed2b",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "14_closed_toilet_building_bad_choice",
             "title": "在关门的厕所前让黛安继续憋着",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -8012,13 +8051,12 @@
               "toiletclosed2c",
               "gameover"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "15_riverside_gents_urinal",
             "title": "黛安使用男厕小便池",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -8105,20 +8143,19 @@
               "urinal",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           }
         ],
         "order": 8
       },
       {
         "groupId": "camper",
-        "title": "房车旁的棕发女孩",
+        "title": "房车旁的褐发女生",
         "variants": [
           {
             "id": "28_luckshot_brunette_camper",
-            "title": "偷看褐发女生在房车后面撒尿",
+            "title": "偷看房车后面的褐发女生",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -8228,13 +8265,12 @@
               "carpark2",
               "carpark3"
             ],
-            "baseLength": 105
+            "baseLength": 104
           },
           {
             "id": "16_brunette_behind_camper",
-            "title": "褐发女生尿在你刚尿过的地方",
+            "title": "褐发女生在你刚尿过的地方又尿一泡",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -8343,13 +8379,12 @@
               "carpark1",
               "carpark2"
             ],
-            "baseLength": 102
+            "baseLength": 101
           },
           {
             "id": "17_diane_brunette_camper_round",
-            "title": "黛安和褐发女生一起到房车后面方便",
+            "title": "黛安和褐发女生在房车后面撒尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -8461,13 +8496,12 @@
               "peepround",
               "peepround1"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "18_diane_brunette_camper_under",
             "title": "从房车底下偷看",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -8579,13 +8613,12 @@
               "peepunder",
               "peepunderluck"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "19_camper_gentleman_choice",
             "title": "选择不偷看黛安和褐发女生",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -8697,13 +8730,12 @@
               "gentleman",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "22_caught_by_boyfriend",
             "title": "被褐发女生的男友抓包",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -8816,123 +8848,232 @@
               "peepunderrisk",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           }
         ],
         "order": 9
       },
       {
-        "id": "20_church_lych_gate_glimpse",
-        "order": 10,
-        "title": "墓园门廊一瞥",
-        "tags": [
-          "start",
-          "start1a",
-          "start1b",
-          "thursdaydate",
-          "start2",
-          "gothere",
-          "winelist",
-          "buypinot",
-          "eatmeal",
-          "buysteak",
-          "steak3",
-          "eatmeal6",
-          "eatmeal6a",
-          "eatmeal6b",
-          "eatmeal6c",
-          "eatmeal5c",
-          "asklootalk",
-          "asklootalk1",
-          "asklootalk2",
-          "gotheatre",
-          "theatre1",
-          "theatre2",
-          "theatre3c",
-          "theatre4",
-          "theatre5",
-          "theatre6",
-          "theatre7",
-          "theatre8",
-          "theatre9",
-          "theatre10",
-          "interval",
-          "interval1",
-          "luckytrip1",
-          "luckytrip1a",
-          "interval3",
-          "act2",
-          "act2a",
-          "act2b",
-          "act2c",
-          "act2d",
-          "act2e",
-          "act2f",
-          "act2fa",
-          "act2g",
-          "act2h",
-          "leavetheatre",
-          "leavetheatre1",
-          "dianechoice",
-          "foyerbar1",
-          "foyerbar1a",
-          "foyerbar2",
-          "foyerbar3",
-          "stagedoor5",
-          "choosepub1",
-          "pubdrink",
-          "pubdrink1",
-          "pubdrink2",
-          "pubdrink3",
-          "pubdrink4",
-          "pubdrink4a",
-          "pubdrink5",
-          "pubdrink6",
-          "pubdrink7",
-          "pubdrink8",
-          "riverside2",
-          "riverside3",
-          "riverside7",
-          "riverside8",
-          "riverside9",
-          "riversidepath",
-          "riversidepath10a",
-          "riversidepath11a",
-          "riversidepath12x",
-          "riverside14",
-          "toiletclosed",
-          "riverside15",
-          "riverside16",
-          "riverside16a",
-          "busqueue",
-          "busqueue1",
-          "busqueue2",
-          "busqueue3",
-          "queue1a",
-          "watchblonde",
-          "busqueue6",
-          "busqueue6a",
-          "busqueue7",
-          "bushome",
-          "bushome1",
-          "bushome2",
-          "bushome3",
-          "bushome4",
-          "bushome5",
-          "bushome6",
-          "luckytrip17",
-          "luckytrip17a",
-          "luckytrip17b",
-          "gameover"
+        "groupId": "bus_stop",
+        "title": "黛安下了公交车",
+        "variants": [
+          {
+            "id": "20_church_lych_gate_glimpse",
+            "title": "黛安在教堂旁小便",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buypinot",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "foyerbar1",
+              "foyerbar1a",
+              "foyerbar2",
+              "foyerbar3",
+              "stagedoor5",
+              "choosepub1",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "queue1a",
+              "watchblonde",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "luckytrip17",
+              "luckytrip17a",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 88
+          },
+          {
+            "id": "20b_rioja_bus_glimpse",
+            "title": "你因尿急没法送她回家",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buyrioja",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "stagedoor",
+              "stagedoor1",
+              "stagedoor2",
+              "stagedoor3",
+              "stagedoor4",
+              "stagedoor5",
+              "choosepub",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "busqueue4",
+              "busqueue5",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "peestop1",
+              "peestop2",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 89
+          }
         ],
-        "baseLength": 94
+        "order": 10
       },
       {
         "id": "21_hidden_camera",
         "order": 11,
         "title": "弟弟的浴室隐藏摄像头",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -8978,14 +9119,13 @@
           "hiddencamera1",
           "gameover"
         ],
-        "baseLength": 42
+        "baseLength": 41
       },
       {
         "id": "26_train_photo_album",
         "order": 12,
         "title": "你给黛安看火车相册",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -9043,14 +9183,13 @@
           "sofatrains7",
           "stampalbum7"
         ],
-        "baseLength": 43
+        "baseLength": 42
       },
       {
         "id": "23_brooch",
         "order": 13,
         "title": "把胸针送给黛安",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -9103,7 +9242,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 49
+        "baseLength": 48
       },
       {
         "groupId": "sofa_bathroom",
@@ -9113,7 +9252,6 @@
             "id": "25_lootogether",
             "title": "你跟着黛安进了厕所",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -9274,13 +9412,12 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 153
+            "baseLength": 152
           },
           {
             "id": "27_bath_peeing",
-            "title": "黛安在浴缸里尿",
+            "title": "黛安在浴缸里小便",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -9431,7 +9568,7 @@
               "secondplace",
               "secondplace1"
             ],
-            "baseLength": 146
+            "baseLength": 145
           }
         ],
         "order": 14
@@ -9441,7 +9578,6 @@
         "order": 15,
         "title": "次日清晨黛安来电",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -9613,7 +9749,7 @@
           "showover2",
           "gameover"
         ],
-        "baseLength": 168
+        "baseLength": 167
       }
     ]
   },
@@ -9624,7 +9760,6 @@
         "order": 1,
         "title": "Primer premio",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -9815,14 +9950,13 @@
           "triumph"
         ],
         "baseLength": 2,
-        "climaxIndex": 177
+        "climaxIndex": 176
       },
       {
         "id": "05_second_prize",
         "order": 2,
         "title": "Segundo premio",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -9979,14 +10113,13 @@
           "secondplace1"
         ],
         "baseLength": 2,
-        "climaxIndex": 144
+        "climaxIndex": 143
       },
       {
         "id": "01_third_prize",
         "order": 3,
         "title": "Tercer premio",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -10051,14 +10184,13 @@
           "legsz3"
         ],
         "baseLength": 2,
-        "climaxIndex": 40
+        "climaxIndex": 39
       },
       {
         "id": "02_fourth_prize",
         "order": 4,
         "title": "Cuarto premio",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -10215,14 +10347,13 @@
           "helphersquat3"
         ],
         "baseLength": 2,
-        "climaxIndex": 149
+        "climaxIndex": 148
       },
       {
         "id": "04_fifth_prize",
         "order": 5,
         "title": "Quinto premio",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -10284,14 +10415,13 @@
           "gobathroom3"
         ],
         "baseLength": 2,
-        "climaxIndex": 45
+        "climaxIndex": 44
       },
       {
         "id": "09_amanda_consolation",
         "order": 6,
         "title": "Premio de consolación de Amanda",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -10413,7 +10543,7 @@
           "luckytrip31e"
         ],
         "baseLength": 2,
-        "climaxIndex": 107
+        "climaxIndex": 106
       },
       {
         "groupId": "08_chloe",
@@ -10424,7 +10554,6 @@
             "id": "08a_chloe_consolation",
             "title": "Chloe se moja las bragas",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -10480,13 +10609,12 @@
               "watching6"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           },
           {
             "id": "08b_chloe_outside",
             "title": "Chloe orina al lado de su casa",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -10542,7 +10670,7 @@
               "gameover"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           }
         ]
       },
@@ -10555,7 +10683,6 @@
             "id": "07a_consolation_tuesday_pavilion",
             "title": "Ruta del martes del Pavilion",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -10675,13 +10802,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 108
+            "climaxIndex": 107
           },
           {
             "id": "07b_consolation_thursday_subway",
             "title": "Ruta del jueves por el paso subterráneo",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "thursdaydate",
@@ -10798,13 +10924,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 106
+            "climaxIndex": 105
           },
           {
             "id": "07c_consolation_saturday_car_park",
             "title": "Ruta del sábado por el aparcamiento",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -10916,7 +11041,7 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 105
+            "climaxIndex": 104
           }
         ]
       },
@@ -10929,7 +11054,6 @@
             "id": "06a_lounge_hen_party",
             "title": "Despedida de soltera",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11086,13 +11210,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 148
+            "climaxIndex": 147
           },
           {
             "id": "06b_lounge_bus_boy",
             "title": "El chico del colegio en el bus",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11241,13 +11364,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 140
+            "climaxIndex": 139
           },
           {
             "id": "06c_lounge_chess_lesson",
             "title": "Lección de ajedrez",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11406,13 +11528,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
             "title": "Semana de bienvenida",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11571,7 +11692,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -11582,7 +11703,6 @@
         "order": 1,
         "title": "Recuerdo en el teatro de la primera vez que viste a Diane",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -11615,7 +11735,7 @@
           "theatre3c",
           "theatre4"
         ],
-        "baseLength": 30
+        "baseLength": 29
       },
       {
         "groupId": "portaloo",
@@ -11625,7 +11745,6 @@
             "id": "02_portaloo_ladies_first",
             "title": "Encontrar el baño portátil oculto para Diane",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11701,13 +11820,12 @@
               "luckytrip16a1",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           },
           {
             "id": "03_portaloo_too_embarrassed",
             "title": "Ofrecer el baño portátil de forma demasiado directa",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11783,7 +11901,7 @@
               "luckytrip16ba",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 2
@@ -11793,7 +11911,6 @@
         "order": 3,
         "title": "Robert te lleva a espiar a Diane y Molly bajo el puente",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -11872,7 +11989,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 70
+        "baseLength": 69
       },
       {
         "groupId": "molly_towpath",
@@ -11882,7 +11999,6 @@
             "id": "05_molly_bruno_towpath",
             "title": "Ver a Molly detrás del contenedor de obra",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -11976,13 +12092,12 @@
               "luckytrip4a",
               "luckytrip4b"
             ],
-            "baseLength": 89
+            "baseLength": 88
           },
           {
             "id": "06_diane_slips_away_while_watching_molly",
             "title": "Diane se escapa mientras miras a Molly",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -12068,7 +12183,7 @@
               "luckytrip4c",
               "luckytrip4d"
             ],
-            "baseLength": 79
+            "baseLength": 78
           }
         ],
         "order": 4
@@ -12079,9 +12194,8 @@
         "variants": [
           {
             "id": "07_riverside_bushes_diane",
-            "title": "Diane va detrás de los arbustos junto al río",
+            "title": "Diane orina detrás de los arbustos junto al río",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -12165,13 +12279,12 @@
               "helpdiane1aa",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "09_riverside_bushes_together",
-            "title": "Tú y Diane vais juntos detrás de los arbustos",
+            "title": "Tú y Diane hacéis pis detrás de los arbustos",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -12255,7 +12368,7 @@
               "together2",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           }
         ],
         "order": 5
@@ -12265,7 +12378,6 @@
         "order": 6,
         "title": "Diane no aguanta en las escaleras del sendero",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -12350,7 +12462,7 @@
           "together1a",
           "together1b"
         ],
-        "baseLength": 80
+        "baseLength": 79
       },
       {
         "groupId": "spyhole",
@@ -12358,9 +12470,8 @@
         "variants": [
           {
             "id": "10_public_toilet_spyhole",
-            "title": "El agujero para espiar en el baño público y las bragas abandonadas",
+            "title": "La mirilla del baño público y las bragas abandonadas",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -12452,13 +12563,12 @@
               "luckytrip5tue2",
               "gameover"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "11_public_toilet_spyhole_stockings",
-            "title": "El agujero para espiar del baño público y las medias de Diane",
+            "title": "La mirilla del baño público y las medias de Diane",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -12538,20 +12648,19 @@
               "luckytrip5cd",
               "riverside15"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 7
       },
       {
         "groupId": "closed_toilet",
-        "title": "Edificio de baños cerrado",
+        "title": "Baño cerrado",
         "variants": [
           {
             "id": "12_closed_toilet_building_lookout",
-            "title": "Diane va detrás del baño cerrado",
+            "title": "Diane orina detrás del baño cerrado",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -12637,13 +12746,12 @@
               "toiletclosed2a",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "13_closed_toilet_building_together",
-            "title": "Turnarse detrás del baño cerrado",
+            "title": "Turnarse a hacer pis detrás del baño cerrado",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -12729,13 +12837,12 @@
               "toiletclosed2b",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "14_closed_toilet_building_bad_choice",
             "title": "Pedirle a Diane que aguante en el baño cerrado",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -12821,13 +12928,12 @@
               "toiletclosed2c",
               "gameover"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "15_riverside_gents_urinal",
             "title": "Diane usa el urinario de caballeros",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -12914,7 +13020,7 @@
               "urinal",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           }
         ],
         "order": 8
@@ -12925,9 +13031,8 @@
         "variants": [
           {
             "id": "28_luckshot_brunette_camper",
-            "title": "Ver a la morena detrás de la autocaravana",
+            "title": "Espiar a la morena detrás de la autocaravana",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -13037,13 +13142,12 @@
               "carpark2",
               "carpark3"
             ],
-            "baseLength": 105
+            "baseLength": 104
           },
           {
             "id": "16_brunette_behind_camper",
             "title": "La morena hace pis donde acabas de hacer pis",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -13152,13 +13256,12 @@
               "carpark1",
               "carpark2"
             ],
-            "baseLength": 102
+            "baseLength": 101
           },
           {
             "id": "17_diane_brunette_camper_round",
-            "title": "Diane y la morena detrás de la autocaravana",
+            "title": "Diane y la morena hacen pis detrás de la autocaravana",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -13270,13 +13373,12 @@
               "peepround",
               "peepround1"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "18_diane_brunette_camper_under",
             "title": "Espiar por debajo de la autocaravana",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -13388,13 +13490,12 @@
               "peepunder",
               "peepunderluck"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "19_camper_gentleman_choice",
             "title": "No mirar a Diane y a la morena",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -13506,13 +13607,12 @@
               "gentleman",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "22_caught_by_boyfriend",
             "title": "Pillado por el novio de la morena",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -13625,123 +13725,232 @@
               "peepunderrisk",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           }
         ],
         "order": 9
       },
       {
-        "id": "20_church_lych_gate_glimpse",
-        "order": 10,
-        "title": "Vistazo en el pórtico de la iglesia",
-        "tags": [
-          "start",
-          "start1a",
-          "start1b",
-          "thursdaydate",
-          "start2",
-          "gothere",
-          "winelist",
-          "buypinot",
-          "eatmeal",
-          "buysteak",
-          "steak3",
-          "eatmeal6",
-          "eatmeal6a",
-          "eatmeal6b",
-          "eatmeal6c",
-          "eatmeal5c",
-          "asklootalk",
-          "asklootalk1",
-          "asklootalk2",
-          "gotheatre",
-          "theatre1",
-          "theatre2",
-          "theatre3c",
-          "theatre4",
-          "theatre5",
-          "theatre6",
-          "theatre7",
-          "theatre8",
-          "theatre9",
-          "theatre10",
-          "interval",
-          "interval1",
-          "luckytrip1",
-          "luckytrip1a",
-          "interval3",
-          "act2",
-          "act2a",
-          "act2b",
-          "act2c",
-          "act2d",
-          "act2e",
-          "act2f",
-          "act2fa",
-          "act2g",
-          "act2h",
-          "leavetheatre",
-          "leavetheatre1",
-          "dianechoice",
-          "foyerbar1",
-          "foyerbar1a",
-          "foyerbar2",
-          "foyerbar3",
-          "stagedoor5",
-          "choosepub1",
-          "pubdrink",
-          "pubdrink1",
-          "pubdrink2",
-          "pubdrink3",
-          "pubdrink4",
-          "pubdrink4a",
-          "pubdrink5",
-          "pubdrink6",
-          "pubdrink7",
-          "pubdrink8",
-          "riverside2",
-          "riverside3",
-          "riverside7",
-          "riverside8",
-          "riverside9",
-          "riversidepath",
-          "riversidepath10a",
-          "riversidepath11a",
-          "riversidepath12x",
-          "riverside14",
-          "toiletclosed",
-          "riverside15",
-          "riverside16",
-          "riverside16a",
-          "busqueue",
-          "busqueue1",
-          "busqueue2",
-          "busqueue3",
-          "queue1a",
-          "watchblonde",
-          "busqueue6",
-          "busqueue6a",
-          "busqueue7",
-          "bushome",
-          "bushome1",
-          "bushome2",
-          "bushome3",
-          "bushome4",
-          "bushome5",
-          "bushome6",
-          "luckytrip17",
-          "luckytrip17a",
-          "luckytrip17b",
-          "gameover"
+        "groupId": "bus_stop",
+        "title": "Diane baja del autobús",
+        "variants": [
+          {
+            "id": "20_church_lych_gate_glimpse",
+            "title": "Diane orina junto a la iglesia",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buypinot",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "foyerbar1",
+              "foyerbar1a",
+              "foyerbar2",
+              "foyerbar3",
+              "stagedoor5",
+              "choosepub1",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "queue1a",
+              "watchblonde",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "luckytrip17",
+              "luckytrip17a",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 88
+          },
+          {
+            "id": "20b_rioja_bus_glimpse",
+            "title": "Estás demasiado apurado para acompañarla a casa",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buyrioja",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "stagedoor",
+              "stagedoor1",
+              "stagedoor2",
+              "stagedoor3",
+              "stagedoor4",
+              "stagedoor5",
+              "choosepub",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "busqueue4",
+              "busqueue5",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "peestop1",
+              "peestop2",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 89
+          }
         ],
-        "baseLength": 94
+        "order": 10
       },
       {
         "id": "21_hidden_camera",
         "order": 11,
         "title": "La cámara oculta de tu hermano en el baño",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -13787,14 +13996,13 @@
           "hiddencamera1",
           "gameover"
         ],
-        "baseLength": 42
+        "baseLength": 41
       },
       {
         "id": "26_train_photo_album",
         "order": 12,
         "title": "Le muestras a Diane tu álbum de trenes",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -13852,14 +14060,13 @@
           "sofatrains7",
           "stampalbum7"
         ],
-        "baseLength": 43
+        "baseLength": 42
       },
       {
         "id": "23_brooch",
         "order": 13,
         "title": "Regalarle el broche a Diane",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -13912,7 +14119,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 49
+        "baseLength": 48
       },
       {
         "groupId": "sofa_bathroom",
@@ -13922,7 +14129,6 @@
             "id": "25_lootogether",
             "title": "Sigues a Diane al baño",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -14083,13 +14289,12 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 153
+            "baseLength": 152
           },
           {
             "id": "27_bath_peeing",
             "title": "Diane orina en la bañera",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -14240,7 +14445,7 @@
               "secondplace",
               "secondplace1"
             ],
-            "baseLength": 146
+            "baseLength": 145
           }
         ],
         "order": 14
@@ -14250,7 +14455,6 @@
         "order": 15,
         "title": "Diane te llama a la mañana siguiente",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -14422,7 +14626,7 @@
           "showover2",
           "gameover"
         ],
-        "baseLength": 168
+        "baseLength": 167
       }
     ]
   },
@@ -14433,7 +14637,6 @@
         "order": 1,
         "title": "Premier prix",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -14624,14 +14827,13 @@
           "triumph"
         ],
         "baseLength": 2,
-        "climaxIndex": 177
+        "climaxIndex": 176
       },
       {
         "id": "05_second_prize",
         "order": 2,
         "title": "Deuxième prix",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -14788,14 +14990,13 @@
           "secondplace1"
         ],
         "baseLength": 2,
-        "climaxIndex": 144
+        "climaxIndex": 143
       },
       {
         "id": "01_third_prize",
         "order": 3,
         "title": "Troisième prix",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -14860,14 +15061,13 @@
           "legsz3"
         ],
         "baseLength": 2,
-        "climaxIndex": 40
+        "climaxIndex": 39
       },
       {
         "id": "02_fourth_prize",
         "order": 4,
         "title": "Quatrième prix",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -15024,14 +15224,13 @@
           "helphersquat3"
         ],
         "baseLength": 2,
-        "climaxIndex": 149
+        "climaxIndex": 148
       },
       {
         "id": "04_fifth_prize",
         "order": 5,
         "title": "Cinquième prix",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -15093,14 +15292,13 @@
           "gobathroom3"
         ],
         "baseLength": 2,
-        "climaxIndex": 45
+        "climaxIndex": 44
       },
       {
         "id": "09_amanda_consolation",
         "order": 6,
         "title": "Prix de consolation d'Amanda",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -15222,7 +15420,7 @@
           "luckytrip31e"
         ],
         "baseLength": 2,
-        "climaxIndex": 107
+        "climaxIndex": 106
       },
       {
         "groupId": "08_chloe",
@@ -15233,7 +15431,6 @@
             "id": "08a_chloe_consolation",
             "title": "Chloe mouille sa culotte",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -15289,13 +15486,12 @@
               "watching6"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           },
           {
             "id": "08b_chloe_outside",
             "title": "Chloe fait pipi à côté de sa maison",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -15351,7 +15547,7 @@
               "gameover"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           }
         ]
       },
@@ -15364,7 +15560,6 @@
             "id": "07a_consolation_tuesday_pavilion",
             "title": "Route du mardi au Pavilion",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -15484,13 +15679,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 108
+            "climaxIndex": 107
           },
           {
             "id": "07b_consolation_thursday_subway",
             "title": "Route du jeudi par le passage souterrain",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "thursdaydate",
@@ -15607,13 +15801,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 106
+            "climaxIndex": 105
           },
           {
             "id": "07c_consolation_saturday_car_park",
             "title": "Route du samedi par le parking",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -15725,7 +15918,7 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 105
+            "climaxIndex": 104
           }
         ]
       },
@@ -15738,7 +15931,6 @@
             "id": "06a_lounge_hen_party",
             "title": "Enterrement de vie de jeune fille",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -15895,13 +16087,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 148
+            "climaxIndex": 147
           },
           {
             "id": "06b_lounge_bus_boy",
             "title": "Le garçon de l’école dans le bus",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16050,13 +16241,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 140
+            "climaxIndex": 139
           },
           {
             "id": "06c_lounge_chess_lesson",
             "title": "Leçon d’échecs",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16215,13 +16405,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
             "title": "Semaine d’intégration",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16380,7 +16569,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -16391,7 +16580,6 @@
         "order": 1,
         "title": "Souvenir au théâtre de la première fois où vous avez vu Diane",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -16424,7 +16612,7 @@
           "theatre3c",
           "theatre4"
         ],
-        "baseLength": 30
+        "baseLength": 29
       },
       {
         "groupId": "portaloo",
@@ -16434,7 +16622,6 @@
             "id": "02_portaloo_ladies_first",
             "title": "Trouver les toilettes portatives cachées pour Diane",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16510,13 +16697,12 @@
               "luckytrip16a1",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           },
           {
             "id": "03_portaloo_too_embarrassed",
             "title": "Proposer les toilettes portatives trop directement",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16592,7 +16778,7 @@
               "luckytrip16ba",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 2
@@ -16602,7 +16788,6 @@
         "order": 3,
         "title": "Robert vous emmène espionner Diane et Molly sous le pont",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -16681,7 +16866,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 70
+        "baseLength": 69
       },
       {
         "groupId": "molly_towpath",
@@ -16691,7 +16876,6 @@
             "id": "05_molly_bruno_towpath",
             "title": "Regarder Molly derrière la benne de chantier",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16785,13 +16969,12 @@
               "luckytrip4a",
               "luckytrip4b"
             ],
-            "baseLength": 89
+            "baseLength": 88
           },
           {
             "id": "06_diane_slips_away_while_watching_molly",
             "title": "Diane s'éclipse pendant que vous regardez Molly",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16877,7 +17060,7 @@
               "luckytrip4c",
               "luckytrip4d"
             ],
-            "baseLength": 79
+            "baseLength": 78
           }
         ],
         "order": 4
@@ -16888,9 +17071,8 @@
         "variants": [
           {
             "id": "07_riverside_bushes_diane",
-            "title": "Diane va derrière les buissons au bord de la rivière",
+            "title": "Diane fait pipi derrière les buissons au bord de la rivière",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -16974,13 +17156,12 @@
               "helpdiane1aa",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "09_riverside_bushes_together",
-            "title": "Vous et Diane allez tous les deux derrière les buissons",
+            "title": "Vous et Diane faites tous les deux pipi derrière les buissons",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -17064,7 +17245,7 @@
               "together2",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           }
         ],
         "order": 5
@@ -17074,7 +17255,6 @@
         "order": 6,
         "title": "Diane ne tient plus dans les marches du chemin de halage",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -17159,7 +17339,7 @@
           "together1a",
           "together1b"
         ],
-        "baseLength": 80
+        "baseLength": 79
       },
       {
         "groupId": "spyhole",
@@ -17167,9 +17347,8 @@
         "variants": [
           {
             "id": "10_public_toilet_spyhole",
-            "title": "Le trou d'espionnage des toilettes publiques et la culotte abandonnée",
+            "title": "Le judas des toilettes publiques et la culotte abandonnée",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -17261,13 +17440,12 @@
               "luckytrip5tue2",
               "gameover"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "11_public_toilet_spyhole_stockings",
-            "title": "Le trou d'espionnage des toilettes publiques et les bas de Diane",
+            "title": "Le judas des toilettes publiques et les bas de Diane",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -17347,20 +17525,19 @@
               "luckytrip5cd",
               "riverside15"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 7
       },
       {
         "groupId": "closed_toilet",
-        "title": "Bâtiment des toilettes fermé",
+        "title": "Toilettes fermées",
         "variants": [
           {
             "id": "12_closed_toilet_building_lookout",
-            "title": "Diane va derrière les toilettes fermées",
+            "title": "Diane fait pipi derrière les toilettes fermées",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -17446,13 +17623,12 @@
               "toiletclosed2a",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "13_closed_toilet_building_together",
-            "title": "Se relayer derrière les toilettes fermées",
+            "title": "Se relayer pour faire pipi derrière les toilettes fermées",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -17538,13 +17714,12 @@
               "toiletclosed2b",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "14_closed_toilet_building_bad_choice",
             "title": "Demander à Diane de tenir devant les toilettes fermées",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -17630,13 +17805,12 @@
               "toiletclosed2c",
               "gameover"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "15_riverside_gents_urinal",
             "title": "Diane utilise l'urinoir des hommes",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -17723,7 +17897,7 @@
               "urinal",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           }
         ],
         "order": 8
@@ -17734,9 +17908,8 @@
         "variants": [
           {
             "id": "28_luckshot_brunette_camper",
-            "title": "Regarder la brune derrière le camping-car",
+            "title": "Espionner la brune derrière le camping-car",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -17846,13 +18019,12 @@
               "carpark2",
               "carpark3"
             ],
-            "baseLength": 105
+            "baseLength": 104
           },
           {
             "id": "16_brunette_behind_camper",
             "title": "La brune fait pipi là où vous venez de faire pipi",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -17961,13 +18133,12 @@
               "carpark1",
               "carpark2"
             ],
-            "baseLength": 102
+            "baseLength": 101
           },
           {
             "id": "17_diane_brunette_camper_round",
-            "title": "Diane et la brune derrière le camping-car",
+            "title": "Diane et la brune font pipi derrière le camping-car",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -18079,13 +18250,12 @@
               "peepround",
               "peepround1"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "18_diane_brunette_camper_under",
             "title": "Regarder sous le camping-car",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -18197,13 +18367,12 @@
               "peepunder",
               "peepunderluck"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "19_camper_gentleman_choice",
             "title": "Ne pas regarder Diane et la brune",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -18315,13 +18484,12 @@
               "gentleman",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "22_caught_by_boyfriend",
             "title": "Surpris par le petit ami de la brune",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -18434,123 +18602,232 @@
               "peepunderrisk",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           }
         ],
         "order": 9
       },
       {
-        "id": "20_church_lych_gate_glimpse",
-        "order": 10,
-        "title": "Aperçu sous le porche de l'église",
-        "tags": [
-          "start",
-          "start1a",
-          "start1b",
-          "thursdaydate",
-          "start2",
-          "gothere",
-          "winelist",
-          "buypinot",
-          "eatmeal",
-          "buysteak",
-          "steak3",
-          "eatmeal6",
-          "eatmeal6a",
-          "eatmeal6b",
-          "eatmeal6c",
-          "eatmeal5c",
-          "asklootalk",
-          "asklootalk1",
-          "asklootalk2",
-          "gotheatre",
-          "theatre1",
-          "theatre2",
-          "theatre3c",
-          "theatre4",
-          "theatre5",
-          "theatre6",
-          "theatre7",
-          "theatre8",
-          "theatre9",
-          "theatre10",
-          "interval",
-          "interval1",
-          "luckytrip1",
-          "luckytrip1a",
-          "interval3",
-          "act2",
-          "act2a",
-          "act2b",
-          "act2c",
-          "act2d",
-          "act2e",
-          "act2f",
-          "act2fa",
-          "act2g",
-          "act2h",
-          "leavetheatre",
-          "leavetheatre1",
-          "dianechoice",
-          "foyerbar1",
-          "foyerbar1a",
-          "foyerbar2",
-          "foyerbar3",
-          "stagedoor5",
-          "choosepub1",
-          "pubdrink",
-          "pubdrink1",
-          "pubdrink2",
-          "pubdrink3",
-          "pubdrink4",
-          "pubdrink4a",
-          "pubdrink5",
-          "pubdrink6",
-          "pubdrink7",
-          "pubdrink8",
-          "riverside2",
-          "riverside3",
-          "riverside7",
-          "riverside8",
-          "riverside9",
-          "riversidepath",
-          "riversidepath10a",
-          "riversidepath11a",
-          "riversidepath12x",
-          "riverside14",
-          "toiletclosed",
-          "riverside15",
-          "riverside16",
-          "riverside16a",
-          "busqueue",
-          "busqueue1",
-          "busqueue2",
-          "busqueue3",
-          "queue1a",
-          "watchblonde",
-          "busqueue6",
-          "busqueue6a",
-          "busqueue7",
-          "bushome",
-          "bushome1",
-          "bushome2",
-          "bushome3",
-          "bushome4",
-          "bushome5",
-          "bushome6",
-          "luckytrip17",
-          "luckytrip17a",
-          "luckytrip17b",
-          "gameover"
+        "groupId": "bus_stop",
+        "title": "Diane descend du bus",
+        "variants": [
+          {
+            "id": "20_church_lych_gate_glimpse",
+            "title": "Diane fait pipi près de l'église",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buypinot",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "foyerbar1",
+              "foyerbar1a",
+              "foyerbar2",
+              "foyerbar3",
+              "stagedoor5",
+              "choosepub1",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "queue1a",
+              "watchblonde",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "luckytrip17",
+              "luckytrip17a",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 88
+          },
+          {
+            "id": "20b_rioja_bus_glimpse",
+            "title": "Vous êtes trop pressé pour la raccompagner",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buyrioja",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "stagedoor",
+              "stagedoor1",
+              "stagedoor2",
+              "stagedoor3",
+              "stagedoor4",
+              "stagedoor5",
+              "choosepub",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "busqueue4",
+              "busqueue5",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "peestop1",
+              "peestop2",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 89
+          }
         ],
-        "baseLength": 94
+        "order": 10
       },
       {
         "id": "21_hidden_camera",
         "order": 11,
         "title": "La caméra cachée de votre frère dans la salle de bains",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -18596,14 +18873,13 @@
           "hiddencamera1",
           "gameover"
         ],
-        "baseLength": 42
+        "baseLength": 41
       },
       {
         "id": "26_train_photo_album",
         "order": 12,
         "title": "Vous montrez à Diane votre album de trains",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -18661,14 +18937,13 @@
           "sofatrains7",
           "stampalbum7"
         ],
-        "baseLength": 43
+        "baseLength": 42
       },
       {
         "id": "23_brooch",
         "order": 13,
         "title": "Offrir la broche à Diane",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -18721,7 +18996,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 49
+        "baseLength": 48
       },
       {
         "groupId": "sofa_bathroom",
@@ -18731,7 +19006,6 @@
             "id": "25_lootogether",
             "title": "Vous suivez Diane aux toilettes",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -18892,13 +19166,12 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 153
+            "baseLength": 152
           },
           {
             "id": "27_bath_peeing",
             "title": "Diane fait pipi dans la baignoire",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -19049,7 +19322,7 @@
               "secondplace",
               "secondplace1"
             ],
-            "baseLength": 146
+            "baseLength": 145
           }
         ],
         "order": 14
@@ -19059,7 +19332,6 @@
         "order": 15,
         "title": "Diane vous appelle le lendemain matin",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -19231,7 +19503,7 @@
           "showover2",
           "gameover"
         ],
-        "baseLength": 168
+        "baseLength": 167
       }
     ]
   },
@@ -19242,7 +19514,6 @@
         "order": 1,
         "title": "一等獎",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -19433,14 +19704,13 @@
           "triumph"
         ],
         "baseLength": 2,
-        "climaxIndex": 177
+        "climaxIndex": 176
       },
       {
         "id": "05_second_prize",
         "order": 2,
         "title": "二等獎",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -19597,14 +19867,13 @@
           "secondplace1"
         ],
         "baseLength": 2,
-        "climaxIndex": 144
+        "climaxIndex": 143
       },
       {
         "id": "01_third_prize",
         "order": 3,
         "title": "三等獎",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -19669,14 +19938,13 @@
           "legsz3"
         ],
         "baseLength": 2,
-        "climaxIndex": 40
+        "climaxIndex": 39
       },
       {
         "id": "02_fourth_prize",
         "order": 4,
         "title": "四等獎",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -19833,14 +20101,13 @@
           "helphersquat3"
         ],
         "baseLength": 2,
-        "climaxIndex": 149
+        "climaxIndex": 148
       },
       {
         "id": "04_fifth_prize",
         "order": 5,
         "title": "五等獎",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -19902,14 +20169,13 @@
           "gobathroom3"
         ],
         "baseLength": 2,
-        "climaxIndex": 45
+        "climaxIndex": 44
       },
       {
         "id": "09_amanda_consolation",
         "order": 6,
         "title": "阿曼達安慰獎",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -20031,7 +20297,7 @@
           "luckytrip31e"
         ],
         "baseLength": 2,
-        "climaxIndex": 107
+        "climaxIndex": 106
       },
       {
         "groupId": "08_chloe",
@@ -20042,7 +20308,6 @@
             "id": "08a_chloe_consolation",
             "title": "克洛伊尿濕內褲",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -20098,13 +20363,12 @@
               "watching6"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           },
           {
             "id": "08b_chloe_outside",
-            "title": "克洛伊在屋旁小便",
+            "title": "克洛伊在屋旁尿尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -20160,7 +20424,7 @@
               "gameover"
             ],
             "baseLength": 2,
-            "climaxIndex": 48
+            "climaxIndex": 47
           }
         ]
       },
@@ -20173,7 +20437,6 @@
             "id": "07a_consolation_tuesday_pavilion",
             "title": "週二涼亭路線",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -20293,13 +20556,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 108
+            "climaxIndex": 107
           },
           {
             "id": "07b_consolation_thursday_subway",
-            "title": "週四地下通道路線",
+            "title": "週四地下道路線",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "thursdaydate",
@@ -20416,13 +20678,12 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 106
+            "climaxIndex": 105
           },
           {
             "id": "07c_consolation_saturday_car_park",
             "title": "週六停車場路線",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -20534,7 +20795,7 @@
               "consolation"
             ],
             "baseLength": 2,
-            "climaxIndex": 105
+            "climaxIndex": 104
           }
         ]
       },
@@ -20547,7 +20808,6 @@
             "id": "06a_lounge_hen_party",
             "title": "單身派對",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -20704,13 +20964,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 148
+            "climaxIndex": 147
           },
           {
             "id": "06b_lounge_bus_boy",
             "title": "公車上的男生",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -20859,13 +21118,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 140
+            "climaxIndex": 139
           },
           {
             "id": "06c_lounge_chess_lesson",
-            "title": "下棋課",
+            "title": "西洋棋課",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21024,13 +21282,12 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
             "title": "迎新週",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21189,7 +21446,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -21200,7 +21457,6 @@
         "order": 1,
         "title": "劇院裡回想第一次見到黛安",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -21233,17 +21489,16 @@
           "theatre3c",
           "theatre4"
         ],
-        "baseLength": 30
+        "baseLength": 29
       },
       {
         "groupId": "portaloo",
-        "title": "河邊移動廁所",
+        "title": "河邊流動廁所",
         "variants": [
           {
             "id": "02_portaloo_ladies_first",
-            "title": "幫黛安找到隱藏的移動廁所",
+            "title": "幫黛安找到隱藏的流動廁所",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21319,13 +21574,12 @@
               "luckytrip16a1",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           },
           {
             "id": "03_portaloo_too_embarrassed",
-            "title": "過於直接地提醒她移動廁所",
+            "title": "過於直白地提起流動廁所",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21401,7 +21655,7 @@
               "luckytrip16ba",
               "riverside7"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 2
@@ -21411,7 +21665,6 @@
         "order": 3,
         "title": "羅伯特帶你偷看橋下的黛安和莫莉",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -21490,7 +21743,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 70
+        "baseLength": 69
       },
       {
         "groupId": "molly_towpath",
@@ -21498,9 +21751,8 @@
         "variants": [
           {
             "id": "05_molly_bruno_towpath",
-            "title": "偷看莫莉在廢料箱後面撒尿",
+            "title": "偷看莫莉在工地貨櫃後面撒尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21594,13 +21846,12 @@
               "luckytrip4a",
               "luckytrip4b"
             ],
-            "baseLength": 89
+            "baseLength": 88
           },
           {
             "id": "06_diane_slips_away_while_watching_molly",
             "title": "你偷看莫莉時黛安也悄悄離開",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21686,20 +21937,19 @@
               "luckytrip4c",
               "luckytrip4d"
             ],
-            "baseLength": 79
+            "baseLength": 78
           }
         ],
         "order": 4
       },
       {
         "groupId": "riverside_bushes",
-        "title": "河邊灌木後面",
+        "title": "河邊樹叢後面",
         "variants": [
           {
             "id": "07_riverside_bushes_diane",
-            "title": "黛安去河邊灌木後面方便",
+            "title": "黛安在河邊樹叢後面尿尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21783,13 +22033,12 @@
               "helpdiane1aa",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "09_riverside_bushes_together",
-            "title": "你和黛安一起去灌木後面方便",
+            "title": "你和黛安都在樹叢後面尿尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -21873,7 +22122,7 @@
               "together2",
               "helpdiane1b"
             ],
-            "baseLength": 80
+            "baseLength": 79
           }
         ],
         "order": 5
@@ -21883,7 +22132,6 @@
         "order": 6,
         "title": "黛安在河邊台階上憋不住",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -21968,17 +22216,16 @@
           "together1a",
           "together1b"
         ],
-        "baseLength": 80
+        "baseLength": 79
       },
       {
         "groupId": "spyhole",
-        "title": "公廁窺視孔",
+        "title": "公廁偷窺孔",
         "variants": [
           {
             "id": "10_public_toilet_spyhole",
-            "title": "公共廁所裡的偷看孔和遺落的內褲",
+            "title": "公共廁所裡的偷窺孔和遺落的內褲",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -22070,13 +22317,12 @@
               "luckytrip5tue2",
               "gameover"
             ],
-            "baseLength": 80
+            "baseLength": 79
           },
           {
             "id": "11_public_toilet_spyhole_stockings",
-            "title": "公共廁所裡的偷看孔和黛安的絲襪",
+            "title": "公共廁所裡的偷窺孔和黛安的絲襪",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -22156,20 +22402,19 @@
               "luckytrip5cd",
               "riverside15"
             ],
-            "baseLength": 71
+            "baseLength": 70
           }
         ],
         "order": 7
       },
       {
         "groupId": "closed_toilet",
-        "title": "關閉的廁所樓",
+        "title": "關門的廁所",
         "variants": [
           {
             "id": "12_closed_toilet_building_lookout",
-            "title": "黛安繞到關門的廁所後面方便",
+            "title": "黛安在關門的廁所後面尿尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -22255,13 +22500,12 @@
               "toiletclosed2a",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "13_closed_toilet_building_together",
-            "title": "和黛安輪流到關門的廁所後面方便",
+            "title": "和黛安輪流在關門的廁所後面尿尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -22347,13 +22591,12 @@
               "toiletclosed2b",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "14_closed_toilet_building_bad_choice",
             "title": "在關門的廁所前讓黛安繼續憋著",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -22439,13 +22682,12 @@
               "toiletclosed2c",
               "gameover"
             ],
-            "baseLength": 81
+            "baseLength": 80
           },
           {
             "id": "15_riverside_gents_urinal",
-            "title": "黛安使用男廁小便池",
+            "title": "黛安使用男廁小便斗",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -22532,20 +22774,19 @@
               "urinal",
               "riverside15"
             ],
-            "baseLength": 81
+            "baseLength": 80
           }
         ],
         "order": 8
       },
       {
         "groupId": "camper",
-        "title": "房車旁的棕髮女孩",
+        "title": "房車旁的褐髮女生",
         "variants": [
           {
             "id": "28_luckshot_brunette_camper",
-            "title": "偷看褐髮女生在房車後面撒尿",
+            "title": "偷看房車後面的褐髮女生",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -22655,13 +22896,12 @@
               "carpark2",
               "carpark3"
             ],
-            "baseLength": 105
+            "baseLength": 104
           },
           {
             "id": "16_brunette_behind_camper",
-            "title": "褐髮女生尿在你剛尿過的地方",
+            "title": "褐髮女生在你剛尿過的地方又尿一泡",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -22770,13 +23010,12 @@
               "carpark1",
               "carpark2"
             ],
-            "baseLength": 102
+            "baseLength": 101
           },
           {
             "id": "17_diane_brunette_camper_round",
-            "title": "黛安和褐髮女生一起到房車後面方便",
+            "title": "黛安和褐髮女生在房車後面撒尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -22888,13 +23127,12 @@
               "peepround",
               "peepround1"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "18_diane_brunette_camper_under",
             "title": "從房車底下偷看",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -23006,13 +23244,12 @@
               "peepunder",
               "peepunderluck"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "19_camper_gentleman_choice",
             "title": "選擇不偷看黛安和褐髮女生",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -23124,13 +23361,12 @@
               "gentleman",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           },
           {
             "id": "22_caught_by_boyfriend",
             "title": "被褐髮女生的男友抓包",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -23243,123 +23479,232 @@
               "peepunderrisk",
               "gameover"
             ],
-            "baseLength": 109
+            "baseLength": 108
           }
         ],
         "order": 9
       },
       {
-        "id": "20_church_lych_gate_glimpse",
-        "order": 10,
-        "title": "墓園門廊一瞥",
-        "tags": [
-          "start",
-          "start1a",
-          "start1b",
-          "thursdaydate",
-          "start2",
-          "gothere",
-          "winelist",
-          "buypinot",
-          "eatmeal",
-          "buysteak",
-          "steak3",
-          "eatmeal6",
-          "eatmeal6a",
-          "eatmeal6b",
-          "eatmeal6c",
-          "eatmeal5c",
-          "asklootalk",
-          "asklootalk1",
-          "asklootalk2",
-          "gotheatre",
-          "theatre1",
-          "theatre2",
-          "theatre3c",
-          "theatre4",
-          "theatre5",
-          "theatre6",
-          "theatre7",
-          "theatre8",
-          "theatre9",
-          "theatre10",
-          "interval",
-          "interval1",
-          "luckytrip1",
-          "luckytrip1a",
-          "interval3",
-          "act2",
-          "act2a",
-          "act2b",
-          "act2c",
-          "act2d",
-          "act2e",
-          "act2f",
-          "act2fa",
-          "act2g",
-          "act2h",
-          "leavetheatre",
-          "leavetheatre1",
-          "dianechoice",
-          "foyerbar1",
-          "foyerbar1a",
-          "foyerbar2",
-          "foyerbar3",
-          "stagedoor5",
-          "choosepub1",
-          "pubdrink",
-          "pubdrink1",
-          "pubdrink2",
-          "pubdrink3",
-          "pubdrink4",
-          "pubdrink4a",
-          "pubdrink5",
-          "pubdrink6",
-          "pubdrink7",
-          "pubdrink8",
-          "riverside2",
-          "riverside3",
-          "riverside7",
-          "riverside8",
-          "riverside9",
-          "riversidepath",
-          "riversidepath10a",
-          "riversidepath11a",
-          "riversidepath12x",
-          "riverside14",
-          "toiletclosed",
-          "riverside15",
-          "riverside16",
-          "riverside16a",
-          "busqueue",
-          "busqueue1",
-          "busqueue2",
-          "busqueue3",
-          "queue1a",
-          "watchblonde",
-          "busqueue6",
-          "busqueue6a",
-          "busqueue7",
-          "bushome",
-          "bushome1",
-          "bushome2",
-          "bushome3",
-          "bushome4",
-          "bushome5",
-          "bushome6",
-          "luckytrip17",
-          "luckytrip17a",
-          "luckytrip17b",
-          "gameover"
+        "groupId": "bus_stop",
+        "title": "黛安下了公車",
+        "variants": [
+          {
+            "id": "20_church_lych_gate_glimpse",
+            "title": "黛安在教堂旁尿尿",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buypinot",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "foyerbar1",
+              "foyerbar1a",
+              "foyerbar2",
+              "foyerbar3",
+              "stagedoor5",
+              "choosepub1",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "queue1a",
+              "watchblonde",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "luckytrip17",
+              "luckytrip17a",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 88
+          },
+          {
+            "id": "20b_rioja_bus_glimpse",
+            "title": "你因尿急沒辦法送她回家",
+            "tags": [
+              "start1a",
+              "start1b",
+              "thursdaydate",
+              "start2",
+              "gothere",
+              "winelist",
+              "buyrioja",
+              "eatmeal",
+              "buysteak",
+              "steak3",
+              "eatmeal6",
+              "eatmeal6a",
+              "eatmeal6b",
+              "eatmeal6c",
+              "eatmeal5c",
+              "asklootalk",
+              "asklootalk1",
+              "asklootalk2",
+              "gotheatre",
+              "theatre1",
+              "theatre2",
+              "theatre3c",
+              "theatre4",
+              "theatre5",
+              "theatre6",
+              "theatre7",
+              "theatre8",
+              "theatre9",
+              "theatre10",
+              "interval",
+              "interval1",
+              "luckytrip1",
+              "luckytrip1a",
+              "interval3",
+              "act2",
+              "act2a",
+              "act2b",
+              "act2c",
+              "act2d",
+              "act2e",
+              "act2f",
+              "act2fa",
+              "act2g",
+              "act2h",
+              "leavetheatre",
+              "leavetheatre1",
+              "dianechoice",
+              "stagedoor",
+              "stagedoor1",
+              "stagedoor2",
+              "stagedoor3",
+              "stagedoor4",
+              "stagedoor5",
+              "choosepub",
+              "pubdrink",
+              "pubdrink1",
+              "pubdrink2",
+              "pubdrink3",
+              "pubdrink4",
+              "pubdrink4a",
+              "pubdrink5",
+              "pubdrink6",
+              "pubdrink7",
+              "pubdrink8",
+              "riverside2",
+              "riverside3",
+              "riverside7",
+              "riverside8",
+              "riverside9",
+              "riversidepath",
+              "riversidepath10a",
+              "riversidepath11a",
+              "riversidepath12x",
+              "riverside14",
+              "toiletclosed",
+              "riverside15",
+              "riverside16",
+              "riverside16a",
+              "busqueue",
+              "busqueue1",
+              "busqueue2",
+              "busqueue3",
+              "busqueue4",
+              "busqueue5",
+              "busqueue6",
+              "busqueue6a",
+              "busqueue7",
+              "bushome",
+              "bushome1",
+              "bushome2",
+              "bushome3",
+              "bushome4",
+              "bushome5",
+              "bushome6",
+              "peestop1",
+              "peestop2",
+              "luckytrip17b",
+              "gameover"
+            ],
+            "baseLength": 89
+          }
         ],
-        "baseLength": 94
+        "order": 10
       },
       {
         "id": "21_hidden_camera",
         "order": 11,
         "title": "弟弟的浴室隱藏攝影機",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "thursdaydate",
@@ -23405,14 +23750,13 @@
           "hiddencamera1",
           "gameover"
         ],
-        "baseLength": 42
+        "baseLength": 41
       },
       {
         "id": "26_train_photo_album",
         "order": 12,
         "title": "你給黛安看火車相簿",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -23470,14 +23814,13 @@
           "sofatrains7",
           "stampalbum7"
         ],
-        "baseLength": 43
+        "baseLength": 42
       },
       {
         "id": "23_brooch",
         "order": 13,
         "title": "把胸針送給黛安",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "tuesdaydate",
@@ -23530,7 +23873,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 49
+        "baseLength": 48
       },
       {
         "groupId": "sofa_bathroom",
@@ -23540,7 +23883,6 @@
             "id": "25_lootogether",
             "title": "你跟著黛安進了廁所",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "tuesdaydate",
@@ -23701,13 +24043,12 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 153
+            "baseLength": 152
           },
           {
             "id": "27_bath_peeing",
-            "title": "黛安在浴缸裡尿",
+            "title": "黛安在浴缸裡尿尿",
             "tags": [
-              "start",
               "start1a",
               "start1b",
               "saturdaydate",
@@ -23858,7 +24199,7 @@
               "secondplace",
               "secondplace1"
             ],
-            "baseLength": 146
+            "baseLength": 145
           }
         ],
         "order": 14
@@ -23868,7 +24209,6 @@
         "order": 15,
         "title": "次日清晨黛安來電",
         "tags": [
-          "start",
           "start1a",
           "start1b",
           "saturdaydate",
@@ -24040,7 +24380,7 @@
           "showover2",
           "gameover"
         ],
-        "baseLength": 168
+        "baseLength": 167
       }
     ]
   }

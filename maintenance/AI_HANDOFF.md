@@ -14,8 +14,9 @@ Each language folder ships:
 - playable HTML (`dianedate_*.html`; bilingual with English except EN)
 - `edition_notes_*.txt`
 - climax transcripts under `transcripts/endings/` and `transcripts/hidden_scenes/`
+- English only, for now: companion wiki under `outputs/en/wiki/` (not playable)
 
-There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix).
+There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix). Bus-home is two hidden-scene leaves: `10a` luckshot (church) and `10b` rioja (too desperate to walk her home).
 
 Gallery currently documents **15 ending leaves** and **29 hidden-scene leaves** per language (leaf counts, not top-level group rows).
 
@@ -23,11 +24,18 @@ All Gallery route label sequences live inline in `write_verified_guides.js` (end
 
 The old archive dig (`dianedate27a.html`) is finished: remaining archive-only stubs are unreachable drafts and are not merge candidates.
 
+**Wiki pack** (English only, not playable): [`outputs/en/wiki/`](../outputs/en/wiki/). Numbered encyclopedic articles for Welbourne (early summer 2005). Lead names: Simon Hartley (27), Diane Ellison (25). Neutral encyclopedic register; body/sexual subjects use clinical terms (`urinate`, `urinary urgency`, bladder, lose control) — not slang. Backstory only; do not retell playable branches; do not spell links from wiki traits to in-game beats. Ages: `born …` + `N-year-old` / `aged N` only (never `25 in 2005`). No em dashes and no colons in wiki prose (use a new sentence or a comma construction instead). Character H2s when relevant: Early life and family; Education; Career; Personal life; Residence. Under Personal life reuse the same H3 labels for the same topics (`Relationships`, `Sexual interests`, `Urinary habits` / `Urinary accidents` as needed). Category H3s take the plural (`Relationships`, `Interests`, `Sexual interests`) even when the article mainly covers one example. Do not leak into playable HTML unless asked (then all langs + bilingual).
+
 ## Raw HTML vs rendered text
 
-Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapitalized choices, legacy `<LI>`/`<EM>`, etc.). A render-time pipeline (`polishStoryHtml`, `polishChoiceText`, `smartenHtml`, speech-aside wrappers, …) fixes that every display. **EN dialogue quotes:** write straight `'...'` (or straight `"..."`) in source; `smartenText` renders British singles `‘…’`. Do not hardcode American `“…”`. **CN** quoted spans become curly doubles `“…”`; **TW** quoted spans become `「…」`.
+Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapitalized choices, legacy `<LI>`/`<EM>`, etc.). A render-time pipeline (`polishStoryHtml`, `polishChoiceText`, `smartenHtml`, speech-aside wrappers, …) fixes that every display.
 
-**Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text.
+**Quotes in source → render:**
+- **EN:** write straight `'...'` (or straight `"..."`); `smartenText` renders British singles `‘…’`. Do not hardcode American `“…”`.
+- **CN:** quoted spans become curly doubles `“…”`.
+- **TW:** quoted spans become `「…」`.
+
+**Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text; `write_verified_guides.js` `normalize()` strips quote marks so British `‘…’` still matches guide labels written with `“…”` / `"..."`.
 
 ## The `s()` rendering pipeline (know this before touching any narration line)
 
@@ -85,6 +93,53 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 
 `aligned_text.json` is a cross-language index for checks — it does **not** build HTML.
 
+## Settled wording (don't reopen unless asked)
+
+**UI / meters**
+- **Immersion CTA:** EN `On with the story!`; CN `开始约会！`; TW `開始約會！`; ES `¡Empezar la cita!`; FR `C'est parti pour le rendez-vous !` (narrow no-break space before `!`).
+- **Buy something:** shop-literal in all langs (`买点东西` / `買點東西` / `Comprar algo` / `Acheter quelque chose`).
+- **Money meter:** EN `Pounds`; CN `英镑`; TW `英鎊`; ES `Libras`; FR `Livres sterling`.
+- **Prices:** whole pounds, no `.00` (`£1`, `15英镑`). Pence use two places (`£1.50`, `1.50英镑`). FR: `1,50 £`.
+- **Status-bar tummy (`proc`):** EN `Tummy`; CN/TW `肚子`; ES `Vientre`; FR `Ventre`. Match the notes’ body word — do not revive mechanic glosses (`待转化水分`, `Líquido en tránsito`, etc.).
+- **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy. **Shyness** changes go through `adjpoints(±n)` and clamp at **0**; intimacy may still go negative.
+
+**CN / TW register**
+- **Caretaker:** CN/TW **管理员** / **管理員** (council first-mention may stay **市政管理员**). Not 看守员/环卫工人/etc.
+- **Bouncer (Pavilion):** **保安**. Occasional **门卫** for English *doorman* — not the toilet caretaker.
+- **Bra:** CN **文胸** throughout; TW **胸罩**. Do not mix.
+- **Miniskirt:** one word in EN (`miniskirt` / `miniskirted`), never `mini-skirt` / `mini skirt`. First clothing-list mention of the bus-queue girl is `Debbie (the brunette) wears a miniskirt.`
+- **High bladder status:** `…两脚不停地来回挪动。` / `…兩腳不停地來回挪動。`
+- ***Can't stand still* (fidget):** CN/TW **站不定**, not **站不住** (后者偏站不稳/要垮). Keep **站不稳** only for physical unsteadiness (key in lock, *hardly stand upright*).
+- **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
+- **Play still on (`x00027`):** **停演** wording (`…想在停演前去看一次…`), not **下演**.
+- **TW-only (do not copy onto CN):** Gallery/story register uses **流動廁所** (CN **移动厕所**), **樹叢** (CN gallery **灌木**), **尿尿** on several Gallery pee leaves (CN often **小便**), **西洋棋課** (CN **下棋课**).
+
+**Scene lines**
+- **Urinal straddle (`x01569b`):** EN comma before aside (`…urinal, with her back to you`), no em dash. CN/TW: **横跨/橫跨**, aside after `——`, prefer **更省事**. ES `ponerse a horcajadas…`; FR `enjamber l'urinoir…`.
+- **Church mind-races (bus luckshot):** `…and only then could she finally relieve herself.` — inversion after *only then*; not *only now*, not *only then she could*, no trailing *there*.
+
+## UI / Gallery conventions
+
+**Boot and theme**
+- No age gate. Boot opens on `start` (title); first `go("start")` does not push history, so Back is not offered on the title screen.
+- **Dark mode** persists across refresh via `sessionStorage.dianeDarkMode` (`1`/`0`). Gallery guide reload keeps the same preference automatically. A new tab starts light.
+- Pregame screens freeze/hide stats until the date starts.
+- **Theme tokens** live in each `outputs/*/dianedate_*.html` `:root` / `[data-theme="dark"]`. Light stays wine-on-parchment. Dark uses pale straw gold for accents + CTA fills (`--on-accent` = dark ink on straw); dark `--status` is `#2f2822` (above paper, near choice) so the attribute table reads as a panel; dark `--choice-hover` `#534433`; `--highlight-bg` `#4a4024`; `--guide-hover-bg` `#5f4c32` (hover fills stay below ink luminance). Hover/key-press text uses `--ink-on-hover` (dark: `#faf6ee`; light: same as ink) so straw text doesn’t wash into the hover tray. Guide + hover: fill → `--guide-hover-bg`, accent inset stays.
+
+**Shortcuts**
+- `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices, `S` Skip to the good bit (`climaxIndex`, same cut as climax transcripts).
+- Number-key / guided Enter flash: one pending pick only (`choiceKeyPending`); `#box.choice-key-armed` suppresses `.choice:hover` so keyboard wins over mouse.
+- **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On.
+
+**Gallery names and hover**
+- Leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Pees in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject.
+- Chloe’s group is singular **Chloe Consolation Prize** (two variants of one prize, like Amanda); Outdoor / Lounge stay plural.
+- Gallery rows hover/focus-visible with `--choice-hover` wash **and** `--accent` text (wine `#9b2f3f` light / gold dark — same token family as links/CTAs; brighter than heading `--accent-dark` so light-mode hover reads clearly). Rows are `appearance: none` buttons so WebKit honours `color`. Open groups: no wash — chevron ▾ plus revealed children mark open; wash is hover-only.
+
+**Notices and bilingual UI**
+- **Points notices** (intimacy via `getinti`, shyness/bladder status lines): `<p class='notice'><strong>…</strong></p>` — bold, **no** `<EM>` and **no** orange `#FF9966` spans. Port to every mono + bilingual (source `s()` + dictionary keys/values) and `aligned_text.json`.
+- **Bilingual guide highlighting:** guard `querySelectorAll("button.choice")` with `offsetParent !== null`; `setLanguage()`/`toggleLanguage()` must call `syncGuideDisplay()`.
+
 ## Maintenance toolkit
 
 | Path | Role |
@@ -99,7 +154,7 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 | `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
 | `aligned_text.json` | Aligned EN/CN/TW/ES/FR strings |
 
-Do **not** leave scratch audit dumps in this folder (delete after use).
+Do **not** leave scratch audit dumps in this folder (delete after use). Ignore local `.DS_Store` files; do not commit them.
 
 After wording/route edits:
 
@@ -121,31 +176,6 @@ node maintenance/write_transcripts.js
 ```
 
 `write_verified_guides.js` green across all five languages is the fastest smoke test after a text batch.
-
-## Settled wording (don't reopen unless asked)
-
-- **Immersion CTA:** EN `On with the story!`; CN `开始约会！`; TW `開始約會！`; ES `¡Empezar la cita!`; FR `C'est parti pour le rendez-vous !` (narrow no-break space before `!`).
-- **Buy something:** shop-literal in all langs (`买点东西` / `買點東西` / `Comprar algo` / `Acheter quelque chose`).
-- **Prices:** whole pounds, no `.00` (`£1`, `15英镑`). Pence use two places (`£1.50`, `1.50英镑`). FR: `1,50 £`.
-- **Caretaker:** CN/TW **管理员** / **管理員** (council first-mention may stay **市政管理员**). Not 看守员/环卫工人/etc.
-- **Bouncer (Pavilion):** **保安**. Occasional **门卫** for English *doorman* — not the toilet caretaker.
-- **High bladder status:** `…两脚不停地来回挪动。` / `…兩腳不停地來回挪動。`
-- ***Can't stand still* (fidget):** CN/TW **站不定**, not **站不住** (后者偏站不稳/要垮). Keep **站不稳** only for physical unsteadiness (key in lock, *hardly stand upright*).
-- **Urinal straddle (`x01569b`):** EN comma before aside (`…urinal, with her back to you`), no em dash. CN/TW: **横跨/橫跨**, aside after `——`, prefer **更省事**. ES `ponerse a horcajadas…`; FR `enjamber l'urinoir…`.
-- **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
-- **Play still on (`x00027`):** **停演** wording (`…想在停演前去看一次…`), not **下演**.
-- **Status-bar tummy (`proc`):** EN `Tummy`; CN/TW `肚子`; ES `Vientre`; FR `Ventre`. Match the notes’ body word — do not revive mechanic glosses (`待转化水分`, `Líquido en tránsito`, etc.).
-- **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy. **Shyness** changes go through `adjpoints(±n)` and clamp at **0**; intimacy may still go negative.
-
-## UI / Gallery conventions
-
-- Gallery + guided walkthrough + Back; shortcuts: `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices. Number-key / guided Enter flash: one pending pick only (`choiceKeyPending`); `#box.choice-key-armed` suppresses `.choice:hover` so keyboard wins over mouse. **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On. **S** / Skip to the good bit jumps to `climaxIndex` (same cut as climax transcripts).
-- **Theme:** light stays wine-on-parchment; dark uses pale straw gold for accents + CTA fills (`--on-accent` = dark ink on straw); dark `--status` is `#2f2822` (above paper, near choice) so the attribute table reads as a panel; dark `--choice-hover` `#534433`; `--highlight-bg` `#4a4024`; `--guide-hover-bg` `#5f4c32` (hover fills stay below ink luminance). Hover/key-press text uses `--ink-on-hover` (dark: `#faf6ee`; light: same as ink) so straw text doesn’t wash into the hover tray. Guide + hover: fill → `--guide-hover-bg`, accent inset stays. Tokens in each `outputs/*/dianedate_*.html` `:root` / `[data-theme="dark"]`.
-- **Dark mode:** persists across refresh via `sessionStorage.dianeDarkMode` (`1`/`0`). Gallery guide reload keeps the same preference automatically. Boot opens on `start` (title); first `go("start")` does not push history, so Back is not offered on the title screen.
-- Pregame screens freeze/hide stats until the date starts.
-- **Points notices** (intimacy via `getinti`, shyness/bladder status lines): `<p class='notice'><strong>…</strong></p>` — bold, **no** `<EM>` and **no** orange `#FF9966` spans. Port to every mono + bilingual (source `s()` + dictionary keys/values) and `aligned_text.json`.
-- **Bilingual guide highlighting:** guard `querySelectorAll("button.choice")` with `offsetParent !== null`; `setLanguage()`/`toggleLanguage()` must call `syncGuideDisplay()`.
-- **Gallery names:** leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Pees in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject. Chloe’s group is singular **Chloe Consolation Prize** (two variants of one prize, like Amanda); Outdoor / Lounge stay plural. Gallery rows hover/focus-visible with `--choice-hover` wash **and** `--accent` text (wine `#9b2f3f` light / gold dark — same token family as links/CTAs; brighter than heading `--accent-dark` so light-mode hover reads clearly). Rows are `appearance: none` buttons so WebKit honours `color`. Open groups: no wash — chevron ▾ plus revealed children mark open; wash is hover-only.
 
 ## Do / don't
 

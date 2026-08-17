@@ -35,6 +35,8 @@ Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapi
 - **CN:** quoted spans become curly doubles `“…”`.
 - **TW:** quoted spans become `「…」`.
 
+**Dashes in source → render (EN):** unspaced em dashes (`word—word`) are Chicago/US. British house style (Hart's, Guardian) is a **spaced en dash** (`word – word`). `polishStoryHtml` / `polishChoiceText` convert `—` at render; do not bulk-replace source dashes. Route `normalize()` folds `—` / `–` / spaced dashes so Gallery labels still match.
+
 **Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text; `write_verified_guides.js` `normalize()` strips quote marks so British `‘…’` still matches guide labels written with `“…”` / `"..."`.
 
 ## The `s()` rendering pipeline (know this before touching any narration line)
@@ -102,12 +104,14 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 - **Prices:** whole pounds, no `.00` (`£1`, `15英镑`). Pence use two places (`£1.50`, `1.50英镑`). FR: `1,50 £`.
 - **Status-bar tummy (`proc`):** EN `Tummy`; CN/TW `肚子`; ES `Vientre`; FR `Ventre`. Match the notes’ body word — do not revive mechanic glosses (`待转化水分`, `Líquido en tránsito`, etc.).
 - **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy. **Shyness** changes go through `adjpoints(±n)` and clamp at **0**; intimacy may still go negative.
+- **Luckshots:** start at 3. Early uses `spendLuckshot()` (decrement, floor 0). From taxi home / bus home / short Tuesday–Thursday jump, `capEndgameLuckshots()` leaves at most 1 remaining (the on-screen “only one beyond this stage” notice is not display-only). Home/lounge luckshots must decrement, never `luckshots = 0` (that wiped 3→0 after Skip-to-the-good-bit + Back, because Skip records every `go()` but those functions used to zero the meter in one step). Chloe doorbell luckshot (`luckytrip19`) also spends.
 
 **CN / TW register**
 - **Caretaker:** CN/TW **管理员** / **管理員** (council first-mention may stay **市政管理员**). Not 看守员/环卫工人/etc.
 - **Bouncer (Pavilion):** **保安**. Occasional **门卫** for English *doorman* — not the toilet caretaker.
 - **Bra:** CN **文胸** throughout; TW **胸罩**. Do not mix.
 - **Miniskirt:** one word in EN (`miniskirt` / `miniskirted`), never `mini-skirt` / `mini skirt`. First clothing-list mention of the bus-queue girl is `Debbie (the brunette) wears a miniskirt.`
+- **Underwear (EN playable):** narration and clothing notes use **knickers**. Spoken idioms keep **pants** (`get my pants down`, `wet my pants`, `pants and trousers`). Do not use *panties*. Gallery leaf: *The Public Toilet Spyhole and Discarded Knickers* (transcript slug `07a_spyhole_panties` is a filename only).
 - **High bladder status:** `…两脚不停地来回挪动。` / `…兩腳不停地來回挪動。`
 - ***Can't stand still* (fidget):** CN/TW **站不定**, not **站不住** (后者偏站不稳/要垮). Keep **站不稳** only for physical unsteadiness (key in lock, *hardly stand upright*).
 - **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.
@@ -128,7 +132,7 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 
 **Shortcuts**
 - `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices, `S` Skip to the good bit (`climaxIndex`, same cut as climax transcripts).
-- Number-key / guided Enter flash: one pending pick only (`choiceKeyPending`); `#box.choice-key-armed` suppresses `.choice:hover` so keyboard wins over mouse.
+- Number-key / guided Enter flash: one pending pick only (`choiceKeyPending`); `#box.choice-key-armed` suppresses `.choice:hover` so keyboard wins over mouse. A numbered pick on a Guide-highlighted row uses `--guide-hover-bg` (same as guide hover), not the ordinary `--choice-hover` wash.
 - **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On.
 
 **Gallery names and hover**

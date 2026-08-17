@@ -150,6 +150,7 @@ function normalize(text) {
   // route labels still match polished choice text after smartenText.
   return stripTags(text)
     .replace(/[“”«»「」『』‘’'"]/g, "")
+    .replace(/\s*[—–]\s*/g, "-")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -668,7 +669,7 @@ function buildDefinitions(routes) {
         tw: "你會先看到布魯諾，再看到莫莉在工地貨櫃後面撒尿，之後黛安會調侃你。"
       },
       exit: {
-        en: "The route continues toward the riverside public toilets.",
+        en: "The route continues towards the riverside public toilets.",
         cn: "路线继续走向河边公共厕所。",
         es: "La ruta sigue hacia los baños públicos junto al río.",
         fr: "La route continue vers les toilettes publiques au bord de la rivière.",
@@ -701,7 +702,7 @@ function buildDefinitions(routes) {
         tw: "你仍然會看到布魯諾和莫莉，但黛安也憋得夠急，會趁你分心時悄悄去方便。"
       },
       exit: {
-        en: "The route continues toward the riverside public toilets.",
+        en: "The route continues towards the riverside public toilets.",
         cn: "路线继续走向河边公共厕所。",
         es: "La ruta sigue hacia los baños públicos junto al río.",
         fr: "La route continue vers les toilettes publiques au bord de la rivière.",
@@ -734,7 +735,7 @@ function buildDefinitions(routes) {
         tw: "黛安會在樹叢後面急著方便一次，之後路線繼續。"
       },
       exit: {
-        en: "The route continues toward the riverside public toilets.",
+        en: "The route continues towards the riverside public toilets.",
         cn: "路线继续走向河边公共厕所。",
         es: "La ruta sigue hacia los baños públicos junto al río.",
         fr: "La route continue vers les toilettes publiques au bord de la rivière.",
@@ -800,7 +801,7 @@ function buildDefinitions(routes) {
         tw: "你們會分別到樹叢後面方便，之後路線繼續。"
       },
       exit: {
-        en: "The route continues toward the riverside public toilets.",
+        en: "The route continues towards the riverside public toilets.",
         cn: "路线继续走向河边公共厕所。",
         es: "La ruta sigue hacia los baños públicos junto al río.",
         fr: "La route continue vers les toilettes publiques au bord de la rivière.",
@@ -812,14 +813,14 @@ function buildDefinitions(routes) {
       stem: "10_public_toilet_spyhole",
       base: "riversideEmergency",
       title: {
-        en: "The Public Toilet Spyhole and Discarded Panties",
+        en: "The Public Toilet Spyhole and Discarded Knickers",
         cn: "公共厕所里的偷窥孔和遗落的内裤",
         es: "La mirilla del baño público y las bragas abandonadas",
         fr: "Le judas des toilettes publiques et la culotte abandonnée",
         tw: "公共廁所裡的偷窺孔和遺落的內褲"
       },
       entry: {
-        en: "This begins when you send Diane toward the riverside public toilets instead of finding bushes.",
+        en: "This begins when you send Diane towards the riverside public toilets instead of finding bushes.",
         cn: "这个场景从你让黛安去河边公共厕所开始，而不是直接帮她找灌木。",
         es: "Empieza cuando envías a Diane hacia los baños públicos junto al río en lugar de buscar arbustos.",
         fr: "Cela commence quand vous envoyez Diane vers les toilettes publiques au lieu de chercher des buissons.",
@@ -1255,7 +1256,7 @@ function buildDefinitions(routes) {
         tw: "同一條週四回家公車線，但你喝了里奧哈：自己憋得沒辦法陪她下車，先在樹叢後解決，再折返回去。"
       },
       result: {
-        en: "You relieve yourself behind a bush and walk back toward her stop—but you only scare up a stray cat. No glimpse of Diane. The route ends immediately afterwards.",
+        en: "You relieve yourself behind a bush and walk back towards her stop—but you only scare up a stray cat. No glimpse of Diane. The route ends immediately afterwards.",
         cn: "你在树丛后解决后折返回她那站——却只惊起一只野猫，没瞥见黛安。随后路线立刻结束。",
         es: "Te alivias detrás de un arbusto y vuelves hacia su parada, pero solo espantas a un gato callejero. Sin vislumbre de Diane. La ruta termina justo después.",
         fr: "Vous vous soulagez derrière un buisson et revenez vers son arrêt — mais vous ne faites que faire fuir un chat errant. Pas d'aperçu de Diane. La route se termine juste après.",

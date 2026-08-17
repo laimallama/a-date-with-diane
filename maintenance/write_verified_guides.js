@@ -2065,6 +2065,7 @@ function normalize(text) {
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
     .replace(/["']/g, "")
+    .replace(/\s*[—–]\s*/g, "-")
     .replace(/\s+/g, " ")
     .trim();
 }

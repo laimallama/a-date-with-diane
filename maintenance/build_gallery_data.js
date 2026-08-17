@@ -98,7 +98,7 @@ const ENDING_META = {
   loungeTiramisu: {
     order: 9, stem: "06b_lounge_bus_boy",
     climaxStartTag: "loungedesp",
-    title: { en: "Boy from School on the Bus", cn: "公交车上的男生", tw: "公車上的男生", es: "El chico del colegio en el bus", fr: "Le garçon de l’école dans le bus" },
+    title: { en: "Boy from School", cn: "学校的男生", tw: "學校的男生", es: "El chico del instituto", fr: "Le garçon de l’école" },
   },
   loungePanna: {
     order: 9, stem: "06c_lounge_chess_lesson",

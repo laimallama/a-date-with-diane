@@ -1,6 +1,6 @@
 # Wiki
 
-Setting and character articles for *A Date With Diane* (English only).
+Setting and character articles for *A Date With Diane*. Parallel packs live under `outputs/{cn,tw,es,fr}/wiki/`.
 
 The articles cover **Welbourne** and the people connected with one evening there in early summer 2005. They are written in a neutral encyclopedic register. Body and sexual subjects are described in clinical terms appropriate to that register.
 

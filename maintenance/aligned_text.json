@@ -10,7 +10,8 @@
   "counts": {
     "total": 5067,
     "story": 3927,
-    "choice": 1140
+    "choice": 1140,
+    "entries": 5088
   },
   "entries": [
     {
@@ -46733,6 +46734,167 @@
       "tw": "你繼續說下去。",
       "es": "Sigues hablando.",
       "fr": "Vous continuez à parler."
+    },
+    {
+      "en": "<LI>You've been sitting together for a while now, talking and drinking. The evening has rather run away with you.",
+      "cn": "<LI>你们已经在沙发上坐了一阵子，边喝边聊。不知不觉，晚上的时间就这么溜走了。",
+      "tw": "<LI>你們已經在沙發上坐了一陣子，邊喝邊聊。不知不覺，晚上的時間就這麼溜走了。",
+      "es": "<LI>Lleváis un rato sentados juntos, hablando y bebiendo. La velada se os ha escapado de las manos.",
+      "fr": "<LI>Vous êtes assis ensemble depuis un moment, à parler et à boire. La soirée vous a un peu échappé."
+    },
+    {
+      "en": "<LI>YOU: You all right?",
+      "cn": "<LI>你：你还好吗？",
+      "tw": "<LI>你：你還好嗎？",
+      "es": "<LI>TÚ: ¿Estás bien?",
+      "fr": "<LI>VOUS : Ça va ?"
+    },
+    {
+      "en": "<LI>DIANE: Mm. Just—give me a second.",
+      "cn": "<LI>黛安：嗯。等我一下——",
+      "tw": "<LI>黛安：嗯。等我一下——",
+      "es": "<LI>DIANE: Mm. Solo… dame un segundo.",
+      "fr": "<LI>DIANE : Mm. Juste—donne-moi une seconde."
+    },
+    {
+      "en": "<LI>She tries to follow what you're saying, then loses the thread and smiles apologetically.",
+      "cn": "<LI>她想跟着你的话，却又走了神，抱歉地笑了笑。",
+      "tw": "<LI>她想跟著你的話，卻又走了神，抱歉地笑了笑。",
+      "es": "<LI>Intenta seguir lo que dices, pierde el hilo y sonríe disculpándose.",
+      "fr": "<LI>Elle essaie de suivre ce que vous dites, perd le fil et sourit en s’excusant."
+    },
+    {
+      "en": "<LI>DIANE: Sorry. I'm listening. Mostly.",
+      "cn": "<LI>黛安：对不起。我在听。差不多在听。",
+      "tw": "<LI>黛安：對不起。我在聽。差不多在聽。",
+      "es": "<LI>DIANE: Perdona. Te escucho. Más o menos.",
+      "fr": "<LI>DIANE : Désolée. J’écoute. Enfin, à peu près."
+    },
+    {
+      "en": "<LI>YOU: Quiet at the estate agent's these days?",
+      "cn": "<LI>你：地产中介最近清闲吗？",
+      "tw": "<LI>你：房仲最近清閒嗎？",
+      "es": "<LI>TÚ: ¿Está tranquila la inmobiliaria estos días?",
+      "fr": "<LI>VOUS : Ça calme, à l’agence immobilière, en ce moment ?"
+    },
+    {
+      "en": "<LI>DIANE: Dead quiet. Some of the cards in the window have been there since Easter. Mum got me the job through someone at church—not exactly glamorous, but it pays.",
+      "cn": "<LI>黛安：冷清得很。橱窗里有些房源卡片从复活节就挂着了。这份工作是妈妈托教堂里的人介绍的——谈不上风光，但好歹有工资。",
+      "tw": "<LI>黛安：冷清得很。櫥窗裡有些物件卡片從復活節就掛著了。這份工作是媽媽託教堂裡的人介紹的——談不上風光，但好歹有薪水。",
+      "es": "<LI>DIANE: Muerta. Algunas fichas del escaparate llevan ahí desde Pascua. Mamá me consiguió el puesto por alguien de la iglesia—no es precisamente glamuroso, pero cobra.",
+      "fr": "<LI>DIANE : Mortel. Certaines fiches en vitrine sont là depuis Pâques. Maman m’a décroché le poste par quelqu’un de l’église—pas très glamour, mais ça paye."
+    },
+    {
+      "en": "<LI>YOU: You and Molly go off to Italy a lot, don't you?",
+      "cn": "<LI>你：你和莫莉常去意大利吧？",
+      "tw": "<LI>你：你和莫莉常去義大利吧？",
+      "es": "<LI>TÚ: Tú y Molly os vais mucho a Italia, ¿no?",
+      "fr": "<LI>VOUS : Toi et Molly, vous partez souvent en Italie, non ?"
+    },
+    {
+      "en": "<LI>DIANE: Most years, if we can. Venice is my favourite—trains, water, none of that sticky heat we had in Greece. Molly organises half of it before I've packed.",
+      "cn": "<LI>黛安：能去的年份就去。我最喜欢威尼斯——火车、水城，不像我们在希腊那次那么闷热。一半行程莫莉都安排好了，我行李还没开始收拾。",
+      "tw": "<LI>黛安：能去的年份就去。我最喜歡威尼斯——火車、水城，不像我們在希臘那次那麼悶熱。一半行程莫莉都安排好了，我行李還沒開始收拾。",
+      "es": "<LI>DIANE: Casi todos los años, si podemos. Venecia es mi favorita—trenes, agua, nada del calor pegajoso de aquella vez en Grecia. Molly organiza la mitad antes de que yo haya hecho la maleta.",
+      "fr": "<LI>DIANE : Presque tous les ans, si on peut. Venise, c’est mon préféré—les trains, l’eau, rien à voir avec la chaleur collante de cette fois en Grèce. Molly organise la moitié avant que j’aie commencé ma valise."
+    },
+    {
+      "en": "<LI>YOU: Did you do much acting? After school, I mean.",
+      "cn": "<LI>你：毕业后还演过戏吗？",
+      "tw": "<LI>你：畢業後還演過戲嗎？",
+      "es": "<LI>TÚ: ¿Hiciste mucho teatro después del colegio?",
+      "fr": "<LI>VOUS : Tu as beaucoup joué après l’école ?"
+    },
+    {
+      "en": "<LI>DIANE: A bit. Welbourne Players, and Gwendolen in <EM>Earnest</EM> at college. Molly's the one on stage tonight, though. I'm only jealous in a friendly way.",
+      "cn": "<LI>黛安：演过一点。威尔本剧社，大学里还演过《不可儿戏》里的格温多琳。不过今晚台上是莫莉。我也就友好地嫉妒一下。",
+      "tw": "<LI>黛安：演過一點。威爾本劇社，大學裡還演過《不可兒戲》裡的格溫多琳。不過今晚臺上是莫莉。我也就友好地嫉妒一下。",
+      "es": "<LI>DIANE: Un poco. Los Welbourne Players, y Gwendolen en <EM>La importancia de llamarse Ernesto</EM> en la universidad. Quien está en el escenario esta noche es Molly. Yo solo estoy celosa de forma amistosa.",
+      "fr": "<LI>DIANE : Un peu. Les Welbourne Players, et Gwendolen dans <EM>L’Importance d’être Constant</EM> à la fac. Ce soir c’est Molly qui est sur scène. Je ne suis jalouse que gentiment."
+    },
+    {
+      "en": "<LI>YOU: Your dad was on the railways, wasn't he?",
+      "cn": "<LI>你：你爸爸以前是铁路上的吧？",
+      "tw": "<LI>你：你爸爸以前是鐵路上的吧？",
+      "es": "<LI>TÚ: Tu padre trabajaba en el ferrocarril, ¿verdad?",
+      "fr": "<LI>VOUS : Ton père était cheminot, non ?"
+    },
+    {
+      "en": "<LI>DIANE: East Coast line, years of it. He's retired now, but he still treats the garden as if it runs to a timetable. Maybe that's why I like trains.",
+      "cn": "<LI>黛安：东海岸线，开了好些年。现在退休了，可还是把花园当成按时刻表跑的。也许我喜欢火车就是因为这个。",
+      "tw": "<LI>黛安：東海岸線，開了好些年。現在退休了，可還是把花園當成按時刻表跑的。也許我喜歡火車就是因為這個。",
+      "es": "<LI>DIANE: Línea de la Costa Este, años y años. Ya está jubilado, pero sigue tratando el jardín como si llevara horario. Quizá por eso me gustan los trenes.",
+      "fr": "<LI>DIANE : Ligne de la côte est, pendant des années. Il est à la retraite, mais il traite encore le jardin comme s’il avait un horaire. Peut-être que c’est pour ça que j’aime les trains."
+    },
+    {
+      "en": "<LI>DIANE: Molly's already talking about watersports for the summer.",
+      "cn": "<LI>黛安：莫莉已经在说夏天要玩水上项目了。",
+      "tw": "<LI>黛安：莫莉已經在說夏天要玩水上項目了。",
+      "es": "<LI>DIANE: Molly ya habla de deportes acuáticos para el verano.",
+      "fr": "<LI>DIANE : Molly parle déjà de sports nautiques pour l’été."
+    },
+    {
+      "en": "<LI>YOU: Fancy any of it?",
+      "cn": "<LI>你：你想玩吗？",
+      "tw": "<LI>你：你想玩嗎？",
+      "es": "<LI>TÚ: ¿Te apetece alguno?",
+      "fr": "<LI>VOUS : Ça te dit ?"
+    },
+    {
+      "en": "<LI>DIANE: Water-skiing, if she books it. I'm braver on water than I am in most other departments.",
+      "cn": "<LI>黛安：滑水，要是她去订的话。我在水上比在别的方面胆子大。",
+      "tw": "<LI>黛安：滑水，要是她去訂的話。我在水上比在別的方面膽子大。",
+      "es": "<LI>DIANE: Esquí acuático, si ella lo reserva. En el agua soy más valiente que en casi cualquier otra cosa.",
+      "fr": "<LI>DIANE : Le ski nautique, si elle réserve. Sur l’eau je suis plus courageuse que pour le reste."
+    },
+    {
+      "en": "<LI>YOU: Brothers or sisters?",
+      "cn": "<LI>你：有兄弟姐妹吗？",
+      "tw": "<LI>你：有兄弟姐妹嗎？",
+      "es": "<LI>TÚ: ¿Hermanos o hermanas?",
+      "fr": "<LI>VOUS : Frères ou sœurs ?"
+    },
+    {
+      "en": "<LI>DIANE: One brother—Paul. He's in Leeds. He collected stamps for a bit, then sold the lot. Mum still hasn't quite forgiven him.",
+      "cn": "<LI>黛安：一个哥哥——保罗。住在利兹。他集邮过一阵，后来全卖了。妈妈到现在还没完全原谅他。",
+      "tw": "<LI>黛安：一個哥哥——保羅。住在里茲。他集郵過一陣，後來全賣了。媽媽到現在還沒完全原諒他。",
+      "es": "<LI>DIANE: Un hermano—Paul. Vive en Leeds. Coleccionó sellos una temporada y luego lo vendió todo. Mamá aún no se lo ha perdonado del todo.",
+      "fr": "<LI>DIANE : Un frère—Paul. Il est à Leeds. Il a collectionné les timbres un moment, puis il a tout vendu. Maman ne lui a pas tout à fait pardonné."
+    },
+    {
+      "en": "<LI>YOU: Ever think of leaving Welbourne?",
+      "cn": "<LI>你：想过离开威尔本吗？",
+      "tw": "<LI>你：想過離開威爾本嗎？",
+      "es": "<LI>TÚ: ¿Piensas alguna vez en dejar Welbourne?",
+      "fr": "<LI>VOUS : Tu songes parfois à quitter Welbourne ?"
+    },
+    {
+      "en": "<LI>DIANE: Sometimes. I've a cousin in Leyton who'd put me up on a sofa. Mum would hate it. I've not packed. Yet.",
+      "cn": "<LI>黛安：有时候想。莱顿有个表亲，说可以让我睡沙发。妈妈会恨死的。我还没开始收拾。暂时没有。",
+      "tw": "<LI>黛安：有時候想。萊頓有個表親，說可以讓我睡沙發。媽媽會恨死的。我還沒開始收拾。暫時沒有。",
+      "es": "<LI>DIANE: A veces. Tengo una prima en Leyton que me dejaría el sofá. Mamá lo odiaría. No he hecho la maleta. Todavía.",
+      "fr": "<LI>DIANE : Parfois. J’ai une cousine à Leyton qui me prêterait son canapé. Maman détesterait. Je n’ai pas fait ma valise. Pas encore."
+    },
+    {
+      "en": "<LI>DIANE: If I'm late, Mum sits up with the radio on. She pretends she's reading a magazine.",
+      "cn": "<LI>黛安：要是我晚归，妈妈会开着收音机坐着等。假装在看杂志。",
+      "tw": "<LI>黛安：要是我晚歸，媽媽會開著收音機坐著等。假裝在看雜誌。",
+      "es": "<LI>DIANE: Si llego tarde, mamá se queda despierta con la radio. Finge que lee una revista.",
+      "fr": "<LI>DIANE : Si je rentre tard, maman reste debout avec la radio. Elle fait semblant de lire un magazine."
+    },
+    {
+      "en": "<LI>YOU: Checking up on you?",
+      "cn": "<LI>你：盯着你呢？",
+      "tw": "<LI>你：盯著你呢？",
+      "es": "<LI>TÚ: ¿Vigilándote?",
+      "fr": "<LI>VOUS : Elle te surveille ?"
+    },
+    {
+      "en": "<LI>DIANE: Checking I've still got a job. And that I haven't done anything exciting.",
+      "cn": "<LI>黛安：盯着我还有没有工作。还有我有没有干出什么出格的事。",
+      "tw": "<LI>黛安：盯著我還有沒有工作。還有我有沒有幹出什麼出格的事。",
+      "es": "<LI>DIANE: Vigilando que aún tenga trabajo. Y que no haya hecho nada emocionante.",
+      "fr": "<LI>DIANE : Elle surveille que j’aie encore un travail. Et que je n’aie rien fait de trop excitant."
     }
   ]
 }

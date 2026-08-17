@@ -21,7 +21,7 @@ Each language folder contains:
 - `dianedate_*.html` — open in a browser to play (bilingual editions switch with English; EN is single-language only)
 - `edition_notes_*.txt` — notes on this edition
 - `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
-- `wiki/` (English folder only) — companion setting and character articles; not playable
+- `wiki/` — companion setting and character articles in that language; not playable
 
 There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **29 hidden-scene leaves** (variants inside a group each count as a leaf).
 

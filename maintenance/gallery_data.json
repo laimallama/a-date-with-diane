@@ -1398,6 +1398,9 @@
               "sofasnog1",
               "sofasnog2",
               "sofabreasts",
+              "sofabreasts0",
+              "sofabreasts1",
+              "sofabreasts2",
               "sofabreasts3",
               "sofabreasts4",
               "sofadrink",
@@ -1412,12 +1415,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -1436,7 +1434,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 153
+            "climaxIndex": 151
           },
           {
             "id": "06b_lounge_bus_boy",
@@ -1578,6 +1576,8 @@
               "sofaarm1",
               "sofaarm2",
               "sofasnog2",
+              "sofalegs",
+              "sofalegs2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -1596,7 +1596,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 145
+            "climaxIndex": 147
           },
           {
             "id": "06c_lounge_chess_lesson",
@@ -1742,12 +1742,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -1766,7 +1761,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -1912,12 +1907,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -1936,7 +1926,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           }
         ]
       }
@@ -4511,12 +4501,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -4539,7 +4524,7 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 158
+            "baseLength": 153
           },
           {
             "id": "27_bath_peeing",
@@ -6269,6 +6254,9 @@
               "sofasnog1",
               "sofasnog2",
               "sofabreasts",
+              "sofabreasts0",
+              "sofabreasts1",
+              "sofabreasts2",
               "sofabreasts3",
               "sofabreasts4",
               "sofadrink",
@@ -6283,12 +6271,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -6307,7 +6290,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 153
+            "climaxIndex": 151
           },
           {
             "id": "06b_lounge_bus_boy",
@@ -6449,6 +6432,8 @@
               "sofaarm1",
               "sofaarm2",
               "sofasnog2",
+              "sofalegs",
+              "sofalegs2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -6467,7 +6452,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 145
+            "climaxIndex": 147
           },
           {
             "id": "06c_lounge_chess_lesson",
@@ -6613,12 +6598,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -6637,7 +6617,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -6783,12 +6763,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -6807,7 +6782,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           }
         ]
       }
@@ -9382,12 +9357,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -9410,7 +9380,7 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 158
+            "baseLength": 153
           },
           {
             "id": "27_bath_peeing",
@@ -11140,6 +11110,9 @@
               "sofasnog1",
               "sofasnog2",
               "sofabreasts",
+              "sofabreasts0",
+              "sofabreasts1",
+              "sofabreasts2",
               "sofabreasts3",
               "sofabreasts4",
               "sofadrink",
@@ -11154,12 +11127,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -11178,7 +11146,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 153
+            "climaxIndex": 151
           },
           {
             "id": "06b_lounge_bus_boy",
@@ -11320,6 +11288,8 @@
               "sofaarm1",
               "sofaarm2",
               "sofasnog2",
+              "sofalegs",
+              "sofalegs2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -11338,7 +11308,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 145
+            "climaxIndex": 147
           },
           {
             "id": "06c_lounge_chess_lesson",
@@ -11484,12 +11454,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -11508,7 +11473,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -11654,12 +11619,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -11678,7 +11638,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           }
         ]
       }
@@ -14253,12 +14213,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -14281,7 +14236,7 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 158
+            "baseLength": 153
           },
           {
             "id": "27_bath_peeing",
@@ -16011,6 +15966,9 @@
               "sofasnog1",
               "sofasnog2",
               "sofabreasts",
+              "sofabreasts0",
+              "sofabreasts1",
+              "sofabreasts2",
               "sofabreasts3",
               "sofabreasts4",
               "sofadrink",
@@ -16025,12 +15983,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -16049,7 +16002,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 153
+            "climaxIndex": 151
           },
           {
             "id": "06b_lounge_bus_boy",
@@ -16191,6 +16144,8 @@
               "sofaarm1",
               "sofaarm2",
               "sofasnog2",
+              "sofalegs",
+              "sofalegs2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -16209,7 +16164,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 145
+            "climaxIndex": 147
           },
           {
             "id": "06c_lounge_chess_lesson",
@@ -16355,12 +16310,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -16379,7 +16329,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -16525,12 +16475,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -16549,7 +16494,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           }
         ]
       }
@@ -19124,12 +19069,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -19152,7 +19092,7 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 158
+            "baseLength": 153
           },
           {
             "id": "27_bath_peeing",
@@ -20882,6 +20822,9 @@
               "sofasnog1",
               "sofasnog2",
               "sofabreasts",
+              "sofabreasts0",
+              "sofabreasts1",
+              "sofabreasts2",
               "sofabreasts3",
               "sofabreasts4",
               "sofadrink",
@@ -20896,12 +20839,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -20920,7 +20858,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 153
+            "climaxIndex": 151
           },
           {
             "id": "06b_lounge_bus_boy",
@@ -21062,6 +21000,8 @@
               "sofaarm1",
               "sofaarm2",
               "sofasnog2",
+              "sofalegs",
+              "sofalegs2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -21080,7 +21020,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 145
+            "climaxIndex": 147
           },
           {
             "id": "06c_lounge_chess_lesson",
@@ -21226,12 +21166,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -21250,7 +21185,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -21396,12 +21331,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -21420,7 +21350,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 155
+            "climaxIndex": 150
           }
         ]
       }
@@ -23995,12 +23925,7 @@
               "sofaarm2",
               "sofasnog2",
               "sofalegs",
-              "sofalegs1",
               "sofalegs2",
-              "sofadrink",
-              "sofaarm1",
-              "sofaarm2",
-              "sofasnog2",
               "sofapee",
               "sofapee1",
               "decisions",
@@ -24023,7 +23948,7 @@
               "lootogether3",
               "gameover"
             ],
-            "baseLength": 158
+            "baseLength": 153
           },
           {
             "id": "27_bath_peeing",

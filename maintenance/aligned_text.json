@@ -8,10 +8,10 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5067,
-    "story": 3927,
-    "choice": 1140,
-    "entries": 5088
+    "total": 5061,
+    "story": 3922,
+    "choice": 1139,
+    "entries": 5084
   },
   "entries": [
     {
@@ -6184,7 +6184,7 @@
     {
       "id": "x00651",
       "kind": "story",
-      "en": "<LI>DIANE: Oooh, I'm glad you ordered these beforehand. Well done that man!",
+      "en": "<LI>DIANE: Oooh, I'm glad you ordered these beforehand. Well done, that man!",
       "cn": "<LI>黛安：哦，太好了，幸亏你提前订了。你真厉害！",
       "es": "<LI>DIANE: ¡Oooh, menos mal que los pediste antes! ¡Muy bien hecho!",
       "fr": "<LI>DIANE : Oh, je suis contente que tu aies commandé à l'avance. Bien joué !",
@@ -13646,7 +13646,7 @@
     {
       "id": "x01446",
       "kind": "story",
-      "en": "<LI>YOU: Hang on one second. There's a cyclist coming along.",
+      "en": "<LI>YOU: Hang on, one second. There's a cyclist coming along.",
       "cn": "<LI>你：等一下。有个骑自行车的人过来了。",
       "es": "<LI>TÚ: Espera un momento. Viene un ciclista.",
       "fr": "<LI>VOUS : Attends une seconde. Il y a un cycliste qui arrive.",
@@ -15600,7 +15600,7 @@
     {
       "id": "x01653",
       "kind": "choice",
-      "tag": "luckytrip5ca",
+      "tag": "luckytrip5cb",
       "en": "Bother!",
       "cn": "真烦！",
       "es": "¡Vaya fastidio!",
@@ -16031,24 +16031,6 @@
       "es": "Te das prisa.",
       "fr": "Vous vous dépêchez.",
       "tw": "你加快步伐。"
-    },
-    {
-      "id": "x01700",
-      "kind": "story",
-      "en": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>WELCOME TO THE PAVILION</SPAN></STRONG></H2>",
-      "cn": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>欢迎来到凉亭酒吧</SPAN></STRONG></H2>",
-      "es": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>BIENVENIDOS AL PABELLÓN</SPAN></STRONG></H2>",
-      "fr": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>BIENVENUE AU PAVILION</SPAN></STRONG></H2>",
-      "tw": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到Pavilion酒吧</SPAN></STRONG></H2>"
-    },
-    {
-      "id": "x01701",
-      "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>",
-      "tw": "<HR>"
     },
     {
       "id": "x01702",
@@ -20613,7 +20595,7 @@
     {
       "id": "x02194",
       "kind": "choice",
-      "tag": "scenario3",
+      "tag": "scenario3a",
       "en": "You hear sounds upstairs. Your brother must have gone to bed.",
       "cn": "你听到楼上有动静。你弟弟肯定上床睡觉了。",
       "es": "Oyes ruidos arriba. Tu hermano debe de haberse ido a la cama.",
@@ -22967,15 +22949,6 @@
       "tw": "你被取消資格了。"
     },
     {
-      "id": "x02446",
-      "kind": "story",
-      "en": "<LI>Diane has gone upstairs to the bathroom.",
-      "cn": "<LI>黛安上楼去卫生间了。",
-      "es": "<LI>Diane ha subido al baño.",
-      "fr": "<LI>Diane est montée à l'étage pour aller à la salle de bains.",
-      "tw": "<LI>黛安上樓去廁所了。"
-    },
-    {
       "id": "x02447",
       "kind": "story",
       "en": "<LI>After a couple of minutes you hear the toilet flush. Your luckshot hasn't worked.",
@@ -24089,38 +24062,104 @@
     {
       "id": "x02565",
       "kind": "story",
-      "en": "<LI>You kiss her, and touch her breasts, through her clothes, with your free hand.",
-      "cn": "<LI>你吻她，同时用空着的那只手隔着衣服抚摸她的胸部。",
-      "es": "<LI>La besas y le tocas los pechos por encima de la ropa con la mano libre.",
-      "fr": "<LI>Vous l'embrassez et caressez ses seins à travers ses vêtements de votre main libre.",
-      "tw": "<LI>你吻她，同時用空著的那隻手隔著衣服撫摸她的胸部。"
+      "en": "<LI>Your free hand rests at her waist.",
+      "cn": "<LI>你空着的那只手搭在她腰上。",
+      "es": "<LI>Tu mano libre descansa en su cintura.",
+      "fr": "<LI>Votre main libre repose sur sa taille.",
+      "tw": "<LI>你空著的那隻手搭在她腰上。"
     },
     {
       "id": "x02566",
-      "kind": "story",
-      "en": "<LI>You undo the top button of her dress.",
-      "cn": "<LI>你解开了她裙子最上面那颗纽扣。",
-      "es": "<LI>Le desabrochas el botón de arriba del vestido.",
-      "fr": "<LI>Vous défaites le bouton du haut de sa robe.",
-      "tw": "<LI>你解開了她裙子最上面那顆紐扣。"
+      "kind": "choice",
+      "tag": "breasts1",
+      "en": "You run your hand up and touch her breasts.",
+      "cn": "你伸手向上，抚上她的胸部。",
+      "es": "Subes la mano y le acaricias los pechos.",
+      "fr": "Vous glissez la main vers le haut et lui caressez les seins.",
+      "tw": "你伸手向上，撫上她的胸部。"
     },
     {
       "id": "x02567",
-      "kind": "story",
-      "en": "<LI>You undo the top button of her blouse.",
-      "cn": "<LI>你解开了她衬衫最上面那颗纽扣。",
-      "es": "<LI>Le desabrochas el botón de arriba de la blusa.",
-      "fr": "<LI>Vous défaites le bouton du haut de son chemisier.",
-      "tw": "<LI>你解開了她襯衫最上面那顆紐扣。"
+      "kind": "choice",
+      "tag": "sofapee",
+      "en": "Sit on the sofa and ask if she needs a pee.",
+      "cn": "坐到沙发上，问她是不是想上厕所。",
+      "es": "Siéntate en el sofá y pregúntale si tiene ganas de hacer pis.",
+      "fr": "S'asseoir sur le canapé et lui demander si elle a envie de faire pipi.",
+      "tw": "坐到沙發上，問她是不是想上廁所。"
     },
     {
-      "id": "x02568",
+      "id": "x02568a",
       "kind": "story",
-      "en": "<LI>You feel her breasts through her lacy bra.",
-      "cn": "<LI>你隔着她的蕾丝文胸感受着她的乳房。",
-      "es": "<LI>Le palpas los pechos a través del sujetador de encaje.",
-      "fr": "<LI>Vous sentez ses seins à travers son soutien-gorge en dentelle.",
-      "tw": "<LI>你隔著她的蕾絲胸罩感受著她的乳房。"
+      "en": "<LI>You've rather had your fun standing here. What will it be?",
+      "cn": "<LI>你站着已经够尽兴了。接下来呢？",
+      "es": "<LI>Ya te has divertido bastante de pie. ¿Qué va a ser?",
+      "fr": "<LI>Vous vous êtes plutôt bien amusé debout. Qu'est-ce que ce sera ?",
+      "tw": "<LI>你站著已經夠盡興了。接下來呢？"
+    },
+    {
+      "id": "x02568b",
+      "kind": "story",
+      "en": "<LI>She gives you a quick kiss. You can hardly stay standing here.",
+      "cn": "<LI>她很快亲了你一下。你们没法一直这么站着。",
+      "es": "<LI>Ella te da un beso rápido. Apenas podéis seguir de pie.",
+      "fr": "<LI>Elle vous donne un baiser rapide. Vous ne pouvez guère rester debout.",
+      "tw": "<LI>她很快親了你一下。你們沒辦法一直這麼站著。"
+    },
+    {
+      "id": "x02568c",
+      "kind": "story",
+      "en": "<LI>You've explored all you can for now. What will it be?",
+      "cn": "<LI>眼下能探索的，你已经探索过了。接下来呢？",
+      "es": "<LI>Ya has explorado todo lo que puedes por ahora. ¿Qué va a ser?",
+      "fr": "<LI>Vous avez exploré tout ce que vous pouviez pour l'instant. Qu'est-ce que ce sera ?",
+      "tw": "<LI>眼下能探索的，你已經探索過了。接下來呢？"
+    },
+    {
+      "id": "x02568d",
+      "kind": "choice",
+      "tag": "sofapee",
+      "en": "Ask again if she needs a pee?",
+      "cn": "再问她是不是想上厕所？",
+      "es": "¿Preguntarle otra vez si tiene ganas de hacer pis?",
+      "fr": "Lui demander encore si elle a envie de faire pipi ?",
+      "tw": "再問她是不是想上廁所？"
+    },
+    {
+      "id": "x02568e",
+      "kind": "story",
+      "en": "<LI>That's as far as she'll let you go.",
+      "cn": "<LI>她不会让你再往前了。",
+      "es": "<LI>No va a dejarte ir más lejos.",
+      "fr": "<LI>Elle ne vous laissera pas aller plus loin.",
+      "tw": "<LI>她不會讓你再往前了。"
+    },
+    {
+      "id": "x02568f",
+      "kind": "story",
+      "en": "<LI>You kiss her again. Your hand finds the suspender clasp more easily this time.",
+      "cn": "<LI>你们又吻在一起。这次你的手更容易摸到了吊袜带的扣子。",
+      "es": "<LI>La vuelves a besar. Esta vez tu mano encuentra el enganche del liguero más fácilmente.",
+      "fr": "<LI>Vous l'embrassez à nouveau. Cette fois votre main trouve l'attache du porte-jarretelles plus facilement.",
+      "tw": "<LI>你們又吻在一起。這次你的手更容易摸到了吊襪帶的扣子。"
+    },
+    {
+      "id": "x02568g",
+      "kind": "story",
+      "en": "<LI>DIANE: I must pop to the loo.",
+      "cn": "<LI>黛安：我得去一下厕所。",
+      "es": "<LI>DIANE: Tengo que ir al baño.",
+      "fr": "<LI>DIANE : Il faut que je file aux toilettes.",
+      "tw": "<LI>黛安：我得去一下廁所。"
+    },
+    {
+      "id": "x02568h",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm OK, thanks.",
+      "cn": "<LI>黛安：我没事，谢谢。",
+      "es": "<LI>DIANE: Estoy bien, gracias.",
+      "fr": "<LI>DIANE : Ça va, merci.",
+      "tw": "<LI>黛安：我沒事，謝謝。"
     },
     {
       "id": "x02569",
@@ -24271,29 +24310,29 @@
     {
       "id": "x02585",
       "kind": "story",
-      "en": "<LI>You can see the dark bit at the top of her tights.",
-      "cn": "<LI>你能看到她连裤袜顶端的那一小段深色边口。",
-      "es": "<LI>Puedes ver la parte oscura de la parte superior de sus medias.",
-      "fr": "<LI>Vous apercevez la partie sombre en haut de ses collants.",
-      "tw": "<LI>你能看見她褲襪頂端的那一小段深色邊口。"
+      "en": "<LI>This time you can see more of the dark top of her tights.",
+      "cn": "<LI>这回你能看到她连裤袜顶端更多的深色边口。",
+      "es": "<LI>Esta vez se ve más la parte oscura de la parte de arriba de sus medias.",
+      "fr": "<LI>Cette fois, vous apercevez davantage la partie sombre en haut de ses collants.",
+      "tw": "<LI>這回你能看見她褲襪頂端更多的深色邊口。"
     },
     {
       "id": "x02586",
       "kind": "story",
-      "en": "<LI>You can see the top of one stocking, with a glimpse of a white suspender.",
-      "cn": "<LI>你能看到她一条长筒丝袜的顶端，隐约还瞥见了一根白色吊袜带。",
-      "es": "<LI>Puedes ver la parte superior de una de sus medias, con un destello de liguero blanco.",
-      "fr": "<LI>Vous apercevez le haut d'un bas, avec une furtive jarretelle blanche.",
-      "tw": "<LI>你看到一隻長筒襪的頂端，還隱約瞥見白色吊襪帶。"
+      "en": "<LI>This time you can see more of the stocking top, and the white suspender against her thigh.",
+      "cn": "<LI>这回你能看到更多长筒丝袜的顶端，白色吊袜带贴在她大腿上。",
+      "es": "<LI>Esta vez se ve más el alto de la media, y el liguero blanco contra el muslo.",
+      "fr": "<LI>Cette fois, vous apercevez davantage le haut du bas, et la jarretelle blanche contre sa cuisse.",
+      "tw": "<LI>這回你能看見更多長筒絲襪的頂端，白色吊襪帶貼在她大腿上。"
     },
     {
       "id": "x02587",
       "kind": "story",
-      "en": "<LI>She sits upright again and pushes her skirt back into place. She looks at the door again.",
-      "cn": "<LI>她又重新坐直，把裙子往下拉整齐，目光再次瞟向门口。",
-      "es": "<LI>Se sienta erguida de nuevo y se coloca la falda en su sitio. Mira hacia la puerta otra vez.",
-      "fr": "<LI>Elle se redresse et remet sa jupe en place. Elle regarde de nouveau vers la porte.",
-      "tw": "<LI>她又重新坐直，把裙子往下拉整齊，目光再次瞟向門口。"
+      "en": "<LI>She glances at the door again, then at you, as if she hasn't noticed.",
+      "cn": "<LI>她又瞟了一眼门口，然后看向你，像是没发觉似的。",
+      "es": "<LI>Vuelve a mirar hacia la puerta, luego a ti, como si no se hubiera dado cuenta.",
+      "fr": "<LI>Elle jette encore un coup d'œil vers la porte, puis vers vous, comme si elle n'avait rien remarqué.",
+      "tw": "<LI>她又瞟了一眼門口，然後看向你，像是沒發覺似的。"
     },
     {
       "id": "x02588",
@@ -24879,7 +24918,7 @@
     {
       "id": "x02646",
       "kind": "story",
-      "en": "<LI>YOU: Diane, Can I ask you something?",
+      "en": "<LI>YOU: Diane, can I ask you something?",
       "cn": "<LI>你：黛安，我能问你一件事吗？",
       "es": "<LI>TÚ: Diane, ¿puedo preguntarte algo?",
       "fr": "<LI>VOUS : Diane, je peux te demander quelque chose ?",
@@ -25409,11 +25448,11 @@
     {
       "id": "x02699",
       "kind": "story",
-      "en": "<LI>You slip a hand underneath her skirt and reach up as far as her knickers again, but she squeezes her legs together, and changes position again.",
-      "cn": "<LI>你再次把手伸进她的裙子下面，往上够到她的内裤，但她又把腿夹紧，换了个姿势。",
-      "es": "<LI>Deslizas la mano por debajo de su falda y subes hasta rozarle las bragas, pero ella aprieta las piernas y vuelve a cambiar de postura.",
-      "fr": "<LI>Vous glissez une main sous sa jupe et remonte jusqu'à sa culotte, mais elle serre les jambes et change de position à nouveau.",
-      "tw": "<LI>你再次把手伸進她的裙子下面，往上夠到她的內褲，但她又把腿夾緊，換了個姿勢。"
+      "en": "<LI>You catch her as she kneels and slip a hand under her skirt, as far as her knickers. She clamps her thighs shut, twists away, and sits sideways again.",
+      "cn": "<LI>她跪在沙发上时你一把揽住她，把手伸进裙子下面，够到她的内裤。她夹紧大腿，扭开身子，又侧坐回去。",
+      "es": "<LI>La pillas de rodillas y deslizas una mano bajo la falda, hasta las bragas. Ella aprieta los muslos, se retuerce y vuelve a sentarse de lado.",
+      "fr": "<LI>Vous la rattrapez à genoux et glissez une main sous sa jupe, jusqu'à sa culotte. Elle serre les cuisses, se dégage et se rassoit de côté.",
+      "tw": "<LI>她跪在沙發上時你一把攬住她，把手伸進裙子下面，夠到她的內褲。她夾緊大腿，扭開身子，又側坐回去。"
     },
     {
       "id": "x02700",
@@ -25538,7 +25577,7 @@
     {
       "id": "x02712",
       "kind": "story",
-      "en": "<LI>You carry on talking about the theatre. Trouble is you've been talking about it much of the evening so she finds it quite easy to interrupt.",
+      "en": "<LI>You carry on talking about the theatre. Trouble is, you've been talking about it much of the evening so she finds it quite easy to interrupt.",
       "cn": "<LI>你们继续聊着戏剧的话题。只是整个晚上聊了太多这个，所以她很容易就找到机会插嘴。",
       "es": "<LI>Seguís hablando del teatro. El problema es que habéis estado hablando de eso buena parte de la noche, así que a ella le resulta bastante fácil interrumpir.",
       "fr": "<LI>Vous continuez à parler du théâtre. Le problème, c'est que vous en avez parlé une bonne partie de la soirée, alors elle trouve assez facilement une occasion d'interrompre la conversation.",
@@ -26115,7 +26154,7 @@
       "id": "x02773",
       "kind": "choice",
       "tag": "gameover",
-      "en": "She returns to you and your stamp album, which is all very nice, but the end of this game.",
+      "en": "She returns to you and your stamp album, which is all very nice, but that's the end of this game.",
       "cn": "她回到你和你的集邮册旁边，感觉倒也不错，不过游戏就此结束了。",
       "es": "Ella vuelve contigo y con tu álbum de sellos, lo cual está muy bien, pero es el final de este juego.",
       "fr": "Elle revient vers vous et votre album de timbres, ce qui est très agréable, mais c'est la fin de ce jeu.",
@@ -26143,7 +26182,7 @@
       "id": "x02776",
       "kind": "choice",
       "tag": "gameover",
-      "en": "She returns to you and your railway album, which is all very nice, but the end of this game.",
+      "en": "She returns to you and your railway album, which is all very nice, but that's the end of this game.",
       "cn": "她回到你和你的铁路相册旁边，感觉倒也不错，不过游戏就此结束了。",
       "es": "Ella vuelve contigo y con tu álbum de trenes, lo cual está muy bien, pero es el final de este juego.",
       "fr": "Elle revient vers vous et votre album de chemin de fer, ce qui est très agréable, mais c'est la fin de ce jeu.",
@@ -28062,10 +28101,10 @@
     {
       "id": "x02980",
       "kind": "story",
-      "en": "<LI>You show her the photos for the Frankfurt. On Main and on Oder.",
+      "en": "<LI>You show her the photos for Frankfurt am Main and Frankfurt an der Oder.",
       "cn": "<LI>你给她展示法兰克福的照片，美因河畔的和奥德河畔的都有。",
-      "es": "<LI>Le enseñas las fotos de Frankfurt. El del Meno y el del Óder.",
-      "fr": "<LI>Vous lui montres les photos de Francfort. Sur le Main et sur l'Oder.",
+      "es": "<LI>Le enseñas las fotos de Fráncfort del Meno y de Fráncfort del Óder.",
+      "fr": "<LI>Vous lui montrez les photos de Francfort-sur-le-Main et de Francfort-sur-l'Oder.",
       "tw": "<LI>你給她展示法蘭克福的照片，美因河畔的和奧德河畔的都有。"
     },
     {
@@ -28229,11 +28268,11 @@
     {
       "id": "x02998",
       "kind": "story",
-      "en": "<LI><SPAN style='color: #00ff00'> She smiles but changes position again, so she is sitting more upright.</SPAN>",
-      "cn": "<LI><SPAN style='color: #00ff00'> 她微微一笑，却又换了个姿势，坐得更挺了。</SPAN>",
-      "es": "<LI><SPAN style='color: #00ff00'> Sonríe pero cambia de postura otra vez, sentándose más erguida.</SPAN>",
-      "fr": "<LI><SPAN style='color: #00ff00'> Elle sourit mais change de position à nouveau, s'asseyant plus droite.</SPAN>",
-      "tw": "<LI><SPAN style='color: #00ff00'> 她微微一笑，卻又換了個姿勢，坐得更滿了。</SPAN>"
+      "en": "<LI>She smiles but changes position again, so she is sitting more upright.",
+      "cn": "<LI>她微笑着，却又换了个姿势，坐得更端正了。",
+      "es": "<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.",
+      "fr": "<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.",
+      "tw": "<LI>她微笑著，卻又換了個姿勢，坐得更端正了。"
     },
     {
       "id": "x02999",
@@ -28405,7 +28444,7 @@
     {
       "id": "x03017",
       "kind": "story",
-      "en": "<LI>You show her your photos from Fort William and the West Highland line. She says its one of her favourite journeys.",
+      "en": "<LI>You show her your photos from Fort William and the West Highland line. She says it's one of her favourite journeys.",
       "cn": "<LI>你给她看威廉堡和西高地线的照片。她说那是她最喜欢的旅程之一。",
       "es": "<LI>Le enseñas tus fotos de Fort William y la línea West Highland. Dice que es uno de sus viajes favoritos.",
       "fr": "<LI>Vous lui montrez vos photos de Fort William et de la ligne West Highland. Elle dit que c'est l'un de ses voyages préférés.",
@@ -28450,7 +28489,7 @@
     {
       "id": "x03022",
       "kind": "story",
-      "en": "<LI>She leans her head on your shoulder",
+      "en": "<LI>She leans her head on your shoulder.",
       "cn": "<LI>她把头靠在你肩上。",
       "es": "<LI>Apoya la cabeza en tu hombro.",
       "fr": "<LI>Elle pose sa tête sur votre épaule.",
@@ -28802,7 +28841,7 @@
     {
       "id": "x03060",
       "kind": "story",
-      "en": "<LI>You show her your photos from Italy and a journey from Milan down to Naples. You say you had you pocket picked in Naples. She says Molly had her handbag stolen.",
+      "en": "<LI>You show her your photos from Italy and a journey from Milan down to Naples. You say you had your pocket picked in Naples. She says Molly had her handbag stolen.",
       "cn": "<LI>你给她看意大利的照片，还有一段从米兰南下那不勒斯的旅程。你说在那不勒斯被人扒了口袋，她说莫莉的手提包也在那里被偷了。",
       "es": "<LI>Le enseñas tus fotos de Italia y un viaje de Milán a Nápoles. Comentas que te robaron la cartera en Nápoles. Ella dice que a Molly le robaron el bolso.",
       "fr": "<LI>Vous lui montrez vos photos d'Italie et un voyage de Milan à Naples. Vous lui dites qu'on vous a fait les poches à Naples. Elle dit que Molly s'est fait voler son sac.",
@@ -28847,11 +28886,11 @@
     {
       "id": "x03065",
       "kind": "story",
-      "en": "<LI>She leans forward to look at the stamps. She rests her head on your shoulder but looks at the door. She reaches down to get a hankie from her bag. She crosses her legs the other way. She sits on her hands.",
-      "cn": "<LI>她俯身看邮票，头靠在你肩上，眼睛却一直往门口瞟。她俯身从包里掏出一块手帕，随即换了个方向把腿交叉叠上，又把手压在自己身下坐着。",
-      "es": "<LI>Se inclina hacia delante para ver los sellos. Apoya la cabeza en tu hombro pero mira hacia la puerta. Se agacha para sacar un pañuelo del bolso. Cruza las piernas al otro lado. Se sienta encima de las manos.",
-      "fr": "<LI>Elle se penche en avant pour regarder les timbres. Elle pose sa tête sur votre épaule mais regarde vers la porte. Elle plonge la main dans son sac pour en sortir un mouchoir. Elle croise les jambes dans l'autre sens. Elle s'assoit sur ses mains.",
-      "tw": "<LI>她俯身看郵票，頭靠在你肩上，眼睛卻一直往門口瞟。她俯身從包裡掏出一塊手帕，隨即換了個方向把腿交叉疊上，又把手壓在自己身下坐著。"
+      "en": "<LI>She leans forward to look at the photos. She rests her head on your shoulder but looks at the door. She reaches down to get a hankie from her bag. She crosses her legs the other way. She sits on her hands.",
+      "cn": "<LI>她俯身看照片，头靠在你肩上，眼睛却一直往门口瞟。她俯身从包里掏出一块手帕，随即换了个方向把腿交叉叠上，又把手压在自己身下坐着。",
+      "es": "<LI>Se inclina hacia delante para ver las fotos. Apoya la cabeza en tu hombro pero mira hacia la puerta. Se agacha para sacar un pañuelo del bolso. Cruza las piernas al otro lado. Se sienta encima de las manos.",
+      "fr": "<LI>Elle se penche en avant pour regarder les photos. Elle pose sa tête sur votre épaule mais regarde vers la porte. Elle plonge la main dans son sac pour en sortir un mouchoir. Elle croise les jambes dans l'autre sens. Elle s'assoit sur ses mains.",
+      "tw": "<LI>她俯身看照片，頭靠在你肩上，眼睛卻一直往門口瞟。她俯身從包裡掏出一塊手帕，隨即換了個方向把腿交叉疊上，又把手壓在自己身下坐著。"
     },
     {
       "id": "x03066",
@@ -28920,11 +28959,11 @@
     {
       "id": "x03073",
       "kind": "story",
-      "en": "<LI><SPAN style='color: #00ff00'> She smiles but changes position again, so she is sitting more upright.</SPAN>",
-      "cn": "<LI> <SPAN style='color: #00ff00'> 她微微一笑，却又换了个姿势，坐得更挺了。</SPAN>",
-      "es": "<LI><SPAN style='color: #00ff00'> Sonríe pero vuelve a cambiar de posición, sentándose más erguida.</SPAN>",
-      "fr": "<LI><SPAN style='color: #00ff00'> Elle sourit mais change de position à nouveau, en s'asseyant plus droite.</SPAN>",
-      "tw": "<LI> <SPAN style='color: #00ff00'> 她微微一笑，卻又換了個姿勢，坐得更滿了。</SPAN>"
+      "en": "<LI>She smiles but changes position again, so she is sitting more upright.",
+      "cn": "<LI>她微笑着，却又换了个姿势，坐得更端正了。",
+      "es": "<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.",
+      "fr": "<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.",
+      "tw": "<LI>她微笑著，卻又換了個姿勢，坐得更端正了。"
     },
     {
       "id": "x03074",
@@ -29077,11 +29116,11 @@
     {
       "id": "x03090",
       "kind": "story",
-      "en": "<LI><SPAN style='color: #00ff00'> She smiles but changes position again, so she is sitting more upright.</SPAN>",
-      "cn": "<LI> <SPAN style='color: #00ff00'> 她微微一笑，却又换了个姿势，坐得更挺了。</SPAN>",
-      "es": "<LI><SPAN style='color: #00ff00'> Sonríe pero vuelve a cambiar de posición, sentándose más erguida.</SPAN>",
-      "fr": "<LI><SPAN style='color: #00ff00'> Elle sourit mais change de position à nouveau, en s'asseyant plus droite.</SPAN>",
-      "tw": "<LI> <SPAN style='color: #00ff00'> 她微微一笑，卻又換了個姿勢，坐得更滿了。</SPAN>"
+      "en": "<LI>She smiles but changes position again, so she is sitting more upright.",
+      "cn": "<LI>她微笑着，却又换了个姿势，坐得更端正了。",
+      "es": "<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.",
+      "fr": "<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.",
+      "tw": "<LI>她微笑著，卻又換了個姿勢，坐得更端正了。"
     },
     {
       "id": "x03091",
@@ -29686,7 +29725,7 @@
     {
       "id": "x03156",
       "kind": "story",
-      "en": "<LI>You show her your Photos from Rome. She pays special attention as she loves Rome and knows it well.",
+      "en": "<LI>You show her your photos from Rome. She pays special attention as she loves Rome and knows it well.",
       "cn": "<LI>你给她看罗马的照片，她格外认真地看着，因为她喜欢罗马，对那里很熟。",
       "es": "<LI>Le enseñas tus fotos de Roma. Le presta especial atención porque adora Roma y la conoce muy bien.",
       "fr": "<LI>Vous lui montrez vos photos de Rome. Elle y prête une attention toute particulière, car elle adore Rome et la connaît bien.",
@@ -29907,7 +29946,7 @@
     {
       "id": "x03180",
       "kind": "story",
-      "en": "<LI>She gets up too, and starts tidying herself up",
+      "en": "<LI>She gets up too, and starts tidying herself up.",
       "cn": "<LI>她也站起来，开始整理仪容。",
       "es": "<LI>Ella también se levanta y empieza a arreglarse.",
       "fr": "<LI>Elle se lève elle aussi et commence à se rajuster.",
@@ -30098,7 +30137,7 @@
     {
       "id": "x03199",
       "kind": "story",
-      "en": "<LI>But you lean over and put your left arm around her. You kiss her",
+      "en": "<LI>But you lean over and put your left arm around her. You kiss her.",
       "cn": "<LI>但你身子探过去，用左臂揽住她，吻了她。",
       "es": "<LI>Pero te inclinas y le pasas el brazo izquierdo por encima. La besas.",
       "fr": "<LI>Mais vous vous penchez et passez votre bras gauche autour d'elle. Vous l'embrassez.",
@@ -34221,15 +34260,6 @@
       "tw": "你繼續往前走。"
     },
     {
-      "id": "x03642",
-      "kind": "story",
-      "en": "<LI>You are walking up the road with Diane, hand in hand.",
-      "cn": "<LI>你和黛安手牵着手，沿着街道向前走去。",
-      "es": "<LI>Vais caminando por la calle, tú y Diane, cogidos de la mano.",
-      "fr": "<LI>Vous remontez la rue avec Diane, main dans la main.",
-      "tw": "<LI>你和黛安手牽著手，沿著街道向前走去。"
-    },
-    {
       "id": "x03643",
       "kind": "story",
       "en": "<LI>You pass a few houses, and come to a church.",
@@ -35071,7 +35101,7 @@
     {
       "id": "x03734",
       "kind": "story",
-      "en": "<LI>DIANE: Oh, it got worse. The front door key is a real pain so I went round the back, but then I found I didn't have the back door key. Honestly, if you could have seen me, searching in my handbag while standing on one leg. Anyway I gave up and had to use the front door after all, and it really is hopeless. I thought there was going to be a puddle on the doorstep at one stage.",
+      "en": "<LI>DIANE: Oh, it got worse. The front door key is a real pain so I went round the back, but then I found I didn't have the back door key. Honestly, if you could have seen me, searching in my handbag while standing on one leg. Anyway, I gave up and had to use the front door after all, and it really is hopeless. I thought there was going to be a puddle on the doorstep at one stage.",
       "cn": "<LI>黛安：哦，后来还更糟呢。前门钥匙太难用了，所以我绕到屋后，结果发现后门钥匙也没带。你要是看见我当时的样子啊——单腿站着，翻来翻去找钥匙。最后没办法，还是只能走前门，那前门真的是噩梦。我估计有那么一刻，门口差点就要出现一摊水了。",
       "es": "<LI>DIANE: Ay, fue a peor. La llave de la puerta principal es un suplicio, así que fui hacia la parte trasera, pero resulta que no tenía la llave de esa puerta. En serio, si me hubieras visto, rebuscando en el bolso apoyada en un pie... Al final me rendí y tuve que volver a la puerta principal, que es un desastre. Hubo un momento en que pensé que iba a haber un charco en el umbral.",
       "fr": "<LI>DIANE : Oh, ça s'est compliqué. La clé de la porte d'entrée est vraiment galère, alors je suis allée par derrière, mais j'ai réalisé que je n'avais pas la clé de la porte de derrière. Vraiment, si tu avais pu me voir, à fouiller dans mon sac à main debout sur une jambe. Bref, j'ai abandonné et j'ai dû utiliser la porte d'entrée quand même, et c'est vraiment une horreur. J'ai cru à un moment qu'il allait y avoir une flaque sur le pas de la porte.",
@@ -36117,7 +36147,7 @@
     {
       "id": "x03848",
       "kind": "story",
-      "en": "<LI>And she heads upstairs. A few minutes later she comes downstairs looking relaxed.",
+      "en": "<LI>And she heads upstairs. A few minutes later she comes downstairs, looking relaxed.",
       "cn": "<LI>她上了楼。过了几分钟，她走下来，整个人轻松了不少。",
       "es": "<LI>Y sube las escaleras. Unos minutos después baja con cara de alivio.",
       "fr": "<LI>Et elle monte à l'étage. Quelques minutes plus tard elle redescend l'air détendu.",
@@ -37446,7 +37476,7 @@
     {
       "id": "x03989",
       "kind": "story",
-      "en": "<LI>It's not urgent. I'll wait a minute.",
+      "en": "<LI>DIANE: It's not urgent. I'll wait a minute.",
       "cn": "<LI>还不算急。我稍等一会儿。",
       "es": "<LI>No es urgente. Esperaré un momento.",
       "fr": "<LI>Ce n'est pas urgent. Je vais attendre une minute.",
@@ -37729,11 +37759,11 @@
     {
       "id": "x04019",
       "kind": "story",
-      "en": "<LI>DIANE: <EM>very quietly</EM> That's lovely.",
-      "cn": "<LI>黛安：<EM>（轻声说道）</EM>真好。",
-      "es": "<LI>DIANE: <EM>muy bajito</EM> Qué rico.",
-      "fr": "<LI>DIANE : <EM>très doucement</EM> C'est merveilleux.",
-      "tw": "<LI>黛安：<EM>（輕聲說道）</EM>真好。"
+      "en": "<LI>DIANE: <EM>(very quietly)</EM> Mmm.",
+      "cn": "<LI>黛安：<EM>（很轻地）</EM>嗯啊……",
+      "es": "<LI>DIANE: <EM>(muy bajito)</EM> Mmm.",
+      "fr": "<LI>DIANE : <EM>(tout bas)</EM> Mmm.",
+      "tw": "<LI>黛安：<EM>（很輕地）</EM>嗯啊……"
     },
     {
       "id": "x04020",
@@ -37785,11 +37815,11 @@
     {
       "id": "x04025",
       "kind": "story",
-      "en": "<LI>DIANE: That's lovely.",
-      "cn": "<LI>黛安：真好。",
-      "es": "<LI>DIANE: Qué rico.",
-      "fr": "<LI>DIANE : C'est merveilleux.",
-      "tw": "<LI>黛安：真好。"
+      "en": "<LI>DIANE: Don't stop…",
+      "cn": "<LI>黛安：别停……",
+      "es": "<LI>DIANE: No pares…",
+      "fr": "<LI>DIANE : N'arrête pas…",
+      "tw": "<LI>黛安：別停……"
     },
     {
       "id": "x04026",
@@ -38640,7 +38670,7 @@
     {
       "id": "x04114",
       "kind": "story",
-      "en": "<LI>DIANE: Come on bus, we want to go home.",
+      "en": "<LI>DIANE: Come on, bus, we want to go home.",
       "cn": "<LI>黛安：快开车啊，我们要回家了。",
       "es": "<LI>DIANE: Venga, autobús, que queremos ir a casa.",
       "fr": "<LI>DIANE : Allez, le bus, on veut rentrer.",
@@ -43710,7 +43740,7 @@
     {
       "id": "x04652",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is shifting about a bit. Maybe she's just uncomfortable—or maybe she's beginning to need the loo.</SPAN></EM></P>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is shifting about a bit. Maybe she's just uncomfortable, or maybe she's beginning to need the loo.</SPAN></EM></P>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安有些坐不住了。也许只是坐得不舒服——也许是开始想去厕所了。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Diane se mueve un poco. Quizá solo está incómoda, o quizá empieza a necesitar el baño.</SPAN></EM></P>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane remue un peu sur son siège. Peut-être qu'elle n'est pas à l'aise — ou peut-être qu'elle commence à avoir besoin des toilettes.</SPAN></EM></P>",
@@ -43934,7 +43964,7 @@
     {
       "id": "x04677",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is standing with her legs crossed. Maybe she's just uncomfortable—or maybe she's beginning to need the toilet.</SPAN></EM></P>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is standing with her legs crossed. Maybe she's just uncomfortable, or maybe she's beginning to need the toilet.</SPAN></EM></P>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安站着，双腿交叉。也许只是站得不舒服——也许是开始想去厕所了。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Diane está de pie con las piernas cruzadas. Quizá solo está incómoda... o quizá empieza a necesitar el baño.</SPAN></EM></P>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane se tient debout les jambes croisées. Peut-être qu'elle est juste mal à l'aise — ou peut-être qu'elle commence à avoir envie d'aller aux toilettes.</SPAN></EM></P>",
@@ -44284,7 +44314,7 @@
     {
       "id": "x04716",
       "kind": "story",
-      "en": "<EM><SPAN style='color: #0000FF'>Molly is shifting about a bit. Maybe she's just uncomfortable—or maybe she's beginning to need the loo.</SPAN></EM>",
+      "en": "<EM><SPAN style='color: #0000FF'>Molly is shifting about a bit. Maybe she's just uncomfortable, or maybe she's beginning to need the loo.</SPAN></EM>",
       "cn": "<EM><SPAN style='color: #0000FF'>莫莉微微挪动着身子。也许只是坐得不舒服——也许她开始想去厕所了。</SPAN></EM>",
       "es": "<EM><SPAN style='color: #0000FF'>Molly no para de moverse. Quizá es que está incómoda, o quizá le están empezando a entrar ganas de ir al baño.</SPAN></EM>",
       "fr": "<EM><SPAN style='color: #0000FF'>Molly gigote un peu. Peut-être qu'elle est juste mal à l'aise — ou peut-être qu'elle commence à avoir envie d'aller aux toilettes.</SPAN></EM>",
@@ -44589,7 +44619,7 @@
     {
       "id": "x04750",
       "kind": "story",
-      "en": "<EM><SPAN style='color: #0000FF'>Molly is standing with her legs crossed. Maybe she's just uncomfortable—or maybe she's beginning to need the toilet.</SPAN></EM><P>",
+      "en": "<EM><SPAN style='color: #0000FF'>Molly is standing with her legs crossed. Maybe she's just uncomfortable, or maybe she's beginning to need the toilet.</SPAN></EM><P>",
       "cn": "<EM><SPAN style='color: #0000FF'>莫莉站着时双腿交叉。也许只是站得不太舒服——也许她已经开始想去厕所了。</SPAN></EM><P>",
       "es": "<EM><SPAN style='color: #0000FF'>Molly está de pie con las piernas cruzadas. Puede que esté incómoda, o puede que le estén empezando a entrar ganas de ir al baño.</SPAN></EM><P>",
       "fr": "<EM><SPAN style='color: #0000FF'>Molly est debout les jambes croisées. Peut-être est-elle juste mal à l'aise — ou peut-être commence-t-elle à avoir envie d'aller aux toilettes.</SPAN></EM><P>",
@@ -44905,7 +44935,7 @@
     {
       "id": "x04785",
       "kind": "story",
-      "en": "<P><LI>DIANE: Well, when I was in college I used to go up to town with my friends and often we'd drink a bit. Then I had to get the bus back home and I often wanted to go to the loo by the end of the journey. It didn't matter too much because it was only half a mile's walk. But one day it was bitterly cold and it seemed to go to my bladder and I was really desperate. Trouble was I'd met a boy from school on the bus and he was chatting and wanted to walk home with me. I really fancied him, but this wasn't the moment. If I'd been by myself I'd have popped into the bushes but I couldn't with him there. I was in agony.",
+      "en": "<P><LI>DIANE: Well, when I was in college I used to go up to town with my friends and often we'd drink a bit. Then I had to get the bus back home and I often wanted to go to the loo by the end of the journey. It didn't matter too much because it was only half a mile's walk. But one day it was bitterly cold and it seemed to go to my bladder and I was really desperate. Trouble was, I'd met a boy from school on the bus and he was chatting and wanted to walk home with me. I really fancied him, but this wasn't the moment. If I'd been by myself I'd have popped into the bushes but I couldn't with him there. I was in agony.",
       "cn": "<P><LI>黛安：嗯，上大学的时候，我常和朋友进城玩，会喝点酒。然后我坐公共汽车回家，到站下车的时候往往就很想去厕所。这倒也还好，因为只有半英里的路要走。但有一天，天气特别冷，那股寒意像是直往膀胱里钻。我当时憋得难受极了，偏偏还在车上碰到了一个学校认识的男生。他一路上和我聊天，还要陪我走回家。我挺喜欢他的，但那一刻真的不是时候。要是独自一人，我早就躲进路边草丛里撒尿了，可有他在场根本不行。我那会儿难受极了。",
       "es": "<P><LI>DIANE: Bueno, cuando estaba en la universidad solía salir a la ciudad con mis amigas y a veces bebíamos un poco. Luego tenía que coger el autobús para volver a casa y casi siempre me entraban ganas de ir al baño hacia el final del trayecto. No era gran cosa porque solo había que andar media milla. Pero un día hacía un frío horrible y me fue directo a la vejiga y tenía unas ganas tremendas. El problema era que me había encontrado en el autobús con un chico del instituto y estaba charlando y quería acompañarme a casa. Me gustaba bastante, pero ese no era el momento. Si hubiera ido sola me habría metido entre los arbustos, pero con él delante no podía. Estaba apuradísima.",
       "fr": "<P><LI>DIANE : Bon, quand j'étais à la fac, je montais en ville avec mes amies et on buvait parfois un peu. Ensuite je devais prendre le bus pour rentrer et j'avais souvent envie d'aller aux toilettes à la fin du trajet. Ça n'avait pas trop d'importance car je n'avais qu'un kilomètre à faire à pied. Mais un jour il faisait un froid glacial et ça s'est répercuté direct sur ma vessie — j'avais vraiment une envie pressante. Le problème, c'est que j'avais rencontré un garçon de l'école dans le bus qui bavardait et voulait me raccompagner. Il me plaisait vraiment, mais c'était le plus mauvais moment qui soit. Toute seule, je serais allée dans les buissons, mais je ne pouvais pas avec lui là. J'étais au supplice.",
@@ -44923,7 +44953,7 @@
     {
       "id": "x04787",
       "kind": "story",
-      "en": "<P><LI>DIANE: One of the worst times, a few years back I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was dying for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.",
+      "en": "<P><LI>DIANE: One of the worst times, a few years back, I went with my family to visit some friends. There was a bloke a bit older than me and I was a bit in awe of him. Anyway, he took me into another room and taught me how to play chess. Trouble was, I'd had some cider for lunch and I was dying for a wee and didn't know how to tell him. I was fidgeting about and my skirt kept riding up and I could tell he was watching me and that made it worse.",
       "cn": "<P><LI>黛安：记忆里最难熬的一次，是几年前跟家人去拜访朋友。那里有个比我大几岁的男生，我当时有点崇拜他。他把我带到另一个房间教我下国际象棋。问题是，午饭喝了些苹果酒，我憋得要死，特别想上厕所，又不知道怎么开口。我坐在那里不停扭动，裙子一直往上爬，我能感觉到他在看我，这让我更加窘迫。",
       "es": "<P><LI>DIANE: Una de las peores veces fue hace unos años, cuando fui con mi familia a visitar a unos amigos. Había un chico un poco mayor que yo que me imponía bastante. El caso es que me llevó a otra habitación y me enseñó a jugar al ajedrez. El problema era que había tomado sidra en la comida y tenía unas ganas locas de hacer pis y no sabía cómo decírselo. No paraba de moverme y la falda se me iba subiendo, y notaba que él me miraba, y eso lo ponía todo peor.",
       "fr": "<P><LI>DIANE : L'un des pires moments — il y a quelques années, j'étais allée avec ma famille rendre visite à des amis. Il y avait un type un peu plus âgé que moi et il m'impressionnait un peu. Bref, il m'a emmenée dans une autre pièce et m'a appris à jouer aux échecs. Le problème, c'est que j'avais bu du cidre au déjeuner et j'avais une envie folle de faire pipi sans savoir comment lui dire. Je n'arrêtais pas de gigoter et ma jupe ne cessait de remonter — je sentais qu'il me regardait, ce qui n'arrangeait pas les choses.",
@@ -44968,7 +44998,7 @@
     {
       "id": "x04792",
       "kind": "story",
-      "en": "<P><LI>DIANE: A few months ago three girlfriends and I went on a hen party to Holland. We'd drunk quite a lot and were walking back to the hotel. We all wanted a wee, but one of my mates was really desperate. We saw this toilet over the road but it was just a men's, with urinals. Anyway, Linda was desperate and she said 'This'll do' and went and pulled her knickers to one side and let go in the urinals. We were laughing like anything and the other two girls went as well. I wanted to go as well, really badly by now, but the trouble is I was wearing trousers.",
+      "en": "<P><LI>DIANE: A few months ago three girlfriends and I went on a hen party to Holland. We'd drunk quite a lot and were walking back to the hotel. We all wanted a wee, but one of my mates was really desperate. We saw this toilet over the road but it was just a men's, with urinals. Anyway, Linda was desperate and she said 'This'll do' and went and pulled her knickers to one side and let go in the urinals. We were laughing like anything and the other two girls went as well. I wanted to go as well, really badly by now, but the trouble is, I was wearing trousers.",
       "cn": "<P><LI>黛安：几个月前，我和三个闺蜜去荷兰参加一个婚前派对。我们喝了不少，正走路回酒店。大家都想上厕所，但其中一个朋友真的快忍不住了。我们看到对面有个厕所，结果是男厕，里面全是小便池。不管了，琳达已经憋到了极限，她说“将就一下吧”，干脆把内裤拨到一边，在小便池里尿了。我们笑得东倒西歪，另外两个女生也跟着去了。我这时候也尿急得难受，真的很想去，但问题是我穿的是长裤。",
       "es": "<P><LI>DIANE: Hace unos meses, tres amigas y yo fuimos a una despedida de soltera a Holanda. Habíamos bebido bastante y volvíamos andando al hotel. Todas teníamos ganas de hacer pis, pero una de mis amigas estaba verdaderamente desesperada. Vimos un baño al otro lado de la calle pero era solo de hombres, con urinarios. El caso es que Linda no aguantaba más y dijo «Con esto me vale» y fue, se apartó las bragas a un lado y se alivió en los urinarios. Nos partíamos de risa y las otras dos chicas también fueron. Yo también tenía unas ganas enormes para entonces, pero el problema era que llevaba pantalones.",
       "fr": "<P><LI>DIANE : Il y a quelques mois, trois copines et moi sommes parties en enterrement de vie de jeune fille en Hollande. On avait pas mal bu et on rentrait à pied à l'hôtel. On avait toutes envie de faire pipi, mais l'une d'elles était vraiment à bout. On a aperçu des toilettes de l'autre côté de la rue, mais c'était des toilettes pour hommes, avec des urinoirs. Bref, Linda n'en pouvait plus et elle a dit « Ça fera l'affaire » — elle a écarté sa culotte sur le côté et s'est soulagée dans les urinoirs. On riait comme des folles et les deux autres filles y sont allées aussi. Moi aussi j'avais vraiment très envie à ce stade, mais le problème c'est que je portais un pantalon.",
@@ -45067,7 +45097,7 @@
     {
       "id": "x04803",
       "kind": "story",
-      "en": "<P><LI>DIANE: It was one of those grotty wall-like urinals so I couldn't sort of sit on it. Anyway I thought I could hold it until I got back to the hotel but I was soon bursting, the others were laughing and when I popped into an alley and started to unzip my jeans one took out a camera. I didn't want to be on Webshots so I held on—literally, I had my hand in my pocket, so to speak. It got so bad a few spurts began to run down my leg and I had to go behind an old lorry.",
+      "en": "<P><LI>DIANE: It was one of those grotty wall-like urinals so I couldn't sort of sit on it. Anyway, I thought I could hold it until I got back to the hotel but I was soon bursting, the others were laughing and when I popped into an alley and started to unzip my jeans one took out a camera. I didn't want to be on Webshots so I held on—literally, I had my hand in my pocket, so to speak. It got so bad a few spurts began to run down my leg and I had to go behind an old lorry.",
       "cn": "<P><LI>黛安：那是那种恶心的挂墙式小便池，根本没法蹲。反正我以为自己能忍到回酒店，可没多久就憋得不行了，其他人还在旁边笑。我溜进一条小巷，刚开始拉裤子拉链，就有人掏出相机。我可不想照片上网，只能硬撑着——我可不是打比方，真的是把手插进裤兜捂住，就这么顶着。后来憋得太厉害，几滴尿液漏出来沿着腿流下去，我不得不躲到一辆旧卡车后面。",
       "es": "<P><LI>DIANE: Era uno de esos urinarios asquerosos adosados a la pared, así que no podía sentarme ni nada. El caso es que pensé que aguantaría hasta llegar al hotel, pero enseguida estaba a punto de reventar; las demás se reían, y cuando me metí en un callejón y empecé a bajar la cremallera de los vaqueros, una sacó una cámara. No quería acabar en Webshots, así que aguanté —literalmente, con la mano en el bolsillo, por así decirlo. Se puso tan mal que empezaron a escapárseme algunos chorros por la pierna y tuve que meterme detrás de un camión viejo.",
       "fr": "<P><LI>DIANE : Ces urinoirs crasseux en forme de mur — impossible de s'y asseoir. Bref, je pensais pouvoir tenir jusqu'à l'hôtel, mais j'allais bientôt craquer. Les autres riaient, et quand je me suis glissée dans une ruelle pour baisser ma fermeture éclair, l'une d'elles a sorti un appareil photo. Je ne voulais pas me retrouver sur Webshots, alors je me suis retenue — littéralement, j'avais la main dans la poche, si on peut dire. C'est devenu tellement critique que quelques jets ont commencé à couler le long de ma jambe et j'ai dû me cacher derrière un vieux camion.",

@@ -10,11 +10,11 @@ Playable files are in [`outputs/`](outputs/), grouped by language.
 
 | Folder | Language |
 |---|---|
-| `outputs/en` | English |
-| `outputs/cn` | Simplified Chinese |
-| `outputs/tw` | Traditional Chinese (Taiwan) |
-| `outputs/es` | Spanish |
-| `outputs/fr` | French |
+| `outputs/en/` | English |
+| `outputs/cn/` | Simplified Chinese |
+| `outputs/tw/` | Taiwan Mandarin (Traditional) |
+| `outputs/es/` | Spanish |
+| `outputs/fr/` | French |
 
 Each language folder contains:
 

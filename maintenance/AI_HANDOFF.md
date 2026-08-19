@@ -1,14 +1,13 @@
 # AI handoff — A Date With Diane
 
-Read this before editing. Ship text lives in `outputs/`. Toolkit lives in `maintenance/`.
+Read this before editing. Ship text lives in `outputs/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
 
 ## What this project is
 
 Restored multi-language edition of the old HTML branching adult text game *A Date With Diane*: cleaned wording/logic, Back with state restore, in-game Gallery (guided walkthroughs + Skip to the good bit), dark mode, five playable languages.
 
 **Languages (all independent):** `en`, `cn`, `tw`, `es`, `fr` under `outputs/{lang}/`.
-TW is Traditional Chinese with Taiwan-flavoured wording — edit it like ES/FR, not as a derivative of CN.
-Full TW voice rules (lexicon, grammar, particles, anti-patterns): [`maintenance/TW_VOICE.md`](TW_VOICE.md).
+**TW** is Taiwan Mandarin (國語) in Traditional script — same standing as ES/FR. Edit it as its own edition, not as CN run through conversion. Keep settled playable terms (`胸罩`, `計程車`, `流動廁所`, `樹叢`, `管理員`, `站不定`, `接著`, intimacy `撫摸`/`愛撫`). Particles sparingly; narration almost none.
 
 Each language folder ships:
 

@@ -8,11 +8,11 @@ Restored multi-language edition of the old HTML branching adult text game *A Dat
 
 **Languages (all independent):** `en`, `cn`, `tw`, `es`, `fr` under `outputs/{lang}/`.
 TW is Traditional Chinese with Taiwan-flavoured wording — edit it like ES/FR, not as a derivative of CN.
+Full TW voice rules (lexicon, grammar, particles, anti-patterns): [`maintenance/TW_VOICE.md`](TW_VOICE.md).
 
 Each language folder ships:
 
 - playable HTML (`dianedate_*.html`; bilingual with English except EN)
-- `edition_notes_*.txt`
 - climax transcripts under `transcripts/endings/` and `transcripts/hidden_scenes/`
 - companion wiki under `outputs/{lang}/wiki/` (not playable; all five languages)
 

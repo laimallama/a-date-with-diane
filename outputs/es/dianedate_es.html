@@ -735,6 +735,13 @@ function prefersReducedMotion() {
 
 function presentScreen() {
   try {
+    try {
+      var ae = document.activeElement;
+      if (ae && ae !== document.body && typeof ae.blur === "function") {
+        var aeTag = ae.tagName ? ae.tagName.toLowerCase() : "";
+        if (aeTag !== "input" && aeTag !== "textarea" && aeTag !== "select") ae.blur();
+      }
+    } catch (eBlur) {}
     if (typeof window.scrollTo === "function") window.scrollTo(0, 0);
     var box = document.getElementById("box");
     if (!box) return;
@@ -877,19 +884,27 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (!(guideActive && guideOn)) return;
+      // Always swallow Enter outside form fields so a focused button cannot
+      // keep firing (common on the last page after Guide ends).
       e.preventDefault();
-      if (e.repeat) return;
-      if (!claimStoryActionKey("Enter")) return;
-      pressGuidedChoice();
-      clearEnterHold();
-      enterHoldTimer = setTimeout(function () {
-        enterHoldTimer = null;
-        enterFastTimer = setInterval(function () {
-          if (!(guideActive && guideOn)) { clearEnterHold(); return; }
-          pressGuidedChoice(true);
-        }, HOLD_FF_INTERVAL_MS);
-      }, HOLD_FF_DELAY_MS);
+      if (guideActive && guideOn) {
+        if (e.repeat) return;
+        if (!claimStoryActionKey("Enter")) return;
+        pressGuidedChoice();
+        clearEnterHold();
+        enterHoldTimer = setTimeout(function () {
+          enterHoldTimer = null;
+          enterFastTimer = setInterval(function () {
+            if (!(guideActive && guideOn)) { clearEnterHold(); return; }
+            pressGuidedChoice(true);
+          }, HOLD_FF_INTERVAL_MS);
+        }, HOLD_FF_DELAY_MS);
+        return;
+      }
+      if (!e.repeat && e.target && e.target.classList && e.target.classList.contains("choice")) {
+        if (!claimStoryActionKey("Enter")) return;
+        e.target.click();
+      }
       return;
     }
     if (e.repeat) return;
@@ -7684,7 +7699,7 @@ else if (saturday)
 {s("<LI>El dobladillo del vestido se le sube dejando ver un buen trozo de pierna desnuda."); }
 else
 {s("<LI>La falda se le sube dejando ver un buen trozo de pierna preciosa."); }
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
+s("<LI>Echa una sonrisa rápida y se sienta un poco más derecha, con las rodillas juntas.");
 if (chardonnay)
 {s("<LI>De repente se inclina hacia delante y mira a su alrededor.");
 s("<LI>DIANE: <EM>(en un susurro)</EM> ¿Dónde está el baño?");
@@ -7695,8 +7710,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante.");
+{s("TÚ: Espero que esto no te esté aburriendo.");
+s("DIANE: Mm, no. Estos son preciosos. Sigue.");
 if (blad > 650)
 {s("<LI>Venga, ya te has divertido bastante. Se nota que necesita aliviarse. ¿No vas a darle la oportunidad?");
 c("givechance","Bueno, seré compasivo."); }
@@ -7711,7 +7726,7 @@ else if (saturday)
 {s("<LI>El dobladillo del vestido se le sube dejando ver un buen trozo de pierna desnuda."); }
 else
 {s("<LI>La falda se le sube dejando ver un buen trozo de pierna preciosa."); }
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
+s("<LI>Echa una sonrisa rápida y se sienta un poco más derecha, con las rodillas juntas.");
 if (burgundy)
 {s("<LI>De repente se inclina hacia delante y mira a su alrededor.");
 s("<LI>DIANE: <EM>(en un susurro)</EM> ¿Dónde está el baño?");
@@ -7722,8 +7737,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante.");
+{s("TÚ: Espero que esto no te esté aburriendo.");
+s("DIANE: Mm, no. Estos son preciosos. Sigue.");
 if (blad > 650 )
 {s("<LI>Venga, ya te has divertido bastante. Se nota que necesita aliviarse. ¿No vas a darle la oportunidad?");
 c("givechance","Bueno, seré compasivo."); }
@@ -7768,7 +7783,7 @@ c("sofatrains3a","Le acaricias el pelo."); }
 function
 stampalbum3a()
 {
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida."); 
+s("<LI>Se acomoda otra vez, más erguida esta vez."); 
 if (merlot)
 {s("<LI>De repente se pone de pie y mira a su alrededor. Está sonrojada.");
 s("<LI>DIANE: Tengo que ir un momento. ¿Dónde está el baño?");
@@ -7779,8 +7794,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante."); 
+{s("TÚ: Estás siendo muy paciente.");
+s("DIANE: No me importa. De verdad."); 
 if (blad > 650)
 {s("<LI>Mira, no puede quedarse quieta. ¿No vas a darle una oportunidad?");
 c("givechance","Bueno, seré compasivo.");}
@@ -7789,7 +7804,7 @@ c("stampalbum4","Pasas a un álbum nuevo.");}}
 function
 sofatrains3a()
 {
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida."); 
+s("<LI>Se acomoda otra vez, más erguida esta vez."); 
 if (chardonnay)
 {s("<LI>De repente se pone de pie y mira a su alrededor. Está sonrojada.");
 s("<LI>DIANE: Tengo que ir un momento. ¿Dónde está el baño?");
@@ -7800,8 +7815,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante."); 
+{s("TÚ: Estás siendo muy paciente.");
+s("DIANE: No me importa. De verdad."); 
 if (blad > 650)
 {s("<LI>Mira, no puede quedarse quieta. ¿No vas a darle una oportunidad?");
 c("givechance","Bueno, seré compasivo."); }
@@ -7860,7 +7875,7 @@ else if (saturday)
 else
 {s("<LI>La falda y la enagua se le suben tanto que ves la parte oscura en lo alto de sus medias.");
 s("<LI>Ojalá no llevara medias."); }
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
+s("<LI>Sonríe, luego se da cuenta de que está inquieta y se sienta bien erguida.");
 if (burgundy)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?");
@@ -7871,8 +7886,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante.");
+{s("TÚ: Podemos parar cuando quieras.");
+s("DIANE: No, me gustaría ver el resto.");
 if (blad > 700)
 {s("<LI>Mira, ya te has divertido bastante. La pobrecilla se está meando. ¿No vas a darle una oportunidad?");
 c("givechance","Bueno, seré compasivo.");}
@@ -7896,7 +7911,7 @@ else if (saturday)
 else
 {s("<LI>La falda y la enagua se le suben tanto que ves la parte oscura en lo alto de sus medias.");
 s("<LI>Ojalá no llevara medias."); }
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
+s("<LI>Sonríe, luego se da cuenta de que está inquieta y se sienta bien erguida.");
 if (pinot)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?");
@@ -7907,8 +7922,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante.");
+{s("TÚ: Podemos parar cuando quieras.");
+s("DIANE: No, me gustaría ver el resto.");
 if (blad > 700 )
 {s("<LI>Mira, ya te has divertido bastante. La pobrecilla se está meando. ¿No vas a darle una oportunidad?");
 c("givechance","Bueno, seré compasivo."); }
@@ -7964,7 +7979,7 @@ if (saturday)
 {s("<LI>Se alisa el vestido.");}
 else
 {s("<LI>Se alisa la falda.");} 
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
+s("<LI>Se reacomoda una vez más, intentando parecer sosegada.");
 if (riesling)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: Lo siento, pero necesito ir al baño. ¿Dónde está?");
@@ -7975,8 +7990,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante.");
+{s("TÚ: No estás solo siendo amable, ¿verdad?");
+s("DIANE: No. Me gusta mirar estas cosas.");
 if (blad > 700 )
 {s("<LI>Mira, ya te has divertido bastante. Tiene unas ganas tremendas de hacer pis. ¿No vas a darle una oportunidad?");
 c("givechance","Bueno, seré compasivo.");}
@@ -7989,7 +8004,7 @@ if (saturday)
 {s("<LI>Se alisa el vestido.");}
 else
 {s("<LI>Se alisa la falda.");} 
-s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
+s("<LI>Se reacomoda una vez más, intentando parecer sosegada.");
 if (merlot)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: Lo siento, pero de verdad que tengo que ir al baño. ¿Dónde está?");
@@ -8000,8 +8015,8 @@ c("toiletgo","No, no usaré un golpe de suerte.");}
 else
 {c("toiletgo","No me quedan golpes de suerte.");} }
 else 
-{s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
-s("DIANE: Oh, no, es muy interesante.");
+{s("TÚ: No estás solo siendo amable, ¿verdad?");
+s("DIANE: No. Me gusta mirar estas cosas.");
 if (blad > 700)
 {s("<LI>Mira, ya te has divertido bastante. Tiene unas ganas tremendas de hacer pis. ¿No vas a darle una oportunidad?");
 c("givechance","Bueno, seré compasivo."); }

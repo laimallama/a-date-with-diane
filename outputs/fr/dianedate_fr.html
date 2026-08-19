@@ -735,6 +735,13 @@ function prefersReducedMotion() {
 
 function presentScreen() {
   try {
+    try {
+      var ae = document.activeElement;
+      if (ae && ae !== document.body && typeof ae.blur === "function") {
+        var aeTag = ae.tagName ? ae.tagName.toLowerCase() : "";
+        if (aeTag !== "input" && aeTag !== "textarea" && aeTag !== "select") ae.blur();
+      }
+    } catch (eBlur) {}
     if (typeof window.scrollTo === "function") window.scrollTo(0, 0);
     var box = document.getElementById("box");
     if (!box) return;
@@ -877,19 +884,27 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (!(guideActive && guideOn)) return;
+      // Always swallow Enter outside form fields so a focused button cannot
+      // keep firing (common on the last page after Guide ends).
       e.preventDefault();
-      if (e.repeat) return;
-      if (!claimStoryActionKey("Enter")) return;
-      pressGuidedChoice();
-      clearEnterHold();
-      enterHoldTimer = setTimeout(function () {
-        enterHoldTimer = null;
-        enterFastTimer = setInterval(function () {
-          if (!(guideActive && guideOn)) { clearEnterHold(); return; }
-          pressGuidedChoice(true);
-        }, HOLD_FF_INTERVAL_MS);
-      }, HOLD_FF_DELAY_MS);
+      if (guideActive && guideOn) {
+        if (e.repeat) return;
+        if (!claimStoryActionKey("Enter")) return;
+        pressGuidedChoice();
+        clearEnterHold();
+        enterHoldTimer = setTimeout(function () {
+          enterHoldTimer = null;
+          enterFastTimer = setInterval(function () {
+            if (!(guideActive && guideOn)) { clearEnterHold(); return; }
+            pressGuidedChoice(true);
+          }, HOLD_FF_INTERVAL_MS);
+        }, HOLD_FF_DELAY_MS);
+        return;
+      }
+      if (!e.repeat && e.target && e.target.classList && e.target.classList.contains("choice")) {
+        if (!claimStoryActionKey("Enter")) return;
+        e.target.click();
+      }
       return;
     }
     if (e.repeat) return;
@@ -7701,7 +7716,7 @@ else if (saturday)
 {s("<LI>L'ourlet de sa robe remonte, révélant de belles jambes nues."); }
 else
 {s("<LI>Sa jupe remonte, révélant de belles jambes bien galbées."); }
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.");
+s("<LI>Elle esquisse un sourire et se redresse un peu, genoux joints.");
 if (chardonnay)
 {s("<LI>Soudain, elle se redresse et regarde autour d'elle.");
 s("<LI>DIANE : <EM>(en chuchotant)</EM> Où sont les toilettes ?");
@@ -7712,8 +7727,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant.");
+{s("VOUS : J'espère que ça ne t'ennuie pas ?");
+s("DIANE : Mm, non. C'est ravissant. Continue.");
 if (blad > 650)
 {s("<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut se soulager. Vous n'allez pas lui en donner l'occasion ?");
 c("givechance","D'accord, je vais être gentil."); }
@@ -7728,7 +7743,7 @@ else if (saturday)
 {s("<LI>L'ourlet de sa robe remonte, révélant de belles jambes nues."); }
 else
 {s("<LI>Sa jupe remonte, révélant de belles jambes bien galbées."); }
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.");
+s("<LI>Elle esquisse un sourire et se redresse un peu, genoux joints.");
 if (burgundy)
 {s("<LI>Soudain, elle se redresse et regarde autour d'elle.");
 s("<LI>DIANE : <EM>(en chuchotant)</EM> Où sont les toilettes ?");
@@ -7739,8 +7754,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant.");
+{s("VOUS : J'espère que ça ne t'ennuie pas ?");
+s("DIANE : Mm, non. C'est ravissant. Continue.");
 if (blad > 650 )
 {s("<LI>Bon, vous avez bien profité. Vous voyez bien qu'elle veut se soulager. Vous n'allez pas lui en donner l'occasion ?");
 c("givechance","D'accord, je vais être gentil."); }
@@ -7785,7 +7800,7 @@ c("sofatrains3a","Vous lui caressez les cheveux."); }
 function
 stampalbum3a()
 {
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite."); 
+s("<LI>Elle se réinstalle, plus droite cette fois."); 
 if (merlot)
 {s("<LI>Soudain, elle se lève et regarde autour d'elle. Elle rougit.");
 s("<LI>DIANE : J'ai besoin d'aller… quelque part. Où sont vos toilettes ?");
@@ -7796,8 +7811,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant."); 
+{s("VOUS : Tu es vraiment patiente.");
+s("DIANE : Ça ne me dérange pas. Vraiment."); 
 if (blad > 650)
 {s("<LI>Regardez, elle n'arrive pas à tenir en place. Vous n'allez pas lui laisser une chance ?");
 c("givechance","D'accord, je vais être gentil.");}
@@ -7806,7 +7821,7 @@ c("stampalbum4","Vous passez à un nouvel album.");}}
 function
 sofatrains3a()
 {
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite."); 
+s("<LI>Elle se réinstalle, plus droite cette fois."); 
 if (chardonnay)
 {s("<LI>Soudain, elle se lève et regarde autour d'elle. Elle rougit.");
 s("<LI>DIANE : J'ai besoin d'aller… quelque part. Où sont vos toilettes ?");
@@ -7817,8 +7832,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant."); 
+{s("VOUS : Tu es vraiment patiente.");
+s("DIANE : Ça ne me dérange pas. Vraiment."); 
 if (blad > 650)
 {s("<LI>Regardez, elle n'arrive pas à tenir en place. Vous n'allez pas lui laisser une chance ?");
 c("givechance","D'accord, je vais être gentil."); }
@@ -7877,7 +7892,7 @@ else if (saturday)
 else
 {s("<LI>Sa jupe et sa combinaison remontent tellement que vous voyez la partie sombre en haut de ses collants.");
 s("<LI>Vous regrettez qu'elle porte des collants."); }
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.");
+s("<LI>Elle sourit, puis se surprend à gigoter et se rassied bien droite.");
 if (burgundy)
 {s("<LI>Soudain, elle se lève et regarde autour d'elle.");
 s("<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?");
@@ -7888,8 +7903,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant.");
+{s("VOUS : On peut s'arrêter quand tu veux.");
+s("DIANE : Non, j'aimerais voir la suite.");
 if (blad > 700)
 {s("<LI>Bon, vous vous êtes bien amusé. La pauvre fille est au bord de se faire pipi dessus. Vous n'allez pas lui laisser une chance ?");
 c("givechance","D'accord, je vais être gentil.");}
@@ -7913,7 +7928,7 @@ else if (saturday)
 else
 {s("<LI>Sa jupe et sa combinaison remontent tellement que vous voyez la partie sombre en haut de ses collants.");
 s("<LI>Vous regrettez qu'elle porte des collants."); }
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.");
+s("<LI>Elle sourit, puis se surprend à gigoter et se rassied bien droite.");
 if (pinot)
 {s("<LI>Soudain, elle se lève et regarde autour d'elle.");
 s("<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?");
@@ -7924,8 +7939,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant.");
+{s("VOUS : On peut s'arrêter quand tu veux.");
+s("DIANE : Non, j'aimerais voir la suite.");
 if (blad > 700 )
 {s("<LI>Bon, vous vous êtes bien amusé. La pauvre fille est au bord de se faire pipi dessus. Vous n'allez pas lui laisser une chance ?");
 c("givechance","D'accord, je vais être gentil."); }
@@ -7981,7 +7996,7 @@ if (saturday)
 {s("<LI>Elle lisse sa robe vers le bas.");}
 else
 {s("<LI>Elle lisse sa jupe vers le bas.");} 
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.");
+s("<LI>Elle se rajuste encore une fois, essayant de paraître posée.");
 if (riesling)
 {s("<LI>Soudain, elle se lève et regarde autour d'elle.");
 s("<LI>DIANE : Excusez-moi, mais j'ai besoin d'aller aux toilettes. Où sont-elles ?");
@@ -7992,8 +8007,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant.");
+{s("VOUS : Tu n'es pas juste polie, n'est-ce pas ?");
+s("DIANE : Non. J'aime regarder tout ça.");
 if (blad > 700 )
 {s("<LI>Bon, vous vous êtes bien amusé. Elle est carrément à deux doigts de se faire pipi dessus. Vous n'allez pas lui laisser une chance ?");
 c("givechance","D'accord, je vais être gentil.");}
@@ -8006,7 +8021,7 @@ if (saturday)
 {s("<LI>Elle lisse sa robe vers le bas.");}
 else
 {s("<LI>Elle lisse sa jupe vers le bas.");} 
-s("<LI>Elle sourit mais change de position à nouveau, s'asseyant plus droite.");
+s("<LI>Elle se rajuste encore une fois, essayant de paraître posée.");
 if (merlot)
 {s("<LI>Soudain, elle se lève et regarde autour d'elle.");
 s("<LI>DIANE : Excusez-moi, mais il faut vraiment que j'aille aux toilettes. Où sont-elles ?");
@@ -8017,8 +8032,8 @@ c("toiletgo","Non, je ne joue pas de coup de chance.");}
 else
 {c("toiletgo","Il ne me reste plus de coups de chance.");} }
 else 
-{s("VOUS : J'espère que tu ne t'ennuies pas ?");
-s("DIANE : Oh non, c'est vraiment intéressant.");
+{s("VOUS : Tu n'es pas juste polie, n'est-ce pas ?");
+s("DIANE : Non. J'aime regarder tout ça.");
 if (blad > 700)
 {s("<LI>Bon, vous vous êtes bien amusé. Elle est carrément à deux doigts de se faire pipi dessus. Vous n'allez pas lui laisser une chance ?");
 c("givechance","D'accord, je vais être gentil."); }

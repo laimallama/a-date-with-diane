@@ -739,6 +739,13 @@ function prefersReducedMotion() {
 
 function presentScreen() {
   try {
+    try {
+      var ae = document.activeElement;
+      if (ae && ae !== document.body && typeof ae.blur === "function") {
+        var aeTag = ae.tagName ? ae.tagName.toLowerCase() : "";
+        if (aeTag !== "input" && aeTag !== "textarea" && aeTag !== "select") ae.blur();
+      }
+    } catch (eBlur) {}
     if (typeof window.scrollTo === "function") window.scrollTo(0, 0);
     var box = document.getElementById("box");
     if (!box) return;
@@ -881,19 +888,27 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (!(guideActive && guideOn)) return;
+      // Always swallow Enter outside form fields so a focused button cannot
+      // keep firing (common on the last page after Guide ends).
       e.preventDefault();
-      if (e.repeat) return;
-      if (!claimStoryActionKey("Enter")) return;
-      pressGuidedChoice();
-      clearEnterHold();
-      enterHoldTimer = setTimeout(function () {
-        enterHoldTimer = null;
-        enterFastTimer = setInterval(function () {
-          if (!(guideActive && guideOn)) { clearEnterHold(); return; }
-          pressGuidedChoice(true);
-        }, HOLD_FF_INTERVAL_MS);
-      }, HOLD_FF_DELAY_MS);
+      if (guideActive && guideOn) {
+        if (e.repeat) return;
+        if (!claimStoryActionKey("Enter")) return;
+        pressGuidedChoice();
+        clearEnterHold();
+        enterHoldTimer = setTimeout(function () {
+          enterHoldTimer = null;
+          enterFastTimer = setInterval(function () {
+            if (!(guideActive && guideOn)) { clearEnterHold(); return; }
+            pressGuidedChoice(true);
+          }, HOLD_FF_INTERVAL_MS);
+        }, HOLD_FF_DELAY_MS);
+        return;
+      }
+      if (!e.repeat && e.target && e.target.classList && e.target.classList.contains("choice")) {
+        if (!claimStoryActionKey("Enter")) return;
+        e.target.click();
+      }
       return;
     }
     if (e.repeat) return;
@@ -1561,7 +1576,7 @@ s("<HR>");
 s("<LI><strong>膀胱</strong>仪表显示黛安憋着多少尿。<strong>肚子</strong>里的水分会随时间慢慢流进<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。");
 s("<LI>别指望第一次约会就能和她上床，但如果你应对得当，也许还能尝到点乐子。永远别忘了：女人总是让人捉摸不透。");
 s("<LI>随着夜晚推进，你的<strong>亲密度</strong>通常会逐渐上升，也会自然影响你能做哪些事。有些场景还会用到<strong>害羞值</strong>；你回到家时这个数值的得失也会影响后续事件。有时高一点更有利，有时反而低一点更有利，所以它更像一张百搭牌。"); 
-s("<LI>开局你有<strong>£100</strong>。留意你的钱。晚上结束时你可能需要留一些打车回家。");
+s("<LI>开局你有<strong>100英镑</strong>。留意你的钱。晚上结束时你可能需要留一些打车回家。");
 s("<LI>游戏里有不少分支，建议完整多玩几遍。但周二和周四也会提供较短的版本。");
 s("<HR>");
 s("<p class='note-lead'>左上角还有个剧情图鉴，里面有通往奖励结局、安慰奖结局以及各种隐藏场景的引导路线。卡住了可以用，单纯想逛逛也行。有些行是下拉菜单：先点开，再选你要的变体。在手机或平板上请用屏幕上的按钮；在电脑上还可以用下面这些快捷键。</p>");
@@ -1710,9 +1725,9 @@ s("<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每份套餐免�
 s("<HR>");
 s("<LI>你们走进餐厅，找了张桌子坐下，服务员端来了菜单。你不想要开胃菜，但黛安要了一杯橙汁解渴。"); proc += 50; pounds -= 2; 
 if (saturday)
-{s("<LI>她这条连衣裙的领口开得挺低，她坐下时你忍不住瞥了一眼胸前的曲线。你暗自想，今晚是否有机会好好探索一番。"); }
+{s("<LI>她这条连衣裙的领口开得挺低，她坐下时你忍不住瞥了一眼胸前的曲线。你暗自想，今晚是否有机会好好爱抚一番。"); }
 else
-{s("<LI>她把外套搭在椅背上。你细细端详她的衬衫勾勒出的胸部曲线，暗想今晚是否有机会进一步探索。"); }
+{s("<LI>她把外套搭在椅背上。你细细端详她的衬衫勾勒出的胸部曲线，暗想今晚是否有机会进一步爱抚。"); }
 s("<LI>你们翻看意大利菜单时，你顺手选了一瓶葡萄酒。选哪种？");  
 c("buyrioja","一瓶西班牙里奥哈红酒（12英镑）"); 
 c("buymerlot","一瓶智利梅洛红酒（12英镑）"); 
@@ -2614,9 +2629,9 @@ theatre3a()
 s("<LI>你的思绪飘远了，开始琢磨她里面穿着什么。你已经瞥见了一丁点，这让你更加心痒难耐。");
 if (saturday)
 {s("<P><LI>当她弯腰把手提包放到地板上时，你短暂地瞥到了她的领口——能看到一截白色蕾丝文胸的边。"); 
-s("<LI>稍后你能有机会继续深入探索吗？");}
+s("<LI>稍后你能有机会继续深入爱抚吗？");}
 else
-{s("<P><LI>当她落座时，裙子微微往上蹿了一下，让你瞥到了一角白色蕾丝衬裙。你颇为心动。已经很久没和穿衬裙的女孩约会了，但你觉得这很有女人味，又多了一样值得细细探索的东西。");
+{s("<P><LI>当她落座时，裙子微微往上蹿了一下，让你瞥到了一角白色蕾丝衬裙。你颇为心动。已经很久没和穿衬裙的女孩约会了，但你觉得这很有女人味，又多了一样值得细细抚弄的东西。");
 s("<LI>你甚至开始好奇她穿的是不是长筒丝袜。"); }
 s("<LI>黛安侧过脸看向你，给了你一个浅浅的微笑。"); getinti(2);
 c("theatre4","专心看戏。"); }
@@ -5420,7 +5435,7 @@ else
 if (tuesday)
 {s("<LI>你瞥见了她蕾丝衬裙漂亮的一闪。这让你更想探探她的腿，你还是很好奇她是不是穿了长筒袜。"); }
 else if (thursday)
-{s("<LI>你瞥见了她那条漂亮衬裙的一闪。不知为何，这勾起了你想继续探索她双腿的欲望。");}
+{s("<LI>你瞥见了她那条漂亮衬裙的一闪。不知为何，这勾起了你想继续抚摸她的双腿的欲望。");}
 else
 {s("<LI>她的双腿越看越勾人。"); }
 if (blad >600)
@@ -6674,13 +6689,13 @@ s("<LI>然后她站起来去拿了她的包。她掏出一块手帕，又走回�
 c("sofadesp","她一直朝门口张望。"); }
 else
 {if (saturday)
-{s("<LI>黛安靠在你身上。连衣裙下摆往上蹿了，露出她裸露的双腿。你很想再进一步探索。");}
+{s("<LI>黛安靠在你身上。连衣裙下摆往上蹿了，露出她裸露的双腿。你很想再进一步抚摸。");}
 else
-{s("<LI>黛安靠在你身上。她的裙子往上蹿了，露出了衬裙。你很想再进一步探索。");}
+{s("<LI>黛安靠在你身上。她的裙子往上蹿了，露出了衬裙。你很想再进一步抚摸。");}
 sitting_desp()
 s("<LI>你也很想让她憋尿憋到忍不住。");
 s("<LI>哪个优先？");
-c("sofaarm2","继续探索？");
+c("sofaarm2","继续抚摸？");
 c("sofagame","让她憋到受不了。"); }}
 
 function
@@ -7703,7 +7718,7 @@ else if (saturday)
 {s("<LI>连衣裙下摆往上蹿，露出大截好看的光腿。"); }
 else
 {s("<LI>她的裙子往上滑，露出大截好看的腿。"); }
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。");
+s("<LI>她闪过一丝微笑，又坐直了一点，膝盖并拢。");
 if (chardonnay)
 {s("<LI>她突然坐直了身子，四处张望。");
 s("<LI>黛安：<EM>（压低声音）</EM>洗手间在哪儿？");
@@ -7714,8 +7729,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。");
+{s("你：希望这没有让你觉得无聊？");
+s("黛安：嗯，没有。这些真好看。继续吧。");
 if (blad > 650)
 {s("<LI>行了，你也玩得够痛快了。看得出来她急着去方便一下，你难道不打算给她这个机会吗？");
 c("givechance","好吧，我发发善心。"); }
@@ -7730,7 +7745,7 @@ else if (saturday)
 {s("<LI>连衣裙下摆往上蹿，露出大截好看的光腿。"); }
 else
 {s("<LI>她的裙子往上滑，露出大截好看的腿。"); }
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。");
+s("<LI>她闪过一丝微笑，又坐直了一点，膝盖并拢。");
 if (burgundy)
 {s("<LI>她突然坐直了身子，四处张望。");
 s("<LI>黛安：<EM>（压低声音）</EM>洗手间在哪儿？");
@@ -7741,8 +7756,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。");
+{s("你：希望这没有让你觉得无聊？");
+s("黛安：嗯，没有。这些真好看。继续吧。");
 if (blad > 650 )
 {s("<LI>行了，你也玩得够痛快了。看得出来她急着去方便一下，你难道不打算给她这个机会吗？");
 c("givechance","好吧，我发发善心。"); }
@@ -7787,7 +7802,7 @@ c("sofatrains3a","你抚摸着她的头发。"); }
 function
 stampalbum3a()
 {
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。"); 
+s("<LI>她又重新坐好，这回坐得更端正了。"); 
 if (merlot)
 {s("<LI>她突然站了起来，四下张望，脸上泛起一阵红晕。");
 s("<LI>黛安：我需要去一下。你家浴室在哪儿？");
@@ -7798,8 +7813,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。"); 
+{s("你：你可真有耐心。");
+s("黛安：我不介意。真的。"); 
 if (blad > 650)
 {s("<LI>你看，她都坐不住了。难道你不打算给她个机会吗？");
 c("givechance","好吧，我发发善心。");}
@@ -7808,7 +7823,7 @@ c("stampalbum4","你翻到了新的一册。");}}
 function
 sofatrains3a()
 {
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。"); 
+s("<LI>她又重新坐好，这回坐得更端正了。"); 
 if (chardonnay)
 {s("<LI>她突然站了起来，四下张望，脸上泛起一阵红晕。");
 s("<LI>黛安：我需要去一下。你家浴室在哪儿？");
@@ -7819,8 +7834,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。"); 
+{s("你：你可真有耐心。");
+s("黛安：我不介意。真的。"); 
 if (blad > 650)
 {s("<LI>你看，她都坐不住了。难道你不打算给她个机会吗？");
 c("givechance","好吧，我发发善心。"); }
@@ -7879,7 +7894,7 @@ else if (saturday)
 else
 {s("<LI>她的裙子和衬裙滑得很高，隐约可见连裤袜顶端的深色边缘。");
 s("<LI>你真希望她没穿连裤袜。"); }
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。");
+s("<LI>她笑了笑，随即发觉自己又在不安分地动，于是端端正正坐直。");
 if (burgundy)
 {s("<LI>她突然站了起来，环顾四周。");
 s("<LI>黛安：失陪一下，厕所在哪儿？");
@@ -7890,8 +7905,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。");
+{s("你：你想停随时可以说。");
+s("黛安：不用，我想把剩下的看完。");
 if (blad > 700)
 {s("<LI>行了，你也乐够了。这可怜的姑娘都快憋不住了。你难道不打算给她个机会吗？");
 c("givechance","好吧，我发发善心。");}
@@ -7915,7 +7930,7 @@ else if (saturday)
 else
 {s("<LI>她的裙子和衬裙滑得很高，隐约可见连裤袜顶端的深色边缘。");
 s("<LI>你真希望她没穿连裤袜。"); }
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。");
+s("<LI>她笑了笑，随即发觉自己又在不安分地动，于是端端正正坐直。");
 if (pinot)
 {s("<LI>她突然站了起来，环顾四周。");
 s("<LI>黛安：失陪一下，厕所在哪儿？");
@@ -7926,8 +7941,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。");
+{s("你：你想停随时可以说。");
+s("黛安：不用，我想把剩下的看完。");
 if (blad > 700 )
 {s("<LI>行了，你也乐够了。这可怜的姑娘都快憋不住了。你难道不打算给她个机会吗？");
 c("givechance","好吧，我发发善心。"); }
@@ -7983,7 +7998,7 @@ if (saturday)
 {s("<LI>她把连衣裙往下抚平。");}
 else
 {s("<LI>她把裙子往下抚平。");} 
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。");
+s("<LI>她又调整了一下姿势，努力显得镇定。");
 if (riesling)
 {s("<LI>她突然站了起来，环顾四周。");
 s("<LI>黛安：不好意思，我需要去一下厕所，在哪儿啊？");
@@ -7994,8 +8009,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。");
+{s("你：你不是在客气吧？");
+s("黛安：不是。我喜欢翻这些。");
 if (blad > 700 )
 {s("<LI>好了，你也玩得够了。她都快憋不住了。你就不打算给她个机会吗？");
 c("givechance","好吧，我发发善心。");}
@@ -8008,7 +8023,7 @@ if (saturday)
 {s("<LI>她把连衣裙往下抚平。");}
 else
 {s("<LI>她把裙子往下抚平。");} 
-s("<LI>她微笑着，却又换了个姿势，坐得更端正了。");
+s("<LI>她又调整了一下姿势，努力显得镇定。");
 if (merlot)
 {s("<LI>她突然站了起来，环顾四周。");
 s("<LI>黛安：对不起，我真的得去一下厕所，在哪里啊？");
@@ -8019,8 +8034,8 @@ c("toiletgo","不，我不用幸运机会了。");}
 else
 {c("toiletgo","我的幸运机会用完了。");} }
 else 
-{s("你：希望你没觉得无聊？");
-s("黛安：哦，没有，真的很有意思。");
+{s("你：你不是在客气吧？");
+s("黛安：不是。我喜欢翻这些。");
 if (blad > 700)
 {s("<LI>好了，你也玩得够了。她都快憋不住了。你就不打算给她个机会吗？");
 c("givechance","好吧，我发发善心。"); }
@@ -8443,7 +8458,7 @@ breasts1()
 standingBreastsDone = 1;
 s("<LI>你热情地吻住她，两人的舌尖缠绵交缠。");
 s("<LI>你们分开，对视片刻。你将手移到她正面，小心翼翼地触碰她的胸部。");
-s("<LI>她的胸部小巧却玲珑有致。那柔软的触感让你涌起一阵欲火，你想继续探索。她呼吸渐渐加重，闭上了眼睛。"); getinti(6);
+s("<LI>她的胸部小巧却玲珑有致。那柔软的触感让你涌起一阵欲火，你想继续爱抚。她呼吸渐渐加重，闭上了眼睛。"); getinti(6);
 if (blad > 700)
 {s("<LI>就算在拥抱中，你也能感觉到她不停地上下扭动着身子。"); 
 s("<LI>她挣脱出来，说道：“我们坐下来吧？”");
@@ -8456,7 +8471,7 @@ function
 breasts2()
 {
 if (saturday)
-{s("<LI>她的裙子领口开得颇低。你把手放到领口上沿，悄悄滑入里面开始探索。你解开最上面的纽扣，将手放上她的蕾丝文胸。");}
+{s("<LI>她的裙子领口开得颇低。你把手放到领口上沿，悄悄滑入里面开始抚摸。你解开最上面的纽扣，将手放上她的蕾丝文胸。");}
 else
 {s("<LI>你解开她衬衫的一颗纽扣，将手指滑入其中，隔着蕾丝文胸感受她的胸部。"); }
 if (inti <120)
@@ -8485,7 +8500,7 @@ else
 {s("<LI>然后你把手移回去，再次轻轻揉捏她的臀部。"); }
 s("<LI>接下来呢？");
 if (!standingLegsDone)
-c("bottom1a","探索她的双腿？");
+c("bottom1a","抚摸她的双腿？");
 if (!standingBreastsDone)
 c("breasts1b","再次抚摸她的胸？");
 c("kissher","再亲她一次？"); }}
@@ -8808,7 +8823,7 @@ function
 bottom2()
 {
 s("<LI>你热情地吻住她，两人的舌尖缠绵交缠。");
-s("<LI>你搂住她，右手慢慢向下移动，握住她的臀部，把她拉向你。你摩挲了她的臀部几秒钟，但你还想探索更多。她呼吸急促，双眼微闭"); getinti(10);
+s("<LI>你搂住她，右手慢慢向下移动，握住她的臀部，把她拉向你。你摩挲了她的臀部几秒钟，但你还想再摸下去。她呼吸急促，双眼微闭"); getinti(10);
 if (blad > 700)
 {s("<LI>就算在拥抱中，你也能感觉到她不停地上下扭动着身子。"); 
 s("<LI>她挣脱出来，说道：“我们坐下来吧？”");
@@ -9583,19 +9598,19 @@ else
 {s("<LI>黛安：我不能待太久了。明天早上我还要上班。");}
 sitting_desp() 
 s("<LI>她把头靠在你肩上。你一只手搂着她，刚好能够到她的胸。");
-s("<LI>你转向她，吻住她，这样另一只手就自由了，可以探索她。");
+s("<LI>你转向她，吻住她，这样另一只手就自由了，可以爱抚她。");
 s("<LI>接下来呢？");
 var sofaExploreOptions = 0;
 if (!sofaBreastsDone)
 {c("sofabreasts","爱抚她的胸部？"); sofaExploreOptions++;}
 if (sofaLegsStage < 2)
-{c("sofalegs","探索她的双腿？"); sofaExploreOptions++;}
+{c("sofalegs","抚摸她的双腿？"); sofaExploreOptions++;}
 if (!sofaPeeAskedDone)
 {c("sofapee","问她是不是想上厕所？"); sofaExploreOptions++;}
 else if (blad > 700)
 {c("sofapee","再问她是不是想上厕所？"); sofaExploreOptions++;}
 if (sofaExploreOptions === 0)
-{s("<LI>眼下能探索的，你已经探索过了。接下来呢？");
+{s("<LI>眼下能摸的，你都已经摸过了。接下来呢？");
 blad += 8; getinti(2);
 c("decisions","该你做决定了。");
 c("sofapee2","试着用专辑或话题来转移她的注意力。");} }
@@ -9756,9 +9771,9 @@ sofabreasts()
 {
 sofaBreastsDone = 1;
 if (saturday)
-{s("<LI>在你吻她的同时，空出的那只手开始探索她的胸部。你解开她连衣裙的一颗纽扣，将手伸了进去。");}
+{s("<LI>在你吻她的同时，空出的那只手开始爱抚她的胸部。你解开她连衣裙的一颗纽扣，将手伸了进去。");}
 else
-{s("<LI>在你吻她的同时，空出的那只手开始探索她的胸部。你解开她衬衫的一颗纽扣，将手伸了进去。");}
+{s("<LI>在你吻她的同时，空出的那只手开始爱抚她的胸部。你解开她衬衫的一颗纽扣，将手伸了进去。");}
 s("<LI>你隔着蕾丝内衣感受着她胸部的柔软，心里盘算着能不能把它取下来。");
 c("sofabreasts0","好，我想解开她的文胸。");
 c("sofabreasts3","不，我现在还不解开她的文胸。"); }

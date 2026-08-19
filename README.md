@@ -19,7 +19,6 @@ Playable files are in [`outputs/`](outputs/), grouped by language.
 Each language folder contains:
 
 - `dianedate_*.html` — open in a browser to play (bilingual editions switch with English; EN is single-language only)
-- `edition_notes_*.txt` — notes on this edition
 - `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
 - `wiki/` — companion setting and character articles in that language; not playable
 

@@ -615,6 +615,18 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body>
@@ -940,6 +952,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -993,6 +1010,7 @@ function syncThemeButton() {
     if (btn) {
       btn.textContent = darkMode ? "深色模式：开启" : "深色模式：关闭";
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -1581,7 +1599,8 @@ s("<LI>游戏里有不少分支，建议完整多玩几遍。但周二和周四�
 s("<HR>");
 s("<p class='note-lead'>左上角还有个剧情图鉴，里面有通往奖励结局、安慰奖结局以及各种隐藏场景的引导路线。卡住了可以用，单纯想逛逛也行。有些行是下拉菜单：先点开，再选你要的变体。在手机或平板上请用屏幕上的按钮；在电脑上还可以用下面这些快捷键。</p>");
 s("<p class='note-keys'><strong>G</strong>键打开剧情图鉴（<strong>Esc</strong>键关闭）。</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>");
+s("<p class='note-keys'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong>键开启或关闭深色模式。</p>");
 s("<p class='note-keys'><strong>数字键</strong>用来选择选项。</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong>键可选择高亮的引导选项，但只有在引导开启时才有效。按住<strong>Enter</strong>键可快进引导选项；松开即停。</p>");
 s("<p class='note-lead'>若后悔某个选择，随时可以按“返回”按钮回到上一页；它会把一切都恢复——数值、选项，统统还原。引导模式里同样有效。</p>");
@@ -4095,7 +4114,7 @@ luckytrip4a()
 {
 s("<LI>莫莉走向墙边，走到布鲁诺刚才站的地方附近，正在解她的腰带。");
 s("<LI>她转过身，发现布鲁诺正盯着她看。她挥手叫他走开，你隐约听到一声“别看！”她又挥了挥手，但他依然看着她，嘴角似乎还带着笑。");
-s("<LI>莫莉环顾四周，然后腰带还未系好，就沿着纤道朝你这边走了几码，走到一个建筑工人遗留的小型废料箱旁边。她躲到箱子后面，夹在箱子和墙壁之间——布鲁诺看不到她，但你能。");
+s("<LI>莫莉环顾四周，然后腰带还未系好，就沿着纤道朝你这边走了几码，走到一个建筑工人遗留的小型废料箱旁边。她躲到箱子后面，紧贴着墙——布鲁诺看不到她，但你能。");
 s("<LI>接着她迅速解开牛仔裤拉链，一把将裤子和白色内裤一起拽下来，立刻蹲成半蹲姿势。光线太暗，你看不清尿流，但能看到地上正在形成一滩水洼，顺着地面淌开。从水洼的大小来看，她显然早就憋得不行了。");
 s("<LI>她尿了将近一分钟，然后站直身子，把白色内裤拉上来整理好，再拉上牛仔裤拉链。她一边系着腰带，一边从废料箱后面走出来，重新走向布鲁诺。"); mollyblad = 50;
 c("luckytrip4b","你回到小路上。"); }

@@ -668,6 +668,18 @@ body.lang-en .lang-alt {
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body class="lang-alt">
@@ -764,7 +776,7 @@ var alternateTranslations = {
   "<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.": "<LI>开局你有<strong>100英镑</strong>。留意你的钱。晚上结束时你可能需要留一些打车回家。",
   "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>": "<p class='note-lead'>左上角还有个剧情图鉴，里面有通往奖励结局、安慰奖结局以及各种隐藏场景的引导路线。卡住了可以用，单纯想逛逛也行。有些行是下拉菜单：先点开，再选你要的变体。在手机或平板上请用屏幕上的按钮；在电脑上还可以用下面这些快捷键。</p>",
   "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>": "<p class='note-keys'><strong>G</strong>键打开剧情图鉴（<strong>Esc</strong>键关闭）。</p>",
-  "<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>": "<p class='note-keys note-cluster-end'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>",
+  "<p class='note-keys'><strong>H</strong> turns the Guide on or off once you've started one.</p>": "<p class='note-keys'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>",
   "<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>": "<p class='note-keys'><strong>数字键</strong>用来选择选项。</p>",
   "<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>": "<p class='note-keys note-cluster-end'><strong>Enter</strong>键可选择高亮的引导选项，但只有在引导开启时才有效。按住<strong>Enter</strong>键可快进引导选项；松开即停。</p>",
   "<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>": "<p class='note-lead'>若后悔某个选择，随时可以按“返回”按钮回到上一页；它会把一切都恢复——数值、选项，统统还原。引导模式里同样有效。</p>",
@@ -1310,7 +1322,7 @@ var alternateTranslations = {
   "<LI>YOU: Diane, I think you want to see your friend. Should we go into the foyer or to the stage door?": "<LI>你：黛安，你想去见你朋友，对吧？我们去大厅，还是去后台门口？",
   "<LI>DIANE: Oooh, it's lovely to be asked!": "<LI>黛安：哎呀，你还会问我的意见，真好！",
   "<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.": "<LI>黛安：<EM>（压低声音）</EM>其实……我现在急得要命，想去洗手间。要不我们先在这里喝一杯？这样我也能趁机去一下厕所。莫莉会来大厅找我们的。",
-  "<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>她亲口承认自己“急着去方便”。你失去了5点害羞值。</strong></p>",
+  "<p class='notice'><strong>She admits she's 'dying to spend a penny.' You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>她亲口承认自己“急着去方便”。你失去了5点害羞值。</strong></p>",
   "<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her knickers down...": "<LI>你们走上大厅，黛安直奔女厕所——你看得出来她真的很急！你脑海里浮现出她冲进最近那个隔间、两腿有些打颤地把内裤往下扯的画面……",
   "<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.": "<LI>你自己也去了趟厕所，然后在大厅等她。过了一两分钟，她回来了，脸上带着笑。",
   "<LI>DIANE: That feels better. I was dying to go.": "<LI>黛安：舒服多了。我刚才真的急死了。",
@@ -1640,7 +1652,6 @@ var alternateTranslations = {
   "<LI>Molly and Bruno have peeled off and gone down the steps to the towpath. They are out of sight. You are wondering if Molly needed a pee. You'd like to peep over the parapet but you obviously can't while you're with Diane.": "<LI>莫莉和布鲁诺已经离队，走下台阶去了纤道，不见了踪影。你不禁猜想莫莉是不是憋不住了，想去方便。你很想趴在栏杆上往下看，但显然和黛安在一起时没法这么做。",
   "<LI>DIANE: Where have they gone?": "<LI>黛安：他们去哪了？",
   "<LI>YOU: I'm not sure. There's a sort of towpath down there.": "<LI>你：不太确定。下面好像有条纤道。",
-  "<LI>DIANE: Oh. <EM>(The penny has probably clicked.)</EM>": "<LI>黛安：哦。<EM>（她大概已经猜到了。）</EM>",
   "<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.": "<LI>你只能靠自己的想象了。当然，除非你想用一次幸运机会。",
   "<LI>You walk on alone with Diane. You wish you could look over the parapet, but you can't.": "<LI>你和黛安独自继续前行。你真希望能趴到栏杆上看一眼，但没法那么做。",
   "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a Luckshot.": "<LI>你猜莫莉可能是去方便了，但又不确定。反正你很想看。于是你用了一次幸运机会。",
@@ -1655,7 +1666,7 @@ var alternateTranslations = {
   "<LI>Diane says, 'Come on,' and touches your arm as if to pull you away. But you are not going to miss this. If she could watch Bruno, you can watch Molly!": "<LI>黛安说“走吧”，拉了拉你的手臂，想把你拽走。但你可不想错过这一幕。她都能看布鲁诺，你当然也能看莫莉！",
   "<LI>Molly walks to the wall, close to where Bruno had just been. She is unbuckling her belt.": "<LI>莫莉走向墙边，走到布鲁诺刚才站的地方附近，正在解她的腰带。",
   "<LI>She turns round and sees Bruno is watching her. She waves him away and you can hear a faint cry of 'Look away.' She waves again. But he is still looking towards her with what seems to be a grin.": "<LI>她转过身，发现布鲁诺正盯着她看。她挥手叫他走开，你隐约听到一声“别看！”她又挥了挥手，但他依然看着她，嘴角似乎还带着笑。",
-  "<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind this, between the skip and the wall, where Bruno can't see her—but you can.": "<LI>莫莉环顾四周，然后腰带还未系好，就沿着纤道朝你这边走了几码，走到一个建筑工人遗留的小型废料箱旁边。她躲到箱子后面，夹在箱子和墙壁之间——布鲁诺看不到她，但你能。",
+  "<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind it, up against the wall, where Bruno can't see her—but you can.": "<LI>莫莉环顾四周，然后腰带还未系好，就沿着纤道朝你这边走了几码，走到一个建筑工人遗留的小型废料箱旁边。她躲到箱子后面，紧贴着墙——布鲁诺看不到她，但你能。",
   "<LI>Then she quickly unzips her jeans and pulls them and her white knickers down in one movement, straight away going into a half squat. It's too gloomy for you to see any stream but you can see a puddle forming on the ground and running away from her. Judging by the size of it, she certainly needed to go.": "<LI>接着她迅速解开牛仔裤拉链，一把将裤子和白色内裤一起拽下来，立刻蹲成半蹲姿势。光线太暗，你看不清尿流，但能看到地上正在形成一滩水洼，顺着地面淌开。从水洼的大小来看，她显然早就憋得不行了。",
   "<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt she emerges from behind the skip and rejoins Bruno.": "<LI>她尿了将近一分钟，然后站直身子，把白色内裤拉上来整理好，再拉上牛仔裤拉链。她一边系着腰带，一边从废料箱后面走出来，重新走向布鲁诺。",
   "<LI>You scramble across the rough grass back to the path.": "<LI>你急忙穿过粗糙的草地跑回路上。",
@@ -4931,7 +4942,7 @@ var alternateTranslations = {
   "<LI>THE GIRL: Anything. Another minute I'll be wetting myself.": "<LI>女孩：什么都行。再撑一分钟我就要尿裤子了。",
   "<LI>THE GIRL: Can he be trusted?": "他靠得住吗？",
   "<LI>THE GIRL: What the hell.": "<LI>女孩：管他呢。",
-  "<LI>The penny has probably clicked.": "<LI>她大概已经猜到了。",
+  "<LI>The penny has probably dropped for her.": "<LI>她大概已经猜到了。",
   "<HR>": "<HR>",
   "<LI>DIANE: <EM>(giggles)</EM> No, I squatted and peed a flood. Mind you—": "<LI>黛安：<EM>（咯咯笑道）</EM>没有，我蹲下来尿了一大泡。不过——",
   "<LI>DIANE: I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<LI>黛安：我觉得我坚持不到公共汽车到站——本来打算来这儿之前去一趟的，没想到凉亭酒吧已经关门了。",
@@ -5419,6 +5430,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -5462,6 +5478,7 @@ function syncThemeButton() {
     if (btn) {
       btn.textContent = currentLanguage === "en" ? (darkMode ? "Dark Mode: On" : "Dark Mode: Off") : (darkMode ? "深色模式：开启" : "深色模式：关闭");
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -6145,7 +6162,8 @@ s("<LI>There are lots of variations, so do play the game right through a few tim
 s("<HR>");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
 s("<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong> toggles Dark Mode on or off.</p>");
 s("<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>");
 s("<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>");
@@ -7810,7 +7828,7 @@ s("<LI>DIANE: Oooh, it's lovely to be asked!"); getinti(5);
 sAlt("<LI>Which will it be?", "<LI>选哪个呢？");
 if (blad > 600) 
 {s("<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.");
-s("<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>"); adjpoints(-5);
+s("<p class='notice'><strong>She admits she's 'dying to spend a penny.' You lost 5 shyness points.</strong></p>"); adjpoints(-5);
 s("<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her knickers down...");
 afterpee()
 s("<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.");
@@ -8623,7 +8641,7 @@ riverside13()
 s("<LI>Molly and Bruno have peeled off and gone down the steps to the towpath. They are out of sight. You are wondering if Molly needed a pee. You'd like to peep over the parapet but you obviously can't while you're with Diane.");
 s("<LI>DIANE: Where have they gone?");
 s("<LI>YOU: I'm not sure. There's a sort of towpath down there.");
-s("<LI>DIANE: Oh.");s("<LI>The penny has probably clicked.");
+s("<LI>DIANE: Oh.");s("<LI>The penny has probably dropped for her.");
 s("<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.");
 c("riverside13b","No, I'll save my luckshots.");
 if (luckshots >= 1) c("luckytrip4","Yes, I'll risk a luckshot."); }
@@ -8659,7 +8677,7 @@ luckytrip4a()
 {
 s("<LI>Molly walks to the wall, close to where Bruno had just been. She is unbuckling her belt.");
 s("<LI>She turns round and sees Bruno is watching her. She waves him away and you can hear a faint cry of 'Look away.' She waves again. But he is still looking towards her with what seems to be a grin.");
-s("<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind this, between the skip and the wall, where Bruno can't see her—but you can.");
+s("<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind it, up against the wall, where Bruno can't see her—but you can.");
 s("<LI>Then she quickly unzips her jeans and pulls them and her white knickers down in one movement, straight away going into a half squat. It's too gloomy for you to see any stream but you can see a puddle forming on the ground and running away from her. Judging by the size of it, she certainly needed to go.");
 s("<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt she emerges from behind the skip and rejoins Bruno."); mollyblad = 50;
 c("luckytrip4b","You go back to the path."); }

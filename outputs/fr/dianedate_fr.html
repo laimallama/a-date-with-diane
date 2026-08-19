@@ -611,6 +611,18 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body>
@@ -936,6 +948,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -989,6 +1006,7 @@ function syncThemeButton() {
     if (btn) {
       btn.textContent = darkMode ? "Mode sombre : Activé" : "Mode sombre : Désactivé";
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -1577,7 +1595,8 @@ s("<LI>Il y a beaucoup de variations, alors jouez jusqu'au bout plusieurs fois. 
 s("<HR>");
 s("<p class='note-lead'>Il y a aussi une Galerie en haut à gauche, avec des parcours guidés vers les fins de prix, les fins de consolation et diverses scènes cachées. Servez-vous-en si vous bloquez, ou si vous voulez simplement explorer. Certaines lignes sont des menus déroulants : cliquez pour les ouvrir, puis choisissez la variante voulue. Sur téléphone ou tablette, utilisez les boutons à l'écran ; sur ordinateur, vous avez aussi ces raccourcis clavier.</p>");
 s("<p class='note-keys'><strong>G</strong> ouvre la Galerie (<strong>Échap</strong> la ferme).</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong> active ou désactive le Guide une fois que vous en avez lancé un.</p>");
+s("<p class='note-keys'><strong>H</strong> active ou désactive le Guide une fois que vous en avez lancé un.</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong> active ou désactive le Mode sombre.</p>");
 s("<p class='note-keys'>Utilisez les <strong>touches numériques</strong> pour choisir vos options.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Entrée</strong> suit le choix Guide surligné, mais seulement tant que le Guide est activé. Maintenez <strong>Entrée</strong> un instant pour avancer rapidement dans les choix guidés ; relâchez pour arrêter.</p>");
 s("<p class='note-lead'>Vous pouvez appuyer sur le bouton « Retour » pour revenir à la page précédente à tout moment si vous regrettez un choix ; tout est restauré — statistiques, choix, le reste. Cela fonctionne aussi en mode Guide.</p>");
@@ -4091,7 +4110,7 @@ luckytrip4a()
 {
 s("<LI>Molly se dirige vers le mur, près de l'endroit où Bruno venait juste d'être. Elle défait sa ceinture.");
 s("<LI>Elle se retourne et voit que Bruno la regarde. Elle lui fait signe de s'en aller, et vous entendez un faible cri : « Regarde ailleurs. » Elle fait à nouveau signe. Mais il continue de la regarder avec ce qui ressemble fort à un sourire en coin.");
-s("<LI>Molly regarde autour d'elle. Puis, sa ceinture toujours défaite, elle avance de quelques mètres le long du chemin de halage dans votre direction, jusqu'à une petite benne que des ouvriers ont laissée là. Elle se glisse derrière, entre la benne et le mur, là où Bruno ne peut pas la voir — mais vous, si.");
+s("<LI>Molly regarde autour d'elle. Puis, sa ceinture toujours défaite, elle avance de quelques mètres le long du chemin de halage dans votre direction, jusqu'à une petite benne que des ouvriers ont laissée là. Elle se glisse derrière, dos au mur, là où Bruno ne peut pas la voir — mais vous, si.");
 s("<LI>Elle dézippe rapidement son jean et le baisse d'un seul geste avec sa culotte blanche, s'accroupissant aussitôt à demi. Il fait trop sombre pour que vous distinguiez le moindre jet, mais vous voyez une flaque se former sur le sol et s'éloigner d'elle. À en juger par son étendue, elle en avait vraiment besoin.");
 s("<LI>Elle fait pipi pendant près d'une bonne minute, puis se redresse, remonte sa culotte blanche en la rajustant, et tire et ferme son jean. Sa ceinture encore à moitié bouclée, elle ressort de derrière la benne et rejoint Bruno."); mollyblad = 50;
 c("luckytrip4b","Vous retournez sur le chemin."); }

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Welbourne Wiki</title>
+<style>
+/* Wiki chrome — matched to dianedate playable theme */
+:root {
+  color-scheme: light;
+  --paper: #fffaf2;
+  --ink: #231f20;
+  --muted: #71675c;
+  --line: #dfd1bd;
+  --accent: #9b2f3f;
+  --accent-dark: #6f1f2c;
+  --accent-strong: #6f1f2c;
+  --on-accent: #ffffff;
+  --choice: #fff;
+  --choice-hover: #fff3df;
+  --status: #f1e7d8;
+  --hover-border: #c59c73;
+  --ink-on-hover: #231f20;
+  --em-color: #6f4a58;
+  --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
+  --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
+  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), #e9dcc8;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #221c17;
+  --ink: #ede3d3;
+  --muted: #948b82;
+  --line: #3c2f26;
+  --accent: #f0d060;
+  --accent-dark: #f0d060;
+  --accent-strong: #f6e48a;
+  --on-accent: #221c17;
+  --choice: #2b241e;
+  --choice-hover: #534433;
+  --status: #2f2822;
+  --hover-border: #c9a94a;
+  --ink-on-hover: #faf6ee;
+  --em-color: #e2c878;
+  --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+  --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
+  --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
+}
+* { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--body-bg-wash);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.58;
+}
+a { color: inherit; }
+a:hover { color: var(--accent-dark); }
+.game-shell {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0;
+}
+.game-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.theme-toggle-button {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 120px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+  color: var(--muted);
+}
+.theme-toggle-on { background: var(--choice); color: var(--accent-dark); }
+.theme-toggle-off { background: transparent; color: var(--muted); border-color: var(--line); }
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle-button:hover {
+    background: var(--choice-hover);
+    border-color: var(--accent-dark);
+  }
+}
+#box.wiki-box {
+  width: 100%;
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--box-shadow);
+}
+.wiki-box h1, .wiki-box h2, .wiki-box h3 {
+  margin: .2rem 0 1rem;
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+.wiki-box h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.wiki-box h2 {
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  margin-top: 1.6rem;
+}
+.wiki-box h3 {
+  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  color: var(--ink);
+}
+.wiki-box p { margin: 0 0 1em; }
+.wiki-box em { color: var(--em-color); }
+.wiki-box strong { color: var(--accent-dark); }
+.wiki-box p a, .wiki-box td a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.wiki-lead { color: var(--ink); margin-bottom: 1.25em !important; }
+.wiki-crumb {
+  margin: 0 0 1.25em !important;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.4;
+}
+.wiki-crumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.wiki-crumb a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.wiki-crumb .sep {
+  margin: 0 .4em;
+  opacity: .5;
+}
+.wiki-crumb .here {
+  color: var(--ink);
+}
+.wiki-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.25em;
+  font-size: 1rem;
+}
+.wiki-box th, .wiki-box td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.wiki-box th {
+  background: var(--status);
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* Cast — Game text ~40%, Name ~48%, Age ~12% */
+.wiki-box table.wiki-cast {
+  table-layout: fixed;
+}
+.wiki-box table.wiki-cast th:nth-child(1),
+.wiki-box table.wiki-cast td:nth-child(1) { width: 40%; }
+.wiki-box table.wiki-cast th:nth-child(2),
+.wiki-box table.wiki-cast td:nth-child(2) { width: 48%; }
+.wiki-box table.wiki-cast th:nth-child(3),
+.wiki-box table.wiki-cast td:nth-child(3) { width: 12%; }
+
+/* Articles — numbered list, full width, game-style hover */
+ol.wiki-articles {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.25em;
+  padding: 0;
+  list-style: none;
+  counter-reset: wiki-art;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+ol.wiki-articles li {
+  counter-increment: wiki-art;
+  border-bottom: 1px solid var(--line);
+}
+ol.wiki-articles li:last-child {
+  border-bottom: none;
+}
+ol.wiki-articles li a {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  padding: 8px 10px;
+  color: var(--ink);
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+ol.wiki-articles li a::before {
+  content: counter(wiki-art, decimal-leading-zero);
+  flex: 0 0 2.2rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) and (pointer: fine) {
+  ol.wiki-articles li a:hover {
+    background: var(--choice-hover);
+    color: var(--ink-on-hover);
+  }
+  ol.wiki-articles li a:hover::before {
+    color: var(--ink-on-hover);
+  }
+}
+ol.wiki-articles li a:focus { outline: none; }
+ol.wiki-articles li a:focus-visible {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lead quote on major character pages */
+.wiki-quote {
+  margin: 0 0 1.25em;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.wiki-quote footer {
+  margin-top: .55em;
+  font-size: .9rem;
+  font-style: normal;
+  color: var(--muted);
+}
+.wiki-quote footer cite {
+  font-style: normal;
+  color: var(--accent-dark);
+}
+
+.nav-row {
+  margin-top: 2em;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.back-button {
+  box-sizing: border-box;
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--on-accent);
+  background: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .back-button:hover {
+    color: var(--on-accent);
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+  }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .game-shell { width: 100%; padding: 10px 12px 16px; }
+  #box.wiki-box { box-shadow: var(--box-shadow-mobile); }
+}
+
+/* Lang font override */
+body, button, table, th, td, h1, h2, h3, p, ol, li, blockquote, .wiki-back-btn, .theme-toggle-button,
+.wiki-box h1, .wiki-box h2, .wiki-box h3 {
+  font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans CJK TC", Arial, Helvetica, sans-serif;
+}
+
+/* Single-file SPA */
+.wiki-page { display: none; }
+.wiki-page.active { display: block; }
+.wiki-back-row { margin-top: 2em; }
+.wiki-back-btn {
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--on-accent);
+  background: var(--accent);
+  font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans CJK TC", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .wiki-back-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+}
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
+</style>
+</head>
+<body>
+<div class="game-shell">
+  <div class="game-toolbar">
+    <button type="button" id="themeToggle" class="theme-toggle-button theme-toggle-off" aria-pressed="false">深色模式：關</button>
+  </div>
+  <div id="box" class="wiki-box">
+
+    <div class="wiki-page active" id="page-index">
+<h1>威爾本維基</h1>
+<p class="wiki-lead">《與黛安約會》的背景與人物條目。條目涵蓋<strong>威爾本</strong>，以及2005年初夏西蒙·哈特利與黛安·埃利森初次約會前後的相關人物。</p>
+<h2>人物表</h2>
+<table class="wiki-cast"><tr><th>遊戲文本</th><th>姓名</th><th>年齡</th></tr><tr><td>你</td><td>西蒙·哈特利</td><td>27</td></tr><tr><td>黛安</td><td>黛安·埃利森</td><td>25</td></tr><tr><td>莫莉</td><td>莫莉·耶茨</td><td>25</td></tr><tr><td>布魯諾</td><td>布魯諾·帕爾默</td><td>35</td></tr><tr><td>羅伯特</td><td>羅伯特·邁爾斯</td><td>60</td></tr><tr><td>你弟弟</td><td>丹尼爾·哈特利</td><td>18</td></tr><tr><td>克洛伊</td><td>克洛伊·霍利斯</td><td>18</td></tr><tr><td>阿曼達</td><td>阿曼達·馬洛</td><td>18</td></tr><tr><td>黛比（褐髮女生）</td><td>黛比·克羅夫特</td><td>23</td></tr><tr><td>黛比的男友</td><td>克雷格·弗林</td><td>25</td></tr></table>
+<h2>條目</h2>
+<ol class="wiki-articles">
+<li><a href="#" onclick="showPage('01_welbourne'); return false;">威爾本</a></li>
+<li><a href="#" onclick="showPage('02_simon_hartley'); return false;">西蒙·哈特利</a></li>
+<li><a href="#" onclick="showPage('03_diane_ellison'); return false;">黛安·埃利森</a></li>
+<li><a href="#" onclick="showPage('04_molly_yates'); return false;">莫莉·耶茨</a></li>
+<li><a href="#" onclick="showPage('05_bruno_palmer'); return false;">布魯諾·帕爾默</a></li>
+<li><a href="#" onclick="showPage('06_robert_miles'); return false;">羅伯特·邁爾斯</a></li>
+<li><a href="#" onclick="showPage('07_daniel_hartley'); return false;">丹尼爾·哈特利</a></li>
+<li><a href="#" onclick="showPage('08_chloe_hollis'); return false;">克洛伊·霍利斯</a></li>
+<li><a href="#" onclick="showPage('09_amanda_marlow'); return false;">阿曼達·馬洛</a></li>
+<li><a href="#" onclick="showPage('10_debbie_croft'); return false;">黛比·克羅夫特</a></li>
+<li><a href="#" onclick="showPage('11_other_characters'); return false;">其他人物</a></li>
+</ol>
+<h2>地點</h2>
+<table><tr><th>名稱</th><th>類型</th></tr><tr><td>威爾本</td><td>市鎮</td></tr><tr><td>伯恩河</td><td>河流</td></tr><tr><td>濱水劇院</td><td>劇院</td></tr><tr><td>金流酒館</td><td>酒吧</td></tr><tr><td>涼亭酒吧</td><td>酒吧</td></tr><tr><td>比薩披薩店</td><td>餐廳</td></tr><tr><td>貝克合夥人</td><td>房仲</td></tr><tr><td>威爾本劇社</td><td>業餘劇團</td></tr><tr><td>威爾本學院</td><td>中六學院</td></tr></table>
+    </div>
+
+<div class="wiki-page" id="page-01_welbourne" data-title="威爾本">
+<h1>威爾本</h1>
+<p><strong>威爾本</strong>是英格蘭東部一座市集小鎮。它是《與黛安約會》的故事背景，故事發生於2005年初夏。</p>
+<p>威爾本坐落於<strong>伯恩河</strong>兩岸。這條小河昔日曾通行駁船，如今主要供散步與休閒。居民通常只稱它為「那條河」。</p>
+<h2>詞源</h2>
+<p>地名結合古英語中表示泉井與<em>bourne</em>（溪流）的成分，意指臨泉溪而居的聚落。</p>
+<h2>地理</h2>
+<p>城鎮分據伯恩河兩岸，歷史中心位於北岸教區教堂與市集一帶。較晚期的住宅區向南、向西延伸。教堂下方的濱水地帶曾於1980年代由自治市議會改建，1990年代末再次整修。</p>
+<p>威爾本位在東海岸幹線鐵路服務的區域通勤範圍內。較長途的鐵路行程通常須在較大車站轉車。</p>
+<h2>行政</h2>
+<p>地方政府由威爾本自治市議會負責。鎮內沒有大學。十六歲後教育以威爾本學院為中心。</p>
+<h2>人口統計</h2>
+<p>2000年代中期的估計包括以下各項。</p>
+<table>
+<tr><th>主題</th><th>細節</th></tr>
+<tr><td>人口（鎮區）</td><td>約24,000</td></tr>
+<tr><td>人口（自治市，含村莊）</td><td>約38,000</td></tr>
+<tr><td>族群構成</td><td>以白人英國人為主，另有較少的其他白人、南亞裔與混血人口</td></tr>
+<tr><td>年齡結構</td><td>略高於全國平均年齡，同時可見與學院相關的中六學生與年輕成人群體</td></tr>
+<tr><td>就業</td><td>公共服務、零售、鎮郊輕工業，以及前往較大城鎮通勤</td></tr>
+<tr><td>住房</td><td>維多利亞連棟、兩戰間半獨立式與較晚期住宅區；年輕成人中私人租屋常見</td></tr>
+</table>
+<h2>經濟</h2>
+<p>商業街上有大型Boots藥局、銀行，以及已受城外零售壓力的獨立商店。教區教堂對面的房仲<strong>貝克合夥人</strong>承攬不少本地住宅交易。房仲櫥窗物件流動緩慢。</p>
+<p>餐飲與酒吧集中於劇院與河邊一帶。場所包括比薩披薩店（位於劇院建築內）、金流酒館，以及沿河步道更遠處的涼亭酒吧。</p>
+<h2>交通</h2>
+<p>通往主要住宅區的末班公車約於<strong>晚上11時15分</strong>收班。計程車招呼站設於劇院附近，以及步道盡頭的涼亭酒吧一端。夜間外出時，步行往返濱水各處很常見。</p>
+<h2>教育</h2>
+<p><strong>威爾本學院</strong>提供中六教育。若干較年輕的居民剛在該處考完試。許多居民較早的教育則經由本地小學與一所綜合中學完成。</p>
+<h2>文化與休閒</h2>
+<h3>濱水劇院</h3>
+<p><strong>濱水劇院</strong>是威爾本僅次於教區教堂的最大公共建築。它是紅磚建造的市政劇院，設有大廳、正廳、可俯瞰公園的樓座、廣播系統與後台門。節目包括喜劇、夏季莎士比亞演出，以及偶有藉電視演員宣傳以帶動售票的製作。劇院當時正結束《外緣》的一檔檔期。</p>
+<h3>威爾本劇社</h3>
+<p><strong>威爾本劇社</strong>是鎮上主要的業餘劇團。黛安·埃利森與莫莉·耶茨都曾在該社演出。莫莉後來轉入專業工作，包括在濱水劇院的客串出演。</p>
+<h3>濱水酒吧與步道</h3>
+<table>
+<tr><th>場所</th><th>說明</th></tr>
+<tr><td>金流酒館</td><td>劇院對面的酒吧；週四女士啤酒免費；週二買一送一</td></tr>
+<tr><td>涼亭酒吧</td><td>步道盡頭、公車總站旁的酒吧與露天啤酒花園；優惠模式與金流酒館相反；打烊時有門衛</td></tr>
+<tr><td>比薩披薩店</td><td>劇院建築內的餐廳；用餐附贈一壺免費水</td></tr>
+</table>
+<p>劇院與涼亭酒吧之間的步道包括市府公廁（標示上午9時至晚上9時，週六常提早關閉）、漢堡餐車、瀑布設施、樂隊台、垃圾斗、一座橋、纖道入口，以及約四英尺高的灌木帶。</p>
+<h3>旅行與節慶</h3>
+<p>居民常離開本鎮參加音樂節（包括格拉斯頓伯里與懷特島），也常前往義大利、希臘等地度假。</p>
+<h2>宗教與市政建築</h2>
+<p>教區教堂設有停柩門，正對貝克合夥人。市府辦公處位於鎮中心邊緣。</p>
+<h2>住宅區</h2>
+<table>
+<tr><th>區域</th><th>備註</th></tr>
+<tr><td>教堂附近街道</td><td>較舊住宅，車道較短；包括埃利森與克羅夫特住家</td></tr>
+<tr><td>黛安·埃利森住家道路旁岔路</td><td>包括霍利斯住家；若抄近路，距埃利森大門約二十碼</td></tr>
+<tr><td>外圍半獨立式住宅</td><td>包括哈特利住家；沿末班公車路線，較黛安·埃利森的站牌約再遠一英里</td></tr>
+</table>
+<p>搭計程車時，埃利森與哈特利兩家距離不遠；搭公車則分屬不同站牌。</p>
+<h2>通訊</h2>
+<p>市話與行動電話屬日常使用。在職成人普遍使用電子郵件。青少年與年輕成人家庭網路與筆記型電腦已相當普及。如Webshots 一類商業相片分享網站被視為已知的社會隱憂。智慧型手機應用尚非日常生活的一部分。</p>
+<h2>在《與黛安約會》中</h2>
+<p>該晚主要發生於威爾本的劇院區、河畔步道、公車路線，以及少數私人住宅。職場、學院與家庭住所構成更廣的背景。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-02_simon_hartley" data-title="西蒙·哈特利">
+<h1>西蒙·哈特利</h1>
+    <blockquote class="wiki-quote">
+      <p>你以前有沒有過尿急到實在憋不住的經歷？就是……拖到太晚、差點來不及那種。願意跟我講講嗎？</p>
+      <footer> – <cite>西蒙·哈特利</cite></footer>
+    </blockquote>
+<p><strong>西蒙·哈特利</strong>（生於1978年5月）是威爾本一名27歲居民。他與弟弟丹尼爾·哈特利同住一棟半獨立式住宅，並在鎮上從事辦公室工作。他預定在與黛安·埃利森首次約會的隔天早上參加升遷面試。哈特利與埃利森因雙雙錯過末班公車、合搭計程車而相識。</p>
+<h2>早年生活與家庭</h2>
+<p>哈特利生於威爾本，在後來與丹尼爾同住的那棟半獨立式家中長大。母親海倫·哈特利再婚後遷往斯卡伯勒，當時丹尼爾仍在就學。父親菲利普·哈特利則已搬到鄰鎮的一間公寓。此後聯絡有限。兩兄弟留下房子；已有薪資收入的西蒙承擔了房貸與家用帳單。</p>
+<p>童年時期他性格安靜，多半不參與團隊運動。消遣包括集郵、鐵路參考書與騎自行車。同儕對他較常是忽略，而非霸凌。</p>
+<h2>教育</h2>
+<p>他就讀威爾本的綜合中學與中六，其後在外地完成大學學士學位。該學歷並未直接通向專門職業，他回到威爾本從事行政工作，原本打算只是暫時職位。</p>
+<h2>職業生涯</h2>
+<p>工作內容為例行辦公室行政，包括歸檔、文書往來、電話詢問與相關事務。同事大致視他為可靠而內斂。可能的升遷會適度提高薪資，工作性質則大致不變。他用錢謹慎，部分原因是他維持整個家計。</p>
+<h2>個人生活</h2>
+<h3>興趣</h3>
+<p>哈特利收藏1940年代與1950年代的大英帝國郵票。他對柴油與蒸汽鐵路保持興趣，並曾在瑞士搭乘鐵路旅行。他定期騎車，曾以兩天完成海岸對海岸自行車路線，也與友人約以一週走完海岸對海岸步道。他近來購入一輛二手BMW雙門跑車。他以觀眾身分看戲，自己並未演過戲。</p>
+<h3>人際關係</h3>
+<p>他較早的戀愛關係不多。中六時期與同班同學路易絲的一段關係維持了三週。大學期間有過隨學期結束而結束的短暫交往。之後與同事凱倫的關係維持了大半個冬天，並未發生重大爭吵，只因對外出夜晚該如何度過長期意見不合而結束。</p>
+<p>他曾先看過濱水劇院《外緣》的一場演出，之後才陪黛安·埃利森再看一場，且未向她提及先前那次觀劇。</p>
+<h3>性興趣</h3>
+<p>哈特利主要的私下性興趣是女性的尿意急迫。這涵蓋急欲排尿的跡象、長時間憋尿，以及女性因無法再等而失禁或在戶外排尿的情境。他通常不與伴侶討論此興趣。</p>
+<p>該興趣始於童年。一次小學旅遊巴士上，他觀察到一名同班同學長時間急於使用廁所。中學期間他開始留意尿急的行為跡象。十五歲時，一次學校迪斯可之後，他看見一名較年長的女生在停車場飲用私帶的蘋果酒後膀胱失控。該事件對他具有性意義，隨之而來的持久羞恥感並未終結這項興趣。</p>
+<p>成年後他私下尋找相關材料，有時也會置身可能觀察到女性排尿困難的場合，包括尾隨一名夜班公車下車的女性，並觀看她在停放的廂型車後排尿。與凱倫交往期間，有一次在她表示急於排尿後，他刻意開得比必要速度更慢，且未作解釋。</p>
+<p>與黛安·埃利森相識當晚，在合搭計程車之前，他曾看著她在停車場一輛小巴士後排尿。</p>
+<h2>住所</h2>
+<p>哈特利家是一棟貫穿式客廳的半獨立式住宅，樓上有浴室。西蒙的臥室通往走廊；丹尼爾的臥室在後方。房子沿末班公車路線，較黛安·埃利森的站牌約再遠一英里。西蒙採購基本家用物資，並覺得與一名十八歲同住既平常又費神。他對丹尼爾的部分朋友僅止於面識。發現一台連接到丹尼爾筆記型電腦、藏於浴室的攝影機時，西蒙視之為必須嚴肅對質的理由。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-03_diane_ellison" data-title="黛安·埃利森">
+<h1>黛安·埃利森</h1>
+    <blockquote class="wiki-quote">
+      <p>你明明知道我為什麼錯過車嘛。真的超尷尬！</p>
+      <footer> – <cite>黛安·埃利森</cite></footer>
+    </blockquote>
+<p><strong>黛安·埃利森</strong>（生於1979年9月）是威爾本一名25歲居民。她任職於教區教堂對面的房仲貝克合夥人，並住在附近父母的房子裡。與西蒙·哈特利雙雙錯過末班公車並合搭計程車後，她同意第一次約會，並要求票券去濱水劇院看《外緣》。她的朋友莫莉·耶茨在該劇停演前最後一週有出演。</p>
+<h2>早年生活與家庭</h2>
+<p>埃利森在威爾本一棟有短車道與樓下廁所的房子長大。母親瑪格麗特·埃利森常在黛安晚歸時仍醒著，重視穩定就業，並反對遷往倫敦的想法。父親艾倫·埃利森曾在東海岸線擔任司機多年，現已退休。他花時間打理花園、聽收音機，並在黛安整個童年時期囑咐她出門前先上廁所。</p>
+<p>兄長保羅·埃利森住在里茲。他青少年時期曾集郵一段時間，後來把收藏賣掉。黛安仍住在父母家中的一間臥室。她曾以為上大學意味著永久離開威爾本，但其後仍回到本地就業。</p>
+<h2>教育</h2>
+<p>她與莫莉·耶茨就讀同一所綜合中學，並一同在威爾本劇社演出。其後完成一門包含戲劇的大學課程，並在《不可兒戲》中飾演格溫多琳。貝克合夥人的職位經由母親教會方面的人脈取得。她仍對演戲保持興趣，包括莎士比亞，但並未將其視為既定的職業計畫。</p>
+<h2>職業生涯</h2>
+<p>在貝克合夥人，她從事平靜市場中的一般房仲工作。物件卡片長期留在櫥窗裡，她認為裁員並非不可能。她曾討論遷往倫敦另覓工作。萊頓有一位表親提出可暫時讓她睡沙發。她尚未開始收拾。她拒絕任何過早暗示，以為新認識的人應左右這項決定。</p>
+<h2>個人生活</h2>
+<h3>排尿習慣</h3>
+<p>埃利森長期不願在人前承認尿意急迫。她傾向等到社交上方便的時刻才告退，而這樣的時刻並非總能及時出現。後果包括帶著濕內褲回家、在大眾運輸上滲尿進褲襪、在住家後方垃圾桶後排尿，以及上課與用餐時憋到最後一刻。</p>
+<p>她有時會向信任的人講述部分情節。其中包括十八歲迎新週，大量飲酒後回宿舍途中尿急，與其他學生在路邊樹叢排尿；以及一次荷蘭的新娘派對週末，朋友使用男用小便斗，而她穿著長褲無法同樣處理，因有人拿出相機而延遲後，最終在一輛卡車後方排尿。例行的私下事故不作為公開軼事。</p>
+<h3>朋友</h3>
+<p>莫莉·耶茨自學校起便是她最親近的朋友。兩人多數年份會前往義大利。威尼斯是埃利森較偏好的目的地；近期一次行程包括拿坡里、索倫托，以及搭船前往卡布里島。較早一次希臘假期因炎熱與廁所條件不佳而不盡如人意。夏天她們會討論水上運動；埃利森喜歡滑水，通常由耶茨安排預約。看完《外緣》後與耶茨碰面，優先於其他收尾計畫。</p>
+<p>尼爾·庫珀是昔日校車相識，後來在本地修車廠工作，仍是鎮上點頭之交。一位約在她十五歲時教她下棋的家庭友人，在她記憶中與午餐蘋果酒及私人住宅中不適情境相連。她拒絕在西蒙·哈特利家下棋。</p>
+<p>黛比·克羅夫特住在同一條街。克洛伊·霍利斯住在附近岔路。兩人皆非密友。</p>
+<h3>人際關係</h3>
+<p>與蓋瑞·希爾的一段關係約在2003年前後維持八個月左右。希爾沉迷汽車與行車路線，並多次在埃利森需要廁所時拒絕停車，不止一次已滲尿到車座上。此後她厭惡以汽車為中心的談話。</p>
+<h2>住所</h2>
+<p>埃利森家位於教堂附近街道。前門鎖在潮濕天氣會卡住。樓梯下方有一間樓下廁所。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-04_molly_yates" data-title="莫莉·耶茨">
+<h1>莫莉·耶茨</h1>
+    <blockquote class="wiki-quote">
+      <p>老天，我那時候憋得快炸了。以為自己要在台上尿褲子。都是為了藝術啊。</p>
+      <footer> – <cite>莫莉·耶茨</cite></footer>
+    </blockquote>
+<p><strong>莫莉·耶茨</strong>（生於1979年春）是威爾本出身的25歲女演員，也是黛安·埃利森最親近的朋友。她在濱水劇院《外緣》停演前最後一週以客串角色出演。</p>
+<h2>早年生活與家庭</h2>
+<p>耶茨與黛安·埃利森就讀同一所綜合中學，並一同在威爾本劇社演出。畢業後她比埃利森更堅持繼續演戲。她未取得大學學位。母親瓊·耶茨住得比埃利森家更遠離鎮中心，住在一棟連棟住宅。父親在她十二歲時離開，此後聯絡斷續。</p>
+<p>畢業後她從事青年劇場工作，曾在曼徹斯特合租居住一段時間，參加無酬試鏡，並至少出演過一支電視廣告。</p>
+<h2>職業生涯</h2>
+<p>濱水劇院的檔期是她在家鄉的有薪專業工作，對手戲演員是布魯諾·帕爾默。在《外緣》中她飾演一名憤怒離去的角色，其後又飾演一名無法進入會所廁所的角色。羅伯特·邁爾斯把第二段戲排成生理與喜劇雙重難題，包括要求耶茨在下午排練時已帶著未解的尿意到場。她為角色剪短頭髮，並維持該髮型。</p>
+<p>製作結束後她尚無確定合約。選項包括返回曼徹斯特、從事暫時的非演戲工作，以及繼續參加區域試鏡。</p>
+<h2>個人生活</h2>
+<h3>朋友</h3>
+<p>她多數年份與黛安·埃利森同遊義大利，通常也負責安排她們的夏季水上運動。她因排練錯過埃利森在荷蘭的新娘派對週末。她知道埃利森長期難在人前承認尿意急迫，也不把此事當成兩人之間的笑料。</p>
+<h3>人際關係</h3>
+<p>威爾本檔期期間，週二與週六演出後她與布魯諾·帕爾默一同離開劇院，週四則與羅伯特·邁爾斯同行。她喜歡帕爾默，但未把這段安排說成既定情侶關係。她尊重邁爾斯身為導演，並將其排練方法視為專業要求，而非個人怪癖。最終場演出後，她不知與帕爾默的聯絡是否會繼續。</p>
+<h2>住所</h2>
+<p>她在倫敦沒有固定據點。合約空檔期間，生活仍繫於威爾本與暫時住所。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-05_bruno_palmer" data-title="布魯諾·帕爾默">
+<h1>布魯諾·帕爾默</h1>
+<p><strong>布魯諾·帕爾默</strong>（生於1970年3月）是一名35歲英國男演員。父親是英國人，母親是義大利人。他出演威爾本濱水劇院的《外緣》，部分公眾從電視認出他，往往說不出確切劇名。</p>
+<h2>早年生活與家庭</h2>
+<p>父親安東尼·帕爾默在吉爾福德一所綜合中學教授數學，希望兒子走傳統職業。母親露琪亞·帕爾默年輕時來自波隆那附近村莊，定居英格蘭，並在家中維持義大利語、料理與家族往來。布魯諾·帕爾默在學校說英語，在家則英義混用。他仍與義大利親戚保持聯絡，並曾赴波隆那一帶度假。</p>
+<h2>教育</h2>
+<p>在吉爾福德完成中等教育後，他進入戲劇學校受訓。</p>
+<h2>職業生涯</h2>
+<p>戲劇學校畢業後，他經由無酬製作與短期合約工作。區域犯罪影集《拘留室》使他較廣為人知，他在其中飾演警官兩季；其後一齣週日晚間家庭劇中他飾演一名兄長。兩個角色都未能在倫敦確立持久的主角地位。他習慣被人認不全，也不會主動向陌生人提示劇名。</p>
+<p>他接下威爾本檔期，圖的是檔期短、角色分量足，以及與羅伯特·邁爾斯合作的機會。在《外緣》中他與莫莉·耶茨演對手戲。他將該製作視為專業工作，而非家鄉虛榮企畫；威爾本並非他的出生地。檔期結束後他返回南倫敦的租屋，並繼續試鏡。</p>
+<h2>個人生活</h2>
+<h3>人際關係</h3>
+<p>排練期間他與莫莉·耶茨產生感情，並在週二與週六演出後與她共度時間。檔期內兩人親近，但未冠以正式名分。他未給她固定的倫敦地址，也未要求她搬遷。</p>
+<p>當同行場合與西蒙·哈特利、黛安·埃利森重疊時，他保持禮貌，除此之外不介入他們的夜晚。</p>
+<h2>住所</h2>
+<p>區域檔期之間在南倫敦租一間房；劇院檔期期間暫住威爾本。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-06_robert_miles" data-title="羅伯特·邁爾斯">
+<h1>羅伯特·邁爾斯</h1>
+    <blockquote class="wiki-quote">
+      <p>你想看，我也想看。</p>
+      <footer> – <cite>羅伯特·邁爾斯</cite></footer>
+    </blockquote>
+<p><strong>羅伯特·邁爾斯</strong>（生於1945年）是一名60歲英國劇場導演。他執導威爾本濱水劇院的《外緣》。</p>
+<h2>早年生活與家庭</h2>
+<p>邁爾斯在英格蘭中部長大，就讀文法學校，曾開始攻讀英語學位，未完成即轉入舞台監督工作。他結過兩次婚。第一次婚姻因長期為劇場工作缺席而分居結束。他與第二任妻子維持客氣關係；她住在另一郡，兩人偶有通信與見面。女兒埃莉諾·邁爾斯會出席部分首演，尤其是莎士比亞製作。</p>
+<p>他住在一間堆滿大量劇本的公寓。他隨身帶著小型相機，常拍攝河流與瀑布。</p>
+<h2>職業生涯</h2>
+<p>舞台監督一段時間後他轉入執導。他曾執導《不可兒戲》，以及較早的《外緣》製作。威爾本這次演出有意與1990年代電視改編區隔開來。</p>
+<p>他將鬧劇排練為一套生理難題與言語難題並重的問題。在《外緣》中他特別著重會所廁所那場戲，包括要求莫莉·耶茨在下午排練時已帶著尿意急迫到場。他主張此類場面須有身體真實感，喜劇才能成立。</p>
+<p>到2000年代中期，他多數工作屬區域與巡演性質。他並未維持其他產業部門日益要求的那種作品集。</p>
+<h2>個人生活</h2>
+<h3>人際關係</h3>
+<p>他不會在檔期結束時追求較年輕的演員。對待莫莉·耶茨的態度屬同事性質，演出後有時顯得溫暖，但未構成追求。</p>
+<h3>性興趣</h3>
+<p>邁爾斯長期私下對女性的尿意急迫有性興趣，也對觀察在時間或地點壓力下（包括戶外）排尿的女性有興趣。在男女混合場合他通常謹慎，與同樣有此興趣的男性相處時則較不掩飾。他長期以相機拍攝風景靜物，有時在情況允許時也會留下其他照片。</p>
+<p>他善於從表演者與散場後同伴身上讀出疲勞、緊張與膀胱脹滿。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-07_daniel_hartley" data-title="丹尼爾·哈特利">
+<h1>丹尼爾·哈特利</h1>
+<p><strong>丹尼爾·哈特利</strong>（生於1987年2月）是西蒙·哈特利的18歲弟弟。他住在威爾本的半獨立式老家，剛在威爾本學院考完試。成績預計八月公布。</p>
+<h2>早年生活與家庭</h2>
+<p>他比西蒙小九歲，不記得海倫與菲利普·哈特利曾以夫妻身分同住該屋。海倫·哈特利再婚後住在斯卡伯勒，與一家小型民宿相關。菲利普·哈特利住在鄰鎮公寓，聯絡有限。日常家用多半由西蒙負擔。丹尼爾喜歡哥哥，同時也覺得他習慣明顯偏老。西蒙的集郵是反覆出現的玩笑；西蒙的BMW則是單純羨慕的對象。</p>
+<h2>教育</h2>
+<p>在威爾本學院，他學業能力時好時壞，投入程度也不穩定，直到考試期間才有所改變。他希望升大學，最可能讀資訊相關科系，另對設計有興趣，但不總向朋友公開。</p>
+<p>學院一名技術人員曾安排他從技術位置觀看濱水劇院日場。他仍對舞台布景保持興趣。筆記型電腦裡除其他檔案外，也有未完成的布景圖。</p>
+<h2>個人生活</h2>
+<h3>朋友</h3>
+<p>主要男性友人包括托比與湯瑪斯。考試結束後，他有時在哈特利家舉辦或參加較大型聚會，與會者包括阿曼達·馬洛與貝拉等人。</p>
+<h3>人際關係</h3>
+<p>考試前那個春天起，他也與克洛伊·霍利斯共度時間。關係屬非正式。</p>
+<h3>隱藏攝影機</h3>
+<p>至少有一晚，藏於浴室的攝影機把影像傳到他的筆記型電腦。其他晚上，房子只作一般社交用途。西蒙·哈特利發現攝影機後引發重大爭吵。</p>
+<h2>住所</h2>
+<p>他住在哈特利家後方臥室。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-08_chloe_hollis" data-title="克洛伊·霍利斯">
+<h1>克洛伊·霍利斯</h1>
+<p><strong>克洛伊·霍利斯</strong>（生於1986年11月）是威爾本一名18歲居民，也是丹尼爾·哈特利的朋友。她剛在威爾本學院考完試，希望秋季升大學。</p>
+<h2>早年生活與家庭</h2>
+<p>她與母親莎倫·霍利斯同住，住家在黛安·埃利森住家道路旁的住宅岔路，距埃利森家不遠。父親從事卡車司機工作，合約常使他離家。莎倫·霍利斯維持整潔家務，要求進門脫鞋，反對克洛伊飲酒後晚歸，並會開著大廳燈。</p>
+<p>克洛伊自童年起在團體場合就偏害羞。她偏好先觀察場面再開口。</p>
+<h2>教育</h2>
+<p>她與丹尼爾·哈特利同屬重疊的學院圈子，並非整段學業都在同一教學組。她私下畫畫，在較愛出風頭的同儕間對這項興趣感到不自在。阿曼達·馬洛談藝術時的流暢更強化了這種不自在。她曾與母親參加大學開放日，希望拿到錄取，同時仍對陌生合租生活中的社交感到焦慮。</p>
+<h2>個人生活</h2>
+<p>她主要把黛安·埃利森當成任職於貝克合夥人的鄰居，與西蒙·哈特利先前幾乎沒有接觸。與丹尼爾·哈特利一夥外出時，她常穿短版格紋裙與剪至腳踝的黑色褲襪，多半是從手頭乾淨衣物中挑選，而非刻意展示。</p>
+<h3>人際關係</h3>
+<p>考試結束後她與丹尼爾·哈特利共度時間，包括在酒吧的夜晚。她不是他的固定女友。飲酒後她常說母親會氣壞，預想一場家中爭吵。</p>
+<h2>住所</h2>
+<p>霍利斯家位於威爾本條目住宅區所述、黛安·埃利森住家道路旁的岔路上。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-09_amanda_marlow" data-title="阿曼達·馬洛">
+<h1>阿曼達·馬洛</h1>
+<p><strong>阿曼達·馬洛</strong>（生於1986年12月）是威爾本一名18歲居民，也是丹尼爾·哈特利學院圈子的一員。她已考完試，若作品集與財務允許，打算繼續藝術教育。</p>
+<h2>早年生活與家庭</h2>
+<p>父母傑夫與派翠西亞·馬洛住在威爾本較新的住宅區。派翠西亞·馬洛強調穩定就業。傑夫·馬洛支持藝術之路，同時仍擔心費用。教師常把阿曼達看得比同儕更成熟；男同學則常把她當成挑戰。她以保留態度回應這兩種模式。</p>
+<h2>教育</h2>
+<p>她對純藝術保持認真興趣，能不矯飾地討論林布蘭等畫家。部分朋友（包括貝拉與克洛伊·霍利斯）覺得這份腔調過頭。托比的一次追求以某種說法被拒絕，後來成了圈子裡的固定玩笑。</p>
+<h2>個人生活</h2>
+<p>她不喜歡在陌生房子裡承認尿意急迫，也不喜歡在可能拿這事開玩笑的年輕男性間詢問浴室。飲酒後她難以保持靜坐，部分原因即在此。她曾寧可提早離開聚會，也不願冒險在人前膀胱失控。</p>
+<p>她參加哈特利家聚會，是因為考後社交以群體移動，而非因為她要找西蒙·哈特利。有一晚在急於使用浴室之後，她與他談論藝術書籍，並提到可能見面喝咖啡。</p>
+<h2>住所</h2>
+<p>她與父母同住於較新的住宅區。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-10_debbie_croft" data-title="黛比·克羅夫特">
+<h1>黛比·克羅夫特</h1>
+    <blockquote class="wiki-quote">
+      <p>黛比剛才出了點小意外，不太想讓別人知道。</p>
+      <footer> – <cite>黛安·埃利森</cite></footer>
+    </blockquote>
+<p><strong>黛比·克羅夫特</strong>（生於1982年4月）是威爾本一名23歲居民。她與黛安·埃利森住在同一條街，並在商業街大型Boots藥局擔任收銀。</p>
+<h2>早年生活與家庭</h2>
+<p>她在那條街上長大，十八歲離校時具備足以從事零售的學歷，並留在威爾本。母親會在黛比晚歸時問起克雷格·弗林。埃利森家對她家人而言屬鄰居熟識，而非深交。</p>
+<h2>職業生涯</h2>
+<p>工作內容是大型商業街藥局的收銀服務。她反對在社交場合被男人當成笑料。</p>
+<h2>個人生活</h2>
+<h3>人際關係</h3>
+<p>克雷格·弗林（生於1980年）現年25歲。有工作時他從事零星營建，並擁有一輛車。黛比需要排尿時他一再拖延，並把這行為說成逗弄。她已警告他，結果可能是她失禁。她曾短暫離開這段關係又回來。關係同時包含平常的感情與這套反覆模式。</p>
+<h3>朋友</h3>
+<p>黛比·克羅夫特與黛安·埃利森是鄰居而非密友。夜晚收場不佳時，她們能夠一起走路回家。克羅夫特覺察到埃利森的辦公室工作與旅行，同自己零售工作與和弗林共度的夜晚之間的差異，若在公開場合想起這比較，她會不喜歡。</p>
+<h3>排尿事故</h3>
+<p>由於弗林的拖延，克羅夫特已不止一次在衣物中失禁，地點包括戶外與他的車內。公車招呼站旁停車場一輛長期停放的露營車，在公廁關閉時曾被當作掩蔽。當埃利森在場目睹明顯事故時，克羅夫特很少說話。</p>
+<h2>住所</h2>
+<p>黛安·埃利森街上、相隔幾戶的一棟房子。</p>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+<div class="wiki-page" id="page-11_other_characters" data-title="其他人物">
+<h1>其他人物</h1>
+<p>與威爾本相關的次要人物，依其所屬主要條目分組。</p>
+<h2>與西蒙·哈特利相關</h2>
+<h3>海倫·哈特利</h3>
+<p>西蒙與丹尼爾·哈特利的母親。與第二任丈夫同住斯卡伯勒；與一家小型民宿相關。保持電話聯絡，並在考試期間寄錢。</p>
+<h3>菲利普·哈特利</h3>
+<p>西蒙與丹尼爾·哈特利的父親。住在鄰鎮公寓。探訪有限；偶爾就房子提供實務建議。</p>
+<h3>路易絲</h3>
+<p>西蒙·哈特利中六時期維持三週的女友。</p>
+<h3>凱倫</h3>
+<p>西蒙·哈特利的同事，曾與他有一段維持大半個冬天的關係。</p>
+<h3>蘇菲·雷恩</h3>
+<p>西蒙·哈特利的學校同輩，在他記憶中與一次校外教學及上鎖的涼亭廁所相關。她後來離開該地區。</p>
+<h2>與黛安·埃利森相關</h2>
+<h3>瑪格麗特·埃利森</h3>
+<p>黛安·埃利森的母親。住在埃利森家。黛安晚歸時仍醒著，並對貝克合夥人的就業與倫敦一事表示關切。</p>
+<h3>艾倫·埃利森</h3>
+<p>黛安·埃利森的父親。東海岸線退休司機。花時間打理花園。黛安整個童年時期他囑咐她出門前先上廁所。</p>
+<h3>保羅·埃利森</h3>
+<p>黛安·埃利森的兄長。住在里茲。青少年時期曾短暫集郵。</p>
+<h3>蓋瑞·希爾</h3>
+<p>黛安·埃利森約八個月的前男友。與長途開車及拒絕停下來上廁所相關。</p>
+<h3>尼爾·庫珀</h3>
+<p>黛安·埃利森昔日校車相識。任職於本地修車廠。</p>
+<h3>琳達與珍妮</h3>
+<p>黛安·埃利森的友人。琳達曾參與荷蘭新娘派對週末中涉及男用小便斗的一段情節。珍妮出現在一則關於瑪格麗特·埃利森座車路邊拋錨的敘述中。</p>
+<h3>教棋的家庭友人</h3>
+<p>約在黛安·埃利森十五歲時教她下棋的成年相識。在她記憶中與午餐蘋果酒及私人住宅浴室中的不適情境相關。這些條目未詳列其姓名。</p>
+<h2>與莫莉·耶茨相關</h2>
+<h3>瓊·耶茨</h3>
+<p>莫莉·耶茨的母親。住得比埃利森家更遠離中心。《外緣》首演夜她有出席。</p>
+<h2>與布魯諾·帕爾默相關</h2>
+<h3>露琪亞與安東尼·帕爾默</h3>
+<p>布魯諾·帕爾默的父母，住在吉爾福德。安東尼·帕爾默教授數學。露琪亞·帕爾默來自波隆那附近，維持家族聯絡與食物包裹。</p>
+<h2>與羅伯特·邁爾斯相關</h2>
+<h3>埃莉諾·邁爾斯</h3>
+<p>羅伯特·邁爾斯的女兒。出席選定的首演。其餘時候維持務實通信。</p>
+<h2>與丹尼爾·哈特利相關</h2>
+<h3>托比、湯瑪斯與貝拉</h3>
+<p>丹尼爾·哈特利的學院友人，皆為18歲。出現在哈特利家部分考後聚會。</p>
+<h2>與克洛伊·霍利斯相關</h2>
+<h3>莎倫·霍利斯</h3>
+<p>克洛伊·霍利斯的母親。維持整潔家務，要求進門脫鞋，克洛伊晚歸時開著大廳燈。</p>
+<h2>與阿曼達·馬洛相關</h2>
+<h3>傑夫與派翠西亞·馬洛</h3>
+<p>阿曼達·馬洛的父母。住在威爾本較新住宅區。在穩定就業與支持藝術教育之間側重不同。</p>
+<h2>與黛比·克羅夫特相關</h2>
+<h3>克雷格·弗林</h3>
+<p>黛比·克羅夫特的男友（生於1980年），現年25歲。零星營建工作、擁有汽車，並一再拖延廁所使用。見<a href="#" onclick="showPage('10_debbie_croft'); return false;">黛比·克羅夫特</a>。</p>
+<h2>鎮上角色</h2>
+<table>
+<tr><th>角色</th><th>職能</th></tr>
+<tr><td>貝克合夥人業主</td><td>雇用黛安·埃利森；無法保證無限期雇用</td></tr>
+<tr><td>市府公廁管理員</td><td>掌管河畔公廁鑰匙；週六常提早上鎖</td></tr>
+<tr><td>涼亭酒吧門衛</td><td>打烊後管制進出</td></tr>
+<tr><td>後台門管理員、比薩披薩店員工、節目單販售、吧台人員、漢堡餐車業者、計程車司機</td><td>劇院與濱水地帶的一般基礎設施</td></tr>
+</table>
+<div class="wiki-back-row"><button class="wiki-back-btn" onclick="showIndex()">返回目錄</button></div>
+</div>
+
+  </div>
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var THEME_KEY = 'diane-wiki-theme';
+  var SCROLL_KEY = 'diane-wiki-index-scroll';
+  var FROM_KEY   = 'diane-wiki-from-index';
+  function applyTheme(on) {
+    if (on) root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+    if (btn) {
+      btn.textContent = on ? '深色模式：開' : '深色模式：關';
+      btn.className = 'theme-toggle-button ' + (on ? 'theme-toggle-on' : 'theme-toggle-off');
+      if (document.activeElement === btn) btn.blur();
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+    try { sessionStorage.setItem(THEME_KEY, on ? 'dark' : 'light'); } catch(e) {}
+  }
+  function toggleTheme() { applyTheme(root.getAttribute('data-theme') !== 'dark'); }
+  var saved = null;
+  try { saved = sessionStorage.getItem(THEME_KEY); } catch(e) {}
+  applyTheme(saved === 'dark');
+  if (btn) btn.addEventListener('click', toggleTheme);
+  var indexPage = document.getElementById('page-index');
+  var allPages  = document.querySelectorAll('.wiki-page');
+  function showIndex() {
+    for (var i = 0; i < allPages.length; i++) allPages[i].classList.remove('active');
+    indexPage.classList.add('active');
+    document.title = 'Welbourne Wiki';
+    var fromIdx = null, y = null;
+    try { fromIdx = sessionStorage.getItem(FROM_KEY); y = sessionStorage.getItem(SCROLL_KEY); sessionStorage.removeItem(FROM_KEY); } catch(e) {}
+    if (fromIdx === '1' && y != null) {
+      var n = parseInt(y, 10);
+      if (!isNaN(n)) { requestAnimationFrame(function() { window.scrollTo(0, n); }); }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+  window.showIndex = showIndex;
+  window.showPage = function(stem) {
+    try {
+      sessionStorage.setItem(SCROLL_KEY, String(window.scrollY || window.pageYOffset || 0));
+      sessionStorage.setItem(FROM_KEY, '1');
+    } catch(e) {}
+    var target = document.getElementById('page-' + stem);
+    if (!target) return;
+    for (var i = 0; i < allPages.length; i++) allPages[i].classList.remove('active');
+    target.classList.add('active');
+    document.title = target.getAttribute('data-title') + ' | Welbourne Wiki';
+    window.scrollTo(0, 0);
+  };
+  showIndex();
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : '';
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    if (e.repeat) return;
+    if (e.key === 'd' || e.key === 'D') { e.preventDefault(); toggleTheme(); }
+    if (e.key === 'b' || e.key === 'B') { e.preventDefault(); showIndex(); }
+  });
+})();
+</script>
+</body>
+</html>

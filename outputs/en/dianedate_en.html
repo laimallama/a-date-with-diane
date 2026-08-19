@@ -609,6 +609,18 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body>
@@ -933,6 +945,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -986,6 +1003,7 @@ function syncThemeButton() {
     if (btn) {
       btn.textContent = darkMode ? "Dark Mode: On" : "Dark Mode: Off";
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -1588,7 +1606,8 @@ s("<LI>There are lots of variations, so do play the game right through a few tim
 s("<HR>");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
 s("<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong> toggles Dark Mode on or off.</p>");
 s("<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>");
 s("<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>");
@@ -3253,7 +3272,7 @@ s("<LI>DIANE: Oooh, it's lovely to be asked!"); getinti(5);
 s("<LI>Which will it be?");
 if (blad > 600) 
 {s("<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.");
-s("<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>"); adjpoints(-5);
+s("<p class='notice'><strong>She admits she's 'dying to spend a penny.' You lost 5 shyness points.</strong></p>"); adjpoints(-5);
 s("<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her knickers down...");
 afterpee()
 s("<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.");
@@ -4031,7 +4050,7 @@ s("<LI>DIANE: I'd love to.");s("<LI>She gives your hand a squeeze and looks at y
 s("<LI>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. It is the first time you have kissed her and she lingers over it. You can taste her lips. You kiss again."); getinti(25);
 if (blad > 700)
 {
-if (points <20 )
+if (points < 20)
 {s("<LI>DIANE: Come on! I'm dying to spend a penny!"); }
 else
 {s("<LI>DIANE: Come on!"); }}
@@ -4066,7 +4085,7 @@ riverside13()
 s("<LI>Molly and Bruno have peeled off and gone down the steps to the towpath. They are out of sight. You are wondering if Molly needed a pee. You'd like to peep over the parapet but you obviously can't while you're with Diane.");
 s("<LI>DIANE: Where have they gone?");
 s("<LI>YOU: I'm not sure. There's a sort of towpath down there.");
-s("<LI>DIANE: Oh.");s("<LI>The penny has probably clicked.");
+s("<LI>DIANE: Oh.");s("<LI>The penny has probably dropped for her.");
 s("<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.");
 c("riverside13b","No, I'll save my luckshots.");
 if (luckshots >= 1) c("luckytrip4","Yes, I'll risk a luckshot."); }
@@ -4102,7 +4121,7 @@ luckytrip4a()
 {
 s("<LI>Molly walks to the wall, close to where Bruno had just been. She is unbuckling her belt.");
 s("<LI>She turns round and sees Bruno is watching her. She waves him away and you can hear a faint cry of 'Look away.' She waves again. But he is still looking towards her with what seems to be a grin.");
-s("<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind this, between the skip and the wall, where Bruno can't see her—but you can.");
+s("<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind it, up against the wall, where Bruno can't see her—but you can.");
 s("<LI>Then she quickly unzips her jeans and pulls them and her white knickers down in one movement, straight away going into a half squat. It's too gloomy for you to see any stream but you can see a puddle forming on the ground and running away from her. Judging by the size of it, she certainly needed to go.");
 s("<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt she emerges from behind the skip and rejoins Bruno."); mollyblad = 50;
 c("luckytrip4b","You go back to the path."); }

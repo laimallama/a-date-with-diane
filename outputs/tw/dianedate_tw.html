@@ -615,6 +615,18 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body>
@@ -940,6 +952,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -991,8 +1008,9 @@ function syncThemeButton() {
   try {
     var btn = document.getElementById("themeToggle");
     if (btn) {
-      btn.textContent = darkMode ? "深色模式：開啟" : "深色模式：關閉";
+      btn.textContent = darkMode ? "深色模式：開" : "深色模式：關";
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -1581,7 +1599,8 @@ s("<LI>遊戲有很多不同走向，最好從頭到尾多玩幾遍。但週二�
 s("<HR>");
 s("<p class='note-lead'>左上角還有個劇情圖鑑，裡面有通往得獎結局、安慰獎結局以及各種隱藏場景的引導路線。卡住時可以用，只是想瀏覽也可以。有些項目是下拉選單：先點開，再選你要的變體。在手機或平板上請用畫面上的按鈕；在電腦上還可以用下面這些快捷鍵。</p>");
 s("<p class='note-keys'><strong>G</strong> 鍵打開劇情圖鑑（<strong>Esc</strong> 鍵關閉）。</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>");
+s("<p class='note-keys'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong> 鍵開啟或關閉深色模式。</p>");
 s("<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong> 鍵可選擇反白的引導選項，但只有在引導開啟時才有效。按住 <strong>Enter</strong> 鍵可快進引導選項；放開即停。</p>");
 s("<p class='note-lead'>若後悔某個選擇，隨時可以按「返回」按鈕回到上一頁；它會把一切都恢復——數值、選項，統統還原。引導模式裡同樣有效。</p>");
@@ -3202,9 +3221,9 @@ function
 leavetheatre1()
 {
 s("<LI>那麼，你選哪個？");
-c("foyerbar","去大廳裡和莫莉碰面，也許在那裡喝幾杯啤酒，再和黛安一起走去Pavilion酒吧。");
+c("foyerbar","去大廳裡和莫莉碰面，也許在那裡喝幾杯啤酒，再和黛安一起走去涼亭酒吧。");
 c("stagedoor","在舞台門口等莫莉，接著換個地方喝一杯？");
-c("riversidewalk","不管莫莉了，就和黛安沿著河邊好好散散步，再去Pavilion酒吧喝一杯？畢竟，你想陪的人是黛安。");
+c("riversidewalk","不管莫莉了，就和黛安沿著河邊好好散散步，再去涼亭酒吧喝一杯？畢竟，你想陪的人是黛安。");
 c("dianechoice","紳士一點，問黛安想怎麼走。"); }
 
 function
@@ -3304,7 +3323,7 @@ foyerbar2()
 s("<LI>你們在劇場大廳的酒吧等莫莉。");
 s("<LI>你們等了大約10分鐘。莫莉終於出現了。你一眼就認出她就是台上那個女生，不過現實中她看起來矮了一些。她身邊還帶著一位男性朋友。");
 s("<LI>兩人走過來跟你們打招呼。莫莉和黛安互相親吻擁抱，你們也握了手，互相介紹。");
-s("<LI>莫莉和她的朋友暫時不打算點飲料，他們覺得知道一個更好的去處；或者你們想先散步去Pavilion酒吧？");
+s("<LI>莫莉和她的朋友暫時不打算點飲料，他們覺得知道一個更好的去處；或者你們想先散步去涼亭酒吧？");
 c("foyerbar3","你要選哪個？"); } 
 
 function
@@ -3313,11 +3332,11 @@ foyerbar3()
 s("<LI>你們在劇場大廳酒吧與莫莉和她的朋友聊天。");  
 if (thursday)
 {s("<LI>這位男性朋友叫羅伯特。你認不出他，但原來他是這齣戲的導演。他比莫莉大了不少，大概六十歲左右。");
-s("<LI>你們打算步行去Pavilion酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。"); 
+s("<LI>你們打算步行去涼亭酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。"); 
 c("stagedoor5","你要選哪個？"); }
 else
 {s("<LI>這位男性朋友叫布魯諾。你認出他是劇中演員之一，以前大約在電視上見過他。他和莫莉關係很好，但看來不像是情侶。");
-s("<LI>你們打算步行去Pavilion酒吧。但布魯諾問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。");
+s("<LI>你們打算步行去涼亭酒吧。但布魯諾問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。");
 c("foyerbar4","你要選哪個？");} }
 
 function
@@ -3393,11 +3412,11 @@ stagedoor4()
 s("<LI>你們在後台門外與莫莉和她的朋友聊天。"); blad += 5;
 if (thursday)
 {s("<LI>這位男性朋友叫羅伯特。你認不出他，但原來他是這齣戲的導演。他比莫莉大了不少，大概六十歲左右。");
-s("<LI>你們打算步行去Pavilion酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，不過現在人有點多了。");
+s("<LI>你們打算步行去涼亭酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，不過現在人有點多了。");
 c("stagedoor5","你要選哪個？");} 
 if (saturday)
 {s("<LI>這位男性朋友叫布魯諾。你認出他是劇中演員之一，以前大約在電視上見過他。他和莫莉關係很好，但看來不像是情侶。");
-s("<LI>劇院附近的酒吧擠滿了週六夜晚出來狂歡的人，看起來不太誘人。莫莉建議你們四個沿著河邊散步，去Pavilion酒吧喝一杯。"); mollyblad = 100;
+s("<LI>劇院附近的酒吧擠滿了週六夜晚出來狂歡的人，看起來不太誘人。莫莉建議你們四個沿著河邊散步，去涼亭酒吧喝一杯。"); mollyblad = 100;
 c("stagedoor5a","你要選哪個？");}
 else if (tuesday)
 {s("<LI>你認出這位男性朋友是劇中演員之一，叫布魯諾。他跟莫莉好像只是朋友，不是她男朋友。"); 
@@ -3439,7 +3458,7 @@ choosewalk()
 {
 s("<LI>你說想去散步。等走到涼亭，想喝多久都行。");
 s("<LI>黛安對你微微一笑，輓起了你的手臂。"); getinti(15); mollyblad = 50 ;
-s("<LI>你們沿河朝Pavilion酒吧走去。");
+s("<LI>你們沿河朝涼亭酒吧走去。");
 c("riverside2","你繼續往前走。"); }
 
 function
@@ -3452,7 +3471,7 @@ else if (blad < 625)
 {s("<LI>黛安：哼。你好歹也幫我說兩句嘛。");s("<LI>她撅起嘴，有點悶悶不樂。");  getinti(-15); }
 else
 {s("<LI>黛安對你的決定挺不滿，但咬了咬嘴唇，沒多說什麼。"); getinti(-25); }
-s("<LI>你們沿河朝Pavilion酒吧走去。");
+s("<LI>你們沿河朝涼亭酒吧走去。");
 c("riverside2","你繼續往前走。"); }
 
 function
@@ -3569,7 +3588,7 @@ s("<LI>大家聊得正歡。"); mollyproc -=30; mollyblad += 30;
 s("<LI>你們東聊西聊，什麼都聊了一點。");
 if (saturday)
 {s("<LI>週六晚上客人越來越多，酒吧裡吵得很，大家說話都快聽不見了。");
-s("<LI>你們決定喝完就出發前往Pavilion酒吧。到了那邊應該還有時間再來一杯。"); leavepub1 = 1;
+s("<LI>你們決定喝完就出發前往涼亭酒吧。到了那邊應該還有時間再來一杯。"); leavepub1 = 1;
 if (blad >670)
 {s("<LI>黛安：我去一下廁所，立刻回來。");
 afterpee()}
@@ -3588,7 +3607,7 @@ if (blad >660)
 {s("<LI>黛安：我去一下廁所，立刻回來。");
 afterpee()
 s("<LI>她去了趟廁所，過一會兒回來，整個人輕鬆多了。"); } 
-s("<LI>但現在快十點半了。要是你和黛安想趕上回家的公車，得在十一點左右或稍晚些到Pavilion酒吧。其他人會和你們一起走，因為他們住得離Pavilion酒吧很近。");
+s("<LI>但現在快十點半了。要是你和黛安想趕上回家的公車，得在十一點左右或稍晚些到涼亭酒吧。其他人會和你們一起走，因為他們住得離涼亭酒吧很近。");
 s("<LI>莫莉：有人要再來一杯嗎？");
 s("<LI>要不要再喝一杯？");
 c("pubdrink7a","不，我們沒時間再喝一杯了。");
@@ -4038,7 +4057,7 @@ riverside12()
 {
 s("<LI>你們繼續向前走。"); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
-{s("<LI>黛安好像超急著想趕到Pavilion酒吧。她邁著急促的小碎步，咬著嘴唇，像是急著要去廁所。"); 
+{s("<LI>黛安好像超急著想趕到涼亭酒吧。她邁著急促的小碎步，咬著嘴唇，像是急著要去廁所。"); 
 s("<p class='notice'><strong>一路上黛安走得好急。你獲得了5點害羞值。</strong></p>"); adjpoints(5);}
 else
 {s("<LI>你在想是否可以停下來親吻一下。"); }
@@ -4095,7 +4114,7 @@ luckytrip4a()
 {
 s("<LI>莫莉走向牆邊，走到布魯諾剛才站的地方附近，正在解腰帶。");
 s("<LI>她轉過身，注意到布魯諾正盯著她看。她揮手叫他走開，你隱約聽到一聲「別看！」她又揮了揮手，但他依然看著她，嘴角好像還帶著笑。");
-s("<LI>莫莉環顧四周，然後腰帶還未繫好，就沿著纖道朝你這邊走了幾碼，走到一個建築工人遺留的小型工地貨櫃旁邊。她躲到貨櫃後面，夾在貨櫃和牆壁之間——布魯諾看不到她，但你能。");
+s("<LI>莫莉環顧四周，然後腰帶還未繫好，就沿著纖道朝你這邊走了幾碼，走到一個建築工人遺留的小型工地貨櫃旁邊。她躲到貨櫃後面，緊貼著牆——布魯諾看不到她，但你能。");
 s("<LI>接著她飛快解開牛仔褲拉鍊，一把把褲子和白色內褲一起拽下來，立刻半蹲下來。光線太暗，你看不清尿流，但能看到地上正在積成一灘水窪，順著地面淌開。從水窪的大小來看，她明顯早就憋得不行了。");
 s("<LI>她尿了將近一分鐘，然後站直身子，把白色內褲拉上來整理好，再拉上牛仔褲拉鍊。她一邊繫著腰帶，一邊從工地貨櫃後面走出來，重新走向布魯諾。"); mollyblad = 50;
 c("luckytrip4b","你回到小路上。"); }
@@ -4148,7 +4167,7 @@ function
 riverside13a()
 {
 s("<LI>你和黛安並肩走著。莫莉和布魯諾在你們前面幾碼遠的地方。");
-s("<LI>黛安變得有點沉默。看起來她需要去廁所了。不過到Pavilion酒吧應該不遠了。");
+s("<LI>黛安變得有點沉默。看起來她需要去廁所了。不過到涼亭酒吧應該不遠了。");
 if ( blad > 750 )
 {s("<LI>黛安：還有多遠啊？");
 s("<LI>你：不遠了，差不多五分鐘。你還好嗎？");
@@ -4156,7 +4175,7 @@ s("<LI>黛安：嗯——");
 s("<LI>她頓了頓。");
 s("<LI>黛安：說實話，我現在真的快忍不住了，急得厲害。要不是布魯諾在，我早就去樹叢後面解決一下了，可他在場讓我有點不好意思。我真不知道該怎麼辦才好。");
 s("<LI>你們又走了一會兒，接著黛安停了下來。");
-s("<LI>黛安：附近有沒有地方可以上廁所？我怕自己撐不到Pavilion酒吧了。");
+s("<LI>黛安：附近有沒有地方可以上廁所？我怕自己撐不到涼亭酒吧了。");
 if (saturday)
 {s("<LI>她站在那裡，身體微微前傾，雙手深深插進裙子口袋，像是在偷偷按住自己。她焦急地望著你。");}
 else
@@ -4357,7 +4376,7 @@ c("toiletclosed1","你看了看她。"); }
 else if (blad > 650)
 {s("<LI>一看到廁所，黛安就走在了前頭。你看到她走到標著「女廁」的門前，卻發現門已經關上了。她急得小跳了一下，又來回走了幾步，像是在找什麼入口。");
 s("<LI>接著她回來了，一臉遺憾。");
-s("<LI>黛安：每次需要的時候它們都關著。不過很快就到Pavilion酒吧了。");
+s("<LI>黛安：每次需要的時候它們都關著。不過很快就到涼亭酒吧了。");
 c("riverside15","你繼續往前走。"); }
 else
 {s("<LI>黛安看了看那間廁所。");
@@ -4435,7 +4454,7 @@ c("justclosed1","你看了看她。"); }
 else if (blad > 650)
 {s("<LI>一看到廁所，黛安就走在了前頭。你看到她走到標著「女廁」的門前，卻發現門已經關上了。她急得小跳了一下，又來回走了幾步，像是在找什麼入口。");
 s("<LI>接著她回來了，一臉遺憾。");
-s("<LI>黛安：每次需要的時候它們都關著。不過很快就到Pavilion酒吧了。");
+s("<LI>黛安：每次需要的時候它們都關著。不過很快就到涼亭酒吧了。");
 c("riverside15","你繼續往前走。"); }
 else
 {s("<LI>黛安看了看那間廁所。");
@@ -4768,13 +4787,13 @@ c("riverside16","你加快腳步。"); }
 function
 riverside16()
 {
-s("<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到Pavilion酒吧</SPAN></STRONG></H2>");
+s("<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到涼亭酒吧</SPAN></STRONG></H2>");
 s("<HR>");
-s("<LI>你們接著前行。前方，Pavilion酒吧燈火通明。");
+s("<LI>你們接著前行。前方，涼亭酒吧燈火通明。");
 if (leavepub2)
 {s("<LI>但已經過了十一點，你們沒時間在這裡再喝一杯了。其實酒吧正在打烊，顧客們正喝著最後一杯，大多數人都在陸續離開。");
 if (blad >710)
-{s("<LI>看到Pavilion酒吧已經關門，你聽到黛安倒吸一口氣，驚呼：「哦，不！」");}
+{s("<LI>看到涼亭酒吧已經關門，你聽到黛安倒吸一口氣，驚呼：「哦，不！」");}
 else
 {s("<LI>你本來也沒指看它會開著。");}
 s("<LI>於是你們朝——");
@@ -4786,7 +4805,7 @@ s("<LI>女生們在俯瞰河景的露天啤酒花園裡找位子坐。"); pounds
 c("pavilion9","你去買酒"); } 
 else
 {s("<LI>現在還不到10點半。距你和黛安需要趕公車還有半個多小時，時間足夠喝上幾杯。");
-s("<LI>Pavilion酒吧挺熱鬧。你們在俯瞰河景的露天啤酒花園裡找位子。"); pounds -= 10; 
+s("<LI>涼亭酒吧挺熱鬧。你們在俯瞰河景的露天啤酒花園裡找位子。"); pounds -= 10; 
 c("pavilion","你去買酒。"); }}
 
 function
@@ -4794,7 +4813,7 @@ riverside16a()
 {
 s("<LI>你們直接走向公車站。");
 if (blad >700 )
-{s("<LI>黛安看見Pavilion酒吧關了，明顯很失望。");
+{s("<LI>黛安看見涼亭酒吧關了，明顯很失望。");
 if (inti >100 )
 {s("<LI>黛安：我就指望這裡上廁所呢。");}
 else
@@ -4806,17 +4825,17 @@ c("busqueue","你們到了公車站。"); }
 function
 pavilion()
 {
-s("<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到Pavilion酒吧</SPAN></STRONG></H2>");
+s("<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到涼亭酒吧</SPAN></STRONG></H2>");
 s("<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每週二，女士免費暢飲！</SPAN></STRONG></P>");
 s("<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每週四，啤酒買一品脫送一品脫！</SPAN></STRONG></P>");
 s("<HR>");
-s("<LI>你們四個人進到Pavilion酒吧。");
+s("<LI>你們四個人進到涼亭酒吧。");
 s("<LI>裡面挺熱鬧的，可能是因為有好幾個特惠活動。這裡明顯在努力跟金流酒吧搶生意。");
 if (blad >825)
-{s("<LI>黛安憋尿憋到了極限。剛看見Pavilion酒吧，她就飛奔過去，等你到的時候，她已經在女廁裡了。莫莉也跟著進去了。");
+{s("<LI>黛安憋尿憋到了極限。剛看見涼亭酒吧，她就飛奔過去，等你到的時候，她已經在女廁裡了。莫莉也跟著進去了。");
 c("pavilion0","你走到吧台。"); }
 else if (blad >700)
-{s("<LI>黛安尿急得厲害。剛到Pavilion酒吧，她就隨便找了個藉口去了女廁。莫莉陪她一起去了。");
+{s("<LI>黛安尿急得厲害。剛到涼亭酒吧，她就隨便找了個藉口去了女廁。莫莉陪她一起去了。");
 s("<LI>你在心裡暗罵了一聲。有沒有幸運機會？");
 if (luckshots >= 1) c("luckytrip8","好，我用一次幸運機會。");
 c("pavilion1","不，我要留著幸運機會。"); }
@@ -4853,7 +4872,7 @@ c("pavilion2","你們一起聊著天。"); }
 function
 pavilion2()
 {
-s("<LI>你們四個人在Pavilion酒吧的吧台處。");
+s("<LI>你們四個人在涼亭酒吧的吧台處。");
 if (thursday)
 {s("<LI>羅伯特請客買飲料。他為自己點了一杯葡萄酒，給你點了啤酒，給黛安點了拉格啤酒，給莫莉點了一杯英式艾爾啤酒。週四有特惠活動，買一品脫送一品脫，兩個女生都趁機要了品脫裝。"); proc += 200; mollyproc += 200; 
 s("<LI>黛安：哎呀！這麼多我根本喝不完啦。") }
@@ -4866,7 +4885,7 @@ c("pavilion3","你們繼續聊著。"); }
 function
 pavilion3()
 {
-s("<LI>你們四個人在Pavilion酒吧的露天啤酒花園裡喝酒。");
+s("<LI>你們四個人在涼亭酒吧的露天啤酒花園裡喝酒。");
 s("<LI>你們東聊西聊，你告訴莫莉你很欣賞她的表演。");
 s("<LI>莫莉：說真的，這角色根本就是為我量身打造的，一個很討喜的小配角。"); mollyproc -=30; mollyblad += 30; 
 sitting_desp()
@@ -4976,7 +4995,7 @@ pavilion8()
 s("<LI>快十一點了。酒保喊道：「最後點單了，請抓緊！」");
 if (blad >600)
 {s("<LI>黛安好像有點坐立不安，動來動去的。");
-s("<p class='notice'><strong>黛安在Pavilion酒吧裡尿急了。你獲得了3點害羞值。</strong></p>"); adjpoints(3);} 
+s("<p class='notice'><strong>黛安在涼亭酒吧裡尿急了。你獲得了3點害羞值。</strong></p>"); adjpoints(3);} 
 else
 {s("<LI>氣氛輕鬆愉快。"); }
 s("<LI>趕公車之前還有時間來最後一杯。喝什麼好呢？");
@@ -5008,7 +5027,7 @@ c("pavilion9a","你準備好離開了。"); }}
 function
 pavilion9a()
 {
-s("<LI>你們離開了Pavilion酒吧。");
+s("<LI>你們離開了涼亭酒吧。");
 c("busqueue","然後朝公車站走去。"); }
 
 function
@@ -5017,7 +5036,7 @@ pavilion10()
 s("<LI>你告訴黛安和莫莉，你們會等她們去一趟廁所再走。畢竟，你可不希望黛安在回家路上憋得難受，對吧？");
 s("<LI>她們去了，幾分鐘後有說有笑地回來，看來輕鬆多了。"); mollyblad = 0; getinti (10);
 afterpee()
-s("<LI>黛安輓起你的手臂，你們一行人離開了Pavilion酒吧。");
+s("<LI>黛安輓起你的手臂，你們一行人離開了涼亭酒吧。");
 c("busqueue","你尋找公車站。"); }
  
 function
@@ -5028,10 +5047,10 @@ if (blad >700)
 {s("<LI>黛安說她真的<EM>非去不可</EM>，會儘量快。她和莫莉向廁所走去。");
 s("<LI>她們去了，幾分鐘後有說有笑地回來，看來輕鬆多了。"); mollyblad = 0; getinti (-10);
 afterpee()
-s("<LI>你們離開了Pavilion酒吧。");}
+s("<LI>你們離開了涼亭酒吧。");}
 else
 {s("<LI>黛安說「不是很急」，回家再上廁所就行了。"); 
-s("<LI>你們一起離開了Pavilion酒吧。"); } 
+s("<LI>你們一起離開了涼亭酒吧。"); } 
 c("busqueue","你尋找公車站。"); }
 
 function  
@@ -5053,16 +5072,16 @@ s("<LI>黛安和莫莉正向女廁走去。你很想看看如果阻止她們會�
 if (saturday)
 {s("<LI>女廁裡有幾個喝多了的女生鬧了起來，引發了一場小騷亂。女廁因此暫時關閉幾分鐘，等工作人員處理。黛安和莫莉覺得等不了那麼久，於是沒能上成廁所就回來了。");
 s("<LI>「只能憋著了，」她們說。");
-s("<LI>你們一起離開了Pavilion酒吧。"); }
+s("<LI>你們一起離開了涼亭酒吧。"); }
 else if (tuesday)
-{s("<LI>從啤酒花園通往Pavilion酒吧的門已經鎖上了，根本進不去女廁。沒辦法，兩個女生只得失望地回來了。");
+{s("<LI>從啤酒花園通往涼亭酒吧的門已經鎖上了，根本進不去女廁。沒辦法，兩個女生只得失望地回來了。");
 s("<LI>「只能憋著了，」她們說。");
-s("<LI>你們一起離開了Pavilion酒吧。"); }
+s("<LI>你們一起離開了涼亭酒吧。"); }
 else
 {s("<LI>她們還是趕上了去廁所的時間。你的幸運機會沒奏效。"); mollyblad = 0;
 afterpee()
 s("<LI>兩個女生回來時看來輕鬆多了。");
-s("<LI>你們一起離開了Pavilion酒吧。"); }
+s("<LI>你們一起離開了涼亭酒吧。"); }
 c("busqueue","你尋找公車站。"); }
 
 function
@@ -5238,7 +5257,7 @@ busqueue()
 {
 s("<LI>你們加入等公車的隊伍。大概還要等十五分鐘左右。");
 s("<LI>現在天氣挺冷，冷得黛安更想上廁所了。"); blad +=20 
-s("<LI>那裡還有其他幾個人，包括一些在Pavilion酒吧裡見過的面孔。");
+s("<LI>那裡還有其他幾個人，包括一些在涼亭酒吧裡見過的面孔。");
 s("<LI>莫莉和她的朋友還在你們身邊，一邊聊天一邊跟你們道晚安。");
 standing_desp()
 mollyst_desp() 
@@ -9894,7 +9913,7 @@ busqueue3()
 s("<LI>你還在等公車。"); blad +=15
 s("<LI>旁邊公車站上有個女生像是怎麼也站不定。她穿著一條迷你短裙，雙腿不停換來換去，動作格外顯眼。她先把腿往一邊交叉，又換到另一邊，最後乾脆單腳站著。");
 if (blad > 660)
-{s("<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM>我快憋死了，想上廁所。附近有地方可以去嗎？");s("<LI>她紅著臉，有點不好意思。");s("<LI>黛安：我覺得我撐不到公車來——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。");
+{s("<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM>我快憋死了，想上廁所。附近有地方可以去嗎？");s("<LI>她紅著臉，有點不好意思。");s("<LI>黛安：我覺得我撐不到公車來——本來打算來這裡之前去一趟的，沒想到涼亭酒吧已經關門了。");
 s("<LI>你環顧四周，想了想。");
 c("queue1a","你打算怎麼辦？"); }
 else
@@ -10307,7 +10326,7 @@ searchdiane()
 {
 s("<LI>她往哪個方向走的？你四下張望，只能靠猜。該往哪邊？");
 c("search1","進停車場了？對面有公共廁所，不然她會蹲在某輛車後面。");
-c("search2","往Pavilion酒吧方向跑去？說不定她希望能進去用一下女廁。");
+c("search2","往涼亭酒吧方向跑去？說不定她希望能進去用一下女廁。");
 c("search3","鑽進路下的地下道，那會把她帶回市區？");}
 
 function
@@ -10445,12 +10464,12 @@ c("consolation","約會也許提前結束了，不過也不是毫無收穫。");
 function
 search2()
 {
-s("<LI>你往Pavilion酒吧方向折返。你向左看，向右看。黛安不見蹤影。");
+s("<LI>你往涼亭酒吧方向折返。你向左看，向右看。黛安不見蹤影。");
 s("<LI>你望向停車場。也許她躲到哪輛車後面尿尿去了。可你什麼都看不到，只有幾個零散的人在往各自的車走去。");
-s("<LI>你看向Pavilion酒吧的正門。門口站著一個保安。");
+s("<LI>你看向涼亭酒吧的正門。門口站著一個保安。");
 if (tuesday)
 {s("<LI>突然你聽到了腳步聲，是一個女生跑動的聲音。");
-s("<LI>是黛安。你退回陰影裡，看著她走向Pavilion酒吧門口。");
+s("<LI>是黛安。你退回陰影裡，看著她走向涼亭酒吧門口。");
 s("<LI>她走到門衛跟前，問了他什麼。");
 s("<LI>看來你可能得再用一次幸運機會。你還能用嗎？"); 
 if (luckshots >= 1) c("luckytrip29","是的，我還留著一個，現在就用！"); 
@@ -11723,7 +11742,7 @@ if (typeof document !== "undefined" && document.readyState !== "loading" && type
 <div class="game-shell">
   <div id="gameToolbar" class="game-toolbar" style="display:none">
     <button id="galleryToggle" class="gallery-button" onclick="openGallery()" type="button">劇情圖鑑</button>
-    <button id="themeToggle" class="theme-toggle-button theme-toggle-off" onclick="toggleTheme()" type="button">深色模式：關閉</button>
+    <button id="themeToggle" class="theme-toggle-button theme-toggle-off" onclick="toggleTheme()" type="button">深色模式：關</button>
   </div>
   <div id="box" aria-live="polite" aria-atomic="true"></div>
 </div>

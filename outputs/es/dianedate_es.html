@@ -611,6 +611,18 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body>
@@ -936,6 +948,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -989,6 +1006,7 @@ function syncThemeButton() {
     if (btn) {
       btn.textContent = darkMode ? "Modo oscuro: Activado" : "Modo oscuro: Desactivado";
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -1577,7 +1595,8 @@ s("<LI>Hay muchas variaciones, así que juega la partida completa varias veces. 
 s("<HR>");
 s("<p class='note-lead'>También hay una Galería arriba a la izquierda, con recorridos guiados por los finales de premio, los finales de consolación y varias escenas ocultas. Úsala si te atascas, o si simplemente quieres explorar. Algunas filas son desplegables: haz clic para abrirlas y luego elige la variante que quieras. En un teléfono o tableta, usa los botones de la pantalla; en un ordenador también tienes estas teclas de acceso rápido.</p>");
 s("<p class='note-keys'><strong>G</strong> abre la Galería (<strong>Esc</strong> la cierra).</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong> activa o desactiva la Guía una vez que has empezado una.</p>");
+s("<p class='note-keys'><strong>H</strong> activa o desactiva la Guía una vez que has empezado una.</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong> activa o desactiva el Modo oscuro.</p>");
 s("<p class='note-keys'>Usa las <strong>teclas numéricas</strong> para elegir tus opciones.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Intro</strong> sigue la opción resaltada de la Guía, pero solo mientras la Guía esté activada. Mantén pulsado <strong>Intro</strong> un momento para avanzar rápido por las opciones guiadas; suéltalo para parar.</p>");
 s("<p class='note-lead'>Puedes pulsar el botón «Atrás» para volver a la página anterior en cualquier momento si te arrepientes de una elección; restaura todo: estadísticas, decisiones, el lote. También funciona en el modo Guía.</p>");
@@ -4090,7 +4109,7 @@ luckytrip4a()
 {
 s("<LI>Molly camina hacia la pared, cerca del sitio donde Bruno había estado. Está desabrochándose el cinturón.");
 s("<LI>Ella se da la vuelta y ve que Bruno la está mirando. Le hace señas para que aparte la vista y se oye un débil grito de «No mires». Vuelve a hacerle señas. Pero él sigue mirando hacia ella con lo que parece una sonrisa burlona.");
-s("<LI>Molly mira a su alrededor. Entonces, todavía con el cinturón desabrochado, camina unos metros por el camino de sirga hacia ti, hasta donde unos obreros han dejado un pequeño contenedor. Se mete detrás de él, entre el contenedor y la pared, donde Bruno no puede verla... pero tú sí.");
+s("<LI>Molly mira a su alrededor. Entonces, todavía con el cinturón desabrochado, camina unos metros por el camino de sirga hacia ti, hasta donde unos obreros han dejado un pequeño contenedor. Se mete detrás de él, apoyada contra la pared, donde Bruno no puede verla—pero tú sí.");
 s("<LI>Entonces se baja rápidamente la cremallera de los vaqueros y los baja de un tirón junto con las bragas blancas, agachándose enseguida en cuclillas. Hay poca luz para ver el chorro, pero puedes ver cómo se forma un charco en el suelo que se aleja de ella. A juzgar por su tamaño, desde luego tenía muchísimas ganas de hacer pis.");
 s("<LI>Hace pis durante casi un minuto y luego, al incorporarse, se sube las bragas blancas y las ajusta, después se sube los vaqueros y cierra la cremallera. Todavía abrochándose el cinturón, sale de detrás del contenedor y se reúne con Bruno."); mollyblad = 50;
 c("luckytrip4b","Vuelves al camino."); }

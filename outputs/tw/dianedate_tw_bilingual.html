@@ -668,6 +668,18 @@ body.lang-en .lang-alt {
   font-size: 1rem;
   line-height: 1.25;
 }
+
+button:focus,
+.choice:focus,
+.back-button:focus,
+.wiki-back-btn:focus,
+.gallery-button:focus,
+.language-toggle:focus,
+.guide-toggle-button:focus,
+.climax-skip-button:focus,
+.theme-toggle-button:focus {
+  outline: none;
+}
 </style>
 </head>
 <body class="lang-alt">
@@ -764,7 +776,7 @@ var alternateTranslations = {
   "<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.": "<LI>一開始你有<strong>100英鎊</strong>。留意你的錢。晚上結束時，最好留點錢搭計程車回家。",
   "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>": "<p class='note-lead'>左上角還有個劇情圖鑑，裡面有通往得獎結局、安慰獎結局以及各種隱藏場景的引導路線。卡住時可以用，只是想瀏覽也可以。有些項目是下拉選單：先點開，再選你要的變體。在手機或平板上請用畫面上的按鈕；在電腦上還可以用下面這些快捷鍵。</p>",
   "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>": "<p class='note-keys'><strong>G</strong> 鍵打開劇情圖鑑（<strong>Esc</strong> 鍵關閉）。</p>",
-  "<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>": "<p class='note-keys note-cluster-end'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>",
+  "<p class='note-keys'><strong>H</strong> turns the Guide on or off once you've started one.</p>": "<p class='note-keys'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>",
   "<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>": "<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>",
   "<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>": "<p class='note-keys note-cluster-end'><strong>Enter</strong> 鍵可選擇反白的引導選項，但只有在引導開啟時才有效。按住 <strong>Enter</strong> 鍵可快進引導選項；放開即停。</p>",
   "<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>": "<p class='note-lead'>若後悔某個選擇，隨時可以按「返回」按鈕回到上一頁；它會把一切都恢復——數值、選項，統統還原。引導模式裡同樣有效。</p>",
@@ -1310,7 +1322,7 @@ var alternateTranslations = {
   "<LI>YOU: Diane, I think you want to see your friend. Should we go into the foyer or to the stage door?": "<LI>你：黛安，你想去見你朋友，對吧？我們去大廳，還是去後台門口？",
   "<LI>DIANE: Oooh, it's lovely to be asked!": "<LI>黛安：哎呀，你還會問我的意見，真好耶！",
   "<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.": "<LI>黛安：<EM>（壓低聲音）</EM>其實……我現在急得要命，想去廁所。要不我們先在這裡喝一杯？這樣我也能趁機去一下廁所。莫莉會來大廳找我們的。",
-  "<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>她親口承認自己「急著去方便」。你失去了5點害羞值。</strong></p>",
+  "<p class='notice'><strong>She admits she's 'dying to spend a penny.' You lost 5 shyness points.</strong></p>": "<p class='notice'><strong>她親口承認自己「急著去方便」。你失去了5點害羞值。</strong></p>",
   "<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her knickers down...": "<LI>你們走上大廳，黛安直奔女廁——你看得出來她真的很急！你腦海裡浮現出她衝進最近那個隔間、兩腿有點打顫地把內褲往下扯的畫面……",
   "<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.": "<LI>你自己也去了趟廁所，然後在大廳等她。過了一兩分鐘她回來了，臉上帶著笑。",
   "<LI>DIANE: That feels better. I was dying to go.": "<LI>黛安：舒服多了。我剛才真的急死了啦。",
@@ -1332,12 +1344,12 @@ var alternateTranslations = {
   "<LI>You are in the theatre's foyer bar, waiting for Molly.": "<LI>你們在劇場大廳的酒吧等莫莉。",
   "<LI>You have to wait about 10 minutes. Eventually Molly arrives. You recognise her instantly as the girl on stage, though she looks shorter in real life. She is with a male friend.": "<LI>你們等了大約10分鐘。莫莉終於出現了。你一眼就認出她就是台上那個女生，不過現實中她看起來矮了一些。她身邊還帶著一位男性朋友。",
   "<LI>The two come over to meet you. Molly and Diane kiss and hug, and you shake hands and are introduced.": "<LI>兩人走過來跟你們打招呼。莫莉和黛安互相親吻擁抱，你們也握了手，互相介紹。",
-  "<LI>Molly and her friend don't get drinks yet as they think they know a nicer place; or perhaps you all want a walk to the Pavilion first.": "<LI>莫莉和她的朋友暫時不打算點飲料，他們覺得知道一個更好的去處；或者你們想先散步去Pavilion酒吧？",
+  "<LI>Molly and her friend don't get drinks yet as they think they know a nicer place; or perhaps you all want a walk to the Pavilion first.": "<LI>莫莉和她的朋友暫時不打算點飲料，他們覺得知道一個更好的去處；或者你們想先散步去涼亭酒吧？",
   "<LI>You are in the theatre foyer bar chatting with Molly and her friend.": "<LI>你們在劇場大廳酒吧與莫莉和她的朋友聊天。",
   "<LI>The male friend is called Robert. You don't recognise him but it turns out he's the director of the play. He's quite a bit older than Molly, maybe about sixty.": "<LI>這位男性朋友叫羅伯特。你認不出他，但原來他是這齣戲的導演。他比莫莉大了不少，大概六十歲左右。",
-  "<LI>You are going to walk to the Pavilion. But Robert asks whether you would all like a quick drink first. There's a nice pub just over the road, with much better beer than here in the foyer.": "<LI>你們打算步行去Pavilion酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。",
+  "<LI>You are going to walk to the Pavilion. But Robert asks whether you would all like a quick drink first. There's a nice pub just over the road, with much better beer than here in the foyer.": "<LI>你們打算步行去涼亭酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。",
   "<LI>The male friend is called Bruno. You recognise him as one of the actors in the play and you have seen him before, probably on television. He and Molly seem quite friendly, although perhaps not as in a relationship.": "<LI>這位男性朋友叫布魯諾。你認出他是劇中演員之一，以前大約在電視上見過他。他和莫莉關係很好，但看來不像是情侶。",
-  "<LI>You are going to walk to the Pavilion. But Bruno asks whether you would all like a quick drink first. There's a nice pub just over the road, with much better beer than here in the foyer.": "<LI>你們打算步行去Pavilion酒吧。但布魯諾問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。",
+  "<LI>You are going to walk to the Pavilion. But Bruno asks whether you would all like a quick drink first. There's a nice pub just over the road, with much better beer than here in the foyer.": "<LI>你們打算步行去涼亭酒吧。但布魯諾問大家要不要先喝一杯。馬路對面有家不錯的酒吧，啤酒比這裡大廳的好多了。",
   "<LI>Bruno has asked whether you would like a quick drink before your walk.": "<LI>布魯諾問你們散步前要不要先喝一杯。",
   "<LI>Molly says she would like a walk straight away. But Diane says a quick drink would be nice.": "<LI>莫莉說她想直接去散步。但黛安說喝一杯也滿好。",
   "<LI>So the choice lies with you. Which will it be?": "<LI>那就由你來決定了。你選哪個？",
@@ -1368,8 +1380,8 @@ var alternateTranslations = {
   "<p class='notice'><strong>She's embarrassed at having had to dash to the loo. You gained 2 shyness points.</strong></p>": "<p class='notice'><strong>她因為匆忙衝去廁所而覺得不好意思。你獲得了2點害羞值。</strong></p>",
   "<LI>After a couple of minutes Molly emerges from the stage door. She and Diane hug and kiss.": "<LI>過了幾分鐘，莫莉從後台門走了出來。她和黛安擁抱親吻。",
   "<LI>You are outside the stage door chatting with Molly and her friend.": "<LI>你們在後台門外與莫莉和她的朋友聊天。",
-  "<LI>You are going to walk to the Pavilion. But Robert asks whether you would all like a quick drink first. There's a nice pub just over the road, but it is getting a trifle crowded.": "<LI>你們打算步行去Pavilion酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，不過現在人有點多了。",
-  "<LI>The pubs near the theatre are packed with Saturday night revellers and don't seem very tempting. Molly suggests the four of you walk along the riverside and have a drink at the Pavilion.": "<LI>劇院附近的酒吧擠滿了週六夜晚出來狂歡的人，看起來不太誘人。莫莉建議你們四個沿著河邊散步，去Pavilion酒吧喝一杯。",
+  "<LI>You are going to walk to the Pavilion. But Robert asks whether you would all like a quick drink first. There's a nice pub just over the road, but it is getting a trifle crowded.": "<LI>你們打算步行去涼亭酒吧。但羅伯特問大家要不要先喝一杯。馬路對面有家不錯的酒吧，不過現在人有點多了。",
+  "<LI>The pubs near the theatre are packed with Saturday night revellers and don't seem very tempting. Molly suggests the four of you walk along the riverside and have a drink at the Pavilion.": "<LI>劇院附近的酒吧擠滿了週六夜晚出來狂歡的人，看起來不太誘人。莫莉建議你們四個沿著河邊散步，去涼亭酒吧喝一杯。",
   "<LI>You recognise the male friend as one of the cast. His name is Bruno. He seems just to be a friend of Molly, not her boyfriend.": "<LI>你認出這位男性朋友是劇中演員之一，叫布魯諾。他跟莫莉好像只是朋友，不是她男朋友。",
   "<LI>Molly says she is gasping for a drink, and mentions the pub across the road.": "<LI>莫莉說她渴壞了，提到了對面那家酒吧。",
   "<LI>Robert has asked whether you would like a quick drink before your walk.": "<LI>羅伯特問你們散步前要不要先喝一杯。",
@@ -1377,7 +1389,7 @@ var alternateTranslations = {
   "<LI>So the choice lies with you. Which will it be? You suspect Diane may want to go to the pub so that she can use the Ladies, but you don't want to annoy her, do you?": "<LI>所以，選擇權在你手上。究竟去哪裡呢？你懷疑黛安可能是想去酒吧，好借機去女廁，但你也不想惹她不高興，是吧。",
   "<LI>You say you would like to go for the walk. There will be plenty of time for a drink when you get to the pavilion.": "<LI>你說想去散步。等走到涼亭，想喝多久都行。",
   "<LI>Diane smiles at you and takes your arm.": "<LI>黛安對你微微一笑，輓起了你的手臂。",
-  "<LI>You set off to walk along the riverside to the Pavilion.": "<LI>你們沿河朝Pavilion酒吧走去。",
+  "<LI>You set off to walk along the riverside to the Pavilion.": "<LI>你們沿河朝涼亭酒吧走去。",
   "<LI>DIANE: You rotter! <EM>(She looks a bit put out, but not too much.)</EM>": "<LI>黛安：你這壞蛋！<EM>（她看來有點不高興，但也沒太在意。）</EM>",
   "<LI>DIANE: Huh. You might have given me a bit of support. <EM>(She pouts and goes into a bit of a sulk.)</EM>": "<LI>黛安：哼。你好歹也幫我說兩句嘛。<EM>（她撅起嘴，有點悶悶不樂。）</EM>",
   "<LI>Diane is really put out by your decision, but bites her lip and doesn't say anything to anyone.": "<LI>黛安對你的決定挺不滿，但咬了咬嘴唇，沒多說什麼。",
@@ -1429,14 +1441,14 @@ var alternateTranslations = {
   "<LI>You take the drinks back to the table.": "<LI>你把飲料端回桌子。",
   "<LI>You are all chatting away.": "<LI>大家聊得正歡。",
   "<LI>The pub is getting rather crowded with Saturday night revellers, and the noise makes it difficult to hear each other.": "<LI>週六晚上客人越來越多，酒吧裡吵得很，大家說話都快聽不見了。",
-  "<LI>You decide to drink up and set off to the Pavilion. There should be just time for a quick drink when you get there.": "<LI>你們決定喝完就出發前往Pavilion酒吧。到了那邊應該還有時間再來一杯。",
+  "<LI>You decide to drink up and set off to the Pavilion. There should be just time for a quick drink when you get there.": "<LI>你們決定喝完就出發前往涼亭酒吧。到了那邊應該還有時間再來一杯。",
   "<LI>DIANE: I'm just going to the Ladies for a minute.": "<LI>黛安：我去一下廁所，立刻回來。",
   "<LI>You all finish your drinks.": "<LI>大家把各自的飲料喝完。",
   "<LI>Molly is drinking pints. You wonder whether you will see her fidgeting too.": "<LI>莫莉喝啤酒都是一品脫一杯。你忍不住想，待會她是不是也會憋得坐立不安呢。",
   "<LI>MOLLY: It's really good beer here, isn't it?": "<LI>莫莉：這裡的啤酒真的很好喝，對吧？",
   "<LI>It's quite cosy in the pub. Diane is sitting beside you, while Molly and her friend are opposite. Diane hasn't drunk much, but Molly is halfway through her second pint. But she seems to be accustomed to drinking real ale. So you don't get too excited.": "<LI>酒吧裡氣氛挺愜意。黛安坐在你身邊，莫莉和她朋友坐在對面。黛安沒喝多少，莫莉的第二杯已經下去一半。不過她看起來早就喝慣這種英式艾爾啤酒，所以你也別太期待什麼了。",
   "<LI>She disappears to the loo and returns a minute later looking relaxed.": "<LI>她去了趟廁所，過一會兒回來，整個人輕鬆多了。",
-  "<LI>But it's now almost 10.30 and you need to be at the Pavilion by 11pm or soon after if Diane and you are going to catch your bus home. The others are going to walk with you, as they're staying quite near to the Pavilion.": "<LI>但現在快十點半了。要是你和黛安想趕上回家的公車，得在十一點左右或稍晚些到Pavilion酒吧。其他人會和你們一起走，因為他們住得離Pavilion酒吧很近。",
+  "<LI>But it's now almost 10.30 and you need to be at the Pavilion by 11pm or soon after if Diane and you are going to catch your bus home. The others are going to walk with you, as they're staying quite near to the Pavilion.": "<LI>但現在快十點半了。要是你和黛安想趕上回家的公車，得在十一點左右或稍晚些到涼亭酒吧。其他人會和你們一起走，因為他們住得離涼亭酒吧很近。",
   "<LI>MOLLY: Anyone want another drink?": "<LI>莫莉：有人要再來一杯嗎？",
   "<LI>You get up and leave.": "<LI>你站起身，離開了。",
   "<LI>ROBERT: How about just a quick nightcap? A liqueur, anyone, just to toast friendship?": "<LI>羅伯特：不然再來一小杯睡前酒？來點利口酒，為友誼乾一杯？",
@@ -1628,7 +1640,7 @@ var alternateTranslations = {
   "<LI>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. It is the first time you have kissed her and she lingers over it. You can taste her lips. You kiss again.": "<LI>你點頭同意。兩人都停下腳步，對看著。你摟住她，慢慢把她拉近，然後吻了她。這是你第一次吻她，她久久沒有離開。你能感覺到她嘴唇的溫度。你們又吻了一次。",
   "<LI>DIANE: Come on! I'm dying to spend a penny!": "<LI>黛安：快走啦！我急著要去，快憋瘋了！",
   "<LI>DIANE: Come on!": "<LI>黛安：快點！",
-  "<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet.": "<LI>黛安好像超急著想趕到Pavilion酒吧。她邁著急促的小碎步，咬著嘴唇，像是急著要去廁所。",
+  "<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet.": "<LI>黛安好像超急著想趕到涼亭酒吧。她邁著急促的小碎步，咬著嘴唇，像是急著要去廁所。",
   "<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>一路上黛安走得好急。你獲得了5點害羞值。</strong></p>",
   "<LI>You're wondering whether you could stop and kiss.": "<LI>你在想是否可以停下來親吻一下。",
   "<LI>You pass some steps up from the towpath.": "<LI>你們經過了幾級從纖道通往上方的台階。",
@@ -1640,7 +1652,6 @@ var alternateTranslations = {
   "<LI>Molly and Bruno have peeled off and gone down the steps to the towpath. They are out of sight. You are wondering if Molly needed a pee. You'd like to peep over the parapet but you obviously can't while you're with Diane.": "<LI>莫莉和布魯諾已經離隊，走下台階去了纖道，不見了蹤影。你忍不住猜想莫莉是不是憋不住了，想去方便。你很想趴在欄桿上往下看，但明顯和黛安在一起時沒法這麼做。",
   "<LI>DIANE: Where have they gone?": "<LI>黛安：他們跑哪去了？",
   "<LI>YOU: I'm not sure. There's a sort of towpath down there.": "<LI>你：不太確定。下面好像有一條纖道。",
-  "<LI>DIANE: Oh. <EM>(The penny has probably clicked.)</EM>": "<LI>黛安：哦。<EM>（她大概已經猜到了。）</EM>",
   "<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.": "<LI>你只能靠自己的想像了。當然，除非你想用一次幸運機會。",
   "<LI>You walk on alone with Diane. You wish you could look over the parapet, but you can't.": "<LI>你和黛安獨自繼續前行。你真希望能趴到欄桿上看一眼，但沒法那麼做。",
   "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a Luckshot.": "<LI>你猜莫莉可能是去方便了，但又不確定。反正你很想看。所以你用了一次幸運機會。",
@@ -1655,7 +1666,7 @@ var alternateTranslations = {
   "<LI>Diane says, 'Come on,' and touches your arm as if to pull you away. But you are not going to miss this. If she could watch Bruno, you can watch Molly!": "<LI>黛安說「走吧」，拉了拉你的手臂，想把你拽走。但你可不想錯過這一幕。她都能看布魯諾，你當然也能看莫莉！",
   "<LI>Molly walks to the wall, close to where Bruno had just been. She is unbuckling her belt.": "<LI>莫莉走向牆邊，走到布魯諾剛才站的地方附近，正在解腰帶。",
   "<LI>She turns round and sees Bruno is watching her. She waves him away and you can hear a faint cry of 'Look away.' She waves again. But he is still looking towards her with what seems to be a grin.": "<LI>她轉過身，注意到布魯諾正盯著她看。她揮手叫他走開，你隱約聽到一聲「別看！」她又揮了揮手，但他依然看著她，嘴角好像還帶著笑。",
-  "<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind this, between the skip and the wall, where Bruno can't see her—but you can.": "<LI>莫莉環顧四周，然後腰帶還未繫好，就沿著纖道朝你這邊走了幾碼，走到一個建築工人遺留的小型工地貨櫃旁邊。她躲到貨櫃後面，夾在貨櫃和牆壁之間——布魯諾看不到她，但你能。",
+  "<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind it, up against the wall, where Bruno can't see her—but you can.": "<LI>莫莉環顧四周，然後腰帶還未繫好，就沿著纖道朝你這邊走了幾碼，走到一個建築工人遺留的小型工地貨櫃旁邊。她躲到貨櫃後面，緊貼著牆——布魯諾看不到她，但你能。",
   "<LI>Then she quickly unzips her jeans and pulls them and her white knickers down in one movement, straight away going into a half squat. It's too gloomy for you to see any stream but you can see a puddle forming on the ground and running away from her. Judging by the size of it, she certainly needed to go.": "<LI>接著她飛快解開牛仔褲拉鍊，一把把褲子和白色內褲一起拽下來，立刻半蹲下來。光線太暗，你看不清尿流，但能看到地上正在積成一灘水窪，順著地面淌開。從水窪的大小來看，她明顯早就憋得不行了。",
   "<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt she emerges from behind the skip and rejoins Bruno.": "<LI>她尿了將近一分鐘，然後站直身子，把白色內褲拉上來整理好，再拉上牛仔褲拉鍊。她一邊繫著腰帶，一邊從工地貨櫃後面走出來，重新走向布魯諾。",
   "<LI>You scramble across the rough grass back to the path.": "<LI>你急忙穿過粗糙的草地跑迴路上。",
@@ -1682,13 +1693,13 @@ var alternateTranslations = {
   "<LI>DIANE: Of course, everyone has. I was pretty desperate the other week, just before you met me. Anyway, here are the other two.": "<LI>黛安：當然有，誰沒經歷過呢。上周你遇見我之前，我就憋得很厲害。好了，他們兩個來了。",
   "<LI>Molly and Bruno rejoin you.": "<LI>莫莉和布魯諾重新加入你們。",
   "<LI>You are walking with Diane. Molly and Bruno are a few yards ahead of you.": "<LI>你和黛安並肩走著。莫莉和布魯諾在你們前面幾碼遠的地方。",
-  "<LI>Diane has gone rather quiet. It looks as if she needs the loo. But it won't be far to the Pavilion.": "<LI>黛安變得有點沉默。看起來她需要去廁所了。不過到Pavilion酒吧應該不遠了。",
+  "<LI>Diane has gone rather quiet. It looks as if she needs the loo. But it won't be far to the Pavilion.": "<LI>黛安變得有點沉默。看起來她需要去廁所了。不過到涼亭酒吧應該不遠了。",
   "<LI>DIANE: How much further is it?": "<LI>黛安：還有多遠啊？",
   "<LI>YOU: Not far. Five minutes or so. You OK?": "<LI>你：不遠了，差不多五分鐘。你還好嗎？",
   "<LI>DIANE: Mm—": "<LI>黛安：嗯——",
   "<LI>DIANE: Actually, I'm absolutely dying to go to the toilet. It's really bad. If it wasn't for Bruno I'd pop behind the bushes, but I feel a bit awkward with him being here. I don't know what to do.": "<LI>黛安：說實話，我現在真的快忍不住了，急得厲害。要不是布魯諾在，我早就去樹叢後面解決一下了，可他在場讓我有點不好意思。我真不知道該怎麼辦才好。",
   "<LI>You walk on for a while. Then Diane stops.": "<LI>你們又走了一會兒，接著黛安停了下來。",
-  "<LI>DIANE: Is there somewhere I can go? I don't think I'll make it to the Pavilion.": "<LI>黛安：附近有沒有地方可以上廁所？我怕自己撐不到Pavilion酒吧了。",
+  "<LI>DIANE: Is there somewhere I can go? I don't think I'll make it to the Pavilion.": "<LI>黛安：附近有沒有地方可以上廁所？我怕自己撐不到涼亭酒吧了。",
   "<LI>She is standing there, slightly bent forward, her hands deep in her dress pockets. It looks as if she's furtively holding herself. She's looking at you with worried eyes.": "<LI>她站在那裡，身體微微前傾，雙手深深插進裙子口袋，像是在偷偷按住自己。她焦急地望著你。",
   "<LI>She is standing there, slightly bent forward, one leg half crossed over the other. You look at where the other two are walking on ahead of you. When you glance back Diane has a hand at her crotch but she takes it away, turning away in embarrassment.": "<LI>她站在那裡，身子微微往前傾，一條腿半搭在另一條腿上。你往前看了看走在前面的另外兩人，再回頭一瞥，卻發現黛安的手正捂著襠部——見你看過來，她趕緊把手移開，窘迫地轉過身去。",
   "<LI>You are on a date with her. You have to help her.": "<LI>你在陪她約會，你必須幫她。",
@@ -1773,7 +1784,7 @@ var alternateTranslations = {
   "<LI>She gets up again and starts pacing urgently about. She is bent forward and can hardly stand upright.": "<LI>她又站起來，急得來回踱步。她弓著身子，幾乎站不直。",
   "<LI>As soon as she sees it, Diane goes on ahead. You see her go up to the door marked Ladies only to find it shut. She does a little jig and for a moment paces about, as if looking for a way in.": "<LI>一看到廁所，黛安就走在了前頭。你看到她走到標著「女廁」的門前，卻發現門已經關上了。她急得小跳了一下，又來回走了幾步，像是在找什麼入口。",
   "<LI>Then she returns, looking rueful.": "<LI>接著她回來了，一臉遺憾。",
-  "<LI>DIANE: They're always closed when you need them. Still, we'll soon be at the pavilion.": "<LI>黛安：每次需要的時候它們都關著。不過很快就到Pavilion酒吧了。",
+  "<LI>DIANE: They're always closed when you need them. Still, we'll soon be at the pavilion.": "<LI>黛安：每次需要的時候它們都關著。不過很快就到涼亭酒吧了。",
   "<LI>Diane looks at the toilet.": "<LI>黛安看了看那間廁所。",
   "<LI>That place looks disgusting. I'm glad I'm not desperate.": "<LI>黛安：那地方看起來好噁心，還好我還沒急到那份上。",
   "<LI>You sympathise with Diane. You ask her if she can hold on till she gets to the Pavilion.": "<LI>你同情黛安，問她能不能撐到涼亭那邊再去。",
@@ -1917,28 +1928,28 @@ var alternateTranslations = {
   "<LI>After various diversions, all four of you are together again.": "<LI>經過各種插曲，你們四個人又重新聚到一起。",
   "<LI>You pass a public park. The gates are locked for the night, but you stand and look at the information board for a minute.": "<LI>你們路過一座公園。大門早就上鎖，但你停下來看了看告示牌。",
   "<LI>Molly and Diane tell you to hurry up, as the walk has taken longer than you expected.": "<LI>莫莉和黛安催你快點，因為這段路比預期花了更久。",
-  "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>WELCOME TO THE PAVILION</SPAN></STRONG></H2>": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到Pavilion酒吧</SPAN></STRONG></H2>",
-  "<LI>You carry on walking. You see the bright lights of the Pavilion ahead.": "<LI>你們接著前行。前方，Pavilion酒吧燈火通明。",
+  "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>WELCOME TO THE PAVILION</SPAN></STRONG></H2>": "<H2><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>歡迎來到涼亭酒吧</SPAN></STRONG></H2>",
+  "<LI>You carry on walking. You see the bright lights of the Pavilion ahead.": "<LI>你們接著前行。前方，涼亭酒吧燈火通明。",
   "<LI>But it's gone 11 o'clock and you haven't got time for a drink here. In fact, it's closing and the customers are finishing their last drinks and most are leaving.": "<LI>但已經過了十一點，你們沒時間在這裡再喝一杯了。其實酒吧正在打烊，顧客們正喝著最後一杯，大多數人都在陸續離開。",
-  "<LI>You hear Diane gasp, 'Oh no!' when she sees that the Pavilion is closed.": "<LI>看到Pavilion酒吧已經關門，你聽到黛安倒吸一口氣，驚呼：「哦，不！」",
+  "<LI>You hear Diane gasp, 'Oh no!' when she sees that the Pavilion is closed.": "<LI>看到涼亭酒吧已經關門，你聽到黛安倒吸一口氣，驚呼：「哦，不！」",
   "<LI>You hadn't expected it to be open.": "<LI>你本來也沒指看它會開著。",
   "<LI>So you make your way—": "<LI>於是你們朝——",
   "<LI>It's quite late but you will just have time for one quick farewell drink before you and Diane have to leave for the bus.": "<LI>時間已經不早了，但你和黛安趕去坐公車之前，還來得及喝一杯道別酒。",
   "<LI>Many drinkers and walkers are already leaving.": "<LI>許多喝酒的人和散步的人已經陸續離去。",
   "<LI>The girls look for a table in the beer garden overlooking the river.": "<LI>女生們在俯瞰河景的露天啤酒花園裡找位子坐。",
   "<LI>It's not yet 10.30. You've got more than half an hour before you and Diane need to catch the bus, so there's plenty of time for a couple of drinks.": "<LI>現在還不到10點半。距你和黛安需要趕公車還有半個多小時，時間足夠喝上幾杯。",
-  "<LI>The Pavilion is quite busy. You look for a table in the beer garden overlooking the river.": "<LI>Pavilion酒吧挺熱鬧。你們在俯瞰河景的露天啤酒花園裡找位子。",
+  "<LI>The Pavilion is quite busy. You look for a table in the beer garden overlooking the river.": "<LI>涼亭酒吧挺熱鬧。你們在俯瞰河景的露天啤酒花園裡找位子。",
   "<LI>You go straight to the bus stop.": "<LI>你們直接走向公車站。",
-  "<LI>Diane seems really put out that the Pavilion is closed.": "<LI>黛安看見Pavilion酒吧關了，明顯很失望。",
+  "<LI>Diane seems really put out that the Pavilion is closed.": "<LI>黛安看見涼亭酒吧關了，明顯很失望。",
   "<LI>DIANE: I was banking on it for the loo.": "<LI>黛安：我就指望這裡上廁所呢。",
   "<LI>She looks a bit concerned but doesn't say anything.": "<LI>她看來有點擔心，但什麼也沒說。",
   "<LI>DIANE: We wouldn't want to miss the bus.": "<LI>黛安：可不能錯過公車喔。",
   "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>Free Beer for Ladies on Tuesday Nights!</SPAN></STRONG></P>": "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每週二，女士免費暢飲！</SPAN></STRONG></P>",
   "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>and two pints for the price of one on Thursdays!</SPAN></STRONG></P>": "<P><STRONG><SPAN style='background: #ffff33; color: #2F4F4F'>每週四，啤酒買一品脫送一品脫！</SPAN></STRONG></P>",
-  "<LI>The four of you enter The Pavilion.": "<LI>你們四個人進到Pavilion酒吧。",
+  "<LI>The four of you enter The Pavilion.": "<LI>你們四個人進到涼亭酒吧。",
   "<LI>It's quite busy, perhaps because there are several special offers on. It's obviously trying to compete with The Golden Stream.": "<LI>裡面挺熱鬧的，可能是因為有好幾個特惠活動。這裡明顯在努力跟金流酒吧搶生意。",
-  "<LI>Diane is absolutely desperate for a pee. The moment she saw The Pavilion she ran on ahead, and by the time you get there she is already in the Ladies. Molly follows her.": "<LI>黛安憋尿憋到了極限。剛看見Pavilion酒吧，她就飛奔過去，等你到的時候，她已經在女廁裡了。莫莉也跟著進去了。",
-  "<LI>Diane is dying for a pee. The moment you get to The Pavilion she makes her excuses and goes to the Ladies. Molly goes with her.": "<LI>黛安尿急得厲害。剛到Pavilion酒吧，她就隨便找了個藉口去了女廁。莫莉陪她一起去了。",
+  "<LI>Diane is absolutely desperate for a pee. The moment she saw The Pavilion she ran on ahead, and by the time you get there she is already in the Ladies. Molly follows her.": "<LI>黛安憋尿憋到了極限。剛看見涼亭酒吧，她就飛奔過去，等你到的時候，她已經在女廁裡了。莫莉也跟著進去了。",
+  "<LI>Diane is dying for a pee. The moment you get to The Pavilion she makes her excuses and goes to the Ladies. Molly goes with her.": "<LI>黛安尿急得厲害。剛到涼亭酒吧，她就隨便找了個藉口去了女廁。莫莉陪她一起去了。",
   "<LI>You curse inwardly. Any chance of a luckshot?": "<LI>你在心裡暗罵了一聲。有沒有幸運機會？",
   "<LI>DIANE: I'm just going to pop to the loo. I won't be long.<EM>( She goes to the Ladies.)</EM>": "<LI>黛安：我去一下廁所，立刻回來。<EM>（她去了女廁。）</EM>",
   "<LI>You all go to a table in the beergarden.": "<LI>你們一起走到啤酒花園裡的一張桌子旁。",
@@ -1950,12 +1961,12 @@ var alternateTranslations = {
   "<LI>Nobody says anything but you can only presume that Diane didn't make it to the Ladies in time.": "<LI>沒有人說什麼，但你只好猜測黛安沒能及時趕到廁所。",
   "<LI>Diane and Molly have both been to the Ladies. They join you in the Beer Garden.": "<LI>黛安和莫莉都去過女廁了。她們來到啤酒花園和你們會合。",
   "<LI>Everyone is very relaxed.": "<LI>大家都很放鬆。",
-  "<LI>The four of you are at the bar of The Pavilion.": "<LI>你們四個人在Pavilion酒吧的吧台處。",
+  "<LI>The four of you are at the bar of The Pavilion.": "<LI>你們四個人在涼亭酒吧的吧台處。",
   "<LI>Robert is buying the drinks. He orders a glass of wine for himself, a beer for you, a lager for Diane and a real ale for Molly. There's two pints for the price of one on Thursdays as part of a special promotion, so both girls go for pints.": "<LI>羅伯特請客買飲料。他為自己點了一杯葡萄酒，給你點了啤酒，給黛安點了拉格啤酒，給莫莉點了一杯英式艾爾啤酒。週四有特惠活動，買一品脫送一品脫，兩個女生都趁機要了品脫裝。",
   "<LI>DIANE: Ooh! I'll never drink all this.": "<LI>黛安：哎呀！這麼多我根本喝不完啦。",
   "<LI>Bruno is buying the drinks. He orders a beer for you, a lager for Diane and real ale for himself and Molly. They are both thirsty. Molly has a pint.": "<LI>布魯諾請客買飲料。他給你點了啤酒，給黛安點了拉格，給自己和莫莉各點了一杯英式艾爾。他們兩個都渴了。莫莉要了一品脫。",
   "<LI>You join the others at the table. They ask you about yourself and you chat. You all say, 'Cheers!' and clink your glasses.": "<LI>你來到桌邊和大家坐在一起。他們問起你的事，你們聊了起來。大家說著「乾杯！」，碰了碰杯。",
-  "<LI>The four of you are drinking in The Pavilion's beer garden.": "<LI>你們四個人在Pavilion酒吧的露天啤酒花園裡喝酒。",
+  "<LI>The four of you are drinking in The Pavilion's beer garden.": "<LI>你們四個人在涼亭酒吧的露天啤酒花園裡喝酒。",
   "<LI>There is a slight pause in the conversation. Maybe time for some drinks?": "<LI>談話間有片刻停頓。也許該再來一杯了？",
   "<LI>YOU: Would everyone like another drink?": "<LI>你：大家還想再來一杯嗎？",
   "<LI>MOLLY: Oh, yes please. It's nice and relaxing here. But just a half this time.": "<LI>莫莉：哦，好啊。這裡真的很舒服。不過這次半品脫就好。",
@@ -1963,7 +1974,7 @@ var alternateTranslations = {
   "<LI>Perhaps you'd like to buy another bottle of water in case you get thirsty on the way home?": "<LI>也許你想再買一瓶水，免得回家路上口渴？",
   "<LI>It's almost 11 o'clock. The barman calls, 'Last orders, please.'": "<LI>快十一點了。酒保喊道：「最後點單了，請抓緊！」",
   "<LI>Diane seems to be shifting about a bit.": "<LI>黛安好像有點坐立不安，動來動去的。",
-  "<p class='notice'><strong>Diane needs the loo at The Pavilion. You gained 3 shyness points.</strong></p>": "<p class='notice'><strong>黛安在Pavilion酒吧裡尿急了。你獲得了3點害羞值。</strong></p>",
+  "<p class='notice'><strong>Diane needs the loo at The Pavilion. You gained 3 shyness points.</strong></p>": "<p class='notice'><strong>黛安在涼亭酒吧裡尿急了。你獲得了3點害羞值。</strong></p>",
   "<LI>It's a nice relaxed atmosphere.": "<LI>氣氛輕鬆愉快。",
   "<LI>You've just time for a final drink before catching the bus. What will it be?": "<LI>趕公車之前還有時間來最後一杯。喝什麼好呢？",
   "<LI>BRUNO: There are some interesting beers here. They've got a Riddles Ambernectar. I'd quite like to try it. Molly?": "<LI>布魯諾：這裡有幾款很有意思的啤酒。他們有里德爾斯琥珀花蜜啤酒，我很想嚐嚐。莫莉，你呢？",
@@ -1971,19 +1982,19 @@ var alternateTranslations = {
   "<LI>You drink up and get ready to leave. Molly and Diane look at each other.": "<LI>你們喝完到最後一口，準備離開。莫莉和黛安互相對視了一眼。",
   "<LI>DIANE: Have we girls got time to pop to the loo?": "<LI>黛安：我們女生還來得及去一下廁所嗎？",
   "Molly looks at Diane. You hear her whisper, 'D'you need the loo?' but Diane shakes her head.": "莫莉看著黛安。你聽見她低聲問道：「你要去廁所嗎？」但黛安搖了搖頭。",
-  "<LI>You leave the Pavilion.": "<LI>你們離開了Pavilion酒吧。",
+  "<LI>You leave the Pavilion.": "<LI>你們離開了涼亭酒吧。",
   "<LI>You tell Diane and Molly you'll wait for them while they pop to the loo. After all, you wouldn't want Diane to be uncomfortable on the journey home, would you?": "<LI>你告訴黛安和莫莉，你們會等她們去一趟廁所再走。畢竟，你可不希望黛安在回家路上憋得難受，對吧？",
   "<LI>They head off and return a few minutes later chatting and looking relaxed.": "<LI>她們去了，幾分鐘後有說有笑地回來，看來輕鬆多了。",
-  "<LI>Diane takes your arm and you all leave the Pavilion.": "<LI>黛安輓起你的手臂，你們一行人離開了Pavilion酒吧。",
+  "<LI>Diane takes your arm and you all leave the Pavilion.": "<LI>黛安輓起你的手臂，你們一行人離開了涼亭酒吧。",
   "<LI>You tell Molly and Diane that you really need to be hurrying along if you are to catch the bus.": "<LI>你告訴莫莉和黛安，要趕上公車的話得抓緊時間了。",
   "<LI>Diane says she really <EM>has</EM> to go and she'll be as quick as possible. She and Molly head for the loo.": "<LI>黛安說她真的<EM>非去不可</EM>，會儘量快。她和莫莉向廁所走去。",
   "<LI>Diane says that 'it's not urgent' and she'll wait till she gets home.": "<LI>黛安說「不是很急」，回家再上廁所就行了。",
-  "<LI>You all leave the Pavilion.": "<LI>你們一起離開了Pavilion酒吧。",
+  "<LI>You all leave the Pavilion.": "<LI>你們一起離開了涼亭酒吧。",
   "<LI>Diane and Molly have gone to the loo and you've played a luckshot": "<LI>黛安和莫莉去了廁所，而你用了一次幸運機會。",
   "<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a Luckshot.": "<LI>黛安和莫莉正向女廁走去。你很想看看如果阻止她們會發生什麼，於是用了一次幸運機會。",
   "<LI>There's been a bit of an argument in the Ladies, with a couple of girls who've drunk too much. As a result the Ladies is closed for a few minutes while the staff sort things out. Diane and Molly decide they can't wait that long and return without having had a pee.": "<LI>女廁裡有幾個喝多了的女生鬧了起來，引發了一場小騷亂。女廁因此暫時關閉幾分鐘，等工作人員處理。黛安和莫莉覺得等不了那麼久，於是沒能上成廁所就回來了。",
   "<LI>'We'll just have to wait,' they say.": "<LI>「只能憋著了，」她們說。",
-  "<LI>They've already locked the door from the beer garden into the Pavilion, so there isn't access to the Ladies. Sorry. The girls have to return disappointed.": "<LI>從啤酒花園通往Pavilion酒吧的門已經鎖上了，根本進不去女廁。沒辦法，兩個女生只得失望地回來了。",
+  "<LI>They've already locked the door from the beer garden into the Pavilion, so there isn't access to the Ladies. Sorry. The girls have to return disappointed.": "<LI>從啤酒花園通往涼亭酒吧的門已經鎖上了，根本進不去女廁。沒辦法，兩個女生只得失望地回來了。",
   "<LI>There is just time for them to visit the toilets. Your luckshot hasn't worked.": "<LI>她們還是趕上了去廁所的時間。你的幸運機會沒奏效。",
   "<LI>The girls return looking relaxed.": "<LI>兩個女生回來時看來輕鬆多了。",
   "<LI>You are walking along with Robert. The girls are walking ahead—you have dropped back a bit because Robert was taking photographs. But the girls now stop, to let you catch up.": "<LI>你和羅伯特並肩走著。兩個女生走在前面——你們稍微落後了一些，因為羅伯特在拍照。但女生們現在停下來等你們趕上。",
@@ -2031,7 +2042,7 @@ var alternateTranslations = {
   "<LI>DIANE: There's ever such a queue. I'll go later.": "<LI>黛安：隊排太長了。我待會再去好了。",
   "<LI>You join the queue for the bus. You have about 15 minutes to wait.": "<LI>你們加入等公車的隊伍。大概還要等十五分鐘左右。",
   "<LI>It's quite cold now, and that has an effect on Diane's bladder.": "<LI>現在天氣挺冷，冷得黛安更想上廁所了。",
-  "<LI>There are several others there, including some who were in the Pavilion.": "<LI>那裡還有其他幾個人，包括一些在Pavilion酒吧裡見過的面孔。",
+  "<LI>There are several others there, including some who were in the Pavilion.": "<LI>那裡還有其他幾個人，包括一些在涼亭酒吧裡見過的面孔。",
   "<LI>And Molly and her friend are still with you, chatting while they wish you Goodnight.": "<LI>莫莉和她的朋友還在你們身邊，一邊聊天一邊跟你們道晚安。",
   "<LI>You are waiting for the bus.": "<LI>你在等公車。",
   "<LI>Molly and her friend say their goodnights. Molly gives Diane a kiss and hug, and then walks off, leaving you and Diane together.": "<LI>莫莉和她的朋友道過晚安後，莫莉給了黛安一個擁抱和一個吻，接著轉身離開，只剩下你和黛安兩人。",
@@ -3459,7 +3470,7 @@ var alternateTranslations = {
   "<LI>Diane leaps at the offer, says a quick 'Goodbye—see you around' to you, and leaves with her friend.": "<LI>黛安立刻答應了，匆匆對你說了句「再見，有緣再見」，便和朋友一起離開了。",
   "<LI>You are still waiting for the bus.": "<LI>你還在等公車。",
   "<LI>A girl at the next bus stop seems unable to stand still. She's wearing a little miniskirt that really emphasises her shifting legs. She crosses her legs one way, then the other. Then she stands on one leg.": "<LI>旁邊公車站上有個女生像是怎麼也站不定。她穿著一條迷你短裙，雙腿不停換來換去，動作格外顯眼。她先把腿往一邊交叉，又換到另一邊，最後乾脆單腳站著。",
-  "<P><LI>DIANE: <EM>(whispers in your ear)</EM> I'm dying to go to the loo. Is there anywhere I can go? <EM>(She blushes and looks sheepish)</EM> I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM>我快憋死了，想上廁所。附近有地方可以去嗎？<EM>（她紅著臉，有點不好意思）</EM>我覺得我堅持不到公車到站——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。",
+  "<P><LI>DIANE: <EM>(whispers in your ear)</EM> I'm dying to go to the loo. Is there anywhere I can go? <EM>(She blushes and looks sheepish)</EM> I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<P><LI>黛安：<EM>（湊到你耳邊悄聲說）</EM>我快憋死了，想上廁所。附近有地方可以去嗎？<EM>（她紅著臉，有點不好意思）</EM>我覺得我堅持不到公車到站——本來打算來這裡之前去一趟的，沒想到涼亭酒吧已經關門了。",
   "<LI>You look around and consider.": "<LI>你環顧四周，想了想。",
   "<LI>You put your arm round Diane and she puts hers round you.": "<LI>你摟著黛安的肩膀，她也回摟著你。",
   "<LI>Is there anywhere she can go?": "<LI>附近有沒有她能去的地方？",
@@ -3666,10 +3677,10 @@ var alternateTranslations = {
   "<LI>She goes up to a tourist information board, stands there a moment while the drunks pass. She is standing away from you, as if pretending to read the board. The drunks disappear into the distance and Diane looks to see if they have gone, but doesn't move. She seems to be fiddling with her skirt, is bent slightly forward and then—": "<LI>她走到一塊旅遊資訊牌前，等醉鬼們經過時站在那裡。她背對著你，好像假裝在看牌子。醉鬼們漸漸遠去，黛安回頭看他們有沒有走遠，卻沒有移動。她好像在擺弄裙子，身子微微前傾，然後——",
   "<LI>She is peeing. She must have a hand beneath the front of her dress holding her knickers aside because a stream of pee is cascading to the ground, splattering on the pavement. The puddle sneaks across the pavement and across the kerb.": "<LI>她已經開始尿尿了。她一定是用手把裙子前擺撥到一邊，把內褲撥到一邊讓尿出來，因為一股尿流嘩嘩瀉到地面，濺在人行道上。尿蔓延過人行道，淌過路邊石。",
   "<LI>Diane turns and comes back out of the bus shelter, tidying down her dress, and bending to wipe her legs a little. But in her summer dress she looks as elegant as ever. She walks off through the car park towards the taxi rank, leaving you looking forward to your next date with her.": "<LI>黛安轉身走出公車候車亭，理了理裙子，彎腰擦了擦腿。但穿著那條夏裙，她依然很好看。她穿過停車場向計程車站走去，留下你滿心期待下一次與她的約會。",
-  "<LI>You head back towards the Pavilion. You look left, you look right. There's no sign of Diane.": "<LI>你往Pavilion酒吧方向折返。你向左看，向右看。黛安不見蹤影。",
+  "<LI>You head back towards the Pavilion. You look left, you look right. There's no sign of Diane.": "<LI>你往涼亭酒吧方向折返。你向左看，向右看。黛安不見蹤影。",
   "<LI>You look across the car park. Maybe she's popped behind a car. But you can't see her, just a few stragglers heading for their cars.": "<LI>你望向停車場。也許她躲到哪輛車後面尿尿去了。可你什麼都看不到，只有幾個零散的人在往各自的車走去。",
-  "<LI>You look across to the main entrance to the Pavilion. There is a bouncer at the door.": "<LI>你看向Pavilion酒吧的正門。門口站著一個保安。",
-  "<LI>It's Diane. You stand back into the shadows and watch as she goes up to the door of the Pavilion.": "<LI>是黛安。你退回陰影裡，看著她走向Pavilion酒吧門口。",
+  "<LI>You look across to the main entrance to the Pavilion. There is a bouncer at the door.": "<LI>你看向涼亭酒吧的正門。門口站著一個保安。",
+  "<LI>It's Diane. You stand back into the shadows and watch as she goes up to the door of the Pavilion.": "<LI>是黛安。你退回陰影裡，看著她走向涼亭酒吧門口。",
   "<LI>She goes up to the doorman. She asks him something.": "<LI>她走到門衛跟前，問了他什麼。",
   "<LI>Looks like you might need another luckshot. Can you play one?": "<LI>看來你可能得再用一次幸運機會。你還能用嗎？",
   "<LI>But no sign of Diane. Maybe you could try another direction—if you've still got any luckshots?": "<LI>可黛安還是沒出現。也許你可以換個方向找找看——要是你還有幸運機會的話？",
@@ -4224,9 +4235,9 @@ var alternateTranslations = {
   "You stand up to leave the theatre.": "你站起身，準備離開劇場。",
   "Game Over!": "遊戲結束！",
   "In the meantime everyone is filing out of the auditorium": "同時，觀眾正陸續走出觀眾席",
-  "Go up into the foyer and meet Molly there, and maybe have a few beers there before a walk to the Pavilion with Diane.": "去大廳裡和莫莉碰面，也許在那裡喝幾杯啤酒，再和黛安一起走去Pavilion酒吧。",
+  "Go up into the foyer and meet Molly there, and maybe have a few beers there before a walk to the Pavilion with Diane.": "去大廳裡和莫莉碰面，也許在那裡喝幾杯啤酒，再和黛安一起走去涼亭酒吧。",
   "Meet Molly at the stage door and maybe have a drink somewhere else?": "在舞台門口等莫莉，接著換個地方喝一杯？",
-  "Forget Molly and just go for a nice walk along the riverside with Diane, and then a drink at the Pavilion? After all, its Diane you want to be with.": "不管莫莉了，就和黛安沿著河邊好好散散步，再去Pavilion酒吧喝一杯？畢竟，你想陪的人是黛安。",
+  "Forget Molly and just go for a nice walk along the riverside with Diane, and then a drink at the Pavilion? After all, its Diane you want to be with.": "不管莫莉了，就和黛安沿著河邊好好散散步，再去涼亭酒吧喝一杯？畢竟，你想陪的人是黛安。",
   "Be a gentleman and ask Diane what she wants to do.": "紳士一點，問黛安想怎麼走。",
   "You go up into the foyer.": "你走進大廳。",
   "Goodnight!": "晚安！",
@@ -4765,7 +4776,7 @@ var alternateTranslations = {
   "No, I don't.": "不，我沒有。",
   "Where did she go?": "她去哪裡了？",
   "Into the car park? There's a public toilet on the other side, or maybe she'll squat behind a car.": "進停車場了？對面有公共廁所，不然她會蹲在某輛車後面。",
-  "Back towards the Pavilion? Maybe she's hoping she'll be able to get in to use the Ladies.": "往Pavilion酒吧方向跑去？說不定她希望能進去用一下女廁。",
+  "Back towards the Pavilion? Maybe she's hoping she'll be able to get in to use the Ladies.": "往涼亭酒吧方向跑去？說不定她希望能進去用一下女廁。",
   "Down the subway beneath the road, that will lead her back into town?": "鑽進路下的地下道，那會把她帶回市區？",
   "What will she do?": "她會怎麼辦？",
   "No, I give up.": "不，我放棄了。",
@@ -4931,10 +4942,10 @@ var alternateTranslations = {
   "<LI>THE GIRL: Anything. Another minute I'll be wetting myself.": "<LI>女生：什麼都行。再撐一分鐘我就要尿褲子了。",
   "<LI>THE GIRL: Can he be trusted?": "他靠得住嗎？",
   "<LI>THE GIRL: What the hell.": "<LI>女生：管他呢。",
-  "<LI>The penny has probably clicked.": "<LI>她大概已經猜到了。",
+  "<LI>The penny has probably dropped for her.": "<LI>她大概已經猜到了。",
   "<HR>": "<HR>",
   "<LI>DIANE: <EM>(giggles)</EM> No, I squatted and peed a flood. Mind you—": "<LI>黛安：<EM>（咯咯笑）</EM>沒有，我蹲下來尿了一大泡。不過——",
-  "<LI>DIANE: I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<LI>黛安：我覺得我撐不到公車來——本來打算來這裡之前去一趟的，沒想到Pavilion酒吧已經關門了。",
+  "<LI>DIANE: I don't think I could last out the bus journey—I was banking on going before we got here but hadn't reckoned with the Pavilion being closed.": "<LI>黛安：我覺得我撐不到公車來——本來打算來這裡之前去一趟的，沒想到涼亭酒吧已經關門了。",
   "<LI>DIANE: You know perfectly well why I missed the bus. It was so embarrassing!": "<LI>黛安：你明明知道我為什麼錯過車嘛。真的超尷尬！",
   "<LI>She blushes and grins at you.": "<LI>她臉紅了，朝你咧嘴一笑。",
   "<LI>She blushes and looks sheepish.": "<LI>她紅著臉，有點不好意思。",
@@ -5064,7 +5075,7 @@ function setLanguage(lang) {
   var galleryBtn = document.getElementById("galleryToggle");
   if (galleryBtn) galleryBtn.textContent = currentLanguage === "en" ? "Gallery" : "劇情圖鑑";
   var themeBtn = document.getElementById("themeToggle");
-  if (themeBtn) themeBtn.textContent = currentLanguage === "en" ? (darkMode ? "Dark Mode: On" : "Dark Mode: Off") : (darkMode ? "深色模式：開啟" : "深色模式：關閉");
+  if (themeBtn) themeBtn.textContent = currentLanguage === "en" ? (darkMode ? "Dark Mode: On" : "Dark Mode: Off") : (darkMode ? "深色模式：開" : "深色模式：關");
   if (typeof syncGuideDisplay === "function") syncGuideDisplay();
 }
 
@@ -5419,6 +5430,11 @@ if (document.addEventListener) {
       if (canSkipToClimax()) skipToClimax();
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (/^[1-9]$/.test(e.key)) {
       if (!claimStoryActionKey(e.key)) return;
       pressChoiceByNumber(parseInt(e.key, 10));
@@ -5460,8 +5476,9 @@ function syncThemeButton() {
   try {
     var btn = document.getElementById("themeToggle");
     if (btn) {
-      btn.textContent = currentLanguage === "en" ? (darkMode ? "Dark Mode: On" : "Dark Mode: Off") : (darkMode ? "深色模式：開啟" : "深色模式：關閉");
+      btn.textContent = currentLanguage === "en" ? (darkMode ? "Dark Mode: On" : "Dark Mode: Off") : (darkMode ? "深色模式：開" : "深色模式：關");
       btn.className = "theme-toggle-button" + (darkMode ? " theme-toggle-on" : " theme-toggle-off");
+      if (document.activeElement === btn) btn.blur();
     }
   } catch (e) {}
 }
@@ -6145,7 +6162,8 @@ s("<LI>There are lots of variations, so do play the game right through a few tim
 s("<HR>");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
 s("<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>");
-s("<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys'><strong>H</strong> turns the Guide on or off once you've started one.</p>");
+s("<p class='note-keys note-cluster-end'><strong>D</strong> toggles Dark Mode on or off.</p>");
 s("<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>");
 s("<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>");
 s("<p class='note-lead'>You can press the 'Back' button to return to the previous page at any time if you regret a choice; it restores everything—stats, choices, the lot. That works in Guide mode too.</p>");
@@ -7810,7 +7828,7 @@ s("<LI>DIANE: Oooh, it's lovely to be asked!"); getinti(5);
 sAlt("<LI>Which will it be?", "<LI>選哪個呢？");
 if (blad > 600) 
 {s("<LI>DIANE: <EM>(in a whisper)</EM> Actually, I'm dying to spend a penny. So maybe we could have a drink here first. It would give me a chance to pop into the loo, wouldn't it? And Molly will find us in the foyer.");
-s("<p class='notice'><strong>She admits she's 'Dying to spend a penny.' You lost 5 shyness points.</strong></p>"); adjpoints(-5);
+s("<p class='notice'><strong>She admits she's 'dying to spend a penny.' You lost 5 shyness points.</strong></p>"); adjpoints(-5);
 s("<LI>You head up into the foyer. Diane heads into the Ladies—you get the feeling she really needed to go! You imagine her dashing into the nearest cubicle, maybe hopping up and down as she tugs her knickers down...");
 afterpee()
 s("<LI>You go for a pee yourself, and then wait in the foyer for her. After a minute or so she returns, smiling.");
@@ -8623,7 +8641,7 @@ riverside13()
 s("<LI>Molly and Bruno have peeled off and gone down the steps to the towpath. They are out of sight. You are wondering if Molly needed a pee. You'd like to peep over the parapet but you obviously can't while you're with Diane.");
 s("<LI>DIANE: Where have they gone?");
 s("<LI>YOU: I'm not sure. There's a sort of towpath down there.");
-s("<LI>DIANE: Oh.");s("<LI>The penny has probably clicked.");
+s("<LI>DIANE: Oh.");s("<LI>The penny has probably dropped for her.");
 s("<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.");
 c("riverside13b","No, I'll save my luckshots.");
 if (luckshots >= 1) c("luckytrip4","Yes, I'll risk a luckshot."); }
@@ -8659,7 +8677,7 @@ luckytrip4a()
 {
 s("<LI>Molly walks to the wall, close to where Bruno had just been. She is unbuckling her belt.");
 s("<LI>She turns round and sees Bruno is watching her. She waves him away and you can hear a faint cry of 'Look away.' She waves again. But he is still looking towards her with what seems to be a grin.");
-s("<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind this, between the skip and the wall, where Bruno can't see her—but you can.");
+s("<LI>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind it, up against the wall, where Bruno can't see her—but you can.");
 s("<LI>Then she quickly unzips her jeans and pulls them and her white knickers down in one movement, straight away going into a half squat. It's too gloomy for you to see any stream but you can see a puddle forming on the ground and running away from her. Judging by the size of it, she certainly needed to go.");
 s("<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt she emerges from behind the skip and rejoins Bruno."); mollyblad = 50;
 c("luckytrip4b","You go back to the path."); }

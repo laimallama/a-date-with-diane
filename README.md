@@ -20,11 +20,11 @@ Each language folder contains:
 
 - `dianedate_*.html` — open in a browser to play (bilingual editions switch with English; EN is single-language only)
 - `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
-- `wiki/` — companion setting and character articles in that language; not playable
+- `wiki_*.html` — companion setting and character articles; not playable
 
 There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **29 hidden-scene leaves** (variants inside a group each count as a leaf).
 
-The game boots on the title screen (no age gate). **Gallery** is available from there: pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**h**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**b**) restores full state. **g** / Escape open and close the Gallery. Bilingual: **l** switches language. **1–9** select choices.
+The game boots on the title screen (no age gate). **Gallery** is available from there: pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**H**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**B**) restores full state. **G** / Escape open and close the Gallery. **D** toggles Dark Mode. Bilingual: **L** switches language. **1–9** select choices.
 
 **Dark Mode: On/Off** persists across refresh in the same tab (`sessionStorage`). A new tab starts in light mode.
 
@@ -32,7 +32,7 @@ The stats bar stays hidden/frozen on title, notes, further information, and day-
 
 ## Maintaining
 
-Toolkit and conventions: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). Companion wiki: [`outputs/en/wiki/`](outputs/en/wiki/).
+Toolkit and conventions: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). Companion wiki: [`outputs/en/wiki_en.html`](outputs/en/wiki_en.html).
 
 All ending/extra Gallery route label sequences live in `write_verified_guides.js`; hidden-scene definitions live in `write_hidden_scenes.js`. There is no separate `routes/` folder.
 

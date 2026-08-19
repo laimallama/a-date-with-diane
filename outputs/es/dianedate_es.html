@@ -702,7 +702,7 @@ var gameStateVars = [
   "traintalking", "gourinal", "instantcoffee", "nicecoffee",
   "leavechloe", "triedbathroom", "brooch", "gobushes", "gobushes1",
   "gotoilet", "gobehindtoilet", "admitwetting", "gopee", "tiramisu",
-  "pannacotta", "icecream", "gettaxi", "steak", "undobra", "sofaloop", "sofaDrinkBoost", "sofaBreastsDone", "sofaArm2Done", "sofaLegsStage", "sofaPeeAskedDone", "standingBottomDone", "standingBreastsDone", "standingLegsDone", "carparklie", "wine",
+  "pannacotta", "icecream", "gettaxi", "steak", "undobra", "sofaloop", "sofaDrinkBoost", "sofaBreastsDone", "sofaArm2Done", "sofaLegsStage", "sofaDressOpened", "sofaPeeAskedDone", "standingBottomDone", "standingBreastsDone", "standingLegsDone", "carparklie", "wine",
   "pregameCaughtUp", "currentTag"
 ];
 var currentTag = null;
@@ -2029,7 +2029,10 @@ s("<LI>TÚ: ¿Quieres probar?");
 s("<LI>Ella asiente. Te inclinas sobre la mesa y le ofreces un bocado de tu ravioli en el tenedor; ella lo come directamente del tenedor.");
 s("<LI>DIANE: Está riquísimo de verdad. Me pregunto qué salsa lleva. ¿Quieres probar el mío?");  
 s("<LI>Ella se inclina hacia delante y te ofrece un tenedor de su tortelloni, que comes directamente del tenedor. Está inclinada hacia ti, sonriéndote."); getinti(8);
-s("<LI>El primer botón de su blusa está desabrochado, y cuando se inclina hacia delante atisbas el surco entre sus pechos y un sujetador de encaje blanco.");
+if (saturday)
+{s("<LI>El primer botón de su vestido está desabrochado, y cuando se inclina hacia delante atisbas el surco entre sus pechos y un sujetador de encaje blanco.");}
+else
+{s("<LI>El primer botón de su blusa está desabrochado, y cuando se inclina hacia delante atisbas el surco entre sus pechos y un sujetador de encaje blanco.");}
 s("<LI>Rellenas las dos copas de vino.");  proc += 50; 
 s("<LI>DIANE: ¡Gracias!");
 c("eatmeal3e","Seguís charlando");  }
@@ -2037,7 +2040,10 @@ c("eatmeal3e","Seguís charlando");  }
 function
 eatmeal3e()
 {
-s("<LI>Diane te sonríe de un modo casi coqueto. Sabe que has estado mirándole el escote, y parece complacida, pero se abrocha el botón."); getinti(1);
+if (saturday)
+{s("<LI>Diane te sonríe de un modo casi coqueto. Sabe que has estado mirándole por el escote del vestido, y parece complacida, pero se abrocha el botón."); getinti(1);}
+else
+{s("<LI>Diane te sonríe de un modo casi coqueto. Sabe que has estado mirándole el escote, y parece complacida, pero se abrocha el botón."); getinti(1);}
 s("<LI>DIANE: Me gusta compartir la comida. Por eso me encantan los restaurantes chinos."); 
 s("<LI>Bebe un poco de agua."); proc += 25;
 c("eatmeal7","Seguís charlando."); }
@@ -2466,7 +2472,12 @@ lethergo()
 {
 s("<LI>TÚ: Claro que te da tiempo. Me aseguraré de que no empiecen sin ti. Y mientras estás, compro un programa.");
 s("<LI>DIANE: Gracias. No tardo nada."); getinti(4);
-s("<LI>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, las medias y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");
+if (saturday)
+{s("<LI>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, el vestido subido hasta la cintura, las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");}
+else if (tuesday)
+{s("<LI>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, las medias y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");}
+else
+{s("<LI>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, los pantis y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");}
 s("<p class='notice'><strong>Diane hace su primera visita al baño. Pierdes 5 puntos de timidez.</strong></p>"); adjpoints(-5);
 afterpee()
 s("<LI>Te acercas al vendedor de programas:");
@@ -2505,7 +2516,12 @@ gotoo()
 {
 s("<LI>TÚ: Seguro que da tiempo. Yo también voy. Igual hasta da tiempo a pedir algo para el descanso.");
 s("<LI>DIANE: Gracias. Qué bien. Nos vemos aquí en un par de minutos."); getinti(2);
-s("<LI>Ella desaparece en el baño de señoras, tú entras en el de caballeros. Oyes cómo da un portazo al meterse en un cubículo. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");
+if (saturday)
+{s("<LI>Ella desaparece en el baño de señoras, tú entras en el de caballeros. Oyes cómo da un portazo al meterse en un cubículo. No puedes hacer otra cosa que imaginártela al otro lado de la pared, el vestido subido hasta la cintura, las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");}
+else if (tuesday)
+{s("<LI>Ella desaparece en el baño de señoras, tú entras en el de caballeros. Oyes cómo da un portazo al meterse en un cubículo. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, las medias y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");}
+else
+{s("<LI>Ella desaparece en el baño de señoras, tú entras en el de caballeros. Oyes cómo da un portazo al meterse en un cubículo. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, los pantis y las bragas por las rodillas mientras está sentada, el pis cayendo tintineando en el inodoro...");}
 s("<p class='notice'><strong>Los dos vais al baño. Pierdes 6 puntos de timidez.</strong></p>"); adjpoints(-6);
 afterpee()
 s("<LI>Sales antes que ella y te acercas al vendedor de programas.");
@@ -2629,7 +2645,10 @@ s("<LI>¿Qué haces?");
 c("holdhand","¿Cogerle la mano?");
 c("leanclose","¿Acercarte más a ella?");
 c("handonthigh","¿Poner la mano en su muslo?");
-c("underskirt","¿Deslizar la mano bajo su falda?");
+if (saturday)
+{c("underskirt","¿Deslizar la mano bajo su vestido?");}
+else
+{c("underskirt","¿Deslizar la mano bajo su falda?");}
 c("theatre5","Seguir viendo la obra sin más"); } 
 
 function
@@ -2671,7 +2690,10 @@ c("theatre5","Seguir viendo la obra"); }
 function
 underskirt()
 {
-s("<LI>Deslizas la mano bajo la falda de Diane.");
+if (saturday)
+{s("<LI>Deslizas la mano bajo el vestido de Diane.");}
+else
+{s("<LI>Deslizas la mano bajo la falda de Diane.");}
 s("<LI><B>¿Estás loco?</B> Esto es un teatro de categoría, no la última fila del cine del barrio.");
 s("<LI>Diane aparta tu mano de un empujón, te fulmina con la mirada y cruza los brazos. Se echa hacia el otro lado."); getinti(-20);
 c("theatre5","Te maldices a ti mismo"); } 
@@ -2707,7 +2729,10 @@ s("<LI>¿Qué haces?");
 c("holdhand1","¿Cogerle la mano?");
 c("leanclose1","¿Acercarte más a ella?");
 c("handonthigh1","¿Poner la mano en su muslo?");
-c("underskirt1","¿Deslizar la mano bajo su falda?");
+if (saturday)
+{c("underskirt1","¿Deslizar la mano bajo su vestido?");}
+else
+{c("underskirt1","¿Deslizar la mano bajo su falda?");}
 c("theatre8","Seguir viendo la obra sin más"); } 
 
 function
@@ -2749,7 +2774,10 @@ c("theatre8","Seguir viendo la obra"); }
 function
 underskirt1()
 {
-s("<LI>Deslizas la mano bajo la falda de Diane.");
+if (saturday)
+{s("<LI>Deslizas la mano bajo el vestido de Diane.");}
+else
+{s("<LI>Deslizas la mano bajo la falda de Diane.");}
 s("<LI><B>¿Estás loco?</B> Esto es un teatro de categoría, no la última fila del cine del barrio.");
 s("<LI>Diane aparta tu mano de un empujón, te fulmina con la mirada y cruza los brazos. Se echa hacia el otro lado."); getinti(-20);
 c("theatre8","Te maldices a ti mismo"); } 
@@ -2972,7 +3000,10 @@ s("<LI>¿Qué haces?");
 c("holdhand2","¿Cogerle la mano?");
 c("leanclose2","¿Acercarte más a ella?");
 c("handonthigh2","¿Poner la mano en su muslo?");
-c("underskirt2","¿Deslizar la mano bajo su falda?");
+if (saturday)
+{c("underskirt2","¿Deslizar la mano bajo su vestido?");}
+else
+{c("underskirt2","¿Deslizar la mano bajo su falda?");}
 c("act2c","Seguir viendo la obra sin más"); } 
 
 function
@@ -3014,11 +3045,12 @@ c("act2c","Seguir viendo la obra"); }
 function
 underskirt2()
 {
-s("<LI>Te apetecería deslizar la mano bajo la falda de Diane.");
 if (saturday)
-s("<LI>Puede que sí, pero es una falda bastante amplia y estáis en un teatro elegante. Hay un tiempo y un lugar para todo."); 
+{s("<LI>Te apetecería deslizar la mano bajo el vestido de Diane.");
+s("<LI>Puede que sí, pero es un vestido bastante amplio y estáis en un teatro elegante. Hay un tiempo y un lugar para todo.");}
 else
-s("<LI>Mira, ya sabemos que quieres averiguar si lleva medias, pero esa no es la manera de hacerlo. Ni el momento ni el lugar. Compórtate.");
+{s("<LI>Te apetecería deslizar la mano bajo la falda de Diane.");
+s("<LI>Mira, ya sabemos que quieres averiguar si lleva medias, pero esa no es la manera de hacerlo. Ni el momento ni el lugar. Compórtate.");}
 s("<P><LI>Pierdes 10 puntos de intimidad solo por pensarlo."); getinti(-10);
 c("act2c","Seguir viendo la obra"); } 
 
@@ -3112,7 +3144,8 @@ else if (blad > 550)
 {s("<LI>Diane no para de cambiar de postura."); }
 else
 s("<LI>Diane se ríe con todo el mundo");
-sitting_desp()   
+if (blad <= 550)
+sitting_desp()
 c("act2h","La obra está a punto de terminar"); } 
 
 function
@@ -3167,12 +3200,20 @@ riversidewalk()
 s("<LI>TÚ: ¿Qué tal un paseo por la orilla del río hasta el Pabellón? ¡Es una noche preciosa!");
 if (inti < 50)
 {s("<LI>DIANE: ¿Pero qué hay de ver a Molly? No podría irme sin verla. Tú vete al Pabellón y a lo mejor nos vemos allí.");
-s("<LI>La has cagado. ¿Qué te ha pasado por la cabeza? ¿Querías verla meando entre los arbustos o algo así? ¿O colarle la mano por debajo de esa falda tan bonita? Qué vergüenza.");
+if (saturday)
+{s("<LI>La has cagado. ¿Qué te ha pasado por la cabeza? ¿Querías verla meando entre los arbustos o algo así? ¿O colarle la mano por debajo de ese vestido tan bonito? Qué vergüenza.");}
+else
+{s("<LI>La has cagado. ¿Qué te ha pasado por la cabeza? ¿Querías verla meando entre los arbustos o algo así? ¿O colarle la mano por debajo de esa falda tan bonita? Qué vergüenza.");}
 c("gameover","¡Buenas noches!"); }
 else
 {s("<LI>DIANE: ¿Pero qué hay de ver a Molly? No podría irme sin verla. Podemos quedar con ella en el vestíbulo."); getinti(-3);
 s("<LI>Diane se dirige por el pasillo del teatro siguiendo al resto del público hacia el vestíbulo. Tú la sigues un par de pasos por detrás. Pasáis junto al baño de mujeres y Diane se detiene y dice, «Voy a entrar un momento. Te veo en el vestíbulo en un par de minutos.»"); 
-s("<LI>No te queda más remedio que imaginártela ahí dentro, subiéndose la falda a toda prisa, bajándose las bragas y… no te emociones demasiado.");
+if (saturday)
+{s("<LI>No te queda más remedio que imaginártela ahí dentro, subiéndose el vestido a toda prisa, bajándose las bragas y… no te emociones demasiado.");}
+else if (tuesday)
+{s("<LI>No te queda más remedio que imaginártela ahí dentro, subiéndose la falda a toda prisa, bajándose las medias y las bragas y… no te emociones demasiado.");}
+else
+{s("<LI>No te queda más remedio que imaginártela ahí dentro, subiéndose la falda a toda prisa, bajándose los pantis y las bragas y… no te emociones demasiado.");}
 afterpee()
 s("<LI>Buscas un sitio apartado del gentío.");
 c("foyerbar1","Esperas en el vestíbulo."); } }
@@ -3673,7 +3714,10 @@ molly_desp()
 if (blad > 600)
 s("<LI>A pesar del fresco de la tarde, Diane parecía muy decidida a sentarse.");
 else
-s("<LI>Diane estaba un poco reacia a sentarse, preocupada por si la falda se le manchaba en el banco.");
+if (saturday)
+{s("<LI>Diane estaba un poco reacia a sentarse, preocupada por si el vestido se le manchaba en el banco.");}
+else
+{s("<LI>Diane estaba un poco reacia a sentarse, preocupada por si la falda se le manchaba en el banco.");}
 s("<LI>Su mano descansa en el banco. La tocas y ella responde apretándote la mano suavemente."); getinti(5);
 s("<LI>Te suelta la mano pero te regala una sonrisa.");
 c("riverside6","Charláis animadamente."); } 
@@ -4127,8 +4171,13 @@ c("helpdiane1aa","No puede estarse quieta."); }
 function
 helpdiane1aa()
 {
-s("<LI>Por fin los paseadores se pierden de vista. Diane se suelta de tus brazos y corre hacia el borde del camino, donde hay hierba alta y algunos arbustos bajos. Ya está recogiendo la falda, quizá para que no se manche ni se moje con la maleza.");
-s("<LI>Los arbustos miden apenas un metro y algo y no son muy tupidos, pero ella se mete detrás. Solo se le ven la cabeza y los hombros, pero por sus movimientos puedes adivinar que se está subiendo la falda. Luego su cabeza desaparece de la vista al agacharse."); gobushes = 1; gopee = 1;
+if (saturday)
+{s("<LI>Por fin los paseadores se pierden de vista. Diane se suelta de tus brazos y corre hacia el borde del camino, donde hay hierba alta y algunos arbustos bajos. Ya está recogiendo el vestido, quizá para que no se manche ni se moje con la maleza.");
+s("<LI>Los arbustos miden apenas un metro y algo y no son muy tupidos, pero ella se mete detrás. Solo se le ven la cabeza y los hombros, pero por sus movimientos puedes adivinar que se está subiendo el vestido. Luego su cabeza desaparece de la vista al agacharse.");}
+else
+{s("<LI>Por fin los paseadores se pierden de vista. Diane se suelta de tus brazos y corre hacia el borde del camino, donde hay hierba alta y algunos arbustos bajos. Ya está recogiendo la falda, quizá para que no se manche ni se moje con la maleza.");
+s("<LI>Los arbustos miden apenas un metro y algo y no son muy tupidos, pero ella se mete detrás. Solo se le ven la cabeza y los hombros, pero por sus movimientos puedes adivinar que se está subiendo la falda. Luego su cabeza desaparece de la vista al agacharse.");}
+gobushes = 1; gopee = 1;
 if (saturday)
 {s("<LI>A través de los arbustos tan poco espesos apenas puedes intuir su silueta en cuclillas. Solo desearías atreverte a acercarte más."); 
 s("<LI>Al cabo de un minuto más o menos se levanta y oyes el crujido de la ropa mientras se sube las bragas blancas y se alisa el vestido."); }
@@ -4181,9 +4230,18 @@ s("<LI>Está muy avergonzada. «Lo siento,» dice, «no podía esperar.»");
 afterpee()
 s("<p class='notice'><strong>Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 2 puntos de timidez.</strong></p>"); adjpoints(-2);
 c("together1b","Le coges la mano.");}
-else
-{s("<LI>Diane cruza a toda prisa hacia el rincón más alejado del rellano de cemento. Parece estar levantándose el vestido por delante. Cuando llega al rincón se detiene, inclinada ligeramente hacia adelante, y casi de inmediato oyes un suave sonido de salpicaduras.");
+else if (tuesday)
+{s("<LI>Diane cruza a toda prisa hacia el rincón más alejado del rellano de cemento. Parece estar levantándose la falda por delante. Cuando llega al rincón se detiene, inclinada ligeramente hacia adelante, y casi de inmediato oyes un suave sonido de salpicaduras.");
 s("<LI>Ya está meando. Debe de estar apartándose las bragas a un lado —seguro que lleva medias de verdad— porque sigue de pie, con las piernas abiertas, y desde donde estás tú, varios escalones más abajo y con la cabeza justo al nivel del suelo del rellano, puedes ver incluso el vapor mientras su pis salpica contra el suelo. Tras ese primer chorro urgente se estabiliza en un chorro continuo y ajusta ligeramente su postura.");
+s("<LI>Cuando el chorro se apaga, bajas con sigilo los siguientes escalones. Tú también tenías muchas ganas de mear, así que lo haces, y luego vuelves a subir.");
+s("<LI>Al pasar ves el gran charco en el rincón del rellano, y luego te reúnes con Diane, que te espera en lo alto de los escalones. Tiene un pañuelo de papel en la mano y parece estar secándose las piernas, aunque se incorpora en cuanto te ve."); gobushes = 1; gopee = 1;
+s("<LI>Está muy avergonzada. «Lo siento,» dice, «no podía esperar.»");
+afterpee()
+s("<p class='notice'><strong>Diane está muy avergonzada por su pis de emergencia, pero a partir de ahora será menos tímida. Pierdes 3 puntos de timidez.</strong></p>"); adjpoints(-3);
+c("together1b","Le coges la mano.");}
+else
+{s("<LI>Diane cruza a toda prisa hacia el rincón más alejado del rellano de cemento. Parece estar levantándose la falda por delante y bajándose los pantis y las bragas. Cuando llega al rincón se detiene, inclinada ligeramente hacia adelante, y casi de inmediato oyes un suave sonido de salpicaduras.");
+s("<LI>Ya está meando. Desde donde estás tú, varios escalones más abajo y con la cabeza justo al nivel del suelo del rellano, puedes ver incluso el vapor mientras su pis salpica contra el suelo. Tras ese primer chorro urgente se estabiliza en un chorro continuo y ajusta ligeramente su postura.");
 s("<LI>Cuando el chorro se apaga, bajas con sigilo los siguientes escalones. Tú también tenías muchas ganas de mear, así que lo haces, y luego vuelves a subir.");
 s("<LI>Al pasar ves el gran charco en el rincón del rellano, y luego te reúnes con Diane, que te espera en lo alto de los escalones. Tiene un pañuelo de papel en la mano y parece estar secándose las piernas, aunque se incorpora en cuanto te ve."); gobushes = 1; gopee = 1;
 s("<LI>Está muy avergonzada. «Lo siento,» dice, «no podía esperar.»");
@@ -4218,7 +4276,11 @@ s("<LI>TÚ: Espera un momento. Viene un ciclista.");
 s("<LI>Esperáis a que pase el ciclista. Puedes ver que Diane hace un esfuerzo enorme por parecer tranquila mientras él pasa, con los típicos «Buenas noches» de rigor. Y entonces—");
 s("<LI>DIANE: ¿Ya se ha ido?");s("<LI>Está inclinada hacia adelante, con las manos en las rodillas, mientras lo ve desaparecer camino abajo.");
 s("<LI>Los dos os abrís paso entre la hierba alta hasta los arbustos raquíticos. Ella te señala un arbusto, mientras ella se va detrás de otro. Te bajas la cremallera y empiezas a mear. Tenías unas ganas tremendas.");
-s("<LI>Ves de reojo a Diane levantarse la falda mientras se mete detrás del otro arbusto. Los arbustos apenas tienen metro y poco de altura y no son muy tupidos. Todavía se le ven la cabeza y los hombros, pero por sus movimientos puedes intuir que está buscando un sitio donde hacer pis. Luego su cabeza desaparece de tu vista cuando se agacha en cuclillas."); gobushes = 1; gopee = 1;
+if (saturday)
+{s("<LI>Ves de reojo a Diane levantarse el vestido mientras se mete detrás del otro arbusto. Los arbustos apenas tienen metro y poco de altura y no son muy tupidos. Todavía se le ven la cabeza y los hombros, pero por sus movimientos puedes intuir que está buscando un sitio donde hacer pis. Luego su cabeza desaparece de tu vista cuando se agacha en cuclillas.");}
+else
+{s("<LI>Ves de reojo a Diane levantarse la falda mientras se mete detrás del otro arbusto. Los arbustos apenas tienen metro y poco de altura y no son muy tupidos. Todavía se le ven la cabeza y los hombros, pero por sus movimientos puedes intuir que está buscando un sitio donde hacer pis. Luego su cabeza desaparece de tu vista cuando se agacha en cuclillas.");}
+gobushes = 1; gopee = 1;
 if (saturday)
 {s("<LI>A través de los arbustos, tan delgados, apenas puedes distinguir la silueta de su figura en cuclillas. Pero cuando terminas de hacer pis y subes la cremallera, das un par de pasos silenciosos hacia la derecha y puedes ver su trasero desnudo, agachada tan bajo que casi debe de rozar la hierba alta. Al poco le da un pequeño meneo al trasero y tú te apartas. Oyes el roce de su ropa mientras se sube las bragas blancas y se arregla el vestido."); }
 else
@@ -4312,7 +4374,11 @@ toiletclosed2b()
 {
 s("<LI>TÚ: La verdad es que yo también tengo que hacer pis. ¿Por qué no vamos turnándonos para meternos detrás del edificio?");
 s("<LI>DIANE: ¿Por qué no?");s("<LI>Mira a su alrededor.");s("<LI>DIANE: Ese caminito lateral debería ir bien. ¿Te importa si voy yo primero? Me estoy meando."); getinti (+15);
-s("<LI>La observas mientras se dirige al lateral del edificio y sube con cautela por el camino junto al baño de mujeres. Ya está empezando a levantarse la falda cuando desaparece de tu vista."); gobehindtoilet = 1; gopee = 1;
+if (saturday)
+{s("<LI>La observas mientras se dirige al lateral del edificio y sube con cautela por el camino junto al baño de mujeres. Ya está empezando a levantarse el vestido cuando desaparece de tu vista.");}
+else
+{s("<LI>La observas mientras se dirige al lateral del edificio y sube con cautela por el camino junto al baño de mujeres. Ya está empezando a levantarse la falda cuando desaparece de tu vista.");}
+gobehindtoilet = 1; gopee = 1;
 afterpee()
 s("<LI>Un par de minutos después vuelve. «Tu turno», dice sonriendo, y tú también vas a la parte trasera del edificio. Te fijas en un gran charco que todavía se sigue extendiendo por el camino.");
 s("<LI>Haces pis y vuelves.");
@@ -4399,7 +4465,7 @@ s("<LI>TÚ: ¿Por qué no usas uno de estos?");
 s("<LI>DIANE: Creo que voy a tener que hacerlo. Un minuto más y me meo las bragas.");
 s("<LI>Ya has terminado de hacer pis y estás subiéndote la cremallera. Diane se acerca al urinario. De repente se ríe y se gira hacia ti con un brillo en los ojos.");
 s("<LI>DIANE: Los he usado en festivales de música, pero nunca le he cogido el truco. Sobre todo con un hombre delante. Dios sabe qué diría mi madre.");  
-c("urinal","Ella se acerca al urinario y se sube la falda por delante."); }
+c("urinal","Ella se acerca al urinario y se sube el vestido por delante."); }
 else
 {s("<LI>Diane entra a la carrera en la cabina y da un portazo. La puerta no llega al suelo y puedes ver sus piernas, pisando en el sitio mientras trastea con la ropa. No te queda más remedio que imaginártelo, pero el susurro de su falda y enagua, y luego el fuerte silbido y chapoteo de su pis dejan muy poco a la imaginación. Se oye un jadeo audible de alivio."); gotoilet = 1;
 afterpee()
@@ -4417,12 +4483,12 @@ c("riverside15","Sigues caminando."); }
 function
 urinal()
 {
-s("<LI>Diane se acerca a toda prisa a uno de los urinarios. Está riéndose nerviosa y se ha recogido la falda por delante.");
+s("<LI>Diane se acerca a toda prisa a uno de los urinarios. Está riéndose nerviosa y se ha recogido el vestido por delante.");
 s("<LI>DIANE: Nunca sé cómo colocarme en estos.");
 s("<LI>Parece dudar si darse la vuelta o no, pero entonces, quizá porque es más rápido, decide ponerse a horcajadas sobre el urinario, de espaldas a ti. Se inclina ligeramente hacia delante mientras aparta las bragas a un lado.");
 s("<LI>Casi de inmediato empieza a mear. Unos cuantos chorros salpican el suelo, pero enseguida está meando en el urinario; no ves el chorro, pero sí el vaho que sube. Te echas un poco hacia atrás y a un lado, y ahora puedes ver su chorro, plateado más que dorado, mientras se deja ir de verdad. Permanece ahí, imagen de concentración, jadeando de alivio."); gourinal = 1; gopee = 1;
 afterpee()
-s("<LI>Al final el chorro se apaga hasta convertirse en un hilillo, y alguna gota más parece salpicar el suelo. Todavía de espaldas a ti, da un paso atrás y deja caer la falda en su sitio. Se gira hacia ti.");
+s("<LI>Al final el chorro se apaga hasta convertirse en un hilillo, y alguna gota más parece salpicar el suelo. Todavía de espaldas a ti, da un paso atrás y deja caer el vestido en su sitio. Se gira hacia ti.");
 s("<LI>Está algo colorada, pero con una gran sonrisa resignada en la cara. Parece no tener ningún reparo ni vergüenza porque la hayas visto. Se acerca a ti y te rodea con los brazos, apoyando la cabeza en tu hombro. No es tanto un gesto sensual como uno de camaradería."); getinti(25);
 s("<LI>DIANE: ¿Serías un cielo y esperarías fuera mientras me arreglo?");
 s("<LI>Un minuto después sale a reunirse contigo y el conserje va a cerrar. Diane te coge del brazo y os acercáis a los demás.");
@@ -4781,7 +4847,10 @@ s("<LI>MOLLY: Es un papel regalado, la verdad. Un cameo precioso."); mollyproc -
 sitting_desp()
 c("pavilion4","Charláis animadamente.");
 c("morewater","¿Comprar una botella de agua para más tarde?");
-c("handupskirt","¿Intentar meterle la mano bajo la falda?"); }
+if (saturday)
+{c("handupskirt","¿Intentar meterle la mano bajo el vestido?");}
+else
+{c("handupskirt","¿Intentar meterle la mano bajo la falda?");} }
 
 
 function
@@ -4798,7 +4867,10 @@ c("pavilion4","Seguir charlando."); }
 function
 handupskirt()
 {
-s("<LI>Intentas meterle la mano bajo la falda.");
+if (saturday)
+{s("<LI>Intentas meterle la mano bajo el vestido.");}
+else
+{s("<LI>Intentas meterle la mano bajo la falda.");}
 s("<LI>Ella suelta una risita y te aparta la mano.");
 s("<LI>DIANE: ¡Hay gente mirando!"); getinti(-5);
 c("pavilion4","Seguir charlando."); }
@@ -5269,7 +5341,10 @@ s("<LI>Tienes ganas de recuperar el tiempo perdido.");
 s("<LI>¿Qué va a ser?");
 c("taxiholdhand","¿Cogerle la mano?");
 c("taxiarmround","¿Pasarle el brazo por encima?");
-c("taxiupskirt","¿Meterle la mano por debajo de la falda?"); }
+if (saturday)
+{c("taxiupskirt","¿Meterle la mano por debajo del vestido?");}
+else
+{c("taxiupskirt","¿Meterle la mano por debajo de la falda?");} }
 
 function
 taxiholdhand()
@@ -5315,7 +5390,7 @@ s("<LI>Le das un abrazo especial. Ella te sonríe.");
 s("<LI>DIANE: Ha sido una noche estupenda, aunque ya tengo unas ganas de llegar a casa... Pero nos vemos la semana que viene, ¿verdad?, para el viaje en tren. Prepararé un picnic rico."); }
 else
 {s("<LI>TÚ: ¿Estás bien?");
-s("<LI>Ojalá hubiera ido al baño antes de subirme al taxi. Qué ganas de llegar ya."); }}
+s("<LI>DIANE: Ojalá hubiera ido al baño antes de subirme al taxi. Qué ganas de llegar ya."); }}
 else
 {s("<LI>Está tan tranquila que casi te preguntas si se ha quedado dormida.");}
 c("taxihome7","Ya casi en casa."); }
@@ -5323,7 +5398,10 @@ c("taxihome7","Ya casi en casa."); }
 function
 taxiupskirt()
 {
-s("<LI>Al acomodarse de nuevo en el asiento trasero del taxi, la falda se le sube un poco.");
+if (saturday)
+{s("<LI>Al acomodarse de nuevo en el asiento trasero del taxi, el vestido se le sube un poco.");}
+else
+{s("<LI>Al acomodarse de nuevo en el asiento trasero del taxi, la falda se le sube un poco.");}
 if (tuesday)
 {s("<LI>Consigues ver un buen destello de su enagua de encaje. Eso te anima a explorar más sus piernas, y sigues preguntándote si lleva medias."); }
 else if (thursday)
@@ -5331,10 +5409,17 @@ else if (thursday)
 else
 {s("<LI>Sus piernas parecen tentarte cada vez más."); }
 if (blad >600)
-{s("<LI>No para de cambiar de postura, y cada vez que lo hace la falda vuelve a subírsele.");
-s("<LI>Ella tira del dobladillo de la falda para volver a colocárselo en su sitio."); }
+{if (saturday)
+{s("<LI>No para de cambiar de postura, y cada vez que lo hace el vestido vuelve a subírsele.");
+s("<LI>Ella tira del dobladillo del vestido para volver a colocárselo en su sitio.");}
 else
-{s("<LI>Con cierto recato, se coloca el dobladillo de la falda de nuevo en su sitio."); }
+{s("<LI>No para de cambiar de postura, y cada vez que lo hace la falda vuelve a subírsele.");
+s("<LI>Ella tira del dobladillo de la falda para volver a colocárselo en su sitio.");}}
+else
+{if (saturday)
+{s("<LI>Con cierto recato, se coloca el dobladillo del vestido de nuevo en su sitio.");}
+else
+{s("<LI>Con cierto recato, se coloca el dobladillo de la falda de nuevo en su sitio.");}}
 s("<LI>Pones la mano en su pierna, justo por encima de la rodilla, y la vas subiendo despacio.");
 s("<LI>Ella enseguida alarga la mano y te aparta la tuya.");
 s("<LI>«El conductor puede vernos», siseó.");
@@ -5361,6 +5446,7 @@ else if (blad >600)
 {s("<LI>Parece un poco inquieta, como si volviera a tener ganas de ir al baño. No parece que haya pasado tanto tiempo desde la última vez, pero es que ha estado bebiendo cerveza."); }
 else
 {s("<LI>Te sonríe y sigue charlando animadamente."); }
+if (blad <= 600)
 sitting_desp()
 c("taxihome6a","El taxi va a mitad de camino."); }
  
@@ -6093,7 +6179,6 @@ else if (blad <750)
 else
 {s("<LI>Pero se está meando, con las rodillas apretadas y tamborileando. La observas mientras dos o tres veces hace ademán de levantarse de la silla, pero cada vez tu hermano encuentra algo más en el álbum para enseñarle."); }
 s("La observas.");
-sitting_desp() 
 c("asklooneed2","El álbum es muy interesante."); }
 
 function
@@ -6273,6 +6358,7 @@ else if (blad <700)
 {s("<LI>TÚ: Gracias por esta velada tan bonita.");s("<LI>Te sonríe pero parece que está pensando en algo."); }
 else
 {s("Parece un poco tensa."); }
+if (blad < 700)
 sitting_desp()
 c("scenario3a","¿Qué harás ahora?"); }
 
@@ -6316,8 +6402,11 @@ s("<LI>TÚ: Claro que no. El baño está justo al subir las escaleras, la primer
 s("<LI>DIANE: No tardo nada.");
 s("<LI>Sale de la habitación.");
 s("<LI>¿Te quedan golpes de suerte?");
-if (luckshots >= 1) c("luckytrip10","¡Sí, jugaré un golpe de suerte!");
-c("sofakiss1","No, no me quedan golpes de suerte."); }}
+if (luckshots >= 1)
+{c("luckytrip10","¡Sí, jugaré un golpe de suerte!");
+c("sofakiss1","No, no usaré un golpe de suerte.");}
+else
+{c("sofakiss1","No me quedan golpes de suerte.");} }}
 
 function
 sofakiss1()
@@ -6333,6 +6422,7 @@ var sofaDrinkBoost = 0;
 var sofaBreastsDone = 0;
 var sofaArm2Done = 0;
 var sofaLegsStage = 0;
+var sofaDressOpened = 0;
 var sofaPeeAskedDone = 0;
 var standingBottomDone = 0;
 var standingBreastsDone = 0;
@@ -6348,7 +6438,6 @@ else
 {s("<LI>Vuelves con un vaso de agua. Ella da un par de sorbos educados, lo deja a un lado y te vuelve a atraer hacia sí.");}
 proc += 40;
 cuddleUp();
-sitting_desp()
 c("sofasat1","¡Salud!"); }
 else if (blad > 760)
 {if (sofaloop % 2 == 1)
@@ -6357,7 +6446,6 @@ else
 {s("<LI>Traes las bebidas: vino para ti, agua para ella. Ella dice «¡Salud!» y da unos sorbos.");}
 proc += 60;
 cuddleUp();
-sitting_desp()
 c("sofasat1","¡Salud!"); }
 else
 {if (sofaloop % 3 == 1)
@@ -6437,33 +6525,48 @@ s("<LI>DIANE: <EM>(algo entrecortada)</EM> ¿Has disfrutado de hoy?");}
 else
 {s("<LI>Diane está recostada contra ti, apretando los muslos de vez en cuando sin parecer darse cuenta. Sientes sus pechos a través de la tela de su vestido estampado en blanco y negro, y metes una mano entre los botones del corpiño para tocarlos a través de su sujetador de encaje.");
 s("<LI>DIANE: ¿Has disfrutado de hoy?");}
-s("<LI>Por supuesto que sí, y se lo dices. Le desabrochas los dos botones de arriba del vestido y pasas los dedos alrededor de su sujetador, tratando de no fijarte en que sigue apretando los muslos.");}
+if (!sofaDressOpened)
+{s("<LI>Por supuesto que sí, y se lo dices. Le desabrochas los dos botones de arriba del vestido y pasas los dedos alrededor de su sujetador, tratando de no fijarte en que sigue apretando los muslos."); sofaDressOpened = 1;}
+else
+{s("<LI>Por supuesto que sí, y se lo dices. El vestido ya está desabrochado. Vuelves a meter la mano y pasas los dedos alrededor de su sujetador, tratando de no fijarte en que sigue apretando los muslos.");}}
 else if (blad > 760)
 {if (sofaloop % 2 == 1)
 {s("<LI>Diane te sonríe desde el sofá, un poco más inquieta que antes. Sientes sus pechos a través de la tela de su vestido estampado en blanco y negro y metes una mano entre los botones del corpiño para tocarlos a través de su sujetador de encaje.");}
 else
 {s("<LI>Diane te sonríe desde el sofá, cambiando de postura de vez en cuando. Sientes sus pechos a través de la tela de su vestido estampado en blanco y negro y metes una mano entre los botones del corpiño para tocarlos a través de su sujetador de encaje.");}
 s("<LI>DIANE: ¿Has disfrutado de hoy?");
-s("<LI>Por supuesto que sí, y se lo dices, desabrochando los dos botones de arriba de su vestido. Pasas los dedos alrededor de su sujetador.");}
+if (!sofaDressOpened)
+{s("<LI>Por supuesto que sí, y se lo dices, desabrochando los dos botones de arriba de su vestido. Pasas los dedos alrededor de su sujetador."); sofaDressOpened = 1;}
+else
+{s("<LI>Por supuesto que sí, y se lo dices. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.");}}
 else
 {if (sofaloop % 3 == 1)
 {s("<LI>Diane te sonríe desde el sofá. Vuelves a sentir sus pechos a través de la tela de su vestido estampado en blanco y negro, y tu mano regresa entre los botones del corpiño para tocarlos a través de su sujetador de encaje.");
 s("<LI>DIANE: Qué gusto.");
-s("<LI>Murmuras que sí, desabrochando los dos botones de arriba de su vestido, pasando los dedos alrededor de su sujetador.");}
+if (!sofaDressOpened)
+{s("<LI>Murmuras que sí, desabrochando los dos botones de arriba de su vestido, pasando los dedos alrededor de su sujetador."); sofaDressOpened = 1;}
+else
+{s("<LI>Murmuras que sí. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.");}}
 else if (sofaloop % 3 == 2)
 {s("<LI>Diane sigue sonriéndote, tumbada, dejándote continuar. Sientes sus pechos a través de la tela de su vestido estampado en blanco y negro, y tu mano vuelve entre los botones del corpiño para tocarlos a través de su sujetador de encaje.");
 s("<LI>DIANE: Se te da bien esto.");
-s("<LI>Sonríes y le desabrochas un poco más el vestido, pasando los dedos alrededor de su sujetador.");}
+if (!sofaDressOpened)
+{s("<LI>Sonríes y le desabrochas un poco más el vestido, pasando los dedos alrededor de su sujetador."); sofaDressOpened = 1;}
+else
+{s("<LI>Sonríes. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.");}}
 else
 {s("<LI>Diane te sonríe desde abajo, tumbada en el sofá. Sientes sus pechos a través de la tela de su vestido estampado en blanco y negro. Consigues meter una mano entre los botones del corpiño y tocarle los pechos a través de su sujetador de encaje.");
 s("<LI>DIANE: ¿Has disfrutado de hoy?");
-s("<LI>Por supuesto que sí, y se lo dices, desabrochando los dos botones de arriba de su vestido. Pasas los dedos alrededor de su sujetador.");}}
+if (!sofaDressOpened)
+{s("<LI>Por supuesto que sí, y se lo dices, desabrochando los dos botones de arriba de su vestido. Pasas los dedos alrededor de su sujetador."); sofaDressOpened = 1;}
+else
+{s("<LI>Por supuesto que sí, y se lo dices. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.");}}}
 if (gopee)
 {s("<LI>TÚ: ¿Y tú lo has disfrutado?");
 s("<LI>DIANE: Por supuesto, todo. <EM>(Piensa un momento y luego sonríe con pesar)</EM> Excepto esa parte junto al río cuando tuve que ir a hacer pis. Fue taaaan vergonzoso.");
 s("<LI>TÚ: ¿Tenías muchas ganas?");
 s("<LI>DIANE: Estaba a punto de reventar. Llevaba con ganas de ir desde que salimos del teatro. Me hubiera cargado a Molly cuando propuso tomar cafés en ese puesto.");
-s("<LI>Deslizas la mano por su cuerpo, palpando sus curvas a través del vestido, hasta llegar al borde de la falda. Metes la mano por debajo y la subes hasta tocar la frescura de su muslo.");
+s("<LI>Deslizas la mano por su cuerpo, palpando sus curvas a través del vestido, hasta llegar al dobladillo del vestido. Metes la mano por debajo y la subes hasta tocar la frescura de su muslo.");
 c("sofatalk","Ella te sonríe desde abajo.");}
 else
 {if (blad > 860)
@@ -6488,7 +6591,10 @@ sofaarm()
 {
 s("<LI>Estás sentado en el sofá. Le pasas un brazo por encima a Diane y ella se recuesta hacia ti. Charláis animadamente.");
 if (blad >700)
-{s("<LI>Ella se echa del todo hacia atrás contra ti y pone los pies en el sofá. Es genial, porque puedes empezar a tocarle los pechos por encima de la blusa sin problema. Parece contenta de que lo hagas, pero en cuanto intentas desabrochar un botón se aparta y vuelve a sentarse erguida.");}
+{if (saturday)
+{s("<LI>Ella se echa del todo hacia atrás contra ti y pone los pies en el sofá. Es genial, porque puedes empezar a tocarle los pechos por encima del vestido sin problema. Parece contenta de que lo hagas, pero en cuanto intentas desabrochar un botón se aparta y vuelve a sentarse erguida.");}
+else
+{s("<LI>Ella se echa del todo hacia atrás contra ti y pone los pies en el sofá. Es genial, porque puedes empezar a tocarle los pechos por encima de la blusa sin problema. Parece contenta de que lo hagas, pero en cuanto intentas desabrochar un botón se aparta y vuelve a sentarse erguida.");}}
 else
 {s("<LI>Ella apoya la cabeza en tu hombro, y tú no puedes apartar los ojos de su escote, con parte del sujetador visible por el cuello de la blusa."); }
 s("<LI>Te preguntas si le apetecería otra copa.");
@@ -6550,7 +6656,10 @@ s("<LI>Le das un beso.");
 s("<LI>Luego se levanta y va a buscar su bolso. Saca un pañuelo y vuelve a sentarse. Seguís hablando todo el rato, pero ella se ha quedado un poco callada.");
 c("sofadesp","Ella no deja de mirar hacia la puerta."); }
 else
-{s("<LI>Diane se apoya en ti. Su falda se ha subido, dejando ver la combinación. Te gustaría explorar un poco más.");
+{if (saturday)
+{s("<LI>Diane se apoya en ti. El dobladillo del vestido se le ha subido, dejando ver las piernas desnudas. Te gustaría explorar un poco más.");}
+else
+{s("<LI>Diane se apoya en ti. Su falda se ha subido, dejando ver la combinación. Te gustaría explorar un poco más.");}
 sitting_desp()
 s("<LI>También te gustaría que se le fueran las ganas de hacer pis.");
 s("<LI>¿Qué tiene prioridad?");
@@ -6596,12 +6705,17 @@ s("<LI>Diane está sentada a tu lado en el sofá.");
 sitting_desp()
 s("<LI>Sube una pierna al sofá, doblada por debajo de ella. La besas.");
 s("<LI>Cambia y sube la otra pierna al sofá, doblada por debajo de ella. Le pasas un brazo por encima.");
-s("<LI>La falda se le va subiendo con los cambios de postura, dejando ver destellos de enagua.");
+if (saturday)
+{s("<LI>El dobladillo del vestido se le va subiendo con los cambios de postura, dejando ver destellos de muslo desnudo.");
+s("<LI>Puedes ver el largo de sus piernas desnudas.");
+s("<LI>Se sienta erguida de nuevo y se coloca el vestido en su sitio. Mira hacia la puerta otra vez.");}
+else
+{s("<LI>La falda se le va subiendo con los cambios de postura, dejando ver destellos de enagua.");
 if (thursday)
-{s("<LI>Puedes ver la parte oscura de la parte superior de sus medias.");}
+{s("<LI>Puedes ver la parte oscura de la parte superior de sus pantis.");}
 else
 {s("<LI>Puedes ver la parte superior de una de sus medias, con un destello de liguero blanco.");}
-s("<LI>Se sienta erguida de nuevo y se coloca la falda en su sitio. Mira hacia la puerta otra vez.");
+s("<LI>Se sienta erguida de nuevo y se coloca la falda en su sitio. Mira hacia la puerta otra vez.");}
 if (blad >900)
 {emergency()}
 else
@@ -6616,11 +6730,15 @@ s("<LI>Ella te rodea con los brazos y te da un beso.");
 s("<LI>Se gira como si mirara hacia la puerta.");
 s("<LI>Sube una pierna al sofá, doblada por debajo de ella. Le pasas un brazo por encima.");
 s("<LI>Cambia y sube la otra pierna al sofá, doblada por debajo de ella. Deslizas el brazo por su espalda, notando los tirantes del sujetador y preguntándote si podrías desabrochárselos.");
-s("<LI>Gira las piernas de nuevo y queda sentada, pero la falda se le queda un poco enredada.");
-if (thursday)
-{s("<LI>Puedes ver la parte oscura de la parte superior de sus medias.");}
+if (saturday)
+{s("<LI>Gira las piernas de nuevo y queda sentada, pero la falda del vestido se le queda un poco enredada.");
+s("<LI>Esta vez puedes ver más de su muslo desnudo.");}
 else
-{s("<LI>Puedes ver la parte superior de una de sus medias, con un destello de liguero blanco.");}
+{s("<LI>Gira las piernas de nuevo y queda sentada, pero la falda se le queda un poco enredada.");
+if (thursday)
+{s("<LI>Puedes ver la parte oscura de la parte superior de sus pantis.");}
+else
+{s("<LI>Puedes ver la parte superior de una de sus medias, con un destello de liguero blanco.");}}
 s("<LI>Se sienta erguida de nuevo y se coloca la falda en su sitio. Mira hacia la puerta otra vez.");
 c("sofadesp2","No puede estarse quieta."); }
 
@@ -6669,7 +6787,10 @@ c("toiletgo","Se lo dices."); }}
 function
 sofatoilet1()
 {
-s("<LI>Ella está sentada en tu regazo. Estáis abrazados. Le pones la mano en la rodilla y la vas subiendo por debajo de la falda. Notas cómo mueve las piernas nerviosamente. Intentas colar la mano entre sus muslos, pero los tiene apretados con fuerza.");
+if (saturday)
+{s("<LI>Ella está sentada en tu regazo. Estáis abrazados. Le pones la mano en la rodilla y la vas subiendo por debajo del vestido. Notas cómo mueve las piernas nerviosamente. Intentas colar la mano entre sus muslos, pero los tiene apretados con fuerza.");}
+else
+{s("<LI>Ella está sentada en tu regazo. Estáis abrazados. Le pones la mano en la rodilla y la vas subiendo por debajo de la falda. Notas cómo mueve las piernas nerviosamente. Intentas colar la mano entre sus muslos, pero los tiene apretados con fuerza.");}
 s("<LI>TÚ: No paras de moverse, Diane.");
 s("<LI>DIANE: Es que tengo ganas de ir al baño, por eso. Acabo de decírtelo.");
 s("<LI>TÚ: Espera unos minutos.");
@@ -6858,8 +6979,11 @@ excuseme1()
 s("<LI>De pronto se incorpora y se pone en pie, sonrojándose un poco.");
 s("<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?");
 s("<LI>Se lo dices. Ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip12","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip12","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 
 function
 sofatheatre()
@@ -6868,8 +6992,11 @@ s("<LI>Seguís hablando del teatro. El problema es que habéis estado hablando d
 s("<LI>DIANE: Por cierto, ¿dónde tienes el baño?");
 s("<LI>Se lo dices y ella dice que no tardará nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?");
 s("<LI>¿O quizá simplemente tirar de ella y sentarla en tus rodillas?");
-if (luckshots >= 1) c("luckytrip12","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip12","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 
 function
 sofawork()
@@ -6917,8 +7044,11 @@ if (buycappuccino)
 {s("<LI>Dices que vas a buscar el álbum. Te levantas.");
 s("<LI>DIANE: Mientras lo buscas, me escapo un momento al baño.");
 s("<LI>Le dices dónde está y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip18","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip18","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else
 {s("<LI>TÚ: El álbum está aquí, si quieres echarle un vistazo.");
 s("<LI>Te sigue por la habitación hasta la estantería. Parece contenta de poder moverse. Se balancea de un pie al otro mientras buscas el álbum. Se inclina hacia delante, con las manos sobre las rodillas.");
@@ -7284,8 +7414,11 @@ if (buyfiltercoffee)
 {s("<LI>Dices que vas a buscar el álbum. Te levantas.");
 s("<LI>DIANE: Mientras lo buscas, me escapo un momento al baño.");
 s("<LI>Le dices dónde está y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero crees que quizá ya haya terminado. ¿Seguirá valiendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip20","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip20","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else
 {s("<LI>TÚ: El álbum está aquí, si quieres echarle un vistazo.");
 s("<LI>Te sigue por la habitación hasta la estantería. Parece contenta de poder moverse. Se balancea de un pie al otro mientras buscas el álbum. Se inclina hacia delante, con las manos sobre las rodillas.");
@@ -7333,8 +7466,11 @@ if (pinot)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: A decir verdad, antes de que nos liemos demasiado con el libro, ¿dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip181","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip181","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7489,8 +7625,11 @@ if (rioja)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: A decir verdad, antes de que nos liemos demasiado con el libro, ¿dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip201","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip201","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7504,9 +7643,15 @@ function
 stampalbum2()
 {
 s("<LI>Le enseñas tus sellos de Finlandia. Y después los de Fiyi. Le explicas cuáles son raros y cómo los conseguiste."); 
-s("<LI>Ella se inclina para ver mejor. Puedes ver perfectamente por dentro de su blusa."); 
+if (saturday)
+{s("<LI>Ella se inclina para ver mejor. Puedes ver perfectamente por dentro de su vestido.");}
+else
+{s("<LI>Ella se inclina para ver mejor. Puedes ver perfectamente por dentro de su blusa.");} 
 s("<LI>Le enseñas los sellos de Gibraltar. Hay bastantes, ya que es una de tus especialidades.");
-s("<LI>Diane vuelve a inclinarse para ver los sellos. Puedes volver a verle el escote por dentro de la blusa."); 
+if (saturday)
+{s("<LI>Diane vuelve a inclinarse para ver los sellos. Puedes volver a verle el escote por dentro del vestido.");}
+else
+{s("<LI>Diane vuelve a inclinarse para ver los sellos. Puedes volver a verle el escote por dentro de la blusa.");} 
 s("<LI>Le enseñas los sellos de Grecia. Y después los de Hungría."); 
 albumdesp()
 c("stampalbum2a","Le pasas un brazo por encima y la atraes hacia ti."); }
@@ -7518,9 +7663,14 @@ s("<LI>Le enseñas tus fotos de Crewe. Has pasado allí muchos días felices.");
 s("<LI>Le enseñas las fotos de Colonia. Tú viajaste por el Rin en tren y ella también, así que compartís recuerdos.");
 if (tuesday)
 {s("<LI>La falda se le sube y puedes ver la parte oscura en la parte superior de la media.");}
+else if (saturday)
+{s("<LI>El dobladillo del vestido se le sube, dejando ver sus preciosas piernas desnudas."); }
 else
 {s("<LI>La falda se le sube dejando ver un buen trozo de enagua de encaje."); }
-s("<LI>Ella se coloca la falda de nuevo en su sitio y se sienta con más recato, con las rodillas juntas.");
+if (saturday)
+{s("<LI>Ella se coloca el vestido de nuevo en su sitio y se sienta con más recato, con las rodillas juntas.");}
+else
+{s("<LI>Ella se coloca la falda de nuevo en su sitio y se sienta con más recato, con las rodillas juntas.");}
 s("<LI>Le enseñas las fotos de Fráncfort del Meno y de Fráncfort del Óder.");
 albumdesp()
 c("sofatrains2a","Vas pasando las páginas."); }
@@ -7530,6 +7680,8 @@ stampalbum2a()
 {
 if (tuesday)
 {s("<LI>La falda se le vuelve a subir y puedes ver bastante enagua con volantes y un poco del borde de la media.");}
+else if (saturday)
+{s("<LI>El dobladillo del vestido se le sube dejando ver un buen trozo de pierna desnuda."); }
 else
 {s("<LI>La falda se le sube dejando ver un buen trozo de pierna preciosa."); }
 s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
@@ -7537,8 +7689,11 @@ if (chardonnay)
 {s("<LI>De repente se inclina hacia delante y mira a su alrededor.");
 s("<LI>DIANE: <EM>(en un susurro)</EM> ¿Dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip182","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip182","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7552,6 +7707,8 @@ sofatrains2a()
 {
 if (tuesday)
 {s("<LI>La falda se le ha subido aún más y puedes ver bastante enagua con volantes y un poco del borde de la media.");}
+else if (saturday)
+{s("<LI>El dobladillo del vestido se le sube dejando ver un buen trozo de pierna desnuda."); }
 else
 {s("<LI>La falda se le sube dejando ver un buen trozo de pierna preciosa."); }
 s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
@@ -7559,8 +7716,11 @@ if (burgundy)
 {s("<LI>De repente se inclina hacia delante y mira a su alrededor.");
 s("<LI>DIANE: <EM>(en un susurro)</EM> ¿Dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip202","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip202","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7588,9 +7748,15 @@ function
 sofatrains3()
 {
 s("<LI>Le enseñas tus fotos de Fort William y la línea West Highland. Dice que es uno de sus viajes favoritos.");  
-s("<LI>Se inclina para mirar más de cerca. Puedes ver perfectamente el interior de su blusa. Luego cambia de posición y se sienta sobre los talones en el sofá.");
+if (saturday)
+{s("<LI>Se inclina para mirar más de cerca. Puedes ver perfectamente el interior de su vestido. Luego cambia de posición y se sienta sobre los talones en el sofá.");}
+else
+{s("<LI>Se inclina para mirar más de cerca. Puedes ver perfectamente el interior de su blusa. Luego cambia de posición y se sienta sobre los talones en el sofá.");}
 s("<LI>Le enseñas las fotos de Génova y esa línea espectacular que sube hasta las colinas. Dice que siempre ha querido viajar en ella.");
-s("<LI>Diane vuelve a inclinarse hacia delante para ver las fotos. Puedes ver perfectamente el interior de su blusa otra vez."); 
+if (saturday)
+{s("<LI>Diane vuelve a inclinarse hacia delante para ver las fotos. Puedes ver perfectamente el interior de su vestido otra vez.");}
+else
+{s("<LI>Diane vuelve a inclinarse hacia delante para ver las fotos. Puedes ver perfectamente el interior de su blusa otra vez.");} 
 if (blad >740 )
 {s("<LI>Diane sigue mirando hacia la puerta, pero luego se vuelve y finge mostrar interés en tu álbum.");}
 else
@@ -7607,8 +7773,11 @@ if (merlot)
 {s("<LI>De repente se pone de pie y mira a su alrededor. Está sonrojada.");
 s("<LI>DIANE: Tengo que ir un momento. ¿Dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip183","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip183","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante."); 
@@ -7625,8 +7794,11 @@ if (chardonnay)
 {s("<LI>De repente se pone de pie y mira a su alrededor. Está sonrojada.");
 s("<LI>DIANE: Tengo que ir un momento. ¿Dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip203","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip203","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante."); 
@@ -7676,11 +7848,15 @@ stampalbum4a()
 if (blad >900)
 {emergency()}
 else
-{s("La falda se le sube mientras os abrazáis."); 
+{if (saturday)
+{s("El dobladillo del vestido se le sube mientras os abrazáis."); }
+else
+{s("La falda se le sube mientras os abrazáis."); }
+
 if (tuesday)
 {s("<LI>Ves la parte superior de una media y el destello de un liguero blanco.");}
 else if (saturday)
-{s("<LI>Su vestido rojo de lunares le marca las piernas de maravilla."); }
+{s("<LI>Su vestido blanco y negro le marca las piernas desnudas de maravilla."); }
 else
 {s("<LI>La falda y la enagua se le suben tanto que ves la parte oscura en lo alto de sus medias.");
 s("<LI>Ojalá no llevara medias."); }
@@ -7689,8 +7865,11 @@ if (burgundy)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip184","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip184","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7705,11 +7884,15 @@ sofatrains4a()
 if (blad >900)
 {emergency()}
 else
-{s("La falda se le sube mientras os abrazáis."); 
+{if (saturday)
+{s("El dobladillo del vestido se le sube mientras os abrazáis."); }
+else
+{s("La falda se le sube mientras os abrazáis."); }
+
 if (tuesday)
 {s("<LI>Ves la parte superior de una media y el destello de un liguero blanco.");}
 else if (saturday)
-{s("<LI>Su vestido rojo de lunares le marca las piernas de maravilla."); }
+{s("<LI>Su vestido blanco y negro le marca las piernas desnudas de maravilla."); }
 else
 {s("<LI>La falda y la enagua se le suben tanto que ves la parte oscura en lo alto de sus medias.");
 s("<LI>Ojalá no llevara medias."); }
@@ -7718,8 +7901,11 @@ if (pinot)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip204","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip204","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7763,8 +7949,10 @@ s("<LI>Le enseñas las fotos de Rotherham y Róterdam.");
 s("<LI>Diane vuelve a cambiar de posición para sentarse bien en el sofá. Al hacerlo levanta una rodilla y puedes verle perfectamente debajo de la falda.");
 if (tuesday)
 {s("<LI>Ves la parte superior de una media y un liguero blanco, y alcanzas a ver sus bragas rosas.");}
+else if (saturday)
+{s("<LI>Alcanzas a ver sus bragas blancas y el largo de su muslo desnudo."); }
 else
-{s("<LI>Ojalá no llevara medias."); }
+{s("<LI>Ojalá no llevara pantis."); }
 s("<LI>Le enseñas algunas fotos tomadas en el Severn Valley Railway."); 
 albumdesp()
 c("sofatrains5a","Le das un beso."); }
@@ -7772,14 +7960,20 @@ c("sofatrains5a","Le das un beso."); }
 function
 stampalbum5a()
 {
-s("<LI>Se alisa el vestido."); 
+if (saturday)
+{s("<LI>Se alisa el vestido.");}
+else
+{s("<LI>Se alisa la falda.");} 
 s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
 if (riesling)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: Lo siento, pero necesito ir al baño. ¿Dónde está?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip185","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip185","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7791,14 +7985,20 @@ c("stampalbum6","Sigues adelante."); }}
 function
 sofatrains5a()
 {
-s("<LI>Se alisa el vestido."); 
+if (saturday)
+{s("<LI>Se alisa el vestido.");}
+else
+{s("<LI>Se alisa la falda.");} 
 s("<LI>Ella sonríe pero cambia de postura otra vez, sentándose más erguida.");
 if (merlot)
 {s("<LI>De repente se pone de pie y mira a su alrededor.");
 s("<LI>DIANE: Lo siento, pero de verdad que tengo que ir al baño. ¿Dónde está?");
 s("<LI>Se lo dices y ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
-if (luckshots >= 1) c("luckytrip205","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte."); }
+if (luckshots >= 1)
+{c("luckytrip205","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");} }
 else 
 {s("TÚ: Espero que no te estés aburriendo, ¿verdad?");
 s("DIANE: Oh, no, es muy interesante.");
@@ -7842,8 +8042,11 @@ albumdesp()
 if (rioja)
 {s("<LI>Ella se levanta de repente, sonrojada.");
 s("<LI>DIANE: Lo siento, de verdad tengo que irme ya. ¿Dónde está el baño?");
-if (luckshots >= 1) c("luckytrip206","Sí, usaré un golpe de suerte.");
-c("toiletgo","No me quedan golpes de suerte.");}
+if (luckshots >= 1)
+{c("luckytrip206","Sí, usaré un golpe de suerte.");
+c("toiletgo","No, no usaré un golpe de suerte.");}
+else
+{c("toiletgo","No me quedan golpes de suerte.");}}
 else
 {c("sofatrains7","Le dices que solo quedan un par de páginas más.");} }}
 
@@ -7893,6 +8096,8 @@ sofatrains7()
 s("<LI>Le muestras tus fotos de York y del Museo del Ferrocarril. Ella dice que estuvo allí la semana pasada.");  
 if (tuesday)
 {s("<LI>Extiendes la mano libre y la posas en su rodilla. Vas subiendo, por debajo de su falda, hasta encontrar la parte superior de sus medias y la deliciosa suavidad de su pierna más allá. El elástico rígido de sus ligueros ofrece un contraste aún más delicioso.");}
+else if (saturday)
+{s("<LI>Extiendes la mano libre y la posas en su rodilla. Exploras debajo del vestido, a mitad de camino por sus preciosas piernas desnudas."); }
 else
 {s("<LI>Extiendes la mano libre y la posas en su rodilla. Exploras bajo su falda, a mitad de camino por sus preciosas piernas. El fino tejido de su enagua roza tu mano."); }
 s("<LI>Incluso mientras las tocas, notas que sus piernas no paran de moverse.");
@@ -7907,7 +8112,10 @@ function
 stampalbum8()
 {
 s("<LI>Diane ha salido disparada al baño. Estaba claro que tenía muchísimas ganas de ir y ya no podía esperar más.");
-s("<LI>Te la imaginas agarrándose la entrepierna a través de la falda en cuanto ve el inodoro, luchando por aguantar el tiempo justo para bajarse las bragas.");
+if (saturday)
+{s("<LI>Te la imaginas agarrándose la entrepierna a través del vestido en cuanto ve el inodoro, luchando por aguantar el tiempo justo para bajarse las bragas.");}
+else
+{s("<LI>Te la imaginas agarrándose la entrepierna a través de la falda en cuanto ve el inodoro, luchando por aguantar el tiempo justo para bajarse las bragas.");}
 s("<LI>Se acerca la una y ya es hora de que se vaya de todos modos. ¡Aunque ojalá pudiera quedarse un poco más!"); 
 if (blad > 850 )
 {s("<LI>Tarda bastante en volver.");
@@ -7942,13 +8150,19 @@ function
 legsz()
 {
 s("<LI>Le acarcias el trasero por última vez. La atraes hacia ti.");
-s("<LI>Tu mano baja por sus muslos hasta el borde de su falda. La besas.");
+if (saturday)
+{s("<LI>Tu mano baja por sus muslos hasta el dobladillo de su vestido. La besas.");}
+else
+{s("<LI>Tu mano baja por sus muslos hasta el borde de su falda. La besas.");}
 s("<LI>Tu mano sigue bajando, rozando su pierna.");
 if (thursday)
 {s("<LI>Te das cuenta de que se ha quitado las medias. Qué maravilla sentir por fin la suavidad de su pierna.");}
 else
 {s("<LI>Tocas la suavidad de su pierna."); }
-s("<LI>Tu mano sube despacio, por debajo de su falda, por última vez.");
+if (saturday)
+{s("<LI>Tu mano sube despacio, por debajo de su vestido, por última vez.");}
+else
+{s("<LI>Tu mano sube despacio, por debajo de su falda, por última vez.");}
 s("<LI>DIANE: De verdad que tengo que irme.");
 c("legsz1","Ella intenta soltarse."); }
 
@@ -7970,7 +8184,10 @@ c("legsz2","Esperas una respuesta."); }
 function
 legsz2()
 {
-s("<LI>Diane no dice nada; está muerta de vergüenza. Tu mano sigue bajo su falda y puedes notar que la entrepierna de sus bragas está completamente empapada. Te gustaría verlas, pero sabes que ella no quiere eso. Al cabo de un momento retiras la mano.");
+if (saturday)
+{s("<LI>Diane no dice nada; está muerta de vergüenza. Tu mano sigue bajo su vestido y puedes notar que la entrepierna de sus bragas está completamente empapada. Te gustaría verlas, pero sabes que ella no quiere eso. Al cabo de un momento retiras la mano.");}
+else
+{s("<LI>Diane no dice nada; está muerta de vergüenza. Tu mano sigue bajo su falda y puedes notar que la entrepierna de sus bragas está completamente empapada. Te gustaría verlas, pero sabes que ella no quiere eso. Al cabo de un momento retiras la mano.");}
 s("<LI>Ha dejado de forcejear. La estrechas contra ti y le acarcias el pelo. Le preguntas qué ha pasado.");
 s("<LI>DIANE: <EM>(casi en un susurro)</EM> Llegué al baño, pero… pero no me dio tiempo a bajarme las bragas. Tenía unas ganas horribles. Llevaba una eternidad aguantando. Con toda esa cerveza y el café y… y tú sin dejarme ir al baño… me has dejado en una situación muy violenta.");
 s("<LI>TÚ: Ya lo sé, es culpa mía. Lo siento. Pero, Diane, no tienes por qué avergonzarte; para mí es muy excitante.");
@@ -8751,14 +8968,20 @@ else
 {s("<LI>Llegáis a una zona más apartada. Os detenéis y os abrazáis, pero ella se separa enseguida."); }
 else
 {s("<LI>Llegáis a una zona más apartada. Os detenéis y os abrazáis. Os besáis, tu mano en su trasero, atrayéndola hacia ti, y la mano de ella se desliza hacia abajo acercándote también a ella."); getinti(5);
-s("<LI>Deslizas una mano por delante, rozándole los pechos sobre la blusa.");
+if (saturday)
+{s("<LI>Deslizas una mano por delante, rozándole los pechos sobre el vestido.");}
+else
+{s("<LI>Deslizas una mano por delante, rozándole los pechos sobre la blusa.");}
 if (blad > 800)
 {s("<LI>Incluso mientras os besáis, ella va bailando sobre sus pies. Se aparta jadeando, «Es tarde. Tengo que llegar a casa.»"); }
 else if (blad > 670)
 {s("<LI>Puedes notar cómo se remueve.");
 s("<LI>DIANE: Vamos, que se está haciendo tarde."); } 
 else
-{s("<LI>Ella desliza una mano por delante, con los dedos buscando hueco entre los botones de tu camisa. Desabrocha uno y te acaricia el pecho. Tú desabrochas uno de los botones de su blusa y metes la mano dentro, sintiendo sus pechos a través del sujetador de encaje."); getinti(15); }}
+{if (saturday)
+{s("<LI>Ella desliza una mano por delante, con los dedos buscando hueco entre los botones de tu camisa. Desabrocha uno y te acaricia el pecho. Tú desabrochas uno de los botones de su vestido y metes la mano dentro, sintiendo sus pechos a través del sujetador de encaje."); getinti(15); }
+else
+{s("<LI>Ella desliza una mano por delante, con los dedos buscando hueco entre los botones de tu camisa. Desabrocha uno y te acaricia el pecho. Tú desabrochas uno de los botones de su blusa y metes la mano dentro, sintiendo sus pechos a través del sujetador de encaje."); getinti(15); }}}
 c("walkhome3","Sigues caminando."); }}
 
 function
@@ -9331,7 +9554,10 @@ c("gameover","¡Bueno, qué se le va a hacer!"); }
 function
 sofasnog2()
 {
-s("<LI>DIANE: No debo quedarme demasiado. Mañana tengo que trabajar.");
+if (saturday)
+{s("<LI>DIANE: No debo quedarme demasiado tarde. Ha sido un día largo.");}
+else
+{s("<LI>DIANE: No debo quedarme demasiado. Mañana tengo que trabajar.");}
 sitting_desp() 
 s("<LI>Tiene la cabeza apoyada en tu hombro. Tienes un brazo alrededor de ella y puedes rozarle el pecho.");
 s("<LI>Te giras hacia ella, la besas, de modo que tu otra mano queda libre para explorarla.");
@@ -9360,9 +9586,8 @@ blad += 6; getinti(1);
 c("decisions","¿Y ahora qué?"); return;}
 s("<LI>Diane está acurrucada contra ti en el sofá. Mientras os besáis, tu mano se desliza hasta su rodilla."); 
 s("<LI>Subes la mano por su muslo, por encima de la ropa.");
-if (!tuesday)
-{sofaLegsStage = 2;
-c("decisions","¿Y ahora qué?"); return;}
+if (tuesday)
+{
 if (sofaLegsStage === 0)
 {s("<LI>Puedes notar el enganche de un liguero bajo su falda.");
 s("<LI>Ella sabe que los has descubierto y se acerca más a ti.");
@@ -9373,11 +9598,34 @@ else
 {s("<LI>La vuelves a besar. Esta vez tu mano encuentra el enganche del liguero más fácilmente.");
 sofaLegsStage = 2;
 c("sofalegs2","Volvéis a besaros."); }}
+else
+{
+if (sofaLegsStage === 0)
+{if (saturday)
+{s("<LI>Metes la mano bajo el dobladillo de su vestido, sobre la piel cálida y desnuda de su muslo.");
+s("<LI>Ella sabe lo que haces y se acurruca más cerca.");}
+else
+{s("<LI>Metes la mano bajo su falda, sobre el nailon liso de sus pantis.");
+s("<LI>Ella sabe lo que haces y se acurruca más cerca.");}
+sofaLegsStage = 1;
+c("sofalegs1","Volvéis a besaros."); }
+else
+{if (saturday)
+{s("<LI>La vuelves a besar. Esta vez tu mano encuentra el camino más fácilmente, bajo el vestido y por su muslo desnudo.");}
+else
+{s("<LI>La vuelves a besar. Esta vez tu mano encuentra el camino más fácilmente, bajo la falda y sobre los pantis.");}
+sofaLegsStage = 2;
+c("sofalegs2","Volvéis a besaros."); }}}
 
 function
 sofalegs1()
 {
-s("<LI>Subes la mano por su pierna, por encima del borde de la media, con el liguero contrastando con la suavidad de su muslo.");
+if (tuesday)
+{s("<LI>Subes la mano por su pierna, por encima del borde de la media, con el liguero contrastando con la suavidad de su muslo.");}
+else if (saturday)
+{s("<LI>Subes la mano por su muslo desnudo, bajo el vestido.");}
+else
+{s("<LI>Subes la mano por su muslo, bajo la falda y sobre los pantis.");}
 if (blad > 650 && blad <= 750)
 {s("<LI>Puedes notar que aprieta los muslos."); }
 else if (blad >750 )
@@ -9404,8 +9652,15 @@ function
 sofalegs2a()
 {
 sofaLegsStage = 2;
-s("<LI>Le acaricias los muslos, deslizando los dedos por debajo del liguero.");
-s("<LI>Metes una mano por la cinturilla de sus bragas y notas unos suaves mechones de vello púbico.");
+if (tuesday)
+{s("<LI>Le acaricias los muslos, deslizando los dedos por debajo del liguero.");
+s("<LI>Metes una mano por la cinturilla de sus bragas y notas unos suaves mechones de vello púbico.");}
+else if (saturday)
+{s("<LI>Le acaricias los muslos desnudos bajo el vestido.");
+s("<LI>Metes una mano por la cinturilla de sus bragas y notas unos suaves mechones de vello púbico.");}
+else
+{s("<LI>Le acaricias los muslos a través de los pantis, hasta el borde de las bragas.");
+s("<LI>Te deja quedarte ahí, pero no más allá.");}
 c("suddenend","—y luego—"); }
 
 function
@@ -9477,7 +9732,10 @@ function
 sofabreasts()
 {
 sofaBreastsDone = 1;
-s("<LI>Mientras la besas, tu mano libre empieza a explorarle los pechos. Le desabrochas uno de los botones de la blusa y metes la mano dentro.");
+if (saturday)
+{s("<LI>Mientras la besas, tu mano libre empieza a explorarle los pechos. Le desabrochas uno de los botones del vestido y metes la mano dentro.");}
+else
+{s("<LI>Mientras la besas, tu mano libre empieza a explorarle los pechos. Le desabrochas uno de los botones de la blusa y metes la mano dentro.");}
 s("<LI>Sientes la suavidad de sus pechos a través del sujetador de encaje. Te preguntas si podrías quitárselo.");
 c("sofabreasts0","Sí, me gustaría desabrocharle el sujetador.");
 c("sofabreasts3","No, no le desabrocharé el sujetador todavía."); }
@@ -10908,7 +11166,7 @@ else if (mollyblad < 725)
 s("<EM><SPAN style='color: #0000FF'>Molly se ha quedado muy callada y se está mordiendo el labio.</SPAN></EM>"); 
 else if (mollyblad < 750)
 {if (saturday)
-s("<SPAN style='color: #0000FF'>¡Molly se está meando! Se mueve hacia delante y hacia atrás en el asiento, y el vestido se le sube una y otra vez dejando ver sus preciosas piernas. No puede estarse quieta. Le falta un poco el aliento. Se coloca el vestido de nuevo y se inclina hacia delante con las manos en las rodillas.</SPAN>");
+s("<SPAN style='color: #0000FF'>¡Molly se está meando! Se mueve hacia delante y hacia atrás en el asiento. No puede estarse quieta. Le falta un poco el aliento. Se inclina hacia delante con las manos en las rodillas.</SPAN>");
 else 
 s("<SPAN style='color: #0000FF'>¡Molly se está meando! Se mueve hacia delante y hacia atrás en el asiento, y la falda se le sube una y otra vez dejando ver destellos de su enagua de encaje. No puede estarse quieta. Le falta un poco el aliento. Se coloca la falda de nuevo y se inclina hacia delante con las manos en las rodillas.</SPAN>"); }
 else if (mollyblad < 800)

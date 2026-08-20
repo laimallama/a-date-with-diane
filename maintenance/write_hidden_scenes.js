@@ -314,6 +314,33 @@ function buildDefinitions(routes) {
   // Non-Chardonnay bus wait: brunette slips off alone; luckshot follow (exclusive with leaf 16).
   const luckshotBrunetteBus = generalTags.slice(0, generalTags.indexOf("busqueue6") + 1);
 
+  // Spaghetti bolognese is the flag that lets the bus leave while you spy. Swapping
+  // only the meal tags is not enough: higher bladder at the riverside toilets forces
+  // the open-toilet pee, which resets Diane, so the later Pavilion / bus-queue
+  // choices also change. This is a walked Tuesday route that still reaches busqueue6
+  // with spagbol set and a luckshot left.
+  const luckshotBrunetteDebbieBus = [
+    "start1a", "start1b", "tuesdaydate", "start2", "buysth", "buywater", "buysth",
+    "gothere", "winelist", "buyrioja", "eatmeal", "buyspagbol", "eatmeal2",
+    "eatmeal2a", "eatmeal2b", "eatmeal2c", "eatmeal2d", "eatmeal7", "eatmeal7a",
+    "puddings", "buypannacotta", "eatmeal7b", "filtercoffee", "eatmeal7bb",
+    "gotheatre", "theatreask", "gotoo", "theatre1", "theatre2", "theatre3c",
+    "theatre4", "theatre5", "theatre6", "theatre7", "holdhand1", "theatre8",
+    "theatre9", "theatre10", "interval", "interval1", "askloo", "interval2",
+    "interval3", "act2", "act2a", "act2b", "leanclose2", "act2c", "act2d",
+    "act2e", "act2f", "act2fa", "act2g", "act2h", "leavetheatre", "leavetheatre1",
+    "stagedoor", "stagedoor1", "stagedoor2", "stagedoor3", "stagedoor4",
+    "stagedoor5a", "choosewalk", "riverside2", "riverside3", "riverside3aa",
+    "riverside4", "sitonbench", "riverside5", "riverside6", "riverside7",
+    "riverside8", "riverside9", "riverside10", "riverside11", "riverside12",
+    "riverside13a", "riverside14", "toiletopen", "toiletopen1c", "toiletopen1c1",
+    "goforpee", "goforpee1", "riverside15", "riverside16", "pavilion",
+    "pavilion2", "pavilion3", "pavilion4", "pavilion5", "pavilion5a", "pavilion6",
+    "pavilion7", "buywaterpav", "pavilion8", "pavilion9", "pavilion9a",
+    "busqueue", "busqueue1", "busqueue2", "busqueue3", "busqueue4", "busqueue5",
+    "busqueue6",
+  ];
+
   const hiddenCamera = [
     "start1a", "start1b", "thursdaydate", "start2", "gothere", "flirt_l",
     "winelist", "buyrioja", "eatmeal", "buylasagne", "eatmeal4", "eatmeal4a",
@@ -470,6 +497,16 @@ function buildDefinitions(routes) {
         tw: "9b：公車站幸運一擊褐髮女生基礎路線"
       },
       tags: luckshotBrunetteBus,
+    },
+    luckshotBrunetteDebbieBus: {
+      name: {
+        en: "9c: Bus queue luckshot brunette, bus leaves",
+        cn: "9c：公交站幸运一击褐发女生，公车先走",
+        es: "9c: Base de la morena con suerte, el autobús se va",
+        fr: "9c : Base de la brune avec chance, le bus part",
+        tw: "9c：公車站幸運一擊褐髮女生，公車先走"
+      },
+      tags: luckshotBrunetteDebbieBus,
     },
     camperDecision: {
       name: {
@@ -815,11 +852,11 @@ function buildDefinitions(routes) {
       stem: "10_public_toilet_spyhole",
       base: "riversideEmergency",
       title: {
-        en: "The Public Toilet Spyhole and Discarded Knickers",
-        cn: "公共厕所里的偷窥孔和遗落的内裤",
-        es: "La mirilla del baño público y las bragas abandonadas",
-        fr: "Le judas des toilettes publiques et la culotte abandonnée",
-        tw: "公共廁所裡的偷窺孔和遺落的內褲"
+        en: "Discarded Knickers",
+        cn: "遗落的内裤",
+        es: "Las bragas abandonadas",
+        fr: "La culotte abandonnée",
+        tw: "遺落的內褲"
       },
       entry: {
         en: "This begins when you send Diane towards the riverside public toilets instead of finding bushes.",
@@ -848,11 +885,11 @@ function buildDefinitions(routes) {
       stem: "11_public_toilet_spyhole_stockings",
     base: "openPublicToiletSpyhole",
     title: {
-      en: "The Public Toilet Spyhole and Diane's Stockings",
-      cn: "公共厕所里的偷窥孔和黛安的丝袜",
-      es: "La mirilla del baño público y las medias de Diane",
-      fr: "Le judas des toilettes publiques et les bas de Diane",
-      tw: "公共廁所裡的偷窺孔和黛安的絲襪"
+      en: "Diane's Stockings",
+      cn: "黛安的丝袜",
+      es: "Las medias de Diane",
+      fr: "Les bas de Diane",
+      tw: "黛安的絲襪"
     },
       entry: {
         en: "This begins on the Tuesday riverside walk, when the public toilets are still open and Diane goes in before she is at her absolute limit.",
@@ -881,11 +918,11 @@ function buildDefinitions(routes) {
       stem: "12_closed_toilet_building_lookout",
       base: "riversideUrinal",
       title: {
-        en: "Diane Pees Behind the Closed Toilet Building",
-        cn: "黛安在关门的厕所后面小便",
-        es: "Diane orina detrás del baño cerrado",
-        fr: "Diane fait pipi derrière les toilettes fermées",
-        tw: "黛安在關門的廁所後面尿尿"
+        en: "Diane Pees Behind the Building",
+        cn: "黛安在建筑后面小便",
+        es: "Diane orina detrás del edificio",
+        fr: "Diane fait pipi derrière le bâtiment",
+        tw: "黛安在建築後面尿尿"
       },
       entry: {
         en: "This is a Saturday branch at the riverside public toilets, after the caretaker has just locked up.",
@@ -914,11 +951,11 @@ function buildDefinitions(routes) {
       stem: "13_closed_toilet_building_together",
       base: "riversideUrinal",
       title: {
-        en: "Taking Turns Peeing Behind the Closed Toilet Building",
-        cn: "和黛安轮流在关门的厕所后面小便",
-        es: "Turnarse a hacer pis detrás del baño cerrado",
-        fr: "Se relayer pour faire pipi derrière les toilettes fermées",
-        tw: "和黛安輪流在關門的廁所後面尿尿"
+        en: "Taking Turns Peeing Behind the Building",
+        cn: "轮流在建筑后面小便",
+        es: "Turnarse para hacer pis detrás del edificio",
+        fr: "Se relayer pour faire pipi derrière le bâtiment",
+        tw: "輪流在建築後面尿尿"
       },
       entry: {
         en: "This uses the same Saturday closed-toilet decision point, but you tell Diane you need to go too.",
@@ -947,11 +984,11 @@ function buildDefinitions(routes) {
       stem: "14_closed_toilet_building_bad_choice",
       base: "riversideUrinal",
       title: {
-        en: "Asking Diane to Hold On at the Closed Toilet",
-        cn: "在关门的厕所前让黛安继续憋着",
-        es: "Pedirle a Diane que aguante en el baño cerrado",
-        fr: "Demander à Diane de tenir devant les toilettes fermées",
-        tw: "在關門的廁所前讓黛安繼續憋著"
+        en: "Asking Diane to Hold On",
+        cn: "让黛安继续憋着",
+        es: "Pedirle a Diane que aguante",
+        fr: "Demander à Diane de tenir",
+        tw: "讓黛安繼續憋著"
       },
       entry: {
         en: "This uses the same Saturday closed-toilet decision point, but you choose the selfish option.",
@@ -1043,6 +1080,39 @@ function buildDefinitions(routes) {
       tags: ["luckytrip7", "carparkalone", "carpark2", "carpark3"],
     },
     {
+      stem: "28b_luckshot_brunette_debbie",
+      base: "luckshotBrunetteDebbieBus",
+      title: {
+        en: "The Brunette Shares a Taxi with You",
+        cn: "褐发女生和你共乘出租车",
+        es: "La morena comparte un taxi contigo",
+        fr: "La brune partage un taxi avec vous",
+        tw: "褐髮女生和你共乘計程車"
+      },
+      entry: {
+        en: "Same luckshot spy as the previous scene, but dinner was spaghetti bolognese. That single flag makes the bus leave while you are in the car park. Spaghetti also changes the meal timing, so this Gallery path uses the still-open riverside toilets rather than walking past them.",
+        cn: "和上一场相同的幸运一击偷看，但晚餐点了肉酱意大利面。只要这一个标记，公车就会在你还在停车场时先走。肉酱面也会改变用餐节奏，所以这条图鉴路线会走进仍开放的河边厕所，而不是直接走过。",
+        es: "El mismo espiar con golpe de suerte que la escena anterior, pero la cena fue espaguetis a la boloñesa. Esa sola marca hace que el autobús se vaya mientras estás en el aparcamiento. Los espaguetis también cambian el ritmo de la comida, así que esta ruta de la Galería usa los baños del río que siguen abiertos, en lugar de pasar de largo.",
+        fr: "Le même espionnage avec coup de chance que la scène précédente, mais le dîner était des spaghetti bolognaise. Ce seul drapeau fait partir le bus pendant que vous êtes sur le parking. Les spaghetti changent aussi le rythme du repas, donc cette route de la Galerie utilise les toilettes du bord de rivière encore ouvertes, au lieu de passer devant.",
+        tw: "和上一場相同的幸運一擊偷看，但晚餐點了肉醬義大利麵。只要這一個標記，公車就會在你還在停車場時先走。肉醬麵也會改變用餐節奏，所以這條圖鑑路線會走進仍開放的河邊廁所，而不是直接走過。"
+      },
+      result: {
+        en: "You watch the brunette behind the camper van, then return to an empty stop. Diane has caught the bus. You share a taxi with the girl and arrange a date. This is a non-Prize game over.",
+        cn: "你在房车后面看完那个褐发女生，回到空荡荡的车站。黛安已经坐上了那班车。你和她共乘出租车，还约了下次见面。这是非奖项失败结局。",
+        es: "Ves a la morena detrás de la autocaravana y vuelves a una parada vacía. Diane ha cogido el autobús. Compartes un taxi con ella y quedáis para una cita. Es un game over sin premio.",
+        fr: "Vous regardez la brune derrière le camping-car, puis vous revenez à un arrêt vide. Diane a pris le bus. Vous partagez un taxi avec elle et convenez d'un rendez-vous. C'est un game over sans prix.",
+        tw: "你在房車後面看完那個褐髮女生，回到空蕩蕩的車站。黛安已經坐上了那班車。你和她共乘計程車，還約了下次見面。這是非獎項失敗結局。"
+      },
+      exit: {
+        en: "The route ends immediately.",
+        cn: "路线会直接结束。",
+        es: "La ruta termina inmediatamente.",
+        fr: "La route se termine immédiatement.",
+        tw: "路線會直接結束。"
+      },
+      tags: ["luckytrip7", "carparkalone", "carpark2", "gameover"],
+    },
+    {
       stem: "16_brunette_behind_camper",
       base: "soloBrunetteBus",
       title: {
@@ -1079,11 +1149,11 @@ function buildDefinitions(routes) {
       stem: "17_diane_brunette_camper_round",
       base: "camperDecision",
       title: {
-        en: "Diane and the Brunette Pee Behind the Camper Van",
-        cn: "黛安和褐发女生在房车后面撒尿",
-        es: "Diane y la morena hacen pis detrás de la autocaravana",
-        fr: "Diane et la brune font pipi derrière le camping-car",
-        tw: "黛安和褐髮女生在房車後面撒尿"
+        en: "Peeping Round the Back of the Camper Van",
+        cn: "绕到房车后面偷看",
+        es: "Espiar por detrás de la autocaravana",
+        fr: "Regarder par derrière le camping-car",
+        tw: "繞到房車後面偷看"
       },
       entry: {
         en: "This begins after Diane and the brunette both fail to find an open toilet near the bus stop.",

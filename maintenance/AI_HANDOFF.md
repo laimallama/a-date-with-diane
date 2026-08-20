@@ -17,7 +17,7 @@ Each language folder ships:
 
 There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix). Bus-home is two hidden-scene leaves: `10a` luckshot (church) and `10b` rioja (too desperate to walk her home).
 
-Gallery currently documents **15 ending leaves** and **29 hidden-scene leaves** per language (leaf counts, not top-level group rows).
+Gallery currently documents **15 ending leaves** and **30 hidden-scene leaves** per language (leaf counts, not top-level group rows).
 
 All Gallery route label sequences live inline in `write_verified_guides.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
@@ -110,7 +110,7 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 - **Bouncer (Pavilion):** **保安**. Occasional **门卫** for English *doorman* — not the toilet caretaker.
 - **Bra:** CN **文胸** throughout; TW **胸罩**. Do not mix.
 - **Miniskirt:** one word in EN (`miniskirt` / `miniskirted`), never `mini-skirt` / `mini skirt`. First clothing-list mention of the bus-queue girl is `Debbie (the brunette) wears a miniskirt.`
-- **Underwear (EN playable):** narration and clothing notes use **knickers**. Spoken idioms keep **pants** (`get my pants down`, `wet my pants`, `pants and trousers`). Do not use *panties*. Gallery leaf: *The Public Toilet Spyhole and Discarded Knickers* (transcript slug `07a_spyhole_panties` is a filename only).
+- **Underwear (EN playable):** narration and clothing notes use **knickers**. Spoken idioms keep **pants** (`get my pants down`, `wet my pants`, `pants and trousers`). Do not use *panties*. Gallery leaf: *Discarded Knickers* (transcript slug `07a_spyhole_panties` is a filename only).
 - **High bladder status:** `…两脚不停地来回挪动。` / `…兩腳不停地來回挪動。`
 - ***Can't stand still* (fidget):** CN/TW **站不定**, not **站不住** (后者偏站不稳/要垮). Keep **站不稳** only for physical unsteadiness (key in lock, *hardly stand upright*).
 - **Pee-start (`x01570`):** CN `她几乎立刻就尿了。` / TW `她幾乎立刻就尿了。` (keep 几乎/幾乎; no 开始/開始). CN connector **接着** ↔ TW **接著**.

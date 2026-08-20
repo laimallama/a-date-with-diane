@@ -22,7 +22,7 @@ Each language folder contains:
 - `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
 - `wiki_*.html` — companion setting and character articles; not playable
 
-There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **29 hidden-scene leaves** (variants inside a group each count as a leaf).
+There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **30 hidden-scene leaves** (variants inside a group each count as a leaf).
 
 The game boots on the title screen (no age gate). **Gallery** is available from there: pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**H**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**B**) restores full state. **G** / Escape open and close the Gallery. **D** toggles Dark Mode. Bilingual: **L** switches language. **1–9** select choices.
 

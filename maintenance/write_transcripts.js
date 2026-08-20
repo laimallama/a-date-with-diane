@@ -56,6 +56,7 @@ const HIDDEN_SLUGS = {
   "14_closed_toilet_building_bad_choice": "08c_closed_holdon",
   "15_riverside_gents_urinal": "08d_gents_urinal",
   "28_luckshot_brunette_camper": "09a_camper_watch",
+  "28b_luckshot_brunette_debbie": "09aa_camper_debbie",
   "16_brunette_behind_camper": "09b_camper_your_spot",
   "17_diane_brunette_camper_round": "09c_camper_diane",
   "18_diane_brunette_camper_under": "09d_camper_under",
@@ -351,8 +352,8 @@ function main() {
   if (endingLeavesEn.length !== 15) {
     throw new Error(`Expected 15 ending leaves, got ${endingLeavesEn.length}`);
   }
-  if (hiddenLeavesEn.length !== 29) {
-    throw new Error(`Expected 29 hidden leaves, got ${hiddenLeavesEn.length}`);
+  if (hiddenLeavesEn.length !== 30) {
+    throw new Error(`Expected 30 hidden leaves, got ${hiddenLeavesEn.length}`);
   }
 
   for (const leaf of endingLeavesEn) {

@@ -98,15 +98,6 @@
       "tw": "<LI>另外還有幾個安慰獎結局，你甚至有機會和阿曼達約會。"
     },
     {
-      "id": "x05009",
-      "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>",
-      "tw": "<HR>"
-    },
-    {
       "id": "x00010",
       "kind": "story",
       "en": "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.",
@@ -150,15 +141,6 @@
       "es": "<LI>Hay muchas variaciones, así que juega la partida completa varias veces. Pero los martes y jueves también encontrarás una versión más corta.",
       "fr": "<LI>Il y a beaucoup de variations, alors jouez jusqu'au bout plusieurs fois. Mais le mardi et le jeudi, vous trouverez également une version plus courte.",
       "tw": "<LI>遊戲有很多不同走向，最好從頭到尾多玩幾遍。但週二和週四也會提供較短的版本。"
-    },
-    {
-      "id": "x05010",
-      "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "tw": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>"
     },
     {
       "id": "x05011",
@@ -296,15 +278,6 @@
       "es": "<LI>SÁBADO: Diane lleva un vestido estampado en blanco y negro, casi como un vestido de verano, con bolsillos y un cinturón de cuero. Lleva un sujetador blanco de encaje y unas bragas blancas, sin combinación y con las piernas al descubierto.",
       "fr": "<LI>SAMEDI : Diane porte une robe à motifs noirs et blancs, presque comme une robe d'été, avec des poches et une ceinture en cuir. En dessous, elle porte un soutien-gorge blanc en dentelle et une culotte blanche, sans fond de robe, jambes nues.",
       "tw": "<LI>週六：黛安穿著一條黑白圖案洋裝，有點像夏裝，帶口袋，還配了一條皮腰帶。她穿著白色蕾絲胸罩和白色內褲，沒有襯裙，光著腿。"
-    },
-    {
-      "id": "x00020",
-      "kind": "story",
-      "en": "<HR>",
-      "cn": "<HR>",
-      "es": "<HR>",
-      "fr": "<HR>",
-      "tw": "<HR>"
     },
     {
       "id": "x00021",
@@ -3335,7 +3308,7 @@
     {
       "id": "x00344",
       "kind": "story",
-      "en": "<LI>YOU: I think lots of boys collect them but it sort of developed as I got to know more about them. Then I started to specialise and nowadays I just collect British empire stamps from the 1940s and '50s. The other day I bought a Rhodesian twopenny stamp from 1945 and it was great because it gave me a full set of the standard issue for that year.",
+      "en": "<LI>YOU: I think lots of boys collect them but it sort of developed as I got to know more about them. Then I started to specialise and nowadays I just collect British empire stamps from the 1940s and '50s. The other day I bought a Rhodesian twopenny stamp from 1945, and it was great because it gave me a full set of the standard issue for that year.",
       "cn": "<LI>你：很多男孩小时候都集过邮，但随着我了解得越来越多，慢慢就认真钻研起来了。后来开始专门研究某一类，现在我只收集四十至五十年代的大英帝国邮票。前几天我买到了一枚1945年的罗得西亚两便士邮票，太开心了，因为这样我就凑齐了那一年标准版的全套。",
       "es": "<LI>TÚ: Creo que muchos chicos los coleccionan, pero la cosa fue evolucionando a medida que fui aprendiendo más sobre el tema. Luego empecé a especializarme, y hoy en día solo colecciono sellos del Imperio Británico de los años 40 y 50. El otro día compré un sello de dos peniques de Rodesia de 1945, y fue genial porque me completó la serie estándar de ese año.",
       "fr": "<LI>VOUS : Je pense que beaucoup de garçons en collectionnent, mais ça s'est vraiment développé au fur et à mesure que j'en apprenais davantage. J'ai commencé à me spécialiser, et maintenant je ne collectionne plus que les timbres de l'Empire britannique des années 1940 et 1950. L'autre jour, j'ai acheté un timbre rhodésien de deux pence de 1945, et c'était formidable parce que ça me donnait la série complète de l'émission courante de cette année-là.",
@@ -3555,9 +3528,9 @@
     {
       "id": "x00368",
       "kind": "story",
-      "en": "<LI>And you are still talking about them when you finish your meal. Here eyes are alight with pleasure.",
+      "en": "<LI>And you are still talking about them when you finish your meal. Her eyes are alight with pleasure.",
       "cn": "<LI>等你们吃完饭的时候，话题还是没离开火车。她的眼睛里闪着愉快的光芒。",
-      "es": "<LI>Y seguís hablando de ellos cuando terminéis de cenar. Sus ojos brillan de placer.",
+      "es": "<LI>Y seguís hablando de ellos cuando termináis de cenar. Sus ojos brillan de placer.",
       "fr": "<LI>Et vous en parlez encore quand vous terminez votre repas. Ses yeux brillent de plaisir.",
       "tw": "<LI>等你們吃完飯，話題還是離不開火車。她眼睛裡閃著開心的光。"
     },
@@ -5368,11 +5341,11 @@
     {
       "id": "x00562",
       "kind": "story",
-      "en": "<HR><LI><SPAN style='color: #CC0033'>You were at the bus stop on the way home, late in the evening, when you noticed Diane a few places ahead of you in the queue. What caught your attention was that she was clearly dying for a pee. She was fidgeting about, walking on the spot and as the minutes passed she started pacing about, a hand deep in her trouser pocket. The only trouble was that you were desperate yourself and rather than stand and watch had to retreat into the car park for an urgent pee.</SPAN>",
-      "cn": "<HR><LI><SPAN style='color: #CC0033'>那是一个深夜，你在公交站等车回家，这时注意到黛安站在队伍前面几个位置。吸引你目光的是，她明显已经快憋坏了。她坐立不安，在原地踱步，随着时间一分一分过去，她开始来回走动，一只手深深插进裤兜里。唯一的问题是，你自己也憋得难受，根本顾不上站在那里旁观，只好溜进停车场，赶紧撒了泡尿。</SPAN>",
-      "es": "<HR><LI><SPAN style='color: #CC0033'>Estabas en la parada del autobús de camino a casa, ya entrada la noche, cuando te fijaste en Diane, unas cuantas personas por delante de ti en la cola. Lo que te llamó la atención fue que estaba claramente muerta de ganas de hacer pis. Se removía inquieta, andaba en el sitio y, conforme pasaban los minutos, empezó a ir de un lado a otro con una mano hundida en el bolsillo del pantalón. El único problema era que tú también ibas apurado y, en lugar de quedarte mirando, tuviste que escabullirte al aparcamiento para mear con urgencia.</SPAN>",
-      "fr": "<HR><LI><SPAN style='color: #CC0033'>Vous étiez à l'arrêt de bus en rentrant chez vous, tard le soir, quand vous avez remarqué Diane quelques places devant vous dans la queue. Ce qui a attiré votre attention, c'est qu'elle avait manifestement une envie pressante de faire pipi. Elle s'agitait, piétinait sur place, et au fil des minutes elle s'est mise à faire les cent pas, une main enfouie dans sa poche de pantalon. Le seul problème, c'est que vous étiez vous-même désespérément pressé, et plutôt que de rester là à la regarder, vous avez dû vous réfugier dans le parking pour un pipi d'urgence.</SPAN>",
-      "tw": "<HR><LI><SPAN style='color: #CC0033'>那是一個深夜，你在公車站等車回家，這時注意到黛安站在隊伍前面幾個位置。吸引你目光的是，她明顯已經快憋壞了。她坐立不安，在原地踱步，隨著時間一分一分過去，她開始來回走動，一隻手深深插進褲袋裡。唯一的問題是，你自己也憋得難受，根本顧不上站在那裡旁觀，只好溜進停車場，趕緊撒了泡尿。</SPAN>"
+      "en": "<LI><SPAN style='color: #CC0033'>You were at the bus stop on the way home, late in the evening, when you noticed Diane a few places ahead of you in the queue. What caught your attention was that she was clearly dying for a pee. She was fidgeting about, walking on the spot and as the minutes passed she started pacing about, a hand deep in her trouser pocket. The only trouble was that you were desperate yourself and rather than stand and watch had to retreat into the car park for an urgent pee.</SPAN>",
+      "cn": "<LI><SPAN style='color: #CC0033'>那是一个深夜，你在公交站等车回家，这时注意到黛安站在队伍前面几个位置。吸引你目光的是，她明显已经快憋坏了。她坐立不安，在原地踱步，随着时间一分一分过去，她开始来回走动，一只手深深插进裤兜里。唯一的问题是，你自己也憋得难受，根本顾不上站在那里旁观，只好溜进停车场，赶紧撒了泡尿。</SPAN>",
+      "es": "<LI><SPAN style='color: #CC0033'>Estabas en la parada del autobús de camino a casa, ya entrada la noche, cuando te fijaste en Diane, unas cuantas personas por delante de ti en la cola. Lo que te llamó la atención fue que estaba claramente muerta de ganas de hacer pis. Se removía inquieta, andaba en el sitio y, conforme pasaban los minutos, empezó a ir de un lado a otro con una mano hundida en el bolsillo del pantalón. El único problema era que tú también ibas apurado y, en lugar de quedarte mirando, tuviste que escabullirte al aparcamiento para mear con urgencia.</SPAN>",
+      "fr": "<LI><SPAN style='color: #CC0033'>Vous étiez à l'arrêt de bus en rentrant chez vous, tard le soir, quand vous avez remarqué Diane quelques places devant vous dans la queue. Ce qui a attiré votre attention, c'est qu'elle avait manifestement une envie pressante de faire pipi. Elle s'agitait, piétinait sur place, et au fil des minutes elle s'est mise à faire les cent pas, une main enfouie dans sa poche de pantalon. Le seul problème, c'est que vous étiez vous-même désespérément pressé, et plutôt que de rester là à la regarder, vous avez dû vous réfugier dans le parking pour un pipi d'urgence.</SPAN>",
+      "tw": "<LI><SPAN style='color: #CC0033'>那是一個深夜，你在公車站等車回家，這時注意到黛安站在隊伍前面幾個位置。吸引你目光的是，她明顯已經快憋壞了。她坐立不安，在原地踱步，隨著時間一分一分過去，她開始來回走動，一隻手深深插進褲袋裡。唯一的問題是，你自己也憋得難受，根本顧不上站在那裡旁觀，只好溜進停車場，趕緊撒了泡尿。</SPAN>"
     },
     {
       "id": "x00563",
@@ -5386,11 +5359,11 @@
     {
       "id": "x00564",
       "kind": "story",
-      "en": "<LI><HR>Of course, she doesn't know that you watched her having that pee!",
-      "cn": "<LI><HR>当然，她并不知道你偷看过她尿尿！",
-      "es": "<LI><HR>¡Claro que ella no sabe que la viste meando!",
-      "fr": "<LI><HR>Évidemment, elle ne sait pas que vous l'avez regardée faire pipi !",
-      "tw": "<LI><HR>當然，她並不知道你偷看過她尿尿！"
+      "en": "<LI>Of course, she doesn't know that you watched her having that pee!",
+      "cn": "<LI>当然，她并不知道你偷看过她尿尿！",
+      "es": "<LI>¡Claro que ella no sabe que la viste meando!",
+      "fr": "<LI>Évidemment, elle ne sait pas que vous l'avez regardée faire pipi !",
+      "tw": "<LI>當然，她並不知道你偷看過她尿尿！"
     },
     {
       "id": "x00565",
@@ -6019,11 +5992,11 @@
     {
       "id": "x00632",
       "kind": "story",
-      "en": "<HR><LI><SPAN style='color: #CC0033'>You think back to the time when you first saw her and you'd secretly watched her having a pee. She'd been absolutely desperate—you could tell that by the way she was shifting about at the bus stop, constantly looking anxiously around.</SPAN>",
-      "cn": "<HR><LI><SPAN style='color: #CC0033'>你想起第一次见到她时的情形——那次你曾偷偷看见她撒尿。她当时明显憋得很急——从她在公交站不停挪动脚步、焦急地四下张望就能看出来。</SPAN>",
-      "es": "<HR><LI><SPAN style='color: #CC0033'>Recuerdas la primera vez que la viste y la observaste a escondidas mientras meaba. No podía más de las ganas de hacer pis —se notaba en cómo no paraba de moverse en la parada, mirando a su alrededor con nerviosismo a cada momento.</SPAN>",
-      "fr": "<HR><LI><SPAN style='color: #CC0033'>Vous repensez à la première fois que vous l'avez vue et que vous l'aviez secrètement regardée faire pipi. Elle était au bord de craquer — ça se voyait à la façon dont elle s'agitait à l'arrêt de bus, le regard anxieux sans cesse tourné autour d'elle.</SPAN>",
-      "tw": "<HR><LI><SPAN style='color: #CC0033'>你想起第一次見到她時的情形——那次你曾偷偷看見她撒尿。她當時明顯憋得很急——從她在公車站不停挪動腳步、焦急地四下張望就能看出來。</SPAN>"
+      "en": "<LI><SPAN style='color: #CC0033'>You think back to the time when you first saw her and you'd secretly watched her having a pee. She'd been absolutely desperate—you could tell that by the way she was shifting about at the bus stop, constantly looking anxiously around.</SPAN>",
+      "cn": "<LI><SPAN style='color: #CC0033'>你想起第一次见到她时的情形——那次你曾偷偷看见她撒尿。她当时明显憋得很急——从她在公交站不停挪动脚步、焦急地四下张望就能看出来。</SPAN>",
+      "es": "<LI><SPAN style='color: #CC0033'>Recuerdas la primera vez que la viste y la observaste a escondidas mientras meaba. No podía más de las ganas de hacer pis —se notaba en cómo no paraba de moverse en la parada, mirando a su alrededor con nerviosismo a cada momento.</SPAN>",
+      "fr": "<LI><SPAN style='color: #CC0033'>Vous repensez à la première fois que vous l'avez vue et que vous l'aviez secrètement regardée faire pipi. Elle était au bord de craquer — ça se voyait à la façon dont elle s'agitait à l'arrêt de bus, le regard anxieux sans cesse tourné autour d'elle.</SPAN>",
+      "tw": "<LI><SPAN style='color: #CC0033'>你想起第一次見到她時的情形——那次你曾偷偷看見她撒尿。她當時明顯憋得很急——從她在公車站不停挪動腳步、焦急地四下張望就能看出來。</SPAN>"
     },
     {
       "id": "x00633",
@@ -6046,11 +6019,11 @@
     {
       "id": "x00635",
       "kind": "story",
-      "en": "<LI><HR>Maybe one day you'll able to ask her.",
-      "cn": "<LI><HR>也许有一天，你会有机会问她。",
-      "es": "<LI><HR>Quizá algún día puedas preguntárselo.",
-      "fr": "<LI><HR>Peut-être qu'un jour vous pourrez le lui demander.",
-      "tw": "<LI><HR>也許有一天，你會有機會問她。"
+      "en": "<LI>Maybe one day you'll be able to ask her.",
+      "cn": "<LI>也许有一天，你会有机会问她。",
+      "es": "<LI>Quizá algún día puedas preguntárselo.",
+      "fr": "<LI>Peut-être qu'un jour vous pourrez le lui demander.",
+      "tw": "<LI>也許有一天，你會有機會問她。"
     },
     {
       "id": "x00636",
@@ -8394,11 +8367,11 @@
     {
       "id": "x00884",
       "kind": "story",
-      "en": "<LI>Perhaps you'd like to buy another bottle of water in case you get thirsty later on?",
-      "cn": "<LI>要不要再买一瓶水备着，以防等会儿渴了？",
-      "es": "<LI>¿Te gustaría comprar otra botella de agua por si luego tienes sed?",
-      "fr": "<LI>Vous voudriez peut-être acheter une autre bouteille d'eau au cas où vous auriez soif plus tard ?",
-      "tw": "<LI>要不要再買一瓶水備著，以防等會兒渴了？"
+      "en": "<LI>Perhaps you'd like to buy a bottle of water in case you get thirsty later on?",
+      "cn": "<LI>要不要买一瓶水备着，以防等会儿渴了？",
+      "es": "<LI>¿Te gustaría comprar una botella de agua por si luego tienes sed?",
+      "fr": "<LI>Vous voudriez peut-être acheter une bouteille d'eau au cas où vous auriez soif plus tard ?",
+      "tw": "<LI>要不要買一瓶水備著，以防等會兒渴了？"
     },
     {
       "id": "x00885",
@@ -16855,10 +16828,10 @@
     {
       "id": "x01789",
       "kind": "story",
-      "en": "<LI>Perhaps you'd like to buy another bottle of water in case you get thirsty on the way home?",
-      "cn": "<LI>也许你想再买一瓶水，以备回家路上口渴时用？",
-      "es": "<LI>¿Quizá te apetezca comprar otra botella de agua por si tienes sed de camino a casa?",
-      "fr": "<LI>Vous voudriez peut-être acheter une autre bouteille d'eau au cas où vous auriez soif sur le chemin du retour ?",
+      "en": "<LI>Perhaps you'd like to buy a bottle of water in case you get thirsty on the way home?",
+      "cn": "<LI>也许你想买一瓶水，以备回家路上口渴时用？",
+      "es": "<LI>¿Quizá te apetezca comprar una botella de agua por si tienes sed de camino a casa?",
+      "fr": "<LI>Vous voudriez peut-être acheter une bouteille d'eau au cas où vous auriez soif sur le chemin du retour ?",
       "tw": "<LI>你把飲料端回桌子。"
     },
     {
@@ -40048,11 +40021,11 @@
     {
       "id": "x04254",
       "kind": "story",
-      "en": "<LI>Suddenly: ",
-      "cn": "<LI>突然：",
-      "es": "<LI>De repente:",
-      "fr": "<LI>Soudain :",
-      "tw": "<LI>突然："
+      "en": "<LI>Suddenly—",
+      "cn": "<LI>突然——",
+      "es": "<LI>De repente—",
+      "fr": "<LI>Soudain—",
+      "tw": "<LI>突然——"
     },
     {
       "id": "x04255",
@@ -46476,8 +46449,8 @@
       "kind": "choice",
       "tag": "morewater",
       "en": "Buy a bottle of water for later?",
-      "cn": "再买瓶水以备后用？",
-      "tw": "再買瓶水備用？",
+      "cn": "买瓶水以备后用？",
+      "tw": "買瓶水備用？",
       "es": "¿Comprar una botella de agua para más tarde?",
       "fr": "Acheter une bouteille d'eau pour plus tard ?"
     },

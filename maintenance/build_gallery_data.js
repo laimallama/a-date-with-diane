@@ -291,6 +291,7 @@ const HIDDEN_GROUPS = [
     // Solo watches first (luckshot, then Chardonnay "your spot"), then together-path forks.
     stems: [
       "28_luckshot_brunette_camper",
+      "28b_luckshot_brunette_debbie",
       "16_brunette_behind_camper",
       "17_diane_brunette_camper_round",
       "18_diane_brunette_camper_under",
@@ -490,8 +491,8 @@ function buildDataForLang(ctx, routes, definitions, lang) {
   const hiddenLeaves = countLeaves(hiddenScenes);
   // 5 prizes + Amanda + Chloe×2 + Day×3 + Lounge×4
   if (endingLeaves !== 15) throw new Error(`Expected 15 ending leaves, got ${endingLeaves}`);
-  if (hiddenLeaves !== 24 + EXTRA_HIDDEN.length) {
-    throw new Error(`Expected ${24 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
+  if (hiddenLeaves !== 25 + EXTRA_HIDDEN.length) {
+    throw new Error(`Expected ${25 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
   }
 
   return { endings, hiddenScenes };

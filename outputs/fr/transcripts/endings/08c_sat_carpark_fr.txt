@@ -20,7 +20,7 @@ Vous traversez le parking. Vous savez qu’il y a des toilettes de l’autre cô
 
 Soudain, vous entendez des pas — le bruit d’une fille qui court.
 
-C’est Diane. Elle a dû aller du côté du parking, mais il y avait des gens et pas d’endroit assez discret pour s’accroupir. Vous la regardez se dépêcher tant bien que mal vers les toilettes.
+C’est Diane. Elle a dû aller de l’autre côté du parking, mais il y avait des gens et pas d’endroit assez discret pour s’accroupir. Vous la regardez se dépêcher tant bien que mal vers les toilettes.
 
 Elle s’approche de la porte marquée Femmes, mais elle est fermée à clé. Elle essaie d’ouvrir — rien à faire.
 
@@ -44,4 +44,4 @@ Diane se retourne et ressort de l’abribus, lissant sa robe, et se penchant pou
 
 (Votre rendez-vous s’est peut-être terminé tôt, mais il n’a pas été sans récompense.)
 
-VOUS AVEZ REMPORTÉ UN PRIX DE CONSOLATION !
+VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !

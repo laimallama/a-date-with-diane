@@ -2223,7 +2223,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 69
+        "baseLength": 73
       },
       {
         "groupId": "molly_towpath",
@@ -4070,7 +4070,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 88
+            "baseLength": 93
           },
           {
             "id": "20b_rioja_bus_glimpse",
@@ -4175,7 +4175,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 89
+            "baseLength": 94
           }
         ],
         "order": 10
@@ -4292,7 +4292,8 @@
           "sofatrains5a",
           "sofatrains6",
           "sofatrains7",
-          "stampalbum7"
+          "stampalbum7",
+          "stampalbum8"
         ],
         "baseLength": 42
       },
@@ -4353,7 +4354,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 48
+        "baseLength": 49
       },
       {
         "groupId": "sofa_bathroom",
@@ -7079,7 +7080,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 69
+        "baseLength": 73
       },
       {
         "groupId": "molly_towpath",
@@ -8926,7 +8927,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 88
+            "baseLength": 93
           },
           {
             "id": "20b_rioja_bus_glimpse",
@@ -9031,7 +9032,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 89
+            "baseLength": 94
           }
         ],
         "order": 10
@@ -9148,7 +9149,8 @@
           "sofatrains5a",
           "sofatrains6",
           "sofatrains7",
-          "stampalbum7"
+          "stampalbum7",
+          "stampalbum8"
         ],
         "baseLength": 42
       },
@@ -9209,7 +9211,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 48
+        "baseLength": 49
       },
       {
         "groupId": "sofa_bathroom",
@@ -11935,7 +11937,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 69
+        "baseLength": 73
       },
       {
         "groupId": "molly_towpath",
@@ -13782,7 +13784,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 88
+            "baseLength": 93
           },
           {
             "id": "20b_rioja_bus_glimpse",
@@ -13887,7 +13889,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 89
+            "baseLength": 94
           }
         ],
         "order": 10
@@ -14004,7 +14006,8 @@
           "sofatrains5a",
           "sofatrains6",
           "sofatrains7",
-          "stampalbum7"
+          "stampalbum7",
+          "stampalbum8"
         ],
         "baseLength": 42
       },
@@ -14065,7 +14068,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 48
+        "baseLength": 49
       },
       {
         "groupId": "sofa_bathroom",
@@ -16791,7 +16794,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 69
+        "baseLength": 73
       },
       {
         "groupId": "molly_towpath",
@@ -18638,7 +18641,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 88
+            "baseLength": 93
           },
           {
             "id": "20b_rioja_bus_glimpse",
@@ -18743,7 +18746,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 89
+            "baseLength": 94
           }
         ],
         "order": 10
@@ -18860,7 +18863,8 @@
           "sofatrains5a",
           "sofatrains6",
           "sofatrains7",
-          "stampalbum7"
+          "stampalbum7",
+          "stampalbum8"
         ],
         "baseLength": 42
       },
@@ -18921,7 +18925,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 48
+        "baseLength": 49
       },
       {
         "groupId": "sofa_bathroom",
@@ -21647,7 +21651,7 @@
           "underbridge2",
           "underbridge3"
         ],
-        "baseLength": 69
+        "baseLength": 73
       },
       {
         "groupId": "molly_towpath",
@@ -23494,7 +23498,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 88
+            "baseLength": 93
           },
           {
             "id": "20b_rioja_bus_glimpse",
@@ -23599,7 +23603,7 @@
               "luckytrip17b",
               "gameover"
             ],
-            "baseLength": 89
+            "baseLength": 94
           }
         ],
         "order": 10
@@ -23716,7 +23720,8 @@
           "sofatrains5a",
           "sofatrains6",
           "sofatrains7",
-          "stampalbum7"
+          "stampalbum7",
+          "stampalbum8"
         ],
         "baseLength": 42
       },
@@ -23777,7 +23782,7 @@
           "givebrooch",
           "walkhomeX"
         ],
-        "baseLength": 48
+        "baseLength": 49
       },
       {
         "groupId": "sofa_bathroom",

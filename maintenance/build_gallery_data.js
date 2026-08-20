@@ -157,7 +157,7 @@ const EXTRA_HIDDEN = [
   {
     stem: "23_brooch",
     routeKey: "brooch",
-    sceneStartTag: "givechance",
+    sceneStartTag: "givebrooch",
     title: {
       en: "Giving Diane the Brooch",
       cn: "把胸针送给黛安",

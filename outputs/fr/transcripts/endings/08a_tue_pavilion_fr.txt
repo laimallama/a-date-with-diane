@@ -26,7 +26,7 @@ Elle s’approche du videur. Elle lui demande quelque chose.
 
 On dirait qu’il vous faudrait un coup de chance supplémentaire. Vous en avez un à jouer ?
 
-(Je ne pourrai pas la regarder dans le club, alors à quoi bon.)
+(Je ne pourrai pas la regarder dans le club, alors à quoi bon?)
 
 Il ne vous reste plus aucun coup de chance.
 
@@ -88,4 +88,4 @@ Mais tout ça semble un peu vain, et quand vous sortez sa culotte tachée de pip
 
 (Quoi qu’il en soit—)
 
-VOUS AVEZ REMPORTÉ UN PRIX DE CONSOLATION !
+VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !

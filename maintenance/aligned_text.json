@@ -8,10 +8,10 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5330,
-    "story": 4183,
+    "total": 5331,
+    "story": 4184,
     "choice": 1147,
-    "entries": 5384
+    "entries": 5385
   },
   "entries": [
     {
@@ -181,11 +181,20 @@
     {
       "id": "x05013",
       "kind": "story",
-      "en": "<p class='note-keys note-cluster-end'><strong>H</strong> turns the Guide on or off once you've started one.</p>",
-      "cn": "<p class='note-keys note-cluster-end'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>",
-      "tw": "<p class='note-keys note-cluster-end'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>",
-      "es": "<p class='note-keys note-cluster-end'><strong>H</strong> activa o desactiva la Guía una vez que has empezado una.</p>",
-      "fr": "<p class='note-keys note-cluster-end'><strong>H</strong> active ou désactive le Guide une fois que vous en avez lancé un.</p>"
+      "en": "<p class='note-keys'><strong>H</strong> turns the Guide on or off once you've started one.</p>",
+      "cn": "<p class='note-keys'><strong>H</strong>键在你已开始一条引导后，打开或关闭引导。</p>",
+      "tw": "<p class='note-keys'><strong>H</strong> 鍵在你已開始一條引導後，打開或關閉引導。</p>",
+      "es": "<p class='note-keys'><strong>H</strong> activa o desactiva la Guía una vez que has empezado una.</p>",
+      "fr": "<p class='note-keys'><strong>H</strong> active ou désactive le Guide une fois que vous en avez lancé un.</p>"
+    },
+    {
+      "id": "x05013a",
+      "kind": "story",
+      "en": "<p class='note-keys note-cluster-end'><strong>D</strong> toggles Dark Mode on or off.</p>",
+      "cn": "<p class='note-keys note-cluster-end'><strong>D</strong>键开启或关闭深色模式。</p>",
+      "tw": "<p class='note-keys note-cluster-end'><strong>D</strong> 鍵開啟或關閉深色模式。</p>",
+      "es": "<p class='note-keys note-cluster-end'><strong>D</strong> activa o desactiva el Modo oscuro.</p>",
+      "fr": "<p class='note-keys note-cluster-end'><strong>D</strong> active ou désactive le Mode sombre.</p>"
     },
     {
       "id": "x05014",
@@ -10818,11 +10827,11 @@
       "id": "x01143",
       "kind": "choice",
       "tag": "riverside7",
-      "en": "'You're joking! I'm enjoying this.'",
-      "cn": "“你在开玩笑吧！我正看得高兴呢。”",
-      "es": "«¡No hablarás en serio! Yo estoy disfrutando muchísimo.»",
-      "fr": "« Tu plaisantes ! J'adore ça. »",
-      "tw": "「你在開玩笑吧！我正看得高興呢。」"
+      "en": "You're joking! I'm enjoying this.",
+      "cn": "你在开玩笑吧！我正看得高兴呢。",
+      "es": "¡No hablarás en serio! Yo estoy disfrutando muchísimo.",
+      "fr": "Tu plaisantes ! J'adore ça.",
+      "tw": "你在開玩笑吧！我正看得高興呢。"
     },
     {
       "id": "x01144",
@@ -11516,7 +11525,7 @@
     {
       "id": "x01219",
       "kind": "story",
-      "en": "<LI>ROBERT: By chance? At a bus stop? Sounds a lucky meeting.",
+      "en": "<LI>ROBERT: By chance? At a bus stop? Sounds like a lucky meeting.",
       "cn": "<LI>罗伯特：偶然？在公交站？听起来挺有缘的。",
       "es": "<LI>ROBERT: ¿Por casualidad? ¿En una parada de autobús? Vaya encuentro tan afortunado.",
       "fr": "<LI>ROBERT : Par hasard ? À un arrêt de bus ? Voilà une heureuse rencontre.",
@@ -11525,7 +11534,7 @@
     {
       "id": "x01220",
       "kind": "story",
-      "en": "<LI>You tell him the story, of how she had needed a pee, had gone into the car park for one, and by doing so had missed her bus. He chuckles, and remarks that she must have been desperate. You admit you had seen her fidgeting about at the bus stop.",
+      "en": "<LI>You tell him the story of how she had needed a pee, had gone into the car park for one, and by doing so had missed her bus. He chuckles, and remarks that she must have been desperate. You admit you had seen her fidgeting about at the bus stop.",
       "cn": "<LI>你把经过讲给他听——她当时尿急，跑到停车场撒了泡尿，结果错过了公交车。他低笑起来，感叹说她当时一定憋得够呛。你承认你其实早就注意到她在公交站不停扭动身子了。",
       "es": "<LI>Le cuentas la historia: que ella tenía muchas ganas de hacer pis, que se metió en el aparcamiento para hacerlo y que, por eso, perdió su autobús. Él se ríe entre dientes y comenta que debía de estar a punto de hacerse pis. Admites que la viste moviéndose nerviosamente en la parada.",
       "fr": "<LI>Vous lui racontez l'histoire : comment elle avait eu envie de faire pipi, comment elle était allée dans le parking pour se soulager, et qu'en faisant ainsi elle avait raté son bus. Il rit doucement et remarque qu'elle devait être vraiment au bord de craquer. Vous admettez que vous l'aviez vue se trémousser à l'arrêt de bus.",
@@ -25101,8 +25110,8 @@
     {
       "id": "x02665",
       "kind": "story",
-      "en": "<LI>DIANE: No, in some godawful suburb, on the edge of a dual carriageway. The country would have been easier, for obvious reasons. Anyway, I phoned my mum and she said she'd come and fetch us; it would be half an hour or so. But of course, we'd all been drinking—me, Jenny and Linda. Except Jenny's dad, of course, who was driving. He was going to have to wait with the car until the RAC came out.",
-      "cn": "<LI>黛安：不，在一个破郊区，双向车道旁边。要是在乡下反而好办，你懂的。反正，我打电话给我妈，她说她来接我们，大概要半小时左右。但我们当然都喝了酒——我、珍妮和琳达。当然珍妮她爸除外，他是司机。他得留下来陪着车等道路救援人员。",
+      "en": "<LI>DIANE: No, in some god-awful suburb, on the edge of a dual carriageway. The country would have been easier, for obvious reasons. Anyway, I phoned my mum and she said she'd come and fetch us; it would be half an hour or so. But of course, we'd all been drinking—me, Jenny and Linda. Except Jenny's dad, of course, who was driving. He was going to have to wait with the car until the RAC came out.",
+      "cn": "<LI>黛安：不，在一个破郊区的一条双向车道旁边。要是在乡下反而好办，你懂的。反正，我打电话给我妈，她说她来接我们，大概要半小时左右。但我们当然都喝了酒——我、珍妮和琳达。当然珍妮她爸除外，他是司机。他得留下来陪着车等道路救援人员。",
       "es": "<LI>DIANE: No, en un suburbio horrible, al borde de una carretera de doble calzada. En el campo habría sido más fácil, por razones obvias. En fin, llamé a mi madre y dijo que vendría a buscarnos; tardaría media hora más o menos. Pero claro, todas habíamos estado bebiendo: yo, Jenny y Linda. El padre de Jenny no, claro, porque era quien conducía. Él tendría que quedarse con el coche hasta que llegara la grúa.",
       "fr": "<LI>DIANE : Non, dans une banlieue sinistre, en bordure d'une deux fois deux voies. La campagne aurait été plus pratique, pour des raisons évidentes. Bref, j'ai appelé ma mère et elle a dit qu'elle viendrait nous chercher — une demi-heure à peu près. Mais évidemment, on avait toutes bu — moi, Jenny et Linda. Sauf le père de Jenny, bien sûr, qui conduisait. Lui allait devoir rester avec la voiture en attendant le dépannage.",
       "tw": "<LI>黛安：車拋錨了。我們離最近的地方也有好幾英里，而且都快午夜了。"
@@ -25123,7 +25132,7 @@
       "cn": "<LI>黛安：对，都想。我觉得琳达最惨。我们坐在车里努力不乱动——因为珍妮她爸在场，才那么难为情。等我妈到的时候，琳达已经快憋坏了，我们都在笑她。然后，我妈当然说先送琳达，再送珍妮，最后才回家。",
       "es": "<LI>DIANE: Sí, todas. Creo que Linda era la que peor lo llevaba. Estuvimos sentadas en el coche intentando no movernos; con el padre de Jenny allí, eso era lo que lo hacía tan embarazoso. Cuando llegó mi madre, Linda estaba a punto de mearse encima y nos reíamos de ella. Luego, claro, mi madre dijo que primero dejaríamos a Linda, después a Jenny y ya entonces iríamos a casa.",
       "fr": "<LI>DIANE : Oui, toutes. Linda était la pire, je crois. On était assises dans la voiture à essayer de ne pas s'agiter — à cause du père de Jenny, c'est ça qui rendait la situation si gênante. Quand ma mère est arrivée, Linda était vraiment au bord du désastre et on se moquait d'elle. Et bien sûr, ma mère a décidé de déposer Linda en premier, puis Jenny, avant de rentrer.",
-      "tw": "<LI>黛安：不，在一個破郊區，雙向車道旁邊。要是在鄉下反而好辦，你懂的。反正，我打電話給我媽，她說她來接我們，大概要半小時左右。可我們當然都喝了酒——我、珍妮和琳達。當然珍妮她爸除外，他是司機。他得留下來陪著車等道路救援。"
+      "tw": "<LI>黛安：不，在一個破郊區的一條雙向車道旁邊。要是在鄉下反而好辦，你懂的。反正，我打電話給我媽，她說她來接我們，大概要半小時左右。可我們當然都喝了酒——我、珍妮和琳達。當然珍妮她爸除外，他是司機。他得留下來陪著車等道路救援。"
     },
     {
       "id": "x02668",
@@ -25283,10 +25292,10 @@
     {
       "id": "x04982",
       "kind": "story",
-      "en": "<LI>(You wish she would!)",
-      "cn": "<LI>（你真希望她多描述一点！）",
-      "es": "<LI>(¡Cómo te gustaría que lo hiciera!)",
-      "fr": "<LI>(Vous aimeriez bien qu'elle le fasse !)",
+      "en": "<LI>You wish she would!",
+      "cn": "<LI>你真希望她多描述一点！",
+      "es": "<LI>¡Cómo te gustaría que lo hiciera!",
+      "fr": "<LI>Vous aimeriez bien qu'elle le fasse !",
       "tw": "<LI>你：你真的把內褲尿濕了。"
     },
     {
@@ -38467,10 +38476,10 @@
     {
       "id": "x04093",
       "kind": "story",
-      "en": "<LI>Suddenly she says, <EM>I'm going to catch Molly up; I know where her digs are. I'll see you around</EM> and she is gone.",
+      "en": "<LI>Suddenly she says, <EM>I'm going to catch Molly up; I know where her digs are. I'll see you around,</EM> and she is gone.",
       "cn": "<LI>突然她开口说，<EM>我要去追莫莉；我知道她住在哪里。改天见</EM>，说完人就不见了。",
       "es": "<LI>De repente dice, <EM>Voy a alcanzar a Molly; sé dónde vive. Ya nos veremos</EM>, y desaparece.",
-      "fr": "<LI>Soudain elle dit, <EM>Je vais rattraper Molly ; je connais son adresse. À bientôt</EM> et elle disparaît.",
+      "fr": "<LI>Soudain elle dit, <EM>Je vais rattraper Molly ; je connais son adresse. À bientôt,</EM> et elle disparaît.",
       "tw": "<LI>突然她開口說，<EM>我要去追莫莉；我知道她住在哪裡。改天見</EM>，說完人就不見了。"
     },
     {
@@ -40291,11 +40300,11 @@
     {
       "id": "x04281",
       "kind": "story",
-      "en": "<LI>It's Diane. She must have gone to the side of the car park but there are people there and nowhere discreet enough to squat. You watch her hurry as best she can towards the toilets.",
-      "cn": "<LI>是黛安。她大概是去了停车场一侧，但那边有人，找不到够隐蔽的地方蹲下来。你看着她尽量快步朝厕所方向赶去。",
-      "es": "<LI>Es Diane. Debió de ir hacia el lateral del aparcamiento, pero había gente allí y ningún rincón discreto donde agacharse. La ves apresurarse como puede hacia los aseos.",
-      "fr": "<LI>C'est Diane. Elle a dû aller du côté du parking, mais il y avait des gens et pas d'endroit assez discret pour s'accroupir. Vous la regardez se dépêcher tant bien que mal vers les toilettes.",
-      "tw": "<LI>是黛安。她大概去了停車場一側，可那邊有人，找不到夠隱蔽的地方蹲下來。你看著她儘量快步朝廁所方向趕去。"
+      "en": "<LI>It's Diane. She must have gone to the far side of the car park but there are people there and nowhere discreet enough to squat. You watch her hurry as best she can towards the toilets.",
+      "cn": "<LI>是黛安。她大概是去了停车场另一头，但那边有人，找不到够隐蔽的地方蹲下来。你看着她尽量快步朝厕所方向赶去。",
+      "es": "<LI>Es Diane. Debió de ir hacia el otro lado del aparcamiento, pero había gente allí y ningún rincón discreto donde agacharse. La ves apresurarse como puede hacia los aseos.",
+      "fr": "<LI>C'est Diane. Elle a dû aller de l'autre côté du parking, mais il y avait des gens et pas d'endroit assez discret pour s'accroupir. Vous la regardez se dépêcher tant bien que mal vers les toilettes.",
+      "tw": "<LI>是黛安。她大概去了停車場另一頭，可那邊有人，找不到夠隱蔽的地方蹲下來。你看著她儘量快步朝廁所方向趕去。"
     },
     {
       "id": "x04282",
@@ -40654,7 +40663,7 @@
     {
       "id": "x04320",
       "kind": "story",
-      "en": "<LI>She stands there, turned towards the wall, and puts a hand to her face. You hear the faint splattering of pee. The poor girl couldn't hold on a moment longer, but is wetting herself.",
+      "en": "<LI>She stands there, turned towards the wall, and puts a hand to her face. You hear the faint splattering of pee. The poor girl couldn't hold on a moment longer, and is wetting herself.",
       "cn": "<LI>她面朝墙壁站着，用手捂住脸。你听到隐约的尿液溅落声。可怜的她再也憋不住了，正在尿湿自己。",
       "es": "<LI>Se queda ahí de pie, vuelta hacia la pared, y se lleva una mano a la cara. Oyes el débil repiqueteo del pis. La pobre chica no ha podido aguantar ni un momento más y se está meando encima.",
       "fr": "<LI>Elle reste là, tournée vers le mur, une main sur le visage. Vous entendez le léger crépitement du pipi. La pauvre n'a pas pu se retenir une seconde de plus — elle est en train de se faire pipi dessus.",
@@ -40987,11 +40996,11 @@
       "id": "x04356",
       "kind": "choice",
       "tag": "luckytrip28a",
-      "en": "I won't be able to watch her in the club, so what's the point.",
-      "cn": "在俱乐部里我也没法看她，那有什么意义。",
-      "es": "No podré verla en el club, así que para qué.",
-      "fr": "Je ne pourrai pas la regarder dans le club, alors à quoi bon.",
-      "tw": "在俱樂部裡我也看不到她，那有什麼意思。"
+      "en": "I won't be able to watch her in the club, so what's the point?",
+      "cn": "在俱乐部里我也没法看她，那有什么意义？",
+      "es": "No podré verla en el club, así que ¿para qué?",
+      "fr": "Je ne pourrai pas la regarder dans le club, alors à quoi bon ?",
+      "tw": "在俱樂部裡我也看不到她，那有什麼意思？"
     },
     {
       "id": "x04357",
@@ -41182,7 +41191,7 @@
     {
       "id": "x04377",
       "kind": "story",
-      "en": "<LI>To the right, to the edge of the car park, is a little portakabin. Maybe she could pop behind that.",
+      "en": "<LI>To the right, to the edge of the car park, is a little Portakabin. Maybe she could pop behind that.",
       "cn": "<LI>右边，停车场边缘，有一个小活动板房。也许她能去那后面。",
       "es": "<LI>A la derecha, al fondo del aparcamiento, hay una pequeña caseta portátil. Quizá pueda esconderse detrás.",
       "fr": "<LI>Sur la droite, au bord du parking, il y a un petit algeco. Elle pourrait peut-être se glisser derrière.",
@@ -41248,7 +41257,7 @@
     {
       "id": "x04384",
       "kind": "story",
-      "en": "<LI>You guess that she might head right, and have an urgent pee behind the portakabin. It's a few yards further but better hidden.",
+      "en": "<LI>You guess that she might head right, and have an urgent pee behind the Portakabin. It's a few yards further but better hidden.",
       "cn": "<LI>你猜她可能会往右，躲到活动板房后面方便。那里远几步，但藏得更好。",
       "es": "<LI>Calculas que podría ir hacia la derecha y mear urgentemente detrás de la caseta. Está un poco más lejos pero está mejor escondida.",
       "fr": "<LI>Vous pariez qu'elle pourrait aller à droite et faire pipi en urgence derrière l'algeco. C'est un peu plus loin mais bien mieux caché.",
@@ -41276,7 +41285,7 @@
     {
       "id": "x04387",
       "kind": "story",
-      "en": "<LI>You've guessed that she might go behind the portakabin.",
+      "en": "<LI>You've guessed that she might go behind the Portakabin.",
       "cn": "<LI>你猜她可能会去那个活动板房后面。",
       "es": "<LI>Has apostado por que vaya detrás de la caseta.",
       "fr": "<LI>Vous avez parié qu'elle pourrait aller derrière l'algeco.",
@@ -41479,11 +41488,11 @@
     {
       "id": "x04409",
       "kind": "story",
-      "en": "<LI>But it all feels a bit shallow and when you take her pee-stained knickers out of your pocket you feel a bit ashamed.",
-      "cn": "<LI>但这一切总让你觉得有些空洞，当你从口袋里掏出那条带有尿渍的内裤时，心里竟涌起一丝羞意。",
-      "es": "<LI>Pero todo se siente un poco vacío y cuando sacas sus bragas manchadas de pis del bolsillo te entra un poco de vergüenza.",
-      "fr": "<LI>Mais tout ça semble un peu vain, et quand vous sortez sa culotte tachée de pipi de votre poche, vous éprouvez une légère honte.",
-      "tw": "<LI>可這一切總讓你覺得有點空洞。等你從口袋裡掏出那條帶尿漬的內褲時，心裡竟浮上來一絲不好意思。"
+      "en": "<P><LI><B>But it all feels a bit shallow and when you take her pee-stained knickers out of your pocket you feel a bit ashamed.",
+      "cn": "<P><LI><B>但这一切总让你觉得有些空洞，当你从口袋里掏出那条带有尿渍的内裤时，心里竟涌起一丝羞意。",
+      "es": "<P><LI><B>Pero todo se siente un poco vacío y cuando sacas sus bragas manchadas de pis del bolsillo te entra un poco de vergüenza.",
+      "fr": "<P><LI><B>Mais tout ça semble un peu vain, et quand vous sortez sa culotte tachée de pipi de votre poche, vous éprouvez une légère honte.",
+      "tw": "<P><LI><B>可這一切總讓你覺得有點空洞。等你從口袋裡掏出那條帶尿漬的內褲時，心裡竟浮上來一絲不好意思。"
     },
     {
       "id": "x04410",
@@ -42868,11 +42877,11 @@
     {
       "id": "x04558",
       "kind": "story",
-      "en": "<LI>She looks shyly at you. You step forward and take her hand, then kiss her on the lips. 'My darling, that was wonderful,' you say.",
-      "cn": "<LI>她羞怯地看着你。你上前握住她的手，然后吻上她的嘴唇。“亲爱的，那真的太美了，”你说。",
-      "es": "<LI>Te mira con timidez. Te acercas, le coges la mano y la besas en los labios. «Cariño mío, ha sido maravilloso», dices.",
-      "fr": "<LI>Elle vous regarde timidement. Vous vous avancez, prenez sa main, puis l'embrassez sur les lèvres. « Ma chérie, c'était merveilleux », lui dites-vous.",
-      "tw": "<LI>她羞怯地看著你。你上前握住她的手，接著吻上她的嘴唇。「親愛的，那真的太美了，」你說。"
+      "en": "<LI>She looks shyly at you. You step forward and take her hand, then kiss her on the lips. 'That was wonderful,' you say.",
+      "cn": "<LI>她羞怯地看着你。你上前握住她的手，然后吻上她的嘴唇。“那真的太美了，”你说。",
+      "es": "<LI>Te mira con timidez. Te acercas, le coges la mano y la besas en los labios. «Ha sido maravilloso», dices.",
+      "fr": "<LI>Elle vous regarde timidement. Vous vous avancez, prenez sa main, puis l'embrassez sur les lèvres. « C'était merveilleux », lui dites-vous.",
+      "tw": "<LI>她羞怯地看著你。你上前握住她的手，接著吻上她的嘴唇。「那真的太美了，」你說。"
     },
     {
       "id": "x04559",
@@ -44072,7 +44081,7 @@
     {
       "id": "x04689",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is walking on the spot, and anxiously looking around.</SPAN></EM></P>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is walking on the spot and anxiously looking around.</SPAN></EM></P>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安在原地踏步，焦急地四处张望。</SPAN></EM></P>",
       "es": "<P><EM><SPAN style='color: #ff0000'>Diane camina en el sitio y mira a su alrededor con ansiedad.</SPAN></EM></P>",
       "fr": "<P><EM><SPAN style='color: #ff0000'>Diane trépigne sur place en jetant des regards anxieux autour d'elle.</SPAN></EM></P>",
@@ -44673,7 +44682,7 @@
     {
       "id": "x04756",
       "kind": "story",
-      "en": "<EM><SPAN style='color: #0000FF'>Molly needs to pee so badly she's biting her lip. She is walking on the spot, and anxiously looking around.</SPAN></EM>",
+      "en": "<EM><SPAN style='color: #0000FF'>Molly needs to pee so badly she's biting her lip. She is walking on the spot and anxiously looking around.</SPAN></EM>",
       "cn": "<EM><SPAN style='color: #0000FF'>莫莉尿急得直咬嘴唇。她在原地踏步，焦急地四处张望。</SPAN></EM>",
       "es": "<EM><SPAN style='color: #0000FF'>Molly tiene unas ganas tremendas de hacer pis. Se muerde el labio, camina en el sitio y mira a su alrededor con nerviosismo.</SPAN></EM>",
       "fr": "<EM><SPAN style='color: #0000FF'>Molly a tellement envie de faire pipi qu'elle se mord la lèvre. Elle trépigne sur place et regarde anxieusement autour d'elle.</SPAN></EM>",
@@ -46363,11 +46372,11 @@
     {
       "id": "x04940",
       "kind": "story",
-      "en": "<LI>YOU HAVE WON A CONSOLATION PRIZE!",
-      "cn": "<LI>你获得了安慰奖！",
-      "es": "<LI>¡HAS GANADO UN PREMIO DE CONSOLACIÓN!",
-      "fr": "<LI>VOUS AVEZ REMPORTÉ UN PRIX DE CONSOLATION !",
-      "tw": "<LI>你獲得了安慰獎！"
+      "en": "<P><LI><B>YOU HAVE WON A CONSOLATION PRIZE!",
+      "cn": "<P><LI><B>你获得了一个安慰奖！",
+      "es": "<P><LI><B>¡HAS GANADO UN PREMIO DE CONSOLACIÓN!",
+      "fr": "<P><LI><B>VOUS AVEZ REMPORTÉ UN LOT DE CONSOLATION !</B>",
+      "tw": "<P><LI><B>你獲得了一個安慰獎！"
     },
     {
       "id": "x04941",
@@ -48680,11 +48689,11 @@
     },
     {
       "kind": "story",
-      "en": "<LI>Suddenly she says, 'I'm going to catch Molly up; I know where her digs are. I'll see you around' and she is gone.",
+      "en": "<LI>Suddenly she says, 'I'm going to catch Molly up; I know where her digs are. I'll see you around,' and she is gone.",
       "cn": "<LI>突然她开口说，“我要去追莫莉；我知道她住在哪里。改天见，”说完人就不见了。",
       "tw": "<LI>突然她開口說，「我要去追莫莉；我知道她住在哪裡。改天見，」說完人就不見了。",
       "es": "<LI>De repente dice, «Voy a alcanzar a Molly; sé dónde vive. Ya nos veremos», y desaparece.",
-      "fr": "<LI>Soudain elle dit, « Je vais rattraper Molly ; je connais son adresse. À bientôt » et elle disparaît."
+      "fr": "<LI>Soudain elle dit, « Je vais rattraper Molly ; je connais son adresse. À bientôt », et elle disparaît."
     },
     {
       "kind": "story",

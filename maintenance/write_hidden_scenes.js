@@ -223,6 +223,7 @@ function buildDefinitions(routes) {
     "stagedoor2", "stagedoor3", "stagedoor4", "stagedoor5",
     "choosewalk1", "riverside2", "riverside3", "riverside3aa",
     "riverside4", "sitonbench", "riverside5", "riverside6",
+    "riverside7", "riverside8", "riverside9", "riversidepath",
   ];
 
   const mollyBrunoTowpath = [
@@ -342,7 +343,8 @@ function buildDefinitions(routes) {
     "riversidepath12x", "riverside14", "toiletclosed", "riverside15",
     "riverside16", "riverside16a", "busqueue", "busqueue1", "busqueue2",
     "busqueue3", "queue1a", "watchblonde", "busqueue6", "busqueue6a",
-    "busqueue7", "bushome", "bushome1",
+    "busqueue7", "bushome", "bushome1", "bushome2", "bushome3",
+    "bushome4", "bushome5", "bushome6",
   ];
 
   // Same Thursday setup, but Rioja so *you* are desperate on the bus home.
@@ -622,11 +624,11 @@ function buildDefinitions(routes) {
         tw: "羅伯特帶你偷看橋下的黛安和莫莉"
       },
       entry: {
-        en: "This is a Thursday-only riverside branch, after Diane and Molly hint that they are going down to the towpath.",
-        cn: "这是周四限定的河边分支，从黛安和莫莉暗示要下到纤道那边开始。",
-        es: "Es una rama del jueves junto al río, después de que Diane y Molly insinúen que van a bajar al sendero junto al agua.",
-        fr: "C'est une branche du jeudi au bord de la rivière, après que Diane et Molly laissent entendre qu'elles descendent sur le chemin de halage.",
-        tw: "這是週四限定的河邊分支，從黛安和莫莉暗示要下到纖道那邊開始。"
+        en: "This is a Thursday-only riverside branch. It begins once Diane and Molly have peeled off down the towpath, when Robert offers you a luckshot to watch them under the bridge.",
+        cn: "这是周四限定的河边分支。从黛安和莫莉已经下到纤道、罗伯特提议用一次幸运机会去桥下偷看开始。",
+        es: "Es una rama del jueves junto al río. Empieza cuando Diane y Molly ya se han separado hacia el sendero y Robert te ofrece una oportunidad de suerte para verlas bajo el puente.",
+        fr: "C'est une branche du jeudi au bord de la rivière. Elle commence une fois que Diane et Molly sont parties sur le chemin de halage, quand Robert vous propose une opportunité de chance pour les regarder sous le pont.",
+        tw: "這是週四限定的河邊分支。從黛安和莫莉已經下到纖道、羅伯特提議用一次幸運機會去橋下偷看開始。"
       },
       result: {
         en: "Robert helps you find a lookout point, and you watch Diane and then Molly under the bridge.",
@@ -642,7 +644,7 @@ function buildDefinitions(routes) {
         fr: "La route rejoint la promenade au bord de la rivière.",
         tw: "路線會接回河邊散步。"
       },
-      tags: ["riverside7", "riverside8", "riverside9", "riversidepath", "luckytrip3", "underbridge", "underbridge2", "underbridge3"],
+      tags: ["luckytrip3", "underbridge", "underbridge2", "underbridge3"],
     },
     {
       stem: "05_molly_bruno_towpath",
@@ -1216,11 +1218,11 @@ function buildDefinitions(routes) {
         tw: "黛安在教堂旁尿尿"
       },
       entry: {
-        en: "This is a narrow Thursday route: Diane gets off alone, desperate, and you spend a luckshot to walk back after her.",
-        cn: "这是一条很窄的周四路线：黛安独自下车、明显憋急，你用一次幸运机会折返回去跟。",
-        es: "Es una ruta estrecha del jueves: Diane baja sola y desesperada, y usas una oportunidad de suerte para volver tras ella.",
-        fr: "C'est une route étroite du jeudi : Diane descend seule, pressée, et vous utilisez une opportunité de chance pour revenir sur vos pas.",
-        tw: "這是一條很窄的週四路線：黛安獨自下車、明顯憋急，你用一次幸運機會折返回去跟。"
+        en: "This is a narrow Thursday route. It begins at Diane's stop: she gets off alone, desperate, and you spend a luckshot to walk back after her.",
+        cn: "这是一条很窄的周四路线。从黛安那一站开始：她独自下车、明显憋急，你用一次幸运机会折返回去跟。",
+        es: "Es una ruta estrecha del jueves. Empieza en la parada de Diane: baja sola y desesperada, y usas una oportunidad de suerte para volver tras ella.",
+        fr: "C'est une route étroite du jeudi. Elle commence à l'arrêt de Diane : elle descend seule, pressée, et vous utilisez une opportunité de chance pour revenir sur vos pas.",
+        tw: "這是一條很窄的週四路線。從黛安那一站開始：她獨自下車、明顯憋急，你用一次幸運機會折返回去跟。"
       },
       result: {
         en: "You glimpse Diane having an urgent pee in the church lych gate. The route ends immediately afterwards.",
@@ -1236,7 +1238,7 @@ function buildDefinitions(routes) {
         fr: "La route se termine par un game over sans prix.",
         tw: "路線會進入非獎項失敗結局。"
       },
-      tags: ["bushome2", "bushome3", "bushome4", "bushome5", "bushome6", "luckytrip17", "luckytrip17a", "luckytrip17b", "gameover"],
+      tags: ["luckytrip17", "luckytrip17a", "luckytrip17b", "gameover"],
     },
     {
       stem: "20b_rioja_bus_glimpse",
@@ -1249,11 +1251,11 @@ function buildDefinitions(routes) {
         tw: "你因尿急沒辦法送她回家"
       },
       entry: {
-        en: "Same Thursday bus home, but you drank Rioja: you are too desperate to get off with her, pee behind a bush, then walk back.",
-        cn: "同一条周四回家公交线，但你喝了里奥哈：自己憋得没法陪她下车，先在树丛后解决，再折返回去。",
-        es: "La misma vuelta en bus del jueves, pero bebiste Rioja: estás demasiado apurado para bajar con ella, haces pis detrás de un arbusto y luego vuelves.",
-        fr: "Même retour en bus le jeudi, mais vous avez bu du Rioja : trop pressé pour descendre avec elle, vous faites pipi derrière un buisson puis vous revenez.",
-        tw: "同一條週四回家公車線，但你喝了里奧哈：自己憋得沒辦法陪她下車，先在樹叢後解決，再折返回去。"
+        en: "Same Thursday bus home, but you drank Rioja. It begins at her stop: you are too desperate to get off with her, pee behind a bush, then walk back.",
+        cn: "同一条周四回家公交线，但你喝了里奥哈。从她那一站开始：自己憋得没法陪她下车，先在树丛后解决，再折返回去。",
+        es: "La misma vuelta en bus del jueves, pero bebiste Rioja. Empieza en su parada: estás demasiado apurado para bajar con ella, haces pis detrás de un arbusto y luego vuelves.",
+        fr: "Même retour en bus le jeudi, mais vous avez bu du Rioja. Cela commence à son arrêt : trop pressé pour descendre avec elle, vous faites pipi derrière un buisson puis vous revenez.",
+        tw: "同一條週四回家公車線，但你喝了里奧哈。從她那一站開始：自己憋得沒辦法陪她下車，先在樹叢後解決，再折返回去。"
       },
       result: {
         en: "You relieve yourself behind a bush and walk back towards her stop—but you only scare up a stray cat. No glimpse of Diane. The route ends immediately afterwards.",
@@ -1269,7 +1271,7 @@ function buildDefinitions(routes) {
         fr: "La route se termine par un game over sans prix.",
         tw: "路線會進入非獎項失敗結局。"
       },
-      tags: ["bushome2", "bushome3", "bushome4", "bushome5", "bushome6", "peestop1", "peestop2", "luckytrip17b", "gameover"],
+      tags: ["peestop1", "peestop2", "luckytrip17b", "gameover"],
     },
     {
       stem: "21_hidden_camera",

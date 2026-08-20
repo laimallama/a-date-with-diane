@@ -1845,6 +1845,7 @@ const sofatrainsRoute = [
   "You carry on.",
   "You tell her there are just a couple more pages.",
   "Almost finished!",
+  "She hurries from the room and up the stairs.",
 ];
 const bathpeeRoute = [
   "I've already read them. I'll get straight on with the game.",
@@ -2159,7 +2160,7 @@ function ending(text, lang) {
       /你真的獲得了一等獎！/,
       /你獲得了[一二三四五]等獎！/,
       /你獲得了(?:一個)?安慰獎！/,
-      /這倒也算個相當不錯的安慰獎！/,
+      /這倒也算個(?:相當不錯|挺不錯)的安慰獎！/,
     ],
     es: [
       /¡(?:VERDADERAMENTE, |DE VERDAD )HAS GANADO EL PRIMER PREMIO!/,

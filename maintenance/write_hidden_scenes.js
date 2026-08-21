@@ -4,7 +4,7 @@ const vm = require("vm");
 const mod = require("module");
 
 const ROOT = path.resolve(__dirname, "..");
-const GUIDE_SOURCE = path.join(ROOT, "maintenance/write_verified_guides.js");
+const ENDING_ROUTES_SOURCE = path.join(ROOT, "maintenance/verify_ending_routes.js");
 // Clean legacy guide/hidden_scenes paths only — never touch outputs/*/transcripts/.
 const LEGACY_HIDDEN_OUTPUTS = [
   path.join(ROOT, "outputs/en/hidden_scenes"),
@@ -35,19 +35,19 @@ const languages = {
 };
 
 function loadRoutes() {
-  const source = fs.readFileSync(GUIDE_SOURCE, "utf8");
+  const source = fs.readFileSync(ENDING_ROUTES_SOURCE, "utf8");
   // Stop before route smoke-test side effects — gallery only needs route arrays.
   const cut = source.search(/\n\/\/ --- route smoke test/);
   const trimmed = cut >= 0 ? source.slice(0, cut) : source;
-  const localRequire = mod.createRequire(GUIDE_SOURCE);
+  const localRequire = mod.createRequire(ENDING_ROUTES_SOURCE);
   const savedArgv = process.argv;
-  process.argv = [savedArgv[0], GUIDE_SOURCE];
+  process.argv = [savedArgv[0], ENDING_ROUTES_SOURCE];
   const context = {
     console: { log() {}, error: console.error },
     require: localRequire,
     process,
-    __dirname: path.dirname(GUIDE_SOURCE),
-    __filename: GUIDE_SOURCE,
+    __dirname: path.dirname(ENDING_ROUTES_SOURCE),
+    __filename: ENDING_ROUTES_SOURCE,
     globalThis: {},
   };
   context.global = context;
@@ -57,7 +57,7 @@ function loadRoutes() {
     vm.runInContext(
       `${trimmed}\nglobalThis.__routes = (typeof galleryRoutes !== "undefined" ? galleryRoutes : routes);`,
       context,
-      { filename: GUIDE_SOURCE }
+      { filename: ENDING_ROUTES_SOURCE }
     );
   } finally {
     process.argv = savedArgv;

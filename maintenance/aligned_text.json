@@ -100,11 +100,11 @@
     {
       "id": "x00010",
       "kind": "story",
-      "en": "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.",
-      "cn": "<LI><strong>膀胱</strong>仪表显示黛安憋着多少尿。<strong>肚子</strong>里的水分会随时间慢慢流进<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
-      "es": "<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco a su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.",
+      "en": "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows into her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.",
+      "cn": "<LI><strong>膀胱</strong>仪表显示黛安正憋着多少尿。她<strong>肚子</strong>里的水分会随时间慢慢流进<strong>膀胱</strong>。另外，你有<strong>3次幸运机会</strong>，出现时要明智使用；别忘了，它们也可能带来坏运气！注意，一旦你坐上回家的公交车或出租车，当晚结束时最多只能再用一次。",
+      "es": "<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco al interior de su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.",
       "fr": "<LI>La jauge de <strong>vessie</strong> indique ce que Diane retient. Ce qu'il y a dans son <strong>ventre</strong> passe lentement dans sa <strong>vessie</strong> au fil du temps. Vous disposez également de <strong>3 coups de chance</strong>, à utiliser judicieusement lorsqu'on vous les propose — et rappelez-vous qu'ils peuvent aussi apporter de la malchance ! Notez que vous ne pouvez en utiliser qu'un seul en fin de soirée, une fois que vous avez pris le bus ou le taxi pour rentrer.",
-      "tw": "<LI><strong>膀胱</strong>儀表顯示黛安憋著多少尿。<strong>肚子</strong>裡的水分會隨時間慢慢流進<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
+      "tw": "<LI><strong>膀胱</strong>儀表顯示黛安正憋著多少尿。她<strong>肚子</strong>裡的水分會隨時間慢慢流進<strong>膀胱</strong>。另外，你有<strong>3次幸運機會</strong>，出現時要明智使用；別忘了，它們也可能帶來壞運氣！注意，一旦你坐上回家的公車或計程車，當晚結束時最多只能再用一次。"
     },
     {
       "id": "x00011",
@@ -686,11 +686,11 @@
       "id": "x00066",
       "kind": "choice",
       "tag": "flirt_h",
-      "en": "Say you wish you were on her side of the table.",
-      "cn": "说你真希望能坐在她那一侧。",
-      "es": "Decirle que ojalá estuvieras en su lado de la mesa.",
-      "fr": "Lui dire que vous aimeriez être de son côté de la table.",
-      "tw": "說你真希望能坐在她那一側。"
+      "en": "Say you won't be able to focus on the play with her looking like that.",
+      "cn": "说她这么好看，你没法专心看这场演出。",
+      "es": "Decirle que no vas a poder concentrarte en la obra con ella tan guapa.",
+      "fr": "Lui dire que vous n'arriverez pas à vous concentrer sur la pièce à la voir si belle.",
+      "tw": "說她這麼好看，你沒法專心看這場演出。"
     },
     {
       "id": "x00067",
@@ -734,11 +734,11 @@
       "id": "x00071",
       "kind": "choice",
       "tag": "flirt_h",
-      "en": "Say you wish you were on her side of the table",
-      "cn": "说你真希望能坐在她那一侧",
-      "es": "Decirle que ojalá estuvieras en su lado de la mesa",
-      "fr": "Lui dire que vous aimeriez être de son côté de la table",
-      "tw": "說你真希望能坐在她那一側"
+      "en": "Say you won't be able to focus on the play with her looking like that.",
+      "cn": "说她这么好看，你没法专心看这场演出。",
+      "es": "Decirle que no vas a poder concentrarte en la obra con ella tan guapa.",
+      "fr": "Lui dire que vous n'arriverez pas à vous concentrer sur la pièce à la voir si belle.",
+      "tw": "說她這麼好看，你沒法專心看這場演出。"
     },
     {
       "id": "x00072",
@@ -782,11 +782,11 @@
       "id": "x00076",
       "kind": "choice",
       "tag": "flirt_h",
-      "en": "Say you're really looking forward to seeing the play.",
-      "cn": "说你非常期待看这场演出。",
-      "es": "Decirle que tienes muchas ganas de ver la obra.",
-      "fr": "Lui dire que vous êtes vraiment impatient de voir la pièce.",
-      "tw": "說你很期待看這場演出。"
+      "en": "Say you won't be able to focus on the play with her looking like that.",
+      "cn": "说她这么好看，你没法专心看这场演出。",
+      "es": "Decirle que no vas a poder concentrarte en la obra con ella tan guapa.",
+      "fr": "Lui dire que vous n'arriverez pas à vous concentrer sur la pièce à la voir si belle.",
+      "tw": "說她這麼好看，你沒法專心看這場演出。"
     },
     {
       "id": "x00077",
@@ -839,11 +839,11 @@
     {
       "id": "x00082",
       "kind": "story",
-      "en": "<LI>DIANE: Mm. What are you going to eat?",
-      "cn": "<LI>黛安：嗯。你打算吃什么？",
-      "es": "<LI>DIANE: Mm. ¿Qué vas a comer?",
-      "fr": "<LI>DIANE : Hmm. Qu'est-ce que tu vas prendre ?",
-      "tw": "<LI>黛安：嗯。你想吃什麼？"
+      "en": "<LI>DIANE: <EM>(half smiling)</EM> Don't start. We've only just got here.",
+      "cn": "<LI>黛安：<EM>（似笑非笑）</EM>别这样。我们才刚到。",
+      "es": "<LI>DIANE: <EM>(sonriendo a medias)</EM> No empieces. Acabamos de llegar.",
+      "fr": "<LI>DIANE : <EM>(à demi souriante)</EM> Ne commence pas. On vient à peine d'arriver.",
+      "tw": "<LI>黛安：<EM>（似笑非笑）</EM>別這樣。我們才剛到。"
     },
     {
       "id": "x00083",

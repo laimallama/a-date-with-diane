@@ -1,3 +1,5 @@
+// Ending/extra Gallery click-paths + smoke test. Does not write player guide files.
+// Hidden-scene defs: write_hidden_scenes.js. Pack into HTML: build_gallery_data.js.
 const fs = require("fs");
 const vm = require("vm");
 const { earlyBushHouseBase } = require("./check_endings.js");
@@ -74,7 +76,7 @@ const saturdayTheatre = common.concat([
   "Saturday.",
   "On with the story!",
   "Just go there.",
-  "Say you wish you were on her side of the table.",
+  "Say you won't be able to focus on the play with her looking like that.",
   "OK.",
   "A bottle of Italian Pinot Grigio (£10)",
   "Go on to the food menu.",
@@ -2000,7 +2002,7 @@ const bathpeeRoute = [
 ];
 
 
-// Official prize endings (must end on a detected prize line — used by guide capture).
+// Official prize endings (must end on a detected prize line).
 const routes = {
   third: tuesdayShortHouse.concat(thirdTail),
   fourth: saturdayHouse.concat(firstDrink, flatRepeat(repeatDrink, 4), fourthTail),

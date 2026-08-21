@@ -34,11 +34,11 @@ The stats bar stays hidden/frozen on title, notes, further information, and day-
 
 Toolkit and conventions: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). Companion wiki: [`outputs/en/wiki_en.html`](outputs/en/wiki_en.html).
 
-All ending/extra Gallery route label sequences live in `write_verified_guides.js`; hidden-scene definitions live in `write_hidden_scenes.js`. There is no separate `routes/` folder.
+All ending/extra Gallery click-paths live in `verify_ending_routes.js`; hidden-scene definitions live in `write_hidden_scenes.js`. There is no separate `routes/` folder.
 
 ```bash
-node maintenance/write_verified_guides.js   # ending-route smoke test
+node maintenance/verify_ending_routes.js    # ending-route smoke test
 node maintenance/write_hidden_scenes.js     # hidden-scene definitions check
-node maintenance/build_gallery_data.js      # after Gallery route/title changes
+node maintenance/build_gallery_data.js      # pack routes into the Gallery HTML
 node maintenance/write_transcripts.js       # regenerate climax transcripts
 ```

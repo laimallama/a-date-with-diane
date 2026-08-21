@@ -1,4 +1,4 @@
-const { runRoute } = require("./verify_routes.js");
+const { runRoute } = require("./replay_route.js");
 
 const baseStart = [
   "I've already read them. I'll get straight on with the game.",

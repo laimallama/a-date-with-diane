@@ -1586,7 +1586,7 @@ start1()
 {
 s("<LI>Hay cinco finales exitosos distintos, o «resultados ganadores», ordenados por categoría. ¡A ver si los consigues todos!");
 s("<LI>También hay algunos finales de compensación, e incluso podrías conseguir una cita con Amanda.");
-s("<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco a su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.");
+s("<LI>El medidor de <strong>vejiga</strong> indica cuánto está aguantando Diane. Lo que hay en su <strong>vientre</strong> va pasando poco a poco al interior de su <strong>vejiga</strong> con el tiempo. Además, tienes <strong>3 golpes de suerte</strong> que debes usar con cabeza cuando te los ofrezcan, y recuerda que también pueden traer mala suerte. Ten en cuenta que no puedes usar más de uno al final de la noche, una vez que hayas cogido el autobús o el taxi a casa.");
 s("<LI>No esperes acostarte con ella en esta primera cita, pero puede que consigas algo de diversión si juegas bien tus cartas. Y nunca olvides: las mujeres son criaturas imprevisibles.");
 s("<LI>A medida que avance la noche, tus puntos de <strong>intimidad</strong> deberían subir, y eso afecta de manera natural a lo que puedes hacer. En algunas escenas también entran en juego los puntos de <strong>timidez</strong>, y la cantidad que hayas ganado o perdido al llegar a casa puede influir en lo que ocurra. En algunos casos conviene tener una cifra alta; en otros, una cifra baja, así que funcionan a modo de comodín."); 
 s("<LI>Empiezas con <strong>£100</strong>. Vigila tu dinero. Puede que necesites algo para un taxi a casa al final de la noche.");
@@ -1697,19 +1697,19 @@ s("<LI>Lleva un vestido veraniego estampado en blanco y negro, con bolsillos y u
 s("<LI>DIANE: ¡Hola! He llegado un poco antes para tomar algo con mi amiga que actúa en la obra. Acaba de irse a prepararse."); proc += 110;  
 c("flirt_l", "Decirle que tenías muchas ganas de volveros a ver.");    
 c("flirt_m", "Decirle que te encanta el vestido"); 
-c("flirt_h", "Decirle que ojalá estuvieras en su lado de la mesa.");  }
+c("flirt_h", "Decirle que no vas a poder concentrarte en la obra con ella tan guapa.");  }
 else if (tuesday)
 {s("<LI>Entras al vestíbulo y miras uno o dos carteles. Está un poco gris porque el sol se ha ocultado tras las nubes. No tardas mucho en verla caminar por la calle. Entra al vestíbulo y sonríe cuando te ve.");
 s("<LI>Lleva una falda roja de lunares a la altura de la rodilla, con cinturón, medias, una blusa blanca y una chaquetita roja. Está genial.");
 c("flirt_l", "Decirle que tenías muchas ganas de volveros a ver.");    
 c("flirt_m", "Decirle que te encanta la falda"); 
-c("flirt_h", "Decirle que ojalá estuvieras en su lado de la mesa");  
+c("flirt_h", "Decirle que no vas a poder concentrarte en la obra con ella tan guapa.");  
 c("winelist", "Decir que entonces entremos a comer."); }
 else
 {s("<LI>Entras al vestíbulo y miras uno o dos carteles. Te alegras de estar dentro porque fuera sopla un viento fresco. Tienes que esperar unos diez minutos; entonces la ves apresurarse por la calle. Entra al vestíbulo y sonríe cuando te ve.");
 s("<LI>Ha venido directamente del trabajo y lleva una elegante falda negra tableada, con una blusa negra y una chaqueta roja. Todo muy profesional, pero está genial.");
 c("flirt_l", "Decirle que tenías muchas ganas de volveros a ver.");   
-c("flirt_h", "Decirle que tienes muchas ganas de ver la obra.");  
+c("flirt_h", "Decirle que no vas a poder concentrarte en la obra con ella tan guapa.");  
 c("winelist", "Decir que entonces entremos a comer."); }}
 
 
@@ -1728,7 +1728,7 @@ c("winelist","Vale."); }
 function
 flirt_h() 
 {
-s("<LI>DIANE: Mm. ¿Qué vas a comer?"); getinti(-1); flirted = 1; 
+s("<LI>DIANE: <EM>(sonriendo a medias)</EM> No empieces. Acabamos de llegar."); getinti(-1); flirted = 1; 
 c("winelist","Vale."); }
 
 function  

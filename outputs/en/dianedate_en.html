@@ -1597,7 +1597,7 @@ start1()
 {
 s("<LI>There are five different successful endings, or 'winning results', rated in order. See if you can get them all!");
 s("<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.");
-s("<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows to her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.");
+s("<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows into her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.");
 s("<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.");
 s("<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card."); 
 s("<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.");
@@ -1708,19 +1708,19 @@ s("<LI>She's wearing a black-and-white patterned dress, almost like a summer fro
 s("<LI>DIANE: Hello! I got here a bit early so that I could have a drink with my friend who's acting in the play. She's just gone off to get ready."); proc += 110;  
 c("flirt_l", "Say you've really been looking forward to seeing each other again.");    
 c("flirt_m", "Say you love the dress"); 
-c("flirt_h", "Say you wish you were on her side of the table.");  }
+c("flirt_h", "Say you won't be able to focus on the play with her looking like that.");  }
 else if (tuesday)
 {s("<LI>You go into the foyer, and look at one or two posters. It's a little bit gloomy as the sun has gone behind the clouds. You don't have to wait long before you see her walking along the street. She comes into the foyer and smiles when she sees you.");
 s("<LI>She's wearing a knee-length red polka-dot skirt, with a belt, stockings, a white blouse and a little red jacket. She looks great.");
 c("flirt_l", "Say you've really been looking forward to seeing each other again.");    
 c("flirt_m", "Say you love the skirt"); 
-c("flirt_h", "Say you wish you were on her side of the table");  
+c("flirt_h", "Say you won't be able to focus on the play with her looking like that.");  
 c("winelist", "Say let's go in and eat, then."); }
 else
 {s("<LI>You go into the foyer, and look at one or two posters. You're glad to be inside as there's a cool wind blowing outside. You have to wait about ten minutes, then you see her hurrying down the street. She comes into the foyer and smiles when she sees you.");
 s("<LI>She's come straight from work and is wearing a smart black pleated skirt, with a black blouse and a red jacket. All rather businesslike but she looks great.");
 c("flirt_l", "Say you've really been looking forward to seeing each other again.");   
-c("flirt_h", "Say you're really looking forward to seeing the play.");  
+c("flirt_h", "Say you won't be able to focus on the play with her looking like that.");  
 c("winelist", "Say let's go in and eat, then."); }}
 
 
@@ -1739,7 +1739,7 @@ c("winelist","OK."); }
 function
 flirt_h() 
 {
-s("<LI>DIANE: Mm. What are you going to eat?"); getinti(-1); flirted = 1; 
+s("<LI>DIANE: <EM>(half smiling)</EM> Don't start. We've only just got here."); getinti(-1); flirted = 1; 
 c("winelist","OK."); }
 
 function  

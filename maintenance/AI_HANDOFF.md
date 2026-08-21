@@ -19,7 +19,7 @@ There are **no** external click-path guide `.txt` files. The Gallery is the walk
 
 Gallery currently documents **15 ending leaves** and **30 hidden-scene leaves** per language (leaf counts, not top-level group rows).
 
-All Gallery route label sequences live inline in `write_verified_guides.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
+All Gallery route label sequences live inline in `verify_ending_routes.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
 The old archive dig (`dianedate27a.html`) is finished: remaining archive-only stubs are unreachable drafts and are not merge candidates.
 
@@ -36,7 +36,7 @@ Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapi
 
 **Dashes in source → render (EN):** unspaced em dashes (`word—word`) are Chicago/US. British house style (Hart's, Guardian) is a **spaced en dash** (`word – word`). `polishStoryHtml` / `polishChoiceText` convert `—` at render; do not bulk-replace source dashes. Route `normalize()` folds `—` / `–` / spaced dashes so Gallery labels still match.
 
-**Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text; `write_verified_guides.js` `normalize()` strips quote marks so British `‘…’` still matches guide labels written with `“…”` / `"..."`.
+**Do not "fix" raw source to pre-bake typography.** Judge text in a real render (browser or route scripts). Route matching uses rendered text; `verify_ending_routes.js` `normalize()` strips quote marks so British `‘…’` still matches guide labels written with `“…”` / `"..."`.
 
 ## The `s()` rendering pipeline (know this before touching any narration line)
 
@@ -148,12 +148,12 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 | Path | Role |
 |------|------|
 | `AI_HANDOFF.md` | This file — conventions + toolkit map |
-| `write_verified_guides.js` | Ending-route smoke test (en/cn/tw/es/fr); holds **all** ending/extra route label sequences (bases/tails + expanded Gallery routes); **no guide `.txt` output** |
-| `write_hidden_scenes.js` | Hidden-scene definitions for Gallery; verify only from `main` |
-| `write_transcripts.js` | Climax transcripts → `outputs/{lang}/transcripts/{endings,hidden_scenes}/` (from climax/scene start) |
-| `build_gallery_data.js` | Rebuild/inject `GALLERY_DATA` into all HTML (+ bilingual) |
+| `verify_ending_routes.js` | Click-paths for prize endings and extra hidden scenes; running it smoke-tests those paths. Does not write player files. |
+| `write_hidden_scenes.js` | Classic hidden-scene Gallery definitions (titles, climax starts). Not transcripts. |
+| `write_transcripts.js` | Writes climax `.txt` transcripts → `outputs/{lang}/transcripts/{endings,hidden_scenes}/` |
+| `build_gallery_data.js` | Packs the two route books into `GALLERY_DATA` and injects that into the HTML |
 | `check_endings.js` | Shared early-bush base + helpers |
-| `verify_routes.js` | Replay one route against an HTML file |
+| `replay_route.js` | Replay one click-path against an HTML file (helper for `check_endings.js`) |
 | `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
 | `aligned_text.json` | Aligned EN/CN/TW/ES/FR strings |
 
@@ -162,7 +162,7 @@ Do **not** leave scratch audit dumps in this folder (delete after use). Ignore l
 After wording/route edits:
 
 ```bash
-node maintenance/write_verified_guides.js
+node maintenance/verify_ending_routes.js
 node maintenance/write_hidden_scenes.js
 ```
 
@@ -178,7 +178,7 @@ After climax wording or transcript-writer changes (also after Gallery rebuild):
 node maintenance/write_transcripts.js
 ```
 
-`write_verified_guides.js` green across all five languages is the fastest smoke test after a text batch.
+`verify_ending_routes.js` green across all five languages is the fastest smoke test after a text batch.
 
 ## Do / don't
 

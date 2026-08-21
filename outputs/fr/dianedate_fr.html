@@ -1697,19 +1697,19 @@ s("<LI>Elle porte une robe d'été à motifs noirs et blancs, avec des poches et
 s("<LI>DIANE : Bonjour ! Je suis arrivée un peu tôt pour prendre un verre avec mon amie qui joue dans la pièce. Elle vient juste de partir se préparer."); proc += 110;  
 c("flirt_l", "Lui dire que vous étiez vraiment impatients de vous retrouver.");    
 c("flirt_m", "Lui dire que vous adorez sa robe"); 
-c("flirt_h", "Lui dire que vous aimeriez être de son côté de la table.");  }
+c("flirt_h", "Lui dire que vous n'arriverez pas à vous concentrer sur la pièce à la voir si belle.");  }
 else if (tuesday)
 {s("<LI>Vous entrez dans le hall et regardez une ou deux affiches. Le temps est un peu maussade — le soleil est passé derrière les nuages. Vous n'attendez pas longtemps avant de la voir arriver dans la rue. Elle entre dans le hall et vous sourit en vous apercevant.");
 s("<LI>Elle porte une jupe rouge à pois mi-longue, avec une ceinture, des bas, un chemisier blanc et un petit veston rouge. Elle est vraiment très bien.");
 c("flirt_l", "Lui dire que vous étiez vraiment impatients de vous retrouver.");    
 c("flirt_m", "Lui dire que vous adorez sa jupe"); 
-c("flirt_h", "Lui dire que vous aimeriez être de son côté de la table");  
+c("flirt_h", "Lui dire que vous n'arriverez pas à vous concentrer sur la pièce à la voir si belle.");  
 c("winelist", "Proposer d'aller manger, dans ce cas."); }
 else
 {s("<LI>Vous entrez dans le hall et regardez une ou deux affiches. Vous êtes soulagé d'être à l'intérieur car il y a un vent frais qui souffle dehors. Vous attendez une dizaine de minutes, puis vous la voyez arriver en hâte dans la rue. Elle entre dans le hall et vous sourit en vous apercevant.");
 s("<LI>Elle vient directement du travail et porte une élégante jupe noire plissée, avec un chemisier noir et un veston rouge. Un look très professionnel, mais elle est vraiment très bien.");
 c("flirt_l", "Lui dire que vous étiez vraiment impatients de vous retrouver.");   
-c("flirt_h", "Lui dire que vous êtes vraiment impatient de voir la pièce.");  
+c("flirt_h", "Lui dire que vous n'arriverez pas à vous concentrer sur la pièce à la voir si belle.");  
 c("winelist", "Proposer d'aller manger, dans ce cas."); }}
 
 
@@ -1728,7 +1728,7 @@ c("winelist","D'accord."); }
 function
 flirt_h() 
 {
-s("<LI>DIANE : Hmm. Qu'est-ce que tu vas prendre ?"); getinti(-1); flirted = 1; 
+s("<LI>DIANE : <EM>(à demi souriante)</EM> Ne commence pas. On vient à peine d'arriver."); getinti(-1); flirted = 1; 
 c("winelist","D'accord."); }
 
 function  

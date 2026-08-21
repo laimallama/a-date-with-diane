@@ -1,3 +1,5 @@
+// Replay one click-path against an HTML file. Used by check_endings.js.
+// The ending-route book and smoke test live in verify_ending_routes.js.
 const fs = require("fs");
 const vm = require("vm");
 

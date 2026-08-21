@@ -151,7 +151,7 @@ const ENDING_GROUPS = [
   },
 ];
 
-// Extra hidden scenes (route keys from write_verified_guides `galleryRoutes`).
+// Extra hidden scenes (route keys from verify_ending_routes.js `galleryRoutes`).
 // sceneStartTag: first tag of the actual scene — everything before is auto-skipped base.
 const EXTRA_HIDDEN = [
   {

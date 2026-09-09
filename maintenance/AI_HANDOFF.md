@@ -46,6 +46,10 @@ Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapi
 
 `c(tag, label)` appends a clickable choice button; `go(tag)` evals `tag+'()'`.
 
+## Status bar (Diane’s date HUD)
+
+`showStats` is Diane’s date HUD only. `PREGAME_TAGS` hide it before “On with the story!”. `HIDE_DATE_STATS_TAGS` hide it the next morning (`showover1`, `showover2`). `gameover` inherits `holdDateStatsOff` so a hidden stretch does not bring the bar back. Same-night prize cards, same-night game-overs (including Amanda downstairs), and Chloe from `walkhome6` (“You turn for home”) through `watching6` / `luckytrip19` keep it — luckshots must stay visible for the doorbell shot. At `walkhome6` call `afterpee()` (she has gone inside; off-screen leftover, not a fake `blad = 0`). Digestion ticks whenever the bar is shown. Do not give Chloe or Amanda their own meters.
+
 ## Stage-direction / aside formatting (settled convention — read before touching any `<EM>`)
 
 Historically the game embedded stage directions mid-sentence like `SPEAKER: <EM>action</EM> dialogue`, which reads badly once rendered. The settled rule, sorted by **what the aside is doing**, not by where it happens to sit in the old source:

@@ -1177,10 +1177,10 @@
       "id": "x00118",
       "kind": "choice",
       "tag": "buypizza",
-      "en": "A spicy pepperoni pizza (£8)",
+      "en": "Spicy pepperoni pizza (£8)",
       "cn": "香辣意大利辣肠披萨（8英镑）",
-      "es": "Una pizza de pepperoni picante (£8)",
-      "fr": "Une pizza pepperoni épicée (£8)",
+      "es": "Pizza de pepperoni picante (£8)",
+      "fr": "Pizza pepperoni épicée (£8)",
       "tw": "香辣義大利辣腸披薩（8英鎊）"
     },
     {
@@ -1197,11 +1197,11 @@
       "id": "x00120",
       "kind": "choice",
       "tag": "buyravioli",
-      "en": "Ravioli—you're trying to save money (£7)",
-      "cn": "意式方饺——你在省钱呢（7英镑）",
-      "es": "Ravioli, para ahorrar dinero (£7)",
-      "fr": "Des raviolis—vous essayez d'économiser (£7)",
-      "tw": "義式方餃——你在省錢呢（7英鎊）。"
+      "en": "Ravioli (£7)",
+      "cn": "意式方饺（7英镑）",
+      "es": "Ravioli (£7)",
+      "fr": "Raviolis (£7)",
+      "tw": "義式方餃（7英鎊）"
     },
     {
       "id": "x00121",
@@ -1546,10 +1546,10 @@
       "id": "x00157",
       "kind": "story",
       "en": "<LI>DIANE: This looks nice. I love pasta.",
-      "cn": "<LI>黛安：看起来好好吃。我最喜欢意面了。",
+      "cn": "<LI>黛安：看起来好好吃。我最喜欢意式面食了。",
       "es": "<LI>DIANE: Qué buena pinta. Me encanta la pasta.",
       "fr": "<LI>DIANE : Ça a l'air délicieux. J'adore les pâtes.",
-      "tw": "<LI>黛安：看起來好好吃。我最喜歡義大利麵了。"
+      "tw": "<LI>黛安：看起來好好吃。我最喜歡義式麵食了。"
     },
     {
       "id": "x00158",
@@ -1875,10 +1875,10 @@
       "id": "x00192",
       "kind": "story",
       "en": "<LI>DIANE: This looks nice. I love pasta.",
-      "cn": "<LI>黛安：看起来好好吃。我最喜欢意面了。",
+      "cn": "<LI>黛安：看起来好好吃。我最喜欢意式面食了。",
       "es": "<LI>DIANE: Qué buena pinta. Me encanta la pasta.",
       "fr": "<LI>DIANE : Ça a l'air délicieux. J'adore les pâtes.",
-      "tw": "<LI>黛安：看起來好好吃。我最喜歡義大利麵了。"
+      "tw": "<LI>黛安：看起來好好吃。我最喜歡義式麵食了。"
     },
     {
       "id": "x00193",
@@ -2168,10 +2168,10 @@
       "id": "x00223",
       "kind": "story",
       "en": "<LI>DIANE: This looks nice. I love pasta.",
-      "cn": "<LI>黛安：看起来好好吃。我最喜欢意面了。",
+      "cn": "<LI>黛安：看起来好好吃。我最喜欢意式面食了。",
       "es": "<LI>DIANE: Qué buena pinta. Me encanta la pasta.",
       "fr": "<LI>DIANE : Ça a l'air délicieux. J'adore les pâtes.",
-      "tw": "<LI>黛安：看起來好好吃。我最喜歡義大利麵了。"
+      "tw": "<LI>黛安：看起來好好吃。我最喜歡義式麵食了。"
     },
     {
       "id": "x00224",
@@ -2525,10 +2525,10 @@
       "id": "x00262",
       "kind": "story",
       "en": "<LI>DIANE: This looks nice. I love pasta.",
-      "cn": "<LI>黛安：看起来好好吃。我最喜欢意面了。",
+      "cn": "<LI>黛安：看起来好好吃。我最喜欢意式面食了。",
       "es": "<LI>DIANE: Qué buena pinta. Me encanta la pasta.",
       "fr": "<LI>DIANE : Ça a l'air délicieux. J'adore les pâtes.",
-      "tw": "<LI>黛安：看起來好好吃。我最喜歡義大利麵了。"
+      "tw": "<LI>黛安：看起來好好吃。我最喜歡義式麵食了。"
     },
     {
       "id": "x00263",
@@ -2836,10 +2836,10 @@
       "id": "x00294",
       "kind": "story",
       "en": "<LI>DIANE: This looks nice. I love pasta.",
-      "cn": "<LI>黛安：看起来好好吃。我最喜欢意面了。",
+      "cn": "<LI>黛安：看起来好好吃。我最喜欢意式面食了。",
       "es": "<LI>DIANE: Qué buena pinta. Me encanta la pasta.",
       "fr": "<LI>DIANE : Ça a l'air délicieux. J'adore les pâtes.",
-      "tw": "<LI>黛安：看起來好好吃。我最喜歡義大利麵了。"
+      "tw": "<LI>黛安：看起來好好吃。我最喜歡義式麵食了。"
     },
     {
       "id": "x00295",
@@ -2863,7 +2863,7 @@
     {
       "id": "x00297",
       "kind": "story",
-      "en": "<LI>Your Tortelloni is nice. A really tasty choice. You enjoy every mouthful.",
+      "en": "<LI>Your tortelloni is nice. A really tasty choice. You enjoy every mouthful.",
       "cn": "<LI>你点的意式大馄饨非常好吃，确实选对了。每一口你都吃得很享受。",
       "es": "<LI>Tu tortelloni está buenísimo. Una elección muy acertada. Disfrutas de cada bocado.",
       "fr": "<LI>Vos tortelloni sont délicieux. Un vrai bon choix. Vous savourez chaque bouchée.",
@@ -3612,10 +3612,10 @@
       "id": "x00377",
       "kind": "story",
       "en": "<LI>DIANE: This looks nice. I love pasta.",
-      "cn": "<LI>黛安：看起来好好吃。我最喜欢意面了。",
+      "cn": "<LI>黛安：看起来好好吃。我最喜欢意式面食了。",
       "es": "<LI>DIANE: Qué buena pinta. Me encanta la pasta.",
       "fr": "<LI>DIANE : Ça a l'air délicieux. J'adore les pâtes.",
-      "tw": "<LI>黛安：看起來好好吃。我最喜歡義大利麵了。"
+      "tw": "<LI>黛安：看起來好好吃。我最喜歡義式麵食了。"
     },
     {
       "id": "x00378",
@@ -12535,11 +12535,29 @@
     {
       "id": "x01327",
       "kind": "story",
-      "en": "<LI>Oh! She says, and puts a hand across her mouth, looking at you with mock embarrassment. You look over the wall and can see down the half lit towpath to where Bruno and Molly are standing, perhaps 50 yards away.",
-      "cn": "<LI>“哦！”她轻呼一声，用手捂住嘴，带着几分假装的不好意思看着你。你探头往墙下望去，能看到光线昏暗的纤道上，布鲁诺和莫莉站在那里，大约五十码开外。",
-      "es": "<LI>—¡Oh! —dice, y se lleva una mano a la boca, mirándote con fingido bochorno. Te asomas a la pared y puedes ver a lo largo del camino de sirga apenas iluminado, donde Bruno y Molly están de pie, a unos 50 metros.",
-      "fr": "<LI>« Oh ! » dit-elle, portant une main à sa bouche et vous regardant avec une fausse gêne. Vous regardez par-dessus le mur et pouvez voir en contrebas le chemin de halage à moitié éclairé, où Bruno et Molly se tiennent à une cinquantaine de mètres.",
-      "tw": "<LI>「哦！」她輕呼一聲，用手捂住嘴，帶著幾分假裝的不好意思看著你。你探頭往牆下望去，能看到光線昏暗的纖道上，布魯諾和莫莉站在那裡，大約五十碼開外。"
+      "en": "<LI>DIANE: Oh!",
+      "cn": "<LI>黛安：哦！",
+      "es": "<LI>DIANE: ¡Oh!",
+      "fr": "<LI>DIANE : Oh !",
+      "tw": "<LI>黛安：哦！"
+    },
+    {
+      "id": "x01327b",
+      "kind": "story",
+      "en": "<LI>She puts a hand across her mouth, looking at you with mock embarrassment.",
+      "cn": "<LI>她用手捂住嘴，带着几分假装的不好意思看着你。",
+      "es": "<LI>Se lleva una mano a la boca, mirándote con fingido bochorno.",
+      "fr": "<LI>Elle porte une main à sa bouche et vous regarde avec une fausse gêne.",
+      "tw": "<LI>她用手捂住嘴，帶著幾分假裝的不好意思看著你。"
+    },
+    {
+      "id": "x01327c",
+      "kind": "story",
+      "en": "<LI>You look over the wall and can see down the half lit towpath to where Bruno and Molly are standing, perhaps 50 yards away.",
+      "cn": "<LI>你探头往墙下望去，能看到光线昏暗的纤道上，布鲁诺和莫莉站在那里，大约五十码开外。",
+      "es": "<LI>Te asomas a la pared y puedes ver a lo largo del camino de sirga apenas iluminado, donde Bruno y Molly están de pie, a unos 50 metros.",
+      "fr": "<LI>Vous regardez par-dessus le mur et pouvez voir en contrebas le chemin de halage à moitié éclairé, où Bruno et Molly se tiennent à une cinquantaine de mètres.",
+      "tw": "<LI>你探頭往牆下望去，能看到光線昏暗的纖道上，布魯諾和莫莉站在那裡，大約五十碼開外。"
     },
     {
       "id": "x01328",
@@ -12635,7 +12653,7 @@
     {
       "id": "x01338",
       "kind": "story",
-      "en": "<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt she emerges from behind the skip and rejoins Bruno.",
+      "en": "<LI>She pees for the best part of a minute and then, straightening up, pulls up her white knickers, adjusting them, and then pulls up and zips her jeans. Still buckling her belt, she emerges from behind the skip and rejoins Bruno.",
       "cn": "<LI>她尿了将近一分钟，然后站直身子，把白色内裤拉上来整理好，再拉上牛仔裤拉链。她一边系着腰带，一边从废料箱后面走出来，重新走向布鲁诺。",
       "es": "<LI>Hace pis durante casi un minuto y luego, al incorporarse, se sube las bragas blancas y las ajusta, después se sube los vaqueros y cierra la cremallera. Todavía abrochándose el cinturón, sale de detrás del contenedor y se reúne con Bruno.",
       "fr": "<LI>Elle fait pipi pendant près d'une bonne minute, puis se redresse, remonte sa culotte blanche en la rajustant, et tire et ferme son jean. Sa ceinture encore à moitié bouclée, elle ressort de derrière la benne et rejoint Bruno.",

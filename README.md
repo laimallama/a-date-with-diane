@@ -28,7 +28,7 @@ The game boots on the title screen (no age gate). **Gallery** is available from 
 
 **Dark Mode: On/Off** persists across refresh in the same tab (`sessionStorage`). A new tab starts in light mode.
 
-The stats bar stays hidden/frozen on title, notes, further information, and day-choice screens, then appears when the date begins (“On with the story!”).
+The stats bar is Diane’s date HUD. It stays hidden on title, notes, further information, and day-choice screens, then appears when the date begins (“On with the story!”). It stays up through same-night prize cards, same-night game-overs (including Amanda downstairs), and the Chloe walk-home stretch (so luckshots stay visible). When you turn for home after leaving Diane, her bladder empties off-screen as usual. It hides again the next morning (the phone call). Chloe and Amanda do not get their own meters.
 
 ## Maintaining
 

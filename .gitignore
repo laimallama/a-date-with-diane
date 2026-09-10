@@ -1,0 +1,9 @@
+.DS_Store
+.tmp-gif-venv/
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.env
+.env.*
+*.log

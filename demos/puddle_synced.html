@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synced puddle demo — ADWD visual</title>
+  <style>
+    :root {
+      --ink: #2a241c;
+      --muted: #6b5e4e;
+      --line: #d4c4ae;
+      --paper: #f3ebe0;
+      --stage: #ebe0d0;
+      --accent: #8b3a3a;
+      --on-accent: #fff8f0;
+      --status: #e8ddd0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, #fff6ea 0%, transparent 55%),
+        linear-gradient(165deg, #f7f0e6 0%, #e8dcc8 100%);
+      min-height: 100vh;
+      padding: 28px 20px 48px;
+    }
+    h1 { font-size: 1.5rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+    .lede {
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 46rem;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1000px;
+      align-items: start;
+    }
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 560px) {
+      .pair { grid-template-columns: 1fr; }
+    }
+    .controls-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (max-width: 560px) {
+      .controls-row { grid-template-columns: 1fr; }
+    }
+    .stage-wrap {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 10px 28px rgba(42, 36, 28, 0.08);
+    }
+    .stage-label {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--status);
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: system-ui, sans-serif;
+    }
+    .stage-label strong { color: var(--ink); }
+    .visual-stage {
+      position: relative;
+      height: min(40vh, 360px);
+      min-height: 240px;
+      background: var(--stage);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 16px 12px 12px;
+    }
+    .visual-stage img {
+      height: calc(100% - 4px);
+      width: auto;
+      object-fit: contain;
+      object-position: bottom center;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.32));
+    }
+    .band {
+      position: absolute;
+      top: 12px; left: 12px;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--on-accent);
+      background: var(--accent);
+      padding: 4px 10px;
+      font-weight: 700;
+      font-family: system-ui, sans-serif;
+      border-radius: 2px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 242, 0.88);
+      padding: 14px 14px 16px;
+    }
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: system-ui, sans-serif;
+    }
+    .row { margin-bottom: 12px; }
+    .row label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+      font-family: system-ui, sans-serif;
+    }
+    select {
+      width: 100%;
+      font: inherit;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      background: #fffaf3;
+      border-radius: 2px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chips button {
+      font-family: system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: #fffaf3;
+      color: var(--ink);
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .chips button[aria-pressed="true"] {
+      background: var(--accent);
+      color: var(--on-accent);
+      border-color: transparent;
+    }
+    .notes {
+      margin: 14px 0 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,250,242,0.7);
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.45;
+      max-width: 1000px;
+    }
+    .notes strong { color: var(--ink); }
+    code { font-size: 0.84em; }
+  </style>
+</head>
+<body>
+  <h1>Synced puddle demo</h1>
+  <p class="lede">
+    Left = current pee/wet loop alone. Right = same loop with a puddle rebuilt for this version:
+    recolored to match the stream yellow, anchored under the splash, growing when the stream hits the floor,
+    then <em>holding</em> through the pong reverse (no liquid unspreading).
+  </p>
+
+  <div class="layout">
+    <div class="pair">
+      <div class="stage-wrap">
+        <div class="stage-label"><strong>Current clip</strong> · no puddle</div>
+        <div class="visual-stage">
+          <div class="band" id="bandA">Peeing</div>
+          <img id="imgPlain" alt="Current clip without puddle" />
+        </div>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage-label"><strong>Synced</strong> · puddle baked in</div>
+        <div class="visual-stage">
+          <div class="band" id="bandB">Peeing</div>
+          <img id="imgSynced" alt="Synced clip with puddle" />
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <aside class="panel">
+        <h2>Controls</h2>
+        <div class="row">
+          <label for="cast">Character</label>
+          <select id="cast">
+            <option value="diane">Diane</option>
+            <option value="molly">Molly</option>
+            <option value="debbie">Debbie</option>
+            <option value="amanda">Amanda</option>
+            <option value="chloe">Chloe</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Clip</label>
+          <div class="chips" id="clips" role="group">
+            <button type="button" data-clip="07_pee_a" aria-pressed="true">Pee A</button>
+            <button type="button" data-clip="08_pee_b">Pee B</button>
+            <button type="button" data-clip="06_wetting">Wetting</button>
+          </div>
+        </div>
+      </aside>
+      <aside class="panel">
+        <h2>Sync</h2>
+        <button type="button" id="restart" style="width:100%;font:inherit;font-size:0.9rem;padding:8px;background:var(--accent);color:var(--on-accent);border:0;cursor:pointer;font-weight:600;border-radius:2px">
+          Restart both
+        </button>
+      </aside>
+    </div>
+  </div>
+
+  <p class="notes">
+    <strong>What changed vs the raw Mojique puddle:</strong>
+    timing matched to each current pong GIF; grow starts at stream-to-floor onset;
+    full puddle holds on reverse; color lifted from olive <code>#a0a000</code> toward the sprite stream yellow;
+    origin shifted under each clip’s splash. Files live in
+    <code>demos/puddle_synced/</code> (baked) and <code>assets/fx/*_puddle.gif</code> (layer mates).
+  </p>
+
+  <script>
+    (function () {
+      var PEE_B = { molly: true, amanda: true };
+      var BAND = {
+        "07_pee_a": "Peeing",
+        "08_pee_b": "Peeing",
+        "06_wetting": "Wetting",
+      };
+      var state = { cast: "diane", clip: "07_pee_a" };
+      var imgPlain = document.getElementById("imgPlain");
+      var imgSynced = document.getElementById("imgSynced");
+      var bandA = document.getElementById("bandA");
+      var bandB = document.getElementById("bandB");
+
+      function bust(url) { return url + "?t=" + Date.now(); }
+
+      function plainPath() {
+        var file = state.clip + ".gif";
+        if (state.clip === "08_pee_b" && !PEE_B[state.cast]) file = "07_pee_a.gif";
+        return "../assets/" + state.cast + "/" + file;
+      }
+
+      function syncedPath() {
+        var file = state.clip + ".gif";
+        if (state.clip === "08_pee_b" && !PEE_B[state.cast]) file = "07_pee_a.gif";
+        return "./puddle_synced/" + state.cast + "_" + file;
+      }
+
+      function render() {
+        var label = BAND[state.clip] || "Clip";
+        bandA.textContent = label;
+        bandB.textContent = label;
+        document.querySelectorAll("#clips button").forEach(function (btn) {
+          var clip = btn.getAttribute("data-clip");
+          var disabled = clip === "08_pee_b" && !PEE_B[state.cast];
+          btn.disabled = disabled;
+          btn.setAttribute("aria-pressed", clip === state.clip ? "true" : "false");
+          btn.style.opacity = disabled ? "0.4" : "1";
+        });
+        imgPlain.src = bust(plainPath());
+        imgSynced.src = bust(syncedPath());
+      }
+
+      document.getElementById("cast").addEventListener("change", function (e) {
+        state.cast = e.target.value;
+        if (state.clip === "08_pee_b" && !PEE_B[state.cast]) state.clip = "07_pee_a";
+        render();
+      });
+      document.getElementById("clips").addEventListener("click", function (e) {
+        var btn = e.target.closest("button[data-clip]");
+        if (!btn || btn.disabled) return;
+        state.clip = btn.getAttribute("data-clip");
+        render();
+      });
+      document.getElementById("restart").addEventListener("click", render);
+
+      render();
+    })();
+  </script>
+</body>
+</html>

@@ -315,7 +315,7 @@
   }
 
   /**
-   * Frame-locked grow bank — same timing as demos/puddle_live.
+   * Frame-locked grow bank — same timing as the puddle sync engine.
    * Prepares maps, then starts character GIFs + puddle clock on the same tick.
    */
   function startSyncedPuddle(entries, kind, continuing) {

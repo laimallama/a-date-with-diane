@@ -13194,7 +13194,7 @@ window.ADWD_PUDDLE_META = {
 </script>
 <script id="adwd-puddle-sync">
 /**
- * Frame-locked puddle sync — same timing as demos/puddle_live.html.
+ * Frame-locked puddle sync — grow-bank scrub locked to character pee/wet GIFs.
  * Grow banks load as PNG frames via <img> (works on file:// and without ImageDecoder).
  */
 (function (root) {
@@ -13947,7 +13947,7 @@ window.ADWD_PUDDLE_META = {
   }
 
   /**
-   * Frame-locked grow bank — same timing as demos/puddle_live.
+   * Frame-locked grow bank — same timing as the puddle sync engine.
    * Prepares maps, then starts character GIFs + puddle clock on the same tick.
    */
   function startSyncedPuddle(entries, kind, continuing) {

@@ -29,7 +29,7 @@ Transparent GIF loops for the visual edition. Art © Ao Kurage (Mojique), adapte
 
 **Shared style (all clips):** 398×398, **10 fps** (100 ms/frame), transparency index 0, nearest-neighbour upscale from Mojique `Pictures` PNGs.
 
-Puddle preview: `demos/puddle_live.html` — starts when stream is out, continue-spreads on second gush, holds through panties-up, clears after.
+Live puddles in the visual shell use `assets/fx/` + `visual/puddle-sync.js` (frame-locked to pee/wet clips).
 
 ## Archive (not used in-game)
 

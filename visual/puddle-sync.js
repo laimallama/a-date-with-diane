@@ -1,5 +1,5 @@
 /**
- * Frame-locked puddle sync — same timing as demos/puddle_live.html.
+ * Frame-locked puddle sync — grow-bank scrub locked to character pee/wet GIFs.
  * Grow banks load as PNG frames via <img> (works on file:// and without ImageDecoder).
  */
 (function (root) {

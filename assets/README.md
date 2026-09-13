@@ -1,6 +1,6 @@
 # Character sprites (`assets/`)
 
-Transparent GIF loops for the visual edition. Art © Ao Kurage (Mojique), adapted for ADWD.
+Transparent GIF animation assets for the visual edition. Art © Ao Kurage (Mojique), adapted for ADWD.
 
 ## Active folders
 
@@ -21,11 +21,11 @@ Transparent GIF loops for the visual edition. Art © Ao Kurage (Mojique), adapte
 | `03_desperate_pee.gif` | Desperate |
 | `04_critical_pee.gif` | Critical |
 | `05_wet_idle.gif` | Already wet (after accident) |
-| `06_wetting.gif` | Wetting accident (looped) |
+| `06_wetting.gif` | Forward event sequence; the shell switches to `05_wet_idle.gif` after one pass |
 | `07_pee_a.gif` | Intentional pee |
 | `08_pee_b.gif` | Second pee pose (Molly & Amanda only) |
 
-`06` / `07` / `08` are **one full-arc pong** each (same individual cycle as the old ×3 pack: desperation → pee → panties up → reverse). Internal pee frames unchanged.
+`07` / `08` use full-arc bidirectional loops. Active `06` files are forward sequences, not the old bidirectional loops. Their one-pass durations are Diane 2.2 s, Molly 3.0 s, Debbie 2.9 s, Amanda 2.5 s, and Chloe 2.7 s. The adapter controls the transition to the idle clip; the files themselves contain finite-repeat GIF metadata.
 
 **Shared style (all clips):** 398×398, **10 fps** (100 ms/frame), transparency index 0, nearest-neighbour upscale from Mojique `Pictures` PNGs.
 

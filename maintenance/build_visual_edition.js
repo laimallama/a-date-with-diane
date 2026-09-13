@@ -11,6 +11,13 @@ const SRC = path.join(ROOT, "outputs/en/dianedate_en.html");
 const OUT = path.join(ROOT, "outputs/en/dianedate_visual_en.html");
 const VISUAL = path.join(ROOT, "visual");
 
+function replaceRequired(source, search, replacement) {
+  const matched = typeof search === "string" ? source.includes(search) : search.test(source);
+  if (!matched) throw new Error("Visual build anchor not found: " + String(search).slice(0, 100));
+  // Insert generated code literally; do not interpret $ replacement sequences.
+  return source.replace(search, () => replacement);
+}
+
 function read(p) {
   return fs.readFileSync(p, "utf8");
 }
@@ -144,19 +151,19 @@ ${metersHtml}
 let html = read(SRC);
 
 // Title
-html = html.replace(
+html = replaceRequired(html,
   /<title>[^<]*<\/title>/i,
   "<title>A Date With Diane — Visual</title>"
 );
 
 // Inject visual CSS before </style> of game (append new style block before </head>)
-html = html.replace(
+html = replaceRequired(html,
   "</head>",
   "<style id=\"visual-shell-css\">\n" + shellCss + "\n</style>\n</head>"
 );
 
 // Mark body
-html = html.replace(/<body>/i, '<body class="visual-edition">');
+html = replaceRequired(html,/<body>/i, '<body class="visual-edition">');
 
 // Replace game-shell block with visual layout wrapping #box
 const oldShell = /<div class="game-shell">[\s\S]*?<div id="box"[^>]*><\/div>\s*<\/div>/;
@@ -165,7 +172,7 @@ if (!oldShell.test(html)) {
   process.exit(1);
 }
 
-html = html.replace(
+html = replaceRequired(html,
   oldShell,
   shellOpen +
     '  <div id="gameToolbar" class="game-toolbar" style="display:none"></div>\n' +
@@ -174,7 +181,7 @@ html = html.replace(
 );
 
 // Inject scene map + adapter before </body>
-html = html.replace(
+html = replaceRequired(html,
   "</body>",
   "<script id=\"adwd-puddle-meta\">\nwindow.ADWD_PUDDLE_META = " +
     puddleMetaRaw +
@@ -188,7 +195,7 @@ html = html.replace(
 );
 
 // Rail brand (title → day), Back, Skip — keep in sync with classic chrome helpers
-html = html.replace(
+html = replaceRequired(html,
   "function syncThemeButton() {",
   `function syncVisualChrome() {
   try {
@@ -207,23 +214,23 @@ html = html.replace(
 function syncThemeButton() {`
 );
 
-html = html.replace(
+html = replaceRequired(html,
   "syncThemeButton();\n",
   "syncThemeButton();\n  try { syncVisualChrome(); } catch (e) {}\n"
 );
 
-html = html.replace(
+html = replaceRequired(html,
   "box.classList.add(\"screen-fade\");",
   "box.classList.add(\"screen-fade\");\n    try { syncVisualChrome(); } catch (eVis) {}"
 );
 
 // Short Skip label in classic nav + sync to rail #skipBtn
-html = html.replace(
+html = replaceRequired(html,
   /Skip to the good bit!/g,
   "Skip"
 );
 
-html = html.replace(
+html = replaceRequired(html,
   `function syncSkipButton() {
   var row = document.querySelector("#box .nav-row");
   if (!row) return;
@@ -266,7 +273,12 @@ html = html.replace(
 }`
 );
 
-fs.writeFileSync(OUT, html, "utf8");
-const size = (fs.statSync(OUT).size / 1024 / 1024).toFixed(2);
-console.log("Wrote", OUT, "(" + size + " MB)");
-console.log("Open file:// outputs/en/dianedate_visual_en.html");
+if (process.argv.includes("--check")) {
+  if (!fs.existsSync(OUT) || read(OUT) !== html) throw new Error("Visual HTML is stale; run node maintenance/build_visual_edition.js");
+  console.log("Visual HTML matches its source and presentation modules (read-only).");
+} else {
+  fs.writeFileSync(OUT, html, "utf8");
+  const size = (Buffer.byteLength(html, "utf8") / 1024 / 1024).toFixed(2);
+  console.log("Wrote", OUT, "(" + size + " MB)");
+  console.log("Open outputs/en/dianedate_visual_en.html in a browser.");
+}

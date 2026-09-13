@@ -1,7 +1,7 @@
 /**
- * Maps game tags → location backdrop + on-stage cast.
+ * Maps game tags → location label + on-stage cast.
  *
- * Backdrops are CSS atmospheres keyed by location id (see visual/shell.css).
+ * The current shell uses a shared stage background, with data-location available for styling.
  * Cast is an allowlist: default Diane alone; duo only when the beat
  * literally has that second woman with Diane (or as the watch focus).
  */
@@ -37,7 +37,10 @@
   function match(tag, parts) {
     tag = String(tag || "");
     for (var i = 0; i < parts.length; i++) {
-      if (tag.indexOf(parts[i]) !== -1) return true;
+      // Numbered route families must not capture a different number (3 vs 31).
+      if (/^luckytrip\d+$/.test(parts[i])) {
+        if (new RegExp("^" + parts[i] + "(?![0-9])").test(tag)) return true;
+      } else if (tag.indexOf(parts[i]) !== -1) return true;
     }
     return false;
   }
@@ -63,6 +66,12 @@
     if (!tag || tag === "start" || match(tag, ["start1", "info", "tuesdaydate", "thursdaydate", "saturdaydate"])) {
       return LOC.title;
     }
+
+    // Explicit exceptions take precedence over legacy name-based location rules.
+    if (tag === "traintalka") return LOC.riverside;
+    if (match(tag, ["luckytrip31"])) return LOC.home;
+    if (match(tag, ["luckytrip19"])) return LOC.night;
+    if (starts(tag, ["search", "goleft", "passage"])) return LOC.night;
 
     // —— Specific places first (avoid broad substring traps) ——
     if (match(tag, ["church", "lych", "bushome", "luckytrip17", "peestop"])) return LOC.church;

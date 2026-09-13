@@ -2,8 +2,10 @@
 // The ending-route book and smoke test live in verify_ending_routes.js.
 const fs = require("fs");
 const vm = require("vm");
+const path = require("path");
 
-const htmlPath = process.argv[2] || "outputs/en/dianedate_en.html";
+const defaultHtmlPath = path.resolve(__dirname, "../outputs/en/dianedate_en.html");
+const htmlPath = require.main === module && process.argv[2] ? path.resolve(process.argv[2]) : defaultHtmlPath;
 const source = fs.readFileSync(htmlPath, "utf8");
 const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
 

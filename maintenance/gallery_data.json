@@ -4871,6 +4871,11 @@
           "choosewalk",
           "riverside2",
           "riverside3",
+          "riverside3aa",
+          "riverside4",
+          "sitonbench",
+          "riverside5",
+          "riverside6",
           "riverside7",
           "riverside8",
           "riverside9",
@@ -4965,9 +4970,10 @@
           "walkhomedesp7",
           "showover",
           "showover1",
+          "showover2",
           "gameover"
         ],
-        "baseLength": 158
+        "baseLength": 163
       }
     ]
   }

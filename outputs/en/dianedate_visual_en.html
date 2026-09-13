@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>A Date With Diane — Visual</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -1397,7 +1399,7 @@ var gameStateVars = [
   "leavechloe", "triedbathroom", "brooch", "gobushes", "gobushes1",
   "gotoilet", "gobehindtoilet", "admitwetting", "gopee", "tiramisu",
   "pannacotta", "icecream", "gettaxi", "steak", "undobra", "sofaloop", "sofaDrinkBoost", "sofaBreastsDone", "sofaArm2Done", "sofaLegsStage", "sofaDressOpened", "sofaPeeAskedDone", "sofaOfferLooDone", "albumdespBand", "standingBottomDone", "standingBreastsDone", "standingLegsDone", "carparklie", "wine",
-  "pregameCaughtUp", "holdDateStatsOff", "currentTag"
+  "pregameCaughtUp", "holdDateStatsOff", "currentTag", "despLineIndex"
 ];
 var currentTag = null;
 
@@ -2221,7 +2223,7 @@ function
 go(tag)
 {
    try { clearChoiceKeyArm(); } catch (e) {}
-   // Age gate is static HTML (no currentTag): don't put it in Back history.
+   // The first title render has no currentTag and must not create a Back entry.
    if (currentTag) {
      gameHistory.push(snapshotGame());
      guideHistory.push({ index: guideIndex, active: guideActive });
@@ -12832,9 +12834,9 @@ window.ADWD_PUDDLE_META = {
 </script>
 <script id="adwd-scene-map">
 /**
- * Maps game tags → location backdrop + on-stage cast.
+ * Maps game tags → location label + on-stage cast.
  *
- * Backdrops are CSS atmospheres keyed by location id (see visual/shell.css).
+ * The current shell uses a shared stage background, with data-location available for styling.
  * Cast is an allowlist: default Diane alone; duo only when the beat
  * literally has that second woman with Diane (or as the watch focus).
  */
@@ -12870,7 +12872,10 @@ window.ADWD_PUDDLE_META = {
   function match(tag, parts) {
     tag = String(tag || "");
     for (var i = 0; i < parts.length; i++) {
-      if (tag.indexOf(parts[i]) !== -1) return true;
+      // Numbered route families must not capture a different number (3 vs 31).
+      if (/^luckytrip\d+$/.test(parts[i])) {
+        if (new RegExp("^" + parts[i] + "(?![0-9])").test(tag)) return true;
+      } else if (tag.indexOf(parts[i]) !== -1) return true;
     }
     return false;
   }
@@ -12896,6 +12901,12 @@ window.ADWD_PUDDLE_META = {
     if (!tag || tag === "start" || match(tag, ["start1", "info", "tuesdaydate", "thursdaydate", "saturdaydate"])) {
       return LOC.title;
     }
+
+    // Explicit exceptions take precedence over legacy name-based location rules.
+    if (tag === "traintalka") return LOC.riverside;
+    if (match(tag, ["luckytrip31"])) return LOC.home;
+    if (match(tag, ["luckytrip19"])) return LOC.night;
+    if (starts(tag, ["search", "goleft", "passage"])) return LOC.night;
 
     // —— Specific places first (avoid broad substring traps) ——
     if (match(tag, ["church", "lych", "bushome", "luckytrip17", "peestop"])) return LOC.church;

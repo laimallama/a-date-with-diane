@@ -9,4 +9,8 @@ Puddle / stream FX rebuilt from Mojique `Pictures`.
 - Pees: `sの*` stems (same art as curated Good Animations, sourced from Pictures)
 - Wet: normal-costume `決壊` event + stream slice
 
-Active `assets/{char}/06–08` are naive full-arc **pong loops** of those one-shots.
+Active `assets/{char}/07–08` use full-arc bidirectional loops. Active `06` files were replaced by forward event sequences. The older bidirectional versions are retained under `wetting_pong_before_oneshot/`.
+
+## Other retained versions
+
+`with_foot_shadows/` preserves earlier character clips before shadow cleanup. `wetting_pong_before_oneshot/` preserves the earlier `06` playback format. These folders are historical references; the live shell uses the character folders directly under `assets/`.

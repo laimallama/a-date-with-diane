@@ -1,12 +1,12 @@
-# AI handoff — ADWD-visual
+# AI handoff (ADWD-visual)
 
 This tree is **ADWD-visual**, not the settled text edition.
 
 **What this is:** English-only sandbox for a visual / visual-novel take on *A Date With Diane*. Work stays in English (`outputs/en/`). Do not port CN/TW/ES/FR or bilingual files here unless the owner asks.
 
-**Playable visual edition:** `outputs/en/dianedate_visual_en.html` (rebuild with `node maintenance/build_visual_edition.js`). Story/Gallery logic is still the text game; `visual/` holds shell CSS, scene→cast map, and the `go` adapter. Sprites: `assets/{diane,molly,debbie,amanda,chloe}/`.
+**Playable visual edition:** `outputs/en/dianedate_visual_en.html` (rebuild with `node maintenance/build_visual_edition.js`). Story/Gallery logic is still the text game; `visual/` holds shell CSS, scene→cast map, effects synchronizer, and the navigation adapter. Sprites: `assets/{diane,molly,debbie,amanda,chloe}/`.
 
-**What this is not:** the finished five-language HTML text game. That lives at `/Users/apple/Documents/ADWD` and https://github.com/laimallama/a-date-with-diane.git (old / settled versions). This copy has no GitHub remote; do not push there.
+**What this is not:** the finished five-language HTML text game. That lives at `/Users/apple/Documents/ADWD` and https://github.com/laimallama/a-date-with-diane.git (old / settled versions). This repository has its own origin, `https://github.com/laimallama/a-date-with-diane-visual.git`. Do not push visual work to the text-edition repository.
 
 Read this before editing. Playable English lives in `outputs/en/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
 
@@ -14,7 +14,7 @@ Read this before editing. Playable English lives in `outputs/en/`. Toolkit lives
 
 English playable HTML (`outputs/en/dianedate_en.html`), English climax transcripts, English wiki (`wiki_en.html`). Gallery: **15 ending leaves** and **30 hidden-scene leaves**.
 
-Translation-only files were removed (`aligned_text.json`, `outputs/{cn,tw,es,fr}/`). Keep the useful maintenance scripts (route smoke, Gallery, transcripts, wiki builders). They run against English only.
+This local checkout retains untracked translation reference files (`maintenance/aligned_text.json` and `outputs/{cn,tw,es,fr}/`). They are outside the maintained visual scope and may be stale. Use the text repository for current translations. The visual game checks, Gallery builder, and transcript writer operate on English only; legacy wiki utilities remain separate.
 
 There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix). Bus-home is two hidden-scene leaves: `10a` luckshot (church) and `10b` rioja (too desperate to walk her home).
 
@@ -22,7 +22,7 @@ Gallery currently documents **15 ending leaves** and **30 hidden-scene leaves** 
 
 All Gallery route label sequences live inline in `verify_ending_routes.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
-**Wiki pack** (not playable): [`outputs/en/wiki_en.html`](../outputs/en/wiki_en.html). Lead names: Simon Hartley (27), Diane Ellison (25). Neutral encyclopedic register; body/sexual subjects use clinical terms (`urinate`, `urinary urgency`, bladder, lose control) — not slang. Backstory only; do not retell playable branches; do not spell links from wiki traits to in-game beats. Ages: `born …` + `N-year-old` / `aged N` only (never `25 in 2005`). No em dashes and no colons in wiki prose (use a new sentence or a comma construction instead). Character H2s when relevant: Early life and family; Education; Career; Personal life; Residence. Under Personal life reuse the same H3 labels for the same topics (`Friends`, `Relationships`, `Sexual interests`, `Urinary habits` / `Urinary accidents`, `Hobbies` as needed). `Friends` and `Relationships` stay separate (`Relationships` = romantic/sexual partners). Category H3s take the plural even when the article mainly covers one example. EN wiki is HTML only. Work/game titles use italics (`<em>A Date With Diane</em>`, `<em>Outside Edge</em>`); article-subject names in leads use bold (`<strong>Welbourne</strong>`).
+**Wiki pack** (not playable): [`outputs/en/wiki_en.html`](../outputs/en/wiki_en.html). Lead names: Simon Hartley (27), Diane Ellison (25). Neutral encyclopedic register; body/sexual subjects use clinical terms (`urinate`, `urinary urgency`, bladder, lose control) — not slang. Backstory only; do not retell playable branches; do not spell links from wiki traits to in-game beats. Ages: `born …` + `N-year-old` / `aged N` only (never `25 in 2005`). No em dashes and no colons in wiki prose (use a new sentence or a comma construction instead). Character H2s when relevant: Early life and family; Education; Career; Personal life; Residence. Under Personal life reuse the same H3 labels for the same topics (`Friends`, `Relationships`, `Sexual interests`, `Urinary habits` / `Urinary accidents`, `Hobbies` as needed). `Friends` and `Relationships` stay separate (`Relationships` = romantic/sexual partners). Category H3s take the plural even when the article mainly covers one example. The English wiki is the single `outputs/en/wiki_en.html` file. Work/game titles use italics (`<em>A Date With Diane</em>`, `<em>Outside Edge</em>`); article-subject names in leads use bold (`<strong>Welbourne</strong>`).
 
 ## Raw HTML vs rendered text
 
@@ -116,7 +116,7 @@ Do not recreate bilingual dictionaries or `aligned_text.json` in this tree.
 | Path | Role |
 |------|------|
 | `AI_HANDOFF.md` | This file — conventions + toolkit map |
-| `verify_ending_routes.js` | Click-paths for prize endings and extra hidden scenes; running it smoke-tests those paths. Does not write player files. |
+| `verify_ending_routes.js` | Click-paths for prize endings and extra hidden scenes; running it smoke-tests those paths. Read-only; does not write or delete files. |
 | `write_hidden_scenes.js` | Classic hidden-scene Gallery definitions (titles, climax starts). Not transcripts. |
 | `write_transcripts.js` | Writes climax `.txt` transcripts → `outputs/en/transcripts/{endings,hidden_scenes}/` |
 | `build_gallery_data.js` | Packs the two route books into `GALLERY_DATA` and injects that into the English HTML |
@@ -152,4 +152,17 @@ node maintenance/write_transcripts.js
 
 **Do:** targeted user-directed edits in English; rebuild Gallery when routes/titles change; regenerate English transcripts after climax wording.
 
-**Don't:** recreate translation files or other-language HTML unless asked; bulk "fluency" rewrites without an explicit ask; add a GitHub remote or push to the settled text edition; force-push history unless asked.
+**Don't:** recreate translation files or other-language HTML unless asked; bulk "fluency" rewrites without an explicit ask; push visual changes to the text-edition origin; force-push history unless asked.
+
+
+## Verified maintenance baseline (13 September 2026)
+
+- Run `node maintenance/verify_project.js` for the complete maintained-edition regression check. It replays all 45 embedded Gallery routes and checks Back/forward HTML and state, guided progress, and Skip. In the text repository it also checks all nine playable editions against English numerical state. It is not a substitute for browser layout or animation testing.
+- `gameStateVars` includes `despLineIndex`. Any future state or text counter that affects replay must be included in snapshots. Restore must not execute a story node a second time. Back remains session history, not a disk save.
+- All playable documents have a doctype, page title, and language metadata. Bilingual layers declare their own languages; `setLanguage()` updates the document language too.
+- `verify_ending_routes.js` and `write_hidden_scenes.js` are read-only. The latter checks definitions; the full verifier checks actual routes. Never add implicit deletion to a check command.
+- Route definitions are authoritative for generated Gallery data. `build_gallery_data.js --check` detects drift without writing. Rebuild the Gallery and then transcripts after route changes. Transcript generation renders every managed output before writing and preserves unrelated files.
+- Input paths in the maintained game-check/build commands are resolved from the script location. Do not rely on the caller's working directory.
+- Run `build_visual_edition.js` after source runtime or presentation edits. Its `--check` mode is read-only, and missing injection anchors are errors. Never hand-edit the generated visual HTML.
+- Location matching treats numbered route families as distinct, so `luckytrip3` cannot capture `luckytrip31`. Explicit location exceptions precede legacy heuristics. The current CSS uses a shared stage background; location IDs and labels do not imply finished environmental artwork.
+- Godot is the selected future 3D engine. The agreed save design is manual saves at choices plus automatic scene checkpoints and dialogue history, without gameplay rewind. See `GODOT_PLAN.md`. This does not change the current HTML Back feature.

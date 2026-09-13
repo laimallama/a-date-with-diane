@@ -5,26 +5,7 @@ const mod = require("module");
 
 const ROOT = path.resolve(__dirname, "..");
 const ENDING_ROUTES_SOURCE = path.join(ROOT, "maintenance/verify_ending_routes.js");
-// Clean legacy guide/hidden_scenes paths only — never touch outputs/*/transcripts/.
-const LEGACY_HIDDEN_OUTPUTS = [
-  path.join(ROOT, "outputs/en/hidden_scenes"),
-  path.join(ROOT, "outputs/cn/hidden_scenes"),
-  path.join(ROOT, "outputs/es/hidden_scenes"),
-  path.join(ROOT, "outputs/fr/hidden_scenes"),
-  path.join(ROOT, "outputs/tw/hidden_scenes"),
-  path.join(ROOT, "outputs/en/hidden_scene_transcripts_en"),
-  path.join(ROOT, "outputs/cn/hidden_scene_transcripts_cn"),
-  path.join(ROOT, "outputs/es/hidden_scene_transcripts_es"),
-  path.join(ROOT, "outputs/fr/hidden_scene_transcripts_fr"),
-  path.join(ROOT, "outputs/en/hidden_scenes_guide_en.txt"),
-  path.join(ROOT, "outputs/cn/hidden_scenes_guide_cn.txt"),
-  path.join(ROOT, "outputs/es/hidden_scenes_guide_es.txt"),
-  path.join(ROOT, "outputs/fr/hidden_scenes_guide_fr.txt"),
-  path.join(ROOT, "outputs/en/guides/hidden_scenes_guide_en.txt"),
-  path.join(ROOT, "outputs/cn/guides/hidden_scenes_guide_cn.txt"),
-  path.join(ROOT, "outputs/es/guides/hidden_scenes_guide_es.txt"),
-  path.join(ROOT, "outputs/fr/guides/hidden_scenes_guide_fr.txt"),
-];
+// This command checks definitions without modifying any files.
 
 const languages = {
   en: { htmlPath: path.join(ROOT, "outputs/en/dianedate_en.html") },
@@ -859,9 +840,8 @@ function buildDefinitions(routes) {
 function main() {
   const routes = loadRoutes();
   const definitions = buildDefinitions(routes);
-  LEGACY_HIDDEN_OUTPUTS.forEach((target) => fs.rmSync(target, { recursive: true, force: true }));
   console.log(
-    `Verified ${definitions.scenes.length} hidden-scene definitions for Gallery (no guide/transcript files written).`
+    `Verified ${definitions.scenes.length} hidden-scene definitions for Gallery (read-only; route replay is checked by verify_project.js).`
   );
 }
 

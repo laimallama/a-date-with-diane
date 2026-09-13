@@ -165,4 +165,3 @@ node maintenance/write_transcripts.js
 - Input paths in the maintained game-check/build commands are resolved from the script location. Do not rely on the caller's working directory.
 - Run `build_visual_edition.js` after source runtime or presentation edits. Its `--check` mode is read-only, and missing injection anchors are errors. Never hand-edit the generated visual HTML.
 - Location matching treats numbered route families as distinct, so `luckytrip3` cannot capture `luckytrip31`. Explicit location exceptions precede legacy heuristics. The current CSS uses a shared stage background; location IDs and labels do not imply finished environmental artwork.
-- Godot is the selected future 3D engine. The agreed save design is manual saves at choices plus automatic scene checkpoints and dialogue history, without gameplay rewind. See `GODOT_PLAN.md`. This does not change the current HTML Back feature.

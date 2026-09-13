@@ -31,6 +31,4 @@ Source of truth for story / Gallery / routes remains `outputs/en/dianedate_en.ht
 
 `node maintenance/build_visual_edition.js --check` detects a stale generated page without writing. The builder requires its injection anchors to exist and fails if the source structure no longer matches. Run `node maintenance/verify_project.js` for route/state and location regression checks.
 
-Location labels currently share the same stage background. They are not separate illustrated or 3D environments. Back reconstructs presentation from the restored narrative state; it does not serialize a precise GIF playback frame.
-
-The future Godot version has a separate save/checkpoint design documented in `maintenance/GODOT_PLAN.md`. The browser shell keeps its existing Back control.
+Location labels currently share the same stage background. They are not separate illustrated environments. Back reconstructs presentation from the restored narrative state; it does not serialize a precise GIF playback frame.

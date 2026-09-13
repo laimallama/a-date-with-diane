@@ -13,7 +13,7 @@ Keep the repositories separate. Shared English runtime fixes should be applied t
 
 Open [`outputs/en/dianedate_visual_en.html`](outputs/en/dianedate_visual_en.html) in a browser. This is the generated visual edition. Its companion text runtime is [`outputs/en/dianedate_en.html`](outputs/en/dianedate_en.html), and the setting reference is [`outputs/en/wiki_en.html`](outputs/en/wiki_en.html).
 
-The visual edition adds character sprites, location labels, meters, and a two-column layout. It is a 2D browser presentation. There are no 3D models or a Godot project in this repository yet.
+The visual edition adds character sprites, location labels, meters, and a two-column layout. It is a 2D browser presentation.
 
 Gallery contains **15 ending leaves** and **30 hidden-scene leaves**. It supplies guided routes and Skip. The visual toolbar labels the command **Skip**; the text companion calls it **Skip to the good bit!**. The English transcripts under `outputs/en/transcripts/` use the corresponding Gallery start positions.
 
@@ -49,9 +49,3 @@ node maintenance/verify_project.js
 ```
 
 After an English runtime or presentation-only edit, rebuild the visual edition and run the verifier. Do not edit the generated visual HTML directly. Transcript generation validates routes before overwriting its managed English transcript files; unrelated files are preserved. The commands resolve project inputs relative to their script location.
-
-## Future 3D version
-
-The selected engine is **Godot**. The installed Mac application was checked on 13 September 2026 and reports **4.7.2 stable**. The future version will have manual saves at choice points, automatic scene checkpoints, and dialogue history, with **no gameplay rewind**. These decisions apply to the future 3D project; the current HTML editions keep Back.
-
-See [`maintenance/GODOT_PLAN.md`](maintenance/GODOT_PLAN.md) for the recorded direction. This is a plan, not an implemented 3D release.

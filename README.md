@@ -59,4 +59,4 @@ The full verifier checks route availability, Back and forward replay, guided pro
 
 The companion wikis are single HTML files, one per language. `maintenance/aligned_text.json` is a translation reference index, not a game or wiki generator.
 
-The separate visual experiment is maintained in `/Users/apple/Documents/ADWD-visual` with its own Git repository. Its future Godot direction does not replace Back or change the five-language text edition. Local fixes do not automatically commit or push either repository.
+The separate visual experiment is maintained in `/Users/apple/Documents/ADWD-visual` with its own Git repository. Local fixes do not automatically commit or push either repository.

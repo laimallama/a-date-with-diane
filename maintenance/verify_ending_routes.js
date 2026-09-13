@@ -1,34 +1,16 @@
-// Ending/extra Gallery click-paths + smoke test. Does not write player guide files.
+// Ending/extra Gallery click-paths + smoke test. Read-only; does not create, overwrite, or delete files.
 // Hidden-scene defs: write_hidden_scenes.js. Pack into HTML: build_gallery_data.js.
 const fs = require("fs");
 const vm = require("vm");
+const path = require("path");
+const ROOT = path.resolve(__dirname, "..");
 const { earlyBushHouseBase } = require("./check_endings.js");
 
-const EN_HTML = "outputs/en/dianedate_en.html";
-const CN_HTML = "outputs/cn/dianedate_cn.html";
-const ES_HTML = "outputs/es/dianedate_es.html";
-const FR_HTML = "outputs/fr/dianedate_fr.html";
-const TW_HTML = "outputs/tw/dianedate_tw.html";
-// External .txt guides/transcripts were removed; Gallery is the player-facing guide.
-const LEGACY_GUIDE_OUTPUTS = [
-  "outputs/en/endings",
-  "outputs/cn/endings",
-  "outputs/es/endings",
-  "outputs/fr/endings",
-  "outputs/tw/endings",
-  "outputs/en/guides",
-  "outputs/cn/guides",
-  "outputs/es/guides",
-  "outputs/fr/guides",
-  "outputs/en/dianeguide_en.txt",
-  "outputs/cn/dianeguide_cn.txt",
-  "outputs/es/dianeguide_es.txt",
-  "outputs/fr/dianeguide_fr.txt",
-  "outputs/en/hidden_scenes_guide_en.txt",
-  "outputs/cn/hidden_scenes_guide_cn.txt",
-  "outputs/es/hidden_scenes_guide_es.txt",
-  "outputs/fr/hidden_scenes_guide_fr.txt",
-];
+const EN_HTML = path.join(ROOT, "outputs/en/dianedate_en.html");
+const CN_HTML = path.join(ROOT, "outputs/cn/dianedate_cn.html");
+const ES_HTML = path.join(ROOT, "outputs/es/dianedate_es.html");
+const FR_HTML = path.join(ROOT, "outputs/fr/dianedate_fr.html");
+const TW_HTML = path.join(ROOT, "outputs/tw/dianedate_tw.html");
 
 const common = [
   "I've already read them. I'll get straight on with the game.",
@@ -2188,14 +2170,10 @@ function ending(text, lang) {
     const match = text.match(pattern);
     if (match) return match[0];
   }
-  return "NO ENDING TEXT FOUND";
+  throw new Error(`Expected a prize ending in ${lang}, but none was found.`);
 }
 
 // --- route smoke test (script entry; gallery/hidden loaders cut above this line) ---
-LEGACY_GUIDE_OUTPUTS.forEach((target) => {
-  fs.rmSync(target, { recursive: true, force: true });
-});
-
 for (const [key, route] of Object.entries(routes)) {
   const en = captureLabelsAndTags(EN_HTML, route);
   const cn = captureLabelsByTags(CN_HTML, en.tags);
@@ -2205,4 +2183,4 @@ for (const [key, route] of Object.entries(routes)) {
   console.log(`OK ${key}: EN="${ending(en.text, "en")}" CN="${ending(cn.text, "cn")}" ES="${ending(es.text, "es")}" FR="${ending(fr.text, "fr")}" TW="${ending(tw.text, "tw")}"`);
 }
 
-console.log(`Verified ${Object.keys(routes).length} ending routes across en/cn/tw/es/fr (no guide files written).`);
+console.log(`Verified ${Object.keys(routes).length} ending routes across en/cn/tw/es/fr (read-only).`);

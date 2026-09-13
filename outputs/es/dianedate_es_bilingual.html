@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
+<title>A Date With Diane — English / Español</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -5069,6 +5071,7 @@ function languageSpan(en, alt) {
 
 function setLanguage(lang) {
   currentLanguage = lang === "en" ? "en" : "alt";
+  document.documentElement.setAttribute("lang", currentLanguage === "en" ? "en" : "es");
   document.body.classList.toggle("lang-en", currentLanguage === "en");
   document.body.classList.toggle("lang-alt", currentLanguage !== "en");
   var button = document.getElementById("languageToggle");
@@ -5093,7 +5096,9 @@ function finishRender() {
   var enLayer = document.createElement("div");
   var altLayer = document.createElement("div");
   enLayer.className = "lang lang-en";
+  enLayer.setAttribute("lang", "en");
   altLayer.className = "lang lang-alt";
+  altLayer.setAttribute("lang", "es");
   enLayer.innerHTML = renderBuffers.en;
   altLayer.innerHTML = renderBuffers.alt;
   box.innerHTML = "";
@@ -5190,7 +5195,7 @@ var gameStateVars = [
   "leavechloe", "triedbathroom", "brooch", "gobushes", "gobushes1",
   "gotoilet", "gobehindtoilet", "admitwetting", "gopee", "tiramisu",
   "pannacotta", "icecream", "gettaxi", "steak", "undobra", "sofaloop", "sofaDrinkBoost", "sofaBreastsDone", "sofaArm2Done", "sofaLegsStage", "sofaDressOpened", "sofaPeeAskedDone", "sofaOfferLooDone", "albumdespBand", "standingBottomDone", "standingBreastsDone", "standingLegsDone", "carparklie", "wine",
-  "pregameCaughtUp", "holdDateStatsOff", "currentTag"
+  "pregameCaughtUp", "holdDateStatsOff", "currentTag", "despLineIndex"
 ];
 var currentTag = null;
 
@@ -6043,7 +6048,7 @@ function
 go(tag)
 {
    try { clearChoiceKeyArm(); } catch (e) {}
-   // Age gate is static HTML (no currentTag): don't put it in Back history.
+   // The first title render has no currentTag and must not create a Back entry.
    if (currentTag) {
      gameHistory.push(snapshotGame());
      guideHistory.push({ index: guideIndex, active: guideActive });

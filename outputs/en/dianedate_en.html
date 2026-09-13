@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>A Date With Diane — English</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -739,7 +741,7 @@ var gameStateVars = [
   "leavechloe", "triedbathroom", "brooch", "gobushes", "gobushes1",
   "gotoilet", "gobehindtoilet", "admitwetting", "gopee", "tiramisu",
   "pannacotta", "icecream", "gettaxi", "steak", "undobra", "sofaloop", "sofaDrinkBoost", "sofaBreastsDone", "sofaArm2Done", "sofaLegsStage", "sofaDressOpened", "sofaPeeAskedDone", "sofaOfferLooDone", "albumdespBand", "standingBottomDone", "standingBreastsDone", "standingLegsDone", "carparklie", "wine",
-  "pregameCaughtUp", "holdDateStatsOff", "currentTag"
+  "pregameCaughtUp", "holdDateStatsOff", "currentTag", "despLineIndex"
 ];
 var currentTag = null;
 
@@ -1539,7 +1541,7 @@ function
 go(tag)
 {
    try { clearChoiceKeyArm(); } catch (e) {}
-   // Age gate is static HTML (no currentTag): don't put it in Back history.
+   // The first title render has no currentTag and must not create a Back entry.
    if (currentTag) {
      gameHistory.push(snapshotGame());
      guideHistory.push({ index: guideIndex, active: guideActive });

@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+<title>A Date With Diane — Français</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -745,7 +747,7 @@ var gameStateVars = [
   "leavechloe", "triedbathroom", "brooch", "gobushes", "gobushes1",
   "gotoilet", "gobehindtoilet", "admitwetting", "gopee", "tiramisu",
   "pannacotta", "icecream", "gettaxi", "steak", "undobra", "sofaloop", "sofaDrinkBoost", "sofaBreastsDone", "sofaArm2Done", "sofaLegsStage", "sofaDressOpened", "sofaPeeAskedDone", "sofaOfferLooDone", "albumdespBand", "standingBottomDone", "standingBreastsDone", "standingLegsDone", "carparklie", "wine",
-  "pregameCaughtUp", "holdDateStatsOff", "currentTag"
+  "pregameCaughtUp", "holdDateStatsOff", "currentTag", "despLineIndex"
 ];
 var currentTag = null;
 
@@ -1529,7 +1531,7 @@ function
 go(tag)
 {
    try { clearChoiceKeyArm(); } catch (e) {}
-   // Age gate is static HTML (no currentTag): don't put it in Back history.
+   // The first title render has no currentTag and must not create a Back entry.
    if (currentTag) {
      gameHistory.push(snapshotGame());
      guideHistory.push({ index: guideIndex, active: guideActive });
@@ -6716,7 +6718,6 @@ if (saturday)
 {s("<LI>DIANE : Non, vraiment, je crois que j'ai assez bu. Restons assis à discuter.");}
 else
 {s("<LI>DIANE : Non merci, juste de l'eau.");}
-proc += 25;
 s("<LI>Vous allez lui chercher un verre d'eau, et vous vous servez un dernier petit verre pour vous.");
 c("sofasat","Vous allez à la cuisine."); }
 else if (blad > 760)
@@ -6724,7 +6725,6 @@ else if (blad > 760)
 {s("<LI>DIANE : De l'eau cette fois, je crois ; je ne veux pas trop forcer sur le vin.");}
 else
 {s("<LI>DIANE : Je vais passer à l'eau pour un moment.");}
-proc += 40;
 s("<LI>Vous allez lui chercher un verre d'eau.");
 c("sofasat","Vous allez à la cuisine."); }
 else

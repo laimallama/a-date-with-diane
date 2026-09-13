@@ -3,6 +3,20 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
+const pendingOutputs = [];
+
+function finishOutputs() {
+  const changed = pendingOutputs.filter(({ filePath, text }) =>
+    !fs.existsSync(filePath) || fs.readFileSync(filePath, "utf8") !== text);
+  if (process.argv.includes("--check")) {
+    if (changed.length) throw new Error("Stale Gallery output: " + changed.map(x => path.relative(ROOT, x.filePath)).join(", "));
+    console.log("Gallery data and embedded editions match the route definitions (read-only).");
+    return false;
+  }
+  for (const { filePath, text } of changed) fs.writeFileSync(filePath, text, "utf8");
+  return true;
+}
+
 const HIDDEN_SCENES_SOURCE = path.join(ROOT, "maintenance/write_hidden_scenes.js");
 
 const HTML_PATHS = {
@@ -527,8 +541,8 @@ function injectIntoFile(filePath, galleryData) {
   const injected = `const GALLERY_DATA = ${JSON.stringify(galleryData)};\n`;
   let html = fs.readFileSync(filePath, "utf8");
   if (!marker.test(html)) throw new Error("GALLERY_DATA_PLACEHOLDER marker not found in " + filePath);
-  html = html.replace(marker, injected);
-  fs.writeFileSync(filePath, html, "utf8");
+  html = html.replace(marker, () => injected);
+  pendingOutputs.push({ filePath, text: html });
 }
 
 function main() {
@@ -550,7 +564,7 @@ function main() {
     existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
   }
   const merged = { ...existing, ...dataByLang };
-  fs.writeFileSync(outPath, JSON.stringify(merged, null, 2), "utf8");
+  pendingOutputs.push({ filePath: outPath, text: JSON.stringify(merged, null, 2) });
 
   injectIntoFile(HTML_PATHS.en, merged.en);
   if (!onlyLang) {
@@ -560,6 +574,7 @@ function main() {
     }
   }
 
+  if (!finishOutputs()) return;
   console.log(`Wrote ${outPath}`);
   console.log(onlyLang ? "Injected gallery data into en only" : "Injected gallery data into en, cn, es, fr, tw (single + bilingual where applicable)");
   console.log("EN hidden scenes:");

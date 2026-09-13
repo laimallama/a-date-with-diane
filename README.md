@@ -37,8 +37,26 @@ Toolkit and conventions: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md
 All ending/extra Gallery click-paths live in `verify_ending_routes.js`; hidden-scene definitions live in `write_hidden_scenes.js`. There is no separate `routes/` folder.
 
 ```bash
-node maintenance/verify_ending_routes.js    # ending-route smoke test
-node maintenance/write_hidden_scenes.js     # hidden-scene definitions check
+node maintenance/verify_project.js          # full read-only regression check
+node maintenance/verify_ending_routes.js    # read-only ending-route smoke test
+node maintenance/write_hidden_scenes.js     # read-only definition check
 node maintenance/build_gallery_data.js      # pack routes into the Gallery HTML
 node maintenance/write_transcripts.js       # regenerate climax transcripts
 ```
+
+## Runtime and generated files
+
+The playable HTML files contain the maintained story and runtime. The single-language and bilingual editions contain separate copies of that code; shared runtime fixes must reach all nine playable files. Back restores the game variables, rendered page, and text-variation counter. It is session history, not a persistent save system.
+
+Route definitions are maintained in `maintenance/verify_ending_routes.js` and `maintenance/write_hidden_scenes.js`. `maintenance/build_gallery_data.js` generates both `maintenance/gallery_data.json` and the Gallery data embedded in the playable HTML. Regenerate transcripts after rebuilding the Gallery or changing transcript text. Transcript generation validates all routes before writing its managed files and preserves unrelated files.
+
+```bash
+node maintenance/build_gallery_data.js --check  # detect stale generated data; no writes
+node maintenance/verify_project.js              # all 45 Gallery routes in all nine editions
+```
+
+The full verifier checks route availability, Back and forward replay, guided progress, Skip, cross-language numerical state, HTML metadata, JavaScript syntax, and generated Gallery consistency. It uses a small DOM stub; browser layout, keyboard interactions, and animation timing still need browser checks. All maintenance commands above resolve project inputs relative to their script location and can be invoked from another working directory with an absolute script path.
+
+The companion wikis are single HTML files, one per language. `maintenance/aligned_text.json` is a translation reference index, not a game or wiki generator.
+
+The separate visual experiment is maintained in `/Users/apple/Documents/ADWD-visual` with its own Git repository. Its future Godot direction does not replace Back or change the five-language text edition. Local fixes do not automatically commit or push either repository.

@@ -363,13 +363,9 @@ function main() {
     if (!HIDDEN_SLUGS[leaf.id]) throw new Error(`Missing hidden slug for ${leaf.id}`);
   }
 
-  // Reset output dirs (new layout + legacy paths)
-  for (const code of Object.keys(LANGS)) {
-    fs.rmSync(path.join(ROOT, `outputs/${code}/transcripts`), { recursive: true, force: true });
-    fs.rmSync(path.join(ROOT, `outputs/${code}/endings`), { recursive: true, force: true });
-    fs.rmSync(path.join(ROOT, `outputs/${code}/hidden_scenes`), { recursive: true, force: true });
-  }
-
+  // Validate and render every route before overwriting managed transcript files.
+  // Leave unrelated files and historical folders untouched.
+  const pending = [];
   let written = 0;
 
   for (const code of Object.keys(LANGS)) {
@@ -396,20 +392,21 @@ function main() {
       const slug = ENDING_SLUGS[leaf.id];
       const text = buildClimaxTranscript(leaf, lang);
       const outPath = path.join(outDirFor("ending", code), `${slug}_${code}.txt`);
-      writeTextFile(outPath, text, code);
+      pending.push({ outPath, text, code });
       written++;
     }
     for (const leaf of hiddens) {
       const slug = HIDDEN_SLUGS[leaf.id];
       const text = buildClimaxTranscript(leaf, lang);
       const outPath = path.join(outDirFor("hidden", code), `${slug}_${code}.txt`);
-      writeTextFile(outPath, text, code);
+      pending.push({ outPath, text, code });
       written++;
     }
     console.log(`OK ${code}: ${endings.length} endings + ${hiddens.length} hidden`);
   }
 
-  console.log(`Wrote ${written} climax transcript files.`);
+  for (const { outPath, text, code } of pending) writeTextFile(outPath, text, code);
+  console.log(`Wrote ${written} climax transcript files; unrelated files preserved.`);
 }
 
 if (require.main === module) main();

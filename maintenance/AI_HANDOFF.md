@@ -14,7 +14,7 @@ Read this before editing. Playable English lives in `outputs/en/`. Toolkit lives
 
 English playable HTML (`outputs/en/dianedate_en.html`), English climax transcripts, English wiki (`wiki_en.html`). Gallery: **15 ending leaves** and **30 hidden-scene leaves**.
 
-This local checkout retains untracked translation reference files (`maintenance/aligned_text.json` and `outputs/{cn,tw,es,fr}/`). They are outside the maintained visual scope and may be stale. Use the text repository for current translations. The visual game checks, Gallery builder, and transcript writer operate on English only; legacy wiki utilities remain separate.
+Translations and `aligned_text.json` belong in the text repository only. The visual game checks, Gallery builder, and transcript writer operate on English only; legacy wiki utilities remain separate.
 
 There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix). Bus-home is two hidden-scene leaves: `10a` luckshot (church) and `10b` rioja (too desperate to walk her home).
 

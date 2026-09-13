@@ -19,9 +19,9 @@ Gallery contains **15 ending leaves** and **30 hidden-scene leaves**. It supplie
 
 The game opens on the title screen. **B** goes Back, **G** / Escape opens or closes Gallery, **H** toggles the active guide, **S** skips to the route's designated start, **D** toggles dark mode, and **1–9** select choices. Dark mode persists in the same tab through `sessionStorage`. Back restores game state and text variation within the current session; it is not a persistent save system. Visual animations are reconstructed on Back, rather than restored at an exact animation frame.
 
-## Maintained scope and local references
+## Maintained scope
 
-Only `outputs/en/` is maintained and built in this visual repository. This local checkout also contains untracked reference copies under `outputs/cn/`, `outputs/tw/`, `outputs/es/`, and `outputs/fr/`, plus `maintenance/aligned_text.json`. They are retained for reference, are excluded from the supported visual build and verification scope, and may lag behind the maintained text edition. Use `/Users/apple/Documents/ADWD` for current translations. Their presence does not make this a multilingual visual release.
+Only `outputs/en/` is maintained and built in this visual repository. Translations live in `/Users/apple/Documents/ADWD`. This is not a multilingual visual release.
 
 ## Maintaining
 

@@ -23,7 +23,9 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), #e9dcc8;
+  --body-base: #e9dcc8;
+  --body-canvas: #f8f4ee;
+  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
   --overlay-scrim: rgba(35, 31, 32, .55);
 }
 
@@ -47,7 +49,9 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
+    --body-base: #171310;
+    --body-canvas: #0f0c0a;
+    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -56,6 +60,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background-color: var(--body-canvas);
 }
 
 body {
@@ -63,6 +68,7 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
+  background-color: var(--body-canvas);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 1.58;
@@ -346,7 +352,7 @@ a:hover { color: var(--accent-dark); }
 
 .theme-toggle-button {
   width: auto;
-  min-width: 120px;
+  min-width: 0;
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -408,7 +414,7 @@ a:hover { color: var(--accent-dark); }
 
 @media (max-width: 520px) {
   .status-bar {
-    padding: 10px 8px;
+    padding: 10px 10px;
     font-size: .78rem;
   }
   .status-row {
@@ -421,7 +427,8 @@ a:hover { color: var(--accent-dark); }
     justify-content: center;
     gap: 2px;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: keep-all;
   }
 }
 
@@ -464,6 +471,17 @@ a:hover { color: var(--accent-dark); }
   .game-toolbar {
     padding: 0;
     margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
   }
 }
 
@@ -604,11 +622,27 @@ a:hover { color: var(--accent-dark); }
 .climax-skip-button,
 .theme-toggle-button {
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   min-height: 44px;
   padding: 10px 14px;
   font-size: 1rem;
   line-height: 1.25;
 }
+@media (max-width: 640px) {
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+}
+
 
 button:focus,
 .choice:focus,
@@ -4077,7 +4111,7 @@ riverside12()
 s("<LI>You carry on walking."); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
 {s("<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet."); 
-s("<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>"); adjpoints(5);}
+s("<p class='notice'><strong>Diane is in a real hurry as you walk, but she still won't say she needs the loo. You gained 5 shyness points.</strong></p>"); adjpoints(5);}
 else
 {s("<LI>You're wondering whether you could stop and kiss."); }
 s("<LI>You pass some steps up from the towpath.");
@@ -4111,9 +4145,9 @@ c("riverside14","You walk on together."); }
 function
 luckytrip4()
 {
-s("<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a Luckshot."); spendLuckshot(); 
+s("<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot."); spendLuckshot(); 
 if (inti < 75)
-{s("<LI>You don't have enough Intimacy points for the Luckshot to work."); mollyblad = 50;
+{s("<LI>You don't have enough Intimacy points for the luckshot to work."); mollyblad = 50;
 c("riverside14","Carry on walking."); }
 else
 {s("<LI>DIANE: I wonder what they're up to?");
@@ -4642,20 +4676,18 @@ toiletopen1bb()
 {
 s("<LI>Diane has rushed into the Ladies. She's in a real hurry and you hear the door of a cubicle slam shut. You go into the Gents.");
 s("<LI>You're going to have a pee yourself. But you wish you could watch Diane.");
-s("Is it worth risking a Luckshot?");
+s("Is it worth risking a luckshot?");
 if (luckshots >= 1) c("luckytrip5","Yes, I will use a luckshot."); 
-c("goforpee","No, I won't spy on her.");
-c("goforpee","No, I'll save the luckshot for later."); }
+c("goforpee","No, I won't spy on her.");}
 
 function
 toiletopen1c1()
 {
 s("<LI>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.");
 s("<LI>You're going to have a pee yourself. But you wish you could watch Diane.");
-s("Is it worth risking a Luckshot?");
+s("Is it worth risking a luckshot?");
 if (luckshots >= 1) c("luckytrip5c","Yes, I will use a luckshot."); 
-c("goforpee","No, I won't spy on her.");
-c("goforpee","No, I'll save the luckshot for later."); }
+c("goforpee","No, I won't spy on her.");}
 
 
 function
@@ -5092,7 +5124,7 @@ c("gameover","You are disqualified"); } }
 function
 luckytrip6a()
 {
-s("<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a Luckshot.");
+s("<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a luckshot.");
 if (saturday)
 {s("<LI>There's been a bit of an argument in the Ladies, with a couple of girls who've drunk too much. As a result the Ladies is closed for a few minutes while the staff sort things out. Diane and Molly decide they can't wait that long and return without having had a pee.");
 s("<LI>'We'll just have to wait,' they say.");
@@ -5121,7 +5153,7 @@ s("<LI>There's a hint of mischief in his voice.");
 s("<LI>MOLLY: No! We'll catch you up.");
 s("<LI>You and Robert walk on. After about 20 yards you look back. Diane is beginning to go down the steps, but Molly has paused at the top, as if to make sure you are walking away. She waves at you, then starts to go down. You carry on walking.");
 s("<LI>ROBERT: I think your friend's going for a pee.");
-s("<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a Luckshot?");
+s("<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a luckshot?");
 if (luckshots >= 1) c("luckytrip3","Yes, I will use a luckshot."); 
 c("riversidepath11","No, I'll save that for later.");   }
 else
@@ -9055,7 +9087,9 @@ function
 walkhome2()
 {
 s("<LI>You and Diane are walking up the road, hand in hand.");
-s("<LI>The cool night air is having its inevitable effect."); blad +=10
+blad +=10
+if (blad > 670)
+{s("<LI>The cool night air is having its inevitable effect.");}
 if (blad >975)
 {disaster()}
 else
@@ -10679,7 +10713,7 @@ bushome4()
 {
 s("<LI>You're about halfway home.");
 if (rioja)
-{s("<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely busting for a pee.");
+{s("<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely bursting for a pee.");
 s("<LI>You shift about on the seat."); getinti(-10); }
 else
 {s("<LI>You put your arm round Diane and she leans her head on your shoulder."); 
@@ -11149,7 +11183,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane is desperate for the loo. She's cro
 else if (blad < 900)
 s("<P><EM><SPAN style='color: #ff0000'>Diane is desperate to pee! She's squeezing her legs very tight and only her modesty is keeping her from holding her crotch. She's bouncing on her seat.</SPAN></EM></P>"); 
 else
-s("<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>"); }
+s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>"); }
 
 function
 standing_desp()
@@ -11198,7 +11232,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate for the loo
 else if (blad < 900)
 s("<P><EM><SPAN style='color: #ff0000'>Diane is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM></P>"); 
 else if (blad < 950)
-s("<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>");
+s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>");
 else 
 s("<P><EM><SPAN style='color: #ff0000'>Diane has gone very quiet and is looking absolutely miserable. She is so desperate that she can hardly stand upright. You wonder whether a few spurts have already escaped.</SPAN></EM></P>"); }
 
@@ -11255,11 +11289,11 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane can't stand still but keeps pacing 
 else if (blad < 875 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane is so desperate she can hardly stand upright. She looks utterly miserable.</SPAN></EM>");
 else if (blad < 900)
-s("<P><EM><SPAN style='color: #ff0000'>DIANE IS ABSOLUTELY DESPERATE. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.");
+s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.");
 else if (blad < 925 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane is walking around in a little circle, doing little curtseys at every turn. You wonder if a few spurts have already escaped.</SPAN></EM>");
 else
-{s("<P><EM><SPAN style='color: #ff0000'>DIANE IS ON THE VERGE OF WETTING HERSELF. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>");  }}
+{s("<P><EM><SPAN style='color: #ff0000'>Diane is on the verge of wetting herself. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>");  }}
 
 
 
@@ -11298,7 +11332,7 @@ s("<EM><SPAN style='color: #0000FF'>Molly is desperate for the loo. She's crossi
 else if (mollyblad < 900)
 s("<EM><SPAN style='color: #0000FF'>Molly is desperate to pee! She's squeezing her legs very tight and only her modesty is keeping her from holding her crotch. She's bouncing on her seat.</SPAN></EM>"); 
 else
-s("<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>"); }
+s("<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>"); }
 
 function
 albumdesp()
@@ -11369,7 +11403,7 @@ s("<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate for the loo. S
 else if (mollyblad < 900)
 s("<EM><SPAN style='color: #0000FF'>Molly is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM>"); 
 else
-s("<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself.</SPAN></EM>"); }
+s("<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate and seems to be struggling not to wet herself.</SPAN></EM>"); }
 
 function
 admission()

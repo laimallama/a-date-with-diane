@@ -12304,11 +12304,11 @@
     {
       "id": "x01303",
       "kind": "story",
-      "en": "<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>",
-      "cn": "<p class='notice'><strong>一路上黛安走得很急。你获得了5点害羞值。</strong></p>",
-      "es": "<p class='notice'><strong>Diane tiene mucha prisa mientras camináis. Ganas 5 puntos de timidez.</strong></p>",
-      "fr": "<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez. Vous gagnez 5 points de timidité.</strong></p>",
-      "tw": "<p class='notice'><strong>一路上黛安走得好急。你獲得了5點害羞值。</strong></p>"
+      "en": "<p class='notice'><strong>Diane is in a real hurry as you walk, but she still won't say she needs the loo. You gained 5 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>一路上黛安走得很急，却还是不肯说她要上厕所。你获得了5点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane tiene mucha prisa mientras camináis, pero sigue sin decir que necesita el baño. Ganas 5 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez, mais elle n'avoue toujours pas qu'elle a besoin des toilettes. Vous gagnez 5 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>一路上黛安走得好急，卻還是不肯說她要上廁所。你獲得了5點害羞值。</strong></p>"
     },
     {
       "id": "x01304",
@@ -12489,7 +12489,7 @@
     {
       "id": "x01322",
       "kind": "story",
-      "en": "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a Luckshot.",
+      "en": "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot.",
       "cn": "<LI>你猜莫莉可能是去方便了，但又不确定。反正你很想看。于是你用了一次幸运机会。",
       "es": "<LI>Sospechas que Molly puede haberse ido a hacer pis, pero no puedes estar seguro. En cualquier caso, te gustaría verlo. Así que has jugado un golpe de suerte.",
       "fr": "<LI>Vous soupçonnez que Molly est peut-être allée faire pipi, mais vous n'en êtes pas sûr. Quoi qu'il en soit, vous aimeriez regarder. Alors vous avez tenté un coup de chance.",
@@ -12498,7 +12498,7 @@
     {
       "id": "x01323",
       "kind": "story",
-      "en": "<LI>You don't have enough Intimacy points for the Luckshot to work.",
+      "en": "<LI>You don't have enough Intimacy points for the luckshot to work.",
       "cn": "<LI>你的亲密度不够，幸运机会无法生效。",
       "es": "<LI>No tienes suficientes puntos de intimidad para que el golpe de suerte funcione.",
       "fr": "<LI>Vous n'avez pas assez de points d'intimité pour que le coup de chance fonctionne.",
@@ -15272,7 +15272,7 @@
     {
       "id": "x01618",
       "kind": "story",
-      "en": "Is it worth risking a Luckshot?",
+      "en": "Is it worth risking a luckshot?",
       "cn": "值得冒险用一次幸运机会吗？",
       "es": "¿Merece la pena arriesgarse con un golpe de suerte?",
       "fr": "Ça vaut le coup de risquer un coup de chance ?",
@@ -15299,16 +15299,6 @@
       "tw": "不，我不偷看她。"
     },
     {
-      "id": "x01621",
-      "kind": "choice",
-      "tag": "goforpee",
-      "en": "No, I'll save the luckshot for later.",
-      "cn": "不，幸运机会留到后面再用。",
-      "es": "No, guardaré el golpe de suerte para más tarde.",
-      "fr": "Non, je garde le coup de chance pour plus tard.",
-      "tw": "不，幸運機會留到後面再用。"
-    },
-    {
       "id": "x01622",
       "kind": "story",
       "en": "<LI>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.",
@@ -15329,7 +15319,7 @@
     {
       "id": "x01624",
       "kind": "story",
-      "en": "Is it worth risking a Luckshot?",
+      "en": "Is it worth risking a luckshot?",
       "cn": "值得冒险用一次幸运机会吗？",
       "es": "¿Merece la pena arriesgarse con un golpe de suerte?",
       "fr": "Ça vaut le coup de risquer un coup de chance ?",
@@ -15354,16 +15344,6 @@
       "es": "No, no la espiaré.",
       "fr": "Non, je ne vais pas l'espionner.",
       "tw": "不，我不偷看她。"
-    },
-    {
-      "id": "x01627",
-      "kind": "choice",
-      "tag": "goforpee",
-      "en": "No, I'll save the luckshot for later.",
-      "cn": "不，幸运机会留到后面再用。",
-      "es": "No, guardaré el golpe de suerte para más tarde.",
-      "fr": "Non, je garde le coup de chance pour plus tard.",
-      "tw": "不，幸運機會留到後面再用。"
     },
     {
       "id": "x01628",
@@ -17274,7 +17254,7 @@
     {
       "id": "x01835",
       "kind": "story",
-      "en": "<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a Luckshot.",
+      "en": "<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a luckshot.",
       "cn": "<LI>黛安和莫莉正向女厕所走去。你很想看看如果阻止她们会发生什么，于是使用了一次幸运机会。",
       "es": "<LI>Diane y Molly se dirigen al baño de mujeres. Te gustaría ver qué pasaría si las detuvieras. Así que has usado un golpe de suerte.",
       "fr": "<LI>Diane et Molly se dirigent vers les toilettes des femmes. Vous aimeriez voir ce qui se passerait si vous les arrêtiez. Alors vous avez joué un coup de chance.",
@@ -17446,7 +17426,7 @@
     {
       "id": "x01854",
       "kind": "story",
-      "en": "<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a Luckshot?",
+      "en": "<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a luckshot?",
       "cn": "<LI>你真希望能看见她们，但和罗伯特在一起显然不行。使用一次幸运机会有用吗？",
       "es": "<LI>Ojalá pudieras verlas, pero obviamente no puedes estando con Robert. ¿Merece la pena usar un golpe de suerte?",
       "fr": "<LI>Vous aimeriez pouvoir les regarder, mais c'est évidemment impossible avec Robert dans les parages. Est-ce que ça vaut le coup de jouer un coup de chance ?",
@@ -41745,7 +41725,7 @@
     {
       "id": "x04437",
       "kind": "story",
-      "en": "<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely busting for a pee.",
+      "en": "<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely bursting for a pee.",
       "cn": "<P><LI>你真希望公车快点。喝了那么多，你现在憋得快要爆炸了。",
       "es": "<P><LI>Ojalá el autobús fuera más deprisa. Después de todas esas copas, tienes unas ganas tremendas de hacer pis.",
       "fr": "<P><LI>Vous voudriez que le bus se dépêche. Après toutes ces boissons, vous êtes au bord de craquer tellement vous avez envie de pisser.",
@@ -43911,10 +43891,10 @@
     {
       "id": "x04671",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安憋得极度难受，看起来已经快到极限了。她用一只手捂住裆部，双腿夹得像要把自己夹碎一样。她表情痛苦，拼命忍着，似乎随时可能尿裤子。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='color: #ff0000'>Diane NO AGUANTA MÁS. Parece estar muy cerca de su límite. Se agarra la entrepierna con una mano y aprieta las piernas como si le fuera la vida en ello. Tiene cara de angustia y parece estar luchando para no hacerse pis encima.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane EST ABSOLUMENT À BOUT, elle semble tout près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Son visage est crispé et elle lutte visiblement pour ne pas se faire pipi dessus.</SPAN></EM></P>",
+      "es": "<P><EM><SPAN style='color: #ff0000'>Diane no aguanta más. Parece estar muy cerca de su límite. Se agarra la entrepierna con una mano y aprieta las piernas como si le fuera la vida en ello. Tiene cara de angustia y parece estar luchando para no hacerse pis encima.</SPAN></EM></P>",
+      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout, elle semble tout près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Son visage est crispé et elle lutte visiblement pour ne pas se faire pipi dessus.</SPAN></EM></P>",
       "tw": "<P><EM><SPAN style='color: #ff0000'>黛安憋得好難受，看起來已經快到極限了。她用一隻手捂住襠部，雙腿夾得像要把自己夾碎一樣。她表情痛苦，拼命忍著，好像隨時可能尿褲子。</SPAN></EM></P>"
     },
     {
@@ -44108,10 +44088,10 @@
     {
       "id": "x04693",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安憋得极度难受，拼命忍着，好像随时都要尿裤子。她咬紧嘴唇，慌乱地不停四处张望。</SPAN></EM></P>",
-      "es": "<P><EM><SPAN style='color: #ff0000'>Diane NO AGUANTA MÁS y parece estar luchando para no hacerse pis encima. Se muerde el labio y no para de mirar frenéticamente a su alrededor.</SPAN></EM></P>",
-      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane EST ABSOLUMENT À BOUT et lutte visiblement pour ne pas se faire pipi dessus. Elle se mord la lèvre et regarde frénétiquement autour d'elle sans arrêt.</SPAN></EM></P>",
+      "es": "<P><EM><SPAN style='color: #ff0000'>Diane no aguanta más y parece estar luchando para no hacerse pis encima. Se muerde el labio y no para de mirar frenéticamente a su alrededor.</SPAN></EM></P>",
+      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout et lutte visiblement pour ne pas se faire pipi dessus. Elle se mord la lèvre et regarde frénétiquement autour d'elle sans arrêt.</SPAN></EM></P>",
       "tw": "<P><EM><SPAN style='color: #ff0000'>黛安憋得好難受，拼命忍著，好像隨時都要尿褲子。她咬緊嘴唇，慌慌張張不停四處張望。</SPAN></EM></P>"
     },
     {
@@ -44270,10 +44250,10 @@
     {
       "id": "x04711",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>DIANE IS ABSOLUTELY DESPERATE. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>Oh, I wish there was a toilet somewhere!<EM> she mutters.</EM>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>Oh, I wish there was a toilet somewhere!<EM> she mutters.</EM>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安已经憋到了极限。你又瞥见她偷偷捂住裆部，但察觉到你在看时她立刻把手移开了。</SPAN></EM>“要是哪里有个厕所就好了！”<EM>她喃喃自语道。</EM>",
-      "es": "<P><EM><SPAN style='color: #ff0000'>DIANE NO AGUANTA MÁS. La ves aguantarse a escondidas otra vez, pero aparta la mano en cuanto se da cuenta de que la estás mirando. </SPAN></EM>¡Ojalá hubiera un baño por aquí cerca!<EM>, murmura.</EM>",
-      "fr": "<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>Oh, j'aimerais tellement qu'il y ait des toilettes quelque part !<EM> marmonne-t-elle.</EM>",
+      "es": "<P><EM><SPAN style='color: #ff0000'>Diane no aguanta más. La ves aguantarse a escondidas otra vez, pero aparta la mano en cuanto se da cuenta de que la estás mirando. </SPAN></EM>¡Ojalá hubiera un baño por aquí cerca!<EM>, murmura.</EM>",
+      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>Oh, j'aimerais tellement qu'il y ait des toilettes quelque part !<EM> marmonne-t-elle.</EM>",
       "tw": "<P><EM><SPAN style='color: #ff0000'>黛安急得要命。你又瞥見她偷偷捂住自己，可發現你在看後立刻把手拿開。「要是哪裡有廁所就好了！」她嘟囔道。"
     },
     {
@@ -44288,10 +44268,10 @@
     {
       "id": "x04713",
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>DIANE IS ON THE VERGE OF WETTING HERSELF. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is on the verge of wetting herself. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安已经快要尿裤子了。她用渴求的眼神望着你。你打算帮她吗？</SPAN></EM>",
-      "es": "<P><EM><SPAN style='color: #ff0000'>DIANE ESTÁ A PUNTO DE HACERSE PIS ENCIMA. Te mira con ojos suplicantes. ¿Vas a ayudarla?</SPAN></EM>",
-      "fr": "<P><EM><SPAN style='color: #ff0000'>DIANE EST SUR LE POINT DE SE FAIRE PIPI DESSUS. Elle vous regarde avec des yeux implorants. Allez-vous l'aider ?</SPAN></EM>",
+      "es": "<P><EM><SPAN style='color: #ff0000'>Diane está a punto de hacerse pis encima. Te mira con ojos suplicantes. ¿Vas a ayudarla?</SPAN></EM>",
+      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane est sur le point de se faire pipi dessus. Elle vous regarde avec des yeux implorants. Allez-vous l'aider ?</SPAN></EM>",
       "tw": "<P><EM><SPAN style='color: #ff0000'>黛安已經快要尿褲子了。她用求你的眼神望著你。你打算幫她嗎？</SPAN></EM>"
     },
     {
@@ -44431,10 +44411,10 @@
     {
       "id": "x04729",
       "kind": "story",
-      "en": "<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>",
+      "en": "<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>",
       "cn": "<EM><SPAN style='color: #0000FF'>莫莉已经憋到了极限。她用一只手死死捂住裆部，双腿夹得死紧。她表情痛苦，拼命克制着自己不要尿裤子。</SPAN></EM>",
-      "es": "<EM><SPAN style='color: #0000FF'>Molly NO AGUANTA MÁS. Parece estar llegando a su límite. Se agarra la entrepierna con una mano y aprieta las piernas como si le fuera la vida en ello. Tiene cara de angustia y parece estar luchando por no hacerse pis encima.</SPAN></EM>",
-      "fr": "<EM><SPAN style='color: #0000FF'>Molly EST ABSOLUMENT À BOUT, elle semble très près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Elle a une expression douloureuse et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
+      "es": "<EM><SPAN style='color: #0000FF'>Molly no aguanta más. Parece estar llegando a su límite. Se agarra la entrepierna con una mano y aprieta las piernas como si le fuera la vida en ello. Tiene cara de angustia y parece estar luchando por no hacerse pis encima.</SPAN></EM>",
+      "fr": "<EM><SPAN style='color: #0000FF'>Molly est absolument à bout, elle semble très près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Elle a une expression douloureuse et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
       "tw": "<EM><SPAN style='color: #0000FF'>莫莉已經憋到了極限。她用一隻手死死捂住襠部，雙腿夾得死緊。她表情痛苦，拼命克制著自己不要尿褲子。</SPAN></EM>"
     },
     {
@@ -44700,10 +44680,10 @@
     {
       "id": "x04759",
       "kind": "story",
-      "en": "<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself.</SPAN></EM>",
+      "en": "<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate and seems to be struggling not to wet herself.</SPAN></EM>",
       "cn": "<EM><SPAN style='color: #0000FF'>莫莉已经完全憋不住了，看起来在拼死挣扎，竭力不让自己尿裤子。</SPAN></EM>",
-      "es": "<EM><SPAN style='color: #0000FF'>Molly ESTÁ A PUNTO DE MEARSE ENCIMA y parece que le está costando horrores no mojarse.</SPAN></EM>",
-      "fr": "<EM><SPAN style='color: #0000FF'>Molly EST ABSOLUMENT AU BORD DE CRAQUER et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
+      "es": "<EM><SPAN style='color: #0000FF'>Molly está a punto de mearse encima y parece que le está costando horrores no mojarse.</SPAN></EM>",
+      "fr": "<EM><SPAN style='color: #0000FF'>Molly est absolument au bord de craquer et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
       "tw": "<EM><SPAN style='color: #0000FF'>莫莉已經完全憋不住了，看來在拼死掙扎，竭力不讓自己尿褲子。</SPAN></EM>"
     },
     {
@@ -48800,11 +48780,11 @@
     },
     {
       "kind": "story",
-      "en": "<P><EM><SPAN style='color: #ff0000'>DIANE IS ABSOLUTELY DESPERATE. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.",
+      "en": "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.",
       "cn": "<P><EM><SPAN style='color: #ff0000'>黛安已经憋到了极限。你又瞥见她偷偷捂住裆部，但察觉到你在看时她立刻把手移开了。</SPAN></EM>“要是哪里有个厕所就好了！”她喃喃自语道。",
       "tw": "<P><EM><SPAN style='color: #ff0000'>黛安已經憋到了極限。你又瞥見她偷偷捂住襠部，但察覺到你在看時她立刻把手移開了。</SPAN></EM>「要是哪裡有個廁所就好了！」她喃喃自語道。",
-      "es": "<P><EM><SPAN style='color: #ff0000'>DIANE NO AGUANTA MÁS. La ves aguantarse a escondidas otra vez, pero aparta la mano en cuanto se da cuenta de que la estás mirando. </SPAN></EM>«¡Ojalá hubiera un baño por aquí cerca!» murmura.",
-      "fr": "<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle."
+      "es": "<P><EM><SPAN style='color: #ff0000'>Diane no aguanta más. La ves aguantarse a escondidas otra vez, pero aparta la mano en cuanto se da cuenta de que la estás mirando. </SPAN></EM>«¡Ojalá hubiera un baño por aquí cerca!» murmura.",
+      "fr": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle."
     },
     {
       "kind": "story",

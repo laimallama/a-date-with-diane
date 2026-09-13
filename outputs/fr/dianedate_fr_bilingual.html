@@ -23,7 +23,9 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), #e9dcc8;
+  --body-base: #e9dcc8;
+  --body-canvas: #f8f4ee;
+  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
   --overlay-scrim: rgba(35, 31, 32, .55);
 }
 
@@ -47,7 +49,9 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
+    --body-base: #171310;
+    --body-canvas: #0f0c0a;
+    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -56,6 +60,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background-color: var(--body-canvas);
 }
 
 body {
@@ -63,6 +68,7 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
+  background-color: var(--body-canvas);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 1.58;
@@ -327,7 +333,7 @@ a:hover { color: var(--accent-dark); }
 
 .theme-toggle-button {
   width: auto;
-  min-width: 120px;
+  min-width: 0;
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -406,7 +412,7 @@ a:hover { color: var(--accent-dark); }
 
 @media (max-width: 520px) {
   .status-bar {
-    padding: 10px 8px;
+    padding: 10px 10px;
     font-size: .78rem;
   }
   .status-row {
@@ -419,7 +425,8 @@ a:hover { color: var(--accent-dark); }
     justify-content: center;
     gap: 2px;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: keep-all;
   }
 }
 
@@ -463,6 +470,17 @@ body.lang-en .lang-alt {
   .game-toolbar {
     padding: 0;
     margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
   }
 }
 
@@ -635,11 +653,27 @@ body.lang-en .lang-alt {
 .climax-skip-button,
 .theme-toggle-button {
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   min-height: 44px;
   padding: 10px 14px;
   font-size: 1rem;
   line-height: 1.25;
 }
+@media (max-width: 640px) {
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+}
+
 
 button:focus,
 .choice:focus,
@@ -1614,7 +1648,7 @@ var alternateTranslations = {
   "<LI>DIANE: Come on! I'm dying to spend a penny!": "<LI>DIANE : Allez, viens ! J'ai vraiment trop envie de faire pipi !",
   "<LI>DIANE: Come on!": "<LI>DIANE : Allez, viens !",
   "<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet.": "<LI>Diane semble vraiment pressée d'arriver au Pavillon. Elle marche à petits pas serrés et se mord la lèvre, comme si elle avait vraiment hâte d'atteindre les toilettes.",
-  "<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez. Vous gagnez 5 points de timidité.</strong></p>",
+  "<p class='notice'><strong>Diane is in a real hurry as you walk, but she still won't say she needs the loo. You gained 5 shyness points.</strong></p>": "<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez, mais elle n'avoue toujours pas qu'elle a besoin des toilettes. Vous gagnez 5 points de timidité.</strong></p>",
   "<LI>You're wondering whether you could stop and kiss.": "<LI>Vous vous demandez si vous pourriez vous arrêter pour vous embrasser.",
   "<LI>You pass some steps up from the towpath.": "<LI>Vous passez devant des marches qui montent depuis le chemin de halage.",
   "<LI>Molly and Bruno, who are walking ahead of you, have stopped suddenly. They both look a little bit sheepish.": "<LI>Molly et Bruno, qui marchaient devant vous, se sont arrêtés brusquement. Ils ont tous les deux l'air un peu penauds.",
@@ -1627,8 +1661,8 @@ var alternateTranslations = {
   "<LI>YOU: I'm not sure. There's a sort of towpath down there.": "<LI>VOUS : Je ne suis pas sûr. Il y a une sorte de chemin de halage là en bas.",
   "<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.": "<LI>Vous n'aurez qu'à laisser libre cours à votre imagination. À moins que vous ne vouliez tenter un coup de chance, bien sûr.",
   "<LI>You walk on alone with Diane. You wish you could look over the parapet, but you can't.": "<LI>Vous continuez à marcher seul avec Diane. Vous aimeriez pouvoir regarder par-dessus le parapet, mais vous ne pouvez pas.",
-  "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a Luckshot.": "<LI>Vous soupçonnez que Molly est peut-être allée faire pipi, mais vous n'en êtes pas sûr. Quoi qu'il en soit, vous aimeriez regarder. Alors vous avez tenté un coup de chance.",
-  "<LI>You don't have enough Intimacy points for the Luckshot to work.": "<LI>Vous n'avez pas assez de points d'intimité pour que le coup de chance fonctionne.",
+  "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot.": "<LI>Vous soupçonnez que Molly est peut-être allée faire pipi, mais vous n'en êtes pas sûr. Quoi qu'il en soit, vous aimeriez regarder. Alors vous avez tenté un coup de chance.",
+  "<LI>You don't have enough Intimacy points for the luckshot to work.": "<LI>Vous n'avez pas assez de points d'intimité pour que le coup de chance fonctionne.",
   "<LI>DIANE: I wonder what they're up to?": "<LI>DIANE : Je me demande ce qu'ils peuvent bien fabriquer ?",
   "<LI>The path curves a little to the left here, and close to a rather erratic wall. It only takes a few paces across some rough grass to get to the wall and look over. Out of curiosity Diane does this, and you follow.": "<LI>Le chemin tourne légèrement à gauche ici, le long d'un mur assez irrégulier. Il suffit de quelques pas dans l'herbe rase pour atteindre le mur et regarder par-dessus. Par curiosité, Diane le fait, et vous la suivez.",
   "<LI>DIANE: Oh!": "<LI>DIANE : Oh !",
@@ -1853,7 +1887,7 @@ var alternateTranslations = {
   "<LI>You wish you could follow her, but you go into the Gents.": "<LI>Vous aimeriez la suivre, mais vous entrez dans les toilettes des hommes.",
   "<LI>Diane has rushed into the Ladies. She's in a real hurry and you hear the door of a cubicle slam shut. You go into the Gents.": "<LI>Diane s'est précipitée dans les toilettes des femmes. Elle est vraiment pressée et vous entendez la porte d'une cabine claquer. Vous entrez dans les toilettes des hommes.",
   "<LI>You're going to have a pee yourself. But you wish you could watch Diane.": "<LI>Vous allez faire pipi vous aussi. Mais vous aimeriez pouvoir observer Diane.",
-  "Is it worth risking a Luckshot?": "Ça vaut le coup de risquer un coup de chance ?",
+  "Is it worth risking a luckshot?": "Ça vaut le coup de risquer un coup de chance ?",
   "<LI>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.": "<LI>Diane est entrée dans les toilettes des femmes. On voit bien qu'elle en a vraiment besoin, et vous entendez la porte d'une cabine claquer. Vous entrez dans les toilettes des hommes.",
   "<LI>You have a pee. You imagine Diane next door and wish you could watch. Maybe another time.": "<LI>Vous faites pipi. Vous imaginez Diane de l'autre côté et vous aimeriez pouvoir la regarder. Peut-être une prochaine fois.",
   "<LI>You leave the toilet and wait for Diane.": "<LI>Vous sortez des toilettes et attendez Diane.",
@@ -1966,7 +2000,7 @@ var alternateTranslations = {
   "<LI>Diane says that 'it's not urgent' and she'll wait till she gets home.": "<LI>Diane dit que « ce n'est pas urgent » et qu'elle attendra d'être rentrée chez elle.",
   "<LI>You all leave the Pavilion.": "<LI>Vous quittez tous le Pavillon.",
   "<LI>Diane and Molly have gone to the loo and you've played a luckshot": "<LI>Diane et Molly sont allées aux toilettes et vous avez joué un coup de chance.",
-  "<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a Luckshot.": "<LI>Diane et Molly se dirigent vers les toilettes des femmes. Vous aimeriez voir ce qui se passerait si vous les arrêtiez. Alors vous avez joué un coup de chance.",
+  "<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a luckshot.": "<LI>Diane et Molly se dirigent vers les toilettes des femmes. Vous aimeriez voir ce qui se passerait si vous les arrêtiez. Alors vous avez joué un coup de chance.",
   "<LI>There's been a bit of an argument in the Ladies, with a couple of girls who've drunk too much. As a result the Ladies is closed for a few minutes while the staff sort things out. Diane and Molly decide they can't wait that long and return without having had a pee.": "<LI>Il y a eu une petite dispute dans les toilettes des femmes, avec deux filles qui avaient trop bu. Du coup, les toilettes sont fermées quelques minutes le temps que le personnel règle les choses. Diane et Molly décident qu'elles ne peuvent pas attendre aussi longtemps et reviennent sans avoir fait pipi.",
   "<LI>'We'll just have to wait,' they say.": "<LI>« On n'a plus qu'à attendre », disent-elles.",
   "<LI>They've already locked the door from the beer garden into the Pavilion, so there isn't access to the Ladies. Sorry. The girls have to return disappointed.": "<LI>Ils ont déjà fermé à clé la porte donnant du jardin sur le Pavillon, donc il n'y a aucun accès aux toilettes des femmes. Désolé. Les filles doivent repartir déçues.",
@@ -1981,7 +2015,7 @@ var alternateTranslations = {
   "<LI>MOLLY: No! We'll catch you up.": "<LI>MOLLY : Non ! On vous rattrape.",
   "<LI>You and Robert walk on. After about 20 yards you look back. Diane is beginning to go down the steps, but Molly has paused at the top, as if to make sure you are walking away. She waves at you, then starts to go down. You carry on walking.": "<LI>Vous et Robert continuez à marcher. Au bout d'une vingtaine de mètres vous vous retournez. Diane commence à descendre les marches, mais Molly s'est arrêtée en haut, comme pour s'assurer que vous vous éloignez. Elle vous fait signe de la main, puis commence à descendre. Vous continuez à marcher.",
   "<LI>ROBERT: I think your friend's going for a pee.": "<LI>ROBERT : Je crois que votre amie va faire pipi.",
-  "<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a Luckshot?": "<LI>Vous aimeriez pouvoir les regarder, mais c'est évidemment impossible avec Robert dans les parages. Est-ce que ça vaut le coup de jouer un coup de chance ?",
+  "<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a luckshot?": "<LI>Vous aimeriez pouvoir les regarder, mais c'est évidemment impossible avec Robert dans les parages. Est-ce que ça vaut le coup de jouer un coup de chance ?",
   "<LI>You imagine the girls down on the towpath. You wish you could watch.": "<LI>Vous imaginez les filles en bas sur le chemin de halage. Vous aimeriez pouvoir regarder.",
   "<LI>You walk slowly until they catch you up.": "<LI>Vous marchez lentement jusqu'à ce qu'elles vous rattrapent.",
   "<LI>You carry on walking, the four of you.": "<LI>Vous continuez à marcher, tous les quatre.",
@@ -3708,7 +3742,7 @@ var alternateTranslations = {
   "<LI>She says, 'Thank you, just a sip,' and drinks a little bit": "<LI>Elle dit « Merci, juste une gorgée » et boit un petit peu.",
   "<LI>She says, 'Thank you, it is rather hot in here,' and drinks half the bottle": "<LI>Elle dit « Merci, il fait vraiment chaud ici » et boit la moitié de la bouteille.",
   "<LI>You're about halfway home.": "<LI>Vous êtes à peu près à mi-chemin.",
-  "<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely busting for a pee.": "<P><LI>Vous voudriez que le bus se dépêche. Après toutes ces boissons, vous êtes au bord de craquer tellement vous avez envie de pisser.",
+  "<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely bursting for a pee.": "<P><LI>Vous voudriez que le bus se dépêche. Après toutes ces boissons, vous êtes au bord de craquer tellement vous avez envie de pisser.",
   "<LI>You shift about on the seat.": "<LI>Vous vous tortillez sur votre siège.",
   "<LI>You put your arm round Diane and she leans her head on your shoulder.": "<LI>Vous passez votre bras autour de Diane et elle pose la tête sur votre épaule.",
   "<LI>There's about five minutes to go before Diane's stop.": "<LI>Il reste environ cinq minutes avant l'arrêt de Diane.",
@@ -3870,7 +3904,7 @@ var alternateTranslations = {
   "<P><EM><SPAN style='color: #ff0000'>Diane has gone very still but keeps looking around.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane s'est immobilisée mais continue de regarder autour d'elle.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane is desperate for the loo. She's crossing her legs with all her strength and is practically dancing on her seat. Her hands are clasped together on her lap as if she wants to hold herself. She looks at you with pleading eyes.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane a désespérément envie de faire pipi. Elle croise les jambes de toutes ses forces et s'agite pratiquement sur son siège. Ses mains sont jointes sur ses genoux, comme si elle voulait se retenir. Elle vous regarde avec des yeux suppliants.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane is desperate to pee! She's squeezing her legs very tight and only her modesty is keeping her from holding her crotch. She's bouncing on her seat.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane est au bord de se faire pipi dessus ! Elle serre les jambes très fort et seule sa pudeur l'empêche de se saisir l'entrejambe. Elle trépigne sur son siège.</SPAN></EM></P>",
-  "<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane EST ABSOLUMENT À BOUT, elle semble tout près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Son visage est crispé et elle lutte visiblement pour ne pas se faire pipi dessus.</SPAN></EM></P>",
+  "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout, elle semble tout près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Son visage est crispé et elle lutte visiblement pour ne pas se faire pipi dessus.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane looks like she might want a pee. She has one leg slightly bent at the knee and keeps changing her position. But maybe it's your imagination.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane semble avoir un peu envie de faire pipi. Elle garde une jambe légèrement fléchie et n'arrête pas de changer de position. Mais c'est peut-être votre imagination.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane looks a little impatient, and seems to be thinking of something.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane semble un peu impatiente et paraît avoir quelque chose en tête.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane seems a bit tense.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane paraît un peu tendue.</SPAN></EM></P>",
@@ -3890,7 +3924,7 @@ var alternateTranslations = {
   "<P><EM><SPAN style='color: #ff0000'>Diane keeps turning away from you, then turning back with a forced smile.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane n'arrête pas de se détourner de vous, puis de revenir avec un sourire forcé.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate for the loo. She can't stand on one spot but is pacing about. A hand goes to her crotch when she thinks no one is watching</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Elle ne tient pas en place et fait les cent pas. Sa main part vers l'entrejambe quand elle croit que personne ne la regarde.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane est tellement au bord qu'elle doit se tenir l'entrejambe, en espérant que personne ne la voit.</SPAN></EM></P>",
-  "<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane EST ABSOLUMENT À BOUT et lutte visiblement pour ne pas se faire pipi dessus. Elle se mord la lèvre et regarde frénétiquement autour d'elle sans arrêt.</SPAN></EM></P>",
+  "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout et lutte visiblement pour ne pas se faire pipi dessus. Elle se mord la lèvre et regarde frénétiquement autour d'elle sans arrêt.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane has gone very quiet and is looking absolutely miserable. She is so desperate that she can hardly stand upright. You wonder whether a few spurts have already escaped.</SPAN></EM></P>": "<P><EM><SPAN style='color: #ff0000'>Diane s'est faite très silencieuse et a l'air absolument malheureuse. Elle est tellement à bout qu'elle a du mal à rester debout. Vous vous demandez si quelques gouttes ne lui ont pas déjà échappé.</SPAN></EM></P>",
   "<P><EM><SPAN style='color: #ff0000'>Diane doesn't look like she has to pee yet.</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Diane n'a pas l'air d'avoir envie de faire pipi pour l'instant.</SPAN></EM>",
   "<P><EM><SPAN style='color: #ff0000'>Diane looks like she might need the loo. You can tell that because she seems a little bit fidgety, but you can't be sure.</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Diane semble peut-être avoir envie d'aller aux toilettes. Elle paraît un tout petit peu agitée, mais vous n'êtes pas sûr(e).</SPAN></EM>",
@@ -3908,9 +3942,9 @@ var alternateTranslations = {
   "<P><EM><SPAN style='color: #ff0000'>Diane's hands are clenched at her sides.</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Les poings de Diane sont serrés le long de ses flancs.</SPAN></EM>",
   "<P><EM><SPAN style='color: #ff0000'>Diane can't stand still but keeps pacing about. You glimpse her furtively holding herself when she thinks no one is watching.</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Diane ne tient pas en place et fait les cent pas. Vous l'apercevez qui se tient furtivement l'entrejambe quand elle croit que personne ne la regarde.</SPAN></EM>",
   "<P><EM><SPAN style='color: #ff0000'>Diane is so desperate she can hardly stand upright. She looks utterly miserable.</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Diane est tellement au bord qu'elle a du mal à rester debout. Elle a l'air absolument malheureuse.</SPAN></EM>",
-  "<P><EM><SPAN style='color: #ff0000'>DIANE IS ABSOLUTELY DESPERATE. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.": "<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle.",
+  "<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.": "<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle.",
   "<P><EM><SPAN style='color: #ff0000'>Diane is walking around in a little circle, doing little curtseys at every turn. You wonder if a few spurts have already escaped.</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Diane tourne en rond en faisant de petites révérences à chaque pas. Vous vous demandez si quelques gouttes ne lui ont pas déjà échappé.</SPAN></EM>",
-  "<P><EM><SPAN style='color: #ff0000'>DIANE IS ON THE VERGE OF WETTING HERSELF. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>DIANE EST SUR LE POINT DE SE FAIRE PIPI DESSUS. Elle vous regarde avec des yeux implorants. Allez-vous l'aider ?</SPAN></EM>",
+  "<P><EM><SPAN style='color: #ff0000'>Diane is on the verge of wetting herself. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>": "<P><EM><SPAN style='color: #ff0000'>Diane est sur le point de se faire pipi dessus. Elle vous regarde avec des yeux implorants. Allez-vous l'aider ?</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Is it your imagination or is Molly beginning to need a pee? She just seems a little bit fidgety.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Est-ce votre imagination, ou Molly commencerait-elle à avoir envie de faire pipi ? Elle semble juste un peu agitée.</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is shifting about a bit. Maybe she's just uncomfortable, or maybe she's beginning to need the loo.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly gigote un peu. Peut-être qu'elle est juste mal à l'aise — ou peut-être qu'elle commence à avoir envie d'aller aux toilettes.</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly keeps crossing her legs, first one way, then the other.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly n'arrête pas de croiser les jambes, d'un côté puis de l'autre.</SPAN></EM>",
@@ -3925,7 +3959,7 @@ var alternateTranslations = {
   "<EM><SPAN style='color: #0000FF'>Molly needs to pee so badly she's gritting her teeth. Her legs are crushed together and her hands are under her thighs. She keeps moving her feet frantically.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly a tellement envie de faire pipi qu'elle serre les dents. Ses jambes sont crispées l'une contre l'autre et ses mains sont glissées sous ses cuisses. Elle remue frénétiquement les pieds.</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is desperate for the loo. She's crossing her legs with all her strength and is practically dancing on her seat. Her hands are clasped together on her lap as if she wants to hold herself. She looks at you with pleading eyes.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly a désespérément besoin d'aller aux toilettes. Elle croise les jambes de toutes ses forces et danse presque sur son siège. Ses mains sont jointes sur ses genoux comme si elle voulait se retenir. Elle vous regarde avec des yeux implorants.</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is desperate to pee! She's squeezing her legs very tight and only her modesty is keeping her from holding her crotch. She's bouncing on her seat.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly n'en peut plus ! Elle serre les jambes très fort et seule sa pudeur l'empêche de se tenir l'entrejambe. Elle rebondit sur son siège.</SPAN></EM>",
-  "<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly EST ABSOLUMENT À BOUT, elle semble très près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Elle a une expression douloureuse et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
+  "<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly est absolument à bout, elle semble très près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Elle a une expression douloureuse et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane crosses her legs. First one way, then the other. But she seems quite relaxed.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane croise les jambes. D’un côté, puis de l’autre. Mais elle semble assez détendue.</SPAN></EM></P>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane definitely needs the toilet. She keeps crossing her legs, first one way, then the other. But she is trying to look calm, and interested in the album.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Diane a manifestement envie d'aller aux toilettes. Elle n'arrête pas de croiser les jambes, d'un côté puis de l'autre. Mais elle essaie d'avoir l'air calme et intéressée par l'album.</SPAN></EM></P>",
   "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>She crosses her legs. Then she uncrosses them again. She seems uncomfortable.</SPAN></EM></P>": "<P><EM><SPAN style='background: #FFFF00; color: #0000FF'>Elle croise les jambes. Puis les décroise. Elle semble mal à l’aise.</SPAN></EM></P>",
@@ -3953,7 +3987,7 @@ var alternateTranslations = {
   "<EM><SPAN style='color: #0000FF'>Molly needs to pee so badly she's biting her lip. She is walking on the spot and anxiously looking around.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly a tellement envie de faire pipi qu'elle se mord la lèvre. Elle trépigne sur place et regarde anxieusement autour d'elle.</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate for the loo. She can't stand on one spot but is pacing about. A hand goes to her crotch when she thinks no one is watching</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly est absolument à bout — elle n'arrive pas à tenir en place et fait les cent pas. Sa main file vers son entrejambe quand elle croit que personne ne la regarde</SPAN></EM>",
   "<EM><SPAN style='color: #0000FF'>Molly is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly est tellement à bout qu'elle est obligée de se tenir, une main sur l'entrejambe, en espérant que personne ne la voit.</SPAN></EM>",
-  "<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly EST ABSOLUMENT AU BORD DE CRAQUER et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
+  "<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate and seems to be struggling not to wet herself.</SPAN></EM>": "<EM><SPAN style='color: #0000FF'>Molly est absolument au bord de craquer et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>",
   "<LI>DIANE: <EM>(blushing bright red)</EM> Actually, I do need to go. I think, maybe, that it's getting late, it's time I went. I can wait till I get home. There's no need for you to walk me home.": "<LI>DIANE : <EM>(rouge écarlate)</EM> En fait, j'ai besoin d'y aller. Je pense, peut-être, qu'il se fait tard, il est temps que je rentre. Je peux attendre d'être chez moi. Pas besoin de me raccompagner.",
   "<LI>She blushes bright red, crossing her legs as she stands there.": "<LI>Elle est rouge écarlate, les jambes croisées là où elle se tient.",
   "<LI>DIANE: Actually, I'm dying to go. I should have gone earlier. Sorry about this, but maybe it's best if I just head off home now. It is quite late.": "<LI>DIANE : En fait, j'ai terriblement envie d'y aller. J'aurais dû y aller avant. Désolée, mais je crois qu'il vaut mieux que je rentre maintenant. Il est vraiment tard.",
@@ -4336,7 +4370,6 @@ var alternateTranslations = {
   "The toilet is open.": "Les toilettes sont ouvertes.",
   "Yes, I will use a luckshot.": "Oui, je vais utiliser un coup de chance.",
   "No, I won't spy on her.": "Non, je ne vais pas l'espionner.",
-  "No, I'll save the luckshot for later.": "Non, je garde le coup de chance pour plus tard.",
   "You leave the toilet.": "Vous quittez les toilettes.",
   "She must have wet them!": "Elle a dû tremper sa culotte !",
   "Bother!": "Zut !",
@@ -8605,7 +8638,7 @@ riverside12()
 s("<LI>You carry on walking."); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
 {s("<LI>Diane seems really keen to get to the Pavilion. She is walking in hurried little steps, and is biting her lip, as if quite anxious to get to the toilet."); 
-s("<p class='notice'><strong>Diane is in a real hurry as you walk. You gained 5 shyness points.</strong></p>"); adjpoints(5);}
+s("<p class='notice'><strong>Diane is in a real hurry as you walk, but she still won't say she needs the loo. You gained 5 shyness points.</strong></p>"); adjpoints(5);}
 else
 {s("<LI>You're wondering whether you could stop and kiss."); }
 s("<LI>You pass some steps up from the towpath.");
@@ -8639,9 +8672,9 @@ c("riverside14","You walk on together."); }
 function
 luckytrip4()
 {
-s("<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a Luckshot."); spendLuckshot(); 
+s("<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot."); spendLuckshot(); 
 if (inti < 75)
-{s("<LI>You don't have enough Intimacy points for the Luckshot to work."); mollyblad = 50;
+{s("<LI>You don't have enough Intimacy points for the luckshot to work."); mollyblad = 50;
 c("riverside14","Carry on walking."); }
 else
 {s("<LI>DIANE: I wonder what they're up to?");
@@ -9170,20 +9203,18 @@ toiletopen1bb()
 {
 s("<LI>Diane has rushed into the Ladies. She's in a real hurry and you hear the door of a cubicle slam shut. You go into the Gents.");
 s("<LI>You're going to have a pee yourself. But you wish you could watch Diane.");
-s("Is it worth risking a Luckshot?");
+s("Is it worth risking a luckshot?");
 if (luckshots >= 1) c("luckytrip5","Yes, I will use a luckshot."); 
-c("goforpee","No, I won't spy on her.");
-c("goforpee","No, I'll save the luckshot for later."); }
+c("goforpee","No, I won't spy on her.");}
 
 function
 toiletopen1c1()
 {
 s("<LI>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.");
 s("<LI>You're going to have a pee yourself. But you wish you could watch Diane.");
-s("Is it worth risking a Luckshot?");
+s("Is it worth risking a luckshot?");
 if (luckshots >= 1) c("luckytrip5c","Yes, I will use a luckshot."); 
-c("goforpee","No, I won't spy on her.");
-c("goforpee","No, I'll save the luckshot for later."); }
+c("goforpee","No, I won't spy on her.");}
 
 
 function
@@ -9620,7 +9651,7 @@ c("gameover","You are disqualified"); } }
 function
 luckytrip6a()
 {
-s("<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a Luckshot.");
+s("<LI>Diane and Molly are heading for the Ladies. You'd like to see what happened if you stopped them. So you've played a luckshot.");
 if (saturday)
 {s("<LI>There's been a bit of an argument in the Ladies, with a couple of girls who've drunk too much. As a result the Ladies is closed for a few minutes while the staff sort things out. Diane and Molly decide they can't wait that long and return without having had a pee.");
 s("<LI>'We'll just have to wait,' they say.");
@@ -9649,7 +9680,7 @@ s("<LI>There's a hint of mischief in his voice.");
 s("<LI>MOLLY: No! We'll catch you up.");
 s("<LI>You and Robert walk on. After about 20 yards you look back. Diane is beginning to go down the steps, but Molly has paused at the top, as if to make sure you are walking away. She waves at you, then starts to go down. You carry on walking.");
 s("<LI>ROBERT: I think your friend's going for a pee.");
-s("<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a Luckshot?");
+s("<LI>You wish you could watch them, but you obviously can't while you're with Robert. Is there any point in playing a luckshot?");
 if (luckshots >= 1) c("luckytrip3","Yes, I will use a luckshot."); 
 c("riversidepath11","No, I'll save that for later.");   }
 else
@@ -13582,7 +13613,9 @@ function
 walkhome2()
 {
 s("<LI>You and Diane are walking up the road, hand in hand.");
-s("<LI>The cool night air is having its inevitable effect."); blad +=10
+blad +=10
+if (blad > 670)
+{s("<LI>The cool night air is having its inevitable effect.");}
 if (blad >975)
 {disaster()}
 else
@@ -15206,7 +15239,7 @@ bushome4()
 {
 s("<LI>You're about halfway home.");
 if (rioja)
-{s("<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely busting for a pee.");
+{s("<P><LI>You wish the bus would hurry up. After all those drinks you're absolutely bursting for a pee.");
 s("<LI>You shift about on the seat."); getinti(-10); }
 else
 {s("<LI>You put your arm round Diane and she leans her head on your shoulder."); 
@@ -15676,7 +15709,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane is desperate for the loo. She's cro
 else if (blad < 900)
 s("<P><EM><SPAN style='color: #ff0000'>Diane is desperate to pee! She's squeezing her legs very tight and only her modesty is keeping her from holding her crotch. She's bouncing on her seat.</SPAN></EM></P>"); 
 else
-s("<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>"); }
+s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM></P>"); }
 
 function  
 standing_desp() 
@@ -15725,7 +15758,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate for the loo
 else if (blad < 900)
 s("<P><EM><SPAN style='color: #ff0000'>Diane is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM></P>"); 
 else if (blad < 950)
-s("<P><EM><SPAN style='color: #ff0000'>Diane IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>");
+s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate and seems to be struggling not to wet herself. She's biting her lip and constantly looking frantically around.</SPAN></EM></P>");
 else 
 s("<P><EM><SPAN style='color: #ff0000'>Diane has gone very quiet and is looking absolutely miserable. She is so desperate that she can hardly stand upright. You wonder whether a few spurts have already escaped.</SPAN></EM></P>"); }
 
@@ -15782,11 +15815,11 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane can't stand still but keeps pacing 
 else if (blad < 875 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane is so desperate she can hardly stand upright. She looks utterly miserable.</SPAN></EM>");
 else if (blad < 900)
-s("<P><EM><SPAN style='color: #ff0000'>DIANE IS ABSOLUTELY DESPERATE. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.");
+s("<P><EM><SPAN style='color: #ff0000'>Diane is absolutely desperate. You glimpse her furtively holding herself again but she takes her hand away when she realizes you're watching. </SPAN></EM>'Oh, I wish there was a toilet somewhere!' she mutters.");
 else if (blad < 925 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane is walking around in a little circle, doing little curtseys at every turn. You wonder if a few spurts have already escaped.</SPAN></EM>");
 else
-{s("<P><EM><SPAN style='color: #ff0000'>DIANE IS ON THE VERGE OF WETTING HERSELF. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>");  }}
+{s("<P><EM><SPAN style='color: #ff0000'>Diane is on the verge of wetting herself. She is looking at you with pleading eyes. Are you going to help her?</SPAN></EM>");  }}
 
 
 
@@ -15825,7 +15858,7 @@ s("<EM><SPAN style='color: #0000FF'>Molly is desperate for the loo. She's crossi
 else if (mollyblad < 900)
 s("<EM><SPAN style='color: #0000FF'>Molly is desperate to pee! She's squeezing her legs very tight and only her modesty is keeping her from holding her crotch. She's bouncing on her seat.</SPAN></EM>"); 
 else
-s("<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>"); }
+s("<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate, she seems to be very near her limit. She's grabbing herself in the crotch with one hand and squeezing her legs like her life depends on it. She has a pained expression and seems to be struggling not to wet herself.</SPAN></EM>"); }
 
 function
 albumdesp()
@@ -15896,7 +15929,7 @@ s("<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate for the loo. S
 else if (mollyblad < 900)
 s("<EM><SPAN style='color: #0000FF'>Molly is so desperate she is having to hold herself, with a hand at her crotch, hoping that no one can see her.</SPAN></EM>"); 
 else
-s("<EM><SPAN style='color: #0000FF'>Molly IS ABSOLUTELY DESPERATE and seems to be struggling not to wet herself.</SPAN></EM>"); }
+s("<EM><SPAN style='color: #0000FF'>Molly is absolutely desperate and seems to be struggling not to wet herself.</SPAN></EM>"); }
 
 function
 admission()

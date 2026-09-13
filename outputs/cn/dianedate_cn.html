@@ -23,7 +23,9 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), #e9dcc8;
+  --body-base: #e9dcc8;
+  --body-canvas: #f8f4ee;
+  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
   --overlay-scrim: rgba(35, 31, 32, .55);
   --body-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;
   --ui-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;
@@ -49,7 +51,9 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
+    --body-base: #171310;
+    --body-canvas: #0f0c0a;
+    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -58,6 +62,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background-color: var(--body-canvas);
 }
 
 body {
@@ -65,6 +70,7 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
+  background-color: var(--body-canvas);
   font-family: var(--body-font);
   font-size: 18px;
   line-height: 1.58;
@@ -329,7 +335,7 @@ a:hover { color: var(--accent-dark); }
 
 @media (max-width: 520px) {
   .status-bar {
-    padding: 10px 8px;
+    padding: 10px 10px;
     font-size: .78rem;
   }
   .status-row {
@@ -342,7 +348,8 @@ a:hover { color: var(--accent-dark); }
     justify-content: center;
     gap: 2px;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: keep-all;
   }
 }
 
@@ -357,6 +364,17 @@ a:hover { color: var(--accent-dark); }
   .game-toolbar {
     padding: 0;
     margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
   }
 }
 
@@ -566,7 +584,7 @@ a:hover { color: var(--accent-dark); }
 
 .theme-toggle-button {
   width: auto;
-  min-width: 120px;
+  min-width: 0;
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -610,11 +628,27 @@ a:hover { color: var(--accent-dark); }
 .climax-skip-button,
 .theme-toggle-button {
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   min-height: 44px;
   padding: 10px 14px;
   font-size: 1rem;
   line-height: 1.25;
 }
+@media (max-width: 640px) {
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+}
+
 
 button:focus,
 .choice:focus,
@@ -4070,7 +4104,7 @@ riverside12()
 s("<LI>你们继续向前走。"); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
 {s("<LI>黛安似乎非常急着想赶到凉亭酒吧。她迈着急促的小碎步，咬着嘴唇，像是急着要去厕所。"); 
-s("<p class='notice'><strong>一路上黛安走得很急。你获得了5点害羞值。</strong></p>"); adjpoints(5);}
+s("<p class='notice'><strong>一路上黛安走得很急，却还是不肯说她要上厕所。你获得了5点害羞值。</strong></p>"); adjpoints(5);}
 else
 {s("<LI>你在想是否可以停下来亲吻一下。"); }
 s("<LI>你们经过了几级从纤道通往上方的台阶。");
@@ -4637,8 +4671,7 @@ s("<LI>黛安冲进了女厕所。她急得很，你听到隔间的门砰地一�
 s("<LI>你自己也去尿了一泡。但心里真希望能看着黛安。");
 s("值得冒险用一次幸运机会吗？");
 if (luckshots >= 1) c("luckytrip5","好，我要用幸运机会。"); 
-c("goforpee","不，我不偷看她。");
-c("goforpee","不，幸运机会留到后面再用。"); }
+c("goforpee","不，我不偷看她。");}
 
 function
 toiletopen1c1()
@@ -4647,8 +4680,7 @@ s("<LI>黛安进了女厕所。看得出她已经急得不行，你听到隔间�
 s("<LI>你自己也去尿了一泡。但心里真希望能看着黛安。");
 s("值得冒险用一次幸运机会吗？");
 if (luckshots >= 1) c("luckytrip5c","好，我要用幸运机会。"); 
-c("goforpee","不，我不偷看她。");
-c("goforpee","不，幸运机会留到后面再用。"); }
+c("goforpee","不，我不偷看她。");}
 
 
 function
@@ -9050,7 +9082,9 @@ function
 walkhome2()
 {
 s("<LI>你和黛安手牵着手，沿着街道往前走。");
-s("<LI>夜晚的凉风如期而至，带来了它那不可避免的影响。"); blad +=10
+blad +=10
+if (blad > 670)
+{s("<LI>夜晚的凉风如期而至，带来了它那不可避免的影响。");}
 if (blad >975)
 {disaster()}
 else

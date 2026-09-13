@@ -23,7 +23,9 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), #e9dcc8;
+  --body-base: #e9dcc8;
+  --body-canvas: #f8f4ee;
+  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
   --overlay-scrim: rgba(35, 31, 32, .55);
 }
 
@@ -47,7 +49,9 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), #171310;
+    --body-base: #171310;
+    --body-canvas: #0f0c0a;
+    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -56,6 +60,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background-color: var(--body-canvas);
 }
 
 body {
@@ -63,6 +68,7 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
+  background-color: var(--body-canvas);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 1.58;
@@ -327,7 +333,7 @@ a:hover { color: var(--accent-dark); }
 
 @media (max-width: 520px) {
   .status-bar {
-    padding: 10px 8px;
+    padding: 10px 10px;
     font-size: .78rem;
   }
   .status-row {
@@ -340,7 +346,8 @@ a:hover { color: var(--accent-dark); }
     justify-content: center;
     gap: 2px;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: keep-all;
   }
 }
 
@@ -355,6 +362,17 @@ a:hover { color: var(--accent-dark); }
   .game-toolbar {
     padding: 0;
     margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
   }
 }
 
@@ -562,7 +580,7 @@ a:hover { color: var(--accent-dark); }
 
 .theme-toggle-button {
   width: auto;
-  min-width: 120px;
+  min-width: 0;
   padding: 9px 12px;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -606,11 +624,27 @@ a:hover { color: var(--accent-dark); }
 .climax-skip-button,
 .theme-toggle-button {
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   min-height: 44px;
   padding: 10px 14px;
   font-size: 1rem;
   line-height: 1.25;
 }
+@media (max-width: 640px) {
+  .theme-toggle-button {
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: .78rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+}
+
 
 button:focus,
 .choice:focus,
@@ -4066,7 +4100,7 @@ riverside12()
 s("<LI>Vous continuez à marcher."); blad += 5; mollyproc -=30; mollyblad += 30; 
 if (blad > 700)
 {s("<LI>Diane semble vraiment pressée d'arriver au Pavillon. Elle marche à petits pas serrés et se mord la lèvre, comme si elle avait vraiment hâte d'atteindre les toilettes."); 
-s("<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez. Vous gagnez 5 points de timidité.</strong></p>"); adjpoints(5);}
+s("<p class='notice'><strong>Diane est vraiment pressée pendant que vous marchez, mais elle n'avoue toujours pas qu'elle a besoin des toilettes. Vous gagnez 5 points de timidité.</strong></p>"); adjpoints(5);}
 else
 {s("<LI>Vous vous demandez si vous pourriez vous arrêter pour vous embrasser."); }
 s("<LI>Vous passez devant des marches qui montent depuis le chemin de halage.");
@@ -4633,8 +4667,7 @@ s("<LI>Diane s'est précipitée dans les toilettes des femmes. Elle est vraiment
 s("<LI>Vous allez faire pipi vous aussi. Mais vous aimeriez pouvoir observer Diane.");
 s("Ça vaut le coup de risquer un coup de chance ?");
 if (luckshots >= 1) c("luckytrip5","Oui, je vais utiliser un coup de chance."); 
-c("goforpee","Non, je ne vais pas l'espionner.");
-c("goforpee","Non, je garde le coup de chance pour plus tard."); }
+c("goforpee","Non, je ne vais pas l'espionner.");}
 
 function
 toiletopen1c1()
@@ -4643,8 +4676,7 @@ s("<LI>Diane est entrée dans les toilettes des femmes. On voit bien qu'elle en 
 s("<LI>Vous allez faire pipi vous aussi. Mais vous aimeriez pouvoir observer Diane.");
 s("Ça vaut le coup de risquer un coup de chance ?");
 if (luckshots >= 1) c("luckytrip5c","Oui, je vais utiliser un coup de chance."); 
-c("goforpee","Non, je ne vais pas l'espionner.");
-c("goforpee","Non, je garde le coup de chance pour plus tard."); }
+c("goforpee","Non, je ne vais pas l'espionner.");}
 
 
 function
@@ -9048,7 +9080,9 @@ function
 walkhome2()
 {
 s("<LI>Vous et Diane remontez la rue, main dans la main.");
-s("<LI>L'air frais de la nuit produit son effet inévitable."); blad +=10
+blad +=10
+if (blad > 670)
+{s("<LI>L'air frais de la nuit produit son effet inévitable.");}
 if (blad >975)
 {disaster()}
 else
@@ -11132,7 +11166,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane a désespérément envie de faire p
 else if (blad < 900)
 s("<P><EM><SPAN style='color: #ff0000'>Diane est au bord de se faire pipi dessus ! Elle serre les jambes très fort et seule sa pudeur l'empêche de se saisir l'entrejambe. Elle trépigne sur son siège.</SPAN></EM></P>"); 
 else
-s("<P><EM><SPAN style='color: #ff0000'>Diane EST ABSOLUMENT À BOUT, elle semble tout près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Son visage est crispé et elle lutte visiblement pour ne pas se faire pipi dessus.</SPAN></EM></P>"); }
+s("<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout, elle semble tout près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Son visage est crispé et elle lutte visiblement pour ne pas se faire pipi dessus.</SPAN></EM></P>"); }
 
 function
 standing_desp()
@@ -11181,7 +11215,7 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Elle ne tie
 else if (blad < 900)
 s("<P><EM><SPAN style='color: #ff0000'>Diane est tellement au bord qu'elle doit se tenir l'entrejambe, en espérant que personne ne la voit.</SPAN></EM></P>"); 
 else if (blad < 950)
-s("<P><EM><SPAN style='color: #ff0000'>Diane EST ABSOLUMENT À BOUT et lutte visiblement pour ne pas se faire pipi dessus. Elle se mord la lèvre et regarde frénétiquement autour d'elle sans arrêt.</SPAN></EM></P>");
+s("<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout et lutte visiblement pour ne pas se faire pipi dessus. Elle se mord la lèvre et regarde frénétiquement autour d'elle sans arrêt.</SPAN></EM></P>");
 else 
 s("<P><EM><SPAN style='color: #ff0000'>Diane s'est faite très silencieuse et a l'air absolument malheureuse. Elle est tellement à bout qu'elle a du mal à rester debout. Vous vous demandez si quelques gouttes ne lui ont pas déjà échappé.</SPAN></EM></P>"); }
 
@@ -11238,11 +11272,11 @@ s("<P><EM><SPAN style='color: #ff0000'>Diane ne tient pas en place et fait les c
 else if (blad < 875 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane est tellement au bord qu'elle a du mal à rester debout. Elle a l'air absolument malheureuse.</SPAN></EM>");
 else if (blad < 900)
-s("<P><EM><SPAN style='color: #ff0000'>DIANE EST ABSOLUMENT À BOUT. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle.");
+s("<P><EM><SPAN style='color: #ff0000'>Diane est absolument à bout. Vous l'apercevez à nouveau qui se retient furtivement, mais elle retire sa main quand elle réalise que vous la regardez. </SPAN></EM>« Oh, j'aimerais tellement qu'il y ait des toilettes quelque part ! » marmonne-t-elle.");
 else if (blad < 925 )
 s("<P><EM><SPAN style='color: #ff0000'>Diane tourne en rond en faisant de petites révérences à chaque pas. Vous vous demandez si quelques gouttes ne lui ont pas déjà échappé.</SPAN></EM>");
 else
-{s("<P><EM><SPAN style='color: #ff0000'>DIANE EST SUR LE POINT DE SE FAIRE PIPI DESSUS. Elle vous regarde avec des yeux implorants. Allez-vous l'aider ?</SPAN></EM>");  }}
+{s("<P><EM><SPAN style='color: #ff0000'>Diane est sur le point de se faire pipi dessus. Elle vous regarde avec des yeux implorants. Allez-vous l'aider ?</SPAN></EM>");  }}
 
 
 
@@ -11281,7 +11315,7 @@ s("<EM><SPAN style='color: #0000FF'>Molly a désespérément besoin d'aller aux 
 else if (mollyblad < 900)
 s("<EM><SPAN style='color: #0000FF'>Molly n'en peut plus ! Elle serre les jambes très fort et seule sa pudeur l'empêche de se tenir l'entrejambe. Elle rebondit sur son siège.</SPAN></EM>"); 
 else
-s("<EM><SPAN style='color: #0000FF'>Molly EST ABSOLUMENT À BOUT, elle semble très près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Elle a une expression douloureuse et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>"); }
+s("<EM><SPAN style='color: #0000FF'>Molly est absolument à bout, elle semble très près de sa limite. Elle se tient l'entrejambe d'une main et serre les jambes comme si sa vie en dépendait. Elle a une expression douloureuse et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>"); }
 
 function
 albumdesp()
@@ -11352,7 +11386,7 @@ s("<EM><SPAN style='color: #0000FF'>Molly est absolument à bout — elle n'arri
 else if (mollyblad < 900)
 s("<EM><SPAN style='color: #0000FF'>Molly est tellement à bout qu'elle est obligée de se tenir, une main sur l'entrejambe, en espérant que personne ne la voit.</SPAN></EM>"); 
 else
-s("<EM><SPAN style='color: #0000FF'>Molly EST ABSOLUMENT AU BORD DE CRAQUER et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>"); }
+s("<EM><SPAN style='color: #0000FF'>Molly est absolument au bord de craquer et semble lutter de toutes ses forces pour ne pas se faire pipi dessus.</SPAN></EM>"); }
 
 function
 admission()

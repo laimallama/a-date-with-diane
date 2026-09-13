@@ -9,7 +9,7 @@ The finished **text** game (five languages, Gallery, transcripts, wiki) lives in
 | Settled text edition | `/Users/apple/Documents/ADWD` |
 | GitHub (text edition) | https://github.com/laimallama/a-date-with-diane.git |
 | This sandbox | `/Users/apple/Documents/ADWD-visual` |
-| GitHub (visual edition) | https://github.com/laimallama/ADWD-visual.git |
+| GitHub (visual edition) | https://github.com/laimallama/a-date-with-diane-visual.git |
 
 Keep this repo separate from the text edition. Do not push visual work to `a-date-with-diane`.
 

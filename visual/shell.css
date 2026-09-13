@@ -1,14 +1,18 @@
 /* Visual edition chrome — demo typography + location backdrops */
 
+html {
+  background: var(--body-bg-wash, #f5eee5);
+}
+
 body.visual-edition {
   --font-visual: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   margin: 0;
-  height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  height: auto;
+  max-height: none;
+  overflow: visible;
   font-family: var(--font-visual);
-  background-color: var(--body-base, #e9dcc8);
-  background-image: var(--body-bg-wash);
+  background: var(--body-bg-wash, #f5eee5);
 }
 
 body.visual-edition,
@@ -35,11 +39,14 @@ body.visual-edition .game-shell {
 
 body.visual-edition #box {
   box-shadow: none;
-  background: transparent;
+  background: var(--paper);
   padding: 14px 18px 10px;
   max-width: none;
-  flex: 1;
-  overflow: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   font-size: 1.05rem;
   line-height: 1.55;
 }
@@ -64,15 +71,18 @@ body.visual-edition #box [style*="FFFF00"] {
 body.visual-edition .visual-app {
   max-width: none;
   width: 100%;
+  min-height: 100vh;
+  height: auto;
+  max-height: none;
   margin: 0;
-  height: 100vh;
-  max-height: 100vh;
   padding: 10px 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   box-sizing: border-box;
+  overflow: visible;
   font-family: var(--font-visual);
+  background: var(--body-bg-wash, #f5eee5);
 }
 
 body.visual-edition .visual-rail {
@@ -115,6 +125,10 @@ body.visual-edition .gallery-button,
 body.visual-edition .theme-toggle-button,
 body.visual-edition .climax-skip-button {
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-family: var(--font-visual);
   font-size: 0.95rem;
   line-height: 1.25;
@@ -130,27 +144,12 @@ body.visual-edition .visual-main {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: stretch;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+  flex: 1 1 auto;
+  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  overflow: visible;
   width: 100%;
-}
-/* Stack only on phone-narrow widths; tablets stay half-and-half */
-@media (max-width: 640px) {
-  body.visual-edition {
-    height: auto;
-    max-height: none;
-    overflow: auto;
-  }
-  body.visual-edition .visual-app {
-    height: auto;
-    max-height: none;
-  }
-  body.visual-edition .visual-main {
-    grid-template-columns: 1fr;
-    overflow: visible;
-  }
-  body.visual-edition .visual-stage-col { order: -1; max-height: none; }
 }
 
 body.visual-edition .visual-panel {
@@ -181,24 +180,78 @@ body.visual-edition .visual-kicker strong {
   font-size: 1.05rem;
 }
 
-body.visual-edition .visual-story-col {
+body.visual-edition .visual-story-col,
+body.visual-edition .visual-stage-col {
   min-height: 0;
+  height: auto;
+  overflow: hidden;
+}
+body.visual-edition .visual-story-col .visual-panel {
+  height: 100%;
   overflow: hidden;
 }
 body.visual-edition .visual-story-col #box {
+  flex: 1 1 auto;
   min-height: 0;
-  flex: 1;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--paper);
 }
 
 body.visual-edition .visual-stage-col {
+  position: static;
   align-self: stretch;
-  height: 100%;
   max-height: none;
-  min-height: 0;
-  overflow: hidden;
   /* Match meters / kicker so leftover column height isn’t a paper-colored strip */
   background: var(--status);
+}
+body.visual-edition .visual-stage-col .visual-panel {
+  height: 100%;
+}
+
+/* Phone: one column, page scrolls like the text game */
+@media (max-width: 640px) {
+  body.visual-edition {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  body.visual-edition .visual-app {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  body.visual-edition .visual-main {
+    grid-template-columns: 1fr;
+    flex: none;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  body.visual-edition .visual-story-col,
+  body.visual-edition .visual-stage-col {
+    overflow: visible;
+  }
+  body.visual-edition .visual-story-col .visual-panel {
+    height: auto;
+    overflow: visible;
+  }
+  body.visual-edition .visual-story-col #box,
+  body.visual-edition #box {
+    overflow: visible;
+    flex: none;
+  }
+  body.visual-edition .visual-stage-col {
+    order: -1;
+    height: auto;
+    max-height: none;
+  }
+  body.visual-edition .visual-stage-col .visual-panel {
+    height: auto;
+    min-height: 280px;
+  }
 }
 
 body.visual-edition .visual-stage {
@@ -577,7 +630,6 @@ body.visual-edition #gameToolbar {
 
 :root {
   --body-base: #e9dcc8;
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35));
   --bar-track: rgba(35, 31, 32, 0.08);
   --stage: #ebe0d0;
   --stage-urgent: rgba(155, 47, 63, 0.22);
@@ -589,7 +641,6 @@ body.visual-edition #gameToolbar {
 }
 :root[data-theme="dark"] {
   --body-base: #171310;
-  --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10));
   --bar-track: rgba(237, 227, 211, 0.1);
   --stage: #3a3228;
   --stage-urgent: rgba(240, 208, 96, 0.35);

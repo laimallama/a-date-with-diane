@@ -1145,6 +1145,10 @@
 
     stripChoiceNumbers();
     polishStoryBox();
+    try {
+      var storyBox = $("box");
+      if (storyBox) storyBox.scrollTop = 0;
+    } catch (eScroll) {}
 
     try {
       var bars = document.querySelectorAll("#box .status-bar, #box .nav-row");

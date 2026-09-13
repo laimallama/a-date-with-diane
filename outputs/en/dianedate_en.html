@@ -23,9 +23,7 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-base: #e9dcc8;
-  --body-canvas: #f8f4ee;
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
+  --body-bg-wash: #f5eee5;
   --overlay-scrim: rgba(35, 31, 32, .55);
 }
 
@@ -49,9 +47,7 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-base: #171310;
-    --body-canvas: #0f0c0a;
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
+    --body-bg-wash: #120f0c;
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -60,7 +56,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background-color: var(--body-canvas);
+  background: var(--body-bg-wash);
 }
 
 body {
@@ -68,11 +64,11 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
-  background-color: var(--body-canvas);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 1.58;
 }
+
 
 a { color: inherit; }
 a:hover { color: var(--accent-dark); }
@@ -1642,7 +1638,7 @@ s("<LI>There are five different successful endings, or 'winning results', rated 
 s("<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.");
 s("<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows into her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.");
 s("<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.");
-s("<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card."); 
+s("<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a joker card."); 
 s("<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.");
 s("<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
@@ -4147,7 +4143,7 @@ luckytrip4()
 {
 s("<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot."); spendLuckshot(); 
 if (inti < 75)
-{s("<LI>You don't have enough Intimacy points for the luckshot to work."); mollyblad = 50;
+{s("<LI>You don't have enough intimacy points for the luckshot to work."); mollyblad = 50;
 c("riverside14","Carry on walking."); }
 else
 {s("<LI>DIANE: I wonder what they're up to?");

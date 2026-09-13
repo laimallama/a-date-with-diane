@@ -23,9 +23,7 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-base: #e9dcc8;
-  --body-canvas: #f8f4ee;
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
+  --body-bg-wash: #f5eee5;
   --overlay-scrim: rgba(35, 31, 32, .55);
 }
 
@@ -49,9 +47,7 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-base: #171310;
-    --body-canvas: #0f0c0a;
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
+    --body-bg-wash: #120f0c;
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -60,7 +56,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background-color: var(--body-canvas);
+  background: var(--body-bg-wash);
 }
 
 body {
@@ -68,11 +64,11 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
-  background-color: var(--body-canvas);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 1.58;
 }
+
 
 a { color: inherit; }
 a:hover { color: var(--accent-dark); }
@@ -778,7 +774,7 @@ var alternateTranslations = {
   "<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.": "<LI>Il y a aussi quelques fins de compensation, et vous pourriez même décrocher un rendez-vous avec Amanda.",
   "<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows into her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.": "<LI>La jauge de <strong>vessie</strong> indique ce que Diane retient. Ce qu'il y a dans son <strong>ventre</strong> passe lentement dans sa <strong>vessie</strong> au fil du temps. Vous disposez également de <strong>3 coups de chance</strong>, à utiliser judicieusement lorsqu'on vous les propose — et rappelez-vous qu'ils peuvent aussi apporter de la malchance ! Notez que vous ne pouvez en utiliser qu'un seul en fin de soirée, une fois que vous avez pris le bus ou le taxi pour rentrer.",
   "<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.": "<LI>N'espérez pas coucher avec elle dès ce premier rendez-vous, mais vous pourriez bien vous amuser si vous jouez bien vos cartes. Et n'oubliez jamais : les femmes sont des créatures imprévisibles.",
-  "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.": "<LI>Au fil de la soirée, vos points d'<strong>intimité</strong> devraient augmenter et influencent naturellement ce que vous pouvez faire. Dans certaines scènes, les points de <strong>timidité</strong> entrent aussi en jeu, et le total accumulé ou perdu au moment de rentrer chez vous peut influer sur les événements. Dans certains scénarios, un chiffre élevé est un avantage ; dans d'autres, c'est un chiffre bas qui aide — cela fonctionne un peu comme une carte Joker.",
+  "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a joker card.": "<LI>Au fil de la soirée, vos points d'<strong>intimité</strong> devraient augmenter et influencent naturellement ce que vous pouvez faire. Dans certaines scènes, les points de <strong>timidité</strong> entrent aussi en jeu, et le total accumulé ou perdu au moment de rentrer chez vous peut influer sur les événements. Dans certains scénarios, un chiffre élevé est un avantage ; dans d'autres, c'est un chiffre bas qui aide — cela fonctionne un peu comme une carte joker.",
   "<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.": "<LI>Vous commencez avec <strong>£100</strong>. Gardez un œil sur votre argent. Il vous en faudra peut-être pour prendre un taxi en fin de soirée.",
   "<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>": "<p class='note-lead'>Il y a aussi une Galerie en haut à gauche, avec des parcours guidés vers les fins de prix, les fins de consolation et diverses scènes cachées. Servez-vous-en si vous bloquez, ou si vous voulez simplement explorer. Certaines lignes sont des menus déroulants : cliquez pour les ouvrir, puis choisissez la variante voulue. Sur téléphone ou tablette, utilisez les boutons à l'écran ; sur ordinateur, vous avez aussi ces raccourcis clavier.</p>",
   "<p class='note-keys'><strong>G</strong> opens the Gallery (<strong>Esc</strong> closes it).</p>": "<p class='note-keys'><strong>G</strong> ouvre la Galerie (<strong>Échap</strong> la ferme).</p>",
@@ -1662,7 +1658,7 @@ var alternateTranslations = {
   "<LI>You will just have to leave it all to your imagination. Unless you want to play a luckshot, of course.": "<LI>Vous n'aurez qu'à laisser libre cours à votre imagination. À moins que vous ne vouliez tenter un coup de chance, bien sûr.",
   "<LI>You walk on alone with Diane. You wish you could look over the parapet, but you can't.": "<LI>Vous continuez à marcher seul avec Diane. Vous aimeriez pouvoir regarder par-dessus le parapet, mais vous ne pouvez pas.",
   "<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot.": "<LI>Vous soupçonnez que Molly est peut-être allée faire pipi, mais vous n'en êtes pas sûr. Quoi qu'il en soit, vous aimeriez regarder. Alors vous avez tenté un coup de chance.",
-  "<LI>You don't have enough Intimacy points for the luckshot to work.": "<LI>Vous n'avez pas assez de points d'intimité pour que le coup de chance fonctionne.",
+  "<LI>You don't have enough intimacy points for the luckshot to work.": "<LI>Vous n'avez pas assez de points d'intimité pour que le coup de chance fonctionne.",
   "<LI>DIANE: I wonder what they're up to?": "<LI>DIANE : Je me demande ce qu'ils peuvent bien fabriquer ?",
   "<LI>The path curves a little to the left here, and close to a rather erratic wall. It only takes a few paces across some rough grass to get to the wall and look over. Out of curiosity Diane does this, and you follow.": "<LI>Le chemin tourne légèrement à gauche ici, le long d'un mur assez irrégulier. Il suffit de quelques pas dans l'herbe rase pour atteindre le mur et regarder par-dessus. Par curiosité, Diane le fait, et vous la suivez.",
   "<LI>DIANE: Oh!": "<LI>DIANE : Oh !",
@@ -6169,7 +6165,7 @@ s("<LI>There are five different successful endings, or 'winning results', rated 
 s("<LI>There are also a few compensation endings, and you might even be able to win a date with Amanda.");
 s("<LI>The <strong>bladder</strong> meter shows how much Diane's holding. What's in her <strong>tummy</strong> slowly flows into her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you've got the bus or taxi home.");
 s("<LI>Don't expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.");
-s("<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card."); 
+s("<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a joker card."); 
 s("<LI>You start with <strong>£100</strong>. Keep an eye on your money. You might want some for a taxi home at the end of the evening.");
 s("<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.");
 s("<p class='note-lead'>There's also a Gallery on the top left, with guided walks through the prize endings, consolation endings, and various hidden scenes. Use it if you get stuck, or if you simply want to explore. Some rows are dropdowns: click to open them, then choose the variant you want. On a phone or tablet, use the buttons on screen; on a computer you also have these shortcut keys.</p>");
@@ -8674,7 +8670,7 @@ luckytrip4()
 {
 s("<LI>You suspect Molly may have gone for a pee, but can't be sure. Anyway, you would like to watch. So you have played a luckshot."); spendLuckshot(); 
 if (inti < 75)
-{s("<LI>You don't have enough Intimacy points for the luckshot to work."); mollyblad = 50;
+{s("<LI>You don't have enough intimacy points for the luckshot to work."); mollyblad = 50;
 c("riverside14","Carry on walking."); }
 else
 {s("<LI>DIANE: I wonder what they're up to?");

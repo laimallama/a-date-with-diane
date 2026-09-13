@@ -118,10 +118,10 @@
     {
       "id": "x00012",
       "kind": "story",
-      "en": "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a Joker card.",
+      "en": "<LI>As the evening progresses, your <strong>intimacy</strong> points should rise, and they naturally affect what you can do. In some scenes, <strong>shyness</strong> points also come into play, and the number earned or lost by the time you arrive home can influence events. In some scenarios a high figure helps; in others, a low figure helps, so this works rather like a joker card.",
       "cn": "<LI>随着夜晚推进，你的<strong>亲密度</strong>通常会逐渐上升，也会自然影响你能做哪些事。有些场景还会用到<strong>害羞值</strong>；你回到家时这个数值的得失也会影响后续事件。有时高一点更有利，有时反而低一点更有利，所以它更像一张百搭牌。",
       "es": "<LI>A medida que avance la noche, tus puntos de <strong>intimidad</strong> deberían subir, y eso afecta de manera natural a lo que puedes hacer. En algunas escenas también entran en juego los puntos de <strong>timidez</strong>, y la cantidad que hayas ganado o perdido al llegar a casa puede influir en lo que ocurra. En algunos casos conviene tener una cifra alta; en otros, una cifra baja, así que funcionan a modo de comodín.",
-      "fr": "<LI>Au fil de la soirée, vos points d'<strong>intimité</strong> devraient augmenter et influencent naturellement ce que vous pouvez faire. Dans certaines scènes, les points de <strong>timidité</strong> entrent aussi en jeu, et le total accumulé ou perdu au moment de rentrer chez vous peut influer sur les événements. Dans certains scénarios, un chiffre élevé est un avantage ; dans d'autres, c'est un chiffre bas qui aide — cela fonctionne un peu comme une carte Joker.",
+      "fr": "<LI>Au fil de la soirée, vos points d'<strong>intimité</strong> devraient augmenter et influencent naturellement ce que vous pouvez faire. Dans certaines scènes, les points de <strong>timidité</strong> entrent aussi en jeu, et le total accumulé ou perdu au moment de rentrer chez vous peut influer sur les événements. Dans certains scénarios, un chiffre élevé est un avantage ; dans d'autres, c'est un chiffre bas qui aide — cela fonctionne un peu comme une carte joker.",
       "tw": "<LI>隨著夜晚推進，你的<strong>親密度</strong>通常會逐漸上升，也會自然影響你能做什麼。有些場景還會用到<strong>害羞值</strong>；你回家時這個數值的得失也會影響後續事件。有時高一點更有利，有時反而低一點更有利，所以它更像一張百搭牌。"
     },
     {
@@ -12498,7 +12498,7 @@
     {
       "id": "x01323",
       "kind": "story",
-      "en": "<LI>You don't have enough Intimacy points for the luckshot to work.",
+      "en": "<LI>You don't have enough intimacy points for the luckshot to work.",
       "cn": "<LI>你的亲密度不够，幸运机会无法生效。",
       "es": "<LI>No tienes suficientes puntos de intimidad para que el golpe de suerte funcione.",
       "fr": "<LI>Vous n'avez pas assez de points d'intimité pour que le coup de chance fonctionne.",

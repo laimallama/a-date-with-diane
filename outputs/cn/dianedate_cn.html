@@ -23,9 +23,7 @@
   --em-color: #6f4a58;
   --box-shadow: 0 18px 50px rgba(59, 43, 25, .14);
   --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, .10);
-  --body-base: #e9dcc8;
-  --body-canvas: #f8f4ee;
-  --body-bg-wash: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.35)), var(--body-base);
+  --body-bg-wash: #f5eee5;
   --overlay-scrim: rgba(35, 31, 32, .55);
   --body-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;
   --ui-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;
@@ -51,9 +49,7 @@
     --em-color: #e2c878;
     --box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
     --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, .4);
-    --body-base: #171310;
-    --body-canvas: #0f0c0a;
-    --body-bg-wash: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10)), var(--body-base);
+    --body-bg-wash: #120f0c;
     --overlay-scrim: rgba(0, 0, 0, .7);
 }
 
@@ -62,7 +58,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background-color: var(--body-canvas);
+  background: var(--body-bg-wash);
 }
 
 body {
@@ -70,11 +66,11 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: var(--body-bg-wash);
-  background-color: var(--body-canvas);
   font-family: var(--body-font);
   font-size: 18px;
   line-height: 1.58;
 }
+
 
 a { color: inherit; }
 a:hover { color: var(--accent-dark); }

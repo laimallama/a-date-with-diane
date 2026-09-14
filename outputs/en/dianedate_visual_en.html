@@ -1096,15 +1096,19 @@ body.visual-edition .stage-cast.duo .sprite-secondary {
   max-height: calc(100% - 6px);
   max-width: calc((100% - 18px) / 2);
   opacity: 1;
-  transform: none;
   z-index: 1;
+}
+/* Tremor is per-sprite only — never the whole cast, never calm/pee partners */
+body.visual-edition .stage-cast .sprite:not(.tremor) {
+  animation: none !important;
 }
 body.visual-edition .sprite.tremor {
   animation: visualTremor 0.32s steps(2) infinite;
+  will-change: transform;
 }
 @keyframes visualTremor {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-2px, 1px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-2px, 1px, 0); }
 }
 
 body.visual-edition .visual-meters {
@@ -14242,6 +14246,16 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     return !!(band && (band.key === "desperate" || band.key === "critical"));
   }
 
+  /** Keep duo partners independent: only this cast’s idle desperation may shake. */
+  function syncSpriteTremor(castKey, file) {
+    if (!el.cast) return;
+    var img = el.cast.querySelector('[data-cast="' + castKey + '"]');
+    if (!img) return;
+    var tag = typeof currentTag !== "undefined" ? currentTag : "";
+    var band = bandForCast(castKey, tag);
+    img.classList.toggle("tremor", spriteShouldTremor(band, file));
+  }
+
   function setSpriteClip(castKey, file, bustCache) {
     if (!el.cast) return;
     var img = el.cast.querySelector('[data-cast="' + castKey + '"]');
@@ -14249,10 +14263,12 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     var url = spriteUrl(castKey, file);
     if (bustCache) url += (url.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now();
     // Skip no-op src writes — reassigning the same URL can still reset some browsers
-    if (!bustCache && img.getAttribute("src") === url) return;
+    if (!bustCache && img.getAttribute("src") === url) {
+      syncSpriteTremor(castKey, file);
+      return;
+    }
     img.setAttribute("src", url);
-    // Pee/wet clips never keep desperation tremor
-    if (isReliefClip(file)) img.classList.remove("tremor");
+    syncSpriteTremor(castKey, file);
   }
 
   function clearPeeTimer() {

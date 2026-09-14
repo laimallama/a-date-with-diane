@@ -486,6 +486,16 @@
     return !!(band && (band.key === "desperate" || band.key === "critical"));
   }
 
+  /** Keep duo partners independent: only this cast’s idle desperation may shake. */
+  function syncSpriteTremor(castKey, file) {
+    if (!el.cast) return;
+    var img = el.cast.querySelector('[data-cast="' + castKey + '"]');
+    if (!img) return;
+    var tag = typeof currentTag !== "undefined" ? currentTag : "";
+    var band = bandForCast(castKey, tag);
+    img.classList.toggle("tremor", spriteShouldTremor(band, file));
+  }
+
   function setSpriteClip(castKey, file, bustCache) {
     if (!el.cast) return;
     var img = el.cast.querySelector('[data-cast="' + castKey + '"]');
@@ -493,10 +503,12 @@
     var url = spriteUrl(castKey, file);
     if (bustCache) url += (url.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now();
     // Skip no-op src writes — reassigning the same URL can still reset some browsers
-    if (!bustCache && img.getAttribute("src") === url) return;
+    if (!bustCache && img.getAttribute("src") === url) {
+      syncSpriteTremor(castKey, file);
+      return;
+    }
     img.setAttribute("src", url);
-    // Pee/wet clips never keep desperation tremor
-    if (isReliefClip(file)) img.classList.remove("tremor");
+    syncSpriteTremor(castKey, file);
   }
 
   function clearPeeTimer() {

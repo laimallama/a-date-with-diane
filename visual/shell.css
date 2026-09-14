@@ -420,15 +420,19 @@ body.visual-edition .stage-cast.duo .sprite-secondary {
   max-height: calc(100% - 6px);
   max-width: calc((100% - 18px) / 2);
   opacity: 1;
-  transform: none;
   z-index: 1;
+}
+/* Tremor is per-sprite only — never the whole cast, never calm/pee partners */
+body.visual-edition .stage-cast .sprite:not(.tremor) {
+  animation: none !important;
 }
 body.visual-edition .sprite.tremor {
   animation: visualTremor 0.32s steps(2) infinite;
+  will-change: transform;
 }
 @keyframes visualTremor {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-2px, 1px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-2px, 1px, 0); }
 }
 
 body.visual-edition .visual-meters {

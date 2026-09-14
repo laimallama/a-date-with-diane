@@ -200,6 +200,34 @@ async function check(page, edition) {
   await page.keyboard.down('Enter');
   await page.waitForFunction(() => document.getElementById('galleryOverlay').classList.contains('open'));
   assert.equal((await read(page)).focusInGallery, true, 'Opening Gallery must move focus into it');
+  const galleryLayout = await page.evaluate(() => {
+    const list = document.getElementById('galleryEndings');
+    const rows = [...list.querySelectorAll(':scope > .gallery-row, :scope > .gallery-group > .gallery-row')];
+    const first = rows[0], second = rows[1];
+    const index = first && first.querySelector('.gallery-index');
+    const title = first && first.querySelector('.gallery-title');
+    const listCs = getComputedStyle(list);
+    const rowCs = first ? getComputedStyle(first) : {};
+    return {
+      listDisplay: listCs.display,
+      listDir: listCs.flexDirection,
+      rowDisplay: rowCs.display,
+      rowWidth: first ? first.getBoundingClientRect().width : 0,
+      listWidth: list.getBoundingClientRect().width,
+      stacked: !!(first && second && second.getBoundingClientRect().top > first.getBoundingClientRect().top + 8),
+      indexWidth: index ? index.getBoundingClientRect().width : 0,
+      gap: (index && title) ? (title.getBoundingClientRect().left - index.getBoundingClientRect().right) : -1,
+      count: rows.length,
+    };
+  });
+  assert.equal(galleryLayout.listDisplay, 'flex', 'Gallery list must be a column, not inline wrap');
+  assert.equal(galleryLayout.listDir, 'column');
+  assert.equal(galleryLayout.rowDisplay, 'grid', 'Gallery rows must use the number/title grid');
+  assert.ok(galleryLayout.count >= 9, `Gallery endings list looks empty (${galleryLayout.count})`);
+  assert.ok(Math.abs(galleryLayout.rowWidth - galleryLayout.listWidth) < 2, 'Gallery rows must span the list');
+  assert.equal(galleryLayout.stacked, true, 'Gallery rows must stack, not wrap as chips');
+  assert.ok(galleryLayout.indexWidth > 8, 'Gallery numbers need a reserved column');
+  assert.ok(galleryLayout.gap >= 2, `Gallery number collides with the title (gap ${galleryLayout.gap})`);
   await page.keyboard.down('Enter');
   await page.keyboard.down('Enter');
   await page.keyboard.up('Enter');

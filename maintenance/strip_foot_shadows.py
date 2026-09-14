@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Strip Mojique baked foot-contact shadows (solid RGB 48,48,48 ovals) from cast GIFs.
+Strip baked foot-contact shadows (solid RGB 48,48,48 ovals) from cast GIFs.
 
 Stage CSS drop-shadow still grounds the sprite; the hard oval fought dynamic puddles.
 Backs up originals once under assets/_archive/with_foot_shadows/.

@@ -1,13 +1,13 @@
 # Archive (not used in-game)
 
 ## `fx/`
-Puddle / stream FX rebuilt from Mojique `Pictures`.
+Earlier puddle / stream FX kept for reference.
 
 ## `originals/{diane,…}/`
-**One-shot** pees and split wetting, built from `Pictures` PNG sequences with the same pipeline as active sprites (398×398, 10 fps, transparency index 0):
+**One-shot** pees and split wetting, built from PNG sequences with the same pipeline as active sprites (398×398, 10 fps, transparency index 0):
 
-- Pees: `sの*` stems (same art as curated Good Animations, sourced from Pictures)
-- Wet: normal-costume `決壊` event + stream slice
+- Pees: alternate squat / standing stems used while curating the live loops
+- Wet: normal-costume wetting event + stream slice
 
 Active `assets/{char}/07–08` use full-arc bidirectional loops. Active `06` files were replaced by forward event sequences. The older bidirectional versions are retained under `wetting_pong_before_oneshot/`.
 

@@ -11,13 +11,16 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
+const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
 
 const LANGS = {
   en: { code: "en", htmlPath: path.join(ROOT, "outputs/en/dianedate_en.html") },
-  cn: { code: "cn", htmlPath: path.join(ROOT, "outputs/cn/dianedate_cn.html") },
-  tw: { code: "tw", htmlPath: path.join(ROOT, "outputs/tw/dianedate_tw.html") },
-  es: { code: "es", htmlPath: path.join(ROOT, "outputs/es/dianedate_es.html") },
-  fr: { code: "fr", htmlPath: path.join(ROOT, "outputs/fr/dianedate_fr.html") },
+  ...(!visual ? {
+    cn: { code: "cn", htmlPath: path.join(ROOT, "outputs/cn/dianedate_cn.html") },
+    tw: { code: "tw", htmlPath: path.join(ROOT, "outputs/tw/dianedate_tw.html") },
+    es: { code: "es", htmlPath: path.join(ROOT, "outputs/es/dianedate_es.html") },
+    fr: { code: "fr", htmlPath: path.join(ROOT, "outputs/fr/dianedate_fr.html") },
+  } : {}),
 };
 
 /** Gallery leaf id (stem) → short transcript slug */
@@ -71,6 +74,14 @@ const HIDDEN_SLUGS = {
   "27_bath_peeing": "14b_bath_pee",
   "24_phone_call": "15_phone_call",
 };
+
+// Managed English outputs shared with ADWD-visual; unrelated files are excluded.
+function managedTranscriptFiles() {
+  return [
+    ...Object.values(ENDING_SLUGS).map(slug => `outputs/en/transcripts/endings/${slug}_en.txt`),
+    ...Object.values(HIDDEN_SLUGS).map(slug => `outputs/en/transcripts/hidden_scenes/${slug}_en.txt`),
+  ];
+}
 
 function loadGalleryData(htmlPath) {
   const html = fs.readFileSync(htmlPath, "utf8");
@@ -405,8 +416,16 @@ function main() {
     console.log(`OK ${code}: ${endings.length} endings + ${hiddens.length} hidden`);
   }
 
+  if (process.argv.includes('--check')) {
+    const stale = pending.filter(({ outPath, text, code }) =>
+      !fs.existsSync(outPath) || fs.readFileSync(outPath, 'utf8') !== (code === 'en' ? `\uFEFF${text}` : text));
+    if (stale.length) throw new Error('Stale transcripts: ' + stale.map(x => path.relative(ROOT, x.outPath)).join(', '));
+    console.log(`Verified ${pending.length} climax transcripts against the current game (read-only).`);
+    return;
+  }
   for (const { outPath, text, code } of pending) writeTextFile(outPath, text, code);
   console.log(`Wrote ${written} climax transcript files; unrelated files preserved.`);
 }
 
+module.exports = { managedTranscriptFiles };
 if (require.main === module) main();

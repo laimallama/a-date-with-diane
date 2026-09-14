@@ -70,11 +70,20 @@ a:hover { color: var(--accent-dark); }
   padding: 36px 0;
 }
 .game-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+  background: var(--body-bg-wash);
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 .theme-toggle-button {
   box-sizing: border-box;
@@ -91,6 +100,7 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
+  touch-action: manipulation;
   background: transparent;
   color: var(--muted);
 }
@@ -104,6 +114,9 @@ a:hover { color: var(--accent-dark); }
 }
 #box.wiki-box {
   width: 100%;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(22px, 4vw, 44px);
   border: 1px solid var(--line);
   background: var(--paper);
@@ -210,13 +223,16 @@ ol.wiki-articles li:last-child {
 }
 ol.wiki-articles li a {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: .75rem;
-  padding: 8px 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   color: var(--ink);
   font-size: 1rem;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
 }
 ol.wiki-articles li a::before {
   content: counter(wiki-art, decimal-leading-zero);
@@ -326,6 +342,7 @@ body, button, table, th, td, h1, h2, h3, p, ol, li, blockquote, .wiki-back-btn, 
   line-height: 1.35;
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
 }
 @media (hover: hover) and (pointer: fine) {
   .wiki-back-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
@@ -415,7 +432,7 @@ button:focus,
 <tr><td>涼亭酒吧</td><td>步道盡頭、公車總站旁的酒吧與露天啤酒花園；優惠模式與金流酒館相反；打烊時有門衛</td></tr>
 <tr><td>比薩披薩店</td><td>劇院建築內的餐廳；用餐附贈一壺免費水</td></tr>
 </table>
-<p>劇院與涼亭酒吧之間的步道包括市府公廁（標示上午9時至晚上9時，週六常提早關閉）、漢堡餐車、瀑布設施、樂隊台、垃圾斗、一座橋、纖道入口，以及約四英尺高的灌木帶。</p>
+<p>劇院與涼亭酒吧之間的步道包括市府公廁（標示上午9時至晚上9時；管理員有時會晚些上鎖，週六則常提早關閉）、漢堡餐車、瀑布設施、樂隊台、垃圾斗、一座橋、纖道入口，以及約四英尺高的灌木帶。</p>
 <h3>旅行與節慶</h3>
 <p>居民常離開本鎮參加音樂節（包括格拉斯頓伯里與懷特島），也常前往義大利、希臘等地度假。</p>
 <h2>宗教與市政建築</h2>
@@ -500,7 +517,7 @@ button:focus,
       <p>老天，我那時候憋得快炸了。以為自己要在台上尿褲子。都是為了藝術啊。</p>
       <footer> – <cite>莫莉·耶茨</cite></footer>
     </blockquote>
-<p><strong>莫莉·耶茨</strong>（生於1979年春）是威爾本出身的25歲女演員，也是黛安·埃利森最親近的朋友。她在濱水劇院《外緣》停演前最後一週以客串角色出演。</p>
+<p><strong>莫莉·耶茨</strong>（生於1980年春）是威爾本出身的25歲女演員，也是黛安·埃利森最親近的朋友。她在濱水劇院《外緣》停演前最後一週以客串角色出演。</p>
 <h2>早年生活與家庭</h2>
 <p>耶茨與黛安·埃利森就讀同一所綜合中學，並一同在威爾本劇社演出。畢業後她比埃利森更堅持繼續演戲。她未取得大學學位。母親瓊·耶茨住得比埃利森家更遠離鎮中心，住在一棟連棟住宅。父親在她十二歲時離開，此後聯絡斷續。</p>
 <p>畢業後她從事青年劇場工作，曾在曼徹斯特合租居住一段時間，參加無酬試鏡，並至少出演過一支電視廣告。</p>

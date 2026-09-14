@@ -28,7 +28,7 @@ On dirait qu’il vous faudrait un coup de chance supplémentaire. Vous en avez 
 
 (Je ne pourrai pas la regarder dans le club, alors à quoi bon?)
 
-Il ne vous reste plus aucun coup de chance.
+Vous continuez sans utiliser un autre coup de chance.
 
 Mais c’est peut-être aussi bien. Car le videur ne l’a pas laissée entrer dans le Pavillon.
 
@@ -50,7 +50,7 @@ Vous repérez un endroit, quelques marches plus haut sur la droite, d’où vous
 
 (Vous grimpez ces marches en vitesse.)
 
-Vous avez parié qu’elle pourrait aller derrière les poubelles. Vous remontez rapidement quelques marches sur votre gauche et, en vous penchant pour regarder par-dessus le muret, vous avez une vue parfaite.
+Vous avez parié qu’elle pourrait aller derrière les poubelles. Vous remontez rapidement quelques marches sur votre droite et, en vous penchant pour regarder par-dessus le muret, vous avez une vue parfaite.
 
 Vous avez vu juste !
 

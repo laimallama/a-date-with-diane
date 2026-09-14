@@ -3,6 +3,7 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
+const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
 const pendingOutputs = [];
 
 function finishOutputs() {
@@ -546,7 +547,7 @@ function injectIntoFile(filePath, galleryData) {
 }
 
 function main() {
-  const onlyLang = process.env.GALLERY_EN_ONLY === "1" ? "en" : null;
+  const onlyLang = visual || process.env.GALLERY_EN_ONLY === "1" ? "en" : null;
   const ctx = loadHiddenScenesModule();
   const routes = ctx.loadRoutes();
   const definitions = ctx.buildDefinitions(routes);
@@ -557,10 +558,10 @@ function main() {
     dataByLang[lang] = buildDataForLang(ctx, routes, definitions, lang);
   }
 
-  // Keep other languages in gallery_data.json when doing an EN-only inject.
+  // Preserve translations for a text-repository EN-only inject; visual stays English-only.
   const outPath = path.join(ROOT, "maintenance/gallery_data.json");
   let existing = {};
-  if (onlyLang && fs.existsSync(outPath)) {
+  if (onlyLang && !visual && fs.existsSync(outPath)) {
     existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
   }
   const merged = { ...existing, ...dataByLang };

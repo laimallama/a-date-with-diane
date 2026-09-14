@@ -1,7 +1,5 @@
 Quatrième prix
 
-Vous remontez la rue avec Diane, main dans la main.
-
 Vous passez devant quelques maisons, puis arrivez à une église.
 
 Vous voulez vous arrêter à l’abri du porche de l’église pour vous embrasser, mais Diane vous presse d’avancer.
@@ -40,7 +38,7 @@ Elle s’arrête et réfléchit un instant. Elle est penchée en avant, les main
 
 DIANE : Tu ne m’en veux pas ? Quelle chose à vivre lors d’un premier rendez-vous !
 
-VOUS : Si. Mais c’est quand même mieux que de te faire pipi dessus.
+VOUS : Pas du tout. Mais c’est quand même mieux que de te faire pipi dessus.
 
 DIANE : Ce serait affreux, non ? C’est arrivé à une amie à moi. Allez — tiens mon sac. Et regarde ailleurs, hein.
 
@@ -60,7 +58,7 @@ Elle remonte sa culotte, qui est blanche, en tirant sa robe plus haut au fur et 
 
 Diane vous sourit en reprenant son sac. Puis elle passe les bras autour de vous.
 
-« Ouf ! » dit-elle. « J’en avais vraiment besoin. Mais t’es un sacré vilain — tu avais dit que tu regarderais pas. »
+« Ouf ! » dit-elle. « J’en avais vraiment besoin. Mais t’es un sacré vilain — tu étais censé faire le guet. »
 
 Mais elle vous sourit.
 

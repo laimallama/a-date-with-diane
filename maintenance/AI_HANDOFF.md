@@ -2,6 +2,18 @@
 
 Read this before editing. Ship text lives in `outputs/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
 
+## Required visual-edition synchronization
+
+The owner requires every shared English content change to reach the separate ADWD-visual checkout. This repository is canonical for the English story/runtime, Gallery routes, wiki, transcripts, and shared maintenance scripts. After the applicable language edits and generated-file refreshes, run `node maintenance/sync_visual_edition.js`, then run `verify_project.js` in both repositories. The sync command rebuilds the generated visual page. This is part of completing shared changes, not an optional later task.
+
+Normal visual builds also synchronize first. Both verifiers check shared file equality; `sync_visual_edition.js --check` additionally checks the generated visual output without writing. Keep visual-only code and assets in ADWD-visual. The visual tree stays English-only; do not copy the translation index or bilingual rendering tools there.
+
+If shared edits add/rename scene tags, change on-screen characters, or alter tracked state, also review and update ADWD-visual's scene map/adapter and browser-check the affected scenes. Synchronization cannot infer new visual mappings.
+
+Shared maintenance scripts are byte-identical and detect the visual tree at runtime to select English-only processing. The sync manifest is an explicit file list in `sync_visual_edition.js`, with managed transcripts supplied by `write_transcripts.js`. Its receipt in the visual repository records last-synced hashes. Initial synchronization adopts canonical content; subsequent independent edits to shared visual files cause an error before writes, so reconcile them into ADWD. Previously managed files removed from the manifest also require explicit reconciliation; the sync command never deletes discovered files.
+
+Checkout defaults are sibling folders `ADWD` and `ADWD-visual`, overridable with `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT`. Use `--local-only` only to explicitly check/build a carried snapshot when the other checkout is unavailable, and report that upstream synchronization was not verified. No commit or push is implied.
+
 ## What this project is
 
 Restored multi-language edition of the old HTML branching adult text game *A Date With Diane*: cleaned wording/logic, Back with state restore, in-game Gallery (guided walkthroughs + Skip to the good bit), dark mode, five playable languages.
@@ -46,6 +58,8 @@ Raw `dianedate_*.html` strings intentionally look rough (straight quotes, uncapi
 
 `c(tag, label)` appends a clickable choice button; `go(tag)` evals `tag+'()'`.
 
+Standalone choice rendering keeps a complete, closed `.choices` block on every DOM write. Do not append an unclosed opening tag to `innerHTML`: the browser closes it immediately and leaves later buttons outside the group. `s()` calls between choices append inside the same group, matching the bilingual buffers. `go()` calls `finishChoiceBlock()` after the scene; direct rendering checks must finalize too. The standalone prefix/content buffers are transient and are cleared when the scene finishes, so Back restores the saved page without rerunning the scene.
+
 ## Status bar (Diane’s date HUD)
 
 `showStats` is Diane’s date HUD only. `PREGAME_TAGS` hide it before “On with the story!”. `HIDE_DATE_STATS_TAGS` hide it the next morning (`showover1`, `showover2`). `gameover` inherits `holdDateStatsOff` so a hidden stretch does not bring the bar back. Same-night prize cards, same-night game-overs (including Amanda downstairs), and Chloe from `walkhome6` (“You turn for home”) through `watching6` / `luckytrip19` keep it — luckshots must stay visible for the doorbell shot. At `walkhome6` call `afterpee()` (she has gone inside; off-screen leftover, not a fake `blad = 0`). Digestion ticks whenever the bar is shown. Do not give Chloe or Amanda their own meters.
@@ -89,14 +103,24 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 ## Editing playable text
 
 1. Find the line (`rg`), read surrounding HTML context.
-2. If English changes, update **all** language HTMLs that need it (single-language **and** bilingual), plus `maintenance/aligned_text.json`.
+2. If English changes, update **all** language HTMLs that need it (single-language **and** bilingual), then regenerate `maintenance/aligned_text.json` with `node maintenance/build_aligned_text.js`.
 3. CN and TW are separate — a CN wording fix does **not** auto-update TW.
 4. Re-run route smoke tests; rebuild Gallery if routes/titles changed; regenerate transcripts after climax wording or `write_transcripts.js` changes (see toolkit below).
 5. Syntax-check touched HTML: extract the `<script>` body and `new Function(...)`.
 6. Pull search strings from the file; don’t retype non-ASCII punctuation by hand.
 7. For multi-line JS replacements, check brace balance.
 
-`aligned_text.json` is a cross-language index for checks — it does **not** build HTML.
+Shared scenes must respect the current date's clothing in `info()`: Tuesday has stockings and pink knickers, Thursday has tights and sky-blue knickers, and Saturday has a dress, white knickers and bare legs. Preserve those distinctions when branches converge. The declared `stampstalking` flag records whether the stamp collection has already been introduced; it is included in Back/replay snapshots.
+
+`aligned_text.json` is a generated cross-language reference — it does **not** build HTML. Each entry records a source function/array and one-based slot. Story and choice calls align by location across the five standalone editions; dynamic calls retain complete expressions, and the three text-variant arrays are included. Do not hand-edit reference text or counts. Run `build_aligned_text.js` after source changes, or `build_aligned_text.js --check` to detect drift without writing. Existing IDs are retained where possible; deleted entries are removed without renumbering the rest.
+
+When adding a copy of existing text in another scene, preserve the original occurrence’s reference ID. The generator claims surviving source/function matches one-to-one across the inventory before considering cross-function reuse. Translations help distinguish repeated English text and identify a reworded original. `test_aligned_text.js` covers copied, shifted, moved, reworded and removed occurrences, repeat builds, repeated choice labels, and simultaneous copy/move/reword interactions; the full canonical verifier runs it. Truly indistinguishable repeated occurrences still require editorial judgment.
+
+For an ambiguous simultaneous split and reword, `build_aligned_text.js --id-remap=/absolute/path/remaps.json` accepts an explicitly reviewed one-off ID assignment. The JSON array supplies `id`, old `from` and new `to` source objects (`node`, `slot`), and exact `before`/`after` text objects for all five language codes. The generator validates the ID, locations, kind/choice target and every language before claiming that ID; stale or conflicting assignments fail before writing. Explicit remaps accept only static text: dynamic calls are rejected because literal prefixes do not guard their complete expressions. Keep the mapping and its source guards with the audit evidence. Subsequent ordinary builds need no remap file. Do not rerun a consumed migration or use it to conceal an unintended ownership change.
+
+The bilingual alternate-language formatting helpers are generated inside `BEGIN ALTERNATE_RENDERER` / `END ALTERNATE_RENDERER` markers from the corresponding standalone edition. Run `build_bilingual_renderer.js` after changing standalone rendering functions. `s`, `sAlt`, `c`, `cAlt`, and bilingual intimacy notices use this renderer for the alternate layer. Keep the English renderer separate so French spacing and language-specific typography match their respective standalone editions.
+
+Identical English strings can have different translations in different contexts. Use `sAlt(en, alt)` or `cAlt(tag, en, alt)` for those cases instead of duplicate dictionary keys. Dynamic status lines use separate English and alternate variant arrays with the same `despLineIndex`; these arrays are fixed text, not mutable game state.
 
 ## Settled wording (don't reopen unless asked)
 
@@ -105,9 +129,13 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 - **Buy something:** shop-literal in all langs (`买点东西` / `買點東西` / `Comprar algo` / `Acheter quelque chose`).
 - **Money meter:** EN `Pounds`; CN `英镑`; TW `英鎊`; ES `Libras`; FR `Livres sterling`.
 - **Prices:** whole pounds, no `.00` (`£1`, `15英镑`). Pence use two places (`£1.50`, `1.50英镑`). FR: `1,50 £`.
+- **French speaker labels:** `smartenText` supplies the narrow nonbreaking space before a known speaker’s colon, including when source spacing was ordinary or absent. It does not rewrite times or URL colons. Keep the bilingual English renderer independent.
+- **Localized price rendering:** ES/FR `smartenText` displays symbol prices with the amount first, a decimal comma, and a nonbreaking space before £. It handles both source orders within visible text; `smartenHtml` leaves HTML attributes untouched. Keep the bilingual English renderer separate and regenerate alternate renderers after changes. Do not pre-bake price typography throughout the source. Ambiguous thousands/long decimal forms are not guessed; current game prices use whole pounds or two decimal places.
+- **Money accounting and balances:** `formatPounds(amount, language)` formats displayed balances while state stays numeric; ES/FR use decimal commas. Restaurant coffee is charged once when ordered: two filters £2, two espressos £3, or Simon's cappuccino plus Diane's espresso £3.50. The automatic order at `asklootalk1` also charges £2 and sets `buyfiltercoffee = 2`; retain its existing drink-input timing without adding another dose. The foyer-bar beer/lager round at `foyerbar1` is explicitly funded by Diane; keep Simon's balance unchanged. This payer was clarified editorially because no original price was documented. The ordinary Pavilion first round is paid by Robert/Bruno, so do not charge Simon for it. Optional spending offers require sufficient funds and their endpoints also guard insufficient funds. If the late farewell round is unaffordable, continue to the bus without buying it. Do not clamp a negative balance to hide a missed debit/affordability bug.
+- **Molly digestion (`mollyproc`):** Molly has no HUD. `digestMolly(n)` moves `n` ml into `mollyblad` and depletes `mollyproc`, flooring that tank at 0 so it cannot go negative. Walking and chat beats still fill `mollyblad` by the same amounts as before; `molly_desp()` and the skip-scene threshold continue to read `mollyblad`. Do not invent a foyer beer/lager price.
 - **Status-bar tummy (`proc`):** EN `Tummy`; CN/TW `肚子`; ES `Vientre`; FR `Ventre`. Match the notes’ body word — do not revive mechanic glosses (`待转化水分`, `Líquido en tránsito`, etc.).
 - **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy. **Shyness** changes go through `adjpoints(±n)` and clamp at **0**; intimacy may still go negative.
-- **Luckshots:** start at 3. Early uses `spendLuckshot()` (decrement, floor 0). From taxi home / bus home / short Tuesday–Thursday jump, `capEndgameLuckshots()` leaves at most 1 remaining (the on-screen “only one beyond this stage” notice is not display-only). Home/lounge luckshots must decrement, never `luckshots = 0` (that wiped 3→0 after Skip-to-the-good-bit + Back, because Skip records every `go()` but those functions used to zero the meter in one step). Chloe doorbell luckshot (`luckytrip19`) also spends.
+- **Luckshots:** start at 3. Early uses `spendLuckshot()` (decrement, floor 0). From taxi home / either successful bus-home boarding path / short Tuesday–Thursday jump, `capEndgameLuckshots()` leaves at most 1 remaining (the on-screen “only one beyond this stage” notice is not display-only). Home/lounge luckshots must decrement, never `luckshots = 0` (that wiped 3→0 after Skip-to-the-good-bit + Back, because Skip records every `go()` but those functions used to zero the meter in one step). Chloe doorbell luckshot (`luckytrip19`) also spends.
 
 **CN / TW register**
 - **Caretaker:** CN/TW **管理员** / **管理員** (council first-mention may stay **市政管理员**). Not 看守员/环卫工人/etc.
@@ -137,6 +165,8 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 - `b` Back, `h` guide toggle, `g`/Esc Gallery, `l` bilingual language, `1–9` choices, `S` Skip to the good bit (`climaxIndex`, same cut as climax transcripts).
 - Number-key / guided Enter flash: one pending pick only (`choiceKeyPending`); `#box.choice-key-armed` suppresses `.choice:hover` so keyboard wins over mouse. A numbered pick on a Guide-highlighted row uses `--guide-hover-bg` (same as guide hover), not the ordinary `--choice-hover` wash.
 - **Enter** selects the highlighted guided choice only when a Gallery guide is active **and** Guide is On.
+- Focused toolbar buttons and links retain native Enter activation. Opening Gallery cancels held navigation and any pending numbered-choice flash. The labelled dialog traps focus, makes background elements inert, restores focus on close, and is itself inert while closed. Preserve the visible `:focus-visible` indicators; opacity and pointer-events alone do not exclude hidden controls from keyboard focus.
+- **Reduced motion / zoom / touch:** `prefers-reduced-motion: reduce` skips the screen-fade, Gallery overlay transitions, visual GIF loops (still PNGs), JS drain/puddle clocks, and sprite tremor. Do not set `user-scalable=no` or a maximum scale. Keep 44px tap targets and `touch-action: manipulation` on controls so pinch-zoom still works on the page. Wiki article lists wrap; long wiki pages keep a sticky Dark Mode control.
 
 **Gallery names and hover**
 - Leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Pees in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject.
@@ -160,6 +190,15 @@ When splitting an `s()` call in a bilingual file (per the stage-direction rules 
 | `replay_route.js` | Replay one click-path against an HTML file (helper for `check_endings.js`) |
 | `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
 | `aligned_text.json` | Aligned EN/CN/TW/ES/FR strings |
+| `build_aligned_text.js` | Rebuild the source-located translation reference; `--check` is read-only |
+| `text_sources.js` | Shared lexer for text call sites, variant arrays, and translation dictionaries |
+| `build_bilingual_renderer.js` | Copy standalone formatting helpers into the bilingual alternate renderer; `--check` is read-only |
+| `verify_text_consistency.js` | Check all static text in both rendered bilingual layers, dictionary uniqueness, and focused dynamic/branch cases |
+| `sync_visual_edition.js` | Synchronize canonical English files/tools to ADWD-visual and rebuild; `--check` is read-only |
+| `test_visual_sync.js` | Isolated synchronization tests using temporary fixture repositories; does not alter the real checkouts |
+| `audit_state_space.js` | Bounded actual-choice exploration with state fingerprints, conditional outcomes, witnesses, and explicit pruning limits; not exhaustive proof |
+| `verify_audit_regressions.js` | Canonical-only coffee accounting/narration, theatre preorder/water, high-spending routes, ordinary-bus cap, riverside continuity, date-specific clothing, Back/replay, and labelled synthetic boundary checks |
+| `verify_browser_controls.js` | Separate real-browser controls, modal focus, selected layout, and money/focus display checks; requires Playwright and matching engines |
 
 Do **not** leave scratch audit dumps in this folder (delete after use). Ignore local `.DS_Store` files; do not commit them.
 
@@ -168,6 +207,8 @@ After wording/route edits:
 ```bash
 node maintenance/verify_ending_routes.js
 node maintenance/write_hidden_scenes.js
+node maintenance/build_aligned_text.js
+node maintenance/verify_text_consistency.js
 ```
 
 If Gallery routes/titles changed:
@@ -181,6 +222,8 @@ After climax wording or transcript-writer changes (also after Gallery rebuild):
 ```bash
 node maintenance/write_transcripts.js
 ```
+
+`write_transcripts.js --check` compares the 225 managed transcripts against current route renders without writing. The full `verify_project.js` also checks this, the reference index, alternate renderer generation, and bilingual text consistency.
 
 `verify_ending_routes.js` green across all five languages is the fastest smoke test after a text batch.
 

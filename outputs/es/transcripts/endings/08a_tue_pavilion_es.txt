@@ -28,7 +28,7 @@ Parece que vas a necesitar otro golpe de suerte. ¿Puedes usar uno?
 
 (No podré verla en el club, así que ¿para qué?)
 
-No te quedan golpes de suerte.
+Sigues adelante sin usar otro golpe de suerte.
 
 Pero quizá no sea tan mala noticia. Porque el portero no la ha dejado entrar al Pabellón.
 
@@ -50,7 +50,7 @@ Localizas un punto, subiendo unos peldaños a la derecha, desde donde tendrías 
 
 (Subes los escalones a toda prisa.)
 
-Has apostado por que vaya detrás de los contenedores de basura. Te mueves rápidamente subiendo unos peldaños a tu izquierda y, agachándote y asomándote por encima del murete bajo, tienes una vista perfecta.
+Has apostado por que vaya detrás de los contenedores de basura. Te mueves rápidamente subiendo unos peldaños a tu derecha y, agachándote y asomándote por encima del murete bajo, tienes una vista perfecta.
 
 ¡Has acertado!
 

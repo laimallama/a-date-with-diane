@@ -54,9 +54,9 @@ Diane semble jeter un coup d’œil vers le Portaloo mais ne dit rien. Elle doit
 
 Elle n’a pas le courage de vous dire qu’elle a vraiment besoin du Portaloo. Vous gagnez 5 points de timidité.
 
-(Vous quittez le café.)
+(Vous quittez le camion à burgers.)
 
-Vous quittez le café et continuez à marcher. La rivière murmure à côté de vous.
+Vous quittez le camion à burgers et continuez à marcher. La rivière murmure à côté de vous.
 
 Vous arrivez à une cascade. Vous vous approchez tous pour l’admirer tandis que l’eau dévale les rochers.
 

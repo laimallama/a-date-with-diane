@@ -1698,7 +1698,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -1761,7 +1760,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -1863,7 +1862,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -1926,7 +1924,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -6676,7 +6674,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -6739,7 +6736,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -6841,7 +6838,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -6904,7 +6900,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -11654,7 +11650,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -11717,7 +11712,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -11819,7 +11814,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -11882,7 +11876,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -16632,7 +16626,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -16695,7 +16688,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -16797,7 +16790,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -16860,7 +16852,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }
@@ -21610,7 +21602,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -21673,7 +21664,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           },
           {
             "id": "06d_lounge_freshers_week",
@@ -21775,7 +21766,6 @@
               "pavilion5a",
               "pavilion6",
               "pavilion7",
-              "buywaterpav",
               "pavilion8",
               "pavilion9",
               "pavilion9a",
@@ -21838,7 +21828,7 @@
               "story5"
             ],
             "baseLength": 2,
-            "climaxIndex": 150
+            "climaxIndex": 149
           }
         ]
       }

@@ -70,11 +70,20 @@ a:hover { color: var(--accent-dark); }
   padding: 36px 0;
 }
 .game-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+  background: var(--body-bg-wash);
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 .theme-toggle-button {
   box-sizing: border-box;
@@ -91,6 +100,7 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
+  touch-action: manipulation;
   background: transparent;
   color: var(--muted);
 }
@@ -104,6 +114,9 @@ a:hover { color: var(--accent-dark); }
 }
 #box.wiki-box {
   width: 100%;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(22px, 4vw, 44px);
   border: 1px solid var(--line);
   background: var(--paper);
@@ -210,13 +223,16 @@ ol.wiki-articles li:last-child {
 }
 ol.wiki-articles li a {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: .75rem;
-  padding: 8px 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   color: var(--ink);
   font-size: 1rem;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
 }
 ol.wiki-articles li a::before {
   content: counter(wiki-art, decimal-leading-zero);
@@ -320,6 +336,7 @@ ol.wiki-articles li a:focus-visible {
   line-height: 1.35;
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
 }
 @media (hover: hover) and (pointer: fine) {
   .wiki-back-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
@@ -409,7 +426,7 @@ button:focus,
 <tr><td>Pavillon</td><td>Pub et jardin à l’extrémité du chemin près du terminus de bus; promotions inversées par rapport au Golden Stream; personnel de porte à la fermeture</td></tr>
 <tr><td>Pisa Pizzeria</td><td>Restaurant dans le bâtiment du théâtre; carafe d’eau gratuite avec les repas</td></tr>
 </table>
-<p>Le chemin entre le théâtre et le Pavillon comprend un bloc de toilettes municipales (indiqué de 9 h à 21 h, souvent fermé plus tôt le samedi), une camionnette à hamburgers, une cascade d’agrément, un kiosque à musique, une benne, un pont, un accès au chemin de halage et des bandes de buissons d’environ quatre pieds de haut.</p>
+<p>Le chemin entre le théâtre et le Pavillon comprend un bloc de toilettes municipales (indiqué de 9 h à 21 h; le gardien ferme parfois plus tard, et souvent plus tôt le samedi), une camionnette à hamburgers, une cascade d’agrément, un kiosque à musique, une benne, un pont, un accès au chemin de halage et des bandes de buissons d’environ quatre pieds de haut.</p>
 <h3>Voyages et festivals</h3>
 <p>Les habitants quittent couramment la ville pour des festivals de musique (notamment Glastonbury et l’île de Wight) et pour des vacances en Italie, en Grèce et ailleurs.</p>
 <h2>Religion et bâtiments civiques</h2>
@@ -478,7 +495,7 @@ button:focus,
 <p>Ellison a une réticence de longue date à admettre une envie urgente d’uriner en société. Elle tend à attendre un moment socialement convenable avant de s’excuser, et ces moments n’arrivent pas toujours à temps. Les conséquences ont inclus rentrer chez elle avec des sous-vêtements mouillés, perdre le contrôle dans ses collants dans les transports en commun, uriner derrière les poubelles à l’arrière de la maison familiale, et se retenir pendant les cours et les repas jusqu’au dernier moment possible.</p>
 <p>Elle raconte parfois des épisodes sélectionnés à des personnes de confiance. Parmi eux figurent la Freshers’ Week à dix-huit ans, lorsqu'une consommation importante d’alcool l’a laissée avec une envie urgente d’uriner sur le chemin du retour vers la résidence et qu’elle a perdu le contrôle dans son jean dans le hall tandis qu’une amie cherchait les clés, et un week-end d’enterrement de vie de jeune fille aux Pays-Bas où des amies ont utilisé un urinoir pour hommes tandis qu’elle, en pantalon, ne pouvait pas faire de même; après avoir tardé parce que quelqu’un avait sorti un appareil photo, elle a fini par uriner derrière un camion. Les accidents privés ordinaires ne sont pas traités comme des anecdotes publiques.</p>
 <h3>Amis</h3>
-<p>Molly Yates est son amie la plus proche depuis l’école. Les deux partent en Italie la plupart des années. Venise est la destination préférée d’Ellison; un voyage récent a compris Naples, Sorrente et Capri en train. Des vacances antérieures en Grèce ont été insatisfaisantes en raison de la chaleur et d’une mauvaise offre de toilettes. En été, elles parlent de sports nautiques; Ellison aime le ski nautique, et Yates organise d’ordinaire les réservations. Retrouver Yates après <em>Outside Edge</em> prime sur d’autres projets de fin de soirée.</p>
+<p>Molly Yates est son amie la plus proche depuis l’école. Les deux partent en Italie la plupart des années. Venise est la destination préférée d’Ellison; un voyage récent a compris Naples et Sorrente, puis une traversée en bateau jusqu’à Capri. Des vacances antérieures en Grèce ont été insatisfaisantes en raison de la chaleur et d’une mauvaise offre de toilettes. En été, elles parlent de sports nautiques; Ellison aime le ski nautique, et Yates organise d’ordinaire les réservations. Retrouver Yates après <em>Outside Edge</em> prime sur d’autres projets de fin de soirée.</p>
 <p>Neil Cooper, une ancienne connaissance du bus scolaire qui a ensuite travaillé dans un garage local, reste une connaissance de salutation en ville. Un ami de la famille qui lui a enseigné les échecs vers quinze ans est associé dans sa mémoire à du cidre au déjeuner et à une situation inconfortable dans une maison particulière. Elle refuse de jouer aux échecs chez Simon Hartley.</p>
 <p>Debbie Croft habite la même rue. Chloe Hollis habite un embranchement proche. Aucune n’est une amie intime.</p>
 <h3>Relations</h3>
@@ -494,7 +511,7 @@ button:focus,
       <p>Mon Dieu, j'allais éclater. Je croyais que j'allais me faire pipi dessus sur scène. Tout ça au nom de l'art.</p>
       <footer> – <cite>Molly Yates</cite></footer>
     </blockquote>
-<p><strong>Molly Yates</strong> (née au printemps 1979) est une actrice de Welbourne de 25 ans et l’amie la plus proche de Diane Ellison. Elle apparaît dans un caméo de <em>Outside Edge</em> au Waterfront Theatre pendant la dernière semaine de la série.</p>
+<p><strong>Molly Yates</strong> (née au printemps 1980) est une actrice de Welbourne de 25 ans et l’amie la plus proche de Diane Ellison. Elle apparaît dans un caméo de <em>Outside Edge</em> au Waterfront Theatre pendant la dernière semaine de la série.</p>
 <h2>Jeunesse et famille</h2>
 <p>Yates a fréquenté la même comprehensive school que Diane Ellison et a joué avec elle chez les Welbourne Players. Elle a été plus persistante qu’Ellison pour continuer le théâtre après l’école. Elle n’a pas suivi d’études universitaires. Sa mère, June Yates, habite plus loin du centre que la famille Ellison, dans une maison en terrasse. Son père est parti lorsqu’elle avait douze ans; les contacts ultérieurs ont été intermittents.</p>
 <p>Après l’école, elle a travaillé dans le théâtre pour la jeunesse, a vécu un temps en colocation à Manchester, a passé des auditions non rémunérées et a paru dans au moins une publicité télévisée.</p>

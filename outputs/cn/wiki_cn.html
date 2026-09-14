@@ -70,11 +70,20 @@ a:hover { color: var(--accent-dark); }
   padding: 36px 0;
 }
 .game-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+  background: var(--body-bg-wash);
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 .theme-toggle-button {
   box-sizing: border-box;
@@ -91,6 +100,7 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
+  touch-action: manipulation;
   background: transparent;
   color: var(--muted);
 }
@@ -104,6 +114,9 @@ a:hover { color: var(--accent-dark); }
 }
 #box.wiki-box {
   width: 100%;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(22px, 4vw, 44px);
   border: 1px solid var(--line);
   background: var(--paper);
@@ -210,13 +223,16 @@ ol.wiki-articles li:last-child {
 }
 ol.wiki-articles li a {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: .75rem;
-  padding: 8px 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   color: var(--ink);
   font-size: 1rem;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
 }
 ol.wiki-articles li a::before {
   content: counter(wiki-art, decimal-leading-zero);
@@ -326,6 +342,7 @@ body, button, table, th, td, h1, h2, h3, p, ol, li, blockquote, .wiki-back-btn, 
   line-height: 1.35;
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
 }
 @media (hover: hover) and (pointer: fine) {
   .wiki-back-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
@@ -415,7 +432,7 @@ button:focus,
 <tr><td>凉亭酒吧</td><td>小路尽头、公交终点附近的酒吧与露天啤酒花园；优惠模式与金流酒馆相反；打烊时有门卫</td></tr>
 <tr><td>比萨披萨餐厅</td><td>剧院大楼内的餐馆；用餐附赠免费水壶水</td></tr>
 </table>
-<p>剧院与凉亭酒吧之间的小路包括市政公厕（标示开放时间为上午9时至晚上9时，周六常提前关闭）、汉堡餐车、瀑布景观、乐队台、废料箱、一座桥、纤道入口，以及约四英尺高的灌木带。</p>
+<p>剧院与凉亭酒吧之间的小路包括市政公厕（标示开放时间为上午9时至晚上9时；管理员有时会晚些上锁，周六则常提前关闭）、汉堡餐车、瀑布景观、乐队台、废料箱、一座桥、纤道入口，以及约四英尺高的灌木带。</p>
 <h3>出行与节庆</h3>
 <p>居民常离开本镇参加音乐节（包括格拉斯顿伯里与怀特岛），并前往意大利、希腊等地度假。</p>
 <h2>宗教与市政建筑</h2>
@@ -484,7 +501,7 @@ button:focus,
 <p>埃利森长期不愿在有人在场时承认尿急。她往往等到社交上方便的时刻才告退，而这样的时刻并不总能及时出现。后果包括带着湿内衣回家、在公共交通上渗入裤袜、在自家屋后垃圾桶后排尿，以及在课堂与用餐中憋到最后一刻。</p>
 <p>她有时会向信任的人讲述部分事件。其中包括18岁迎新周期间因大量饮酒，回宿舍途中尿急，到达宿舍门厅时朋友还在找钥匙，她在牛仔裤里失禁；以及荷兰的一次新娘派对，朋友们使用了男厕小便池，而她穿着长裤无法同样行事，因有人拿出相机而耽搁后，最终在一辆卡车后排尿。日常私密事故不作为公开谈资。</p>
 <h3>朋友</h3>
-<p>莫莉·耶茨自中学起就是她最亲密的朋友。两人多数年份前往意大利。威尼斯是埃利森偏爱的目的地；最近一次行程包括乘火车到那不勒斯、索伦托，再到卡普里岛。较早一次希腊度假因炎热与厕所条件差而不尽如人意。夏季她们讨论水上运动；埃利森喜欢滑水，预订通常由耶茨安排。看完《外缘》后与耶茨见面，优先于其他晚间收尾安排。</p>
+<p>莫莉·耶茨自中学起就是她最亲密的朋友。两人多数年份前往意大利。威尼斯是埃利森偏爱的目的地；最近一次行程包括乘火车到那不勒斯、索伦托，再乘船到卡普里岛。较早一次希腊度假因炎热与厕所条件差而不尽如人意。夏季她们讨论水上运动；埃利森喜欢滑水，预订通常由耶茨安排。看完《外缘》后与耶茨见面，优先于其他晚间收尾安排。</p>
 <p>尼尔·库珀是昔日校车相识，后来在本地修车厂工作，在镇上仍是点头之交。约15岁时教她下国际象棋的一位家庭友人，在她记忆中与午餐时的苹果酒及私人住宅中的不适处境相连。她拒绝在西蒙·哈特利家下棋。</p>
 <p>黛比·克罗夫特住在同一条街。克洛伊·霍利斯住在附近岔道。两人都不是密友。</p>
 <h3>人际关系</h3>
@@ -500,7 +517,7 @@ button:focus,
       <p>老天，我那时候憋得快炸了。以为自己要在台上尿裤子。都是为了艺术嘛。</p>
       <footer> – <cite>莫莉·耶茨</cite></footer>
     </blockquote>
-<p><strong>莫莉·耶茨</strong>（生于1979年春）是来自威尔本的25岁女演员，也是黛安·埃利森最亲密的朋友。她在滨水剧院《外缘》停演前的最后一周出演客串角色。</p>
+<p><strong>莫莉·耶茨</strong>（生于1980年春）是来自威尔本的25岁女演员，也是黛安·埃利森最亲密的朋友。她在滨水剧院《外缘》停演前的最后一周出演客串角色。</p>
 <h2>早年生活与家庭</h2>
 <p>耶茨与黛安·埃利森同读一所综合中学，并同在威尔本剧社演出。毕业后她比埃利森更坚持继续演戏。她未攻读大学学位。母亲琼·耶茨住在比埃利森家更远离镇中心的排屋。父亲在她12岁时离开；此后联系断断续续。</p>
 <p>毕业后她从事青年戏剧工作，曾在曼彻斯特合租居住一段时间，参加无报酬试镜，并至少出演过一则电视广告。</p>

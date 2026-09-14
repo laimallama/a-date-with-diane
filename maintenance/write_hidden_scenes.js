@@ -261,7 +261,7 @@ function buildDefinitions(routes) {
       "You chat away.",
       "You chat on.",
       "Yes, I’ll get more drinks in.",
-      "It’s your round—but a cheap one because of the special offers.",
+      "It’s your round.",
       "Cheers!",
       "You leave the pub.",
       "You reach the river.",

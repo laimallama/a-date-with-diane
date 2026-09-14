@@ -70,7 +70,7 @@
     // Explicit exceptions take precedence over legacy name-based location rules.
     if (exact(tag, ["ontoilet2", "fifthplace"])) return LOC.home;
     if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"])) return LOC.riverside;
-    if (tag === "carpark3") return LOC.bus;
+    if (tag === "carpark3" || tag === "carpark2") return LOC.bus;
     if (exact(tag, ["underskirt", "underskirt1", "underskirt2"])) return LOC.theatre;
     if (exact(tag, ["ownjob", "herjob", "stamptalk", "cartalk"])) return LOC.restaurant;
     if (match(tag, ["luckytrip31"])) return LOC.home;
@@ -175,7 +175,13 @@
   function castFor(tag) {
     tag = String(tag || "");
 
-    // After watching Debbie, the conversation returns to Diane at the bus queue.
+    // After watching Debbie pee: bus stop again — Diane impatient; brunette relieved.
+    // Spagbol route: Diane already left on the bus; only the brunette remains.
+    if (tag === "carpark2") {
+      if (dayFlag("spagbol")) return { primary: "debbie", focusLabel: "Debbie" };
+      return { primary: "diane", secondary: "debbie", focusLabel: "Diane" };
+    }
+    // Back in the queue with Diane after the camper watch.
     if (tag === "carpark3") return { primary: "diane", focusLabel: "Diane" };
 
     // —— Chloe: watching her house (you alone / luckshot) ——

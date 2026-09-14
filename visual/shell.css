@@ -423,8 +423,7 @@ body.visual-edition .stage-cast.duo .sprite-secondary {
   transform: none;
   z-index: 1;
 }
-body.visual-edition .stage-cast.tremor .sprite-primary,
-body.visual-edition .stage-cast.tremor .sprite-secondary {
+body.visual-edition .sprite.tremor {
   animation: visualTremor 0.32s steps(2) infinite;
 }
 @keyframes visualTremor {
@@ -664,8 +663,7 @@ body.visual-edition #gameToolbar {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  body.visual-edition .stage-cast.tremor .sprite-primary,
-  body.visual-edition .stage-cast.tremor .sprite-secondary,
+  body.visual-edition .sprite.tremor,
   body.visual-edition .stage-rec .rec-dot,
   body.visual-edition .stage-puddle,
   body.visual-edition .visual-stage,

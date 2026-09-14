@@ -211,18 +211,30 @@
 
     // No story bladder — tag heuristics. Prefer Desperate/Critical over mild Need.
     if (castKey === "debbie") {
+      // Aftermath: she has already peed / walked back relieved
+      if (/^(carpark2|carpark3|peepround1|peepunderluck|gentleman)$/.test(tag)) {
+        return bandFromPct(20);
+      }
       if (/carpark|luckytrip7|watchblonde|queue1|peepround|peepunder/.test(tag)) {
         return bandFromPct(90); // Critical — camper / duo pee
       }
       return bandFromPct(74); // Desperate
     }
     if (castKey === "chloe") {
+      // Prize / leave pages after the house watch
+      if (/^(watching6|leavechloe)$/.test(tag)) {
+        return bandFromPct(20);
+      }
       if (/watching|luckytrip19|gonow|leavechloe|scenario4/.test(tag)) {
         return bandFromPct(92); // Critical
       }
       return bandFromPct(74);
     }
     if (castKey === "amanda") {
+      // Out of the bathroom, flushed but no longer desperate
+      if (/^luckytrip31[c-e]$/.test(tag)) {
+        return bandFromPct(20);
+      }
       if (/goupstairs|luckytrip31|scenario[568]/.test(tag)) {
         return bandFromPct(90); // Critical
       }
@@ -444,20 +456,34 @@
     var primaryBand = bandForCast(primary, tag);
     var primaryFile = (clipOverrides && clipOverrides[primary]) || primaryBand.file;
     var html = "";
-    html += '<img class="sprite sprite-primary" data-cast="' + primary + '" id="spritePrimary" alt="' +
+    html += '<img class="sprite sprite-primary' +
+      (spriteShouldTremor(primaryBand, primaryFile) ? " tremor" : "") +
+      '" data-cast="' + primary + '" id="spritePrimary" alt="' +
       (CAST[primary] || CAST.diane).name + '" src="' + spriteUrl(primary, primaryFile) + '" />';
     if (secondary) {
       var secondaryBand = bandForCast(secondary, tag);
       var secondaryFile = (clipOverrides && clipOverrides[secondary]) || secondaryBand.file;
-      html += '<img class="sprite sprite-secondary" data-cast="' + secondary + '" alt="' +
+      html += '<img class="sprite sprite-secondary' +
+        (spriteShouldTremor(secondaryBand, secondaryFile) ? " tremor" : "") +
+        '" data-cast="' + secondary + '" alt="' +
         (CAST[secondary] || {}).name + '" src="' + spriteUrl(secondary, secondaryFile) + '" />';
     }
     el.cast.innerHTML = html;
     el.cast.classList.toggle("duo", !!secondary);
+    el.cast.classList.remove("tremor");
     el.wrap = el.cast;
     el.sprite = $("spritePrimary");
-    var tremorBand = primaryBand;
-    el.wrap.classList.toggle("tremor", !prefersReducedMotion() && !state.wet && (tremorBand.key === "desperate" || tremorBand.key === "critical"));
+  }
+
+  /** CSS tremor is for desperate/critical idle only — never on pee/wet action clips. */
+  function isReliefClip(file) {
+    return file === GIF.peeA || file === GIF.peeB || file === GIF.wetting || file === GIF.wetIdle;
+  }
+
+  function spriteShouldTremor(band, file) {
+    if (prefersReducedMotion() || state.wet) return false;
+    if (isReliefClip(file)) return false;
+    return !!(band && (band.key === "desperate" || band.key === "critical"));
   }
 
   function setSpriteClip(castKey, file, bustCache) {
@@ -469,6 +495,8 @@
     // Skip no-op src writes — reassigning the same URL can still reset some browsers
     if (!bustCache && img.getAttribute("src") === url) return;
     img.setAttribute("src", url);
+    // Pee/wet clips never keep desperation tremor
+    if (isReliefClip(file)) img.classList.remove("tremor");
   }
 
   function clearPeeTimer() {

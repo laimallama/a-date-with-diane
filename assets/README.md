@@ -27,7 +27,7 @@ Transparent GIF animation assets for the visual edition.
 
 `07` / `08` use full-arc bidirectional loops. Active `06` files are forward sequences, not the old bidirectional loops. Their one-pass durations are Diane 2.2 s, Molly 3.0 s, Debbie 2.9 s, Amanda 2.5 s, and Chloe 2.7 s. The adapter controls the transition to the idle clip; the files themselves contain finite-repeat GIF metadata.
 
-**Shared style (all clips):** 398×398, **10 fps** (100 ms/frame), transparency index 0, nearest-neighbour upscale from source PNG frames.
+**Shared style (all clips):** 398×398, **10 fps** (100 ms/frame), transparency index 0, nearest-neighbour upscale from source PNG frames. Each live GIF also has a matching `*.still.png` first-frame still. The visual adapter uses those stills when the user prefers reduced motion.
 
 Live puddles in the visual shell use `assets/fx/` + `visual/puddle-sync.js` (frame-locked to pee/wet clips).
 

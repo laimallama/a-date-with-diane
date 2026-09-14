@@ -172,19 +172,16 @@
   }
 
   /** PNG frame bank — works on file:// (unlike fetch + ImageDecoder). */
-  async function loadGrowFrames(castKey, stem) {
+  async function loadGrowFrames(castKey, stem, info) {
     var dir = fxBase() + "grow_frames/" + castKey + "_" + stem + "_grow/";
     if (growCache[dir]) return growCache[dir].slice();
+    var count = info && info.growFrames;
+    if (typeof count !== "number" || count <= 0 || Math.floor(count) !== count) {
+      throw new Error("missing grow-frame count for " + castKey + "/" + stem + "; rebuild the visual edition");
+    }
     var frames = [];
     var i;
-    for (i = 0; i < 48; i++) {
-      try {
-        frames.push(await loadImage(dir + pad2(i) + ".png"));
-      } catch (eLoad) {
-        break;
-      }
-    }
-    if (!frames.length) throw new Error("no grow frames at " + dir);
+    for (i = 0; i < count; i++) frames.push(await loadImage(dir + pad2(i) + ".png"));
     growCache[dir] = frames;
     return frames.slice();
   }
@@ -263,12 +260,23 @@
       }
     }
 
+    function prefersReducedMotion() {
+      try {
+        return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      } catch (e) { return false; }
+    }
+
     function beginClock() {
       stopClock();
       eng.active = true;
-      eng.holding = false;
       eng.t0 = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
       setHostOn(true);
+      if (prefersReducedMotion()) {
+        eng.holding = true;
+        for (var i = 0; i < eng.tracks.length; i++) paintTrack(eng.tracks[i], 0);
+        return eng.t0;
+      }
+      eng.holding = false;
       tick();
       eng.timer = window.setInterval(tick, FRAME_MS);
       return eng.t0;
@@ -353,7 +361,7 @@
             continue;
           }
           var growFrames;
-          try { growFrames = await loadGrowFrames(e.castKey, stem); }
+          try { growFrames = await loadGrowFrames(e.castKey, stem, info); }
           catch (eGrow) {
             console.warn("[puddle]", eGrow);
             continue;

@@ -47,6 +47,7 @@ body.visual-edition #box {
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  overflow-wrap: break-word;
   overscroll-behavior: contain;
   font-size: 1.05rem;
   line-height: 1.55;
@@ -138,11 +139,12 @@ body.visual-edition .climax-skip-button {
   min-height: 44px;
   padding: 10px 14px;
   flex-shrink: 0;
+  touch-action: manipulation;
 }
 
 body.visual-edition .visual-main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
   align-items: stretch;
   flex: 1 1 auto;
@@ -159,6 +161,7 @@ body.visual-edition .visual-panel {
   border-radius: 4px;
   overflow: hidden;
   min-height: 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -196,6 +199,7 @@ body.visual-edition .visual-story-col #box {
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  overflow-wrap: break-word;
   overscroll-behavior: contain;
   background: var(--paper);
 }
@@ -224,7 +228,7 @@ body.visual-edition .visual-stage-col .visual-panel {
     overflow: visible;
   }
   body.visual-edition .visual-main {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     flex: none;
     height: auto;
     min-height: 0;
@@ -354,6 +358,7 @@ body.visual-edition .stage-puddle .puddle-sprite {
   max-height: calc(100% - 6px);
   width: auto;
   max-width: 100%;
+  min-width: 0;
   object-fit: contain;
   object-position: bottom center;
   filter: none;
@@ -367,6 +372,7 @@ body.visual-edition .stage-puddle canvas.puddle-sprite {
 body.visual-edition .stage-puddle.duo .puddle-sprite {
   height: calc(100% - 6px);
   max-height: calc(100% - 6px);
+  max-width: calc((100% - 18px) / 2);
 }
 /* Invisible flex twin — keeps a solo puddle under the matching duo sprite */
 body.visual-edition .stage-puddle .puddle-spacer {
@@ -399,6 +405,8 @@ body.visual-edition .stage-cast .sprite {
   height: calc(100% - 6px);
   max-height: calc(100% - 6px);
   width: auto;
+  max-width: 100%;
+  min-width: 0;
   object-fit: contain;
   object-position: bottom center;
   filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
@@ -410,6 +418,7 @@ body.visual-edition .stage-cast.duo .sprite-primary,
 body.visual-edition .stage-cast.duo .sprite-secondary {
   height: calc(100% - 6px);
   max-height: calc(100% - 6px);
+  max-width: calc((100% - 18px) / 2);
   opacity: 1;
   transform: none;
   z-index: 1;
@@ -518,6 +527,11 @@ body.visual-edition .organ[data-tip]:hover::after,
 body.visual-edition .organ[data-tip]:focus-visible::after {
   opacity: 1;
   visibility: visible;
+}
+body.visual-edition .organ:focus-visible,
+body.visual-edition .tank-name:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 body.visual-edition .organ .cavity { fill: var(--membrane-inner, #f0e0d4); }
 body.visual-edition .organ.tummy .cavity { fill: url(#tummyWall); }
@@ -649,7 +663,13 @@ body.visual-edition #gameToolbar {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   body.visual-edition .stage-cast.tremor .sprite-primary,
+  body.visual-edition .stage-cast.tremor .sprite-secondary,
+  body.visual-edition .stage-rec .rec-dot,
+  body.visual-edition .stage-puddle,
+  body.visual-edition .visual-stage,
+  body.visual-edition .bar-fill,
   body.visual-edition .organ.blad.full,
   body.visual-edition .organ .fill-shape { animation: none !important; transition: none !important; }
 }

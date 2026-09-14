@@ -11,6 +11,8 @@ const ROOT = path.resolve(__dirname, '..');
 const visual = fs.existsSync(path.join(ROOT, 'visual/scene-map.js'));
 const langs = visual ? ['en'] : ['en', 'cn', 'tw', 'es', 'fr'];
 const gallerySnapshot = JSON.parse(fs.readFileSync(path.join(ROOT, 'maintenance/gallery_data.json'), 'utf8'));
+const sharedProjects = process.argv.includes('--local-only') ? null
+  : require('./sync_visual_edition.js').synchronize({ check: true });
 
 function element(tag = 'div') {
   const attrs = {}, classes = new Set();
@@ -53,6 +55,8 @@ function loadGame(file) {
   };
   context.window = context;
   vm.createContext(context);
+  // Execute the core runtime in each edition. Visual adapters and animations need a browser;
+  // every injected script is still syntax-checked above, and the visual build is checked below.
   vm.runInContext(blocks[0][2], context, { filename: file });
   context.go('start');
   assert.equal(context.gameHistory.length, 0, 'Title must not offer Back');
@@ -70,9 +74,22 @@ function guide(g) { return JSON.stringify([g.context.guideIndex, g.context.guide
 function plain(x) { return JSON.parse(JSON.stringify(x)); }
 let totalSteps = 0, totalRoutes = 0;
 const referenceStates = new Map();
+if (!visual) {
+  for (const command of [
+    ['test_aligned_text.js'],
+    ['build_aligned_text.js', '--check'],
+    ['build_bilingual_renderer.js', '--check'],
+    ['verify_text_consistency.js'],
+    ['verify_audit_regressions.js'],
+  ]) execFileSync(process.execPath, [path.join(ROOT, 'maintenance', command[0]), ...command.slice(1)], { stdio: 'inherit' });
+}
+execFileSync(process.execPath, [path.join(ROOT, 'maintenance/write_transcripts.js'), '--check'], { stdio: 'inherit' });
 for (const lang of langs) {
-  for (const bilingual of (lang === 'en' || visual ? [false] : [false, true])) {
-    const file = path.join(ROOT, `outputs/${lang}/dianedate_${lang}${bilingual ? '_bilingual' : ''}.html`);
+  const editions = visual ? ['standalone', 'visual'] : (lang === 'en' ? ['standalone'] : ['standalone', 'bilingual']);
+  for (const edition of editions) {
+    const bilingual = edition === 'bilingual';
+    const filename = edition === 'visual' ? 'dianedate_visual_en.html' : `dianedate_${lang}${bilingual ? '_bilingual' : ''}.html`;
+    const file = path.join(ROOT, `outputs/${lang}`, filename);
     const initial = loadGame(file), book = leaves(initial.gallery);
     assert.equal(book.filter(x => x.kind === 'endings').length, 15);
     assert.equal(book.filter(x => x.kind === 'hiddenScenes').length, 30);
@@ -100,7 +117,7 @@ for (const lang of langs) {
         steps++;
       }
       const digest = fingerprint.digest('hex');
-      if (lang === 'en') referenceStates.set(leaf.id, digest);
+      if (lang === 'en' && edition === 'standalone') referenceStates.set(leaf.id, digest);
       else assert.equal(digest, referenceStates.get(leaf.id), `State differs from English: ${path.basename(file)} / ${leaf.id}`);
       // Check the real Skip loop against ordinary forward navigation.
       const cut = leaf.kind === 'endings' ? leaf.climaxIndex : leaf.baseLength;
@@ -124,9 +141,18 @@ for (const lang of langs) {
 if (visual) {
   const c = {}; vm.createContext(c);
   vm.runInContext(fs.readFileSync(path.join(ROOT,'visual/scene-map.js'),'utf8'),c);
-  const expected = { start:'title', start2:'street', traintalk:'restaurant', traintalka:'riverside', luckytrip3:'bridge', luckytrip3a:'bridge', luckytrip31:'home', luckytrip31a:'home', luckytrip19:'night', luckytrip19a:'night', searchdiane:'night', goleft:'night', buywaterfoyer:'foyer', buywaterpav:'pavilion' };
+  const expected = { start:'title', start2:'street', traintalk:'restaurant', traintalka:'riverside', luckytrip3:'bridge', luckytrip3a:'bridge', luckytrip31:'home', luckytrip31a:'home', luckytrip19:'night', luckytrip19a:'night', searchdiane:'night', goleft:'night', buywaterfoyer:'foyer', buywaterpav:'pavilion', ontoilet1:'bathroom', ontoilet2:'home', fifthplace:'home' };
   for (const [tag,location] of Object.entries(expected)) assert.equal(c.ADWDSceneMap.locationFor(tag).id,location,tag);
-  execFileSync(process.execPath,[path.join(ROOT,'maintenance/build_visual_edition.js'),'--check'],{stdio:'inherit'});
+  assert(c.ADWDSceneMap.isPrizeTag('fifthplace'), 'Fifth-prize screen is recognized');
+  assert(c.ADWDSceneMap.isSilentEmpty('fifthplace'), 'Prize screen does not start a clip');
+  assert(c.ADWDSceneMap.isPeeBeat('ontoilet1'), 'Preceding bathroom clip is retained');
+  for (const tag of ['ontoilet2', 'fifthplace']) assert.equal(c.ADWDSceneMap.peeBeat(tag, c.ADWDSceneMap.castFor(tag)), null, 'No lingering clip on ' + tag);
+  execFileSync(process.execPath, [path.join(ROOT, 'maintenance/build_visual_edition.js'), '--check',
+    ...(process.argv.includes('--local-only') ? ['--local-only'] : [])], { stdio: 'inherit' });
+  console.log('Visual core parity and all script syntax checked; adapter behavior, layout, and animation timing need browser validation.');
 }
 execFileSync(process.execPath,[path.join(ROOT,'maintenance/build_gallery_data.js'),'--check'],{stdio:'inherit'});
+if (!visual && sharedProjects) {
+  execFileSync(process.execPath, [path.join(sharedProjects.visualRoot, 'maintenance/build_visual_edition.js'), '--check'], { stdio: 'inherit' });
+}
 console.log(`PASS: ${totalRoutes} route/edition combinations; ${totalSteps} Back/replay checks. No files written.`);

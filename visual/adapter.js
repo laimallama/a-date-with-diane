@@ -265,9 +265,19 @@
     return { key: "calm", label: "Comfortable", file: GIF.calm };
   }
 
+  function prefersReducedMotion() {
+    try {
+      return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    } catch (e) { return false; }
+  }
+
   function spriteUrl(castKey, file) {
     var c = CAST[castKey] || CAST.diane;
-    return ASSET_BASE + c.folder + "/" + file;
+    var name = file;
+    if (prefersReducedMotion() && /\.gif$/i.test(file)) {
+      name = file.replace(/\.gif$/i, ".still.png");
+    }
+    return ASSET_BASE + c.folder + "/" + name;
   }
 
   var puddleEngine = null;
@@ -406,7 +416,7 @@
     if (el.shyFill) el.shyFill.style.width = shyPct() + "%";
     if (el.intiN) el.intiN.textContent = typeof inti === "number" ? inti : "—";
     if (el.shyN) el.shyN.textContent = typeof points === "number" ? points : "—";
-    if (el.pounds) el.pounds.textContent = typeof pounds === "number" ? pounds : "—";
+    if (el.pounds) el.pounds.textContent = typeof pounds === "number" ? formatPounds(pounds) : "—";
     if (el.coins) {
       var luck = typeof luckshots === "number" ? luckshots : 0;
       el.coins.innerHTML = [0, 1, 2].map(function (i) {
@@ -447,7 +457,7 @@
     el.wrap = el.cast;
     el.sprite = $("spritePrimary");
     var tremorBand = primaryBand;
-    el.wrap.classList.toggle("tremor", !state.wet && (tremorBand.key === "desperate" || tremorBand.key === "critical"));
+    el.wrap.classList.toggle("tremor", !prefersReducedMotion() && !state.wet && (tremorBand.key === "desperate" || tremorBand.key === "critical"));
   }
 
   function setSpriteClip(castKey, file, bustCache) {
@@ -560,6 +570,14 @@
     state.visualBlad = fromMl;
     renderMeters();
 
+    if (prefersReducedMotion()) {
+      state.visualBlad = toMl;
+      state.lastBlad = toMl;
+      setBladFillTransition(false);
+      renderMeters();
+      return;
+    }
+
     if (kind === "wet") {
       // Oneshot — same as before, no refill loop
       var stream = info.streamStart != null ? (info.streamStart | 0) : (info.gush1 | 0);
@@ -650,6 +668,13 @@
     state.drainFromMl = fromMl;
     state.visualBlad = fromMl;
     renderMeters();
+    if (prefersReducedMotion()) {
+      state.visualBlad = toMl;
+      state.lastBlad = toMl;
+      setBladFillTransition(false);
+      renderMeters();
+      return;
+    }
     var t0 = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
     state.peeTimer = window.setInterval(function () {
       var now = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
@@ -792,7 +817,7 @@
 
   function scheduleWetIdle(scene, castKey) {
     clearWetIdleTimer();
-    var ms = WET_ONESHOT_MS[castKey] || 2400;
+    var ms = prefersReducedMotion() ? 0 : (WET_ONESHOT_MS[castKey] || 2400);
     state.wetIdleTimer = window.setTimeout(function () {
       state.wetIdleTimer = null;
       if (!state.playingEvent) return;
@@ -828,6 +853,8 @@
       refreshStage(scene);
       return;
     }
+
+    syncSceneLabels(scene);
 
     // Aftermath / already-wet idle beat (e.g. legsz1)
     if (beatClipId(beat) === "wetIdle") {
@@ -982,18 +1009,21 @@
     }, null, false);
   }
 
+  // Scene metadata must refresh on animated pages too, including Back from a farewell.
+  function syncSceneLabels(scene) {
+    if (el.stage) el.stage.setAttribute("data-location", scene.location.id);
+    if (el.locLabel) el.locLabel.textContent = scene.location.label || "";
+    if (el.focusLabel) el.focusLabel.textContent = scene.cast.focusLabel || "Diane";
+  }
+
   function refreshStage(scene) {
     if (!scene) scene = root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "");
     var tag = scene.tag || (typeof currentTag !== "undefined" ? currentTag : "");
     var focusKey = (scene.cast && scene.cast.primary) || "diane";
     var band = bandForCast(focusKey, tag);
 
-    if (el.stage) {
-      el.stage.setAttribute("data-location", scene.location.id);
-    }
-    if (el.locLabel) el.locLabel.textContent = scene.location.label || "";
+    syncSceneLabels(scene);
     syncRailBrand(typeof currentTag !== "undefined" ? currentTag : "");
-    if (el.focusLabel) el.focusLabel.textContent = scene.cast.focusLabel || "Diane";
 
     if (!state.playingEvent) {
       var pregameNow = document.body.classList.contains("pregame");

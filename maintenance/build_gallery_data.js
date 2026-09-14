@@ -3,6 +3,7 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
+const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
 const pendingOutputs = [];
 
 function finishOutputs() {
@@ -21,6 +22,17 @@ const HIDDEN_SCENES_SOURCE = path.join(ROOT, "maintenance/write_hidden_scenes.js
 
 const HTML_PATHS = {
   en: path.join(ROOT, "outputs/en/dianedate_en.html"),
+  cn: path.join(ROOT, "outputs/cn/dianedate_cn.html"),
+  es: path.join(ROOT, "outputs/es/dianedate_es.html"),
+  fr: path.join(ROOT, "outputs/fr/dianedate_fr.html"),
+  tw: path.join(ROOT, "outputs/tw/dianedate_tw.html"),
+};
+
+const BILINGUAL_HTML_PATHS = {
+  cn: path.join(ROOT, "outputs/cn/dianedate_cn_bilingual.html"),
+  es: path.join(ROOT, "outputs/es/dianedate_es_bilingual.html"),
+  fr: path.join(ROOT, "outputs/fr/dianedate_fr_bilingual.html"),
+  tw: path.join(ROOT, "outputs/tw/dianedate_tw_bilingual.html"),
 };
 
 // Gallery top-level order: 1st–5th, Amanda, Chloe, Day-route, Lounge
@@ -535,20 +547,37 @@ function injectIntoFile(filePath, galleryData) {
 }
 
 function main() {
+  const onlyLang = visual || process.env.GALLERY_EN_ONLY === "1" ? "en" : null;
   const ctx = loadHiddenScenesModule();
   const routes = ctx.loadRoutes();
   const definitions = ctx.buildDefinitions(routes);
 
-  const dataEn = buildDataForLang(ctx, routes, definitions, "en");
+  const langs = onlyLang ? [onlyLang] : ["en", "cn", "es", "fr", "tw"];
+  const dataByLang = {};
+  for (const lang of langs) {
+    dataByLang[lang] = buildDataForLang(ctx, routes, definitions, lang);
+  }
+
+  // Preserve translations for a text-repository EN-only inject; visual stays English-only.
   const outPath = path.join(ROOT, "maintenance/gallery_data.json");
-  const merged = { en: dataEn };
+  let existing = {};
+  if (onlyLang && !visual && fs.existsSync(outPath)) {
+    existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
+  }
+  const merged = { ...existing, ...dataByLang };
   pendingOutputs.push({ filePath: outPath, text: JSON.stringify(merged, null, 2) });
 
   injectIntoFile(HTML_PATHS.en, merged.en);
+  if (!onlyLang) {
+    for (const lang of ["cn", "es", "fr", "tw"]) {
+      injectIntoFile(HTML_PATHS[lang], merged[lang]);
+      injectIntoFile(BILINGUAL_HTML_PATHS[lang], buildBilingualData(merged.en, merged[lang]));
+    }
+  }
 
   if (!finishOutputs()) return;
   console.log(`Wrote ${outPath}`);
-  console.log("Injected gallery data into en only");
+  console.log(onlyLang ? "Injected gallery data into en only" : "Injected gallery data into en, cn, es, fr, tw (single + bilingual where applicable)");
   console.log("EN hidden scenes:");
   merged.en.hiddenScenes.forEach((h, i) => {
     if (h.variants) {

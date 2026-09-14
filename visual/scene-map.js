@@ -68,7 +68,11 @@
     }
 
     // Explicit exceptions take precedence over legacy name-based location rules.
-    if (tag === "traintalka") return LOC.riverside;
+    if (exact(tag, ["ontoilet2", "fifthplace"])) return LOC.home;
+    if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"])) return LOC.riverside;
+    if (tag === "carpark3") return LOC.bus;
+    if (exact(tag, ["underskirt", "underskirt1", "underskirt2"])) return LOC.theatre;
+    if (exact(tag, ["ownjob", "herjob", "stamptalk", "cartalk"])) return LOC.restaurant;
     if (match(tag, ["luckytrip31"])) return LOC.home;
     if (match(tag, ["luckytrip19"])) return LOC.night;
     if (starts(tag, ["search", "goleft", "passage"])) return LOC.night;
@@ -121,7 +125,7 @@
     if (
       match(tag, ["interval", "foyer", "theatreask", "buywaterfoyer"]) ||
       exact(tag, [
-        "lethergo", "stopher", "gotoo", "gotoo1",
+        "gotheatre", "lethergo", "stopher", "gotoo", "gotoo1",
         "askloo", "askwait", "askwait1", "keepquiet", "keepquiet1",
         "luckytrip0", "luckytrip0a", "luckytrip0b",
         "luckytrip1", "luckytrip1a",
@@ -136,8 +140,6 @@
       match(tag, ["theatre", "act2", "stagedoor", "holdhand", "leanclose", "dianechoice", "leavetheatre"]) ||
       exact(tag, ["handonthigh", "handonthigh1", "handonthigh2"])
     ) {
-      // Walking toward the theatre is still outdoors
-      if (exact(tag, ["gotheatre"])) return LOC.street;
       return LOC.theatre;
     }
 
@@ -155,7 +157,7 @@
     }
 
     // Pre-date high street shopping
-    if (exact(tag, ["buysth", "buywater", "buybrooch", "start2", "ownjob", "herjob", "stamptalk", "cartalk"])) {
+    if (exact(tag, ["buysth", "buywater", "buybrooch", "start2"])) {
       return LOC.street;
     }
 
@@ -172,6 +174,9 @@
    */
   function castFor(tag) {
     tag = String(tag || "");
+
+    // After watching Debbie, the conversation returns to Diane at the bus queue.
+    if (tag === "carpark3") return { primary: "diane", focusLabel: "Diane" };
 
     // —— Chloe: watching her house (you alone / luckshot) ——
     if (starts(tag, ["watching", "luckytrip19"]) || exact(tag, ["leavechloe", "gonow"])) {
@@ -237,6 +242,7 @@
       "triumph",
       "secondplace",
       "secondplace1",
+      "fifthplace",
     ]) || starts(tag, ["ending"]);
   }
 

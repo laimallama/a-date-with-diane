@@ -11,6 +11,12 @@ const SRC = path.join(ROOT, "outputs/en/dianedate_en.html");
 const OUT = path.join(ROOT, "outputs/en/dianedate_visual_en.html");
 const VISUAL = path.join(ROOT, "visual");
 
+// Normal builds first import the current canonical English content and tools.
+// --check remains read-only; --local-only explicitly builds an isolated snapshot.
+if (!process.argv.includes('--local-only')) {
+  require('./sync_visual_edition.js').synchronize({ check: process.argv.includes('--check') });
+}
+
 function replaceRequired(source, search, replacement) {
   const matched = typeof search === "string" ? source.includes(search) : search.test(source);
   if (!matched) throw new Error("Visual build anchor not found: " + String(search).slice(0, 100));
@@ -26,7 +32,19 @@ const shellCss = read(path.join(VISUAL, "shell.css"));
 const sceneMap = read(path.join(VISUAL, "scene-map.js"));
 const puddleSync = read(path.join(VISUAL, "puddle-sync.js"));
 const adapter = read(path.join(VISUAL, "adapter.js"));
-const puddleMetaRaw = read(path.join(ROOT, "assets/fx/puddle_meta.json"));
+const puddleMeta = JSON.parse(read(path.join(ROOT, "assets/fx/puddle_meta.json")));
+// Frame banks are the authority for their length. Embed a validated count so
+// browsers never discover the end by requesting a nonexistent PNG.
+for (const [clip, info] of Object.entries(puddleMeta.clips)) {
+  const bank = path.join(ROOT, "assets/fx/grow_frames", clip.replace("/", "_") + "_grow");
+  const frames = fs.readdirSync(bank).filter(name => /\.png$/i.test(name)).sort();
+  const expected = frames.map((_, index) => String(index).padStart(2, "0") + ".png").sort();
+  if (!frames.length || frames.some((name, index) => name !== expected[index])) {
+    throw new Error("Puddle frame bank must contain contiguous numbered PNGs starting at 00: " + bank);
+  }
+  info.growFrames = frames.length;
+}
+const puddleMetaRaw = JSON.stringify(puddleMeta);
 
 const metersHtml = `
         <div class="visual-meters" id="visualMeters">

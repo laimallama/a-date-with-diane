@@ -10,6 +10,22 @@ This tree is **ADWD-visual**, not the settled text edition.
 
 Read this before editing. Playable English lives in `outputs/en/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
 
+## Required synchronization with ADWD
+
+The owner requires this edition to receive all shared English content changes. Canonical English story/runtime, route definitions, wiki, transcripts, and shared maintenance scripts live in the sibling ADWD repository. Make shared edits there, finish its required translations/generated files, then run `node maintenance/sync_visual_edition.js` from either checkout. It imports managed English content and rebuilds the visual HTML. Run both repositories' verifiers before completing a shared change.
+
+Normal `build_visual_edition.js` runs synchronization first. Its `--check` mode and `sync_visual_edition.js --check` are read-only and fail on drift. `verify_project.js` checks canonical shared-file equality, transcript freshness, and both companion/generated core routes. Shared maintenance scripts are byte-identical across repositories and detect this English-only tree at runtime.
+
+New/renamed scene tags, different on-screen characters, or changes to tracked state also require reviewing/updating `visual/scene-map.js` and `visual/adapter.js` and browser-checking the affected scenes. Copying content does not infer new presentation mappings.
+
+Keep this repository's `visual/`, `assets/`, and `maintenance/build_visual_edition.js` separate. Never hand-edit imported shared content here. The initial sync adopts ADWD content; subsequent runs compare the receipt in `maintenance/shared_content_state.json` and refuse to overwrite independent shared-file edits. Reconcile those into ADWD first. Removed managed paths require explicit reconciliation; unrelated files are preserved.
+
+Default paths are sibling `ADWD` / `ADWD-visual` folders, overridable with `ADWD_TEXT_ROOT` / `ADWD_VISUAL_ROOT`. `--local-only` explicitly builds/verifies the carried snapshot if ADWD is unavailable; report that canonical synchronization was not checked. No commit or push is implied.
+
+## Visual runtime maintenance
+
+The builder validates contiguous effect PNG banks and embeds the exact `growFrames` count for each clip. `visual/puddle-sync.js` loads that count without a failed-request terminator. Keep raw effect timing metadata intact and browser-check decoding, scene changes, and Back cleanup after loader changes. See `visual/README.md` for frame-bank, narrow-layout, focus, and reduced-motion details. The current reduced-motion CSS does not freeze animated GIFs or JavaScript clocks.
+
 ## What is in this folder
 
 English playable HTML (`outputs/en/dianedate_en.html`), English climax transcripts, English wiki (`wiki_en.html`). Gallery: **15 ending leaves** and **30 hidden-scene leaves**.
@@ -65,8 +81,8 @@ Categories 2 and 3 never get parens or italics — they're just narration.
 
 ## Editing playable text
 
-1. Find the line (`rg`), read surrounding HTML context in `outputs/en/dianedate_en.html`.
-2. Re-run the English route smoke test; rebuild Gallery if routes/titles changed; regenerate transcripts after climax wording or `write_transcripts.js` changes (see toolkit below).
+1. Find the line (`rg`), read surrounding HTML context in canonical ADWD's `outputs/en/dianedate_en.html`, and make shared edits there with the required language parity.
+2. Refresh canonical Gallery/transcripts as applicable, run `sync_visual_edition.js`, and verify both repositories. Re-run the English route smoke test as appropriate.
 3. Syntax-check touched HTML: extract the `<script>` body and `new Function(...)`.
 4. Pull search strings from the file; don’t retype punctuation by hand.
 5. For multi-line JS replacements, check brace balance.
@@ -79,6 +95,7 @@ Do not recreate bilingual dictionaries or `aligned_text.json` in this tree.
 - **Immersion CTA:** `On with the story!`
 - **Buy something:** shop-literal (`Buy something`).
 - **Money meter:** `Pounds`.
+- **Foyer round:** Diane funds the beer/lager round at `foyerbar1`; Simon's balance stays unchanged. Canonical ADWD documents this editorial payer clarification.
 - **Prices:** whole pounds, no `.00` (`£1`). Pence use two places (`£1.50`).
 - **Status-bar tummy (`proc`):** `Tummy`.
 - **Intimacy amounts:** only via `getinti` (exact notice). Hand-written scene summaries may cover shyness/scene, not vague “lots of / a few” intimacy. **Shyness** changes go through `adjpoints(±n)` and clamp at **0**; intimacy may still go negative.
@@ -124,6 +141,9 @@ Do not recreate bilingual dictionaries or `aligned_text.json` in this tree.
 | `replay_route.js` | Replay one click-path against an HTML file (helper for `check_endings.js`) |
 | `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
 | `build_wiki_html.js` / `build_single_wiki.js` | Wiki builders (English in this tree) |
+| `sync_visual_edition.js` | Import canonical English content/tools from ADWD and rebuild; `--check` is read-only |
+| `shared_content_state.json` | Generated hashes of last-synced managed content; do not hand-edit |
+| `test_visual_sync.js` | Isolated tests of sync scope, conflicts, read-only checks, and invalid inputs |
 
 Do **not** leave scratch audit dumps in this folder (delete after use). Ignore local `.DS_Store` files; do not commit them.
 

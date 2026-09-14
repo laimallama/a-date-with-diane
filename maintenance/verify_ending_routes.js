@@ -4,9 +4,14 @@ const fs = require("fs");
 const vm = require("vm");
 const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
+const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
 const { earlyBushHouseBase } = require("./check_endings.js");
 
 const EN_HTML = path.join(ROOT, "outputs/en/dianedate_en.html");
+const CN_HTML = path.join(ROOT, "outputs/cn/dianedate_cn.html");
+const ES_HTML = path.join(ROOT, "outputs/es/dianedate_es.html");
+const FR_HTML = path.join(ROOT, "outputs/fr/dianedate_fr.html");
+const TW_HTML = path.join(ROOT, "outputs/tw/dianedate_tw.html");
 
 const common = [
   "I've already read them. I'll get straight on with the game.",
@@ -95,7 +100,7 @@ const saturdayTheatre = common.concat([
   "You stand up to leave the theatre.",
   "In the meantime everyone is filing out of the auditorium.",
   "Be a gentleman and ask Diane what she wants to do.",
-  "You head for the stagedoor.",
+  "You head for the stage door.",
   "—and head towards the stage door.",
   "You wait for Molly.",
   "You wait for Molly.",
@@ -119,7 +124,7 @@ const saturdayHouse = saturdayTheatre.concat([
   "You stop in your tracks.",
   "You walk on.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "You go to the bar.",
   "You chat away.",
   "You chat away.",
@@ -171,7 +176,7 @@ const thursdayFifthBase = common.concat([
   "Thursday.",
   "On with the story!",
   "Just go there.",
-  "Say you’ve really been looking forward to seeing each other again.",
+  "Say you've really been looking forward to seeing her again.",
   "OK.",
   "A bottle of Spanish Rioja (£12)",
   "Go on to the food menu.",
@@ -282,7 +287,7 @@ const amandaBase = common.concat([
   "You stand up to leave the theatre.",
   "In the meantime everyone is filing out of the auditorium.",
   "Be a gentleman and ask Diane what she wants to do.",
-  "You head for the stagedoor.",
+  "You head for the stage door.",
   "—and head towards the stage door.",
   "You wait for Molly.",
   "You wait for Molly.",
@@ -303,7 +308,7 @@ const amandaBase = common.concat([
   "You stop in your tracks.",
   "You walk on.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "No, I’ll hold onto my luckshots.",
   "You chat together.",
   "You chat away.",
@@ -617,15 +622,15 @@ const generalRoute = common.concat([
   "Hurrah!",
   "You walk on.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "Yes, I’ll play a luckshot.",
   "OK.",
-  "She drinks her lager.",
+  "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
   "Good idea.",
   "Return to the beer garden.",
@@ -676,9 +681,9 @@ const generalThursdayRawRoute = generalThursdayBase
     "You walk on.",
     "You hurry along.",
   ])
-  .concat(generalThursdayBase.slice(generalThursdayBase.indexOf("You buy the drinks.")))
+  .concat(generalThursdayBase.slice(generalThursdayBase.indexOf("You go to the bar.")))
   .concat([
-    "Down the subway beneath the road, that will lead her back into town?",
+    "Down the subway beneath the road, which will lead her back into town?",
     "Along the passage?",
     "You pause, then move forward slowly.",
     "But then you hear footsteps again.",
@@ -837,13 +842,13 @@ const loungeTiramisu = [
   "Hurrah!",
   "But you walk on past it.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
   "Good idea.",
   "Return to the beer garden.",
@@ -996,16 +1001,16 @@ const loungePanna = [
   "Hurrah!",
   "But you walk on past it.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
-  "Good idea.",
-  "Return to the beer garden.",
+  // The theatre refusal kept the original water, so no replacement is needed.
+  "You carry on chatting.",
   "You drink up.",
   "You get ready to leave.",
   "And head for the bus stop.",
@@ -1155,16 +1160,16 @@ const loungeIce = [
   "Hurrah!",
   "But you walk on past it.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
-  "Good idea.",
-  "Return to the beer garden.",
+  // The theatre refusal kept the original water, so no replacement is needed.
+  "You carry on chatting.",
   "You drink up.",
   "You get ready to leave.",
   "And head for the bus stop.",
@@ -1360,15 +1365,15 @@ const generalSaturday = [
   "You stop in your tracks.",
   "You walk on.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "Yes, I’ll play a luckshot.",
   "OK.",
-  "She drinks her lager.",
+  "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
   "Good idea.",
   "Return to the beer garden.",
@@ -1501,7 +1506,7 @@ const phoneCallRoute = [
   "You stand up to leave the theatre.",
   "In the meantime everyone is filing out of the auditorium.",
   "Be a gentleman and ask Diane what she wants to do.",
-  "You head for the stagedoor.",
+  "You head for the stage door.",
   "—and head towards the stage door.",
   "You wait for Molly.",
   "You wait for Molly.",
@@ -1527,7 +1532,7 @@ const phoneCallRoute = [
   "You stop in your tracks.",
   "You walk on.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "No, I’ll hold onto my luckshots.",
   "You chat together.",
   "You chat away.",
@@ -1699,13 +1704,13 @@ const lootogetherRoute = [
   "Hurrah!",
   "But you walk on past it.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
   "Good idea.",
   "Return to the beer garden.",
@@ -1921,13 +1926,13 @@ const bathpeeRoute = [
   "Hurrah!",
   "But you walk on past it.",
   "You hurry along.",
-  "You buy the drinks.",
+  "You go to the bar.",
   "You go to the bar.",
   "You chat away.",
   "You chat away.",
   "You chat on.",
   "Yes, I’ll buy another round of drinks.",
-  "It’s your round, but quite a cheap one because of the special offers.",
+  "It’s your round.",
   "Cheers!",
   "Good idea.",
   "Return to the beer garden.",
@@ -2172,7 +2177,14 @@ function ending(text, lang) {
 // --- route smoke test (script entry; gallery/hidden loaders cut above this line) ---
 for (const [key, route] of Object.entries(routes)) {
   const en = captureLabelsAndTags(EN_HTML, route);
-  console.log(`OK ${key}: EN="${ending(en.text, "en")}"`);
+  const results = [`EN="${ending(en.text, "en")}"`];
+  if (!visual) {
+    for (const [lang, file] of [["cn", CN_HTML], ["es", ES_HTML], ["fr", FR_HTML], ["tw", TW_HTML]]) {
+      const translated = captureLabelsByTags(file, en.tags);
+      results.push(`${lang.toUpperCase()}="${ending(translated.text, lang)}"`);
+    }
+  }
+  console.log(`OK ${key}: ${results.join(" ")}`);
 }
 
-console.log(`Verified ${Object.keys(routes).length} ending routes (English only; read-only).`);
+console.log(`Verified ${Object.keys(routes).length} ending routes ${visual ? "(English only; read-only)" : "across en/cn/tw/es/fr (read-only)"}.`);

@@ -7,7 +7,7 @@ This is the English-only visual experiment for *A Date With Diane*. The text edi
 | Text edition | `/Users/apple/Documents/ADWD` | `https://github.com/laimallama/a-date-with-diane.git` |
 | Visual experiment | `/Users/apple/Documents/ADWD-visual` | `https://github.com/laimallama/a-date-with-diane-visual.git` |
 
-Keep the repositories separate. Shared English runtime fixes should be applied to both English source files; visual presentation changes belong here. A local change does not authorize committing or pushing.
+Keep the repositories separate. ADWD owns shared English content; the sync command imports it here. Visual presentation changes belong here. A local change does not authorize committing or pushing.
 
 ## Playing
 
@@ -35,17 +35,21 @@ node maintenance/verify_ending_routes.js
 node maintenance/write_hidden_scenes.js
 node maintenance/build_gallery_data.js --check
 node maintenance/build_visual_edition.js --check
+node maintenance/sync_visual_edition.js --check
+node maintenance/write_transcripts.js --check
 ```
 
-`verify_project.js` checks all 45 embedded Gallery routes, exact Back/forward replay, guide progress, Skip, location regression cases, HTML metadata, JavaScript syntax, and generated-file consistency. Its DOM stub does not verify browser layout or animation timing.
+`verify_project.js` checks all 45 embedded Gallery routes in both the companion and generated visual core, exact Back/forward replay, guide progress, Skip, numerical state parity, location cases, HTML metadata, JavaScript syntax, and generated-file consistency. It also checks shared content against ADWD and all 45 English transcripts. Its DOM stub does not execute visual adapter behavior or verify browser layout or animation timing.
 
-After editing route definitions, rebuild in this order:
+For shared English story/runtime, route, wiki, transcript, or maintenance changes, edit canonical ADWD first and refresh its affected generated files. Then, from either checkout:
 
 ```bash
-node maintenance/build_gallery_data.js
-node maintenance/write_transcripts.js
-node maintenance/build_visual_edition.js
+node maintenance/sync_visual_edition.js
 node maintenance/verify_project.js
 ```
 
-After an English runtime or presentation-only edit, rebuild the visual edition and run the verifier. Do not edit the generated visual HTML directly. Transcript generation validates routes before overwriting its managed English transcript files; unrelated files are preserved. The commands resolve project inputs relative to their script location.
+Also run ADWD's verifier after shared changes. After a presentation-only edit, run `build_visual_edition.js` and this verifier. Normal visual builds synchronize shared English content first. Do not edit the generated visual HTML directly.
+
+Synchronization copies only the managed English game, wiki, transcripts, English Gallery snapshot, and shared maintenance scripts. It preserves `visual/`, `assets/`, the visual builder, and unrelated files. The first sync adopts canonical content; later syncs use `maintenance/shared_content_state.json` to reject independently changed shared targets before writes. Reconcile such edits into ADWD before syncing. Nothing is automatically committed or pushed.
+
+Default paths are sibling folders `ADWD` and `ADWD-visual`; override them with `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT`. An isolated clone can use `build_visual_edition.js --local-only` and `verify_project.js --local-only` to work with its carried snapshot, which does not verify synchronization against ADWD. All commands resolve project inputs relative to their script location.

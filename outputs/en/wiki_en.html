@@ -70,11 +70,20 @@ a:hover { color: var(--accent-dark); }
   padding: 36px 0;
 }
 .game-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+  background: var(--body-bg-wash);
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 .theme-toggle-button {
   box-sizing: border-box;
@@ -91,6 +100,7 @@ a:hover { color: var(--accent-dark); }
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
+  touch-action: manipulation;
   background: transparent;
   color: var(--muted);
 }
@@ -104,6 +114,9 @@ a:hover { color: var(--accent-dark); }
 }
 #box.wiki-box {
   width: 100%;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(22px, 4vw, 44px);
   border: 1px solid var(--line);
   background: var(--paper);
@@ -210,13 +223,16 @@ ol.wiki-articles li:last-child {
 }
 ol.wiki-articles li a {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: .75rem;
-  padding: 8px 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   color: var(--ink);
   font-size: 1rem;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
 }
 ol.wiki-articles li a::before {
   content: counter(wiki-art, decimal-leading-zero);
@@ -320,6 +336,7 @@ ol.wiki-articles li a:focus-visible {
   line-height: 1.35;
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
 }
 @media (hover: hover) and (pointer: fine) {
   .wiki-back-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
@@ -409,7 +426,7 @@ button:focus,
     <tr><td>The Pavilion</td><td>Pub and beer garden at the path end by the bus terminus; offer pattern inverted relative to the Golden Stream; door staff at closing</td></tr>
     <tr><td>Pisa Pizzeria</td><td>Restaurant in the theatre building; free jug of water with meals</td></tr>
     </table>
-    <p>The path between the theatre and the Pavilion includes a council toilet block (signed 9 a.m. to 9 p.m., often closed earlier on Saturdays), a burger van, a waterfall feature, a bandstand, a skip, a bridge, towpath access, and stretches of bushes approximately four feet high.</p>
+    <p>The path between the theatre and the Pavilion includes a council toilet block (signed 9 a.m. to 9 p.m.; the attendant sometimes locks later, and often earlier on Saturdays), a burger van, a waterfall feature, a bandstand, a skip, a bridge, towpath access, and stretches of bushes approximately four feet high.</p>
     <h3>Travel and festivals</h3>
     <p>Residents commonly leave town for music festivals (including Glastonbury and the Isle of Wight) and for holidays in Italy, Greece, and elsewhere.</p>
     <h2>Religion and civic buildings</h2>
@@ -478,7 +495,7 @@ button:focus,
     <p>Ellison has a long-standing reluctance to admit an urgent need to urinate in company. She tends to wait for a socially convenient moment before excusing herself, and such moments do not always occur in time. Consequences have included returning home with wet underwear, leaking into tights on public transport, urinating behind the bins at the rear of the family house, and holding through lessons and meals until the last possible moment.</p>
     <p>She sometimes recounts selected episodes to people she trusts. These include Freshers’ Week at the age of eighteen, when heavy drinking left her with an urgent need to urinate on the way back to halls and she lost control in her jeans in the lobby while a friend fumbled for the keys, and a hen weekend in the Netherlands in which friends used a men’s urinal while she, wearing trousers, could not do the same; after delaying because someone produced a camera, she eventually urinated behind a lorry. Routine private accidents are not treated as public anecdotes.</p>
     <h3>Friends</h3>
-    <p>Molly Yates has been her closest friend since school. The two travel to Italy in most years. Venice is Ellison’s preferred destination; a recent journey included Naples, Sorrento, and Capri by train. An earlier holiday in Greece was unsatisfactory because of heat and poor toilet provision. In summer they discuss watersports; Ellison likes water-skiing, and Yates usually arranges bookings. Meeting Yates after <em>Outside Edge</em> takes priority over other end-of-evening plans.</p>
+    <p>Molly Yates has been her closest friend since school. The two travel to Italy in most years. Venice is Ellison’s preferred destination; a recent journey included Naples and Sorrento, followed by a boat trip to Capri. An earlier holiday in Greece was unsatisfactory because of heat and poor toilet provision. In summer they discuss watersports; Ellison likes water-skiing, and Yates usually arranges bookings. Meeting Yates after <em>Outside Edge</em> takes priority over other end-of-evening plans.</p>
     <p>Neil Cooper, a former school-bus acquaintance who later worked at a local garage, is still someone she nods to in town. A family friend taught her chess at about the age of fifteen. She remembers cider at lunch and an uncomfortable situation in a private house, and declines to play chess at Simon Hartley’s house.</p>
     <p>Debbie Croft lives on the same street. Chloe Hollis lives on a nearby turning. Neither is a close friend.</p>
     <h3>Relationships</h3>
@@ -494,7 +511,7 @@ button:focus,
       <p>God, I was busting. Thought I was going to wee myself on stage. All in the name of art.</p>
       <footer> – <cite>Molly Yates</cite></footer>
     </blockquote>
-    <p><strong>Molly Yates</strong> (born spring 1979) is a 25-year-old actress from Welbourne and the closest friend of Diane Ellison. She appears in a cameo role in <em>Outside Edge</em> at the Waterfront Theatre during the production’s final week.</p>
+    <p><strong>Molly Yates</strong> (born spring 1980) is a 25-year-old actress from Welbourne and the closest friend of Diane Ellison. She appears in a cameo role in <em>Outside Edge</em> at the Waterfront Theatre during the production’s final week.</p>
     <h2>Early life and family</h2>
     <p>Yates attended the same comprehensive school as Diane Ellison and performed with her in the Welbourne Players. She was more persistent than Ellison about continuing with acting after school. She did not take a university degree. Her mother, June Yates, lives further from the town centre than the Ellison family, in a terrace house. Her father left when she was twelve; subsequent contact has been intermittent.</p>
     <p>After school she worked in youth theatre, lived for a period in shared housing in Manchester, attended unpaid auditions, and appeared in at least one television commercial.</p>

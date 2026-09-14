@@ -42,6 +42,9 @@ function loadGame(file) {
   assert.match(html, /^<!DOCTYPE html>/i, 'Playable document needs standards mode');
   assert.match(html, /<html lang="[^"]+">/);
   assert.match(html, /<title>[^<]+<\/title>/);
+  assert.match(html, /\.gallery-scroll\s*\{/, 'Gallery list must keep a scroll pane');
+  assert.match(html, /--gallery-num-w:\s*1\.85rem/, 'Gallery numbers need a reserved column');
+  assert.match(html, /\.gallery-row\s*\{[\s\S]*?display:\s*grid/, 'Gallery rows must stack as a grid, not wrap as chips');
   const nodes = new Map([['box', element()]]), storage = new Map();
   const document = {
     readyState: 'loading', body: element('body'), documentElement: element('html'), activeElement: null,

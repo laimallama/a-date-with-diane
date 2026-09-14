@@ -543,6 +543,49 @@ a:hover { color: var(--accent-dark); }
   cursor: pointer;
   touch-action: manipulation;
 }
+.gallery-close:hover {
+  border-color: var(--hover-border);
+  background: var(--choice-hover);
+}
+.gallery-scroll {
+  overflow-y: auto;
+  padding: 4px 20px 20px;
+}
+.gallery-section h3 {
+  margin: 16px 0 6px;
+  font-size: .95rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-list {
+  --gallery-num-w: 1.85rem;
+  --gallery-num-gap: 0.35rem;
+}
+.gallery-row {
+  -webkit-appearance: none;
+  appearance: none;
+  display: grid;
+  grid-template-columns: var(--gallery-num-w) minmax(0, 1fr) auto;
+  column-gap: var(--gallery-num-gap);
+  align-items: baseline;
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 4px 10px 2px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .95rem;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
 .gallery-index {
   width: var(--gallery-num-w);
   text-align: right;

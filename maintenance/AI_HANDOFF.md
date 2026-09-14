@@ -140,7 +140,8 @@ Do not recreate bilingual dictionaries or `aligned_text.json` in this tree.
 | `check_endings.js` | Shared early-bush base + helpers |
 | `replay_route.js` | Replay one click-path against an HTML file (helper for `check_endings.js`) |
 | `gallery_data.json` | Generated Gallery snapshot (don’t hand-edit) |
-| `build_wiki_html.js` / `build_single_wiki.js` | Wiki builders (English in this tree) |
+| `build_visual_edition.js` | Inject visual chrome into the English playable; `--check` is read-only; `--local-only` skips upstream sync |
+| `bake_wetting_oneshot.py` / `strip_foot_shadows.py` | One-off sprite bake tools; not a game repair step |
 | `sync_visual_edition.js` | Import canonical English content/tools from ADWD and rebuild; `--check` is read-only |
 | `shared_content_state.json` | Generated hashes of last-synced managed content; do not hand-edit |
 | `test_visual_sync.js` | Isolated tests of sync scope, conflicts, read-only checks, and invalid inputs |

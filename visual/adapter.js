@@ -692,10 +692,6 @@
     }, 40);
   }
 
-  function startBladderDrain(fromMl, toMl) {
-    startBladderDrainLinear(fromMl, toMl);
-  }
-
   /** Resolve beat clip id → filename for a cast (peeB falls back to peeA). */
   function resolveClipFile(castKey, clipId) {
     clipId = clipId || "peeA";
@@ -999,16 +995,6 @@
       });
   }
 
-  function playWettingThenIdle(scene) {
-    playPeeBeat(scene, {
-      mode: "solo",
-      keys: [scene.cast.primary || "diane"],
-      clip: "wetting",
-      outcome: "wet",
-      label: "Wetting",
-    }, null, false);
-  }
-
   // Scene metadata must refresh on animated pages too, including Back from a farewell.
   function syncSceneLabels(scene) {
     if (el.stage) el.stage.setAttribute("data-location", scene.location.id);
@@ -1073,16 +1059,6 @@
     var day = root.ADWDSceneMap && root.ADWDSceneMap.dayLabel ? root.ADWDSceneMap.dayLabel() : "";
     var titlePhase = !tag || tag === "start" || /^(start1|tuesdaydate|thursdaydate|saturdaydate)/.test(tag);
     brand.textContent = (!titlePhase && day) ? day : "A Date with Diane";
-  }
-
-  function detectWetFromBox() {
-    /* Disabled: story often mentions wetting hypothetically; caused false accidents. */
-    return false;
-  }
-
-  /** @deprecated — use ADWDSceneMap.isWetBeat */
-  function isAccidentTag(tag) {
-    return !!(root.ADWDSceneMap && root.ADWDSceneMap.isWetBeat && root.ADWDSceneMap.isWetBeat(tag));
   }
 
   function afterGo(tag) {

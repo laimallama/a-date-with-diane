@@ -596,11 +596,11 @@ function buildDefinitions(routes) {
       stem: "06_diane_slips_away_while_watching_molly",
       base: "mollyBrunoTowpathHigh",
       title: {
-        en: "Diane Slips Away While Molly Pees",
-        cn: "莫莉撒尿时黛安悄悄离开",
-        es: "Diane se escapa mientras Molly hace pis",
-        fr: "Diane s'éclipse pendant que Molly fait pipi",
-        tw: "莫莉撒尿時黛安悄悄離開"
+        en: "Diane Sneaks a Pee While You Watch Molly",
+        cn: "你偷看莫莉时黛安偷偷去撒尿",
+        es: "Diane se escapa a hacer pis mientras miras a Molly",
+        fr: "Diane va faire pipi en cachette pendant que vous regardez Molly",
+        tw: "你偷看莫莉時黛安偷偷去撒尿"
       },
       tags: ["riverside13", "luckytrip4", "luckytrip4a", "luckytrip4b", "luckytrip4c", "luckytrip4d"],
     },

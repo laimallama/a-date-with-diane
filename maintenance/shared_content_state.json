@@ -2,10 +2,10 @@
   "version": 1,
   "source": "ADWD English edition",
   "files": {
-    "outputs/en/dianedate_en.html": "5f7c0ab9a0335d922f21a905d8bcf6a78d9b670c2fbb61288252b1b6bfabcd28",
+    "outputs/en/dianedate_en.html": "462ac3f1bba4d4a96be0b910add54174b52df15d42175f41319ed1a1b2dcef25",
     "outputs/en/wiki_en.html": "baf27da162c38c61f30c16654ebd9b1c6f0e57c91eabe4511670997b60b7e15e",
     "maintenance/verify_ending_routes.js": "95d438bc8001e703cf1078d3e9548b1c1a388e68d4d5e563292e347997929b94",
-    "maintenance/write_hidden_scenes.js": "037fa7a135c287bd50be58969a29acc1cfdc3623dd336a56760e5defffefa686",
+    "maintenance/write_hidden_scenes.js": "2635a8618d24d5fc18d365261e5787f4777b0b1440a0238645dbea65da2c74ea",
     "maintenance/check_endings.js": "841bc15dee3dcb7ed3fe13c70a3ca8660f01f90bc2e923b167fa6083f90de098",
     "maintenance/replay_route.js": "6e114db774cf5485a319d458c622a75b71baf37de6f652a83be6c36eb218cc6f",
     "maintenance/build_gallery_data.js": "fa638c4942079f096bd74c87270049c0e7539ff4a83db545ce21a837259073c4",
@@ -33,7 +33,7 @@
     "outputs/en/transcripts/hidden_scenes/02b_portaloo_direct_en.txt": "45ddda1be0676fc48f3937a31d3258988a3409847d8859bc8f6f16059700b795",
     "outputs/en/transcripts/hidden_scenes/03_bridge_en.txt": "4223679a673b4471c59286ee8ee25f152273eda229ac12777fad7639524ace73",
     "outputs/en/transcripts/hidden_scenes/04a_molly_skip_en.txt": "44d3f88e162b0e0ed3b13727122243cad2b47fca9a1aa60fa5b689de2dc3e506",
-    "outputs/en/transcripts/hidden_scenes/04b_diane_slips_en.txt": "c5313ff406ab8ca51fc6081468e3ad232c494f3004559c9a0d8830afac776026",
+    "outputs/en/transcripts/hidden_scenes/04b_diane_slips_en.txt": "3f9721b8fa5ba4671dbb5d8ee1c777e7783863a70bf17e0cb2c113958afe1499",
     "outputs/en/transcripts/hidden_scenes/05a_bushes_diane_en.txt": "bcf8e6a021a57e4e7320ff8cceb70a4d9109009c9513bcd734642040d1b935d0",
     "outputs/en/transcripts/hidden_scenes/05b_bushes_together_en.txt": "fdaed276b19aa40518d133c0f1836ef9cf4261c862dc605ba621532e1af52e40",
     "outputs/en/transcripts/hidden_scenes/06_towpath_steps_en.txt": "9be191381926de327c5659f9ee968cacb96d9fb96486f266a085f523ddc8fdeb",
@@ -58,6 +58,6 @@
     "outputs/en/transcripts/hidden_scenes/14a_loo_follow_en.txt": "b7be1a3b448687dda018e443195522917bc9a5c491153ad8fbcd7e6a1cad96be",
     "outputs/en/transcripts/hidden_scenes/14b_bath_pee_en.txt": "dfde6cf180fec084cdd38c54c7cbfeea4db72156b1776487317d07223fea89d0",
     "outputs/en/transcripts/hidden_scenes/15_phone_call_en.txt": "7eb9913843573658d72a082d275e3189ea8d170967c9f5e4e7bebfbeb4fa562c",
-    "maintenance/gallery_data.json": "bac0721e2a31cdc48e6121b86041f0f4d82f7bb1bcbc9af1a544f37c2f3ac596"
+    "maintenance/gallery_data.json": "d9826e8847b3801842e0f0d6718cce7cb800296060f75fc43a637ff4eb940284"
   }
 }

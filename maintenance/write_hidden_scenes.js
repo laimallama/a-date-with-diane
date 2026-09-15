@@ -584,11 +584,11 @@ function buildDefinitions(routes) {
       stem: "05_molly_bruno_towpath",
       base: "mollyBrunoTowpath",
       title: {
-        en: "Watching Molly Behind the Skip",
-        cn: "偷看莫莉在废料箱后面撒尿",
-        es: "Ver a Molly detrás del contenedor de obra",
-        fr: "Regarder Molly derrière la benne de chantier",
-        tw: "偷看莫莉在工地貨櫃後面撒尿"
+        en: "Molly Pees Behind the Skip",
+        cn: "莫莉在废料箱后面撒尿",
+        es: "Molly hace pis detrás del contenedor de obra",
+        fr: "Molly fait pipi derrière la benne de chantier",
+        tw: "莫莉在工地貨櫃後面撒尿"
       },
       tags: ["riverside13", "luckytrip4", "luckytrip4a", "luckytrip4b"],
     },
@@ -596,11 +596,11 @@ function buildDefinitions(routes) {
       stem: "06_diane_slips_away_while_watching_molly",
       base: "mollyBrunoTowpathHigh",
       title: {
-        en: "Diane Slips Away While You Watch Molly",
-        cn: "你偷看莫莉时黛安也悄悄离开",
-        es: "Diane se escapa mientras miras a Molly",
-        fr: "Diane s'éclipse pendant que vous regardez Molly",
-        tw: "你偷看莫莉時黛安也悄悄離開"
+        en: "Diane Slips Away While Molly Pees",
+        cn: "莫莉撒尿时黛安悄悄离开",
+        es: "Diane se escapa mientras Molly hace pis",
+        fr: "Diane s'éclipse pendant que Molly fait pipi",
+        tw: "莫莉撒尿時黛安悄悄離開"
       },
       tags: ["riverside13", "luckytrip4", "luckytrip4a", "luckytrip4b", "luckytrip4c", "luckytrip4d"],
     },
@@ -620,11 +620,11 @@ function buildDefinitions(routes) {
       stem: "08_riverside_towpath_landing",
       base: "riversideEmergency",
       title: {
-        en: "Diane Cannot Wait on the Towpath Steps",
-        cn: "黛安在河边台阶上憋不住",
-        es: "Diane no aguanta en las escaleras del sendero",
-        fr: "Diane ne tient plus dans les marches du chemin de halage",
-        tw: "黛安在河邊台階上憋不住"
+        en: "Diane Pees on the Towpath Steps",
+        cn: "黛安在河边台阶上小便",
+        es: "Diane orina en las escaleras del sendero",
+        fr: "Diane fait pipi dans les marches du chemin de halage",
+        tw: "黛安在河邊台階上尿尿"
       },
       tags: ["helpdiane2a", "together1", "together1a", "together1b"],
     },
@@ -716,11 +716,11 @@ function buildDefinitions(routes) {
       stem: "28_luckshot_brunette_camper",
       base: "luckshotBrunetteBus",
       title: {
-        en: "Spying on the Brunette Behind the Camper Van",
-        cn: "偷看房车后面的褐发女生",
-        es: "Espiar a la morena detrás de la autocaravana",
-        fr: "Espionner la brune derrière le camping-car",
-        tw: "偷看房車後面的褐髮女生"
+        en: "The Brunette Pees Behind the Camper Van",
+        cn: "褐发女生在房车后面撒尿",
+        es: "La morena hace pis detrás de la autocaravana",
+        fr: "La brune fait pipi derrière le camping-car",
+        tw: "褐髮女生在房車後面撒尿"
       },
       tags: ["luckytrip7", "carparkalone", "carpark2", "carpark3"],
     },

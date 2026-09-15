@@ -169,7 +169,7 @@ Identical English strings can have different translations in different contexts.
 - **Reduced motion / zoom / touch:** `prefers-reduced-motion: reduce` skips the screen-fade, Gallery overlay transitions, visual GIF loops (still PNGs), JS drain/puddle clocks, and sprite tremor. Do not set `user-scalable=no` or a maximum scale. Keep 44px tap targets and `touch-action: manipulation` on controls so pinch-zoom still works on the page. Wiki article lists wrap; long wiki pages keep a sticky Dark Mode control.
 
 **Gallery names and hover**
-- Leaf titles keep proper names even if the group already names that person (*Watching Molly…*, *the Brunette…*, *Diane Pees in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject.
+- Leaf titles keep proper names even if the group already names that person (*Molly Pees Behind the Skip*, *the Brunette…*, *Diane Pees in the Bath*, *Chloe Wets Her Knickers*). Do not replace a name with *her/she* as the scene subject.
 - Chloe’s group is singular **Chloe Consolation Prize** (two variants of one prize, like Amanda); Outdoor / Lounge stay plural.
 - Gallery rows hover/focus-visible with `--choice-hover` wash **and** `--accent` text (wine `#9b2f3f` light / gold dark — same token family as links/CTAs; brighter than heading `--accent-dark` so light-mode hover reads clearly). Rows are `appearance: none` buttons so WebKit honours `color`. Open groups: no wash — chevron ▾ plus revealed children mark open; wash is hover-only.
 

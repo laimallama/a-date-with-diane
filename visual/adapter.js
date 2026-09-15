@@ -202,8 +202,8 @@
         else if (ml > 600 && pct < 68) pct = 74;
         // Solo skip voyeur: blad already >600 to unlock; 4 leads straight into 4a
         if (/^luckytrip4a?$/.test(tag) && pct < 88) pct = 90;
-        // Under-bridge duo: urgent but less than Diane — Desperate floor
-        if (/^underbridge|^luckytrip3$/.test(tag) && pct < 68) pct = 74;
+        // Under-bridge wait / Diane's pee only — not Molly's pee page or the reunion
+        if ((tag === "luckytrip3" || tag === "underbridge") && pct < 68) pct = 74;
         if (/^(stagedoor|foyerbar|pubdrink)/.test(tag) && pct < 68) pct = 74;
       }
       return bandFromPct(pct);

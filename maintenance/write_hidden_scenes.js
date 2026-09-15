@@ -597,10 +597,10 @@ function buildDefinitions(routes) {
       base: "mollyBrunoTowpathHigh",
       title: {
         en: "Diane Sneaks a Pee While You Watch Molly",
-        cn: "你偷看莫莉时黛安偷偷去撒尿",
+        cn: "你偷看莫莉时黛安悄悄去撒尿",
         es: "Diane se escapa a hacer pis mientras miras a Molly",
         fr: "Diane va faire pipi en cachette pendant que vous regardez Molly",
-        tw: "你偷看莫莉時黛安偷偷去撒尿"
+        tw: "你偷看莫莉時黛安悄悄去撒尿"
       },
       tags: ["riverside13", "luckytrip4", "luckytrip4a", "luckytrip4b", "luckytrip4c", "luckytrip4d"],
     },

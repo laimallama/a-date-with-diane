@@ -1013,7 +1013,7 @@ const clothingClauses = [
   {
     "node": "lootogether1",
     "branch": "always",
-    "thursday": "<LI>Standing right in front of you she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her light blue knickers just above them.",
+    "thursday": "<LI>Standing right in front of you she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.",
     "tuesday": "<LI>Standing right in front of you she reaches up under her skirt, fumbles for a second, then pulls down her pink knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees.",
     "otherwise": "<LI>Standing right in front of you she reaches up under her dress, fumbles for a second, then pulls down her white knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees."
   },
@@ -1026,7 +1026,7 @@ const clothingClauses = [
   {
     "node": "ontoilet1",
     "branch": "squat",
-    "thursday": "<LI>She pulls off a piece of tissue and quickly wipes herself, then stands and pulls on her light blue knickers.",
+    "thursday": "<LI>She pulls off a piece of tissue and quickly wipes herself, then stands and pulls on her sky-blue knickers.",
     "tuesday": "<LI>She pulls off a piece of tissue and quickly wipes herself, then stands and pulls on her pink knickers.",
     "otherwise": "<LI>She pulls off a piece of tissue and quickly wipes herself, then stands and pulls on her white knickers."
   },

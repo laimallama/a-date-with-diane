@@ -29,8 +29,4 @@ Transparent GIF animation assets for the visual edition.
 
 **Shared style (all clips):** 398×398, **10 fps** (100 ms/frame), transparency index 0, nearest-neighbour upscale from source PNG frames. Each live GIF also has a matching `*.still.png` first-frame still. The visual adapter uses those stills when the user prefers reduced motion.
 
-Live puddles in the visual shell use `assets/fx/` + `visual/puddle-sync.js` (frame-locked to pee/wet clips).
-
-## Archive (not used in-game)
-
-`_archive/` — short **original** pee/wet one-shots plus puddle/stream FX, kept for reference. See `_archive/README.md`.
+Live puddles in the visual shell use `assets/fx/grow_frames/` PNG banks plus `assets/fx/puddle_meta.json`, driven by `visual/puddle-sync.js` (frame-locked to pee/wet clips).

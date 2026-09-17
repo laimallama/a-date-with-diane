@@ -1,10 +1,10 @@
 # AI handoff — A Date With Diane
 
-Read this before editing. Ship text lives in `outputs/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
+Read `README.md` and this file before editing. Ship text lives in `outputs/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
 
 ## Required visual-edition synchronization
 
-The owner requires every shared English content change to reach the separate ADWD-visual checkout. This repository is canonical for the English story/runtime, Gallery routes, wiki, transcripts, and shared maintenance scripts. After the applicable language edits and generated-file refreshes, run `node maintenance/sync_visual_edition.js`, then run `verify_project.js` in both repositories. The sync command rebuilds the generated visual page. This is part of completing shared changes, not an optional later task.
+The owner requires every shared English content change to reach the separate ADWD-visual checkout. This repository is canonical for the English story/runtime, Gallery routes, wiki, transcripts, and shared maintenance scripts. After the applicable language edits and generated-file refreshes, run `node maintenance/sync_visual_edition.js`, then run `verify_project.js` in both repositories. The sync command rebuilds the generated visual page. This is part of completing shared changes, not an optional later task. Do not stop with only the text checkout updated.
 
 Normal visual builds also synchronize first. Both verifiers check shared file equality; `sync_visual_edition.js --check` additionally checks the generated visual output without writing. Keep visual-only code and assets in ADWD-visual. The visual tree stays English-only; do not copy the translation index or bilingual rendering tools there.
 

@@ -8,7 +8,7 @@ This tree is **ADWD-visual**, not the settled text edition.
 
 **What this is not:** the finished five-language HTML text game. That lives at `/Users/apple/Documents/ADWD` and https://github.com/laimallama/a-date-with-diane.git (old / settled versions). This repository has its own origin, `https://github.com/laimallama/a-date-with-diane-visual.git`. Do not push visual work to the text-edition repository.
 
-Read this before editing. Playable English lives in `outputs/en/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.)
+Read `README.md`, this file, and `visual/README.md` before editing. Playable English lives in `outputs/en/`. Toolkit lives in `maintenance/`. (Trailing `/` marks a folder; omit it for files.) After presentation-only changes, run this repository’s verifier and the relevant browser checks.
 
 ## Required synchronization with ADWD
 

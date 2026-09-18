@@ -1,6 +1,6 @@
-# A Date With Diane (Visual)
+# A Date with Diane (Visual)
 
-This is the English-only visual experiment for *A Date With Diane*. The text edition, with five languages and bilingual variants, is maintained separately in `/Users/apple/Documents/ADWD`.
+This is the English-only visual experiment for *A Date with Diane*. The text edition, with five languages and bilingual variants, is maintained separately in `/Users/apple/Documents/ADWD`.
 
 | Project | Local folder | Configured origin |
 |---|---|---|

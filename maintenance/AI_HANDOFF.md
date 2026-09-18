@@ -2,7 +2,7 @@
 
 This tree is **ADWD-visual**, not the settled text edition.
 
-**What this is:** English-only sandbox for a visual / visual-novel take on *A Date With Diane*. Work stays in English (`outputs/en/`). Do not port CN/TW/ES/FR or bilingual files here unless the owner asks.
+**What this is:** English-only sandbox for a visual / visual-novel take on *A Date with Diane*. Work stays in English (`outputs/en/`). Do not port CN/TW/ES/FR or bilingual files here unless the owner asks.
 
 **Playable visual edition:** `outputs/en/dianedate_visual_en.html` (rebuild with `node maintenance/build_visual_edition.js`). Story/Gallery logic is still the text game; `visual/` holds shell CSS, scene→cast map, effects synchronizer, and the navigation adapter. Sprites: `assets/{diane,molly,debbie,amanda,chloe}/`.
 
@@ -38,7 +38,7 @@ Gallery currently documents **15 ending leaves** and **30 hidden-scene leaves** 
 
 All Gallery route label sequences live inline in `verify_ending_routes.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
-**Wiki pack** (not playable): [`outputs/en/wiki_en.html`](../outputs/en/wiki_en.html). Lead names: Simon Hartley (27), Diane Ellison (25). Neutral encyclopedic register; body/sexual subjects use clinical terms (`urinate`, `urinary urgency`, bladder, lose control) — not slang. Backstory only; do not retell playable branches; do not spell links from wiki traits to in-game beats. Ages: `born …` + `N-year-old` / `aged N` only (never `25 in 2005`). No em dashes and no colons in wiki prose (use a new sentence or a comma construction instead). Character H2s when relevant: Early life and family; Education; Career; Personal life; Residence. Under Personal life reuse the same H3 labels for the same topics (`Friends`, `Relationships`, `Sexual interests`, `Urinary habits` / `Urinary accidents`, `Hobbies` as needed). `Friends` and `Relationships` stay separate (`Relationships` = romantic/sexual partners). Category H3s take the plural even when the article mainly covers one example. The English wiki is the single `outputs/en/wiki_en.html` file. Work/game titles use italics (`<em>A Date With Diane</em>`, `<em>Outside Edge</em>`); article-subject names in leads use bold (`<strong>Welbourne</strong>`).
+**Wiki pack** (not playable): [`outputs/en/wiki_en.html`](../outputs/en/wiki_en.html). Lead names: Simon Hartley (27), Diane Ellison (25). Neutral encyclopedic register; body/sexual subjects use clinical terms (`urinate`, `urinary urgency`, bladder, lose control) — not slang. Backstory only; do not retell playable branches; do not spell links from wiki traits to in-game beats. Ages: `born …` + `N-year-old` / `aged N` only (never `25 in 2005`). No em dashes and no colons in wiki prose (use a new sentence or a comma construction instead). Character H2s when relevant: Early life and family; Education; Career; Personal life; Residence. Under Personal life reuse the same H3 labels for the same topics (`Friends`, `Relationships`, `Sexual interests`, `Urinary habits` / `Urinary accidents`, `Hobbies` as needed). `Friends` and `Relationships` stay separate (`Relationships` = romantic/sexual partners). Category H3s take the plural even when the article mainly covers one example. The English wiki is the single `outputs/en/wiki_en.html` file. Work/game titles use italics (`<em>A Date with Diane</em>`, `<em>Outside Edge</em>`); article-subject names in leads use bold (`<strong>Welbourne</strong>`).
 
 ## Raw HTML vs rendered text
 

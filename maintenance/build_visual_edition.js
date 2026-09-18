@@ -171,7 +171,7 @@ let html = read(SRC);
 // Title
 html = replaceRequired(html,
   /<title>[^<]*<\/title>/i,
-  "<title>A Date With Diane — Visual</title>"
+  "<title>A Date with Diane — Visual</title>"
 );
 
 // Inject visual CSS before </style> of game (append new style block before </head>)

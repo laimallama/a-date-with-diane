@@ -1,6 +1,6 @@
-# A Date With Diane (Remastered)
+# A Date with Diane (Remastered)
 
-This is a restored, cleaned, and expanded edition of the original *A Date With Diane*, an old omorashi text game.
+This is a restored, cleaned, and expanded edition of the original *A Date with Diane*, an old omorashi text game.
 
 This edition keeps the original narrative flavour while improving the playable experience: clearer wording and logic, Back with full state restore, an in-game Gallery for endings and hidden scenes (with guided highlighting and Skip to the good bit), dark mode, and five language editions.
 

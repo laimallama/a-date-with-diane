@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<title>A Date With Diane — English / 繁體中文</title>
+<title>A Date with Diane — English / 繁體中文</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -847,7 +847,7 @@ var alternateTranslations = {
   "<LI>SATURDAY: Diane wears a black-and-white patterned dress, almost like a summer frock, with pockets and a leather belt. She has a lacy white bra, white knickers, no slip and bare legs.": "<LI>週六：黛安穿著一件黑白圖案洋裝，有點像夏裝，帶口袋，還配了一條皮腰帶。她穿著白色蕾絲胸罩和白色內褲，沒有襯裙，光著腿。",
   "<LI>Molly and Amanda wear jeans.": "<LI>莫莉和阿曼達都穿牛仔褲。",
   "<LI>Debbie (the brunette) wears a miniskirt.": "<LI>黛比（那個褐髮女生）穿著迷你裙。",
-  "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>A Date With Diane</SPAN></div></STRONG></H1>": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>與黛安約會</SPAN></div></STRONG></H1>",
+  "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>A Date with Diane</SPAN></div></STRONG></H1>": "<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>與黛安約會</SPAN></div></STRONG></H1>",
   "<LI>The goal of the game is to get your girlfriend desperate on a date. It is not guaranteed! Along the way you may have other pleasures: see her take a pee, even go into the loo with her, have her tell you about a desperation experience, spot another desperate girl, etc. It's that simple. Intimacy points indicate how much she's into you, and she might abandon the date if they sink too low. She will also abandon the date if she wets herself in public, and will probably never see you again, so you mustn't let that happen.": "<LI>這個遊戲的目標是讓你的女朋友在約會時憋到尿急難耐。不過，這可不一定會成功！一路上你還可能碰到其他刺激場面：看她撒尿，甚至陪她進廁所，聽她講自己憋尿的經歷，或者撞見另一個憋得快不行的女生，等等。規則很簡單，「親密度」代表她有多喜歡你。如果親密度降得太低，她可能會直接結束約會。如果她當眾尿濕自己，她也會立刻走人——而且很可能再也不想見你了，所以千萬別讓事情失控到那一步。",
   "<LI>There are five different successful endings, or 'winning results', rated in order. See if you can get them all!": "<LI>一共有五種成功結局，也就是依等級排列的「得獎結局」。看看你能不能全部達成！",
   "<LI>There are lots of variations, so do play the game right through a few times. But on Tuesdays and Thursdays you will also find a shorter version.": "<LI>遊戲有很多不同走向，最好從頭到尾多玩幾遍。但週二和週四也會提供較短的版本。",
@@ -5288,7 +5288,7 @@ function polishStoryHtml(html) {
     .replace(/\s+/g, " ")
     .trim();
 
-  if (/^(A Date With Diane|與黛安約會|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
+  if (/^(A Date with Diane|與黛安約會|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
     return smartenHtml(html.replace(/^<h1\b/i, "<h1 class='game-title'"));
   }
   if (/^<p(?:\s[^>]*)?>\s*<strong\b[^>]*>[\s\S]*<\/strong>\s*<\/p>\s*$/i.test(html) && visible.length < 140) {
@@ -6294,7 +6294,7 @@ function polishStoryHtml(html) {
     .replace(/\s+/g, " ")
     .trim();
 
-  if (/^(A Date With Diane|與黛安約會|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
+  if (/^(A Date with Diane|與黛安約會|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
     return smartenHtml(html.replace(/^<h1\b/i, "<h1 class='game-title'"));
   }
   if (/^<p(?:\s[^>]*)?>\s*<strong\b[^>]*>[\s\S]*<\/strong>\s*<\/p>\s*$/i.test(html) && visible.length < 140) {
@@ -6571,7 +6571,7 @@ function adjpoints(d) {
 
 function 
 start() {
-s("<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>A Date With Diane</SPAN></div></STRONG></H1>");
+s("<H1><STRONG><div align='center'><SPAN style='background: #ffff00; color: #000000'>A Date with Diane</SPAN></div></STRONG></H1>");
 s("<HR>");
 s("<LI>The goal of the game is to get your girlfriend desperate on a date. It is not guaranteed! Along the way you may have other pleasures: see her take a pee, even go into the loo with her, have her tell you about a desperation experience, spot another desperate girl, etc. It's that simple. Intimacy points indicate how much she's into you, and she might abandon the date if they sink too low. She will also abandon the date if she wets herself in public, and will probably never see you again, so you mustn't let that happen.");
 c("start1", "A few notes about the game."); 

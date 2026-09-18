@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>A Date With Diane — Español</title>
+<title>A Date with Diane — Español</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -1502,7 +1502,7 @@ function polishStoryHtml(html) {
     .replace(/\s+/g, " ")
     .trim();
 
-  if (/^(A Date With Diane|与黛安约会|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
+  if (/^(A Date with Diane|与黛安约会|Una cita con Diane|Un rendez-vous avec Diane)$/i.test(visible) && /^<h1\b/i.test(html)) {
     return smartenHtml(html.replace(/^<h1\b/i, "<h1 class='game-title'"));
   }
   if (/^<p(?:\s[^>]*)?>\s*<strong\b[^>]*>[\s\S]*<\/strong>\s*<\/p>\s*$/i.test(html) && visible.length < 140) {

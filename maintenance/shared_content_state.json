@@ -2,7 +2,7 @@
   "version": 1,
   "source": "ADWD English edition",
   "files": {
-    "outputs/en/dianedate_en.html": "5050f74560d3c3dec7f70010a1424e4ecf2b0aba3077f454ce78fbf6e88b00df",
+    "outputs/en/dianedate_en.html": "d067e17b2046ca54e49bd7247da01ea8effab2dfa2d8d93b5de6b2bc52668b8b",
     "outputs/en/wiki_en.html": "84aa97559411399b5ca26e3e6b68ff0b720079780ef3ffa827b1b9244e10ac8e",
     "maintenance/verify_ending_routes.js": "95d438bc8001e703cf1078d3e9548b1c1a388e68d4d5e563292e347997929b94",
     "maintenance/write_hidden_scenes.js": "e78128caa4debf463f086a55e3374314c9395be84ae088d9c8b5df4672ef1249",
@@ -31,7 +31,7 @@
     "outputs/en/transcripts/hidden_scenes/01_theatre_en.txt": "7dcd29f53876f538020957bbedcaf09fb6c4d50f1c1fa31a8b2d1074e3b4239e",
     "outputs/en/transcripts/hidden_scenes/02a_portaloo_found_en.txt": "d41887ae6050740f02059d77f131c66e76c5fee72ef5a3f924dede51a7ea322d",
     "outputs/en/transcripts/hidden_scenes/02b_portaloo_direct_en.txt": "45ddda1be0676fc48f3937a31d3258988a3409847d8859bc8f6f16059700b795",
-    "outputs/en/transcripts/hidden_scenes/03_bridge_en.txt": "6a6e790c80a4a5be67d373dcc9c92974c2ba222f87c7acec0c9d593bfc5c2da5",
+    "outputs/en/transcripts/hidden_scenes/03_bridge_en.txt": "cf6d79655bc4579724da92346fa4fa6fe88529db1d57fb4aa0031f981f7b627f",
     "outputs/en/transcripts/hidden_scenes/04a_molly_skip_en.txt": "44d3f88e162b0e0ed3b13727122243cad2b47fca9a1aa60fa5b689de2dc3e506",
     "outputs/en/transcripts/hidden_scenes/04b_diane_slips_en.txt": "3f9721b8fa5ba4671dbb5d8ee1c777e7783863a70bf17e0cb2c113958afe1499",
     "outputs/en/transcripts/hidden_scenes/05a_bushes_diane_en.txt": "bcf8e6a021a57e4e7320ff8cceb70a4d9109009c9513bcd734642040d1b935d0",

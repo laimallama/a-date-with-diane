@@ -126,7 +126,8 @@ const metersHtml = `
             </div>
           </div>
           <div class="footer-stats">
-            <span>Luckshots<span class="coins" id="coins"></span></span>
+            <span class="luck-label">Luckshots</span>
+            <span class="coins" id="coins"></span>
             <span class="pounds">£ <strong id="pounds">100</strong></span>
           </div>
         </div>`;
@@ -171,7 +172,7 @@ let html = read(SRC);
 // Title
 html = replaceRequired(html,
   /<title>[^<]*<\/title>/i,
-  "<title>A Date with Diane — Visual</title>"
+  "<title>A Date with Diane (Visual)</title>"
 );
 
 // Inject visual CSS before </style> of game (append new style block before </head>)

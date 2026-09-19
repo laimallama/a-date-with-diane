@@ -141,6 +141,9 @@ body.visual-edition .climax-skip-button {
   flex-shrink: 0;
   touch-action: manipulation;
 }
+body.visual-edition .theme-toggle-button {
+  margin-left: 0;
+}
 
 body.visual-edition .visual-main {
   display: grid;
@@ -585,10 +588,11 @@ body.visual-edition .bars {
   flex: 0 0 auto;
   width: 100%;
 }
-body.visual-edition .bar-row {
+body.visual-edition .bar-row,
+body.visual-edition .footer-stats {
   display: grid;
-  grid-template-columns: 76px 1fr 40px;
-  gap: 10px;
+  grid-template-columns: 76px 1fr 3.25rem;
+  column-gap: 10px;
   align-items: center;
   font-size: 0.92rem;
   color: var(--muted);
@@ -610,16 +614,22 @@ body.visual-edition .bar-fill {
 body.visual-edition .bar-row.shy .bar-fill { background: var(--em-color, #6f4a58); }
 body.visual-edition .bar-row b { color: var(--ink); text-align: right; }
 body.visual-edition .footer-stats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.92rem;
   padding-top: 4px;
   flex: 0 0 auto;
   width: 100%;
-  color: var(--muted);
 }
-body.visual-edition .coins { display: inline-flex; gap: 5px; margin-left: 8px; }
+body.visual-edition .luck-label { justify-self: start; }
+body.visual-edition .coins {
+  display: inline-flex;
+  gap: 5px;
+  margin-left: 0;
+  justify-self: start;
+}
+body.visual-edition .pounds {
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
 body.visual-edition .coin {
   width: 12px; height: 12px; border-radius: 50%;
   border: 1.5px solid var(--accent-dark);

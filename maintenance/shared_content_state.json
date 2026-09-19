@@ -2,7 +2,7 @@
   "version": 1,
   "source": "ADWD English edition",
   "files": {
-    "outputs/en/dianedate_en.html": "99e9cd342fdfc2af1e17df789e85494e7f53640131d860f8ac7e9dcd2f8c53e4",
+    "outputs/en/dianedate_en.html": "5050f74560d3c3dec7f70010a1424e4ecf2b0aba3077f454ce78fbf6e88b00df",
     "outputs/en/wiki_en.html": "84aa97559411399b5ca26e3e6b68ff0b720079780ef3ffa827b1b9244e10ac8e",
     "maintenance/verify_ending_routes.js": "95d438bc8001e703cf1078d3e9548b1c1a388e68d4d5e563292e347997929b94",
     "maintenance/write_hidden_scenes.js": "e78128caa4debf463f086a55e3374314c9395be84ae088d9c8b5df4672ef1249",

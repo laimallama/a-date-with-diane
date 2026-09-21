@@ -212,7 +212,7 @@
     // No story bladder — tag heuristics. Prefer Desperate/Critical over mild Need.
     if (castKey === "debbie") {
       // Aftermath: she has already peed / walked back relieved
-      if (/^(carpark2|carpark3|peepround1|peepunderluck|gentleman)$/.test(tag)) {
+      if (/^(carpark2|carpark3|peepround1|gentleman)$/.test(tag)) {
         return bandFromPct(20);
       }
       if (/carpark|luckytrip7|watchblonde|queue1|peepround|peepunder/.test(tag)) {

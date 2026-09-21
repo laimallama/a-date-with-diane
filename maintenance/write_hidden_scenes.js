@@ -292,6 +292,31 @@ function buildDefinitions(routes) {
     "carparka3",
   ]);
 
+  // Pizza at dinner is the original catch flag under the camper van. Extra wine
+  // from that meal pushes bladder onto the riverside-toilet fork unless the
+  // later evening is a little lighter, so this walked Tuesday route skips
+  // pudding and the burger-van coffees and still reaches the together-camper
+  // choice with pizza set.
+  const camperDecisionPizza = [
+    "start1a", "start1b", "tuesdaydate", "start2", "buysth", "buywater", "buysth",
+    "gothere", "winelist", "buyrioja", "eatmeal", "buypizza", "eatmeal1",
+    "eatmeal1a", "eatmeal1b", "eatmeal1c", "eatmeal1d", "eatmeal7", "eatmeal7a",
+    "eatmeal7b", "espresso", "eatmeal7c", "gotheatre", "theatreask", "gotoo",
+    "theatre1", "theatre2", "theatre3c", "theatre4", "theatre5", "theatre6",
+    "theatre7", "holdhand1", "theatre8", "theatre9", "theatre10", "interval",
+    "interval1", "askloo", "interval2", "interval3", "act2", "act2a", "act2b",
+    "leanclose2", "act2c", "act2d", "act2e", "act2f", "act2fa", "act2g", "act2h",
+    "leavetheatre", "leavetheatre1", "stagedoor", "stagedoor1", "stagedoor2",
+    "stagedoor3", "stagedoor4", "stagedoor5a", "choosewalk", "riverside2",
+    "riverside3", "riverside7", "riverside8", "riverside9", "riverside10",
+    "riverside11", "riverside12", "riverside13a", "riverside14", "toiletopen",
+    "riverside15", "riverside16", "pavilion", "luckytrip8", "luckytrip8a",
+    "pavilion2", "pavilion3", "pavilion4", "pavilion5", "pavilion5a", "pavilion6",
+    "pavilion7", "buywaterpav", "pavilion8", "pavilion9", "notime", "busqueue",
+    "busqueue1", "busqueue2", "busqueue3", "queue1a", "queue1b", "carparka",
+    "carparka0", "carparka1", "carparka2", "carparka3",
+  ];
+
   // Non-Chardonnay bus wait: brunette slips off alone; luckshot follow (exclusive with leaf 16).
   const luckshotBrunetteBus = generalTags.slice(0, generalTags.indexOf("busqueue6") + 1);
 
@@ -498,6 +523,16 @@ function buildDefinitions(routes) {
         tw: "10：房車後選擇基礎路線"
       },
       tags: camperDecision,
+    },
+    camperDecisionPizza: {
+      name: {
+        en: "10b: Camper van decision setup (pizza)",
+        cn: "10b：房车后选择基础路线（披萨）",
+        es: "10b: Base de la decisión detrás de la autocaravana (pizza)",
+        fr: "10b : Base du choix derrière le camping-car (pizza)",
+        tw: "10b：房車後選擇基礎路線（披薩）"
+      },
+      tags: camperDecisionPizza,
     },
     hiddenCamera: {
       name: {
@@ -770,11 +805,11 @@ function buildDefinitions(routes) {
         fr: "Regarder sous le camping-car",
         tw: "從房車底下偷看"
       },
-      tags: ["peepunder", "peepunderluck"],
+      tags: ["peepunder"],
     },
     {
       stem: "22_caught_by_boyfriend",
-      base: "camperDecision",
+      base: "camperDecisionPizza",
       title: {
         en: "Caught by the Brunette's Boyfriend",
         cn: "被褐发女生的男友抓包",
@@ -782,7 +817,7 @@ function buildDefinitions(routes) {
         fr: "Surpris par le petit ami de la brune",
         tw: "被褐髮女生的男友抓包"
       },
-      tags: ["peepunder", "peepunderrisk", "gameover"],
+      tags: ["peepunder", "gameover"],
     },
     {
       stem: "19_camper_gentleman_choice",

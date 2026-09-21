@@ -8,11 +8,11 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5337,
-    "story": 4113,
-    "choice": 1212,
+    "total": 5331,
+    "story": 4110,
+    "choice": 1209,
     "variant": 12,
-    "entries": 5337
+    "entries": 5331
   },
   "entries": [
     {
@@ -46464,90 +46464,6 @@
       "source": { "node": "peepunder", "slot": 4 }
     },
     {
-      "id": "x05454",
-      "kind": "story",
-      "en": "<LI>Then you hear it—footsteps, close behind you, coming fast.",
-      "cn": "<LI>就在这时你听到了——脚步声，就在身后，越来越近。",
-      "es": "<LI>Entonces lo oyes: pasos, cerca, justo detrás de ti, acercándose deprisa.",
-      "fr": "<LI>Puis vous l’entendez : des pas, tout près, juste derrière vous, qui se rapprochent vite.",
-      "tw": "<LI>就在這時你聽到了──腳步聲，就在身後，越來越近。",
-      "source": { "node": "peepunder", "slot": 5 }
-    },
-    {
-      "id": "x05455",
-      "kind": "choice",
-      "tag": "peepunderluck",
-      "en": "Use a luckshot to duck out of sight before you're seen?",
-      "cn": "用一次幸运机会及时躲开，不被发现？",
-      "es": "¿Usar una oportunidad de suerte para esconderte antes de que te vean?",
-      "fr": "Utiliser une opportunité de chance pour vous cacher avant d’être vu ?",
-      "tw": "用一次幸運機會及時躲開，別被發現？",
-      "source": { "node": "peepunder", "slot": 6 }
-    },
-    {
-      "id": "x05456",
-      "kind": "choice",
-      "tag": "peepunderrisk",
-      "en": "Stay put and hope for the best?",
-      "cn": "待在原地，赌一把？",
-      "es": "¿Quedarte quieto y confiar en tu suerte?",
-      "fr": "Rester immobile et tenter votre chance ?",
-      "tw": "待在原地，賭一把？",
-      "source": { "node": "peepunder", "slot": 7 }
-    },
-    {
-      "id": "x05457",
-      "kind": "story",
-      "en": "<LI>You've no luckshots left. Whoever it is, you're stuck right where you are.",
-      "cn": "<LI>你已经没有幸运机会可用了。不管是谁，你都躲不掉了。",
-      "es": "<LI>No te quedan oportunidades de suerte. Sea quien sea, no puedes escapar de ahí.",
-      "fr": "<LI>Il ne vous reste plus d’opportunités de chance. Qui que ce soit, vous êtes coincé là où vous êtes.",
-      "tw": "<LI>你已經沒有幸運機會可用了。不管是誰，你都躲不掉。",
-      "source": { "node": "peepunder", "slot": 8 }
-    },
-    {
-      "id": "x05458",
-      "kind": "choice",
-      "tag": "peepunderrisk",
-      "en": "Stay put and hope for the best.",
-      "cn": "待在原地，赌一把。",
-      "es": "Quedarte quieto y confiar en tu suerte.",
-      "fr": "Rester immobile et tenter votre chance.",
-      "tw": "待在原地，賭一把。",
-      "source": { "node": "peepunder", "slot": 9 }
-    },
-    {
-      "id": "x05459",
-      "kind": "story",
-      "en": "<LI>You duck back into the shadow of the wheel just as a figure hurries past, not even glancing your way. Close call.",
-      "cn": "<LI>你迅速缩回车轮的阴影里，一个人影匆匆走过，看都没看你一眼。真是好险。",
-      "es": "<LI>Te agazapas de nuevo en la sombra de la rueda justo cuando una figura pasa deprisa, sin mirar siquiera hacia ti. Por poco.",
-      "fr": "<LI>Vous vous replies dans l’ombre de la roue juste au moment où une silhouette passe rapidement, sans même regarder de votre côté. Ça passe de justesse.",
-      "tw": "<LI>你迅速縮回車輪的陰影裡，一個人影匆匆走過，看都沒看你一眼。真好險。",
-      "source": { "node": "peepunderluck", "slot": 1 }
-    },
-    {
-      "id": "x05460",
-      "kind": "story",
-      "en": "<LI>You get up and brush yourself down, trying to look nonchalant as the girls reappear.",
-      "cn": "你站起身来，拍了拍身上的灰，竭力摆出一副若无其事的样子，就在这时女孩们从后面转了出来。",
-      "es": "Te levantas y te sacudes la ropa intentando aparentar indiferencia mientras las chicas reaparecen.",
-      "fr": "Vous vous relevez et vous époussetez, essayant d’afficher un air dégagé tandis que les filles réapparaissent.",
-      "tw": "你站起身來，拍了拍身上的灰，竭力擺出一副若無其事的樣子，就在這時女生們從後面轉了出來。",
-      "source": { "node": "peepunderluck", "slot": 2 }
-    },
-    {
-      "id": "x04189",
-      "kind": "choice",
-      "tag": "taxihome1",
-      "en": "You go to the taxi rank.",
-      "cn": "你朝出租车站走去。",
-      "es": "Te acercas a la parada de taxis.",
-      "fr": "Vous allez à la station de taxis.",
-      "tw": "你去計程車站。",
-      "source": { "node": "peepunderluck", "slot": 3 }
-    },
-    {
       "id": "x04186",
       "kind": "story",
       "en": "<LI>Suddenly there is a voice behind you. 'What the hell d'you think you are up to?' It's the brunette's boyfriend. You scramble to your feet and mumble something. He hits you and you fall to the ground. The two girls come round and look at you in disgust.",
@@ -46555,7 +46471,7 @@
       "es": "<LI>De repente oyes una voz a tu espalda. «¿Pero qué coño crees que estás haciendo?». Es el novio de la morena. Te pones de pie de un salto y mascullas algo. Te da un puñetazo y caes al suelo. Las dos chicas aparecen y te miran con cara de asco.",
       "fr": "<LI>Soudain, une voix retentit dans votre dos. « Mais qu’est-ce que vous foutez là ? » C’est le petit ami de la brune. Vous vous relevez précipitamment en bredouillant quelque chose. Il vous frappe et vous tombez à terre. Les deux filles apparaissent et vous regardent avec dégoût.",
       "tw": "<LI>突然背後傳來一個聲音：「你他媽的在幹嘛！」是那褐髮女生的男朋友。你慌忙爬起來，結結巴巴說了幾句什麼。他一拳打來，你摔倒在地。兩個女生繞過來，滿臉厭惡地盯著你。",
-      "source": { "node": "peepunderrisk", "slot": 1 }
+      "source": { "node": "peepunder", "slot": 5 }
     },
     {
       "id": "x04187",
@@ -46566,7 +46482,28 @@
       "es": "¡Ay, no!",
       "fr": "Oh là là !",
       "tw": "哎呀！",
-      "source": { "node": "peepunderrisk", "slot": 2 }
+      "source": { "node": "peepunder", "slot": 6 }
+    },
+    {
+      "id": "x05460",
+      "kind": "story",
+      "en": "<LI>You get up and brush yourself down, trying to look nonchalant as the girls reappear.",
+      "cn": "你站起身来，拍了拍身上的灰，竭力摆出一副若无其事的样子，就在这时女孩们从后面转了出来。",
+      "es": "Te levantas y te sacudes la ropa intentando aparentar indiferencia mientras las chicas reaparecen.",
+      "fr": "Vous vous relevez et vous époussetez, essayant d’afficher un air dégagé tandis que les filles réapparaissent.",
+      "tw": "你站起身來，拍了拍身上的灰，竭力擺出一副若無其事的樣子，就在這時女生們從後面轉了出來。",
+      "source": { "node": "peepunder", "slot": 7 }
+    },
+    {
+      "id": "x04189",
+      "kind": "choice",
+      "tag": "taxihome1",
+      "en": "You go to the taxi rank.",
+      "cn": "你朝出租车站走去。",
+      "es": "Te acercas a la parada de taxis.",
+      "fr": "Vous allez à la station de taxis.",
+      "tw": "你去計程車站。",
+      "source": { "node": "peepunder", "slot": 8 }
     },
     {
       "id": "x04190",

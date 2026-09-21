@@ -333,18 +333,37 @@ async function checkWiki(page, file) {
   assert.equal(metrics.reduced, true, 'Wiki check must run with reduced motion');
   assert.ok(metrics.wrap === 'normal' || metrics.wrap === 'break-spaces', `Wiki index links must wrap, got ${metrics.wrap}`);
   assert.ok(metrics.minHeight >= 44, `Wiki index links must keep a 44px tap target, got ${metrics.minHeight}`);
-  assert.equal(metrics.sticky, 'sticky', 'Wiki toolbar must stay available on long pages');
+  assert.ok(metrics.sticky === 'static' || metrics.sticky === 'relative', `Wiki toolbar must scroll with the page, got ${metrics.sticky}`);
   assert.ok(metrics.documentWidth <= metrics.width + 1, `Wiki index overflows: ${metrics.documentWidth} > ${metrics.width}`);
   await page.locator('ol.wiki-articles li a').first().click();
   await page.waitForFunction(() => {
     const active = document.querySelector('.wiki-page.active');
     return active && active.id !== 'page-index';
   });
-  const article = await page.evaluate(() => ({
-    width: innerWidth,
-    documentWidth: document.documentElement.scrollWidth
-  }));
+  const article = await page.evaluate(() => {
+    const dark = document.querySelector('.theme-toggle-button');
+    const back = document.querySelector('.wiki-back-btn');
+    const ds = dark ? getComputedStyle(dark) : null;
+    const bs = back ? getComputedStyle(back) : null;
+    return {
+      width: innerWidth,
+      documentWidth: document.documentElement.scrollWidth,
+      darkHeight: dark ? dark.getBoundingClientRect().height : 0,
+      backHeight: back ? back.getBoundingClientRect().height : 0,
+      darkFont: ds ? ds.fontSize : '',
+      backFont: bs ? bs.fontSize : '',
+      darkLine: ds ? ds.lineHeight : '',
+      backLine: bs ? bs.lineHeight : '',
+      darkPad: ds ? ds.padding : '',
+      backPad: bs ? bs.padding : ''
+    };
+  });
   assert.ok(article.documentWidth <= article.width + 1, `Wiki article overflows: ${article.documentWidth} > ${article.width}`);
+  assert.ok(article.backHeight > 0, 'Wiki article must show Back to Menu');
+  assert.equal(article.darkHeight, article.backHeight, `Wiki Dark Mode and Back to Menu heights must match (${article.darkHeight} vs ${article.backHeight})`);
+  assert.equal(article.darkFont, article.backFont, `Wiki Dark Mode and Back to Menu font-size must match (${article.darkFont} vs ${article.backFont})`);
+  assert.equal(article.darkLine, article.backLine, `Wiki Dark Mode and Back to Menu line-height must match (${article.darkLine} vs ${article.backLine})`);
+  assert.equal(article.darkPad, article.backPad, `Wiki Dark Mode and Back to Menu padding must match (${article.darkPad} vs ${article.backPad})`);
 }
 (async () => {
   for (const engine of engines) {

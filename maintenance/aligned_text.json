@@ -8,11 +8,11 @@
     "tw": "outputs/tw/dianedate_tw.html"
   },
   "counts": {
-    "total": 5331,
-    "story": 4110,
+    "total": 5341,
+    "story": 4120,
     "choice": 1209,
     "variant": 12,
-    "entries": 5331
+    "entries": 5341
   },
   "entries": [
     {
@@ -30188,6 +30188,26 @@
       "source": { "node": "excuseme1", "slot": 1 }
     },
     {
+      "id": "x05561",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm sorry, but where's the toilet?",
+      "cn": "<LI>黛安：对不起，厕所在哪儿？",
+      "es": "<LI>DIANE: Lo siento, ¿dónde está el baño?",
+      "fr": "<LI>DIANE : Je suis désolée, mais où sont les toilettes ?",
+      "tw": "<LI>黛安：對不起，廁所在哪裡啊？",
+      "source": { "node": "excuseme1", "slot": 2 }
+    },
+    {
+      "id": "x05562",
+      "kind": "story",
+      "en": "<LI>Suddenly she sits round, with her hands on her knees.",
+      "cn": "<LI>她忽然转过身来，双手按在膝盖上。",
+      "es": "<LI>De pronto se gira, con las manos en las rodillas.",
+      "fr": "<LI>Soudain, elle se tourne, les mains sur les genoux.",
+      "tw": "<LI>她忽然轉過身來，雙手按在膝蓋上。",
+      "source": { "node": "excuseme1", "slot": 3 }
+    },
+    {
       "id": "x_excuseme1_b",
       "kind": "story",
       "en": "<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?",
@@ -30195,7 +30215,107 @@
       "es": "<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?",
       "fr": "<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller aux toilettes. Où est-ce ?",
       "tw": "<LI>黛安：對不起，我得去廁所。在哪裡啊？",
-      "source": { "node": "excuseme1", "slot": 2 }
+      "source": { "node": "excuseme1", "slot": 4 }
+    },
+    {
+      "id": "x05563",
+      "kind": "story",
+      "en": "<LI>Suddenly she sits up, with her hands on her knees.",
+      "cn": "<LI>她忽然坐直身子，双手按在膝盖上。",
+      "es": "<LI>De pronto se incorpora, con las manos en las rodillas.",
+      "fr": "<LI>Soudain, elle se redresse, les mains sur les genoux.",
+      "tw": "<LI>她忽然坐直身子，雙手按在膝蓋上。",
+      "source": { "node": "excuseme1", "slot": 5 }
+    },
+    {
+      "id": "x05564",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm sorry, but where's your toilet?",
+      "cn": "<LI>黛安：对不起，你家厕所在哪儿？",
+      "es": "<LI>DIANE: Lo siento, ¿dónde está tu baño?",
+      "fr": "<LI>DIANE : Je suis désolée, mais où sont tes toilettes ?",
+      "tw": "<LI>黛安：對不起，你家廁所在哪裡啊？",
+      "source": { "node": "excuseme1", "slot": 6 }
+    },
+    {
+      "id": "x05565",
+      "kind": "story",
+      "en": "<LI>Suddenly she sits forward and looks around.",
+      "cn": "<LI>她突然坐直了身子，四处张望。",
+      "es": "<LI>De repente se inclina hacia delante y mira a su alrededor.",
+      "fr": "<LI>Soudain, elle se redresse et regarde autour d'elle.",
+      "tw": "<LI>她突然坐直了身子，四處張望。",
+      "source": { "node": "excuseme1", "slot": 7 }
+    },
+    {
+      "id": "x05566",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm sorry, but I need to go somewhere. Where's the bathroom?",
+      "cn": "<LI>黛安：对不起，我得去个地方。洗手间在哪儿？",
+      "es": "<LI>DIANE: Lo siento, pero tengo que ir a algún sitio. ¿Dónde está el baño?",
+      "fr": "<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller quelque part. Où sont les toilettes ?",
+      "tw": "<LI>黛安：對不起，我得去個地方。洗手間在哪裡？",
+      "source": { "node": "excuseme1", "slot": 8 }
+    },
+    {
+      "id": "x05567",
+      "kind": "story",
+      "en": "<LI>Suddenly she stands up and looks around.",
+      "cn": "<LI>她突然站了起来，环顾四周。",
+      "es": "<LI>De repente se pone de pie y mira a su alrededor.",
+      "fr": "<LI>Soudain, elle se lève et regarde autour d'elle.",
+      "tw": "<LI>她突然站了起來，環顧四周。",
+      "source": { "node": "excuseme1", "slot": 9 }
+    },
+    {
+      "id": "x05568",
+      "kind": "story",
+      "en": "<LI>DIANE: Will you excuse me a moment? Where's the loo?",
+      "cn": "<LI>黛安：失陪一下，厕所在哪儿？",
+      "es": "<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?",
+      "fr": "<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?",
+      "tw": "<LI>黛安：失陪一下，廁所在哪裡？",
+      "source": { "node": "excuseme1", "slot": 10 }
+    },
+    {
+      "id": "x05569",
+      "kind": "story",
+      "en": "<LI>Suddenly she blushes.",
+      "cn": "<LI>她忽然脸红了。",
+      "es": "<LI>De pronto se sonroja.",
+      "fr": "<LI>Soudain, elle rougit.",
+      "tw": "<LI>她忽然臉紅了。",
+      "source": { "node": "excuseme1", "slot": 11 }
+    },
+    {
+      "id": "x05570",
+      "kind": "story",
+      "en": "<LI>DIANE: Sorry to interrupt, but I need to spend a penny. Where's your bathroom?",
+      "cn": "<LI>黛安：抱歉打断一下，我得方便一下。你家洗手间在哪儿？",
+      "es": "<LI>DIANE: Perdona que te interrumpa, pero tengo que ir un momento al aseo. ¿Dónde está tu baño?",
+      "fr": "<LI>DIANE : Désolée de t'interrompre, mais j'ai besoin de faire pipi. Où sont tes toilettes ?",
+      "tw": "<LI>黛安：抱歉打斷一下，我得方便一下。你家洗手間在哪裡？",
+      "source": { "node": "excuseme1", "slot": 12 }
+    },
+    {
+      "id": "x05571",
+      "kind": "story",
+      "en": "<LI>Suddenly she sits forward and stands up, blushing slightly.",
+      "cn": "<LI>她忽然坐直身子站起来，微微脸红。",
+      "es": "<LI>De pronto se incorpora y se pone en pie, sonrojándose un poco.",
+      "fr": "<LI>Soudain, elle se redresse et se lève, légèrement rougissante.",
+      "tw": "<LI>她忽然坐直身子站起來，微微臉紅。",
+      "source": { "node": "excuseme1", "slot": 13 }
+    },
+    {
+      "id": "x05572",
+      "kind": "story",
+      "en": "<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?",
+      "cn": "<LI>黛安：对不起，我得去厕所。在哪儿？",
+      "es": "<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?",
+      "fr": "<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller aux toilettes. Où est-ce ?",
+      "tw": "<LI>黛安：對不起，我得去廁所。在哪裡啊？",
+      "source": { "node": "excuseme1", "slot": 14 }
     },
     {
       "id": "x02879",
@@ -30205,7 +30325,7 @@
       "es": "<LI>Se lo dices. Ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?",
       "fr": "<LI>Vous lui indiquez. Elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?",
       "tw": "<LI>你告訴她。她說馬上就回來，便離開了房間。你弟弟之前一直在浴室，不過現在應該出來了吧。現在用一次幸運機會還值得嗎？",
-      "source": { "node": "excuseme1", "slot": 3 }
+      "source": { "node": "excuseme1", "slot": 15 }
     },
     {
       "id": "x02716",
@@ -30216,7 +30336,7 @@
       "es": "Sí, usaré un golpe de suerte.",
       "fr": "Oui, je vais jouer un coup de chance.",
       "tw": "好，我用一次幸運機會。",
-      "source": { "node": "excuseme1", "slot": 4 }
+      "source": { "node": "excuseme1", "slot": 16 }
     },
     {
       "id": "x05293",
@@ -30227,7 +30347,7 @@
       "es": "No, no usaré un golpe de suerte.",
       "fr": "Non, je ne joue pas de coup de chance.",
       "tw": "不，我不用幸運機會了。",
-      "source": { "node": "excuseme1", "slot": 5 }
+      "source": { "node": "excuseme1", "slot": 17 }
     },
     {
       "id": "x02745",
@@ -30238,7 +30358,7 @@
       "es": "No me quedan golpes de suerte.",
       "fr": "Il ne me reste plus de coups de chance.",
       "tw": "我的幸運機會已經用完了。",
-      "source": { "node": "excuseme1", "slot": 6 }
+      "source": { "node": "excuseme1", "slot": 18 }
     },
     {
       "id": "x02712",
@@ -46312,26 +46432,6 @@
       "source": { "node": "peepround1", "slot": 3 }
     },
     {
-      "id": "x04172",
-      "kind": "story",
-      "en": "<LI>Diane whispers to you. 'I could tell you were watching. That was rotten of you. The poor girl was desperate.'",
-      "cn": "<LI>黛安凑近你耳边低语：“我看出来了，你在偷看。你真过分。那可怜的女孩已经快忍不住了。”",
-      "es": "<LI>Diane te susurra: «Supe que nos estabas mirando. Eso estuvo muy feo por tu parte. La pobre chica lo estaba pasando fatal».",
-      "fr": "<LI>Diane vous chuchote : « Je savais que vous nous regardiez. C'était vraiment mal de votre part. La pauvre fille était à bout. »",
-      "tw": "<LI>黛安湊近你耳邊低語：「我看出來了，你在偷看。你真過分。那可憐的女生已經快忍不住了。」",
-      "source": { "node": "peepround1", "slot": 4 }
-    },
-    {
-      "id": "x04173",
-      "kind": "story",
-      "en": "<LI>You mumble something incoherent.",
-      "cn": "<LI>你语无伦次地嗫嚅了几声，说了些什么连自己都不清楚。",
-      "es": "<LI>Mascullas algo incoherente.",
-      "fr": "<LI>Vous marmonnez quelque chose d'incompréhensible.",
-      "tw": "<LI>你語無倫次囁嚅了幾聲，說了些連自己都不清楚的話。",
-      "source": { "node": "peepround1", "slot": 5 }
-    },
-    {
       "id": "x04174",
       "kind": "choice",
       "tag": "taxihome1",
@@ -46340,7 +46440,7 @@
       "es": "Te diriges hacia la parada de taxis.",
       "fr": "Vous vous dirigez vers la station de taxis.",
       "tw": "你往計程車站走。",
-      "source": { "node": "peepround1", "slot": 6 }
+      "source": { "node": "peepround1", "slot": 4 }
     },
     {
       "id": "x04175",

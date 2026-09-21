@@ -7265,8 +7265,27 @@ c("walkhomeX","Te preparas para acompañarla a casa.");
 function
 excuseme1()
 {
-s("<LI>De pronto se incorpora y se pone en pie, sonrojándose un poco.");
-s("<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?");
+if (riesling)
+{s("<LI>De pronto se incorpora y se pone en pie, sonrojándose un poco.");
+s("<LI>DIANE: Lo siento, ¿dónde está el baño?"); }
+else if (merlot)
+{s("<LI>De pronto se gira, con las manos en las rodillas.");
+s("<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?"); }
+else if (pinot)
+{s("<LI>De pronto se incorpora, con las manos en las rodillas.");
+s("<LI>DIANE: Lo siento, ¿dónde está tu baño?");}
+else if (chardonnay)
+{s("<LI>De repente se inclina hacia delante y mira a su alrededor.");
+s("<LI>DIANE: Lo siento, pero tengo que ir a algún sitio. ¿Dónde está el baño?");}
+else if (burgundy)
+{s("<LI>De repente se pone de pie y mira a su alrededor.");
+s("<LI>DIANE: ¿Me disculpas un momento? ¿Dónde está el baño?");}
+else if (rioja)
+{s("<LI>De pronto se sonroja.");
+s("<LI>DIANE: Perdona que te interrumpa, pero tengo que ir un momento al aseo. ¿Dónde está tu baño?"); }
+else
+{s("<LI>De pronto se incorpora y se pone en pie, sonrojándose un poco.");
+s("<LI>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?"); }
 s("<LI>Se lo dices. Ella dice que no tarda nada y sale de la habitación. Tu hermano ha estado en el baño, pero ya debe de haber terminado. ¿Sigue mereciendo la pena jugar un golpe de suerte?");
 if (luckshots >= 1)
 {c("luckytrip12","Sí, usaré un golpe de suerte.");
@@ -8424,7 +8443,6 @@ dampness()
 {
 s("<LI>Diane tarda varios minutos, pero al final vuelve con una sonrisa avergonzada. Os besáis, pero ella dice: «Se está haciendo tarde y nos veremos la semana que viene. De verdad que tengo que irme a casa».");
 s("<LI>La rodeas con los brazos y la besas de nuevo. Le acarcias el trasero y ella se acurruca contra ti, aunque no parece muy entusiasmada."); 
-afterpee() 
 s("<LI>Le dices lo mucho que has disfrutado de la cita y lo que te alegra volver a verla.");
 s("<LI>Os abrazáis por última vez. ¿Qué va a ser?");
 c("breastsz","¿Acariciarle los pechos?");
@@ -8469,7 +8487,7 @@ else
 s("<LI>Ella no parece muy entusiasmada e intenta alejarse. Te preguntas por qué, si hace apenas unos minutos erais tan íntimos.");
 s("<LI>Pero al subir la mano un poco más, entiendes la razón. Cuando llegas a su trasero, a sus bragas, ella intenta soltarse una vez más, pero tú la retienes.");
 s("<LI>La miras con asombro.");
-s("<LI>TÚ: Diane, tienes las bragas completamente húmedas."); blad = 0;
+s("<LI>TÚ: Diane, tienes las bragas completamente húmedas.");
 s("<LI>Ella se pone colorada hasta las orejas de vergüenza. No recuerdas haberle visto las mejillas tan rojas nunca. Intenta girarse, pero acaba hundiendo la cara en tu hombro.");
 c("legsz2","Esperas una respuesta."); } 
 
@@ -10339,9 +10357,6 @@ peepround1()
 s("<LI>Las chicas vuelven a aparecer. Están susurrando entre ellas. La morena parece estar secándose las piernas. Oyes decir a Diane: «No te preocupes, no se nota»."); blad +=10
 s("<LI>Se reúnen contigo de nuevo. No parecen saber que las estabas mirando.");
 s("<LI>Diane te coge de la mano. Los tres volvéis caminando hacia la calle. La morena se despide y se dirige a su parada de autobús."); 
-if (chardonnay)
-{s("<LI>Diane te susurra: «Supe que nos estabas mirando. Eso estuvo muy feo por tu parte. La pobre chica lo estaba pasando fatal»."); getinti(-15);
-s("<LI>Mascullas algo incoherente.");}
 c("taxihome1","Te diriges hacia la parada de taxis."); }
 
 

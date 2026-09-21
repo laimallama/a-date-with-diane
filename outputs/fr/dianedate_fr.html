@@ -7266,8 +7266,27 @@ c("walkhomeX","Vous vous préparez à la raccompagner chez elle.");
 function
 excuseme1()
 {
-s("<LI>Soudain, elle se redresse et se lève, légèrement rougissante.");
-s("<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller aux toilettes. Où est-ce ?");
+if (riesling)
+{s("<LI>Soudain, elle se redresse et se lève, légèrement rougissante.");
+s("<LI>DIANE : Je suis désolée, mais où sont les toilettes ?"); }
+else if (merlot)
+{s("<LI>Soudain, elle se tourne, les mains sur les genoux.");
+s("<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller aux toilettes. Où est-ce ?"); }
+else if (pinot)
+{s("<LI>Soudain, elle se redresse, les mains sur les genoux.");
+s("<LI>DIANE : Je suis désolée, mais où sont tes toilettes ?");}
+else if (chardonnay)
+{s("<LI>Soudain, elle se redresse et regarde autour d'elle.");
+s("<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller quelque part. Où sont les toilettes ?");}
+else if (burgundy)
+{s("<LI>Soudain, elle se lève et regarde autour d'elle.");
+s("<LI>DIANE : Excusez-moi un instant. Où sont les toilettes ?");}
+else if (rioja)
+{s("<LI>Soudain, elle rougit.");
+s("<LI>DIANE : Désolée de t'interrompre, mais j'ai besoin de faire pipi. Où sont tes toilettes ?"); }
+else
+{s("<LI>Soudain, elle se redresse et se lève, légèrement rougissante.");
+s("<LI>DIANE : Je suis désolée, mais j'ai besoin d'aller aux toilettes. Où est-ce ?"); }
 s("<LI>Vous lui indiquez. Elle dit qu'elle en a pour une minute, puis quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Ça vaut encore le coup de jouer un coup de chance ?");
 if (luckshots >= 1)
 {c("luckytrip12","Oui, je vais jouer un coup de chance.");
@@ -8425,7 +8444,6 @@ dampness()
 {
 s("<LI>Diane est absente plusieurs minutes, mais finit par revenir, un sourire gêné aux lèvres. Vous l'embrassez, mais elle dit : « Il se fait tard et on se reverra la semaine prochaine. Il faut vraiment que je rentre. »");
 s("<LI>Vous la prenez dans vos bras et l'embrassez à nouveau. Vous caressez ses fesses, et elle se blottit contre vous, mais sans vraiment sembler enthousiaste."); 
-afterpee() 
 s("<LI>Vous lui dites à quel point vous avez apprécié cette soirée et combien vous avez hâte de la revoir.");
 s("<LI>Vous vous enlacez une dernière fois. Que va-t-il se passer ?");
 c("breastsz","Lui caresser les seins ?");
@@ -8470,7 +8488,7 @@ else
 s("<LI>Elle ne semble pas très enthousiaste et tente de se dégager. Vous vous demandez pourquoi, car vous étiez si proches quelques minutes auparavant.");
 s("<LI>Mais tandis que votre main remonte, vous comprenez pourquoi. En atteignant ses fesses, sa culotte, elle tente de se dégager encore une fois, mais vous la retenez.");
 s("<LI>Vous la regardez avec stupeur.");
-s("<LI>VOUS : Diane, ta culotte est toute mouillée."); blad = 0;
+s("<LI>VOUS : Diane, ta culotte est toute mouillée.");
 s("<LI>Elle rougit jusqu'aux oreilles. Vous ne vous souvenez pas d'avoir jamais vu des joues aussi rouges. Elle tente de se détourner, puis enfouit la tête dans votre épaule.");
 c("legsz2","Vous attendez une réponse."); } 
 
@@ -10340,9 +10358,6 @@ peepround1()
 s("<LI>Les filles réapparaissent. Elles se chuchotent quelque chose. La brune semble s'essuyer les jambes. Vous entendez Diane dire : « Ne t'en fais pas, ça ne se voit pas. »"); blad +=10
 s("<LI>Elles vous rejoignent. Elles ne semblent pas savoir que vous les regardiez.");
 s("<LI>Diane prend votre main. Vous retournez tous les trois vers la route. La brune vous quitte et se dirige vers son arrêt de bus."); 
-if (chardonnay)
-{s("<LI>Diane vous chuchote : « Je savais que vous nous regardiez. C'était vraiment mal de votre part. La pauvre fille était à bout. »"); getinti(-15);
-s("<LI>Vous marmonnez quelque chose d'incompréhensible.");}
 c("taxihome1","Vous vous dirigez vers la station de taxis."); }
 
 

@@ -7269,8 +7269,27 @@ c("walkhomeX","You get ready to walk her home.");
 function
 excuseme1()
 {
-s("<LI>Suddenly she sits forward and stands up, blushing slightly.");
-s("<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?");
+if (riesling)
+{s("<LI>Suddenly she sits forward and stands up, blushing slightly.");
+s("<LI>DIANE: I'm sorry, but where's the toilet?"); }
+else if (merlot)
+{s("<LI>Suddenly she sits round, with her hands on her knees.");
+s("<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?"); }
+else if (pinot)
+{s("<LI>Suddenly she sits up, with her hands on her knees.");
+s("<LI>DIANE: I'm sorry, but where's your toilet?");}
+else if (chardonnay)
+{s("<LI>Suddenly she sits forward and looks around.");
+s("<LI>DIANE: I'm sorry, but I need to go somewhere. Where's the bathroom?");}
+else if (burgundy)
+{s("<LI>Suddenly she stands up and looks around.");
+s("<LI>DIANE: Will you excuse me a moment? Where's the loo?");}
+else if (rioja)
+{s("<LI>Suddenly she blushes.");
+s("<LI>DIANE: Sorry to interrupt, but I need to spend a penny. Where's your bathroom?"); }
+else
+{s("<LI>Suddenly she sits forward and stands up, blushing slightly.");
+s("<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?"); }
 s("<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?");
 if (luckshots >= 1)
 {c("luckytrip12","Yes, I'll play a luckshot.");
@@ -8428,7 +8447,6 @@ dampness()
 {
 s("<LI>Diane is gone several minutes, but eventually she returns, grinning ruefully. You kiss but she says, 'It's getting late and we'll be seeing each other next week. I really must go home.'");
 s("<LI>You put your arms round her and kiss her again. You fondle her bottom, and she nestles up to you, but doesn't seem very keen."); 
-afterpee() 
 s("<LI>You tell her how you've enjoyed the date, and how you look forward to seeing her again.");
 s("<LI>You embrace for one last time. What will it be?");
 c("breastsz","Fondle her breasts?");
@@ -8473,7 +8491,7 @@ else
 s("<LI>She doesn't seem very enthusiastic, and tries to break away. You wonder why, because you were so intimate a few minutes ago.");
 s("<LI>But as your hand slips higher, you realise why. As you reach her bottom, her knickers, she tries to break away one more time, but you hold her.");
 s("<LI>You look at her in wonder.");
-s("<LI>YOU: Diane, your knickers are all damp."); blad = 0;
+s("<LI>YOU: Diane, your knickers are all damp.");
 s("<LI>She blushes bright red with embarrassment. You can't remember when you saw such blushing cheeks. She tries to turn away, then buries her head on your shoulder.");
 c("legsz2","You wait for a reply."); } 
 
@@ -10343,9 +10361,6 @@ peepround1()
 s("<LI>The girls re-emerge. They are whispering to each other. The brunette seems to be wiping her legs. You hear Diane say, 'Don't worry, it doesn't show.'"); blad +=10
 s("<LI>They join you again. They don't seem to know you were watching.");
 s("<LI>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop."); 
-if (chardonnay)
-{s("<LI>Diane whispers to you. 'I could tell you were watching. That was rotten of you. The poor girl was desperate.'"); getinti(-15);
-s("<LI>You mumble something incoherent.");}
 c("taxihome1","You head for the taxi rank."); }
 
 

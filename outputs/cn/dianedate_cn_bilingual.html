@@ -3551,8 +3551,6 @@ var alternateTranslations = {
   "<LI>The girls re-emerge. They are whispering to each other. The brunette seems to be wiping her legs. You hear Diane say, 'Don't worry, it doesn't show.'": "<LI>两人从后面转了出来，低声说着什么。那位褐发女生好像在擦腿。你听到黛安说：“别担心，看不出来的。”",
   "<LI>They join you again. They don't seem to know you were watching.": "<LI>她们走回你身边。看样子她们不知道你刚才在偷看。",
   "<LI>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop.": "<LI>黛安握住你的手。你们三人一起走回公路边。褐发女生与你们道别，朝她的候车站走去。",
-  "<LI>Diane whispers to you. 'I could tell you were watching. That was rotten of you. The poor girl was desperate.'": "<LI>黛安凑近你耳边低语：“我看出来了，你在偷看。你真过分。那可怜的女孩已经快忍不住了。”",
-  "<LI>You mumble something incoherent.": "<LI>你语无伦次地嗫嚅了几声，说了些什么连自己都不清楚。",
   "<LI>You stand guard while Diane and the girl have their pee. You don't try to watch.": "<LI>黛安和那女孩在房车后面撒尿的时候，你在旁边站哨。你没有试图偷看。",
   "<LI>Beats me why you are playing this game, but that's your choice.": "<LI>我真搞不懂你为什么要这么玩，不过随你吧。",
   "<LI>They take quite a while and you hear some whispering before they emerge. You then escort them politely back to the road. You and Diane go to the taxi rank.": "<LI>她们过了好一会儿才出来，期间你听到一阵低声细语。随后你彬彬有礼地护送她们回到路边。你和黛安一起走向出租车候车站。",
@@ -4535,6 +4533,13 @@ var alternateTranslations = {
   "Wait for her to ask?": "等她自己开口？",
   "<LI>I just stood in the middle of the bathroom and—wet my knickers. I eventually found the light switch but my knickers were so soaked I had to hide them under a cupboard.": "<LI>我就那么站在浴室中间——尿湿了内裤。后来终于找到灯的开关，但内裤已经湿透了，我只好把它藏到柜子底下。",
   "<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?": "<LI>黛安：对不起，我得去厕所。在哪儿？",
+  "<LI>DIANE: I'm sorry, but where's the toilet?": "<LI>黛安：对不起，厕所在哪儿？",
+  "<LI>Suddenly she sits round, with her hands on her knees.": "<LI>她忽然转过身来，双手按在膝盖上。",
+  "<LI>Suddenly she sits up, with her hands on her knees.": "<LI>她忽然坐直身子，双手按在膝盖上。",
+  "<LI>DIANE: I'm sorry, but where's your toilet?": "<LI>黛安：对不起，你家厕所在哪儿？",
+  "<LI>DIANE: I'm sorry, but I need to go somewhere. Where's the bathroom?": "<LI>黛安：对不起，我得去个地方。洗手间在哪儿？",
+  "<LI>Suddenly she blushes.": "<LI>她忽然脸红了。",
+  "<LI>DIANE: Sorry to interrupt, but I need to spend a penny. Where's your bathroom?": "<LI>黛安：抱歉打断一下，我得方便一下。你家洗手间在哪儿？",
   "<LI>Suddenly she sits forward and stands up, blushing slightly.": "<LI>她忽然坐直身子站起来，微微脸红。",
   "<LI>DIANE: Will you excuse me a moment? Where's the loo?": "<LI>黛安：失陪一下，厕所在哪儿？",
   "<LI>There is no sign of your brother. He's probably out with his friends—he's just finished college and is waiting for his results before going on to university. You ask Diane if she would like a glass of wine, but she says she'd prefer a coffee.": "<LI>屋里不见你弟弟的踪影。他大概和朋友出去了——他刚考完试，正在等成绩，之后要上大学。你问黛安要不要来杯葡萄酒，她说更想喝咖啡。",
@@ -12097,8 +12102,27 @@ c("walkhomeX","You get ready to walk her home.");
 function
 excuseme1()
 {
-s("<LI>Suddenly she sits forward and stands up, blushing slightly.");
-s("<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?");
+if (riesling)
+{s("<LI>Suddenly she sits forward and stands up, blushing slightly.");
+s("<LI>DIANE: I'm sorry, but where's the toilet?"); }
+else if (merlot)
+{s("<LI>Suddenly she sits round, with her hands on her knees.");
+s("<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?"); }
+else if (pinot)
+{s("<LI>Suddenly she sits up, with her hands on her knees.");
+s("<LI>DIANE: I'm sorry, but where's your toilet?");}
+else if (chardonnay)
+{s("<LI>Suddenly she sits forward and looks around.");
+s("<LI>DIANE: I'm sorry, but I need to go somewhere. Where's the bathroom?");}
+else if (burgundy)
+{s("<LI>Suddenly she stands up and looks around.");
+s("<LI>DIANE: Will you excuse me a moment? Where's the loo?");}
+else if (rioja)
+{s("<LI>Suddenly she blushes.");
+s("<LI>DIANE: Sorry to interrupt, but I need to spend a penny. Where's your bathroom?"); }
+else
+{s("<LI>Suddenly she sits forward and stands up, blushing slightly.");
+s("<LI>DIANE: I'm sorry, but I need to go to the loo. Where is it?"); }
 sAlt("<LI>You tell her. She says she won't be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?", "<LI>你告诉她。她说马上就回来，便离开了房间。你弟弟之前一直在浴室，但现在应该出来了吧。现在用一次幸运机会还值得吗？");
 if (luckshots >= 1)
 {c("luckytrip12","Yes, I'll play a luckshot.");
@@ -13256,7 +13280,6 @@ dampness()
 {
 s("<LI>Diane is gone several minutes, but eventually she returns, grinning ruefully. You kiss but she says, 'It's getting late and we'll be seeing each other next week. I really must go home.'");
 s("<LI>You put your arms round her and kiss her again. You fondle her bottom, and she nestles up to you, but doesn't seem very keen."); 
-afterpee() 
 s("<LI>You tell her how you've enjoyed the date, and how you look forward to seeing her again.");
 s("<LI>You embrace for one last time. What will it be?");
 c("breastsz","Fondle her breasts?");
@@ -13301,7 +13324,7 @@ else
 s("<LI>She doesn't seem very enthusiastic, and tries to break away. You wonder why, because you were so intimate a few minutes ago.");
 s("<LI>But as your hand slips higher, you realise why. As you reach her bottom, her knickers, she tries to break away one more time, but you hold her.");
 s("<LI>You look at her in wonder.");
-s("<LI>YOU: Diane, your knickers are all damp."); blad = 0;
+s("<LI>YOU: Diane, your knickers are all damp.");
 s("<LI>She blushes bright red with embarrassment. You can't remember when you saw such blushing cheeks. She tries to turn away, then buries her head on your shoulder.");
 c("legsz2","You wait for a reply."); } 
 
@@ -15171,9 +15194,6 @@ peepround1()
 s("<LI>The girls re-emerge. They are whispering to each other. The brunette seems to be wiping her legs. You hear Diane say, 'Don't worry, it doesn't show.'"); blad +=10
 s("<LI>They join you again. They don't seem to know you were watching.");
 s("<LI>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop."); 
-if (chardonnay)
-{s("<LI>Diane whispers to you. 'I could tell you were watching. That was rotten of you. The poor girl was desperate.'"); getinti(-15);
-s("<LI>You mumble something incoherent.");}
 c("taxihome1","You head for the taxi rank."); }
 
 

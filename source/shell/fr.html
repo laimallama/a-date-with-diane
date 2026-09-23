@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>Un rendez-vous avec Diane</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <style>
+      /* ADWD:STYLE */
+    </style>
+  </head>
+  <body>
+    <script>
+      /* ADWD:SCRIPT */
+    </script>
+
+    <div
+      id="galleryOverlay"
+      class="gallery-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="galleryTitle"
+      aria-hidden="true"
+      tabindex="-1"
+      inert
+    >
+      <div class="gallery-panel">
+        <div class="gallery-header">
+          <h2 id="galleryTitle">Galerie</h2>
+          <button class="gallery-close" onclick="closeGallery()">Fermer</button>
+        </div>
+        <div class="gallery-scroll">
+          <div class="gallery-section">
+            <h3>Fins</h3>
+            <div id="galleryEndings" class="gallery-list"></div>
+          </div>
+          <div class="gallery-section">
+            <h3>Scènes cachées</h3>
+            <div id="galleryHiddenScenes" class="gallery-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-shell">
+      <div id="gameToolbar" class="game-toolbar" style="display: none">
+        <button id="galleryToggle" class="gallery-button" onclick="openGallery()" type="button">
+          Galerie
+        </button>
+        <button
+          id="themeToggle"
+          class="theme-toggle-button theme-toggle-off"
+          onclick="toggleTheme()"
+          type="button"
+        >
+          Mode sombre : Désactivé
+        </button>
+      </div>
+      <div id="box" aria-live="polite" aria-atomic="true"></div>
+    </div>
+  </body>
+</html>

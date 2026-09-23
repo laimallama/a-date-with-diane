@@ -1,16 +1,18 @@
 const fs = require("fs");
 const path = require("path");
-const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
-const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
 const pendingOutputs = [];
 
 function finishOutputs() {
-  const changed = pendingOutputs.filter(({ filePath, text }) =>
-    !fs.existsSync(filePath) || fs.readFileSync(filePath, "utf8") !== text);
+  const changed = pendingOutputs.filter(
+    ({ filePath, text }) => !fs.existsSync(filePath) || fs.readFileSync(filePath, "utf8") !== text,
+  );
   if (process.argv.includes("--check")) {
-    if (changed.length) throw new Error("Stale Gallery output: " + changed.map(x => path.relative(ROOT, x.filePath)).join(", "));
+    if (changed.length)
+      throw new Error(
+        "Stale Gallery output: " + changed.map((x) => path.relative(ROOT, x.filePath)).join(", "),
+      );
     console.log("Gallery data and embedded editions match the route definitions (read-only).");
     return false;
   }
@@ -18,7 +20,8 @@ function finishOutputs() {
   return true;
 }
 
-const HIDDEN_SCENES_SOURCE = path.join(ROOT, "maintenance/write_hidden_scenes.js");
+const hiddenScenes = require("./write_hidden_scenes.js");
+const { galleryRoutes } = require("./verify_ending_routes.js");
 
 const HTML_PATHS = {
   en: path.join(ROOT, "outputs/en/dianedate_en.html"),
@@ -39,37 +42,80 @@ const BILINGUAL_HTML_PATHS = {
 // climaxStartTag: first guided choice of the ending climax (Skip to climax jumps here).
 const ENDING_META = {
   first: {
-    order: 1, stem: "03_first_prize",
+    order: 1,
+    stem: "03_first_prize",
     climaxStartTag: "disaster0", // outdoor walk-home wetting
-    title: { en: "First Prize", cn: "一等奖", tw: "一等獎", es: "Primer premio", fr: "Premier prix" },
+    title: {
+      en: "First Prize",
+      cn: "一等奖",
+      tw: "一等獎",
+      es: "Primer premio",
+      fr: "Premier prix",
+    },
   },
   second: {
-    order: 2, stem: "05_second_prize",
+    order: 2,
+    stem: "05_second_prize",
     climaxStartTag: "nicelydesp1", // sofa story → bathroom wetting
-    title: { en: "Second Prize", cn: "二等奖", tw: "二等獎", es: "Segundo premio", fr: "Deuxième prix" },
+    title: {
+      en: "Second Prize",
+      cn: "二等奖",
+      tw: "二等獎",
+      es: "Segundo premio",
+      fr: "Deuxième prix",
+    },
   },
   third: {
-    order: 3, stem: "01_third_prize",
+    order: 3,
+    stem: "01_third_prize",
     climaxStartTag: "sofadesp", // sofa desperation → stamp album
-    title: { en: "Third Prize", cn: "三等奖", tw: "三等獎", es: "Tercer premio", fr: "Troisième prix" },
+    title: {
+      en: "Third Prize",
+      cn: "三等奖",
+      tw: "三等獎",
+      es: "Tercer premio",
+      fr: "Troisième prix",
+    },
   },
   fourth: {
-    order: 4, stem: "02_fourth_prize",
+    order: 4,
+    stem: "02_fourth_prize",
     climaxStartTag: "walkhomedesp", // outdoor walk-home desperation / squat
-    title: { en: "Fourth Prize", cn: "四等奖", tw: "四等獎", es: "Cuarto premio", fr: "Quatrième prix" },
+    title: {
+      en: "Fourth Prize",
+      cn: "四等奖",
+      tw: "四等獎",
+      es: "Cuarto premio",
+      fr: "Quatrième prix",
+    },
   },
   fifth: {
-    order: 5, stem: "04_fifth_prize",
+    order: 5,
+    stem: "04_fifth_prize",
     climaxStartTag: "skirtremove1", // skirt deal → bathroom watch
-    title: { en: "Fifth Prize", cn: "五等奖", tw: "五等獎", es: "Quinto premio", fr: "Cinquième prix" },
+    title: {
+      en: "Fifth Prize",
+      cn: "五等奖",
+      tw: "五等獎",
+      es: "Quinto premio",
+      fr: "Cinquième prix",
+    },
   },
   amanda: {
-    order: 6, stem: "09_amanda_consolation",
+    order: 6,
+    stem: "09_amanda_consolation",
     climaxStartTag: "goupstairs", // Amanda upstairs bathroom beat
-    title: { en: "Amanda Consolation Prize", cn: "阿曼达安慰奖", tw: "阿曼達安慰獎", es: "Premio de consolación de Amanda", fr: "Prix de consolation d'Amanda" },
+    title: {
+      en: "Amanda Consolation Prize",
+      cn: "阿曼达安慰奖",
+      tw: "阿曼達安慰獎",
+      es: "Premio de consolación de Amanda",
+      fr: "Prix de consolation d'Amanda",
+    },
   },
   chloe: {
-    order: 7, stem: "08a_chloe_consolation",
+    order: 7,
+    stem: "08a_chloe_consolation",
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
       en: "Chloe Wets Her Knickers",
@@ -80,7 +126,8 @@ const ENDING_META = {
     },
   },
   chloeSibling: {
-    order: 7, stem: "08b_chloe_outside",
+    order: 7,
+    stem: "08b_chloe_outside",
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
       en: "Chloe Pees Beside Her House",
@@ -91,39 +138,88 @@ const ENDING_META = {
     },
   },
   general: {
-    order: 8, stem: "07a_consolation_tuesday_pavilion",
+    order: 8,
+    stem: "07a_consolation_tuesday_pavilion",
     climaxStartTag: "searchdiane", // follow Diane after she slips away outdoors
-    title: { en: "Tuesday Pavilion Route", cn: "周二凉亭酒吧路线", tw: "週二涼亭酒吧路線", es: "Ruta del martes por el Pabellón", fr: "Parcours du mardi par le Pavillon" },
+    title: {
+      en: "Tuesday Pavilion Route",
+      cn: "周二凉亭酒吧路线",
+      tw: "週二涼亭酒吧路線",
+      es: "Ruta del martes por el Pabellón",
+      fr: "Parcours du mardi par le Pavillon",
+    },
   },
   generalThursday: {
-    order: 8, stem: "07b_consolation_thursday_subway",
+    order: 8,
+    stem: "07b_consolation_thursday_subway",
     climaxStartTag: "searchdiane",
-    title: { en: "Thursday Subway Route", cn: "周四地下通道路线", tw: "週四地下道路線", es: "Ruta del jueves por el paso subterráneo", fr: "Parcours du jeudi par le passage souterrain" },
+    title: {
+      en: "Thursday Subway Route",
+      cn: "周四地下通道路线",
+      tw: "週四地下道路線",
+      es: "Ruta del jueves por el paso subterráneo",
+      fr: "Parcours du jeudi par le passage souterrain",
+    },
   },
   generalSaturday: {
-    order: 8, stem: "07c_consolation_saturday_car_park",
+    order: 8,
+    stem: "07c_consolation_saturday_car_park",
     climaxStartTag: "searchdiane",
-    title: { en: "Saturday Car Park Route", cn: "周六停车场路线", tw: "週六停車場路線", es: "Ruta del sábado por el aparcamiento", fr: "Parcours du samedi par le parking" },
+    title: {
+      en: "Saturday Car Park Route",
+      cn: "周六停车场路线",
+      tw: "週六停車場路線",
+      es: "Ruta del sábado por el aparcamiento",
+      fr: "Parcours du samedi par le parking",
+    },
   },
   loungeHen: {
-    order: 9, stem: "06a_lounge_hen_party",
+    order: 9,
+    stem: "06a_lounge_hen_party",
     climaxStartTag: "loungedesp", // lounge story consolation
-    title: { en: "Hen Party", cn: "婚前单身派对", tw: "婚前單身派對", es: "Despedida de soltera", fr: "Enterrement de vie de jeune fille" },
+    title: {
+      en: "Hen Party",
+      cn: "婚前单身派对",
+      tw: "婚前單身派對",
+      es: "Despedida de soltera",
+      fr: "Enterrement de vie de jeune fille",
+    },
   },
   loungeTiramisu: {
-    order: 9, stem: "06b_lounge_bus_boy",
+    order: 9,
+    stem: "06b_lounge_bus_boy",
     climaxStartTag: "loungedesp",
-    title: { en: "Boy from School", cn: "学校的男生", tw: "學校的男生", es: "El chico del instituto", fr: "Le garçon de l’école" },
+    title: {
+      en: "Boy from School",
+      cn: "学校的男生",
+      tw: "學校的男生",
+      es: "El chico del instituto",
+      fr: "Le garçon de l’école",
+    },
   },
   loungePanna: {
-    order: 9, stem: "06c_lounge_chess_lesson",
+    order: 9,
+    stem: "06c_lounge_chess_lesson",
     climaxStartTag: "loungedesp",
-    title: { en: "Chess Lesson", cn: "下棋课", tw: "西洋棋課", es: "Lección de ajedrez", fr: "Leçon d’échecs" },
+    title: {
+      en: "Chess Lesson",
+      cn: "下棋课",
+      tw: "西洋棋課",
+      es: "Lección de ajedrez",
+      fr: "Leçon d’échecs",
+    },
   },
   loungeIce: {
-    order: 9, stem: "06d_lounge_freshers_week",
+    order: 9,
+    stem: "06d_lounge_freshers_week",
     climaxStartTag: "loungedesp",
-    title: { en: "Freshers' Week", cn: "迎新周", tw: "迎新週", es: "Semana de bienvenida", fr: "Semaine d’intégration" },
+    title: {
+      en: "Freshers' Week",
+      cn: "迎新周",
+      tw: "迎新週",
+      es: "Semana de bienvenida",
+      fr: "Semaine d’intégration",
+    },
   },
 };
 
@@ -376,38 +472,11 @@ function countLeaves(items) {
   return items.reduce((n, item) => n + (item.variants ? item.variants.length : 1), 0);
 }
 
-function loadHiddenScenesModule() {
-  const source = fs.readFileSync(HIDDEN_SCENES_SOURCE, "utf8").replace(/\nmain\(\);\s*$/, "\n");
-  const context = {
-    console,
-    require,
-    process,
-    __dirname: path.dirname(HIDDEN_SCENES_SOURCE),
-    __filename: HIDDEN_SCENES_SOURCE,
-  };
-  context.global = context;
-  context.globalThis = context;
-  vm.createContext(context);
-  vm.runInContext(source, context, { filename: HIDDEN_SCENES_SOURCE });
-  return context;
-}
-
-function leafFromRoute(ctx, routes, key, meta) {
-  return {
-    id: meta.stem,
-    order: meta.order,
-    title: null, // filled per lang
-    tags: ctx.routeToTags(routes[key], routes),
-    baseLength: 2,
-    _key: key,
-  };
-}
-
 function buildEndingsForLang(ctx, routes, lang) {
   const byKey = {};
   for (const [key, meta] of Object.entries(ENDING_META)) {
     if (!routes[key]) throw new Error(`Missing route for ending key: ${key}`);
-    const tags = ctx.routeToTags(routes[key], routes);
+    const tags = ctx.routeToTags(routes[key]);
     const climaxIndex = tags.indexOf(meta.climaxStartTag);
     if (climaxIndex < 0) {
       throw new Error(`climaxStartTag "${meta.climaxStartTag}" not found in ending route ${key}`);
@@ -458,14 +527,21 @@ function buildHiddenScenesForLang(ctx, routes, definitions, lang) {
     };
   });
 
-  const extraForLang = EXTRA_HIDDEN.filter(extra => !extra.languages || extra.languages.includes(lang));
-  const excludedStems = new Set(EXTRA_HIDDEN.filter(extra => !extraForLang.includes(extra)).map(extra => extra.stem));
+  const extraForLang = EXTRA_HIDDEN.filter(
+    (extra) => !extra.languages || extra.languages.includes(lang),
+  );
+  const excludedStems = new Set(
+    EXTRA_HIDDEN.filter((extra) => !extraForLang.includes(extra)).map((extra) => extra.stem),
+  );
   for (const extra of extraForLang) {
-    if (!routes[extra.routeKey]) throw new Error(`Missing route for hidden scene: ${extra.routeKey}`);
-    const tags = ctx.routeToTags(routes[extra.routeKey], routes);
+    if (!routes[extra.routeKey])
+      throw new Error(`Missing route for hidden scene: ${extra.routeKey}`);
+    const tags = ctx.routeToTags(routes[extra.routeKey]);
     const baseLength = tags.indexOf(extra.sceneStartTag);
     if (baseLength < 0) {
-      throw new Error(`sceneStartTag "${extra.sceneStartTag}" not found in route ${extra.routeKey}`);
+      throw new Error(
+        `sceneStartTag "${extra.sceneStartTag}" not found in route ${extra.routeKey}`,
+      );
     }
     flat.push({
       id: extra.stem,
@@ -485,16 +561,18 @@ function buildHiddenScenesForLang(ctx, routes, definitions, lang) {
     byKey[scene.id] = scene;
   }
   for (const group of HIDDEN_GROUPS) {
-    const variants = group.stems.filter(stem => !excludedStems.has(stem)).map((stem) => {
-      const v = byStem[stem];
-      if (!v) throw new Error(`Missing hidden scene stem for group ${group.groupId}: ${stem}`);
-      return {
-        id: v.id,
-        title: v.title,
-        tags: v.tags,
-        baseLength: v.baseLength,
-      };
-    });
+    const variants = group.stems
+      .filter((stem) => !excludedStems.has(stem))
+      .map((stem) => {
+        const v = byStem[stem];
+        if (!v) throw new Error(`Missing hidden scene stem for group ${group.groupId}: ${stem}`);
+        return {
+          id: v.id,
+          title: v.title,
+          tags: v.tags,
+          baseLength: v.baseLength,
+        };
+      });
     byKey[group.groupId] = {
       groupId: group.groupId,
       title: group.title[lang],
@@ -522,25 +600,35 @@ function buildDataForLang(ctx, routes, definitions, lang) {
   const hiddenLeaves = countLeaves(hiddenScenes);
   // 5 prizes + Amanda + Chloe×2 + Day×3 + Lounge×4
   if (endingLeaves !== 15) throw new Error(`Expected 15 ending leaves, got ${endingLeaves}`);
-  const expectedHidden = 25 + EXTRA_HIDDEN.filter(extra => !extra.languages || extra.languages.includes(lang)).length;
+  const expectedHidden =
+    25 + EXTRA_HIDDEN.filter((extra) => !extra.languages || extra.languages.includes(lang)).length;
   if (hiddenLeaves !== expectedHidden) {
     throw new Error(`Expected ${expectedHidden} hidden-scene leaves, got ${hiddenLeaves}`);
   }
 
+  // Titles are stored with their final typography, just like story catalogs.
+  for (const item of [...endings, ...hiddenScenes]) {
+    item.title = item.title.replace(/'/g, "’");
+    for (const variant of item.variants || []) variant.title = variant.title.replace(/'/g, "’");
+  }
   return { endings, hiddenScenes };
 }
 
 function mergeGalleryEntries(enList, otherList) {
   // Pair translations by stable identity, so reordering never shifts sibling titles.
-  return otherList.map(other => {
-    const en = enList.find(item => (item.id || item.groupId) === (other.id || other.groupId));
-    if (!en) throw Error('Missing English Gallery counterpart: ' + (other.id || other.groupId));
+  return otherList.map((other) => {
+    const en = enList.find((item) => (item.id || item.groupId) === (other.id || other.groupId));
+    if (!en) throw Error("Missing English Gallery counterpart: " + (other.id || other.groupId));
     if (other.variants) {
-      return { ...en, titleAlt: other.title, variants: other.variants.map(variant => {
-        const english = en.variants.find(item => item.id === variant.id);
-        if (!english) throw Error('Missing English Gallery leaf: ' + variant.id);
-        return { ...english, titleAlt: variant.title };
-      }) };
+      return {
+        ...en,
+        titleAlt: other.title,
+        variants: other.variants.map((variant) => {
+          const english = en.variants.find((item) => item.id === variant.id);
+          if (!english) throw Error("Missing English Gallery leaf: " + variant.id);
+          return { ...english, titleAlt: variant.title };
+        }),
+      };
     }
     return { ...en, titleAlt: other.title };
   });
@@ -557,15 +645,16 @@ function injectIntoFile(filePath, galleryData) {
   const marker = /const GALLERY_DATA = [\s\S]*?;\n|\/\* GALLERY_DATA_PLACEHOLDER \*\//;
   const injected = `const GALLERY_DATA = ${JSON.stringify(galleryData)};\n`;
   let html = fs.readFileSync(filePath, "utf8");
-  if (!marker.test(html)) throw new Error("GALLERY_DATA_PLACEHOLDER marker not found in " + filePath);
+  if (!marker.test(html))
+    throw new Error("GALLERY_DATA_PLACEHOLDER marker not found in " + filePath);
   html = html.replace(marker, () => injected);
   pendingOutputs.push({ filePath, text: html });
 }
 
 function main() {
-  const onlyLang = visual || process.env.GALLERY_EN_ONLY === "1" ? "en" : null;
-  const ctx = loadHiddenScenesModule();
-  const routes = ctx.loadRoutes();
+  const onlyLang = process.env.GALLERY_EN_ONLY === "1" ? "en" : null;
+  const ctx = hiddenScenes;
+  const routes = galleryRoutes;
   const definitions = ctx.buildDefinitions(routes);
 
   const langs = onlyLang ? [onlyLang] : ["en", "cn", "es", "fr", "tw"];
@@ -574,10 +663,10 @@ function main() {
     dataByLang[lang] = buildDataForLang(ctx, routes, definitions, lang);
   }
 
-  // Preserve translations for a text-repository EN-only inject; visual stays English-only.
+  // Preserve translations for an explicitly requested English-only rebuild.
   const outPath = path.join(ROOT, "maintenance/gallery_data.json");
   let existing = {};
-  if (onlyLang && !visual && fs.existsSync(outPath)) {
+  if (onlyLang && fs.existsSync(outPath)) {
     existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
   }
   const merged = { ...existing, ...dataByLang };
@@ -593,21 +682,29 @@ function main() {
 
   if (!finishOutputs()) return;
   console.log(`Wrote ${outPath}`);
-  console.log(onlyLang ? "Injected gallery data into en only" : "Injected gallery data into en, cn, es, fr, tw (single + bilingual where applicable)");
+  console.log(
+    onlyLang
+      ? "Injected gallery data into en only"
+      : "Injected gallery data into en, cn, es, fr, tw (single + bilingual where applicable)",
+  );
   console.log("EN hidden scenes:");
   merged.en.hiddenScenes.forEach((h, i) => {
     if (h.variants) {
       console.log(`  ${i + 1}. ${h.title}`);
       h.variants.forEach((v, vi) => {
-        console.log(`      ${vi + 1}. ${v.title} (bl=${v.baseLength}/${v.tags.length}, end=${v.tags.slice(-2).join("|")})`);
+        console.log(
+          `      ${vi + 1}. ${v.title} (bl=${v.baseLength}/${v.tags.length}, end=${v.tags.slice(-2).join("|")})`,
+        );
       });
     } else {
-      console.log(`  ${i + 1}. ${h.title} (bl=${h.baseLength}/${h.tags.length}, end=${h.tags.slice(-2).join("|")})`);
+      console.log(
+        `  ${i + 1}. ${h.title} (bl=${h.baseLength}/${h.tags.length}, end=${h.tags.slice(-2).join("|")})`,
+      );
     }
   });
   console.log(
     `Endings: ${merged.en.endings.length} top-level / ${countLeaves(merged.en.endings)} leaves, ` +
-    `Hidden: ${merged.en.hiddenScenes.length} top-level / ${countLeaves(merged.en.hiddenScenes)} leaves`
+      `Hidden: ${merged.en.hiddenScenes.length} top-level / ${countLeaves(merged.en.hiddenScenes)} leaves`,
   );
 }
 

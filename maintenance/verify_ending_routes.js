@@ -4,8 +4,6 @@ const fs = require("fs");
 const vm = require("vm");
 const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
-const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
-const { earlyBushHouseBase } = require("./check_endings.js");
 
 const EN_HTML = path.join(ROOT, "outputs/en/dianedate_en.html");
 const CN_HTML = path.join(ROOT, "outputs/cn/dianedate_cn.html");
@@ -17,6 +15,126 @@ const common = [
   "I've already read them. I'll get straight on with the game.",
   "When can you see her?",
 ];
+
+const earlyBushHouseBase = common.concat([
+  "Tuesday.",
+  "On with the story!",
+  "Buy something.",
+  "An overpriced bottle of water (£3)",
+  "Back to the shop.",
+  "Just head for the theatre.",
+  "Say let’s go in and eat, then.",
+  "A bottle of Spanish Rioja (£12)",
+  "Go on to the food menu.",
+  "Tortelloni, the same as Diane (£9)",
+  "Begin the meal.",
+  "You chat about your meal.",
+  "You carry on eating.",
+  "What will it be?",
+  "Talk about trains?",
+  "Gosh!",
+  "Carry on chatting.",
+  "The waiter takes away your plates.",
+  "Cheers.",
+  "No, let’s go straight to the coffees; the sweets are always a waste of money.",
+  "An espresso (£1.50 each)",
+  "You carry on chatting.",
+  "You leave the restaurant and head into the theatre.",
+  "Think about it.",
+  "Try to stop her?",
+  "You take your seats in the auditorium.",
+  "You watch the play.",
+  "Thinking about the way you met?",
+  "Concentrate on the play.",
+  "Just carry on watching the play.",
+  "Carry on watching the play.",
+  "Carry on watching the play.",
+  "Hold her hand?",
+  "Carry on watching the play.",
+  "Concentrate on the play.",
+  "Concentrate on the play.",
+  "You look at Diane.",
+  "You chat about the play.",
+  "Tell her you need to go?",
+  "You go out onto the balcony.",
+  "You carry on chatting.",
+  "Time to return to the play.",
+  "You go back to your seats.",
+  "The second act begins.",
+  "Lean closer to her?",
+  "Carry on watching the play.",
+  "The actress really knows how to play desperation.",
+  "You’re enjoying the play.",
+  "The play continues.",
+  "The lights dim.",
+  "The play continues.",
+  "The play has almost ended.",
+  "You stand up to leave the theatre.",
+  "In the meantime everyone is filing out of the auditorium.",
+  "Meet Molly at the stage door and maybe have a drink somewhere else?",
+  "—and head towards the stage door.",
+  "You wait for Molly.",
+  "You wait for Molly.",
+  "You shake hands with Molly and her friend.",
+  "Which will it be?",
+  "Go for the walk.",
+  "You walk on.",
+  "You reach the river.",
+  "What a good idea.",
+  "You drink your coffees.",
+  "She nestles closer to you.",
+  "You are sitting next to Diane.",
+  "You chat away.",
+  "“You’re joking! I’m enjoying this.”",
+  "You walk on.",
+  "You walk on.",
+  "You walk on.",
+  "You’re quite happy about that.",
+  "Talk about trains.",
+  "She marches you forward.",
+  "OK.",
+  "How?",
+  "Find her somewhere to go.",
+  "She can’t stand still.",
+  "Thank you, she says.",
+  "You walk on.",
+  "Hurrah!",
+  "But you walk on past it.",
+  "You hurry along.",
+  "You go to the bar.",
+  "You go to the bar.",
+  "You chat away.",
+  "You chat away.",
+  "You chat on.",
+  "Yes, I’ll buy another round of drinks.",
+  "It’s your round.",
+  "Cheers!",
+  "Good idea.",
+  "Return to the beer garden.",
+  "You drink up.",
+  "You get ready to leave.",
+  "And head for the bus stop.",
+  "You carry on waiting.",
+  "Think about it.",
+  "Get the taxi?",
+  "Find a taxi.",
+  "You settle back.",
+  "The taxi pulls away onto the main road.",
+  "Put your arm round her?",
+  "The journey continues.",
+  "You’re about halfway home.",
+  "Almost home.",
+  "The taxi continues to your house.",
+  "You get out.",
+  "You find the key.",
+  "You give her a kiss.",
+  "They shake hands.",
+  "A small mug of real filter coffee?",
+  "You drink the coffee.",
+  "He goes upstairs.",
+  "What will you do next?",
+  "So she says nothing.",
+]);
 
 const tuesdayShortHouse = common.concat([
   "Tuesday.",
@@ -532,7 +650,7 @@ const fourthRoute = [
   "Suggest she go behind the wall?",
   "You promise.",
   "You pretend to be looking away.",
-  "And she can sense how excited you are."
+  "And she can sense how excited you are.",
 ];
 
 const firstTail = [
@@ -796,11 +914,23 @@ const generalRoute = common.concat([
 ]);
 
 const generalThursdayBase = generalRoute
-  .slice(0, generalRoute.indexOf("Back towards the Pavilion? Maybe she’s hoping she’ll be able to get in to use the Ladies."))
+  .slice(
+    0,
+    generalRoute.indexOf(
+      "Back towards the Pavilion? Maybe she’s hoping she’ll be able to get in to use the Ladies.",
+    ),
+  )
   .flatMap((label) => {
     if (label === "Tuesday.") return ["Thursday."];
     if (label === "Buy something.") return ["Just go there."];
-    if (["An overpriced bottle of water (£3)", "Back to the shop.", "Just head for the theatre."].includes(label)) return [];
+    if (
+      [
+        "An overpriced bottle of water (£3)",
+        "Back to the shop.",
+        "Just head for the theatre.",
+      ].includes(label)
+    )
+      return [];
     if (label === "Which will it be?") return ["What will it be?"];
     if (label === "You drink up.") return ["And then it's time to leave."];
     if (label === "Yes, you’ve plenty of time.") return ["No, there isn’t really time."];
@@ -2127,7 +2257,6 @@ const bathpeeRoute = [
   "Exactly.",
 ];
 
-
 // Official prize endings (must end on a detected prize line).
 const routes = {
   third: tuesdayShortHouse.concat(thirdTail),
@@ -2252,7 +2381,7 @@ const dianeBrunetteEncounterRoute = [
   "Yes, there are some toilets across the car park – and they’ll probably be closed (but no need to tell her that!)",
   "You walk together through the car park.",
   "You hurry through the car park.",
-  "You wait for her."
+  "You wait for her.",
 ];
 
 // Full set for Gallery (includes game-over / mid-route hidden scenes).
@@ -2296,8 +2425,9 @@ function normalize(text) {
 function loadGame(htmlPath) {
   const source = fs.readFileSync(htmlPath, "utf8");
   const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
-  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
-    .replace(/^\s+|\s+$/g, "");
+  const initialBox = (source.match(
+    /<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i,
+  ) || [null, ""])[1].replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {
     console,
@@ -2316,7 +2446,8 @@ function loadGame(htmlPath) {
 
 function choices(game) {
   const out = [];
-  const re = /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
+  const re =
+    /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
   let match;
   while ((match = re.exec(game.box.innerHTML))) {
     out.push({ tag: match[1] || match[2], text: stripTags(match[3]) });
@@ -2333,7 +2464,8 @@ function findChoice(options, label) {
   let found = options.find((o) => normalize(o.text) === wanted);
   if (!found) {
     found = options.find(
-      (o) => normalize(o.text).replace(/[.!?。！？]+$/u, "") === wanted.replace(/[.!?。！？]+$/u, ""),
+      (o) =>
+        normalize(o.text).replace(/[.!?。！？]+$/u, "") === wanted.replace(/[.!?。！？]+$/u, ""),
     );
   }
   return found;
@@ -2420,17 +2552,28 @@ function ending(text, lang) {
   throw new Error(`Expected a prize ending in ${lang}, but none was found.`);
 }
 
-// --- route smoke test (script entry; gallery/hidden loaders cut above this line) ---
-for (const [key, route] of Object.entries(routes)) {
-  const en = captureLabelsAndTags(EN_HTML, route);
-  const results = [`EN="${ending(en.text, "en")}"`];
-  if (!visual) {
-    for (const [lang, file] of [["cn", CN_HTML], ["es", ES_HTML], ["fr", FR_HTML], ["tw", TW_HTML]]) {
-      const translated = captureLabelsByTags(file, en.tags);
-      results.push(`${lang.toUpperCase()}="${ending(translated.text, lang)}"`);
+function main() {
+  for (const [key, route] of Object.entries(routes)) {
+    const en = captureLabelsAndTags(EN_HTML, route);
+    const results = [`EN="${ending(en.text, "en")}"`];
+    {
+      for (const [lang, file] of [
+        ["cn", CN_HTML],
+        ["es", ES_HTML],
+        ["fr", FR_HTML],
+        ["tw", TW_HTML],
+      ]) {
+        const translated = captureLabelsByTags(file, en.tags);
+        results.push(`${lang.toUpperCase()}="${ending(translated.text, lang)}"`);
+      }
     }
+    console.log(`OK ${key}: ${results.join(" ")}`);
   }
-  console.log(`OK ${key}: ${results.join(" ")}`);
+
+  console.log(
+    `Verified ${Object.keys(routes).length} ending routes across en/cn/tw/es/fr (read-only).`,
+  );
 }
 
-console.log(`Verified ${Object.keys(routes).length} ending routes ${visual ? "(English only; read-only)" : "across en/cn/tw/es/fr (read-only)"}.`);
+if (require.main === module) main();
+module.exports = { galleryRoutes };

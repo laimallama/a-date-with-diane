@@ -1,0 +1,62 @@
+{
+  "story": "Récit",
+  "skip": "Passer",
+  "replay": "Rediffusion",
+  "volume": "{value} ml",
+  "separator": " : ",
+  "join": " et ",
+  "visualTitle": "Un rendez-vous avec Diane (version visuelle)",
+  "visualBilingualTitle": "Un rendez-vous avec Diane (version visuelle bilingue)",
+  "days": {
+    "tuesday": "Mardi",
+    "thursday": "Jeudi",
+    "saturday": "Samedi"
+  },
+  "status": {
+    "calm": "À l’aise",
+    "need": "A envie",
+    "desperate": "Très pressée",
+    "critical": "À bout",
+    "wet": "Déjà mouillée",
+    "peeing": "Fait pipi",
+    "wetting": "Se fait dessus"
+  },
+  "locations": {
+    "title": "",
+    "street": "Rue",
+    "restaurant": "Restaurant",
+    "theatre": "Théâtre",
+    "foyer": "Foyer",
+    "pub": "Pub",
+    "riverside": "Bord de la rivière",
+    "pavilion": "Pavillon",
+    "bus": "File du bus",
+    "taxi": "Taxi",
+    "carpark": "Parking",
+    "home": "Maison",
+    "bathroom": "Salle de bains",
+    "church": "Église",
+    "bridge": "Sous le pont",
+    "night": "De nuit"
+  },
+  "names": {
+    "diane": "Diane",
+    "molly": "Molly",
+    "debbie": "Debbie",
+    "amanda": "Amanda",
+    "chloe": "Chloe"
+  },
+  "title": "Un rendez-vous avec Diane",
+  "back": "Retour",
+  "darkOn": "Mode sombre : Activé",
+  "darkOff": "Mode sombre : Désactivé",
+  "guideOn": "Guide : Activé",
+  "guideOff": "Guide : Désactivé",
+  "tummy": "Ventre",
+  "bladder": "Vessie",
+  "intimacy": "Intimité",
+  "shyness": "Timidité",
+  "luckshots": "Coups de chance",
+  "poundsLabel": "Livres sterling",
+  "gallery": "Galerie"
+}

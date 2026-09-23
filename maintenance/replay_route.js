@@ -1,17 +1,19 @@
-// Replay one click-path against an HTML file. Used by check_endings.js.
+// Replay one click-path against an HTML file for interactive debugging.
 // The ending-route book and smoke test live in verify_ending_routes.js.
 const fs = require("fs");
 const vm = require("vm");
 const path = require("path");
 
 const defaultHtmlPath = path.resolve(__dirname, "../outputs/en/dianedate_en.html");
-const htmlPath = require.main === module && process.argv[2] ? path.resolve(process.argv[2]) : defaultHtmlPath;
+const htmlPath =
+  require.main === module && process.argv[2] ? path.resolve(process.argv[2]) : defaultHtmlPath;
 const source = fs.readFileSync(htmlPath, "utf8");
 const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
 
 function makeGame() {
-  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
-    .replace(/^\s+|\s+$/g, "");
+  const initialBox = (source.match(
+    /<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i,
+  ) || [null, ""])[1].replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {
     console,
@@ -40,7 +42,8 @@ function stripTags(text) {
 
 function choices(box) {
   const out = [];
-  const re = /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
+  const re =
+    /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
   let match;
   while ((match = re.exec(box.innerHTML))) {
     out.push({ tag: match[1] || match[2], text: stripTags(match[3]) });
@@ -66,11 +69,16 @@ function click(game, label) {
   const wanted = normalize(label);
   let found = opts.find((o) => normalize(o.text) === wanted);
   if (!found) {
-    found = opts.find((o) => normalize(o.text).replace(/[.!?。！？]+$/u, "") === wanted.replace(/[.!?。！？]+$/u, ""));
+    found = opts.find(
+      (o) =>
+        normalize(o.text).replace(/[.!?。！？]+$/u, "") === wanted.replace(/[.!?。！？]+$/u, ""),
+    );
   }
   if (!found) {
     const available = opts.map((o) => `- ${o.text}`).join("\n");
-    throw new Error(`Choice not found: ${label}\nAvailable:\n${available}\n\nPage:\n${visibleText(game.box).slice(0, 1200)}`);
+    throw new Error(
+      `Choice not found: ${label}\nAvailable:\n${available}\n\nPage:\n${visibleText(game.box).slice(0, 1200)}`,
+    );
   }
   game.context.go(found.tag);
 }

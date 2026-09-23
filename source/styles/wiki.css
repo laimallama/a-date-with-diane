@@ -1,0 +1,328 @@
+/* Wiki chrome — matched to dianedate playable theme */
+:root {
+  color-scheme: light;
+  --paper: #fffaf2;
+  --ink: #231f20;
+  --muted: #71675c;
+  --line: #dfd1bd;
+  --accent: #9b2f3f;
+  --accent-dark: #6f1f2c;
+  --accent-strong: #6f1f2c;
+  --on-accent: #ffffff;
+  --choice: #fff;
+  --choice-hover: #fff3df;
+  --status: #f1e7d8;
+  --ink-on-hover: #231f20;
+  --em-color: #6f4a58;
+  --box-shadow: 0 18px 50px rgba(59, 43, 25, 0.14);
+  --box-shadow-mobile: 0 10px 28px rgba(59, 43, 25, 0.1);
+  --body-bg-wash: #f5eee5;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #221c17;
+  --ink: #ede3d3;
+  --muted: #948b82;
+  --line: #3c2f26;
+  --accent: #f0d060;
+  --accent-dark: #f0d060;
+  --accent-strong: #f6e48a;
+  --on-accent: #221c17;
+  --choice: #2b241e;
+  --choice-hover: #534433;
+  --status: #2f2822;
+  --ink-on-hover: #faf6ee;
+  --em-color: #e2c878;
+  --box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --box-shadow-mobile: 0 10px 28px rgba(0, 0, 0, 0.4);
+  --body-bg-wash: #120f0c;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--body-bg-wash);
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--body-bg-wash);
+  font-family: var(--wiki-font, Georgia, "Times New Roman", serif);
+  font-size: 18px;
+  line-height: 1.58;
+}
+
+a {
+  color: inherit;
+}
+a:hover {
+  color: var(--accent-dark);
+}
+.game-shell {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0;
+}
+.game-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+.theme-toggle-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-family: var(--wiki-font, Georgia, "Times New Roman", serif);
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  background: transparent;
+  color: var(--muted);
+}
+.theme-toggle-on {
+  background: var(--choice);
+  color: var(--accent-dark);
+}
+.theme-toggle-off {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--line);
+}
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle-button:hover {
+    background: var(--choice-hover);
+    border-color: var(--accent-dark);
+  }
+}
+#box.wiki-box {
+  width: 100%;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--box-shadow);
+}
+.wiki-box h1,
+.wiki-box h2,
+.wiki-box h3 {
+  margin: 0.2rem 0 1rem;
+  color: var(--accent-dark);
+  font-family: var(--wiki-font, Georgia, "Times New Roman", serif);
+  letter-spacing: 0;
+}
+.wiki-box h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+.wiki-box h2 {
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  margin-top: 1.6rem;
+}
+.wiki-box h3 {
+  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  color: var(--ink);
+}
+.wiki-box p {
+  margin: 0 0 1em;
+}
+.wiki-box em {
+  color: var(--em-color);
+}
+.wiki-box strong {
+  color: var(--accent-dark);
+}
+.wiki-box p a,
+.wiki-box td a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.wiki-lead {
+  color: var(--ink);
+  margin-bottom: 1.25em !important;
+}
+.wiki-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.25em;
+  font-size: 1rem;
+}
+.wiki-box th,
+.wiki-box td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.wiki-box th {
+  background: var(--status);
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* Cast Age: shrink to the header (Age / Edad / Âge / 年龄 / 年齡), left-aligned like the other columns */
+.wiki-box table.wiki-cast {
+  table-layout: auto;
+  width: 100%;
+}
+.wiki-box table.wiki-cast th:nth-child(3),
+.wiki-box table.wiki-cast td:nth-child(3) {
+  width: 1%;
+  min-width: 3.5em;
+  padding-left: 10px;
+  padding-right: 1.35em;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Articles — numbered list, full width, game-style hover */
+ol.wiki-articles {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.25em;
+  padding: 0;
+  list-style: none;
+  counter-reset: wiki-art;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+ol.wiki-articles li {
+  counter-increment: wiki-art;
+  border-bottom: 1px solid var(--line);
+}
+ol.wiki-articles li:last-child {
+  border-bottom: none;
+}
+ol.wiki-articles li a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--ink);
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  touch-action: manipulation;
+}
+ol.wiki-articles li a::before {
+  content: counter(wiki-art, decimal-leading-zero);
+  flex: 0 0 2.2rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) and (pointer: fine) {
+  ol.wiki-articles li a:hover {
+    background: var(--choice-hover);
+    color: var(--ink-on-hover);
+  }
+  ol.wiki-articles li a:hover::before {
+    color: var(--ink-on-hover);
+  }
+}
+ol.wiki-articles li a:focus {
+  outline: none;
+}
+ol.wiki-articles li a:focus-visible {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lead quote on major character pages */
+.wiki-quote {
+  margin: 0 0 1.25em;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.wiki-quote footer {
+  margin-top: 0.55em;
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--muted);
+}
+.wiki-quote footer cite {
+  font-style: normal;
+  color: var(--accent-dark);
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+  .game-shell {
+    width: 100%;
+    padding: 16px 12px;
+  }
+  #box.wiki-box {
+    box-shadow: var(--box-shadow-mobile);
+  }
+}
+
+/* Single-file SPA */
+.wiki-page {
+  display: none;
+}
+.wiki-page.active {
+  display: block;
+}
+.wiki-back-row {
+  margin-top: 2em;
+}
+.wiki-back-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--on-accent);
+  background: var(--accent);
+  font-family: var(--wiki-font, Georgia, "Times New Roman", serif);
+  font-size: 1rem;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+@media (hover: hover) and (pointer: fine) {
+  .wiki-back-btn:hover {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+  }
+}
+
+button:focus {
+  outline: none;
+}

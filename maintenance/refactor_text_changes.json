@@ -1,0 +1,38 @@
+{
+  "checkpoint": "60be4ae1ce5cede005363248b6a43e7b377824dd",
+  "date": "2026-09-23",
+  "changes": [
+    {
+      "lang": "cn",
+      "id": "x05559",
+      "before": "<p><em><span style='color: #ff0000'>黛安和莫莉迫切想去厕所。她们没法在一个地方站定，只能来回踱步。一以为没人注意，就把手伸到裆部。</span></em></p>",
+      "after": "<p><em><span style='color: #ff0000'>黛安和莫莉都憋得受不了了。她们站不定，只能来回踱步。一觉得没人注意，就伸手捂住裆部。</span></em></p>",
+      "reason": "Use natural urgency wording and an idiomatic conditional; preserve the stronger English intensity.",
+      "scope": "Localized editorial change in a combined-status description; generated bilingual layer and references must match."
+    },
+    {
+      "lang": "cn",
+      "id": "x05560",
+      "before": "<p><em><span style='color: #ff0000'>黛安和莫莉急到必须用手捂住自己，一手放在裆部，生怕被人看见。</span></em></p>",
+      "after": "<p><em><span style='color: #ff0000'>黛安和莫莉都急得不得不用手捂住裆部，生怕被人看见。</span></em></p>",
+      "reason": "Remove the redundant sequence of holding herself and separately placing a hand at her crotch while preserving the full action and embarrassment.",
+      "scope": "Localized editorial change in a combined-status description; generated bilingual layer and references must match."
+    },
+    {
+      "lang": "tw",
+      "id": "x05559",
+      "before": "<p><em><span style='color: #ff0000'>黛安和莫莉迫切想去廁所。她們沒法在一個地方站定，只能走來走去。只要以為沒人注意，就把手伸到襠部。</span></em></p>",
+      "after": "<p><em><span style='color: #ff0000'>黛安和莫莉都快憋不住了。她們站不定，只能走來走去。以為沒人注意時，就伸手捂住襠部。</span></em></p>",
+      "reason": "Use natural urgency wording and an idiomatic conditional; preserve the stronger English intensity.",
+      "scope": "Localized editorial change in a combined-status description; generated bilingual layer and references must match."
+    },
+    {
+      "lang": "tw",
+      "id": "x05560",
+      "before": "<p><em><span style='color: #ff0000'>黛安和莫莉急到必須用手捂住自己，一手放在襠部，生怕被人看見。</span></em></p>",
+      "after": "<p><em><span style='color: #ff0000'>黛安和莫莉都急得不得不用手捂住襠部，生怕被人看見。</span></em></p>",
+      "reason": "Remove the redundant sequence of holding herself and separately placing a hand at her crotch while preserving the full action and embarrassment.",
+      "scope": "Localized editorial change in a combined-status description; generated bilingual layer and references must match."
+    }
+  ]
+}

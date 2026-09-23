@@ -1,0 +1,62 @@
+{
+  "story": "Historia",
+  "skip": "Saltar",
+  "replay": "Repetición",
+  "volume": "{value} ml",
+  "separator": ": ",
+  "join": " y ",
+  "visualTitle": "Una cita con Diane (versión visual)",
+  "visualBilingualTitle": "Una cita con Diane (versión visual bilingüe)",
+  "days": {
+    "tuesday": "Martes",
+    "thursday": "Jueves",
+    "saturday": "Sábado"
+  },
+  "status": {
+    "calm": "Cómoda",
+    "need": "Tiene ganas",
+    "desperate": "Muy apurada",
+    "critical": "Al límite",
+    "wet": "Ya se ha mojado",
+    "peeing": "Haciendo pis",
+    "wetting": "Haciéndose pis"
+  },
+  "locations": {
+    "title": "",
+    "street": "Calle",
+    "restaurant": "Restaurante",
+    "theatre": "Teatro",
+    "foyer": "Vestíbulo",
+    "pub": "Pub",
+    "riverside": "Paseo del río",
+    "pavilion": "Pabellón",
+    "bus": "Cola del autobús",
+    "taxi": "Taxi",
+    "carpark": "Aparcamiento",
+    "home": "Casa",
+    "bathroom": "Baño",
+    "church": "Iglesia",
+    "bridge": "Bajo el puente",
+    "night": "De noche"
+  },
+  "names": {
+    "diane": "Diane",
+    "molly": "Molly",
+    "debbie": "Debbie",
+    "amanda": "Amanda",
+    "chloe": "Chloe"
+  },
+  "title": "Una cita con Diane",
+  "back": "Atrás",
+  "darkOn": "Modo oscuro: Activado",
+  "darkOff": "Modo oscuro: Desactivado",
+  "guideOn": "Guía: Activada",
+  "guideOff": "Guía: Desactivada",
+  "tummy": "Vientre",
+  "bladder": "Vejiga",
+  "intimacy": "Intimidad",
+  "shyness": "Timidez",
+  "luckshots": "Golpes de suerte",
+  "poundsLabel": "Libras",
+  "gallery": "Galería"
+}

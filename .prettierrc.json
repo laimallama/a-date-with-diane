@@ -1,0 +1,12 @@
+{
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "htmlWhitespaceSensitivity": "strict",
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}

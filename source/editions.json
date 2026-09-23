@@ -1,0 +1,19 @@
+{
+  "en": {
+    "style": "english"
+  },
+  "cn": {
+    "style": "cjk",
+    "font": "\"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", Arial, Helvetica, sans-serif"
+  },
+  "tw": {
+    "style": "cjk",
+    "font": "\"PingFang TC\", \"Heiti TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", Arial, Helvetica, sans-serif"
+  },
+  "es": {
+    "style": "latin"
+  },
+  "fr": {
+    "style": "latin"
+  }
+}

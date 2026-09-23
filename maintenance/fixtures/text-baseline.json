@@ -1,0 +1,26 @@
+{
+  "checkpoint": "60be4ae1ce5cede005363248b6a43e7b377824dd",
+  "purpose": "Hashes of [stable ID, final rendered markup] pairs sorted with localeCompare(en). Covers every static call and rotating variant at migration; an intentional wording change requires review and a recorded update.",
+  "catalogs": {
+    "en": {
+      "entries": 5356,
+      "sha256": "3b2462cb77983eff7fe77db3dd6fea4bfab528f4996efa171eb626dc6c72af7e"
+    },
+    "cn": {
+      "entries": 5356,
+      "sha256": "07b8795cd8a24b5e6e7662bfac70cc893ed6344598ccbc4d908276a3acbae339"
+    },
+    "tw": {
+      "entries": 5356,
+      "sha256": "beb44836b186609611d7c32f30d1d324262b2e6f8142812f16df528a735474d9"
+    },
+    "es": {
+      "entries": 5356,
+      "sha256": "7c65212e3397313f8a276c0e7cfa383b2088de0b267f51a59d55a6d581a5f4c4"
+    },
+    "fr": {
+      "entries": 5356,
+      "sha256": "fc89622714f1cc34c0a9959ea56dbf7c29375c10fb13dc8bc4d7bd95cb68318e"
+    }
+  }
+}

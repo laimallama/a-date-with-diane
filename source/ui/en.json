@@ -1,0 +1,21 @@
+{
+  "single": {
+    "navRow_1": "<button class='back-button' onclick='goback()'>Back</button>",
+    "navRow_6": "Guide: On",
+    "navRow_7": "Guide: Off",
+    "navRow_10": "<button class='climax-skip-button' onclick='skipToClimax()'>Skip to the good bit!</button>",
+    "syncThemeButton_1": "Dark Mode: On",
+    "syncThemeButton_2": "Dark Mode: Off",
+    "syncGuideDisplay_3": "Guide: On",
+    "syncGuideDisplay_4": "Guide: Off",
+    "syncSkipButton_6": "Skip to the good bit!",
+    "go_8": "<span>Pounds <b>",
+    "go_9": "en",
+    "go_11": "<span>Luckshots <b>",
+    "go_13": "<span>Intimacy <b>",
+    "go_17": "<span>Tummy <b>",
+    "go_19": "<span>Bladder <b>",
+    "go_21": "<span>Shyness <b>"
+  },
+  "bilingual": {}
+}

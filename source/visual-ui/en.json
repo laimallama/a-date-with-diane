@@ -1,0 +1,62 @@
+{
+  "story": "Story",
+  "skip": "Skip",
+  "replay": "Replay",
+  "volume": "{value} ml",
+  "separator": ": ",
+  "join": " and ",
+  "visualTitle": "A Date with Diane (Visual)",
+  "visualBilingualTitle": "A Date with Diane (Bilingual Visual)",
+  "days": {
+    "tuesday": "Tuesday",
+    "thursday": "Thursday",
+    "saturday": "Saturday"
+  },
+  "status": {
+    "calm": "Comfortable",
+    "need": "Needs to go",
+    "desperate": "Desperate",
+    "critical": "Critical",
+    "wet": "Already wet",
+    "peeing": "Peeing",
+    "wetting": "Wetting"
+  },
+  "locations": {
+    "title": "",
+    "street": "Street",
+    "restaurant": "Restaurant",
+    "theatre": "Theatre",
+    "foyer": "Foyer",
+    "pub": "Pub",
+    "riverside": "Riverside",
+    "pavilion": "Pavilion",
+    "bus": "Bus queue",
+    "taxi": "Taxi",
+    "carpark": "Car park",
+    "home": "Home",
+    "bathroom": "Bathroom",
+    "church": "Church",
+    "bridge": "Under the bridge",
+    "night": "Night"
+  },
+  "names": {
+    "diane": "Diane",
+    "molly": "Molly",
+    "debbie": "Debbie",
+    "amanda": "Amanda",
+    "chloe": "Chloe"
+  },
+  "title": "A Date with Diane",
+  "back": "Back",
+  "darkOn": "Dark Mode: On",
+  "darkOff": "Dark Mode: Off",
+  "guideOn": "Guide: On",
+  "guideOff": "Guide: Off",
+  "tummy": "Tummy",
+  "bladder": "Bladder",
+  "intimacy": "Intimacy",
+  "shyness": "Shyness",
+  "luckshots": "Luckshots",
+  "poundsLabel": "Pounds",
+  "gallery": "Gallery"
+}

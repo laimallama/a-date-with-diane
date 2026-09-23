@@ -32,51 +32,67 @@ The stats bar is Diane’s date HUD. It stays hidden on title, notes, further in
 
 ## Maintaining
 
-Toolkit and conventions: [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md). Companion wiki: [`outputs/en/wiki_en.html`](outputs/en/wiki_en.html).
+The maintained story is in [`source/story.js`](source/story.js); the five language
+catalogs are in [`source/text/`](source/text/). Shared runtime, interface labels,
+styles and document shells live alongside them. All nine playable HTML files are
+generated, self-contained releases. English and local bilingual text come directly
+from the same catalogs as the standalone games. Text already contains its final
+punctuation and markup; no runtime repair or translation fallback is needed.
 
-All ending/extra Gallery click-paths live in `verify_ending_routes.js`; hidden-scene definitions live in `write_hidden_scenes.js`. There is no separate `routes/` folder.
-
-```bash
-node maintenance/verify_project.js          # full read-only regression check
-node maintenance/verify_ending_routes.js    # read-only ending-route smoke test
-node maintenance/write_hidden_scenes.js     # read-only definition check
-node maintenance/verify_text_consistency.js # source and rendered bilingual parity
-node maintenance/build_aligned_text.js      # refresh the translation reference
-node maintenance/build_bilingual_renderer.js # sync alternate-language formatting
-node maintenance/build_gallery_data.js      # pack routes into the Gallery HTML
-node maintenance/write_transcripts.js       # regenerate climax transcripts
-node maintenance/sync_visual_edition.js     # import shared English into ADWD-visual and rebuild it
-```
-
-## Runtime and generated files
-
-The playable HTML files contain the maintained story and runtime. The single-language and bilingual editions contain separate copies of that code; shared runtime fixes must reach all nine playable files. Back restores the game variables, rendered page, and text-variation counter. It is session history, not a persistent save system.
-
-Route definitions are maintained in `maintenance/verify_ending_routes.js` and `maintenance/write_hidden_scenes.js`. `maintenance/build_gallery_data.js` generates both `maintenance/gallery_data.json` and the Gallery data embedded in the playable HTML. Regenerate transcripts after rebuilding the Gallery or changing transcript text. Transcript generation validates all routes before writing its managed files and preserves unrelated files.
+Use Node.js 20 or newer for development:
 
 ```bash
-node maintenance/build_gallery_data.js --check  # detect stale generated data; no writes
-node maintenance/build_aligned_text.js --check  # detect stale reference entries
-node maintenance/write_transcripts.js --check   # compare all 230 managed transcripts
-node maintenance/verify_project.js              # 46 routes in each of nine editions
+npm ci
+npm run build        # rebuild editions, Gallery, reference, transcripts and wikis
+npm test             # read-only checks, including build parity with ADWD-visual
+npm run check:local  # isolated checkout only
+node ../ADWD-visual/maintenance/build_visual_edition.js
 ```
 
-The full verifier checks route availability, Back and forward replay, guided progress, Skip, cross-language numerical state, HTML metadata, JavaScript syntax, and generated Gallery consistency. It also checks the translation reference, all managed transcripts, bilingual translation keys, and the rendered output of every static story/choice call in all four bilingual languages. Focused cases cover dynamic notices, text variants, and previously divergent branches. It uses a small DOM stub; browser layout, keyboard interactions, animation timing, translation meaning, and arbitrary untested branch combinations still need separate review. All maintenance commands above resolve project inputs relative to their script location and can be invoked from another working directory with an absolute script path.
+Read [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md) for editing conventions,
+source ownership, verification scope, browser checks and visual synchronization.
+[`maintenance/REFACTOR.md`](maintenance/REFACTOR.md) records the source migration and
+its recovery commits. Route definitions generate the classic Gallery's 46 leaves and
+all 230 localized transcripts. `maintenance/aligned_text.json` is a generated
+inspection reference with stable text IDs; edit the catalogs, not that reference.
+The five wiki article documents are maintained in `source/wiki/`; their runtime and
+stylesheet are shared. The released wiki HTML is generated and self-contained.
+`npm run format` / `npm run format:check` cover all maintained code and HTML templates.
+Use `npm run format:visual` / `npm run format:visual:check` for the visual repository.
 
-The comprehensive audit adds `maintenance/verify_audit_regressions.js` to the canonical verifier. It checks coffee prices and purchase markers for ordinary and automatic orders, coffee narration after each wine choice, theatre wine preorders and water refusals, naturally reachable high-spending routes, the ordinary-bus luckshot cap, and Back/refunds. Synthetic affordability, drinking and boarding boundaries are labelled separately from normal-play witnesses. The theatre order costs £10 even when Diane buys the programme; Pinot coffee narration respects her earlier wine refusal. `maintenance/audit_state_space.js` discovers alternatives through actual choices and reports witnesses, conditional outcomes, and every state-budget cutoff. Its bounded exploration is not proof of exhaustive state coverage.
+The full verifier covers generated freshness, exact text witnesses, all bilingual
+layers, dynamic text, focused historical regressions, all Gallery routes, numerical
+state, Back/replay and Skip. Real-browser controls and selected layouts have a separate
+Playwright verifier. These checks do not prove linguistic perfection or exhaustive
+coverage of arbitrary state combinations.
 
-`maintenance/verify_browser_controls.js` runs actual Chromium, Firefox, and WebKit checks across the nine text games and the generated visual game. It requires Playwright and matching browser binaries; `ADWD_PLAYWRIGHT_MODULE` and `PLAYWRIGHT_BROWSERS_PATH` can point to an existing installation. It accepts `--output=/absolute/path/results.json`, engine/edition selections, and focused `--currency-only`, `--focus-only`, or `--choices-only` checks. Choice checks follow normal routes with single and interleaved choices and verify their DOM containers after Back/replay. It remains a separate browser command because the ordinary verifier needs only Node.js. The browser matrix covers controls and selected layouts, not every narrative route or animation.
+ADWD is canonical for all language content and visual labels (`source/visual-ui/`).
+The sibling **ADWD-visual** checkout reads those inputs directly to build all nine visual
+editions. It carries no duplicate text games, wikis, transcripts or language catalogs.
+Set `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT` when the source checkouts are not siblings.
+Build commands never commit or push automatically.
 
-The companion wikis are single HTML files, one per language. `maintenance/aligned_text.json` is a generated translation reference, not a game or wiki generator. Its entries identify the source function and one-based call position; dynamic entries retain complete expressions, and text-variation tables are indexed too. Refresh it with `build_aligned_text.js` after text edits. Preserve existing IDs rather than renumbering the index.
+## Small playable exports
 
-Bilingual files use exact-match dictionaries for shared translations and `sAlt` / `cAlt` for context-specific wording. Their alternate-language rendering helpers are generated from the corresponding standalone edition by `build_bilingual_renderer.js`; rebuild those helpers after changing standalone formatting functions.
+The repository is an authoring checkout; source, tests, package manifests and Git history
+are development files. Produce separate play-only folders with:
 
-The separate visual edition is maintained in `/Users/apple/Documents/ADWD-visual` with its own Git repository. This text repository is the canonical source for shared English content. After English story/runtime, route, wiki, transcript, or shared-tool changes, refresh the affected generated files and run `node maintenance/sync_visual_edition.js`. It copies the managed English files, projects the Gallery snapshot to English, and rebuilds the visual edition while preserving its presentation and assets. It does not copy translations or the reference index into the visual repository.
+```bash
+node maintenance/export_games.js /path/to/new-release-folder
+node maintenance/export_games.js --check /path/to/new-release-folder
+```
 
-`node maintenance/sync_visual_edition.js --check` checks shared content and the generated visual page without writing. The normal verifier also requires both checkouts to agree. Default paths are sibling `ADWD` and `ADWD-visual` folders; set `ADWD_TEXT_ROOT` / `ADWD_VISUAL_ROOT` for other locations. `verify_project.js --local-only` explicitly checks an isolated checkout without claiming cross-project synchronization. Local fixes do not automatically commit or push either repository.
+The exporter requires a new destination and refuses to overlap either source checkout.
+It copies all 18 playable HTML editions unchanged. `ADWD/` contains the nine text games,
+five wikis and 230 transcripts. `ADWD-visual/` contains only the nine visual games and
+318 required image assets; companion references point to ADWD. Each gets a short playing
+README. Exports have no `.git`, `node_modules`, `source`, maintenance tools, manifests,
+synchronization receipts or duplicated companion files. The visual metadata is already
+embedded in every visual HTML page.
 
-The Gallery contains **15 ending leaves and 31 hidden-scene leaves** in all five standalone languages, all four bilingual editions, and visual English. The camper-group addition “You and Diane Come Across the Brunette” is localized in every interface. Routes, ordering, scene boundaries and localized transcripts are synchronized. Dialogue differences use one coherent representative route, without extra variation controls or menu notes.
-
-The direct camper encounter is fourth within its group: after the solo encounters and before the covert-watching branches. Its title remains “You and Diane Come Across the Brunette”. The guide and transcript open on `carparka0`, cover the encounter on `carparka1`, and stop before `taxihome1`. The final taxi-rank choice correctly remains unhighlighted because it is outside this scene; Back restores the highlighted waiting choice. The transcript filename `09ba_camper_encounter_en.txt` keeps it in Gallery order without renaming existing transcripts.
-
-The camper group pairs “Caught by the Brunette’s Boyfriend” immediately after “Peeping Underneath”, then closes with the non-watching choice. Its transcript slug is `09da_camper_caught`; the retired `09f_camper_caught` filenames were deliberately migrated. The Chardonnay solo scene now includes the return-to-queue response on `carpark3`, ending before `busqueue7`. All scene-final continuation choices remain available but unhighlighted.
+`package.json` defines development commands and dependencies; `package-lock.json` pins
+exact versions for reproducible installs; `node_modules/` is their disposable installed
+copy. `source/` is the authoritative editable code and translation catalogs. Keep these
+in the authoring repository, not in a folder intended only for playing. To resume work
+from play-only folders, clone both GitHub repositories into sibling development folders,
+then run `npm ci` in ADWD. Do not try to run build commands inside a playable export.

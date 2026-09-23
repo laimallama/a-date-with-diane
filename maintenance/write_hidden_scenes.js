@@ -1,56 +1,18 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
-const mod = require("module");
 
 const ROOT = path.resolve(__dirname, "..");
-const ENDING_ROUTES_SOURCE = path.join(ROOT, "maintenance/verify_ending_routes.js");
 // This command checks definitions without modifying any files.
 
-const languages = {
-  en: { htmlPath: path.join(ROOT, "outputs/en/dianedate_en.html") },
-  cn: { htmlPath: path.join(ROOT, "outputs/cn/dianedate_cn.html") },
-  es: { htmlPath: path.join(ROOT, "outputs/es/dianedate_es.html") },
-  fr: { htmlPath: path.join(ROOT, "outputs/fr/dianedate_fr.html") },
-  tw: { htmlPath: path.join(ROOT, "outputs/tw/dianedate_tw.html") },
-};
-
-function loadRoutes() {
-  const source = fs.readFileSync(ENDING_ROUTES_SOURCE, "utf8");
-  // Stop before route smoke-test side effects — gallery only needs route arrays.
-  const cut = source.search(/\n\/\/ --- route smoke test/);
-  const trimmed = cut >= 0 ? source.slice(0, cut) : source;
-  const localRequire = mod.createRequire(ENDING_ROUTES_SOURCE);
-  const savedArgv = process.argv;
-  process.argv = [savedArgv[0], ENDING_ROUTES_SOURCE];
-  const context = {
-    console: { log() {}, error: console.error },
-    require: localRequire,
-    process,
-    __dirname: path.dirname(ENDING_ROUTES_SOURCE),
-    __filename: ENDING_ROUTES_SOURCE,
-    globalThis: {},
-  };
-  context.global = context;
-  context.globalThis = context;
-  vm.createContext(context);
-  try {
-    vm.runInContext(
-      `${trimmed}\nglobalThis.__routes = (typeof galleryRoutes !== "undefined" ? galleryRoutes : routes);`,
-      context,
-      { filename: ENDING_ROUTES_SOURCE }
-    );
-  } finally {
-    process.argv = savedArgv;
-  }
-  return context.__routes;
-}
+const EN_HTML = path.join(ROOT, "outputs/en/dianedate_en.html");
 
 function loadGame(htmlPath) {
   const source = fs.readFileSync(htmlPath, "utf8");
   const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
-  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
-    .replace(/^\s+|\s+$/g, "");
+  const initialBox = (source.match(
+    /<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i,
+  ) || [null, ""])[1].replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {
     console,
@@ -88,7 +50,8 @@ function stripTags(text) {
 
 function choices(box) {
   const out = [];
-  const re = /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
+  const re =
+    /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
   let match;
   while ((match = re.exec(box.innerHTML))) {
     out.push({ tag: match[1] || match[2], text: stripTags(match[3]) });
@@ -96,39 +59,9 @@ function choices(box) {
   return out;
 }
 
-function removeUi(html) {
-  return String(html)
-    .replace(/<div class=['"]choices['"]>[\s\S]*?<\/div>/g, "")
-    .replace(/<aside class=['"]status-bar['"]>[\s\S]*?<\/aside>/g, "")
-    .replace(/<div class=['"]nav-row['"]>[\s\S]*?<\/div>/g, "");
-}
-
-
-
-
-
-
-
-
-function visibleStory(html) {
-  let text = removeUi(html);
-  text = text
-    .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, inner) => `\n\n【${stripTags(inner)}】\n\n`)
-    .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<hr\s*\/?>/gi, "\n\n")
-    .replace(/<\/(?:p|h1|h2|div)>/gi, "\n\n")
-    .replace(/<[^>]+>/g, "");
-  return decodeEntities(text)
-    .split(/\n/)
-    .map((line) => line.replace(/[ \t]+/g, " ").trim())
-    .join("\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-}
-
 function normalize(text) {
   // Strip all quote marks (British ‘…’, American “…”, straight '…'/"…") so
-  // route labels still match polished choice text after smartenText.
+  // route labels still match the reviewed choice text.
   return stripTags(text)
     .replace(/[“”«»「」『』‘’'"]/g, "")
     .replace(/\s*[—–]\s*/g, "-")
@@ -136,36 +69,35 @@ function normalize(text) {
     .trim();
 }
 
-
-function routeToTags(route, routes) {
-  const game = loadGame(languages.en.htmlPath);
-  return route.map((label, index) => {
+// The same immutable English route feeds every locale within a build.
+const routeTagCache = new WeakMap();
+function routeToTags(route) {
+  if (routeTagCache.has(route)) return routeTagCache.get(route).slice();
+  const game = loadGame(EN_HTML);
+  const tags = route.map((label, index) => {
     const options = choices(game.box);
     const wanted = normalize(label);
-    const found = options.find((o) => normalize(o.text) === wanted)
-      || options.find((o) => normalize(o.text).replace(/[.!?。！？]+$/u, "") === wanted.replace(/[.!?。！？]+$/u, ""));
+    const found =
+      options.find((o) => normalize(o.text) === wanted) ||
+      options.find(
+        (o) =>
+          normalize(o.text).replace(/[.!?。！？]+$/u, "") === wanted.replace(/[.!?。！？]+$/u, ""),
+      );
     if (!found) {
-      throw new Error(`Choice not found at route step ${index + 1}: ${label}\nAvailable:\n${options.map((o) => `- ${o.text}`).join("\n")}`);
+      throw new Error(
+        `Choice not found at route step ${index + 1}: ${label}\nAvailable:\n${options.map((o) => `- ${o.text}`).join("\n")}`,
+      );
     }
     game.context.go(found.tag);
     return found.tag;
   });
+  routeTagCache.set(route, tags.slice());
+  return tags;
 }
-
-function runTag(game, tag, context) {
-  const found = choices(game.box).find((o) => o.tag === tag);
-  if (!found) {
-    throw new Error(`Tag not found for ${context}: ${tag}\nAvailable:\n${choices(game.box).map((o) => `- ${o.tag}: ${o.text}`).join("\n")}\n\nPage:\n${visibleStory(game.box.innerHTML).slice(0, 1200)}`);
-  }
-  game.context.go(tag);
-  return found.text;
-}
-
-
 
 function buildDefinitions(routes) {
-  const secondTags = routeToTags(routes.second, routes);
-  const generalTags = routeToTags(routes.general, routes);
+  const secondTags = routeToTags(routes.second);
+  const generalTags = routeToTags(routes.general);
 
   // Burgundy retains the entire discovery and adds Molly’s visible urgency within the scene.
   const portalooDiscovery = [
@@ -239,7 +171,7 @@ function buildDefinitions(routes) {
     "riverside4",
     "sitonbench",
     "riverside5",
-    "riverside6"
+    "riverside6",
   ];
 
   // Tuesday/Riesling/tiramisu gives Diane the stronger visible reaction while keeping the same embarrassed refusal and complete waterfall aftermath.
@@ -312,7 +244,7 @@ function buildDefinitions(routes) {
     "riverside4",
     "sitonbench",
     "riverside5",
-    "riverside6"
+    "riverside6",
   ];
 
   // Thursday/Merlot retains the fuller urgency description and adds Diane’s playful return-to-queue response instead of the silent rebuff.
@@ -417,7 +349,7 @@ function buildDefinitions(routes) {
     "busqueue3",
     "queue1a",
     "watchblonde",
-    "busqueue6"
+    "busqueue6",
   ];
 
   // Tuesday/Chardonnay: complete the return to the queue with Diane’s playful reaction.
@@ -521,89 +453,332 @@ function buildDefinitions(routes) {
     "pavilion9a",
     "busqueue",
     "busqueue1",
-    "busqueue2"
+    "busqueue2",
   ];
 
   const theatreFlashback = secondTags.slice(0, 29);
   const riversideEmergency = secondTags.slice(0, 79);
 
   const openPublicToiletSpyhole = [
-    "start1a", "start1b", "tuesdaydate", "start2", "gothere",
-    "winelist", "buyrioja", "eatmeal", "buylasagne", "eatmeal4",
-    "eatmeal4a", "eatmeal4b", "eatmeal4c", "eatmeal4d", "eatmeal7",
-    "eatmeal7a", "eatmeal7b", "espresso", "eatmeal7c", "gotheatre",
-    "theatreask", "stopher", "theatre1", "theatre2", "theatre3c",
-    "theatre4", "theatre5", "theatre6", "theatre7", "holdhand1",
-    "theatre8", "theatre9", "theatre10", "interval", "interval1",
-    "gotoo1", "interval2", "interval3", "act2", "act2a", "act2b",
-    "leanclose2", "act2c", "act2d", "act2e", "act2f", "act2fa",
-    "act2g", "act2h", "leavetheatre", "leavetheatre1", "stagedoor",
-    "stagedoor1", "stagedoor2", "stagedoor3", "stagedoor4",
-    "stagedoor5a", "choosewalk1", "riverside2", "riverside3",
-    "riverside7", "riverside8", "riverside9", "riverside10",
-    "riverside11", "traintalka", "riverside12", "riverside13a",
-    "riverside14", "toiletopen",
+    "start1a",
+    "start1b",
+    "tuesdaydate",
+    "start2",
+    "gothere",
+    "winelist",
+    "buyrioja",
+    "eatmeal",
+    "buylasagne",
+    "eatmeal4",
+    "eatmeal4a",
+    "eatmeal4b",
+    "eatmeal4c",
+    "eatmeal4d",
+    "eatmeal7",
+    "eatmeal7a",
+    "eatmeal7b",
+    "espresso",
+    "eatmeal7c",
+    "gotheatre",
+    "theatreask",
+    "stopher",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "holdhand1",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "gotoo1",
+    "interval2",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "leanclose2",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "stagedoor",
+    "stagedoor1",
+    "stagedoor2",
+    "stagedoor3",
+    "stagedoor4",
+    "stagedoor5a",
+    "choosewalk1",
+    "riverside2",
+    "riverside3",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riverside10",
+    "riverside11",
+    "traintalka",
+    "riverside12",
+    "riverside13a",
+    "riverside14",
+    "toiletopen",
   ];
 
   const thursdayBridge = [
-    "start1a", "start1b", "thursdaydate", "start2", "gothere",
-    "winelist", "buyrioja", "eatmeal", "buytort", "eatmeal5", "eatmeal5a",
-    "eatmeal5b", "eatmeal5c", "traintalk", "traintalk1", "traintalk2",
-    "eatmeal7", "eatmeal7a", "puddings", "buypannacotta", "eatmeal7b",
-    "filtercoffee", "eatmeal7bb", "gotheatre", "theatreask", "stopher",
-    "theatre1", "theatre2", "theatre3c", "theatre4", "theatre5",
-    "theatre6", "theatre7", "holdhand1", "theatre8", "theatre9",
-    "theatre10", "interval", "interval1", "gotoo1", "interval2",
-    "interval3", "act2", "act2a", "act2b", "leanclose2", "act2c",
-    "act2d", "act2e", "act2f", "act2fa", "act2g", "act2h",
-    "leavetheatre", "leavetheatre1", "stagedoor", "stagedoor1",
-    "stagedoor2", "stagedoor3", "stagedoor4", "stagedoor5",
-    "choosewalk1", "riverside2", "riverside3", "riverside3aa",
-    "riverside4", "sitonbench", "riverside5", "riverside6",
-    "riverside7", "riverside8", "riverside9", "riversidepath",
+    "start1a",
+    "start1b",
+    "thursdaydate",
+    "start2",
+    "gothere",
+    "winelist",
+    "buyrioja",
+    "eatmeal",
+    "buytort",
+    "eatmeal5",
+    "eatmeal5a",
+    "eatmeal5b",
+    "eatmeal5c",
+    "traintalk",
+    "traintalk1",
+    "traintalk2",
+    "eatmeal7",
+    "eatmeal7a",
+    "puddings",
+    "buypannacotta",
+    "eatmeal7b",
+    "filtercoffee",
+    "eatmeal7bb",
+    "gotheatre",
+    "theatreask",
+    "stopher",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "holdhand1",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "gotoo1",
+    "interval2",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "leanclose2",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "stagedoor",
+    "stagedoor1",
+    "stagedoor2",
+    "stagedoor3",
+    "stagedoor4",
+    "stagedoor5",
+    "choosewalk1",
+    "riverside2",
+    "riverside3",
+    "riverside3aa",
+    "riverside4",
+    "sitonbench",
+    "riverside5",
+    "riverside6",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riversidepath",
   ];
 
   const mollyBrunoTowpath = [
-    "start1a", "start1b", "tuesdaydate", "start2", "buysth",
-    "buywater", "buysth", "gothere", "winelist", "buyrioja", "eatmeal",
-    "buytort", "eatmeal5", "eatmeal5a", "eatmeal5b", "eatmeal5c",
-    "traintalk", "traintalk1", "traintalk2", "eatmeal7", "eatmeal7a",
-    "eatmeal7b", "espresso", "eatmeal7c", "gotheatre", "theatreask",
-    "stopher", "theatre1", "theatre2", "theatre3c", "theatre4",
-    "theatre5", "theatre6", "theatre7", "holdhand1", "theatre8",
-    "theatre9", "theatre10", "interval", "interval1", "gotoo1",
-    "interval2", "interval3", "act2", "act2a", "act2b", "leanclose2",
-    "act2c", "act2d", "act2e", "act2f", "act2fa", "act2g", "act2h",
-    "leavetheatre", "leavetheatre1", "stagedoor", "stagedoor1",
-    "stagedoor2", "stagedoor3", "stagedoor4", "stagedoor5a",
-    "choosepub", "pubdrink", "pubdrink1", "pubdrink2", "pubdrink3",
-    "pubdrink4", "pubdrink4a", "pubdrink5", "pubdrink6", "pubdrink7",
-    "pubdrink8", "pubdrink9", "riverside2", "riverside3",
-    "riverside3aa", "riverside4", "sitonbench", "riverside5",
-    "riverside6", "riverside7", "riverside8", "riverside9",
-    "riverside10", "riverside11", "traintalka", "riverside12",
+    "start1a",
+    "start1b",
+    "tuesdaydate",
+    "start2",
+    "buysth",
+    "buywater",
+    "buysth",
+    "gothere",
+    "winelist",
+    "buyrioja",
+    "eatmeal",
+    "buytort",
+    "eatmeal5",
+    "eatmeal5a",
+    "eatmeal5b",
+    "eatmeal5c",
+    "traintalk",
+    "traintalk1",
+    "traintalk2",
+    "eatmeal7",
+    "eatmeal7a",
+    "eatmeal7b",
+    "espresso",
+    "eatmeal7c",
+    "gotheatre",
+    "theatreask",
+    "stopher",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "holdhand1",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "gotoo1",
+    "interval2",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "leanclose2",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "stagedoor",
+    "stagedoor1",
+    "stagedoor2",
+    "stagedoor3",
+    "stagedoor4",
+    "stagedoor5a",
+    "choosepub",
+    "pubdrink",
+    "pubdrink1",
+    "pubdrink2",
+    "pubdrink3",
+    "pubdrink4",
+    "pubdrink4a",
+    "pubdrink5",
+    "pubdrink6",
+    "pubdrink7",
+    "pubdrink8",
+    "pubdrink9",
+    "riverside2",
+    "riverside3",
+    "riverside3aa",
+    "riverside4",
+    "sitonbench",
+    "riverside5",
+    "riverside6",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riverside10",
+    "riverside11",
+    "traintalka",
+    "riverside12",
   ];
 
   const mollyBrunoTowpathHigh = [
-    "start1a", "start1b", "tuesdaydate", "start2", "gothere",
-    "winelist", "buyburgundy", "eatmeal", "buytort", "eatmeal5",
-    "eatmeal5a", "eatmeal5b", "eatmeal5c", "asklootalk",
-    "asklootalk1", "asklootalk2", "gotheatre", "theatre1", "theatre2",
-    "theatre3c", "theatre4", "theatre5", "theatre6", "theatre7",
-    "holdhand1", "theatre8", "theatre9", "theatre10", "interval",
-    "interval1", "gotoo1", "interval2", "interval3", "act2", "act2a",
-    "act2b", "leanclose2", "act2c", "act2d", "act2e", "act2f",
-    "act2fa", "act2g", "act2h", "leavetheatre", "leavetheatre1",
-    "stagedoor", "stagedoor1", "stagedoor2", "stagedoor3",
-    "stagedoor4", "stagedoor5a", "choosepub", "pubdrink",
-    "pubdrink1", "pubdrink2", "pubdrink3", "pubdrink4", "pubdrink4a",
-    "pubdrink5", "pubdrink6", "pubdrink7", "pubdrink8", "pubdrink9",
-    "riverside2", "riverside3", "riverside3aa", "riverside4",
-    "sitonbench", "riverside5", "riverside6", "riverside7",
-    "riverside8", "riverside9", "riverside10", "riverside11",
-    "traintalka", "riverside12",
+    "start1a",
+    "start1b",
+    "tuesdaydate",
+    "start2",
+    "gothere",
+    "winelist",
+    "buyburgundy",
+    "eatmeal",
+    "buytort",
+    "eatmeal5",
+    "eatmeal5a",
+    "eatmeal5b",
+    "eatmeal5c",
+    "asklootalk",
+    "asklootalk1",
+    "asklootalk2",
+    "gotheatre",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "holdhand1",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "gotoo1",
+    "interval2",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "leanclose2",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "stagedoor",
+    "stagedoor1",
+    "stagedoor2",
+    "stagedoor3",
+    "stagedoor4",
+    "stagedoor5a",
+    "choosepub",
+    "pubdrink",
+    "pubdrink1",
+    "pubdrink2",
+    "pubdrink3",
+    "pubdrink4",
+    "pubdrink4a",
+    "pubdrink5",
+    "pubdrink6",
+    "pubdrink7",
+    "pubdrink8",
+    "pubdrink9",
+    "riverside2",
+    "riverside3",
+    "riverside3aa",
+    "riverside4",
+    "sitonbench",
+    "riverside5",
+    "riverside6",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riverside10",
+    "riverside11",
+    "traintalka",
+    "riverside12",
   ];
-
 
   const riversideUrinalRoute = routes.amanda
     .slice(0, routes.amanda.indexOf("Which will it be?") + 1)
@@ -635,16 +810,11 @@ function buildDefinitions(routes) {
       "You hurry up.",
       "Are you in time?",
     ]);
-  const riversideUrinal = routeToTags(riversideUrinalRoute, routes);
+  const riversideUrinal = routeToTags(riversideUrinalRoute);
 
-  const camperDecision = generalTags.slice(0, 102).concat([
-    "queue1b",
-    "carparka",
-    "carparka0",
-    "carparka1",
-    "carparka2",
-    "carparka3",
-  ]);
+  const camperDecision = generalTags
+    .slice(0, 102)
+    .concat(["queue1b", "carparka", "carparka0", "carparka1", "carparka2", "carparka3"]);
 
   // Pizza at dinner is the original catch flag under the camper van. Extra wine
   // from that meal pushes bladder onto the riverside-toilet fork unless the
@@ -652,23 +822,105 @@ function buildDefinitions(routes) {
   // pudding and the burger-van coffees and still reaches the together-camper
   // choice with pizza set.
   const camperDecisionPizza = [
-    "start1a", "start1b", "tuesdaydate", "start2", "buysth", "buywater", "buysth",
-    "gothere", "winelist", "buyrioja", "eatmeal", "buypizza", "eatmeal1",
-    "eatmeal1a", "eatmeal1b", "eatmeal1c", "eatmeal1d", "eatmeal7", "eatmeal7a",
-    "eatmeal7b", "espresso", "eatmeal7c", "gotheatre", "theatreask", "gotoo",
-    "theatre1", "theatre2", "theatre3c", "theatre4", "theatre5", "theatre6",
-    "theatre7", "holdhand1", "theatre8", "theatre9", "theatre10", "interval",
-    "interval1", "askloo", "interval2", "interval3", "act2", "act2a", "act2b",
-    "leanclose2", "act2c", "act2d", "act2e", "act2f", "act2fa", "act2g", "act2h",
-    "leavetheatre", "leavetheatre1", "stagedoor", "stagedoor1", "stagedoor2",
-    "stagedoor3", "stagedoor4", "stagedoor5a", "choosewalk", "riverside2",
-    "riverside3", "riverside7", "riverside8", "riverside9", "riverside10",
-    "riverside11", "riverside12", "riverside13a", "riverside14", "toiletopen",
-    "riverside15", "riverside16", "pavilion", "luckytrip8", "luckytrip8a",
-    "pavilion2", "pavilion3", "pavilion4", "pavilion5", "pavilion5a", "pavilion6",
-    "pavilion7", "buywaterpav", "pavilion8", "pavilion9", "notime", "busqueue",
-    "busqueue1", "busqueue2", "busqueue3", "queue1a", "queue1b", "carparka",
-    "carparka0", "carparka1", "carparka2", "carparka3",
+    "start1a",
+    "start1b",
+    "tuesdaydate",
+    "start2",
+    "buysth",
+    "buywater",
+    "buysth",
+    "gothere",
+    "winelist",
+    "buyrioja",
+    "eatmeal",
+    "buypizza",
+    "eatmeal1",
+    "eatmeal1a",
+    "eatmeal1b",
+    "eatmeal1c",
+    "eatmeal1d",
+    "eatmeal7",
+    "eatmeal7a",
+    "eatmeal7b",
+    "espresso",
+    "eatmeal7c",
+    "gotheatre",
+    "theatreask",
+    "gotoo",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "holdhand1",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "askloo",
+    "interval2",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "leanclose2",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "stagedoor",
+    "stagedoor1",
+    "stagedoor2",
+    "stagedoor3",
+    "stagedoor4",
+    "stagedoor5a",
+    "choosewalk",
+    "riverside2",
+    "riverside3",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riverside10",
+    "riverside11",
+    "riverside12",
+    "riverside13a",
+    "riverside14",
+    "toiletopen",
+    "riverside15",
+    "riverside16",
+    "pavilion",
+    "luckytrip8",
+    "luckytrip8a",
+    "pavilion2",
+    "pavilion3",
+    "pavilion4",
+    "pavilion5",
+    "pavilion5a",
+    "pavilion6",
+    "pavilion7",
+    "buywaterpav",
+    "pavilion8",
+    "pavilion9",
+    "notime",
+    "busqueue",
+    "busqueue1",
+    "busqueue2",
+    "busqueue3",
+    "queue1a",
+    "queue1b",
+    "carparka",
+    "carparka0",
+    "carparka1",
+    "carparka2",
+    "carparka3",
   ];
 
   // Non-Chardonnay bus wait: brunette slips off alone; luckshot follow (exclusive with leaf 16).
@@ -679,58 +931,250 @@ function buildDefinitions(routes) {
   // choices also change. This is a walked Tuesday route that still reaches busqueue6
   // with spagbol set and a luckshot left.
   const luckshotBrunetteDebbieBus = [
-    "start1a", "start1b", "tuesdaydate", "start2", "buysth", "buywater", "buysth",
-    "gothere", "winelist", "buyrioja", "eatmeal", "buyspagbol", "eatmeal2",
-    "eatmeal2a", "eatmeal2b", "eatmeal2c", "eatmeal2d", "eatmeal7", "eatmeal7a",
-    "puddings", "buypannacotta", "eatmeal7b", "filtercoffee", "eatmeal7bb",
-    "gotheatre", "theatreask", "gotoo", "theatre1", "theatre2", "theatre3c",
-    "theatre4", "theatre5", "theatre6", "theatre7", "holdhand1", "theatre8",
-    "theatre9", "theatre10", "interval", "interval1", "askloo", "interval2",
-    "interval3", "act2", "act2a", "act2b", "leanclose2", "act2c", "act2d",
-    "act2e", "act2f", "act2fa", "act2g", "act2h", "leavetheatre", "leavetheatre1",
-    "stagedoor", "stagedoor1", "stagedoor2", "stagedoor3", "stagedoor4",
-    "stagedoor5a", "choosewalk", "riverside2", "riverside3", "riverside3aa",
-    "riverside4", "sitonbench", "riverside5", "riverside6", "riverside7",
-    "riverside8", "riverside9", "riverside10", "riverside11", "riverside12",
-    "riverside13a", "riverside14", "toiletopen", "toiletopen1c", "toiletopen1c1",
-    "goforpee", "goforpee1", "riverside15", "riverside16", "pavilion",
-    "pavilion2", "pavilion3", "pavilion4", "pavilion5", "pavilion5a", "pavilion6",
-    "pavilion7", "buywaterpav", "pavilion8", "pavilion9", "pavilion9a",
-    "busqueue", "busqueue1", "busqueue2", "busqueue3", "busqueue4", "busqueue5",
+    "start1a",
+    "start1b",
+    "tuesdaydate",
+    "start2",
+    "buysth",
+    "buywater",
+    "buysth",
+    "gothere",
+    "winelist",
+    "buyrioja",
+    "eatmeal",
+    "buyspagbol",
+    "eatmeal2",
+    "eatmeal2a",
+    "eatmeal2b",
+    "eatmeal2c",
+    "eatmeal2d",
+    "eatmeal7",
+    "eatmeal7a",
+    "puddings",
+    "buypannacotta",
+    "eatmeal7b",
+    "filtercoffee",
+    "eatmeal7bb",
+    "gotheatre",
+    "theatreask",
+    "gotoo",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "holdhand1",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "askloo",
+    "interval2",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "leanclose2",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "stagedoor",
+    "stagedoor1",
+    "stagedoor2",
+    "stagedoor3",
+    "stagedoor4",
+    "stagedoor5a",
+    "choosewalk",
+    "riverside2",
+    "riverside3",
+    "riverside3aa",
+    "riverside4",
+    "sitonbench",
+    "riverside5",
+    "riverside6",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riverside10",
+    "riverside11",
+    "riverside12",
+    "riverside13a",
+    "riverside14",
+    "toiletopen",
+    "toiletopen1c",
+    "toiletopen1c1",
+    "goforpee",
+    "goforpee1",
+    "riverside15",
+    "riverside16",
+    "pavilion",
+    "pavilion2",
+    "pavilion3",
+    "pavilion4",
+    "pavilion5",
+    "pavilion5a",
+    "pavilion6",
+    "pavilion7",
+    "buywaterpav",
+    "pavilion8",
+    "pavilion9",
+    "pavilion9a",
+    "busqueue",
+    "busqueue1",
+    "busqueue2",
+    "busqueue3",
+    "busqueue4",
+    "busqueue5",
     "busqueue6",
   ];
 
   const hiddenCamera = [
-    "start1a", "start1b", "thursdaydate", "start2", "gothere", "flirt_l",
-    "winelist", "buyrioja", "eatmeal", "buylasagne", "eatmeal4", "eatmeal4a",
-    "eatmeal4b", "eatmeal4c", "eatmeal4d", "eatmeal7", "eatmeal7a", "puddings",
-    "buytiramisu", "eatmeal7b", "filtercoffee", "eatmeal7bb", "gotheatre",
-    "theatreask", "testtue", "testtue1", "arrivehome", "arrivehome0",
-    "arrivehome1", "scenario2", "coffeereal2", "scenario2a", "scenario2b",
-    "scenario2c", "asklooneed", "asklooneed1", "asklooneed2", "offercoffeeagain",
-    "offercoffeeagain1", "luckytrip11", "luckytrip11a",
+    "start1a",
+    "start1b",
+    "thursdaydate",
+    "start2",
+    "gothere",
+    "flirt_l",
+    "winelist",
+    "buyrioja",
+    "eatmeal",
+    "buylasagne",
+    "eatmeal4",
+    "eatmeal4a",
+    "eatmeal4b",
+    "eatmeal4c",
+    "eatmeal4d",
+    "eatmeal7",
+    "eatmeal7a",
+    "puddings",
+    "buytiramisu",
+    "eatmeal7b",
+    "filtercoffee",
+    "eatmeal7bb",
+    "gotheatre",
+    "theatreask",
+    "testtue",
+    "testtue1",
+    "arrivehome",
+    "arrivehome0",
+    "arrivehome1",
+    "scenario2",
+    "coffeereal2",
+    "scenario2a",
+    "scenario2b",
+    "scenario2c",
+    "asklooneed",
+    "asklooneed1",
+    "asklooneed2",
+    "offercoffeeagain",
+    "offercoffeeagain1",
+    "luckytrip11",
+    "luckytrip11a",
   ];
 
   const churchLychGate = [
-    "start1a", "start1b", "thursdaydate", "start2", "gothere",
-    "winelist", "buypinot", "eatmeal", "buysteak", "steak3", "eatmeal6",
-    "eatmeal6a", "eatmeal6b", "eatmeal6c", "eatmeal5c", "asklootalk",
-    "asklootalk1", "asklootalk2", "gotheatre", "theatre1", "theatre2",
-    "theatre3c", "theatre4", "theatre5", "theatre6", "theatre7",
-    "theatre8", "theatre9", "theatre10", "interval", "interval1",
-    "luckytrip1", "luckytrip1a", "interval3", "act2", "act2a",
-    "act2b", "act2c", "act2d", "act2e", "act2f", "act2fa", "act2g",
-    "act2h", "leavetheatre", "leavetheatre1", "dianechoice",
-    "foyerbar1", "foyerbar1a", "foyerbar2", "foyerbar3", "stagedoor5",
-    "choosepub1", "pubdrink", "pubdrink1", "pubdrink2", "pubdrink3",
-    "pubdrink4", "pubdrink4a", "pubdrink5", "pubdrink6", "pubdrink7",
-    "pubdrink8", "riverside2", "riverside3", "riverside7", "riverside8",
-    "riverside9", "riversidepath", "riversidepath10a", "riversidepath11a",
-    "riversidepath12x", "riverside14", "toiletclosed", "riverside15",
-    "riverside16", "riverside16a", "busqueue", "busqueue1", "busqueue2",
-    "busqueue3", "queue1a", "watchblonde", "busqueue6", "busqueue6a",
-    "busqueue7", "bushome", "bushome1", "bushome2", "bushome3",
-    "bushome4", "bushome5", "bushome6",
+    "start1a",
+    "start1b",
+    "thursdaydate",
+    "start2",
+    "gothere",
+    "winelist",
+    "buypinot",
+    "eatmeal",
+    "buysteak",
+    "steak3",
+    "eatmeal6",
+    "eatmeal6a",
+    "eatmeal6b",
+    "eatmeal6c",
+    "eatmeal5c",
+    "asklootalk",
+    "asklootalk1",
+    "asklootalk2",
+    "gotheatre",
+    "theatre1",
+    "theatre2",
+    "theatre3c",
+    "theatre4",
+    "theatre5",
+    "theatre6",
+    "theatre7",
+    "theatre8",
+    "theatre9",
+    "theatre10",
+    "interval",
+    "interval1",
+    "luckytrip1",
+    "luckytrip1a",
+    "interval3",
+    "act2",
+    "act2a",
+    "act2b",
+    "act2c",
+    "act2d",
+    "act2e",
+    "act2f",
+    "act2fa",
+    "act2g",
+    "act2h",
+    "leavetheatre",
+    "leavetheatre1",
+    "dianechoice",
+    "foyerbar1",
+    "foyerbar1a",
+    "foyerbar2",
+    "foyerbar3",
+    "stagedoor5",
+    "choosepub1",
+    "pubdrink",
+    "pubdrink1",
+    "pubdrink2",
+    "pubdrink3",
+    "pubdrink4",
+    "pubdrink4a",
+    "pubdrink5",
+    "pubdrink6",
+    "pubdrink7",
+    "pubdrink8",
+    "riverside2",
+    "riverside3",
+    "riverside7",
+    "riverside8",
+    "riverside9",
+    "riversidepath",
+    "riversidepath10a",
+    "riversidepath11a",
+    "riversidepath12x",
+    "riverside14",
+    "toiletclosed",
+    "riverside15",
+    "riverside16",
+    "riverside16a",
+    "busqueue",
+    "busqueue1",
+    "busqueue2",
+    "busqueue3",
+    "queue1a",
+    "watchblonde",
+    "busqueue6",
+    "busqueue6a",
+    "busqueue7",
+    "bushome",
+    "bushome1",
+    "bushome2",
+    "bushome3",
+    "bushome4",
+    "bushome5",
+    "bushome6",
   ];
 
   // Same Thursday setup, but Rioja so *you* are desperate on the bus home.
@@ -763,7 +1207,7 @@ function buildDefinitions(routes) {
         cn: "1：剧院回忆基础路线",
         es: "1: Base para el recuerdo en el teatro",
         fr: "1 : Base du souvenir au théâtre",
-        tw: "1：劇院回憶基礎路線"
+        tw: "1：劇院回憶基礎路線",
       },
       tags: theatreFlashback,
     },
@@ -773,7 +1217,7 @@ function buildDefinitions(routes) {
         cn: "2：河边长椅基础路线",
         es: "2: Base del banco junto al río",
         fr: "2 : Base du banc au bord de la rivière",
-        tw: "2：河邊長椅基礎路線"
+        tw: "2：河邊長椅基礎路線",
       },
       tags: portalooDiscovery,
     },
@@ -783,7 +1227,7 @@ function buildDefinitions(routes) {
         cn: "3：河边紧急选择基础路线",
         es: "3: Base de la decisión urgente junto al río",
         fr: "3 : Base du choix urgent au bord de la rivière",
-        tw: "3：河邊緊急選擇基礎路線"
+        tw: "3：河邊緊急選擇基礎路線",
       },
       tags: riversideEmergency,
     },
@@ -793,7 +1237,7 @@ function buildDefinitions(routes) {
         cn: "4：周二公共厕所开放基础路线",
         es: "4: Base del baño público abierto del martes",
         fr: "4 : Base des toilettes publiques ouvertes le mardi",
-        tw: "4：週二公共廁所開放基礎路線"
+        tw: "4：週二公共廁所開放基礎路線",
       },
       tags: openPublicToiletSpyhole,
     },
@@ -803,7 +1247,7 @@ function buildDefinitions(routes) {
         cn: "5：周四桥下偷看基础路线",
         es: "5: Base del puente el jueves",
         fr: "5 : Base du pont le jeudi",
-        tw: "5：週四橋下偷看基礎路線"
+        tw: "5：週四橋下偷看基礎路線",
       },
       tags: thursdayBridge,
     },
@@ -813,7 +1257,7 @@ function buildDefinitions(routes) {
         cn: "6：周二莫莉和布鲁诺纤道基础路线",
         es: "6: Base de Molly y Bruno en el sendero del martes",
         fr: "6 : Base de Molly et Bruno sur le chemin de halage le mardi",
-        tw: "6：週二莫莉和布魯諾纖道基礎路線"
+        tw: "6：週二莫莉和布魯諾纖道基礎路線",
       },
       tags: mollyBrunoTowpath,
     },
@@ -823,7 +1267,7 @@ function buildDefinitions(routes) {
         cn: "7：高尿急版莫莉和布鲁诺纤道基础路线",
         es: "7: Base de alta urgencia de Molly y Bruno en el sendero",
         fr: "7 : Base très pressante de Molly et Bruno sur le chemin de halage",
-        tw: "7：高尿急版莫莉和布魯諾纖道基礎路線"
+        tw: "7：高尿急版莫莉和布魯諾纖道基礎路線",
       },
       tags: mollyBrunoTowpathHigh,
     },
@@ -833,7 +1277,7 @@ function buildDefinitions(routes) {
         cn: "8：周六河边公共厕所基础路线",
         es: "8: Base de los baños públicos junto al río del sábado",
         fr: "8 : Base des toilettes publiques au bord de la rivière le samedi",
-        tw: "8：週六河邊公共廁所基礎路線"
+        tw: "8：週六河邊公共廁所基礎路線",
       },
       tags: riversideUrinal,
     },
@@ -843,7 +1287,7 @@ function buildDefinitions(routes) {
         cn: "9：公交站褐发女生基础路线",
         es: "9: Base de la morena en la cola del autobús",
         fr: "9 : Base de la brune dans la file du bus",
-        tw: "9：公車站褐髮女生基礎路線"
+        tw: "9：公車站褐髮女生基礎路線",
       },
       tags: soloBrunetteBus,
     },
@@ -853,7 +1297,7 @@ function buildDefinitions(routes) {
         cn: "9b：公交站幸运一击褐发女生基础路线",
         es: "9b: Base de la morena con oportunidad de suerte en la cola",
         fr: "9b : Base de la brune avec opportunité de chance dans la file",
-        tw: "9b：公車站幸運一擊褐髮女生基礎路線"
+        tw: "9b：公車站幸運一擊褐髮女生基礎路線",
       },
       tags: luckshotBrunetteBus,
     },
@@ -863,7 +1307,7 @@ function buildDefinitions(routes) {
         cn: "9c：公交站幸运一击褐发女生，公车先走",
         es: "9c: Base de la morena con suerte, el autobús se va",
         fr: "9c : Base de la brune avec chance, le bus part",
-        tw: "9c：公車站幸運一擊褐髮女生，公車先走"
+        tw: "9c：公車站幸運一擊褐髮女生，公車先走",
       },
       tags: luckshotBrunetteDebbieBus,
     },
@@ -873,7 +1317,7 @@ function buildDefinitions(routes) {
         cn: "10：房车后选择基础路线",
         es: "10: Base de la decisión detrás de la autocaravana",
         fr: "10 : Base du choix derrière le camping-car",
-        tw: "10：露營車後選擇基礎路線"
+        tw: "10：露營車後選擇基礎路線",
       },
       tags: camperDecision,
     },
@@ -883,7 +1327,7 @@ function buildDefinitions(routes) {
         cn: "10b：房车后选择基础路线（披萨）",
         es: "10b: Base de la decisión detrás de la autocaravana (pizza)",
         fr: "10b : Base du choix derrière le camping-car (pizza)",
-        tw: "10b：露營車後選擇基礎路線（披薩）"
+        tw: "10b：露營車後選擇基礎路線（披薩）",
       },
       tags: camperDecisionPizza,
     },
@@ -893,7 +1337,7 @@ function buildDefinitions(routes) {
         cn: "11：隐藏摄像头基础路线",
         es: "11: Base de la cámara oculta",
         fr: "11 : Base de la caméra cachée",
-        tw: "11：隱藏攝影機基礎路線"
+        tw: "11：隱藏攝影機基礎路線",
       },
       tags: hiddenCamera,
     },
@@ -903,7 +1347,7 @@ function buildDefinitions(routes) {
         cn: "12：周四公交站幸运一击基础路线",
         es: "12: Base de la parada del jueves (suerte)",
         fr: "12 : Base de l'arrêt du jeudi (chance)",
-        tw: "12：週四公車站幸運一擊基礎路線"
+        tw: "12：週四公車站幸運一擊基礎路線",
       },
       tags: churchLychGate,
     },
@@ -913,7 +1357,7 @@ function buildDefinitions(routes) {
         cn: "12b：周四公交站里奥哈基础路线",
         es: "12b: Base de la parada del jueves (Rioja)",
         fr: "12b : Base de l'arrêt du jeudi (Rioja)",
-        tw: "12b：週四公車站里奧哈基礎路線"
+        tw: "12b：週四公車站里奧哈基礎路線",
       },
       tags: busStopRioja,
     },
@@ -930,7 +1374,7 @@ function buildDefinitions(routes) {
         cn: "剧院里回想第一次见到黛安",
         es: "Recuerdo en el teatro de la primera vez que viste a Diane",
         fr: "Souvenir au théâtre de la première fois où vous avez vu Diane",
-        tw: "劇院裡回想第一次見到黛安"
+        tw: "劇院裡回想第一次見到黛安",
       },
       tags: ["theatre3c", "theatre4"],
     },
@@ -942,9 +1386,9 @@ function buildDefinitions(routes) {
         cn: "帮黛安找到隐藏的移动厕所",
         es: "Encontrar el baño portátil oculto para Diane",
         fr: "Trouver les toilettes mobiles cachées pour Diane",
-        tw: "幫黛安找到隱藏的流動廁所"
+        tw: "幫黛安找到隱藏的流動廁所",
       },
-      tags: ["luckytrip16","luckytrip16a","luckytrip16a1","riverside7"],
+      tags: ["luckytrip16", "luckytrip16a", "luckytrip16a1", "riverside7"],
     },
     {
       stem: "03_portaloo_too_embarrassed",
@@ -954,9 +1398,9 @@ function buildDefinitions(routes) {
         cn: "过于直白地提起移动厕所",
         es: "Ofrecer el baño portátil de forma demasiado directa",
         fr: "Proposer les toilettes mobiles trop directement",
-        tw: "過於直白地提起流動廁所"
+        tw: "過於直白地提起流動廁所",
       },
-      tags: ["luckytrip16","luckytrip16b","luckytrip16ba","riverside7"],
+      tags: ["luckytrip16", "luckytrip16b", "luckytrip16ba", "riverside7"],
     },
     {
       stem: "04_thursday_bridge_diane_molly",
@@ -966,7 +1410,7 @@ function buildDefinitions(routes) {
         cn: "罗伯特带你偷看桥下的黛安和莫莉",
         es: "Robert te lleva a espiar a Diane y Molly bajo el puente",
         fr: "Robert vous emmène espionner Diane et Molly sous le pont",
-        tw: "羅伯特帶你偷看橋下的黛安和莫莉"
+        tw: "羅伯特帶你偷看橋下的黛安和莫莉",
       },
       tags: ["luckytrip3", "underbridge", "underbridge2", "underbridge3"],
     },
@@ -978,7 +1422,7 @@ function buildDefinitions(routes) {
         cn: "莫莉在废料箱后面撒尿",
         es: "Molly hace pis detrás del contenedor de obra",
         fr: "Molly fait pipi derrière la benne de chantier",
-        tw: "莫莉在廢料箱後面撒尿"
+        tw: "莫莉在廢料箱後面撒尿",
       },
       tags: ["riverside13", "luckytrip4", "luckytrip4a", "luckytrip4b"],
     },
@@ -990,9 +1434,16 @@ function buildDefinitions(routes) {
         cn: "你偷看莫莉时黛安悄悄去撒尿",
         es: "Diane se escapa a hacer pis mientras miras a Molly",
         fr: "Diane va faire pipi en cachette pendant que vous regardez Molly",
-        tw: "你偷看莫莉時黛安悄悄去撒尿"
+        tw: "你偷看莫莉時黛安悄悄去撒尿",
       },
-      tags: ["riverside13", "luckytrip4", "luckytrip4a", "luckytrip4b", "luckytrip4c", "luckytrip4d"],
+      tags: [
+        "riverside13",
+        "luckytrip4",
+        "luckytrip4a",
+        "luckytrip4b",
+        "luckytrip4c",
+        "luckytrip4d",
+      ],
     },
     {
       stem: "07_riverside_bushes_diane",
@@ -1002,7 +1453,7 @@ function buildDefinitions(routes) {
         cn: "黛安在河边灌木后面小便",
         es: "Diane orina detrás de los arbustos junto al río",
         fr: "Diane fait pipi derrière les buissons au bord de la rivière",
-        tw: "黛安在河邊樹叢後面尿尿"
+        tw: "黛安在河邊樹叢後面尿尿",
       },
       tags: ["helpdiane1a", "helpdiane1aa", "helpdiane1b"],
     },
@@ -1014,7 +1465,7 @@ function buildDefinitions(routes) {
         cn: "黛安在河边台阶上小便",
         es: "Diane orina en las escaleras del sendero",
         fr: "Diane fait pipi sur les marches du chemin de halage",
-        tw: "黛安在河邊台階上尿尿"
+        tw: "黛安在河邊台階上尿尿",
       },
       tags: ["helpdiane2a", "together1", "together1a", "together1b"],
     },
@@ -1026,7 +1477,7 @@ function buildDefinitions(routes) {
         cn: "你和黛安都在灌木后面小便",
         es: "Tú y Diane hacéis pis detrás de los arbustos",
         fr: "Vous et Diane faites tous les deux pipi derrière les buissons",
-        tw: "你和黛安都在樹叢後面尿尿"
+        tw: "你和黛安都在樹叢後面尿尿",
       },
       tags: ["helpdiane2a", "together2", "helpdiane1b"],
     },
@@ -1038,21 +1489,42 @@ function buildDefinitions(routes) {
         cn: "丢下的内裤",
         es: "Las bragas abandonadas",
         fr: "La culotte abandonnée",
-        tw: "丟棄的內褲"
+        tw: "丟棄的內褲",
       },
-      tags: ["helpdiane3a", "riverside14", "toiletopen", "toiletopen1b", "toiletopen1bb", "luckytrip5", "luckytrip5a", "luckytrip5tue", "luckytrip5tue1", "luckytrip5tue2", "gameover"],
+      tags: [
+        "helpdiane3a",
+        "riverside14",
+        "toiletopen",
+        "toiletopen1b",
+        "toiletopen1bb",
+        "luckytrip5",
+        "luckytrip5a",
+        "luckytrip5tue",
+        "luckytrip5tue1",
+        "luckytrip5tue2",
+        "gameover",
+      ],
     },
     {
       stem: "11_public_toilet_spyhole_stockings",
-    base: "openPublicToiletSpyhole",
-    title: {
-      en: "Diane's Stockings",
-      cn: "黛安的长筒丝袜",
-      es: "Las medias de Diane",
-      fr: "Les bas de Diane",
-      tw: "黛安的長筒絲襪"
-    },
-      tags: ["toiletopen1c", "toiletopen1c1", "luckytrip5c", "luckytrip5ca", "luckytrip5cb", "luckytrip5cc", "luckytrip5cd", "riverside15"],
+      base: "openPublicToiletSpyhole",
+      title: {
+        en: "Diane's Stockings",
+        cn: "黛安的长筒丝袜",
+        es: "Las medias de Diane",
+        fr: "Les bas de Diane",
+        tw: "黛安的長筒絲襪",
+      },
+      tags: [
+        "toiletopen1c",
+        "toiletopen1c1",
+        "luckytrip5c",
+        "luckytrip5ca",
+        "luckytrip5cb",
+        "luckytrip5cc",
+        "luckytrip5cd",
+        "riverside15",
+      ],
     },
     {
       stem: "12_closed_toilet_building_lookout",
@@ -1062,7 +1534,7 @@ function buildDefinitions(routes) {
         cn: "黛安在建筑后面小便",
         es: "Diane orina detrás del edificio",
         fr: "Diane fait pipi derrière le bâtiment",
-        tw: "黛安在建築後面尿尿"
+        tw: "黛安在建築後面尿尿",
       },
       tags: ["justclosed1", "toiletclosed1", "toiletclosed2a", "riverside15"],
     },
@@ -1074,7 +1546,7 @@ function buildDefinitions(routes) {
         cn: "轮流在建筑后面小便",
         es: "Turnarse para hacer pis detrás del edificio",
         fr: "Se relayer pour faire pipi derrière le bâtiment",
-        tw: "輪流在建築後面尿尿"
+        tw: "輪流在建築後面尿尿",
       },
       tags: ["justclosed1", "toiletclosed1", "toiletclosed2b", "riverside15"],
     },
@@ -1086,7 +1558,7 @@ function buildDefinitions(routes) {
         cn: "让黛安继续憋着",
         es: "Pedirle a Diane que aguante",
         fr: "Demander à Diane de se retenir",
-        tw: "讓黛安繼續憋著"
+        tw: "讓黛安繼續憋著",
       },
       tags: ["justclosed1", "toiletclosed1", "toiletclosed2c", "gameover"],
     },
@@ -1098,7 +1570,7 @@ function buildDefinitions(routes) {
         cn: "黛安使用男厕小便池",
         es: "Diane usa el urinario de caballeros",
         fr: "Diane utilise l'urinoir des hommes",
-        tw: "黛安使用男廁小便斗"
+        tw: "黛安使用男廁小便斗",
       },
       tags: ["justclosed1", "justclosed2", "justclosed3", "urinal", "riverside15"],
     },
@@ -1110,9 +1582,9 @@ function buildDefinitions(routes) {
         cn: "褐发女生在房车后面撒尿",
         es: "La morena hace pis detrás de la autocaravana",
         fr: "La brune fait pipi derrière le camping-car",
-        tw: "褐髮女生在露營車後面撒尿"
+        tw: "褐髮女生在露營車後面撒尿",
       },
-      tags: ["luckytrip7","carparkalone","carpark2","carpark3"],
+      tags: ["luckytrip7", "carparkalone", "carpark2", "carpark3"],
     },
     {
       stem: "28b_luckshot_brunette_debbie",
@@ -1122,7 +1594,7 @@ function buildDefinitions(routes) {
         cn: "褐发女生和你共乘出租车",
         es: "La morena comparte un taxi contigo",
         fr: "La brune partage un taxi avec vous",
-        tw: "褐髮女生和你共乘計程車"
+        tw: "褐髮女生和你共乘計程車",
       },
       tags: ["luckytrip7", "carparkalone", "carpark2", "gameover"],
     },
@@ -1134,9 +1606,9 @@ function buildDefinitions(routes) {
         cn: "褐发女生在你刚尿过的地方小便",
         es: "La morena hace pis donde acabas de hacer pis",
         fr: "La brune fait pipi là où vous venez de faire pipi",
-        tw: "褐髮女生在你剛尿過的地方尿尿"
+        tw: "褐髮女生在你剛尿過的地方尿尿",
       },
-      tags: ["busqueue3","busqueue4","busqueue5","carpark","carpark1","carpark2","carpark3"],
+      tags: ["busqueue3", "busqueue4", "busqueue5", "carpark", "carpark1", "carpark2", "carpark3"],
     },
     {
       stem: "17_diane_brunette_camper_round",
@@ -1146,7 +1618,7 @@ function buildDefinitions(routes) {
         cn: "绕到房车后面偷看",
         es: "Espiar por detrás de la autocaravana",
         fr: "Épier derrière le camping-car",
-        tw: "繞到露營車後面偷看"
+        tw: "繞到露營車後面偷看",
       },
       tags: ["peepround", "peepround1"],
     },
@@ -1158,7 +1630,7 @@ function buildDefinitions(routes) {
         cn: "从房车底下偷看",
         es: "Espiar por debajo de la autocaravana",
         fr: "Épier sous le camping-car",
-        tw: "從露營車底下偷看"
+        tw: "從露營車底下偷看",
       },
       tags: ["peepunder"],
     },
@@ -1170,7 +1642,7 @@ function buildDefinitions(routes) {
         cn: "被褐发女生的男友撞见",
         es: "Pillado por el novio de la morena",
         fr: "Surpris par le petit ami de la brune",
-        tw: "被褐髮女生的男友抓包"
+        tw: "被褐髮女生的男友抓包",
       },
       tags: ["peepunder", "gameover"],
     },
@@ -1182,7 +1654,7 @@ function buildDefinitions(routes) {
         cn: "选择不偷看黛安和褐发女生",
         es: "No mirar a Diane y a la morena",
         fr: "Ne pas regarder Diane et la brune",
-        tw: "選擇不偷看黛安和褐髮女生"
+        tw: "選擇不偷看黛安和褐髮女生",
       },
       tags: ["gentleman", "gameover"],
     },
@@ -1194,7 +1666,7 @@ function buildDefinitions(routes) {
         cn: "黛安在教堂旁小便",
         es: "Diane orina junto a la iglesia",
         fr: "Diane fait pipi près de l'église",
-        tw: "黛安在教堂旁尿尿"
+        tw: "黛安在教堂旁尿尿",
       },
       tags: ["luckytrip17", "luckytrip17a", "luckytrip17b", "gameover"],
     },
@@ -1206,7 +1678,7 @@ function buildDefinitions(routes) {
         cn: "你因尿急没法送她回家",
         es: "Estás demasiado apurado para acompañarla a casa",
         fr: "Vous avez trop envie de faire pipi pour la raccompagner",
-        tw: "你因尿急沒辦法送她回家"
+        tw: "你因尿急沒辦法送她回家",
       },
       tags: ["peestop1", "peestop2", "luckytrip17b", "gameover"],
     },
@@ -1218,7 +1690,7 @@ function buildDefinitions(routes) {
         cn: "弟弟的浴室隐藏摄像头",
         es: "La cámara oculta de tu hermano en el baño",
         fr: "La caméra cachée de votre frère dans la salle de bains",
-        tw: "弟弟的浴室隱藏攝影機"
+        tw: "弟弟的浴室隱藏攝影機",
       },
       tags: ["hiddencamera", "hiddencamera1", "gameover"],
     },
@@ -1228,11 +1700,12 @@ function buildDefinitions(routes) {
 }
 
 function main() {
-  const routes = loadRoutes();
+  const { galleryRoutes: routes } = require("./verify_ending_routes.js");
   const definitions = buildDefinitions(routes);
   console.log(
-    `Verified ${definitions.scenes.length} hidden-scene definitions for Gallery (read-only; route replay is checked by verify_project.js).`
+    `Verified ${definitions.scenes.length} hidden-scene definitions for Gallery (read-only; route replay is checked by verify_project.js).`,
   );
 }
 
-main();
+if (require.main === module) main();
+module.exports = { routeToTags, buildDefinitions };

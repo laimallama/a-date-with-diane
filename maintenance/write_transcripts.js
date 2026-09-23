@@ -11,17 +11,16 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.resolve(__dirname, "..");
-const visual = fs.existsSync(path.join(ROOT, "visual/scene-map.js"));
 
-const LANGS = {
-  en: { code: "en", htmlPath: path.join(ROOT, "outputs/en/dianedate_en.html") },
-  ...(!visual ? {
-    cn: { code: "cn", htmlPath: path.join(ROOT, "outputs/cn/dianedate_cn.html") },
-    tw: { code: "tw", htmlPath: path.join(ROOT, "outputs/tw/dianedate_tw.html") },
-    es: { code: "es", htmlPath: path.join(ROOT, "outputs/es/dianedate_es.html") },
-    fr: { code: "fr", htmlPath: path.join(ROOT, "outputs/fr/dianedate_fr.html") },
-  } : {}),
-};
+const LANGS = Object.fromEntries(
+  ["en", "cn", "tw", "es", "fr"].map((code) => [
+    code,
+    {
+      code,
+      htmlPath: path.join(ROOT, `outputs/${code}/dianedate_${code}.html`),
+    },
+  ]),
+);
 
 /** Gallery leaf id (stem) → short transcript slug */
 const ENDING_SLUGS = {
@@ -76,12 +75,16 @@ const HIDDEN_SLUGS = {
   "24_phone_call": "15_phone_call",
 };
 
-// Managed English outputs shared with ADWD-visual; unrelated files are excluded.
+// Every managed transcript is synchronized to the visual release.
 function managedTranscriptFiles() {
-  return [
-    ...Object.values(ENDING_SLUGS).map(slug => `outputs/en/transcripts/endings/${slug}_en.txt`),
-    ...Object.values(HIDDEN_SLUGS).map(slug => `outputs/en/transcripts/hidden_scenes/${slug}_en.txt`),
-  ];
+  return Object.keys(LANGS).flatMap((lang) => [
+    ...Object.values(ENDING_SLUGS).map(
+      (slug) => `outputs/${lang}/transcripts/endings/${slug}_${lang}.txt`,
+    ),
+    ...Object.values(HIDDEN_SLUGS).map(
+      (slug) => `outputs/${lang}/transcripts/hidden_scenes/${slug}_${lang}.txt`,
+    ),
+  ]);
 }
 
 function loadGalleryData(htmlPath) {
@@ -120,8 +123,9 @@ function flattenLeaves(items, kind) {
 function loadGame(htmlPath) {
   const source = fs.readFileSync(htmlPath, "utf8");
   const script = source.match(/<script>([\s\S]*?)<\/script>/i)[1];
-  const initialBox = (source.match(/<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i) || [null, ""])[1]
-    .replace(/^\s+|\s+$/g, "");
+  const initialBox = (source.match(
+    /<div id="box"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/body>/i,
+  ) || [null, ""])[1].replace(/^\s+|\s+$/g, "");
   const box = { innerHTML: initialBox };
   const context = {
     console,
@@ -159,7 +163,8 @@ function stripTags(text) {
 
 function choices(box) {
   const out = [];
-  const re = /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
+  const re =
+    /<button class=['"]choice['"] onclick=(?:"go\('([^']+)'\)"|'go\("([^"]+)"\)')>([\s\S]*?)<\/button>/g;
   let match;
   while ((match = re.exec(box.innerHTML))) {
     out.push({ tag: match[1] || match[2], text: stripTags(match[3]) });
@@ -177,14 +182,36 @@ function removeUi(html) {
 function shouldQuoteEmphasis(text, langCode) {
   const clean = text.trim();
   if (!clean || clean.length > 140) return false;
-  if (/\b(points?|puntos?|点|分|點|timidez|intimidad|亲密度|親密度|害羞值)\b/i.test(clean)) return false;
+  if (/\b(points?|puntos?|点|分|點|timidez|intimidad|亲密度|親密度|害羞值)\b/i.test(clean))
+    return false;
   const lower = clean.toLowerCase();
   const stageStarts = [
-    "almost ", "between ", "softly", "with ", "then ", "she ",
-    "en voz baja", "con ", "poniéndose", "casi ", "entre ",
-    "à voix", "doucement", "rouge", "glousse", "elle ", "vous l'entendez",
-    "她", "几乎", "声音", "轻声", "脸红",
-    "幾乎", "聲音", "輕聲", "臉紅",
+    "almost ",
+    "between ",
+    "softly",
+    "with ",
+    "then ",
+    "she ",
+    "en voz baja",
+    "con ",
+    "poniéndose",
+    "casi ",
+    "entre ",
+    "à voix",
+    "doucement",
+    "rouge",
+    "glousse",
+    "elle ",
+    "vous l'entendez",
+    "她",
+    "几乎",
+    "声音",
+    "轻声",
+    "脸红",
+    "幾乎",
+    "聲音",
+    "輕聲",
+    "臉紅",
   ];
   if (langCode === "en" && lower.startsWith("he ")) return false;
   if (stageStarts.some((start) => lower.startsWith(start))) return false;
@@ -223,15 +250,40 @@ function isStageEmphasis(text) {
   if (!clean) return false;
   const lower = clean.toLowerCase();
   const stageStarts = [
-    "almost ", "between ", "softly", "with ", "then ", "she ",
-    "en voz baja", "con ", "poniéndose", "casi ", "entre ",
-    "à voix", "doucement", "rouge", "glousse", "elle ", "vous l'entendez",
-    "她", "几乎", "声音", "轻声", "脸红",
-    "幾乎", "聲音", "輕聲", "臉紅",
+    "almost ",
+    "between ",
+    "softly",
+    "with ",
+    "then ",
+    "she ",
+    "en voz baja",
+    "con ",
+    "poniéndose",
+    "casi ",
+    "entre ",
+    "à voix",
+    "doucement",
+    "rouge",
+    "glousse",
+    "elle ",
+    "vous l'entendez",
+    "她",
+    "几乎",
+    "声音",
+    "轻声",
+    "脸红",
+    "幾乎",
+    "聲音",
+    "輕聲",
+    "臉紅",
   ];
   if (stageStarts.some((start) => lower.startsWith(start))) return true;
   // Single-token manner cues that transcripts keep as [Aside]
-  if (/^(giggles?|laughs?|laughing|whispering|whispers?|quietly|softly|aside|blushing|interrupting|joking|thinks?\b|nervously|ruefully)/i.test(clean)) {
+  if (
+    /^(giggles?|laughs?|laughing|whispering|whispers?|quietly|softly|aside|blushing|interrupting|joking|thinks?\b|nervously|ruefully)/i.test(
+      clean,
+    )
+  ) {
     return true;
   }
   return false;
@@ -265,7 +317,10 @@ function polishTranscriptText(text, langCode) {
   );
   if (langCode === "cn" || langCode === "tw") {
     out = out
-      .replace(/(你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达|布魯諾|羅伯特)(\[[^\]]+\])：\s*/g, "$1：$2 ")
+      .replace(
+        /(你|黛安|莫莉|布鲁诺|罗伯特|克洛伊|阿曼达|布魯諾|羅伯特)(\[[^\]]+\])：\s*/g,
+        "$1：$2 ",
+      )
       .replace(/\]([\u3400-\u9fffA-Za-z0-9])/g, "] $1");
   } else {
     out = out.replace(/\]([A-Za-z0-9À-ÖØ-öø-ÿ¿¡])/g, "] $1");
@@ -342,7 +397,11 @@ function buildClimaxTranscript(leaf, lang) {
   const finalPage = visibleStory(game.box.innerHTML, lang.code);
   if (finalPage) parts.push(finalPage, "");
 
-  let text = parts.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+  let text =
+    parts
+      .join("\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim() + "\n";
   if (lang.code === "en") text = plainEnglishTxt(text);
   return text;
 }
@@ -393,9 +452,9 @@ function main() {
       tags: enLeaf.tags,
       climaxStart: enLeaf.climaxStart,
     }));
-    const hiddens = hiddenLeaves.map(localLeaf => {
-      const enLeaf = hiddenLeavesEn.find(leaf => leaf.id === localLeaf.id);
-      if (!enLeaf) throw new Error('Missing English transcript route: ' + localLeaf.id);
+    const hiddens = hiddenLeaves.map((localLeaf) => {
+      const enLeaf = hiddenLeavesEn.find((leaf) => leaf.id === localLeaf.id);
+      if (!enLeaf) throw new Error("Missing English transcript route: " + localLeaf.id);
       return { ...enLeaf, title: localLeaf.title };
     });
 
@@ -416,11 +475,19 @@ function main() {
     console.log(`OK ${code}: ${endings.length} endings + ${hiddens.length} hidden`);
   }
 
-  if (process.argv.includes('--check')) {
-    const stale = pending.filter(({ outPath, text, code }) =>
-      !fs.existsSync(outPath) || fs.readFileSync(outPath, 'utf8') !== (code === 'en' ? `\uFEFF${text}` : text));
-    if (stale.length) throw new Error('Stale transcripts: ' + stale.map(x => path.relative(ROOT, x.outPath)).join(', '));
-    console.log(`Verified ${pending.length} climax transcripts against the current game (read-only).`);
+  if (process.argv.includes("--check")) {
+    const stale = pending.filter(
+      ({ outPath, text, code }) =>
+        !fs.existsSync(outPath) ||
+        fs.readFileSync(outPath, "utf8") !== (code === "en" ? `\uFEFF${text}` : text),
+    );
+    if (stale.length)
+      throw new Error(
+        "Stale transcripts: " + stale.map((x) => path.relative(ROOT, x.outPath)).join(", "),
+      );
+    console.log(
+      `Verified ${pending.length} climax transcripts against the current game (read-only).`,
+    );
     return;
   }
   for (const { outPath, text, code } of pending) writeTextFile(outPath, text, code);

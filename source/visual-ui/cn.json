@@ -1,0 +1,62 @@
+{
+  "story": "剧情",
+  "skip": "跳过",
+  "replay": "重播",
+  "volume": "{value} 毫升",
+  "separator": "：",
+  "join": "和",
+  "visualTitle": "与黛安约会（视觉版）",
+  "visualBilingualTitle": "与黛安约会（双语视觉版）",
+  "days": {
+    "tuesday": "星期二",
+    "thursday": "星期四",
+    "saturday": "星期六"
+  },
+  "status": {
+    "calm": "舒适",
+    "need": "有点尿意",
+    "desperate": "尿急",
+    "critical": "快憋不住了",
+    "wet": "已经尿湿",
+    "peeing": "正在小便",
+    "wetting": "正在尿裤子"
+  },
+  "locations": {
+    "title": "",
+    "street": "街上",
+    "restaurant": "餐厅",
+    "theatre": "剧院",
+    "foyer": "门厅",
+    "pub": "酒吧",
+    "riverside": "河边",
+    "pavilion": "凉亭酒吧",
+    "bus": "候车队伍",
+    "taxi": "出租车",
+    "carpark": "停车场",
+    "home": "家里",
+    "bathroom": "浴室",
+    "church": "教堂",
+    "bridge": "桥下",
+    "night": "夜里"
+  },
+  "names": {
+    "diane": "黛安",
+    "molly": "莫莉",
+    "debbie": "黛比",
+    "amanda": "阿曼达",
+    "chloe": "克洛伊"
+  },
+  "title": "与黛安约会",
+  "back": "返回",
+  "darkOn": "深色模式：开启",
+  "darkOff": "深色模式：关闭",
+  "guideOn": "引导：开启",
+  "guideOff": "引导：关闭",
+  "tummy": "肚子",
+  "bladder": "膀胱",
+  "intimacy": "亲密度",
+  "shyness": "害羞值",
+  "luckshots": "幸运机会",
+  "poundsLabel": "英镑",
+  "gallery": "剧情图鉴"
+}

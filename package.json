@@ -1,0 +1,26 @@
+{
+  "name": "adwd-maintenance",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node maintenance/build_editions.js && node maintenance/build_gallery_data.js && node maintenance/build_aligned_text.js && node maintenance/write_transcripts.js && node maintenance/build_wikis.js",
+    "test": "node maintenance/verify_project.js",
+    "check:local": "node maintenance/verify_project.js --local-only",
+    "format": "node maintenance/format_sources.js",
+    "format:check": "node maintenance/format_sources.js --check",
+    "format:visual": "node maintenance/format_sources.js --visual",
+    "format:visual:check": "node maintenance/format_sources.js --visual --check",
+    "build:visual": "node ../ADWD-visual/maintenance/build_visual_edition.js",
+    "export": "node maintenance/export_games.js"
+  },
+  "devDependencies": {
+    "@babel/generator": "7.28.5",
+    "@babel/parser": "7.28.5",
+    "@babel/traverse": "7.28.5",
+    "@babel/types": "7.28.5",
+    "prettier": "3.9.9"
+  }
+}

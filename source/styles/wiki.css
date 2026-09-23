@@ -22,7 +22,7 @@
   color-scheme: dark;
   --paper: #221c17;
   --ink: #ede3d3;
-  --muted: #948b82;
+  --muted: #9b9289;
   --line: #3c2f26;
   --accent: #f0d060;
   --accent-dark: #f0d060;
@@ -109,6 +109,7 @@ a:hover {
 }
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle-button:hover {
+    color: var(--ink-on-hover);
     background: var(--choice-hover);
     border-color: var(--accent-dark);
   }

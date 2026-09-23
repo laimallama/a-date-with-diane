@@ -33,7 +33,7 @@
   color-scheme: dark;
   --paper: #221c17;
   --ink: #ede3d3;
-  --muted: #948b82;
+  --muted: #9b9289;
   --line: #3c2f26;
   --accent: #f0d060;
   --accent-dark: #f0d060;
@@ -119,17 +119,20 @@ a:hover {
 }
 
 #box p.note-lead {
-  margin: 0 0 0.35em;
+  margin: 0 0 1em;
   line-height: 1.45;
 }
 
 #box p.note-keys {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.65em;
   line-height: 1.45;
 }
 
-/* Last line of a tight cluster → normal section gap after it */
-#box p.note-cluster-end {
+#box p.note-keys:has(+ p.note-follow) {
+  margin-bottom: 0.35em;
+}
+
+#box p.note-keys:last-of-type {
   margin-bottom: 1em;
 }
 
@@ -597,6 +600,7 @@ a:hover {
   border-color: var(--line);
 }
 .guide-toggle-button:hover {
+  color: var(--ink-on-hover);
   background: var(--choice-hover);
   border-color: var(--accent-dark);
 }
@@ -648,6 +652,7 @@ a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle-button:hover {
+    color: var(--ink-on-hover);
     background: var(--choice-hover);
     border-color: var(--accent-dark);
   }
@@ -1708,26 +1713,24 @@ function start1() {
   s(
     "<p class='note-keys'><strong>H</strong> active ou désactive le Guide une fois que vous en avez lancé un.</p>",
   );
-  s(
-    "<p class='note-keys note-cluster-end'><strong>D</strong> active ou désactive le Mode sombre.</p>",
-  );
+  s("<p class='note-keys'><strong>D</strong> active ou désactive le Mode sombre.</p>");
   s(
     "<p class='note-keys'>Utilisez les <strong>touches numériques</strong> pour choisir vos options.</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'><strong>Entrée</strong> sélectionne l’option surlignée par le Guide, mais seulement tant que le Guide est activé. Maintenez <strong>Entrée</strong> un instant pour avancer rapidement dans les choix guidés\u202F; relâchez pour arrêter.</p>",
+    "<p class='note-keys'><strong>Entrée</strong> sélectionne l’option surlignée par le Guide, mais seulement tant que le Guide est activé. Maintenez <strong>Entrée</strong> pour avancer rapidement dans les choix guidés\u202F; relâchez pour arrêter.</p>",
   );
   s(
-    "<p class='note-lead'>Vous pouvez appuyer sur le bouton «\xA0Retour\xA0» pour revenir à la page précédente à tout moment si vous regrettez un choix\u202F; tout est restauré — statistiques, choix, tout le reste. Cela fonctionne aussi en mode Guide.</p>",
+    "<p class='note-keys'>Vous pouvez appuyer sur le bouton «\xA0Retour\xA0» pour revenir à la page précédente à tout moment si vous regrettez un choix\u202F; tout est restauré — statistiques, choix, tout le reste. Cela fonctionne aussi en mode Guide.</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'><strong>B</strong> fait la même chose que le bouton «\xA0Retour\xA0». Maintenez <strong>B</strong> un instant pour rembobiner rapidement\u202F; relâchez pour arrêter.</p>",
+    "<p class='note-keys note-follow'><strong>B</strong> fait la même chose que le bouton «\xA0Retour\xA0». Maintenez <strong>B</strong> pour rembobiner rapidement\u202F; relâchez pour arrêter.</p>",
   );
   s(
-    "<p class='note-lead'>Lorsque vous suivez le Guide d’une fin, appuyez sur le bouton «\xA0Passer aux moments forts\u202F!\xA0» (ou appuyez sur <strong>S</strong>) pour passer directement au point culminant de l’histoire. Le bouton «\xA0Retour\xA0» permet de revenir avant ce point, mais le bouton de saut ne réapparaîtra pas tant que vous n’aurez pas relancé une fin depuis la Galerie.</p>",
+    "<p class='note-keys'>Lorsque vous suivez le Guide d’une fin, appuyez sur le bouton «\xA0Passer aux moments forts\u202F!\xA0» (ou appuyez sur <strong>S</strong>) pour passer directement au point culminant de l’histoire. Vous pouvez revenir avant ce point, mais le bouton de saut ne réapparaîtra pas tant que vous n’aurez pas relancé une fin depuis la Galerie.</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'>Désactiver le Guide retire aussi le bouton de saut et arrête l’avance rapide. Vous pouvez réactiver le Guide si vous êtes encore sur le parcours\u202F; si vous choisissez autrement et quittez le chemin, le Guide disparaît, sauf si vous faites «\xA0Retour\xA0» jusqu’à un point où vous étiez encore sur la bonne voie.</p>",
+    "<p class='note-keys note-follow'>Désactiver le Guide retire aussi le bouton de saut et arrête l’avance rapide. Vous pouvez réactiver le Guide si vous êtes encore sur le parcours\u202F; si vous choisissez autrement et quittez le chemin, le Guide disparaît, sauf si vous revenez à un point où vous étiez encore sur la bonne voie.</p>",
   );
   c("start1a", "Commencer la partie.");
   c("info", "Informations complémentaires.");

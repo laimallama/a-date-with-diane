@@ -17,38 +17,93 @@ function listFiles(root) {
   });
 }
 function introduction(visual) {
+  const names = {
+    en: "English",
+    cn: "Simplified Chinese",
+    tw: "Taiwan Mandarin (Traditional Chinese)",
+    es: "Spanish",
+    fr: "French",
+  };
   const rows = LANGUAGES.map((lang) => {
     const base = `outputs/${lang}/dianedate_${visual ? "visual_" : ""}${lang}`;
-    return `| ${lang} | [Play](${base}.html) | ${lang === "en" ? "—" : `[English + ${lang}](${base}_bilingual.html)`} |`;
+    return `| ${names[lang]} | [Play](${base}.html) | ${lang === "en" ? "—" : `[Play with English](${base}_bilingual.html)`} |`;
   });
+  const companions = LANGUAGES.map(
+    (lang) =>
+      `- ${names[lang]}: [Wiki](${visual ? "../ADWD/" : ""}outputs/${lang}/wiki_${lang}.html) · [Transcripts](${visual ? "../ADWD/" : ""}outputs/${lang}/transcripts/)`,
+  );
   return [
-    `# A Date with Diane${visual ? " — Visual" : ""}`,
+    `# A Date with Diane${visual ? " — Visual editions" : " (Remastered)"}`,
     "",
-    "Open any game HTML file in your browser. No installation or server is needed.",
+    "A restored, polished and expanded edition of the original *A Date with Diane*, an omorashi text adventure. Your choices shape an evening with Diane: the day, meals, drinks, conversations and journey home can lead to different scenes and endings. The remaster preserves the original British narrative voice while improving wording, continuity and navigation.",
+    "",
+    ...(visual
+      ? [
+          "The visual editions add animated character sprites, locations and graphical meters to the same story, choices, translations and Gallery routes as the text editions. The layout adapts to computers, phones and tablets; reduced-motion preferences use still images and held effects.",
+          "",
+        ]
+      : []),
+    "## Play",
+    "",
+    "Open one of the HTML files below in your browser. No installation, server or internet connection is needed to play. Use the on-screen buttons on any device, or the keyboard shortcuts on a computer.",
     "",
     "| Language | Standalone | Bilingual |",
     "|---|---|---|",
     ...rows,
     "",
-    "Language codes: en = English; cn = Simplified Chinese; tw = Taiwan Mandarin; es = Spanish; fr = French.",
+    "Bilingual editions let you switch between English and the other language during play. Each language uses the same text as its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters.",
     "",
+    "## What is included",
+    "",
+    "- Five standalone languages and four bilingual editions.",
+    "- Five main prize endings, consolation endings and hidden scenes, with branches affected by your earlier choices.",
+    "- A Gallery containing 15 ending routes and 31 hidden-scene routes. Expand grouped entries to choose a scene, then follow the highlighted Guide choices.",
+    "- Back navigation that restores the previous page, choices and game state; guided fast-forward and Skip to the good bit.",
+    "- Light and dark themes, responsive layouts and localized interface labels.",
     ...(visual
       ? [
-          "Keep the assets folder beside outputs. Wikis and transcripts are kept once in the sibling ADWD folder:",
-          ...LANGUAGES.map(
-            (lang) =>
-              `- ${lang}: [Wiki](../ADWD/outputs/${lang}/wiki_${lang}.html) · [Transcripts](../ADWD/outputs/${lang}/transcripts/)`,
-          ),
+          "- Nine visual game pages and 318 required image assets, shared across the editions.",
+          "- Animated presentation and graphical status meters, synchronized with the text game's state.",
         ]
       : [
-          "Offline companions:",
-          ...LANGUAGES.map(
-            (lang) =>
-              `- ${lang}: [Wiki](outputs/${lang}/wiki_${lang}.html) · [Transcripts](outputs/${lang}/transcripts/)`,
-          ),
+          "- Nine self-contained game pages, five companion wikis and 230 scene transcripts (46 per language).",
         ]),
     "",
-    "These are play-only files. Editable sources, build tools and version history are on GitHub:",
+    "## Controls",
+    "",
+    "| Key | Action |",
+    "|---|---|",
+    "| **1–9** | Select a choice. |",
+    "| **G** / **Esc** | Open / close the Gallery. |",
+    "| **H** | Turn an already-started Guide on or off. |",
+    "| **Enter** | Follow the highlighted Guide choice. Hold to fast-forward; release to stop. |",
+    "| **B** | Use the Back button. Hold to rewind quickly; release to stop. |",
+    "| **S** | Skip to the climax while following an ending Guide. |",
+    "| **D** | Toggle dark mode. |",
+    "| **L** | Switch language in a bilingual edition. |",
+    "",
+    "Skip is available once per newly started ending Guide. Going back can take you before the skipped point; turning the Guide off removes Skip and stops fast-forward. The in-game Notes explain these controls in each language.",
+    "",
+    "Dark mode persists when you refresh the same tab. Back history lasts only during the current game session; it is not a saved game.",
+    "",
+    "## Wiki and transcripts",
+    "",
+    visual
+      ? "The companion wikis and transcripts are kept once, in the sibling **ADWD** folder. They are optional references; the visual games run without that folder."
+      : "Each language folder includes a wiki about the setting and characters, plus transcripts of the Gallery's endings and hidden scenes.",
+    "",
+    "Transcripts follow Gallery order and titles. Ending transcripts begin at the climax reached by Skip to the good bit; hidden-scene transcripts begin at the scene's starting point. The in-game Gallery supplies the walkthroughs.",
+    "",
+    ...companions,
+    "",
+    "## Folder contents and source",
+    "",
+    visual
+      ? "Keep **assets/** beside **outputs/**, preserving their folder structure. This folder contains the visual games and their graphics; the text-only games and companion references are in ADWD."
+      : "**outputs/** contains the language folders, games, wikis and transcripts. Each text game is a single HTML file; the visual editions are available separately in ADWD-visual.",
+    "",
+    "These folders contain the files needed to play and read the companion material. Editable sources, maintenance tools and version history are kept in the GitHub repositories:",
+    "",
     "- [Text source](https://github.com/laimallama/a-date-with-diane)",
     "- [Visual source](https://github.com/laimallama/a-date-with-diane-visual)",
     "",

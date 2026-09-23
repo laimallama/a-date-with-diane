@@ -78,12 +78,15 @@ and package manifests in GitHub even when the user removes local development cop
 ## Text and localization conventions
 
 Preserve the original British voice. Change wording or punctuation when the result is
-clearly better in context, without mechanically adding commas. English uses British
-single quotation marks, curly apostrophes and spaced en dashes. CN uses curly double
-quotes; Taiwan Mandarin uses corner quotes and native Taiwanese vocabulary and syntax.
-Taiwan Mandarin is not a character conversion of Simplified Chinese. Do not add dialect
-or particles that change a character's voice. Spanish uses Spain's established register;
-French uses its established idiomatic register and typographic spacing.
+clearly better in context, without mechanically adding commas. In control instructions,
+use unquoted lower-case “go back” for the action and “the ‘Back’ button” for the named
+control. Hold-key instructions describe sustained holding and release, without
+“briefly”. English uses British single quotation marks, curly apostrophes and spaced en
+dashes. CN uses curly double quotes; Taiwan Mandarin uses corner quotes and native
+Taiwanese vocabulary and syntax. Taiwan Mandarin is not a character conversion of
+Simplified Chinese. Do not add dialect or particles that change a character's voice.
+Spanish uses Spain's established register; French uses its established idiomatic
+register and typographic spacing.
 
 Write final typography in catalogs: French speaker colons use a narrow nonbreaking
 space; French guillemets use nonbreaking inner spaces. ES/FR amounts precede £ with a

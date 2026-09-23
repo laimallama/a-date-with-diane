@@ -26,7 +26,7 @@
   color-scheme: dark;
   --paper: #221c17;
   --ink: #ede3d3;
-  --muted: #948b82;
+  --muted: #9b9289;
   --line: #3c2f26;
   --accent: #f0d060;
   --accent-dark: #f0d060;
@@ -112,17 +112,20 @@ a:hover {
 }
 
 #box p.note-lead {
-  margin: 0 0 0.35em;
+  margin: 0 0 1em;
   line-height: 1.45;
 }
 
 #box p.note-keys {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.65em;
   line-height: 1.45;
 }
 
-/* Last line of a tight cluster → normal section gap after it */
-#box p.note-cluster-end {
+#box p.note-keys:has(+ p.note-follow) {
+  margin-bottom: 0.35em;
+}
+
+#box p.note-keys:last-of-type {
   margin-bottom: 1em;
 }
 
@@ -344,6 +347,7 @@ a:hover {
 }
 
 .guide-toggle-button:hover {
+  color: var(--ink-on-hover);
   background: var(--choice-hover);
   border-color: var(--accent-dark);
 }
@@ -395,6 +399,7 @@ a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle-button:hover {
+    color: var(--ink-on-hover);
     background: var(--choice-hover);
     border-color: var(--accent-dark);
   }

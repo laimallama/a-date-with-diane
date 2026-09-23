@@ -36,7 +36,7 @@
   color-scheme: dark;
   --paper: #221c17;
   --ink: #ede3d3;
-  --muted: #948b82;
+  --muted: #9b9289;
   --line: #3c2f26;
   --accent: #f0d060;
   --accent-dark: #f0d060;
@@ -122,17 +122,20 @@ a:hover {
 }
 
 #box p.note-lead {
-  margin: 0 0 0.35em;
+  margin: 0 0 1em;
   line-height: 1.45;
 }
 
 #box p.note-keys {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.65em;
   line-height: 1.45;
 }
 
-/* Last line of a tight cluster → normal section gap after it */
-#box p.note-cluster-end {
+#box p.note-keys:has(+ p.note-follow) {
+  margin-bottom: 0.35em;
+}
+
+#box p.note-keys:last-of-type {
   margin-bottom: 1em;
 }
 
@@ -602,6 +605,7 @@ a:hover {
   border-color: var(--line);
 }
 .guide-toggle-button:hover {
+  color: var(--ink-on-hover);
   background: var(--choice-hover);
   border-color: var(--accent-dark);
 }
@@ -653,6 +657,7 @@ a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle-button:hover {
+    color: var(--ink-on-hover);
     background: var(--choice-hover);
     border-color: var(--accent-dark);
   }
@@ -1701,22 +1706,22 @@ function start1() {
   );
   s("<p class='note-keys'><strong>G</strong>键打开剧情图鉴（<strong>Esc</strong>键关闭）。</p>");
   s("<p class='note-keys'>开始跟随引导路线后，可按<strong>H</strong>键开启或关闭引导。</p>");
-  s("<p class='note-keys note-cluster-end'><strong>D</strong>键开启或关闭深色模式。</p>");
+  s("<p class='note-keys'><strong>D</strong>键开启或关闭深色模式。</p>");
   s("<p class='note-keys'><strong>数字键</strong>用来选择选项。</p>");
   s(
-    "<p class='note-keys note-cluster-end'><strong>Enter</strong>键可选择高亮的引导选项，但只有在引导开启时才有效。按住<strong>Enter</strong>键可快进引导选项；松开即停。</p>",
+    "<p class='note-keys'><strong>Enter</strong>键可选择高亮的引导选项，但只有在引导开启时才有效。按住<strong>Enter</strong>键可快进引导选项；松开即停。</p>",
   );
   s(
-    "<p class='note-lead'>若后悔某个选择，随时可以按“返回”按钮回到上一页；它会把一切都恢复——数值、选项，统统还原。引导模式里同样有效。</p>",
+    "<p class='note-keys'>若后悔某个选择，随时可以按“返回”按钮回到上一页；它会把一切都恢复——数值、选项，统统还原。引导模式里同样有效。</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'><strong>B</strong>键的效果和“返回”按钮一样。按住<strong>B</strong>键可快速倒退；松开即停。</p>",
+    "<p class='note-keys note-follow'><strong>B</strong>键的效果和“返回”按钮一样。按住<strong>B</strong>键可快速倒退；松开即停。</p>",
   );
   s(
-    "<p class='note-lead'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到故事的高潮。用“返回”可以退回到高潮之前，但跳过按钮不会再出现，除非你从图鉴重新开始一个结局。</p>",
+    "<p class='note-keys'>跟随结局引导时，可按“跳到精彩部分！”按钮（或按<strong>S</strong>键）直接跳到故事的高潮。你可以退回到高潮之前，但跳过按钮不会再出现，除非你从图鉴重新开始一个结局。</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'>关闭引导也会去掉跳过按钮并停止快进。若你仍在路线上，可以再打开引导；若选了别的选项偏离路线，引导就会退出，除非你“返回”到仍在路线上的节点。</p>",
+    "<p class='note-keys note-follow'>关闭引导也会去掉跳过按钮并停止快进。若你仍在路线上，可以再打开引导；若选了别的选项偏离路线，引导就会退出，除非你退回到仍在路线上的节点。</p>",
   );
   c("start1a", "开始游戏。");
   c("info", "更多信息。");

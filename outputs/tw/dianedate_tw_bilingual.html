@@ -36,7 +36,7 @@
   color-scheme: dark;
   --paper: #221c17;
   --ink: #ede3d3;
-  --muted: #948b82;
+  --muted: #9b9289;
   --line: #3c2f26;
   --accent: #f0d060;
   --accent-dark: #f0d060;
@@ -138,17 +138,20 @@ a:hover {
 }
 
 #box p.note-lead {
-  margin: 0 0 0.35em;
+  margin: 0 0 1em;
   line-height: 1.45;
 }
 
 #box p.note-keys {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.65em;
   line-height: 1.45;
 }
 
-/* Last line of a tight cluster → normal section gap after it */
-#box p.note-cluster-end {
+#box p.note-keys:has(+ p.note-follow) {
+  margin-bottom: 0.35em;
+}
+
+#box p.note-keys:last-of-type {
   margin-bottom: 1em;
 }
 
@@ -350,6 +353,7 @@ a:hover {
   border-color: var(--line);
 }
 .guide-toggle-button:hover {
+  color: var(--ink-on-hover);
   background: var(--choice-hover);
   border-color: var(--accent-dark);
 }
@@ -401,6 +405,7 @@ a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle-button:hover {
+    color: var(--ink-on-hover);
     background: var(--choice-hover);
     border-color: var(--accent-dark);
   }
@@ -1902,32 +1907,32 @@ function start1() {
     "<p class='note-keys'>開始跟隨引導路線後，可按 <strong>H</strong> 鍵開啟或關閉引導。</p>",
   );
   sAlt(
-    "<p class='note-keys note-cluster-end'><strong>D</strong> toggles Dark Mode on or off.</p>",
-    "<p class='note-keys note-cluster-end'><strong>D</strong> 鍵開啟或關閉深色模式。</p>",
+    "<p class='note-keys'><strong>D</strong> toggles Dark Mode on or off.</p>",
+    "<p class='note-keys'><strong>D</strong> 鍵開啟或關閉深色模式。</p>",
   );
   sAlt(
     "<p class='note-keys'>Use <strong>number keys</strong> to pick your choices.</p>",
     "<p class='note-keys'><strong>數字鍵</strong>用來選擇選項。</p>",
   );
   sAlt(
-    "<p class='note-keys note-cluster-end'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> briefly to fast-forward through guided choices; release to stop.</p>",
-    "<p class='note-keys note-cluster-end'><strong>Enter</strong> 鍵可選擇反白的引導選項，但只有在引導開啟時才有效。按住 <strong>Enter</strong> 鍵可快速前進，依序選取引導選項；放開即停。</p>",
+    "<p class='note-keys'><strong>Enter</strong> follows the highlighted Guide choice, but only while the Guide is on. Hold <strong>Enter</strong> to fast-forward through guided choices; release to stop.</p>",
+    "<p class='note-keys'><strong>Enter</strong> 鍵可選擇反白的引導選項，但只有在引導開啟時才有效。按住 <strong>Enter</strong> 鍵可快速前進，依序選取引導選項；放開即停。</p>",
   );
   sAlt(
-    "<p class='note-lead'>You can press the ‘Back’ button to return to the previous page at any time if you regret a choice; it restores everything – stats, choices, the lot. That works in Guide mode too.</p>",
-    "<p class='note-lead'>若後悔某個選擇，隨時可以按「返回」按鈕回到上一頁；它會把一切都恢復——數值、選項，統統還原。引導模式裡同樣有效。</p>",
+    "<p class='note-keys'>You can press the ‘Back’ button to return to the previous page at any time if you regret a choice; it restores everything – stats, choices, the lot. That works in Guide mode too.</p>",
+    "<p class='note-keys'>若後悔某個選擇，隨時可以按「返回」按鈕回到上一頁；它會把一切都恢復——數值、選項，統統還原。引導模式裡同樣有效。</p>",
   );
   sAlt(
-    "<p class='note-keys note-cluster-end'><strong>B</strong> does the same as the ‘Back’ button. Hold <strong>B</strong> briefly to rewind quickly; release to stop.</p>",
-    "<p class='note-keys note-cluster-end'><strong>B</strong> 鍵的效果和「返回」按鈕一樣。按住 <strong>B</strong> 鍵可快速倒退；放開即停。</p>",
+    "<p class='note-keys note-follow'><strong>B</strong> does the same as the ‘Back’ button. Hold <strong>B</strong> to rewind quickly; release to stop.</p>",
+    "<p class='note-keys note-follow'><strong>B</strong> 鍵的效果和「返回」按鈕一樣。按住 <strong>B</strong> 鍵可快速倒退；放開即停。</p>",
   );
   sAlt(
-    "<p class='note-lead'>While following an ending Guide, press the ‘Skip to the good bit!’ button (or press <strong>S</strong>) to jump ahead to the climax of the story. Going ‘Back’ can rewind past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>",
-    "<p class='note-lead'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到故事的高潮。用「返回」可以回到高潮之前，但跳過按鈕不會再出現，除非你從圖鑑重新開始一個結局。</p>",
+    "<p class='note-keys'>While following an ending Guide, press the ‘Skip to the good bit!’ button (or press <strong>S</strong>) to jump ahead to the climax of the story. You can go back past that point, but the skip button will not appear again until you start a fresh ending from the Gallery.</p>",
+    "<p class='note-keys'>跟隨結局引導時，可按「跳到精采部分！」按鈕（或按 <strong>S</strong> 鍵）直接跳到故事的高潮。你可以回到高潮之前，但跳過按鈕不會再出現，除非你從圖鑑重新開始一個結局。</p>",
   );
   sAlt(
-    "<p class='note-keys note-cluster-end'>Turning the Guide off also removes the skip button and stops fast-forward. You can turn the Guide back on if you’re still on the path; if you choose differently and leave the path, the Guide drops out, unless you go ‘Back’ to a point where you were still on track.</p>",
-    "<p class='note-keys note-cluster-end'>關閉引導也會隱藏跳過按鈕，並停止快速前進。若你仍在路線上，可以再打開引導；若選了別的選項偏離路線，引導就會中止，除非你「返回」到仍在路線上的節點。</p>",
+    "<p class='note-keys note-follow'>Turning the Guide off also removes the skip button and stops fast-forward. You can turn the Guide back on if you’re still on the path; if you choose differently and leave the path, the Guide drops out, unless you go back to a point where you were still on track.</p>",
+    "<p class='note-keys note-follow'>關閉引導也會隱藏跳過按鈕，並停止快速前進。若你仍在路線上，可以再打開引導；若選了別的選項偏離路線，引導就會中止，除非你回到仍在路線上的節點。</p>",
   );
   cAlt("start1a", "Start the game.", "開始遊戲。");
   cAlt("info", "Further information.", "更多資訊。");

@@ -85,10 +85,11 @@ node maintenance/export_games.js --check /path/to/new-release-folder
 The exporter requires a new destination and refuses to overlap either source checkout.
 It copies all 18 playable HTML editions unchanged. `ADWD/` contains the nine text games,
 five wikis and 230 transcripts. `ADWD-visual/` contains only the nine visual games and
-318 required image assets; companion references point to ADWD. Each gets a short playing
-README. Exports have no `.git`, `node_modules`, `source`, maintenance tools, manifests,
-synchronization receipts or duplicated companion files. The visual metadata is already
-embedded in every visual HTML page.
+318 required image assets; companion references point to ADWD. Each gets an informative
+playing README covering the game, contents, controls and companions. Exports have no
+`.git`, `node_modules`, `source`, maintenance tools, manifests, synchronization receipts
+or duplicated companion files. The visual metadata is already embedded in every visual
+HTML page.
 
 `package.json` defines development commands and dependencies; `package-lock.json` pins
 exact versions for reproducible installs; `node_modules/` is their disposable installed

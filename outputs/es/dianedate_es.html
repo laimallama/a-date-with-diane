@@ -33,7 +33,7 @@
   color-scheme: dark;
   --paper: #221c17;
   --ink: #ede3d3;
-  --muted: #948b82;
+  --muted: #9b9289;
   --line: #3c2f26;
   --accent: #f0d060;
   --accent-dark: #f0d060;
@@ -119,17 +119,20 @@ a:hover {
 }
 
 #box p.note-lead {
-  margin: 0 0 0.35em;
+  margin: 0 0 1em;
   line-height: 1.45;
 }
 
 #box p.note-keys {
-  margin: 0 0 0.35em;
+  margin: 0 0 0.65em;
   line-height: 1.45;
 }
 
-/* Last line of a tight cluster → normal section gap after it */
-#box p.note-cluster-end {
+#box p.note-keys:has(+ p.note-follow) {
+  margin-bottom: 0.35em;
+}
+
+#box p.note-keys:last-of-type {
   margin-bottom: 1em;
 }
 
@@ -597,6 +600,7 @@ a:hover {
   border-color: var(--line);
 }
 .guide-toggle-button:hover {
+  color: var(--ink-on-hover);
   background: var(--choice-hover);
   border-color: var(--accent-dark);
 }
@@ -648,6 +652,7 @@ a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle-button:hover {
+    color: var(--ink-on-hover);
     background: var(--choice-hover);
     border-color: var(--accent-dark);
   }
@@ -1708,24 +1713,22 @@ function start1() {
   s(
     "<p class='note-keys'><strong>H</strong> activa o desactiva la Guía una vez que has iniciado un recorrido guiado.</p>",
   );
-  s(
-    "<p class='note-keys note-cluster-end'><strong>D</strong> activa o desactiva el Modo oscuro.</p>",
-  );
+  s("<p class='note-keys'><strong>D</strong> activa o desactiva el Modo oscuro.</p>");
   s("<p class='note-keys'>Usa las <strong>teclas numéricas</strong> para elegir tus opciones.</p>");
   s(
-    "<p class='note-keys note-cluster-end'><strong>Intro</strong> selecciona la opción resaltada de la Guía, pero solo mientras la Guía esté activada. Mantén pulsado <strong>Intro</strong> un momento para avanzar rápido por las opciones guiadas; suéltalo para parar.</p>",
+    "<p class='note-keys'><strong>Intro</strong> selecciona la opción resaltada de la Guía, pero solo mientras la Guía esté activada. Mantén pulsado <strong>Intro</strong> para avanzar rápido por las opciones guiadas; suéltalo para parar.</p>",
   );
   s(
-    "<p class='note-lead'>Puedes pulsar el botón «Atrás» para volver a la página anterior en cualquier momento si te arrepientes de una elección; restaura todo: estadísticas, decisiones y todo lo demás. También funciona en el modo Guía.</p>",
+    "<p class='note-keys'>Puedes pulsar el botón «Atrás» para volver a la página anterior en cualquier momento si te arrepientes de una elección; restaura todo: estadísticas, decisiones y todo lo demás. También funciona en el modo Guía.</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'><strong>B</strong> hace lo mismo que el botón «Atrás». Mantén pulsado <strong>B</strong> un momento para rebobinar rápido; suéltalo para parar.</p>",
+    "<p class='note-keys note-follow'><strong>B</strong> hace lo mismo que el botón «Atrás». Mantén pulsado <strong>B</strong> para rebobinar rápido; suéltalo para parar.</p>",
   );
   s(
-    "<p class='note-lead'>Mientras sigues la Guía de un final, pulsa el botón «¡Saltar a lo bueno!» (o pulsa <strong>S</strong>) para saltar al clímax de la historia. Con «Atrás» puedes volver a un punto anterior al clímax, pero el botón de salto no volverá a aparecer hasta que empieces un final nuevo desde la Galería.</p>",
+    "<p class='note-keys'>Mientras sigues la Guía de un final, pulsa el botón «¡Saltar a lo bueno!» (o pulsa <strong>S</strong>) para saltar al clímax de la historia. Puedes volver a un punto anterior al clímax, pero el botón de salto no volverá a aparecer hasta que empieces un final nuevo desde la Galería.</p>",
   );
   s(
-    "<p class='note-keys note-cluster-end'>Desactivar la Guía también quita el botón de salto y detiene el avance rápido. Puedes volver a activar la Guía si sigues en la ruta; si eliges otra cosa y te sales del camino, la Guía desaparece, a menos que vuelvas «Atrás» hasta un punto en el que aún estuvieras en la ruta.</p>",
+    "<p class='note-keys note-follow'>Desactivar la Guía también quita el botón de salto y detiene el avance rápido. Puedes volver a activar la Guía si sigues en la ruta; si eliges otra cosa y te sales del camino, la Guía desaparece, a menos que vuelvas a un punto en el que aún estuvieras en la ruta.</p>",
   );
   c("start1a", "Empezar la partida.");
   c("info", "Más información.");

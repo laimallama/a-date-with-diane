@@ -95,7 +95,7 @@ for (const lang of langs) {
     const file = path.join(ROOT, `outputs/${lang}`, filename);
     const initial = loadGame(file), book = leaves(initial.gallery);
     assert.equal(book.filter(x => x.kind === 'endings').length, 15);
-    assert.equal(book.filter(x => x.kind === 'hiddenScenes').length, 30);
+    assert.equal(book.filter(x => x.kind === 'hiddenScenes').length, 31);
     assert(initial.context.gameStateVars.includes('despLineIndex'), 'Text counter must be restored');
     if (!bilingual) assert.deepEqual(plain(initial.gallery), gallerySnapshot[lang], 'Embedded Gallery must match JSON');
     let steps = 0;
@@ -144,7 +144,7 @@ for (const lang of langs) {
 if (visual) {
   const c = {}; vm.createContext(c);
   vm.runInContext(fs.readFileSync(path.join(ROOT,'visual/scene-map.js'),'utf8'),c);
-  const expected = { start:'title', start2:'street', traintalk:'restaurant', traintalka:'riverside', luckytrip3:'bridge', luckytrip3a:'bridge', luckytrip31:'home', luckytrip31a:'home', luckytrip19:'night', luckytrip19a:'night', searchdiane:'night', goleft:'night', buywaterfoyer:'foyer', buywaterpav:'pavilion', ontoilet1:'bathroom', ontoilet2:'home', fifthplace:'home' };
+  const expected = { carparka1:'carpark', start:'title', start2:'street', traintalk:'restaurant', traintalka:'riverside', luckytrip3:'bridge', luckytrip3a:'bridge', luckytrip31:'home', luckytrip31a:'home', luckytrip19:'night', luckytrip19a:'night', searchdiane:'night', goleft:'night', buywaterfoyer:'foyer', buywaterpav:'pavilion', ontoilet1:'bathroom', ontoilet2:'home', fifthplace:'home', luckytrip18:'home', luckytrip18a:'home', luckytrip20:'home', luckytrip20a:'home' };
   for (const [tag,location] of Object.entries(expected)) assert.equal(c.ADWDSceneMap.locationFor(tag).id,location,tag);
   assert(c.ADWDSceneMap.isPrizeTag('fifthplace'), 'Fifth-prize screen is recognized');
   assert(c.ADWDSceneMap.isSilentEmpty('fifthplace'), 'Prize screen does not start a clip');

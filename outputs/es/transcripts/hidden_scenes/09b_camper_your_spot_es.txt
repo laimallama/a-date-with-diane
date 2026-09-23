@@ -22,7 +22,7 @@ Tú sigues esperando el autobús.
 
 Llegará en unos 10 minutos.
 
-Diane no parece que tenga ganas de hacer pis todavía.
+No parece que Diane tenga ganas de hacer pis todavía.
 
 La morenita está que no aguanta más. No para de mirar a su alrededor y está bailando de un pie a otro.
 
@@ -64,7 +64,7 @@ Ya se está subiendo la falda mientras corre entre los coches. Como tú, ha vist
 
 Se sube las bragas negras y vuelve caminando hacia la parada del autobús.
 
-(Las sigues a una distancia prudencial.)
+(La sigues a una distancia prudencial.)
 
 Vuelves a la parada del autobús.
 
@@ -73,3 +73,15 @@ Diane parece un poco impaciente.
 Has perdido 10 puntos de intimidad.
 
 Y la morena te mira con cierta suspicacia.
+
+(Hora de pasar desapercibido.)
+
+Estás de vuelta en la cola del autobús con Diane.
+
+DIANE: (en un susurro) Seguro que has mirado a esa chica mientras hacía pis.
+
+TÚ: ¿Qué? Eh, bueno, no, quiero decir, la vi sin querer.
+
+Ella te da un codazo y sonríe. «Qué travieso eres», dice, y te da un pequeño apretón en el trasero.
+
+Has ganado 12 puntos de intimidad.

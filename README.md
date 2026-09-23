@@ -22,7 +22,7 @@ Each language folder contains:
 - `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
 - `wiki_*.html` — companion setting and character articles; not playable
 
-There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **30 hidden-scene leaves** (variants inside a group each count as a leaf).
+There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **31 hidden-scene leaves in every language** (variants inside a group each count as a leaf).
 
 The game boots on the title screen (no age gate). **Gallery** is available from there: pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**H**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**B**) restores full state. **G** / Escape open and close the Gallery. **D** toggles Dark Mode. Bilingual: **L** switches language. **1–9** select choices.
 
@@ -57,8 +57,8 @@ Route definitions are maintained in `maintenance/verify_ending_routes.js` and `m
 ```bash
 node maintenance/build_gallery_data.js --check  # detect stale generated data; no writes
 node maintenance/build_aligned_text.js --check  # detect stale reference entries
-node maintenance/write_transcripts.js --check   # compare all 225 managed transcripts
-node maintenance/verify_project.js              # all 45 Gallery routes in all nine editions
+node maintenance/write_transcripts.js --check   # compare all 230 managed transcripts
+node maintenance/verify_project.js              # 46 routes in each of nine editions
 ```
 
 The full verifier checks route availability, Back and forward replay, guided progress, Skip, cross-language numerical state, HTML metadata, JavaScript syntax, and generated Gallery consistency. It also checks the translation reference, all managed transcripts, bilingual translation keys, and the rendered output of every static story/choice call in all four bilingual languages. Focused cases cover dynamic notices, text variants, and previously divergent branches. It uses a small DOM stub; browser layout, keyboard interactions, animation timing, translation meaning, and arbitrary untested branch combinations still need separate review. All maintenance commands above resolve project inputs relative to their script location and can be invoked from another working directory with an absolute script path.
@@ -74,3 +74,9 @@ Bilingual files use exact-match dictionaries for shared translations and `sAlt` 
 The separate visual edition is maintained in `/Users/apple/Documents/ADWD-visual` with its own Git repository. This text repository is the canonical source for shared English content. After English story/runtime, route, wiki, transcript, or shared-tool changes, refresh the affected generated files and run `node maintenance/sync_visual_edition.js`. It copies the managed English files, projects the Gallery snapshot to English, and rebuilds the visual edition while preserving its presentation and assets. It does not copy translations or the reference index into the visual repository.
 
 `node maintenance/sync_visual_edition.js --check` checks shared content and the generated visual page without writing. The normal verifier also requires both checkouts to agree. Default paths are sibling `ADWD` and `ADWD-visual` folders; set `ADWD_TEXT_ROOT` / `ADWD_VISUAL_ROOT` for other locations. `verify_project.js --local-only` explicitly checks an isolated checkout without claiming cross-project synchronization. Local fixes do not automatically commit or push either repository.
+
+The Gallery contains **15 ending leaves and 31 hidden-scene leaves** in all five standalone languages, all four bilingual editions, and visual English. The camper-group addition “You and Diane Come Across the Brunette” is localized in every interface. Routes, ordering, scene boundaries and localized transcripts are synchronized. Dialogue differences use one coherent representative route, without extra variation controls or menu notes.
+
+The direct camper encounter is fourth within its group: after the solo encounters and before the covert-watching branches. Its title remains “You and Diane Come Across the Brunette”. The guide and transcript open on `carparka0`, cover the encounter on `carparka1`, and stop before `taxihome1`. The final taxi-rank choice correctly remains unhighlighted because it is outside this scene; Back restores the highlighted waiting choice. The transcript filename `09ba_camper_encounter_en.txt` keeps it in Gallery order without renaming existing transcripts.
+
+The camper group pairs “Caught by the Brunette’s Boyfriend” immediately after “Peeping Underneath”, then closes with the non-watching choice. Its transcript slug is `09da_camper_caught`; the retired `09f_camper_caught` filenames were deliberately migrated. The Chardonnay solo scene now includes the return-to-queue response on `carpark3`, ending before `busqueue7`. All scene-final continuation choices remain available but unhighlighted.

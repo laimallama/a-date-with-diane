@@ -10,7 +10,7 @@ Intenta mantener la compostura, pero no consigue quedarse quieta.
 
 DIANE: Me estoy meando. ¿Por qué tenía que cerrarlo justo ahora?
 
-Se dobla de golpe hacia delante, se aparta y se sienta en un murete bajo. Tiene cara de estar concentrándose con todas sus fuerzas. Se queda ahí sentada, moviéndose hacia delante y hacia atrás. Tú vas y te sientas a su lado.
+Flexiona un instante las rodillas, apurada, se aparta y se sienta en un murete bajo. Tiene cara de estar concentrándose con todas sus fuerzas. Se queda ahí sentada, moviéndose hacia delante y hacia atrás. Tú vas y te sientas a su lado.
 
 DIANE: El conserje sigue ahí. ¿Crees que volvería a abrirlo por mí?
 
@@ -22,9 +22,9 @@ TÚ: ¿Por qué no le preguntas tú? A lo mejor acepta.
 
 DIANE: Ay, es demasiado vergonzoso. Yo no podría.
 
-¿Qué va a ser?
+¿Qué vas a hacer?
 
-(Compadécete de ella y pregúntale si puede aguantar.)
+(Muéstrate comprensivo y pregúntale si puede aguantar.)
 
 Te compadeces de Diane. Le preguntas si puede aguantar hasta llegar al Pabellón.
 
@@ -36,7 +36,7 @@ DIANE: Lo siento, es que tengo que ir. Me estoy meando. ¿Hay algún sitio donde
 
 (Pídele que aguante, porque lo estás disfrutando.)
 
-TÚ: Me parece muy sexy que tengas tantas ganas. Estaría genial que esperaras un poco más.
+TÚ: Me parece muy sexi que tengas tantas ganas. Estaría genial que esperaras un poco más.
 
 Te mira con incredulidad. Claramente no era ni el momento ni el lugar.
 

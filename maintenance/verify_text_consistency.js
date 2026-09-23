@@ -52,8 +52,12 @@ function main() {
         ['<p>DIANE : Bonjour.</p>', '<p>DIANE\u202f: Bonjour.</p>'],
         ['<p>VOUS: Bonjour.</p>', '<p>VOUS\u202f: Bonjour.</p>'],
         ['<a href="https://example.test">12:30</a>.', '<a href="https://example.test">12:30</a>.'],
+        ['<p>« Bonjour. »</p>', '<p>«\u00a0Bonjour.\u00a0»</p>'],
+        ['<p>«Bonjour» &amp; <em>«\u202fDiane\u202f»</em></p>', '<p>«\u00a0Bonjour\u00a0» &amp; <em>«\u00a0Diane\u00a0»</em></p>'],
+        ['<a title="« Diane »" href="https://example.test?q=a&amp;b=c">« Diane »</a>', '<a title="« Diane »" href="https://example.test?q=a&amp;b=c">«\u00a0Diane\u00a0»</a>'],
       ]) {
-        assert.equal(mg.context.smartenHtml(input), expected, 'French speaker-colon spacing');
+        assert.equal(mg.context.smartenHtml(input), expected, 'French typography');
+        assert.equal(mg.context.smartenHtml(expected), expected, 'French typography idempotence');
         assert.equal(bg.context.alternateRenderer.choice(input), expected, 'French alternate speaker-colon spacing');
         assert.equal(bg.context.polishChoiceText(input), eg.context.polishChoiceText(input),
           'French speaker-colon formatting changed the English layer');

@@ -10,7 +10,7 @@ const earlyBushHouseBase = baseStart.concat([
   "On with the story!",
   "Buy something.",
   "An overpriced bottle of water (£3)",
-  "Back to store.",
+  "Back to the shop.",
   "Just head for the theatre.",
   "Say let’s go in and eat, then.",
   "A bottle of Spanish Rioja (£12)",

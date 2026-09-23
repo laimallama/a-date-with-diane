@@ -29,7 +29,7 @@ Each language folder ships:
 
 There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix). Bus-home is two hidden-scene leaves: `10a` luckshot (church) and `10b` rioja (too desperate to walk her home).
 
-Gallery currently documents **15 ending leaves** and **30 hidden-scene leaves** per language (leaf counts, not top-level group rows).
+Gallery currently documents **15 ending leaves** and **31 hidden-scene leaves in every language** (leaf counts, not top-level group rows).
 
 All Gallery route label sequences live inline in `verify_ending_routes.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
@@ -153,6 +153,12 @@ Identical English strings can have different translations in different contexts.
 - **Urinal straddle (`x01569b`):** EN comma before aside (`…urinal, with her back to you`), no em dash. CN/TW: **横跨/橫跨**, aside after `——`, prefer **更省事**. ES `ponerse a horcajadas…`; FR `enjamber l'urinoir…`.
 - **Church mind-races (bus luckshot):** `…and only then could she finally relieve herself.` — inversion after *only then*; not *only now*, not *only then she could*, no trailing *there*.
 
+## Conversation continuity
+
+Saturday sofa topics record what has actually been displayed in `sofaTopicsSeen`; repeat visits retain their timing and actions without restarting the eight biographical conversations. `sofaEveningAsked` prevents repeating the evening-review question and its answer. The sofa uses `stampstalking`, `theatretalking` and `movingtalking` to acknowledge earlier conversations; both dinner job branches set `movingtalking`.
+
+`brotherHome` records an established presence at home, including the upstairs bathroom scene. The stamp/train luckshot arrival branches require `!brotherHome`; when he is already home, they use the existing relaxed-album continuation instead of bringing him and Chloe through the front door again. Ordinary first introductions remain available. All four new history variables start at zero and belong to `gameStateVars`, so Back restores dialogue and arrival history. `verifyRepetition` in `verify_audit_regressions.js` covers the real routes, translated text, Back/replay and separately labelled rendering boundaries.
+
 ## UI / Gallery conventions
 
 **Boot and theme**
@@ -223,7 +229,7 @@ After climax wording or transcript-writer changes (also after Gallery rebuild):
 node maintenance/write_transcripts.js
 ```
 
-`write_transcripts.js --check` compares the 225 managed transcripts against current route renders without writing. The full `verify_project.js` also checks this, the reference index, alternate renderer generation, and bilingual text consistency.
+`write_transcripts.js --check` compares the 226 managed transcripts against current route renders without writing. The full `verify_project.js` also checks this, the reference index, alternate renderer generation, and bilingual text consistency.
 
 `verify_ending_routes.js` green across all five languages is the fastest smoke test after a text batch.
 
@@ -236,9 +242,19 @@ node maintenance/write_transcripts.js
 
 ## Verified maintenance baseline (13 September 2026)
 
-- Run `node maintenance/verify_project.js` for the complete maintained-edition regression check. It replays all 45 embedded Gallery routes and checks Back/forward HTML and state, guided progress, and Skip. In the text repository it also checks all nine playable editions against English numerical state. It is not a substitute for browser layout or animation testing.
+- Run `node maintenance/verify_project.js` for the complete maintained-edition regression check. It replays 46 Gallery routes in each edition and checks Back/forward HTML and state, guided progress, and Skip. In the text repository it also checks all nine playable editions against English numerical state. It is not a substitute for browser layout or animation testing.
 - `gameStateVars` includes `despLineIndex`. Any future state or text counter that affects replay must be included in snapshots. Restore must not execute a story node a second time. Back remains session history, not a disk save.
 - All playable documents have a doctype, page title, and language metadata. Bilingual layers declare their own languages; `setLanguage()` updates the document language too.
 - `verify_ending_routes.js` and `write_hidden_scenes.js` are read-only. The latter checks definitions; the full verifier checks actual routes. Never add implicit deletion to a check command.
 - Route definitions are authoritative for generated Gallery data. `build_gallery_data.js --check` detects drift without writing. Rebuild the Gallery and then transcripts after route changes. Transcript generation renders every managed output before writing and preserves unrelated files.
 - Input paths in the maintained game-check/build commands are resolved from the script location. Do not rely on the caller's working directory.
+
+## Gallery curation rule — September 2026
+
+The owner rejected the variations-panel design. Keep the classic Gallery layout: no Variations buttons, extra explanatory menu notes, setup selectors or conversation-variation section. Add a leaf only for a meaningfully different event, action, encounter or outcome. When the scene differs only in dialogue, select one coherent, complete representative route using real earlier choices. Do not splice text, force state flags or create a leaf for each wine/day/meal.
+
+The camper encounter “You and Diane Come Across the Brunette” uses the fuller Saturday/Pinot variant and is now localized in all editions. The curation pass compares complete playable routes for endings and only each hidden scene’s displayed duration. Fourth Prize, the two portaloo scenes and the two solo camper approaches use reviewed representatives. The train/stamp albums retain their complete variants. Gallery and transcripts pair translations by stable leaf ID. All five standalone and four bilingual editions contain the same 46 leaves; the 230 standalone transcripts are generated from those routes. The school-age flashbacks were excluded from content curation; their existing navigation and parity remain covered.
+
+The direct camper encounter is fourth within its group: after the solo encounters and before the covert-watching branches. Its title remains “You and Diane Come Across the Brunette”. The guide and transcript open on `carparka0`, cover the encounter on `carparka1`, and stop before `taxihome1`. The final taxi-rank choice correctly remains unhighlighted because it is outside this scene; Back restores the highlighted waiting choice. The transcript filename `09ba_camper_encounter_en.txt` keeps it in Gallery order without renaming existing transcripts.
+
+The camper group pairs “Caught by the Brunette’s Boyfriend” immediately after “Peeping Underneath”, then closes with the non-watching choice. Its transcript slug is `09da_camper_caught`; the retired `09f_camper_caught` filenames were deliberately migrated. The Chardonnay solo scene now includes the return-to-queue response on `carpark3`, ending before `busqueue7`. All scene-final continuation choices remain available but unhighlighted.

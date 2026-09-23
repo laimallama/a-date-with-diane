@@ -1013,15 +1013,15 @@ const clothingClauses = [
   {
     "node": "lootogether1",
     "branch": "always",
-    "thursday": "<LI>Standing right in front of you she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.",
-    "tuesday": "<LI>Standing right in front of you she reaches up under her skirt, fumbles for a second, then pulls down her pink knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees.",
-    "otherwise": "<LI>Standing right in front of you she reaches up under her dress, fumbles for a second, then pulls down her white knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees."
+    "thursday": "<LI>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.",
+    "tuesday": "<LI>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her pink knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees.",
+    "otherwise": "<LI>Standing right in front of you, she reaches up under her dress, fumbles for a second, then pulls down her white knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees."
   },
   {
     "node": "lootogether1",
     "branch": "lowIntimacy",
-    "thursday": "<LI>Because she's pushed the hem of her skirt down you can't see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. 'I really needed that,' she says and, standing up, pulls up her knickers and then her tights.",
-    "otherwise": "<LI>Because she's pushed the hem of her skirt down you can't see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. 'I really needed that,' she says and, standing up, pulls up her knickers."
+    "thursday": "<LI>Because she's pushed the hem of her skirt down, you can't see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. 'I really needed that,' she says and, standing up, pulls up her knickers and then her tights.",
+    "otherwise": "<LI>Because she's pushed the hem of her skirt down, you can't see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, 'Almost finished,' but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. 'I really needed that,' she says and, standing up, pulls up her knickers."
   },
   {
     "node": "ontoilet1",
@@ -1033,8 +1033,8 @@ const clothingClauses = [
   {
     "node": "ontoilet1",
     "branch": "squat",
-    "thursday": "She then starts to pull up her tights but long before she has finished she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was.",
-    "otherwise": "She then starts to straighten her clothes but long before she has finished she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was."
+    "thursday": "She then starts to pull up her tights, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was.",
+    "otherwise": "She then starts to straighten her clothes, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was."
   },
   {
     "node": "ontoilet1",
@@ -1466,7 +1466,7 @@ function verifyEnglishCloseout(source) {
     const route = englishCloseoutRoutes[day], g = replay(source, route.slice(0, -1));
     const before = snapshot(g); click(g, 'luckytrip4c');
     assert.equal(g.context[day], 2);
-    expectRiversideLine(g, source, 'luckytrip4c', "<LI>She puts an arm round your waist. You turn towards her, put your arms round her and kiss her. She responds, nervously at first, but then warmly. You kiss again. You slip a hand down to her bottom, pulling her closer to you. She puts her hand on your bottom. Your hand slips further down, to her upper thigh, and moving it round to the side you think you discover the ridge of a suspender—but you can't be sure. She pulls away with a smile.", day === 'tuesday');
+    expectRiversideLine(g, source, 'luckytrip4c', "<LI>She puts an arm round your waist. You turn towards her, put your arms round her and kiss her. She responds, nervously at first, but then warmly. You kiss again. You slip a hand down to her bottom, pulling her closer to you. She puts her hand on your bottom. Your hand slips further down, to her upper thigh, and moving it round to the side, you think you discover the ridge of a suspender—but you can't be sure. She pulls away with a smile.", day === 'tuesday');
     expectRiversideLine(g, source, 'luckytrip4c', "<LI>She puts an arm round your waist. You turn towards her, put your arms round her and kiss her. She responds, nervously at first, but then warmly. You kiss again. You slip a hand down to her bottom, pulling her closer to you. She puts her hand on your bottom. Your hand slips further down, to her upper thigh. She pulls away with a smile.", day !== 'tuesday');
     checkRiversideBack(g, 'luckytrip4c', before);
   }
@@ -1484,13 +1484,242 @@ function verifyEnglishCloseout(source) {
   return 5;
 }
 
+// A normal path where the next coffees belong to the other two guests.
+const guestCoffeeRoute = ["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buymerlot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario8","coffeereal1","scenario1a","scenario1b","scenario1c","scenario5","scenario5a","scenario5aa","scenario5b"];
+function verifyHomeDrinks(source) {
+  const coffee = replay(source, guestCoffeeRoute.slice(0, -1));
+  const before = snapshot(coffee), previousProc = coffee.context.proc;
+  click(coffee, 'scenario5b');
+  assert.equal(coffee.context.proc, Math.max(0, previousProc - 10), 'Other guests’ coffee does not enter Diane’s intake');
+  const served = snapshot(coffee);
+  coffee.context.goback(); assert.equal(snapshot(coffee), before, 'Back restores the guest-coffee scene');
+  click(coffee, 'scenario5b'); assert.equal(snapshot(coffee), served, 'Guest coffee replays without phantom intake');
+
+  // One ordinary extra cuddle makes a later request cross 760 on serving.
+  const initial = loadRuntime(source);
+  const leaf = leaves(initial.gallery).find(x => x.id === '03_first_prize');
+  let inserted = false, witness = false, requested;
+  for (const tag of ['start', ...leaf.tags]) {
+    if (tag === 'sofadrink' && !inserted) { click(initial, 'sofaarm'); inserted = true; }
+    if (tag === 'start') initial.context.go(tag); else click(initial, tag);
+    if (tag === 'sofadrink') requested = { bladder: initial.context.blad, state: snapshot(initial), proc: initial.context.proc };
+    if (tag === 'sofasat' && requested.bladder <= 760 && initial.context.blad > 760) {
+      assert.equal(initial.context.sofaDrinkBand, -1, 'The order is consumed once');
+      assert.equal(initial.context.proc, Math.max(0, requested.proc - 10) + 95, 'Serve the requested wine amount');
+      const result = snapshot(initial);
+      initial.context.goback(); assert.equal(snapshot(initial), requested.state, 'Back preserves the request');
+      click(initial, 'sofasat'); assert.equal(snapshot(initial), result, 'Serving replays exactly');
+      witness = true; break;
+    }
+  }
+  assert(witness, 'An ordinary threshold-crossing path remains reachable');
+
+  // Separately labelled synthetic boundaries, entered from the real sofa menu.
+  const prefix = ['start', ...leaf.tags.slice(0, leaf.tags.indexOf('sofadrink'))];
+  for (const bladder of [759, 760, 761, 859, 860, 861]) {
+    const g = replay(source, prefix);
+    Object.assign(g.context, { blad: bladder - 10, proc: 100 });
+    const menu = snapshot(g);
+    click(g, 'sofadrink');
+    assert.equal(g.context.blad, bladder);
+    const band = bladder > 860 ? 2 : bladder > 760 ? 1 : 0;
+    assert.equal(g.context.sofaDrinkBand, band);
+    const order = snapshot(g), proc = g.context.proc;
+    click(g, 'sofasat');
+    assert.equal(g.context.proc, Math.max(0, proc - 10) + [95, 60, 40][band], 'Serving follows the requested band');
+    const result = snapshot(g);
+    g.context.goback(); assert.equal(snapshot(g), order);
+    g.context.goback(); assert.equal(snapshot(g), menu, 'Back restores the previous selection state');
+    click(g, 'sofadrink'); click(g, 'sofasat'); assert.equal(snapshot(g), result);
+  }
+
+  // The cuddle entrance makes no request: use the current band, not an old order.
+  for (const bladder of [700, 800, 900]) {
+    const g = replay(source, prefix);
+    Object.assign(g.context, { blad: bladder - 10, proc: 100, sofaDrinkBand: -1 });
+    g.context.go('sofasat');
+    const band = bladder > 860 ? 2 : bladder > 760 ? 1 : 0;
+    assert.equal(g.context.proc, 90 + [95, 60, 40][band], 'Direct entry chooses from the current state');
+    assert.equal(g.context.sofaDrinkBand, -1, 'Direct entry does not leave a stale request');
+  }
+  return { reachable: 2, boundaries: 9 };
+}
+
+const saturdayBathroomRoute = ["start","start1a","start1b","saturdaydate","start2","buysth","buywater","buysth","gothere","flirt_m","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","holdhand","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","keepquiet","interval2","interval3","act2","act2a","act2b","holdhand2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","helpdiane","helpdiane2a","together2","helpdiane1b","riverside14","toiletopen","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","buywaterpav","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofakiss","sofasnog","sofasnog1","sofasat","sofasat1","sofatalk","sofatalk1","sofatalk2","sofatalk3","sofatalk4","sofatalk5","askloogo"];
+const saturdayBathroomLines = [{"node":"gobathroom","before":"<LI>Standing right in front of you, Diane reaches up under her skirt and slip from behind, fumbles for a second, then pulls down her tights and knickers, and sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.","after":"<LI>Standing right in front of you, she hitches up her dress from behind, fumbles for a second, then pulls down her knickers, and sits on the toilet. She pushes her knickers a little further down until they are just above her knees."},{"node":"gobathroom","before":"<LI>She has pushed the hem of her skirt down towards her knees, modestly covering herself.","after":"<LI>She has pushed the hem of her dress down towards her knees, modestly covering herself."},{"node":"gobathroom","before":"<LI>Diane really needed to go, so—even with you standing there gawping at her—she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect some modesty, but it doesn't conceal much.","after":"<LI>Diane really needed to go, so—even with you standing there gawping at her—she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect some modesty, but it doesn't conceal much."},{"node":"gobathroom","before":"<LI>From where you are standing, you can just see her pee stream. Perhaps it's the cider, but it looks amazingly golden. But then she pushes the hem of her skirt down towards her knees, so you can no longer see the stream.","after":"<LI>From where you are standing, you can just see her pee stream. Perhaps it's the cider, but it looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream."},{"node":"gobathroom1","before":"<LI>You gaze at her. 'Can I watch?' you hear yourself say. She shakes her head as if smiling at your madness, pulls the hem of her skirt back a little and sits a couple of inches further back on the toilet.","after":"<LI>You gaze at her. 'Can I watch?' you hear yourself say. She shakes her head as if smiling at your madness, pulls the hem of her dress back a little and sits a couple of inches further back on the toilet."},{"node":"gobathroom1","before":"<LI>She pulls off a piece of tissue and quickly wipes herself, then stands and pulls on her sky-blue knickers.","after":"<LI>She pulls off a piece of tissue and quickly wipes herself, then stands and pulls on her white knickers."},{"node":"gobathroom1","before":"<LI>She then starts to pull up her tights, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was.","after":"She then starts to straighten her clothes, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was."},{"node":"gobathroom1","before":"<LI>You reach over and kiss her, even as she is tugging up her tights, sensing the slightly acid fragrance of her urine from the toilet.","after":"<LI>You reach over and kiss her, sensing the slightly acid fragrance of her urine from the toilet."},{"node":"gobathroomx","before":"<LI>She ushers you out of the toilet while she washes her hands and straightens her tights. Then she comes down to join you in the sitting room.","after":"<LI>She ushers you out of the toilet while she washes her hands and straightens her clothes. Then she comes down to join you in the sitting room."}];
+function verifySaturdayBathroom(source) {
+  const g = replay(source, saturdayBathroomRoute);
+  assert.equal(g.context.saturday, 2, 'The shared bathroom scene is reachable on Saturday');
+  for (const tag of ['skirtdeal2', 'gobathroom', 'gobathroom1', 'gobathroomx']) {
+    const before = snapshot(g); click(g, tag);
+    const expected = saturdayBathroomLines.filter(x => x.node === tag &&
+      (tag !== 'gobathroom' || [saturdayBathroomLines[0], saturdayBathroomLines[1]].includes(x)) &&
+      (tag !== 'gobathroom1' || x.before.includes('even as')));
+    for (const line of expected) { expectRiversideLine(g, source, tag, line.after); expectRiversideLine(g, source, tag, line.before, false); }
+    checkRiversideBack(g, tag, before);
+  }
+  // Both bladder and intimacy sides retain the same date-specific clothing.
+  for (const day of ['saturday', 'thursday']) for (const bladder of [650, 700]) for (const intimacy of [150, 160]) {
+    const trial = loadRuntime(source);
+    trial.context.go('start');
+    Object.assign(trial.context, { saturday: day === 'saturday' ? 2 : 0, thursday: day === 'thursday' ? 2 : 0, tuesday: 0, blad: bladder, proc: 0, inti: intimacy, pregameCaughtUp: true });
+    trial.context.go('gobathroom');
+    const bodyLine = saturdayBathroomLines[0];
+    expectRiversideLine(trial, source, 'gobathroom', day === 'saturday' ? bodyLine.after : bodyLine.before);
+    click(trial, 'gobathroom1');
+    const selected = saturdayBathroomLines.filter(x => x.node === 'gobathroom1' && (intimacy > 157 ? !x.before.includes('even as') : x.before.includes('even as')));
+    for (const line of selected) expectRiversideLine(trial, source, 'gobathroom1', day === 'saturday' ? line.after : line.before);
+    assert.equal(trial.context.blad, 0, 'Observed emptying is preserved');
+    assert(choices(trial.box).some(c => c.tag === (intimacy > 157 ? 'gobathroom2' : 'gobathroomx')), 'The prize threshold is unchanged');
+  }
+  return { reachable: 1, boundaries: 8 };
+}
+
+
+// The camper-van recall must not describe the riverside, or claim no intervening toilet visit.
+const camperRecallRoute = ["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buyrioja","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buyicecream","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","askloo","interval2","interval3","act2","act2a","act2b","leanclose2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk1","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","luckytrip8","luckytrip8a","pavilion2","pavilion3","pavilion4","pavilion5","pavilion5a","pavilion6","pavilion7","pavilion8","pavilion9","notime","busqueue","busqueue1","busqueue2","busqueue3","queue1a","queue1b","carparka","carparka0","carparka1","carparka2","carparka3","peepround","peepround1","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeeinstant2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1"];
+function verifySofaRecall(source) {
+  const originalLocation = "<LI>DIANE: Except that bit down by the riverside when I had to go for a pee. That was soooo embarrassing.";
+  const originalTiming = "<LI>DIANE: I was absolutely bursting. I'd been wanting to go since we left the theatre. I could have killed Molly when she suggested coffees at that little stall.";
+  const camperLocation = "<LI>DIANE: Except that bit in the car park when I had to go for a pee. That was soooo embarrassing.";
+  const camperTiming = "<LI>DIANE: I was absolutely bursting. I didn't think I'd last the journey home.";
+  const under = camperRecallRoute.filter(tag => tag !== 'peepround1').map(tag => tag === 'peepround' ? 'peepunder' : tag);
+  const river = saturdayBathroomRoute.slice(0, saturdayBathroomRoute.indexOf('sofasat1') + 1);
+  for (const [tags, camper] of [[camperRecallRoute, true], [under, true], [river, false]]) {
+    const g = replay(source, tags.slice(0, -1));
+    assert.equal(g.context.gopee, 1, 'Recall has an actual earlier event');
+    assert.equal(!!g.context.squat, camper, 'Camper flag follows the actual earlier route');
+    const before = snapshot(g);
+    click(g, 'sofasat1');
+    for (const line of [camperLocation, camperTiming]) expectRiversideLine(g, source, 'sofasat1', line, camper);
+    for (const line of [originalLocation, originalTiming]) expectRiversideLine(g, source, 'sofasat1', line, !camper);
+    checkRiversideBack(g, 'sofasat1', before);
+  }
+  return 3;
+}
+
+
+// Repetition witnesses follow offered choices from the title screen. Only the
+// explicitly marked rendering boundary cases below assign synthetic state.
+const repetitionRoutes = {"train":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buymerlot","eatmeal","buyspagbol","eatmeal2","eatmeal2a","eatmeal2b","eatmeal2c","eatmeal2d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario4","scenario4a","scenario4b","scenario4c","scenario4d","scenario4e","scenario3","scenario3a","scenario3b","sofaarm","sofaarm1","sofagame","sofatrains","luckytrip20","luckytrip20a"],"stamp":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buymerlot","eatmeal","buyspagbol","eatmeal2","eatmeal2a","eatmeal2b","eatmeal2c","eatmeal2d","eatmeal7","eatmeal7a","puddings","buypannacotta","eatmeal7b","cappuccino","eatmeal7c","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario4","scenario4a","scenario4b","scenario4c","scenario4d","scenario4e","scenario3","scenario3a","scenario3b","sofaarm","sofaarm1","sofagame","sofastamps","luckytrip18","luckytrip18a"],"introduction":["start","start1a","start1b","tuesdaydate","start2","gothere","winelist","buymerlot","eatmeal","buysteak","steak1","eatmeal6","eatmeal6a","eatmeal6b","eatmeal6c","eatmeal5c","traintalk","traintalk1","traintalk2","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","filtercoffee","eatmeal7bb","gotheatre","theatreask","testtue","testtue1","arrivehome","arrivehome0","arrivehome1","scenario8","coffeereal1","scenario1a","scenario1b","scenario1c","scenario5","scenario5a"],"callbacks":[{"kind":"riverside-stamps","path":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","stamptalka","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1"]},{"kind":"dinner-job","path":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","herjob","eatmeal5d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","holdhand","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","holdhand2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion1","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1"]},{"kind":"dinner-stamps","path":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_m","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","stamptalk","eatmeal5d","eatmeal7","eatmeal7a","puddings","buytiramisu","eatmeal7b","espresso","eatmeal7c","gotheatre","theatre1","theatre2","theatre3c","theatre4","holdhand","theatre5","theatre6","theatre7","holdhand1","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","holdhand2","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside3aa","riverside4","sitonbench","riverside5","riverside6","riverside7","riverside8","riverside9","riverside10","riverside11","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion1","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion9a","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1"]},{"kind":"riverside-theatre","path":["start","start1a","start1b","saturdaydate","start2","gothere","flirt_h","winelist","buypinot","eatmeal","buytort","eatmeal5","eatmeal5a","eatmeal5b","eatmeal5c","asklootalk","asklootalk1","asklootalk2","gotheatre","theatre1","theatre2","theatre3c","theatre4","theatre5","theatre6","theatre7","theatre8","theatre9","theatre10","interval","interval1","luckytrip1","luckytrip1a","interval3","act2","act2a","act2b","act2c","act2d","act2e","act2f","act2fa","act2g","act2h","leavetheatre","leavetheatre1","dianechoice","stagedoor","stagedoor1","stagedoor2","stagedoor3","stagedoor4","stagedoor5a","choosewalk","riverside2","riverside3","riverside7","riverside8","riverside9","riverside10","riverside11","theatretalka","riverside12","riverside13a","riverside14","toiletopen","justclosed","riverside15","riverside16","pavilion","pavilion2","pavilion3","pavilion4","pavilion5","pavilion7","pavilion8","pavilion9","pavilion10","busqueue","busqueue1","busqueue2","taxihome","taxihome1","taxihome2","taxihome3","taxihome4","taxihome4a","taxiarmround","taxihome5","taxihome6","taxihome7","taxihome8","arrivehome","arrivehome0","arrivehome1","scenario2","coffeereal2","scenario2a","scenario3","scenario3a","scenario3b","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1","decisions","sofadrink","sofasat","sofasat1"]}]};
+const repetitionCallbacks = ["<LI>YOU: You enjoyed playing Gwendolen, then?","<LI>DIANE: I did. I've done a bit with Welbourne Players as well. Molly's the one on stage tonight, though. I'm only jealous in a friendly way.","<LI>YOU: What became of your brother's stamp collection?","<LI>DIANE: He sold the lot. Mum still hasn't quite forgiven him. He's called Paul, by the way. He's in Leeds now.","<LI>YOU: So, if you do move to London, have you somewhere to stay?","<LI>DIANE: I've a cousin in Leyton who'd put me up on a sofa. Mum would hate it. I've not packed. Yet."];
+const repetitionFollowups = ["<LI>Her dress is already unbuttoned. You slip your hand back inside and run your fingers around her bra, trying not to notice how she keeps pressing her thighs together.","<LI>Her dress is already unbuttoned. You run your fingers around her bra."];
+
+function verifyRepetition(source) {
+  const initial = loadRuntime(source);
+  for (const key of ['sofaTopicsSeen', 'sofaEveningAsked', 'movingtalking', 'brotherHome']) {
+    assert(initial.context.gameStateVars.includes(key), key + ' must be saved by Back');
+    assert.equal(initial.context[key], 0, key + ' must start clear on a new game');
+  }
+  const first = leaves(initial.gallery).find(x => x.id === '03_first_prize').tags;
+  const question = '<LI>DIANE: Have you enjoyed today?';
+  const breathless = '<LI>DIANE: <EM>(a little breathless)</EM> Have you enjoyed today?';
+  const normalTopics = [
+    "<LI>YOU: Quiet at the estate agent's these days?",
+    "<LI>YOU: You and Molly go off to Italy a lot, don't you?",
+    '<LI>YOU: Did you do much acting? After school, I mean.',
+    "<LI>YOU: Your dad was on the railways, wasn't he?",
+    "<LI>DIANE: Molly's already talking about watersports for the summer.",
+    '<LI>YOU: Brothers or sisters?',
+    '<LI>YOU: Ever think of leaving Welbourne?',
+    "<LI>DIANE: If I'm late, Mum sits up with the radio on. She pretends she's reading a magazine.",
+  ];
+  const g = replay(source, ['start']);
+  let visits = 0, seen = 0;
+  const expectedBladder = [285, 325, 365, 405, 565, 605, 645, 685, 725, 765, 805];
+  for (const tag of first.slice(0, first.lastIndexOf('sofasat1') + 1)) {
+    const before = snapshot(g); click(g, tag);
+    if (tag !== 'sofasat1') continue;
+    visits++;
+    if (visits <= 8) seen |= 1 << (visits % 8);
+    assert.equal(g.context.sofaTopicsSeen, seen, 'Only rendered topics are remembered');
+    assert.equal(g.context.sofaEveningAsked, visits >= 3 ? 1 : 0);
+    assert.equal(g.context.blad, expectedBladder[visits - 1], 'Sofa timing and drink effects stay unchanged');
+    normalTopics.forEach((line, index) => expectRiversideLine(g, source, 'sofaChat', line, visits === index + 1));
+    expectRiversideLine(g, source, 'sofasat1', question, visits === 3);
+    checkRiversideBack(g, tag, before);
+  }
+  assert.equal(visits, 11, 'The real route reaches the original repetition');
+  assert.equal(g.context.sofaTopicsSeen, 255, 'All eight topics occur once');
+
+  for (const test of repetitionRoutes.callbacks) {
+    const offset = test.kind.includes('stamps') ? 2 : test.kind.includes('job') ? 4 : 0;
+    const visit = offset === 2 ? 6 : offset === 4 ? 7 : 3;
+    let count = 0;
+    const end = test.path.findIndex(t => t === 'sofasat1' && ++count === visit);
+    assert(end >= 0);
+    const trial = replay(source, test.path.slice(0, end));
+    const before = snapshot(trial); click(trial, 'sofasat1');
+    expectRiversideLine(trial, source, 'sofaChat', repetitionCallbacks[offset]);
+    expectRiversideLine(trial, source, 'sofaChat', repetitionCallbacks[offset + 1]);
+    expectRiversideLine(trial, source, 'sofaChat', normalTopics[visit - 1], false);
+    checkRiversideBack(trial, 'sofasat1', before);
+  }
+
+  // Both dinner branches record the London conversation, including Back.
+  const dinnerStart = ['start', ...first.slice(0, first.indexOf('eatmeal') + 1)];
+  const jobPaths = [
+    [...dinnerStart, 'buyspagbol', 'eatmeal2', 'eatmeal2a', 'eatmeal2b'],
+    repetitionRoutes.callbacks.find(x => x.kind === 'dinner-job').path.slice(0,
+      repetitionRoutes.callbacks.find(x => x.kind === 'dinner-job').path.indexOf('herjob') + 1),
+  ];
+  for (const tags of jobPaths) {
+    const trial = replay(source, tags.slice(0, -1));
+    assert.equal(trial.context.movingtalking, 0);
+    const before = snapshot(trial); click(trial, tags.at(-1));
+    assert.equal(trial.context.movingtalking, 1);
+    checkRiversideBack(trial, tags.at(-1), before);
+  }
+
+  for (const [kind, node] of [['train', 'relaxedtrainalbum'], ['stamp', 'relaxedstampalbum']]) {
+    const tags = repetitionRoutes[kind], trial = replay(source, tags.slice(0, -1));
+    assert(tags.includes('scenario4') && tags.includes('scenario4e'), 'Chloe already visited and left');
+    assert.equal(trial.context.brotherHome, 1);
+    assert.equal(trial.context.luckshots, 0, 'The offered luckshot was spent normally');
+    const before = snapshot(trial); click(trial, tags.at(-1));
+    assert.deepEqual([...new Set(choices(trial.box).map(x => x.tag))], ['gameover'], 'Do not offer a second first introduction');
+    expectRiversideLine(trial, source, node, '<LI>She leaves the room and hurries up the stairs.');
+    expectRiversideLine(trial, source, node, '<LI>You hear her go into the bathroom. A few minutes later she comes down, looking relaxed.');
+    checkRiversideBack(trial, tags.at(-1), before);
+  }
+  // A genuine first arrival through the steak route still introduces Chloe.
+  const arrival = repetitionRoutes.introduction;
+  const trial = replay(source, arrival.slice(0, arrival.indexOf('scenario5')));
+  assert.equal(trial.context.brotherHome, 0);
+  const before = snapshot(trial); click(trial, 'scenario5');
+  assert.equal(trial.context.brotherHome, 1);
+  checkRiversideBack(trial, 'scenario5', before);
+  click(trial, 'scenario5a');
+  expectRiversideLine(trial, source, 'scenario5a', "<LI>You haven't met Chloe before. She isn't a regular girlfriend. But she and your brother have just finished their college exams and have been out for a few drinks to celebrate.");
+
+  // Synthetic rendering boundaries: first/repeated question at all four display branches.
+  let boundaries = 0;
+  for (const [blad, sofaloop] of [[400, 3], [800, 3], [880, 3], [880, 4]]) for (const repeated of [0, 1]) {
+    const boundary = replay(source, ['start']);
+    Object.assign(boundary.context, { saturday: 2, blad, proc: 0, sofaloop, sofaDrinkBoost: 1,
+      sofaDressOpened: 1, sofaEveningAsked: repeated, pregameCaughtUp: true });
+    const before = snapshot(boundary); boundary.context.go('sofasat1');
+    expectRiversideLine(boundary, source, 'sofasat1', question, !repeated && !(blad > 860 && sofaloop % 2));
+    expectRiversideLine(boundary, source, 'sofasat1', breathless, !repeated && blad > 860 && !!(sofaloop % 2));
+    expectRiversideLine(boundary, source, 'sofasat1', repetitionFollowups[blad > 860 ? 0 : 1], !!repeated);
+    assert.equal(boundary.context.sofaEveningAsked, 1);
+    checkRiversideBack(boundary, 'sofasat1', before, true); boundaries++;
+  }
+  return { reachable: 10, boundaries };
+}
+
 function main() {
   let count = 0, automaticCoffeePaths = 0, editions = 0, moneyPaths = 0, moneyBoundaries = 0, busPaths = 0, busBoundaries = 0;
   let coffeeNarrativePaths = 0, waterPaths = 0, waterBoundaries = 0, preorderPaths = 0, preorderBoundaries = 0;
   let riversidePaths = 0, riversideBoundaries = 0;
   let clothingPaths = 0, clothingBoundaries = 0, closeoutPaths = 0;
+  let repetitionPaths = 0, repetitionBoundaries = 0;
   for (const lang of LANGS) for (const bilingual of lang === 'en' ? [false] : [false, true]) {
     const source = readSource(lang, bilingual);
+    const repetition = verifyRepetition(source); repetitionPaths += repetition.reachable; repetitionBoundaries += repetition.boundaries;
+    verifySofaRecall(source);
+    verifyHomeDrinks(source);
+    verifySaturdayBathroom(source);
     closeoutPaths += verifyEnglishCloseout(source);
     const clothing = verifyClothingContinuity(source); clothingPaths += clothing.reachable; clothingBoundaries += clothing.boundaries;
     count += verifyCoffee(source); editions++;
@@ -1505,6 +1734,10 @@ function main() {
     }
     console.log(`OK ${source.file}: coffee charges/narration, theatre water/preorders, Back/replay, four high-spend routes, ${money.boundaries} synthetic spending boundaries`);
   }
+  console.log(`PASS: ${repetitionPaths} actual-choice repetition/continuity paths and ${repetitionBoundaries} synthetic rendering boundaries, with localized output and Back/replay.`);
+  console.log('PASS: 27 actual-choice sofa recall cases (both camper entrances and riverside), with Back/replay across nine editions.');
+  console.log(`PASS: 9 actual-choice Saturday bathroom paths and 72 synthetic clothing boundaries.`);
+  console.log(`PASS: 18 actual-choice home drink cases and 81 synthetic drink boundaries, with Back/replay across nine editions.`);
   console.log(`PASS: ${closeoutPaths} actual-choice closeout paths for fifth-prize reachability, date-specific clothing, foyer payment and second-prize recap.`);
   console.log(`PASS: ${coffeeNarrativePaths} reachable coffee-narration paths; ${waterPaths} actual theatre-water paths and ${waterBoundaries} synthetic water boundaries; ${preorderPaths} actual preorder paths and ${preorderBoundaries} synthetic preorder boundaries.`);
   console.log(`PASS: ${riversidePaths} reachable riverside drink/music/stamp/urgency/round cases and ${riversideBoundaries} separately synthetic boundaries.`);
@@ -1512,5 +1745,5 @@ function main() {
   console.log(`PASS: ${busPaths} reachable ordinary bus paths and ${busBoundaries} synthetic boarding boundaries.`);
   console.log(`PASS: ${count} ordinary and ${automaticCoffeePaths} automatic reachable coffee cases, ${moneyPaths} high-spend paths, ${moneyBoundaries} synthetic boundaries across ${editions} editions. No files written.`);
 }
-module.exports = { verifyCoffee, verifyAutomaticCoffee, verifyMoney, verifyBusLuckshots, verifyCoffeeNarrative, verifyTheatreWater, verifyTheatrePreorder, verifyRiversideDrinks, verifyRiversideMusic, verifyRiversideStamps, verifyRiversideNeedCue, verifyRiversideRoundLabels, verifyClothingContinuity, verifyEnglishCloseout };
+module.exports = { verifyRepetition, verifySofaRecall, verifySaturdayBathroom, verifyHomeDrinks, verifyCoffee, verifyAutomaticCoffee, verifyMoney, verifyBusLuckshots, verifyCoffeeNarrative, verifyTheatreWater, verifyTheatrePreorder, verifyRiversideDrinks, verifyRiversideMusic, verifyRiversideStamps, verifyRiversideNeedCue, verifyRiversideRoundLabels, verifyClothingContinuity, verifyEnglishCloseout };
 if (require.main === module) main();

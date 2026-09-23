@@ -1,61 +1,76 @@
-# A Date with Diane (Visual)
+# A Date with Diane — Visual editions
 
-This is the English-only visual experiment for *A Date with Diane*. The text edition, with five languages and bilingual variants, is maintained separately in `/Users/apple/Documents/ADWD`.
+Five standalone languages and four English/local bilingual editions share one visual shell,
+scene map and asset library. ADWD supplies the unchanged game scripts and settled translations.
 
-| Project | Local folder | Configured origin |
+## Play
+
+Open a visual HTML file in a browser; no server or installation is required.
+
+| Language | Standalone | With English |
 |---|---|---|
-| Text edition | `/Users/apple/Documents/ADWD` | `https://github.com/laimallama/a-date-with-diane.git` |
-| Visual experiment | `/Users/apple/Documents/ADWD-visual` | `https://github.com/laimallama/a-date-with-diane-visual.git` |
+| English | [Play](outputs/en/dianedate_visual_en.html) | — |
+| 简体中文 | [开始](outputs/cn/dianedate_visual_cn.html) | [双语](outputs/cn/dianedate_visual_cn_bilingual.html) |
+| 台灣繁體中文 | [開始](outputs/tw/dianedate_visual_tw.html) | [雙語](outputs/tw/dianedate_visual_tw_bilingual.html) |
+| Español | [Jugar](outputs/es/dianedate_visual_es.html) | [Bilingüe](outputs/es/dianedate_visual_es_bilingual.html) |
+| Français | [Jouer](outputs/fr/dianedate_visual_fr.html) | [Bilingue](outputs/fr/dianedate_visual_fr_bilingual.html) |
 
-Keep the repositories separate. ADWD owns shared English content; the sync command imports it here. Visual presentation changes belong here. A local change does not authorize committing or pushing.
+The visual edition adds animated character sprites, location labels, organ meters and a
+responsive story/stage layout. Bilingual language buttons switch the story, Gallery and
+visual interface together without restarting the current animation. Chinese editions use
+native font stacks; Spanish and French use decimal commas and a trailing pound sign.
 
-## Playing
+Gallery retains **15 ending leaves** and **31 hidden-scene leaves**, with the same routes,
+ordering and start/end boundaries as the text editions. There is no Variations interface.
+The visual toolbar shortens the Skip command; its behavior is unchanged.
 
-Open [`outputs/en/dianedate_visual_en.html`](outputs/en/dianedate_visual_en.html) in a browser. This is the generated visual edition. Its companion text runtime is [`outputs/en/dianedate_en.html`](outputs/en/dianedate_en.html), and the setting reference is [`outputs/en/wiki_en.html`](outputs/en/wiki_en.html).
+**B** goes Back, **G** / Escape opens or closes Gallery, **H** toggles the active guide,
+**S** skips to the designated scene start, **D** toggles dark mode, **L** switches bilingual
+language, and **1–9** select choices. Dark mode persists in the same tab. Back restores
+narrative state and reconstructs the visual presentation; it does not restore an exact GIF
+frame or provide a persistent save. Reduced-motion preferences use stills and held effects.
 
-The visual edition adds character sprites, location labels, meters, and a two-column layout. It is a 2D browser presentation.
+## Development and small playable folders
 
-Gallery contains **15 ending leaves** and **31 hidden-scene leaves**. It supplies guided routes and Skip. The visual toolbar labels the command **Skip**; the text companion calls it **Skip to the good bit!**. The English transcripts under `outputs/en/transcripts/` use the corresponding Gallery start positions.
+This GitHub repository contains the visual authoring source and generated releases.
+The canonical text source is [a-date-with-diane](https://github.com/laimallama/a-date-with-diane).
+Clone the two repositories into sibling `ADWD` and `ADWD-visual` development folders.
 
-The game opens on the title screen. **B** goes Back, **G** / Escape opens or closes Gallery, **H** toggles the active guide, **S** skips to the route's designated start, **D** toggles dark mode, and **1–9** select choices. Dark mode persists in the same tab through `sessionStorage`. Back restores game state and text variation within the current session; it is not a persistent save system. Visual animations are reconstructed on Back, rather than restored at an exact animation frame.
-
-## Maintained scope
-
-Only `outputs/en/` is maintained and built in this visual repository. Translations live in `/Users/apple/Documents/ADWD`. This is not a multilingual visual release.
-
-## Maintaining
-
-Project conventions are in [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md); presentation details are in [`visual/README.md`](visual/README.md).
-
-Read-only checks:
-
-```bash
-node maintenance/verify_project.js
-node maintenance/verify_ending_routes.js
-node maintenance/write_hidden_scenes.js
-node maintenance/build_gallery_data.js --check
-node maintenance/build_visual_edition.js --check
-node maintenance/sync_visual_edition.js --check
-node maintenance/write_transcripts.js --check
-```
-
-`verify_project.js` checks all 46 embedded Gallery routes in both the companion and generated visual core, exact Back/forward replay, guide progress, Skip, numerical state parity, location cases, HTML metadata, JavaScript syntax, and generated-file consistency. It also checks shared content against ADWD and all 46 English transcripts. Its DOM stub does not execute visual adapter behavior or verify browser layout or animation timing.
-
-For shared English story/runtime, route, wiki, transcript, or maintenance changes, edit canonical ADWD first and refresh its affected generated files. Then, from either checkout:
+The visual builder reads all nine canonical HTML inputs and the five visual label catalogs
+straight from ADWD. No non-visual game, wiki, transcript, copied locale catalog or synchronization
+receipt is kept here. Existing generated visual pages are self-contained apart from graphics;
+playing them does not require ADWD or any build tools.
 
 ```bash
-node maintenance/sync_visual_edition.js
+node maintenance/build_visual_edition.js
 node maintenance/verify_project.js
 ```
 
-Also run ADWD's verifier after shared changes. After a presentation-only edit, run `build_visual_edition.js` and this verifier. Normal visual builds synchronize shared English content first. Do not edit the generated visual HTML directly.
+Use `--check` with the builder to verify without writing. Both building and verification
+need the canonical source checkout; set `ADWD_TEXT_ROOT` if it is elsewhere. ADWD's tools
+use `ADWD_VISUAL_ROOT` for a nonstandard visual checkout. Commands never commit or push.
 
-Synchronization copies only the managed English game, wiki, transcripts, English Gallery snapshot, and shared maintenance scripts. It preserves `visual/`, `assets/`, the visual builder, and unrelated files. The first sync adopts canonical content; later syncs use `maintenance/shared_content_state.json` to reject independently changed shared targets before writes. Reconcile such edits into ADWD before syncing. Nothing is automatically committed or pushed.
+The visual verifier checks exact game-script parity for all nine editions, Gallery leaf
+counts, complete label catalogs, script syntax, generated freshness, scene-map regressions
+and all assets. ADWD owns route/state/transcript tests. Its browser verifier covers all nine
+visual editions, language switching, navigation, localization and responsive layout. Use
+`--editions=visual,visual-cn,visual-cn-bilingual,visual-tw,visual-tw-bilingual,visual-es,visual-es-bilingual,visual-fr,visual-fr-bilingual --currency`.
 
-Default paths are sibling folders `ADWD` and `ADWD-visual`; override them with `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT`. An isolated clone can use `build_visual_edition.js --local-only` and `verify_project.js --local-only` to work with its carried snapshot, which does not verify synchronization against ADWD. All commands resolve project inputs relative to their script location.
+From the ADWD source checkout, run:
 
-The Gallery contains **15 ending leaves and 31 hidden-scene leaves** in all five standalone languages, all four bilingual editions, and visual English. The camper-group addition “You and Diane Come Across the Brunette” is localized in every interface. Routes, ordering, scene boundaries and localized transcripts are synchronized. Dialogue differences use one coherent representative route, without extra variation controls or menu notes.
+```bash
+node maintenance/export_games.js /path/to/new-release-folder
+```
 
-The direct camper encounter is fourth within its group: after the solo encounters and before the covert-watching branches. Its title remains “You and Diane Come Across the Brunette”. The guide and transcript open on `carparka0`, cover the encounter on `carparka1`, and stop before `taxihome1`. The final taxi-rank choice correctly remains unhighlighted because it is outside this scene; Back restores the highlighted waiting choice. The transcript filename `09ba_camper_encounter_en.txt` keeps it in Gallery order without renaming existing transcripts.
+This creates two play-only folders. The visual export contains nine HTML games, 318 image
+assets and a playing README. The text export holds nine text games and the sole copy of
+five wikis and 230 transcripts. No Git metadata, dependency installation, source/build files
+or duplicated companions are exported. Keep `assets/` beside `outputs/` in the visual folder.
 
-The camper group pairs “Caught by the Brunette’s Boyfriend” immediately after “Peeping Underneath”, then closes with the non-watching choice. Its transcript slug is `09da_camper_caught`; the retired `09f_camper_caught` filenames were deliberately migrated. The Chardonnay solo scene now includes the return-to-queue response on `carpark3`, ending before `busqueue7`. All scene-final continuation choices remain available but unhighlighted.
+The source checkout retains `visual/`, the builder, two verifiers, asset metadata and
+maintenance documentation because they are needed to develop the game. With ADWD's pinned
+development dependencies installed, format/check visual source through
+`node ../ADWD/maintenance/format_sources.js --visual` and
+`node ../ADWD/maintenance/verify_maintenance.js --visual`. A second dependency tree is unnecessary.
+
+See [maintenance conventions](maintenance/AI_HANDOFF.md) and [presentation notes](visual/README.md).

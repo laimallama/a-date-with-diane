@@ -30,3 +30,8 @@ Transparent GIF animation assets for the visual edition.
 **Shared style (all clips):** 398×398, **10 fps** (100 ms/frame), transparency index 0, nearest-neighbour upscale from source PNG frames. Each live GIF also has a matching `*.still.png` first-frame still. The visual adapter uses those stills when the user prefers reduced motion.
 
 Live puddles in the visual shell use `assets/fx/grow_frames/` PNG banks plus `assets/fx/puddle_meta.json`, driven by `visual/puddle-sync.js` (frame-locked to pee/wet clips).
+
+`maintenance/verify_visual_support.js` accounts for all 37 GIF/still pairs and all
+244 PNG frames across 12 banks. It checks names, contiguous numbering, image headers
+and 398×398 dimensions. The builder derives frame counts directly; no `count.txt`
+sidecars are needed. Reduced-motion stills and frame-bank images are all live assets.

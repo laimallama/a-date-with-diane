@@ -1,4 +1,4 @@
-/* Visual edition chrome — demo typography + location backdrops */
+/* Visual edition layout, meters and animation styling. */
 
 html {
   background: var(--body-bg-wash, #f5eee5);
@@ -27,14 +27,6 @@ body.visual-edition .visual-rail,
 body.visual-edition .visual-kicker,
 body.visual-edition .visual-meters {
   font-family: var(--font-visual);
-}
-
-body.visual-edition .game-shell {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  background: transparent;
 }
 
 body.visual-edition #box {
@@ -66,9 +58,6 @@ body.visual-edition #box [style*="FFFF00"] {
   background-color: transparent !important;
   color: inherit !important;
 }
-
-/* Demo-style numbered choices */
-/* Choice numbers removed — plain button labels only */
 
 body.visual-edition .visual-app {
   max-width: none;
@@ -104,22 +93,15 @@ body.visual-edition .visual-rail .brand {
   font-size: 1.05rem;
   color: var(--accent-dark);
 }
-body.visual-edition .visual-rail .muted { color: var(--muted); }
+body.visual-edition .visual-rail .muted {
+  color: var(--muted);
+}
 body.visual-edition .rail-end {
   margin-left: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 12px;
-}
-body.visual-edition .rail-end .day {
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-body.visual-edition .rail-end .day strong {
-  color: var(--ink);
-  font-weight: 600;
-  font-size: 1.05rem;
 }
 
 /* Same text↔edge padding; no min-width so short labels don’t get empty side space */
@@ -193,10 +175,7 @@ body.visual-edition .visual-stage-col {
   height: auto;
   overflow: hidden;
 }
-body.visual-edition .visual-story-col .visual-panel {
-  height: 100%;
-  overflow: hidden;
-}
+
 body.visual-edition .visual-story-col #box {
   flex: 1 1 auto;
   min-height: 0;
@@ -213,9 +192,6 @@ body.visual-edition .visual-stage-col {
   max-height: none;
   /* Match meters / kicker so leftover column height isn’t a paper-colored strip */
   background: var(--status);
-}
-body.visual-edition .visual-stage-col .visual-panel {
-  height: 100%;
 }
 
 /* Phone: one column, page scrolls like the text game */
@@ -242,10 +218,7 @@ body.visual-edition .visual-stage-col .visual-panel {
   body.visual-edition .visual-stage-col {
     overflow: visible;
   }
-  body.visual-edition .visual-story-col .visual-panel {
-    height: auto;
-    overflow: visible;
-  }
+
   body.visual-edition .visual-story-col #box,
   body.visual-edition #box {
     overflow: visible;
@@ -255,10 +228,6 @@ body.visual-edition .visual-stage-col .visual-panel {
     order: -1;
     height: auto;
     max-height: none;
-  }
-  body.visual-edition .visual-stage-col .visual-panel {
-    height: auto;
-    min-height: 280px;
   }
 }
 
@@ -284,7 +253,9 @@ body.visual-edition .visual-stage.urgent {
 
 body.visual-edition .stage-band {
   position: absolute;
-  top: 14px; left: 14px; z-index: 5;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
   font-size: 0.65rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -328,8 +299,14 @@ body.visual-edition .stage-rec .rec-dot {
   animation: stageRecBlink 1s steps(1) infinite;
 }
 @keyframes stageRecBlink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0.2; }
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
 }
 
 /* Puddle sits on the floor under the character sprites */
@@ -412,7 +389,7 @@ body.visual-edition .stage-cast .sprite {
   min-width: 0;
   object-fit: contain;
   object-position: bottom center;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
   /* Avoid drop-shadow recompositing flash when theme colours change */
   transition: none;
 }
@@ -434,8 +411,13 @@ body.visual-edition .sprite.tremor {
   will-change: transform;
 }
 @keyframes visualTremor {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(-2px, 1px, 0); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2px, 1px, 0);
+  }
 }
 
 body.visual-edition .visual-meters {
@@ -479,8 +461,12 @@ body.visual-edition .tank-name {
   cursor: default;
   outline: none;
 }
-body.visual-edition .tummy-label { grid-column: 1; }
-body.visual-edition .blad-label { grid-column: 3; }
+body.visual-edition .tummy-label {
+  grid-column: 1;
+}
+body.visual-edition .blad-label {
+  grid-column: 3;
+}
 body.visual-edition .organ {
   grid-row: 2;
   position: relative;
@@ -493,8 +479,13 @@ body.visual-edition .organ {
   outline: none;
   z-index: 1;
 }
-body.visual-edition .organ.tummy { grid-column: 1; }
-body.visual-edition .organ.blad { grid-column: 3; transform: translateY(-4px); }
+body.visual-edition .organ.tummy {
+  grid-column: 1;
+}
+body.visual-edition .organ.blad {
+  grid-column: 3;
+  transform: translateY(-4px);
+}
 body.visual-edition .organ svg {
   display: block;
   width: 100%;
@@ -527,7 +518,9 @@ body.visual-edition .organ[data-tip]::after {
   visibility: hidden;
   pointer-events: none;
   z-index: 6;
-  transition: opacity 0.12s ease, visibility 0.12s ease;
+  transition:
+    opacity 0.12s ease,
+    visibility 0.12s ease;
 }
 body.visual-edition .organ[data-tip]:hover::after,
 body.visual-edition .organ[data-tip]:focus-visible::after {
@@ -539,11 +532,21 @@ body.visual-edition .tank-name:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
-body.visual-edition .organ .cavity { fill: var(--membrane-inner, #f0e0d4); }
-body.visual-edition .organ.tummy .cavity { fill: url(#tummyWall); }
-body.visual-edition .organ.blad .cavity { fill: url(#bladWall); }
-body.visual-edition .organ.tummy .fill-shape { fill: url(#tummyChyme); }
-body.visual-edition .organ.blad .fill-shape { fill: url(#bladUrine); }
+body.visual-edition .organ .cavity {
+  fill: var(--membrane-inner, #f0e0d4);
+}
+body.visual-edition .organ.tummy .cavity {
+  fill: url(#tummyWall);
+}
+body.visual-edition .organ.blad .cavity {
+  fill: url(#bladWall);
+}
+body.visual-edition .organ.tummy .fill-shape {
+  fill: url(#tummyChyme);
+}
+body.visual-edition .organ.blad .fill-shape {
+  fill: url(#bladUrine);
+}
 body.visual-edition .organ .fill-shape {
   transform-box: fill-box;
   transform-origin: center bottom;
@@ -555,10 +558,19 @@ body.visual-edition .organ .outline {
   stroke-width: 2.2;
   stroke-linejoin: round;
 }
-body.visual-edition .organ .shade { pointer-events: none; }
-body.visual-edition .organ.tummy .shade { fill: url(#tummyShade); }
-body.visual-edition .organ.blad .shade { fill: url(#bladShade); }
-body.visual-edition .drip-col { grid-column: 2; grid-row: 2; }
+body.visual-edition .organ .shade {
+  pointer-events: none;
+}
+body.visual-edition .organ.tummy .shade {
+  fill: url(#tummyShade);
+}
+body.visual-edition .organ.blad .shade {
+  fill: url(#bladShade);
+}
+body.visual-edition .drip-col {
+  grid-column: 2;
+  grid-row: 2;
+}
 
 body.visual-edition .organ.blad.full {
   animation: bladShake 0.55s ease-in-out infinite;
@@ -569,16 +581,34 @@ body.visual-edition .organ.blad.crit.full {
   animation: bladShakeHard 0.38s ease-in-out infinite;
 }
 @keyframes bladShake {
-  0%, 100% { transform: translateY(-4px) scale(1); }
-  25% { transform: translateY(-4px) translate(-1.5px, 0.5px) scale(1.03); }
-  50% { transform: translateY(-4px) translate(1.5px, -0.5px) scale(1.05); }
-  75% { transform: translateY(-4px) translate(-1px, 0) scale(1.03); }
+  0%,
+  100% {
+    transform: translateY(-4px) scale(1);
+  }
+  25% {
+    transform: translateY(-4px) translate(-1.5px, 0.5px) scale(1.03);
+  }
+  50% {
+    transform: translateY(-4px) translate(1.5px, -0.5px) scale(1.05);
+  }
+  75% {
+    transform: translateY(-4px) translate(-1px, 0) scale(1.03);
+  }
 }
 @keyframes bladShakeHard {
-  0%, 100% { transform: translateY(-4px) scale(1.02); }
-  25% { transform: translateY(-4px) translate(-2.5px, 1px) scale(1.06); }
-  50% { transform: translateY(-4px) translate(2.5px, -1px) scale(1.08); }
-  75% { transform: translateY(-4px) translate(-2px, 0.5px) scale(1.05); }
+  0%,
+  100% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  25% {
+    transform: translateY(-4px) translate(-2.5px, 1px) scale(1.06);
+  }
+  50% {
+    transform: translateY(-4px) translate(2.5px, -1px) scale(1.08);
+  }
+  75% {
+    transform: translateY(-4px) translate(-2px, 0.5px) scale(1.05);
+  }
 }
 
 body.visual-edition .bars {
@@ -591,7 +621,7 @@ body.visual-edition .bars {
 body.visual-edition .bar-row,
 body.visual-edition .footer-stats {
   display: grid;
-  grid-template-columns: 76px 1fr 3.25rem;
+  grid-template-columns: minmax(76px, auto) minmax(40px, 1fr) auto;
   column-gap: 10px;
   align-items: center;
   font-size: 0.92rem;
@@ -599,7 +629,7 @@ body.visual-edition .footer-stats {
 }
 body.visual-edition .bar-track {
   height: 8px;
-  background: var(--bar-track, rgba(35,31,32,.08));
+  background: var(--bar-track, rgba(35, 31, 32, 0.08));
   border-radius: 2px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -611,14 +641,21 @@ body.visual-edition .bar-fill {
   border-radius: 2px;
   transition: width 0.4s ease;
 }
-body.visual-edition .bar-row.shy .bar-fill { background: var(--em-color, #6f4a58); }
-body.visual-edition .bar-row b { color: var(--ink); text-align: right; }
+body.visual-edition .bar-row.shy .bar-fill {
+  background: var(--em-color, #6f4a58);
+}
+body.visual-edition .bar-row b {
+  color: var(--ink);
+  text-align: right;
+}
 body.visual-edition .footer-stats {
   padding-top: 4px;
   flex: 0 0 auto;
   width: 100%;
 }
-body.visual-edition .luck-label { justify-self: start; }
+body.visual-edition .luck-label {
+  justify-self: start;
+}
 body.visual-edition .coins {
   display: inline-flex;
   gap: 5px;
@@ -631,15 +668,23 @@ body.visual-edition .pounds {
   white-space: nowrap;
 }
 body.visual-edition .coin {
-  width: 12px; height: 12px; border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   border: 1.5px solid var(--accent-dark);
   background: var(--accent);
   display: inline-block;
 }
-body.visual-edition .coin.off { background: transparent; opacity: 0.35; }
+body.visual-edition .coin.off {
+  background: transparent;
+  opacity: 0.35;
+}
 
 /* Pregame: meters muted; stage status badge hidden (status lives only on sprite stage) */
-body.visual-edition.pregame .visual-meters { opacity: 0.45; pointer-events: none; }
+body.visual-edition.pregame .visual-meters {
+  opacity: 0.45;
+  pointer-events: none;
+}
 body.visual-edition.pregame .stage-band {
   display: none !important;
 }
@@ -663,9 +708,6 @@ body.visual-edition #gameToolbar {
   --stage-urgent: rgba(155, 47, 63, 0.22);
   --membrane-line: #8a6a5c;
   --membrane-inner: #f0e0d4;
-  --tummy-fill: #c4896e;
-  --tummy-fill-deep: #a87058;
-  --tummy-fill-lit: #d9a48c;
 }
 :root[data-theme="dark"] {
   --body-base: #171310;
@@ -676,12 +718,33 @@ body.visual-edition #gameToolbar {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   body.visual-edition .sprite.tremor,
   body.visual-edition .stage-rec .rec-dot,
   body.visual-edition .stage-puddle,
   body.visual-edition .visual-stage,
   body.visual-edition .bar-fill,
   body.visual-edition .organ.blad.full,
-  body.visual-edition .organ .fill-shape { animation: none !important; transition: none !important; }
+  body.visual-edition .organ .fill-shape {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Use each text edition's native CJK font while that language is selected. */
+html[lang^="zh"] body.visual-edition {
+  --font-visual: var(--cjk-font);
+}
+body.visual-edition .bar-row > span,
+body.visual-edition .luck-label {
+  max-width: 8.5rem;
+}
+body.visual-edition .rail-end button {
+  max-width: 100%;
+  white-space: normal;
+}
+body.visual-edition .visual-kicker {
+  flex-wrap: wrap;
 }

@@ -9,7 +9,9 @@
   function assetBase() {
     return (root.ADWD_ASSET_BASE || "../../assets/").replace(/\/?$/, "/");
   }
-  function fxBase() { return assetBase() + "fx/"; }
+  function fxBase() {
+    return assetBase() + "fx/";
+  }
 
   var metaCache = null;
   var metaPromise = null;
@@ -29,14 +31,20 @@
 
   function buildPuddleMapFromClip(info, growN) {
     var srcN = info.srcFrames | 0;
-    var stream = info.streamStart != null ? (info.streamStart | 0) : (info.gush1 | 0);
-    var clearBelow = info.clearBelow != null
-      ? (info.clearBelow | 0)
-      : (info.pantiesDown != null ? (info.pantiesDown | 0) : stream);
+    var stream = info.streamStart != null ? info.streamStart | 0 : info.gush1 | 0;
+    var clearBelow =
+      info.clearBelow != null
+        ? info.clearBelow | 0
+        : info.pantiesDown != null
+          ? info.pantiesDown | 0
+          : stream;
     var cycle = pongOrder(srcN);
-    var gush2Scrub = info.gush2Scrub != null
-      ? (info.gush2Scrub | 0)
-      : (info.gush2 != null ? (info.gush2 | 0) : Math.min(srcN - 1, stream + 8));
+    var gush2Scrub =
+      info.gush2Scrub != null
+        ? info.gush2Scrub | 0
+        : info.gush2 != null
+          ? info.gush2 | 0
+          : Math.min(srcN - 1, stream + 8);
     var gush2FullAt;
     if (info.gush2FullAt != null) {
       gush2FullAt = info.gush2FullAt | 0;
@@ -46,16 +54,17 @@
         if (cycle[ri] > stream) gush2FullAt = ri;
       }
     }
-    var gush1Cap = info.gush1Cap != null
-      ? Math.max(0, Math.min(growN - 2, info.gush1Cap | 0))
-      : Math.max(1, Math.min(12, Math.floor((growN - 1) * 0.55)));
+    var gush1Cap =
+      info.gush1Cap != null
+        ? Math.max(0, Math.min(growN - 2, info.gush1Cap | 0))
+        : Math.max(1, Math.min(12, Math.floor((growN - 1) * 0.55)));
     if (gush2FullAt <= gush2Scrub) gush2FullAt = Math.min(cycle.length - 1, gush2Scrub + 1);
 
     var map = [];
     var i, src, inForward, prog, maxProg, t;
     var g1Span = Math.max(1, gush2Scrub - stream);
     var g2Span = Math.max(1, gush2FullAt - gush2Scrub);
-    var g2Grow = (growN - 1) - gush1Cap;
+    var g2Grow = growN - 1 - gush1Cap;
     maxProg = -1;
     for (i = 0; i < cycle.length; i++) {
       src = cycle[i];
@@ -88,24 +97,28 @@
         continue;
       }
       if (maxProg < growN - 1) maxProg = growN - 1;
-      map.push({ prog: maxProg, phase: (!inForward && src < stream) ? "panties" : "hold" });
+      map.push({ prog: maxProg, phase: !inForward && src < stream ? "panties" : "hold" });
     }
     return map;
   }
 
   function buildPuddleMapForWetting(info, growN, eventLen) {
-    var stream = info.streamStart != null ? (info.streamStart | 0) : (info.gush1 | 0);
-    var peeEnd = info.streamEnd != null ? (info.streamEnd | 0) : Math.max(stream, eventLen - 1);
+    var stream = info.streamStart != null ? info.streamStart | 0 : info.gush1 | 0;
+    var peeEnd = info.streamEnd != null ? info.streamEnd | 0 : Math.max(stream, eventLen - 1);
     stream = Math.max(0, Math.min(eventLen - 1, stream));
     peeEnd = Math.max(stream, Math.min(eventLen - 1, peeEnd));
-    var g2 = info.gush2 != null ? (info.gush2 | 0) : Math.min(peeEnd, stream + Math.floor((peeEnd - stream) / 2));
+    var g2 =
+      info.gush2 != null
+        ? info.gush2 | 0
+        : Math.min(peeEnd, stream + Math.floor((peeEnd - stream) / 2));
     g2 = Math.max(stream, Math.min(peeEnd, g2));
-    var gush1Cap = info.gush1Cap != null
-      ? Math.max(0, Math.min(growN - 2, info.gush1Cap | 0))
-      : Math.max(1, Math.min(8, Math.floor((growN - 1) * 0.5)));
+    var gush1Cap =
+      info.gush1Cap != null
+        ? Math.max(0, Math.min(growN - 2, info.gush1Cap | 0))
+        : Math.max(1, Math.min(8, Math.floor((growN - 1) * 0.5)));
     var g1Span = Math.max(1, g2 - stream);
     var g2Span = Math.max(1, peeEnd - g2);
-    var g2Grow = (growN - 1) - gush1Cap;
+    var g2Grow = growN - 1 - gush1Cap;
     var map = [];
     var i, prog, maxProg, t;
     maxProg = -1;
@@ -165,8 +178,12 @@
   function loadImage(url) {
     return new Promise(function (resolve, reject) {
       var img = new Image();
-      img.onload = function () { resolve(img); };
-      img.onerror = function () { reject(new Error("missing " + url)); };
+      img.onload = function () {
+        resolve(img);
+      };
+      img.onerror = function () {
+        reject(new Error("missing " + url));
+      };
       img.src = url;
     });
   }
@@ -177,7 +194,9 @@
     if (growCache[dir]) return growCache[dir].slice();
     var count = info && info.growFrames;
     if (typeof count !== "number" || count <= 0 || Math.floor(count) !== count) {
-      throw new Error("missing grow-frame count for " + castKey + "/" + stem + "; rebuild the visual edition");
+      throw new Error(
+        "missing grow-frame count for " + castKey + "/" + stem + "; rebuild the visual edition",
+      );
     }
     var frames = [];
     var i;
@@ -221,7 +240,9 @@
         if (scrub >= track.map.length) entry = { prog: track.growFrames.length - 1, phase: "hold" };
         else entry = track.map[scrub] || { prog: -1 };
       } else {
-        var idx = track.map.length ? ((scrub % track.map.length) + track.map.length) % track.map.length : 0;
+        var idx = track.map.length
+          ? ((scrub % track.map.length) + track.map.length) % track.map.length
+          : 0;
         entry = track.map[idx] || { prog: -1 };
       }
       if (!entry || entry.prog < 0 || !track.growFrames[entry.prog]) return;
@@ -230,15 +251,21 @@
 
     function tick() {
       if (!eng.active) return;
-      var now = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+      var now =
+        typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
       var scrub = Math.floor((now - eng.t0) / FRAME_MS);
       for (var i = 0; i < eng.tracks.length; i++) paintTrack(eng.tracks[i], scrub);
       if (typeof eng.onScrub === "function") {
         var lead = null;
         for (var li = 0; li < eng.tracks.length; li++) {
-          if (!eng.tracks[li].spacer) { lead = eng.tracks[li]; break; }
+          if (!eng.tracks[li].spacer) {
+            lead = eng.tracks[li];
+            break;
+          }
         }
-        try { eng.onScrub(scrub, lead); } catch (eScrub) {}
+        try {
+          eng.onScrub(scrub, lead);
+        } catch (eScrub) {}
       }
     }
 
@@ -262,14 +289,19 @@
 
     function prefersReducedMotion() {
       try {
-        return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-      } catch (e) { return false; }
+        return !!(
+          window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        );
+      } catch (e) {
+        return false;
+      }
     }
 
     function beginClock() {
       stopClock();
       eng.active = true;
-      eng.t0 = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+      eng.t0 =
+        typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
       setHostOn(true);
       if (prefersReducedMotion()) {
         eng.holding = true;
@@ -303,14 +335,17 @@
         setHostOn(true);
         for (var i = 0; i < eng.tracks.length; i++) paintTrack(eng.tracks[i], 0);
       },
-      isActive: function () { return eng.active; },
-      getT0: function () { return eng.t0; },
-      getInfo: function () { return eng.lastInfo; },
-      getKind: function () { return eng.lastKind; },
-      setOnScrub: function (fn) { eng.onScrub = fn; },
+      isActive: function () {
+        return eng.active;
+      },
+      getT0: function () {
+        return eng.t0;
+      },
+      setOnScrub: function (fn) {
+        eng.onScrub = fn;
+      },
       beginClock: beginClock,
-      start: async function (entries, kind, continuing, opts) {
-        opts = opts || {};
+      start: async function (entries, kind, continuing) {
         if (continuing && eng.active) {
           if (eng.holding) this.holdFull();
           return { continued: true, info: eng.lastInfo, kind: eng.lastKind };
@@ -327,8 +362,12 @@
         if (!entries.length) return { ok: false };
 
         var meta;
-        try { meta = await loadMeta(); }
-        catch (eMeta) { console.warn("[puddle]", eMeta); return { ok: false }; }
+        try {
+          meta = await loadMeta();
+        } catch (eMeta) {
+          console.warn("[puddle]", eMeta);
+          return { ok: false };
+        }
         if (myGen !== eng.gen) return { ok: false };
 
         var tracks = [];
@@ -361,8 +400,9 @@
             continue;
           }
           var growFrames;
-          try { growFrames = await loadGrowFrames(e.castKey, stem, info); }
-          catch (eGrow) {
+          try {
+            growFrames = await loadGrowFrames(e.castKey, stem, info);
+          } catch (eGrow) {
             console.warn("[puddle]", eGrow);
             continue;
           }
@@ -399,10 +439,7 @@
           if (!primaryInfo) primaryInfo = info;
         }
 
-        if ((!liveCount && !tracks.length) || myGen !== eng.gen) {
-          return { ok: false };
-        }
-        if (!liveCount) return { ok: false };
+        if (!liveCount || myGen !== eng.gen) return { ok: false };
 
         eng.tracks = tracks;
         eng.lastInfo = primaryInfo;
@@ -422,11 +459,9 @@
         }
         setHostOn(true);
 
-        if (opts.autoClock) beginClock();
-        else eng.active = false;
+        eng.active = false;
         return {
           ok: true,
-          deferred: !opts.autoClock,
           info: primaryInfo,
           kind: eng.lastKind,
         };
@@ -436,7 +471,8 @@
 
   root.ADWDPuddleSync = {
     create: createEngine,
-    FRAME_MS: FRAME_MS,
-    preload: function () { return loadMeta(); },
+    preload: function () {
+      return loadMeta();
+    },
   };
 })(typeof window !== "undefined" ? window : globalThis);

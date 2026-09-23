@@ -9,28 +9,28 @@
   "use strict";
 
   var LOC = {
-    title: { id: "title", label: "" },
-    street: { id: "street", label: "Street" },
-    restaurant: { id: "restaurant", label: "Restaurant" },
-    theatre: { id: "theatre", label: "Theatre" },
-    foyer: { id: "foyer", label: "Foyer" },
-    pub: { id: "pub", label: "Pub" },
-    riverside: { id: "riverside", label: "Riverside" },
-    pavilion: { id: "pavilion", label: "Pavilion" },
-    bus: { id: "bus", label: "Bus queue" },
-    taxi: { id: "taxi", label: "Taxi" },
-    carpark: { id: "carpark", label: "Car park" },
-    home: { id: "home", label: "Home" },
-    bathroom: { id: "bathroom", label: "Bathroom" },
-    church: { id: "church", label: "Church" },
-    bridge: { id: "bridge", label: "Under the bridge" },
-    night: { id: "night", label: "Night" },
+    title: { id: "title" },
+    street: { id: "street" },
+    restaurant: { id: "restaurant" },
+    theatre: { id: "theatre" },
+    foyer: { id: "foyer" },
+    pub: { id: "pub" },
+    riverside: { id: "riverside" },
+    pavilion: { id: "pavilion" },
+    bus: { id: "bus" },
+    taxi: { id: "taxi" },
+    carpark: { id: "carpark" },
+    home: { id: "home" },
+    bathroom: { id: "bathroom" },
+    church: { id: "church" },
+    bridge: { id: "bridge" },
+    night: { id: "night" },
   };
 
-  function dayLabel() {
-    if (typeof saturday !== "undefined" && saturday) return "Saturday";
-    if (typeof thursday !== "undefined" && thursday) return "Thursday";
-    if (typeof tuesday !== "undefined" && tuesday) return "Tuesday";
+  function dayKey() {
+    if (typeof saturday !== "undefined" && saturday) return "saturday";
+    if (typeof thursday !== "undefined" && thursday) return "thursday";
+    if (typeof tuesday !== "undefined" && tuesday) return "tuesday";
     return "";
   }
 
@@ -63,14 +63,21 @@
 
   function locationFor(tag) {
     tag = String(tag || "");
-    if (!tag || tag === "start" || match(tag, ["start1", "info", "tuesdaydate", "thursdaydate", "saturdaydate"])) {
+    if (
+      !tag ||
+      tag === "start" ||
+      match(tag, ["start1", "info", "tuesdaydate", "thursdaydate", "saturdaydate"])
+    ) {
       return LOC.title;
     }
 
     // Explicit exceptions take precedence over legacy name-based location rules.
+    if (exact(tag, ["gothere", "flirt_l", "flirt_m", "flirt_h"]))
+      return dayFlag("saturday") ? LOC.theatre : LOC.foyer;
     if (exact(tag, ["ontoilet2", "fifthplace"])) return LOC.home;
     if (exact(tag, ["luckytrip18", "luckytrip18a", "luckytrip20", "luckytrip20a"])) return LOC.home;
-    if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"])) return LOC.riverside;
+    if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"]))
+      return LOC.riverside;
     if (tag === "carpark3" || tag === "carpark2") return LOC.bus;
     if (exact(tag, ["underskirt", "underskirt1", "underskirt2"])) return LOC.theatre;
     if (exact(tag, ["ownjob", "herjob", "stamptalk", "cartalk"])) return LOC.restaurant;
@@ -84,21 +91,65 @@
     if (match(tag, ["carpark", "camper", "peep", "gentleman", "luckytrip7"])) return LOC.carpark;
 
     if (
-      match(tag, ["bathpee", "bathroom", "gobathroom", "hiddencamera", "lootogether", "ontoilet", "sofatoilet", "asklooneed"]) ||
+      match(tag, [
+        "bathpee",
+        "bathroom",
+        "gobathroom",
+        "hiddencamera",
+        "lootogether",
+        "ontoilet",
+        "sofatoilet",
+        "asklooneed",
+      ]) ||
       exact(tag, ["gobathroom", "gobathroom1", "gobathroom2", "gobathroom3"])
     ) {
       return LOC.bathroom;
     }
 
     // Home / lounge / prize endings
-    if (match(tag, [
-      "sofa", "scenario", "arrivehome", "coffeereal", "stampalbum", "sofatrain", "lounge", "story",
-      "nicelydesp", "secondplace", "triumph", "disaster", "walkhome", "watching", "goupstairs",
-      "luckytrip31", "luckytrip10", "luckytrip11", "breasts", "bottom", "skirt", "givebrooch",
-      "gameover", "showover", "ending", "consolation", "chess", "cupoftea", "coffeeinstant",
-      "godownstairs", "sendbrother", "offerglass", "offercoffee", "readytoleave", "cuddle",
-      "givechance", "excuseme", "cheat", "stophergoing",
-    ])) {
+    if (
+      match(tag, [
+        "sofa",
+        "scenario",
+        "arrivehome",
+        "coffeereal",
+        "stampalbum",
+        "sofatrain",
+        "lounge",
+        "story",
+        "nicelydesp",
+        "secondplace",
+        "triumph",
+        "disaster",
+        "walkhome",
+        "watching",
+        "goupstairs",
+        "luckytrip31",
+        "luckytrip10",
+        "luckytrip11",
+        "breasts",
+        "bottom",
+        "skirt",
+        "givebrooch",
+        "gameover",
+        "showover",
+        "ending",
+        "consolation",
+        "chess",
+        "cupoftea",
+        "coffeeinstant",
+        "godownstairs",
+        "sendbrother",
+        "offerglass",
+        "offercoffee",
+        "readytoleave",
+        "cuddle",
+        "givechance",
+        "excuseme",
+        "cheat",
+        "stophergoing",
+      ])
+    ) {
       if (match(tag, ["watching", "chloe"]) || starts(tag, ["luckytrip19"])) return LOC.night;
       if (match(tag, ["search", "goleft", "passage", "consolation", "ending5"])) return LOC.night;
       if (match(tag, ["walkhome", "disaster", "showover"])) return LOC.night;
@@ -106,14 +157,29 @@
     }
 
     if (match(tag, ["taxihome", "taxi"])) return LOC.taxi;
-    if (match(tag, ["busqueue", "queue", "watchblonde", "lastgamble", "luckytrip28", "luckytrip29"])) return LOC.bus;
-    if (match(tag, ["pavilion", "luckytrip8", "luckytrip6", "buywaterpav", "notime", "morewater"])) return LOC.pavilion;
+    if (
+      match(tag, ["busqueue", "queue", "watchblonde", "lastgamble", "luckytrip28", "luckytrip29"])
+    )
+      return LOC.bus;
+    if (match(tag, ["pavilion", "luckytrip8", "luckytrip6", "buywaterpav", "notime", "morewater"]))
+      return LOC.pavilion;
 
     // Riverside walk / outdoor toilets / bushes
     if (
       match(tag, [
-        "riverside", "portaloo", "toilet", "helpdiane", "together", "justclosed", "urinal",
-        "luckytrip16", "luckytrip4", "luckytrip5", "choosewalk", "sitonbench", "helphersquat",
+        "riverside",
+        "portaloo",
+        "toilet",
+        "helpdiane",
+        "together",
+        "justclosed",
+        "urinal",
+        "luckytrip16",
+        "luckytrip4",
+        "luckytrip5",
+        "choosewalk",
+        "sitonbench",
+        "helphersquat",
       ]) ||
       exact(tag, ["goforpee", "goforpee1"])
     ) {
@@ -126,11 +192,23 @@
     if (
       match(tag, ["interval", "foyer", "theatreask", "buywaterfoyer"]) ||
       exact(tag, [
-        "gotheatre", "lethergo", "stopher", "gotoo", "gotoo1",
-        "askloo", "askwait", "askwait1", "keepquiet", "keepquiet1",
-        "luckytrip0", "luckytrip0a", "luckytrip0b",
-        "luckytrip1", "luckytrip1a",
-        "testtue", "testtue1",
+        "gotheatre",
+        "lethergo",
+        "stopher",
+        "gotoo",
+        "gotoo1",
+        "askloo",
+        "askwait",
+        "askwait1",
+        "keepquiet",
+        "keepquiet1",
+        "luckytrip0",
+        "luckytrip0a",
+        "luckytrip0b",
+        "luckytrip1",
+        "luckytrip1a",
+        "testtue",
+        "testtue1",
       ])
     ) {
       return LOC.foyer;
@@ -138,7 +216,15 @@
 
     // Auditorium / stage door
     if (
-      match(tag, ["theatre", "act2", "stagedoor", "holdhand", "leanclose", "dianechoice", "leavetheatre"]) ||
+      match(tag, [
+        "theatre",
+        "act2",
+        "stagedoor",
+        "holdhand",
+        "leanclose",
+        "dianechoice",
+        "leavetheatre",
+      ]) ||
       exact(tag, ["handonthigh", "handonthigh1", "handonthigh2"])
     ) {
       return LOC.theatre;
@@ -146,12 +232,23 @@
 
     // Restaurant meal / wine list (explicit buy* food & drink tags — not bare "buy")
     if (
-      match(tag, ["eatmeal", "winelist", "gothere", "flirt", "puddings", "espresso", "filtercoffee", "traintalk", "asklootalk", "steak", "cappuccino"]) ||
+      match(tag, [
+        "eatmeal",
+        "winelist",
+        "puddings",
+        "espresso",
+        "filtercoffee",
+        "traintalk",
+        "asklootalk",
+        "steak",
+        "cappuccino",
+      ]) ||
       starts(tag, [
         "buy", // buypinot, buytort, … — street shopping excluded below
       ])
     ) {
-      if (exact(tag, ["buysth", "buywater", "buybrooch"]) || starts(tag, ["buysth"])) return LOC.street;
+      if (exact(tag, ["buysth", "buywater", "buybrooch"]) || starts(tag, ["buysth"]))
+        return LOC.street;
       if (exact(tag, ["buywaterfoyer"])) return LOC.foyer;
       if (exact(tag, ["buywaterpav"])) return LOC.pavilion;
       return LOC.restaurant;
@@ -179,25 +276,28 @@
     // After watching Debbie pee: bus stop again — Diane impatient; brunette relieved.
     // Spagbol route: Diane already left on the bus; only the brunette remains.
     if (tag === "carpark2") {
-      if (dayFlag("spagbol")) return { primary: "debbie", focusLabel: "Debbie" };
-      return { primary: "diane", secondary: "debbie", focusLabel: "Diane" };
+      if (dayFlag("spagbol")) return { primary: "debbie", focus: ["debbie"] };
+      return { primary: "diane", secondary: "debbie", focus: ["diane"] };
     }
     // Back in the queue with Diane after the camper watch.
-    if (tag === "carpark3") return { primary: "diane", focusLabel: "Diane" };
+    if (tag === "carpark3") return { primary: "diane", focus: ["diane"] };
 
     // —— Chloe: watching her house (you alone / luckshot) ——
     if (starts(tag, ["watching", "luckytrip19"]) || exact(tag, ["leavechloe", "gonow"])) {
-      return { primary: "chloe", focusLabel: "Chloe" };
+      return { primary: "chloe", focus: ["chloe"] };
     }
 
     // —— Home with brother: Diane + Chloe in the room ——
     if (starts(tag, ["scenario4"]) || exact(tag, ["scenario5a", "scenario5aa", "scenario5b"])) {
-      return { primary: "diane", secondary: "chloe", focusLabel: "Diane and Chloe" };
+      return { primary: "diane", secondary: "chloe", focus: ["diane", "chloe"] };
     }
 
     // —— Amanda upstairs (Diane gone / her prize) ——
-    if (starts(tag, ["goupstairs", "luckytrip31"]) || exact(tag, ["scenario8", "scenario5", "scenario6", "scenario6a", "scenario6b", "scenario6c"])) {
-      return { primary: "amanda", focusLabel: "Amanda" };
+    if (
+      starts(tag, ["goupstairs", "luckytrip31"]) ||
+      exact(tag, ["scenario8", "scenario5", "scenario6", "scenario6a", "scenario6b", "scenario6c"])
+    ) {
+      return { primary: "amanda", focus: ["amanda"] };
     }
 
     // —— Debbie (brunette) ——
@@ -207,24 +307,24 @@
       starts(tag, ["luckytrip7"]) ||
       (starts(tag, ["carpark"]) && !starts(tag, ["carparka"]))
     ) {
-      return { primary: "debbie", focusLabel: "Debbie" };
+      return { primary: "debbie", focus: ["debbie"] };
     }
     // Together with Diane — Diane always left
     if (
       exact(tag, ["peepround", "peepunder", "peepround1", "gentleman"]) ||
       starts(tag, ["carparka"])
     ) {
-      return { primary: "diane", secondary: "debbie", focusLabel: "Diane and Debbie" };
+      return { primary: "diane", secondary: "debbie", focus: ["diane", "debbie"] };
     }
 
     // —— Molly ——
     // Voyeur: Molly alone (Diane stayed on the path)
     if (exact(tag, ["luckytrip4", "luckytrip4a"])) {
-      return { primary: "molly", focusLabel: "Molly" };
+      return { primary: "molly", focus: ["molly"] };
     }
     // After peeping: back with Diane only
     if (exact(tag, ["luckytrip4b", "luckytrip4c", "luckytrip4d", "riverside13", "riverside13b"])) {
-      return { primary: "diane", focusLabel: "Diane" };
+      return { primary: "diane", focus: ["diane"] };
     }
     // Under bridge / foyer / stage door / pub — Diane left, Molly right
     if (
@@ -233,24 +333,26 @@
       starts(tag, ["foyerbar", "pubdrink"]) ||
       starts(tag, ["stagedoor"])
     ) {
-      return { primary: "diane", secondary: "molly", focusLabel: "Diane and Molly" };
+      return { primary: "diane", secondary: "molly", focus: ["diane", "molly"] };
     }
 
-    return { primary: "diane", focusLabel: "Diane" };
+    return { primary: "diane", focus: ["diane"] };
   }
 
   /** Ending / prize cards — never start a pee or wet clip here. */
   function isPrizeTag(tag) {
     tag = String(tag || "");
-    return exact(tag, [
-      "consolation",
-      "watching6",
-      "ending5",
-      "triumph",
-      "secondplace",
-      "secondplace1",
-      "fifthplace",
-    ]) || starts(tag, ["ending"]);
+    return (
+      exact(tag, [
+        "consolation",
+        "watching6",
+        "ending5",
+        "triumph",
+        "secondplace",
+        "secondplace1",
+        "fifthplace",
+      ]) || starts(tag, ["ending"])
+    );
   }
 
   /** Involuntary / through-clothes wetting — clip on the page she actually wets. */
@@ -260,41 +362,7 @@
     if (/^disaster[12]$/.test(tag)) return true;
     /* Chloe: wetting only when tiramisu — else intentional squat (pee) */
     if (tag === "watching5") return dayFlag("tiramisu");
-    return exact(tag, [
-      "bathpee1",
-      "nicelydesp8",
-      "passage2aa",
-    ]);
-  }
-
-  /** Intentional pee pages — clip when she pees this beat (even if partly off-screen). */
-  function isPeeBeat(tag) {
-    tag = String(tag || "");
-    return exact(tag, [
-      "underbridge", "underbridge2",
-      "together2", "together1a",
-      "helpdiane1aa",
-      "toiletclosed2a", "toiletclosed2b",
-      "helphersquat1", "goleft2", "search1a", "passage2b",
-      "urinal", "luckytrip4a",
-      "peepround", "peepunder",
-      "carpark1", "carparkalone",
-      /* gentleman = you don't watch — silent */
-      "ontoilet", "ontoilet1",
-      "gobathroom", "gobathroom1",
-      "sofatalkb", "sofatalkc",
-      "luckytrip31b",
-      /* Lounge consolation / imagine cubicle — pee is this beat */
-      "story5", "luckytrip29a",
-    ]) || (tag === "justclosed3" && !dayFlag("saturday"))
-      || (tag === "luckytrip5a" && dayFlag("tuesday"))
-      || (tag === "lootogether1" && (function () {
-        try {
-          var g = typeof globalThis !== "undefined" ? globalThis : root;
-          return !(typeof g.inti === "number" && g.inti >= 110);
-        } catch (e) { return true; }
-      })())
-      || (tag === "watching5" && !dayFlag("tiramisu"));
+    return exact(tag, ["bathpee1", "nicelydesp8", "passage2aa"]);
   }
 
   function dayFlag(name) {
@@ -313,34 +381,91 @@
   function isSilentEmpty(tag) {
     tag = String(tag || "");
     if (isPrizeTag(tag)) return true;
-    return exact(tag, [
-      "gothere", "goforpee", "goforpee1",
-      "luckytrip17b", "skirtremove1h",
-      /* off-screen toilet returns — meter only */
-      "nicelydesp", "asklootalk1", "emergency", "suddenend",
-      "stampalbum8", "dampness", "gotoilet1",
-      "walkhome1b", "walkhomeXa", "walkhomeXb",
-      "pubdrink1", "pubdrink6", "pubdrink7", "pubdrink9",
-      "foyerbar1", "pavilion1", "pavilion10", "notime",
-      "carparka1", "riversidewalk", "riversidepath11",
-      "stagedoor3", "dianechoice", "arrivehome0",
-      "offercoffeeagain2", "keepquiet1", "lethergo",
-      "loungedesp1", "toiletgo", "sofabreasts2a", "sofapee",
-      "helpdiane2a", "helpdiane4a", "helpdiane1a", "helpdiane3a",
-      "helpdiane", "riverside13a",
-      "justcloseda", "toiletclosed2c",
-      "gentleman", "lethergo", "stopher", "gotoo", "gotoo1",
-      "hiddencamera", "givechancea",
-      "givechanceb2", "givechanceb4", "givechancec",
-      "gotoo", "askwait1", "relaxedstampalbum", "relaxedtrainalbum",
-      "luckytrip0b", "luckytrip1a", "luckytrip4c", "luckytrip5cb",
-      "luckytrip6a", "luckytrip8a", "luckytrip11a", "luckytrip12sat",
-      "luckytrip12thurs", "luckytrip12tues", "luckytrip13",
-      "luckytrip16a1", "luckytrip16a2", "luckytrip16ba", "luckytrip16c",
-      "luckytrip18a", "luckytrip20a", "luckytrip21a",
-      /* Already back / returns after pee — meter only */
-      "sofakiss1", "sofatoilet2", "story2",
-    ]) || starts(tag, ["start"]);
+    return (
+      exact(tag, [
+        "gothere",
+        "goforpee",
+        "goforpee1",
+        "luckytrip17b",
+        "skirtremove1h",
+        /* off-screen toilet returns — meter only */
+        "nicelydesp",
+        "asklootalk1",
+        "emergency",
+        "suddenend",
+        "stampalbum8",
+        "dampness",
+        "gotoilet1",
+        "walkhome1b",
+        "walkhomeXa",
+        "walkhomeXb",
+        "pubdrink1",
+        "pubdrink6",
+        "pubdrink7",
+        "pubdrink9",
+        "foyerbar1",
+        "pavilion1",
+        "pavilion10",
+        "notime",
+        "carparka1",
+        "riversidewalk",
+        "riversidepath11",
+        "stagedoor3",
+        "dianechoice",
+        "arrivehome0",
+        "offercoffeeagain2",
+        "keepquiet1",
+        "lethergo",
+        "loungedesp1",
+        "toiletgo",
+        "sofabreasts2a",
+        "sofapee",
+        "helpdiane2a",
+        "helpdiane4a",
+        "helpdiane1a",
+        "helpdiane3a",
+        "helpdiane",
+        "riverside13a",
+        "justcloseda",
+        "toiletclosed2c",
+        "gentleman",
+        "lethergo",
+        "stopher",
+        "gotoo",
+        "gotoo1",
+        "hiddencamera",
+        "givechancea",
+        "givechanceb2",
+        "givechanceb4",
+        "givechancec",
+        "gotoo",
+        "askwait1",
+        "relaxedstampalbum",
+        "relaxedtrainalbum",
+        "luckytrip0b",
+        "luckytrip1a",
+        "luckytrip4c",
+        "luckytrip5cb",
+        "luckytrip6a",
+        "luckytrip8a",
+        "luckytrip11a",
+        "luckytrip12sat",
+        "luckytrip12thurs",
+        "luckytrip12tues",
+        "luckytrip13",
+        "luckytrip16a1",
+        "luckytrip16a2",
+        "luckytrip16ba",
+        "luckytrip16c",
+        "luckytrip18a",
+        "luckytrip20a",
+        "luckytrip21a",
+        /* Already back / returns after pee — meter only */
+        "sofakiss1",
+        "sofatoilet2",
+        "story2",
+      ]) || starts(tag, ["start"])
+    );
   }
 
   /**
@@ -356,41 +481,53 @@
 
     // —— Wetting (on the page it happens) ——
     if (tag === "disaster1" || tag === "disaster2") {
-      return { mode: "solo", keys: [primary], clip: "wetting", outcome: "wet", label: "Wetting" };
+      return { mode: "solo", keys: [primary], clip: "wetting", outcome: "wet", status: "wetting" };
     }
     if (exact(tag, ["bathpee1", "nicelydesp8", "passage2aa"])) {
-      return { mode: "solo", keys: ["diane"], clip: "wetting", outcome: "wet", label: "Wetting" };
+      return { mode: "solo", keys: ["diane"], clip: "wetting", outcome: "wet", status: "wetting" };
     }
     /* legsz1: damp discovered after the fact — wet idle only, no accident replay */
     if (tag === "legsz1") {
-      return { mode: "solo", keys: ["diane"], clip: "wetIdle", outcome: "wet", label: "Already wet" };
+      return {
+        mode: "solo",
+        keys: ["diane"],
+        clip: "wetIdle",
+        outcome: "wet",
+        status: "wet",
+      };
     }
     /* Chloe watching5: tiramisu → wetting; else intentional roadside squat → pee */
     if (tag === "watching5") {
       if (dayFlag("tiramisu")) {
-        return { mode: "solo", keys: ["chloe"], clip: "wetting", outcome: "wet", label: "Wetting" };
+        return {
+          mode: "solo",
+          keys: ["chloe"],
+          clip: "wetting",
+          outcome: "wet",
+          status: "wetting",
+        };
       }
-      return { mode: "solo", keys: ["chloe"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["chloe"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
 
     // —— Intentional peeing (on the page it happens) ——
     /* Molly behind the skip: longer fidget / looks around first → pee A */
     if (exact(tag, ["luckytrip4a"])) {
-      return { mode: "solo", keys: ["molly"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["molly"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* Molly under the bridge after Diane: shorter, straight into it → pee B */
     if (exact(tag, ["underbridge2"])) {
-      return { mode: "solo", keys: ["molly"], clip: "peeB", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["molly"], clip: "peeB", outcome: "calm", status: "peeing" };
     }
     if (exact(tag, ["carpark1", "carparkalone"])) {
-      return { mode: "solo", keys: ["debbie"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["debbie"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     if (exact(tag, ["underbridge"])) {
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* Amanda upstairs bathroom — urgent toilet squat → pee A (not standing B) */
     if (exact(tag, ["luckytrip31b"])) {
-      return { mode: "solo", keys: ["amanda"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["amanda"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     if (exact(tag, ["peepround", "peepunder"])) {
       return {
@@ -399,7 +536,7 @@
         keys: ["diane", "debbie"],
         clips: ["peeA", "peeA"],
         outcome: "calm",
-        label: "Peeing",
+        status: "peeing",
       };
     }
     /* lootogether1: she pees here only when inti < 110; else grin → ontoilet */
@@ -408,28 +545,39 @@
         var g = typeof globalThis !== "undefined" ? globalThis : root;
         if (typeof g.inti === "number" && g.inti >= 110) return null;
       } catch (eLoot) {}
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
-    if (exact(tag, [
-      "together2", "together1a",
-      "helpdiane1aa",
-      "toiletclosed2a", "toiletclosed2b",
-      "helphersquat1", "goleft2", "search1a", "passage2b",
-      "urinal",
-      "ontoilet", "ontoilet1",
-      "gobathroom", "gobathroom1",
-      "sofatalkb", "sofatalkc",
-      "story5", "luckytrip29a",
-    ])) {
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", label: "Peeing" };
+    if (
+      exact(tag, [
+        "together2",
+        "together1a",
+        "helpdiane1aa",
+        "toiletclosed2a",
+        "toiletclosed2b",
+        "helphersquat1",
+        "goleft2",
+        "search1a",
+        "passage2b",
+        "urinal",
+        "ontoilet",
+        "ontoilet1",
+        "gobathroom",
+        "gobathroom1",
+        "sofatalkb",
+        "sofatalkc",
+        "story5",
+        "luckytrip29a",
+      ])
+    ) {
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* justclosed3: cubicle pee Tue/Thu only; Sat leads to urinal choice */
     if (tag === "justclosed3" && !dayFlag("saturday")) {
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* luckytrip5a: spyhole pee on Tuesday only */
     if (tag === "luckytrip5a" && dayFlag("tuesday")) {
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", label: "Peeing" };
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
 
     return null;
@@ -442,22 +590,18 @@
       tag: tag,
       location: loc,
       cast: cast,
-      day: dayLabel(),
       pee: peeBeat(tag, cast),
-      wettingLikely: isWetBeat(tag),
     };
   }
 
   root.ADWDSceneMap = {
-    LOC: LOC,
     resolve: resolve,
     locationFor: locationFor,
     castFor: castFor,
     peeBeat: peeBeat,
     isWetBeat: isWetBeat,
-    isPeeBeat: isPeeBeat,
     isSilentEmpty: isSilentEmpty,
     isPrizeTag: isPrizeTag,
-    dayLabel: dayLabel,
+    dayKey: dayKey,
   };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -5,14 +5,16 @@
 (function (root) {
   "use strict";
 
+  var ui = root.ADWDVisualUI;
+
   var ASSET_BASE = "../../assets/";
 
   var CAST = {
-    diane: { folder: "diane", name: "Diane" },
-    molly: { folder: "molly", name: "Molly" },
-    debbie: { folder: "debbie", name: "Debbie" },
-    amanda: { folder: "amanda", name: "Amanda" },
-    chloe: { folder: "chloe", name: "Chloe" },
+    diane: { folder: "diane" },
+    molly: { folder: "molly" },
+    debbie: { folder: "debbie" },
+    amanda: { folder: "amanda" },
+    chloe: { folder: "chloe" },
   };
 
   var GIF = {
@@ -46,19 +48,13 @@
     peeReplay: false,
     /** Looping pee drain levels (visual refill each cycle). */
     drainFromMl: null,
-    drainToMl: null,
-    drainInfo: null,
-    drainLoopFrames: 0,
     /**
      * Sticky pre-pee bladder ml for Back/restore. afterpee() often leaves a
      * residual (25–180); history snapshots of the pee page store that residual,
      * so we remember the last real full level separately from nav resets.
      */
     reliefFromMl: null,
-    lastTag: null,
     lastBlad: null,
-    focusKey: "diane",
-    pendingDianePee: false,
     peeTimer: null,
     wetIdleTimer: null,
     puddleEntries: null,
@@ -81,29 +77,46 @@
 
   var el = {};
 
-  function $(id) { return document.getElementById(id); }
+  function $(id) {
+    return document.getElementById(id);
+  }
 
   function hexToRgb(hex) {
     var h = hex.replace("#", "");
-    return [0, 2, 4].map(function (i) { return parseInt(h.slice(i, i + 2), 16); });
+    return [0, 2, 4].map(function (i) {
+      return parseInt(h.slice(i, i + 2), 16);
+    });
   }
   function rgbToHex(r, g, b) {
-    return "#" + [r, g, b].map(function (n) {
-      return Math.round(n).toString(16).padStart(2, "0");
-    }).join("");
+    return (
+      "#" +
+      [r, g, b]
+        .map(function (n) {
+          return Math.round(n).toString(16).padStart(2, "0");
+        })
+        .join("")
+    );
   }
-  function lerp(a, b, t) { return a + (b - a) * t; }
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
   function lerpHex(a, b, t) {
-    var A = hexToRgb(a), B = hexToRgb(b);
+    var A = hexToRgb(a),
+      B = hexToRgb(b);
     return rgbToHex(lerp(A[0], B[0], t), lerp(A[1], B[1], t), lerp(A[2], B[2], t));
   }
   function urineAt(pct) {
     var p = Math.max(0, Math.min(100, pct));
     var i = 0;
     while (i < URINE_RAMP.length - 1 && URINE_RAMP[i + 1].at <= p) i++;
-    var a = URINE_RAMP[i], b = URINE_RAMP[Math.min(i + 1, URINE_RAMP.length - 1)];
+    var a = URINE_RAMP[i],
+      b = URINE_RAMP[Math.min(i + 1, URINE_RAMP.length - 1)];
     var t = (p - a.at) / Math.max(1, b.at - a.at);
-    return { lit: lerpHex(a.lit, b.lit, t), mid: lerpHex(a.mid, b.mid, t), deep: lerpHex(a.deep, b.deep, t) };
+    return {
+      lit: lerpHex(a.lit, b.lit, t),
+      mid: lerpHex(a.mid, b.mid, t),
+      deep: lerpHex(a.deep, b.deep, t),
+    };
   }
 
   /**
@@ -141,7 +154,8 @@
   function resolveReliefFromMl(fallback) {
     var hist = peekHistoryBlad();
     if (typeof hist === "number" && hist > 200) return hist;
-    if (typeof state.reliefFromMl === "number" && state.reliefFromMl > 200) return state.reliefFromMl;
+    if (typeof state.reliefFromMl === "number" && state.reliefFromMl > 200)
+      return state.reliefFromMl;
     if (typeof state.drainFromMl === "number" && state.drainFromMl > 200) return state.drainFromMl;
     return typeof fallback === "number" ? fallback : 820;
   }
@@ -190,7 +204,7 @@
 
     // Diane’s accident idle only applies to Diane
     if (castKey === "diane" && state.wet) {
-      return { key: "wet", label: "Already wet", file: GIF.wetIdle };
+      return { key: "wet", file: GIF.wetIdle };
     }
 
     var ml = castBladMl(castKey);
@@ -271,16 +285,18 @@
 
   /** Band cutovers align with bladPct: 40%≈450 ml, 68%≈700, 88%≈880. */
   function bandFromPct(pct) {
-    if (pct >= 88) return { key: "critical", label: "Critical", file: GIF.critical };
-    if (pct >= 68) return { key: "desperate", label: "Desperate", file: GIF.desperate };
-    if (pct >= 40) return { key: "need", label: "Needs to go", file: GIF.need };
-    return { key: "calm", label: "Comfortable", file: GIF.calm };
+    if (pct >= 88) return { key: "critical", file: GIF.critical };
+    if (pct >= 68) return { key: "desperate", file: GIF.desperate };
+    if (pct >= 40) return { key: "need", file: GIF.need };
+    return { key: "calm", file: GIF.calm };
   }
 
   function prefersReducedMotion() {
     try {
       return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-    } catch (e) { return false; }
+    } catch (e) {
+      return false;
+    }
   }
 
   function spriteUrl(castKey, file) {
@@ -318,7 +334,6 @@
     state.peeReplay = false;
     state.visualBlad = null;
     state.wet = false;
-    state.pendingDianePee = false;
     showRecBadge(false);
     setBladFillTransition(true);
   }
@@ -331,7 +346,9 @@
   function preloadImage(url) {
     return new Promise(function (resolve) {
       var img = new Image();
-      img.onload = img.onerror = function () { resolve(); };
+      img.onload = img.onerror = function () {
+        resolve();
+      };
       img.src = url;
     });
   }
@@ -346,11 +363,7 @@
     if (!eng) return Promise.resolve();
     if (el.puddle && el.stage) eng.bind(el.puddle, el.stage);
     var list = entries || state.puddleEntries || [];
-    return Promise.resolve(eng.start(list, kind === "wet" ? "wet" : "pee", !!continuing, { autoClock: false }))
-      .then(function (res) {
-        if (!res || res.continued) return res;
-        return res;
-      });
+    return eng.start(list, kind === "wet" ? "wet" : "pee", !!continuing);
   }
 
   /** After sprites are on screen, kick the puddle scrub clock (aligned with GIF t=0). */
@@ -375,19 +388,21 @@
 
   function setOrganFill(rect, pct) {
     if (!rect) return;
-    rect.style.transform = "scaleY(" + (Math.max(0, Math.min(100, pct)) / 100) + ")";
+    rect.style.transform = "scaleY(" + Math.max(0, Math.min(100, pct)) / 100 + ")";
   }
 
   function setBladColour(pct) {
     var c = urineAt(state.wet ? 8 : pct);
-    var lit = $("blad-stop-lit"), mid = $("blad-stop-mid"), deep = $("blad-stop-deep");
+    var lit = $("blad-stop-lit"),
+      mid = $("blad-stop-mid"),
+      deep = $("blad-stop-deep");
     if (lit) lit.setAttribute("stop-color", c.lit);
     if (mid) mid.setAttribute("stop-color", c.mid);
     if (deep) deep.setAttribute("stop-color", c.deep);
   }
 
   function organMlTip(ml) {
-    return (typeof ml === "number" ? ml : "—") + " ml";
+    return ui.text("volume").replace("{value}", typeof ml === "number" ? ml : "—");
   }
 
   function setOrganTip(node, tip) {
@@ -408,10 +423,16 @@
     setOrganTip(el.tummyOrg, organMlTip(tummyMl));
     setOrganTip(el.bladOrg, organMlTip(Math.round(bladMl)));
     if (el.tummyOrg) {
-      el.tummyOrg.setAttribute("aria-label", "Tummy: " + organMlTip(tummyMl));
+      el.tummyOrg.setAttribute(
+        "aria-label",
+        ui.text("tummy") + ui.text("separator") + organMlTip(tummyMl),
+      );
     }
     if (el.bladOrg) {
-      el.bladOrg.setAttribute("aria-label", "Bladder: " + organMlTip(Math.round(bladMl)));
+      el.bladOrg.setAttribute(
+        "aria-label",
+        ui.text("bladder") + ui.text("separator") + organMlTip(Math.round(bladMl)),
+      );
     }
     // Tips only on .organ hover — labels stay clear of ml popovers
     if (el.tummyLabel) {
@@ -428,12 +449,16 @@
     if (el.shyFill) el.shyFill.style.width = shyPct() + "%";
     if (el.intiN) el.intiN.textContent = typeof inti === "number" ? inti : "—";
     if (el.shyN) el.shyN.textContent = typeof points === "number" ? points : "—";
-    if (el.pounds) el.pounds.textContent = typeof pounds === "number" ? formatPounds(pounds) : "—";
+    if (el.pounds)
+      el.pounds.textContent =
+        typeof pounds === "number" ? formatPounds(pounds, ui.language()) : "—";
     if (el.coins) {
       var luck = typeof luckshots === "number" ? luckshots : 0;
-      el.coins.innerHTML = [0, 1, 2].map(function (i) {
-        return '<i class="coin' + (i < luck ? "" : " off") + '"></i>';
-      }).join("");
+      el.coins.innerHTML = [0, 1, 2]
+        .map(function (i) {
+          return '<i class="coin' + (i < luck ? "" : " off") + '"></i>';
+        })
+        .join("");
     }
     var hot = !state.wet && bp >= 78;
     var crit = !state.wet && bp >= 88;
@@ -444,11 +469,11 @@
     if (el.stage) el.stage.classList.toggle("urgent", hot);
   }
 
-  function renderCast(scene, band, clipOverrides) {
+  function renderCast(scene, clipOverrides) {
     if (!el.cast) return;
     var primary = scene.cast.primary || "diane";
     var secondary = scene.cast.secondary || null;
-    state.focusKey = primary;
+
     clipOverrides = clipOverrides || null;
     var tag = scene.tag || (typeof currentTag !== "undefined" ? currentTag : "");
 
@@ -456,17 +481,29 @@
     var primaryBand = bandForCast(primary, tag);
     var primaryFile = (clipOverrides && clipOverrides[primary]) || primaryBand.file;
     var html = "";
-    html += '<img class="sprite sprite-primary' +
+    html +=
+      '<img class="sprite sprite-primary' +
       (spriteShouldTremor(primaryBand, primaryFile) ? " tremor" : "") +
-      '" data-cast="' + primary + '" id="spritePrimary" alt="' +
-      (CAST[primary] || CAST.diane).name + '" src="' + spriteUrl(primary, primaryFile) + '" />';
+      '" data-cast="' +
+      primary +
+      '" id="spritePrimary" alt="' +
+      ui.text("names." + primary) +
+      '" src="' +
+      spriteUrl(primary, primaryFile) +
+      '" />';
     if (secondary) {
       var secondaryBand = bandForCast(secondary, tag);
       var secondaryFile = (clipOverrides && clipOverrides[secondary]) || secondaryBand.file;
-      html += '<img class="sprite sprite-secondary' +
+      html +=
+        '<img class="sprite sprite-secondary' +
         (spriteShouldTremor(secondaryBand, secondaryFile) ? " tremor" : "") +
-        '" data-cast="' + secondary + '" alt="' +
-        (CAST[secondary] || {}).name + '" src="' + spriteUrl(secondary, secondaryFile) + '" />';
+        '" data-cast="' +
+        secondary +
+        '" alt="' +
+        ui.text("names." + secondary) +
+        '" src="' +
+        spriteUrl(secondary, secondaryFile) +
+        '" />';
     }
     el.cast.innerHTML = html;
     el.cast.classList.toggle("duo", !!secondary);
@@ -538,20 +575,25 @@
    * Drain on gushes → refill during end-of-arc hold/tidy → full again before next floor land.
    */
   function mlAtPeeLoopFrame(i, info, fromMl, toMl, loopLen) {
-    var stream = info.streamStart != null ? (info.streamStart | 0) : (info.gush1 | 0);
-    var g2 = info.gush2Scrub != null
-      ? (info.gush2Scrub | 0)
-      : (info.gush2 != null ? (info.gush2 | 0) : stream + 8);
-    var fullAt = info.gush2FullAt != null
-      ? (info.gush2FullAt | 0)
-      : (info.streamEnd != null ? (info.streamEnd | 0) : g2 + 8);
+    var stream = info.streamStart != null ? info.streamStart | 0 : info.gush1 | 0;
+    var g2 =
+      info.gush2Scrub != null
+        ? info.gush2Scrub | 0
+        : info.gush2 != null
+          ? info.gush2 | 0
+          : stream + 8;
+    var fullAt =
+      info.gush2FullAt != null
+        ? info.gush2FullAt | 0
+        : info.streamEnd != null
+          ? info.streamEnd | 0
+          : g2 + 8;
     if (fullAt <= g2) fullAt = g2 + 1;
     loopLen = loopLen | 0;
     if (loopLen < fullAt + 2) loopLen = fullAt + 2;
-    var growSpan = Math.max(12, (info.gush1Cap != null ? (info.gush1Cap | 0) : 12) + 9);
-    var g1Ratio = info.gush1Cap != null
-      ? Math.max(0.35, Math.min(0.75, (info.gush1Cap | 0) / growSpan))
-      : 0.55;
+    var growSpan = Math.max(12, (info.gush1Cap != null ? info.gush1Cap | 0 : 12) + 9);
+    var g1Ratio =
+      info.gush1Cap != null ? Math.max(0.35, Math.min(0.75, (info.gush1Cap | 0) / growSpan)) : 0.55;
 
     // Wait / prep before floor land — already topped up from previous arc's hold refill
     if (i < stream) return fromMl;
@@ -604,8 +646,7 @@
 
     setBladFillTransition(false);
     state.drainFromMl = fromMl;
-    state.drainToMl = toMl;
-    state.drainInfo = info;
+
     rememberReliefFrom(fromMl);
     state.visualBlad = fromMl;
     renderMeters();
@@ -620,18 +661,21 @@
 
     if (kind === "wet") {
       // Oneshot — same as before, no refill loop
-      var stream = info.streamStart != null ? (info.streamStart | 0) : (info.gush1 | 0);
-      var g2 = info.gush2 != null ? (info.gush2 | 0) : stream + 6;
-      var fullAt = info.streamEnd != null ? (info.streamEnd | 0) : g2 + 6;
+      var stream = info.streamStart != null ? info.streamStart | 0 : info.gush1 | 0;
+      var g2 = info.gush2 != null ? info.gush2 | 0 : stream + 6;
+      var fullAt = info.streamEnd != null ? info.streamEnd | 0 : g2 + 6;
       if (fullAt <= g2) fullAt = g2 + 1;
-      var growSpan = Math.max(12, (info.gush1Cap != null ? (info.gush1Cap | 0) : 12) + 9);
-      var g1Ratio = info.gush1Cap != null
-        ? Math.max(0.35, Math.min(0.75, (info.gush1Cap | 0) / growSpan))
-        : 0.55;
-      var t0 = (eng && eng.getT0 && eng.getT0()) ||
-        ((typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now());
+      var growSpan = Math.max(12, (info.gush1Cap != null ? info.gush1Cap | 0 : 12) + 9);
+      var g1Ratio =
+        info.gush1Cap != null
+          ? Math.max(0.35, Math.min(0.75, (info.gush1Cap | 0) / growSpan))
+          : 0.55;
+      var t0 =
+        (eng && eng.getT0 && eng.getT0()) ||
+        (typeof performance !== "undefined" && performance.now ? performance.now() : Date.now());
       state.peeTimer = window.setInterval(function () {
-        var now = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+        var now =
+          typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
         var scrub = Math.floor((now - t0) / 100);
         var ml;
         if (scrub < stream) ml = fromMl;
@@ -658,11 +702,13 @@
     }
 
     // Pee: drive from puddle scrub so refill/drain stay locked to the grow map forever
-    var loopLen = info.loopFrames != null
-      ? (info.loopFrames | 0)
-      : ((info.srcFrames | 0) ? ((info.srcFrames | 0) * 2 - 2) : 68);
+    var loopLen =
+      info.loopFrames != null
+        ? info.loopFrames | 0
+        : info.srcFrames | 0
+          ? (info.srcFrames | 0) * 2 - 2
+          : 68;
     if (loopLen < 20) loopLen = 68;
-    state.drainLoopFrames = loopLen;
 
     function onPeeScrub(scrub) {
       var i = ((scrub % loopLen) + loopLen) % loopLen;
@@ -674,7 +720,7 @@
         state.peeReplay = true;
         state.playingEvent = false;
         showRecBadge(true);
-        if (el.stageBand) el.stageBand.textContent = "Peeing";
+        setStageStatus("peeing");
       }
     }
 
@@ -683,10 +729,12 @@
       // Also poll in case tick is quiet before first interval
       onPeeScrub(0);
     } else {
-      var t0b = (eng && eng.getT0 && eng.getT0()) ||
-        ((typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now());
+      var t0b =
+        (eng && eng.getT0 && eng.getT0()) ||
+        (typeof performance !== "undefined" && performance.now ? performance.now() : Date.now());
       state.peeTimer = window.setInterval(function () {
-        var now = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+        var now =
+          typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
         onPeeScrub(Math.floor((now - t0b) / 100));
       }, 40);
     }
@@ -715,9 +763,10 @@
       renderMeters();
       return;
     }
-    var t0 = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+    var t0 = typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
     state.peeTimer = window.setInterval(function () {
-      var now = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+      var now =
+        typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
       var t = Math.min(1, (now - t0) / DRAIN_MS);
       var eased = 1 - Math.pow(1 - t, 2.2);
       state.visualBlad = fromMl + (toMl - fromMl) * eased;
@@ -740,8 +789,13 @@
     }
     if (clipId === "peeA" || clipId === "pee") return GIF.peeA;
     if (clipId === "wetIdle" || clipId === "idle") return GIF.wetIdle;
-    if (clipId === "wetting" || clipId === "wetEvent" || clipId === "wetStream"
-        || clipId === "event" || clipId === "stream") {
+    if (
+      clipId === "wetting" ||
+      clipId === "wetEvent" ||
+      clipId === "wetStream" ||
+      clipId === "event" ||
+      clipId === "stream"
+    ) {
       return GIF.wetting;
     }
     return GIF.peeA;
@@ -841,9 +895,10 @@
     if (state.wet) {
       holdPuddleFull();
       if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-        var sc = root.ADWDSceneMap && root.ADWDSceneMap.resolve
-          ? root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "")
-          : null;
+        var sc =
+          root.ADWDSceneMap && root.ADWDSceneMap.resolve
+            ? root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "")
+            : null;
         ensureHeldPuddle((sc && sc.cast && sc.cast.primary) || "diane");
       }
     } else {
@@ -853,7 +908,7 @@
 
   function scheduleWetIdle(scene, castKey) {
     clearWetIdleTimer();
-    var ms = prefersReducedMotion() ? 0 : (WET_ONESHOT_MS[castKey] || 2400);
+    var ms = prefersReducedMotion() ? 0 : WET_ONESHOT_MS[castKey] || 2400;
     state.wetIdleTimer = window.setTimeout(function () {
       state.wetIdleTimer = null;
       if (!state.playingEvent) return;
@@ -862,7 +917,7 @@
       // Keep activePeeBeat so disaster2 can still "continue" as wet idle visually
       setSpriteClip(castKey, GIF.wetIdle, false);
       holdPuddleFull();
-      if (el.stageBand) el.stageBand.textContent = "Already wet";
+      setStageStatus("wet");
       el.cast.classList.remove("tremor");
       renderMeters();
     }, ms);
@@ -872,10 +927,6 @@
    * REC badge is armed from the looping pee scrub (first full arc).
    * Kept as a named hook so playPeeBeat can document the replay contract.
    */
-  function armPeeReplay(loopFrames) {
-    state.drainLoopFrames = (loopFrames | 0) > 20 ? (loopFrames | 0) : 68;
-    // peeReplay + REC flip happen inside startGushSyncedDrain's onScrub
-  }
 
   /**
    * Play pee (07/08) or wetting (06) clips.
@@ -908,7 +959,13 @@
 
     // Already wet after leaving an accident sequence — idle only
     // (skip when continuing disaster1→2 mid-stream)
-    if (!continuing && beat.outcome === "wet" && state.wet && !state.playingEvent && !state.activePeeBeat) {
+    if (
+      !continuing &&
+      beat.outcome === "wet" &&
+      state.wet &&
+      !state.playingEvent &&
+      !state.activePeeBeat
+    ) {
       refreshStage(scene);
       ensureHeldPuddle((beat.keys && beat.keys[0]) || scene.cast.primary || "diane");
       return;
@@ -917,7 +974,7 @@
     if (continuing) {
       state.activePeeBeat = beat;
       if (el.stageBand) {
-        el.stageBand.textContent = beat.label || (beat.outcome === "wet" ? "Wetting" : "Peeing");
+        setStageStatus(beat.status || (beat.outcome === "wet" ? "wetting" : "peeing"));
       }
       // Settled oneshot / replay: keep idle or looping pee + held puddle
       if (!state.playingEvent && beat.outcome === "wet") {
@@ -926,21 +983,25 @@
         setSpriteClip(idleKey, GIF.wetIdle, false);
         holdPuddleFull();
         showRecBadge(false);
-        if (el.stageBand) el.stageBand.textContent = "Already wet";
+        setStageStatus("wet");
       } else if (!state.playingEvent && state.peeReplay) {
-        var replayKeys = (beat.keys && beat.keys.length) ? beat.keys : [scene.cast.primary || "diane"];
+        var replayKeys =
+          beat.keys && beat.keys.length ? beat.keys : [scene.cast.primary || "diane"];
         for (var ri = 0; ri < replayKeys.length; ri++) {
           setSpriteClip(replayKeys[ri], clipForKey(beat, ri, replayKeys[ri]), false);
         }
         // Keep puddle clock looping (do not freeze on full)
         startSyncedPuddle(state.puddleEntries || [], "pee", true);
         showRecBadge(true);
-        if (el.stageBand) el.stageBand.textContent = "Peeing";
+        setStageStatus("peeing");
       } else {
-        startSyncedPuddle(state.puddleEntries || [], beat.outcome === "wet" ? "wet" : "pee", true)
-          .then(function (res) {
-            if (res && res.deferred) syncPuddleClock();
-          });
+        startSyncedPuddle(
+          state.puddleEntries || [],
+          beat.outcome === "wet" ? "wet" : "pee",
+          true,
+        ).then(function (res) {
+          if (res && res.ok) syncPuddleClock();
+        });
       }
       return;
     }
@@ -954,8 +1015,8 @@
     // Fresh wetting oneshot — not yet "already wet"
     if (beat.outcome === "wet") state.wet = false;
 
-    var label = beat.label || (beat.outcome === "wet" ? "Wetting" : "Peeing");
-    var keys = (beat.keys && beat.keys.length) ? beat.keys.slice() : [scene.cast.primary || "diane"];
+    var status = beat.status || (beat.outcome === "wet" ? "wetting" : "peeing");
+    var keys = beat.keys && beat.keys.length ? beat.keys.slice() : [scene.cast.primary || "diane"];
     var mode = beat.mode || "solo";
     if (mode === "sequence") mode = "together";
 
@@ -969,11 +1030,10 @@
     // Cast-order puddle slots (spacers keep solo pees aligned in duo layouts)
     var puddleEntries = buildPuddleEntries(scene, list, overrides);
     state.puddleEntries = puddleEntries;
-    var layoutBand = { key: "calm", label: label, file: GIF.calm };
-    if (el.stageBand) el.stageBand.textContent = label;
+    setStageStatus(status);
     el.cast.classList.remove("tremor");
     // Show pee clips immediately — don't wait on puddle decode (duo spacers used to abort this)
-    renderCast(scene, layoutBand, overrides);
+    renderCast(scene, overrides);
 
     // Decode grow bank + preload char GIFs, THEN start puddle clock aligned to GIFs
     var dianePeeing = list.indexOf("diane") >= 0;
@@ -1010,13 +1070,6 @@
             state.visualBlad = null;
             renderMeters();
           }
-          if (drainKind === "pee") {
-            var info = puddleRes.info || {};
-            var loopFrames = info.loopFrames != null
-              ? (info.loopFrames | 0)
-              : ((info.srcFrames | 0) ? ((info.srcFrames | 0) * 2 - 2) : 68);
-            armPeeReplay(loopFrames);
-          }
         } else {
           state.visualBlad = null;
           state.peeReplay = false;
@@ -1030,7 +1083,7 @@
       .catch(function (err) {
         console.warn("[pee]", err);
         if (state.activePeeBeat !== beat) return;
-        renderCast(scene, layoutBand, overrides);
+        renderCast(scene, overrides);
         renderMeters();
       });
   }
@@ -1038,12 +1091,18 @@
   // Scene metadata must refresh on animated pages too, including Back from a farewell.
   function syncSceneLabels(scene) {
     if (el.stage) el.stage.setAttribute("data-location", scene.location.id);
-    if (el.locLabel) el.locLabel.textContent = scene.location.label || "";
-    if (el.focusLabel) el.focusLabel.textContent = scene.cast.focusLabel || "Diane";
+    if (el.locLabel) el.locLabel.textContent = ui.text("locations." + scene.location.id);
+    if (el.focusLabel)
+      el.focusLabel.textContent = (scene.cast.focus || ["diane"])
+        .map(function (key) {
+          return ui.text("names." + key);
+        })
+        .join(ui.text("join"));
   }
 
   function refreshStage(scene) {
-    if (!scene) scene = root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "");
+    if (!scene)
+      scene = root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "");
     var tag = scene.tag || (typeof currentTag !== "undefined" ? currentTag : "");
     var focusKey = (scene.cast && scene.cast.primary) || "diane";
     var band = bandForCast(focusKey, tag);
@@ -1054,12 +1113,11 @@
     if (!state.playingEvent) {
       var pregameNow = document.body.classList.contains("pregame");
       if (el.stageBand) {
-        if (state.peeReplay) el.stageBand.textContent = "Peeing";
-        else el.stageBand.textContent = pregameNow ? "" : band.label;
+        setStageStatus(pregameNow ? "" : state.peeReplay ? "peeing" : band.key);
       }
       if (state.peeReplay && state.activePeeBeat) {
         var beat = state.activePeeBeat;
-        var rKeys = (beat.keys && beat.keys.length) ? beat.keys : [scene.cast.primary || "diane"];
+        var rKeys = beat.keys && beat.keys.length ? beat.keys : [scene.cast.primary || "diane"];
         var rMode = beat.mode || "solo";
         if (rMode === "sequence") rMode = "together";
         var rList = rMode === "solo" ? [rKeys[0]] : rKeys;
@@ -1067,19 +1125,21 @@
         for (var rk = 0; rk < rList.length; rk++) {
           rOverrides[rList[rk]] = clipForKey(beat, rk, rList[rk]);
         }
-        renderCast(scene, band, rOverrides);
+        renderCast(scene, rOverrides);
         // Puddle keeps scrubbing with the GIF — never freeze on full during replay
-        var rPuddles = state.puddleEntries && state.puddleEntries.length
-          ? state.puddleEntries
-          : buildPuddleEntries(scene, rList, rOverrides);
+        var rPuddles =
+          state.puddleEntries && state.puddleEntries.length
+            ? state.puddleEntries
+            : buildPuddleEntries(scene, rList, rOverrides);
         if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-          startSyncedPuddle(rPuddles, "pee", false)
-            .then(function () { syncPuddleClock(); });
+          startSyncedPuddle(rPuddles, "pee", false).then(function () {
+            syncPuddleClock();
+          });
         }
         showRecBadge(true);
       } else {
         showRecBadge(false);
-        renderCast(scene, band);
+        renderCast(scene);
         if (state.wet) {
           holdPuddleFull();
           if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
@@ -1096,9 +1156,10 @@
     var brand = $("railBrand");
     if (!brand) return;
     tag = String(tag || "");
-    var day = root.ADWDSceneMap && root.ADWDSceneMap.dayLabel ? root.ADWDSceneMap.dayLabel() : "";
-    var titlePhase = !tag || tag === "start" || /^(start1|tuesdaydate|thursdaydate|saturdaydate)/.test(tag);
-    brand.textContent = (!titlePhase && day) ? day : "A Date with Diane";
+    var day = root.ADWDSceneMap && root.ADWDSceneMap.dayKey ? root.ADWDSceneMap.dayKey() : "";
+    var titlePhase =
+      !tag || tag === "start" || /^(start1|tuesdaydate|thursdaydate|saturdaydate)/.test(tag);
+    brand.textContent = !titlePhase && day ? ui.text("days." + day) : ui.text("title");
   }
 
   function afterGo(tag) {
@@ -1136,7 +1197,10 @@
     // and never on prize / off-screen-relief tags.
     var beat = null;
     if (!pregame && !silent) {
-      beat = (root.ADWDSceneMap.peeBeat && root.ADWDSceneMap.peeBeat(tag, scene.cast)) || scene.pee || null;
+      beat =
+        (root.ADWDSceneMap.peeBeat && root.ADWDSceneMap.peeBeat(tag, scene.cast)) ||
+        scene.pee ||
+        null;
     }
 
     // Prefer mid-drain level so multi-page pees don't flash full again.
@@ -1161,7 +1225,8 @@
     }
 
     // Back/restore always rebuilds the page beat; forward may continue multi-page acts
-    var continuing = !fresh && !!(state.activePeeBeat && beat && beatsContinue(state.activePeeBeat, beat));
+    var continuing =
+      !fresh && !!(state.activePeeBeat && beat && beatsContinue(state.activePeeBeat, beat));
 
     // Leaving a pee/wet page: stop the loop unless the next page continues the same act
     if (state.activePeeBeat && !continuing) {
@@ -1171,10 +1236,6 @@
     // Toilet relief empties blad — calm unless this page is the wetting itself
     if (rawBlad <= 0 && !wetTag && !(beat && beat.outcome === "wet")) state.wet = false;
 
-    // afterpee / pending flag is informational only now (meter handled by game)
-    state.pendingDianePee = false;
-
-    state.lastTag = tag;
     state.lastBlad = rawBlad;
 
     if (beat) {
@@ -1184,12 +1245,8 @@
     }
 
     syncRailBrand(tag);
-    try {
-      if (typeof syncVisualChrome === "function") syncVisualChrome();
-      else if (typeof syncSkipButton === "function") syncSkipButton();
-    } catch (eChrome) {}
+    ui.syncChrome();
 
-    stripChoiceNumbers();
     polishStoryBox();
     try {
       var storyBox = $("box");
@@ -1209,35 +1266,35 @@
   function polishStoryBox() {
     var box = $("box");
     if (!box) return;
-    var h1 = box.querySelector("h1");
-    if (h1 && /date\s+with\s+diane/i.test(h1.textContent || "")) {
-      var sib = h1.nextElementSibling;
-      h1.parentNode.removeChild(h1);
-      if (sib && String(sib.tagName || "").toUpperCase() === "HR") {
-        sib.parentNode.removeChild(sib);
+    box.querySelectorAll("h1.game-title").forEach(function (h1) {
+      var next = h1.nextElementSibling;
+      h1.remove();
+      if (next && next.tagName === "HR") next.remove();
+    });
+    var layers = box.querySelectorAll(".lang");
+    (layers.length ? Array.from(layers) : [box]).forEach(function (layer) {
+      while (layer.firstElementChild && layer.firstElementChild.tagName === "HR") {
+        layer.firstElementChild.remove();
       }
-    }
-    var first = box.firstElementChild;
-    while (first && String(first.tagName || "").toUpperCase() === "HR") {
-      var kill = first;
-      first = first.nextElementSibling;
-      kill.parentNode.removeChild(kill);
-    }
+    });
   }
 
-  /** Remove any leftover demo-style number prefixes on choice buttons. */
-  function stripChoiceNumbers() {
-    var box = $("box");
-    if (!box) return;
-    var nums = box.querySelectorAll("button.choice .num, .choices button .num");
-    for (var i = 0; i < nums.length; i++) {
-      var existing = nums[i];
-      var prev = existing.previousSibling;
-      var next = existing.nextSibling;
-      existing.remove();
-      if (next && next.nodeType === 3 && /^\s+$/.test(next.nodeValue || "")) next.remove();
-      else if (prev && prev.nodeType === 3 && /^\s+$/.test(prev.nodeValue || "")) prev.remove();
-    }
+  function setStageStatus(key) {
+    if (!el.stageBand) return;
+    el.stageBand.dataset.status = key;
+    el.stageBand.textContent = key ? ui.text("status." + key) : "";
+  }
+
+  function refreshLanguage() {
+    var tag = typeof currentTag !== "undefined" ? currentTag : "";
+    syncSceneLabels(root.ADWDSceneMap.resolve(tag));
+    syncRailBrand(tag);
+    if (el.stageBand) setStageStatus(el.stageBand.dataset.status || "");
+    document.querySelectorAll(".sprite[data-cast]").forEach(function (sprite) {
+      sprite.alt = ui.text("names." + sprite.dataset.cast);
+    });
+    renderMeters();
+    ui.syncChrome();
   }
 
   function bindDom() {
@@ -1268,7 +1325,11 @@
       var _go = go;
       root.go = function (tag) {
         _go(tag);
-        try { afterGo(tag); } catch (e) { console.error(e); }
+        try {
+          afterGo(tag);
+        } catch (e) {
+          console.error(e);
+        }
       };
     }
     if (typeof goback === "function") {
@@ -1277,6 +1338,7 @@
       root.goback = function () {
         state.forceFreshVisual = true;
         _back();
+        ui.syncChrome();
       };
     }
     if (typeof restoreGame === "function") {
@@ -1286,15 +1348,9 @@
         _restore(snapshot);
         try {
           afterGo(typeof currentTag !== "undefined" ? currentTag : "");
-        } catch (e) { console.error(e); }
-      };
-    }
-    // Intentional Diane relief: afterpee() runs inside scene functions before choices paint
-    if (typeof afterpee === "function") {
-      var _afterpee = afterpee;
-      root.afterpee = function () {
-        state.pendingDianePee = true;
-        return _afterpee.apply(this, arguments);
+        } catch (e) {
+          console.error(e);
+        }
       };
     }
   }
@@ -1302,6 +1358,7 @@
   function boot() {
     bindDom();
     hookEngine();
+    ui.hookEngine();
     document.body.classList.add("visual-edition");
     if (root.ADWDPuddleSync && root.ADWDPuddleSync.preload) {
       root.ADWDPuddleSync.preload().catch(function () {});
@@ -1311,7 +1368,10 @@
 
   root.VisualShell = {
     afterGo: afterGo,
-    refresh: function () { afterGo(typeof currentTag !== "undefined" ? currentTag : ""); },
+    refresh: function () {
+      afterGo(typeof currentTag !== "undefined" ? currentTag : "");
+    },
+    refreshLanguage: refreshLanguage,
     boot: boot,
   };
 

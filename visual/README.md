@@ -1,6 +1,6 @@
 # Visual edition
 
-Playable visual shell built from the English text game.
+One visual shell builds all five standalone and four bilingual text editions.
 
 ## Open
 
@@ -14,10 +14,15 @@ Open in a browser (local file is fine):
 node maintenance/build_visual_edition.js
 ```
 
-The canonical story, runtime, Gallery routes, wiki, and transcripts live in the sibling ADWD repository. A normal visual build automatically imports the managed English files into this checkout before reading `outputs/en/dianedate_en.html`. You can also run `node maintenance/sync_visual_edition.js` from either repository. Shared edits belong in canonical ADWD; presentation edits belong here. The visual build injects:
+The canonical story, runtime, Gallery and language content live in the sibling ADWD source
+checkout. The builder reads its nine HTML inputs and `source/visual-ui/*.json` directly.
+No copied text games or localization snapshots are stored here. Shared edits belong in ADWD;
+presentation edits belong here. The visual build embeds:
 
+- `visual/shell.html` — one shared layout template
+- `visual/i18n.js` and canonical visual label catalogs — active-language controls, metadata and accessibility labels
 - `visual/shell.css` — layout, chrome, shared stage background, and effects styling
-- `visual/scene-map.js` — tag → location ID/label and cast focus; explicit exceptions precede legacy matching
+- `visual/scene-map.js` — tag → language-neutral location ID and cast focus; explicit exceptions precede legacy matching
 - `visual/puddle-sync.js` and `assets/fx/puddle_meta.json` — existing effects timing and metadata
 - `visual/adapter.js` — hooks `go` / Back / restore; drives sprites + meters
 
@@ -37,8 +42,12 @@ Reduced-motion CSS disables the added sprite tremor, REC pulse, and panel/effect
 
 ## Build checks and scope
 
-`node maintenance/build_visual_edition.js --check` detects a stale generated page without writing. The builder requires its injection anchors to exist and fails if the source structure no longer matches. Run `node maintenance/verify_project.js` for route/state and location regression checks.
+`node maintenance/build_visual_edition.js --check` detects stale generated pages without writing. The builder requires its injection anchors to exist and fails if the source structure no longer matches. Run `node maintenance/verify_project.js` for core parity, locale catalogs, location and asset inventory checks.
 
-Default checks also reject drift from canonical ADWD. `--local-only` explicitly builds/checks an isolated carried snapshot without upstream verification. The visual verifier replays both the companion and generated core; visual adapter behavior still requires browser checks.
+Building and checks require the canonical ADWD source checkout; use `ADWD_TEXT_ROOT` to select its path. The visual verifier proves each generated core script is byte-identical to its canonical input. Route/state tests stay in ADWD; visual adapter behavior and layout require browser checks.
 
 Location labels currently share the same stage background. They are not separate illustrated environments. Back reconstructs presentation from the restored narrative state; it does not serialize a precise GIF playback frame.
+
+Language switches call a text-only refresh. Keep sprite/canvas nodes, drain levels and animation
+clocks intact. The adapter wraps navigation and restore; the localization module wraps the
+shared language, theme and Skip-display hooks. It does not override core story functions.

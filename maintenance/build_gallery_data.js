@@ -93,22 +93,22 @@ const ENDING_META = {
   general: {
     order: 8, stem: "07a_consolation_tuesday_pavilion",
     climaxStartTag: "searchdiane", // follow Diane after she slips away outdoors
-    title: { en: "Tuesday Pavilion Route", cn: "周二凉亭路线", tw: "週二涼亭路線", es: "Ruta del martes del Pavilion", fr: "Route du mardi au Pavilion" },
+    title: { en: "Tuesday Pavilion Route", cn: "周二凉亭酒吧路线", tw: "週二涼亭酒吧路線", es: "Ruta del martes por el Pabellón", fr: "Parcours du mardi par le Pavillon" },
   },
   generalThursday: {
     order: 8, stem: "07b_consolation_thursday_subway",
     climaxStartTag: "searchdiane",
-    title: { en: "Thursday Subway Route", cn: "周四地下通道路线", tw: "週四地下道路線", es: "Ruta del jueves por el paso subterráneo", fr: "Route du jeudi par le passage souterrain" },
+    title: { en: "Thursday Subway Route", cn: "周四地下通道路线", tw: "週四地下道路線", es: "Ruta del jueves por el paso subterráneo", fr: "Parcours du jeudi par le passage souterrain" },
   },
   generalSaturday: {
     order: 8, stem: "07c_consolation_saturday_car_park",
     climaxStartTag: "searchdiane",
-    title: { en: "Saturday Car Park Route", cn: "周六停车场路线", tw: "週六停車場路線", es: "Ruta del sábado por el aparcamiento", fr: "Route du samedi par le parking" },
+    title: { en: "Saturday Car Park Route", cn: "周六停车场路线", tw: "週六停車場路線", es: "Ruta del sábado por el aparcamiento", fr: "Parcours du samedi par le parking" },
   },
   loungeHen: {
     order: 9, stem: "06a_lounge_hen_party",
     climaxStartTag: "loungedesp", // lounge story consolation
-    title: { en: "Hen Party", cn: "婚前派对", tw: "單身派對", es: "Despedida de soltera", fr: "Enterrement de vie de jeune fille" },
+    title: { en: "Hen Party", cn: "婚前单身派对", tw: "婚前單身派對", es: "Despedida de soltera", fr: "Enterrement de vie de jeune fille" },
   },
   loungeTiramisu: {
     order: 9, stem: "06b_lounge_bus_boy",
@@ -159,8 +159,8 @@ const ENDING_GROUPS = [
       en: "Lounge Story Consolation Prizes",
       cn: "客厅故事安慰奖",
       tw: "客廳故事安慰獎",
-      es: "Premios de consolación: historia del salón",
-      fr: "Lots de consolation : histoire du salon",
+      es: "Premios de consolación: historias en el salón",
+      fr: "Prix de consolation : histoires au salon",
     },
     variantKeys: ["loungeHen", "loungeTiramisu", "loungePanna", "loungeIce"],
   },
@@ -169,6 +169,18 @@ const ENDING_GROUPS = [
 // Extra hidden scenes (route keys from verify_ending_routes.js `galleryRoutes`).
 // sceneStartTag: first tag of the actual scene — everything before is auto-skipped base.
 const EXTRA_HIDDEN = [
+  {
+    stem: "29_diane_brunette_encounter",
+    routeKey: "dianeBrunetteEncounter",
+    sceneStartTag: "carparka1", // First guided choice; entry/transcript open on carparka0.
+    title: {
+      en: "You and Diane Come Across the Brunette",
+      cn: "你和黛安偶遇褐发女生",
+      tw: "你和黛安巧遇褐髮女生",
+      es: "Diane y tú os encontráis con la morena",
+      fr: "Diane et vous tombez sur la brune",
+    },
+  },
   {
     stem: "23_brooch",
     routeKey: "brooch",
@@ -186,11 +198,11 @@ const EXTRA_HIDDEN = [
     routeKey: "phoneCall",
     sceneStartTag: "showover1",
     title: {
-      en: "Diane Phones You the Next Morning",
-      cn: "次日清晨黛安来电",
-      tw: "次日清晨黛安來電",
-      es: "Diane te llama a la mañana siguiente",
-      fr: "Diane vous appelle le lendemain matin",
+      en: "You Phone Diane the Next Morning",
+      cn: "次日清晨致电黛安",
+      tw: "隔天早上打電話給黛安",
+      es: "Llamas a Diane a la mañana siguiente",
+      fr: "Vous appelez Diane le lendemain matin",
     },
   },
   {
@@ -213,8 +225,8 @@ const EXTRA_HIDDEN = [
       en: "You Show Diane Your Train Photo Album",
       cn: "你给黛安看火车相册",
       tw: "你給黛安看火車相簿",
-      es: "Le muestras a Diane tu álbum de trenes",
-      fr: "Vous montrez à Diane votre album de trains",
+      es: "Le muestras a Diane tu álbum de fotos de trenes",
+      fr: "Vous montrez à Diane votre album de photos de trains",
     },
   },
   {
@@ -240,7 +252,7 @@ const HIDDEN_GROUPS = [
       cn: "河边移动厕所",
       tw: "河邊流動廁所",
       es: "Baño portátil junto al río",
-      fr: "Toilettes portatives au bord de l’eau",
+      fr: "Toilettes mobiles au bord de la rivière",
     },
     stems: ["02_portaloo_ladies_first", "03_portaloo_too_embarrassed"],
   },
@@ -299,19 +311,21 @@ const HIDDEN_GROUPS = [
     title: {
       en: "Brunette by the Camper Van",
       cn: "房车旁的褐发女生",
-      tw: "房車旁的褐髮女生",
+      tw: "露營車旁的褐髮女生",
       es: "La morena junto a la autocaravana",
       fr: "La brune près du camping-car",
     },
-    // Solo watches first (luckshot, then Chardonnay "your spot"), then together-path forks.
+    // Solo encounters, the direct encounter with Diane, then watching forks.
+    // Keep the caught outcome beside peeping underneath; the non-watching choice closes the group.
     stems: [
       "28_luckshot_brunette_camper",
       "28b_luckshot_brunette_debbie",
       "16_brunette_behind_camper",
+      "29_diane_brunette_encounter",
       "17_diane_brunette_camper_round",
       "18_diane_brunette_camper_under",
-      "19_camper_gentleman_choice",
       "22_caught_by_boyfriend",
+      "19_camper_gentleman_choice",
     ],
   },
   {
@@ -332,7 +346,7 @@ const HIDDEN_GROUPS = [
       cn: "黛安在你家浴室",
       tw: "黛安在你家浴室",
       es: "Diane en tu baño",
-      fr: "Diane dans votre salle de bain",
+      fr: "Diane dans votre salle de bains",
     },
     // Same sofa-story fork: watch a normal pee vs bath wetting.
     stems: ["25_lootogether", "27_bath_peeing"],
@@ -444,7 +458,9 @@ function buildHiddenScenesForLang(ctx, routes, definitions, lang) {
     };
   });
 
-  for (const extra of EXTRA_HIDDEN) {
+  const extraForLang = EXTRA_HIDDEN.filter(extra => !extra.languages || extra.languages.includes(lang));
+  const excludedStems = new Set(EXTRA_HIDDEN.filter(extra => !extraForLang.includes(extra)).map(extra => extra.stem));
+  for (const extra of extraForLang) {
     if (!routes[extra.routeKey]) throw new Error(`Missing route for hidden scene: ${extra.routeKey}`);
     const tags = ctx.routeToTags(routes[extra.routeKey], routes);
     const baseLength = tags.indexOf(extra.sceneStartTag);
@@ -469,7 +485,7 @@ function buildHiddenScenesForLang(ctx, routes, definitions, lang) {
     byKey[scene.id] = scene;
   }
   for (const group of HIDDEN_GROUPS) {
-    const variants = group.stems.map((stem) => {
+    const variants = group.stems.filter(stem => !excludedStems.has(stem)).map((stem) => {
       const v = byStem[stem];
       if (!v) throw new Error(`Missing hidden scene stem for group ${group.groupId}: ${stem}`);
       return {
@@ -506,25 +522,25 @@ function buildDataForLang(ctx, routes, definitions, lang) {
   const hiddenLeaves = countLeaves(hiddenScenes);
   // 5 prizes + Amanda + Chloe×2 + Day×3 + Lounge×4
   if (endingLeaves !== 15) throw new Error(`Expected 15 ending leaves, got ${endingLeaves}`);
-  if (hiddenLeaves !== 25 + EXTRA_HIDDEN.length) {
-    throw new Error(`Expected ${25 + EXTRA_HIDDEN.length} hidden-scene leaves, got ${hiddenLeaves}`);
+  const expectedHidden = 25 + EXTRA_HIDDEN.filter(extra => !extra.languages || extra.languages.includes(lang)).length;
+  if (hiddenLeaves !== expectedHidden) {
+    throw new Error(`Expected ${expectedHidden} hidden-scene leaves, got ${hiddenLeaves}`);
   }
 
   return { endings, hiddenScenes };
 }
 
 function mergeGalleryEntries(enList, otherList) {
-  return enList.map((en, i) => {
-    const other = otherList[i];
-    if (en.variants) {
-      return {
-        ...en,
-        titleAlt: other.title,
-        variants: en.variants.map((v, vi) => ({
-          ...v,
-          titleAlt: other.variants[vi].title,
-        })),
-      };
+  // Pair translations by stable identity, so reordering never shifts sibling titles.
+  return otherList.map(other => {
+    const en = enList.find(item => (item.id || item.groupId) === (other.id || other.groupId));
+    if (!en) throw Error('Missing English Gallery counterpart: ' + (other.id || other.groupId));
+    if (other.variants) {
+      return { ...en, titleAlt: other.title, variants: other.variants.map(variant => {
+        const english = en.variants.find(item => item.id === variant.id);
+        if (!english) throw Error('Missing English Gallery leaf: ' + variant.id);
+        return { ...english, titleAlt: variant.title };
+      }) };
     }
     return { ...en, titleAlt: other.title };
   });

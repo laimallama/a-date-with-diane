@@ -69,6 +69,7 @@
 
     // Explicit exceptions take precedence over legacy name-based location rules.
     if (exact(tag, ["ontoilet2", "fifthplace"])) return LOC.home;
+    if (exact(tag, ["luckytrip18", "luckytrip18a", "luckytrip20", "luckytrip20a"])) return LOC.home;
     if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"])) return LOC.riverside;
     if (tag === "carpark3" || tag === "carpark2") return LOC.bus;
     if (exact(tag, ["underskirt", "underskirt1", "underskirt2"])) return LOC.theatre;

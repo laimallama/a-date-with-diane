@@ -61,10 +61,11 @@ const HIDDEN_SLUGS = {
   "28_luckshot_brunette_camper": "09a_camper_watch",
   "28b_luckshot_brunette_debbie": "09aa_camper_debbie",
   "16_brunette_behind_camper": "09b_camper_your_spot",
+  "29_diane_brunette_encounter": "09ba_camper_encounter",
   "17_diane_brunette_camper_round": "09c_camper_diane",
   "18_diane_brunette_camper_under": "09d_camper_under",
   "19_camper_gentleman_choice": "09e_camper_gentleman",
-  "22_caught_by_boyfriend": "09f_camper_caught",
+  "22_caught_by_boyfriend": "09da_camper_caught",
   "20_church_lych_gate_glimpse": "10a_bus_luckshot",
   "20b_rioja_bus_glimpse": "10b_bus_rioja",
   "21_hidden_camera": "11_hidden_camera",
@@ -363,8 +364,8 @@ function main() {
   if (endingLeavesEn.length !== 15) {
     throw new Error(`Expected 15 ending leaves, got ${endingLeavesEn.length}`);
   }
-  if (hiddenLeavesEn.length !== 30) {
-    throw new Error(`Expected 30 hidden leaves, got ${hiddenLeavesEn.length}`);
+  if (hiddenLeavesEn.length !== 31) {
+    throw new Error(`Expected 31 English hidden leaves, got ${hiddenLeavesEn.length}`);
   }
 
   for (const leaf of endingLeavesEn) {
@@ -392,12 +393,11 @@ function main() {
       tags: enLeaf.tags,
       climaxStart: enLeaf.climaxStart,
     }));
-    const hiddens = hiddenLeavesEn.map((enLeaf, i) => ({
-      ...enLeaf,
-      title: hiddenLeaves[i].title,
-      tags: enLeaf.tags,
-      climaxStart: enLeaf.climaxStart,
-    }));
+    const hiddens = hiddenLeaves.map(localLeaf => {
+      const enLeaf = hiddenLeavesEn.find(leaf => leaf.id === localLeaf.id);
+      if (!enLeaf) throw new Error('Missing English transcript route: ' + localLeaf.id);
+      return { ...enLeaf, title: localLeaf.title };
+    });
 
     for (const leaf of endings) {
       const slug = ENDING_SLUGS[leaf.id];

@@ -28,13 +28,13 @@ The builder validates contiguous effect PNG banks and embeds the exact `growFram
 
 ## What is in this folder
 
-English playable HTML (`outputs/en/dianedate_en.html`), English climax transcripts, English wiki (`wiki_en.html`). Gallery: **15 ending leaves** and **30 hidden-scene leaves**.
+English playable HTML (`outputs/en/dianedate_en.html`), English climax transcripts, English wiki (`wiki_en.html`). Gallery: **15 ending leaves** and **31 hidden-scene leaves**.
 
 Translations and `aligned_text.json` belong in the text repository only. The visual game checks, Gallery builder, and transcript writer operate on English only; legacy wiki utilities remain separate.
 
 There are **no** external click-path guide `.txt` files. The Gallery is the walkthrough. **Climax transcripts** start at the climax of the story or the starting point of the hidden scene for each Gallery entry (Gallery `climaxIndex` / `baseLength`; same cut as in-game Skip to the good bit / scene start). Gallery order, short slugs. In-file title = Gallery **leaf** title only (no group prefix). Bus-home is two hidden-scene leaves: `10a` luckshot (church) and `10b` rioja (too desperate to walk her home).
 
-Gallery currently documents **15 ending leaves** and **30 hidden-scene leaves** (leaf counts, not top-level group rows).
+Gallery currently documents **15 ending leaves** and **31 hidden-scene leaves** (leaf counts, not top-level group rows).
 
 All Gallery route label sequences live inline in `verify_ending_routes.js` (endings + extras) and `write_hidden_scenes.js` (classic hidden scenes). There is **no** separate `routes/` JSON folder.
 
@@ -177,7 +177,7 @@ node maintenance/write_transcripts.js
 
 ## Verified maintenance baseline (13 September 2026)
 
-- Run `node maintenance/verify_project.js` for the complete maintained-edition regression check. It replays all 45 embedded Gallery routes and checks Back/forward HTML and state, guided progress, and Skip. In the text repository it also checks all nine playable editions against English numerical state. It is not a substitute for browser layout or animation testing.
+- Run `node maintenance/verify_project.js` for the complete maintained-edition regression check. It replays all 46 embedded Gallery routes and checks Back/forward HTML and state, guided progress, and Skip. In the text repository it also checks all nine playable editions against English numerical state. It is not a substitute for browser layout or animation testing.
 - `gameStateVars` includes `despLineIndex`. Any future state or text counter that affects replay must be included in snapshots. Restore must not execute a story node a second time. Back remains session history, not a disk save.
 - All playable documents have a doctype, page title, and language metadata. Bilingual layers declare their own languages; `setLanguage()` updates the document language too.
 - `verify_ending_routes.js` and `write_hidden_scenes.js` are read-only. The latter checks definitions; the full verifier checks actual routes. Never add implicit deletion to a check command.
@@ -185,3 +185,13 @@ node maintenance/write_transcripts.js
 - Input paths in the maintained game-check/build commands are resolved from the script location. Do not rely on the caller's working directory.
 - Run `build_visual_edition.js` after source runtime or presentation edits. Its `--check` mode is read-only, and missing injection anchors are errors. Never hand-edit the generated visual HTML.
 - Location matching treats numbered route families as distinct, so `luckytrip3` cannot capture `luckytrip31`. Explicit location exceptions precede legacy heuristics. The current CSS uses a shared stage background; location IDs and labels do not imply finished environmental artwork.
+
+## Gallery curation rule — September 2026
+
+The owner rejected the variations-panel design. Keep the classic Gallery layout: no Variations buttons, extra explanatory menu notes, setup selectors or conversation-variation section. Add a leaf only for a meaningfully different event, action, encounter or outcome. When the scene differs only in dialogue, select one coherent, complete representative route using real earlier choices. Do not splice text, force state flags or create a leaf for each wine/day/meal.
+
+The camper encounter “You and Diane Come Across the Brunette” uses the fuller Saturday/Pinot variant and is now localized in all editions. The curation pass compares complete playable routes for endings and only each hidden scene’s displayed duration. Fourth Prize, the two portaloo scenes and the two solo camper approaches use reviewed representatives. The train/stamp albums retain their complete variants. Gallery and transcripts pair translations by stable leaf ID. All five standalone and four bilingual editions contain the same 46 leaves; the 230 standalone transcripts are generated from those routes. The school-age flashbacks were excluded from content curation; their existing navigation and parity remain covered.
+
+The direct camper encounter is fourth within its group: after the solo encounters and before the covert-watching branches. Its title remains “You and Diane Come Across the Brunette”. The guide and transcript open on `carparka0`, cover the encounter on `carparka1`, and stop before `taxihome1`. The final taxi-rank choice correctly remains unhighlighted because it is outside this scene; Back restores the highlighted waiting choice. The transcript filename `09ba_camper_encounter_en.txt` keeps it in Gallery order without renaming existing transcripts.
+
+The camper group pairs “Caught by the Brunette’s Boyfriend” immediately after “Peeping Underneath”, then closes with the non-watching choice. Its transcript slug is `09da_camper_caught`; the retired `09f_camper_caught` filenames were deliberately migrated. The Chardonnay solo scene now includes the return-to-queue response on `carpark3`, ending before `busqueue7`. All scene-final continuation choices remain available but unhighlighted.

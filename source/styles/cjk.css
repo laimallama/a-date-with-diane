@@ -113,18 +113,10 @@ a:hover {
   line-height: 1.25;
 }
 
-#box p.note-lead {
-  margin: 0 0 0.35em;
-  line-height: 1.45;
-}
-
+#box p.note-lead,
 #box p.note-keys {
-  margin: 0 0 0.65em;
+  margin: 0 0 0.5em;
   line-height: 1.45;
-}
-
-#box p.note-keys:has(+ p.note-follow) {
-  margin-bottom: 0.35em;
 }
 
 #box p.note-keys:last-of-type {

@@ -1,7 +1,7 @@
 /* Visual edition layout, meters and animation styling. */
 
 html {
-  background: var(--body-bg-wash, #f5eee5);
+  background: var(--body-bg-wash, #f8f5ef);
 }
 
 body.visual-edition {
@@ -12,7 +12,7 @@ body.visual-edition {
   max-height: none;
   overflow: visible;
   font-family: var(--font-visual);
-  background: var(--body-bg-wash, #f5eee5);
+  background: var(--body-bg-wash, #f8f5ef);
 }
 
 body.visual-edition,
@@ -73,7 +73,7 @@ body.visual-edition .visual-app {
   box-sizing: border-box;
   overflow: visible;
   font-family: var(--font-visual);
-  background: var(--body-bg-wash, #f5eee5);
+  background: var(--body-bg-wash, #f8f5ef);
 }
 
 body.visual-edition .visual-rail {

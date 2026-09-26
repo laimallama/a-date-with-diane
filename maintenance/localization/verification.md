@@ -70,3 +70,9 @@ locale IDs for a future authorized rendering review; it was not run for this rel
 
 There was no independent native-speaker review. Editorial coverage and finite runtime
 checks cannot prove absolute linguistic perfection or every arbitrary state combination.
+
+## Follow-up QA
+
+The [26 September focused QA](qa-2026-09-26.md) records the subsequent German/Japanese
+refinements, fresh checks, exact before/after ledger and preserved release scope.
+The initial full-suite results above are historical and were not redundantly rerun.

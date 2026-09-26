@@ -109,7 +109,7 @@
       "fr": "<p>Il existe cinq fins gagnantes différentes, classées par rang. Essayez de toutes les obtenir !</p>",
       "tw": "<p>一共有五種成功結局，也就是依等級排列的「得獎結局」。看看你能不能全部達成！</p>",
       "de": "<p>Es gibt fünf verschiedene erfolgreiche Spielausgänge mit unterschiedlicher Bewertung. Mal sehen, ob du sie alle erreichst!</p>",
-      "ja": "<p>成功といえるエンディング、つまり「勝利の結果」は五つあり、それぞれ順位がついています。すべて見つけられるでしょうか？</p>",
+      "ja": "<p>「勝利」となるエンディングは五つあり、それぞれ順位がついています。すべて見つけられるでしょうか？</p>",
       "source": { "node": "start1", "slot": 1 }
     },
     {
@@ -46370,7 +46370,7 @@
       "fr": "<p>Elle reste ainsi quelques secondes mais rien ne se passe. Diane rabat pudiquement le bas de sa jupe vers l’avant, mais ça ne couvre pas grand-chose. Au bout d’un moment, elle laisse échapper un petit rire gêné.</p>",
       "tw": "<p>她坐了幾秒鐘，什麼動靜都沒有。黛安羞怯地把裙擺往前推了推，不過遮住的也不多。過了一下，她尷尬地笑了一聲。</p>",
       "de": "<p>Sie sitzt ein paar Sekunden da, aber nichts geschieht. Verschämt schiebt Diane den Rocksaum nach vorn, doch er verdeckt nicht viel. Nach einer Weile lacht sie leise und verlegen.</p>",
-      "ja": "<p>数秒座っているが、何も起こらない。慎み深くスカートの裾を前へ押し出すが、あまり隠れない。しばらくして、恥ずかしそうに小さく笑う。</p>",
+      "ja": "<p>数秒間座っているが、何も起こらない。ダイアンは少しでも隠そうと裾を前へ押し出すが、あまり隠れない。しばらくすると、恥ずかしそうに小さく笑う。</p>",
       "source": { "node": "gobathroom", "slot": 4 }
     },
     {
@@ -46661,7 +46661,7 @@
       "fr": "<p>Elle réalise que vous la regardez, rougit légèrement et rabaisse encore plus le bas de sa jupe. Elle est penchée en avant, les mains sur les genoux. Vous ne voyez plus le jet, mais le bruit de son pipi à plein régime est merveilleux. Au bout d’un moment, il faiblit et elle murmure « Presque fini » — mais il y en a encore un peu avant que le filet ne s’amenuise et que le silence revienne. Ça a dû durer une bonne minute. Elle arrache un morceau de papier toilette, tend la main et s’essuie.</p>",
       "tw": "<p>她意識到你在看她，微微泛紅，把裙擺往下推得更低。她向前傾著身體，雙手放在膝蓋上。你已經看不到尿流了，不過那汩汩作響的尿聲此刻達到最強，聽來真是美妙。過了一下聲音漸漸弱了，她輕聲說「快好了」，不過接著又續了一小陣，才慢慢歸於寂靜。想必持續了整整一分鐘。她扯了一張衛生紙，伸手擦了擦自己。</p>",
       "de": "<p>Sie merkt, dass du zusiehst, wird leicht rot und schiebt den Rocksaum weiter hinunter. Sie beugt sich vor, die Hände auf den Knien. Den Strahl kannst du nicht mehr sehen, aber das Geräusch ihres nun mit voller Kraft fließenden Urins ist herrlich. Nach einer Weile wird es leiser, und sie murmelt: „Gleich fertig.“ Doch dann kommt noch etwas nach, bevor das Plätschern langsam verstummt. Es muss eine volle Minute gedauert haben. Sie reißt ein Stück Toilettenpapier ab, greift nach unten und wischt sich ab.</p>",
-      "ja": "<p>見られていると気づいた彼女は少し赤くなり、スカートの裾をさらに下げる。両手を膝に置き、前かがみになっている。尿の流れはもう見えないが、今や勢いを増した水音が素晴らしい。しばらくすると弱まり、「もう少しで終わる」とつぶやく。それからもう少し出て、最後は細い流れとなり、静かになる。丸一分は続いたはずだ。彼女はトイレットペーパーを切り取り、手を下へ伸ばして拭く。</p>",
+      "ja": "<p>見られていると気づいた彼女は少し赤くなり、裾をさらに下げる。両手を膝に置き、前かがみになっている。尿の流れはもう見えないが、今や勢いを増した水音が素晴らしい。しばらくすると弱まり、「もう少しで終わる」とつぶやく。それからもう少し出て、最後は細い流れとなり、静かになる。丸一分は続いたはずだ。彼女はトイレットペーパーを切り取り、手を下へ伸ばして拭く。</p>",
       "source": { "node": "gobathroom1", "slot": 13 }
     },
     {
@@ -57955,7 +57955,7 @@
       "es": "<p>Se acerca a un panel de información turística y se queda allí un momento mientras los borrachos pasan. Está de espaldas a ti, como si fingiera leer el panel. Los borrachos desaparecen a lo lejos y Diane comprueba si ya se han ido, pero no se mueve. Parece que está trajinando con su falda, ligeramente inclinada hacia delante, y entonces—</p>",
       "fr": "<p>Elle s’approche d’un panneau d’informations touristiques, s’y poste un moment pendant que les ivrognes passent. Elle vous tourne le dos, comme si elle faisait semblant de lire le panneau. Les ivrognes disparaissent au loin et Diane vérifie qu’ils sont bien partis, mais ne bouge pas. Elle semble tripoter sa jupe, légèrement penchée en avant, et puis —</p>",
       "tw": "<p>她走到一塊旅遊資訊牌前，等醉鬼們經過時站在那裡。她背對著你，好像假裝在看牌子。醉鬼們漸漸遠去，黛安回頭看他們有沒有走遠，卻沒有移動。她好像在擺弄裙子，身子微微前傾，然後——</p>",
-      "de": "<p>Sie geht zu einer touristischen Informationstafel und bleibt dort einen Moment stehen, während die Betrunkenen vorbeigehen. Sie hat dir den Rücken zugewandt und tut so, als lese sie die Tafel. Die Betrunkenen verschwinden in der Ferne. Diane schaut nach, ob sie weg sind, rührt sich aber nicht. Sie scheint an ihrem Rock zu nesteln, beugt sich leicht vor, und dann – </p>",
+      "de": "<p>Sie geht zu einer touristischen Informationstafel und bleibt dort einen Moment stehen, während die Betrunkenen vorbeigehen. Sie hat dir den Rücken zugewandt und tut so, als lese sie die Tafel. Die Betrunkenen verschwinden in der Ferne. Diane schaut nach, ob sie weg sind, rührt sich aber nicht. Sie scheint am Saum ihres Kleides zu nesteln, beugt sich leicht vor, und dann – </p>",
       "ja": "<p>彼女は観光案内板へ行き、酔っ払いの一団が通り過ぎる間、そこに立っている。こちらに背を向け、案内板を読むふりをしているようだ。一団が遠ざかると、ダイアンは彼らがいなくなったか確かめるが、動かない。裾をいじっているように見える。少し前かがみになり、それから――</p>",
       "source": { "node": "search1a", "slot": 4 }
     },
@@ -60172,7 +60172,7 @@
       "es": "<p>Diane está de pie en la bañera, con las piernas un poco separadas. Tiene las manos en las caderas, subiéndose la falda un poco.</p>",
       "fr": "<p>Diane est debout dans la baignoire, les jambes légèrement écartées. Ses mains sont sur ses hanches, relevant légèrement sa jupe.</p>",
       "tw": "<p>黛安站在浴缸裡，雙腿微微分開，雙手叉腰，把裙子稍微撩起。</p>",
-      "de": "<p>Diane steht mit leicht gespreizten Beinen in der Badewanne. Sie hat die Hände an den Hüften und hält ihren Rock etwas hoch.</p>",
+      "de": "<p>Diane steht mit leicht gespreizten Beinen in der Badewanne. Sie hat die Hände an den Hüften und hält den Saum ihres Kleides etwas hoch.</p>",
       "ja": "<p>ダイアンは浴槽の中で、脚を少し開いて立っている。腰に手を当て、裾を少したくし上げている。</p>",
       "source": { "node": "bathpee", "slot": 1 }
     },
@@ -60597,8 +60597,8 @@
       "es": "<p>Diane baja las escaleras y la envuelves entre tus brazos. Tu mano se desliza por debajo de su falda, palpando su trasero ahora desnudo.</p>",
       "fr": "<p>Diane descend et vous la prenez dans vos bras. Votre main glisse sous sa jupe, sentant ses fesses maintenant nues.</p>",
       "tw": "<p>黛安從樓上走下來，你張開雙臂將她攬入懷中。你的手悄悄滑進她的裙子底下，摸到了她那赤裸的屁股。</p>",
-      "de": "<p>Diane kommt nach unten, und du nimmst sie in die Arme. Deine Hand gleitet unter ihren Rock und fühlt ihren nun nackten Po.</p>",
-      "ja": "<p>ダイアンが階段を下りてくる。抱きしめ、スカートの下へ手を滑り込ませると、今は何もはいていないお尻に触れる。</p>",
+      "de": "<p>Diane kommt nach unten, und du nimmst sie in die Arme. Deine Hand gleitet unter den Saum und fühlt ihren nun nackten Po.</p>",
+      "ja": "<p>ダイアンが階段を下りてくる。抱きしめ、裾の下へ手を滑り込ませると、今は何もはいていないお尻に触れる。</p>",
       "source": { "node": "secondplace", "slot": 1 }
     },
     {
@@ -60951,7 +60951,7 @@
       "fr": "<p>Diane en avait vraiment besoin, alors — même avec vous planté là à la regarder bouche bée — elle commence à faire pipi presque aussitôt qu’elle s’assoit sur les toilettes. Elle rabat le bas de sa jupe vers l’avant pour garder un semblant de pudeur, mais ça ne cache pas grand-chose.</p>",
       "tw": "<p>黛安實在憋不住了，就算你就站在那裡目瞪口呆地盯著她，她一坐上馬桶幾乎立刻就開始尿。她把裙擺往前推了推，想留一點矜持，但其實遮不住多少。</p>",
       "de": "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Rockes nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
-      "ja": "<p>ダイアンは本当に我慢していたので、あなたが目の前でぽかんと見つめていても、便器に座るとほとんど同時におしっこを始める。少しでも隠そうとスカートの裾を前へ押し出すが、あまり隠れない。</p>",
+      "ja": "<p>ダイアンは本当に我慢していたので、あなたが目の前でぽかんと見つめていても、便器に座るとほとんど同時におしっこを始める。少しでも隠そうと裾を前へ押し出すが、あまり隠れない。</p>",
       "source": { "node": "ontoilet", "slot": 7 }
     },
     {
@@ -61024,7 +61024,7 @@
       "fr": "<p>Vous la regardez. « Je peux regarder ? », vous vous entendez dire. Elle secoue la tête comme si votre folie l’amusait, tire un peu l’ourlet de sa jupe vers l’arrière et s’assied quelques centimètres plus en arrière sur la cuvette.</p>",
       "tw": "<p>你凝視著她。「我能看嗎？」你聽見自己說出口。她搖搖頭，像是在笑你的荒唐，卻將裙擺稍稍往後拉了拉，在馬桶上往後坐了幾英吋。</p>",
       "de": "<p>Du betrachtest sie. „Darf ich zusehen?“, hörst du dich sagen. Sie schüttelt den Kopf, als müsse sie über deine Verrücktheit lächeln, zieht den Rocksaum ein Stück zurück und rutscht auf der Toilette ein paar Zoll weiter nach hinten.</p>",
-      "ja": "<p>彼女を見つめながら、思わず「見てもいい？」と口にしている。彼女はあなたの物好きさにあきれて笑うように首を振り、スカートの裾を少し引き戻して、便器の上で二インチほど後ろへ座り直す。</p>",
+      "ja": "<p>彼女を見つめながら、思わず「見てもいい？」と口にしている。彼女はあなたの物好きさにあきれて笑うように首を振り、裾を少し引き戻して、便器の上で二インチほど後ろへ座り直す。</p>",
       "source": { "node": "ontoilet1", "slot": 3 }
     },
     {
@@ -64869,7 +64869,7 @@
       "fr": "<p>Réfléchissez bien. Vous êtes presque au but. Le premier prix est à votre portée.</p>",
       "tw": "<p>好好想清楚。你幾乎到了。一等獎就在眼前，伸手就拿得到。</p>",
       "de": "<p>Denk gut darüber nach. Du bist fast am Ziel. Der erste Preis ist zum Greifen nah.</p>",
-      "ja": "<p>よく考えよう。あと少しだ。1等賞はもう手の届く所にある。</p>",
+      "ja": "<p>よく考えよう。あと少しだ。一等賞はもう手の届く所にある。</p>",
       "source": { "node": "disaster7b", "slot": 2 }
     },
     {
@@ -65468,7 +65468,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane n’a pas encore l’air d’avoir envie de faire pipi.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安現在看起來還不需要上廁所。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane sieht noch nicht so aus, als müsste sie pinkeln.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンはまだおしっこをしたそうには見えません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンはまだおしっこをしたそうには見えない。</span></em></p>",
       "source": { "node": "notYetSitting", "slot": 1 }
     },
     {
@@ -65480,7 +65480,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane semble parfaitement détendue pour l’instant ; rien n’indique qu’elle ait besoin d’aller aux toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安現在看起來很自在，完全沒有想上廁所的樣子。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane wirkt bisher völlig entspannt. Nichts deutet darauf hin, dass sie auf die Toilette muss.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところすっかりくつろいでいて、トイレに行きたそうな様子はありません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところすっかりくつろいでいて、トイレに行きたそうな様子はない。</span></em></p>",
       "source": { "node": "notYetSitting", "slot": 2 }
     },
     {
@@ -65492,7 +65492,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>目前還看不出黛安有想上廁所的意思。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Noch deutet nichts darauf hin, dass Diane auf die Toilette muss.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンがトイレに行きたそうな様子は、まだ見られません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンがトイレに行きたそうな様子は、まだ見られない。</span></em></p>",
       "source": { "node": "notYetSitting", "slot": 3 }
     },
     {
@@ -65504,7 +65504,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane a l’air tout à fait à l’aise pour l’instant ; à ce que vous pouvez voir, elle n’a pas encore besoin d’aller aux toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安這會兒看起來挺輕鬆的，沒什麼要上廁所的跡象。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane scheint sich im Moment wohlzufühlen. Soweit du erkennen kannst, muss sie noch nicht auf die Toilette.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところ楽そうにしています。見る限り、まだトイレに行く必要はなさそうです。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところ楽そうにしている。見る限り、まだトイレに行く必要はなさそうだ。</span></em></p>",
       "source": { "node": "notYetSitting", "slot": 4 }
     },
     {
@@ -65516,7 +65516,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安看起來還不需要上廁所。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane sieht noch nicht so aus, als müsste sie pinkeln.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンはまだおしっこをしたそうには見えません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンはまだおしっこをしたそうには見えない。</span></em></p>",
       "source": { "node": "notYetStanding", "slot": 1 }
     },
     {
@@ -65528,7 +65528,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane semble tout à fait à l’aise pour l’instant ; elle ne paraît pas avoir besoin d’aller aux toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安這會兒看起來很自在，完全沒有要上廁所的樣子。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane wirkt bisher völlig unbeschwert. Anscheinend muss sie noch nicht auf die Toilette.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところ落ち着いていて、トイレに行きたそうな様子は見られません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところ落ち着いていて、トイレに行きたそうな様子は見られない。</span></em></p>",
       "source": { "node": "notYetStanding", "slot": 2 }
     },
     {
@@ -65540,7 +65540,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>目前還看不出黛安有想上廁所的意思。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Noch deutet nichts darauf hin, dass Diane auf die Toilette muss.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンがトイレに行きたそうな様子は、まだ見られません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンがトイレに行きたそうな様子は、まだ見られない。</span></em></p>",
       "source": { "node": "notYetStanding", "slot": 3 }
     },
     {
@@ -65552,7 +65552,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Debout, Diane semble plutôt détendue ; rien ne laisse penser qu’elle ait déjà besoin d’y aller.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安站在那裡挺輕鬆的，沒什麼要上廁所的跡象。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane steht ganz entspannt da. Nichts deutet darauf hin, dass sie schon auf die Toilette muss.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンはくつろいだ様子で立っていて、まだトイレに行きたそうには見えません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンはくつろいだ様子で立っていて、まだトイレに行きたそうには見えない。</span></em></p>",
       "source": { "node": "notYetStanding", "slot": 4 }
     },
     {
@@ -65564,7 +65564,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane n’a pas l’air d’avoir envie de faire pipi pour l’instant.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安看起來還沒尿意。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane sieht noch nicht so aus, als müsste sie pinkeln.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンはまだおしっこをしたそうには見えません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンはまだおしっこをしたそうには見えない。</span></em></p>",
       "source": { "node": "notYetQueue", "slot": 1 }
     },
     {
@@ -65576,7 +65576,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane semble aller bien pour l’instant ; rien n’indique qu’elle ait besoin d’aller aux toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安這會兒看起來很自在，完全沒有尿意的樣子。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane scheint es gut zu gehen. Nichts deutet darauf hin, dass sie auf die Toilette muss.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところ平気そうで、トイレに行きたそうな様子はありません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンは今のところ平気そうで、トイレに行きたそうな様子はない。</span></em></p>",
       "source": { "node": "notYetQueue", "slot": 2 }
     },
     {
@@ -65588,7 +65588,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Pour l’instant, rien ne laisse penser que Diane ait besoin des toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>目前還看不出黛安有尿意。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Noch deutet nichts darauf hin, dass Diane auf die Toilette muss.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンがトイレに行きたそうな様子は、まだ見られません。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンがトイレに行きたそうな様子は、まだ見られない。</span></em></p>",
       "source": { "node": "notYetQueue", "slot": 3 }
     },
     {
@@ -65600,7 +65600,7 @@
       "fr": "<p><em><span style='color: #ff0000'>Diane paraît parfaitement à l’aise dans la file d’attente ; à ce que vous pouvez voir, elle n’a pas encore besoin d’aller aux toilettes.</span></em></p>",
       "tw": "<p><em><span style='color: #ff0000'>黛安等得挺輕鬆的，沒什麼尿急的跡象。</span></em></p>",
       "de": "<p><em><span style='color: #ff0000'>Diane scheint das Warten nichts auszumachen. Soweit du erkennen kannst, muss sie noch nicht auf die Toilette.</span></em></p>",
-      "ja": "<p><em><span style='color: #ff0000'>ダイアンは楽そうに待っています。見る限り、まだトイレに行く必要はなさそうです。</span></em></p>",
+      "ja": "<p><em><span style='color: #ff0000'>ダイアンは楽そうに待っている。見る限り、まだトイレに行く必要はなさそうだ。</span></em></p>",
       "source": { "node": "notYetQueue", "slot": 4 }
     }
   ]

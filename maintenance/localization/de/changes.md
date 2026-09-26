@@ -133,3 +133,15 @@ assets and runtime modules are unchanged. Installed playable folders remain unto
 The final combined integration and preservation results are recorded in
 `../verification.md`. Historical milestone counts above describe the earlier
 German-only milestone. They are not a separate claim of browser verification.
+
+## Focused follow-up QA — 26 September 2026
+
+Three garment references clarified after checking their connected scenes:
+`x04343` and `x04528` explicitly refer to the dress hem in Saturday scenes;
+`x04562` uses a hem reference suitable for both skirt and dress routes.
+German `Rocksaum` can describe the skirt portion of a dress and was retained
+elsewhere. Exact before/after wording and reasons are recorded in
+`../qa-2026-09-26.json`. No German UI, Gallery or wiki alteration was warranted.
+
+All affected standalone, bilingual, transcript, aligned-table and visual outputs
+were rebuilt. See `../qa-2026-09-26.md` for verification and remaining limits.

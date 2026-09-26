@@ -11,7 +11,7 @@ line breaking. Do not inherit Chinese vocabulary or typography unquestioningly.
 
 ## Established conventions
 
-- Title: ダイアンとのデート. Narration uses contemporary plain prose; Notes use polite explanatory prose. Avoid repeated あなた when the actor is clear; player dialogue is labelled あなた：.
+- Title: ダイアンとのデート. Narration uses contemporary plain prose; Notes and numerical notices use polite explanatory prose; coloured narrative status descriptions use plain prose. Avoid repeated あなた when the actor is clear; player dialogue is labelled あなた：.
 - Names: ダイアン, モリー, ブルーノ, ロバート, クロエ, アマンダ, デビー.
 - Controls: ギャラリー, ガイド, 戻る, お楽しみの場面へ！, ダークモード. Generic transition choices: 続ける。 Keyboard letters remain unchanged.
 - Status: 親密度, 恥じらい, 運試し, おなか, 膀胱.

@@ -31,7 +31,7 @@
   },
   "x00008": {
     "source": "4403948e78c524bfc8a563e91b04e23d27b447e8295470c99e329ae46e3454fd",
-    "target": "1f19e0a4d85cded40f78dfe54eaab131e3c1cd4b16c1deb5771336955317a367",
+    "target": "08cbcd50c2bee4e3fe6c06881f5c72656de127eef1e33d418bc681552c7b86f1",
     "meaning": true,
     "naturalness": true
   },
@@ -22705,7 +22705,7 @@
   },
   "x03476": {
     "source": "b6af7c077001ecda5c3cde749997aae590bebe950926124ee92712cd4181a623",
-    "target": "3d9d0db361daf0ddc7fc0f6102b65f4ff77140bab52e17b0d89aa81ad1a32519",
+    "target": "d00a4ee761d2b3cec025831eb5c56e603c051b3400d01959f0c39f52f3295e4d",
     "meaning": true,
     "naturalness": true
   },
@@ -22849,7 +22849,7 @@
   },
   "x03493": {
     "source": "fb018b18962eb5a27118db8b02bed8294221ce07f0245f78af16ea030954b290",
-    "target": "4bd652dd84da33d459ca963289e22efdb39b00af644ab4451c1b156180ffecc0",
+    "target": "34869904545f16e16e4540cad60a2f19cdedc6b83380dc4efcdd8a22d2ba3ad7",
     "meaning": true,
     "naturalness": true
   },
@@ -29683,7 +29683,7 @@
   },
   "x04562": {
     "source": "1415f48c839478ad80795f856641fd8a3d23e3f07e82adb90a9e9e6fd8025d95",
-    "target": "ab9e598cda877e544e2b2cada8b934254c2ea807357705670907b86fede77442",
+    "target": "83b39e5c0d83920385a780f9b3d201389ba5f1484a95e7476d47516c400cc2e7",
     "meaning": true,
     "naturalness": true
   },
@@ -29857,7 +29857,7 @@
   },
   "x04588": {
     "source": "ec0c2046f2fb50afc7e77726c3266cef235b9bfe112f094913ee61385e228193",
-    "target": "295477fd584a1c9a920ecd5c2718d56f38bd6227f0cda67449b51f92f89a46d5",
+    "target": "d5fbe28756e1cd12d4e0e46aeb6652ac32ff14e4871dcd32dc54faba7f6fc3df",
     "meaning": true,
     "naturalness": true
   },
@@ -29893,7 +29893,7 @@
   },
   "x04594": {
     "source": "f429adc463f04f8981c805ff97d72dc6f13eb980eded6cf1c79d5f35d0140920",
-    "target": "7662df53dbea3812465d4ff46cf17b968cc005830c1607ac3e646f1364baf62c",
+    "target": "52a10f175ea657f40a4fdf78a3ada4364ee39b87f1c83a11e505300958a1456d",
     "meaning": true,
     "naturalness": true
   },
@@ -31711,7 +31711,7 @@
   },
   "x04894": {
     "source": "5cae664b1ceabaa7773b448678a3d3c717a63be02157a7b7663d277a430c50fc",
-    "target": "507af002c4e7627c8f9093f77165551a363887d35ef34c19ed6e0e4c5364c75a",
+    "target": "d4d2a44ac58a85556fdbf4b922d5e6be696196e6237fe0bff4503d6439a72de7",
     "meaning": true,
     "naturalness": true
   },
@@ -32005,73 +32005,73 @@
   },
   "x05504": {
     "source": "e710f72b8c00175f53ce897db6d323c0035e0688b777e3397f1ea0328f76c168",
-    "target": "998b77362968f0e3a0cad50a329b4743b2d337dd32a4d87927b466cb60dae0b8",
+    "target": "6c21aa8440cdbb07247bbe2b3372020da89d9b060d15bcd2fa16971283e160e4",
     "meaning": true,
     "naturalness": true
   },
   "x05505": {
     "source": "f8f0813ac7d62c939a39d436571de266a4b4521a59d6ad4b06d00591bafd3bbf",
-    "target": "1a9274bd1d29a868452811351f1eb8e57d2921d2d33664f9e6f0546fdfaa2dec",
+    "target": "7f956adee0fabc924f4bb430d37cd73a6929a2668f1fc2af0ad5091417d2fee4",
     "meaning": true,
     "naturalness": true
   },
   "x05506": {
     "source": "cb26304b99c1a6b86cb07e4caf132d82ebca0aba35b963d4920251b9a201eca1",
-    "target": "aa9d44701d706087d8a01e5645c8fb2b26047936064bdc1bf813054735be698d",
+    "target": "9cc14c3783126a8db326cffabb7e43c84215f5f7085be709502e17494a227391",
     "meaning": true,
     "naturalness": true
   },
   "x05507": {
     "source": "c19e38a691f3c42632bd3af94b7920a7677e9dac91da736076b52727225ef5cb",
-    "target": "5b165514ebfbc4565711e96ecf176e4d4713a3312f45988609a2e7c9b5e4ed3e",
+    "target": "5fd5a789445c3cdd7ed8a91abbf365a43af55b7f7bdc76db039c22ed41d04623",
     "meaning": true,
     "naturalness": true
   },
   "x05508": {
     "source": "e710f72b8c00175f53ce897db6d323c0035e0688b777e3397f1ea0328f76c168",
-    "target": "998b77362968f0e3a0cad50a329b4743b2d337dd32a4d87927b466cb60dae0b8",
+    "target": "6c21aa8440cdbb07247bbe2b3372020da89d9b060d15bcd2fa16971283e160e4",
     "meaning": true,
     "naturalness": true
   },
   "x05509": {
     "source": "94983dc5851406d2270d3dabaf15e9f23d9f54eb2021d2a1c79c6421edce3140",
-    "target": "759472ccd5d828b3f4cf90a89233ba9a4bd6e9c2c43d4d6778025627d6d06c0d",
+    "target": "124f886510565a78ab3d8e97e7b24e653f66c2862c1828a1ee0f95773669665b",
     "meaning": true,
     "naturalness": true
   },
   "x05510": {
     "source": "cb26304b99c1a6b86cb07e4caf132d82ebca0aba35b963d4920251b9a201eca1",
-    "target": "aa9d44701d706087d8a01e5645c8fb2b26047936064bdc1bf813054735be698d",
+    "target": "9cc14c3783126a8db326cffabb7e43c84215f5f7085be709502e17494a227391",
     "meaning": true,
     "naturalness": true
   },
   "x05511": {
     "source": "cb9bae87c1d38a0ff91d24642f073aa7acdd3e914523498ada79588a3f78ac9d",
-    "target": "a825fe87baa711911af89d9bb30fddf9f2536b7e1ee2f05f9fa3c5b3f2c2759b",
+    "target": "568ad8b9a9305053c5394d7ea969a9f283669c5357562a886b085c1f039fcecc",
     "meaning": true,
     "naturalness": true
   },
   "x05512": {
     "source": "e710f72b8c00175f53ce897db6d323c0035e0688b777e3397f1ea0328f76c168",
-    "target": "998b77362968f0e3a0cad50a329b4743b2d337dd32a4d87927b466cb60dae0b8",
+    "target": "6c21aa8440cdbb07247bbe2b3372020da89d9b060d15bcd2fa16971283e160e4",
     "meaning": true,
     "naturalness": true
   },
   "x05513": {
     "source": "53d47f1b4adce0389b312e09aadec4cd3158d758ff27de75c31a2ec5cdf05be8",
-    "target": "af94ce9f22b795c90cfe0f9fa15b3eef1e5959e3400967f0a6bfba86efa6b185",
+    "target": "0987f975f157030f1896119f7dadf813a183611e8f482a9d4f4efeaa2e92b38d",
     "meaning": true,
     "naturalness": true
   },
   "x05514": {
     "source": "cb26304b99c1a6b86cb07e4caf132d82ebca0aba35b963d4920251b9a201eca1",
-    "target": "aa9d44701d706087d8a01e5645c8fb2b26047936064bdc1bf813054735be698d",
+    "target": "9cc14c3783126a8db326cffabb7e43c84215f5f7085be709502e17494a227391",
     "meaning": true,
     "naturalness": true
   },
   "x05515": {
     "source": "ff4589cb3346e8c735b9b8f401d4c17194af646c8c42f0ea04d503fdf6fdaf09",
-    "target": "73ce24da30deb8477e29649df1456e9323568d9a2781b5903bfcb960f0f3ee79",
+    "target": "f3f94674aa5bb96c2c2587f7cba07dbb7f111b654977fdb69529311bb0590583",
     "meaning": true,
     "naturalness": true
   },

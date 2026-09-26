@@ -8,7 +8,8 @@ structural separators; they are catalog entries, not displayed line counts.
 
 ## Language decisions and revisions
 
-- Contemporary plain narration, natural dialogue and polite Notes/status prose.
+- Contemporary plain narration and coloured urgency descriptions, natural dialogue,
+  and polite Notes/numerical notices.
   No added dialect, honorifics or exaggerated character speech. Subjects are omitted
   only when the actor stays clear.
 - British currency, measurements, names and setting retained. Pounds use ポンド;
@@ -66,3 +67,20 @@ existing palettes, Notes spacing and scrolling behavior are preserved.
 `../verification.md` records final technical checks and their limits. Automated
 checks do not certify linguistic perfection. No independent native-speaker or
 new browser-rendering review is claimed.
+
+## Focused follow-up QA — 26 September 2026
+
+Nineteen catalog entries improved, with exact before/after text and reasons in
+`../qa-2026-09-26.json`:
+
+- `x00008`: simplify the literal description of the five successful endings.
+- `x04894`: use the established narrative/Gallery name `一等賞`.
+- `x05504`–`x05515`: use plain narration consistently across the calm and urgent
+  coloured descriptions. Numerical system notices retain their polite voice.
+- `x03476`, `x03493`, `x04562`, `x04588`, `x04594`: use `裾` in shared skirt/dress
+  scenes. The first also reuses the natural, equivalent modest-action wording
+  already used in its parallel scene.
+
+No Japanese companion labels or wiki text needed alteration. All corresponding
+standalone, bilingual, transcript, aligned-table and visual outputs were rebuilt.
+See `../qa-2026-09-26.md` for the verification scope and remaining limits.

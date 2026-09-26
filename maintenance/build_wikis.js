@@ -11,7 +11,12 @@ const script = read("source/runtime/wiki.js").trimEnd();
 new vm.Script(script);
 const css = read("source/styles/wiki.css").trimEnd();
 const pending = [];
+const selected = process.argv.find((arg) => arg.startsWith("--lang="))?.slice(7);
+assert(!selected || Object.hasOwn(editions, selected), "Unknown wiki locale");
+let count = 0;
 for (const [lang, edition] of Object.entries(editions)) {
+  if (selected && lang !== selected) continue;
+  count++;
   const template = read(`source/wiki/${lang}.html`);
   for (const key of ["STYLE", "SCRIPT"]) {
     assert.equal(
@@ -20,7 +25,10 @@ for (const [lang, edition] of Object.entries(editions)) {
       `Expected one ${key} slot in ${lang} wiki`,
     );
   }
-  const style = (edition.font ? `:root { --wiki-font: ${edition.font}; }\n` : "") + css;
+  const style =
+    (edition.font ? `:root { --wiki-font: ${edition.font}; }\n` : "") +
+    css +
+    (edition.extraStyle ? "\n" + read(`source/styles/${edition.extraStyle}`) : "");
   const html = template
     .replace("/* ADWD:STYLE */", () => style)
     .replace("/* ADWD:SCRIPT */", () => script);
@@ -29,5 +37,9 @@ for (const [lang, edition] of Object.entries(editions)) {
 }
 const check = process.argv.includes("--check");
 if (check) assert.equal(pending.length, 0, "Stale wikis; run node maintenance/build_wikis.js");
-else for (const { file, html } of pending) fs.writeFileSync(file, html);
-console.log(`${check ? "Verified" : "Built"} five wikis; ${pending.length} changed files.`);
+else
+  for (const { file, html } of pending) {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, html);
+  }
+console.log(`${check ? "Verified" : "Built"} ${count} wikis; ${pending.length} changed files.`);

@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Welbourne-Wiki</title>
+    <style>
+      /* ADWD:STYLE */
+    </style>
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="game-toolbar">
+        <button
+          type="button"
+          id="themeToggle"
+          data-theme-on="Dunkelmodus: An"
+          data-theme-off="Dunkelmodus: Aus"
+          class="theme-toggle-button theme-toggle-off"
+          aria-pressed="false"
+        >
+          Dunkelmodus: Aus
+        </button>
+      </div>
+      <div id="box" class="wiki-box">
+        <div class="wiki-page active" id="page-index">
+          <h1>Welbourne-Wiki</h1>
+          <p class="wiki-lead">
+            Hintergrundinformationen zu Schauplatz und Figuren von <em>Ein Date mit Diane</em>. Die
+            Artikel beschreiben <strong>Welbourne</strong> und die Menschen im Umfeld von Simon
+            Hartleys und Diane Ellisons erstem Date, das dort im Frühsommer 2005 stattfindet.
+          </p>
+          <h2>Figuren</h2>
+          <table class="wiki-cast">
+            <tr>
+              <th>Bezeichnung im Spiel</th>
+              <th>Name</th>
+              <th>Alter</th>
+            </tr>
+            <tr>
+              <td>Du</td>
+              <td>Simon Hartley</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>Diane</td>
+              <td>Diane Ellison</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Molly</td>
+              <td>Molly Yates</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Bruno</td>
+              <td>Bruno Palmer</td>
+              <td>35</td>
+            </tr>
+            <tr>
+              <td>Robert</td>
+              <td>Robert Miles</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>Dein Bruder</td>
+              <td>Daniel Hartley</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>Chloe</td>
+              <td>Chloe Hollis</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>Amanda</td>
+              <td>Amanda Marlow</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>Debbie (die Brünette)</td>
+              <td>Debbie Croft</td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td>Debbies Freund</td>
+              <td>Craig Flynn</td>
+              <td>25</td>
+            </tr>
+          </table>
+          <h2>Artikel</h2>
+          <ol class="wiki-articles">
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('01_welbourne');
+                  return false;
+                "
+                >Welbourne</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('02_simon_hartley');
+                  return false;
+                "
+                >Simon Hartley</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('03_diane_ellison');
+                  return false;
+                "
+                >Diane Ellison</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('04_molly_yates');
+                  return false;
+                "
+                >Molly Yates</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('05_bruno_palmer');
+                  return false;
+                "
+                >Bruno Palmer</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('06_robert_miles');
+                  return false;
+                "
+                >Robert Miles</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('07_daniel_hartley');
+                  return false;
+                "
+                >Daniel Hartley</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('08_chloe_hollis');
+                  return false;
+                "
+                >Chloe Hollis</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('09_amanda_marlow');
+                  return false;
+                "
+                >Amanda Marlow</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('10_debbie_croft');
+                  return false;
+                "
+                >Debbie Croft</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  showPage('11_other_characters');
+                  return false;
+                "
+                >Weitere Figuren</a
+              >
+            </li>
+          </ol>
+          <h2>Orte</h2>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Art</th>
+            </tr>
+            <tr>
+              <td>Welbourne</td>
+              <td>Stadt</td>
+            </tr>
+            <tr>
+              <td>Bourne</td>
+              <td>Fluss</td>
+            </tr>
+            <tr>
+              <td>Waterfront Theatre</td>
+              <td>Theater</td>
+            </tr>
+            <tr>
+              <td>Golden Stream Inn</td>
+              <td>Pub</td>
+            </tr>
+            <tr>
+              <td>The Pavilion</td>
+              <td>Pub</td>
+            </tr>
+            <tr>
+              <td>Pisa Pizzeria</td>
+              <td>Restaurant</td>
+            </tr>
+            <tr>
+              <td>Beck &amp; Partners</td>
+              <td>Immobilienbüro</td>
+            </tr>
+            <tr>
+              <td>Welbourne Players</td>
+              <td>Amateurtheatergruppe</td>
+            </tr>
+            <tr>
+              <td>Welbourne College</td>
+              <td>College mit Oberstufenunterricht</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="wiki-page" id="page-01_welbourne" data-title="Welbourne">
+          <h1>Welbourne</h1>
+          <p>
+            <strong>Welbourne</strong> ist eine Marktstadt im Osten Englands. Sie ist Schauplatz von
+            <em>Ein Date mit Diane</em>, das dort im Frühsommer 2005 spielt.
+          </p>
+          <p>
+            Welbourne liegt an der <strong>Bourne</strong>, einem kleinen Fluss, der früher von
+            Lastkähnen befahren wurde. Heute dient seine Umgebung vor allem Spaziergängen und der
+            Erholung. Die Einwohner sprechen meist einfach vom „Fluss“.
+          </p>
+          <h2>Namensherkunft</h2>
+          <p>
+            Der Name verbindet altenglische Wörter für eine Quelle oder einen Brunnen und einen
+            <em>bourne</em>, also einen Bach. Er bezeichnet somit eine Siedlung an einem von einer
+            Quelle gespeisten Bach.
+          </p>
+          <h2>Geografie</h2>
+          <p>
+            Die Stadt erstreckt sich über beide Ufer der Bourne. Ihr historisches Zentrum liegt am
+            Nordufer um die Pfarrkirche und den Marktplatz. Neuere Wohngebiete schließen sich im
+            Süden und Westen an. Die Stadtverwaltung gestaltete das Flussufer unterhalb der Kirche
+            in den 1980er-Jahren und erneut Ende der 1990er-Jahre um.
+          </p>
+          <p>
+            Von Welbourne aus sind Anschlüsse an die East Coast Main Line in der Region erreichbar.
+            Längere Bahnreisen erfordern in der Regel einen Umstieg an einem größeren Bahnhof.
+          </p>
+          <h2>Verwaltung</h2>
+          <p>
+            Für die kommunale Verwaltung ist der Welbourne Borough Council zuständig. Die Stadt hat
+            keine Universität. Die weiterführende Ausbildung ab sechzehn Jahren konzentriert sich
+            auf das Welbourne College.
+          </p>
+          <h2>Bevölkerung</h2>
+          <p>Schätzungen aus der Mitte der 2000er-Jahre nennen die folgenden Merkmale.</p>
+          <table>
+            <tr>
+              <th>Merkmal</th>
+              <th>Angaben</th>
+            </tr>
+            <tr>
+              <td>Einwohnerzahl der Stadt</td>
+              <td>etwa 24.000</td>
+            </tr>
+            <tr>
+              <td>Einwohnerzahl des Verwaltungsbezirks einschließlich der Dörfer</td>
+              <td>etwa 38.000</td>
+            </tr>
+            <tr>
+              <td>Ethnische Zusammensetzung</td>
+              <td>
+                Überwiegend weiße britische Bevölkerung, daneben kleinere Gruppen anderer weißer,
+                südasiatischer und gemischter Herkunft
+              </td>
+            </tr>
+            <tr>
+              <td>Altersstruktur</td>
+              <td>
+                Etwas älter als der Landesdurchschnitt, mit einer durch das College geprägten,
+                deutlich vertretenen Gruppe von Oberstufenschülern und jungen Erwachsenen
+              </td>
+            </tr>
+            <tr>
+              <td>Beschäftigung</td>
+              <td>
+                Öffentlicher Dienst, Einzelhandel, Leichtindustrie in Gewerbegebieten am Stadtrand
+                sowie Pendelverkehr in größere Zentren
+              </td>
+            </tr>
+            <tr>
+              <td>Wohnbebauung</td>
+              <td>
+                Viktorianische Reihenhäuser, Doppelhaushälften aus der Zwischenkriegszeit und neuere
+                Wohnsiedlungen. Junge Erwachsene wohnen häufig zur Miete bei privaten Vermietern.
+              </td>
+            </tr>
+          </table>
+          <h2>Wirtschaft</h2>
+          <p>
+            An der Hauptgeschäftsstraße liegen eine große Boots-Apotheke, Banken und unabhängige
+            Geschäfte, die bereits unter dem Druck von Einkaufszentren außerhalb der Stadt stehen.
+            Das Immobilienbüro <strong>Beck &amp; Partners</strong> gegenüber der Pfarrkirche
+            betreut einen großen Teil des örtlichen Wohnimmobilienmarkts. Die Angebote in seinem
+            Schaufenster wechseln nur langsam.
+          </p>
+          <p>
+            Die Gastronomie konzentriert sich auf die Umgebung des Theaters und des Flusses. Dazu
+            gehören die Pisa Pizzeria im Theatergebäude, das Golden Stream Inn und das weiter am
+            Uferweg gelegene Pavilion.
+          </p>
+          <h2>Verkehr</h2>
+          <p>
+            Die örtlichen Buslinien in die wichtigsten Wohngebiete verkehren bis
+            <strong>23.15 Uhr</strong>. Taxistände befinden sich beim Theater und am Ende des
+            Uferwegs beim Pavilion. Wer abends ausgeht, legt die Wege zwischen den Lokalen am Fluss
+            häufig zu Fuß zurück.
+          </p>
+          <h2>Bildung</h2>
+          <p>
+            Das <strong>Welbourne College</strong> bietet Oberstufenunterricht an. Mehrere jüngere
+            Einwohner haben dort gerade ihre Prüfungen abgeschlossen. Viele Einwohner besuchten
+            zuvor örtliche Grundschulen und eine Gesamtschule.
+          </p>
+          <h2>Kultur und Freizeit</h2>
+          <h3>Waterfront Theatre</h3>
+          <p>
+            Das <strong>Waterfront Theatre</strong> ist nach der Pfarrkirche das größte öffentliche
+            Gebäude in Welbourne. Das städtische Theater aus rotem Backstein verfügt über ein Foyer,
+            ein Parkett, einen Balkon mit Blick auf den Park, eine Lautsprecheranlage und einen
+            Bühneneingang. Auf dem Spielplan stehen Komödien, Shakespeare-Aufführungen im Sommer und
+            gelegentlich Produktionen mit Fernsehdarstellern, die den Kartenverkauf ankurbeln
+            sollen. Die Aufführungsserie von <em>Outside Edge</em> nähert sich ihrem Ende.
+          </p>
+          <h3>Welbourne Players</h3>
+          <p>
+            Die <strong>Welbourne Players</strong> sind die wichtigste Amateurtheatergruppe der
+            Stadt. Diane Ellison und Molly Yates haben beide dort gespielt. Molly wechselte später
+            ins professionelle Schauspiel und übernahm unter anderem einen Kurzauftritt im
+            Waterfront Theatre.
+          </p>
+          <h3>Pubs und Wege am Fluss</h3>
+          <table>
+            <tr>
+              <th>Lokal</th>
+              <th>Beschreibung</th>
+            </tr>
+            <tr>
+              <td>Golden Stream Inn</td>
+              <td>
+                Pub gegenüber dem Theater. Donnerstags trinken Frauen kostenlos, dienstags gibt es
+                zwei Getränke zum Preis von einem.
+              </td>
+            </tr>
+            <tr>
+              <td>The Pavilion</td>
+              <td>
+                Pub mit Biergarten am Ende des Uferwegs bei der Busendhaltestelle. Die
+                Sonderangebote gelten an den jeweils anderen Tagen als im Golden Stream. Zur
+                Schließzeit gibt es Türpersonal.
+              </td>
+            </tr>
+            <tr>
+              <td>Pisa Pizzeria</td>
+              <td>
+                Restaurant im Theatergebäude. Zu den Mahlzeiten gibt es eine kostenlose Karaffe
+                Wasser.
+              </td>
+            </tr>
+          </table>
+          <p>
+            Am Weg zwischen dem Theater und dem Pavilion liegen ein kommunales Toilettengebäude, ein
+            Burger-Imbisswagen, ein künstlicher Wasserfall, ein Musikpavillon, ein Container, eine
+            Brücke und ein Zugang zum Treidelpfad. Dazwischen stehen etwa vier Fuß hohe Büsche. Am
+            Toilettengebäude sind Öffnungszeiten von 9 bis 21 Uhr angeschlagen. Der Aufseher
+            schließt gelegentlich später ab, samstags häufig früher.
+          </p>
+          <h3>Reisen und Festivals</h3>
+          <p>
+            Einwohner fahren häufig zu Musikfestivals außerhalb der Stadt, etwa nach Glastonbury
+            oder auf die Isle of Wight, und verbringen ihren Urlaub in Italien, Griechenland und
+            anderen Ländern.
+          </p>
+          <h2>Religion und öffentliche Gebäude</h2>
+          <p>
+            Die Pfarrkirche hat ein überdachtes Friedhofstor und liegt gegenüber von Beck &amp;
+            Partners. Die Verwaltungsgebäude befinden sich am Rand des Stadtzentrums.
+          </p>
+          <h2>Wohngebiete</h2>
+          <table>
+            <tr>
+              <th>Gebiet</th>
+              <th>Anmerkungen</th>
+            </tr>
+            <tr>
+              <td>Straßen nahe der Kirche</td>
+              <td>
+                Ältere Häuser mit kurzen Einfahrten. Hier wohnen unter anderem die Familien Ellison
+                und Croft.
+              </td>
+            </tr>
+            <tr>
+              <td>Seitenstraße von Diane Ellisons Straße</td>
+              <td>
+                Hier wohnt die Familie Hollis. Nimmt man die Abkürzung über die Ecke, sind es vom
+                Gartentor der Ellisons etwa zwanzig Yards.
+              </td>
+            </tr>
+            <tr>
+              <td>Doppelhaushälften am Stadtrand</td>
+              <td>
+                Hier steht unter anderem das Haus der Hartleys, entlang der späten Buslinie etwa
+                eine Meile hinter Diane Ellisons Haltestelle.
+              </td>
+            </tr>
+          </table>
+          <p>
+            Mit dem Taxi liegen die Häuser der Ellisons und der Hartleys nahe beieinander. Mit dem
+            Bus sind es unterschiedliche Haltestellen.
+          </p>
+          <h2>Kommunikation</h2>
+          <p>
+            Festnetztelefone und Mobiltelefone sind alltäglich. Berufstätige Erwachsene nutzen
+            häufig E-Mail. Internetanschlüsse zu Hause und Laptops sind unter Jugendlichen und
+            jungen Erwachsenen weit verbreitet. Kommerzielle Fotoplattformen wie Webshots werden als
+            mögliche Quelle peinlicher Veröffentlichungen wahrgenommen. Smartphone-Apps gehören noch
+            nicht zum Alltag.
+          </p>
+          <h2>In <em>Ein Date mit Diane</em></h2>
+          <p>
+            Der Abend spielt sich hauptsächlich im Theaterviertel von Welbourne, am Uferweg, entlang
+            der Busstrecke und in einigen Privathäusern ab. Arbeitsplätze, das College und die
+            Familienhäuser bilden den weiteren Hintergrund.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-02_simon_hartley" data-title="Simon Hartley">
+          <h1>Simon Hartley</h1>
+          <blockquote class="wiki-quote">
+            <p>
+              Musstest du schon einmal ganz dringend pinkeln? Ich meine, hast du es schon mal, na
+              ja, zu lange hinausgezögert? Würdest du mir davon erzählen?
+            </p>
+            <footer>– <cite>Simon Hartley</cite></footer>
+          </blockquote>
+          <p>
+            <strong>Simon Hartley</strong>, geboren im Mai 1978, ist ein 27-jähriger Einwohner von
+            Welbourne. Er teilt sich mit seinem jüngeren Bruder Daniel Hartley eine Doppelhaushälfte
+            und arbeitet in einem Büro in der Stadt. Am Morgen nach seinem ersten Date mit Diane
+            Ellison steht ein Gespräch über eine mögliche Beförderung an. Hartley und Ellison
+            lernten sich kennen, nachdem sie beide den letzten Bus verpasst hatten und sich ein Taxi
+            teilten.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Hartley wurde in Welbourne geboren und wuchs in der Doppelhaushälfte der Familie auf,
+            die er später mit Daniel teilt. Seine Mutter Helen Hartley heiratete erneut und zog nach
+            Scarborough, als Daniel noch zur Schule ging. Sein Vater Philip Hartley war bereits in
+            eine Wohnung in einer Nachbarstadt gezogen. Danach bestand nur noch wenig Kontakt. Die
+            Brüder behielten das Haus. Simon, der bereits berufstätig war, übernahm die
+            Verantwortung für die Hypothek und die Haushaltskosten.
+          </p>
+          <p>
+            Als Kind war er ruhig und nahm kaum an Mannschaftssport teil. Zu seinen
+            Freizeitbeschäftigungen gehörten Briefmarkensammeln, Eisenbahnfachbücher und Radfahren.
+            Gleichaltrige ignorierten ihn eher, als ihn zu schikanieren.
+          </p>
+          <h2>Bildung</h2>
+          <p>
+            Er besuchte die Gesamtschule und die Oberstufe in Welbourne und absolvierte anschließend
+            ein erstes Hochschulstudium außerhalb der Stadt. Der Abschluss führte nicht unmittelbar
+            zu einem spezialisierten Beruf. Er kehrte nach Welbourne zurück und nahm eine
+            Verwaltungstätigkeit an, die ursprünglich als Übergangslösung gedacht war.
+          </p>
+          <h2>Beruf</h2>
+          <p>
+            Seine Arbeit besteht aus routinemäßigen Büroaufgaben wie Ablage, Korrespondenz,
+            telefonischen Auskünften und ähnlichen Tätigkeiten. Seine Kollegen halten ihn im
+            Allgemeinen für zuverlässig und zurückhaltend. Die mögliche Beförderung würde sein
+            Gehalt etwas erhöhen, den Charakter der Arbeit aber weitgehend unverändert lassen. Er
+            geht sorgfältig mit Geld um, auch weil er für den Haushalt aufkommt.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Hobbys</h3>
+          <p>
+            Hartley sammelt Briefmarken des Britischen Empire aus den 1940er- und 1950er-Jahren. Er
+            interessiert sich für Diesel- und Dampfeisenbahnen und hat Bahnreisen in der Schweiz
+            unternommen. Er fährt regelmäßig Rad, hat die Coast-to-Coast-Radroute in zwei Tagen
+            bewältigt und ist den Coast to Coast Path mit einem Freund in etwa einer Woche
+            gewandert. Vor Kurzem hat er ein gebrauchtes BMW-Coupé gekauft. Er besucht das Theater
+            als Zuschauer und hat selbst nie geschauspielert.
+          </p>
+          <h3>Beziehungen</h3>
+          <p>
+            Er hatte bislang nur wenige Liebesbeziehungen. Eine Beziehung mit einer Mitschülerin
+            namens Louise während der Oberstufe dauerte drei Wochen. An der Universität hatte er
+            kurze Beziehungen, die mit dem Semester endeten. Eine spätere Beziehung mit seiner
+            Kollegin Karen dauerte fast einen ganzen Winter. Sie endete ohne größeren Streit,
+            nachdem beide anhaltend unterschiedliche Vorstellungen davon hatten, wie sie ihre
+            gemeinsamen Abende verbringen sollten.
+          </p>
+          <p>
+            Er besuchte bereits eine frühere Vorstellung von <em>Outside Edge</em> im Waterfront
+            Theatre, bevor er Diane Ellison zu einer späteren Aufführung begleitet. Er erzählt ihr
+            nichts von seinem früheren Besuch.
+          </p>
+          <h3>Sexuelle Interessen</h3>
+          <p>
+            Hartleys wichtigste private sexuelle Vorliebe gilt dem Harndrang von Frauen. Dazu
+            gehören Anzeichen eines dringenden Bedürfnisses zu urinieren, langes Einhalten und
+            Situationen, in denen eine Frau unwillkürlich oder im Freien uriniert, weil sie nicht
+            länger warten kann. Mit Partnerinnen spricht er gewöhnlich nicht darüber.
+          </p>
+          <p>[Passage ausgelassen.]</p>
+          <p>
+            Als Erwachsener hat er privat nach entsprechendem Material gesucht und sich gelegentlich
+            gezielt an Orte begeben, an denen er Frauen mit starkem Harndrang beobachten konnte. So
+            folgte er einmal einer Frau aus einem Nachtbus und sah ihr beim Urinieren hinter einem
+            geparkten Lieferwagen zu. Während seiner Beziehung mit Karen fuhr er einmal langsamer
+            als nötig, nachdem sie gesagt hatte, dass sie dringend urinieren müsse. Er gab dafür
+            keine Erklärung.
+          </p>
+          <p>
+            An dem Abend, an dem er Diane Ellison kennenlernte, beobachtete er sie beim Urinieren
+            hinter einem Kleinbus auf einem Parkplatz, bevor sie sich ein Taxi teilten.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>
+            Das Haus der Hartleys ist eine Doppelhaushälfte mit einem durchgehenden Wohnzimmer und
+            einem Badezimmer im Obergeschoss. Simons Schlafzimmer geht vom Treppenabsatz ab, Daniels
+            liegt auf der Rückseite. Das Haus liegt entlang der späten Buslinie etwa eine Meile
+            hinter Diane Ellisons Haltestelle. Simon kauft die grundlegenden Dinge für den Haushalt
+            ein und empfindet das Zusammenleben mit einem Achtzehnjährigen zugleich als alltäglich
+            und anstrengend. Einige von Daniels Freunden kennt er vom Sehen. Entdeckt Simon eine
+            versteckte Badezimmerkamera, die mit Daniels Laptop verbunden ist, ist das für ihn
+            Anlass zu einer ernsten Auseinandersetzung.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-03_diane_ellison" data-title="Diane Ellison">
+          <h1>Diane Ellison</h1>
+          <blockquote class="wiki-quote">
+            <p>Du weißt ganz genau, warum ich den Bus verpasst habe. Das war so peinlich!</p>
+            <footer>– <cite>Diane Ellison</cite></footer>
+          </blockquote>
+          <p>
+            <strong>Diane Ellison</strong>, geboren im September 1979, ist eine 25-jährige
+            Einwohnerin von Welbourne. Sie arbeitet bei Beck &amp; Partners, dem Immobilienbüro
+            gegenüber der Pfarrkirche, und wohnt in der Nähe bei ihren Eltern. Nachdem sie mit Simon
+            Hartley den letzten Bus verpasst und sich ein Taxi geteilt hat, sagt sie einem ersten
+            Date zu. Sie wünscht sich Karten für <em>Outside Edge</em> im Waterfront Theatre, wo
+            ihre Freundin Molly Yates in der letzten Aufführungswoche mitspielt.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Ellison wuchs in Welbourne in einem Haus mit kurzer Einfahrt und einer Toilette im
+            Erdgeschoss auf. Ihre Mutter Margaret Ellison bleibt oft wach, wenn Diane spät nach
+            Hause kommt, legt Wert auf eine sichere Arbeitsstelle und lehnt einen Umzug nach London
+            ab. Ihr Vater Alan Ellison war viele Jahre Lokführer auf der East Coast Main Line und
+            ist inzwischen im Ruhestand. Er verbringt Zeit im Garten, hört Radio und erinnerte Diane
+            während ihrer gesamten Kindheit daran, vor dem Verlassen des Hauses auf die Toilette zu
+            gehen.
+          </p>
+          <p>
+            Ihr älterer Bruder Paul Ellison lebt in Leeds. Als Jugendlicher sammelte er eine Zeit
+            lang Briefmarken und verkaufte die Sammlung später. Diane bewohnt weiterhin ein Zimmer
+            im Elternhaus. Sie hatte erwartet, mit dem College Welbourne dauerhaft hinter sich zu
+            lassen, kehrte danach aber für eine Arbeitsstelle vor Ort zurück.
+          </p>
+          <h2>Bildung</h2>
+          <p>
+            Sie besuchte mit Molly Yates die örtliche Gesamtschule und spielte bei den Welbourne
+            Players. Später absolvierte sie einen College-Kurs, zu dem Schauspiel gehörte, und
+            spielte Gwendolen in <em>The Importance of Being Earnest</em>. Die Stelle bei Beck &amp;
+            Partners bekam sie über einen Kontakt ihrer Mutter aus der Kirchengemeinde. Sie
+            interessiert sich weiterhin für das Schauspiel, auch für Shakespeare, ohne darin einen
+            festen Berufsplan zu sehen.
+          </p>
+          <h2>Beruf</h2>
+          <p>
+            Bei Beck &amp; Partners erledigt sie die üblichen Aufgaben eines Wohnimmobilienbüros in
+            einem ruhigen Markt. Objektangebote bleiben lange im Schaufenster, und sie hält einen
+            Stellenabbau für möglich. Sie hat darüber gesprochen, nach London zu ziehen und dort
+            andere Arbeit zu suchen. Verwandtschaft in Leyton hat ihr vorübergehend einen
+            Schlafplatz auf einem Sofa angeboten. Gepackt hat sie noch nicht. Sie wehrt sich
+            dagegen, wenn ein neuer Bekannter schon früh den Eindruck erweckt, über diese
+            Entscheidung bestimmen zu dürfen.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Umgang mit Harndrang</h3>
+          <p>
+            Ellison fällt es seit Langem schwer, in Gesellschaft zuzugeben, dass sie dringend
+            urinieren muss. Sie wartet meist auf einen gesellschaftlich passenden Moment, um sich zu
+            entschuldigen, doch solche Gelegenheiten ergeben sich nicht immer rechtzeitig. So kam
+            sie schon mit nasser Unterwäsche nach Hause, verlor in öffentlichen Verkehrsmitteln Urin
+            in ihre Strumpfhose, urinierte hinter den Mülltonnen am Elternhaus oder hielt während
+            Unterrichtsstunden und Mahlzeiten bis zum letztmöglichen Moment ein.
+          </p>
+          <p>
+            Menschen, denen sie vertraut, erzählt sie gelegentlich ausgewählte Erlebnisse. Dazu
+            gehört die Einführungswoche am College mit achtzehn Jahren. Nach reichlichem
+            Alkoholgenuss musste sie auf dem Weg zurück zur Unterkunft dringend urinieren und verlor
+            im Vorraum die Kontrolle über ihre Blase, während jemand aus ihrer Runde nach dem
+            Schlüssel suchte. Dabei nässte sie ihre Jeans ein. Ein weiteres Erlebnis stammt von
+            einem Junggesellinnenwochenende in den Niederlanden. Ihre Freundinnen benutzten ein
+            Pissoir, während sie selbst das wegen ihrer Hose nicht ebenso machen konnte. Weil jemand
+            eine Kamera hervorholte, wartete sie weiter und urinierte schließlich hinter einem
+            Lastwagen. Alltägliche Missgeschicke im Privaten erzählt sie nicht als öffentliche
+            Anekdoten.
+          </p>
+          <h3>Freundschaften</h3>
+          <p>
+            Molly Yates ist seit der Schulzeit ihre engste Freundin. Die beiden fahren in den
+            meisten Jahren nach Italien. Ellison reist am liebsten nach Venedig. Eine neuere Reise
+            führte nach Neapel und Sorrent, gefolgt von einer Bootsfahrt nach Capri. Ein früherer
+            Urlaub in Griechenland verlief wegen der Hitze und der schlechten Toilettenversorgung
+            unbefriedigend. Im Sommer sprechen sie über Wassersport. Ellison fährt gern Wasserski,
+            und Yates übernimmt meist die Buchungen. Yates nach <em>Outside Edge</em> zu treffen hat
+            Vorrang vor anderen Plänen für den späteren Abend.
+          </p>
+          <p>
+            Neil Cooper, den sie früher aus dem Schulbus kannte und der später in einer örtlichen
+            Werkstatt arbeitete, grüßt sie in der Stadt noch immer mit einem Nicken.
+          </p>
+          <p>[Passage ausgelassen.]</p>
+          <p>
+            Debbie Croft wohnt in derselben Straße. Chloe Hollis wohnt in einer nahe gelegenen
+            Seitenstraße. Keine der beiden ist eine enge Freundin.
+          </p>
+          <h3>Beziehungen</h3>
+          <p>
+            Gary Hill war etwa 2003 für ungefähr acht Monate ihr Freund. Er beschäftigte sich vor
+            allem mit Autos und Fahrstrecken und weigerte sich wiederholt anzuhalten, wenn Ellison
+            eine Toilette brauchte. Mehr als einmal tat er das so lange, bis sie bereits Urin auf
+            den Autositz verlor. Seitdem mag sie keine Gespräche, die sich hauptsächlich um Autos
+            drehen.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>
+            Das Haus der Ellisons liegt in den Straßen nahe der Kirche. Bei feuchtem Wetter klemmt
+            das Haustürschloss. Unter der Treppe befindet sich eine Toilette im Erdgeschoss.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-04_molly_yates" data-title="Molly Yates">
+          <h1>Molly Yates</h1>
+          <blockquote class="wiki-quote">
+            <p>
+              Gott, ich bin fast geplatzt. Ich dachte, ich pinkle mir gleich auf der Bühne in die
+              Hose. Alles im Namen der Kunst.
+            </p>
+            <footer>– <cite>Molly Yates</cite></footer>
+          </blockquote>
+          <p>
+            <strong>Molly Yates</strong>, geboren im Frühjahr 1980, ist eine 25-jährige
+            Schauspielerin aus Welbourne und Diane Ellisons engste Freundin. In der letzten
+            Aufführungswoche von <em>Outside Edge</em> übernimmt sie einen Kurzauftritt im
+            Waterfront Theatre.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Yates besuchte dieselbe Gesamtschule wie Diane Ellison und spielte mit ihr bei den
+            Welbourne Players. Sie verfolgte das Schauspiel nach der Schule beharrlicher als
+            Ellison. Einen Hochschulabschluss machte sie nicht. Ihre Mutter June Yates wohnt in
+            einem Reihenhaus, weiter vom Stadtzentrum entfernt als die Familie Ellison. Ihr Vater
+            ging, als sie zwölf war. Seitdem bestand nur unregelmäßiger Kontakt.
+          </p>
+          <p>
+            Nach der Schule arbeitete sie im Jugendtheater, lebte eine Zeit lang in einer
+            Wohngemeinschaft in Manchester, nahm an unbezahlten Vorsprechen teil und trat in
+            mindestens einem Fernsehwerbespot auf.
+          </p>
+          <h2>Beruf</h2>
+          <p>
+            Das Engagement am Waterfront Theatre ist bezahlte professionelle Arbeit in ihrer
+            Heimatstadt, mit Bruno Palmer als Spielpartner. In <em>Outside Edge</em> spielt sie eine
+            Figur, die wütend fortgeht, und später eine Figur, die nicht in die Toilette eines
+            Vereinsheims gelangt. Robert Miles probte die zweite Szene sowohl als körperliche als
+            auch als komische Herausforderung. Unter anderem bat er Yates, zu einer Nachmittagsprobe
+            mit voller Blase zu erscheinen. Für die Rolle ließ sie sich die Haare kurz schneiden und
+            behielt die Frisur.
+          </p>
+          <p>
+            Für die Zeit unmittelbar nach dem Ende der Aufführungen hat sie noch keinen festen
+            Vertrag. Möglich sind eine Rückkehr nach Manchester, vorübergehende Arbeit außerhalb des
+            Schauspiels und weitere Vorsprechen an regionalen Bühnen.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Freundschaften</h3>
+          <p>
+            Sie fährt in den meisten Jahren mit Diane Ellison nach Italien und organisiert
+            gewöhnlich die gemeinsamen Wassersportaktivitäten im Sommer. Ellisons
+            Junggesellinnenwochenende in den Niederlanden verpasste sie wegen der Proben. Sie weiß,
+            dass Ellison seit Langem Schwierigkeiten hat, dringenden Harndrang in Gesellschaft
+            zuzugeben, und macht sich ihr gegenüber nicht darüber lustig.
+          </p>
+          <h3>Beziehungen</h3>
+          <p>
+            Während der Aufführungsserie in Welbourne verlässt sie dienstags und samstags das
+            Theater mit Bruno Palmer, donnerstags mit Robert Miles. Sie mag Palmer, bezeichnet die
+            beiden aber nicht als festes Paar. Sie respektiert Miles als Regisseur und versteht
+            seine Probenmethoden als berufliche Anforderungen, nicht als persönliche Marotten. Nach
+            der letzten Vorstellung weiß sie nicht, ob der Kontakt zu Palmer bestehen bleiben wird.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>
+            Sie hat keinen festen Wohnsitz in London. Zwischen Engagements bleibt ihr Leben an
+            Welbourne und vorübergehende Unterkünfte gebunden.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-05_bruno_palmer" data-title="Bruno Palmer">
+          <h1>Bruno Palmer</h1>
+          <p>
+            <strong>Bruno Palmer</strong>, geboren im März 1970, ist ein 35-jähriger englischer
+            Schauspieler. Sein Vater ist Brite, seine Mutter Italienerin. Er spielt in
+            <em>Outside Edge</em> am Waterfront Theatre in Welbourne. Manche Zuschauer kennen ihn
+            aus dem Fernsehen, können aber häufig keine genaue Serie nennen.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Sein Vater Anthony Palmer unterrichtete Mathematik an einer Gesamtschule in Guildford
+            und wünschte sich für seinen Sohn einen herkömmlichen Beruf. Seine Mutter Lucia Palmer
+            kam als junge Frau aus einem Dorf nahe Bologna nach England. In der Familie pflegte sie
+            weiterhin die italienische Sprache und Küche sowie Besuche bei Verwandten. Bruno Palmer
+            sprach in der Schule Englisch und zu Hause eine Mischung aus Englisch und Italienisch.
+            Er hat weiterhin Kontakt zu Verwandten in Italien und war im Raum Bologna im Urlaub.
+          </p>
+          <h2>Bildung</h2>
+          <p>Nach seiner Schulzeit in Guildford besuchte er eine Schauspielschule.</p>
+          <h2>Beruf</h2>
+          <p>
+            Nach der Schauspielschule arbeitete er in unbezahlten Produktionen und mit kurzen
+            Verträgen. Größere Bekanntheit erlangte er durch die regionale Krimiserie
+            <em>Holding Cell</em>, in der er zwei Staffeln lang einen Polizisten spielte, und später
+            durch ein sonntagabends ausgestrahltes Familiendrama, in dem er einen Bruder darstellte.
+            Keine der beiden Rollen verschaffte ihm dauerhaft eine führende Stellung in London. Er
+            ist daran gewöhnt, dass Fremde ihn nur vage wiedererkennen, und hilft ihnen nicht mit
+            Serientiteln auf die Sprünge.
+          </p>
+          <p>
+            Er nahm das Engagement in Welbourne wegen der kurzen Laufzeit, der umfangreichen Rolle
+            und der Gelegenheit an, mit Robert Miles zu arbeiten. In <em>Outside Edge</em> spielt er
+            an der Seite von Molly Yates. Er betrachtet die Produktion als berufliche Arbeit und
+            nicht als Eitelkeitsprojekt in der Heimatstadt, denn Welbourne ist nicht sein Heimatort.
+            Nach dem Ende der Aufführungen kehrt er in seine gemietete Unterkunft in Südlondon
+            zurück und nimmt weitere Vorsprechen wahr.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Beziehungen</h3>
+          <p>
+            Während der Proben kam er Molly Yates näher und verbrachte nach den Vorstellungen am
+            Dienstag und Samstag Zeit mit ihr. Für die Dauer des Engagements stehen sie sich nahe,
+            ohne ihrer Beziehung einen festen Namen zu geben. Er hat ihr keine dauerhafte Londoner
+            Adresse genannt und sie nicht gebeten, umzuziehen.
+          </p>
+          <p>
+            Wenn sich ihre Runde mit Simon Hartley und Diane Ellison überschneidet, bleibt er
+            höflich und mischt sich ansonsten nicht in deren Abend ein.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>
+            Zwischen regionalen Engagements bewohnt er ein gemietetes Zimmer in Südlondon. Während
+            der Aufführungsserie wohnt er vorübergehend in Welbourne.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-06_robert_miles" data-title="Robert Miles">
+          <h1>Robert Miles</h1>
+          <blockquote class="wiki-quote">
+            <p>Du willst zuschauen, ich will zuschauen.</p>
+            <footer>– <cite>Robert Miles</cite></footer>
+          </blockquote>
+          <p>
+            <strong>Robert Miles</strong>, geboren 1945, ist ein 60-jähriger englischer
+            Theaterregisseur. Er inszeniert <em>Outside Edge</em> am Waterfront Theatre in
+            Welbourne.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Miles wuchs in den Midlands auf, besuchte eine Grammar School und begann ein Studium der
+            Anglistik, das er zugunsten der Arbeit in der Bühnenleitung abbrach. Er war zweimal
+            verheiratet. Die erste Ehe endete in einer Trennung, zu der seine langen Abwesenheiten
+            für die Theaterarbeit beitrugen. Mit seiner zweiten Frau, die in einer anderen
+            Grafschaft lebt, pflegt er weiterhin einen höflichen Umgang. Sie schreiben einander und
+            treffen sich gelegentlich. Ihre Tochter Eleanor Miles besucht manche Premieren,
+            besonders Shakespeare-Inszenierungen.
+          </p>
+          <p>
+            Er lebt in einer Wohnung mit zahlreichen Theatertexten. Er trägt eine kleine Kamera bei
+            sich und fotografiert häufig Flüsse und Wasserfälle.
+          </p>
+          <h2>Beruf</h2>
+          <p>
+            Nach einer Zeit in der Bühnenleitung wechselte er zur Regie. Er hat
+            <em>The Importance of Being Earnest</em> und frühere Produktionen von
+            <em>Outside Edge</em> inszeniert. Die Aufführung in Welbourne sollte sich von der
+            Fernsehadaption der 1990er-Jahre abheben.
+          </p>
+          <p>
+            Er probt Farcen als eine Reihe körperlicher ebenso wie sprachlicher Aufgaben. Bei
+            <em>Outside Edge</em> widmete er der Toilettenszene im Vereinsheim besondere
+            Aufmerksamkeit. Unter anderem bat er Molly Yates, bereits mit starkem Harndrang zu einer
+            Nachmittagsprobe zu erscheinen. Seiner Ansicht nach benötigen solche Szenen körperliche
+            Wahrhaftigkeit, damit sie als Komödie funktionieren.
+          </p>
+          <p>
+            Mitte der 2000er-Jahre arbeitet er überwiegend an regionalen Bühnen und bei
+            Tourneeproduktionen. Er hat kein Showreel, wie es in anderen Bereichen der Branche
+            zunehmend erwartet wird.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Beziehungen</h3>
+          <p>
+            Er bemüht sich am Ende einer Aufführungsserie nicht um Liebesbeziehungen mit jüngeren
+            Darstellerinnen. Molly Yates begegnet er kollegial und nach den Vorstellungen
+            gelegentlich herzlich, ohne ihr den Hof zu machen.
+          </p>
+          <h3>Sexuelle Interessen</h3>
+          <p>
+            Miles hat seit Langem eine private sexuelle Vorliebe für den Harndrang von Frauen und
+            dafür, Frauen beim Urinieren unter zeitlichem oder räumlichem Druck zu beobachten, auch
+            im Freien. In gemischter Gesellschaft ist er meist diskret, unter Männern, die dieses
+            Interesse teilen, weniger. Er fotografiert seit Langem Landschaften und hat gelegentlich
+            auch andere Aufnahmen behalten, wenn die Umstände es erlaubten.
+          </p>
+          <p>
+            Er ist geübt darin, bei Darstellern und bei seinen Begleitern nach einer Vorstellung
+            Müdigkeit, Nervosität und eine volle Blase zu erkennen.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-07_daniel_hartley" data-title="Daniel Hartley">
+          <h1>Daniel Hartley</h1>
+          <p>
+            <strong>Daniel Hartley</strong>, geboren im Februar 1987, ist der 18-jährige jüngere
+            Bruder von Simon Hartley. Er lebt in der Doppelhaushälfte der Familie in Welbourne und
+            hat gerade die Prüfungen am Welbourne College abgeschlossen. Die Ergebnisse werden im
+            August erwartet.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Er ist neun Jahre jünger als Simon und erinnert sich nicht daran, dass Helen und Philip
+            Hartley als Paar im Haus zusammenlebten. Helen Hartley lebt nach ihrer erneuten Heirat
+            in Scarborough und hat mit einer kleinen Pension zu tun. Philip Hartley lebt in einer
+            Wohnung in einer Nachbarstadt und hält nur wenig Kontakt. Die laufenden Haushaltskosten
+            trägt weitgehend Simon. Daniel mag seinen Bruder, findet aber, dass seine Gewohnheiten
+            ihn deutlich älter wirken lassen. Simons Briefmarkensammlung ist ein wiederkehrender
+            Anlass für Spott, sein BMW dagegen ein Gegenstand unverhohlenen Neids.
+          </p>
+          <h2>Bildung</h2>
+          <p>
+            Am Welbourne College zeigte er bis zur Prüfungszeit nur gelegentlich seine schulischen
+            Fähigkeiten und lernte mit wechselndem Einsatz. Er hofft, anschließend an die
+            Universität zu gehen, wahrscheinlich für Informatik. Daneben interessiert er sich für
+            Design, was er im Freundeskreis nicht immer erwähnt.
+          </p>
+          <p>
+            Ein Techniker des Colleges ermöglichte ihm früher, eine Nachmittagsvorstellung im
+            Waterfront Theatre von einem technischen Arbeitsplatz aus zu beobachten. Er interessiert
+            sich weiterhin für Bühnenbilder. Auf seinem Laptop befinden sich neben anderen Dateien
+            auch unfertige Bühnenbildentwürfe.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Freundschaften</h3>
+          <p>
+            Zu seinen wichtigsten männlichen Freunden gehören Toby und Thomas. Nach den Prüfungen
+            veranstaltet er gelegentlich größere Treffen im Haus der Hartleys oder nimmt daran teil.
+            Unter den Gästen sind auch Amanda Marlow und Bella.
+          </p>
+          <h3>Beziehungen</h3>
+          <p>
+            Seit dem Frühjahr vor den Prüfungen verbringt er außerdem Zeit mit Chloe Hollis. Die
+            Beziehung ist unverbindlich.
+          </p>
+          <h3>Versteckte Kamera</h3>
+          <p>
+            An mindestens einem Abend überträgt eine im Badezimmer versteckte Kamera Bilder auf
+            seinen Laptop. An anderen Abenden treffen sich Freunde einfach nur im Haus. Als Simon
+            Hartley die Kamera entdeckt, kommt es zu einem heftigen Streit.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>Er bewohnt das hintere Schlafzimmer im Haus der Hartleys.</p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-08_chloe_hollis" data-title="Chloe Hollis">
+          <h1>Chloe Hollis</h1>
+          <p>
+            <strong>Chloe Hollis</strong>, geboren im November 1986, ist eine 18-jährige Einwohnerin
+            von Welbourne und mit Daniel Hartley befreundet. Sie hat gerade die Prüfungen am
+            Welbourne College abgeschlossen und hofft, im Herbst ein Studium aufzunehmen.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Sie lebt mit ihrer Mutter Sharon Hollis in einer Seitenstraße von Diane Ellisons Straße,
+            unweit des Hauses der Ellisons. Ihr Vater arbeitet als Lastwagenfahrer und ist wegen
+            seiner Aufträge häufig von zu Hause fort. Sharon Hollis führt einen ordentlichen
+            Haushalt, verlangt, dass Straßenschuhe an der Tür ausgezogen werden, ärgert sich, wenn
+            Chloe nach dem Trinken spät heimkommt, und lässt das Licht im Flur an.
+          </p>
+          <p>
+            Chloe ist in Gruppen seit ihrer Kindheit schüchtern. Sie verschafft sich lieber erst
+            einen Eindruck von der Runde, bevor sie spricht.
+          </p>
+          <h2>Bildung</h2>
+          <p>
+            Am College gehörte sie teilweise denselben Gruppen wie Daniel Hartley an, hatte aber
+            nicht durchgehend mit ihm Unterricht. Sie zeichnet für sich allein und spricht unter
+            lauteren Gleichaltrigen nur befangen über dieses Interesse. Amanda Marlows Gewandtheit
+            in Gesprächen über Kunst verstärkt diese Befangenheit. Sie hat mit ihrer Mutter einen
+            Tag der offenen Tür an einer Universität besucht und hofft auf einen Studienplatz.
+            Zugleich beunruhigt sie die Vorstellung, mit unbekannten Menschen zusammenzuwohnen.
+          </p>
+          <h2>Privatleben</h2>
+          <p>
+            Sie kennt Diane Ellison hauptsächlich als Nachbarin, die bei Beck &amp; Partners
+            arbeitet, und hatte bisher kaum Kontakt mit Simon Hartley. Wenn sie mit Daniel Hartleys
+            Freundeskreis ausgeht, trägt sie oft einen kurzen Schottenrock und eine an den Knöcheln
+            abgeschnittene schwarze Strumpfhose. Sie wählt diese Sachen aus der verfügbaren sauberen
+            Kleidung aus und nicht, um bewusst aufzufallen.
+          </p>
+          <h3>Beziehungen</h3>
+          <p>
+            Nach den Prüfungen verbringt sie Zeit mit Daniel Hartley, unter anderem bei Abenden im
+            Pub. Sie ist nicht seine feste Freundin. Wenn sie getrunken hat, sagt sie häufig, dass
+            ihre Mutter furchtbar wütend sein werde, und rechnet mit einem Streit zu Hause.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>
+            Das Haus der Familie Hollis liegt in der Seitenstraße von Diane Ellisons Straße, die im
+            Welbourne-Artikel unter den Wohngebieten beschrieben wird.
+          </p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-09_amanda_marlow" data-title="Amanda Marlow">
+          <h1>Amanda Marlow</h1>
+          <p>
+            <strong>Amanda Marlow</strong>, geboren im Dezember 1986, ist eine 18-jährige
+            Einwohnerin von Welbourne und gehört zu Daniel Hartleys Freundeskreis am College. Sie
+            hat ihre Prüfungen abgeschlossen und möchte ihre Ausbildung im Bereich Kunst fortsetzen,
+            sofern ihre Mappe und ihre finanziellen Mittel es zulassen.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Ihre Eltern Geoff und Patricia Marlow wohnen in einer neueren Wohnsiedlung in Welbourne.
+            Patricia Marlow legt Wert auf eine sichere Arbeitsstelle. Geoff Marlow unterstützt eine
+            künstlerische Laufbahn, macht sich aber Sorgen um die Kosten. Lehrkräfte haben Amanda
+            häufig als reifer als ihre Gleichaltrigen behandelt. Männliche Mitschüler haben in ihr
+            häufig eine Herausforderung gesehen. Auf beides reagiert sie mit Zurückhaltung.
+          </p>
+          <h2>Bildung</h2>
+          <p>
+            Sie interessiert sich ernsthaft für bildende Kunst und kann ungezwungen über Maler wie
+            Rembrandt sprechen. Einige Freunde, darunter Bella und Chloe Hollis, finden diese Art
+            übertrieben. Sie wies einen Annäherungsversuch von Toby mit Worten zurück, die in der
+            Gruppe zum Dauerwitz wurden.
+          </p>
+          <h2>Privatleben</h2>
+          <p>
+            Sie gibt in einem fremden Haus nur ungern zu, dass sie dringend urinieren muss, und
+            fragt ungern in Gegenwart junger Männer nach dem Bad, wenn sie mit Witzen rechnen muss.
+            Nach Alkoholgenuss fällt es ihr unter anderem deshalb schwer, stillzuhalten. Sie hat
+            Treffen schon früher verlassen, statt das Risiko einzugehen, in Gesellschaft die
+            Kontrolle über ihre Blase zu verlieren.
+          </p>
+          <p>
+            Sie besucht Treffen im Haus der Hartleys, weil sich das gesellschaftliche Leben nach den
+            Prüfungen in der Gruppe abspielt, nicht weil sie gezielt Simon Hartley sucht. An einem
+            solchen Abend spricht sie, nachdem sie dringend auf die Toilette musste, mit ihm über
+            Kunstbücher und ein mögliches Treffen zum Kaffee.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>Sie lebt mit ihren Eltern in der neueren Wohnsiedlung.</p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-10_debbie_croft" data-title="Debbie Croft">
+          <h1>Debbie Croft</h1>
+          <blockquote class="wiki-quote">
+            <p>
+              Debbie ist ein kleines Missgeschick passiert, und sie möchte nicht, dass die anderen
+              es erfahren.
+            </p>
+            <footer>– <cite>Diane Ellison</cite></footer>
+          </blockquote>
+          <p>
+            <strong>Debbie Croft</strong>, geboren im April 1982, ist eine 23-jährige Einwohnerin
+            von Welbourne. Sie wohnt in derselben Straße wie Diane Ellison und arbeitet an der Kasse
+            der großen Boots-Apotheke an der Hauptgeschäftsstraße.
+          </p>
+          <h2>Kindheit und Familie</h2>
+          <p>
+            Sie wuchs in dieser Straße auf, verließ mit achtzehn die Schule mit Abschlüssen, die für
+            eine Tätigkeit im Einzelhandel ausreichten, und blieb in Welbourne. Ihre Mutter fragt
+            nach Craig Flynn, wenn Debbie spät nach Hause kommt. Ihre Familie kennt die Ellisons als
+            Nachbarn, nicht als enge Freunde.
+          </p>
+          <h2>Beruf</h2>
+          <p>
+            Sie arbeitet an der Kasse einer großen Apotheke an der Hauptgeschäftsstraße. Sie mag es
+            nicht, wenn Männer sie in Gesellschaft zur Witzfigur machen.
+          </p>
+          <h2>Privatleben</h2>
+          <h3>Beziehungen</h3>
+          <p>
+            Craig Flynn, geboren 1980, ist 25 Jahre alt. Er nimmt Gelegenheitsarbeiten auf dem Bau
+            an, wenn sie verfügbar sind, und besitzt ein Auto. Wiederholt hält er Debbie hin, wenn
+            sie urinieren muss, und bezeichnet sein Verhalten als Necken. Sie hat ihn gewarnt, dass
+            sie deshalb unwillkürlich Urin verlieren könnte. Sie hat die Beziehung zeitweise beendet
+            und ist zurückgekehrt. Die Beziehung umfasst sowohl alltägliche Zuneigung als auch
+            dieses wiederkehrende Muster.
+          </p>
+          <h3>Freundschaften</h3>
+          <p>
+            Debbie Croft und Diane Ellison sind Nachbarinnen, keine engen Freundinnen. Wenn ein
+            Abend schlecht geendet hat, können sie gemeinsam nach Hause gehen. Croft ist sich der
+            Unterschiede zwischen Ellisons Büroarbeit und Reisen einerseits und ihrer eigenen Arbeit
+            im Einzelhandel und den Abenden mit Flynn andererseits bewusst. Wenn ihr der Vergleich
+            in Gesellschaft in den Sinn kommt, ist er ihr unangenehm.
+          </p>
+          <h3>Unfreiwilliges Einnässen</h3>
+          <p>
+            Weil Flynn sie hinhält, hat Croft bereits mehrfach unwillkürlich in ihre Kleidung
+            uriniert, sowohl im Freien als auch in seinem Auto. Ein seit Langem abgestelltes
+            Wohnmobil auf dem Parkplatz bei der Bushaltestelle diente ihr als Sichtschutz, wenn die
+            öffentlichen Toiletten geschlossen waren. Ist Ellison bei einem offensichtlichen
+            Missgeschick dabei, sagt Croft wenig.
+          </p>
+          <h2>Wohnsituation</h2>
+          <p>Ein Haus wenige Türen von Diane Ellisons Haus entfernt in derselben Straße.</p>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+
+        <div class="wiki-page" id="page-11_other_characters" data-title="Weitere Figuren">
+          <h1>Weitere Figuren</h1>
+          <p>Nebenfiguren aus Welbourne, geordnet nach den Hauptartikeln, zu denen sie gehören.</p>
+          <h2>Im Umfeld von Simon Hartley</h2>
+          <h3>Helen Hartley</h3>
+          <p>
+            Mutter von Simon und Daniel Hartley. Lebt mit ihrem zweiten Mann in Scarborough und hat
+            mit einer kleinen Pension zu tun. Hält telefonisch Kontakt und schickt um die
+            Prüfungszeiten Geld.
+          </p>
+          <h3>Philip Hartley</h3>
+          <p>
+            Vater von Simon und Daniel Hartley. Lebt in einer Wohnung in einer Nachbarstadt. Besucht
+            die Familie selten und gibt gelegentlich praktische Ratschläge zum Haus.
+          </p>
+          <h3>Louise</h3>
+          <p>Simon Hartleys Freundin während der Oberstufe für einen Zeitraum von drei Wochen.</p>
+          <h3>Karen</h3>
+          <p>
+            Kollegin von Simon Hartley, mit der er fast einen ganzen Winter lang eine Beziehung
+            hatte.
+          </p>
+          <h3>Sophie Wren</h3>
+          <p>
+            Ehemalige Mitschülerin von Simon Hartley, die er mit einer Exkursion und einer
+            verschlossenen Pavillontoilette verbindet. Sie zog später aus der Gegend fort.
+          </p>
+          <h2>Im Umfeld von Diane Ellison</h2>
+          <h3>Margaret Ellison</h3>
+          <p>
+            Mutter von Diane Ellison. Lebt im Haus der Ellisons. Bleibt wach, wenn Diane spät nach
+            Hause kommt, und äußert Sorgen wegen der Arbeitsstelle bei Beck &amp; Partners und wegen
+            London.
+          </p>
+          <h3>Alan Ellison</h3>
+          <p>
+            Vater von Diane Ellison. Ehemaliger Lokführer auf der East Coast Main Line, inzwischen
+            im Ruhestand. Verbringt Zeit im Garten. Während Dianes gesamter Kindheit erinnerte er
+            sie daran, vor dem Verlassen des Hauses auf die Toilette zu gehen.
+          </p>
+          <h3>Paul Ellison</h3>
+          <p>
+            Älterer Bruder von Diane Ellison. Lebt in Leeds. Sammelte als Jugendlicher für kurze
+            Zeit Briefmarken.
+          </p>
+          <h3>Gary Hill</h3>
+          <p>
+            Ehemaliger Freund von Diane Ellison für etwa acht Monate. Mit ihm verbindet sie lange
+            Autofahrten und seine Weigerung, für Toilettenpausen anzuhalten.
+          </p>
+          <h3>Neil Cooper</h3>
+          <p>
+            Früherer Bekannter von Diane Ellison aus dem Schulbus. Arbeitet in einer örtlichen
+            Werkstatt.
+          </p>
+          <h3>Linda und Jenny</h3>
+          <p>
+            Freundinnen von Diane Ellison. Linda war an einem Erlebnis während eines
+            Junggesellinnenwochenendes in den Niederlanden beteiligt, bei dem ein Pissoir eine Rolle
+            spielte. Jenny kommt in einer Erzählung über eine Autopanne nach einer Party um
+            Mitternacht vor, nach der Margaret Ellison Diane und ihre Freundinnen abholte.
+          </p>
+          <h3>Freund der Familie und Schachlehrer</h3>
+          <p>[Passage ausgelassen.]</p>
+          <h2>Im Umfeld von Molly Yates</h2>
+          <h3>June Yates</h3>
+          <p>
+            Mutter von Molly Yates. Lebt weiter vom Stadtzentrum entfernt als die Familie Ellison.
+            Besuchte die Premiere von <em>Outside Edge</em>.
+          </p>
+          <h2>Im Umfeld von Bruno Palmer</h2>
+          <h3>Lucia und Anthony Palmer</h3>
+          <p>
+            Eltern von Bruno Palmer, wohnhaft in Guildford. Anthony Palmer unterrichtete Mathematik.
+            Lucia Palmer stammt aus der Nähe von Bologna, pflegt familiäre Kontakte und den
+            Austausch von Lebensmittelpaketen.
+          </p>
+          <h2>Im Umfeld von Robert Miles</h2>
+          <h3>Eleanor Miles</h3>
+          <p>
+            Tochter von Robert Miles. Besucht ausgewählte Premieren. Hält ansonsten durch
+            Schriftverkehr zu praktischen Angelegenheiten Kontakt.
+          </p>
+          <h2>Im Umfeld von Daniel Hartley</h2>
+          <h3>Toby, Thomas und Bella</h3>
+          <p>
+            Freunde von Daniel Hartley am College, 18 Jahre alt. Nehmen nach den Prüfungen an
+            einigen Treffen im Haus der Hartleys teil.
+          </p>
+          <h2>Im Umfeld von Chloe Hollis</h2>
+          <h3>Sharon Hollis</h3>
+          <p>
+            Mutter von Chloe Hollis. Führt einen ordentlichen Haushalt, verlangt, dass Schuhe an der
+            Tür ausgezogen werden, und lässt das Flurlicht an, wenn Chloe spät heimkommt.
+          </p>
+          <h2>Im Umfeld von Amanda Marlow</h2>
+          <h3>Geoff und Patricia Marlow</h3>
+          <p>
+            Eltern von Amanda Marlow. Wohnen in einer neueren Siedlung in Welbourne. Gewichten eine
+            sichere Arbeitsstelle und die Förderung einer Kunstausbildung unterschiedlich.
+          </p>
+          <h2>Im Umfeld von Debbie Croft</h2>
+          <h3>Craig Flynn</h3>
+          <p>
+            Freund von Debbie Croft, geboren 1980 und 25 Jahre alt. Nimmt Gelegenheitsarbeiten auf
+            dem Bau an, besitzt ein Auto und zögert wiederholt ihre Toilettengänge hinaus.
+          </p>
+          <h2>Funktionen im Stadtleben</h2>
+          <table>
+            <tr>
+              <th>Person</th>
+              <th>Funktion</th>
+            </tr>
+            <tr>
+              <td>Inhaber von Beck &amp; Partners</td>
+              <td>
+                Beschäftigt Diane Ellison, kann ihr aber keine dauerhafte Arbeitsstelle garantieren
+              </td>
+            </tr>
+            <tr>
+              <td>Aufseher der städtischen Toiletten</td>
+              <td>
+                Hat die Schlüssel zu den öffentlichen Toiletten am Fluss und schließt samstags
+                häufig früher ab
+              </td>
+            </tr>
+            <tr>
+              <td>Türpersonal des Pavilion</td>
+              <td>Kontrolliert den Einlass nach der Schließzeit</td>
+            </tr>
+            <tr>
+              <td>
+                Personal am Bühneneingang und in der Pisa Pizzeria, Programmverkäufer, Barpersonal,
+                Betreiber des Burger-Imbisswagens und Taxifahrer
+              </td>
+              <td>Das alltägliche Personal im Theater- und Uferviertel</td>
+            </tr>
+          </table>
+          <div class="wiki-back-row">
+            <button class="wiki-back-btn" onclick="showIndex()">Zurück zum Menü</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      /* ADWD:SCRIPT */
+    </script>
+  </body>
+</html>

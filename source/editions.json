@@ -15,5 +15,17 @@
   },
   "fr": {
     "style": "latin"
+  },
+  "de": {
+    "style": "latin",
+    "decimalComma": true,
+    "galleryCatalog": true
+  },
+  "ja": {
+    "style": "cjk",
+    "font": "\"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif",
+    "extraStyle": "japanese.css",
+    "currencySuffix": "ポンド",
+    "galleryCatalog": true
   }
 }

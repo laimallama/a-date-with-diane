@@ -8,7 +8,7 @@ const ROOT = path.resolve(__dirname, "..");
 const VISUAL_ROOT = path.resolve(
   process.env.ADWD_VISUAL_ROOT || path.join(ROOT, "..", "ADWD-visual"),
 );
-const LANGUAGES = ["en", "cn", "tw", "es", "fr"];
+const LANGUAGES = Object.keys(require("../source/editions.json"));
 function listFiles(root) {
   return fs.readdirSync(root, { withFileTypes: true }).flatMap((entry) => {
     const file = path.join(root, entry.name);
@@ -23,6 +23,8 @@ function introduction(visual) {
     tw: "Taiwan Mandarin (Traditional Chinese)",
     es: "Spanish",
     fr: "French",
+    de: "German",
+    ja: "Japanese",
   };
   const rows = LANGUAGES.map((lang) => {
     const base = `outputs/${lang}/dianedate_${visual ? "visual_" : ""}${lang}`;
@@ -51,22 +53,22 @@ function introduction(visual) {
     "|---|---|---|",
     ...rows,
     "",
-    "Bilingual editions let you switch between English and the other language during play. Each language uses the same text as its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters.",
+    "Bilingual editions let you switch between English and the other language during play. Local text matches its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters. In the new German and Japanese editions, six game-text entries and three wiki passages per language carry explicit omission placeholders. The six corresponding English entries in those new bilingual games also carry placeholders. Existing editions remain unchanged.",
     "",
     "## What is included",
     "",
-    "- Five standalone languages and four bilingual editions.",
+    `- ${LANGUAGES.length} standalone languages and ${LANGUAGES.length - 1} bilingual editions.`,
     "- Five main prize endings, consolation endings and hidden scenes, with branches affected by your earlier choices.",
     "- A Gallery containing 15 ending routes and 31 hidden-scene routes. Expand grouped entries to choose a scene, then follow the highlighted Guide choices.",
     "- Back navigation that restores the previous page, choices and game state; guided fast-forward and Skip to the good bit.",
     "- Light and dark themes, responsive layouts and localized interface labels.",
     ...(visual
       ? [
-          "- Nine visual game pages and 318 required image assets, shared across the editions.",
+          `- ${LANGUAGES.length * 2 - 1} visual game pages and 318 required image assets, shared across the editions.`,
           "- Animated presentation and graphical status meters, synchronized with the text game's state.",
         ]
       : [
-          "- Nine self-contained game pages, five companion wikis and 230 scene transcripts (46 per language).",
+          `- ${LANGUAGES.length * 2 - 1} self-contained game pages, ${LANGUAGES.length} companion wikis and ${LANGUAGES.length * 46} scene transcripts (46 per language).`,
         ]),
     "",
     "## Controls",

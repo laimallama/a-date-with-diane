@@ -4,7 +4,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const ROOT = path.resolve(__dirname, "..");
-const LANGS = ["en", "cn", "tw", "es", "fr"];
+const LANGS = Object.keys(require("../source/editions.json"));
 const literalContext = vm.createContext({});
 
 function tokenize(source) {

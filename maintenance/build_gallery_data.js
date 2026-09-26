@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
+const editions = require("../source/editions.json");
 const pendingOutputs = [];
 
 function finishOutputs() {
@@ -593,6 +594,28 @@ function buildHiddenScenesForLang(ctx, routes, definitions, lang) {
 }
 
 function buildDataForLang(ctx, routes, definitions, lang) {
+  if (editions[lang].galleryCatalog) {
+    const labels = JSON.parse(
+      fs.readFileSync(path.join(ROOT, `source/gallery/${lang}.json`), "utf8"),
+    );
+    const seen = new Set();
+    function localize(item) {
+      const id = item.id || item.groupId;
+      if (!labels[id]) throw new Error(`Missing ${lang} Gallery title: ${id}`);
+      seen.add(id);
+      return {
+        ...item,
+        title: labels[id],
+        ...(item.variants ? { variants: item.variants.map(localize) } : {}),
+      };
+    }
+    const english = buildDataForLang(ctx, routes, definitions, "en");
+    const localized = Object.fromEntries(
+      Object.entries(english).map(([kind, items]) => [kind, items.map(localize)]),
+    );
+    if (seen.size !== Object.keys(labels).length) throw new Error(`Unused ${lang} Gallery title`);
+    return localized;
+  }
   const endings = buildEndingsForLang(ctx, routes, lang);
   const hiddenScenes = buildHiddenScenesForLang(ctx, routes, definitions, lang);
 
@@ -657,7 +680,10 @@ function main() {
   const routes = galleryRoutes;
   const definitions = ctx.buildDefinitions(routes);
 
-  const langs = onlyLang ? [onlyLang] : ["en", "cn", "es", "fr", "tw"];
+  const legacyOrder = ["en", "cn", "es", "fr", "tw"];
+  const langs = onlyLang
+    ? [onlyLang]
+    : [...legacyOrder, ...Object.keys(editions).filter((lang) => !legacyOrder.includes(lang))];
   const dataByLang = {};
   for (const lang of langs) {
     dataByLang[lang] = buildDataForLang(ctx, routes, definitions, lang);
@@ -672,12 +698,20 @@ function main() {
   const merged = { ...existing, ...dataByLang };
   pendingOutputs.push({ filePath: outPath, text: JSON.stringify(merged, null, 2) });
 
-  injectIntoFile(HTML_PATHS.en, merged.en);
-  if (!onlyLang) {
-    for (const lang of ["cn", "es", "fr", "tw"]) {
-      injectIntoFile(HTML_PATHS[lang], merged[lang]);
-      injectIntoFile(BILINGUAL_HTML_PATHS[lang], buildBilingualData(merged.en, merged[lang]));
-    }
+  if (!process.argv.includes("--data-only")) {
+    injectIntoFile(HTML_PATHS.en, merged.en);
+    if (!onlyLang)
+      for (const lang of langs.filter((code) => code !== "en")) {
+        injectIntoFile(
+          HTML_PATHS[lang] || path.join(ROOT, `outputs/${lang}/dianedate_${lang}.html`),
+          merged[lang],
+        );
+        injectIntoFile(
+          BILINGUAL_HTML_PATHS[lang] ||
+            path.join(ROOT, `outputs/${lang}/dianedate_${lang}_bilingual.html`),
+          buildBilingualData(merged.en, merged[lang]),
+        );
+      }
   }
 
   if (!finishOutputs()) return;
@@ -685,7 +719,9 @@ function main() {
   console.log(
     onlyLang
       ? "Injected gallery data into en only"
-      : "Injected gallery data into en, cn, es, fr, tw (single + bilingual where applicable)",
+      : process.argv.includes("--data-only")
+        ? "Updated Gallery data only"
+        : "Injected Gallery data into registered editions",
   );
   console.log("EN hidden scenes:");
   merged.en.hiddenScenes.forEach((h, i) => {

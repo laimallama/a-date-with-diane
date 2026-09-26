@@ -13,7 +13,7 @@ const vm = require("vm");
 const ROOT = path.resolve(__dirname, "..");
 
 const LANGS = Object.fromEntries(
-  ["en", "cn", "tw", "es", "fr"].map((code) => [
+  Object.keys(require("../source/editions.json")).map((code) => [
     code,
     {
       code,
@@ -227,6 +227,8 @@ function shouldQuoteEmphasis(text, langCode) {
 }
 
 function quoteForTranscript(text, langCode) {
+  if (langCode === "de") return `„${text}“`;
+  if (langCode === "ja") return `「${text}」`;
   if ((langCode === "es" || langCode === "fr") && text.endsWith(",")) {
     const body = text.slice(0, -1);
     return langCode === "es" ? `«${body}»,` : `« ${body} »,`;
@@ -295,6 +297,14 @@ function quoteEmphasisForTranscript(html, langCode) {
     const text = stripTags(inner);
     if (!text) return "";
     if (_tag.toUpperCase() === "B") return text;
+    // New catalogs explicitly distinguish parenthesized delivery cues, work
+    // titles and spoken stress. They must not use English speech heuristics.
+    if (langCode === "de" || langCode === "ja") {
+      if (/^(?:\([\s\S]*\)|（[\s\S]*）)$/.test(text)) return bracketForTranscript(text);
+      if (["Outside Edge", "The Importance of Being Earnest", "Earnest"].includes(text))
+        return quoteForTranscript(text, langCode);
+      return text;
+    }
     if (text === "Outside Edge") return quoteForTranscript(text, langCode);
     if (shouldQuoteEmphasis(text, langCode)) return quoteForTranscript(text, langCode);
     // Stage / manner asides → [brackets]. Spoken stress (*you*) stays plain.
@@ -412,6 +422,8 @@ function outDirFor(kind, langCode) {
 }
 
 function main() {
+  const selected = process.argv.find((arg) => arg.startsWith("--lang="))?.slice(7);
+  if (selected && !LANGS[selected]) throw new Error("Unknown transcript locale");
   const galleryByLang = {};
   for (const [code, lang] of Object.entries(LANGS)) {
     galleryByLang[code] = loadGalleryData(lang.htmlPath);
@@ -440,18 +452,18 @@ function main() {
   let written = 0;
 
   for (const code of Object.keys(LANGS)) {
+    if (selected && code !== selected) continue;
     const lang = LANGS[code];
     const gallery = galleryByLang[code];
     const endingLeaves = flattenLeaves(gallery.endings, "ending");
     const hiddenLeaves = flattenLeaves(gallery.hiddenScenes, "hidden");
 
     // Prefer EN tags (stable) with localized titles from this language's gallery.
-    const endings = endingLeavesEn.map((enLeaf, i) => ({
-      ...enLeaf,
-      title: endingLeaves[i].title,
-      tags: enLeaf.tags,
-      climaxStart: enLeaf.climaxStart,
-    }));
+    const endings = endingLeavesEn.map((enLeaf) => {
+      const local = endingLeaves.find((leaf) => leaf.id === enLeaf.id);
+      if (!local) throw new Error("Missing local ending: " + enLeaf.id);
+      return { ...enLeaf, title: local.title };
+    });
     const hiddens = hiddenLeaves.map((localLeaf) => {
       const enLeaf = hiddenLeavesEn.find((leaf) => leaf.id === localLeaf.id);
       if (!enLeaf) throw new Error("Missing English transcript route: " + localLeaf.id);
@@ -494,5 +506,5 @@ function main() {
   console.log(`Wrote ${written} climax transcript files; unrelated files preserved.`);
 }
 
-module.exports = { managedTranscriptFiles };
+module.exports = { managedTranscriptFiles, visibleStory };
 if (require.main === module) main();

@@ -5,7 +5,14 @@ const path = require("node:path");
 const assert = require("node:assert/strict");
 const { ROOT, LANGS, readSource } = require("./text_sources");
 const FILE = path.join(ROOT, "maintenance/aligned_text.json");
-const INDEX_LANGS = ["en", "cn", "es", "fr", "tw"];
+const INDEX_LANGS = [
+  "en",
+  "cn",
+  "es",
+  "fr",
+  "tw",
+  ...LANGS.filter((lang) => ["de", "ja"].includes(lang)),
+];
 
 function buildIndex(previous, idRemaps = []) {
   const files = Object.fromEntries(LANGS.map((lang) => [lang, readSource(lang)]));
@@ -26,7 +33,9 @@ function buildIndex(previous, idRemaps = []) {
   const sameKindAndTarget = (old, row) =>
     (!old.kind || old.kind === row.kind) && (!old.tag || old.tag === row.tag);
   const sameTranslations = (old, i) =>
-    LANGS.slice(1).every((lang) => old[lang] === rows[lang][i].text);
+    LANGS.slice(1)
+      .filter((lang) => Object.hasOwn(old, lang))
+      .every((lang) => old[lang] === rows[lang][i].text);
   // An editor can resolve an ambiguous simultaneous split/reword explicitly.
   // Guard both locations and every language so stale instructions fail closed.
   assert(Array.isArray(idRemaps), "ID remaps must be an array");
@@ -175,7 +184,7 @@ function main() {
       "Stale aligned_text.json; run node maintenance/build_aligned_text.js",
     );
     console.log(
-      `Aligned text matches all five editions: ${data.entries.length} source locations (read-only).`,
+      `Aligned text matches all ${LANGS.length} standalone editions: ${data.entries.length} source locations (read-only).`,
     );
   } else {
     if (current !== output) fs.writeFileSync(FILE, output);

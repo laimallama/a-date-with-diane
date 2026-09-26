@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>ダイアンとのデート（日英切替版）</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <style>
+      /* ADWD:STYLE */
+    </style>
+  </head>
+  <body class="lang-alt">
+    <script>
+      /* ADWD:SCRIPT */
+    </script>
+
+    <div
+      id="galleryOverlay"
+      class="gallery-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="galleryTitle"
+      aria-hidden="true"
+      tabindex="-1"
+      inert
+    >
+      <div class="gallery-panel">
+        <div class="gallery-header">
+          <h2 id="galleryTitle">
+            <span class="lang lang-en">Gallery</span><span class="lang lang-alt">ギャラリー</span>
+          </h2>
+          <button class="gallery-close" onclick="closeGallery()">
+            <span class="lang lang-en">Close</span><span class="lang lang-alt">閉じる</span>
+          </button>
+        </div>
+        <div class="gallery-scroll">
+          <div class="gallery-section">
+            <h3>
+              <span class="lang lang-en">Endings</span
+              ><span class="lang lang-alt">エンディング</span>
+            </h3>
+            <div id="galleryEndings" class="gallery-list"></div>
+          </div>
+          <div class="gallery-section">
+            <h3>
+              <span class="lang lang-en">Hidden Scenes</span
+              ><span class="lang lang-alt">隠しシーン</span>
+            </h3>
+            <div id="galleryHiddenScenes" class="gallery-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-shell">
+      <div id="gameToolbar" class="game-toolbar">
+        <button
+          id="galleryToggle"
+          class="gallery-button"
+          onclick="openGallery()"
+          type="button"
+          style="display: none"
+        >
+          <span class="lang lang-en">Gallery</span><span class="lang lang-alt">ギャラリー</span>
+        </button>
+        <button
+          id="themeToggle"
+          class="theme-toggle-button theme-toggle-off"
+          onclick="toggleTheme()"
+          type="button"
+          style="display: none"
+        >
+          Dark Mode: Off
+        </button>
+        <button
+          id="languageToggle"
+          class="language-toggle"
+          onclick="toggleLanguage()"
+          type="button"
+        >
+          English
+        </button>
+      </div>
+      <div id="box"></div>
+    </div>
+  </body>
+</html>

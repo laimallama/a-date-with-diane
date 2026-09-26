@@ -1,0 +1,62 @@
+{
+  "story": "Geschichte",
+  "skip": "Überspringen",
+  "replay": "Wiederholen",
+  "volume": "{value} ml",
+  "separator": ": ",
+  "join": " und ",
+  "visualTitle": "Ein Date mit Diane (visuell)",
+  "visualBilingualTitle": "Ein Date mit Diane (zweisprachig, visuell)",
+  "days": {
+    "tuesday": "Dienstag",
+    "thursday": "Donnerstag",
+    "saturday": "Samstag"
+  },
+  "status": {
+    "calm": "Entspannt",
+    "need": "Muss auf die Toilette",
+    "desperate": "Muss dringend",
+    "critical": "Hält es kaum noch aus",
+    "wet": "Schon nass",
+    "peeing": "Pinkelt",
+    "wetting": "Nässt sich ein"
+  },
+  "locations": {
+    "title": "",
+    "street": "Straße",
+    "restaurant": "Restaurant",
+    "theatre": "Theater",
+    "foyer": "Foyer",
+    "pub": "Pub",
+    "riverside": "Flussufer",
+    "pavilion": "Pavilion",
+    "bus": "Warteschlange am Bus",
+    "taxi": "Taxi",
+    "carpark": "Parkplatz",
+    "home": "Zu Hause",
+    "bathroom": "Badezimmer",
+    "church": "Kirche",
+    "bridge": "Unter der Brücke",
+    "night": "Nacht"
+  },
+  "names": {
+    "diane": "Diane",
+    "molly": "Molly",
+    "debbie": "Debbie",
+    "amanda": "Amanda",
+    "chloe": "Chloe"
+  },
+  "title": "Ein Date mit Diane",
+  "back": "Zurück",
+  "darkOn": "Dunkelmodus: An",
+  "darkOff": "Dunkelmodus: Aus",
+  "guideOn": "Wegweiser: An",
+  "guideOff": "Wegweiser: Aus",
+  "tummy": "Bauch",
+  "bladder": "Blase",
+  "intimacy": "Intimität",
+  "shyness": "Schüchternheit",
+  "luckshots": "Glücksversuche",
+  "poundsLabel": "Pfund",
+  "gallery": "Galerie"
+}

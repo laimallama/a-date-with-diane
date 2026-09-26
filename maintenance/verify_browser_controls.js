@@ -32,6 +32,7 @@ else {
 const arg = (name) => process.argv.find((x) => x.startsWith(`--${name}=`))?.slice(name.length + 3);
 const root = path.resolve(__dirname, "..");
 const visualRoot = process.env.ADWD_VISUAL_ROOT || path.resolve(root, "../ADWD-visual");
+const languages = Object.keys(require("../source/editions.json"));
 const engines = (arg("engines") === undefined ? "chromium,firefox,webkit" : arg("engines"))
   .split(",")
   .map((x) => x.trim());
@@ -42,7 +43,7 @@ const currencyOnly = process.argv.includes("--currency-only");
 const focusOnly = process.argv.includes("--focus-only");
 const choicesOnly = process.argv.includes("--choices-only");
 const localizationOnly = process.argv.includes("--localization-only");
-const editions = ["en", "cn", "tw", "es", "fr"].flatMap((lang) =>
+const editions = languages.flatMap((lang) =>
   [false, true]
     .filter((bilingual) => lang !== "en" || !bilingual)
     .map((bilingual) => ({
@@ -58,7 +59,7 @@ const editions = ["en", "cn", "tw", "es", "fr"].flatMap((lang) =>
     })),
 );
 editions.push(
-  ...["en", "cn", "tw", "es", "fr"].flatMap((locale) =>
+  ...languages.flatMap((locale) =>
     (locale === "en" ? [false] : [false, true]).map((bilingual) => ({
       id: locale === "en" ? "visual" : "visual-" + locale + (bilingual ? "-bilingual" : ""),
       locale,
@@ -82,7 +83,7 @@ validateSelection("engines", engines, ["chromium", "firefox", "webkit"]);
 if (requested)
   validateSelection("editions", requested, [
     ...editions.map((x) => x.id),
-    ...["en", "cn", "tw", "es", "fr"].map((lang) => "wiki-" + lang),
+    ...languages.map((lang) => "wiki-" + lang),
   ]);
 const results = {
   started: new Date().toISOString(),
@@ -153,7 +154,7 @@ async function checkCurrency(page, edition) {
         go("gothere");
       }, amount);
       const local = !edition.bilingual || language === "alt";
-      const comma = local && /^(fr|es)$/.test(edition.locale);
+      const comma = local && /^(fr|es|de)$/.test(edition.locale);
       const wanted = comma ? expected.replace(".", ",") : expected;
       const actual = edition.visual
         ? await page.locator("#pounds").textContent()
@@ -575,9 +576,11 @@ async function checkVisualLocalization(page, edition) {
           mismatches.push("volume aria");
         const currency = document.querySelector(".footer-stats .pounds").textContent;
         if (
-          ui.language() === "es" || ui.language() === "fr"
-            ? !currency.endsWith("£")
-            : !currency.startsWith("£")
+          ui.language() === "ja"
+            ? !currency.endsWith("ポンド")
+            : ["es", "fr", "de"].includes(ui.language())
+              ? !currency.endsWith("£")
+              : !currency.startsWith("£")
         )
           mismatches.push("currency position");
         const clipped = [
@@ -605,6 +608,12 @@ async function checkVisualLocalization(page, edition) {
       assert(observed.documentWidth <= observed.width + 1, "Localized layout overflow");
       if (observed.language === "cn" || observed.language === "tw") {
         assert(observed.cjkFont && observed.font.includes("PingFang"), "Use native CJK font stack");
+      }
+      if (observed.language === "ja") {
+        assert(
+          observed.cjkFont && observed.font.includes("Hiragino"),
+          "Use the Japanese font stack",
+        );
       }
       checks++;
     }
@@ -917,7 +926,7 @@ async function checkWiki(page, file) {
       !localizationOnly &&
       (!requested || requested.some((id) => id.startsWith("wiki-")))
     ) {
-      for (const lang of ["en", "cn", "tw", "es", "fr"].filter(
+      for (const lang of languages.filter(
         (lang) => !requested || requested.includes("wiki-" + lang),
       )) {
         const wikiFile = path.join(root, `outputs/${lang}/wiki_${lang}.html`);

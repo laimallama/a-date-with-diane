@@ -9,10 +9,12 @@ const traverse = require("@babel/traverse").default;
 const t = require("@babel/types");
 const generate = require("@babel/generator").default;
 const prettier = require("prettier");
+const { loadCatalogs } = require("./localization/catalogs");
 const ROOT = path.resolve(__dirname, "..");
-const langs = ["en", "cn", "tw", "es", "fr"];
 const read = (file) => fs.readFileSync(path.join(ROOT, file), "utf8");
 const json = (file) => JSON.parse(read(file));
+const editions = json("source/editions.json");
+const langs = Object.keys(editions);
 const parseSource = (file) => parse(read("source/" + file));
 const variants = ["notYetSitting", "notYetStanding", "notYetQueue"];
 function mergeGallery(en, alt) {
@@ -40,9 +42,9 @@ function mergeGallery(en, alt) {
   );
 }
 async function build(lang, bilingual) {
+  const presentation = editions[lang];
   const mode = bilingual ? "bilingual" : "single";
-  const en = json("source/text/en.json"),
-    alt = json(`source/text/${lang}.json`);
+  const { en, alt } = loadCatalogs(lang);
   const current = bilingual ? en : alt;
   const ui = json(`source/ui/${lang}.json`)[mode];
   const story = parseSource("story.js");
@@ -84,6 +86,21 @@ async function build(lang, bilingual) {
     ...story.program.body,
   ];
   const ast = t.file(t.program(body));
+  // Extend currency formatting only in the new locale's compiled editions.
+  // Existing released scripts remain byte-for-byte identical.
+  if (presentation.decimalComma)
+    traverse(ast, {
+      FunctionDeclaration(p) {
+        if (p.node.id.name !== "formatPounds") return;
+        const returned = p.node.body.body.find((node) => t.isReturnStatement(node));
+        assert(t.isConditionalExpression(returned.argument), "Unexpected currency formatter");
+        returned.argument.test = t.logicalExpression(
+          "||",
+          returned.argument.test,
+          t.binaryExpression("===", t.identifier("language"), t.stringLiteral(lang)),
+        );
+      },
+    });
   traverse(ast, {
     MemberExpression(p) {
       const tables = { TEXT: current, ALT: alt, UI: ui };
@@ -145,10 +162,10 @@ async function build(lang, bilingual) {
     }));
   new vm.Script(script);
   const edition = lang + (bilingual ? "-bilingual" : "");
-  const presentation = json("source/editions.json")[lang];
   const style =
     (presentation.font ? ":root { --cjk-font: " + presentation.font + "; }\n" : "") +
-    read(`source/styles/${presentation.style}${bilingual ? "-bilingual" : ""}.css`);
+    read(`source/styles/${presentation.style}${bilingual ? "-bilingual" : ""}.css`) +
+    (presentation.extraStyle ? "\n" + read(`source/styles/${presentation.extraStyle}`) : "");
   return read(`source/shell/${edition}.html`)
     .replace("/* ADWD:STYLE */", () => style.trimEnd())
     .replace(
@@ -161,11 +178,17 @@ async function build(lang, bilingual) {
 async function main() {
   const check = process.argv.includes("--check");
   const pending = [];
-  for (const lang of langs)
+  const selected = process.argv.find((arg) => arg.startsWith("--lang="))?.slice(7);
+  assert(!selected || langs.includes(selected), "Unknown locale");
+  const selectedLangs = selected ? [selected] : langs;
+  let count = 0;
+  for (const lang of selectedLangs)
     for (const bi of lang === "en" ? [false] : [false, true]) {
       const filename = `outputs/${lang}/dianedate_${lang}${bi ? "_bilingual" : ""}.html`;
       const output = await build(lang, bi);
-      if (read(filename) !== output) pending.push({ filename, output });
+      count++;
+      if (!fs.existsSync(path.join(ROOT, filename)) || read(filename) !== output)
+        pending.push({ filename, output });
     }
   if (check)
     assert.equal(
@@ -174,9 +197,12 @@ async function main() {
       "Stale generated editions: " + pending.map((p) => p.filename).join(", "),
     );
   else
-    for (const { filename, output } of pending) fs.writeFileSync(path.join(ROOT, filename), output);
+    for (const { filename, output } of pending) {
+      fs.mkdirSync(path.dirname(path.join(ROOT, filename)), { recursive: true });
+      fs.writeFileSync(path.join(ROOT, filename), output);
+    }
   console.log(
-    `${check ? "Verified" : "Built"} all nine editions; ${pending.length} ${check ? "stale" : "updated"} files.`,
+    `${check ? "Verified" : "Built"} ${count} editions; ${pending.length} ${check ? "stale" : "updated"} files.`,
   );
 }
 if (require.main === module)

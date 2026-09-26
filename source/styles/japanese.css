@@ -1,0 +1,9 @@
+/* Japanese punctuation and wrapping, scoped to the selected language. */
+html[lang="ja"] {
+  line-break: strict;
+  word-break: normal;
+}
+
+html[lang="ja"] .status-bar span {
+  word-break: normal;
+}

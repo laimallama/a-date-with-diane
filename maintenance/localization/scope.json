@@ -1,0 +1,23 @@
+{
+  "resolved": true,
+  "existingEditions": "Preserve without changes; exclusions may affect new editions only.",
+  "decision": "User approved omission with a clear placeholder at every affected entry, in new editions only.",
+  "heldTextIds": [],
+  "omittedTextIds": ["x04787", "x04788", "x04789", "x05487", "x04798", "x04799"],
+  "placeholders": {
+    "en": "[Passage omitted.]",
+    "de": "[Passage ausgelassen.]",
+    "ja": "［この箇所は省略されています。］"
+  },
+  "omittedWikiSections": [
+    "02_simon_hartley / Sexual interests / childhood paragraph",
+    "03_diane_ellison / Friends / chess recollection",
+    "11_other_characters / Chess-teaching family friend"
+  ],
+  "notes": [
+    "The six chess-anecdote IDs are identified as school-age sexual content by the wiki context.",
+    "The separate college bus anecdote is retained: x04790 and x05143 explicitly establish Diane's first college year as age eighteen. No age is changed or invented.",
+    "There are six game-text source entries and three wiki passages per new language. Generated copies do not increase the number of distinct omitted source locations.",
+    "Placeholder entries are tracked separately from translated text; new bilingual English layers also use placeholders at these six IDs."
+  ]
+}

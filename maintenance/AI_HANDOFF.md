@@ -3,7 +3,7 @@
 ## Source and generated editions
 
 `source/story.js` is the single maintained story and game-logic source. It uses stable
-`TEXT.x…` references. `source/text/{en,cn,tw,es,fr}.json` contains the complete, reviewed
+`TEXT.x…` references. `source/text/{en,cn,tw,es,fr,de,ja}.json` contains the complete, reviewed
 HTML and choice labels for each language. Text is already punctuated, capitalized and
 balanced. There is no render-time legacy repair pipeline or translation fallback.
 
@@ -15,11 +15,15 @@ styles and language-specific fonts. `source/status-groups.json` assigns stable t
 IDs to the nine existing combined Diane/Molly descriptions. Do not infer these groups
 from translated wording or regular expressions.
 
-`maintenance/build_editions.js` compiles all five standalone and four bilingual games.
+`maintenance/build_editions.js` compiles all seven standalone and six bilingual games.
 The shipped HTML remains self-contained and works without a server or dependencies.
 Edit the source, then rebuild; never hand-edit the generated playable HTML. The
 bilingual English layer must equal standalone English, and its local layer must equal
 the corresponding standalone language. Both are compiled directly from those catalogs.
+The only scoped exception is the six English omission placeholders in the new
+German/Japanese bilingual editions, documented in `localization/scope.json`.
+Existing catalogs and outputs are frozen. New locale review hashes are recorded
+separately; never reset legacy witnesses to accommodate a new translation.
 
 `source/locations.json` records each text ID, kind, node, slot and choice target.
 `maintenance/aligned_text.json` is a generated cross-language inspection reference.
@@ -44,7 +48,7 @@ node ../ADWD-visual/maintenance/verify_project.js
 The full verifier checks generated-source freshness, catalog completeness, stable IDs,
 syntax, exact static rendering witnesses, all bilingual layers, dynamic amounts and
 variants, paired status boundaries, focused historical regressions, all 46 Gallery
-routes per edition, Back/replay, Skip, numerical state and all 230 transcripts.
+routes per edition, Back/replay, Skip, numerical state and all 322 transcripts.
 `maintenance/fixtures/text-baseline.json` records the approved rendering baseline from
 the recovery commit. Intentional editorial changes require a reviewed baseline update;
 do not refresh it merely to silence a failure. The four localization refinements from
@@ -113,7 +117,7 @@ still” as physical unsteadiness.
 
 The companion articles are maintained in `source/wiki/{lang}.html`.
 `build_wikis.js` embeds `source/runtime/wiki.js` and `source/styles/wiki.css` to create
-the five self-contained `outputs/{lang}/wiki_{lang}.html` releases. They use neutral encyclopedic language, consistent names and numbered articles.
+the seven self-contained `outputs/{lang}/wiki_{lang}.html` releases. They use neutral encyclopedic language, consistent names and numbered articles.
 They describe backstory rather than retelling playable branches. Keep prose free of
 em dashes and colons; use a sentence or comma construction. Use consistent localized
 section headings, separate friends from romantic relationships, italicize work titles,
@@ -152,7 +156,7 @@ should be extended for a demonstrated new bug rather than duplicating entire aud
 ## Gallery and transcripts
 
 Maintain the classic Gallery: 15 ending leaves and 31 hidden-scene leaves in every
-language and all nine visual editions. No Variations tab/button, setup selectors or explanatory
+language and all thirteen visual editions. No Variations tab/button, setup selectors or explanatory
 variation notes. Add a leaf for a meaningfully different event or outcome. For dialogue
 alternatives choose one complete, coherent, especially engaging real route. Endings
 consider the whole route; hidden scenes consider their displayed duration. Never splice
@@ -160,7 +164,7 @@ text or inject state to make a representative route.
 
 Routes live in `verify_ending_routes.js`; hidden definitions live in
 `write_hidden_scenes.js`. `build_gallery_data.js` generates the Gallery snapshot and
-embedded data. `write_transcripts.js` renders the 230 managed climax transcripts from
+embedded data. `write_transcripts.js` renders the 322 managed climax transcripts from
 those routes and preserves unrelated files. Their cuts and ordering match Gallery/Skip.
 Scene-final continuation choices stay available but unhighlighted outside the guide.
 

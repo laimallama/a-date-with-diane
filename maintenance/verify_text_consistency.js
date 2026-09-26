@@ -3,6 +3,11 @@
 const assert = require("node:assert/strict");
 const vm = require("node:vm");
 const { LANGS, readSource } = require("./text_sources");
+const { loadCatalogs } = require("./localization/catalogs");
+const locations = require("../source/locations.json");
+const locationIds = new Map(
+  locations.map((row) => [row.source.node + "/" + row.source.slot, row.id]),
+);
 
 function makeGame(source) {
   const box = { innerHTML: "" },
@@ -45,6 +50,9 @@ function main() {
     enCalls = en.calls.filter((c) => c.source.node !== "getinti");
   const signature = (c) => [c.source.node, c.source.slot, c.kind, c.tag, c.static];
   for (const lang of LANGS.slice(1)) {
+    const scopedEnglish = loadCatalogs(lang).en;
+    const englishFor = (call) =>
+      scopedEnglish[locationIds.get(call.source.node + "/" + call.source.slot)];
     const mono = sources[lang],
       bilingual = readSource(lang, true);
     assert.deepEqual(
@@ -63,7 +71,7 @@ function main() {
         m = monoCalls[i],
         where = `${lang}/${call.source.node}/${call.source.slot}`;
       if (call.static) {
-        assert.equal(b.text, call.text, "English source mismatch: " + where);
+        assert.equal(b.text, englishFor(call), "English source mismatch: " + where);
         assert(b.alternate, "Missing explicit bilingual text: " + where);
         const alt = b.alternate.text;
         assert.equal(alt, m.text, "Localized source mismatch: " + where);
@@ -89,8 +97,9 @@ function main() {
     for (const [amount, english, localized] of [
       [0, "0", "0"],
       [1, "1", "1"],
-      [13.5, "13.50", ["es", "fr"].includes(lang) ? "13,50" : "13.50"],
-      [1.05, "1.05", ["es", "fr"].includes(lang) ? "1,05" : "1.05"],
+      [13.5, "13.50", ["es", "fr", "de"].includes(lang) ? "13,50" : "13.50"],
+      [1.05, "1.05", ["es", "fr", "de"].includes(lang) ? "1,05" : "1.05"],
+      [-1.05, "-1.05", ["es", "fr", "de"].includes(lang) ? "-1,05" : "-1.05"],
       [100, "100", "100"],
     ]) {
       assert.equal(eg.context.formatPounds(amount), english, "English balance formatting");
@@ -104,6 +113,20 @@ function main() {
     // Parity alone would let the same grammatical error survive in both editions.
     // These independent expectations cover singular, plural, gain, loss, and zero.
     const noticeExamples = {
+      ja: [
+        [-2, "親密度が2ポイント下がりました。"],
+        [-1, "親密度が1ポイント下がりました。"],
+        [0, "親密度が0ポイント上がりました。"],
+        [1, "親密度が1ポイント上がりました。"],
+        [2, "親密度が2ポイント上がりました。"],
+      ],
+      de: [
+        [-2, "Du hast 2 Intimitätspunkte verloren."],
+        [-1, "Du hast 1 Intimitätspunkt verloren."],
+        [0, "Du hast 0 Intimitätspunkte gewonnen."],
+        [1, "Du hast 1 Intimitätspunkt gewonnen."],
+        [2, "Du hast 2 Intimitätspunkte gewonnen."],
+      ],
       es: [
         [-2, "Has perdido 2 puntos de intimidad."],
         [-1, "Has perdido 1 punto de intimidad."],
@@ -141,12 +164,12 @@ function main() {
         m = monoCalls[i],
         choice = call.kind === "choice";
       const name = choice ? "c" : "s",
-        args = choice ? [call.tag, call.text] : [call.text];
+        args = choice ? [call.tag, englishFor(call)] : [englishFor(call)];
       const altArgs = choice ? [m.tag, m.text] : [m.text];
       const actualArgs = b.alternate
         ? choice
-          ? [call.tag, call.text, b.alternate.text]
-          : [call.text, b.alternate.text]
+          ? [call.tag, b.text, b.alternate.text]
+          : [b.text, b.alternate.text]
         : args;
       const expectedEn = render(eg, name, {}, args),
         expectedAlt = render(mg, name, {}, altArgs);

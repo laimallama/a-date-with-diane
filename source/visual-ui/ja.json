@@ -1,0 +1,62 @@
+{
+  "story": "物語",
+  "skip": "スキップ",
+  "replay": "もう一度",
+  "volume": "{value} ml",
+  "separator": "：",
+  "join": "と",
+  "visualTitle": "ダイアンとのデート（ビジュアル版）",
+  "visualBilingualTitle": "ダイアンとのデート（日英切替・ビジュアル版）",
+  "days": {
+    "tuesday": "火曜日",
+    "thursday": "木曜日",
+    "saturday": "土曜日"
+  },
+  "status": {
+    "calm": "余裕あり",
+    "need": "トイレに行きたい",
+    "desperate": "かなり我慢している",
+    "critical": "もう限界",
+    "wet": "すでに濡れている",
+    "peeing": "排尿中",
+    "wetting": "お漏らし中"
+  },
+  "locations": {
+    "title": "",
+    "street": "通り",
+    "restaurant": "レストラン",
+    "theatre": "劇場",
+    "foyer": "ロビー",
+    "pub": "パブ",
+    "riverside": "川沿い",
+    "pavilion": "パビリオン",
+    "bus": "バス待ちの列",
+    "taxi": "タクシー",
+    "carpark": "駐車場",
+    "home": "自宅",
+    "bathroom": "バスルーム",
+    "church": "教会",
+    "bridge": "橋の下",
+    "night": "夜"
+  },
+  "names": {
+    "diane": "ダイアン",
+    "molly": "モリー",
+    "debbie": "デビー",
+    "amanda": "アマンダ",
+    "chloe": "クロエ"
+  },
+  "title": "ダイアンとのデート",
+  "back": "戻る",
+  "darkOn": "ダークモード：オン",
+  "darkOff": "ダークモード：オフ",
+  "guideOn": "ガイド：オン",
+  "guideOff": "ガイド：オフ",
+  "tummy": "おなか",
+  "bladder": "膀胱",
+  "intimacy": "親密度",
+  "shyness": "恥じらい",
+  "luckshots": "運試し",
+  "poundsLabel": "所持金（ポンド）",
+  "gallery": "ギャラリー"
+}

@@ -197,6 +197,8 @@ const coffeeNarrativeExpected = {
     tw: "咖啡端上來，你們喝完了。",
     es: "Llegan los cafés y los tomáis.",
     fr: "Les cafés arrivent, et vous les buvez.",
+    de: "Der Kaffee kommt, und ihr trinkt ihn.",
+    ja: "コーヒーが運ばれてきて、二人で飲む。",
   },
   other: {
     en: "You both drink up the wine. The coffees arrive, and you drink those.",
@@ -204,6 +206,8 @@ const coffeeNarrativeExpected = {
     tw: "你們把酒喝完。咖啡端上來，也喝完了。",
     es: "Los dos apuráis el vino. Llegan los cafés y también los tomáis.",
     fr: "Vous finissez le vin tous les deux. Les cafés arrivent, et vous les buvez.",
+    de: "Ihr trinkt beide euren Wein aus. Der Kaffee kommt, und den trinkt ihr ebenfalls.",
+    ja: "二人ともワインを飲み干す。コーヒーが運ばれてきて、それも飲む。",
   },
 };
 
@@ -280,6 +284,8 @@ function verifyTheatreWater(source) {
     tw: "她搖搖頭。",
     es: "Ella niega con la cabeza.",
     fr: "Elle secoue la tête.",
+    de: "Sie schüttelt den Kopf.",
+    ja: "彼女は首を横に振る。",
   };
   const acceptance = {
     en: "She says",
@@ -287,6 +293,8 @@ function verifyTheatreWater(source) {
     tw: "她說",
     es: "Dice",
     fr: "Elle dit",
+    de: "Sie sagt",
+    ja: "ありがとう",
   };
   for (const routeId of ["06c_lounge_chess_lesson", "06d_lounge_freshers_week"]) {
     const route = leaves(initial.gallery).find((x) => x.id === routeId);
@@ -3603,15 +3611,24 @@ function main() {
     closeoutPaths = 0;
   let repetitionPaths = 0,
     repetitionBoundaries = 0;
+  let sofaPaths = 0,
+    homePaths = 0,
+    homeBoundaries = 0,
+    bathroomPaths = 0,
+    bathroomBoundaries = 0;
   for (const lang of LANGS)
     for (const bilingual of lang === "en" ? [false] : [false, true]) {
       const source = readSource(lang, bilingual);
       const repetition = verifyRepetition(source);
       repetitionPaths += repetition.reachable;
       repetitionBoundaries += repetition.boundaries;
-      verifySofaRecall(source);
-      verifyHomeDrinks(source);
-      verifySaturdayBathroom(source);
+      sofaPaths += verifySofaRecall(source);
+      const home = verifyHomeDrinks(source);
+      homePaths += home.reachable;
+      homeBoundaries += home.boundaries;
+      const bathroom = verifySaturdayBathroom(source);
+      bathroomPaths += bathroom.reachable;
+      bathroomBoundaries += bathroom.boundaries;
       closeoutPaths += verifyEnglishCloseout(source);
       const clothing = verifyClothingContinuity(source);
       clothingPaths += clothing.reachable;
@@ -3652,13 +3669,13 @@ function main() {
     `PASS: ${repetitionPaths} actual-choice repetition/continuity paths and ${repetitionBoundaries} synthetic rendering boundaries, with localized output and Back/replay.`,
   );
   console.log(
-    "PASS: 27 actual-choice sofa recall cases (both camper entrances and riverside), with Back/replay across nine editions.",
+    `PASS: ${sofaPaths} actual-choice sofa recall cases (both camper entrances and riverside), with Back/replay across ${editions} editions.`,
   );
   console.log(
-    `PASS: 9 actual-choice Saturday bathroom paths and 72 synthetic clothing boundaries.`,
+    `PASS: ${bathroomPaths} actual-choice Saturday bathroom paths and ${bathroomBoundaries} synthetic clothing boundaries.`,
   );
   console.log(
-    `PASS: 18 actual-choice home drink cases and 81 synthetic drink boundaries, with Back/replay across nine editions.`,
+    `PASS: ${homePaths} actual-choice home drink cases and ${homeBoundaries} synthetic drink boundaries, with Back/replay across ${editions} editions.`,
   );
   console.log(
     `PASS: ${closeoutPaths} actual-choice closeout paths for fifth-prize reachability, date-specific clothing, foyer payment and second-prize recap.`,

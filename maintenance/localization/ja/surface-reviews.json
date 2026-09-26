@@ -1,0 +1,65 @@
+{
+  "locale": "ja",
+  "browserVerified": false,
+  "nativeSpeakerReview": false,
+  "records": [
+    {
+      "source": "source/ui/fr.json",
+      "target": "source/ui/ja.json",
+      "sourceHash": "360d314bf33065fd9655fdf6f20399dd7e4d97cc46ba6e828a1001618662630c",
+      "targetHash": "bf6c127b0995be0d7cf31643c3f2611ff68c0184790c4bc703f2bc0effe59294",
+      "items": 38,
+      "meaning": true,
+      "naturalness": true
+    },
+    {
+      "source": "source/visual-ui/en.json",
+      "target": "source/visual-ui/ja.json",
+      "sourceHash": "0f8e870341c55e2d3b2cf6a843cb027c8b39db2200a7295149048cec92a79f20",
+      "targetHash": "8841bf0379e08a67ec05325d1c742770384d2cb90f5b73b6c5ef55ea042c2020",
+      "items": 52,
+      "meaning": true,
+      "naturalness": true
+    },
+    {
+      "source": "source/shell/en.html",
+      "target": "source/shell/ja.html",
+      "sourceHash": "1dbbc27a1d326df1c1fde0b2b2e52694ee2c7bf857133863090cf3f3ee4b8315",
+      "targetHash": "b05e54fb8f1395160bbe79e223f48d116d64e2d43b95eb004c4325d94b951e5f",
+      "items": 1,
+      "meaning": true,
+      "naturalness": true,
+      "notes": "One complete template reviewed; count is not a text-entry count."
+    },
+    {
+      "source": "source/shell/fr-bilingual.html",
+      "target": "source/shell/ja-bilingual.html",
+      "sourceHash": "c33a115e7934b68d8f1d072048a72d1ce019eb910e5477a3d87ffb62e6445571",
+      "targetHash": "fff3474eef9c0a58cd7c9256e987438c1e9670af7ebca70b6948f2cc43928d89",
+      "items": 1,
+      "meaning": true,
+      "naturalness": true,
+      "notes": "One complete template reviewed; count is not a text-entry count."
+    },
+    {
+      "source": "maintenance/gallery_data.json",
+      "target": "source/gallery/ja.json",
+      "sourceHash": "6134bd5e2a0eaeab80f19d3fdcc482a260c42cdea0d1f464d41c5024fbcc6637",
+      "targetHash": "620ded618ba1b109251367d9c8a09d0527cd7f100159c3420f1ff316099ad7ff",
+      "items": 57,
+      "meaning": true,
+      "naturalness": true,
+      "sourceKey": "en"
+    },
+    {
+      "source": "source/wiki/en.html",
+      "target": "source/wiki/ja.html",
+      "sourceHash": "dce4f0e430a154734c3036053f1912da1f12e683fe6bd3906dbb7954b965ba54",
+      "targetHash": "303a493cbf4ea67f187ce2887bbdba3cc0fd03a85ab547e584ab7161f3a95954",
+      "items": 357,
+      "meaning": true,
+      "naturalness": true,
+      "omittedPassages": 3
+    }
+  ]
+}

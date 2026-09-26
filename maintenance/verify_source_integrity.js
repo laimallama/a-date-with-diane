@@ -8,6 +8,7 @@ const { parse } = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 const { readSource, LANGS } = require("./text_sources");
 const { makeGame, render } = require("./verify_text_consistency");
+const { loadCatalogs } = require("./localization/catalogs");
 const ROOT = path.resolve(__dirname, "..");
 const json = (file) => JSON.parse(fs.readFileSync(path.join(ROOT, file), "utf8"));
 const hash = (value) => crypto.createHash("sha256").update(value).digest("hex");
@@ -38,21 +39,26 @@ for (const lang of LANGS) {
   const baselineRows = Object.entries(catalog)
     .filter(([id]) => id.startsWith("x"))
     .sort(([a], [b]) => a.localeCompare(b, "en"));
-  assert.equal(baselineRows.length, baseline.catalogs[lang].entries, "Reviewed inventory size");
-  // Reconstruct the checkpoint from explicitly recorded editorial exceptions.
-  // All other text still has to match the original immutable preservation hash.
-  for (const change of reviewedChanges.filter((c) => c.lang === lang)) {
-    const row = baselineRows.find(([id]) => id === change.id);
-    assert(row, "Missing recorded editorial location");
-    assert.equal(row[1], change.after, "Unrecorded revision of " + lang + "/" + change.id);
-    row[1] = change.before;
-  }
+  if (baseline.catalogs[lang]) {
+    assert.equal(baselineRows.length, baseline.catalogs[lang].entries, "Reviewed inventory size");
+    // Reconstruct the checkpoint from explicitly recorded editorial exceptions.
+    // All other text still has to match the original immutable preservation hash.
+    for (const change of reviewedChanges.filter((c) => c.lang === lang)) {
+      const row = baselineRows.find(([id]) => id === change.id);
+      assert(row, "Missing recorded editorial location");
+      assert.equal(row[1], change.after, "Unrecorded revision of " + lang + "/" + change.id);
+      row[1] = change.before;
+    }
 
-  assert.equal(
-    hash(JSON.stringify(baselineRows)),
-    baseline.catalogs[lang].sha256,
-    "Reviewed rendering changed in " + lang,
-  );
+    assert.equal(
+      hash(JSON.stringify(baselineRows)),
+      baseline.catalogs[lang].sha256,
+      "Reviewed rendering changed in " + lang,
+    );
+  } else {
+    // New locales have source/target review hashes instead of a legacy baseline.
+    loadCatalogs(lang);
+  }
 
   assert.equal(
     source.calls.length + source.variants.length,
@@ -164,5 +170,5 @@ for (const lang of LANGS) {
   }
 }
 console.log(
-  `PASS: ${witnessed} static/variant locations (${reviewedChanges.length} recorded editorial refinements; all others preserve the checkpoint); ${paired} paired-status cases; stable IDs, explicit globals, safe scene dispatch.`,
+  `PASS: ${witnessed} static/variant locations (legacy checkpoints preserved with ${reviewedChanges.length} recorded refinements; new locales match editorial review hashes); ${paired} paired-status cases; stable IDs, explicit globals, safe scene dispatch.`,
 );

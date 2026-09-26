@@ -2,7 +2,7 @@
 
 This is a restored, cleaned, and expanded edition of the original *A Date with Diane*, an old omorashi text game.
 
-This edition keeps the original narrative flavour while improving the playable experience: clearer wording and logic, Back with full state restore, an in-game Gallery for endings and hidden scenes (with guided highlighting and Skip to the good bit), dark mode, and five language editions.
+This edition keeps the original narrative flavour while improving the playable experience: clearer wording and logic, Back with full state restore, an in-game Gallery for endings and hidden scenes (with guided highlighting and Skip to the good bit), dark mode, and seven language editions.
 
 ## Playing
 
@@ -15,6 +15,8 @@ Playable files are in [`outputs/`](outputs/), grouped by language.
 | `outputs/tw/` | Taiwan Mandarin (Traditional) |
 | `outputs/es/` | Spanish |
 | `outputs/fr/` | French |
+| `outputs/de/` | German |
+| `outputs/ja/` | Japanese |
 
 Each language folder contains:
 
@@ -32,12 +34,18 @@ The stats bar is Diane’s date HUD. It stays hidden on title, notes, further in
 
 ## Maintaining
 
-The maintained story is in [`source/story.js`](source/story.js); the five language
+The maintained story is in [`source/story.js`](source/story.js); the seven language
 catalogs are in [`source/text/`](source/text/). Shared runtime, interface labels,
-styles and document shells live alongside them. All nine playable HTML files are
+styles and document shells live alongside them. All thirteen playable HTML files are
 generated, self-contained releases. English and local bilingual text come directly
 from the same catalogs as the standalone games. Text already contains its final
 punctuation and markup; no runtime repair or translation fallback is needed.
+
+The new German/Japanese editions use clear placeholders at six game entries and
+three wiki passages per language. Their new bilingual English layers use the same
+six scoped omissions; canonical English and all previously released editions are
+unchanged. [Localization records](maintenance/localization/README.md) document the
+exact IDs, review coverage, language conventions and verification limits.
 
 Use Node.js 20 or newer for development:
 
@@ -53,9 +61,9 @@ Read [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md) for editing conven
 source ownership, verification scope, browser checks and visual synchronization.
 [`maintenance/REFACTOR.md`](maintenance/REFACTOR.md) records the source migration and
 its recovery commits. Route definitions generate the classic Gallery's 46 leaves and
-all 230 localized transcripts. `maintenance/aligned_text.json` is a generated
+all 322 localized transcripts. `maintenance/aligned_text.json` is a generated
 inspection reference with stable text IDs; edit the catalogs, not that reference.
-The five wiki article documents are maintained in `source/wiki/`; their runtime and
+The seven wiki article documents are maintained in `source/wiki/`; their runtime and
 stylesheet are shared. The released wiki HTML is generated and self-contained.
 `npm run format` / `npm run format:check` cover all maintained code and HTML templates.
 Use `npm run format:visual` / `npm run format:visual:check` for the visual repository.
@@ -63,11 +71,12 @@ Use `npm run format:visual` / `npm run format:visual:check` for the visual repos
 The full verifier covers generated freshness, exact text witnesses, all bilingual
 layers, dynamic text, focused historical regressions, all Gallery routes, numerical
 state, Back/replay and Skip. Real-browser controls and selected layouts have a separate
-Playwright verifier. These checks do not prove linguistic perfection or exhaustive
+Playwright verifier. No new browser/device rendering or independent native-speaker
+review is claimed for German/Japanese. These checks do not prove linguistic perfection or exhaustive
 coverage of arbitrary state combinations.
 
 ADWD is canonical for all language content and visual labels (`source/visual-ui/`).
-The sibling **ADWD-visual** checkout reads those inputs directly to build all nine visual
+The sibling **ADWD-visual** checkout reads those inputs directly to build all thirteen visual
 editions. It carries no duplicate text games, wikis, transcripts or language catalogs.
 Set `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT` when the source checkouts are not siblings.
 Build commands never commit or push automatically.
@@ -83,8 +92,8 @@ node maintenance/export_games.js --check /path/to/new-release-folder
 ```
 
 The exporter requires a new destination and refuses to overlap either source checkout.
-It copies all 18 playable HTML editions unchanged. `ADWD/` contains the nine text games,
-five wikis and 230 transcripts. `ADWD-visual/` contains only the nine visual games and
+It copies all 26 playable HTML editions unchanged. `ADWD/` contains the thirteen text games,
+seven wikis and 322 transcripts. `ADWD-visual/` contains only the thirteen visual games and
 318 required image assets; companion references point to ADWD. Each gets an informative
 playing README covering the game, contents, controls and companions. Exports have no
 `.git`, `node_modules`, `source`, maintenance tools, manifests, synchronization receipts

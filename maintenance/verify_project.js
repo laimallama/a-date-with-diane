@@ -8,7 +8,11 @@ const vm = require("node:vm");
 const crypto = require("node:crypto");
 const { execFileSync } = require("node:child_process");
 const ROOT = path.resolve(__dirname, "..");
-const langs = ["en", "cn", "tw", "es", "fr"];
+const registered = Object.keys(require("../source/editions.json"));
+const selected = process.argv.find((arg) => arg.startsWith("--lang="))?.slice(7);
+assert(!selected || registered.includes(selected), "Unknown verification locale");
+const langs = selected ? [...new Set(["en", selected])] : registered;
+const routesOnly = process.argv.includes("--routes-only");
 const gallerySnapshot = JSON.parse(
   fs.readFileSync(path.join(ROOT, "maintenance/gallery_data.json"), "utf8"),
 );
@@ -164,7 +168,7 @@ function plain(x) {
 let totalSteps = 0,
   totalRoutes = 0;
 const referenceStates = new Map();
-{
+if (!routesOnly) {
   for (const command of [
     ["format_sources.js", "--check"],
     ["verify_maintenance.js"],
@@ -173,6 +177,7 @@ const referenceStates = new Map();
     ["build_aligned_text.js", "--check"],
     ["build_editions.js", "--check"],
     ["verify_source_integrity.js"],
+    ["localization/verify.js"],
     ["verify_text_consistency.js"],
     ["verify_audit_regressions.js"],
   ])
@@ -182,9 +187,10 @@ const referenceStates = new Map();
       { stdio: "inherit" },
     );
 }
-execFileSync(process.execPath, [path.join(ROOT, "maintenance/write_transcripts.js"), "--check"], {
-  stdio: "inherit",
-});
+if (!routesOnly)
+  execFileSync(process.execPath, [path.join(ROOT, "maintenance/write_transcripts.js"), "--check"], {
+    stdio: "inherit",
+  });
 for (const lang of langs) {
   const editions = lang === "en" ? ["standalone"] : ["standalone", "bilingual"];
   for (const edition of editions) {

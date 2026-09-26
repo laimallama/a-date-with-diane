@@ -6,7 +6,7 @@ content belongs to the sibling `ADWD` repository. Do not push to the text remote
 
 ## Source ownership and building
 
-ADWD owns the nine game cores, five wikis, Gallery routes, transcripts and five visual label
+ADWD owns the thirteen game cores, seven wikis, Gallery routes, transcripts and seven visual label
 catalogs. Edit its maintained `source/` and rebuild the affected releases first. The visual
 builder reads these canonical inputs directly. Do not copy non-visual HTML, companions,
 locale catalogs or synchronization tools into this repository.
@@ -44,7 +44,7 @@ mechanical parity/navigation verification is not content curation.
 Run `node maintenance/verify_project.js` after building. Exact script parity replaces copied
 route replay tests here; ADWD tests the shared route/state engine. The asset verifier accounts
 for every GIF, reduced-motion still and contiguous effect frame. Use the maintained browser
-suite in ADWD for all nine visual editions, including both bilingual languages, Guide/Skip/
+suite in ADWD for all thirteen visual editions, including both bilingual languages, Guide/Skip/
 Back, modal isolation, reduced motion, translated labels and switching during animation.
 Document the browser engines actually tested; static checks do not establish browser layout
 or exact playback timing on every device.

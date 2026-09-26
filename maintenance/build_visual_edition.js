@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-/** Builds all nine visual editions around byte-identical canonical game scripts. */
+/** Builds registered visual editions around byte-identical canonical game scripts. */
 const fs = require("node:fs");
 const path = require("node:path");
 const ROOT = path.resolve(__dirname, "..");
 const TEXT_ROOT = path.resolve(process.env.ADWD_TEXT_ROOT || path.join(ROOT, "..", "ADWD"));
-const LANGUAGES = ["en", "cn", "tw", "es", "fr"];
+const locales = JSON.parse(fs.readFileSync(path.join(TEXT_ROOT, "source/editions.json"), "utf8"));
+const LANGUAGES = Object.keys(locales);
 const EDITIONS = LANGUAGES.flatMap((locale) =>
   (locale === "en" ? [false] : [false, true]).map((bilingual) => {
     const suffix = locale + (bilingual ? "_bilingual" : "");
@@ -60,11 +61,16 @@ function build(edition, shared = inputs()) {
   let html = original;
   const catalog = shared.catalogs[edition.locale];
   const title = catalog[edition.bilingual ? "visualBilingualTitle" : "visualTitle"];
+  const visualCss =
+    shared.css +
+    (edition.locale === "ja"
+      ? '\nhtml[lang="ja"] body.visual-edition { --font-visual: var(--cjk-font); }\n'
+      : "");
   html = replaceRequired(html, /<title>[^<]*<\/title>/i, `<title>${title}</title>`);
   html = replaceRequired(
     html,
     /<\/head>/i,
-    `<style id="visual-shell-css">\n${shared.css}\n</style>\n</head>`,
+    `<style id="visual-shell-css">\n${visualCss}\n</style>\n</head>`,
   );
   html = html.replace(
     /<body([^>]*)>/i,
@@ -91,16 +97,42 @@ function build(edition, shared = inputs()) {
     ),
   };
   const json = (value) => JSON.stringify(value).replace(/</g, "\\u003c");
+  // Locale additions are compiled only into the new editions. Existing
+  // releases retain their original scripts and presentation byte for byte.
+  const modules = shared.modules.map((originalScript) => {
+    if (!originalScript.startsWith('<script id="adwd-i18n">')) return originalScript;
+    let script = originalScript;
+    if (locales[edition.locale].decimalComma)
+      script = replaceRequired(
+        script,
+        /var comma = language\(\) === "es" \|\| language\(\) === "fr";/,
+        `var comma = language() === "es" || language() === "fr" || language() === ${JSON.stringify(edition.locale)};`,
+      );
+    if (locales[edition.locale].currencySuffix) {
+      script = replaceRequired(
+        script,
+        /label\("currencyPrefix", comma \? "" : "£ "\);/,
+        `var localCurrency = language() === ${JSON.stringify(edition.locale)};\n    label("currencyPrefix", localCurrency || comma ? "" : "£ ");`,
+      );
+      script = replaceRequired(
+        script,
+        /label\("currencySuffix", comma \? "\\u00a0£" : ""\);/,
+        `label("currencySuffix", localCurrency ? ${JSON.stringify(locales[edition.locale].currencySuffix)} : comma ? "\\u00a0£" : "");`,
+      );
+    }
+    return script;
+  });
   html = replaceRequired(
     html,
     /<\/body>/i,
-    `<script id="adwd-visual-config">\nwindow.ADWD_VISUAL_CONFIG = ${json(config)};\nwindow.ADWD_PUDDLE_META = ${json(shared.meta)};\n</script>\n${shared.modules.join("\n")}\n</body>`,
+    `<script id="adwd-visual-config">\nwindow.ADWD_VISUAL_CONFIG = ${json(config)};\nwindow.ADWD_PUDDLE_META = ${json(shared.meta)};\n</script>\n${modules.join("\n")}\n</body>`,
   );
   if (coreScript(html) !== coreScript(original))
     throw Error("Visual build modified game script: " + edition.input);
   return html;
 }
-function buildAll({ check = false } = {}) {
+function buildAll({ check = false, locale = null } = {}) {
+  if (locale && !LANGUAGES.includes(locale)) throw Error("Unknown visual locale");
   if (
     ROOT === TEXT_ROOT ||
     ROOT.startsWith(TEXT_ROOT + path.sep) ||
@@ -108,7 +140,8 @@ function buildAll({ check = false } = {}) {
   )
     throw Error("Text and visual source checkouts must be separate, non-overlapping directories");
   const shared = inputs();
-  for (const edition of EDITIONS) {
+  const selected = EDITIONS.filter((edition) => !locale || edition.locale === locale);
+  for (const edition of selected) {
     const html = build(edition, shared);
     const output = path.join(ROOT, edition.output);
     if (check) {
@@ -120,11 +153,12 @@ function buildAll({ check = false } = {}) {
     }
   }
   console.log(
-    `${check ? "Verified" : "Built"} all nine visual editions; canonical game scripts unchanged.`,
+    `${check ? "Verified" : "Built"} ${selected.length} visual editions; canonical game scripts unchanged.`,
   );
 }
 if (require.main === module) {
   const check = process.argv.includes("--check");
-  buildAll({ check });
+  const locale = process.argv.find((arg) => arg.startsWith("--lang="))?.slice(7);
+  buildAll({ check, locale });
 }
 module.exports = { EDITIONS, LANGUAGES, TEXT_ROOT, buildAll, coreScript };

@@ -1,6 +1,6 @@
 # Visual edition
 
-One visual shell builds all five standalone and four bilingual text editions.
+One visual shell builds all seven standalone and six bilingual text editions.
 
 ## Open
 
@@ -15,7 +15,7 @@ node maintenance/build_visual_edition.js
 ```
 
 The canonical story, runtime, Gallery and language content live in the sibling ADWD source
-checkout. The builder reads its nine HTML inputs and `source/visual-ui/*.json` directly.
+checkout. The builder reads its thirteen HTML inputs and `source/visual-ui/*.json` directly.
 No copied text games or localization snapshots are stored here. Shared edits belong in ADWD;
 presentation edits belong here. The visual build embeds:
 

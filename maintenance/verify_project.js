@@ -28,6 +28,7 @@ function keys(object, prefix = "") {
     .sort();
 }
 const referenceKeys = keys(catalogs.en);
+let localizedChromeChecks = 0;
 for (const [locale, catalog] of Object.entries(catalogs)) {
   assert.deepEqual(keys(catalog), referenceKeys, "Complete visual locale: " + locale);
   assert(catalog.volume.includes("{value}"), "Localized volume placeholder");
@@ -56,6 +57,82 @@ for (const edition of EDITIONS) {
     path.basename(other.output),
   );
   assert.deepEqual(outputs.sort(), expected.sort(), "No stale visual editions");
+  if (["de", "ja"].includes(edition.locale)) {
+    // Exercise the compiled localization module without claiming browser layout
+    // coverage. The canonical verifier separately checks numeric formatting.
+    const nodes = new Map();
+    const node = (id) => {
+      if (!nodes.has(id))
+        nodes.set(id, {
+          textContent: "",
+          style: {},
+          attrs: {},
+          classList: { toggle() {} },
+          setAttribute(key, value) {
+            this.attrs[key] = value;
+          },
+        });
+      return nodes.get(id);
+    };
+    const labels = referenceKeys
+      .filter((key) => !key.includes("."))
+      .map((key) => ({ dataset: { visualText: key } }));
+    const context = {
+      document: {
+        title: "",
+        getElementById: node,
+        querySelector: node,
+        querySelectorAll: () => labels,
+      },
+      currentLanguage: "alt",
+      darkMode: false,
+      gameHistory: [{}],
+      guideActive: true,
+      guideOn: true,
+      pounds: 13.5,
+      luckshots: 2,
+      canSkipToClimax: () => true,
+      formatPounds: () => "amount",
+    };
+    context.window = context;
+    vm.createContext(context);
+    for (const id of ["adwd-visual-config", "adwd-i18n"])
+      vm.runInContext(
+        html.match(new RegExp(`<script id="${id}">([\\s\\S]*?)<\\/script>`))[1],
+        context,
+      );
+    for (const language of edition.bilingual ? ["alt", "en", "alt"] : ["alt"])
+      for (const dark of [false, true]) {
+        context.currentLanguage = language;
+        context.darkMode = dark;
+        const locale = language === "en" ? "en" : edition.locale;
+        const local = catalogs[locale];
+        context.ADWDVisualUI.syncChrome();
+        assert.equal(context.ADWDVisualUI.language(), locale);
+        assert.equal(node("galleryToggle").textContent, local.gallery);
+        assert.equal(node("themeToggle").textContent, local[dark ? "darkOn" : "darkOff"]);
+        assert.equal(node("backBtn").textContent, local.back);
+        assert.equal(node("skipBtn").textContent, local.skip);
+        assert.equal(node("visualGuide").textContent, local.guideOn);
+        assert.equal(node("stageRec").attrs["aria-label"], local.replay);
+        assert.equal(
+          context.document.title,
+          local[edition.bilingual ? "visualBilingualTitle" : "visualTitle"],
+        );
+        for (const label of labels)
+          assert.equal(label.textContent, local[label.dataset.visualText]);
+        assert.equal(node("currencyPrefix").textContent, locale === "en" ? "£ " : "");
+        assert.equal(
+          node("currencySuffix").textContent,
+          locale === "de" ? "\u00a0£" : locale === "ja" ? "ポンド" : "",
+        );
+        assert.equal(node("coins").attrs["aria-label"], local.luckshots + local.separator + "2");
+        assert.equal(context.pounds, 13.5);
+        assert.equal(context.luckshots, 2);
+        assert.equal(context.gameHistory.length, 1);
+        localizedChromeChecks++;
+      }
+  }
 }
 const c = {};
 vm.createContext(c);
@@ -121,5 +198,5 @@ execFileSync(process.execPath, [path.join(ROOT, "maintenance/verify_visual_suppo
   stdio: "inherit",
 });
 console.log(
-  "PASS: nine byte-identical game cores, complete visual catalogs, script syntax, scene regressions and visual assets. Browser behavior/layout is checked separately.",
+  `PASS: ${EDITIONS.length} byte-identical game cores, ${localizedChromeChecks} new-locale chrome/theme/language cases, complete visual catalogs, script syntax, scene regressions and visual assets. Browser behavior/layout is checked separately.`,
 );

@@ -80,6 +80,12 @@ then run the visual builder. `--check` verifies without writing. Default paths a
 ADWD and ADWD-visual source checkouts; override with `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT`.
 The canonical verifier's `--local-only` option skips checking the visual checkout.
 
+The visual verifier also exercises all 47 Gallery histories through the actual adapter
+in every edition using deterministic DOM/image/clock stubs. It checks cast/action
+selection, effect placement, Back, language switching, startup, Skip and loading races.
+Its focused mode is `node ../ADWD-visual/maintenance/verify_visual_runtime.js --focused`.
+These checks establish state and asset selection, not browser pixels or playback timing.
+
 Use `export_games.js` for play-only folders; it excludes all development files and keeps
 companions once in ADWD. A playable export is not a source checkout. Keep authoring sources
 and package manifests in GitHub even when the user removes local development copies.

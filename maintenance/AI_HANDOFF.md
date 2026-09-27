@@ -173,6 +173,12 @@ alternatives choose one complete, coherent, especially engaging real route. Endi
 consider the whole route; hidden scenes consider their displayed duration. Never splice
 text or inject state to make a representative route.
 
+For Gallery titles, Simplified Chinese uses 撒尿 in descriptive peeing titles;
+Taiwan Mandarin uses 尿尿. Both use 黛安先尿 / 莫莉先尿 for the short bridge labels.
+English uses Diane Pees First / Molly Pees First, with explicit localized equivalents.
+The exact 27 September follow-up is recorded in `gallery-register-refinements-2026-09-27.json`.
+Keep compounds such as 尿过 / 尿過 and 小便池 / 小便斗 intact.
+
 Routes live in `verify_ending_routes.js`; hidden definitions live in
 `write_hidden_scenes.js`. `build_gallery_data.js` generates the Gallery snapshot and
 embedded data. `write_transcripts.js` renders the 329 managed climax transcripts from

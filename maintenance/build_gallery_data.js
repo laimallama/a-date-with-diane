@@ -132,7 +132,7 @@ const ENDING_META = {
     climaxStartTag: "watching1", // outside Chloe's door
     title: {
       en: "Chloe Pees Beside Her House",
-      cn: "克洛伊在屋旁小便",
+      cn: "克洛伊在屋旁撒尿",
       tw: "克洛伊在屋旁尿尿",
       es: "Chloe orina al lado de su casa",
       fr: "Chloe fait pipi à côté de sa maison",
@@ -332,7 +332,7 @@ const EXTRA_HIDDEN = [
     sceneStartTag: "bathpee",
     title: {
       en: "Diane Pees in the Bath",
-      cn: "黛安在浴缸里小便",
+      cn: "黛安在浴缸里撒尿",
       tw: "黛安在浴缸裡尿尿",
       es: "Diane orina en la bañera",
       fr: "Diane fait pipi dans la baignoire",

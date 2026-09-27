@@ -702,7 +702,6 @@ body.visual-edition #gameToolbar {
 }
 
 :root {
-  --body-base: #e9dcc8;
   --bar-track: rgba(35, 31, 32, 0.08);
   --stage: #ebe0d0;
   --stage-urgent: rgba(155, 47, 63, 0.22);
@@ -710,7 +709,6 @@ body.visual-edition #gameToolbar {
   --membrane-inner: #f0e0d4;
 }
 :root[data-theme="dark"] {
-  --body-base: #171310;
   --bar-track: rgba(237, 227, 211, 0.1);
   --stage: #3a3228;
   --stage-urgent: rgba(240, 208, 96, 0.35);

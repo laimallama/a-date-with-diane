@@ -21,14 +21,24 @@ Building and parity verification require the canonical source checkout. `--check
 read-only; `ADWD_TEXT_ROOT` selects a nonstandard canonical path. No isolated snapshot or
 sync receipt is maintained. Build commands never commit or push automatically.
 
-For minimal playable folders, use ADWD's `maintenance/export_games.js`. Those exports
-contain no authoring tools or Git history. The text export owns the sole offline companion
-copy. Develop in the GitHub source checkouts, never in a play-only export. Keep temporary
-copies, dumps and screenshots outside both source repositories.
+The normal local folder retains `maintenance/`, `visual/` and asset metadata beside
+`outputs/` and `README.md`, matching the GitHub layout without Git history or installed
+dependencies. The sibling ADWD folder retains its own maintenance tools, source and
+package manifests. Keep this support locally as well as on GitHub.
+
+The installed German/Japanese outputs contain later manual changes absent from the
+maintained catalogs. Account for those differences before rebuilding or replacing
+installed outputs. Restoring maintenance files does not import the local changes.
+
+For a separate play-only copy, use ADWD's `maintenance/export_games.js`. Such exports
+contain no authoring tools or Git history and keep companions once in ADWD. Do not use
+a play-only export to replace the normal maintained local folders. Keep temporary
+copies, dumps and screenshots outside both projects. README files use plain file paths
+and repository names, without hyperlinks or interpuncts.
 
 ## Content contracts
 
-Gallery remains the classic interface: 15 ending leaves and 31 hidden-scene leaves. Do not
+Gallery remains the classic interface: 15 ending leaves and 32 hidden-scene leaves. Do not
 reintroduce a Variations tab, setup selectors or variation notes. Dialogue alternatives use
 one coherent representative route; distinct events may have separate leaves. Canonical ADWD
 supplies titles, ordering, transcript cuts and boundaries. Scene-final choices remain

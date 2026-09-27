@@ -13,7 +13,7 @@ This implements the user's 22 approved packages from section J of the workspace
 | P02 | Make shared drink references beverage-neutral, including the taxi sibling. |
 | P03 | Choose funded/refusal or exhausted-resource labels from the actual luckshot count at all approved sites. |
 | P04 | Correct the Chardonnay continuation to the taxi rank and make the hurry line independent of queue history. |
-| P05 | Credit both women for the charged quick farewell round, with day-specific amounts, and credit Molly for the Thursday Pavilion nightcap. |
+| P05 | Credit both women for the charged quick farewell round, with day-specific amounts, and credit Molly for the Thursday nightcaps at both the Pavilion and pub. |
 | P06 | Record the specific picnic agreement separately from general train conversation; condition taxi and album callbacks on that history. |
 | P07 | Share dress-opening progression across restaurant, standing and sofa scenes; distinguish one opened button from two or more. |
 | P08 | Use actual sofa-touch history for first/repeat wording. |
@@ -35,6 +35,10 @@ This implements the user's 22 approved packages from section J of the workspace
 No other rejected drafts or unused status-array entries were restored. The existing
 omission policy and excluded source locations remain unchanged. No new sexual
 material was authored for the restoration; the added scene adapts the supplied draft.
+
+The final counterpart check found that `pubdrink8` serves the same four liqueurs
+as `pavilion8` and had the same missing Molly intake. Both now add 30 pending
+units, separately from digestion. This is included in P05 and its regression test.
 
 ## Gallery, guides and companions
 
@@ -92,7 +96,9 @@ byte and the changed character mapping.
 Final checks passed: **611 route/edition combinations**, **61,633 Back/replay
 checks**, **37,562 static/variant witnesses**, **1,976 paired-status cases**, all
 **329 transcripts**, and **13 byte-identical visual game cores**. The focused
-restoration tests and historical regression suite passed. The verified play-only
+restoration tests and historical regression suite passed. After the pub-nightcap
+counterpart fix, all 78 route/edition combinations using that node were checked
+again, with 6,929 Back/replay checks and visual parity reverified. The verified play-only
 export and installation contain **682 files**. Exact logs and manifests are
 recorded in the workspace release record and audit archive.
 These finite VM/static checks do not prove every arbitrary game-state combination.

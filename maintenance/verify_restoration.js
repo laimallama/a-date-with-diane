@@ -107,13 +107,15 @@ for (const day of ["tuesday", "thursday", "saturday"]) {
   assert.equal(c.mollyproc, 200 + serving);
   assert.equal(c.pounds, 40);
 }
-isolate("pavilion8", { thursday: 2, proc: 200, mollyproc: 200, mollyblad: 300 });
-assert.equal(c.proc, 230);
-assert.equal(
-  c.mollyproc + c.mollyblad,
-  530,
-  "Molly's total intake increases by the nightcap amount",
-);
+for (const node of ["pubdrink8", "pavilion8"]) {
+  isolate(node, { thursday: 2, proc: 200, mollyproc: 200, mollyblad: 300 });
+  assert.equal(c.proc, 230);
+  assert.equal(
+    c.mollyproc + c.mollyblad,
+    530,
+    "Molly's total intake includes the nightcap: " + node,
+  );
+}
 for (const picnicPlanned of [0, 1]) {
   assert(
     has(

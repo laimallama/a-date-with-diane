@@ -1997,6 +1997,7 @@ function pubdrink8() {
     s(TEXT.x01056);
     digestMolly(30);
     proc += 30;
+    mollyproc += 30;
     s(TEXT.x01057);
     leavepub2 = 1;
     c("riverside2", TEXT.x01058);

@@ -1,5 +1,9 @@
 # German and Japanese localization
 
+The project now keeps both presentation formats in one repository. This guide and
+its dated records preserve the original review scope; current build commands and
+paths are in the root README and `maintenance/AI_HANDOFF.md`.
+
 German and Japanese translation, companion material and technical integration are
 complete. Both were translated directly from English at
 `da90009ab65f88099d1c57b8800e254a9d53e5cc`; the visual baseline is

@@ -31,7 +31,6 @@ else {
 }
 const arg = (name) => process.argv.find((x) => x.startsWith(`--${name}=`))?.slice(name.length + 3);
 const root = path.resolve(__dirname, "..");
-const visualRoot = process.env.ADWD_VISUAL_ROOT || path.resolve(root, "../ADWD-visual");
 const languages = Object.keys(require("../source/editions.json"));
 const engines = (arg("engines") === undefined ? "chromium,firefox,webkit" : arg("engines"))
   .split(",")
@@ -66,7 +65,7 @@ editions.push(
       bilingual,
       visual: true,
       file: path.join(
-        visualRoot,
+        root,
         `outputs/${locale}/dianedate_visual_${locale}${bilingual ? "_bilingual" : ""}.html`,
       ),
     })),

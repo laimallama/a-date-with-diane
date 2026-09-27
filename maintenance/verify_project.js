@@ -16,9 +16,7 @@ const routesOnly = process.argv.includes("--routes-only");
 const gallerySnapshot = JSON.parse(
   fs.readFileSync(path.join(ROOT, "maintenance/gallery_data.json"), "utf8"),
 );
-const visualRoot = process.argv.includes("--local-only")
-  ? null
-  : path.resolve(process.env.ADWD_VISUAL_ROOT || path.join(ROOT, "..", "ADWD-visual"));
+const textOnly = process.argv.includes("--text-only");
 
 function element(tag = "div") {
   const attrs = {},
@@ -314,10 +312,12 @@ for (const lang of langs) {
 execFileSync(process.execPath, [path.join(ROOT, "maintenance/build_gallery_data.js"), "--check"], {
   stdio: "inherit",
 });
-if (visualRoot) {
+if (!textOnly) {
   execFileSync(
     process.execPath,
-    [path.join(visualRoot, "maintenance/build_visual_edition.js"), "--check"],
+    routesOnly
+      ? [path.join(ROOT, "maintenance/build_visual_edition.js"), "--check"]
+      : [path.join(ROOT, "maintenance/verify_visual_project.js")],
     { stdio: "inherit" },
   );
 }

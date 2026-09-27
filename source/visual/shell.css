@@ -1,0 +1,748 @@
+/* Visual edition layout, meters and animation styling. */
+
+html {
+  background: var(--body-bg-wash, #f8f5ef);
+}
+
+body.visual-edition {
+  --font-visual: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  margin: 0;
+  min-height: 100vh;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  font-family: var(--font-visual);
+  background: var(--body-bg-wash, #f8f5ef);
+}
+
+body.visual-edition,
+body.visual-edition #box,
+body.visual-edition #box p,
+body.visual-edition #box li,
+body.visual-edition button,
+body.visual-edition .choice,
+body.visual-edition .gallery-button,
+body.visual-edition .theme-toggle-button,
+body.visual-edition .visual-rail,
+body.visual-edition .visual-kicker,
+body.visual-edition .visual-meters {
+  font-family: var(--font-visual);
+}
+
+body.visual-edition #box {
+  box-shadow: none;
+  border: none;
+  background: var(--paper);
+  padding: 14px 18px 10px;
+  max-width: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  overscroll-behavior: contain;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+body.visual-edition #box .status-bar,
+body.visual-edition #box .nav-row {
+  display: none !important;
+}
+
+/* Classic game yellow highlighter bars → plain story text */
+body.visual-edition #box [style*="ffff00"],
+body.visual-edition #box [style*="#ffff00"],
+body.visual-edition #box [style*="FFFF00"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+body.visual-edition .visual-app {
+  max-width: none;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  overflow: visible;
+  font-family: var(--font-visual);
+  background: var(--body-bg-wash, #f8f5ef);
+}
+
+body.visual-edition .visual-rail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 8px 12px;
+  background: var(--status);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+body.visual-edition .visual-rail .brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+}
+body.visual-edition .visual-rail .muted {
+  color: var(--muted);
+}
+body.visual-edition .rail-end {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+/* Same text↔edge padding; no min-width so short labels don’t get empty side space */
+body.visual-edition .gallery-button,
+body.visual-edition .theme-toggle-button,
+body.visual-edition .climax-skip-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-visual);
+  font-size: 0.95rem;
+  line-height: 1.25;
+  min-width: 0;
+  width: auto;
+  min-height: 44px;
+  padding: 10px 14px;
+  flex-shrink: 0;
+  touch-action: manipulation;
+}
+body.visual-edition .theme-toggle-button {
+  margin-left: 0;
+}
+
+body.visual-edition .visual-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  flex: 1 1 auto;
+  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  overflow: visible;
+  width: 100%;
+}
+
+body.visual-edition .visual-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body.visual-edition .visual-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--status);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+body.visual-edition .visual-kicker strong {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+body.visual-edition .visual-story-col,
+body.visual-edition .visual-stage-col {
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+body.visual-edition .visual-story-col #box {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  overscroll-behavior: contain;
+  background: var(--paper);
+}
+
+body.visual-edition .visual-stage-col {
+  position: static;
+  align-self: stretch;
+  max-height: none;
+  /* Match meters / kicker so leftover column height isn’t a paper-colored strip */
+  background: var(--status);
+}
+
+/* Phone: one column, page scrolls like the text game */
+@media (max-width: 640px) {
+  body.visual-edition {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  body.visual-edition .visual-app {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  body.visual-edition .visual-main {
+    grid-template-columns: minmax(0, 1fr);
+    flex: none;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  body.visual-edition .visual-story-col,
+  body.visual-edition .visual-stage-col {
+    overflow: visible;
+  }
+
+  body.visual-edition .visual-story-col #box,
+  body.visual-edition #box {
+    overflow: visible;
+    flex: none;
+  }
+  body.visual-edition .visual-stage-col {
+    order: -1;
+    height: auto;
+    max-height: none;
+  }
+}
+
+body.visual-edition .visual-stage {
+  position: relative;
+  /* Extra column height goes to the cast window, not the attributes strip */
+  flex: 1 1 auto;
+  min-height: 200px;
+  max-height: none;
+  height: auto;
+  background: var(--stage, #ebe0d0);
+  /* box-shadow only — background must not animate on theme toggle (avoids cast flash) */
+  transition: box-shadow 0.45s ease;
+  overflow: hidden;
+}
+body.visual-edition .visual-stage.urgent {
+  box-shadow: inset 0 0 0 2px var(--stage-urgent, rgba(155, 47, 63, 0.22));
+}
+
+:root[data-theme="dark"] body.visual-edition .visual-stage {
+  --stage: #3a3228;
+}
+
+body.visual-edition .stage-band {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+/* Replay marker after the real (draining) pee arc */
+body.visual-edition .stage-rec {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4f0ea;
+  background: #8a1f1f;
+  padding: 4px 9px 4px 8px;
+  border-radius: 2px;
+  pointer-events: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+body.visual-edition .stage-rec[hidden] {
+  display: none !important;
+}
+body.visual-edition .stage-rec .rec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  animation: stageRecBlink 1s steps(1) infinite;
+}
+@keyframes stageRecBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* Puddle sits on the floor under the character sprites */
+body.visual-edition .stage-puddle {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+  box-sizing: border-box;
+  padding: 18px 16px 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+body.visual-edition .stage-puddle.is-on {
+  opacity: 1;
+}
+/* Soften contact shadow while a puddle is down so it isn’t eaten by drop-shadow */
+body.visual-edition .visual-stage.has-puddle .stage-cast .sprite {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.18));
+}
+body.visual-edition .stage-puddle .puddle-sprite {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  height: calc(100% - 6px);
+  max-height: calc(100% - 6px);
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: none;
+  display: block;
+}
+body.visual-edition .stage-puddle canvas.puddle-sprite {
+  /* Match character sprite box: square art scaled to stage height */
+  aspect-ratio: 1 / 1;
+  width: auto;
+}
+body.visual-edition .stage-puddle.duo .puddle-sprite {
+  height: calc(100% - 6px);
+  max-height: calc(100% - 6px);
+  max-width: calc((100% - 18px) / 2);
+}
+/* Invisible flex twin — keeps a solo puddle under the matching duo sprite */
+body.visual-edition .stage-puddle .puddle-spacer {
+  visibility: hidden;
+  pointer-events: none;
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+  width: auto;
+  height: calc(100% - 6px);
+  max-height: calc(100% - 6px);
+}
+body.visual-edition .stage-cast {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  /* Feet on the “floor”; badge clearance above */
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 0;
+  padding: 18px 16px 14px;
+  isolation: isolate;
+}
+body.visual-edition .stage-cast .sprite {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  /* Fill most of the stage so the figure isn’t floating in empty space */
+  height: calc(100% - 6px);
+  max-height: calc(100% - 6px);
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+  /* Avoid drop-shadow recompositing flash when theme colours change */
+  transition: none;
+}
+/* Duo: same size, even spacing — no secondary shrink */
+body.visual-edition .stage-cast.duo .sprite-primary,
+body.visual-edition .stage-cast.duo .sprite-secondary {
+  height: calc(100% - 6px);
+  max-height: calc(100% - 6px);
+  max-width: calc((100% - 18px) / 2);
+  opacity: 1;
+  z-index: 1;
+}
+/* Tremor is per-sprite only — never the whole cast, never calm/pee partners */
+body.visual-edition .stage-cast .sprite:not(.tremor) {
+  animation: none !important;
+}
+body.visual-edition .sprite.tremor {
+  animation: visualTremor 0.32s steps(2) infinite;
+  will-change: transform;
+}
+@keyframes visualTremor {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2px, 1px, 0);
+  }
+}
+
+body.visual-edition .visual-meters {
+  /* Fixed content height — do not stretch with the column */
+  padding: 20px 28px;
+  border-top: 1px solid var(--line);
+  background: var(--status);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+body.visual-edition .vessels {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  padding: 0;
+  flex: 0 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+body.visual-edition .tank-name {
+  grid-row: 1;
+  position: relative;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  max-width: 136px;
+  cursor: default;
+  outline: none;
+}
+body.visual-edition .tummy-label {
+  grid-column: 1;
+}
+body.visual-edition .blad-label {
+  grid-column: 3;
+}
+body.visual-edition .organ {
+  grid-row: 2;
+  position: relative;
+  width: 100%;
+  max-width: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  outline: none;
+  z-index: 1;
+}
+body.visual-edition .organ.tummy {
+  grid-column: 1;
+}
+body.visual-edition .organ.blad {
+  grid-column: 3;
+  transform: translateY(-4px);
+}
+body.visual-edition .organ svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(128px, 17vh);
+  overflow: visible;
+  pointer-events: none;
+}
+/* Instant ml tip — same for both organs: just under the SVG (not mirrored L/R) */
+body.visual-edition .organ[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 6px);
+  bottom: auto;
+  transform: translateX(-50%);
+  padding: 5px 9px;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  background: var(--paper, #f3e8d6);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  white-space: nowrap;
+  line-height: 1.2;
+  box-shadow: 0 1px 3px rgba(45, 32, 24, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 6;
+  transition:
+    opacity 0.12s ease,
+    visibility 0.12s ease;
+}
+body.visual-edition .organ[data-tip]:hover::after,
+body.visual-edition .organ[data-tip]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+body.visual-edition .organ:focus-visible,
+body.visual-edition .tank-name:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+body.visual-edition .organ .cavity {
+  fill: var(--membrane-inner, #f0e0d4);
+}
+body.visual-edition .organ.tummy .cavity {
+  fill: url(#tummyWall);
+}
+body.visual-edition .organ.blad .cavity {
+  fill: url(#bladWall);
+}
+body.visual-edition .organ.tummy .fill-shape {
+  fill: url(#tummyChyme);
+}
+body.visual-edition .organ.blad .fill-shape {
+  fill: url(#bladUrine);
+}
+body.visual-edition .organ .fill-shape {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: transform 0.45s cubic-bezier(0.33, 0.1, 0.2, 1);
+}
+body.visual-edition .organ .outline {
+  fill: none;
+  stroke: var(--membrane-line, #8a6a5c);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
+body.visual-edition .organ .shade {
+  pointer-events: none;
+}
+body.visual-edition .organ.tummy .shade {
+  fill: url(#tummyShade);
+}
+body.visual-edition .organ.blad .shade {
+  fill: url(#bladShade);
+}
+body.visual-edition .drip-col {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+body.visual-edition .organ.blad.full {
+  animation: bladShake 0.55s ease-in-out infinite;
+  transform-origin: 50% 55%;
+  transform: translateY(-4px);
+}
+body.visual-edition .organ.blad.crit.full {
+  animation: bladShakeHard 0.38s ease-in-out infinite;
+}
+@keyframes bladShake {
+  0%,
+  100% {
+    transform: translateY(-4px) scale(1);
+  }
+  25% {
+    transform: translateY(-4px) translate(-1.5px, 0.5px) scale(1.03);
+  }
+  50% {
+    transform: translateY(-4px) translate(1.5px, -0.5px) scale(1.05);
+  }
+  75% {
+    transform: translateY(-4px) translate(-1px, 0) scale(1.03);
+  }
+}
+@keyframes bladShakeHard {
+  0%,
+  100% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  25% {
+    transform: translateY(-4px) translate(-2.5px, 1px) scale(1.06);
+  }
+  50% {
+    transform: translateY(-4px) translate(2.5px, -1px) scale(1.08);
+  }
+  75% {
+    transform: translateY(-4px) translate(-2px, 0.5px) scale(1.05);
+  }
+}
+
+body.visual-edition .bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 0 0 auto;
+  width: 100%;
+}
+body.visual-edition .bar-row,
+body.visual-edition .footer-stats {
+  display: grid;
+  grid-template-columns: minmax(76px, auto) minmax(40px, 1fr) auto;
+  column-gap: 10px;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+body.visual-edition .bar-track {
+  height: 8px;
+  background: var(--bar-track, rgba(35, 31, 32, 0.08));
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+body.visual-edition .bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+body.visual-edition .bar-row.shy .bar-fill {
+  background: var(--em-color, #6f4a58);
+}
+body.visual-edition .bar-row b {
+  color: var(--ink);
+  text-align: right;
+}
+body.visual-edition .footer-stats {
+  padding-top: 4px;
+  flex: 0 0 auto;
+  width: 100%;
+}
+body.visual-edition .luck-label {
+  justify-self: start;
+}
+body.visual-edition .coins {
+  display: inline-flex;
+  gap: 5px;
+  margin-left: 0;
+  justify-self: start;
+}
+body.visual-edition .pounds {
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+body.visual-edition .coin {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-dark);
+  background: var(--accent);
+  display: inline-block;
+}
+body.visual-edition .coin.off {
+  background: transparent;
+  opacity: 0.35;
+}
+
+/* Pregame: meters muted; stage status badge hidden (status lives only on sprite stage) */
+body.visual-edition.pregame .visual-meters {
+  opacity: 0.45;
+  pointer-events: none;
+}
+body.visual-edition.pregame .stage-band {
+  display: none !important;
+}
+/* Next-morning phone (showover1 / showover2 + sticky gameover): same muted meters as day-select, not hidden. */
+body.visual-edition.hide-date-stats .visual-meters {
+  opacity: 0.45;
+  pointer-events: none;
+}
+body.visual-edition.hide-date-stats .stage-band {
+  display: none !important;
+}
+
+body.visual-edition #gameToolbar {
+  display: none !important;
+}
+
+:root {
+  --bar-track: rgba(35, 31, 32, 0.08);
+  --stage: #ebe0d0;
+  --stage-urgent: rgba(155, 47, 63, 0.22);
+  --membrane-line: #8a6a5c;
+  --membrane-inner: #f0e0d4;
+}
+:root[data-theme="dark"] {
+  --bar-track: rgba(237, 227, 211, 0.1);
+  --stage: #3a3228;
+  --stage-urgent: rgba(240, 208, 96, 0.35);
+  --membrane-line: #b89888;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  body.visual-edition .sprite.tremor,
+  body.visual-edition .stage-rec .rec-dot,
+  body.visual-edition .stage-puddle,
+  body.visual-edition .visual-stage,
+  body.visual-edition .bar-fill,
+  body.visual-edition .organ.blad.full,
+  body.visual-edition .organ .fill-shape {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Use each text edition's native CJK font while that language is selected. */
+html[lang^="zh"] body.visual-edition {
+  --font-visual: var(--cjk-font);
+}
+body.visual-edition .bar-row > span,
+body.visual-edition .luck-label {
+  max-width: 8.5rem;
+}
+body.visual-edition .rail-end button {
+  max-width: 100%;
+  white-space: normal;
+}
+body.visual-edition .visual-kicker {
+  flex-wrap: wrap;
+}

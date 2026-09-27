@@ -41,11 +41,11 @@ Use Node.js 20 or newer. Install the pinned development dependencies with `npm c
 No dependency installation is needed to play the released HTML.
 
 ```bash
-npm run build                 # editions, Gallery, reference, transcripts, wikis
-npm test                      # full read-only text and synchronization checks
-npm run check:local           # isolated text checkout; no cross-project claim
-node ../ADWD-visual/maintenance/build_visual_edition.js
-node ../ADWD-visual/maintenance/verify_project.js
+npm run build                 # text, Gallery, references, companions, then visual games
+npm test                      # full read-only text and visual checks
+npm run test:text             # text/source checks and routes
+npm run test:visual           # visual build parity, assets and simulated runtime
+npm run build:visual          # visual games from the current text outputs
 ```
 
 The full verifier checks generated-source freshness, catalog completeness, stable IDs,
@@ -70,37 +70,47 @@ checks do not prove perfect translation or exhaustive coverage of arbitrary stat
 and cutoff counts when reporting coverage; do not call bounded exploration exhaustive.
 Do not retain temporary copies, logs, screenshots or large audit dumps in the repository.
 
-## Visual synchronization
+## Unified layout and visual presentation
 
-ADWD is canonical for all language story/runtime, routes, wikis, transcripts and visual labels
-(`source/visual-ui/*.json`). ADWD-visual owns presentation and assets. Its builder reads the
-canonical inputs directly; there are no imported text games/catalogs, duplicated companions
-or synchronization receipts in the visual checkout. Rebuild the canonical releases first,
-then run the visual builder. `--check` verifies without writing. Default paths are sibling
-ADWD and ADWD-visual source checkouts; override with `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT`.
-The canonical verifier's `--local-only` option skips checking the visual checkout.
+One repository owns the story, all translations, both presentation formats, Gallery,
+wikis, transcripts, build tools and verification. Text and visual HTML files share
+`outputs/{lang}/`; their filenames distinguish the formats. `assets/` contains only
+the shared images. `source/visual/` contains the visual shell, styles, interface,
+scene map, adapter, effect engine and `puddle_meta.json`. `source/visual-ui/` owns
+localized visual labels. There is one maintenance folder, one package configuration
+and one root README. The old visual repository is retired; use
+`laimallama/a-date-with-diane` for all future changes.
 
-The final audit follow-up is recorded in `AUDIT-FIXES-2026-09-27.md`. The local
-player folders include later manual German/Japanese edits absent from the source
-repositories. Do not replace an existing installation from an export without
-first accounting for its local changes. This follow-up preserves those local
-passages and does not claim that they have been imported into maintained source.
+The consolidation retains both repository histories and preserves every installed
+game, wiki, transcript and image byte for byte. The local folder has no `.git` history
+or installed dependencies. GitHub contains the same maintained layout; its German/
+Japanese outputs still differ from twelve manually edited local output files.
+Those later local edits are not in the maintained catalogs. Before rebuilding or
+installing exports, account for the differences and preserve the local work. Moving
+files into a unified folder does not resolve that source difference.
 
-The visual verifier also exercises all 47 Gallery histories through the actual adapter
-in every edition using deterministic DOM/image/clock stubs. It checks cast/action
-selection, effect placement, Back, language switching, startup, Skip and loading races.
-Its focused mode is `node ../ADWD-visual/maintenance/verify_visual_runtime.js --focused`.
+The visual builder reads the text releases and language labels from this root.
+It preserves every core script byte for byte. Rebuild text outputs before visual
+outputs when shared source changes. `--check` verifies without writing. No external
+text/visual-root environment variables or sibling repositories are required.
+
+The unified `npm test` runs shared route/state checks once, then visual core parity,
+asset checks and all 47 Gallery histories through the actual adapter in every
+edition using deterministic DOM/image/clock stubs. Visual checks cover cast/action
+selection, effect placement, Back, language switching, startup, Skip and loading
+races. For a focused run, use `node maintenance/verify_visual_runtime.js --focused`.
 These checks establish state and asset selection, not browser pixels or playback timing.
 
-The normal local ADWD folder retains `maintenance/`, `source/`, package manifests and
-formatting configuration beside `outputs/` and `README.md`, matching the repository layout.
-ADWD-visual likewise retains its maintenance tools, visual modules and asset metadata.
-These local folders omit Git history and installed dependencies. Keep this support locally
-as well as on GitHub; a maintenance folder alone is not sufficient.
+Presentation edits do not authorize story or translation changes. Use semantic labels
+and hooks instead of patches to generated story functions. Language switches must
+preserve narrative state, sprites, effects and animation timers. See
+`maintenance/VISUAL.md` for presentation and asset contracts.
 
-Use `export_games.js` only for a separate play-only copy. It excludes development files
-and keeps companions once in ADWD. It must not replace the normal maintained local folders.
-README files use plain file paths and repository names, without hyperlinks or interpuncts.
+`export_games.js` creates one separate play-only folder with all text and visual games,
+shared companions, graphics and a single player README. It refuses existing destinations
+and overlap with the maintained project. Exports omit source, maintenance files, Git
+history and dependencies. Do not use an export to remove the installed maintenance tools.
+README text uses plain file paths and repository names, without hyperlinks or interpuncts.
 
 ## Text and localization conventions
 
@@ -218,7 +228,7 @@ was folded into the route book; `replay_route.js` remains a useful standalone de
 command. `write_hidden_scenes.js` retains its historical filename but only checks
 and exports definitions; `write_transcripts.js` owns transcript output.
 
-Visual formatting uses the pinned tools here (`npm run format:visual:check`), avoiding
-a second dependency installation. The visual repository's `verify_visual_support.js`
-checks every GIF/still pair and frame bank for missing or orphan files. Frame counts
+The unified formatter and support verifier include `source/visual/` and visual tools.
+`verify_visual_support.js` checks every GIF/still pair and frame bank for missing or
+orphan files, using effect metadata in `source/visual/puddle_meta.json`. Frame counts
 are derived; do not restore obsolete `count.txt` copies.

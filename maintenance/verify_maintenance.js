@@ -6,21 +6,17 @@ const assert = require("node:assert/strict");
 const { parse } = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 const ROOT = path.resolve(__dirname, "..");
-const visual = process.argv.includes("--visual");
-const root = visual
-  ? path.resolve(process.env.ADWD_VISUAL_ROOT || path.join(ROOT, "..", "ADWD-visual"))
-  : ROOT;
-const dirs = visual ? ["maintenance", "visual"] : ["maintenance"];
+const dirs = ["maintenance", "source/visual"];
 const files = dirs.flatMap((dir) =>
   fs
-    .readdirSync(path.join(root, dir))
+    .readdirSync(path.join(ROOT, dir))
     .filter((name) => name.endsWith(".js"))
     .map((name) => path.join(dir, name)),
 );
-if (!visual) files.push("source/runtime/wiki.js");
+files.push("source/runtime/wiki.js");
 const issues = [];
 for (const file of files) {
-  const ast = parse(fs.readFileSync(path.join(root, file), "utf8"));
+  const ast = parse(fs.readFileSync(path.join(ROOT, file), "utf8"));
   const seen = new Set();
   traverse(ast, {
     Scope(p) {

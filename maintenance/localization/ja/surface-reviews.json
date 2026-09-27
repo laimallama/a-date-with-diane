@@ -44,8 +44,8 @@
     {
       "source": "maintenance/gallery_data.json",
       "target": "source/gallery/ja.json",
-      "sourceHash": "eac3de37d6bf9294c44c1bb27e4f85164d23cf577826930b379d65dccd9099ea",
-      "targetHash": "442268c188f8e9cb42cca76edcf260c6b403b527779285a181a73b4fa75c2940",
+      "sourceHash": "00d936cff48dcd493afbbeae431d561846755c107e3c7ccc49f5204bde5ff3dc",
+      "targetHash": "e1b6a371698db0a4deaab4e418c07c55d8d5e096cad9bfd119a40136f5146b74",
       "items": 59,
       "meaning": true,
       "naturalness": true,

@@ -1,0 +1,171 @@
+{
+  "date": "2026-09-27",
+  "scope": "Three agreed Gallery title refinements only; story, route identity, order, scene boundaries, transcript filenames, omission scope, styles and visual assets remain unchanged.",
+  "previousCommit": "3e8d126b28e32f4e59613ba6228c29c7d7c57164",
+  "changes": [
+    {
+      "id": "01_theatre_flashback",
+      "lang": "en",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "Theatre Flashback to the First Time You Saw Diane",
+      "after": "The First Time You Saw Diane",
+      "sourceBefore": "Theatre Flashback to the First Time You Saw Diane"
+    },
+    {
+      "id": "01_theatre_flashback",
+      "lang": "cn",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "剧院里回想第一次见到黛安",
+      "after": "第一次见到黛安",
+      "sourceBefore": "剧院里回想第一次见到黛安"
+    },
+    {
+      "id": "01_theatre_flashback",
+      "lang": "tw",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "劇院裡回想第一次見到黛安",
+      "after": "第一次見到黛安",
+      "sourceBefore": "劇院裡回想第一次見到黛安"
+    },
+    {
+      "id": "01_theatre_flashback",
+      "lang": "es",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "Recuerdo en el teatro de la primera vez que viste a Diane",
+      "after": "La primera vez que viste a Diane",
+      "sourceBefore": "Recuerdo en el teatro de la primera vez que viste a Diane"
+    },
+    {
+      "id": "01_theatre_flashback",
+      "lang": "fr",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "Souvenir au théâtre de la première fois où vous avez vu Diane",
+      "after": "La première fois où vous avez vu Diane",
+      "sourceBefore": "Souvenir au théâtre de la première fois où vous avez vu Diane"
+    },
+    {
+      "id": "01_theatre_flashback",
+      "lang": "de",
+      "file": "source/gallery/de.json",
+      "before": "Erinnerung im Theater an deine erste Begegnung mit Diane",
+      "after": "Als du Diane zum ersten Mal gesehen hast"
+    },
+    {
+      "id": "01_theatre_flashback",
+      "lang": "ja",
+      "file": "source/gallery/ja.json",
+      "before": "劇場で思い出す、初めてダイアンを見た日",
+      "after": "初めてダイアンを見たとき"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "en",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "Diane Uses the Gents Urinal",
+      "after": "Diane Uses a Urinal",
+      "sourceBefore": "Diane Uses the Gents Urinal"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "cn",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "黛安使用男厕小便池",
+      "after": "黛安使用小便池",
+      "sourceBefore": "黛安使用男厕小便池"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "tw",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "黛安使用男廁小便斗",
+      "after": "黛安使用小便斗",
+      "sourceBefore": "黛安使用男廁小便斗"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "es",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "Diane usa el urinario de caballeros",
+      "after": "Diane usa un urinario",
+      "sourceBefore": "Diane usa el urinario de caballeros"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "fr",
+      "file": "maintenance/write_hidden_scenes.js",
+      "before": "Diane utilise l’urinoir des hommes",
+      "after": "Diane utilise un urinoir",
+      "sourceBefore": "Diane utilise l'urinoir des hommes"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "de",
+      "file": "source/gallery/de.json",
+      "before": "Diane benutzt das Pissoir der Herrentoilette",
+      "after": "Diane benutzt ein Urinal"
+    },
+    {
+      "id": "15_riverside_gents_urinal",
+      "lang": "ja",
+      "file": "source/gallery/ja.json",
+      "before": "ダイアンが男性用トイレの小便器を使う",
+      "after": "ダイアンが小便器を使う"
+    },
+    {
+      "id": "23_brooch",
+      "lang": "en",
+      "file": "maintenance/build_gallery_data.js",
+      "before": "Giving Diane the Brooch",
+      "after": "You Give Diane the Brooch",
+      "sourceBefore": "Giving Diane the Brooch"
+    },
+    {
+      "id": "23_brooch",
+      "lang": "cn",
+      "file": "maintenance/build_gallery_data.js",
+      "before": "把胸针送给黛安",
+      "after": "你把胸针送给黛安",
+      "sourceBefore": "把胸针送给黛安"
+    },
+    {
+      "id": "23_brooch",
+      "lang": "tw",
+      "file": "maintenance/build_gallery_data.js",
+      "before": "把胸針送給黛安",
+      "after": "你把胸針送給黛安",
+      "sourceBefore": "把胸針送給黛安"
+    },
+    {
+      "id": "23_brooch",
+      "lang": "es",
+      "file": "maintenance/build_gallery_data.js",
+      "before": "Regalarle el broche a Diane",
+      "after": "Le regalas el broche a Diane",
+      "sourceBefore": "Regalarle el broche a Diane"
+    },
+    {
+      "id": "23_brooch",
+      "lang": "fr",
+      "file": "maintenance/build_gallery_data.js",
+      "before": "Offrir la broche à Diane",
+      "after": "Vous offrez la broche à Diane",
+      "sourceBefore": "Offrir la broche à Diane"
+    }
+  ],
+  "alreadyEquivalent": [
+    {
+      "id": "23_brooch",
+      "lang": "de",
+      "file": "source/gallery/de.json",
+      "before": "Du schenkst Diane die Brosche",
+      "after": "Du schenkst Diane die Brosche"
+    },
+    {
+      "id": "23_brooch",
+      "lang": "ja",
+      "file": "source/gallery/ja.json",
+      "before": "ダイアンにブローチを贈る",
+      "after": "ダイアンにブローチを贈る"
+    }
+  ]
+}

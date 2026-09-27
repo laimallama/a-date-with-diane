@@ -283,11 +283,11 @@ const EXTRA_HIDDEN = [
     routeKey: "brooch",
     sceneStartTag: "givebrooch",
     title: {
-      en: "Giving Diane the Brooch",
-      cn: "把胸针送给黛安",
-      tw: "把胸針送給黛安",
-      es: "Regalarle el broche a Diane",
-      fr: "Offrir la broche à Diane",
+      en: "You Give Diane the Brooch",
+      cn: "你把胸针送给黛安",
+      tw: "你把胸針送給黛安",
+      es: "Le regalas el broche a Diane",
+      fr: "Vous offrez la broche à Diane",
     },
   },
   {

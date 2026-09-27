@@ -53,7 +53,7 @@ function introduction(visual) {
     "|---|---|---|",
     ...rows,
     "",
-    "Bilingual editions let you switch between English and the other language during play. Local text matches its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters. In the new German and Japanese editions, six game-text entries and three wiki passages per language carry explicit omission placeholders. The six corresponding English entries in those new bilingual games also carry placeholders. Other editions retain their existing content scope.",
+    "Bilingual editions let you switch between English and the other language during play. Local text matches its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters.",
     "",
     "## What is included",
     "",

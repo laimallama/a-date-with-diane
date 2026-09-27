@@ -80,6 +80,12 @@ then run the visual builder. `--check` verifies without writing. Default paths a
 ADWD and ADWD-visual source checkouts; override with `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT`.
 The canonical verifier's `--local-only` option skips checking the visual checkout.
 
+The final audit follow-up is recorded in `AUDIT-FIXES-2026-09-27.md`. The local
+player folders include later manual German/Japanese edits absent from the source
+repositories. Do not replace an existing installation from an export without
+first accounting for its local changes. This follow-up preserves those local
+passages and does not claim that they have been imported into maintained source.
+
 The visual verifier also exercises all 47 Gallery histories through the actual adapter
 in every edition using deterministic DOM/image/clock stubs. It checks cast/action
 selection, effect placement, Back, language switching, startup, Skip and loading races.

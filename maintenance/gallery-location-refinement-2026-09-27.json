@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-27",
+  "reason": "Gallery location differs between text and visual layouts; use position-independent instructions.",
+  "changes": [
+    {
+      "lang": "en",
+      "id": "x05011",
+      "before": "<p class='note-lead'>The Gallery at the top left offers guided routes to the prize endings, consolation endings and hidden scenes. Use it if you get stuck or simply want to explore. Some entries expand to reveal a choice of scenes. On a phone or tablet, use the on-screen buttons; on a computer, you can also use these shortcuts:</p>",
+      "after": "<p class='note-lead'>The Gallery offers guided routes to the prize endings, consolation endings and hidden scenes. Use it if you get stuck or simply want to explore. Some entries expand to reveal a choice of scenes. On a phone or tablet, use the on-screen buttons; on a computer, you can also use these shortcuts:</p>"
+    },
+    {
+      "lang": "cn",
+      "id": "x05011",
+      "before": "<p class='note-lead'>左上角的剧情图鉴提供通往奖励结局、安慰奖结局和隐藏场景的引导路线。遇到困难时可以参考，也可以用来探索剧情。有些项目展开后会显示多个场景，选择想看的即可。在手机或平板上，请使用屏幕上的按钮；在电脑上，还可以使用以下快捷键：</p>",
+      "after": "<p class='note-lead'>剧情图鉴提供通往奖励结局、安慰奖结局和隐藏场景的引导路线。遇到困难时可以参考，也可以用来探索剧情。有些项目展开后会显示多个场景，选择想看的即可。在手机或平板上，请使用屏幕上的按钮；在电脑上，还可以使用以下快捷键：</p>"
+    },
+    {
+      "lang": "tw",
+      "id": "x05011",
+      "before": "<p class='note-lead'>左上角的劇情圖鑑提供通往得獎結局、安慰獎結局與隱藏場景的引導路線。卡關時可以參考，也可以用來探索劇情。有些項目展開後會顯示多個場景，選擇想看的即可。在手機或平板上，請使用畫面上的按鈕；在電腦上，也可以使用以下快速鍵：</p>",
+      "after": "<p class='note-lead'>劇情圖鑑提供通往得獎結局、安慰獎結局與隱藏場景的引導路線。卡關時可以參考，也可以用來探索劇情。有些項目展開後會顯示多個場景，選擇想看的即可。在手機或平板上，請使用畫面上的按鈕；在電腦上，也可以使用以下快速鍵：</p>"
+    },
+    {
+      "lang": "es",
+      "id": "x05011",
+      "before": "<p class='note-lead'>La Galería de arriba a la izquierda ofrece rutas guiadas hacia los finales de premio, los finales de consolación y las escenas ocultas. Úsala si te atascas o simplemente quieres explorar. Algunas entradas se despliegan para que puedas elegir una escena. En un teléfono o tableta, usa los botones de la pantalla; en un ordenador, también puedes usar estos atajos de teclado:</p>",
+      "after": "<p class='note-lead'>La Galería ofrece rutas guiadas hacia los finales de premio, los finales de consolación y las escenas ocultas. Úsala si te atascas o simplemente quieres explorar. Algunas entradas se despliegan para que puedas elegir una escena. En un teléfono o tableta, usa los botones de la pantalla; en un ordenador, también puedes usar estos atajos de teclado:</p>"
+    },
+    {
+      "lang": "fr",
+      "id": "x05011",
+      "before": "<p class='note-lead'>La Galerie en haut à gauche propose des parcours guidés vers les fins gagnantes, les fins de consolation et les scènes cachées. Utilisez-la si vous bloquez ou souhaitez simplement explorer. Certaines entrées se déplient pour afficher plusieurs scènes au choix. Sur téléphone ou tablette, utilisez les boutons à l’écran ; sur ordinateur, vous pouvez aussi utiliser les raccourcis suivants :</p>",
+      "after": "<p class='note-lead'>La Galerie propose des parcours guidés vers les fins gagnantes, les fins de consolation et les scènes cachées. Utilisez-la si vous bloquez ou souhaitez simplement explorer. Certaines entrées se déplient pour afficher plusieurs scènes au choix. Sur téléphone ou tablette, utilisez les boutons à l’écran ; sur ordinateur, vous pouvez aussi utiliser les raccourcis suivants :</p>"
+    },
+    {
+      "lang": "de",
+      "id": "x05011",
+      "before": "<p class='note-lead'>Die Galerie oben links bietet geführte Wege zu den erfolgreichen Enden, Trostpreisen und versteckten Szenen. Nutze sie, wenn du nicht weiterkommst oder einfach etwas entdecken möchtest. Manche Einträge lassen sich aufklappen und bieten mehrere Szenen zur Auswahl. Auf dem Handy oder Tablet verwendest du die Schaltflächen auf dem Bildschirm; am Computer stehen dir außerdem diese Tastenkürzel zur Verfügung:</p>",
+      "after": "<p class='note-lead'>Die Galerie bietet geführte Wege zu den erfolgreichen Enden, Trostpreisen und versteckten Szenen. Nutze sie, wenn du nicht weiterkommst oder einfach etwas entdecken möchtest. Manche Einträge lassen sich aufklappen und bieten mehrere Szenen zur Auswahl. Auf dem Handy oder Tablet verwendest du die Schaltflächen auf dem Bildschirm; am Computer stehen dir außerdem diese Tastenkürzel zur Verfügung:</p>"
+    },
+    {
+      "lang": "ja",
+      "id": "x05011",
+      "before": "<p class='note-lead'>左上のギャラリーでは、各賞のエンディングや残念賞、隠しシーンに進むためのガイドを利用できます。行き詰まったときや、いろいろな場面を見てみたいときに使ってください。項目を開くと、複数のシーンから選べるものもあります。スマートフォンやタブレットでは画面のボタンを使い、パソコンでは次のショートカットキーも利用できます。</p>",
+      "after": "<p class='note-lead'>ギャラリーでは、各賞のエンディングや残念賞、隠しシーンに進むためのガイドを利用できます。行き詰まったときや、いろいろな場面を見てみたいときに使ってください。項目を開くと、複数のシーンから選べるものもあります。スマートフォンやタブレットでは画面のボタンを使い、パソコンでは次のショートカットキーも利用できます。</p>"
+    }
+  ]
+}

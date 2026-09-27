@@ -20,6 +20,9 @@ require("node:child_process").execFileSync(process.execPath, [
 const baseline = json("maintenance/fixtures/text-baseline.json");
 const reviewedChanges = json("maintenance/refactor_text_changes.json").changes;
 const restoration = json("maintenance/continuity-restoration-2026-09-27.json");
+const galleryLocationChanges = json(
+  "maintenance/gallery-location-refinement-2026-09-27.json",
+).changes;
 const groups = json("source/status-groups.json");
 const aligned = json("maintenance/aligned_text.json");
 const key = (r) => `${r.kind}/${r.source.node}/${r.source.slot}`;
@@ -42,6 +45,14 @@ for (const lang of LANGS) {
   const catalog = json(`source/text/${lang}.json`);
   const source = readSource(lang);
   const reconstructed = { ...catalog };
+  for (const change of galleryLocationChanges.filter((c) => c.lang === lang)) {
+    assert.equal(
+      reconstructed[change.id],
+      change.after,
+      "Unrecorded Gallery instruction edit: " + lang + "/" + change.id,
+    );
+    reconstructed[change.id] = change.before;
+  }
   for (const change of restoration.catalogChanges.filter((c) => c.lang === lang)) {
     if (change.after === null)
       assert(!Object.hasOwn(reconstructed, change.id), "Retired text returned: " + change.id);

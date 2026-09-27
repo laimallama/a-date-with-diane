@@ -92,9 +92,15 @@ selection, effect placement, Back, language switching, startup, Skip and loading
 Its focused mode is `node ../ADWD-visual/maintenance/verify_visual_runtime.js --focused`.
 These checks establish state and asset selection, not browser pixels or playback timing.
 
-Use `export_games.js` for play-only folders; it excludes all development files and keeps
-companions once in ADWD. A playable export is not a source checkout. Keep authoring sources
-and package manifests in GitHub even when the user removes local development copies.
+The normal local ADWD folder retains `maintenance/`, `source/`, package manifests and
+formatting configuration beside `outputs/` and `README.md`, matching the repository layout.
+ADWD-visual likewise retains its maintenance tools, visual modules and asset metadata.
+These local folders omit Git history and installed dependencies. Keep this support locally
+as well as on GitHub; a maintenance folder alone is not sufficient.
+
+Use `export_games.js` only for a separate play-only copy. It excludes development files
+and keeps companions once in ADWD. It must not replace the normal maintained local folders.
+README files use plain file paths and repository names, without hyperlinks or interpuncts.
 
 ## Text and localization conventions
 

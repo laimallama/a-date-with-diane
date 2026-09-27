@@ -1,116 +1,93 @@
 # A Date with Diane (Remastered)
 
-This is a restored, cleaned, and expanded edition of the original *A Date with Diane*, an old omorashi text game.
+This is a restored, polished and expanded edition of the original *A Date with Diane*, an omorashi text adventure. Your choices shape an evening with Diane. The day, meals, drinks, conversations and journey home can lead to different scenes and endings.
 
-This edition keeps the original narrative flavour while improving the playable experience: clearer wording and logic, Back with full state restore, an in-game Gallery for endings and hidden scenes (with guided highlighting and Skip to the good bit), dark mode, and seven language editions.
+The remaster keeps the original British narrative voice while improving wording, continuity and navigation. It includes seven languages, six bilingual editions, Back with full state restore, an in-game Gallery, guided fast-forward, Skip to the good bit, and light and dark themes.
 
 ## Playing
 
-Playable files are in [`outputs/`](outputs/), grouped by language.
+Open an HTML game in your browser. No installation, server or internet connection is needed to play. The files are grouped by language:
 
 | Folder | Language |
 |---|---|
 | `outputs/en/` | English |
 | `outputs/cn/` | Simplified Chinese |
-| `outputs/tw/` | Taiwan Mandarin (Traditional) |
+| `outputs/tw/` | Taiwan Mandarin (Traditional Chinese) |
 | `outputs/es/` | Spanish |
 | `outputs/fr/` | French |
 | `outputs/de/` | German |
 | `outputs/ja/` | Japanese |
 
-Each language folder contains:
+Open `outputs/en/dianedate_en.html` for English. Other standalone games use `dianedate_<language>.html`; bilingual games add `_bilingual` before `.html`. Bilingual editions let you switch between English and the other language during play. Taiwan Mandarin uses native local wording rather than a character conversion of Simplified Chinese.
 
-- `dianedate_*.html` — open in a browser to play (bilingual editions switch with English; EN is single-language only)
-- `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
-- `wiki_*.html` — companion setting and character articles; not playable
+## What is included
 
-There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **32 hidden-scene leaves in every language** (variants inside a group each count as a leaf).
+There are thirteen self-contained text games, covering five main prize endings, consolation endings and hidden scenes. Each language folder also contains:
 
-The game boots on the title screen (no age gate). **Gallery** is available from there: pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**H**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**B**) restores full state. **G** / Escape open and close the Gallery. **D** toggles Dark Mode. Bilingual: **L** switches language. **1–9** select choices.
+- `wiki_<language>.html`, a companion reference to the setting and characters.
+- `transcripts/endings/`, the ending transcripts.
+- `transcripts/hidden_scenes/`, the hidden-scene transcripts.
 
-**Dark Mode: On/Off** persists across refresh in the same tab (`sessionStorage`). A new tab starts in light mode.
+The seven wikis and 329 transcripts are kept here, with no duplicate copies in ADWD-visual. Transcripts follow Gallery order and titles. Ending transcripts begin at the climax reached by Skip to the good bit; hidden-scene transcripts begin at the scene's starting point. The separate ADWD-visual folder contains the visual editions.
 
-The stats bar is Diane’s date HUD. It stays hidden on title, notes, further information, and day-choice screens, then appears when the date begins (“On with the story!”). It stays up through same-night prize cards, same-night game-overs (including Amanda downstairs), and the Chloe walk-home stretch (so luckshots stay visible). When you turn for home after leaving Diane, her bladder empties off-screen as usual. It hides again the next morning (the phone call). Chloe and Amanda do not get their own meters.
+## Gallery and controls
+
+The Gallery contains 15 ending routes and 32 hidden-scene routes. It is available from the title screen and supplies the walkthroughs. Choose an entry to start its route, then follow the highlighted Guide choices.
+
+| Key | Action |
+|---|---|
+| **1–9** | Select a choice. |
+| **G** / **Esc** | Open / close the Gallery. |
+| **H** | Turn the active Guide on or off. |
+| **Enter** | Follow the highlighted Guide choice. Hold to fast-forward; release to stop. |
+| **B** | Use the Back button. Hold to rewind quickly; release to stop. |
+| **S** | Skip to the climax while following an ending Guide. |
+| **D** | Toggle dark mode. |
+| **L** | Switch language in a bilingual edition. |
+
+Skip is available once per newly started ending Guide. Going back can take you before the skipped point, but does not make Skip available again. Turning the Guide off removes Skip and stops fast-forward. The in-game Notes explain the controls in each language.
+
+Dark mode persists across refreshes in the same tab. A new tab starts in light mode. Back restores the previous page, choices and game state within the current session; it is not a persistent save.
 
 ## Maintaining
 
-The maintained story is in [`source/story.js`](source/story.js); the seven language
-catalogs are in [`source/text/`](source/text/). Shared runtime, interface labels,
-styles and document shells live alongside them. All thirteen playable HTML files are
-generated, self-contained releases. English and local bilingual text come directly
-from the same catalogs as the standalone games. Text already contains its final
-punctuation and markup; no runtime repair or translation fallback is needed.
+The local folder keeps the same maintained file layout as the GitHub repository `laimallama/a-date-with-diane`:
 
-The new German/Japanese editions use clear placeholders at six game entries and
-three wiki passages per language. Their new bilingual English layers use the same
-six scoped omissions; other editions retain their existing content scope.
-[Localization records](maintenance/localization/README.md) document the
-exact IDs, review coverage, language conventions and verification limits.
+- `outputs/` contains the games, wikis and transcripts.
+- `maintenance/` contains build tools, verification tools, change records and editing conventions.
+- `source/` contains the shared story code, seven language catalogs, interface labels, styles, document templates and wiki articles.
+- `package.json` defines development commands and dependencies. `package-lock.json` pins their versions.
+- `.prettierrc.json` defines source formatting. `.gitignore` excludes temporary files and installed dependencies from version control.
 
-Use Node.js 20 or newer for development:
+The maintenance tools need these supporting files beside them. The local installation has no `.git` history or `node_modules/` folder. Run `npm ci` when development dependencies are needed; the resulting `node_modules/` folder can be removed afterwards. Playing requires none of these development tools.
+
+The current local installation contains later manual German/Japanese edits that are absent from the maintained source. Restoring maintenance files does not import those edits. Read `maintenance/AI_HANDOFF.md` before rebuilding, and account for the local differences before replacing any installed outputs.
+
+Use Node.js 20 or newer. From ADWD, the normal development commands are:
 
 ```bash
 npm ci
-npm run build        # rebuild editions, Gallery, reference, transcripts and wikis
-npm test             # read-only checks, including build parity with ADWD-visual
-npm run check:local  # isolated checkout only
-node ../ADWD-visual/maintenance/build_visual_edition.js
+npm run build
+npm test
+npm run build:visual
+node ../ADWD-visual/maintenance/verify_project.js
 ```
 
-Read [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md) for editing conventions,
-source ownership, verification scope, browser checks and visual synchronization.
-[`maintenance/REFACTOR.md`](maintenance/REFACTOR.md) records the source migration and
-its recovery commits. Route definitions generate the classic Gallery's 47 leaves and
-all 329 localized transcripts. `maintenance/aligned_text.json` is a generated
-inspection reference with stable text IDs; edit the catalogs, not that reference.
-The seven wiki article documents are maintained in `source/wiki/`; their runtime and
-stylesheet are shared. The released wiki HTML is generated and self-contained.
-`npm run format` / `npm run format:check` cover all maintained code and HTML templates.
-Use `npm run format:visual` / `npm run format:visual:check` for the visual repository.
+Build commands write generated files. Tests and builders with `--check` are read-only. Use `npm run check:local` when the visual project is unavailable; it does not verify cross-project consistency. Run `npm run format:check` for maintained code formatting, and `npm run format:visual:check` for visual source formatting.
 
-The full verifier covers generated freshness, exact text witnesses, all bilingual
-layers, dynamic text, focused historical regressions, all Gallery routes, numerical
-state, Back/replay and Skip. Real-browser controls and selected layouts have a separate
-Playwright verifier. No new browser/device rendering or independent native-speaker
-review is claimed for German/Japanese. These checks do not prove linguistic perfection or exhaustive
-coverage of arbitrary state combinations.
+ADWD owns the shared story, translations, Gallery routes, wikis, transcripts and visual labels. ADWD-visual owns the presentation and graphics. Keep the folders side by side, or set `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT` for other locations. Build commands never commit or push automatically.
 
-ADWD is canonical for all language content and visual labels (`source/visual-ui/`).
-The sibling **ADWD-visual** checkout reads those inputs directly to build all thirteen visual
-editions. It carries no duplicate text games, wikis, transcripts or language catalogs.
-Set `ADWD_TEXT_ROOT` and `ADWD_VISUAL_ROOT` when the source checkouts are not siblings.
-Build commands never commit or push automatically.
+Read `maintenance/AI_HANDOFF.md` before editing. It covers source ownership, stable text IDs, preservation rules and verification scope. `maintenance/aligned_text.json` is a generated inspection reference; edit the language catalogs instead. Restoration and localization records remain in `maintenance/`.
 
-## Small playable exports
+The checks cover generated freshness, bilingual text, Gallery routes, game state, Back, Skip and transcript consistency. Browser layout and animation playback require separate browser checks. Automated checks do not prove perfect translation or exhaustive coverage of every possible branch combination.
 
-The repository is an authoring checkout; source, tests, package manifests and Git history
-are development files. Produce separate play-only folders with:
+## Optional play-only copies
+
+The normal local folders retain their maintenance files. For a separate copy containing only the games and companion material, run:
 
 ```bash
 node maintenance/export_games.js /path/to/new-release-folder
 node maintenance/export_games.js --check /path/to/new-release-folder
 ```
 
-The exporter requires a new destination and refuses to overlap either source checkout.
-It copies all 26 playable HTML editions unchanged. `ADWD/` contains the thirteen text games,
-seven wikis and 329 transcripts. `ADWD-visual/` contains only the thirteen visual games and
-318 required image assets; companion references point to ADWD. Each gets an informative
-playing README covering the game, contents, controls and companions. Exports have no
-`.git`, `node_modules`, `source`, maintenance tools, manifests, synchronization receipts
-or duplicated companion files. The visual metadata is already embedded in every visual
-HTML page.
-
-`package.json` defines development commands and dependencies; `package-lock.json` pins
-exact versions for reproducible installs; `node_modules/` is their disposable installed
-copy. `source/` is the authoritative editable code and translation catalogs. Keep these
-in the authoring repository, not in a folder intended only for playing. To resume work
-from play-only folders, clone both GitHub repositories into sibling development folders,
-then run `npm ci` in ADWD. Do not try to run build commands inside a playable export.
-
-## Continuity and restoration update — 27 September 2026
-
-The approved repairs and restored bridge branch are documented in
-[the implementation record](maintenance/RESTORATION-2026-09-27.md). All seven
-languages, both presentation formats, Guides, transcripts and affected wiki facts
-are synchronized. The classic Gallery now has two adjacent bridge scenes under
-“Under the Bridge,” distinguished by who goes first.
+The exporter requires a new destination and refuses to overwrite either source folder. It creates ADWD and ADWD-visual folders without maintenance tools, source files, dependencies or Git history. It copies the current generated outputs; it does not reconcile differences between installed games and maintained source.

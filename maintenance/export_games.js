@@ -28,11 +28,11 @@ function introduction(visual) {
   };
   const rows = LANGUAGES.map((lang) => {
     const base = `outputs/${lang}/dianedate_${visual ? "visual_" : ""}${lang}`;
-    return `| ${names[lang]} | [Play](${base}.html) | ${lang === "en" ? "—" : `[Play with English](${base}_bilingual.html)`} |`;
+    return `| ${names[lang]} | \`${base}.html\` | ${lang === "en" ? "—" : `\`${base}_bilingual.html\``} |`;
   });
   const companions = LANGUAGES.map(
     (lang) =>
-      `- ${names[lang]}: [Wiki](${visual ? "../ADWD/" : ""}outputs/${lang}/wiki_${lang}.html) · [Transcripts](${visual ? "../ADWD/" : ""}outputs/${lang}/transcripts/)`,
+      `- ${names[lang]}: wiki at \`${visual ? "../ADWD/" : ""}outputs/${lang}/wiki_${lang}.html\`; transcripts in \`${visual ? "../ADWD/" : ""}outputs/${lang}/transcripts/\`.`,
   );
   return [
     `# A Date with Diane${visual ? " — Visual editions" : " (Remastered)"}`,
@@ -104,12 +104,12 @@ function introduction(visual) {
       ? "Keep **assets/** beside **outputs/**, preserving their folder structure. This folder contains the visual games and their graphics; the text-only games and companion references are in ADWD."
       : "**outputs/** contains the language folders, games, wikis and transcripts. Each text game is a single HTML file; the visual editions are available separately in ADWD-visual.",
     "",
-    "These folders contain the files needed to play and read the companion material. Editable sources, maintenance tools and version history are kept in the GitHub repositories:",
+    "These folders contain the files needed to play and read the companion material. The normal local ADWD and ADWD-visual folders retain maintenance tools and source files alongside outputs. This play-only export omits that development support. The GitHub repositories also retain the maintained sources and version history:",
     "",
-    "- [Text source](https://github.com/laimallama/a-date-with-diane)",
-    "- [Visual source](https://github.com/laimallama/a-date-with-diane-visual)",
+    "- Text source: `laimallama/a-date-with-diane`.",
+    "- Visual source: `laimallama/a-date-with-diane-visual`.",
     "",
-    "To maintain the games, clone both repositories into sibling ADWD and ADWD-visual development folders and follow their READMEs.",
+    "To maintain the games, use the normal local folders and follow their READMEs. If you only have this play-only export, clone the repositories into separate sibling ADWD and ADWD-visual development folders.",
     "",
   ].join("\n");
 }

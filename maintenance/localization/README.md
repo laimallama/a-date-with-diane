@@ -5,12 +5,12 @@ complete. Both were translated directly from English at
 `da90009ab65f88099d1c57b8800e254a9d53e5cc`; the visual baseline is
 `52c91af79b3a1bdd7ed308cb9c6eb2129eb0a8d8`. The preservation statements below describe that original localization release.
 The separately approved 27 September restoration now updates all seven languages;
-see [the restoration record](../RESTORATION-2026-09-27.md) and its reversible ledger.
+see the restoration record in `maintenance/RESTORATION-2026-09-27.md` and its reversible ledger.
 The omission policy remains unchanged.
 
 Each locale now contains 5,362 reviewed ordinary catalog leaves, six explicit omission
 placeholders and four preserved empty outputs. Each has four game editions, a wiki
-and 47 generated transcripts. See [verification](verification.md), the per-language
+and 47 generated transcripts. See `maintenance/localization/verification.md`, the per-language
 style guides, change records and hash-based editorial ledgers. Technical verification
 and editorial review do not establish absolute perfection; browser and independent
 native-speaker limits are stated explicitly.

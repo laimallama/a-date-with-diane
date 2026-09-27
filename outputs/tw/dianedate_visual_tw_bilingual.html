@@ -15851,7 +15851,7 @@ function bottom1() {
     }
     sAlt("<p>What will it be?</p>", "<p>接下來呢？</p>");
     if (!standingLegsDone) cAlt("bottom1a", "Explore her legs?", "撫摸她的腿？");
-    if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts again?", "再撫摸她的胸？");
+    if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts?", "撫摸她的胸？");
     cAlt("kissher", "Kiss her again?", "再親她一次？");
   }
 }
@@ -16552,7 +16552,7 @@ function kissher() {
       "<p>很好，但我們還是果斷一點點吧？</p>",
     );
   }
-  if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts again?", "再撫摸她的胸？");
+  if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts?", "撫摸她的胸？");
   else {
     cAlt("sofasnog", "You go and sit on the sofa.", "你到沙發上坐下。");
     cAlt(
@@ -16565,8 +16565,8 @@ function kissher() {
 function breasts1b() {
   standingBreastsDone = 1;
   sAlt(
-    "<p>You reach up and touch her breasts again. She breaks away and says, ‘Shall we sit down?’</p>",
-    "<p>你伸手再次撫上她的胸部。她掙開身子說：「我們坐下來吧？」</p>",
+    "<p>You reach up and touch her breasts. She breaks away and says, ‘Shall we sit down?’</p>",
+    "<p>你伸手撫上她的胸部。她掙開身子說：「我們坐下來吧？」</p>",
   );
   cAlt("sofasnog", "You go and sit on the sofa.", "你到沙發上坐下。");
 }

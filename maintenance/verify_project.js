@@ -215,6 +215,9 @@ assert.equal(c.ADWDSceneMap.peeBeat("underbridge3", c.ADWDSceneMap.castFor("unde
 execFileSync(process.execPath, [path.join(ROOT, "maintenance/verify_visual_support.js")], {
   stdio: "inherit",
 });
+execFileSync(process.execPath, [path.join(ROOT, "maintenance/verify_visual_runtime.js")], {
+  stdio: "inherit",
+});
 console.log(
-  `PASS: ${EDITIONS.length} byte-identical game cores, ${localizedChromeChecks} new-locale chrome/theme/language cases, complete visual catalogs, script syntax, scene regressions and visual assets. Browser behavior/layout is checked separately.`,
+  `PASS: ${EDITIONS.length} byte-identical game cores, ${localizedChromeChecks} new-locale chrome/theme/language cases, complete visual catalogs, script syntax, scene regressions, visual assets and adapter runtime checks. Browser rendering is checked separately.`,
 );

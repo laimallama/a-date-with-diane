@@ -44,7 +44,9 @@ Reduced-motion CSS disables the added sprite tremor, REC pulse, and panel/effect
 
 `node maintenance/build_visual_edition.js --check` detects stale generated pages without writing. The builder requires its injection anchors to exist and fails if the source structure no longer matches. Run `node maintenance/verify_project.js` for core parity, locale catalogs, location and asset inventory checks.
 
-Building and checks require the canonical ADWD source checkout; use `ADWD_TEXT_ROOT` to select its path. The visual verifier proves each generated core script is byte-identical to its canonical input. Route/state tests stay in ADWD; visual adapter behavior and layout require browser checks.
+Building and checks require the canonical ADWD source checkout; use `ADWD_TEXT_ROOT` to select its path. The visual verifier proves each generated core script is byte-identical to its canonical input. It also runs `verify_visual_runtime.js`: all 47 Gallery histories in all thirteen editions through the actual adapter and effect engine, using DOM, image and clock stubs. This checks asset selection, actor/effect positions, replay, Back, language switching, conditional events, cold-load races, Gallery startup, Skip and reduced motion. `--focused` runs just the conditional and navigation cases. Browser pixels, layout and actual GIF playback timing still require a browser review.
+
+Aftermath poses are explicit page facts in `wetCastFor`, so Back reconstructs them and one character's outcome cannot affect another. Wet clothing alone does not create a floor effect. A continuing event retains its load identity across pages; navigation invalidates old completions. Every intentional loop can display REC, while only Diane's event animates her meter. Held effects stop their clock. Event duration comes from the verified clip metadata.
 
 Location labels currently share the same stage background. They are not separate illustrated environments. Back reconstructs presentation from the restored narrative state; it does not serialize a precise GIF playback frame.
 

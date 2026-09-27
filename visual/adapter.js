@@ -42,7 +42,8 @@
   ];
 
   var state = {
-    wet: false,
+    wetCast: null,
+    eventGeneration: 0,
     playingEvent: false,
     /** Intentional pee: first loop drained; further loops are replay (REC). */
     peeReplay: false,
@@ -66,15 +67,6 @@
   };
 
   var DRAIN_MS = 5200; // fallback only if clip meta missing
-  /** Forward-only multi-spurt wetting length (frames × 100ms) before wet idle. */
-  var WET_ONESHOT_MS = {
-    diane: 2200,
-    molly: 3000,
-    debbie: 2900,
-    amanda: 2500,
-    chloe: 2700,
-  };
-
   var el = {};
 
   function $(id) {
@@ -202,8 +194,8 @@
     tag = String(tag || "");
     castKey = castKey || "diane";
 
-    // Diane’s accident idle only applies to Diane
-    if (castKey === "diane" && state.wet) {
+    // Aftermath belongs only to the character identified by this page.
+    if (castKey === state.wetCast) {
       return { key: "wet", file: GIF.wetIdle };
     }
 
@@ -219,7 +211,6 @@
         // Under-bridge wait / Diane's pee only — not Molly's pee page or the reunion
         if ((tag === "luckytrip3" || tag === "luckytrip3a" || tag === "underbridge") && pct < 68)
           pct = 74;
-        if (/^(stagedoor|foyerbar|pubdrink)/.test(tag) && pct < 68) pct = 74;
       }
       return bandFromPct(pct);
     }
@@ -327,6 +318,7 @@
 
   /** Wipe pee/puddle/drain so Back/restore can rebuild the page beat cleanly. */
   function resetVisualFxForNav() {
+    state.eventGeneration++;
     clearPeeTimer();
     clearWetIdleTimer();
     clearPuddle();
@@ -334,7 +326,7 @@
     state.activePeeBeat = null;
     state.peeReplay = false;
     state.visualBlad = null;
-    state.wet = false;
+    state.wetCast = null;
     showRecBadge(false);
     setBladFillTransition(true);
   }
@@ -358,13 +350,13 @@
    * Frame-locked grow bank — same timing as the puddle sync engine.
    * Prepares maps, then starts character GIFs + puddle clock on the same tick.
    */
-  function startSyncedPuddle(entries, kind, continuing) {
+  function startSyncedPuddle(entries, kind) {
     state.puddleEntries = entries || state.puddleEntries || null;
     var eng = getPuddleEngine();
     if (!eng) return Promise.resolve();
     if (el.puddle && el.stage) eng.bind(el.puddle, el.stage);
     var list = entries || state.puddleEntries || [];
-    return eng.start(list, kind === "wet" ? "wet" : "pee", !!continuing);
+    return eng.start(list, kind === "wet" ? "wet" : "pee");
   }
 
   /** After sprites are on screen, kick the puddle scrub clock (aligned with GIF t=0). */
@@ -373,27 +365,13 @@
     if (eng && eng.beginClock) eng.beginClock();
   }
 
-  /** Ensure a full puddle is showing (wet idle / aftermath). */
-  function ensureHeldPuddle(castKey) {
-    var eng = getPuddleEngine();
-    if (eng && eng.isActive()) {
-      eng.holdFull();
-      return Promise.resolve();
-    }
-    var key = castKey || "diane";
-    var entries = state.puddleEntries || [{ castKey: key, charFile: GIF.wetting }];
-    return startSyncedPuddle(entries, "wet", false).then(function () {
-      holdPuddleFull();
-    });
-  }
-
   function setOrganFill(rect, pct) {
     if (!rect) return;
     rect.style.transform = "scaleY(" + Math.max(0, Math.min(100, pct)) / 100 + ")";
   }
 
   function setBladColour(pct) {
-    var c = urineAt(state.wet ? 8 : pct);
+    var c = urineAt(state.wetCast === "diane" ? 8 : pct);
     var lit = $("blad-stop-lit"),
       mid = $("blad-stop-mid"),
       deep = $("blad-stop-deep");
@@ -461,8 +439,8 @@
         })
         .join("");
     }
-    var hot = !state.wet && bp >= 78;
-    var crit = !state.wet && bp >= 88;
+    var hot = state.wetCast !== "diane" && bp >= 78;
+    var crit = state.wetCast !== "diane" && bp >= 88;
     if (el.bladOrg) {
       el.bladOrg.classList.toggle("full", hot);
       el.bladOrg.classList.toggle("crit", crit);
@@ -519,7 +497,7 @@
   }
 
   function spriteShouldTremor(band, file) {
-    if (prefersReducedMotion() || state.wet) return false;
+    if (prefersReducedMotion()) return false;
     if (isReliefClip(file)) return false;
     return !!(band && (band.key === "desperate" || band.key === "critical"));
   }
@@ -703,26 +681,14 @@
     }
 
     // Pee: drive from puddle scrub so refill/drain stay locked to the grow map forever
-    var loopLen =
-      info.loopFrames != null
-        ? info.loopFrames | 0
-        : info.srcFrames | 0
-          ? (info.srcFrames | 0) * 2 - 2
-          : 68;
-    if (loopLen < 20) loopLen = 68;
+    var loopLen = peeLoopFrames(info);
 
     function onPeeScrub(scrub) {
       var i = ((scrub % loopLen) + loopLen) % loopLen;
       state.visualBlad = mlAtPeeLoopFrame(i, info, fromMl, toMl, loopLen);
       state.lastBlad = state.visualBlad;
       renderMeters();
-      // REC after the first complete arc (scrub hits loop length)
-      if (!state.peeReplay && scrub >= loopLen) {
-        state.peeReplay = true;
-        state.playingEvent = false;
-        showRecBadge(true);
-        setStageStatus("peeing");
-      }
+      markPeeReplay(scrub, loopLen);
     }
 
     if (eng && eng.setOnScrub) {
@@ -738,6 +704,20 @@
           typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
         onPeeScrub(Math.floor((now - t0b) / 100));
       }, 40);
+    }
+  }
+
+  function peeLoopFrames(info) {
+    if (!info) return 68;
+    return info.loopFrames || (info.srcFrames ? info.srcFrames * 2 - 2 : 68);
+  }
+
+  function markPeeReplay(scrub, loopLength) {
+    if (!state.peeReplay && scrub >= loopLength) {
+      state.peeReplay = true;
+      state.playingEvent = false;
+      showRecBadge(true);
+      setStageStatus("peeing");
     }
   }
 
@@ -875,45 +855,27 @@
     }
   }
 
-  /** End a looping pee/wet page: apply wet idle or return to calm meters. */
-  function finalizePeeBeat(beat) {
+  /** Leaving an event clears its floor effects; aftermath poses come from the page. */
+  function finalizePeeBeat() {
+    state.eventGeneration++;
     clearPeeTimer();
     clearWetIdleTimer();
+    clearPuddle();
     state.playingEvent = false;
     state.activePeeBeat = null;
     state.peeReplay = false;
     showRecBadge(false);
     state.visualBlad = null;
     setBladFillTransition(true);
-    if (!beat) {
-      clearPuddle();
-      return;
-    }
-    state.wet = beat.outcome === "wet";
-    if (typeof blad === "number" && blad <= 0 && beat.outcome !== "wet") {
-      state.wet = false;
-    }
-    if (state.wet) {
-      holdPuddleFull();
-      if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-        var sc =
-          root.ADWDSceneMap && root.ADWDSceneMap.resolve
-            ? root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "")
-            : null;
-        ensureHeldPuddle((sc && sc.cast && sc.cast.primary) || "diane");
-      }
-    } else {
-      clearPuddle();
-    }
   }
 
-  function scheduleWetIdle(scene, castKey) {
+  function scheduleWetIdle(castKey, info) {
     clearWetIdleTimer();
-    var ms = prefersReducedMotion() ? 0 : WET_ONESHOT_MS[castKey] || 2400;
+    var ms = prefersReducedMotion() ? 0 : info && info.srcFrames ? info.srcFrames * 100 : 2400;
     state.wetIdleTimer = window.setTimeout(function () {
       state.wetIdleTimer = null;
       if (!state.playingEvent) return;
-      state.wet = true;
+      state.wetCast = castKey;
       state.playingEvent = false;
       // Keep activePeeBeat so disaster2 can still "continue" as wet idle visually
       setSpriteClip(castKey, GIF.wetIdle, false);
@@ -923,11 +885,6 @@
       renderMeters();
     }, ms);
   }
-
-  /**
-   * REC badge is armed from the looping pee scrub (first full arc).
-   * Kept as a named hook so playPeeBeat can document the replay contract.
-   */
 
   /**
    * Play pee (07/08) or wetting (06) clips.
@@ -948,73 +905,36 @@
     if (beatClipId(beat) === "wetIdle") {
       clearWetIdleTimer();
       clearPeeTimer();
-      state.wet = true;
+      state.wetCast = (beat.keys && beat.keys[0]) || "diane";
       state.playingEvent = false;
       state.activePeeBeat = beat;
       state.visualBlad = null;
       setBladFillTransition(true);
       refreshStage(scene);
-      ensureHeldPuddle((beat.keys && beat.keys[0]) || "diane");
-      return;
-    }
-
-    // Already wet after leaving an accident sequence — idle only
-    // (skip when continuing disaster1→2 mid-stream)
-    if (
-      !continuing &&
-      beat.outcome === "wet" &&
-      state.wet &&
-      !state.playingEvent &&
-      !state.activePeeBeat
-    ) {
-      refreshStage(scene);
-      ensureHeldPuddle((beat.keys && beat.keys[0]) || scene.cast.primary || "diane");
+      clearPuddle();
       return;
     }
 
     if (continuing) {
-      state.activePeeBeat = beat;
-      if (el.stageBand) {
-        setStageStatus(beat.status || (beat.outcome === "wet" ? "wetting" : "peeing"));
-      }
-      // Settled oneshot / replay: keep idle or looping pee + held puddle
+      // Keep the original event identity while its images are still loading.
+      // Its pending completion owns the drain/idle timers; do not start it twice.
       if (!state.playingEvent && beat.outcome === "wet") {
-        state.wet = true;
-        var idleKey = (beat.keys && beat.keys[0]) || scene.cast.primary || "diane";
-        setSpriteClip(idleKey, GIF.wetIdle, false);
-        holdPuddleFull();
-        showRecBadge(false);
         setStageStatus("wet");
-      } else if (!state.playingEvent && state.peeReplay) {
-        var replayKeys =
-          beat.keys && beat.keys.length ? beat.keys : [scene.cast.primary || "diane"];
-        for (var ri = 0; ri < replayKeys.length; ri++) {
-          setSpriteClip(replayKeys[ri], clipForKey(beat, ri, replayKeys[ri]), false);
-        }
-        // Keep puddle clock looping (do not freeze on full)
-        startSyncedPuddle(state.puddleEntries || [], "pee", true);
-        showRecBadge(true);
-        setStageStatus("peeing");
       } else {
-        startSyncedPuddle(
-          state.puddleEntries || [],
-          beat.outcome === "wet" ? "wet" : "pee",
-          true,
-        ).then(function (res) {
-          if (res && res.ok) syncPuddleClock();
-        });
+        setStageStatus(beat.status || "peeing");
       }
       return;
     }
 
     clearPeeTimer();
     clearWetIdleTimer();
+    var generation = ++state.eventGeneration;
     state.playingEvent = true;
     state.peeReplay = false;
     showRecBadge(false);
     state.activePeeBeat = beat;
     // Fresh wetting oneshot — not yet "already wet"
-    if (beat.outcome === "wet") state.wet = false;
+    state.wetCast = null;
 
     var status = beat.status || (beat.outcome === "wet" ? "wetting" : "peeing");
     var keys = beat.keys && beat.keys.length ? beat.keys.slice() : [scene.cast.primary || "diane"];
@@ -1056,10 +976,13 @@
     }
     var drainKind = beat.outcome === "wet" ? "wet" : "pee";
 
-    Promise.all([startSyncedPuddle(puddleEntries, drainKind, false)].concat(preload))
+    Promise.all([startSyncedPuddle(puddleEntries, drainKind)].concat(preload))
       .then(function (results) {
-        if (state.activePeeBeat !== beat) return;
+        if (state.eventGeneration !== generation) return;
         var puddleRes = results[0] || {};
+        // Restart sprites after decoding, so their first frame and effect clock
+        // share the same origin even on a cold load.
+        for (var i = 0; i < list.length; i++) setSpriteClip(list[i], overrides[list[i]], true);
         syncPuddleClock();
         // Organ meter is Diane’s only — never drain it for Molly/Debbie/Chloe/Amanda pees
         if (dianePeeing) {
@@ -1073,17 +996,23 @@
           }
         } else {
           state.visualBlad = null;
-          state.peeReplay = false;
-          showRecBadge(false);
+          if (drainKind === "pee" && !prefersReducedMotion()) {
+            var engine = getPuddleEngine();
+            if (engine && engine.setOnScrub) {
+              engine.setOnScrub(function (scrub) {
+                markPeeReplay(scrub, peeLoopFrames(puddleRes.info));
+              });
+            }
+          }
           renderMeters();
         }
         if (beat.outcome === "wet" && beatClipId(beat) === "wetting") {
-          scheduleWetIdle(scene, list[0]);
+          scheduleWetIdle(list[0], puddleRes.info);
         }
       })
       .catch(function (err) {
         console.warn("[pee]", err);
-        if (state.activePeeBeat !== beat) return;
+        if (state.eventGeneration !== generation) return;
         renderCast(scene, overrides);
         renderMeters();
       });
@@ -1114,40 +1043,11 @@
     if (!state.playingEvent) {
       var pregameNow = document.body.classList.contains("pregame");
       if (el.stageBand) {
-        setStageStatus(pregameNow ? "" : state.peeReplay ? "peeing" : band.key);
+        setStageStatus(pregameNow ? "" : band.key);
       }
-      if (state.peeReplay && state.activePeeBeat) {
-        var beat = state.activePeeBeat;
-        var rKeys = beat.keys && beat.keys.length ? beat.keys : [scene.cast.primary || "diane"];
-        var rMode = beat.mode || "solo";
-        if (rMode === "sequence") rMode = "together";
-        var rList = rMode === "solo" ? [rKeys[0]] : rKeys;
-        var rOverrides = {};
-        for (var rk = 0; rk < rList.length; rk++) {
-          rOverrides[rList[rk]] = clipForKey(beat, rk, rList[rk]);
-        }
-        renderCast(scene, rOverrides);
-        // Puddle keeps scrubbing with the GIF — never freeze on full during replay
-        var rPuddles =
-          state.puddleEntries && state.puddleEntries.length
-            ? state.puddleEntries
-            : buildPuddleEntries(scene, rList, rOverrides);
-        if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-          startSyncedPuddle(rPuddles, "pee", false).then(function () {
-            syncPuddleClock();
-          });
-        }
-        showRecBadge(true);
-      } else {
-        showRecBadge(false);
-        renderCast(scene);
-        if (state.wet) {
-          holdPuddleFull();
-          if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-            ensureHeldPuddle(scene.cast.primary || "diane");
-          }
-        } else clearPuddle();
-      }
+      showRecBadge(false);
+      renderCast(scene);
+      clearPuddle();
     }
     renderMeters();
   }
@@ -1183,7 +1083,6 @@
     var rawBlad = typeof blad === "number" ? blad : 0;
     var prize = root.ADWDSceneMap.isPrizeTag && root.ADWDSceneMap.isPrizeTag(tag);
     var silent = prize || (root.ADWDSceneMap.isSilentEmpty && root.ADWDSceneMap.isSilentEmpty(tag));
-    var wetTag = root.ADWDSceneMap.isWetBeat && root.ADWDSceneMap.isWetBeat(tag);
 
     var pregame = typeof PREGAME_TAGS !== "undefined" && PREGAME_TAGS.indexOf(tag) !== -1;
     var hideDateStats = false;
@@ -1231,11 +1130,10 @@
 
     // Leaving a pee/wet page: stop the loop unless the next page continues the same act
     if (state.activePeeBeat && !continuing) {
-      finalizePeeBeat(state.activePeeBeat);
+      finalizePeeBeat();
     }
 
-    // Toilet relief empties blad — calm unless this page is the wetting itself
-    if (rawBlad <= 0 && !wetTag && !(beat && beat.outcome === "wet")) state.wet = false;
+    if (!beat) state.wetCast = root.ADWDSceneMap.wetCastFor(tag);
 
     state.lastBlad = rawBlad;
 
@@ -1337,7 +1235,7 @@
       var _back = goback;
       // restoreGame (called inside goback) already runs afterGo once — don't double-fire
       root.goback = function () {
-        state.forceFreshVisual = true;
+        if (root.gameHistory && root.gameHistory.length) state.forceFreshVisual = true;
         _back();
         ui.syncChrome();
       };

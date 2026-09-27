@@ -16359,6 +16359,11 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     if (exact(tag, ["gothere", "flirt_l", "flirt_m", "flirt_h"]))
       return dayFlag("saturday") ? LOC.theatre : LOC.foyer;
     if (exact(tag, ["ontoilet2", "fifthplace"])) return LOC.home;
+    if (starts(tag, ["legsz", "dampness", "sofatoilet", "asklooneed"]) || tag === "gonow")
+      return LOC.home;
+    if (exact(tag, ["sofatalkb", "sofatalkc", "nicelydesp7", "nicelydesp8", "nicelydesp9"]))
+      return LOC.bathroom;
+    if (starts(tag, ["luckytrip29"])) return LOC.pavilion;
     if (exact(tag, ["luckytrip18", "luckytrip18a", "luckytrip20", "luckytrip20a"])) return LOC.home;
     if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"]))
       return LOC.riverside;
@@ -16567,27 +16572,42 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     if (tag === "carpark3") return { primary: "diane", focus: ["diane"] };
 
     // —— Chloe: watching her house (you alone / luckshot) ——
-    if (starts(tag, ["watching", "luckytrip19"]) || exact(tag, ["leavechloe", "gonow"])) {
+    if (starts(tag, ["watching", "luckytrip19"])) {
       return { primary: "chloe", focus: ["chloe"] };
     }
 
     // —— Home with brother: Diane + Chloe in the room ——
-    if (starts(tag, ["scenario4"]) || exact(tag, ["scenario5a", "scenario5aa", "scenario5b"])) {
+    if (
+      starts(tag, ["scenario4"]) ||
+      exact(tag, [
+        "scenario5a",
+        "scenario5aa",
+        "scenario5b",
+        "gonow",
+        "luckytrip21",
+        "luckytrip21a",
+      ]) ||
+      (tag === "scenario5" && !dayFlag("saturday"))
+    ) {
       return { primary: "diane", secondary: "chloe", focus: ["diane", "chloe"] };
     }
 
-    // —— Amanda upstairs (Diane gone / her prize) ——
     if (
-      starts(tag, ["goupstairs", "luckytrip31"]) ||
-      exact(tag, ["scenario8", "scenario5", "scenario6", "scenario6a", "scenario6b", "scenario6c"])
+      exact(tag, ["scenario6a", "scenario6b", "scenario6c", "luckytrip30", "luckytrip30a"]) ||
+      (tag === "scenario6" && !dayFlag("mediumsteak"))
     ) {
+      return { primary: "diane", secondary: "amanda", focus: ["diane", "amanda"] };
+    }
+
+    // —— Amanda upstairs (Diane gone / her prize) ——
+    if (starts(tag, ["goupstairs", "luckytrip31"])) {
       return { primary: "amanda", focus: ["amanda"] };
     }
 
     // —— Debbie (brunette) ——
     // Alone: queue / camper alone / luckshot7 (Diane not on stage)
     if (
-      exact(tag, ["carparkalone", "watchblonde", "queue1a", "queue1b"]) ||
+      exact(tag, ["carparkalone"]) ||
       starts(tag, ["luckytrip7"]) ||
       (starts(tag, ["carpark"]) && !starts(tag, ["carparka"]))
     ) {
@@ -16596,7 +16616,8 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     // Together with Diane — Diane always left
     if (
       exact(tag, ["peepround", "peepunder", "peepround1", "gentleman"]) ||
-      starts(tag, ["carparka"])
+      exact(tag, ["carparka2", "carparka3", "watchblonde", "queue1a"]) ||
+      (tag === "carparka1" && (dayFlag("merlot") || dayFlag("chardonnay") || dayFlag("pinot")))
     ) {
       return { primary: "diane", secondary: "debbie", focus: ["diane", "debbie"] };
     }
@@ -16614,8 +16635,8 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     if (
       starts(tag, ["underbridge"]) ||
       exact(tag, ["luckytrip3", "luckytrip3a"]) ||
-      starts(tag, ["foyerbar", "pubdrink"]) ||
-      starts(tag, ["stagedoor"])
+      starts(tag, ["pubdrink", "riversidepath"]) ||
+      exact(tag, ["foyerbar2", "stagedoor3"])
     ) {
       return { primary: "diane", secondary: "molly", focus: ["diane", "molly"] };
     }
@@ -16635,6 +16656,8 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         "secondplace",
         "secondplace1",
         "fifthplace",
+        "story5",
+        "legsz3",
       ]) || starts(tag, ["ending"])
     );
   }
@@ -16670,7 +16693,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         "gothere",
         "goforpee",
         "goforpee1",
-        "luckytrip17b",
         "skirtremove1h",
         /* off-screen toilet returns — meter only */
         "nicelydesp",
@@ -16691,7 +16713,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         "pavilion1",
         "pavilion10",
         "notime",
-        "carparka1",
         "riversidewalk",
         "riversidepath11",
         "stagedoor3",
@@ -16717,7 +16738,10 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         "stopher",
         "gotoo",
         "gotoo1",
-        "hiddencamera",
+        "luckytrip29a",
+        "toiletclosed2a",
+        "toiletclosed2b",
+        "justclosed3",
         "givechancea",
         "givechanceb2",
         "givechanceb4",
@@ -16751,6 +16775,36 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     );
   }
 
+  // Aftermath poses are page facts, not a global accident flag. This also makes
+  // Back/restore deterministic and keeps one character's state off another.
+  function wetCastFor(tag) {
+    if (tag === "watching6" && dayFlag("tiramisu")) return "chloe";
+    if (
+      exact(tag, [
+        "legsz1",
+        "legsz2",
+        "legsz3",
+        "nicelydesp9",
+        "passage2ab",
+        "disaster3",
+        "disaster4a",
+        "disaster4b",
+        "disaster4c",
+        "disaster5b",
+        "disaster5c",
+      ])
+    )
+      return "diane";
+    return null;
+  }
+
+  function emptiedOnPage() {
+    var g = typeof globalThis !== "undefined" ? globalThis : root;
+    var history = g.gameHistory || [];
+    var before = history.length && history[history.length - 1].state;
+    return !!(before && before.blad > 0 && g.blad === 0);
+  }
+
   /**
    * Pee / wetting stage directions for a tag.
    * Only the page where it happens — never prize/summary cards.
@@ -16761,6 +16815,13 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     var primary = cast.primary || "diane";
 
     if (isPrizeTag(tag) || isSilentEmpty(tag)) return null;
+
+    if (tag === "carparka1" && (dayFlag("chardonnay") || dayFlag("pinot"))) {
+      return { mode: "solo", keys: ["debbie"], clip: "peeA", outcome: "calm", status: "peeing" };
+    }
+    if (tag === "luckytrip17b" && dayFlag("thursday") && emptiedOnPage()) {
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
+    }
 
     // —— Wetting (on the page it happens) ——
     if (tag === "disaster1" || tag === "disaster2") {
@@ -16835,8 +16896,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         "together2",
         "together1a",
         "helpdiane1aa",
-        "toiletclosed2a",
-        "toiletclosed2b",
         "helphersquat1",
         "goleft2",
         "search1a",
@@ -16848,14 +16907,9 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         "gobathroom1",
         "sofatalkb",
         "sofatalkc",
-        "story5",
-        "luckytrip29a",
+        "hiddencamera",
       ])
     ) {
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
-    }
-    /* justclosed3: cubicle pee Tue/Thu only; Sat leads to urinal choice */
-    if (tag === "justclosed3" && !dayFlag("saturday")) {
       return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* luckytrip5a: spyhole pee on Tuesday only */
@@ -16885,6 +16939,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     isWetBeat: isWetBeat,
     isSilentEmpty: isSilentEmpty,
     isPrizeTag: isPrizeTag,
+    wetCastFor: wetCastFor,
     dayKey: dayKey,
   };
 })(typeof window !== "undefined" ? window : globalThis);
@@ -17109,8 +17164,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
       host: null,
       stage: null,
       onScrub: null,
-      lastInfo: null,
-      lastKind: "pee",
     };
 
     function stopClock() {
@@ -17223,6 +17276,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
       },
       holdFull: function () {
         if (!eng.active && !eng.tracks.length) return;
+        stopClock();
         eng.active = true;
         eng.holding = true;
         setHostOn(true);
@@ -17238,17 +17292,12 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         eng.onScrub = fn;
       },
       beginClock: beginClock,
-      start: async function (entries, kind, continuing) {
-        if (continuing && eng.active) {
-          if (eng.holding) this.holdFull();
-          return { continued: true, info: eng.lastInfo, kind: eng.lastKind };
-        }
+      start: async function (entries, kind) {
         var myGen = ++eng.gen;
         stopClock();
         destroyTracks();
         eng.holding = false;
         eng.active = false;
-        eng.lastInfo = null;
         setHostOn(false);
 
         entries = entries || [];
@@ -17335,8 +17384,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         if (!liveCount || myGen !== eng.gen) return { ok: false };
 
         eng.tracks = tracks;
-        eng.lastInfo = primaryInfo;
-        eng.lastKind = (function () {
+        var primaryKind = (function () {
           for (var k = 0; k < tracks.length; k++) {
             if (!tracks[k].spacer) return tracks[k].kind;
           }
@@ -17356,7 +17404,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         return {
           ok: true,
           info: primaryInfo,
-          kind: eng.lastKind,
+          kind: primaryKind,
         };
       },
     };
@@ -17416,7 +17464,8 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
   ];
 
   var state = {
-    wet: false,
+    wetCast: null,
+    eventGeneration: 0,
     playingEvent: false,
     /** Intentional pee: first loop drained; further loops are replay (REC). */
     peeReplay: false,
@@ -17440,15 +17489,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
   };
 
   var DRAIN_MS = 5200; // fallback only if clip meta missing
-  /** Forward-only multi-spurt wetting length (frames × 100ms) before wet idle. */
-  var WET_ONESHOT_MS = {
-    diane: 2200,
-    molly: 3000,
-    debbie: 2900,
-    amanda: 2500,
-    chloe: 2700,
-  };
-
   var el = {};
 
   function $(id) {
@@ -17576,8 +17616,8 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     tag = String(tag || "");
     castKey = castKey || "diane";
 
-    // Diane’s accident idle only applies to Diane
-    if (castKey === "diane" && state.wet) {
+    // Aftermath belongs only to the character identified by this page.
+    if (castKey === state.wetCast) {
       return { key: "wet", file: GIF.wetIdle };
     }
 
@@ -17593,7 +17633,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         // Under-bridge wait / Diane's pee only — not Molly's pee page or the reunion
         if ((tag === "luckytrip3" || tag === "luckytrip3a" || tag === "underbridge") && pct < 68)
           pct = 74;
-        if (/^(stagedoor|foyerbar|pubdrink)/.test(tag) && pct < 68) pct = 74;
       }
       return bandFromPct(pct);
     }
@@ -17701,6 +17740,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
 
   /** Wipe pee/puddle/drain so Back/restore can rebuild the page beat cleanly. */
   function resetVisualFxForNav() {
+    state.eventGeneration++;
     clearPeeTimer();
     clearWetIdleTimer();
     clearPuddle();
@@ -17708,7 +17748,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     state.activePeeBeat = null;
     state.peeReplay = false;
     state.visualBlad = null;
-    state.wet = false;
+    state.wetCast = null;
     showRecBadge(false);
     setBladFillTransition(true);
   }
@@ -17732,13 +17772,13 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
    * Frame-locked grow bank — same timing as the puddle sync engine.
    * Prepares maps, then starts character GIFs + puddle clock on the same tick.
    */
-  function startSyncedPuddle(entries, kind, continuing) {
+  function startSyncedPuddle(entries, kind) {
     state.puddleEntries = entries || state.puddleEntries || null;
     var eng = getPuddleEngine();
     if (!eng) return Promise.resolve();
     if (el.puddle && el.stage) eng.bind(el.puddle, el.stage);
     var list = entries || state.puddleEntries || [];
-    return eng.start(list, kind === "wet" ? "wet" : "pee", !!continuing);
+    return eng.start(list, kind === "wet" ? "wet" : "pee");
   }
 
   /** After sprites are on screen, kick the puddle scrub clock (aligned with GIF t=0). */
@@ -17747,27 +17787,13 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     if (eng && eng.beginClock) eng.beginClock();
   }
 
-  /** Ensure a full puddle is showing (wet idle / aftermath). */
-  function ensureHeldPuddle(castKey) {
-    var eng = getPuddleEngine();
-    if (eng && eng.isActive()) {
-      eng.holdFull();
-      return Promise.resolve();
-    }
-    var key = castKey || "diane";
-    var entries = state.puddleEntries || [{ castKey: key, charFile: GIF.wetting }];
-    return startSyncedPuddle(entries, "wet", false).then(function () {
-      holdPuddleFull();
-    });
-  }
-
   function setOrganFill(rect, pct) {
     if (!rect) return;
     rect.style.transform = "scaleY(" + Math.max(0, Math.min(100, pct)) / 100 + ")";
   }
 
   function setBladColour(pct) {
-    var c = urineAt(state.wet ? 8 : pct);
+    var c = urineAt(state.wetCast === "diane" ? 8 : pct);
     var lit = $("blad-stop-lit"),
       mid = $("blad-stop-mid"),
       deep = $("blad-stop-deep");
@@ -17835,8 +17861,8 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
         })
         .join("");
     }
-    var hot = !state.wet && bp >= 78;
-    var crit = !state.wet && bp >= 88;
+    var hot = state.wetCast !== "diane" && bp >= 78;
+    var crit = state.wetCast !== "diane" && bp >= 88;
     if (el.bladOrg) {
       el.bladOrg.classList.toggle("full", hot);
       el.bladOrg.classList.toggle("crit", crit);
@@ -17893,7 +17919,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
   }
 
   function spriteShouldTremor(band, file) {
-    if (prefersReducedMotion() || state.wet) return false;
+    if (prefersReducedMotion()) return false;
     if (isReliefClip(file)) return false;
     return !!(band && (band.key === "desperate" || band.key === "critical"));
   }
@@ -18077,26 +18103,14 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     }
 
     // Pee: drive from puddle scrub so refill/drain stay locked to the grow map forever
-    var loopLen =
-      info.loopFrames != null
-        ? info.loopFrames | 0
-        : info.srcFrames | 0
-          ? (info.srcFrames | 0) * 2 - 2
-          : 68;
-    if (loopLen < 20) loopLen = 68;
+    var loopLen = peeLoopFrames(info);
 
     function onPeeScrub(scrub) {
       var i = ((scrub % loopLen) + loopLen) % loopLen;
       state.visualBlad = mlAtPeeLoopFrame(i, info, fromMl, toMl, loopLen);
       state.lastBlad = state.visualBlad;
       renderMeters();
-      // REC after the first complete arc (scrub hits loop length)
-      if (!state.peeReplay && scrub >= loopLen) {
-        state.peeReplay = true;
-        state.playingEvent = false;
-        showRecBadge(true);
-        setStageStatus("peeing");
-      }
+      markPeeReplay(scrub, loopLen);
     }
 
     if (eng && eng.setOnScrub) {
@@ -18112,6 +18126,20 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
           typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
         onPeeScrub(Math.floor((now - t0b) / 100));
       }, 40);
+    }
+  }
+
+  function peeLoopFrames(info) {
+    if (!info) return 68;
+    return info.loopFrames || (info.srcFrames ? info.srcFrames * 2 - 2 : 68);
+  }
+
+  function markPeeReplay(scrub, loopLength) {
+    if (!state.peeReplay && scrub >= loopLength) {
+      state.peeReplay = true;
+      state.playingEvent = false;
+      showRecBadge(true);
+      setStageStatus("peeing");
     }
   }
 
@@ -18249,45 +18277,27 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     }
   }
 
-  /** End a looping pee/wet page: apply wet idle or return to calm meters. */
-  function finalizePeeBeat(beat) {
+  /** Leaving an event clears its floor effects; aftermath poses come from the page. */
+  function finalizePeeBeat() {
+    state.eventGeneration++;
     clearPeeTimer();
     clearWetIdleTimer();
+    clearPuddle();
     state.playingEvent = false;
     state.activePeeBeat = null;
     state.peeReplay = false;
     showRecBadge(false);
     state.visualBlad = null;
     setBladFillTransition(true);
-    if (!beat) {
-      clearPuddle();
-      return;
-    }
-    state.wet = beat.outcome === "wet";
-    if (typeof blad === "number" && blad <= 0 && beat.outcome !== "wet") {
-      state.wet = false;
-    }
-    if (state.wet) {
-      holdPuddleFull();
-      if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-        var sc =
-          root.ADWDSceneMap && root.ADWDSceneMap.resolve
-            ? root.ADWDSceneMap.resolve(typeof currentTag !== "undefined" ? currentTag : "")
-            : null;
-        ensureHeldPuddle((sc && sc.cast && sc.cast.primary) || "diane");
-      }
-    } else {
-      clearPuddle();
-    }
   }
 
-  function scheduleWetIdle(scene, castKey) {
+  function scheduleWetIdle(castKey, info) {
     clearWetIdleTimer();
-    var ms = prefersReducedMotion() ? 0 : WET_ONESHOT_MS[castKey] || 2400;
+    var ms = prefersReducedMotion() ? 0 : info && info.srcFrames ? info.srcFrames * 100 : 2400;
     state.wetIdleTimer = window.setTimeout(function () {
       state.wetIdleTimer = null;
       if (!state.playingEvent) return;
-      state.wet = true;
+      state.wetCast = castKey;
       state.playingEvent = false;
       // Keep activePeeBeat so disaster2 can still "continue" as wet idle visually
       setSpriteClip(castKey, GIF.wetIdle, false);
@@ -18297,11 +18307,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
       renderMeters();
     }, ms);
   }
-
-  /**
-   * REC badge is armed from the looping pee scrub (first full arc).
-   * Kept as a named hook so playPeeBeat can document the replay contract.
-   */
 
   /**
    * Play pee (07/08) or wetting (06) clips.
@@ -18322,73 +18327,36 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     if (beatClipId(beat) === "wetIdle") {
       clearWetIdleTimer();
       clearPeeTimer();
-      state.wet = true;
+      state.wetCast = (beat.keys && beat.keys[0]) || "diane";
       state.playingEvent = false;
       state.activePeeBeat = beat;
       state.visualBlad = null;
       setBladFillTransition(true);
       refreshStage(scene);
-      ensureHeldPuddle((beat.keys && beat.keys[0]) || "diane");
-      return;
-    }
-
-    // Already wet after leaving an accident sequence — idle only
-    // (skip when continuing disaster1→2 mid-stream)
-    if (
-      !continuing &&
-      beat.outcome === "wet" &&
-      state.wet &&
-      !state.playingEvent &&
-      !state.activePeeBeat
-    ) {
-      refreshStage(scene);
-      ensureHeldPuddle((beat.keys && beat.keys[0]) || scene.cast.primary || "diane");
+      clearPuddle();
       return;
     }
 
     if (continuing) {
-      state.activePeeBeat = beat;
-      if (el.stageBand) {
-        setStageStatus(beat.status || (beat.outcome === "wet" ? "wetting" : "peeing"));
-      }
-      // Settled oneshot / replay: keep idle or looping pee + held puddle
+      // Keep the original event identity while its images are still loading.
+      // Its pending completion owns the drain/idle timers; do not start it twice.
       if (!state.playingEvent && beat.outcome === "wet") {
-        state.wet = true;
-        var idleKey = (beat.keys && beat.keys[0]) || scene.cast.primary || "diane";
-        setSpriteClip(idleKey, GIF.wetIdle, false);
-        holdPuddleFull();
-        showRecBadge(false);
         setStageStatus("wet");
-      } else if (!state.playingEvent && state.peeReplay) {
-        var replayKeys =
-          beat.keys && beat.keys.length ? beat.keys : [scene.cast.primary || "diane"];
-        for (var ri = 0; ri < replayKeys.length; ri++) {
-          setSpriteClip(replayKeys[ri], clipForKey(beat, ri, replayKeys[ri]), false);
-        }
-        // Keep puddle clock looping (do not freeze on full)
-        startSyncedPuddle(state.puddleEntries || [], "pee", true);
-        showRecBadge(true);
-        setStageStatus("peeing");
       } else {
-        startSyncedPuddle(
-          state.puddleEntries || [],
-          beat.outcome === "wet" ? "wet" : "pee",
-          true,
-        ).then(function (res) {
-          if (res && res.ok) syncPuddleClock();
-        });
+        setStageStatus(beat.status || "peeing");
       }
       return;
     }
 
     clearPeeTimer();
     clearWetIdleTimer();
+    var generation = ++state.eventGeneration;
     state.playingEvent = true;
     state.peeReplay = false;
     showRecBadge(false);
     state.activePeeBeat = beat;
     // Fresh wetting oneshot — not yet "already wet"
-    if (beat.outcome === "wet") state.wet = false;
+    state.wetCast = null;
 
     var status = beat.status || (beat.outcome === "wet" ? "wetting" : "peeing");
     var keys = beat.keys && beat.keys.length ? beat.keys.slice() : [scene.cast.primary || "diane"];
@@ -18430,10 +18398,13 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     }
     var drainKind = beat.outcome === "wet" ? "wet" : "pee";
 
-    Promise.all([startSyncedPuddle(puddleEntries, drainKind, false)].concat(preload))
+    Promise.all([startSyncedPuddle(puddleEntries, drainKind)].concat(preload))
       .then(function (results) {
-        if (state.activePeeBeat !== beat) return;
+        if (state.eventGeneration !== generation) return;
         var puddleRes = results[0] || {};
+        // Restart sprites after decoding, so their first frame and effect clock
+        // share the same origin even on a cold load.
+        for (var i = 0; i < list.length; i++) setSpriteClip(list[i], overrides[list[i]], true);
         syncPuddleClock();
         // Organ meter is Diane’s only — never drain it for Molly/Debbie/Chloe/Amanda pees
         if (dianePeeing) {
@@ -18447,17 +18418,23 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
           }
         } else {
           state.visualBlad = null;
-          state.peeReplay = false;
-          showRecBadge(false);
+          if (drainKind === "pee" && !prefersReducedMotion()) {
+            var engine = getPuddleEngine();
+            if (engine && engine.setOnScrub) {
+              engine.setOnScrub(function (scrub) {
+                markPeeReplay(scrub, peeLoopFrames(puddleRes.info));
+              });
+            }
+          }
           renderMeters();
         }
         if (beat.outcome === "wet" && beatClipId(beat) === "wetting") {
-          scheduleWetIdle(scene, list[0]);
+          scheduleWetIdle(list[0], puddleRes.info);
         }
       })
       .catch(function (err) {
         console.warn("[pee]", err);
-        if (state.activePeeBeat !== beat) return;
+        if (state.eventGeneration !== generation) return;
         renderCast(scene, overrides);
         renderMeters();
       });
@@ -18488,40 +18465,11 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     if (!state.playingEvent) {
       var pregameNow = document.body.classList.contains("pregame");
       if (el.stageBand) {
-        setStageStatus(pregameNow ? "" : state.peeReplay ? "peeing" : band.key);
+        setStageStatus(pregameNow ? "" : band.key);
       }
-      if (state.peeReplay && state.activePeeBeat) {
-        var beat = state.activePeeBeat;
-        var rKeys = beat.keys && beat.keys.length ? beat.keys : [scene.cast.primary || "diane"];
-        var rMode = beat.mode || "solo";
-        if (rMode === "sequence") rMode = "together";
-        var rList = rMode === "solo" ? [rKeys[0]] : rKeys;
-        var rOverrides = {};
-        for (var rk = 0; rk < rList.length; rk++) {
-          rOverrides[rList[rk]] = clipForKey(beat, rk, rList[rk]);
-        }
-        renderCast(scene, rOverrides);
-        // Puddle keeps scrubbing with the GIF — never freeze on full during replay
-        var rPuddles =
-          state.puddleEntries && state.puddleEntries.length
-            ? state.puddleEntries
-            : buildPuddleEntries(scene, rList, rOverrides);
-        if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-          startSyncedPuddle(rPuddles, "pee", false).then(function () {
-            syncPuddleClock();
-          });
-        }
-        showRecBadge(true);
-      } else {
-        showRecBadge(false);
-        renderCast(scene);
-        if (state.wet) {
-          holdPuddleFull();
-          if (!getPuddleEngine() || !getPuddleEngine().isActive()) {
-            ensureHeldPuddle(scene.cast.primary || "diane");
-          }
-        } else clearPuddle();
-      }
+      showRecBadge(false);
+      renderCast(scene);
+      clearPuddle();
     }
     renderMeters();
   }
@@ -18557,7 +18505,6 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
     var rawBlad = typeof blad === "number" ? blad : 0;
     var prize = root.ADWDSceneMap.isPrizeTag && root.ADWDSceneMap.isPrizeTag(tag);
     var silent = prize || (root.ADWDSceneMap.isSilentEmpty && root.ADWDSceneMap.isSilentEmpty(tag));
-    var wetTag = root.ADWDSceneMap.isWetBeat && root.ADWDSceneMap.isWetBeat(tag);
 
     var pregame = typeof PREGAME_TAGS !== "undefined" && PREGAME_TAGS.indexOf(tag) !== -1;
     var hideDateStats = false;
@@ -18605,11 +18552,10 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
 
     // Leaving a pee/wet page: stop the loop unless the next page continues the same act
     if (state.activePeeBeat && !continuing) {
-      finalizePeeBeat(state.activePeeBeat);
+      finalizePeeBeat();
     }
 
-    // Toilet relief empties blad — calm unless this page is the wetting itself
-    if (rawBlad <= 0 && !wetTag && !(beat && beat.outcome === "wet")) state.wet = false;
+    if (!beat) state.wetCast = root.ADWDSceneMap.wetCastFor(tag);
 
     state.lastBlad = rawBlad;
 
@@ -18711,7 +18657,7 @@ window.ADWD_PUDDLE_META = {"canvas":398,"fps":10,"cycles":1,"loop":"one_full_arc
       var _back = goback;
       // restoreGame (called inside goback) already runs afterGo once — don't double-fire
       root.goback = function () {
-        state.forceFreshVisual = true;
+        if (root.gameHistory && root.gameHistory.length) state.forceFreshVisual = true;
         _back();
         ui.syncChrome();
       };

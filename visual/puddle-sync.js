@@ -216,8 +216,6 @@
       host: null,
       stage: null,
       onScrub: null,
-      lastInfo: null,
-      lastKind: "pee",
     };
 
     function stopClock() {
@@ -330,6 +328,7 @@
       },
       holdFull: function () {
         if (!eng.active && !eng.tracks.length) return;
+        stopClock();
         eng.active = true;
         eng.holding = true;
         setHostOn(true);
@@ -345,17 +344,12 @@
         eng.onScrub = fn;
       },
       beginClock: beginClock,
-      start: async function (entries, kind, continuing) {
-        if (continuing && eng.active) {
-          if (eng.holding) this.holdFull();
-          return { continued: true, info: eng.lastInfo, kind: eng.lastKind };
-        }
+      start: async function (entries, kind) {
         var myGen = ++eng.gen;
         stopClock();
         destroyTracks();
         eng.holding = false;
         eng.active = false;
-        eng.lastInfo = null;
         setHostOn(false);
 
         entries = entries || [];
@@ -442,8 +436,7 @@
         if (!liveCount || myGen !== eng.gen) return { ok: false };
 
         eng.tracks = tracks;
-        eng.lastInfo = primaryInfo;
-        eng.lastKind = (function () {
+        var primaryKind = (function () {
           for (var k = 0; k < tracks.length; k++) {
             if (!tracks[k].spacer) return tracks[k].kind;
           }
@@ -463,7 +456,7 @@
         return {
           ok: true,
           info: primaryInfo,
-          kind: eng.lastKind,
+          kind: primaryKind,
         };
       },
     };

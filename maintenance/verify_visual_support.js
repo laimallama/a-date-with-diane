@@ -9,6 +9,52 @@ const meta = JSON.parse(fs.readFileSync(path.join(assets, "fx/puddle_meta.json")
 const expected = new Set(["README.md", "fx/puddle_meta.json"]);
 const casts = new Set(Object.keys(meta.clips).map((key) => key.split("/")[0]));
 const clips = new Set(Object.keys(meta.clips));
+// Read GIF control/image blocks without a graphics dependency. Headers alone
+// cannot establish that the effect clock matches the actual animation length.
+function gifTiming(bytes) {
+  let offset = 13 + (bytes[10] & 128 ? 3 * 2 ** ((bytes[10] & 7) + 1) : 0);
+  let delay = 0;
+  let loop = null;
+  const delays = [];
+  function blocks() {
+    const result = [];
+    while (bytes[offset]) {
+      const size = bytes[offset++];
+      result.push(bytes.subarray(offset, offset + size));
+      offset += size;
+    }
+    offset++;
+    return result;
+  }
+  while (offset < bytes.length) {
+    const type = bytes[offset++];
+    if (type === 0x3b) break;
+    if (type === 0x21) {
+      const kind = bytes[offset++];
+      const data = blocks();
+      if (kind === 0xf9) delay = data[0].readUInt16LE(1) * 10;
+      if (kind === 0xff && data[0].toString("ascii") === "NETSCAPE2.0")
+        loop = data[1].readUInt16LE(1);
+    } else if (type === 0x2c) {
+      const packed = bytes[offset + 8];
+      offset += 9;
+      if (packed & 128) offset += 3 * 2 ** ((packed & 7) + 1);
+      offset++; // LZW minimum code size
+      blocks();
+      delays.push(delay);
+    } else throw Error("Invalid GIF block: " + type);
+  }
+  return { delays, loop };
+}
+for (const [clip, info] of Object.entries(meta.clips)) {
+  const timing = gifTiming(fs.readFileSync(path.join(assets, clip + ".gif")));
+  assert.equal(timing.delays.length, info.loopFrames, clip + ": effect/animation duration");
+  assert(
+    timing.delays.every((delay) => delay === 100),
+    clip + ": frame clock",
+  );
+  assert.equal(timing.loop, info.kind === "wet" ? 1 : 0, clip + ": repeat policy");
+}
 for (const cast of casts) {
   for (const stem of [
     "01_calm",

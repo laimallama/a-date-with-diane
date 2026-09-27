@@ -75,6 +75,11 @@
     if (exact(tag, ["gothere", "flirt_l", "flirt_m", "flirt_h"]))
       return dayFlag("saturday") ? LOC.theatre : LOC.foyer;
     if (exact(tag, ["ontoilet2", "fifthplace"])) return LOC.home;
+    if (starts(tag, ["legsz", "dampness", "sofatoilet", "asklooneed"]) || tag === "gonow")
+      return LOC.home;
+    if (exact(tag, ["sofatalkb", "sofatalkc", "nicelydesp7", "nicelydesp8", "nicelydesp9"]))
+      return LOC.bathroom;
+    if (starts(tag, ["luckytrip29"])) return LOC.pavilion;
     if (exact(tag, ["luckytrip18", "luckytrip18a", "luckytrip20", "luckytrip20a"])) return LOC.home;
     if (exact(tag, ["traintalka", "stamptalka", "musictalka", "theatretalka"]))
       return LOC.riverside;
@@ -283,27 +288,42 @@
     if (tag === "carpark3") return { primary: "diane", focus: ["diane"] };
 
     // —— Chloe: watching her house (you alone / luckshot) ——
-    if (starts(tag, ["watching", "luckytrip19"]) || exact(tag, ["leavechloe", "gonow"])) {
+    if (starts(tag, ["watching", "luckytrip19"])) {
       return { primary: "chloe", focus: ["chloe"] };
     }
 
     // —— Home with brother: Diane + Chloe in the room ——
-    if (starts(tag, ["scenario4"]) || exact(tag, ["scenario5a", "scenario5aa", "scenario5b"])) {
+    if (
+      starts(tag, ["scenario4"]) ||
+      exact(tag, [
+        "scenario5a",
+        "scenario5aa",
+        "scenario5b",
+        "gonow",
+        "luckytrip21",
+        "luckytrip21a",
+      ]) ||
+      (tag === "scenario5" && !dayFlag("saturday"))
+    ) {
       return { primary: "diane", secondary: "chloe", focus: ["diane", "chloe"] };
     }
 
-    // —— Amanda upstairs (Diane gone / her prize) ——
     if (
-      starts(tag, ["goupstairs", "luckytrip31"]) ||
-      exact(tag, ["scenario8", "scenario5", "scenario6", "scenario6a", "scenario6b", "scenario6c"])
+      exact(tag, ["scenario6a", "scenario6b", "scenario6c", "luckytrip30", "luckytrip30a"]) ||
+      (tag === "scenario6" && !dayFlag("mediumsteak"))
     ) {
+      return { primary: "diane", secondary: "amanda", focus: ["diane", "amanda"] };
+    }
+
+    // —— Amanda upstairs (Diane gone / her prize) ——
+    if (starts(tag, ["goupstairs", "luckytrip31"])) {
       return { primary: "amanda", focus: ["amanda"] };
     }
 
     // —— Debbie (brunette) ——
     // Alone: queue / camper alone / luckshot7 (Diane not on stage)
     if (
-      exact(tag, ["carparkalone", "watchblonde", "queue1a", "queue1b"]) ||
+      exact(tag, ["carparkalone"]) ||
       starts(tag, ["luckytrip7"]) ||
       (starts(tag, ["carpark"]) && !starts(tag, ["carparka"]))
     ) {
@@ -312,7 +332,8 @@
     // Together with Diane — Diane always left
     if (
       exact(tag, ["peepround", "peepunder", "peepround1", "gentleman"]) ||
-      starts(tag, ["carparka"])
+      exact(tag, ["carparka2", "carparka3", "watchblonde", "queue1a"]) ||
+      (tag === "carparka1" && (dayFlag("merlot") || dayFlag("chardonnay") || dayFlag("pinot")))
     ) {
       return { primary: "diane", secondary: "debbie", focus: ["diane", "debbie"] };
     }
@@ -330,8 +351,8 @@
     if (
       starts(tag, ["underbridge"]) ||
       exact(tag, ["luckytrip3", "luckytrip3a"]) ||
-      starts(tag, ["foyerbar", "pubdrink"]) ||
-      starts(tag, ["stagedoor"])
+      starts(tag, ["pubdrink", "riversidepath"]) ||
+      exact(tag, ["foyerbar2", "stagedoor3"])
     ) {
       return { primary: "diane", secondary: "molly", focus: ["diane", "molly"] };
     }
@@ -351,6 +372,8 @@
         "secondplace",
         "secondplace1",
         "fifthplace",
+        "story5",
+        "legsz3",
       ]) || starts(tag, ["ending"])
     );
   }
@@ -386,7 +409,6 @@
         "gothere",
         "goforpee",
         "goforpee1",
-        "luckytrip17b",
         "skirtremove1h",
         /* off-screen toilet returns — meter only */
         "nicelydesp",
@@ -407,7 +429,6 @@
         "pavilion1",
         "pavilion10",
         "notime",
-        "carparka1",
         "riversidewalk",
         "riversidepath11",
         "stagedoor3",
@@ -433,7 +454,10 @@
         "stopher",
         "gotoo",
         "gotoo1",
-        "hiddencamera",
+        "luckytrip29a",
+        "toiletclosed2a",
+        "toiletclosed2b",
+        "justclosed3",
         "givechancea",
         "givechanceb2",
         "givechanceb4",
@@ -467,6 +491,36 @@
     );
   }
 
+  // Aftermath poses are page facts, not a global accident flag. This also makes
+  // Back/restore deterministic and keeps one character's state off another.
+  function wetCastFor(tag) {
+    if (tag === "watching6" && dayFlag("tiramisu")) return "chloe";
+    if (
+      exact(tag, [
+        "legsz1",
+        "legsz2",
+        "legsz3",
+        "nicelydesp9",
+        "passage2ab",
+        "disaster3",
+        "disaster4a",
+        "disaster4b",
+        "disaster4c",
+        "disaster5b",
+        "disaster5c",
+      ])
+    )
+      return "diane";
+    return null;
+  }
+
+  function emptiedOnPage() {
+    var g = typeof globalThis !== "undefined" ? globalThis : root;
+    var history = g.gameHistory || [];
+    var before = history.length && history[history.length - 1].state;
+    return !!(before && before.blad > 0 && g.blad === 0);
+  }
+
   /**
    * Pee / wetting stage directions for a tag.
    * Only the page where it happens — never prize/summary cards.
@@ -477,6 +531,13 @@
     var primary = cast.primary || "diane";
 
     if (isPrizeTag(tag) || isSilentEmpty(tag)) return null;
+
+    if (tag === "carparka1" && (dayFlag("chardonnay") || dayFlag("pinot"))) {
+      return { mode: "solo", keys: ["debbie"], clip: "peeA", outcome: "calm", status: "peeing" };
+    }
+    if (tag === "luckytrip17b" && dayFlag("thursday") && emptiedOnPage()) {
+      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
+    }
 
     // —— Wetting (on the page it happens) ——
     if (tag === "disaster1" || tag === "disaster2") {
@@ -551,8 +612,6 @@
         "together2",
         "together1a",
         "helpdiane1aa",
-        "toiletclosed2a",
-        "toiletclosed2b",
         "helphersquat1",
         "goleft2",
         "search1a",
@@ -564,14 +623,9 @@
         "gobathroom1",
         "sofatalkb",
         "sofatalkc",
-        "story5",
-        "luckytrip29a",
+        "hiddencamera",
       ])
     ) {
-      return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
-    }
-    /* justclosed3: cubicle pee Tue/Thu only; Sat leads to urinal choice */
-    if (tag === "justclosed3" && !dayFlag("saturday")) {
       return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* luckytrip5a: spyhole pee on Tuesday only */
@@ -601,6 +655,7 @@
     isWetBeat: isWetBeat,
     isSilentEmpty: isSilentEmpty,
     isPrizeTag: isPrizeTag,
+    wetCastFor: wetCastFor,
     dayKey: dayKey,
   };
 })(typeof window !== "undefined" ? window : globalThis);

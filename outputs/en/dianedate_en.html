@@ -10761,7 +10761,7 @@ function bottom1() {
     }
     s("<p>What will it be?</p>");
     if (!standingLegsDone) c("bottom1a", "Explore her legs?");
-    if (!standingBreastsDone) c("breasts1b", "Fondle her breasts again?");
+    if (!standingBreastsDone) c("breasts1b", "Fondle her breasts?");
     c("kissher", "Kiss her again?");
   }
 }
@@ -11214,7 +11214,7 @@ function kissher() {
   } else {
     s("<p>Very nice, but let’s be more decisive, shall we?</p>");
   }
-  if (!standingBreastsDone) c("breasts1b", "Fondle her breasts again?");
+  if (!standingBreastsDone) c("breasts1b", "Fondle her breasts?");
   else {
     c("sofasnog", "You go and sit on the sofa.");
     c("walkhomeX", "Walk her home and hope you have some fun on the way.");
@@ -11222,9 +11222,7 @@ function kissher() {
 }
 function breasts1b() {
   standingBreastsDone = 1;
-  s(
-    "<p>You reach up and touch her breasts again. She breaks away and says, ‘Shall we sit down?’</p>",
-  );
+  s("<p>You reach up and touch her breasts. She breaks away and says, ‘Shall we sit down?’</p>");
   c("sofasnog", "You go and sit on the sofa.");
 }
 function bottom2() {

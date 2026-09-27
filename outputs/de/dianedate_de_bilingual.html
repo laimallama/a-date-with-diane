@@ -16160,8 +16160,7 @@ function bottom1() {
     }
     sAlt("<p>What will it be?</p>", "<p>Was tust du?</p>");
     if (!standingLegsDone) cAlt("bottom1a", "Explore her legs?", "Erkunde ihre Beine.");
-    if (!standingBreastsDone)
-      cAlt("breasts1b", "Fondle her breasts again?", "Streichle noch einmal ihre Brüste.");
+    if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts?", "Streichle ihre Brüste.");
     cAlt("kissher", "Kiss her again?", "Küss sie noch einmal.");
   }
 }
@@ -16884,8 +16883,7 @@ function kissher() {
       "<p>Sehr schön, aber jetzt entscheide dich mal, ja?</p>",
     );
   }
-  if (!standingBreastsDone)
-    cAlt("breasts1b", "Fondle her breasts again?", "Streichle noch einmal ihre Brüste.");
+  if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts?", "Streichle ihre Brüste.");
   else {
     cAlt("sofasnog", "You go and sit on the sofa.", "Du gehst zum Sofa und setzt dich.");
     cAlt(
@@ -16898,8 +16896,8 @@ function kissher() {
 function breasts1b() {
   standingBreastsDone = 1;
   sAlt(
-    "<p>You reach up and touch her breasts again. She breaks away and says, ‘Shall we sit down?’</p>",
-    "<p>Du lässt deine Hand nach oben wandern und berührst erneut ihre Brüste. Sie löst sich von dir und fragt: „Wollen wir uns setzen?“</p>",
+    "<p>You reach up and touch her breasts. She breaks away and says, ‘Shall we sit down?’</p>",
+    "<p>Du lässt deine Hand nach oben wandern und berührst ihre Brüste. Sie löst sich von dir und fragt: „Wollen wir uns setzen?“</p>",
   );
   cAlt("sofasnog", "You go and sit on the sofa.", "Du gehst zum Sofa und setzt dich.");
 }

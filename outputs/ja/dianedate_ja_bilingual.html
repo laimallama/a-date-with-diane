@@ -15752,8 +15752,7 @@ function bottom1() {
     }
     sAlt("<p>What will it be?</p>", "<p>どうしようか？</p>");
     if (!standingLegsDone) cAlt("bottom1a", "Explore her legs?", "脚を探ってみる？");
-    if (!standingBreastsDone)
-      cAlt("breasts1b", "Fondle her breasts again?", "もう一度胸を撫でる？");
+    if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts?", "胸を撫でる？");
     cAlt("kissher", "Kiss her again?", "もう一度キスをする？");
   }
 }
@@ -16466,7 +16465,7 @@ function kissher() {
       "<p>いいものだが、もう少し思い切って動こうじゃないか。</p>",
     );
   }
-  if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts again?", "もう一度胸を撫でる？");
+  if (!standingBreastsDone) cAlt("breasts1b", "Fondle her breasts?", "胸を撫でる？");
   else {
     cAlt("sofasnog", "You go and sit on the sofa.", "ソファへ行って座る。");
     cAlt(
@@ -16479,8 +16478,8 @@ function kissher() {
 function breasts1b() {
   standingBreastsDone = 1;
   sAlt(
-    "<p>You reach up and touch her breasts again. She breaks away and says, ‘Shall we sit down?’</p>",
-    "<p>手を上げて、もう一度胸に触れる。彼女は身を離して、「座ろうか？」と言う。</p>",
+    "<p>You reach up and touch her breasts. She breaks away and says, ‘Shall we sit down?’</p>",
+    "<p>手を上げて、胸に触れる。彼女は身を離して、「座ろうか？」と言う。</p>",
   );
   cAlt("sofasnog", "You go and sit on the sofa.", "ソファへ行って座る。");
 }

@@ -11283,7 +11283,7 @@ function bottom1() {
     }
     s("<p>Qu’est-ce que ce sera\u202F?</p>");
     if (!standingLegsDone) c("bottom1a", "Explorer ses jambes\u202F?");
-    if (!standingBreastsDone) c("breasts1b", "Lui caresser les seins à nouveau\u202F?");
+    if (!standingBreastsDone) c("breasts1b", "Lui caresser les seins\u202F?");
     c("kissher", "L’embrasser à nouveau\u202F?");
   }
 }
@@ -11774,7 +11774,7 @@ function kissher() {
   } else {
     s("<p>Très bien, mais prenons une décision, voulez-vous\u202F?</p>");
   }
-  if (!standingBreastsDone) c("breasts1b", "Lui caresser les seins à nouveau\u202F?");
+  if (!standingBreastsDone) c("breasts1b", "Lui caresser les seins\u202F?");
   else {
     c("sofasnog", "Vous allez vous asseoir sur le canapé.");
     c("walkhomeX", "La raccompagner à pied en espérant s’amuser en chemin.");
@@ -11783,7 +11783,7 @@ function kissher() {
 function breasts1b() {
   standingBreastsDone = 1;
   s(
-    "<p>Vous levez la main et touchez à nouveau ses seins. Elle s’écarte et dit\u202F: «\xA0On s’assoit\u202F?\xA0»</p>",
+    "<p>Vous levez la main et touchez ses seins. Elle s’écarte et dit\u202F: «\xA0On s’assoit\u202F?\xA0»</p>",
   );
   c("sofasnog", "Vous allez vous asseoir sur le canapé.");
 }

@@ -10367,7 +10367,7 @@ function bottom1() {
     }
     s("<p>どうしようか？</p>");
     if (!standingLegsDone) c("bottom1a", "脚を探ってみる？");
-    if (!standingBreastsDone) c("breasts1b", "もう一度胸を撫でる？");
+    if (!standingBreastsDone) c("breasts1b", "胸を撫でる？");
     c("kissher", "もう一度キスをする？");
   }
 }
@@ -10794,7 +10794,7 @@ function kissher() {
   } else {
     s("<p>いいものだが、もう少し思い切って動こうじゃないか。</p>");
   }
-  if (!standingBreastsDone) c("breasts1b", "もう一度胸を撫でる？");
+  if (!standingBreastsDone) c("breasts1b", "胸を撫でる？");
   else {
     c("sofasnog", "ソファへ行って座る。");
     c("walkhomeX", "途中で何か楽しめることを期待して、家まで送る。");
@@ -10802,7 +10802,7 @@ function kissher() {
 }
 function breasts1b() {
   standingBreastsDone = 1;
-  s("<p>手を上げて、もう一度胸に触れる。彼女は身を離して、「座ろうか？」と言う。</p>");
+  s("<p>手を上げて、胸に触れる。彼女は身を離して、「座ろうか？」と言う。</p>");
   c("sofasnog", "ソファへ行って座る。");
 }
 function bottom2() {

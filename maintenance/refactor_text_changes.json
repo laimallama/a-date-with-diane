@@ -393,6 +393,126 @@
       "after": "<p class='note-keys'>Utilisez les <strong>touches numériques</strong> pour choisir une option.</p>",
       "reason": "Refine the Gallery/keyboard Notes for natural wording, explicit control behaviour, less repetition, and a colon introducing the shortcut list. Replace the wordy Back explanation without the dash or the lot.",
       "scope": "All standalone, bilingual and visual Notes; game logic unchanged."
+    },
+    {
+      "lang": "en",
+      "id": "x03357",
+      "before": "Fondle her breasts again?",
+      "after": "Fondle her breasts?",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "en",
+      "id": "x05378",
+      "before": "Fondle her breasts again?",
+      "after": "Fondle her breasts?",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "en",
+      "id": "x05381",
+      "before": "<p>You reach up and touch her breasts again. She breaks away and says, ‘Shall we sit down?’</p>",
+      "after": "<p>You reach up and touch her breasts. She breaks away and says, ‘Shall we sit down?’</p>",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "cn",
+      "id": "x03357",
+      "before": "再次抚摸她的胸？",
+      "after": "抚摸她的胸？",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "cn",
+      "id": "x05378",
+      "before": "再次抚摸她的胸？",
+      "after": "抚摸她的胸？",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "cn",
+      "id": "x05381",
+      "before": "<p>你伸手再次抚上她的胸部。她挣开身子说：“我们坐下来吧？”</p>",
+      "after": "<p>你伸手抚上她的胸部。她挣开身子说：“我们坐下来吧？”</p>",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "tw",
+      "id": "x03357",
+      "before": "再撫摸她的胸？",
+      "after": "撫摸她的胸？",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "tw",
+      "id": "x05378",
+      "before": "再撫摸她的胸？",
+      "after": "撫摸她的胸？",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "tw",
+      "id": "x05381",
+      "before": "<p>你伸手再次撫上她的胸部。她掙開身子說：「我們坐下來吧？」</p>",
+      "after": "<p>你伸手撫上她的胸部。她掙開身子說：「我們坐下來吧？」</p>",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "es",
+      "id": "x03357",
+      "before": "¿Volver a acariciarle los pechos?",
+      "after": "¿Acariciarle los pechos?",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "es",
+      "id": "x05378",
+      "before": "¿Volver a acariciarle los pechos?",
+      "after": "¿Acariciarle los pechos?",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "es",
+      "id": "x05381",
+      "before": "<p>Subes la mano y le tocas los pechos de nuevo. Ella se aparta y dice: «¿Nos sentamos?»</p>",
+      "after": "<p>Subes la mano y le tocas los pechos. Ella se aparta y dice: «¿Nos sentamos?»</p>",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "fr",
+      "id": "x03357",
+      "before": "Lui caresser les seins à nouveau ?",
+      "after": "Lui caresser les seins ?",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "fr",
+      "id": "x05378",
+      "before": "Lui caresser les seins à nouveau ?",
+      "after": "Lui caresser les seins ?",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
+    },
+    {
+      "lang": "fr",
+      "id": "x05381",
+      "before": "<p>Vous levez la main et touchez à nouveau ses seins. Elle s’écarte et dit : « On s’assoit ? »</p>",
+      "after": "<p>Vous levez la main et touchez ses seins. Elle s’écarte et dit : « On s’assoit ? »</p>",
+      "reason": "OC-01: This interaction has not happened yet; remove the unsupported repetition wording.",
+      "scope": "All standalone, bilingual and visual editions; game logic unchanged."
     }
   ]
 }

@@ -435,6 +435,7 @@ function eatmeal3d() {
   getinti(8);
   if (saturday) {
     s(TEXT.x05077);
+    sofaDressOpened = Math.max(sofaDressOpened, 1);
   } else {
     s(TEXT.x00250);
   }
@@ -2462,6 +2463,7 @@ function traintalka() {
   s(TEXT.x01293);
   s(TEXT.x01294);
   traintalking = 1;
+  picnicPlanned = 1;
   s(TEXT.x01295);
   s(TEXT.x04962);
   s(TEXT.x04963);
@@ -2508,7 +2510,8 @@ function riverside13() {
   s(TEXT.x01316);
   s(TEXT.x04964);
   s(TEXT.x01317);
-  c("riverside13b", TEXT.x01318);
+  if (luckshots >= 1) c("riverside13b", TEXT.x01318);
+  else c("riverside13b", TEXT.x06002);
   if (luckshots >= 1) c("luckytrip4", TEXT.x01319);
 }
 function riverside13b() {
@@ -3205,6 +3208,9 @@ function riverside16() {
     s(TEXT.x01709);
     s(TEXT.x01710);
     pounds -= 10;
+    var farewellDrink = thursday ? 30 : 100;
+    proc += farewellDrink;
+    mollyproc += farewellDrink;
     c("pavilion9", TEXT.x01711);
   } else {
     s(TEXT.x01712);
@@ -3238,13 +3244,15 @@ function pavilion() {
     s(TEXT.x01730);
     s(TEXT.x01731);
     if (luckshots >= 1) c("luckytrip8", TEXT.x01732);
-    c("pavilion1", TEXT.x01733);
+    if (luckshots >= 1) c("pavilion1", TEXT.x01733);
+    else c("pavilion1", TEXT.x06004);
   } else if (blad > 500) {
     s(TEXT.x01734);
     s(TEXT.x04968);
     s(TEXT.x01735);
     if (luckshots >= 1) c("luckytrip8", TEXT.x01736);
-    c("pavilion1", TEXT.x01737);
+    if (luckshots >= 1) c("pavilion1", TEXT.x01737);
+    else c("pavilion1", TEXT.x06005);
   } else {
     s(TEXT.x01738);
     c("pavilion2", TEXT.x05523);
@@ -3420,6 +3428,7 @@ function pavilion8() {
     s(TEXT.x01801);
     digestMolly(30);
     proc += 30;
+    mollyproc += 30;
     s(TEXT.x01802);
     c("pavilion9", TEXT.x01803);
   } else {
@@ -3518,8 +3527,26 @@ function riversidepath() {
     s(TEXT.x01853);
     s(TEXT.x01854);
     if (luckshots >= 1) c("luckytrip3", TEXT.x01855);
-    c("riversidepath11", TEXT.x01856);
-  } else c("riversidepath10a", TEXT.x01857);
+    if (luckshots >= 1) c("riversidepath11", TEXT.x01856);
+    else c("riversidepath11", TEXT.x06003);
+  } else if (thursday && mollyblad > 640) riversidepath10();
+  else c("riversidepath10a", TEXT.x01857);
+}
+function riversidepath10() {
+  s(TEXT.x06020);
+  s(TEXT.x06021);
+  s(TEXT.x06022);
+  s(TEXT.x06023);
+  s(TEXT.x06024);
+  s(TEXT.x06025);
+  s(TEXT.x06026);
+  s(TEXT.x06027);
+  s(TEXT.x06028);
+  s(TEXT.x06029);
+  if (luckshots >= 1) {
+    c("luckytrip3a", TEXT.x06030);
+    c("riversidepath11", TEXT.x06031);
+  } else c("riversidepath11", TEXT.x06032);
 }
 function riversidepath10a() {
   s(TEXT.x01858);
@@ -3544,10 +3571,7 @@ function luckytrip3() {
   if (luckshots >= 1) {
     s(TEXT.x01867);
     spendLuckshot();
-    s(TEXT.x05165);
-    s(TEXT.x01869);
-    s(TEXT.x01870);
-    s(TEXT.x01871);
+    bridgeVantage();
     c("underbridge", TEXT.x01872);
   } else {
     s(TEXT.x01873);
@@ -3555,8 +3579,7 @@ function luckytrip3() {
   }
 }
 function underbridge() {
-  s(TEXT.x01875);
-  digestMolly(30);
+  bridgeWait();
   if (blad > 700) {
     s(TEXT.x01876);
   } else {
@@ -3564,8 +3587,7 @@ function underbridge() {
   }
   s(TEXT.x01878);
   s(TEXT.x01879);
-  s(TEXT.x01880);
-  adjpoints(3);
+  bridgeReward();
   afterpee();
   s(TEXT.x01881);
   s(TEXT.x01882);
@@ -3577,10 +3599,59 @@ function underbridge2() {
   s(TEXT.x01886);
   s(TEXT.x01887);
   mollyblad = 50;
+  bridgeRetreat();
+}
+function bridgeVantage() {
+  s(TEXT.x05165);
+  s(TEXT.x01869);
+  s(TEXT.x01870);
+  s(TEXT.x01871);
+}
+function bridgeWait() {
+  s(TEXT.x01875);
+  digestMolly(30);
+}
+function bridgeReward() {
+  s(TEXT.x01880);
+  adjpoints(3);
+}
+function bridgeRetreat() {
   s(TEXT.x01888);
   s(TEXT.x01889);
   s(TEXT.x01890);
   c("underbridge3", TEXT.x01891);
+}
+function luckytrip3a() {
+  if (luckshots >= 1) {
+    s(TEXT.x06033);
+    spendLuckshot();
+    bridgeVantage();
+    c("underbridgea", TEXT.x06034);
+  } else {
+    s(TEXT.x06035);
+    c("gameover", TEXT.x06036);
+  }
+}
+function underbridgea() {
+  bridgeWait();
+  if (mollyblad > 700) s(TEXT.x06037);
+  else s(TEXT.x06038);
+  s(TEXT.x06039);
+  s(TEXT.x06040);
+  mollyblad = 0;
+  s(TEXT.x06041);
+  s(TEXT.x06042);
+  c("underbridge2a", TEXT.x06043);
+}
+function underbridge2a() {
+  s(TEXT.x06044);
+  s(TEXT.x06045);
+  s(TEXT.x06046);
+  afterpee();
+  s(TEXT.x06047);
+  s(TEXT.x06048);
+  bridgeReward();
+  bridgeRetreat();
 }
 function underbridge3() {
   s(TEXT.x01892);
@@ -3799,7 +3870,8 @@ function taxihome6() {
       s(TEXT.x05177);
       s(TEXT.x05178);
       s(TEXT.x01999);
-      s(TEXT.x02000);
+      if (picnicPlanned) s(TEXT.x02000);
+      else s(TEXT.x06007);
     } else {
       s(TEXT.x02001);
       s(TEXT.x02002);
@@ -3987,7 +4059,6 @@ function scenario4() {
 }
 function scenario5a() {
   brotherHome = 1;
-  s(TEXT.x02089);
   s(TEXT.x02090);
   s(TEXT.x02091);
   s(TEXT.x02092);
@@ -4192,7 +4263,7 @@ function scenario1c() {
   } else if (steak) {
     c("scenario5", TEXT.x02195);
   } else {
-    c("scenario7a", TEXT.x02196);
+    c("scenario3a", TEXT.x02196);
   }
 }
 function scenario5() {
@@ -4246,7 +4317,8 @@ function scenario6c() {
   s(TEXT.x02226);
   s(TEXT.x02227);
   s(TEXT.x02228);
-  c("scenario6d", TEXT.x02229);
+  if (luckshots >= 1) c("scenario6d", TEXT.x02229);
+  else c("scenario6d", TEXT.x06006);
   c("goupstairs", TEXT.x02230);
   if (luckshots >= 1) c("luckytrip30", TEXT.x02231);
 }
@@ -4389,12 +4461,6 @@ function goupstairsloo1() {
   s(TEXT.x02314);
   s(TEXT.x02315);
   c("gameover", TEXT.x02316);
-}
-function scenario7a() {
-  brotherHome = 1;
-  s(TEXT.x02317);
-  s(TEXT.x02318);
-  c("scenario3b", TEXT.x02319);
 }
 function scenario2() {
   s(TEXT.x02320);
@@ -4886,9 +4952,9 @@ function sofasat1() {
         sofaEveningAsked = 1;
       }
     }
-    if (!sofaDressOpened) {
+    if (sofaDressOpened < 2) {
       s(TEXT.x05238);
-      sofaDressOpened = 1;
+      sofaDressOpened = 2;
     } else {
       if (repeatEvening) {
         s(TEXT.x05590);
@@ -4906,9 +4972,9 @@ function sofasat1() {
       s(TEXT.x05242);
       sofaEveningAsked = 1;
     }
-    if (!sofaDressOpened) {
+    if (sofaDressOpened < 2) {
       s(TEXT.x02518);
-      sofaDressOpened = 1;
+      sofaDressOpened = 2;
     } else {
       if (repeatEvening) {
         s(TEXT.x05591);
@@ -4917,33 +4983,33 @@ function sofasat1() {
       }
     }
   } else {
+    if (sofaSatTouched && sofaloop % 3 == 1) s(TEXT.x05244);
+    else if (sofaSatTouched && sofaloop % 3 == 2) s(TEXT.x05248);
+    else s(TEXT.x02516);
     if (sofaloop % 3 == 1) {
-      s(TEXT.x05244);
       s(TEXT.x05245);
-      if (!sofaDressOpened) {
+      if (sofaDressOpened < 2) {
         s(TEXT.x05246);
-        sofaDressOpened = 1;
+        sofaDressOpened = 2;
       } else {
         s(TEXT.x05247);
       }
     } else if (sofaloop % 3 == 2) {
-      s(TEXT.x05248);
       s(TEXT.x05249);
-      if (!sofaDressOpened) {
+      if (sofaDressOpened < 2) {
         s(TEXT.x05250);
-        sofaDressOpened = 1;
+        sofaDressOpened = 2;
       } else {
         s(TEXT.x05251);
       }
     } else {
-      s(TEXT.x02516);
       if (!sofaEveningAsked) {
         s(TEXT.x05252);
         sofaEveningAsked = 1;
       }
-      if (!sofaDressOpened) {
+      if (sofaDressOpened < 2) {
         s(TEXT.x05253);
-        sofaDressOpened = 1;
+        sofaDressOpened = 2;
       } else {
         if (repeatEvening) {
           s(TEXT.x05592);
@@ -4976,14 +5042,15 @@ function sofasat1() {
     } else if (blad > 760) {
       s(TEXT.x05260);
     } else {
-      if (sofaloop % 3 == 1) {
+      if (sofaSatTouched && sofaloop % 3 == 1) {
         s(TEXT.x05261);
-      } else if (sofaloop % 3 == 2) {
+      } else if (sofaSatTouched && sofaloop % 3 == 2) {
         s(TEXT.x05262);
       } else {
         s(TEXT.x02525);
       }
     }
+    sofaSatTouched = 1;
     if (blad > 900) {
       emergency();
     } else {
@@ -5268,7 +5335,8 @@ function sofatoilet3() {
 }
 function sofatoilet4() {
   s(TEXT.x02644);
-  s(TEXT.x02645);
+  if (saturday) s(TEXT.x06013);
+  else s(TEXT.x02645);
   s(TEXT.x02646);
   s(TEXT.x02647);
   s(TEXT.x02648);
@@ -5409,7 +5477,8 @@ function sofatheatre() {
 }
 function sofawork() {
   s(TEXT.x02718);
-  s(TEXT.x02719);
+  if (saturday) s(TEXT.x06010);
+  else s(TEXT.x02719);
   s(TEXT.x02720);
   s(TEXT.x02721);
   s(TEXT.x02722);
@@ -5485,33 +5554,11 @@ function cheat() {
 }
 function luckytrip18a() {
   s(TEXT.x02759);
-  if (pannacotta && !brotherHome) {
-    s(TEXT.x02760);
-    s(TEXT.x02761);
-    if (blad > 800) {
-      s(TEXT.x02762);
-      afterpee();
-      c("gameover", TEXT.x02763);
-    } else {
-      c("scenario5a", TEXT.x02764);
-    }
-  } else {
-    relaxedstampalbum();
-  }
+  relaxedstampalbum();
 }
 function luckytrip20a() {
   s(TEXT.x02765);
-  if (tiramisu && !brotherHome) {
-    s(TEXT.x02766);
-    s(TEXT.x02767);
-    if (blad > 800) {
-      s(TEXT.x02768);
-      afterpee();
-      c("gameover", TEXT.x02769);
-    } else c("scenario5a", TEXT.x02770);
-  } else {
-    relaxedtrainalbum();
-  }
+  relaxedtrainalbum();
 }
 function relaxedstampalbum() {
   s(TEXT.x02771);
@@ -5760,30 +5807,6 @@ function luckytrip205a() {
     } else {
       s(TEXT.x02835);
       c("sofatrains6", TEXT.x02836);
-    }
-  } else {
-    relaxedtrainalbum();
-  }
-}
-function luckytrip206() {
-  if (luckshots >= 1) {
-    s(TEXT.x02837);
-    spendLuckshot();
-    s(TEXT.x02838);
-    c("luckytrip206a", TEXT.x02839);
-  } else {
-    cheat();
-  }
-}
-function luckytrip206a() {
-  s(TEXT.x02840);
-  if (buyespresso) {
-    rueful();
-    if (blad > 725) {
-      admission();
-    } else {
-      s(TEXT.x02841);
-      c("sofatrains7", TEXT.x02842);
     }
   } else {
     relaxedtrainalbum();
@@ -6194,7 +6217,8 @@ function stampalbum4() {
   } else {
     s(TEXT.x03055);
     s(TEXT.x03056);
-    s(TEXT.x03057);
+    if (saturday) s(TEXT.x06015);
+    else s(TEXT.x03057);
   }
   s(TEXT.x03058);
   albumdesp();
@@ -6208,7 +6232,8 @@ function sofatrains4() {
     s(TEXT.x03062);
   }
   s(TEXT.x03063);
-  s(TEXT.x03064);
+  if (picnicPlanned) s(TEXT.x06008);
+  else s(TEXT.x03064);
   s(TEXT.x03065);
   s(TEXT.x03066);
   albumdesp();
@@ -6419,18 +6444,7 @@ function sofatrains6() {
     }
     s(TEXT.x03161);
     albumdesp();
-    if (rioja) {
-      s(TEXT.x03162);
-      s(TEXT.x03163);
-      if (luckshots >= 1) {
-        c("luckytrip206", TEXT.x05355);
-        c("toiletgo", TEXT.x05356);
-      } else {
-        c("toiletgo", TEXT.x05357);
-      }
-    } else {
-      c("sofatrains7", TEXT.x03166);
-    }
+    c("sofatrains7", TEXT.x03166);
   }
 }
 function stampalbum6a() {
@@ -6595,23 +6609,18 @@ function luckytrip12() {
 }
 function luckytrip12a() {
   s(TEXT.x03251);
-  if (triedbathroom) {
-    s(TEXT.x03252);
-    c("luckytrip13", TEXT.x03253);
+  if (blad > 700) {
+    s(TEXT.x03254);
   } else {
-    if (blad > 700) {
-      s(TEXT.x03254);
-    } else {
-      s(TEXT.x03255);
-    }
-    s(TEXT.x03256);
-    if (tuesday) {
-      c("luckytrip12tues", TEXT.x03257);
-    } else if (thursday) {
-      c("luckytrip12thurs", TEXT.x03258);
-    } else {
-      c("luckytrip12sat", TEXT.x03259);
-    }
+    s(TEXT.x03255);
+  }
+  s(TEXT.x03256);
+  if (tuesday) {
+    c("luckytrip12tues", TEXT.x03257);
+  } else if (thursday) {
+    c("luckytrip12thurs", TEXT.x03258);
+  } else {
+    c("luckytrip12sat", TEXT.x03259);
   }
 }
 function luckytrip12tues() {
@@ -6622,7 +6631,6 @@ function luckytrip12tues() {
     c("gameover", TEXT.x03262);
   } else {
     s(TEXT.x03263);
-    triedbathroom = 1;
     s(TEXT.x03264);
     s(TEXT.x03265);
     s(TEXT.x03266);
@@ -6644,7 +6652,6 @@ function luckytrip12thurs() {
     c("gameover", TEXT.x03271);
   } else {
     s(TEXT.x03272);
-    triedbathroom = 1;
     s(TEXT.x03273);
     s(TEXT.x03274);
     s(TEXT.x03275);
@@ -6666,7 +6673,6 @@ function luckytrip12sat() {
     c("gameover", TEXT.x03280);
   } else {
     s(TEXT.x03281);
-    triedbathroom = 1;
     s(TEXT.x03282);
     s(TEXT.x03283);
     s(TEXT.x03284);
@@ -6683,23 +6689,6 @@ function luckytrip12sat() {
 function walkhomeinsist() {
   s(TEXT.x03292);
   c("walkhomeX", TEXT.x03293);
-}
-function luckytrip13() {
-  s(TEXT.x03287);
-  if (nicecoffee) {
-    s(TEXT.x03288);
-    triedbathroom = 1;
-    s(TEXT.x03289);
-    s(TEXT.x03290);
-    s(TEXT.x03291);
-    s(TEXT.x05374);
-    c("walkhomeX", TEXT.x05375);
-  } else {
-    s(TEXT.x03294);
-    s(TEXT.x03295);
-    afterpee();
-    c("gameover", TEXT.x03296);
-  }
 }
 function toiletgo() {
   s(TEXT.x03297);
@@ -6792,7 +6781,9 @@ function breasts1() {
 }
 function breasts2() {
   if (saturday) {
-    s(TEXT.x03340);
+    if (sofaDressOpened) s(TEXT.x06009);
+    else s(TEXT.x03340);
+    sofaDressOpened = Math.max(sofaDressOpened, 1);
   } else {
     s(TEXT.x03341);
   }
@@ -6803,6 +6794,7 @@ function breasts2() {
   } else {
     s(TEXT.x03345);
     s(TEXT.x03346);
+    if (saturday) sofaDressOpened = Math.min(2, sofaDressOpened + 1);
     c("bottom2", TEXT.x03347);
   }
 }
@@ -6814,7 +6806,8 @@ function bottom1() {
     s(TEXT.x03350);
     c("walkhomeX", TEXT.x03351);
   } else {
-    s(TEXT.x03352);
+    if (saturday) s(TEXT.x06011);
+    else s(TEXT.x03352);
     if (tuesday) {
       s(TEXT.x03353);
     } else {
@@ -6837,7 +6830,8 @@ function bottom1a() {
     s(TEXT.x03364);
     c("bottomthurs", TEXT.x03365);
   } else {
-    s(TEXT.x03366);
+    if (saturday) s(TEXT.x06012);
+    else s(TEXT.x03366);
     c("suddenend", TEXT.x03367);
   }
 }
@@ -7015,7 +7009,8 @@ function gobathroom() {
   }
   s(TEXT.x03475);
   if (blad < 675) {
-    s(TEXT.x03476);
+    if (saturday) s(TEXT.x06017);
+    else s(TEXT.x03476);
     s(TEXT.x03477);
     s(TEXT.x03478);
     if (saturday) {
@@ -7282,6 +7277,7 @@ function walkhome1() {
     s(TEXT.x03610);
     s(TEXT.x05388);
     c("walkhome1b", TEXT.x03612);
+    return;
   }
   c("walkhome1a", TEXT.x03613);
 }
@@ -7625,7 +7621,8 @@ function watching1() {
   s(TEXT.x03797);
   s(TEXT.x03798);
   if (luckshots >= 1) c("luckytrip19", TEXT.x03799);
-  c("watching2", TEXT.x03800);
+  if (luckshots >= 1) c("watching2", TEXT.x06000);
+  else c("watching2", TEXT.x03800);
 }
 function watching2() {
   s(TEXT.x05405);
@@ -8040,6 +8037,7 @@ function sofabreasts() {
   sofaBreastsDone = 1;
   if (saturday) {
     s(TEXT.x05442);
+    sofaDressOpened = Math.min(2, sofaDressOpened + 1);
   } else {
     s(TEXT.x04007);
   }
@@ -8850,7 +8848,8 @@ function bushome6() {
       s(TEXT.x04461);
       s(TEXT.x04462);
       if (luckshots >= 1) c("luckytrip17", TEXT.x04463);
-      c("gameover", TEXT.x04464);
+      if (luckshots >= 1) c("gameover", TEXT.x06001);
+      else c("gameover", TEXT.x04464);
     }
   }
 }
@@ -9007,7 +9006,8 @@ function nicelydesp9() {
   c("secondplace", TEXT.x04561);
 }
 function secondplace() {
-  s(TEXT.x04562);
+  if (saturday) s(TEXT.x06014);
+  else s(TEXT.x04562);
   s(TEXT.x04563);
   c("secondplace1", TEXT.x04564);
 }
@@ -9378,7 +9378,8 @@ function albumdesp() {
   else if (blad < 687) s(TEXT.x04734);
   else if (blad < 700) s(TEXT.x04735);
   else if (blad < 725) {
-    s(TEXT.x04736);
+    if (saturday) s(TEXT.x06016);
+    else s(TEXT.x04736);
     if (points < 20) {
       s(TEXT.x04737);
     } else {

@@ -45,7 +45,8 @@ const HIDDEN_SLUGS = {
   "01_theatre_flashback": "01_theatre",
   "02_portaloo_ladies_first": "02a_portaloo_found",
   "03_portaloo_too_embarrassed": "02b_portaloo_direct",
-  "04_thursday_bridge_diane_molly": "03_bridge",
+  "04_thursday_bridge_diane_molly": "03a_bridge_diane_first",
+  "04a_thursday_bridge_molly_diane": "03b_bridge_molly_first",
   "05_molly_bruno_towpath": "04a_molly_skip",
   "06_diane_slips_away_while_watching_molly": "04b_diane_slips",
   "07_riverside_bushes_diane": "05a_bushes_diane",
@@ -75,7 +76,7 @@ const HIDDEN_SLUGS = {
   "24_phone_call": "15_phone_call",
 };
 
-// Every managed transcript is synchronized to the visual release.
+// Both releases refer to this single set of managed transcripts.
 function managedTranscriptFiles() {
   return Object.keys(LANGS).flatMap((lang) => [
     ...Object.values(ENDING_SLUGS).map(
@@ -435,8 +436,8 @@ function main() {
   if (endingLeavesEn.length !== 15) {
     throw new Error(`Expected 15 ending leaves, got ${endingLeavesEn.length}`);
   }
-  if (hiddenLeavesEn.length !== 31) {
-    throw new Error(`Expected 31 English hidden leaves, got ${hiddenLeavesEn.length}`);
+  if (hiddenLeavesEn.length !== 32) {
+    throw new Error(`Expected 32 English hidden leaves, got ${hiddenLeavesEn.length}`);
   }
 
   for (const leaf of endingLeavesEn) {

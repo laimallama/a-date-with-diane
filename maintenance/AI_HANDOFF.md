@@ -22,10 +22,13 @@ bilingual English layer must equal standalone English, and its local layer must 
 the corresponding standalone language. Both are compiled directly from those catalogs.
 The only scoped exception is the six English omission placeholders in the new
 German/Japanese bilingual editions, documented in `localization/scope.json`.
-Existing catalogs and outputs are frozen. New locale review hashes are recorded
-separately; never reset legacy witnesses to accommodate a new translation.
+The approved 27 September continuity/restoration patch updates all seven catalogs.
+Further edits require a clear scope and exact change records. New locale review
+hashes are recorded separately; never reset legacy preservation witnesses.
 
-`source/locations.json` records each text ID, kind, node, slot and choice target.
+`build_source_locations.js` derives `source/locations.json` from explicit `TEXT`
+references. It records each text ID, kind, node, slot and choice target. The aligned
+index uses those identities directly, so moved or reworded text cannot steal IDs.
 `maintenance/aligned_text.json` is a generated cross-language inspection reference.
 Preserve IDs when moving or splitting existing text; do not renumber them. When adding
 or removing calls, update locations and all catalogs together. Computed messages are
@@ -47,11 +50,13 @@ node ../ADWD-visual/maintenance/verify_project.js
 
 The full verifier checks generated-source freshness, catalog completeness, stable IDs,
 syntax, exact static rendering witnesses, all bilingual layers, dynamic amounts and
-variants, paired status boundaries, focused historical regressions, all 46 Gallery
-routes per edition, Back/replay, Skip, numerical state and all 322 transcripts.
+variants, paired status boundaries, focused historical regressions, all 47 Gallery
+routes per edition, Back/replay, Skip, numerical state and all 329 transcripts.
 `maintenance/fixtures/text-baseline.json` records the approved rendering baseline from
-the recovery commit. Intentional editorial changes require a reviewed baseline update;
-do not refresh it merely to silence a failure. The four localization refinements from
+the recovery commit. Intentional editorial changes require an exact reversible ledger; never replace
+the immutable baseline to silence a failure. The 27 September changes are in
+`continuity-restoration-2026-09-27.json`; verification reverses them before checking
+the previous release and the older baseline. The four localization refinements from
 this cleanup are explicit exceptions in `maintenance/refactor_text_changes.json`.
 
 `verify_browser_controls.js` is the separate Playwright check for controls, modal focus,
@@ -155,7 +160,7 @@ should be extended for a demonstrated new bug rather than duplicating entire aud
 
 ## Gallery and transcripts
 
-Maintain the classic Gallery: 15 ending leaves and 31 hidden-scene leaves in every
+Maintain the classic Gallery: 15 ending leaves and 32 hidden-scene leaves in every
 language and all thirteen visual editions. No Variations tab/button, setup selectors or explanatory
 variation notes. Add a leaf for a meaningfully different event or outcome. For dialogue
 alternatives choose one complete, coherent, especially engaging real route. Endings
@@ -164,7 +169,7 @@ text or inject state to make a representative route.
 
 Routes live in `verify_ending_routes.js`; hidden definitions live in
 `write_hidden_scenes.js`. `build_gallery_data.js` generates the Gallery snapshot and
-embedded data. `write_transcripts.js` renders the 322 managed climax transcripts from
+embedded data. `write_transcripts.js` renders the 329 managed climax transcripts from
 those routes and preserves unrelated files. Their cuts and ordering match Gallery/Skip.
 Scene-final continuation choices stay available but unhighlighted outside the guide.
 

@@ -13,8 +13,13 @@ const ROOT = path.resolve(__dirname, "..");
 const json = (file) => JSON.parse(fs.readFileSync(path.join(ROOT, file), "utf8"));
 const hash = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const locations = json("source/locations.json");
+require("node:child_process").execFileSync(process.execPath, [
+  path.join(__dirname, "build_source_locations.js"),
+  "--check",
+]);
 const baseline = json("maintenance/fixtures/text-baseline.json");
 const reviewedChanges = json("maintenance/refactor_text_changes.json").changes;
+const restoration = json("maintenance/continuity-restoration-2026-09-27.json");
 const groups = json("source/status-groups.json");
 const aligned = json("maintenance/aligned_text.json");
 const key = (r) => `${r.kind}/${r.source.node}/${r.source.slot}`;
@@ -36,9 +41,32 @@ let witnessed = 0,
 for (const lang of LANGS) {
   const catalog = json(`source/text/${lang}.json`);
   const source = readSource(lang);
-  const baselineRows = Object.entries(catalog)
+  const reconstructed = { ...catalog };
+  for (const change of restoration.catalogChanges.filter((c) => c.lang === lang)) {
+    if (change.after === null)
+      assert(!Object.hasOwn(reconstructed, change.id), "Retired text returned: " + change.id);
+    else
+      assert.equal(
+        reconstructed[change.id],
+        change.after,
+        "Unrecorded restoration edit: " + lang + "/" + change.id,
+      );
+    if (change.before === null) delete reconstructed[change.id];
+    else reconstructed[change.id] = change.before;
+  }
+  const baselineRows = Object.entries(reconstructed)
     .filter(([id]) => id.startsWith("x"))
     .sort(([a], [b]) => a.localeCompare(b, "en"));
+  assert.equal(
+    baselineRows.length,
+    restoration.catalogCheckpoints[lang].entries,
+    "Pre-restoration inventory",
+  );
+  assert.equal(
+    hash(JSON.stringify(baselineRows)),
+    restoration.catalogCheckpoints[lang].sha256,
+    "Pre-restoration catalog witness: " + lang,
+  );
   if (baseline.catalogs[lang]) {
     assert.equal(baselineRows.length, baseline.catalogs[lang].entries, "Reviewed inventory size");
     // Reconstruct the checkpoint from explicitly recorded editorial exceptions.

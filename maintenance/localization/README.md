@@ -3,11 +3,14 @@
 German and Japanese translation, companion material and technical integration are
 complete. Both were translated directly from English at
 `da90009ab65f88099d1c57b8800e254a9d53e5cc`; the visual baseline is
-`52c91af79b3a1bdd7ed308cb9c6eb2129eb0a8d8`. Existing editions remain unchanged.
+`52c91af79b3a1bdd7ed308cb9c6eb2129eb0a8d8`. The preservation statements below describe that original localization release.
+The separately approved 27 September restoration now updates all seven languages;
+see [the restoration record](../RESTORATION-2026-09-27.md) and its reversible ledger.
+The omission policy remains unchanged.
 
-Each locale contains 5,352 reviewed ordinary catalog leaves, six explicit omission
+Each locale now contains 5,362 reviewed ordinary catalog leaves, six explicit omission
 placeholders and four preserved empty outputs. Each has four game editions, a wiki
-and 46 generated transcripts. See [verification](verification.md), the per-language
+and 47 generated transcripts. See [verification](verification.md), the per-language
 style guides, change records and hash-based editorial ledgers. Technical verification
 and editorial review do not establish absolute perfection; browser and independent
 native-speaker limits are stated explicitly.
@@ -19,7 +22,7 @@ After actually reviewing the displayed items, `review de meaning` or
 `review de naturalness` records source and target hashes. A changed source or target
 invalidates its review. Automated checks do not count as editorial review.
 
-## Existing-edition preservation and approved new-edition scope
+## Original localization scope and retained omission policy
 
 The user explicitly requires ALL existing editions and translations to remain
 unchanged. The user has now approved omissions with clear placeholders at every

@@ -12,7 +12,7 @@ const code = fs.readFileSync(
 function row(node, slot, en, translations = en, kind = "story", tag) {
   return { source: { node, slot }, en, translations, kind, tag };
 }
-function build(rows, previous, idRemaps) {
+function build(rows, locations) {
   const sources = Object.fromEntries(
     LANGS.map((lang) => [
       lang,
@@ -42,182 +42,69 @@ function build(rows, previous, idRemaps) {
     },
   };
   vm.runInNewContext(code, context, { filename: "build_aligned_text.js" });
-  return module.exports.buildIndex(previous, idRemaps);
+  return module.exports.buildIndex(locations);
 }
-const key = (r) => r.kind + "/" + r.source.node + "/" + r.source.slot;
-const at = (data, node, slot) =>
-  data.entries.find((r) => r.source.node === node && r.source.slot === slot);
-const originalRows = [
-  row("early", 1, "Intro"),
-  row("later", 1, "Order wine"),
-  row("last", 1, "Goodbye"),
+const sourceRows = [
+  row("original", 1, "Same words", "first"),
+  row("moved", 1, "Same words", "second"),
+  row("moved", 2, "Continue", "continue", "choice", "next"),
 ];
-const baseline = build(originalRows);
-const inserted = build(
-  [originalRows[0], row("early", 2, "Order wine"), ...originalRows.slice(1)],
-  baseline,
-);
-assert.equal(
-  at(inserted, "later", 1).id,
-  at(baseline, "later", 1).id,
-  "New text copied into an earlier node must not steal a still-live later occurrence ID",
-);
-assert.notEqual(at(inserted, "early", 2).id, at(baseline, "later", 1).id);
-const shifted = build(
-  [row("early", 1, "New preface"), row("early", 2, "Intro"), ...originalRows.slice(1)],
-  baseline,
-);
-assert.equal(
-  at(shifted, "early", 2).id,
-  at(baseline, "early", 1).id,
-  "Inserted text preserves shifted same-node IDs",
-);
-const moved = build(
-  [originalRows[0], row("replacement", 1, "Order wine"), originalRows[2]],
-  baseline,
-);
-assert.equal(
-  at(moved, "replacement", 1).id,
-  at(baseline, "later", 1).id,
-  "A genuinely moved occurrence can retain its historical ID",
-);
-const reworded = build(
-  [originalRows[0], row("later", 1, "Order two wines", "Order wine"), originalRows[2]],
-  baseline,
-);
-assert.equal(
-  at(reworded, "later", 1).id,
-  at(baseline, "later", 1).id,
-  "English-only wording changes retain the matching occurrence ID",
-);
-const deleted = build([originalRows[0], originalRows[2]], baseline);
-assert(
-  !deleted.entries.some((r) => r.id === at(baseline, "later", 1).id),
-  "Removed text leaves no stale active entry",
-);
-const repeated = build(
-  inserted.entries.map((r) => row(r.source.node, r.source.slot, r.en)),
-  inserted,
-);
-assert.equal(
-  JSON.stringify(repeated.entries.map((r) => [key(r), r.id])),
-  JSON.stringify(inserted.entries.map((r) => [key(r), r.id])),
-  "Rebuilding is stable",
-);
-const choices = [
-  row("early", 1, "Continue", "Continue", "choice", "a"),
-  row("later", 1, "Continue", "Continue", "choice", "b"),
-];
-const choiceBase = build(choices);
-const choiceNew = build(
-  [
-    row("early", 1, "New choice", "New choice", "choice", "c"),
-    ...choices.map((r) =>
-      r.source.node === "early" ? { ...r, source: { node: "early", slot: 2 } } : r,
+const locations = sourceRows.map((r, i) => ({
+  id: "x" + String(i + 1).padStart(5, "0"),
+  kind: r.kind,
+  source: r.source,
+  ...(r.tag ? { tag: r.tag } : {}),
+}));
+const result = build(sourceRows, locations);
+assert.equal(result.entries[0].id, "x00001");
+assert.equal(result.entries[1].id, "x00002", "Identical text keeps distinct source identities");
+const reworded = sourceRows.map((r) => ({
+  ...r,
+  en: "New wording",
+  translations: "New translation",
+}));
+assert.equal(build(reworded, locations).entries[1].id, "x00002", "Wording does not control IDs");
+assert.throws(() => build(sourceRows, locations.slice(1)), /Complete maintained/);
+assert.throws(
+  () =>
+    build(
+      sourceRows,
+      locations.map((r) => ({ ...r, id: "x00001" })),
     ),
-  ],
-  choiceBase,
-);
-assert.equal(at(choiceNew, "early", 2).id, at(choiceBase, "early", 1).id);
-assert.equal(
-  at(choiceNew, "later", 1).id,
-  at(choiceBase, "later", 1).id,
-  "Repeated labels retain separate target/source references",
-);
-const duplicateRows = [row("original", 1, "Same", "first"), row("original", 2, "Same", "second")];
-const duplicateBase = build(duplicateRows);
-const partlyMoved = build(
-  [duplicateRows[0], row("destination", 1, "Same", "second")],
-  duplicateBase,
-);
-assert.equal(at(partlyMoved, "original", 1).id, at(duplicateBase, "original", 1).id);
-assert.equal(
-  at(partlyMoved, "destination", 1).id,
-  at(duplicateBase, "original", 2).id,
-  "One surviving duplicate must not reserve the ID of a distinct moved occurrence",
-);
-const wordingBase = build([row("later", 1, "Order wine", "original")]);
-const copiedAndReworded = build(
-  [row("earlier", 1, "Order wine", "new copy"), row("later", 1, "Order two wines", "original")],
-  wordingBase,
-);
-assert.equal(
-  at(copiedAndReworded, "later", 1).id,
-  at(wordingBase, "later", 1).id,
-  "Original-node translation matches protect concurrently reworded text from an earlier copy",
-);
-assert.notEqual(at(copiedAndReworded, "earlier", 1).id, at(wordingBase, "later", 1).id);
-const splitBefore = build([
-  row("scene", 1, "Thanks, with a squeeze"),
-  row("scene", 2, "Thanks, with a kiss"),
-]);
-const splitRows = [
-  row("scene", 1, "Thanks"),
-  row("scene", 2, "A squeeze"),
-  row("scene", 3, "Thanks"),
-  row("scene", 4, "A kiss"),
-];
-const remap = {
-  id: at(splitBefore, "scene", 2).id,
-  from: { node: "scene", slot: 2 },
-  to: { node: "scene", slot: 3 },
-  before: Object.fromEntries(LANGS.map((lang) => [lang, at(splitBefore, "scene", 2)[lang]])),
-  after: Object.fromEntries(
-    LANGS.map((lang) => [lang, lang === "en" ? "Thanks" : lang + ":Thanks"]),
-  ),
-};
-const split = build(splitRows, splitBefore, [remap]);
-assert.equal(
-  at(split, "scene", 3).id,
-  remap.id,
-  "Explicitly identified speech keeps its ID after splitting and rewording",
-);
-assert.notEqual(
-  at(split, "scene", 2).id,
-  remap.id,
-  "A new action does not inherit the other branch’s speech ID",
-);
-assert.equal(
-  JSON.stringify(build(splitRows, split).entries),
-  JSON.stringify(split.entries),
-  "Normal rebuild after a one-off remap is stable",
-);
-for (const invalid of [
-  [{ ...remap, id: "missing" }],
-  [remap, remap],
-  [{ ...remap, from: { node: "scene", slot: 99 } }],
-  [{ ...remap, to: { node: "scene", slot: 99 } }],
-  [{ ...remap, before: { ...remap.before, en: "stale" } }],
-  [{ ...remap, after: { ...remap.after, tw: "stale" } }],
-])
-  assert.throws(() => build(splitRows, splitBefore, invalid), /remap|remapped/);
-assert.throws(
-  () => build(splitRows, split, [remap]),
-  /Stale remap source/,
-  "Reapplying a one-off migration fails its old-location guard",
-);
-const dynamicBefore = build([
-  splitRows[0],
-  {
-    ...row("scene", 2, "Thanks, with a kiss"),
-    static: false,
-    expression: '"Thanks, with a kiss" + name',
-  },
-]);
-const dynamicRemap = { ...remap, id: at(dynamicBefore, "scene", 2).id };
-assert.throws(
-  () => build(splitRows, dynamicBefore, [dynamicRemap]),
-  /Dynamic calls cannot use literal-only ID remaps/,
-  "Literal guards cannot authorize remapping an old dynamic expression",
-);
-const dynamicDestination = splitRows.map((r) =>
-  r.source.slot === 3 ? { ...r, static: false, expression: '"Thanks" + name' } : r,
+  /Repeated text ID/,
 );
 assert.throws(
-  () => build(dynamicDestination, splitBefore, [remap]),
-  /Dynamic calls cannot use literal-only ID remaps/,
-  "Literal guards cannot authorize remapping to a dynamic expression",
+  () =>
+    build(
+      sourceRows,
+      locations.map((r) => ({ ...r, source: locations[0].source, kind: "story" })),
+    ),
+  /Repeated source location/,
+);
+assert.throws(
+  () =>
+    build(
+      sourceRows,
+      locations.map((r) => (r.tag ? { ...r, tag: "wrong" } : r)),
+    ),
+  /choice target differs/,
+);
+assert.throws(
+  () =>
+    build(
+      sourceRows,
+      locations.map((r) => ({ ...r, dynamic: true })),
+    ),
+  /text kind differs/,
+);
+assert.throws(
+  () =>
+    build(
+      sourceRows,
+      locations.map((r) => ({ ...r, source: { ...r.source, slot: 99 } })),
+    ),
+  /Repeated source location|Unknown compiled/,
 );
 console.log(
-  "PASS: nine automatic reference-ID scenarios; explicit split ownership and normal rebuild; seven stale/invalid remap guards; both dynamic-remap rejection cases.",
+  "PASS: canonical ID ownership across duplicates and rewording; incomplete, duplicate, moved, dynamic and choice-target mismatch guards.",
 );

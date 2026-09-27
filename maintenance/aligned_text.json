@@ -10,11 +10,11 @@
     "ja": "outputs/ja/dianedate_ja.html"
   },
   "counts": {
-    "total": 5361,
-    "story": 4140,
+    "total": 5371,
+    "story": 4150,
     "choice": 1209,
     "variant": 12,
-    "entries": 5361
+    "entries": 5371
   },
   "entries": [
     {
@@ -369,13 +369,13 @@
     {
       "id": "x00021",
       "kind": "story",
-      "en": "<p>Molly and Amanda wear jeans.</p>",
-      "cn": "<p>莫莉和阿曼达都穿牛仔裤。</p>",
-      "es": "<p>Molly y Amanda llevan vaqueros.</p>",
-      "fr": "<p>Molly et Amanda portent un jean.</p>",
-      "tw": "<p>莫莉和阿曼達都穿牛仔褲。</p>",
-      "de": "<p>Molly und Amanda tragen Jeans.</p>",
-      "ja": "<p>モリーとアマンダはジーンズをはいています。</p>",
+      "en": "<p>Molly and Amanda wear jeans. Molly wears white knickers.</p>",
+      "cn": "<p>莫莉和阿曼达都穿牛仔裤。莫莉穿白色内裤。</p>",
+      "es": "<p>Molly y Amanda llevan vaqueros. Molly lleva bragas blancas.</p>",
+      "fr": "<p>Molly et Amanda portent un jean. Molly porte une culotte blanche.</p>",
+      "tw": "<p>莫莉和阿曼達都穿牛仔褲。莫莉穿白色內褲。</p>",
+      "de": "<p>Molly und Amanda tragen Jeans. Molly trägt einen weißen Slip.</p>",
+      "ja": "<p>モリーとアマンダはジーンズをはいています。モリーのショーツは白です。</p>",
       "source": { "node": "info", "slot": 4 }
     },
     {
@@ -974,13 +974,13 @@
     {
       "id": "x05073",
       "kind": "story",
-      "en": "<p>She’s wearing a knee-length red polka-dot skirt, with a belt, stockings, a white blouse and a little red jacket. She looks great.</p>",
-      "cn": "<p>她穿着一条及膝的红色波点裙，配腰带、长筒丝袜、白色衬衫和一件小红外套。她看起来棒极了。</p>",
-      "es": "<p>Lleva una falda roja de lunares a la altura de la rodilla, con cinturón, medias, una blusa blanca y una chaquetita roja. Está genial.</p>",
-      "fr": "<p>Elle porte une jupe rouge à pois qui lui arrive aux genoux, avec une ceinture, des bas, un chemisier blanc et une petite veste rouge. Elle est superbe.</p>",
-      "tw": "<p>她穿著一條及膝的紅色圓點裙，配腰帶、長筒絲襪、白色襯衫和一件紅色小外套。她看起來真漂亮。</p>",
-      "de": "<p>Sie trägt einen knielangen roten Rock mit Punkten und einem Gürtel, Strümpfe, eine weiße Bluse und eine kleine rote Jacke. Sie sieht toll aus.</p>",
-      "ja": "<p>彼女は、ベルトを締めた膝丈の赤い水玉模様のスカートにストッキング、白いブラウス、小さな赤いジャケットを着ている。とても素敵だ。</p>",
+      "en": "<p>She’s wearing a knee-length red polka-dot skirt, with a belt, a white blouse and a little red jacket. She looks great.</p>",
+      "cn": "<p>她穿着一条及膝的红色波点裙，配腰带、白色衬衫和一件小红外套。她看起来棒极了。</p>",
+      "es": "<p>Lleva una falda roja de lunares a la altura de la rodilla, con cinturón, una blusa blanca y una chaquetita roja. Está genial.</p>",
+      "fr": "<p>Elle porte une jupe rouge à pois qui lui arrive aux genoux, avec une ceinture, un chemisier blanc et une petite veste rouge. Elle est superbe.</p>",
+      "tw": "<p>她穿著一條及膝的紅色圓點裙，配腰帶、白色襯衫和一件紅色小外套。她看起來真漂亮。</p>",
+      "de": "<p>Sie trägt einen knielangen roten Rock mit Punkten und einem Gürtel, eine weiße Bluse und eine kleine rote Jacke. Sie sieht toll aus.</p>",
+      "ja": "<p>彼女は、ベルトを締めた膝丈の赤い水玉模様のスカートに、白いブラウス、小さな赤いジャケットを着ている。とても素敵だ。</p>",
       "source": { "node": "gothere", "slot": 9 }
     },
     {
@@ -1611,13 +1611,13 @@
       "id": "x00120",
       "kind": "choice",
       "tag": "buyravioli",
-      "en": "Ravioli (£7)",
-      "cn": "意式方饺（7英镑）",
-      "es": "Raviolis (7 £)",
-      "fr": "Raviolis (7 £)",
-      "tw": "義式方餃（7英鎊）",
-      "de": "Ravioli (7 £)",
-      "ja": "ラビオリ（7ポンド）",
+      "en": "Ravioli – you’re trying to save money (£7)",
+      "cn": "意式方饺——你想省点钱（7英镑）",
+      "es": "Raviolis, que estás intentando ahorrar (7 £)",
+      "fr": "Raviolis, histoire d’économiser un peu (7 £)",
+      "tw": "義式方餃——你想省點錢（7英鎊）",
+      "de": "Ravioli – du willst etwas sparen (7 £)",
+      "ja": "ラビオリ――少し節約しよう（7ポンド）",
       "source": { "node": "eatmeal", "slot": 5 }
     },
     {
@@ -4676,13 +4676,13 @@
     {
       "id": "x00363",
       "kind": "story",
-      "en": "<p>DIANE: My dad used to work on the railways – he was a driver on the East Coast line – so I guess that’s why I like them so much. We’ve had lots of chances for free travel over the years.</p>",
-      "cn": "<p>黛安：我爸爸以前在铁路部门工作——当时是东海岸线的火车司机——所以我想这就是我这么喜欢火车的原因吧。这些年来我们有很多免费旅行的机会。</p>",
-      "es": "<p>DIANE: Mi padre trabajaba en el ferrocarril —era maquinista en la línea de la Costa Este—, así que supongo que por eso me gustan tanto. A lo largo de los años hemos tenido muchas oportunidades de viajar gratis.</p>",
-      "fr": "<p>DIANE : Mon père travaillait dans les chemins de fer — il était conducteur sur la ligne de la côte est — donc je suppose que c’est pour ça que je les aime autant. On a eu plein d’occasions de voyager gratuitement au fil des années.</p>",
-      "tw": "<p>黛安：我爸爸以前在鐵路工作——當時是東海岸線的火車司機——所以我想這就是我這麼喜歡火車的原因吧。這些年我們有很多免費旅行的機會。</p>",
-      "de": "<p>DIANE: Mein Vater hat früher bei der Eisenbahn gearbeitet. Er war Lokführer auf der East-Coast-Strecke. Wahrscheinlich mag ich Züge deshalb so gern. Im Laufe der Jahre konnten wir oft kostenlos reisen.</p>",
-      "ja": "<p>ダイアン：父が鉄道で働いてたの。東海岸本線の運転士でね。だから、こんなに鉄道が好きなんだと思う。長年、無料で旅行できる機会もずいぶんあったわ。</p>",
+      "en": "<p>DIANE: My dad works on the railways – he’s a driver on the East Coast line – so I guess that’s why I like them so much. We’ve had lots of chances for free travel over the years.</p>",
+      "cn": "<p>黛安：我爸爸在铁路部门工作，是东海岸线的火车司机。所以我想，这就是我这么喜欢火车的原因吧。这些年来，我们有很多免费旅行的机会。</p>",
+      "es": "<p>DIANE: Mi padre trabaja en el ferrocarril —es maquinista en la línea de la Costa Este—, así que supongo que por eso me gustan tanto. A lo largo de los años hemos tenido muchas oportunidades de viajar gratis.</p>",
+      "fr": "<p>DIANE : Mon père travaille dans les chemins de fer — il est conducteur sur la ligne de la côte est — donc je suppose que c’est pour ça que je les aime autant. On a eu plein d’occasions de voyager gratuitement au fil des années.</p>",
+      "tw": "<p>黛安：我爸爸在鐵路工作，是東海岸線的火車司機。所以我想，這就是我這麼喜歡火車的原因吧。這些年我們有很多免費旅行的機會。</p>",
+      "de": "<p>DIANE: Mein Vater arbeitet bei der Eisenbahn. Er ist Lokführer auf der East-Coast-Strecke. Wahrscheinlich mag ich Züge deshalb so gern. Im Laufe der Jahre konnten wir oft kostenlos reisen.</p>",
+      "ja": "<p>ダイアン：父が鉄道で働いてるの。東海岸本線の運転士でね。だから、こんなに鉄道が好きなんだと思う。長年、無料で旅行できる機会もずいぶんあったわ。</p>",
       "source": { "node": "traintalk1", "slot": 1 }
     },
     {
@@ -16917,6 +16917,19 @@
       "source": { "node": "riverside13", "slot": 7 }
     },
     {
+      "id": "x06002",
+      "kind": "choice",
+      "tag": "riverside13b",
+      "en": "I’ve no luckshots left.",
+      "cn": "我的幸运机会用完了。",
+      "es": "No me quedan golpes de suerte.",
+      "fr": "Il ne me reste plus de coups de chance.",
+      "tw": "我的幸運機會已經用完了。",
+      "de": "Ich habe keine Glücksversuche mehr.",
+      "ja": "運試しの回数が残っていない。",
+      "source": { "node": "riverside13", "slot": 8 }
+    },
+    {
       "id": "x01319",
       "kind": "choice",
       "tag": "luckytrip4",
@@ -16927,7 +16940,7 @@
       "tw": "好，我賭一次幸運機會。",
       "de": "Ja, ich riskiere einen Glücksversuch.",
       "ja": "よし、運試しを使ってみよう。",
-      "source": { "node": "riverside13", "slot": 8 }
+      "source": { "node": "riverside13", "slot": 9 }
     },
     {
       "id": "x01320",
@@ -22285,6 +22298,19 @@
       "source": { "node": "pavilion", "slot": 12 }
     },
     {
+      "id": "x06004",
+      "kind": "choice",
+      "tag": "pavilion1",
+      "en": "I’ve no luckshots left.",
+      "cn": "我的幸运机会用完了。",
+      "es": "No me quedan golpes de suerte.",
+      "fr": "Il ne me reste plus de coups de chance.",
+      "tw": "我的幸運機會已經用完了。",
+      "de": "Ich habe keine Glücksversuche mehr.",
+      "ja": "運試しの回数が残っていない。",
+      "source": { "node": "pavilion", "slot": 13 }
+    },
+    {
       "id": "x01734",
       "kind": "story",
       "en": "<p>DIANE: I’m just going to pop to the loo. I won’t be long.</p>",
@@ -22294,7 +22320,7 @@
       "tw": "<p>黛安：我去一下廁所，立刻回來。</p>",
       "de": "<p>DIANE: Ich gehe nur kurz auf die Toilette. Ich bin gleich wieder da.</p>",
       "ja": "<p>ダイアン：ちょっとトイレに行ってくるね。すぐ戻るから。</p>",
-      "source": { "node": "pavilion", "slot": 13 }
+      "source": { "node": "pavilion", "slot": 14 }
     },
     {
       "id": "x04968",
@@ -22306,7 +22332,7 @@
       "tw": "<p>她去了女廁。</p>",
       "de": "<p>Sie geht zur Damentoilette.</p>",
       "ja": "<p>彼女は女性用トイレへ向かう。</p>",
-      "source": { "node": "pavilion", "slot": 14 }
+      "source": { "node": "pavilion", "slot": 15 }
     },
     {
       "id": "x01735",
@@ -22318,7 +22344,7 @@
       "tw": "<p>你在心裡暗罵了一聲。有沒有幸運機會？</p>",
       "de": "<p>Du fluchst innerlich. Könnte ein Glücksversuch helfen?</p>",
       "ja": "<p>心の中で悪態をつく。運試しを使えるだろうか？</p>",
-      "source": { "node": "pavilion", "slot": 15 }
+      "source": { "node": "pavilion", "slot": 16 }
     },
     {
       "id": "x01736",
@@ -22331,7 +22357,7 @@
       "tw": "好，我用一次幸運機會。",
       "de": "Ja, ich setze einen Glücksversuch ein.",
       "ja": "はい、運試しを使う。",
-      "source": { "node": "pavilion", "slot": 16 }
+      "source": { "node": "pavilion", "slot": 17 }
     },
     {
       "id": "x01737",
@@ -22344,7 +22370,20 @@
       "tw": "不，我要留著幸運機會。",
       "de": "Nein, ich hebe mir meine Glücksversuche auf.",
       "ja": "いいえ、運試しは取っておく。",
-      "source": { "node": "pavilion", "slot": 17 }
+      "source": { "node": "pavilion", "slot": 18 }
+    },
+    {
+      "id": "x06005",
+      "kind": "choice",
+      "tag": "pavilion1",
+      "en": "I’ve no luckshots left.",
+      "cn": "我的幸运机会用完了。",
+      "es": "No me quedan golpes de suerte.",
+      "fr": "Il ne me reste plus de coups de chance.",
+      "tw": "我的幸運機會已經用完了。",
+      "de": "Ich habe keine Glücksversuche mehr.",
+      "ja": "運試しの回数が残っていない。",
+      "source": { "node": "pavilion", "slot": 19 }
     },
     {
       "id": "x01738",
@@ -22356,7 +22395,7 @@
       "tw": "<p>你們一起走到啤酒花園裡的一張桌子旁。</p>",
       "de": "<p>Ihr geht alle zu einem Tisch im Biergarten.</p>",
       "ja": "<p>みんなでビアガーデンの席に着く。</p>",
-      "source": { "node": "pavilion", "slot": 18 }
+      "source": { "node": "pavilion", "slot": 20 }
     },
     {
       "id": "x05523",
@@ -22369,7 +22408,7 @@
       "tw": "你走到吧台。",
       "de": "Du gehst zur Bar.",
       "ja": "カウンターへ行く。",
-      "source": { "node": "pavilion", "slot": 19 }
+      "source": { "node": "pavilion", "slot": 21 }
     },
     {
       "id": "x01740",
@@ -24013,6 +24052,19 @@
       "source": { "node": "riversidepath", "slot": 12 }
     },
     {
+      "id": "x06003",
+      "kind": "choice",
+      "tag": "riversidepath11",
+      "en": "I’ve no luckshots left.",
+      "cn": "我的幸运机会用完了。",
+      "es": "No me quedan golpes de suerte.",
+      "fr": "Il ne me reste plus de coups de chance.",
+      "tw": "我的幸運機會已經用完了。",
+      "de": "Ich habe keine Glücksversuche mehr.",
+      "ja": "運試しの回数が残っていない。",
+      "source": { "node": "riversidepath", "slot": 13 }
+    },
+    {
       "id": "x01857",
       "kind": "choice",
       "tag": "riversidepath10a",
@@ -24023,7 +24075,166 @@
       "tw": "你們繼續走著。",
       "de": "Ihr geht weiter.",
       "ja": "歩き続ける。",
-      "source": { "node": "riversidepath", "slot": 13 }
+      "source": { "node": "riversidepath", "slot": 14 }
+    },
+    {
+      "id": "x06020",
+      "kind": "story",
+      "en": "<p>They giggle. Diane grins at you, but Molly looks a bit sheepish. She is trying to look nonchalant, bending forward slightly and pretending to brush some dirt off her jeans.</p>",
+      "cn": "<p>她们咯咯笑着。黛安冲你咧嘴一笑，莫莉却有些不好意思。她装作若无其事，微微弯腰，假装掸掉牛仔裤上的灰尘。</p>",
+      "es": "<p>Se ríen entre dientes. Diane te sonríe, pero Molly parece algo azorada. Intenta disimular inclinándose un poco hacia delante y fingiendo quitarse una mancha de los vaqueros.</p>",
+      "fr": "<p>Elles gloussent. Diane vous adresse un grand sourire, mais Molly a l’air un peu gênée. Elle essaie de prendre un air détaché, se penchant légèrement en avant comme pour enlever de la terre sur son jean.</p>",
+      "tw": "<p>她們咯咯笑著。黛安朝你笑了笑，莫莉卻有點不好意思。她裝作若無其事，微微彎腰，假裝拍掉牛仔褲上的灰塵。</p>",
+      "de": "<p>Sie kichern. Diane grinst dich an, doch Molly wirkt etwas verlegen. Sie versucht, sich nichts anmerken zu lassen, beugt sich leicht vor und tut so, als würde sie Schmutz von ihrer Jeans bürsten.</p>",
+      "ja": "<p>二人はくすくす笑っている。ダイアンはこちらに笑いかけるが、モリーは少しばつが悪そうだ。平気なふりをして、少し前かがみになり、ジーンズの汚れを払うしぐさをしている。</p>",
+      "source": { "node": "riversidepath10", "slot": 1 }
+    },
+    {
+      "id": "x06021",
+      "kind": "story",
+      "en": "<p>The girls are standing close to some steps. They lead down onto a path, a bit like a towpath, which runs right beside the river. About fifty yards on is a bridge across the river. The towpath goes underneath the bridge, but the path you are on connects with the bridge itself.</p>",
+      "cn": "<p>女孩们站在一处台阶旁边。台阶通向一条小径，有点像河边的纤道，紧挨着河流延伸。大约五十码外有一座横跨河流的桥。纤道从桥下穿过，而你们所走的路则直通桥面。</p>",
+      "es": "<p>Las chicas están de pie cerca de unos escalones que bajan hacia un camino, algo parecido a un sendero fluvial, que discurre justo al lado del río. A unos cincuenta metros hay un puente sobre el río. El sendero pasa por debajo del puente, pero el camino por el que vais conecta con el puente mismo.</p>",
+      "fr": "<p>Les filles se tiennent près de quelques marches. Elles descendent sur un chemin, un peu comme un chemin de halage, qui longe la rivière. À une cinquantaine de mètres se trouve un pont qui enjambe la rivière. Le chemin de halage passe en dessous, mais le chemin sur lequel vous vous trouvez rejoint le pont lui-même.</p>",
+      "tw": "<p>女生們站在一處台階旁邊。台階通向一條小徑，有點像河邊的纖道，緊挨著河流延伸。大約五十碼外有一座橫跨河流的橋。纖道從橋下穿過，而你們所走的路則直通橋面。</p>",
+      "de": "<p>Die beiden stehen neben einer Treppe. Sie führt auf einen Weg hinunter, der einem Treidelpfad ähnelt und direkt am Fluss entlangläuft. Etwa fünfzig Yards weiter führt eine Brücke über den Fluss. Der Treidelpfad verläuft unter der Brücke hindurch, während euer Weg oben auf die Brücke führt.</p>",
+      "ja": "<p>二人は階段のそばに立っている。階段を下りると、川のすぐ脇を走る細い道に出られる。そこから50ヤードほど先には橋がかかっている。川沿いの細道は橋の下をくぐり、今いる上の道は橋そのものにつながっている。</p>",
+      "source": { "node": "riversidepath10", "slot": 2 }
+    },
+    {
+      "id": "x06022",
+      "kind": "story",
+      "en": "<p>DIANE: We’re just popping down here for a minute. We’ll catch you up in a couple of minutes.</p>",
+      "cn": "<p>黛安：我们就下去一会儿。几分钟后就追上你们了。</p>",
+      "es": "<p>DIANE: Solo bajamos aquí un momento. Os alcanzamos en un par de minutos.</p>",
+      "fr": "<p>DIANE : On descend juste là une minute. On vous rattrape dans deux minutes.</p>",
+      "tw": "<p>黛安：我們就下去一下子。過幾分鐘就追上你們。</p>",
+      "de": "<p>DIANE: Wir gehen nur kurz hier runter. Wir holen euch in ein paar Minuten ein.</p>",
+      "ja": "<p>ダイアン：ちょっと下に行ってくるね。すぐ追いつくから。</p>",
+      "source": { "node": "riversidepath10", "slot": 3 }
+    },
+    {
+      "id": "x06023",
+      "kind": "story",
+      "en": "<p>ROBERT: Do you want us to come along too?</p>",
+      "cn": "<p>罗伯特：要我们一起去吗？</p>",
+      "es": "<p>ROBERT: ¿Queréis que vayamos también?</p>",
+      "fr": "<p>ROBERT : Vous voulez qu’on vienne aussi ?</p>",
+      "tw": "<p>羅伯特：要不要我們一起去？</p>",
+      "de": "<p>ROBERT: Sollen wir mitkommen?</p>",
+      "ja": "<p>ロバート：僕らも一緒に行こうか？</p>",
+      "source": { "node": "riversidepath10", "slot": 4 }
+    },
+    {
+      "id": "x06024",
+      "kind": "story",
+      "en": "<p>There’s a hint of mischief in his voice.</p>",
+      "cn": "<p>他语气里带着一丝促狭。</p>",
+      "es": "<p>Hay un toque travieso en su voz.</p>",
+      "fr": "<p>Il y a une pointe de malice dans sa voix.</p>",
+      "tw": "<p>他語氣裡帶著一絲促狹。</p>",
+      "de": "<p>In seiner Stimme liegt ein Hauch von Schalk.</p>",
+      "ja": "<p>声には、少しからかうような響きがある。</p>",
+      "source": { "node": "riversidepath10", "slot": 5 }
+    },
+    {
+      "id": "x06025",
+      "kind": "story",
+      "en": "<p>DIANE: No! We’ll catch you up.</p>",
+      "cn": "<p>黛安：不用！你们先走，我们追过来。</p>",
+      "es": "<p>DIANE: ¡No! Os alcanzamos.</p>",
+      "fr": "<p>DIANE : Non ! On vous rattrape.</p>",
+      "tw": "<p>黛安：不用！你們先走，我們隨後追上去。</p>",
+      "de": "<p>DIANE: Nein! Wir holen euch ein.</p>",
+      "ja": "<p>ダイアン：来なくていい！　すぐ追いつくから。</p>",
+      "source": { "node": "riversidepath10", "slot": 6 }
+    },
+    {
+      "id": "x06026",
+      "kind": "story",
+      "en": "<p>You and Robert walk on. After about 20 yards you look back. Molly is beginning to go down the steps, but Diane has paused at the top, as if to make sure you are walking away. She waves at you, then starts to go down. You carry on walking.</p>",
+      "cn": "<p>你和罗伯特继续向前走。走了大约二十码后你回头看了一眼。莫莉已经开始往台阶下走，但黛安停在台阶顶上，似乎在确认你们是否真的走开了。她向你挥了挥手，然后也开始往下走。你继续向前走。</p>",
+      "es": "<p>Tú y Robert seguís caminando. Tras unos veinte metros, miras atrás. Molly está empezando a bajar los escalones, pero Diane se ha detenido en lo alto, como para asegurarse de que os alejáis. Os hace un gesto con la mano y luego empieza a bajar. Vosotros continuáis caminando.</p>",
+      "fr": "<p>Vous et Robert continuez à marcher. Au bout d’une vingtaine de mètres, vous vous retournez. Molly commence à descendre les marches, mais Diane s’est arrêtée en haut, comme pour s’assurer que vous vous éloignez. Elle vous fait signe de la main, puis commence à descendre. Vous continuez à marcher.</p>",
+      "tw": "<p>你和羅伯特繼續向前走。走了大約二十碼後你回頭看了一眼。莫莉已經開始往台階下走，但黛安停在台階頂上，好像在確認你們是否真的走開了。她向你揮了揮手，然後也開始往下走。你繼續向前走。</p>",
+      "de": "<p>Du und Robert geht weiter. Nach etwa 20 Yards schaust du zurück. Molly geht gerade die Treppe hinunter, aber Diane ist oben stehen geblieben, als wolle sie sichergehen, dass ihr weitergeht. Sie winkt euch zu und geht dann ebenfalls hinunter. Ihr geht weiter.</p>",
+      "ja": "<p>ロバートと歩き出し、20ヤードほど進んだところで振り返る。モリーは階段を下り始めているが、ダイアンはあなたたちが離れるのを見届けようとするように、上で立ち止まっている。こちらに手を振ってから、階段を下り始める。あなたたちはそのまま歩き続ける。</p>",
+      "source": { "node": "riversidepath10", "slot": 7 }
+    },
+    {
+      "id": "x06027",
+      "kind": "story",
+      "en": "<p>ROBERT: I think your friend’s going for a pee.</p>",
+      "cn": "<p>罗伯特：我觉得你朋友是去上厕所了。</p>",
+      "es": "<p>ROBERT: Creo que tu amiga va a hacer pis.</p>",
+      "fr": "<p>ROBERT : Je crois que votre amie va faire pipi.</p>",
+      "tw": "<p>羅伯特：我覺得你朋友是去上廁所了吧。</p>",
+      "de": "<p>ROBERT: Ich glaube, deine Freundin geht pinkeln.</p>",
+      "ja": "<p>ロバート：君のお連れさんは、おしっこをしに行くみたいだね。</p>",
+      "source": { "node": "riversidepath10", "slot": 8 }
+    },
+    {
+      "id": "x06028",
+      "kind": "story",
+      "en": "<p>YOU: I’m not sure. I think it might be Molly.</p>",
+      "cn": "<p>你：不一定吧。我觉得可能是莫莉。</p>",
+      "es": "<p>TÚ: No sé. Yo creo que puede ser Molly.</p>",
+      "fr": "<p>VOUS : Je ne sais pas. Je crois que c’est peut-être Molly.</p>",
+      "tw": "<p>你：不一定吧。我覺得可能是莫莉。</p>",
+      "de": "<p>DU: Ich weiß nicht. Ich glaube, es könnte Molly sein.</p>",
+      "ja": "<p>あなた：どうだろう。モリーの方かもしれないよ。</p>",
+      "source": { "node": "riversidepath10", "slot": 9 }
+    },
+    {
+      "id": "x06029",
+      "kind": "story",
+      "en": "<p>You wish you could watch them, but you obviously can’t while you’re with Robert. Is there any point in playing a luckshot?</p>",
+      "cn": "<p>你真希望能看见她们，但和罗伯特在一起显然不行。使用一次幸运机会有用吗？</p>",
+      "es": "<p>Ojalá pudieras verlas, pero obviamente no puedes estando con Robert. ¿Merece la pena usar un golpe de suerte?</p>",
+      "fr": "<p>Vous aimeriez pouvoir les regarder, mais c’est évidemment impossible avec Robert dans les parages. Est-ce que ça vaut le coup de jouer un coup de chance ?</p>",
+      "tw": "<p>你真希望能看見她們，但和羅伯特在一起明顯不行。用一次幸運機會有用嗎？</p>",
+      "de": "<p>Du würdest den beiden gern zuschauen, aber mit Robert an deiner Seite geht das natürlich nicht. Könnte ein Glücksversuch etwas bringen?</p>",
+      "ja": "<p>二人を見たいが、ロバートと一緒ではどうにもならない。運試しを使ってみる価値はあるだろうか？</p>",
+      "source": { "node": "riversidepath10", "slot": 10 }
+    },
+    {
+      "id": "x06030",
+      "kind": "choice",
+      "tag": "luckytrip3a",
+      "en": "Yes, I will use a luckshot.",
+      "cn": "好，我要用幸运机会。",
+      "es": "Sí, usaré un golpe de suerte.",
+      "fr": "Oui, je vais utiliser un coup de chance.",
+      "tw": "好，我要用幸運機會。",
+      "de": "Ja, ich setze einen Glücksversuch ein.",
+      "ja": "はい、運試しを使う。",
+      "source": { "node": "riversidepath10", "slot": 11 }
+    },
+    {
+      "id": "x06031",
+      "kind": "choice",
+      "tag": "riversidepath11",
+      "en": "No, I’ll save that for later.",
+      "cn": "不，先留着，待会儿再用。",
+      "es": "No, lo guardaré para más tarde.",
+      "fr": "Non, je garde ça pour plus tard.",
+      "tw": "不，先留著，待會再用。",
+      "de": "Nein, den hebe ich mir für später auf.",
+      "ja": "いいえ、後のために取っておく。",
+      "source": { "node": "riversidepath10", "slot": 12 }
+    },
+    {
+      "id": "x06032",
+      "kind": "choice",
+      "tag": "riversidepath11",
+      "en": "I’ve no luckshots left.",
+      "cn": "我的幸运机会用完了。",
+      "es": "No me quedan golpes de suerte.",
+      "fr": "Il ne me reste plus de coups de chance.",
+      "tw": "我的幸運機會已經用完了。",
+      "de": "Ich habe keine Glücksversuche mehr.",
+      "ja": "運試しの回数が残っていない。",
+      "source": { "node": "riversidepath10", "slot": 13 }
     },
     {
       "id": "x01858",
@@ -24150,54 +24361,6 @@
       "source": { "node": "luckytrip3", "slot": 1 }
     },
     {
-      "id": "x05165",
-      "kind": "story",
-      "en": "<p>Robert touches your arm. ‘You want to watch, I want to watch.’ He hurries along the path, with you close behind. He’s as keen as you are!</p>",
-      "cn": "<p>罗伯特碰了碰你的手臂，说：“你想看，我也想看。”他加快脚步沿路走去，你紧随其后。他和你一样迫不及待！</p>",
-      "es": "<p>Robert te toca el brazo. «Tú quieres verlo, yo quiero verlo». Echa a andar rápido por el camino, contigo justo detrás. ¡Tiene tantas ganas como tú!</p>",
-      "fr": "<p>Robert vous touche le bras. « Vous voulez regarder, moi aussi je veux regarder. » Il se dépêche le long du chemin, avec vous juste derrière. Il est aussi impatient que vous !</p>",
-      "tw": "<p>羅伯特碰了碰你的手臂，說：「你想看，我也想看。」他加快腳步沿路走去，你緊隨其後。他和你一樣迫不及待！</p>",
-      "de": "<p>Robert berührt deinen Arm. „Du willst zuschauen, ich will zuschauen.“ Er eilt den Weg entlang, und du folgst ihm dichtauf. Er ist genauso begierig wie du!</p>",
-      "ja": "<p>ロバートが腕に触れる。「君も見たいし、僕も見たい」彼は道を急ぎ、あなたもすぐ後についていく。彼もあなたと同じくらい乗り気なのだ！</p>",
-      "source": { "node": "luckytrip3", "slot": 2 }
-    },
-    {
-      "id": "x01869",
-      "kind": "story",
-      "en": "<p>ROBERT: She’ll have to go under the bridge. It’s the one place where people can’t see her.</p>",
-      "cn": "<p>罗伯特：她得去桥底下才行。那是唯一一个别人看不见她的地方。</p>",
-      "es": "<p>ROBERT: Tendrá que ir debajo del puente. Es el único sitio donde nadie puede verla.</p>",
-      "fr": "<p>ROBERT : Elle devra aller sous le pont. C’est le seul endroit où personne ne peut la voir.</p>",
-      "tw": "<p>羅伯特：她得去橋底下才行。那是唯一一個別人看不見她的地方。</p>",
-      "de": "<p>ROBERT: Sie wird unter die Brücke gehen müssen. Das ist die einzige Stelle, an der niemand sie sehen kann.</p>",
-      "ja": "<p>ロバート：橋の下に行くはずだ。人に見られずに済むのは、あそこだけだからね。</p>",
-      "source": { "node": "luckytrip3", "slot": 3 }
-    },
-    {
-      "id": "x01870",
-      "kind": "story",
-      "en": "<p>You don’t cross the bridge but carry on past it for about 30 yards. You look around. A few steps away is a little recess in the wall. You move over to this, almost on tiptoe, and find you have a clear view down onto the towpath. There is a security street light down there.</p>",
-      "cn": "<p>你没有过桥，而是继续往前，走过桥头又走了大约三十码。你四下张望。几步远处，墙边有个凹进去的小角落。你几乎踮着脚尖走了过去，发现从这里可以清楚地俯瞰下方的纤道。纤道上亮着一盏路灯。</p>",
-      "es": "<p>No cruzáis el puente, sino que seguís unos treinta metros más allá. Miráis alrededor. A unos pocos pasos hay un pequeño hueco en la pared. Os acercáis a él casi de puntillas y descubrís que tenéis una vista despejada del sendero fluvial de abajo. Hay una farola de seguridad allí abajo.</p>",
-      "fr": "<p>Vous ne traversez pas le pont mais continuez au-delà sur une trentaine de mètres. Vous regardez autour de vous. À quelques pas se trouve un petit renfoncement dans le mur. Vous vous y glissez, presque sur la pointe des pieds, et constatez que vous avez une vue dégagée sur le chemin de halage en contrebas. Il y a un lampadaire de sécurité en bas.</p>",
-      "tw": "<p>你沒有過橋，而是繼續沿橋旁走了大概三十碼。你四下張望。離你幾步遠的地方，牆上有一個小小的凹處。你幾乎踮著腳尖走過去，發現從這裡可以清楚地俯瞰下方的纖道。纖道上有一盞安全路燈。</p>",
-      "de": "<p>Ihr überquert die Brücke nicht, sondern geht noch etwa 30 Yards daran vorbei. Du schaust dich um. Ein paar Schritte entfernt ist eine kleine Nische in der Mauer. Fast auf Zehenspitzen geht ihr hinüber und stellt fest, dass ihr von dort freie Sicht auf den Treidelpfad habt. Dort unten brennt zur Sicherheit eine Straßenlaterne.</p>",
-      "ja": "<p>橋は渡らず、その先へ30ヤードほど進む。辺りを見回すと、数歩先の壁に小さなくぼみがある。ほとんどつま先立ちでそこへ近づくと、下の川沿いの道がはっきり見える。下には防犯灯がついている。</p>",
-      "source": { "node": "luckytrip3", "slot": 4 }
-    },
-    {
-      "id": "x01871",
-      "kind": "story",
-      "en": "<p>The girls are just arriving below the bridge. They’re looking around, but there is a lone cyclist slowly pedalling along the path.</p>",
-      "cn": "<p>两个女孩正走到桥下。她们四处张望，但纤道上有一个骑手正慢悠悠地骑着自行车路过。</p>",
-      "es": "<p>Las chicas acaban de llegar bajo el puente. Miran alrededor, pero hay un ciclista solitario pedaleando despacio por el camino.</p>",
-      "fr": "<p>Les filles arrivent tout juste sous le pont. Elles regardent autour d’elles, mais un cycliste solitaire pédale lentement sur le chemin.</p>",
-      "tw": "<p>兩個女生正走到橋下。她們四處張望，但纖道上有個人正慢慢騎著腳踏車經過。</p>",
-      "de": "<p>Die beiden kommen gerade unter der Brücke an. Sie sehen sich um, doch ein einzelner Radfahrer fährt langsam den Weg entlang.</p>",
-      "ja": "<p>二人はちょうど橋の下に着いたところだ。辺りを見回しているが、一人の自転車乗りがゆっくりと道を進んでいる。</p>",
-      "source": { "node": "luckytrip3", "slot": 5 }
-    },
-    {
       "id": "x01872",
       "kind": "choice",
       "tag": "underbridge",
@@ -24208,7 +24371,7 @@
       "tw": "你屏住呼吸盯著看。",
       "de": "Ihr schaut mit angehaltenem Atem zu.",
       "ja": "息をひそめて見守る。",
-      "source": { "node": "luckytrip3", "slot": 6 }
+      "source": { "node": "luckytrip3", "slot": 2 }
     },
     {
       "id": "x01873",
@@ -24220,7 +24383,7 @@
       "tw": "<p>你沒有幸運機會了。</p>",
       "de": "<p>Du hast keine Glücksversuche mehr.</p>",
       "ja": "<p>運試しが残っていない。</p>",
-      "source": { "node": "luckytrip3", "slot": 7 }
+      "source": { "node": "luckytrip3", "slot": 3 }
     },
     {
       "id": "x01874",
@@ -24233,19 +24396,7 @@
       "tw": "你出局了。",
       "de": "Du bist disqualifiziert.",
       "ja": "失格だ。",
-      "source": { "node": "luckytrip3", "slot": 8 }
-    },
-    {
-      "id": "x01875",
-      "kind": "story",
-      "en": "<p>You watch the two girls under the bridge. They are having to wait while somebody goes slowly past on a bike.</p>",
-      "cn": "<p>你注视着桥下的两个女孩。她们不得不等着，因为有人正慢慢骑着自行车从旁边经过。</p>",
-      "es": "<p>Observas a las dos chicas bajo el puente. Tienen que esperar mientras alguien pasa lentamente en bicicleta.</p>",
-      "fr": "<p>Vous observez les deux filles sous le pont. Elles doivent attendre qu’un cycliste passe lentement.</p>",
-      "tw": "<p>你注視著橋下的兩個女生。她們只好等著，因為有人正緩緩騎著腳踏車從旁邊經過。</p>",
-      "de": "<p>Ihr beobachtet die beiden unter der Brücke. Sie müssen warten, während jemand langsam mit dem Fahrrad vorbeifährt.</p>",
-      "ja": "<p>橋の下にいる二人を見守る。自転車がゆっくり通り過ぎるのを待たなければならないようだ。</p>",
-      "source": { "node": "underbridge", "slot": 1 }
+      "source": { "node": "luckytrip3", "slot": 4 }
     },
     {
       "id": "x01876",
@@ -24257,7 +24408,7 @@
       "tw": "<p>你這才意識到黛安憋得有多厲害。她簡直在原地踏步，有那麼一刻她背對莫莉轉過身來——朝向你這邊！——並很快把手往襠部按了一下。然後她走到纖道邊緣，探頭看看騎腳踏車的人走遠了沒有。她根本站不定。</p>",
       "de": "<p>Du hattest nicht bemerkt, wie dringend Diane muss. Sie tritt fast auf der Stelle, und einmal dreht sie sich von Molly weg – und euch zu! – und drückt kurz eine Hand in ihren Schritt. Dann geht sie an den Rand des Treidelpfads, um zu sehen, ob der Radfahrer außer Sicht ist. Sie kann nicht stillstehen.</p>",
       "ja": "<p>ダイアンがこれほど切羽詰まっているとは気づかなかった。その場でせわしなく足踏みをしていて、あるときモリーに背を向ける。こちらを向いたのだ！　一瞬、股間に手を押し当てる。それから川沿いの道の端へ歩き、自転車が見えなくなったか確かめる。じっとしていられない。</p>",
-      "source": { "node": "underbridge", "slot": 2 }
+      "source": { "node": "underbridge", "slot": 1 }
     },
     {
       "id": "x01877",
@@ -24269,7 +24420,7 @@
       "tw": "<p>黛安真的急著想尿。她不停地來回走動，雙手抓著裙子，一副隨時準備撩起裙擺的模樣。莫莉在一旁偷笑。</p>",
       "de": "<p>Diane muss wirklich pinkeln. Sie läuft ständig hin und her und hält ihren Rock fest, als wolle sie ihn bei der ersten Gelegenheit hochraffen. Molly lacht sie aus.</p>",
       "ja": "<p>ダイアンは本当におしっこをしたいらしい。絶えず歩き回り、いつでもたくし上げられるよう、スカートをつかんでいる。モリーはそれを見て笑っている。</p>",
-      "source": { "node": "underbridge", "slot": 3 }
+      "source": { "node": "underbridge", "slot": 2 }
     },
     {
       "id": "x01878",
@@ -24281,7 +24432,7 @@
       "tw": "<p>騎腳踏車的人終於消失在視野之外，負責把風的莫莉豎起大拇指。黛安立刻把裙子後擺撩起，在襯裙下面摸索了一秒，然後一口氣把褲襪和天藍色內褲一起扯了下來。至少你現在知道她沒穿長筒絲襪了！</p>",
       "de": "<p>Endlich ist der Radfahrer außer Sicht. Molly, die aufpasst, hebt den Daumen. Sofort rafft Diane ihren Rock hinten hoch, nestelt einen Moment unter ihrem Unterrock und zieht Strumpfhose und himmelblauen Slip in einer Bewegung herunter. Wenigstens weißt du jetzt, dass sie keine Strümpfe trägt!</p>",
       "ja": "<p>ようやく自転車が見えなくなり、見張っていたモリーが親指を立てる。ダイアンはすぐにスカートの後ろをたくし上げ、ペチコートの下を一瞬もたつきながら探り、タイツと空色のショーツを一気に下ろす。少なくとも、ストッキングではないことはこれではっきりした！</p>",
-      "source": { "node": "underbridge", "slot": 4 }
+      "source": { "node": "underbridge", "slot": 3 }
     },
     {
       "id": "x01879",
@@ -24293,19 +24444,7 @@
       "tw": "<p>她馬上蹲下身子，有點緊張地左右張望，然後低下頭盯著地面，像是在集中精神。她的襯裙沒有裙擺撩得那麼高，多少遮住了一些，你看不見尿流。但沒幾秒，腳邊就積起一灘尿，順著纖道往外漫。她是真憋壞了！</p>",
       "de": "<p>Sie geht sofort etwas nervös in die Hocke, blickt ängstlich nach links und rechts und dann konzentriert auf den Boden. Ihr Unterrock ist nicht so weit hochgerafft wie ihr Rock und verdeckt noch einiges, sodass du keinen Strahl sehen kannst. Doch nach wenigen Sekunden bildet sich neben ihren Füßen eine Pfütze und breitet sich über den Treidelpfad aus. Sie hatte es wirklich nötig!</p>",
       "ja": "<p>すぐに少し緊張した様子でしゃがみ込み、不安そうに左右を見てから、集中するように地面へ目を落とす。スリップはスカートほど上がっていないので、体がある程度隠れ、尿の流れは見えない。だが、数秒もしないうちに足元に水たまりができ、道を横切って流れ始める。本当に我慢していたのだ！</p>",
-      "source": { "node": "underbridge", "slot": 5 }
-    },
-    {
-      "id": "x01880",
-      "kind": "story",
-      "en": "<p class='notice'><strong>Diane goes for a pee, but with Molly. You gained 3 shyness points.</strong></p>",
-      "cn": "<p class='notice'><strong>黛安去上厕所了，但莫莉也在场。你获得了3点害羞值。</strong></p>",
-      "es": "<p class='notice'><strong>Diane hace pis, pero con Molly delante. Ganas 3 puntos de timidez.</strong></p>",
-      "fr": "<p class='notice'><strong>Diane va faire pipi, mais avec Molly. Vous gagnez 3 points de timidité.</strong></p>",
-      "tw": "<p class='notice'><strong>黛安去上了廁所，但莫莉也在場。你獲得了3點害羞值。</strong></p>",
-      "de": "<p class='notice'><strong>Diane geht pinkeln, allerdings mit Molly. Du hast 3 Schüchternheitspunkte dazugewonnen.</strong></p>",
-      "ja": "<p class='notice'><strong>ダイアンは用を足しましたが、モリーと一緒でした。恥じらいが3ポイント上がりました。</strong></p>",
-      "source": { "node": "underbridge", "slot": 6 }
+      "source": { "node": "underbridge", "slot": 4 }
     },
     {
       "id": "x01881",
@@ -24317,7 +24456,7 @@
       "tw": "<p>終於，她尿完了。她沒有擦拭，站起身的同時就把內褲往上扯，然後拉好褲襪。裙子落回原位，但她還是把手伸進裙子裡繼續整理褲襪。之後，她再次左右張望，把裙子撩到幾乎腰間，重新整理襯裙，最後才讓襯裙和裙子一起落回原處。</p>",
       "de": "<p>Schließlich ist sie fertig. Sie wischt sich nicht ab, sondern zieht schon beim Aufstehen ihren Slip hoch, dann ihre Strumpfhose. Ihr Rock fällt wieder herunter, doch ihre Hände bleiben darunter, um die Strumpfhose zurechtzuziehen. Dann schaut sie erneut nach links und rechts, rafft ihren Rock fast bis zur Taille hoch und richtet ihren Unterrock. Schließlich lässt sie beides wieder herunterfallen.</p>",
       "ja": "<p>やがて用を足し終える。拭きはせず、立ち上がりながらショーツを上げ、続いてタイツを引き上げる。スカートは元に戻るが、その下に手を入れてまだタイツを直している。それからもう一度左右を確かめ、スカートをほとんど腰までたくし上げてスリップを直し、最後に両方を下ろす。</p>",
-      "source": { "node": "underbridge", "slot": 7 }
+      "source": { "node": "underbridge", "slot": 5 }
     },
     {
       "id": "x01882",
@@ -24329,7 +24468,7 @@
       "tw": "<p>她往前走了幾步，離開身後那灘閃亮的大水窪。她在整理自己的儀容。</p>",
       "de": "<p>Sie geht ein paar Fuß weiter, weg von der großen, glänzenden Pfütze, die sie hinterlassen hat. Sie bringt ihre Kleidung in Ordnung.</p>",
       "ja": "<p>自分の残した大きく光る水たまりから離れ、数フィート前へ進む。身なりを整えている。</p>",
-      "source": { "node": "underbridge", "slot": 8 }
+      "source": { "node": "underbridge", "slot": 6 }
     },
     {
       "id": "x05166",
@@ -24341,7 +24480,7 @@
       "tw": "<p>你正打算離開，羅伯特輕輕把手搭在你臂上。「有一個就會有第二個，」他低聲耳語道。莫莉正在解皮帶扣。</p>",
       "de": "<p>Du willst dich gerade abwenden, als Robert leicht eine Hand auf deinen Arm legt. „Wenn eine geht, geht die andere immer auch“, flüstert er. Molly öffnet ihren Gürtel.</p>",
       "ja": "<p>そろそろ離れようとすると、ロバートがあなたの腕に軽く手を置く。「一人がすれば、必ずもう一人もする」とささやく。モリーがベルトのバックルを外している。</p>",
-      "source": { "node": "underbridge", "slot": 9 }
+      "source": { "node": "underbridge", "slot": 7 }
     },
     {
       "id": "x01884",
@@ -24354,7 +24493,7 @@
       "tw": "你目不轉睛盯著，幾乎不敢呼吸。",
       "de": "Du schaust zu und wagst kaum zu atmen.",
       "ja": "息をするのもためらうほど、じっと見つめる。",
-      "source": { "node": "underbridge", "slot": 10 }
+      "source": { "node": "underbridge", "slot": 8 }
     },
     {
       "id": "x01885",
@@ -24393,6 +24532,78 @@
       "source": { "node": "underbridge2", "slot": 3 }
     },
     {
+      "id": "x05165",
+      "kind": "story",
+      "en": "<p>Robert touches your arm. ‘You want to watch, I want to watch.’ He hurries along the path, with you close behind. He’s as keen as you are!</p>",
+      "cn": "<p>罗伯特碰了碰你的手臂，说：“你想看，我也想看。”他加快脚步沿路走去，你紧随其后。他和你一样迫不及待！</p>",
+      "es": "<p>Robert te toca el brazo. «Tú quieres verlo, yo quiero verlo». Echa a andar rápido por el camino, contigo justo detrás. ¡Tiene tantas ganas como tú!</p>",
+      "fr": "<p>Robert vous touche le bras. « Vous voulez regarder, moi aussi je veux regarder. » Il se dépêche le long du chemin, avec vous juste derrière. Il est aussi impatient que vous !</p>",
+      "tw": "<p>羅伯特碰了碰你的手臂，說：「你想看，我也想看。」他加快腳步沿路走去，你緊隨其後。他和你一樣迫不及待！</p>",
+      "de": "<p>Robert berührt deinen Arm. „Du willst zuschauen, ich will zuschauen.“ Er eilt den Weg entlang, und du folgst ihm dichtauf. Er ist genauso begierig wie du!</p>",
+      "ja": "<p>ロバートが腕に触れる。「君も見たいし、僕も見たい」彼は道を急ぎ、あなたもすぐ後についていく。彼もあなたと同じくらい乗り気なのだ！</p>",
+      "source": { "node": "bridgeVantage", "slot": 1 }
+    },
+    {
+      "id": "x01869",
+      "kind": "story",
+      "en": "<p>ROBERT: They’ll have to go under the bridge. It’s the one place where people can’t see them.</p>",
+      "cn": "<p>罗伯特：她们得去桥底下。只有那里才不会被人看见。</p>",
+      "es": "<p>ROBERT: Tendrán que ir debajo del puente. Es el único sitio donde no las verá nadie.</p>",
+      "fr": "<p>ROBERT : Elles vont devoir aller sous le pont. C’est le seul endroit où personne ne pourra les voir.</p>",
+      "tw": "<p>羅伯特：她們得去橋底下。只有那裡才不會被人看見。</p>",
+      "de": "<p>ROBERT: Sie müssen unter die Brücke gehen. Nur dort kann sie niemand sehen.</p>",
+      "ja": "<p>ロバート：橋の下へ行くしかないな。人に見られないのは、あそこだけだから。</p>",
+      "source": { "node": "bridgeVantage", "slot": 2 }
+    },
+    {
+      "id": "x01870",
+      "kind": "story",
+      "en": "<p>You don’t cross the bridge but carry on past it for about 30 yards. You look around. A few steps away is a little recess in the wall. You move over to this, almost on tiptoe, and find you have a clear view down onto the towpath. There is a security street light down there.</p>",
+      "cn": "<p>你没有过桥，而是继续往前，走过桥头又走了大约三十码。你四下张望。几步远处，墙边有个凹进去的小角落。你几乎踮着脚尖走了过去，发现从这里可以清楚地俯瞰下方的纤道。纤道上亮着一盏路灯。</p>",
+      "es": "<p>No cruzáis el puente, sino que seguís unos treinta metros más allá. Miráis alrededor. A unos pocos pasos hay un pequeño hueco en la pared. Os acercáis a él casi de puntillas y descubrís que tenéis una vista despejada del sendero fluvial de abajo. Hay una farola de seguridad allí abajo.</p>",
+      "fr": "<p>Vous ne traversez pas le pont mais continuez au-delà sur une trentaine de mètres. Vous regardez autour de vous. À quelques pas se trouve un petit renfoncement dans le mur. Vous vous y glissez, presque sur la pointe des pieds, et constatez que vous avez une vue dégagée sur le chemin de halage en contrebas. Il y a un lampadaire de sécurité en bas.</p>",
+      "tw": "<p>你沒有過橋，而是繼續沿橋旁走了大概三十碼。你四下張望。離你幾步遠的地方，牆上有一個小小的凹處。你幾乎踮著腳尖走過去，發現從這裡可以清楚地俯瞰下方的纖道。纖道上有一盞安全路燈。</p>",
+      "de": "<p>Ihr überquert die Brücke nicht, sondern geht noch etwa 30 Yards daran vorbei. Du schaust dich um. Ein paar Schritte entfernt ist eine kleine Nische in der Mauer. Fast auf Zehenspitzen geht ihr hinüber und stellt fest, dass ihr von dort freie Sicht auf den Treidelpfad habt. Dort unten brennt zur Sicherheit eine Straßenlaterne.</p>",
+      "ja": "<p>橋は渡らず、その先へ30ヤードほど進む。辺りを見回すと、数歩先の壁に小さなくぼみがある。ほとんどつま先立ちでそこへ近づくと、下の川沿いの道がはっきり見える。下には防犯灯がついている。</p>",
+      "source": { "node": "bridgeVantage", "slot": 3 }
+    },
+    {
+      "id": "x01871",
+      "kind": "story",
+      "en": "<p>The girls are just arriving below the bridge. They’re looking around, but there is a lone cyclist slowly pedalling along the path.</p>",
+      "cn": "<p>两个女孩正走到桥下。她们四处张望，但纤道上有一个骑手正慢悠悠地骑着自行车路过。</p>",
+      "es": "<p>Las chicas acaban de llegar bajo el puente. Miran alrededor, pero hay un ciclista solitario pedaleando despacio por el camino.</p>",
+      "fr": "<p>Les filles arrivent tout juste sous le pont. Elles regardent autour d’elles, mais un cycliste solitaire pédale lentement sur le chemin.</p>",
+      "tw": "<p>兩個女生正走到橋下。她們四處張望，但纖道上有個人正慢慢騎著腳踏車經過。</p>",
+      "de": "<p>Die beiden kommen gerade unter der Brücke an. Sie sehen sich um, doch ein einzelner Radfahrer fährt langsam den Weg entlang.</p>",
+      "ja": "<p>二人はちょうど橋の下に着いたところだ。辺りを見回しているが、一人の自転車乗りがゆっくりと道を進んでいる。</p>",
+      "source": { "node": "bridgeVantage", "slot": 4 }
+    },
+    {
+      "id": "x01875",
+      "kind": "story",
+      "en": "<p>You watch the two girls under the bridge. They are having to wait while somebody goes slowly past on a bike.</p>",
+      "cn": "<p>你注视着桥下的两个女孩。她们不得不等着，因为有人正慢慢骑着自行车从旁边经过。</p>",
+      "es": "<p>Observas a las dos chicas bajo el puente. Tienen que esperar mientras alguien pasa lentamente en bicicleta.</p>",
+      "fr": "<p>Vous observez les deux filles sous le pont. Elles doivent attendre qu’un cycliste passe lentement.</p>",
+      "tw": "<p>你注視著橋下的兩個女生。她們只好等著，因為有人正緩緩騎著腳踏車從旁邊經過。</p>",
+      "de": "<p>Ihr beobachtet die beiden unter der Brücke. Sie müssen warten, während jemand langsam mit dem Fahrrad vorbeifährt.</p>",
+      "ja": "<p>橋の下にいる二人を見守る。自転車がゆっくり通り過ぎるのを待たなければならないようだ。</p>",
+      "source": { "node": "bridgeWait", "slot": 1 }
+    },
+    {
+      "id": "x01880",
+      "kind": "story",
+      "en": "<p class='notice'><strong>Diane goes for a pee, but with Molly. You gained 3 shyness points.</strong></p>",
+      "cn": "<p class='notice'><strong>黛安去上厕所了，但莫莉也在场。你获得了3点害羞值。</strong></p>",
+      "es": "<p class='notice'><strong>Diane hace pis, pero con Molly delante. Ganas 3 puntos de timidez.</strong></p>",
+      "fr": "<p class='notice'><strong>Diane va faire pipi, mais avec Molly. Vous gagnez 3 points de timidité.</strong></p>",
+      "tw": "<p class='notice'><strong>黛安去上了廁所，但莫莉也在場。你獲得了3點害羞值。</strong></p>",
+      "de": "<p class='notice'><strong>Diane geht pinkeln, allerdings mit Molly. Du hast 3 Schüchternheitspunkte dazugewonnen.</strong></p>",
+      "ja": "<p class='notice'><strong>ダイアンは用を足しましたが、モリーと一緒でした。恥じらいが3ポイント上がりました。</strong></p>",
+      "source": { "node": "bridgeReward", "slot": 1 }
+    },
+    {
       "id": "x01888",
       "kind": "story",
       "en": "<p>Robert touches your arm lightly and you both retreat from your vantage point, avoiding any sudden movement. It is only then that you realise he is holding his camera. It seems he has taken some photos!</p>",
@@ -24402,7 +24613,7 @@
       "tw": "<p>羅伯特輕碰你的手臂，你們兩人悄悄撤離這個有利位置，儘量不做突然的動作。直到這時你才發現他手裡拿著相機。看來他已經拍了幾張照片！</p>",
       "de": "<p>Robert berührt leicht deinen Arm, und ihr zieht euch ohne hastige Bewegungen von eurem Aussichtspunkt zurück. Erst jetzt bemerkst du, dass er seine Kamera in der Hand hält. Offenbar hat er Fotos gemacht!</p>",
       "ja": "<p>ロバートがあなたの腕に軽く触れ、二人は急な動きを避けながら、見ていた場所からそっと離れる。そのとき初めて、彼がカメラを持っていることに気づく。どうやら写真を撮ったらしい！</p>",
-      "source": { "node": "underbridge2", "slot": 4 }
+      "source": { "node": "bridgeRetreat", "slot": 1 }
     },
     {
       "id": "x01889",
@@ -24414,7 +24625,7 @@
       "tw": "<p>你們兩人悄悄沿著小路快步向前，直到走到另一段台階處。你們覺得大概可以在這裡等那兩個女生。</p>",
       "de": "<p>Ihr geht leise und so schnell wie möglich den Weg hinauf, bis ihr eine weitere Treppe erreicht. Hier könnt ihr wohl auf die beiden warten.</p>",
       "ja": "<p>二人でできるだけ素早く、静かに道を進み、別の階段まで来る。ここなら彼女たちを待っていてもよさそうだ。</p>",
-      "source": { "node": "underbridge2", "slot": 5 }
+      "source": { "node": "bridgeRetreat", "slot": 2 }
     },
     {
       "id": "x01890",
@@ -24426,7 +24637,7 @@
       "tw": "<p>羅伯特：把你的電子郵件地址給我，到時候我可以發給你一兩張紀念品。</p>",
       "de": "<p>ROBERT: Wenn du mir deine E-Mail-Adresse gibst, kann ich dir bestimmt ein, zwei Andenken schicken.</p>",
       "ja": "<p>ロバート：メールアドレスを教えてくれたら、記念に一、二枚送れると思うよ。</p>",
-      "source": { "node": "underbridge2", "slot": 6 }
+      "source": { "node": "bridgeRetreat", "slot": 3 }
     },
     {
       "id": "x01891",
@@ -24439,7 +24650,202 @@
       "tw": "你等著那兩個女生。",
       "de": "Ihr wartet auf die beiden.",
       "ja": "二人を待つ。",
-      "source": { "node": "underbridge2", "slot": 7 }
+      "source": { "node": "bridgeRetreat", "slot": 4 }
+    },
+    {
+      "id": "x06033",
+      "kind": "story",
+      "en": "<p>The girls have gone down onto the towpath, probably because one of them wants a pee. You’d like to watch but you’re in company. So you’ve played a luckshot.</p>",
+      "cn": "<p>她们下到了纤道上，大概是其中一个想撒尿。你想看，却又有人同行，所以用了一次幸运机会。</p>",
+      "es": "<p>Las chicas han bajado al sendero, seguramente porque una de ellas quiere hacer pis. Te gustaría mirar, pero estás acompañado. Así que has jugado un golpe de suerte.</p>",
+      "fr": "<p>Les filles sont descendues sur le chemin de halage, sans doute parce que l’une d’elles a envie de faire pipi. Vous aimeriez regarder, mais vous êtes accompagné. Vous avez donc joué un coup de chance.</p>",
+      "tw": "<p>她們走下纖道，大概是其中一個想尿尿。你想看，卻又有人同行，所以用了一次幸運機會。</p>",
+      "de": "<p>Die beiden sind auf den Treidelpfad hinuntergegangen, vermutlich weil eine von ihnen pinkeln muss. Du würdest gern zusehen, aber du bist nicht allein. Also hast du einen Glücksversuch eingesetzt.</p>",
+      "ja": "<p>二人は川沿いの道へ下りていった。どちらかがおしっこをしたいのだろう。見てみたいが、今は連れがいる。そこで運試しを使った。</p>",
+      "source": { "node": "luckytrip3a", "slot": 1 }
+    },
+    {
+      "id": "x06034",
+      "kind": "choice",
+      "tag": "underbridgea",
+      "en": "You watch with bated breath.",
+      "cn": "你屏息凝视。",
+      "es": "Miras conteniendo el aliento.",
+      "fr": "Vous regardez en retenant votre souffle.",
+      "tw": "你屏住呼吸盯著看。",
+      "de": "Ihr schaut mit angehaltenem Atem zu.",
+      "ja": "息をひそめて見守る。",
+      "source": { "node": "luckytrip3a", "slot": 2 }
+    },
+    {
+      "id": "x06035",
+      "kind": "story",
+      "en": "<p>You don’t have any luckshots.</p>",
+      "cn": "<p>你没有幸运机会了。</p>",
+      "es": "<p>No te quedan golpes de suerte.</p>",
+      "fr": "<p>Vous n’avez pas de coups de chance.</p>",
+      "tw": "<p>你沒有幸運機會了。</p>",
+      "de": "<p>Du hast keine Glücksversuche mehr.</p>",
+      "ja": "<p>運試しが残っていない。</p>",
+      "source": { "node": "luckytrip3a", "slot": 3 }
+    },
+    {
+      "id": "x06036",
+      "kind": "choice",
+      "tag": "gameover",
+      "en": "You are disqualified.",
+      "cn": "你被取消资格了。",
+      "es": "Quedas descalificado.",
+      "fr": "Vous êtes disqualifié.",
+      "tw": "你出局了。",
+      "de": "Du bist disqualifiziert.",
+      "ja": "失格だ。",
+      "source": { "node": "luckytrip3a", "slot": 4 }
+    },
+    {
+      "id": "x06037",
+      "kind": "story",
+      "en": "<p>You hadn’t realised how desperate Molly was. She’s virtually walking on the spot, and at one point she turns away from Diane – and towards you! – and you can see she has a hand in her jeans pocket. Then she walks to the edge of the towpath to see if the cyclist is out of sight. She can’t stand still.</p>",
+      "cn": "<p>你没想到莫莉已经急成这样。她几乎在原地踏步，有一刻还转过身，背对黛安，正好朝着你！你能看见她一只手插在牛仔裤口袋里。接着，她走到纤道边，看看骑车的人是否已经走远。她根本站不住。</p>",
+      "es": "<p>No te habías dado cuenta de lo desesperada que estaba Molly. Casi está andando sin moverse del sitio y, en un momento dado, se vuelve de espaldas a Diane, ¡y hacia ti! Ves que tiene una mano en el bolsillo de los vaqueros. Luego se acerca al borde del sendero para ver si el ciclista ya se ha perdido de vista. No puede estarse quieta.</p>",
+      "fr": "<p>Vous n’aviez pas réalisé à quel point Molly était pressée. Elle piétine presque sur place et, à un moment, tourne le dos à Diane, se retrouvant face à vous ! Vous voyez qu’elle a une main dans la poche de son jean. Puis elle s’approche du bord du chemin pour voir si le cycliste a disparu. Elle ne tient pas en place.</p>",
+      "tw": "<p>你沒想到莫莉已經急成這樣。她幾乎在原地踏步，有一刻還轉過身，背對黛安，正好朝著你！你看見她一隻手插在牛仔褲口袋裡。接著，她走到纖道邊，看看騎車的人是不是已經走遠。她根本站不住。</p>",
+      "de": "<p>Dir war gar nicht klar, wie dringend Molly musste. Sie tritt beinahe auf der Stelle. Einmal dreht sie sich von Diane weg – und dir zu! Du siehst, dass sie eine Hand in der Jeanstasche hat. Dann geht sie an den Rand des Treidelpfads, um zu sehen, ob der Radfahrer schon außer Sicht ist. Sie kann nicht stillstehen.</p>",
+      "ja": "<p>モリーがこんなに切羽詰まっているとは思わなかった。その場で足踏みするように動き、一度はダイアンに背を向ける。つまり、こちらを向いたのだ！　片手をジーンズのポケットに入れているのが見える。それから道の端へ行き、自転車の人が見えなくなったか確かめる。じっとしていられない。</p>",
+      "source": { "node": "underbridgea", "slot": 1 }
+    },
+    {
+      "id": "x06038",
+      "kind": "story",
+      "en": "<p>Molly really does need a pee. She keeps walking about, with her hands in her jeans pockets, looking to see if the coast is clear. Diane is laughing at her.</p>",
+      "cn": "<p>莫莉确实很想撒尿。她双手插在牛仔裤口袋里，不停地走来走去，张望着看有没有人。黛安看着她直笑。</p>",
+      "es": "<p>Molly tiene muchas ganas de hacer pis. No para de pasearse, con las manos en los bolsillos de los vaqueros, mirando a ver si hay moros en la costa. Diane se ríe de ella.</p>",
+      "fr": "<p>Molly a vraiment envie de faire pipi. Elle va et vient, les mains dans les poches de son jean, regardant si la voie est libre. Diane se moque gentiment d’elle.</p>",
+      "tw": "<p>莫莉真的很想尿尿。她雙手插在牛仔褲口袋裡，不停地走來走去，張望著看還有沒有人。黛安看著她直笑。</p>",
+      "de": "<p>Molly muss wirklich pinkeln. Sie läuft mit den Händen in den Jeanstaschen hin und her und schaut, ob die Luft rein ist. Diane lacht über sie.</p>",
+      "ja": "<p>モリーは本当におしっこがしたいのだ。両手をジーンズのポケットに入れて歩き回り、もう誰もいないか見回している。ダイアンはそんな彼女を見て笑っている。</p>",
+      "source": { "node": "underbridgea", "slot": 2 }
+    },
+    {
+      "id": "x06039",
+      "kind": "story",
+      "en": "<p>Finally the cyclist goes out of sight and Diane, who is keeping a lookout, gives a thumbs-up. Molly has already unbuckled her belt, and she quickly pulls her jeans and knickers down in one movement. She is straight into a full squat, her bottom perhaps a foot from the ground, and even from where you are you can just catch a glimpse of her pee stream glistening in the twilight.</p>",
+      "cn": "<p>骑车的人终于消失在视线里，负责望风的黛安竖起大拇指。莫莉早已解开腰带，迅速把牛仔裤和内裤一并褪下，立刻蹲了下去，屁股离地大概一英尺。即使从你站的地方，也能勉强瞥见她的尿流在暮色中闪着光。</p>",
+      "es": "<p>Por fin el ciclista se pierde de vista y Diane, que está vigilando, levanta el pulgar. Molly ya se ha desabrochado el cinturón y se baja rápidamente los vaqueros y las bragas de un tirón. Se pone enseguida en cuclillas, con el trasero a unos treinta centímetros del suelo, y hasta desde donde estás alcanzas a distinguir su chorro de pis brillando en la penumbra.</p>",
+      "fr": "<p>Enfin, le cycliste disparaît et Diane, qui fait le guet, lève le pouce. Molly a déjà débouclé sa ceinture et baisse vivement son jean et sa culotte d’un seul geste. Elle s’accroupit aussitôt, les fesses à une trentaine de centimètres du sol. Même de là où vous êtes, vous distinguez tout juste son jet qui brille dans la pénombre.</p>",
+      "tw": "<p>騎車的人終於消失在視線裡，負責把風的黛安豎起大拇指。莫莉早已解開皮帶，迅速把牛仔褲和內褲一起褪下，立刻蹲了下去，屁股離地大概一英尺。即使從你站的地方，也能勉強瞥見她的尿流在暮色中閃著光。</p>",
+      "de": "<p>Endlich verschwindet der Radfahrer, und Diane, die Ausschau hält, hebt den Daumen. Molly hat ihren Gürtel bereits geöffnet und zieht Jeans und Slip rasch mit einem Griff herunter. Sofort geht sie tief in die Hocke, den Po vielleicht dreißig Zentimeter über dem Boden. Selbst von hier aus kannst du gerade noch ihren Urinstrahl in der Dämmerung glitzern sehen.</p>",
+      "ja": "<p>ようやく自転車の人が見えなくなり、見張り役のダイアンが親指を立てる。モリーはすでにベルトを外していて、ジーンズとショーツを一気に下ろす。すぐに深くしゃがみ、お尻は地面から三十センチほどの高さになる。ここからでも、薄闇の中できらめく尿の流れがかすかに見える。</p>",
+      "source": { "node": "underbridgea", "slot": 3 }
+    },
+    {
+      "id": "x06040",
+      "kind": "story",
+      "en": "<p>You see a puddle running between her legs and across the concrete. She pees for the best part of a minute, then wipes herself with a tissue, stands and pulls up her white knickers.</p>",
+      "cn": "<p>你看见一摊尿从她双腿之间流过，淌过水泥地面。她撒了将近一分钟，才用纸巾擦了擦，站起来拉好白色内裤。</p>",
+      "es": "<p>Ves cómo el charco corre entre sus piernas y por el cemento. Hace pis durante casi un minuto; luego se limpia con un pañuelo de papel, se levanta y se sube las bragas blancas.</p>",
+      "fr": "<p>Vous voyez une flaque s’étendre entre ses jambes et sur le béton. Elle fait pipi pendant près d’une minute, puis s’essuie avec un mouchoir en papier, se relève et remonte sa culotte blanche.</p>",
+      "tw": "<p>你看見一攤尿從她雙腿之間流過，淌過水泥地面。她尿了將近一分鐘，才用面紙擦了擦，站起來拉好白色內褲。</p>",
+      "de": "<p>Du siehst, wie sich zwischen ihren Beinen eine Pfütze über den Beton ausbreitet. Sie pinkelt fast eine Minute lang, wischt sich dann mit einem Papiertaschentuch ab, steht auf und zieht ihren weißen Slip hoch.</p>",
+      "ja": "<p>両脚の間からコンクリートの上へ、水たまりが広がっていく。彼女は一分近くおしっこをしてから、ティッシュで拭き、立ち上がって白いショーツを引き上げる。</p>",
+      "source": { "node": "underbridgea", "slot": 4 }
+    },
+    {
+      "id": "x06041",
+      "kind": "story",
+      "en": "<p>She pulls up her jeans and does up the zip, then moves forward a few feet, away from the large, glistening puddle she has left. She is buckling her belt.</p>",
+      "cn": "<p>她提起牛仔裤，拉好拉链，向前走了几步，离开身后那一大摊泛着光的尿，开始系腰带。</p>",
+      "es": "<p>Se sube los vaqueros y se cierra la cremallera antes de avanzar unos pasos, alejándose del gran charco brillante que ha dejado. Se está abrochando el cinturón.</p>",
+      "fr": "<p>Elle remonte son jean et ferme la braguette, puis avance de quelques pas pour s’éloigner de la grande flaque luisante qu’elle a laissée. Elle reboucle sa ceinture.</p>",
+      "tw": "<p>她拉好牛仔褲和拉鍊，往前走了幾步，離開身後那一大攤泛著光的尿，開始扣皮帶。</p>",
+      "de": "<p>Sie zieht ihre Jeans hoch und schließt den Reißverschluss. Dann geht sie ein paar Schritte weiter, weg von der großen, glänzenden Pfütze, die sie hinterlassen hat. Sie schließt ihren Gürtel.</p>",
+      "ja": "<p>ジーンズを引き上げてファスナーを閉めると、自分が残した大きく光る水たまりから離れ、数歩前へ出る。ベルトを締めている。</p>",
+      "source": { "node": "underbridgea", "slot": 5 }
+    },
+    {
+      "id": "x06042",
+      "kind": "story",
+      "en": "<p>You are about to move away, but Robert lightly puts a hand on your arm. ‘If one goes, the other always goes,’ he whispers. Diane is moving to the side of the path.</p>",
+      "cn": "<p>你正要离开，罗伯特却轻轻按住你的胳膊，低声说：“一个去了，另一个准也要去。”黛安正往路边走。</p>",
+      "es": "<p>Estás a punto de apartarte, pero Robert te posa suavemente una mano en el brazo. «Si va una, la otra siempre va detrás», susurra. Diane se está acercando a un lado del sendero.</p>",
+      "fr": "<p>Vous êtes sur le point de vous éloigner, mais Robert pose doucement une main sur votre bras. « Quand l’une y va, l’autre suit toujours », murmure-t-il. Diane se dirige vers le bord du chemin.</p>",
+      "tw": "<p>你正要離開，羅伯特卻輕輕按住你的手臂，低聲說：「一個去了，另一個一定也會去。」黛安正往路邊走。</p>",
+      "de": "<p>Du willst gerade weggehen, doch Robert legt dir leicht eine Hand auf den Arm. „Wenn eine geht, geht die andere immer auch“, flüstert er. Diane geht an den Rand des Weges.</p>",
+      "ja": "<p>立ち去ろうとすると、ロバートがそっと腕に手を置く。「片方がすれば、もう片方も必ずするんだ」とささやく。ダイアンが道の端へ移動している。</p>",
+      "source": { "node": "underbridgea", "slot": 6 }
+    },
+    {
+      "id": "x06043",
+      "kind": "choice",
+      "tag": "underbridge2a",
+      "en": "You watch, hardly daring to breathe.",
+      "cn": "你目不转睛地看着，几乎不敢呼吸。",
+      "es": "Miras casi sin atreverte a respirar.",
+      "fr": "Vous regardez, osant à peine respirer.",
+      "tw": "你目不轉睛盯著，幾乎不敢呼吸。",
+      "de": "Du schaust zu und wagst kaum zu atmen.",
+      "ja": "息をするのもためらうほど、じっと見つめる。",
+      "source": { "node": "underbridgea", "slot": 7 }
+    },
+    {
+      "id": "x06044",
+      "kind": "story",
+      "en": "<p>This really is a bonus. Diane, with her skirt half hitched up, waits a moment while they check the coast is clear.</p>",
+      "cn": "<p>这可真是意外收获。黛安把裙子撩起一半，等着和莫莉一起确认周围没人。</p>",
+      "es": "<p>Esto sí que es un regalo. Diane espera un momento, con la falda a medio levantar, mientras comprueban que no hay nadie a la vista.</p>",
+      "fr": "<p>C’est vraiment un cadeau. Diane, la jupe à moitié relevée, attend un instant pendant qu’elles vérifient que la voie est libre.</p>",
+      "tw": "<p>這可真是意外收穫。黛安把裙子撩起一半，等著和莫莉一起確認四下無人。</p>",
+      "de": "<p>Das ist wirklich eine Zugabe. Diane wartet mit halb hochgerafftem Rock einen Moment, während sie sich vergewissern, dass die Luft rein ist.</p>",
+      "ja": "<p>これは思いがけないおまけだ。ダイアンはスカートを半分たくし上げたまま少し待ち、二人で辺りに人がいないか確かめる。</p>",
+      "source": { "node": "underbridge2a", "slot": 1 }
+    },
+    {
+      "id": "x06045",
+      "kind": "story",
+      "en": "<p>Molly, who is now keeping a lookout, gives a thumbs-up. Diane straight away hitches her skirt up at the rear, fumbles for a second beneath her petticoat and pulls her tights and sky-blue knickers down in one movement. At least you now know she isn’t wearing stockings!</p>",
+      "cn": "<p>莫莉现在负责望风，她竖起大拇指。黛安立刻把裙子后摆撩起，在衬裙下面摸索了一秒，然后一口气把连裤袜和天蓝色内裤一起扯了下来。至少你现在知道她没穿长筒袜了！</p>",
+      "es": "<p>Molly, que ahora está vigilando, levanta el pulgar. Diane de inmediato se sube la falda por detrás, hurga un momento bajo su enagua y se baja los pantis y las bragas azul cielo de un solo movimiento. ¡Al menos ahora sabes que no lleva medias!</p>",
+      "fr": "<p>Molly, qui fait maintenant le guet, lève le pouce. Diane retrousse aussitôt sa jupe par-derrière, tâtonne une seconde sous son jupon et baisse ses collants et sa culotte bleu ciel d’un seul mouvement. Au moins, vous savez maintenant qu’elle ne porte pas de bas !</p>",
+      "tw": "<p>現在換莫莉把風，她豎起大拇指。黛安立刻把裙子後擺撩起，在襯裙下面摸索了一秒，然後一口氣把褲襪和天藍色內褲一起扯了下來。至少你現在知道她沒穿長筒絲襪了！</p>",
+      "de": "<p>Molly, die jetzt Ausschau hält, hebt den Daumen. Sofort rafft Diane ihren Rock hinten hoch, nestelt einen Moment unter ihrem Unterrock und zieht Strumpfhose und himmelblauen Slip in einer Bewegung herunter. Wenigstens weißt du jetzt, dass sie keine Strümpfe trägt!</p>",
+      "ja": "<p>今度はモリーが見張り役になり、親指を立てる。ダイアンはすぐにスカートの後ろをたくし上げ、ペチコートの下を一瞬もたつきながら探り、タイツと空色のショーツを一気に下ろす。少なくとも、ストッキングではないことはこれではっきりした！</p>",
+      "source": { "node": "underbridge2a", "slot": 2 }
+    },
+    {
+      "id": "x06046",
+      "kind": "story",
+      "en": "<p>She is straight into a slightly nervous squat, looks anxiously left and right, and then looks down at the ground as if concentrating. Her slip isn’t as fully hitched up as her skirt, so it does give her some cover and you can’t see any stream. But within a few seconds a puddle is forming by her feet, and this runs across the towpath. She didn’t need to go as badly as Molly, and only pees for 20 or 30 seconds.</p>",
+      "cn": "<p>她马上蹲下身子，有些紧张地左右张望，然后低下头盯着地面，像是在集中精神。她的衬裙没有裙摆撩得那么高，多少遮住了一些，你看不见尿流。但没几秒，她脚边就积起一滩尿，顺着纤道往外漫。她没有莫莉那么急，只撒了二三十秒。</p>",
+      "es": "<p>Se pone en cuclillas con cierto nerviosismo, mira inquieta a izquierda y derecha, y luego baja la vista hacia el suelo como si se concentrara. La combinación no está tan subida como la falda, así que le da algo de cobertura y no puedes ver el chorro. Pero en pocos segundos empieza a formarse un charco junto a sus pies, que se extiende por el sendero. No tenía tantas ganas como Molly y solo hace pis durante veinte o treinta segundos.</p>",
+      "fr": "<p>Elle s’accroupit aussitôt, légèrement nerveuse, regarde avec inquiétude à gauche et à droite, puis baisse les yeux vers le sol comme si elle se concentrait. Son jupon n’est pas aussi relevé que sa jupe, ce qui la dissimule en partie et vous empêche de voir le jet. Mais en quelques secondes une flaque se forme à ses pieds et s’étale sur le chemin de halage. Elle n’avait pas aussi envie que Molly et ne fait pipi que pendant vingt ou trente secondes.</p>",
+      "tw": "<p>她馬上蹲下身子，有點緊張地左右張望，然後低下頭盯著地面，像是在集中精神。她的襯裙沒有裙擺撩得那麼高，多少遮住了一些，你看不見尿流。但沒幾秒，腳邊就積起一灘尿，順著纖道往外漫。她沒有莫莉那麼急，只尿了二、三十秒。</p>",
+      "de": "<p>Sie geht sofort etwas nervös in die Hocke, blickt ängstlich nach links und rechts und dann konzentriert auf den Boden. Ihr Unterrock ist nicht so weit hochgerafft wie ihr Rock und verdeckt noch einiges, sodass du keinen Strahl sehen kannst. Doch nach wenigen Sekunden bildet sich neben ihren Füßen eine Pfütze und breitet sich über den Treidelpfad aus. Sie musste nicht so dringend wie Molly und pinkelt nur zwanzig oder dreißig Sekunden lang.</p>",
+      "ja": "<p>すぐに少し緊張した様子でしゃがみ込み、不安そうに左右を見てから、集中するように地面へ目を落とす。スリップはスカートほど上がっていないので、体がある程度隠れ、尿の流れは見えない。だが、数秒もしないうちに足元に水たまりができ、道を横切って流れ始める。モリーほど切羽詰まってはいなかったので、二十秒か三十秒ほどで終わる。</p>",
+      "source": { "node": "underbridge2a", "slot": 3 }
+    },
+    {
+      "id": "x06047",
+      "kind": "story",
+      "en": "<p>Eventually she is finished. She doesn’t wipe, but is pulling her knickers up even as she stands up, and then tugs up her tights. Her skirt falls back into place but she still has her hands underneath adjusting her tights. Then, once again looking left and right, she hitches her skirt up almost to her waist and adjusts her slip, finally letting that and the skirt fall back into place.</p>",
+      "cn": "<p>终于，她尿完了。她没有擦拭，站起身的同时就把内裤往上扯，然后拉好连裤袜。裙子落回原位，但她还是把手伸进裙子里继续整理连裤袜。之后，她再次左右张望，把裙子撩到几乎腰间，重新整理衬裙，最后才让衬裙和裙子一起落回原处。</p>",
+      "es": "<p>Por fin termina. No se limpia, pero ya está subiéndose las bragas mientras se incorpora, y luego tira de los pantis hacia arriba. La falda le cae en su sitio, pero todavía tiene las manos por debajo ajustándose los pantis. Luego, mirando una vez más a izquierda y derecha, se sube la falda casi hasta la cintura y se arregla la combinación, dejando finalmente que ésta y la falda caigan de nuevo en su sitio.</p>",
+      "fr": "<p>Elle termine enfin. Elle ne s’essuie pas, mais remonte déjà sa culotte alors qu’elle se relève, puis tire ses collants vers le haut. Sa jupe retombe à sa place mais elle a encore les mains dessous pour ajuster ses collants. Puis, regardant à nouveau à gauche et à droite, elle retrousse sa jupe presque jusqu’à la taille et ajuste son jupon, laissant enfin tout retomber à sa place.</p>",
+      "tw": "<p>終於，她尿完了。她沒有擦拭，站起身的同時就把內褲往上扯，然後拉好褲襪。裙子落回原位，但她還是把手伸進裙子裡繼續整理褲襪。之後，她再次左右張望，把裙子撩到幾乎腰間，重新整理襯裙，最後才讓襯裙和裙子一起落回原處。</p>",
+      "de": "<p>Schließlich ist sie fertig. Sie wischt sich nicht ab, sondern zieht schon beim Aufstehen ihren Slip hoch, dann ihre Strumpfhose. Ihr Rock fällt wieder herunter, doch ihre Hände bleiben darunter, um die Strumpfhose zurechtzuziehen. Dann schaut sie erneut nach links und rechts, rafft ihren Rock fast bis zur Taille hoch und richtet ihren Unterrock. Schließlich lässt sie beides wieder herunterfallen.</p>",
+      "ja": "<p>やがて用を足し終える。拭きはせず、立ち上がりながらショーツを上げ、続いてタイツを引き上げる。スカートは元に戻るが、その下に手を入れてまだタイツを直している。それからもう一度左右を確かめ、スカートをほとんど腰までたくし上げてスリップを直し、最後に両方を下ろす。</p>",
+      "source": { "node": "underbridge2a", "slot": 4 }
+    },
+    {
+      "id": "x06048",
+      "kind": "story",
+      "en": "<p>She moves forward a few feet, away from the glistening puddle she has left. She is tidying herself up.</p>",
+      "cn": "<p>她向前走了几步，离开了身后那摊闪亮的水洼。她在整理自己的仪容。</p>",
+      "es": "<p>Da unos pasos hacia delante, alejándose del charco brillante que ha dejado. Se está arreglando.</p>",
+      "fr": "<p>Elle avance de quelques pas, s’éloignant de la flaque brillante qu’elle a laissée. Elle se remet en ordre.</p>",
+      "tw": "<p>她往前走了幾步，離開身後那灘閃亮的水窪。她在整理自己的儀容。</p>",
+      "de": "<p>Sie geht ein paar Fuß weiter, weg von der glänzenden Pfütze, die sie hinterlassen hat. Sie bringt ihre Kleidung in Ordnung.</p>",
+      "ja": "<p>自分の残した光る水たまりから離れ、数フィート前へ進む。身なりを整えている。</p>",
+      "source": { "node": "underbridge2a", "slot": 5 }
     },
     {
       "id": "x01892",
@@ -25885,6 +26291,18 @@
       "source": { "node": "taxihome6", "slot": 8 }
     },
     {
+      "id": "x06007",
+      "kind": "story",
+      "en": "<p>DIANE: It’s been a great evening, but I’ll be pretty glad to get home.</p>",
+      "cn": "<p>黛安：今晚过得真开心，不过我现在可盼着到家了。</p>",
+      "es": "<p>DIANE: Ha sido una noche estupenda, pero tengo unas ganas de llegar a casa...</p>",
+      "fr": "<p>DIANE : J’ai passé une très bonne soirée, mais j’ai vraiment hâte de rentrer.</p>",
+      "tw": "<p>黛安：今晚很開心，不過我現在真的很想趕快到家。</p>",
+      "de": "<p>DIANE: Es war ein wunderschöner Abend, aber ich bin wirklich froh, wenn ich zu Hause bin.</p>",
+      "ja": "<p>ダイアン：今夜はとても楽しかった。でも、早く家に着いてほっとしたいわ。</p>",
+      "source": { "node": "taxihome6", "slot": 9 }
+    },
+    {
       "id": "x02001",
       "kind": "story",
       "en": "<p>YOU: Are you OK?</p>",
@@ -25894,7 +26312,7 @@
       "tw": "<p>你：你沒事吧？</p>",
       "de": "<p>DU: Alles in Ordnung?</p>",
       "ja": "<p>あなた：大丈夫？</p>",
-      "source": { "node": "taxihome6", "slot": 9 }
+      "source": { "node": "taxihome6", "slot": 10 }
     },
     {
       "id": "x02002",
@@ -25906,7 +26324,7 @@
       "tw": "<p>黛安：真希望上車前去過廁所。等到了就好了。</p>",
       "de": "<p>DIANE: Ich wünschte, ich wäre vor der Taxifahrt noch auf die Toilette gegangen. Ich bin froh, wenn wir da sind.</p>",
       "ja": "<p>ダイアン：タクシーに乗る前にトイレに行っておけばよかった。早く着くといいな。</p>",
-      "source": { "node": "taxihome6", "slot": 10 }
+      "source": { "node": "taxihome6", "slot": 11 }
     },
     {
       "id": "x02003",
@@ -25918,7 +26336,7 @@
       "tw": "<p>她看起來那麼安靜放鬆，你幾乎以為她睡著了。</p>",
       "de": "<p>Sie wirkt so friedlich, dass du dich beinahe fragst, ob sie eingeschlafen ist.</p>",
       "ja": "<p>彼女はとても穏やかで、眠ってしまったのかと思うほどだ。</p>",
-      "source": { "node": "taxihome6", "slot": 11 }
+      "source": { "node": "taxihome6", "slot": 12 }
     },
     {
       "id": "x02004",
@@ -25931,7 +26349,7 @@
       "tw": "快到家了。",
       "de": "Fast zu Hause.",
       "ja": "もうすぐ家だ。",
-      "source": { "node": "taxihome6", "slot": 12 }
+      "source": { "node": "taxihome6", "slot": 13 }
     },
     {
       "id": "x05179",
@@ -26225,13 +26643,13 @@
     {
       "id": "x02025",
       "kind": "story",
-      "en": "<p>She seems a bit fidgety, as if she wants to go to the loo again. It doesn’t seem that long since she went, but she was drinking lager.</p>",
-      "cn": "<p>她显得有些坐立不安，像是又想去厕所了。距上次去也没多久，不过她一直在喝啤酒。</p>",
-      "es": "<p>Parece un poco inquieta, como si volviera a tener ganas de ir al baño. No parece que haya pasado tanto tiempo desde la última vez, pero es que ha estado bebiendo cerveza.</p>",
-      "fr": "<p>Elle paraît un peu agitée, comme si elle avait de nouveau envie d’aller aux toilettes. Ça ne fait pourtant pas si longtemps qu’elle y est allée, mais elle a bu de la lager.</p>",
-      "tw": "<p>她看起來有點坐立不安，像是又想去廁所了。距上次去也沒多久，但她之前喝的是拉格啤酒。</p>",
-      "de": "<p>Sie wirkt etwas unruhig, als müsste sie schon wieder auf die Toilette. Dabei scheint es noch gar nicht so lange her zu sein, dass sie auf der Toilette war. Aber sie hat Lagerbier getrunken.</p>",
-      "ja": "<p>少しそわそわしていて、またトイレに行きたいようだ。さっき行ってから、まだそれほどたっていない気もするが、ラガーを飲んでいたからだろう。</p>",
+      "en": "<p>She seems a bit fidgety, as if she wants to go to the loo again. It doesn’t seem that long since she went, but she has had quite a lot to drink.</p>",
+      "cn": "<p>她显得有些坐立不安，像是又想去厕所了。距上次去也没多久，不过她确实喝了不少。</p>",
+      "es": "<p>Parece un poco inquieta, como si volviera a tener ganas de ir al baño. No parece que haya pasado tanto tiempo desde la última vez, pero es que ha bebido bastante.</p>",
+      "fr": "<p>Elle paraît un peu agitée, comme si elle avait de nouveau envie d’aller aux toilettes. Ça ne fait pourtant pas si longtemps qu’elle y est allée, mais elle a pas mal bu.</p>",
+      "tw": "<p>她看起來有點坐立不安，像是又想去廁所了。距上次去也沒多久，不過她剛才確實喝了不少。</p>",
+      "de": "<p>Sie wirkt etwas unruhig, als müsste sie schon wieder auf die Toilette. Dabei scheint es noch gar nicht so lange her zu sein, dass sie auf der Toilette war. Aber sie hat einiges getrunken.</p>",
+      "ja": "<p>少しそわそわしていて、またトイレに行きたいようだ。さっき行ってから、まだそれほどたっていない気もするが、ずいぶん飲んでいたからだろう。</p>",
       "source": { "node": "taxihome5a", "slot": 8 }
     },
     {
@@ -27006,18 +27424,6 @@
       "source": { "node": "scenario4", "slot": 7 }
     },
     {
-      "id": "x02089",
-      "kind": "story",
-      "en": "<p>Your brother enters with his friend, Chloe.</p>",
-      "cn": "<p>你弟弟走进来，身边跟着他的朋友克洛伊。</p>",
-      "es": "<p>Tu hermano entra con su amiga Chloe.</p>",
-      "fr": "<p>Votre frère entre avec son amie, Chloe.</p>",
-      "tw": "<p>你弟弟走進來，身邊跟著他的朋友克洛伊。</p>",
-      "de": "<p>Dein Bruder kommt mit seiner Freundin Chloe herein.</p>",
-      "ja": "<p>弟が女友達のクロエと入ってくる。</p>",
-      "source": { "node": "scenario5a", "slot": 1 }
-    },
-    {
       "id": "x02090",
       "kind": "story",
       "en": "<p>You haven’t met Chloe before. She isn’t a regular girlfriend. But she and your brother have just finished their college exams and have been out for a few drinks to celebrate.</p>",
@@ -27027,7 +27433,7 @@
       "tw": "<p>你之前沒見過克洛伊，她不是什麼固定女友。不過她和你弟弟剛考完試，出去喝了幾杯慶祝一下。</p>",
       "de": "<p>Du bist Chloe noch nie begegnet. Sie ist keine feste Freundin. Aber sie und dein Bruder haben gerade ihre Abschlussprüfungen am College hinter sich und waren zur Feier des Tages etwas trinken.</p>",
       "ja": "<p>クロエとは初対面だ。弟の決まった交際相手というわけではない。二人ともちょうどカレッジの試験が終わり、お祝いに少し飲みに出かけていたのだ。</p>",
-      "source": { "node": "scenario5a", "slot": 2 }
+      "source": { "node": "scenario5a", "slot": 1 }
     },
     {
       "id": "x02091",
@@ -27039,7 +27445,7 @@
       "tw": "<p>克洛伊：我們去了酒吧。我媽要是知道，會要了我的命。</p>",
       "de": "<p>CHLOE: Wir waren im Pub. Meine Mutter bringt mich um.</p>",
       "ja": "<p>クロエ：パブに行ってたの。母に知られたら大目玉だわ。</p>",
-      "source": { "node": "scenario5a", "slot": 3 }
+      "source": { "node": "scenario5a", "slot": 2 }
     },
     {
       "id": "x02092",
@@ -27051,7 +27457,7 @@
       "tw": "<p>弟弟：喝幾杯蘋果酒沒什麼大不了的。再說了，今天可是個值得慶祝的日子。</p>",
       "de": "<p>BRUDER: Ein paar Cider schaden doch nicht. Außerdem ist es ein besonderer Anlass.</p>",
       "ja": "<p>弟：シードルを何杯か飲んだくらい、大丈夫だよ。特別な日なんだし。</p>",
-      "source": { "node": "scenario5a", "slot": 4 }
+      "source": { "node": "scenario5a", "slot": 3 }
     },
     {
       "id": "x02093",
@@ -27063,7 +27469,7 @@
       "tw": "<p>你：我們在泡咖啡，要不要來一杯？</p>",
       "de": "<p>DU: Wir trinken gerade Kaffee. Wollt ihr auch?</p>",
       "ja": "<p>あなた：コーヒーを飲んでるんだけど、君たちもどう？</p>",
-      "source": { "node": "scenario5a", "slot": 5 }
+      "source": { "node": "scenario5a", "slot": 4 }
     },
     {
       "id": "x02094",
@@ -27076,7 +27482,7 @@
       "tw": "你看著克洛伊。",
       "de": "Du betrachtest Chloe.",
       "ja": "クロエを見る。",
-      "source": { "node": "scenario5a", "slot": 6 }
+      "source": { "node": "scenario5a", "slot": 5 }
     },
     {
       "id": "x02095",
@@ -27820,13 +28226,13 @@
     {
       "id": "x02150",
       "kind": "story",
-      "en": "<p>There is no sign of your brother. Perhaps he has gone to bed. Or perhaps he has not got home. You ask Diane if she would like a glass of wine, but she says she’d prefer a coffee.</p>",
-      "cn": "<p>你弟弟不见踪影，也许已经睡了，也许还没回来。你问黛安要不要来杯红酒，她说更想喝咖啡。</p>",
-      "es": "<p>No hay rastro de tu hermano. Quizá se ha ido a la cama. O quizá aún no ha llegado a casa. Le preguntas a Diane si quiere una copa de vino, pero dice que prefiere un café.</p>",
-      "fr": "<p>Votre frère n’est nulle part en vue. Il est peut-être allé se coucher. Ou peut-être n’est-il pas encore rentré. Vous demandez à Diane si elle veut un verre de vin, mais elle dit qu’elle préférerait un café.</p>",
-      "tw": "<p>你弟弟不見蹤影，也許早就睡了，也許還沒回來。你問黛安要不要來杯葡萄酒，她說更想喝咖啡。</p>",
-      "de": "<p>Von deinem Bruder keine Spur. Vielleicht ist er schon im Bett. Oder noch nicht zu Hause. Du fragst Diane, ob sie ein Glas Wein möchte, aber sie hätte lieber einen Kaffee.</p>",
-      "ja": "<p>弟の姿はない。もう寝たのかもしれないし、まだ帰っていないのかもしれない。ダイアンにワインはどうかと尋ねるが、コーヒーの方がいいと言う。</p>",
+      "en": "<p>There is no sign of your brother. Perhaps he has gone to bed. You ask Diane if she would like a glass of wine, but she says she’d prefer a coffee.</p>",
+      "cn": "<p>你弟弟不见踪影，也许已经睡了。你问黛安要不要来杯红酒，她说更想喝咖啡。</p>",
+      "es": "<p>No hay rastro de tu hermano. Quizá se ha ido a la cama. Le preguntas a Diane si quiere una copa de vino, pero dice que prefiere un café.</p>",
+      "fr": "<p>Votre frère n’est nulle part en vue. Il est peut-être allé se coucher. Vous demandez à Diane si elle veut un verre de vin, mais elle dit qu’elle préférerait un café.</p>",
+      "tw": "<p>你弟弟不見蹤影，也許早就睡了。你問黛安要不要來杯葡萄酒，她說更想喝咖啡。</p>",
+      "de": "<p>Von deinem Bruder keine Spur. Vielleicht ist er schon im Bett. Du fragst Diane, ob sie ein Glas Wein möchte, aber sie hätte lieber einen Kaffee.</p>",
+      "ja": "<p>弟の姿はない。もう寝たのかもしれない。ダイアンにワインはどうかと尋ねるが、コーヒーの方がいいと言う。</p>",
       "source": { "node": "scenario1", "slot": 1 }
     },
     {
@@ -28395,7 +28801,7 @@
     {
       "id": "x02196",
       "kind": "choice",
-      "tag": "scenario7a",
+      "tag": "scenario3a",
       "en": "What will you do next?",
       "cn": "你接下来打算做什么？",
       "es": "¿Qué harás ahora?",
@@ -28809,6 +29215,19 @@
       "source": { "node": "scenario6c", "slot": 6 }
     },
     {
+      "id": "x06006",
+      "kind": "choice",
+      "tag": "scenario6d",
+      "en": "I’ll stay and watch Amanda.",
+      "cn": "我留下来看看阿曼达。",
+      "es": "Me quedo a observar a Amanda.",
+      "fr": "Je vais rester pour regarder Amanda.",
+      "tw": "我留下來看看阿曼達。",
+      "de": "Ich bleibe hier und beobachte Amanda.",
+      "ja": "ここに残ってアマンダを見ていよう。",
+      "source": { "node": "scenario6c", "slot": 7 }
+    },
+    {
       "id": "x02230",
       "kind": "choice",
       "tag": "goupstairs",
@@ -28819,7 +29238,7 @@
       "tw": "不，我去拿黛安的書。",
       "de": "Nein, ich hole Dianes Buch.",
       "ja": "いいえ、ダイアンの本を取ってくる。",
-      "source": { "node": "scenario6c", "slot": 7 }
+      "source": { "node": "scenario6c", "slot": 8 }
     },
     {
       "id": "x02231",
@@ -28832,7 +29251,7 @@
       "tw": "好，我用一次幸運機會。",
       "de": "Ja, ich setze einen Glücksversuch ein.",
       "ja": "はい、運試しを使う。",
-      "source": { "node": "scenario6c", "slot": 8 }
+      "source": { "node": "scenario6c", "slot": 9 }
     },
     {
       "id": "x05187",
@@ -29880,52 +30299,15 @@
       "source": { "node": "goupstairsloo1", "slot": 4 }
     },
     {
-      "id": "x02317",
-      "kind": "story",
-      "en": "<p>Your brother has gone to bed. You can hear his footsteps and the sounds of running water in the bathroom above.</p>",
-      "cn": "<p>你弟弟已经去睡了。你能听到楼上浴室里他的脚步声和流水声。</p>",
-      "es": "<p>Tu hermano se ha ido a la cama. Puedes oír sus pasos y el sonido del agua corriendo en el baño de arriba.</p>",
-      "fr": "<p>Votre frère est allé se coucher. Vous entendez ses pas et le bruit de l’eau qui coule dans la salle de bains à l’étage.</p>",
-      "tw": "<p>你弟弟已經去睡了。你聽得見樓上浴室裡他的腳步聲和流水聲。</p>",
-      "de": "<p>Dein Bruder ist ins Bett gegangen. Über euch hörst du seine Schritte und fließendes Wasser im Bad.</p>",
-      "ja": "<p>弟は寝に行った。上の階から足音と、トイレの方で水を使う音が聞こえる。</p>",
-      "source": { "node": "scenario7a", "slot": 1 }
-    },
-    {
-      "id": "x02318",
-      "kind": "story",
-      "en": "<p>You notice Diane’s eyes go briefly to the ceiling. You wonder whether she needs the bathroom – but she will know that it’s occupied.</p>",
-      "cn": "<p>你注意到黛安的眼神飞快地往楼上扫了一眼。你猜她可能想去厕所——但她知道楼上正有人在用。</p>",
-      "es": "<p>Notas que Diane mira un momento hacia el techo. Te preguntas si necesita ir al baño, pero sabrá que está ocupado.</p>",
-      "fr": "<p>Vous remarquez que le regard de Diane monte brièvement vers le plafond. Vous vous demandez si elle a besoin d’aller aux toilettes — mais elle sait que c’est occupé.</p>",
-      "tw": "<p>你注意到黛安的眼神飛快往樓上掃了一眼。你猜她可能想去廁所——可她知道樓上正有人在用。</p>",
-      "de": "<p>Dir fällt auf, wie Dianes Blick kurz zur Decke wandert. Du fragst dich, ob sie ins Bad muss. Aber sie weiß wohl, dass es besetzt ist.</p>",
-      "ja": "<p>ダイアンが一瞬、天井に目をやるのに気づく。トイレに行きたいのだろうか。だが、誰かが使っていることは彼女にもわかる。</p>",
-      "source": { "node": "scenario7a", "slot": 2 }
-    },
-    {
-      "id": "x02319",
-      "kind": "choice",
-      "tag": "scenario3b",
-      "en": "So she says nothing.",
-      "cn": "于是她什么也没说。",
-      "es": "Así que no dice nada.",
-      "fr": "Alors elle ne dit rien.",
-      "tw": "她也就什麼都沒說。",
-      "de": "Also sagt sie nichts.",
-      "ja": "だから、何も言わない。",
-      "source": { "node": "scenario7a", "slot": 3 }
-    },
-    {
       "id": "x02320",
       "kind": "story",
-      "en": "<p>You introduce Diane to your brother. He is having a glass of wine and asks if you would both like one. But Diane says she’d prefer a coffee.</p>",
-      "cn": "<p>你把黛安介绍给你弟弟认识。他正在喝葡萄酒，问你们要不要也来一杯。但黛安说她更想喝咖啡。</p>",
-      "es": "<p>Le presentas a Diane a tu hermano. Él está tomando una copa de vino y pregunta si queréis una. Pero Diane dice que prefiere un café.</p>",
-      "fr": "<p>Vous présentez Diane à votre frère. Il est en train de boire un verre de vin et vous demande si vous en voulez un aussi. Mais Diane dit qu’elle préférerait un café.</p>",
-      "tw": "<p>你把黛安介紹給你弟弟認識。他正喝葡萄酒，問你們要不要也來一杯。但黛安說她更想喝咖啡。</p>",
-      "de": "<p>Du stellst Diane deinem Bruder vor. Er trinkt ein Glas Wein und fragt, ob ihr auch eines möchtet. Aber Diane hätte lieber einen Kaffee.</p>",
-      "ja": "<p>弟にダイアンを紹介する。弟はワインを飲んでいて、二人も一杯どうかと勧める。だが、ダイアンはコーヒーの方がいいと言う。</p>",
+      "en": "<p>Your brother is having a glass of wine and asks if you would both like one. But Diane says she’d prefer a coffee.</p>",
+      "cn": "<p>你弟弟正在喝葡萄酒，问你们要不要也来一杯。但黛安说她更想喝咖啡。</p>",
+      "es": "<p>Tu hermano está tomando una copa de vino y pregunta si queréis una. Pero Diane dice que prefiere un café.</p>",
+      "fr": "<p>Votre frère est en train de boire un verre de vin et vous demande si vous en voulez un aussi. Mais Diane dit qu’elle préférerait un café.</p>",
+      "tw": "<p>你弟弟正喝葡萄酒，問你們要不要也來一杯。但黛安說她更想喝咖啡。</p>",
+      "de": "<p>Dein Bruder trinkt ein Glas Wein und fragt, ob ihr auch eines möchtet. Aber Diane hätte lieber einen Kaffee.</p>",
+      "ja": "<p>弟はワインを飲んでいて、二人も一杯どうかと勧める。だが、ダイアンはコーヒーの方がいいと言う。</p>",
       "source": { "node": "scenario2", "slot": 1 }
     },
     {
@@ -32671,13 +33053,13 @@
     {
       "id": "x05224",
       "kind": "story",
-      "en": "<p>DIANE: East Coast line, years of it. He’s retired now, but he still treats the garden as if it runs to a timetable. Maybe that’s why I like trains.</p>",
-      "cn": "<p>黛安：东海岸线，开了好些年。现在退休了，可打理花园还跟开火车似的，非得按时刻表来。也许我喜欢火车就是因为这个。</p>",
-      "es": "<p>DIANE: Línea de la Costa Este, años y años. Ya está jubilado, pero sigue tratando el jardín como si llevara horario. Quizá por eso me gustan los trenes.</p>",
-      "fr": "<p>DIANE : Ligne de la côte est, pendant des années. Il est à la retraite, mais il s’occupe encore du jardin comme si tout devait y suivre un horaire précis. Peut-être que c’est pour ça que j’aime les trains.</p>",
-      "tw": "<p>黛安：在東海岸線工作了好多年。現在退休了，可連打理花園都像在照著火車時刻表辦事。也許我喜歡火車就是因為這個。</p>",
-      "de": "<p>DIANE: Jahrelang auf der East Coast Line. Jetzt ist er im Ruhestand, aber seinen Garten behandelt er immer noch, als gäbe es dort einen Fahrplan. Vielleicht mag ich deshalb Züge.</p>",
-      "ja": "<p>ダイアン：イースト・コースト本線で、長いことね。もう退職したけど、今でも時刻表どおりに列車を走らせるみたいに庭の世話をしてる。私が列車好きなのも、そのせいかも。</p>",
+      "en": "<p>DIANE: East Coast line, years of it. Even at home he treats the garden as if it runs to a timetable. Maybe that’s why I like trains.</p>",
+      "cn": "<p>黛安：东海岸线，开了好些年了。就连在家打理花园，他都跟开火车似的，非得按时刻表来。也许我喜欢火车就是因为这个。</p>",
+      "es": "<p>DIANE: Lleva años y años en la línea de la Costa Este. Hasta en casa trata el jardín como si tuviera que cumplir un horario. Quizá por eso me gustan los trenes.</p>",
+      "fr": "<p>DIANE : Il travaille sur la ligne de la côte est depuis des années. Même à la maison, il s’occupe du jardin comme si tout devait y suivre un horaire précis. Peut-être que c’est pour ça que j’aime les trains.</p>",
+      "tw": "<p>黛安：他在東海岸線工作好多年了。就連在家打理花園，都像在照著火車時刻表辦事。也許我喜歡火車就是因為這個。</p>",
+      "de": "<p>DIANE: Schon seit Jahren auf der East-Coast-Strecke. Selbst zu Hause behandelt er den Garten, als gäbe es dort einen Fahrplan. Vielleicht mag ich deshalb Züge.</p>",
+      "ja": "<p>ダイアン：東海岸本線で、もう長いことね。家でも、時刻表どおりに列車を走らせるみたいに庭の世話をしてる。私が列車好きなのも、そのせいかも。</p>",
       "source": { "node": "sofaChat", "slot": 15 }
     },
     {
@@ -32899,13 +33281,13 @@
     {
       "id": "x05238",
       "kind": "story",
-      "en": "<p>Of course you have, and you say so. You undo the top two buttons of her dress and run your fingers around her bra, trying not to notice how she keeps pressing her thighs together.</p>",
-      "cn": "<p>当然开心，你也这么说了。你解开她连衣裙最上面的两颗纽扣，手指顺着文胸边缘轻轻滑动，尽量不去在意她一直在夹紧大腿。</p>",
-      "es": "<p>Por supuesto que sí, y se lo dices. Le desabrochas los dos botones de arriba del vestido y pasas los dedos alrededor de su sujetador, tratando de no fijarte en que sigue apretando los muslos.</p>",
-      "fr": "<p>Bien sûr que oui, et vous le lui dites. Vous défaites les deux premiers boutons de sa robe et promenez vos doigts autour de son soutien-gorge, en essayant de ne pas trop remarquer qu’elle n’arrête pas de serrer les cuisses.</p>",
-      "tw": "<p>當然開心，你也這麼說了。你解開她洋裝最上面的兩顆鈕扣，手指順著胸罩邊緣輕輕滑動，盡量不去在意她一直在夾緊大腿。</p>",
-      "de": "<p>Natürlich hat er das, und das sagst du ihr auch. Du öffnest die beiden obersten Knöpfe ihres Kleides und lässt deine Finger über ihren BH wandern. Dabei versuchst du, nicht darauf zu achten, wie sie immer wieder die Schenkel zusammenpresst.</p>",
-      "ja": "<p>もちろん楽しかったと答える。ワンピースの上のボタンを二つ外し、ブラの周りに指を滑らせる。彼女が何度も太ももを押しつけ合っているのは、気にしないようにする。</p>",
+      "en": "<p>Of course you have, and you say so. You undo the front of her dress and run your fingers around her bra, trying not to notice how she keeps pressing her thighs together.</p>",
+      "cn": "<p>当然开心，你也这么说了。你解开她连衣裙前襟的纽扣，手指顺着文胸边缘轻轻滑动，尽量不去在意她一直在夹紧大腿。</p>",
+      "es": "<p>Por supuesto que sí, y se lo dices. Le desabrochas la parte delantera del vestido y pasas los dedos alrededor de su sujetador, tratando de no fijarte en que sigue apretando los muslos.</p>",
+      "fr": "<p>Bien sûr que oui, et vous le lui dites. Vous déboutonnez le devant de sa robe et promenez vos doigts autour de son soutien-gorge, en essayant de ne pas trop remarquer qu’elle n’arrête pas de serrer les cuisses.</p>",
+      "tw": "<p>當然開心，你也這麼說了。你解開她洋裝前襟的鈕扣，手指順著胸罩邊緣輕輕滑動，盡量不去在意她一直在夾緊大腿。</p>",
+      "de": "<p>Natürlich hat er das, und das sagst du ihr auch. Du öffnest die Knöpfe vorn an ihrem Kleid und lässt deine Finger über ihren BH wandern. Dabei versuchst du, nicht darauf zu achten, wie sie immer wieder die Schenkel zusammenpresst.</p>",
+      "ja": "<p>もちろん楽しかったと答える。ワンピースの前のボタンを外し、ブラの周りに指を滑らせる。彼女が何度も太ももを押しつけ合っているのは、気にしないようにする。</p>",
       "source": { "node": "sofasat1", "slot": 5 }
     },
     {
@@ -32971,13 +33353,13 @@
     {
       "id": "x02518",
       "kind": "story",
-      "en": "<p>Of course you have, and you say so, undoing the top two buttons of her dress. You run your fingers around her bra.</p>",
-      "cn": "<p>当然开心，你也这么说了，一边解开她连衣裙最上面的两颗纽扣，手指顺着文胸边缘轻轻滑动。</p>",
-      "es": "<p>Por supuesto que sí, y se lo dices, desabrochando los dos botones de arriba de su vestido. Pasas los dedos alrededor de su sujetador.</p>",
-      "fr": "<p>Bien sûr que oui, et vous le lui dites en défaisant les deux premiers boutons de sa robe. Vous promenez vos doigts autour de son soutien-gorge.</p>",
-      "tw": "<p>當然開心，你也這麼說了，一邊解開她洋裝最上面的兩顆鈕扣，手指順著胸罩邊緣輕輕滑動。</p>",
-      "de": "<p>Natürlich hat er das, und das sagst du ihr auch, während du die beiden obersten Knöpfe ihres Kleides öffnest. Du lässt deine Finger über ihren BH wandern.</p>",
-      "ja": "<p>もちろん楽しかったと答えながら、ワンピースの上のボタンを二つ外す。ブラの周りに指を滑らせる。</p>",
+      "en": "<p>Of course you have, and you say so, undoing the front of her dress. You run your fingers around her bra.</p>",
+      "cn": "<p>当然开心，你也这么说了，一边解开她连衣裙前襟的纽扣，手指顺着文胸边缘轻轻滑动。</p>",
+      "es": "<p>Por supuesto que sí, y se lo dices, desabrochando la parte delantera del vestido. Pasas los dedos alrededor de su sujetador.</p>",
+      "fr": "<p>Bien sûr que oui, et vous le lui dites en déboutonnant le devant de sa robe. Vous promenez vos doigts autour de son soutien-gorge.</p>",
+      "tw": "<p>當然開心，你也這麼說了，一邊解開她洋裝前襟的鈕扣，手指順著胸罩邊緣輕輕滑動。</p>",
+      "de": "<p>Natürlich hat er das, und das sagst du ihr auch, während du die Knöpfe vorn an ihrem Kleid öffnest. Du lässt deine Finger über ihren BH wandern.</p>",
+      "ja": "<p>もちろん楽しかったと答えながら、ワンピースの前のボタンを外す。ブラの周りに指を滑らせる。</p>",
       "source": { "node": "sofasat1", "slot": 11 }
     },
     {
@@ -33017,42 +33399,6 @@
       "source": { "node": "sofasat1", "slot": 14 }
     },
     {
-      "id": "x05245",
-      "kind": "story",
-      "en": "<p>DIANE: This is nice.</p>",
-      "cn": "<p>黛安：真舒服。</p>",
-      "es": "<p>DIANE: Qué gusto.</p>",
-      "fr": "<p>DIANE : C’est agréable.</p>",
-      "tw": "<p>黛安：真舒服。</p>",
-      "de": "<p>DIANE: Das ist schön.</p>",
-      "ja": "<p>ダイアン：こうしてるの、いいね。</p>",
-      "source": { "node": "sofasat1", "slot": 15 }
-    },
-    {
-      "id": "x05246",
-      "kind": "story",
-      "en": "<p>You murmur agreement, undoing the top two buttons of her dress. You run your fingers around her bra.</p>",
-      "cn": "<p>你低声附和，解开她连衣裙最上面的两颗纽扣，手指顺着文胸边缘轻轻滑动。</p>",
-      "es": "<p>Murmuras que sí, desabrochando los dos botones de arriba de su vestido, pasando los dedos alrededor de su sujetador.</p>",
-      "fr": "<p>Vous approuvez à voix basse, défaisant les deux premiers boutons de sa robe. Vous promenez ensuite vos doigts autour de son soutien-gorge.</p>",
-      "tw": "<p>你低聲附和，解開她洋裝最上面的兩顆鈕扣，手指順著胸罩邊緣輕輕滑動。</p>",
-      "de": "<p>Du murmelst zustimmend und öffnest die beiden obersten Knöpfe ihres Kleides. Du lässt deine Finger über ihren BH wandern.</p>",
-      "ja": "<p>小声で同意しながら、ワンピースの上のボタンを二つ外す。ブラの周りに指を滑らせる。</p>",
-      "source": { "node": "sofasat1", "slot": 16 }
-    },
-    {
-      "id": "x05247",
-      "kind": "story",
-      "en": "<p>You murmur agreement. Her dress is already unbuttoned. You run your fingers around her bra.</p>",
-      "cn": "<p>你低声附和。她的连衣裙已经解开了。你的手指顺着文胸边缘轻轻滑动。</p>",
-      "es": "<p>Murmuras que sí. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.</p>",
-      "fr": "<p>Vous approuvez à voix basse. Sa robe est déjà déboutonnée. Vous promenez vos doigts autour de son soutien-gorge.</p>",
-      "tw": "<p>你低聲附和。她的洋裝已經解開了。你的手指順著胸罩邊緣輕輕滑動。</p>",
-      "de": "<p>Du murmelst zustimmend. Ihr Kleid ist bereits aufgeknöpft. Du lässt deine Finger über ihren BH wandern.</p>",
-      "ja": "<p>小声で同意する。ワンピースのボタンはもう外れている。ブラの周りに指を滑らせる。</p>",
-      "source": { "node": "sofasat1", "slot": 17 }
-    },
-    {
       "id": "x05248",
       "kind": "story",
       "en": "<p>Diane is still smiling up at you, happy to let you carry on. You feel her breasts through the material of her black-and-white patterned frock, your hand finding its way back between the buttons of its bodice to touch her breasts through her lacy bra.</p>",
@@ -33062,43 +33408,7 @@
       "tw": "<p>黛安還是笑吟吟地躺在沙發上，任由你繼續。你隔著她那件黑白花紋洋裝的布料感受著她的胸部，手又摸進洋裝前襟的鈕扣縫隙，隔著蕾絲胸罩觸摸著她。</p>",
       "de": "<p>Diane lächelt noch immer zu dir hoch und lässt dich gern weitermachen. Du fühlst ihre Brüste durch den Stoff ihres schwarz-weiß gemusterten Kleides. Deine Hand findet wieder ihren Weg zwischen die Knöpfe des Oberteils, um ihre Brüste durch den Spitzen-BH hindurch zu berühren.</p>",
       "ja": "<p>ダイアンは相変わらず微笑みかけてきて、触れ続けられるのを喜んでいる。白黒の柄のワンピース越しに胸を撫で、胸元のボタンの隙間からまた手を入れて、レースのブラ越しに胸に触れる。</p>",
-      "source": { "node": "sofasat1", "slot": 18 }
-    },
-    {
-      "id": "x05249",
-      "kind": "story",
-      "en": "<p>DIANE: You’re very good at this.</p>",
-      "cn": "<p>黛安：你还挺会的。</p>",
-      "es": "<p>DIANE: Se te da bien esto.</p>",
-      "fr": "<p>DIANE : Tu t’y prends vraiment bien.</p>",
-      "tw": "<p>黛安：你還挺會的耶。</p>",
-      "de": "<p>DIANE: Das kannst du wirklich gut.</p>",
-      "ja": "<p>ダイアン：上手なのね。</p>",
-      "source": { "node": "sofasat1", "slot": 19 }
-    },
-    {
-      "id": "x05250",
-      "kind": "story",
-      "en": "<p>You grin, undoing the top two buttons of her dress. You run your fingers around her bra.</p>",
-      "cn": "<p>你笑了笑，把她连衣裙最上面的两颗纽扣解开了，手指顺着文胸边缘轻轻滑动。</p>",
-      "es": "<p>Sonríes y le desabrochas los dos botones superiores del vestido, pasando los dedos alrededor de su sujetador.</p>",
-      "fr": "<p>Vous souriez et défaites les deux boutons du haut de sa robe. Vous promenez ensuite vos doigts autour de son soutien-gorge.</p>",
-      "tw": "<p>你笑了笑，把她洋裝最上面的兩顆鈕扣解開了，手指順著胸罩邊緣輕輕滑動。</p>",
-      "de": "<p>Du grinst und öffnest die beiden obersten Knöpfe ihres Kleides. Du lässt deine Finger über ihren BH wandern.</p>",
-      "ja": "<p>にやりと笑って、ワンピースの上のボタンを二つ外す。ブラの周りに指を滑らせる。</p>",
-      "source": { "node": "sofasat1", "slot": 20 }
-    },
-    {
-      "id": "x05251",
-      "kind": "story",
-      "en": "<p>You grin. Her dress is already unbuttoned. You run your fingers around her bra.</p>",
-      "cn": "<p>你笑了笑。她的连衣裙已经解开了。你的手指顺着文胸边缘轻轻滑动。</p>",
-      "es": "<p>Sonríes. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.</p>",
-      "fr": "<p>Vous souriez. Sa robe est déjà déboutonnée. Vous promenez vos doigts autour de son soutien-gorge.</p>",
-      "tw": "<p>你笑了笑。她的洋裝已經解開了。你的手指順著胸罩邊緣輕輕滑動。</p>",
-      "de": "<p>Du grinst. Ihr Kleid ist bereits aufgeknöpft. Du lässt deine Finger über ihren BH wandern.</p>",
-      "ja": "<p>にやりと笑う。ワンピースのボタンはもう外れている。ブラの周りに指を滑らせる。</p>",
-      "source": { "node": "sofasat1", "slot": 21 }
+      "source": { "node": "sofasat1", "slot": 15 }
     },
     {
       "id": "x02516",
@@ -33110,6 +33420,78 @@
       "tw": "<p>黛安躺在沙發上，仰頭對你微笑。你隔著她那件黑白花紋洋裝的布料感受著她的胸部。你把手伸進洋裝前襟的鈕扣縫隙，隔著她蕾絲胸罩觸摸著她的乳房。</p>",
       "de": "<p>Diane liegt auf dem Sofa und lächelt zu dir hoch. Du fühlst ihre Brüste durch den Stoff ihres schwarz-weiß gemusterten Kleides. Du kannst eine Hand zwischen die Knöpfe des Oberteils schieben und ihre Brüste durch den Spitzen-BH hindurch berühren.</p>",
       "ja": "<p>ダイアンはソファに横になって微笑みかけてくる。白黒の柄のワンピース越しに胸を撫でる。胸元のボタンの隙間から手を入れて、レースのブラ越しに胸に触れることができる。</p>",
+      "source": { "node": "sofasat1", "slot": 16 }
+    },
+    {
+      "id": "x05245",
+      "kind": "story",
+      "en": "<p>DIANE: This is nice.</p>",
+      "cn": "<p>黛安：真舒服。</p>",
+      "es": "<p>DIANE: Qué gusto.</p>",
+      "fr": "<p>DIANE : C’est agréable.</p>",
+      "tw": "<p>黛安：真舒服。</p>",
+      "de": "<p>DIANE: Das ist schön.</p>",
+      "ja": "<p>ダイアン：こうしてるの、いいね。</p>",
+      "source": { "node": "sofasat1", "slot": 17 }
+    },
+    {
+      "id": "x05246",
+      "kind": "story",
+      "en": "<p>You murmur agreement, undoing the front of her dress. You run your fingers around her bra.</p>",
+      "cn": "<p>你低声附和，解开她连衣裙前襟的纽扣，手指顺着文胸边缘轻轻滑动。</p>",
+      "es": "<p>Murmuras que sí, desabrochando la parte delantera del vestido, pasando los dedos alrededor de su sujetador.</p>",
+      "fr": "<p>Vous approuvez à voix basse, déboutonnant le devant de sa robe. Vous promenez ensuite vos doigts autour de son soutien-gorge.</p>",
+      "tw": "<p>你低聲附和，解開她洋裝前襟的鈕扣，手指順著胸罩邊緣輕輕滑動。</p>",
+      "de": "<p>Du murmelst zustimmend und öffnest die Knöpfe vorn an ihrem Kleid. Du lässt deine Finger über ihren BH wandern.</p>",
+      "ja": "<p>小声で同意しながら、ワンピースの前のボタンを外す。ブラの周りに指を滑らせる。</p>",
+      "source": { "node": "sofasat1", "slot": 18 }
+    },
+    {
+      "id": "x05247",
+      "kind": "story",
+      "en": "<p>You murmur agreement. Her dress is already unbuttoned. You run your fingers around her bra.</p>",
+      "cn": "<p>你低声附和。她的连衣裙已经解开了。你的手指顺着文胸边缘轻轻滑动。</p>",
+      "es": "<p>Murmuras que sí. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.</p>",
+      "fr": "<p>Vous approuvez à voix basse. Sa robe est déjà déboutonnée. Vous promenez vos doigts autour de son soutien-gorge.</p>",
+      "tw": "<p>你低聲附和。她的洋裝已經解開了。你的手指順著胸罩邊緣輕輕滑動。</p>",
+      "de": "<p>Du murmelst zustimmend. Ihr Kleid ist bereits aufgeknöpft. Du lässt deine Finger über ihren BH wandern.</p>",
+      "ja": "<p>小声で同意する。ワンピースのボタンはもう外れている。ブラの周りに指を滑らせる。</p>",
+      "source": { "node": "sofasat1", "slot": 19 }
+    },
+    {
+      "id": "x05249",
+      "kind": "story",
+      "en": "<p>DIANE: You’re very good at this.</p>",
+      "cn": "<p>黛安：你还挺会的。</p>",
+      "es": "<p>DIANE: Se te da bien esto.</p>",
+      "fr": "<p>DIANE : Tu t’y prends vraiment bien.</p>",
+      "tw": "<p>黛安：你還挺會的耶。</p>",
+      "de": "<p>DIANE: Das kannst du wirklich gut.</p>",
+      "ja": "<p>ダイアン：上手なのね。</p>",
+      "source": { "node": "sofasat1", "slot": 20 }
+    },
+    {
+      "id": "x05250",
+      "kind": "story",
+      "en": "<p>You grin, undoing the front of her dress. You run your fingers around her bra.</p>",
+      "cn": "<p>你笑了笑，把她连衣裙前襟的纽扣解开了，手指顺着文胸边缘轻轻滑动。</p>",
+      "es": "<p>Sonríes y le desabrochas la parte delantera del vestido, pasando los dedos alrededor de su sujetador.</p>",
+      "fr": "<p>Vous souriez et déboutonnez le devant de sa robe. Vous promenez ensuite vos doigts autour de son soutien-gorge.</p>",
+      "tw": "<p>你笑了笑，把她洋裝前襟的鈕扣解開了，手指順著胸罩邊緣輕輕滑動。</p>",
+      "de": "<p>Du grinst und öffnest die Knöpfe vorn an ihrem Kleid. Du lässt deine Finger über ihren BH wandern.</p>",
+      "ja": "<p>にやりと笑って、ワンピースの前のボタンを外す。ブラの周りに指を滑らせる。</p>",
+      "source": { "node": "sofasat1", "slot": 21 }
+    },
+    {
+      "id": "x05251",
+      "kind": "story",
+      "en": "<p>You grin. Her dress is already unbuttoned. You run your fingers around her bra.</p>",
+      "cn": "<p>你笑了笑。她的连衣裙已经解开了。你的手指顺着文胸边缘轻轻滑动。</p>",
+      "es": "<p>Sonríes. El vestido ya está desabrochado. Pasas los dedos alrededor de su sujetador.</p>",
+      "fr": "<p>Vous souriez. Sa robe est déjà déboutonnée. Vous promenez vos doigts autour de son soutien-gorge.</p>",
+      "tw": "<p>你笑了笑。她的洋裝已經解開了。你的手指順著胸罩邊緣輕輕滑動。</p>",
+      "de": "<p>Du grinst. Ihr Kleid ist bereits aufgeknöpft. Du lässt deine Finger über ihren BH wandern.</p>",
+      "ja": "<p>にやりと笑う。ワンピースのボタンはもう外れている。ブラの周りに指を滑らせる。</p>",
       "source": { "node": "sofasat1", "slot": 22 }
     },
     {
@@ -33127,13 +33509,13 @@
     {
       "id": "x05253",
       "kind": "story",
-      "en": "<p>Of course you have, and you say so, undoing the top two buttons of her dress. You run your fingers around her bra.</p>",
-      "cn": "<p>当然开心，你也这么说了，一边解开她连衣裙最上面的两颗纽扣，手指顺着文胸边缘轻轻滑动。</p>",
-      "es": "<p>Por supuesto que sí, y se lo dices, desabrochando los dos botones de arriba de su vestido. Pasas los dedos alrededor de su sujetador.</p>",
-      "fr": "<p>Bien sûr que oui, et vous le lui dites en défaisant les deux premiers boutons de sa robe. Vous promenez vos doigts autour de son soutien-gorge.</p>",
-      "tw": "<p>當然開心，你也這麼說了，一邊解開她洋裝最上面的兩顆鈕扣，手指順著胸罩邊緣輕輕滑動。</p>",
-      "de": "<p>Natürlich hat er das, und das sagst du ihr auch, während du die beiden obersten Knöpfe ihres Kleides öffnest. Du lässt deine Finger über ihren BH wandern.</p>",
-      "ja": "<p>もちろん楽しかったと答えながら、ワンピースの上のボタンを二つ外す。ブラの周りに指を滑らせる。</p>",
+      "en": "<p>Of course you have, and you say so, undoing the front of her dress. You run your fingers around her bra.</p>",
+      "cn": "<p>当然开心，你也这么说了，一边解开她连衣裙前襟的纽扣，手指顺着文胸边缘轻轻滑动。</p>",
+      "es": "<p>Por supuesto que sí, y se lo dices, desabrochando la parte delantera del vestido. Pasas los dedos alrededor de su sujetador.</p>",
+      "fr": "<p>Bien sûr que oui, et vous le lui dites en déboutonnant le devant de sa robe. Vous promenez vos doigts autour de son soutien-gorge.</p>",
+      "tw": "<p>當然開心，你也這麼說了，一邊解開她洋裝前襟的鈕扣，手指順著胸罩邊緣輕輕滑動。</p>",
+      "de": "<p>Natürlich hat er das, und das sagst du ihr auch, während du die Knöpfe vorn an ihrem Kleid öffnest. Du lässt deine Finger über ihren BH wandern.</p>",
+      "ja": "<p>もちろん楽しかったと答えながら、ワンピースの前のボタンを外す。ブラの周りに指を滑らせる。</p>",
       "source": { "node": "sofasat1", "slot": 24 }
     },
     {
@@ -35299,6 +35681,18 @@
       "source": { "node": "sofatoilet4", "slot": 1 }
     },
     {
+      "id": "x06013",
+      "kind": "story",
+      "en": "<p>You slip a hand underneath her dress and reach up as far as her knickers again, but she squeezes her legs together, and changes position again.</p>",
+      "cn": "<p>你再次把手伸进她的连衣裙下面，往上够到她的内裤，但她又把腿夹紧，换了个姿势。</p>",
+      "es": "<p>Deslizas la mano por debajo de su vestido y subes hasta rozarle las bragas, pero ella aprieta las piernas y vuelve a cambiar de postura.</p>",
+      "fr": "<p>Vous glissez une main sous sa robe et remontez de nouveau jusqu’à sa culotte, mais elle serre les jambes et change de position à nouveau.</p>",
+      "tw": "<p>你再次把手伸進她洋裝下面，往上夠到她的內褲，可她又把腿夾緊，換了個姿勢。</p>",
+      "de": "<p>Du schiebst eine Hand unter ihr Kleid und wieder bis zu ihrem Slip hinauf, aber sie presst die Beine zusammen und wechselt erneut ihre Haltung.</p>",
+      "ja": "<p>ワンピースの下に手を入れ、またショーツまで伸ばす。けれど、彼女は脚をぎゅっと閉じ、再び姿勢を変える。</p>",
+      "source": { "node": "sofatoilet4", "slot": 2 }
+    },
+    {
       "id": "x02645",
       "kind": "story",
       "en": "<p>You slip a hand underneath her skirt and reach up as far as her knickers again, but she squeezes her legs together, and changes position again.</p>",
@@ -35308,7 +35702,7 @@
       "tw": "<p>你再次把手伸進她裙子下面，往上夠到她的內褲，可她又把腿夾緊，換了個姿勢。</p>",
       "de": "<p>Du schiebst eine Hand unter ihren Rock und wieder bis zu ihrem Slip hinauf, aber sie presst die Beine zusammen und wechselt erneut ihre Haltung.</p>",
       "ja": "<p>スカートの下に手を入れ、またショーツまで伸ばす。けれど、彼女は脚をぎゅっと閉じ、再び姿勢を変える。</p>",
-      "source": { "node": "sofatoilet4", "slot": 2 }
+      "source": { "node": "sofatoilet4", "slot": 3 }
     },
     {
       "id": "x02646",
@@ -35320,7 +35714,7 @@
       "tw": "<p>你：黛安，我可以問你一件事嗎？</p>",
       "de": "<p>DU: Diane, darf ich dich etwas fragen?</p>",
       "ja": "<p>あなた：ダイアン、一つ聞いてもいい？</p>",
-      "source": { "node": "sofatoilet4", "slot": 3 }
+      "source": { "node": "sofatoilet4", "slot": 4 }
     },
     {
       "id": "x02647",
@@ -35332,7 +35726,7 @@
       "tw": "<p>黛安：嗯？</p>",
       "de": "<p>DIANE: Mhm?</p>",
       "ja": "<p>ダイアン：ん？</p>",
-      "source": { "node": "sofatoilet4", "slot": 4 }
+      "source": { "node": "sofatoilet4", "slot": 5 }
     },
     {
       "id": "x02648",
@@ -35344,7 +35738,7 @@
       "tw": "<p>你：你以前有沒有過尿急到實在憋不住的經歷？就是……拖得太久、來不及上廁所那種。願意跟我講講嗎？</p>",
       "de": "<p>DU: Musstest du schon einmal ganz dringend pinkeln? Ich meine, hast du es schon mal, na ja, zu lange hinausgezögert? Würdest du mir davon erzählen?</p>",
       "ja": "<p>あなた：おしっこを本当に我慢できなくなったことってある？　つまり、その、間に合わなくなったことは？　話してくれる？</p>",
-      "source": { "node": "sofatoilet4", "slot": 5 }
+      "source": { "node": "sofatoilet4", "slot": 6 }
     },
     {
       "id": "x02649",
@@ -35356,7 +35750,7 @@
       "tw": "<p>黛安：你真的想知道喔？說完你會讓我去廁所吧？</p>",
       "de": "<p>DIANE: Willst du das wirklich wissen? Lässt du mich aufs Klo, wenn ich es dir erzählt habe?</p>",
       "ja": "<p>ダイアン：本当に聞きたいの？　話したらトイレに行かせてくれる？</p>",
-      "source": { "node": "sofatoilet4", "slot": 6 }
+      "source": { "node": "sofatoilet4", "slot": 7 }
     },
     {
       "id": "x02650",
@@ -35368,7 +35762,7 @@
       "tw": "<p>她站起來想掙開你，但你握住了她的手。</p>",
       "de": "<p>Sie steht auf und versucht, sich von dir zu lösen, aber du hältst ihre Hand fest.</p>",
       "ja": "<p>彼女は身を離そうと立ち上がるが、あなたはその手を握る。</p>",
-      "source": { "node": "sofatoilet4", "slot": 7 }
+      "source": { "node": "sofatoilet4", "slot": 8 }
     },
     {
       "id": "x02651",
@@ -35381,7 +35775,7 @@
       "tw": "好，保證。",
       "de": "Ja, versprochen.",
       "ja": "うん、約束する。",
-      "source": { "node": "sofatoilet4", "slot": 8 }
+      "source": { "node": "sofatoilet4", "slot": 9 }
     },
     {
       "id": "x02652",
@@ -35394,7 +35788,7 @@
       "tw": "把她拉到腿上，讓她跟你說。",
       "de": "Zieh sie auf deinen Schoß und bitte sie, es dir zu erzählen.",
       "ja": "膝の上に引き寄せて、話してほしいと言う。",
-      "source": { "node": "sofatoilet4", "slot": 9 }
+      "source": { "node": "sofatoilet4", "slot": 10 }
     },
     {
       "id": "x02653",
@@ -35617,13 +36011,13 @@
       "id": "x02669",
       "kind": "choice",
       "tag": "nicelydesp3",
-      "en": "Diane is holding on for dear life!",
-      "cn": "黛安正拼命憋着！",
-      "es": "¡Diane está aguantando como puede!",
-      "fr": "Diane se retient de toutes ses forces !",
-      "tw": "黛安正拼命憋著！",
-      "de": "Diane hält mit aller Kraft ein!",
-      "ja": "ダイアンは必死でこらえている！",
+      "en": "DIANE: I was holding on for dear life!",
+      "cn": "黛安：我当时都快憋不住了，拼命忍着呢！",
+      "es": "DIANE: ¡Estaba aguantando como podía!",
+      "fr": "DIANE : Je me retenais de toutes mes forces !",
+      "tw": "黛安：我當時都快憋不住了，只能拚命忍著！",
+      "de": "DIANE: Ich habe mit aller Kraft eingehalten!",
+      "ja": "ダイアン：もう、必死でこらえてたわ！",
       "source": { "node": "nicelydesp2", "slot": 7 }
     },
     {
@@ -36431,13 +36825,13 @@
     {
       "id": "x02712",
       "kind": "story",
-      "en": "<p>You carry on talking about the theatre. Trouble is, you’ve been talking about it much of the evening so she finds it quite easy to interrupt.</p>",
-      "cn": "<p>你们继续聊着戏剧的话题。只是整个晚上聊了太多这个，所以她很容易就找到机会插嘴。</p>",
-      "es": "<p>Seguís hablando del teatro. El problema es que habéis estado hablando de eso buena parte de la noche, así que a ella le resulta bastante fácil interrumpir.</p>",
-      "fr": "<p>Vous continuez à parler du théâtre. Le problème, c’est que vous en avez parlé une bonne partie de la soirée, alors elle trouve assez facilement une occasion d’interrompre la conversation.</p>",
-      "tw": "<p>你們繼續聊著戲劇的話題。只是整個晚上聊這個聊太多了，所以她很容易就找到機會插嘴。</p>",
-      "de": "<p>Ihr unterhaltet euch weiter über das Theater. Nur habt ihr schon einen großen Teil des Abends darüber gesprochen, deshalb fällt es ihr nicht schwer, dich zu unterbrechen.</p>",
-      "ja": "<p>芝居の話を続ける。困ったことに、今夜はもうずいぶんその話をしているので、彼女は簡単に口を挟める。</p>",
+      "en": "<p>You bring up the theatre, but she interrupts before you get very far.</p>",
+      "cn": "<p>你提起戏剧的话题，可没说几句就被她打断了。</p>",
+      "es": "<p>Sacas el tema del teatro, pero ella te interrumpe antes de que puedas decir mucho.</p>",
+      "fr": "<p>Vous abordez le sujet du théâtre, mais elle vous interrompt presque aussitôt.</p>",
+      "tw": "<p>你提起戲劇的話題，可是沒說幾句，她就打斷了你。</p>",
+      "de": "<p>Du bringst das Gespräch aufs Theater, doch sie unterbricht dich schon nach wenigen Worten.</p>",
+      "ja": "<p>芝居の話を持ち出すが、あまり話さないうちに彼女が口を挟む。</p>",
       "source": { "node": "sofatheatre", "slot": 1 }
     },
     {
@@ -36516,6 +36910,18 @@
       "source": { "node": "sofawork", "slot": 1 }
     },
     {
+      "id": "x06010",
+      "kind": "story",
+      "en": "<p>DIANE: Gosh, is that the time? It’s been a long day. I really must be going.</p>",
+      "cn": "<p>黛安：天啊，都这个点了？今天折腾了一整天，我真的该回去了。</p>",
+      "es": "<p>DIANE: ¡Anda, qué tarde es! Ha sido un día largo. De verdad que tengo que irme.</p>",
+      "fr": "<p>DIANE : Oh là là, il est déjà cette heure-là ? La journée a été longue. Il faut vraiment que je rentre.</p>",
+      "tw": "<p>黛安：天啊，已經這麼晚了？今天忙了一整天，我真的該回去了。</p>",
+      "de": "<p>DIANE: Du meine Güte, ist es schon so spät? Es war ein langer Tag. Ich muss wirklich los.</p>",
+      "ja": "<p>ダイアン：えっ、もうこんな時間？　今日は長い一日だったわ。本当にもう帰らなきゃ。</p>",
+      "source": { "node": "sofawork", "slot": 2 }
+    },
+    {
       "id": "x02719",
       "kind": "story",
       "en": "<p>DIANE: Gosh, is that the time? I have to be at work in the morning, you know. I really must be going.</p>",
@@ -36525,7 +36931,7 @@
       "tw": "<p>黛安：天哪，都這麼晚了。你知道我明天早上還要上班。我真的得走了啦。</p>",
       "de": "<p>DIANE: Ach du meine Güte, ist es schon so spät? Ich muss morgen früh arbeiten, weißt du. Ich muss wirklich los.</p>",
       "ja": "<p>ダイアン：あっ、もうこんな時間？　明日の朝は仕事なの。本当にもう帰らなきゃ。</p>",
-      "source": { "node": "sofawork", "slot": 2 }
+      "source": { "node": "sofawork", "slot": 3 }
     },
     {
       "id": "x02720",
@@ -36537,7 +36943,7 @@
       "tw": "<p>她起身開始準備離開。然後——</p>",
       "de": "<p>Sie steht auf und macht sich zum Gehen bereit. Dann – </p>",
       "ja": "<p>彼女は立ち上がり、支度を始める。それから――</p>",
-      "source": { "node": "sofawork", "slot": 3 }
+      "source": { "node": "sofawork", "slot": 4 }
     },
     {
       "id": "x02721",
@@ -36549,7 +36955,7 @@
       "tw": "<p>黛安：對了，走之前我可以先用一下你家廁所嗎？</p>",
       "de": "<p>DIANE: Kann ich eigentlich noch kurz eure Toilette benutzen, bevor ich gehe?</p>",
       "ja": "<p>ダイアン：あの、帰る前にトイレを借りてもいい？</p>",
-      "source": { "node": "sofawork", "slot": 4 }
+      "source": { "node": "sofawork", "slot": 5 }
     },
     {
       "id": "x02722",
@@ -36561,7 +36967,7 @@
       "tw": "<p>你要怎麼辦？</p>",
       "de": "<p>Was wirst du tun?</p>",
       "ja": "<p>どうしようか？</p>",
-      "source": { "node": "sofawork", "slot": 5 }
+      "source": { "node": "sofawork", "slot": 6 }
     },
     {
       "id": "x02723",
@@ -36574,7 +36980,7 @@
       "tw": "放她去，順便用一次幸運機會？",
       "de": "Lass sie gehen und setze einen Glücksversuch ein.",
       "ja": "トイレに行かせて、運試しをする？",
-      "source": { "node": "sofawork", "slot": 6 }
+      "source": { "node": "sofawork", "slot": 7 }
     },
     {
       "id": "x02724",
@@ -36587,7 +36993,7 @@
       "tw": "就讓她去。",
       "de": "Lass sie einfach gehen.",
       "ja": "そのまま行かせる。",
-      "source": { "node": "sofawork", "slot": 7 }
+      "source": { "node": "sofawork", "slot": 8 }
     },
     {
       "id": "x02725",
@@ -36600,7 +37006,7 @@
       "tw": "把她拉到腿上親她？",
       "de": "Zieh sie auf deinen Schoß und küss sie.",
       "ja": "膝の上に引き寄せて、キスをする？",
-      "source": { "node": "sofawork", "slot": 8 }
+      "source": { "node": "sofawork", "slot": 9 }
     },
     {
       "id": "x02726",
@@ -36641,13 +37047,13 @@
     {
       "id": "x02729",
       "kind": "story",
-      "en": "<p>DIANE: I want to go. It’s all that lager. Come on, don’t be rotten – </p>",
-      "cn": "<p>黛安：我得去一趟……都是那些啤酒。行了，别这么坏嘛——</p>",
-      "es": "<p>DIANE: Quiero ir. Es toda esa cerveza. Venga, no seas malo—</p>",
-      "fr": "<p>DIANE : Je veux y aller. C’est à cause de toute cette bière. Allez, sois pas méchant —</p>",
-      "tw": "<p>黛安：我得去一下……都是那些拉格啤酒害的。好了，別這麼壞——</p>",
-      "de": "<p>DIANE: Ich muss eben. Das kommt von dem ganzen Lagerbier. Komm schon, sei nicht so gemein – </p>",
-      "ja": "<p>ダイアン：行きたいの。ラガーをあんなに飲んだから。ねえ、意地悪しないで――</p>",
+      "en": "<p>DIANE: I want to go. It’s all those drinks. Come on, don’t be rotten – </p>",
+      "cn": "<p>黛安：我得去一趟……都怪我喝了那么多。行了，别这么坏嘛——</p>",
+      "es": "<p>DIANE: Quiero ir. Es por todo lo que he bebido. Venga, no seas malo—</p>",
+      "fr": "<p>DIANE : Je veux y aller. C’est à cause de tout ce que j’ai bu. Allez, sois pas méchant —</p>",
+      "tw": "<p>黛安：我得去一下……都是剛才喝太多了。好了，別這麼壞——</p>",
+      "de": "<p>DIANE: Ich muss eben. Das kommt davon, dass ich so viel getrunken habe. Komm schon, sei nicht so gemein – </p>",
+      "ja": "<p>ダイアン：行きたいの。あんなに飲んだから。ねえ、意地悪しないで――</p>",
       "source": { "node": "sofawork1", "slot": 4 }
     },
     {
@@ -37045,68 +37451,6 @@
       "source": { "node": "luckytrip18a", "slot": 1 }
     },
     {
-      "id": "x02760",
-      "kind": "story",
-      "en": "<p>You think your brother has gone to bed. But you can’t be quite sure. Maybe he is out with friends?</p>",
-      "cn": "<p>你觉得你弟弟应该已经去睡了，但不能完全确定。也许他出去和朋友玩了？</p>",
-      "es": "<p>Crees que tu hermano se ha ido a dormir. Pero no estás del todo seguro. ¿Quizá ha salido con amigos?</p>",
-      "fr": "<p>Vous pensez que votre frère est allé se coucher. Mais vous n’en êtes pas tout à fait sûr. Peut-être qu’il est sorti avec des amis ?</p>",
-      "tw": "<p>你覺得弟弟應該已經去睡了，但又不太確定。也許他出去跟朋友玩了？</p>",
-      "de": "<p>Du glaubst, dass dein Bruder schon im Bett ist. Ganz sicher bist du aber nicht. Vielleicht ist er auch mit Freunden unterwegs?</p>",
-      "ja": "<p>弟はもう寝たのだと思う。でも、確かではない。友達と出かけているのかもしれない。</p>",
-      "source": { "node": "luckytrip18a", "slot": 2 }
-    },
-    {
-      "id": "x02761",
-      "kind": "story",
-      "en": "<p>You are just about to show Diane where the toilet is when you hear voices at the front door.</p>",
-      "cn": "<p>你正要告诉黛安厕所在哪，就听见前门传来说话声。</p>",
-      "es": "<p>Estás a punto de decirle a Diane dónde está el baño cuando oyes voces en la puerta principal.</p>",
-      "fr": "<p>Vous êtes sur le point d’indiquer les toilettes à Diane quand vous entendez des voix à la porte d’entrée.</p>",
-      "tw": "<p>你正要告訴黛安廁所在哪，就聽見前門有人在說話。</p>",
-      "de": "<p>Du willst Diane gerade zeigen, wo die Toilette ist, als du Stimmen an der Haustür hörst.</p>",
-      "ja": "<p>ダイアンにトイレの場所を教えようとしたとき、玄関で人の声がする。</p>",
-      "source": { "node": "luckytrip18a", "slot": 3 }
-    },
-    {
-      "id": "x02762",
-      "kind": "story",
-      "en": "<p>She pauses for a second but is dying to go, so after a moment’s hesitation she hurries up to the bathroom. A few minutes later she returns, looking content, and joins in the conversation.</p>",
-      "cn": "<p>她迟疑了一秒，但实在憋得难受，短暂犹豫后便匆匆跑上去进了浴室。几分钟后她回来了，神情轻松满足，加入了谈话。</p>",
-      "es": "<p>Se detiene un instante, pero le urge demasiado, así que después de un momento de duda sube a toda prisa al baño. Unos minutos después regresa con cara de alivio y se une a la conversación.</p>",
-      "fr": "<p>Elle s’arrête une seconde, mais elle n’en peut plus, alors après un moment d’hésitation elle monte en hâte à la salle de bains. Quelques minutes plus tard, elle revient, l’air satisfaite, et rejoint la conversation.</p>",
-      "tw": "<p>她遲疑了一秒，但實在憋得難受，短暫猶豫後便匆匆跑上去進了浴室。過了幾分鐘她回來了，神情輕鬆滿足，加入了談話。</p>",
-      "de": "<p>Sie hält kurz inne, muss aber so dringend, dass sie nach kurzem Zögern ins Bad eilt. Ein paar Minuten später kommt sie zufrieden zurück und beteiligt sich am Gespräch.</p>",
-      "ja": "<p>彼女は少し立ち止まるが、トイレに行きたくてたまらず、ためらった末に急いで二階へ向かう。数分後、満足そうな顔で戻ってきて、会話に加わる。</p>",
-      "source": { "node": "luckytrip18a", "slot": 4 }
-    },
-    {
-      "id": "x02763",
-      "kind": "choice",
-      "tag": "gameover",
-      "en": "And that’s that.",
-      "cn": "就这样结束了。",
-      "es": "Y así queda la cosa.",
-      "fr": "Et voilà.",
-      "tw": "就這樣結束了。",
-      "de": "Und das war’s dann.",
-      "ja": "これでおしまい。",
-      "source": { "node": "luckytrip18a", "slot": 5 }
-    },
-    {
-      "id": "x02764",
-      "kind": "choice",
-      "tag": "scenario5a",
-      "en": "You both pause politely to see who it is.",
-      "cn": "你们都礼貌地停下来，看看是谁来了。",
-      "es": "Los dos esperáis por cortesía a ver quién es.",
-      "fr": "Vous vous arrêtez tous les deux poliment pour voir qui c’est.",
-      "tw": "兩人都禮貌地停下來，看看是誰來了。",
-      "de": "Ihr wartet beide höflich ab, wer es ist.",
-      "ja": "誰が来たのか確かめようと、二人ともいったん待つ。",
-      "source": { "node": "luckytrip18a", "slot": 6 }
-    },
-    {
       "id": "x02765",
       "kind": "story",
       "en": "<p>Diane gets up to excuse herself and pop to the toilet.</p>",
@@ -37117,68 +37461,6 @@
       "de": "<p>Diane steht auf und bittet, sie kurz zu entschuldigen. Sie möchte zur Toilette.</p>",
       "ja": "<p>ダイアンはちょっと失礼すると言って、トイレに行こうと立ち上がる。</p>",
       "source": { "node": "luckytrip20a", "slot": 1 }
-    },
-    {
-      "id": "x02766",
-      "kind": "story",
-      "en": "<p>You think your brother has gone to bed. But you can’t be quite sure. Maybe he is out with friends?</p>",
-      "cn": "<p>你觉得你弟弟应该已经去睡了，但不能完全确定。也许他出去和朋友玩了？</p>",
-      "es": "<p>Crees que tu hermano se ha ido a dormir. Pero no estás del todo seguro. ¿Quizá ha salido con amigos?</p>",
-      "fr": "<p>Vous pensez que votre frère est allé se coucher. Mais vous n’en êtes pas tout à fait sûr. Peut-être qu’il est sorti avec des amis ?</p>",
-      "tw": "<p>你覺得弟弟應該已經去睡了，但又不太確定。也許他出去跟朋友玩了？</p>",
-      "de": "<p>Du glaubst, dass dein Bruder schon im Bett ist. Ganz sicher bist du aber nicht. Vielleicht ist er auch mit Freunden unterwegs?</p>",
-      "ja": "<p>弟はもう寝たのだと思う。でも、確かではない。友達と出かけているのかもしれない。</p>",
-      "source": { "node": "luckytrip20a", "slot": 2 }
-    },
-    {
-      "id": "x02767",
-      "kind": "story",
-      "en": "<p>You are just about to show Diane where the toilet is when you hear voices at the front door.</p>",
-      "cn": "<p>你正要告诉黛安厕所在哪，就听见前门传来说话声。</p>",
-      "es": "<p>Estás a punto de decirle a Diane dónde está el baño cuando oyes voces en la puerta principal.</p>",
-      "fr": "<p>Vous êtes sur le point d’indiquer les toilettes à Diane quand vous entendez des voix à la porte d’entrée.</p>",
-      "tw": "<p>你正要告訴黛安廁所在哪，就聽見前門有人在說話。</p>",
-      "de": "<p>Du willst Diane gerade zeigen, wo die Toilette ist, als du Stimmen an der Haustür hörst.</p>",
-      "ja": "<p>ダイアンにトイレの場所を教えようとしたとき、玄関で人の声がする。</p>",
-      "source": { "node": "luckytrip20a", "slot": 3 }
-    },
-    {
-      "id": "x02768",
-      "kind": "story",
-      "en": "<p>She pauses for a second but is dying to go, so after a moment’s hesitation she hurries up to the bathroom. A few minutes later she returns, looking content, and joins in the conversation.</p>",
-      "cn": "<p>她迟疑了一秒，但实在憋得难受，短暂犹豫后便匆匆跑上去进了浴室。几分钟后她回来了，神情轻松满足，加入了谈话。</p>",
-      "es": "<p>Se detiene un instante, pero le urge demasiado, así que después de un momento de duda sube a toda prisa al baño. Unos minutos después regresa con cara de alivio y se une a la conversación.</p>",
-      "fr": "<p>Elle s’arrête une seconde, mais elle n’en peut plus, alors après un moment d’hésitation elle monte en hâte à la salle de bains. Quelques minutes plus tard, elle revient, l’air satisfaite, et rejoint la conversation.</p>",
-      "tw": "<p>她遲疑了一秒，但實在憋得難受，短暫猶豫後便匆匆跑上去進了浴室。過了幾分鐘她回來了，神情輕鬆滿足，加入了談話。</p>",
-      "de": "<p>Sie hält kurz inne, muss aber so dringend, dass sie nach kurzem Zögern ins Bad eilt. Ein paar Minuten später kommt sie zufrieden zurück und beteiligt sich am Gespräch.</p>",
-      "ja": "<p>彼女は少し立ち止まるが、トイレに行きたくてたまらず、ためらった末に急いで二階へ向かう。数分後、満足そうな顔で戻ってきて、会話に加わる。</p>",
-      "source": { "node": "luckytrip20a", "slot": 4 }
-    },
-    {
-      "id": "x02769",
-      "kind": "choice",
-      "tag": "gameover",
-      "en": "And that’s that.",
-      "cn": "就这样结束了。",
-      "es": "Y así queda la cosa.",
-      "fr": "Et voilà.",
-      "tw": "就這樣結束了。",
-      "de": "Und das war’s dann.",
-      "ja": "これでおしまい。",
-      "source": { "node": "luckytrip20a", "slot": 5 }
-    },
-    {
-      "id": "x02770",
-      "kind": "choice",
-      "tag": "scenario5a",
-      "en": "You both pause politely to see who it is.",
-      "cn": "你们都礼貌地停下来，看看是谁来了。",
-      "es": "Los dos esperáis por cortesía a ver quién es.",
-      "fr": "Vous vous arrêtez tous les deux poliment pour voir qui c’est.",
-      "tw": "兩人都禮貌地停下來，看看是誰來了。",
-      "de": "Ihr wartet beide höflich ab, wer es ist.",
-      "ja": "誰が来たのか確かめようと、二人ともいったん待つ。",
-      "source": { "node": "luckytrip20a", "slot": 6 }
     },
     {
       "id": "x02771",
@@ -37993,80 +38275,6 @@
       "de": "Sie setzt sich neben dich.",
       "ja": "彼女は隣に座る。",
       "source": { "node": "luckytrip205a", "slot": 3 }
-    },
-    {
-      "id": "x02837",
-      "kind": "story",
-      "en": "<p>Diane has left the room. She was trying to look calm but you think she was pretty desperate.</p>",
-      "cn": "<p>黛安已经离开房间了。她努力表现得很镇定，但你觉得她其实已经尿急得够呛。</p>",
-      "es": "<p>Diane ha salido de la habitación. Intentaba aparentar calma, pero crees que iba bastante apurada.</p>",
-      "fr": "<p>Diane a quitté la pièce. Elle essayait d’avoir l’air calme, mais vous pensez qu’elle était vraiment à bout.</p>",
-      "tw": "<p>黛安已經離開房間了。她努力表現得很鎮定，但你覺得她其實已經尿急得夠嗆。</p>",
-      "de": "<p>Diane hat das Zimmer verlassen. Sie versuchte, ruhig zu wirken, aber du glaubst, dass sie ziemlich dringend musste.</p>",
-      "ja": "<p>ダイアンは部屋を出た。落ち着いて見せようとしていたが、かなり我慢していたのだと思う。</p>",
-      "source": { "node": "luckytrip206", "slot": 1 }
-    },
-    {
-      "id": "x02838",
-      "kind": "story",
-      "en": "<p>So you’ve played a luckshot.</p>",
-      "cn": "<p>于是你用了一次幸运机会。</p>",
-      "es": "<p>Así que has jugado un golpe de suerte.</p>",
-      "fr": "<p>Alors vous avez tenté un coup de chance.</p>",
-      "tw": "<p>所以你用了一次幸運機會。</p>",
-      "de": "<p>Also hast du einen Glücksversuch eingesetzt.</p>",
-      "ja": "<p>そこで、運試しを使った。</p>",
-      "source": { "node": "luckytrip206", "slot": 2 }
-    },
-    {
-      "id": "x02839",
-      "kind": "choice",
-      "tag": "luckytrip206a",
-      "en": "Wait and see.",
-      "cn": "静观其变。",
-      "es": "Esperar y ver qué pasa.",
-      "fr": "Attendre pour voir.",
-      "tw": "先看看情況。",
-      "de": "Abwarten.",
-      "ja": "どうなるか待ってみる。",
-      "source": { "node": "luckytrip206", "slot": 3 }
-    },
-    {
-      "id": "x02840",
-      "kind": "story",
-      "en": "<p>Will your luckshot work?</p>",
-      "cn": "<p>你的幸运机会会奏效吗？</p>",
-      "es": "<p>¿Funcionará tu golpe de suerte?</p>",
-      "fr": "<p>Votre coup de chance va-t-il fonctionner ?</p>",
-      "tw": "<p>你的幸運機會會奏效嗎？</p>",
-      "de": "<p>Wird dein Glücksversuch wirken?</p>",
-      "ja": "<p>運試しはうまくいくだろうか？</p>",
-      "source": { "node": "luckytrip206a", "slot": 1 }
-    },
-    {
-      "id": "x02841",
-      "kind": "story",
-      "en": "<p>DIANE: Oh no, I can wait. Let’s carry on looking at your railway photos.</p>",
-      "cn": "<p>黛安：哦，不用，我可以等。咱们继续看你的铁路照片吧。</p>",
-      "es": "<p>DIANE: No, no, puedo aguantar. Sigamos mirando tus fotos de trenes.</p>",
-      "fr": "<p>DIANE : Oh non, je peux attendre. On continue à regarder tes photos de trains.</p>",
-      "tw": "<p>黛安：哦，不用，我可以等。我們接著看你的鐵路照片就好。</p>",
-      "de": "<p>DIANE: Ach nein, ich kann noch warten. Schauen wir uns lieber weiter deine Eisenbahnfotos an.</p>",
-      "ja": "<p>ダイアン：ううん、まだ待てるよ。鉄道写真の続きを見よう。</p>",
-      "source": { "node": "luckytrip206a", "slot": 2 }
-    },
-    {
-      "id": "x02842",
-      "kind": "choice",
-      "tag": "sofatrains7",
-      "en": "She sits down beside you.",
-      "cn": "她在你旁边坐下。",
-      "es": "Ella se sienta a tu lado.",
-      "fr": "Elle s’assoit à côté de vous.",
-      "tw": "她在你旁邊坐下。",
-      "de": "Sie setzt sich neben dich.",
-      "ja": "彼女は隣に座る。",
-      "source": { "node": "luckytrip206a", "slot": 3 }
     },
     {
       "id": "x02843",
@@ -40841,6 +41049,18 @@
       "source": { "node": "stampalbum4", "slot": 8 }
     },
     {
+      "id": "x06015",
+      "kind": "story",
+      "en": "<p>Diane changes position again to sit properly on the sofa. In doing so she lifts one knee up so you can see right up her dress.</p>",
+      "cn": "<p>黛安再次换了个姿势，重新端正地坐在沙发上。换姿势的瞬间，她抬起一条膝盖，让你一眼望进了裙底。</p>",
+      "es": "<p>Diane vuelve a cambiar de posición para sentarse bien en el sofá. Al hacerlo levanta una rodilla y puedes verle perfectamente debajo del vestido.</p>",
+      "fr": "<p>Diane change de position à nouveau pour s’asseoir correctement sur le canapé. Ce faisant, elle lève un genou et vous voyez complètement sous sa robe.</p>",
+      "tw": "<p>黛安又換了姿勢，重新端正坐在沙發上。換姿勢那一瞬，她抬起一條膝蓋，讓你一眼望進裙底。</p>",
+      "de": "<p>Diane wechselt wieder die Position, um sich richtig aufs Sofa zu setzen. Dabei hebt sie ein Knie so weit an, dass du ihr direkt unter das Kleid sehen kannst.</p>",
+      "ja": "<p>ダイアンはまた姿勢を変え、ソファにきちんと座り直す。そのとき片膝を上げるので、ワンピースの奥まで見えてしまう。</p>",
+      "source": { "node": "stampalbum4", "slot": 9 }
+    },
+    {
       "id": "x03057",
       "kind": "story",
       "en": "<p>Diane changes position again to sit properly on the sofa. In doing so she lifts one knee up so you can see right up her skirt.</p>",
@@ -40850,7 +41070,7 @@
       "tw": "<p>黛安又換了姿勢，重新端正坐在沙發上。換姿勢那一瞬，她抬起一條膝蓋，讓你一眼望進裙底。</p>",
       "de": "<p>Diane wechselt wieder die Position, um sich richtig aufs Sofa zu setzen. Dabei hebt sie ein Knie so weit an, dass du ihr direkt unter den Rock sehen kannst.</p>",
       "ja": "<p>ダイアンはまた姿勢を変え、ソファにきちんと座り直す。そのとき片膝を上げるので、スカートの奥まで見えてしまう。</p>",
-      "source": { "node": "stampalbum4", "slot": 9 }
+      "source": { "node": "stampalbum4", "slot": 10 }
     },
     {
       "id": "x03058",
@@ -40862,7 +41082,7 @@
       "tw": "<p>你給她展示馬其頓和馬恩島的郵票。</p>",
       "de": "<p>Du zeigst ihr die Briefmarken aus Mazedonien und von der Isle of Man.</p>",
       "ja": "<p>マケドニアとマン島の切手を見せる。</p>",
-      "source": { "node": "stampalbum4", "slot": 10 }
+      "source": { "node": "stampalbum4", "slot": 11 }
     },
     {
       "id": "x03059",
@@ -40875,7 +41095,7 @@
       "tw": "你摟住了她。",
       "de": "Du legst einen Arm um sie.",
       "ja": "彼女の肩を抱く。",
-      "source": { "node": "stampalbum4", "slot": 11 }
+      "source": { "node": "stampalbum4", "slot": 12 }
     },
     {
       "id": "x03060",
@@ -40926,6 +41146,18 @@
       "source": { "node": "sofatrains4", "slot": 4 }
     },
     {
+      "id": "x06008",
+      "kind": "story",
+      "en": "<p>You show her the photos of the North Yorkshire Moors Railway. You’re going there together next week, and she’s going to bring a picnic.</p>",
+      "cn": "<p>你给她看北约克郡沼泽铁路的照片。你们约好了下星期一起去，她会带上野餐的食物。</p>",
+      "es": "<p>Le enseñas las fotos del ferrocarril de North Yorkshire Moors. Vais a ir juntos la semana que viene, y ella va a llevar comida para un pícnic.</p>",
+      "fr": "<p>Vous lui montrez les photos du chemin de fer des North Yorkshire Moors. Vous comptez y aller ensemble la semaine prochaine, et elle apportera de quoi pique-niquer.</p>",
+      "tw": "<p>你給她看北約克郡沼澤鐵路的照片。你們約好下星期一起去，她會準備野餐的食物。</p>",
+      "de": "<p>Du zeigst ihr die Fotos von der North Yorkshire Moors Railway. Nächste Woche fahrt ihr gemeinsam hin, und sie bringt etwas für ein Picknick mit.</p>",
+      "ja": "<p>ノース・ヨークシャー・ムーアズ鉄道の写真を見せる。来週は二人でそこへ行く約束だ。彼女がピクニックの食べ物を用意してくれることになっている。</p>",
+      "source": { "node": "sofatrains4", "slot": 5 }
+    },
+    {
       "id": "x03064",
       "kind": "story",
       "en": "<p>You show her the photos of the North Yorkshire Moors Railway. You think of going there with her for a picnic.</p>",
@@ -40935,7 +41167,7 @@
       "tw": "<p>你給她看北約克郡荒原鐵路的照片，想著和她一起去那裡野餐。</p>",
       "de": "<p>Du zeigst ihr die Fotos von der North Yorkshire Moors Railway. Du überlegst, mit ihr zum Picknick dorthin zu fahren.</p>",
       "ja": "<p>ノース・ヨークシャー・ムーアズ鉄道の写真を見せる。彼女とそこへピクニックに行くことを考える。</p>",
-      "source": { "node": "sofatrains4", "slot": 5 }
+      "source": { "node": "sofatrains4", "slot": 6 }
     },
     {
       "id": "x03065",
@@ -40947,7 +41179,7 @@
       "tw": "<p>她俯身看照片，頭靠在你肩上，眼睛卻一直往門口瞟。她彎身從包裡掏出手帕，接著換個方向把腿交叉疊上，又把手壓在身下坐著。</p>",
       "de": "<p>Sie beugt sich vor, um die Fotos anzusehen. Sie legt den Kopf auf deine Schulter, schaut aber zur Tür. Sie greift nach unten, um ein Taschentuch aus ihrer Tasche zu holen. Sie schlägt die Beine andersherum übereinander. Sie setzt sich auf ihre Hände.</p>",
       "ja": "<p>彼女は写真を見ようと身を乗り出す。あなたの肩に頭を預けるが、目はドアの方を見ている。バッグからハンカチを取り出し、脚を組み替え、両手をお尻の下に敷く。</p>",
-      "source": { "node": "sofatrains4", "slot": 6 }
+      "source": { "node": "sofatrains4", "slot": 7 }
     },
     {
       "id": "x03066",
@@ -40959,7 +41191,7 @@
       "tw": "<p>你給她看波斯馬多格跟費斯蒂尼奧克鐵路的照片。</p>",
       "de": "<p>Du zeigst ihr die Fotos aus Porthmadog und von der Ffestiniog Railway.</p>",
       "ja": "<p>ポースマドッグとフェスティニオグ鉄道の写真を見せる。</p>",
-      "source": { "node": "sofatrains4", "slot": 7 }
+      "source": { "node": "sofatrains4", "slot": 8 }
     },
     {
       "id": "x03067",
@@ -40972,7 +41204,7 @@
       "tw": "你繼續看那本書。",
       "de": "Du machst mit dem Album weiter.",
       "ja": "アルバムの続きを見せる。",
-      "source": { "node": "sofatrains4", "slot": 8 }
+      "source": { "node": "sofatrains4", "slot": 9 }
     },
     {
       "id": "x05330",
@@ -42186,69 +42418,6 @@
       "source": { "node": "sofatrains6", "slot": 6 }
     },
     {
-      "id": "x03162",
-      "kind": "story",
-      "en": "<p>She stands up suddenly, blushing.</p>",
-      "cn": "<p>她突然站起来，脸都红了。</p>",
-      "es": "<p>Ella se levanta de repente, sonrojada.</p>",
-      "fr": "<p>Elle se lève brusquement, en rougissant.</p>",
-      "tw": "<p>她突然站起來，臉都紅了。</p>",
-      "de": "<p>Sie steht plötzlich auf und wird rot.</p>",
-      "ja": "<p>彼女は急に立ち上がり、顔を赤らめる。</p>",
-      "source": { "node": "sofatrains6", "slot": 7 }
-    },
-    {
-      "id": "x03163",
-      "kind": "story",
-      "en": "<p>DIANE: I’m sorry, I really do have to go now. Where’s the bathroom?</p>",
-      "cn": "<p>黛安：不好意思，我真的得去了。卫生间在哪儿？</p>",
-      "es": "<p>DIANE: Lo siento, de verdad que necesito ir al baño ya. ¿Dónde está?</p>",
-      "fr": "<p>DIANE : Désolée, il faut vraiment que j’y aille maintenant. Où sont les toilettes ?</p>",
-      "tw": "<p>黛安：不好意思，我真的得去了。廁所在哪裡？</p>",
-      "de": "<p>DIANE: Entschuldige, ich muss jetzt wirklich. Wo ist das Bad?</p>",
-      "ja": "<p>ダイアン：ごめん、本当にもう行かなきゃ。トイレはどこ？</p>",
-      "source": { "node": "sofatrains6", "slot": 8 }
-    },
-    {
-      "id": "x05355",
-      "kind": "choice",
-      "tag": "luckytrip206",
-      "en": "Yes, I’ll play a luckshot.",
-      "cn": "好，我用一次幸运机会。",
-      "es": "Sí, usaré un golpe de suerte.",
-      "fr": "Oui, je vais jouer un coup de chance.",
-      "tw": "好，我用一次幸運機會。",
-      "de": "Ja, ich setze einen Glücksversuch ein.",
-      "ja": "うん、運試しをする。",
-      "source": { "node": "sofatrains6", "slot": 9 }
-    },
-    {
-      "id": "x05356",
-      "kind": "choice",
-      "tag": "toiletgo",
-      "en": "No, I won’t play a luckshot.",
-      "cn": "不，我不用幸运机会了。",
-      "es": "No, no usaré un golpe de suerte.",
-      "fr": "Non, je ne joue pas de coup de chance.",
-      "tw": "不，我不用幸運機會了。",
-      "de": "Nein, ich setze keinen Glücksversuch ein.",
-      "ja": "いや、運試しはしない。",
-      "source": { "node": "sofatrains6", "slot": 10 }
-    },
-    {
-      "id": "x05357",
-      "kind": "choice",
-      "tag": "toiletgo",
-      "en": "I’ve no luckshots left.",
-      "cn": "我的幸运机会用完了。",
-      "es": "No me quedan golpes de suerte.",
-      "fr": "Il ne me reste plus de coups de chance.",
-      "tw": "我的幸運機會已經用完了。",
-      "de": "Ich habe keine Glücksversuche mehr.",
-      "ja": "運試しの回数が残っていない。",
-      "source": { "node": "sofatrains6", "slot": 11 }
-    },
-    {
       "id": "x03166",
       "kind": "choice",
       "tag": "sofatrains7",
@@ -42259,7 +42428,7 @@
       "tw": "你告訴她就剩最後幾頁了。",
       "de": "Du sagst ihr, dass es nur noch ein paar Seiten sind.",
       "ja": "あと二、三ページだけだと伝える。",
-      "source": { "node": "sofatrains6", "slot": 12 }
+      "source": { "node": "sofatrains6", "slot": 7 }
     },
     {
       "id": "x05358",
@@ -43381,31 +43550,6 @@
       "source": { "node": "luckytrip12a", "slot": 1 }
     },
     {
-      "id": "x03252",
-      "kind": "story",
-      "en": "<p>She’s dying to go. Last time she tried, your brother was in the bathroom. Maybe she’ll have better luck this time.</p>",
-      "cn": "<p>她憋得要命。上次她想去，你弟弟正占着浴室。也许这次会顺利一些。</p>",
-      "es": "<p>Se está meando. La última vez que lo intentó, tu hermano estaba en el baño. A ver si esta vez tiene más suerte.</p>",
-      "fr": "<p>Elle a vraiment envie d’aller aux toilettes. La dernière fois qu’elle a essayé, votre frère était dans la salle de bains. Peut-être qu’elle aura plus de chance cette fois.</p>",
-      "tw": "<p>她憋得要命。上次她想去，你弟弟正佔著浴室。也許這次會順利一點。</p>",
-      "de": "<p>Sie muss dringend. Beim letzten Versuch war dein Bruder im Bad. Vielleicht hat sie diesmal mehr Glück.</p>",
-      "ja": "<p>彼女はトイレに行きたくてたまらない。前に行こうとしたときは、弟がバスルームを使っていた。今度こそ入れるだろうか。</p>",
-      "source": { "node": "luckytrip12a", "slot": 2 }
-    },
-    {
-      "id": "x03253",
-      "kind": "choice",
-      "tag": "luckytrip13",
-      "en": "Let’s see how she gets on!",
-      "cn": "看看她这次顺不顺利！",
-      "es": "¡A ver cómo le va!",
-      "fr": "Voyons comment elle s’en sort !",
-      "tw": "看看她這次順不順利！",
-      "de": "Mal sehen, wie es ihr ergeht!",
-      "ja": "さて、どうなるかな！",
-      "source": { "node": "luckytrip12a", "slot": 3 }
-    },
-    {
       "id": "x03254",
       "kind": "story",
       "en": "<p>You could tell she was dying to go. She’s been putting it off.</p>",
@@ -43415,7 +43559,7 @@
       "tw": "<p>你看得出來她憋得難受，一直在硬撐。</p>",
       "de": "<p>Du hast gemerkt, dass sie dringend musste. Sie hat es die ganze Zeit hinausgezögert.</p>",
       "ja": "<p>彼女がトイレに行きたくてたまらないのは分かっていた。ずっと先延ばしにしていたのだ。</p>",
-      "source": { "node": "luckytrip12a", "slot": 4 }
+      "source": { "node": "luckytrip12a", "slot": 2 }
     },
     {
       "id": "x03255",
@@ -43427,7 +43571,7 @@
       "tw": "<p>你看得出來她需要去一下。</p>",
       "de": "<p>Du hast gemerkt, dass sie musste.</p>",
       "ja": "<p>彼女がトイレに行きたがっているのは分かっていた。</p>",
-      "source": { "node": "luckytrip12a", "slot": 5 }
+      "source": { "node": "luckytrip12a", "slot": 3 }
     },
     {
       "id": "x03256",
@@ -43439,7 +43583,7 @@
       "tw": "<p>你暗自希望你弟弟可能還佔著浴室。</p>",
       "de": "<p>Du hoffst, dass dein Bruder vielleicht im Bad ist.</p>",
       "ja": "<p>弟がバスルームにいてくれないかと思う。</p>",
-      "source": { "node": "luckytrip12a", "slot": 6 }
+      "source": { "node": "luckytrip12a", "slot": 4 }
     },
     {
       "id": "x03257",
@@ -43452,7 +43596,7 @@
       "tw": "你側耳聽著。",
       "de": "Du lauschst.",
       "ja": "耳を澄ます。",
-      "source": { "node": "luckytrip12a", "slot": 7 }
+      "source": { "node": "luckytrip12a", "slot": 5 }
     },
     {
       "id": "x03258",
@@ -43465,7 +43609,7 @@
       "tw": "你側耳聽著。",
       "de": "Du lauschst.",
       "ja": "耳を澄ます。",
-      "source": { "node": "luckytrip12a", "slot": 8 }
+      "source": { "node": "luckytrip12a", "slot": 6 }
     },
     {
       "id": "x03259",
@@ -43478,7 +43622,7 @@
       "tw": "你側耳聽著。",
       "de": "Du lauschst.",
       "ja": "耳を澄ます。",
-      "source": { "node": "luckytrip12a", "slot": 9 }
+      "source": { "node": "luckytrip12a", "slot": 7 }
     },
     {
       "id": "x03260",
@@ -43948,128 +44092,6 @@
       "de": "Mach dich zum Gehen bereit.",
       "ja": "出かける支度をする。",
       "source": { "node": "walkhomeinsist", "slot": 2 }
-    },
-    {
-      "id": "x03287",
-      "kind": "story",
-      "en": "<p>Diane hurries up the stairs to the bathroom.</p>",
-      "cn": "<p>黛安急匆匆地上楼去浴室。</p>",
-      "es": "<p>Diane sube las escaleras a toda prisa hacia el baño.</p>",
-      "fr": "<p>Diane monte les escaliers en vitesse vers la salle de bains.</p>",
-      "tw": "<p>黛安急匆匆地上樓去浴室。</p>",
-      "de": "<p>Diane eilt die Treppe hinauf zum Bad.</p>",
-      "ja": "<p>ダイアンはバスルームへと階段を駆け上がる。</p>",
-      "source": { "node": "luckytrip13", "slot": 1 }
-    },
-    {
-      "id": "x03288",
-      "kind": "story",
-      "en": "<p>A minute later she comes back downstairs, looking rather put out.</p>",
-      "cn": "<p>一分钟后她走下楼来，神情颇为懊恼。</p>",
-      "es": "<p>Un minuto después baja las escaleras con cara de pocos amigos.</p>",
-      "fr": "<p>Une minute plus tard, elle redescend, l’air plutôt contrarié.</p>",
-      "tw": "<p>一分鐘後她走下樓來，神情頗為懊惱。</p>",
-      "de": "<p>Eine Minute später kommt sie ziemlich verärgert wieder nach unten.</p>",
-      "ja": "<p>一分後、彼女は少し不満そうな顔で階段を下りてくる。</p>",
-      "source": { "node": "luckytrip13", "slot": 2 }
-    },
-    {
-      "id": "x03289",
-      "kind": "story",
-      "en": "<p>DIANE: I think your brother must still be in there.</p>",
-      "cn": "<p>黛安：你弟弟应该还在里面。</p>",
-      "es": "<p>DIANE: Creo que tu hermano sigue ahí dentro.</p>",
-      "fr": "<p>DIANE : Je crois que ton frère est encore là-dedans.</p>",
-      "tw": "<p>黛安：你弟弟應該還在裡頭。</p>",
-      "de": "<p>DIANE: Ich glaube, dein Bruder ist immer noch da drin.</p>",
-      "ja": "<p>ダイアン：弟さんがまだ入ってるみたい。</p>",
-      "source": { "node": "luckytrip13", "slot": 3 }
-    },
-    {
-      "id": "x03290",
-      "kind": "story",
-      "en": "<p>YOU: Oh dear. I don’t expect he’ll be long.</p>",
-      "cn": "<p>你：哦，真不巧。他应该不会太久的。</p>",
-      "es": "<p>TÚ: Vaya. No creo que tarde mucho.</p>",
-      "fr": "<p>VOUS : Oh non. Il ne devrait pas tarder.</p>",
-      "tw": "<p>你：哦，真不巧。他應該不會太久。</p>",
-      "de": "<p>DU: Oje. Er braucht bestimmt nicht lange.</p>",
-      "ja": "<p>あなた：困ったね。でも、すぐに出ると思うよ。</p>",
-      "source": { "node": "luckytrip13", "slot": 4 }
-    },
-    {
-      "id": "x03291",
-      "kind": "story",
-      "en": "<p>DIANE: Mmm. It’s late. I’d better get home.</p>",
-      "cn": "<p>黛安：嗯。太晚了。我该回家了。</p>",
-      "es": "<p>DIANE: Mmm. Es tarde. Más vale que me vaya a casa.</p>",
-      "fr": "<p>DIANE : Mmm. Il est tard. Je ferais mieux de rentrer.</p>",
-      "tw": "<p>黛安：嗯。太晚了。我該回家了喔。</p>",
-      "de": "<p>DIANE: Hm. Es ist spät. Ich sollte nach Hause.</p>",
-      "ja": "<p>ダイアン：うーん。もう遅いし、そろそろ帰らなきゃ。</p>",
-      "source": { "node": "luckytrip13", "slot": 5 }
-    },
-    {
-      "id": "x05374",
-      "kind": "story",
-      "en": "<p>You offer to walk her home. She says it isn’t necessary but you insist. You always were a gentleman.</p>",
-      "cn": "<p>你提出送她回家。她说不必，但你坚持。你向来是个绅士。</p>",
-      "es": "<p>Te ofreces a acompañarla a casa. Ella dice que no hace falta, pero tú insistes. Siempre has sido todo un caballero.</p>",
-      "fr": "<p>Vous proposez de la raccompagner. Elle dit que ce n’est pas nécessaire, mais vous insistez. Vous avez toujours été un gentleman.</p>",
-      "tw": "<p>你提出送她回家。她說不必，不過你堅持。你向來是個紳士。</p>",
-      "de": "<p>Du bietest an, sie nach Hause zu begleiten. Sie sagt, das sei nicht nötig, aber du bestehst darauf. Du warst schon immer ein Gentleman.</p>",
-      "ja": "<p>家まで送ると申し出る。彼女はそこまでしなくていいと言うが、あなたは譲らない。いつだって紳士だったのだから。</p>",
-      "source": { "node": "luckytrip13", "slot": 6 }
-    },
-    {
-      "id": "x05375",
-      "kind": "choice",
-      "tag": "walkhomeX",
-      "en": "Get ready to leave.",
-      "cn": "准备离开。",
-      "es": "Prepárate para irte.",
-      "fr": "Se préparer à partir.",
-      "tw": "準備離開。",
-      "de": "Mach dich zum Gehen bereit.",
-      "ja": "出かける支度をする。",
-      "source": { "node": "luckytrip13", "slot": 7 }
-    },
-    {
-      "id": "x03294",
-      "kind": "story",
-      "en": "<p>This time the bathroom’s free. You hear the door shut and creep to the foot of the stairs. You hear the tinkling of her pee in the toilet. She certainly needed to go.</p>",
-      "cn": "<p>这次浴室没人占。你听见门关上，悄悄摸到楼梯口。你听见她的尿液哗哗流入马桶的声音。看来她确实憋得不轻。</p>",
-      "es": "<p>Esta vez el baño está libre. Oyes cerrarse la puerta y te acercas sigilosamente al pie de la escalera. Oyes el suave tintineo de su pis en el inodoro. Desde luego que tenía ganas de ir.</p>",
-      "fr": "<p>Cette fois, la salle de bains est libre. Vous entendez la porte se fermer et vous vous glissez jusqu’au bas de l’escalier. Vous entendez le clapotis de son pipi dans la cuvette. Elle avait bel et bien besoin d’y aller.</p>",
-      "tw": "<p>這次浴室沒人佔。你聽見門關上，悄悄摸到樓梯口。你聽見尿液落進馬桶的清脆聲響。她確實很想上廁所。</p>",
-      "de": "<p>Diesmal ist das Bad frei. Du hörst, wie die Tür zugeht, und schleichst zum Fuß der Treppe. Du hörst ihren Urin in die Toilette plätschern. Sie musste wirklich dringend.</p>",
-      "ja": "<p>今度はバスルームが空いている。ドアが閉まる音を聞いて、そっと階段の下へ行く。彼女のおしっこが便器に落ちる音が聞こえる。本当に行きたかったのだ。</p>",
-      "source": { "node": "luckytrip13", "slot": 8 }
-    },
-    {
-      "id": "x03295",
-      "kind": "story",
-      "en": "<p>She comes back downstairs smiling and relaxed. It’s time to go home. You kiss her goodnight.</p>",
-      "cn": "<p>她微笑着、放松地走下楼来。该回家了。你亲吻她道晚安。</p>",
-      "es": "<p>Baja las escaleras sonriente y relajada. Ya es hora de irse a casa. Le das un beso de buenas noches.</p>",
-      "fr": "<p>Elle redescend en souriant, détendue. Il est temps de rentrer. Vous l’embrassez pour lui souhaiter bonne nuit.</p>",
-      "tw": "<p>她帶著微笑、輕鬆地走下樓來。該回家了。你親了她一下道晚安。</p>",
-      "de": "<p>Sie kommt lächelnd und entspannt die Treppe herunter. Es ist Zeit, nach Hause zu gehen. Du gibst ihr einen Gutenachtkuss.</p>",
-      "ja": "<p>彼女はすっきりした笑顔で階段を下りてくる。もう帰る時間だ。おやすみのキスをする。</p>",
-      "source": { "node": "luckytrip13", "slot": 9 }
-    },
-    {
-      "id": "x03296",
-      "kind": "choice",
-      "tag": "gameover",
-      "en": "Goodnight!",
-      "cn": "晚安！",
-      "es": "¡Buenas noches!",
-      "fr": "Bonne nuit !",
-      "tw": "晚安！",
-      "de": "Gute Nacht!",
-      "ja": "おやすみ！",
-      "source": { "node": "luckytrip13", "slot": 10 }
     },
     {
       "id": "x03297",
@@ -44690,6 +44712,18 @@
       "source": { "node": "breasts1", "slot": 8 }
     },
     {
+      "id": "x06009",
+      "kind": "story",
+      "en": "<p>Her dress is quite low cut. You put your hand just above it and slip it inside, and start to explore. You put your hand on her lacy bra.</p>",
+      "cn": "<p>她的裙子领口开得颇低。你把手放到领口上沿，悄悄滑入里面开始抚摸。你将手放上她的蕾丝文胸。</p>",
+      "es": "<p>El escote del vestido es bastante pronunciado. Deslizas la mano justo por encima y la cuelas dentro, empezando a explorar. Posas la mano sobre su sujetador de encaje.</p>",
+      "fr": "<p>Sa robe est assez décolletée. Vous posez votre main juste au-dessus et la glissez à l’intérieur, commençant à explorer. Vous posez votre main sur son soutien-gorge en dentelle.</p>",
+      "tw": "<p>她的洋裝領口開得頗低。你把手放到領口上沿，悄悄滑入裡面開始撫摸。你將手放上她的蕾絲胸罩。</p>",
+      "de": "<p>Ihr Kleid ist ziemlich tief ausgeschnitten. Du legst deine Hand knapp über den Ausschnitt, schiebst sie hinein und tastest dich vor. Du legst die Hand auf ihren Spitzen-BH.</p>",
+      "ja": "<p>ワンピースの胸元はかなり深く開いている。そのすぐ上に手を置き、中へ滑り込ませて探り始める。レースのブラに手を添える。</p>",
+      "source": { "node": "breasts2", "slot": 1 }
+    },
+    {
       "id": "x03340",
       "kind": "story",
       "en": "<p>Her dress is quite low cut. You put your hand just above it and slip it inside, and start to explore. You undo the top button and put your hand on her lacy bra.</p>",
@@ -44699,7 +44733,7 @@
       "tw": "<p>她的洋裝領口開得頗低。你把手放到領口上沿，悄悄滑入裡面開始撫摸。你解開最上面的鈕扣，將手放上她的蕾絲胸罩。</p>",
       "de": "<p>Ihr Kleid ist ziemlich tief ausgeschnitten. Du legst deine Hand knapp über den Ausschnitt, schiebst sie hinein und tastest dich vor. Du öffnest den obersten Knopf und legst die Hand auf ihren Spitzen-BH.</p>",
       "ja": "<p>ワンピースの胸元はかなり深く開いている。そのすぐ上に手を置き、中へ滑り込ませて探り始める。いちばん上のボタンを外し、レースのブラに手を添える。</p>",
-      "source": { "node": "breasts2", "slot": 1 }
+      "source": { "node": "breasts2", "slot": 2 }
     },
     {
       "id": "x03341",
@@ -44711,7 +44745,7 @@
       "tw": "<p>你解開她襯衫的一顆鈕扣，將手指滑入其中，隔著蕾絲胸罩感受她的胸部。</p>",
       "de": "<p>Du öffnest einen Knopf ihrer Bluse und schiebst die Finger hinein, um ihre Brüste durch den Spitzen-BH zu fühlen.</p>",
       "ja": "<p>ブラウスのボタンを一つ外して指を滑り込ませ、レースのブラ越しに胸に触れる。</p>",
-      "source": { "node": "breasts2", "slot": 2 }
+      "source": { "node": "breasts2", "slot": 3 }
     },
     {
       "id": "x03342",
@@ -44723,7 +44757,7 @@
       "tw": "<p>她微微一笑，但接著掙脫了出去。</p>",
       "de": "<p>Sie lächelt, löst sich aber von dir.</p>",
       "ja": "<p>彼女は微笑むが、身を離す。</p>",
-      "source": { "node": "breasts2", "slot": 3 }
+      "source": { "node": "breasts2", "slot": 4 }
     },
     {
       "id": "x03343",
@@ -44735,7 +44769,7 @@
       "tw": "<p>黛安：今天不行。我真的只是進來喝杯咖啡。也許下次吧。我得回家了。</p>",
       "de": "<p>DIANE: Heute nicht. Ich bin wirklich nur auf einen Kaffee mit hereingekommen. Vielleicht ein andermal. Ich muss nach Hause.</p>",
       "ja": "<p>ダイアン：今日はだめ。本当にコーヒーを飲みに寄っただけなの。また今度ね。そろそろ帰らなきゃ。</p>",
-      "source": { "node": "breasts2", "slot": 4 }
+      "source": { "node": "breasts2", "slot": 5 }
     },
     {
       "id": "x03344",
@@ -44748,7 +44782,7 @@
       "tw": "準備好送她回家。",
       "de": "Mach dich bereit, sie nach Hause zu begleiten.",
       "ja": "彼女を家まで送る支度をする。",
-      "source": { "node": "breasts2", "slot": 5 }
+      "source": { "node": "breasts2", "slot": 6 }
     },
     {
       "id": "x03345",
@@ -44760,7 +44794,7 @@
       "tw": "<p>她向你靠近，鼓勵你撫摸她的胸部。她的胸罩上沿不是很緊，你能把手指伸進去一點點，但還夠不到她的乳頭。</p>",
       "de": "<p>Sie rückt näher an dich und ermuntert dich, ihre Brüste zu streicheln. Ihr BH sitzt oben nicht allzu eng, und du kannst die Finger ein kleines Stück hineinschieben, aber nicht bis zu ihren Brustwarzen.</p>",
       "ja": "<p>彼女はさらに身を寄せ、胸を撫でてほしそうにする。ブラの上の縁はあまりきつくなく、少し指を入れられるが、乳首までは届かない。</p>",
-      "source": { "node": "breasts2", "slot": 6 }
+      "source": { "node": "breasts2", "slot": 7 }
     },
     {
       "id": "x03346",
@@ -44772,7 +44806,7 @@
       "tw": "<p>你解開了又一顆鈕扣。她的白色胸罩在每側乳房下方各有一個小藍蝴蝶結。透過布料，你隱約能看出她乳頭的粉嫩色澤。</p>",
       "de": "<p>Du öffnest einen weiteren Knopf. Ihr weißer BH hat unter jeder Brust eine kleine blaue Schleife. Du kannst gerade das Rosa ihrer Brustwarzen durch den Stoff erkennen.</p>",
       "ja": "<p>もう一つボタンを外す。白いブラには、左右の胸のすぐ下に青い小さなリボンがついている。生地越しに、ピンク色の乳首がかすかに見える。</p>",
-      "source": { "node": "breasts2", "slot": 7 }
+      "source": { "node": "breasts2", "slot": 8 }
     },
     {
       "id": "x03347",
@@ -44785,7 +44819,7 @@
       "tw": "你把手從那裡移開，滑向她臀部。",
       "de": "Du ziehst deine Hand zurück und lässt sie zu ihrem Po hinabwandern.",
       "ja": "胸から手を離し、お尻へと下ろす。",
-      "source": { "node": "breasts2", "slot": 8 }
+      "source": { "node": "breasts2", "slot": 9 }
     },
     {
       "id": "x03348",
@@ -44837,6 +44871,18 @@
       "source": { "node": "bottom1", "slot": 4 }
     },
     {
+      "id": "x06011",
+      "kind": "story",
+      "en": "<p>You move your hand down, feeling her thighs through her clothes. You wonder whether you dare put your hand under her dress.</p>",
+      "cn": "<p>你将手往下移，隔着衣物抚摸她的大腿。你在心里犯嘀咕——你敢把手伸到她连衣裙里面去吗？</p>",
+      "es": "<p>Bajas la mano y le palpas los muslos por encima de la ropa. Te preguntas si te atreverás a meter la mano bajo su vestido.</p>",
+      "fr": "<p>Vous faites glisser votre main vers le bas, sentant ses cuisses à travers ses vêtements. Vous vous demandez si vous osez la passer sous sa robe.</p>",
+      "tw": "<p>你將手往下移，隔著衣物摸她的大腿。你心想，自己敢把手伸進她洋裝裡嗎？</p>",
+      "de": "<p>Du lässt deine Hand nach unten wandern und fühlst ihre Oberschenkel durch die Kleidung. Du fragst dich, ob du es wagst, die Hand unter ihr Kleid zu schieben.</p>",
+      "ja": "<p>手を下へ滑らせ、服越しに太ももに触れる。思い切ってワンピースの下に手を入れてみようか。</p>",
+      "source": { "node": "bottom1", "slot": 5 }
+    },
+    {
       "id": "x03352",
       "kind": "story",
       "en": "<p>You move your hand down, feeling her thighs through her clothes. You wonder whether you dare put your hand under her skirt.</p>",
@@ -44846,7 +44892,7 @@
       "tw": "<p>你將手往下移，隔著衣物摸她的大腿。你心想，自己敢把手伸進她裙子裡嗎？</p>",
       "de": "<p>Du lässt deine Hand nach unten wandern und fühlst ihre Oberschenkel durch die Kleidung. Du fragst dich, ob du es wagst, die Hand unter ihren Rock zu schieben.</p>",
       "ja": "<p>手を下へ滑らせ、服越しに太ももに触れる。思い切ってスカートの下に手を入れてみようか。</p>",
-      "source": { "node": "bottom1", "slot": 5 }
+      "source": { "node": "bottom1", "slot": 6 }
     },
     {
       "id": "x03353",
@@ -44858,7 +44904,7 @@
       "tw": "<p>你能感覺到一道細細的吊襪帶稜線。她真的穿著長筒絲襪。這個發現讓你好興奮。</p>",
       "de": "<p>Du spürst die schmale Erhebung eines Strumpfhalters. Sie trägt tatsächlich Strümpfe. Das findest du ungeheuer aufregend.</p>",
       "ja": "<p>細く盛り上がったガーターの感触がある。本当にストッキングをはいているのだ。それにひどく興奮する。</p>",
-      "source": { "node": "bottom1", "slot": 6 }
+      "source": { "node": "bottom1", "slot": 7 }
     },
     {
       "id": "x03354",
@@ -44870,7 +44916,7 @@
       "tw": "<p>接著你把手移回去，再次輕輕揉捏她的臀部。</p>",
       "de": "<p>Und du lässt deine Hand wieder nach oben wandern und streichelst erneut ihren Po.</p>",
       "ja": "<p>そして、手をまた上へ戻してお尻を撫でる。</p>",
-      "source": { "node": "bottom1", "slot": 7 }
+      "source": { "node": "bottom1", "slot": 8 }
     },
     {
       "id": "x03584",
@@ -44882,7 +44928,7 @@
       "tw": "<p>接下來呢？</p>",
       "de": "<p>Was tust du?</p>",
       "ja": "<p>どうしようか？</p>",
-      "source": { "node": "bottom1", "slot": 8 }
+      "source": { "node": "bottom1", "slot": 9 }
     },
     {
       "id": "x03356",
@@ -44895,7 +44941,7 @@
       "tw": "撫摸她的腿？",
       "de": "Erkunde ihre Beine.",
       "ja": "脚を探ってみる？",
-      "source": { "node": "bottom1", "slot": 9 }
+      "source": { "node": "bottom1", "slot": 10 }
     },
     {
       "id": "x03357",
@@ -44908,7 +44954,7 @@
       "tw": "撫摸她的胸？",
       "de": "Streichle ihre Brüste.",
       "ja": "胸を撫でる？",
-      "source": { "node": "bottom1", "slot": 10 }
+      "source": { "node": "bottom1", "slot": 11 }
     },
     {
       "id": "x03358",
@@ -44921,7 +44967,7 @@
       "tw": "再親她一次？",
       "de": "Küss sie noch einmal.",
       "ja": "もう一度キスをする？",
-      "source": { "node": "bottom1", "slot": 11 }
+      "source": { "node": "bottom1", "slot": 12 }
     },
     {
       "id": "x03359",
@@ -45009,6 +45055,18 @@
       "source": { "node": "bottom1a", "slot": 7 }
     },
     {
+      "id": "x06012",
+      "kind": "story",
+      "en": "<p>You move your hand down to the hem of her dress.</p>",
+      "cn": "<p>你把手移到她裙摆处。</p>",
+      "es": "<p>Bajas la mano hasta el bajo de su vestido.</p>",
+      "fr": "<p>Vous faites descendre votre main jusqu’à l’ourlet de sa robe.</p>",
+      "tw": "<p>你把手移到她裙擺處。</p>",
+      "de": "<p>Du lässt deine Hand bis zum Saum ihres Kleides hinabwandern.</p>",
+      "ja": "<p>ワンピースの裾まで手を下ろす。</p>",
+      "source": { "node": "bottom1a", "slot": 8 }
+    },
+    {
       "id": "x03366",
       "kind": "story",
       "en": "<p>You move your hand down to the hem of her skirt.</p>",
@@ -45018,7 +45076,7 @@
       "tw": "<p>你把手移到她裙擺處。</p>",
       "de": "<p>Du lässt deine Hand bis zum Saum ihres Rockes hinabwandern.</p>",
       "ja": "<p>スカートの裾まで手を下ろす。</p>",
-      "source": { "node": "bottom1a", "slot": 8 }
+      "source": { "node": "bottom1a", "slot": 9 }
     },
     {
       "id": "x03367",
@@ -45031,7 +45089,7 @@
       "tw": "然後——",
       "de": "Und dann –",
       "ja": "そして――",
-      "source": { "node": "bottom1a", "slot": 9 }
+      "source": { "node": "bottom1a", "slot": 10 }
     },
     {
       "id": "x03368",
@@ -46362,6 +46420,18 @@
       "source": { "node": "gobathroom", "slot": 3 }
     },
     {
+      "id": "x06017",
+      "kind": "story",
+      "en": "<p>She sits there for a few seconds but nothing happens. Diane pushes the hem of her dress forwards modestly, but it doesn’t cover much. After a while she gives a little embarrassed laugh.</p>",
+      "cn": "<p>她坐了几秒钟，什么动静都没有。黛安羞怯地把裙摆往前推了推，但遮住的也不多。过了一会儿，她尴尬地笑了一声。</p>",
+      "es": "<p>Se queda ahí sentada unos segundos pero no pasa nada. Diane empuja el bajo del vestido hacia delante con cierto pudor, aunque no cubre gran cosa. Al cabo de un momento suelta una risita avergonzada.</p>",
+      "fr": "<p>Elle reste ainsi quelques secondes mais rien ne se passe. Diane rabat pudiquement le bas de sa robe vers l’avant, mais ça ne couvre pas grand-chose. Au bout d’un moment, elle laisse échapper un petit rire gêné.</p>",
+      "tw": "<p>她坐了幾秒鐘，什麼動靜都沒有。黛安羞怯地把裙擺往前推了推，不過遮住的也不多。過了一下，她尷尬地笑了一聲。</p>",
+      "de": "<p>Sie sitzt ein paar Sekunden da, aber nichts geschieht. Verschämt schiebt Diane den Kleidersaum nach vorn, doch er verdeckt nicht viel. Nach einer Weile lacht sie leise und verlegen.</p>",
+      "ja": "<p>数秒間座っているが、何も起こらない。ダイアンは少しでも隠そうと裾を前へ押し出すが、あまり隠れない。しばらくすると、恥ずかしそうに小さく笑う。</p>",
+      "source": { "node": "gobathroom", "slot": 4 }
+    },
+    {
       "id": "x03476",
       "kind": "story",
       "en": "<p>She sits there for a few seconds but nothing happens. Diane pushes the hem of her skirt forwards modestly, but it doesn’t cover much. After a while she gives a little embarrassed laugh.</p>",
@@ -46371,7 +46441,7 @@
       "tw": "<p>她坐了幾秒鐘，什麼動靜都沒有。黛安羞怯地把裙擺往前推了推，不過遮住的也不多。過了一下，她尷尬地笑了一聲。</p>",
       "de": "<p>Sie sitzt ein paar Sekunden da, aber nichts geschieht. Verschämt schiebt Diane den Rocksaum nach vorn, doch er verdeckt nicht viel. Nach einer Weile lacht sie leise und verlegen.</p>",
       "ja": "<p>数秒間座っているが、何も起こらない。ダイアンは少しでも隠そうと裾を前へ押し出すが、あまり隠れない。しばらくすると、恥ずかしそうに小さく笑う。</p>",
-      "source": { "node": "gobathroom", "slot": 4 }
+      "source": { "node": "gobathroom", "slot": 5 }
     },
     {
       "id": "x03477",
@@ -46383,7 +46453,7 @@
       "tw": "<p>黛安：你能不能先看別的地方？有人盯著，我實在尿不出來。</p>",
       "de": "<p>DIANE: Kannst du einen Moment wegschauen? Es ist schwierig, wenn jemand zusieht.</p>",
       "ja": "<p>ダイアン：ちょっと向こうを向いててくれる？　見られていると出にくいの。</p>",
-      "source": { "node": "gobathroom", "slot": 5 }
+      "source": { "node": "gobathroom", "slot": 6 }
     },
     {
       "id": "x03478",
@@ -46395,7 +46465,7 @@
       "tw": "<p>你轉過身去，過了幾秒鐘聽到那清脆無誤的水聲——她開始尿了。你轉回頭看向她。</p>",
       "de": "<p>Du wendest dich ab, und nach ein paar Sekunden hörst du das unverkennbare Plätschern, als sie zu pinkeln beginnt. Du drehst dich wieder zu ihr um.</p>",
       "ja": "<p>顔をそむけると、数秒後、紛れもなくおしっこの始まる水音が聞こえる。また彼女の方を向く。</p>",
-      "source": { "node": "gobathroom", "slot": 6 }
+      "source": { "node": "gobathroom", "slot": 7 }
     },
     {
       "id": "x05574",
@@ -46407,7 +46477,7 @@
       "tw": "<p>她把裙擺往膝蓋方向壓下去，遮住自己，保留一點體面。</p>",
       "de": "<p>Sie hat den Saum ihres Kleides zu den Knien hinuntergeschoben, um sich schamhaft zu bedecken.</p>",
       "ja": "<p>彼女はワンピースの裾を膝の方へ下ろして、慎ましく体を隠している。</p>",
-      "source": { "node": "gobathroom", "slot": 7 }
+      "source": { "node": "gobathroom", "slot": 8 }
     },
     {
       "id": "x03479",
@@ -46419,7 +46489,7 @@
       "tw": "<p>她把裙擺往下推向膝蓋方向，遮住自己。</p>",
       "de": "<p>Sie hat den Saum ihres Rockes zu den Knien hinuntergeschoben, um sich schamhaft zu bedecken.</p>",
       "ja": "<p>彼女はスカートの裾を膝の方へ下ろして、慎ましく体を隠している。</p>",
-      "source": { "node": "gobathroom", "slot": 8 }
+      "source": { "node": "gobathroom", "slot": 9 }
     },
     {
       "id": "x03480",
@@ -46432,7 +46502,7 @@
       "tw": "你驚嘆地看著。",
       "de": "Du siehst staunend zu.",
       "ja": "目を奪われて見つめる。",
-      "source": { "node": "gobathroom", "slot": 9 }
+      "source": { "node": "gobathroom", "slot": 10 }
     },
     {
       "id": "x05575",
@@ -46444,7 +46514,7 @@
       "tw": "<p>黛安實在憋不住了，所以——哪怕你就站在那裡盯著她看——她一坐上馬桶幾乎立刻就開始尿。她把裙擺往前推了推想遮一遮，但其實遮不了多少。</p>",
       "de": "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Kleides nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
       "ja": "<p>ダイアンは本当に我慢していたので、あなたが目の前でぽかんと見つめていても、便器に座るとほとんど同時におしっこを始める。少しでも隠そうとワンピースの裾を前へ押し出すが、あまり隠れない。</p>",
-      "source": { "node": "gobathroom", "slot": 10 }
+      "source": { "node": "gobathroom", "slot": 11 }
     },
     {
       "id": "x03481",
@@ -46456,7 +46526,7 @@
       "tw": "<p>黛安實在憋不住了，就算你就站在那裡目瞪口呆地盯著她，她一坐上馬桶幾乎立刻就開始尿。她把裙擺往前推了推，想留一點矜持，但其實遮不住多少。</p>",
       "de": "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Rockes nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
       "ja": "<p>ダイアンは本当に我慢していたので、あなたが目の前でぽかんと見つめていても、便器に座るとほとんど同時におしっこを始める。少しでも隠そうとスカートの裾を前へ押し出すが、あまり隠れない。</p>",
-      "source": { "node": "gobathroom", "slot": 11 }
+      "source": { "node": "gobathroom", "slot": 12 }
     },
     {
       "id": "x03482",
@@ -46468,31 +46538,31 @@
       "tw": "<p>第一聲出賣她的尿液「滴答」聲響起時，她帶著羞澀的微笑瞟了你一眼，接著低下頭目視前方，彷彿在全神貫注。</p>",
       "de": "<p>Beim ersten verräterischen Plätschern ihres Urins sieht sie dich schüchtern lächelnd an, blickt dann aber nach vorn und unten, als konzentriere sie sich.</p>",
       "ja": "<p>おしっこの最初の水音がすると、彼女は恥ずかしそうに微笑んでこちらを見る。それから、集中するように視線を前へ戻し、少しうつむく。</p>",
-      "source": { "node": "gobathroom", "slot": 12 }
+      "source": { "node": "gobathroom", "slot": 13 }
     },
     {
       "id": "x05576",
       "kind": "story",
-      "en": "<p>From where you are standing, you can just see her pee stream. Perhaps it’s the cider, but it looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream.</p>",
-      "cn": "<p>从你站的位置，能隐约看见她的尿流。也许是苹果酒的缘故，那颜色金灿灿的，格外好看。但她随即把裙摆往膝盖方向压下去，尿流便不再可见了。</p>",
-      "es": "<p>Desde donde estás puedes ver justo el chorro. Quizá sea por la sidra, pero tiene un color dorado increíble. Pero entonces ella empuja el dobladillo del vestido hacia las rodillas, así que ya no puedes ver el chorro.</p>",
-      "fr": "<p>De là où vous vous tenez, vous pouvez tout juste voir son jet. C’est peut-être le cidre, mais il a l’air d’un doré saisissant. Puis elle rabat l’ourlet de sa robe vers ses genoux, et vous ne pouvez plus voir le jet.</p>",
-      "tw": "<p>從你站的位置，能隱約看見她的尿流。也許是蘋果酒的緣故，那顏色金燦燦的，格外好看。但她隨即把裙擺往膝蓋方向壓下去，尿流便不再可見了。</p>",
-      "de": "<p>Von deinem Platz aus kannst du ihren Urinstrahl gerade sehen. Vielleicht liegt es am Cider, aber er sieht erstaunlich golden aus. Dann schiebt sie jedoch den Saum ihres Kleides zu den Knien hinunter, sodass du den Strahl nicht mehr sehen kannst.</p>",
-      "ja": "<p>今いる位置からは、尿の流れがかろうじて見える。シードルのせいだろうか、驚くほど金色に輝いている。でも、彼女がワンピースの裾を膝の方へ下ろすと、もう見えなくなる。</p>",
-      "source": { "node": "gobathroom", "slot": 13 }
+      "en": "<p>From where you are standing, you can just see her pee stream. It looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream.</p>",
+      "cn": "<p>从你站的位置，能隐约看见她的尿流。那颜色金灿灿的，格外好看。但她随即把裙摆往膝盖方向压下去，尿流便不再可见了。</p>",
+      "es": "<p>Desde donde estás puedes ver justo el chorro. Tiene un color dorado increíble. Pero entonces ella empuja el dobladillo del vestido hacia las rodillas, así que ya no puedes ver el chorro.</p>",
+      "fr": "<p>De là où vous vous tenez, vous pouvez tout juste voir son jet. Il a l’air d’un doré saisissant. Puis elle rabat l’ourlet de sa robe vers ses genoux, et vous ne pouvez plus voir le jet.</p>",
+      "tw": "<p>從你站的位置，能隱約看見她的尿流。那顏色金燦燦的，格外好看。但她隨即把裙擺往膝蓋方向壓下去，尿流便不再可見了。</p>",
+      "de": "<p>Von deinem Platz aus kannst du ihren Urinstrahl gerade sehen. Er sieht erstaunlich golden aus. Dann schiebt sie jedoch den Saum ihres Kleides zu den Knien hinunter, sodass du den Strahl nicht mehr sehen kannst.</p>",
+      "ja": "<p>今いる位置からは、尿の流れがかろうじて見える。驚くほど金色に輝いている。でも、彼女がワンピースの裾を膝の方へ下ろすと、もう見えなくなる。</p>",
+      "source": { "node": "gobathroom", "slot": 14 }
     },
     {
       "id": "x03483",
       "kind": "story",
-      "en": "<p>From where you are standing, you can just see her pee stream. Perhaps it’s the cider, but it looks amazingly golden. But then she pushes the hem of her skirt down towards her knees, so you can no longer see the stream.</p>",
-      "cn": "<p>从你站的位置，你刚好能看到她的尿流。也许是喝了苹果酒的缘故，那尿液金黄得惊人。但随后她把裙摆往下推向膝盖，你便再也看不到了。</p>",
-      "es": "<p>Desde donde estás de pie puedes ver justo el chorro de su pis. Quizá sea la sidra, pero tiene un color dorado increíble. Pero entonces ella empuja el bajo de la falda hacia las rodillas y ya no puedes ver el chorro.</p>",
-      "fr": "<p>De là où vous vous trouvez, vous distinguez tout juste son jet. Peut-être est-ce à cause du cidre, mais il a une couleur dorée saisissante. Puis elle rabat le bas de sa jupe vers ses genoux, et vous ne voyez plus le jet.</p>",
-      "tw": "<p>從你站的位置，你剛好能看到她的尿流。也許是喝了蘋果酒的緣故，那尿液金黃得驚人。但隨後她把裙擺往下推向膝蓋，你便再也看不到了。</p>",
-      "de": "<p>Von deinem Platz aus kannst du ihren Urinstrahl gerade sehen. Vielleicht liegt es am Cider, aber er sieht erstaunlich golden aus. Dann schiebt sie jedoch den Saum ihres Rockes zu den Knien hinunter, sodass du den Strahl nicht mehr sehen kannst.</p>",
-      "ja": "<p>今いる位置からは、尿の流れがかろうじて見える。シードルのせいだろうか、驚くほど金色に輝いている。でも、彼女がスカートの裾を膝の方へ下ろすと、もう見えなくなる。</p>",
-      "source": { "node": "gobathroom", "slot": 14 }
+      "en": "<p>From where you are standing, you can just see her pee stream. It looks amazingly golden. But then she pushes the hem of her skirt down towards her knees, so you can no longer see the stream.</p>",
+      "cn": "<p>从你站的位置，你刚好能看到她的尿流。那尿液金黄得惊人。但随后她把裙摆往下推向膝盖，你便再也看不到了。</p>",
+      "es": "<p>Desde donde estás de pie puedes ver justo el chorro de su pis. Tiene un color dorado increíble. Pero entonces ella empuja el bajo de la falda hacia las rodillas y ya no puedes ver el chorro.</p>",
+      "fr": "<p>De là où vous vous trouvez, vous distinguez tout juste son jet. Il a une couleur dorée saisissante. Puis elle rabat le bas de sa jupe vers ses genoux, et vous ne voyez plus le jet.</p>",
+      "tw": "<p>從你站的位置，你剛好能看到她的尿流。那尿液金黃得驚人。但隨後她把裙擺往下推向膝蓋，你便再也看不到了。</p>",
+      "de": "<p>Von deinem Platz aus kannst du ihren Urinstrahl gerade sehen. Er sieht erstaunlich golden aus. Dann schiebt sie jedoch den Saum ihres Rockes zu den Knien hinunter, sodass du den Strahl nicht mehr sehen kannst.</p>",
+      "ja": "<p>今いる位置からは、尿の流れがかろうじて見える。驚くほど金色に輝いている。でも、彼女がスカートの裾を膝の方へ下ろすと、もう見えなくなる。</p>",
+      "source": { "node": "gobathroom", "slot": 15 }
     },
     {
       "id": "x03484",
@@ -46505,7 +46575,7 @@
       "tw": "你驚嘆地看著。",
       "de": "Du siehst staunend zu.",
       "ja": "目を奪われて見つめる。",
-      "source": { "node": "gobathroom", "slot": 15 }
+      "source": { "node": "gobathroom", "slot": 16 }
     },
     {
       "id": "x03485",
@@ -50525,6 +50595,19 @@
       "source": { "node": "watching1", "slot": 6 }
     },
     {
+      "id": "x06000",
+      "kind": "choice",
+      "tag": "watching2",
+      "en": "No, I won’t play a luckshot.",
+      "cn": "不，我不用幸运机会了。",
+      "es": "No, no usaré un golpe de suerte.",
+      "fr": "Non, je ne joue pas de coup de chance.",
+      "tw": "不，我不用幸運機會了。",
+      "de": "Nein, ich setze keinen Glücksversuch ein.",
+      "ja": "いや、運試しはしない。",
+      "source": { "node": "watching1", "slot": 7 }
+    },
+    {
       "id": "x03800",
       "kind": "choice",
       "tag": "watching2",
@@ -50535,7 +50618,7 @@
       "tw": "沒了，全用完了。",
       "de": "Nein, ich habe alle aufgebraucht.",
       "ja": "いや、全部使ってしまった。",
-      "source": { "node": "watching1", "slot": 7 }
+      "source": { "node": "watching1", "slot": 8 }
     },
     {
       "id": "x05405",
@@ -51356,12 +51439,12 @@
     {
       "id": "x03868",
       "kind": "story",
-      "en": "<p>She sits there for a few seconds but nothing happens. Diane pushes the hem of her skirt forwards modestly, but it doesn’t cover much. After a while she gives a little embarrassed laugh.</p>",
+      "en": "<p>She sits there for a few seconds but nothing happens. Diane pushes the hem of her dress forwards modestly, but it doesn’t cover much. After a while she gives a little embarrassed laugh.</p>",
       "cn": "<p>她坐了几秒钟，什么动静都没有。黛安羞怯地把裙摆往前推了推，但遮住的也不多。过了一会儿，她尴尬地笑了一声。</p>",
-      "es": "<p>Se queda ahí sentada unos segundos, pero no pasa nada. Diane empuja el bajo de la falda hacia delante con cierto pudor, aunque no cubre gran cosa. Al cabo de un momento suelta una risita avergonzada.</p>",
-      "fr": "<p>Elle reste ainsi quelques secondes mais rien ne se passe. Diane rabat pudiquement le bas de sa jupe vers l’avant, mais ça ne couvre pas grand-chose. Au bout d’un moment, elle laisse échapper un petit rire gêné.</p>",
+      "es": "<p>Se queda ahí sentada unos segundos, pero no pasa nada. Diane empuja el bajo del vestido hacia delante con cierto pudor, aunque no cubre gran cosa. Al cabo de un momento suelta una risita avergonzada.</p>",
+      "fr": "<p>Elle reste ainsi quelques secondes mais rien ne se passe. Diane rabat pudiquement le bas de sa robe vers l’avant, mais ça ne couvre pas grand-chose. Au bout d’un moment, elle laisse échapper un petit rire gêné.</p>",
       "tw": "<p>她坐了幾秒鐘，什麼動靜都沒有。黛安羞怯地把裙擺往前推了推，不過遮住的也不多。過了一下，她尷尬地笑了一聲。</p>",
-      "de": "<p>Sie sitzt ein paar Sekunden da, aber nichts geschieht. Verschämt schiebt Diane den Rocksaum nach vorn, doch er verdeckt nicht viel. Nach einer Weile lacht sie leise und verlegen.</p>",
+      "de": "<p>Sie sitzt ein paar Sekunden da, aber nichts geschieht. Verschämt schiebt Diane den Kleidersaum nach vorn, doch er verdeckt nicht viel. Nach einer Weile lacht sie leise und verlegen.</p>",
       "ja": "<p>数秒間座っているが、何も起こらない。ダイアンは少しでも隠そうと裾を前へ押し出すが、あまり隠れない。しばらくすると、恥ずかしそうに小さく笑う。</p>",
       "source": { "node": "sofatalkb", "slot": 4 }
     },
@@ -51441,13 +51524,13 @@
     {
       "id": "x03875",
       "kind": "story",
-      "en": "<p>From where you are standing, you can just see her pee stream. Perhaps it’s the cider, but it looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream.</p>",
-      "cn": "<p>从你站的位置，能隐约看见她的尿流。也许是苹果酒的缘故，那颜色金灿灿的，格外好看。但她随即把裙摆往膝盖方向压下去，尿流便不再可见了。</p>",
-      "es": "<p>Desde donde estás puedes ver justo el chorro. Quizá sea por la sidra, pero tiene un color dorado increíble. Pero entonces ella empuja el dobladillo del vestido hacia las rodillas, así que ya no puedes ver el chorro.</p>",
-      "fr": "<p>De là où vous vous tenez, vous pouvez tout juste voir son jet. C’est peut-être le cidre, mais il a l’air d’un doré saisissant. Puis elle rabat l’ourlet de sa robe vers ses genoux, et vous ne pouvez plus voir le jet.</p>",
-      "tw": "<p>從你站的位置，能隱約看見她的尿流。也許是蘋果酒的緣故，那顏色金燦燦的，格外好看。但她隨即把裙擺往膝蓋方向壓下去，尿流便不再可見了。</p>",
-      "de": "<p>Von deinem Platz aus kannst du ihren Urinstrahl gerade sehen. Vielleicht liegt es am Cider, aber er sieht erstaunlich golden aus. Dann schiebt sie jedoch den Saum ihres Kleides zu den Knien hinunter, sodass du den Strahl nicht mehr sehen kannst.</p>",
-      "ja": "<p>今いる位置からは、尿の流れがかろうじて見える。シードルのせいだろうか、驚くほど金色に輝いている。でも、彼女がワンピースの裾を膝の方へ下ろすと、もう見えなくなる。</p>",
+      "en": "<p>From where you are standing, you can just see her pee stream. It looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream.</p>",
+      "cn": "<p>从你站的位置，能隐约看见她的尿流。那颜色金灿灿的，格外好看。但她随即把裙摆往膝盖方向压下去，尿流便不再可见了。</p>",
+      "es": "<p>Desde donde estás puedes ver justo el chorro. Tiene un color dorado increíble. Pero entonces ella empuja el dobladillo del vestido hacia las rodillas, así que ya no puedes ver el chorro.</p>",
+      "fr": "<p>De là où vous vous tenez, vous pouvez tout juste voir son jet. Il a l’air d’un doré saisissant. Puis elle rabat l’ourlet de sa robe vers ses genoux, et vous ne pouvez plus voir le jet.</p>",
+      "tw": "<p>從你站的位置，能隱約看見她的尿流。那顏色金燦燦的，格外好看。但她隨即把裙擺往膝蓋方向壓下去，尿流便不再可見了。</p>",
+      "de": "<p>Von deinem Platz aus kannst du ihren Urinstrahl gerade sehen. Er sieht erstaunlich golden aus. Dann schiebt sie jedoch den Saum ihres Kleides zu den Knien hinunter, sodass du den Strahl nicht mehr sehen kannst.</p>",
+      "ja": "<p>今いる位置からは、尿の流れがかろうじて見える。驚くほど金色に輝いている。でも、彼女がワンピースの裾を膝の方へ下ろすと、もう見えなくなる。</p>",
       "source": { "node": "sofatalkb", "slot": 11 }
     },
     {
@@ -54698,13 +54781,13 @@
     {
       "id": "x04097",
       "kind": "story",
-      "en": "<p>DIANE: We’d better hurry so we don’t miss our place in the queue.</p>",
-      "cn": "<p>黛安：我们最好快点，别让人把位置占了。</p>",
-      "es": "<p>DIANE: Será mejor que nos demos prisa para no perder nuestro sitio en la cola.</p>",
-      "fr": "<p>DIANE : On ferait mieux de se dépêcher pour ne pas perdre notre place dans la queue.</p>",
-      "tw": "<p>黛安：我們最好快點，別讓人把位置佔走了。</p>",
-      "de": "<p>DIANE: Wir sollten uns beeilen, damit wir unseren Platz in der Schlange nicht verlieren.</p>",
-      "ja": "<p>ダイアン：列の順番がなくならないように、急がなきゃ。</p>",
+      "en": "<p>DIANE: We’d better hurry.</p>",
+      "cn": "<p>黛安：我们最好快点。</p>",
+      "es": "<p>DIANE: Será mejor que nos demos prisa.</p>",
+      "fr": "<p>DIANE : On ferait mieux de se dépêcher.</p>",
+      "tw": "<p>黛安：我們最好快一點。</p>",
+      "de": "<p>DIANE: Wir sollten uns beeilen.</p>",
+      "ja": "<p>ダイアン：急がなきゃ。</p>",
       "source": { "node": "carparka", "slot": 2 }
     },
     {
@@ -54808,13 +54891,13 @@
     {
       "id": "x04106",
       "kind": "story",
-      "en": "<p>DIANE: I’m sorry about this. It’s all that lager.</p>",
-      "cn": "<p>黛安：真抱歉，都怪那些啤酒。</p>",
-      "es": "<p>DIANE: Lo siento mucho. Es por toda esa cerveza.</p>",
-      "fr": "<p>DIANE : Désolée pour ça. C’est toute cette bière.</p>",
-      "tw": "<p>黛安：真不好意思，都怪那些啤酒。</p>",
-      "de": "<p>DIANE: Entschuldige die Umstände. Das kommt von dem ganzen Lagerbier.</p>",
-      "ja": "<p>ダイアン：ごめんね。ラガーをあんなに飲んだから。</p>",
+      "en": "<p>DIANE: I’m sorry about this. It’s all those drinks.</p>",
+      "cn": "<p>黛安：真抱歉，都怪我喝了那么多。</p>",
+      "es": "<p>DIANE: Lo siento mucho. Es por todo lo que he bebido.</p>",
+      "fr": "<p>DIANE : Désolée pour ça. C’est à cause de tout ce que j’ai bu.</p>",
+      "tw": "<p>黛安：真不好意思，都是剛才喝太多了。</p>",
+      "de": "<p>DIANE: Entschuldige die Umstände. Das kommt davon, dass ich so viel getrunken habe.</p>",
+      "ja": "<p>ダイアン：ごめんね。あんなに飲んだから。</p>",
       "source": { "node": "carparka", "slot": 11 }
     },
     {
@@ -55210,13 +55293,13 @@
     {
       "id": "x04136",
       "kind": "story",
-      "en": "<p>You walk back towards the bus stop. On the way you pass a camper van in the car park. You hear somebody and look. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she hides her face in embarrassment.</p>",
-      "cn": "<p>你们往公交站方向走回去。途中经过停车场里一辆房车，你听到动静，回头一看——排队时见过的那个娇小褐发女孩就蹲在那里撒尿。她的迷你裙撩到腰间，黑色内裤褪到膝盖，一股尿流淌过地面。她看到你，立刻羞得埋下脸去。</p>",
-      "es": "<p>Volvéis caminando hacia la parada de autobús. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes algo y miras. La morena menuda de la cola del autobús está allí, meando. Tiene la minifalda subida hasta la cintura y las bragas negras bajadas hasta las rodillas, mientras un chorro corre por el suelo. Al verte se tapa la cara de vergüenza.</p>",
-      "fr": "<p>Vous revenez vers l’arrêt de bus. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu’un et vous regardez. La petite brune de la file d’attente est là, en train de faire pipi. Sa minijupe est retroussée autour de la taille, sa culotte noire autour des genoux, tandis qu’un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.</p>",
-      "tw": "<p>你們往公車站方向走回去。途中經過停車場裡一輛露營車，你聽到動靜，回頭一看——排隊時見過的那個嬌小褐髮女生就蹲在那裡撒尿。她的迷你裙撩到腰間，黑色內褲褪到膝蓋，一股尿流淌過地面。她看到你，立刻羞得埋下臉去。</p>",
-      "de": "<p>Ihr geht zurück in Richtung Bushaltestelle. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Busschlange ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
-      "ja": "<p>バス停の方へ戻る。途中、駐車場のキャンピングカーのそばを通ると、物音に気づいて目を向ける。バスの列にいた、小柄で茶色い髪の女性がおしっこをしている。ミニスカートを腰までたくし上げ、黒いショーツを膝まで下ろしている。尿が地面を伝って流れていく。こちらに気づくと、恥ずかしそうに顔を隠す。</p>",
+      "en": "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear somebody and look. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she hides her face in embarrassment.</p>",
+      "cn": "<p>你们往出租车站方向走回去。途中经过停车场里一辆房车，你听到动静，回头一看——排队时见过的那个娇小褐发女孩就蹲在那里撒尿。她的迷你裙撩到腰间，黑色内裤褪到膝盖，一股尿流淌过地面。她看到你，立刻羞得埋下脸去。</p>",
+      "es": "<p>Volvéis caminando hacia la parada de taxis. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes algo y miras. La morena menuda de la cola del autobús está allí, meando. Tiene la minifalda subida hasta la cintura y las bragas negras bajadas hasta las rodillas, mientras un chorro corre por el suelo. Al verte se tapa la cara de vergüenza.</p>",
+      "fr": "<p>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu’un et vous regardez. La petite brune de la file d’attente est là, en train de faire pipi. Sa minijupe est retroussée autour de la taille, sa culotte noire autour des genoux, tandis qu’un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.</p>",
+      "tw": "<p>你們往計程車招呼站方向走回去。途中經過停車場裡一輛露營車，你聽到動靜，回頭一看——排隊時見過的那個嬌小褐髮女生就蹲在那裡撒尿。她的迷你裙撩到腰間，黑色內褲褪到膝蓋，一股尿流淌過地面。她看到你，立刻羞得埋下臉去。</p>",
+      "de": "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Busschlange ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
+      "ja": "<p>タクシー乗り場の方へ戻る。途中、駐車場のキャンピングカーのそばを通ると、物音に気づいて目を向ける。バスの列にいた、小柄で茶色い髪の女性がおしっこをしている。ミニスカートを腰までたくし上げ、黒いショーツを膝まで下ろしている。尿が地面を伝って流れていく。こちらに気づくと、恥ずかしそうに顔を隠す。</p>",
       "source": { "node": "carparka1", "slot": 14 }
     },
     {
@@ -57950,11 +58033,11 @@
     {
       "id": "x04343",
       "kind": "story",
-      "en": "<p>She goes up to a tourist information board, stands there a moment while the drunks pass. She is facing away from you, as if pretending to read the board. The drunks disappear into the distance and Diane looks to see if they have gone, but doesn’t move. She seems to be fiddling with her skirt, is bent slightly forward and then – </p>",
-      "cn": "<p>她走到一块旅游信息牌前，等醉鬼们经过时站在那里。她背对着你，好像假装在看牌子。醉鬼们渐渐远去，黛安回头看了看他们是否已经走远，但没有移动。她似乎在摆弄裙子，身子微微前倾，然后——</p>",
-      "es": "<p>Se acerca a un panel de información turística y se queda allí un momento mientras los borrachos pasan. Está de espaldas a ti, como si fingiera leer el panel. Los borrachos desaparecen a lo lejos y Diane comprueba si ya se han ido, pero no se mueve. Parece que está trajinando con su falda, ligeramente inclinada hacia delante, y entonces—</p>",
-      "fr": "<p>Elle s’approche d’un panneau d’informations touristiques, s’y poste un moment pendant que les ivrognes passent. Elle vous tourne le dos, comme si elle faisait semblant de lire le panneau. Les ivrognes disparaissent au loin et Diane vérifie qu’ils sont bien partis, mais ne bouge pas. Elle semble tripoter sa jupe, légèrement penchée en avant, et puis —</p>",
-      "tw": "<p>她走到一塊旅遊資訊牌前，等醉鬼們經過時站在那裡。她背對著你，好像假裝在看牌子。醉鬼們漸漸遠去，黛安回頭看他們有沒有走遠，卻沒有移動。她好像在擺弄裙子，身子微微前傾，然後——</p>",
+      "en": "<p>She goes up to a tourist information board, stands there a moment while the drunks pass. She is facing away from you, as if pretending to read the board. The drunks disappear into the distance and Diane looks to see if they have gone, but doesn’t move. She seems to be fiddling with her dress, is bent slightly forward and then – </p>",
+      "cn": "<p>她走到一块旅游信息牌前，等醉鬼们经过时站在那里。她背对着你，好像假装在看牌子。醉鬼们渐渐远去，黛安回头看了看他们是否已经走远，但没有移动。她似乎在摆弄连衣裙，身子微微前倾，然后——</p>",
+      "es": "<p>Se acerca a un panel de información turística y se queda allí un momento mientras los borrachos pasan. Está de espaldas a ti, como si fingiera leer el panel. Los borrachos desaparecen a lo lejos y Diane comprueba si ya se han ido, pero no se mueve. Parece que está trajinando con su vestido, ligeramente inclinada hacia delante, y entonces—</p>",
+      "fr": "<p>Elle s’approche d’un panneau d’informations touristiques, s’y poste un moment pendant que les ivrognes passent. Elle vous tourne le dos, comme si elle faisait semblant de lire le panneau. Les ivrognes disparaissent au loin et Diane vérifie qu’ils sont bien partis, mais ne bouge pas. Elle semble tripoter sa robe, légèrement penchée en avant, et puis —</p>",
+      "tw": "<p>她走到一塊旅遊資訊牌前，等醉鬼們經過時站在那裡。她背對著你，好像假裝在看牌子。醉鬼們漸漸遠去，黛安回頭看他們有沒有走遠，卻沒有移動。她好像在擺弄洋裝，身子微微前傾，然後——</p>",
       "de": "<p>Sie geht zu einer touristischen Informationstafel und bleibt dort einen Moment stehen, während die Betrunkenen vorbeigehen. Sie hat dir den Rücken zugewandt und tut so, als lese sie die Tafel. Die Betrunkenen verschwinden in der Ferne. Diane schaut nach, ob sie weg sind, rührt sich aber nicht. Sie scheint am Saum ihres Kleides zu nesteln, beugt sich leicht vor, und dann – </p>",
       "ja": "<p>彼女は観光案内板へ行き、酔っ払いの一団が通り過ぎる間、そこに立っている。こちらに背を向け、案内板を読むふりをしているようだ。一団が遠ざかると、ダイアンは彼らがいなくなったか確かめるが、動かない。裾をいじっているように見える。少し前かがみになり、それから――</p>",
       "source": { "node": "search1a", "slot": 4 }
@@ -59381,6 +59464,19 @@
       "source": { "node": "bushome6", "slot": 14 }
     },
     {
+      "id": "x06001",
+      "kind": "choice",
+      "tag": "gameover",
+      "en": "No, I won’t play a luckshot.",
+      "cn": "不，我不用幸运机会了。",
+      "es": "No, no usaré un golpe de suerte.",
+      "fr": "Non, je ne joue pas de coup de chance.",
+      "tw": "不，我不用幸運機會了。",
+      "de": "Nein, ich setze keinen Glücksversuch ein.",
+      "ja": "いや、運試しはしない。",
+      "source": { "node": "bushome6", "slot": 15 }
+    },
+    {
       "id": "x04464",
       "kind": "choice",
       "tag": "gameover",
@@ -59391,7 +59487,7 @@
       "tw": "我的幸運機會已經用完了。",
       "de": "Ich habe keine Glücksversuche mehr.",
       "ja": "運試しはもう残っていない。",
-      "source": { "node": "bushome6", "slot": 15 }
+      "source": { "node": "bushome6", "slot": 16 }
     },
     {
       "id": "x04465",
@@ -60167,11 +60263,11 @@
     {
       "id": "x04528",
       "kind": "story",
-      "en": "<p>Diane is standing in the bath, legs a little apart. Her hands are on her hips, hitching her skirt up a little.</p>",
-      "cn": "<p>黛安站在浴缸里，双腿微微分开，双手叉腰，将裙子略微撩起。</p>",
-      "es": "<p>Diane está de pie en la bañera, con las piernas un poco separadas. Tiene las manos en las caderas, subiéndose la falda un poco.</p>",
-      "fr": "<p>Diane est debout dans la baignoire, les jambes légèrement écartées. Ses mains sont sur ses hanches, relevant légèrement sa jupe.</p>",
-      "tw": "<p>黛安站在浴缸裡，雙腿微微分開，雙手叉腰，把裙子稍微撩起。</p>",
+      "en": "<p>Diane is standing in the bath, legs a little apart. Her hands are on her hips, hitching her dress up a little.</p>",
+      "cn": "<p>黛安站在浴缸里，双腿微微分开，双手叉腰，将连衣裙略微撩起。</p>",
+      "es": "<p>Diane está de pie en la bañera, con las piernas un poco separadas. Tiene las manos en las caderas, subiéndose el vestido un poco.</p>",
+      "fr": "<p>Diane est debout dans la baignoire, les jambes légèrement écartées. Ses mains sont sur ses hanches, relevant légèrement sa robe.</p>",
+      "tw": "<p>黛安站在浴缸裡，雙腿微微分開，雙手叉腰，把洋裝稍微撩起。</p>",
       "de": "<p>Diane steht mit leicht gespreizten Beinen in der Badewanne. Sie hat die Hände an den Hüften und hält den Saum ihres Kleides etwas hoch.</p>",
       "ja": "<p>ダイアンは浴槽の中で、脚を少し開いて立っている。腰に手を当て、裾を少したくし上げている。</p>",
       "source": { "node": "bathpee", "slot": 1 }
@@ -60543,13 +60639,13 @@
     {
       "id": "x04558",
       "kind": "story",
-      "en": "<p>She looks shyly at you. You step forward and take her hand, then kiss her on the lips. ‘That was wonderful,’ you say.</p>",
-      "cn": "<p>她羞怯地看着你。你上前握住她的手，然后吻上她的嘴唇。“那真的太美了，”你说。</p>",
-      "es": "<p>Te mira con timidez. Te acercas, le coges la mano y la besas en los labios. «Ha sido maravilloso», dices.</p>",
-      "fr": "<p>Elle vous regarde timidement. Vous vous avancez, prenez sa main, puis l’embrassez sur les lèvres. « C’était merveilleux », lui dites-vous.</p>",
-      "tw": "<p>她羞怯地看著你。你上前握住她的手，接著吻上她的嘴唇。「那真的太美了，」你說。</p>",
-      "de": "<p>Sie sieht dich schüchtern an. Du trittst zu ihr, nimmst ihre Hand und küsst sie dann auf die Lippen. „Das war wunderbar“, sagst du.</p>",
-      "ja": "<p>彼女は恥ずかしそうにこちらを見る。一歩近づいて手を取り、唇にキスをする。「素晴らしかった」と伝える。</p>",
+      "en": "<p>She looks shyly at you. You step forward and take her hand, then kiss her on the lips. ‘My darling, that was wonderful,’ you say.</p>",
+      "cn": "<p>她羞怯地看着你。你上前握住她的手，然后吻上她的嘴唇。“亲爱的，那真的太美了，”你说。</p>",
+      "es": "<p>Te mira con timidez. Te acercas, le coges la mano y la besas en los labios. «Cariño, ha sido maravilloso», dices.</p>",
+      "fr": "<p>Elle vous regarde timidement. Vous vous avancez, prenez sa main, puis l’embrassez sur les lèvres. « Ma chérie, c’était merveilleux », lui dites-vous.</p>",
+      "tw": "<p>她羞怯地看著你。你上前握住她的手，接著吻上她的嘴唇。「親愛的，那真的太美了，」你說。</p>",
+      "de": "<p>Sie sieht dich schüchtern an. Du trittst zu ihr, nimmst ihre Hand und küsst sie dann auf die Lippen. „Mein Liebling, das war wunderbar“, sagst du.</p>",
+      "ja": "<p>彼女は恥ずかしそうにこちらを見る。一歩近づいて手を取り、唇にキスをする。「ダイアン、素敵だったよ」と伝える。</p>",
       "source": { "node": "nicelydesp9", "slot": 2 }
     },
     {
@@ -60590,6 +60686,18 @@
       "source": { "node": "nicelydesp9", "slot": 5 }
     },
     {
+      "id": "x06014",
+      "kind": "story",
+      "en": "<p>Diane comes downstairs and you take her in your arms. Your hand slips up underneath her dress, feeling her now naked bottom.</p>",
+      "cn": "<p>黛安从楼上走下来，你张开双臂将她揽入怀中。你的手悄悄滑进她的连衣裙底下，摸到了她那赤裸的臀部。</p>",
+      "es": "<p>Diane baja las escaleras y la envuelves entre tus brazos. Tu mano se desliza por debajo de su vestido, palpando su trasero ahora desnudo.</p>",
+      "fr": "<p>Diane descend et vous la prenez dans vos bras. Votre main glisse sous sa robe, sentant ses fesses maintenant nues.</p>",
+      "tw": "<p>黛安從樓上走下來，你張開雙臂將她攬入懷中。你的手悄悄滑進她的洋裝底下，摸到了她那赤裸的屁股。</p>",
+      "de": "<p>Diane kommt nach unten, und du nimmst sie in die Arme. Deine Hand gleitet unter den Saum und fühlt ihren nun nackten Po.</p>",
+      "ja": "<p>ダイアンが階段を下りてくる。抱きしめ、裾の下へ手を滑り込ませると、今は何もはいていないお尻に触れる。</p>",
+      "source": { "node": "secondplace", "slot": 1 }
+    },
+    {
       "id": "x04562",
       "kind": "story",
       "en": "<p>Diane comes downstairs and you take her in your arms. Your hand slips up underneath her skirt, feeling her now naked bottom.</p>",
@@ -60599,7 +60707,7 @@
       "tw": "<p>黛安從樓上走下來，你張開雙臂將她攬入懷中。你的手悄悄滑進她的裙子底下，摸到了她那赤裸的屁股。</p>",
       "de": "<p>Diane kommt nach unten, und du nimmst sie in die Arme. Deine Hand gleitet unter den Saum und fühlt ihren nun nackten Po.</p>",
       "ja": "<p>ダイアンが階段を下りてくる。抱きしめ、裾の下へ手を滑り込ませると、今は何もはいていないお尻に触れる。</p>",
-      "source": { "node": "secondplace", "slot": 1 }
+      "source": { "node": "secondplace", "slot": 2 }
     },
     {
       "id": "x04563",
@@ -60611,7 +60719,7 @@
       "tw": "<p>你把手往前滑，碰到她最私密的地方，心裡清楚得很——</p>",
       "de": "<p>Du lässt deine Hand nach vorn gleiten und findest ihre intimste Stelle, in dem Wissen, dass – </p>",
       "ja": "<p>手を前へ回し、彼女の一番秘められた場所を探り当てる。もう分かっている――</p>",
-      "source": { "node": "secondplace", "slot": 2 }
+      "source": { "node": "secondplace", "slot": 3 }
     },
     {
       "id": "x04564",
@@ -60624,7 +60732,7 @@
       "tw": "沒錯。",
       "de": "Genau.",
       "ja": "そういうこと。",
-      "source": { "node": "secondplace", "slot": 3 }
+      "source": { "node": "secondplace", "slot": 4 }
     },
     {
       "id": "x04565",
@@ -62914,6 +63022,18 @@
       "source": { "node": "albumdesp", "slot": 5 }
     },
     {
+      "id": "x06016",
+      "kind": "story",
+      "en": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane is fidgeting so much her dress keeps riding up. Then she tugs it back into place, using that as an excuse to change position again.</span></em></p>",
+      "cn": "<p><em><span style='background: #FFFF00; color: #0000FF'>黛安坐立不安，连衣裙一直往上爬。她顺手把连衣裙往下拽了拽，借机又换了个姿势。</span></em></p>",
+      "es": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane está tan inquieta que el vestido no para de subírsele. Entonces la estira de nuevo, usando eso como excusa para cambiar de postura otra vez.</span></em></p>",
+      "fr": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane s’agite tellement que sa robe n’arrête pas de remonter. Elle la remet en place d’un coup sec, profitant de l’occasion pour changer de position.</span></em></p>",
+      "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>黛安坐立不安，洋裝一直往上滑。她順手把洋裝往下拽了拽，借機又換了個姿勢。</span></em></p>",
+      "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane ist so unruhig, dass ihr Kleid immer wieder hochrutscht. Dann zieht sie es wieder zurecht und nutzt das als Vorwand, erneut die Sitzposition zu wechseln.</span></em></p>",
+      "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>ダイアンはひどくそわそわして、ワンピースがずり上がってばかりいる。裾を元に引き戻し、それを口実にまた座り直す。</span></em></p>",
+      "source": { "node": "albumdesp", "slot": 6 }
+    },
+    {
       "id": "x04736",
       "kind": "story",
       "en": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane is fidgeting so much her skirt keeps riding up. Then she tugs it back into place, using that as an excuse to change position again.</span></em></p>",
@@ -62923,7 +63043,7 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>黛安坐立不安，裙子一直往上滑。她順手把裙子往下拽了拽，借機又換了個姿勢。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane ist so unruhig, dass ihr Rock immer wieder hochrutscht. Dann zieht sie ihn wieder zurecht und nutzt das als Vorwand, erneut die Sitzposition zu wechseln.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>ダイアンはひどくそわそわして、スカートがずり上がってばかりいる。裾を元に引き戻し、それを口実にまた座り直す。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 6 }
+      "source": { "node": "albumdesp", "slot": 7 }
     },
     {
       "id": "x04737",
@@ -62935,7 +63055,7 @@
       "tw": "<p>黛安：我一會兒得去一下廁所。</p>",
       "de": "<p>DIANE: Ich muss gleich mal aufs Klo.</p>",
       "ja": "<p>ダイアン：もう少ししたらトイレに行かなきゃ。</p>",
-      "source": { "node": "albumdesp", "slot": 7 }
+      "source": { "node": "albumdesp", "slot": 8 }
     },
     {
       "id": "x04738",
@@ -62947,7 +63067,7 @@
       "tw": "<p>黛安：我不能待太晚喔。</p>",
       "de": "<p>DIANE: Ich darf nicht zu lange bleiben.</p>",
       "ja": "<p>ダイアン：あまり遅くまでいられないな。</p>",
-      "source": { "node": "albumdesp", "slot": 8 }
+      "source": { "node": "albumdesp", "slot": 9 }
     },
     {
       "id": "x04739",
@@ -62959,7 +63079,7 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她把手墊在身下坐著，雙膝不停地互相碰撞。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie sitzt auf ihren Händen und schlägt die Knie rasch gegeneinander.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>両手をお尻の下に敷いて座り、膝をせわしなく打ち合わせている。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 9 }
+      "source": { "node": "albumdesp", "slot": 10 }
     },
     {
       "id": "x04740",
@@ -62971,7 +63091,7 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>黛安一直換著姿勢。一會兒身體前傾，雙手墊在大腿下；一會兒又往後靠，把腿伸直。最後乾脆把腿交叉疊起來。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane wechselt ständig die Sitzposition. Eben beugt sie sich noch mit den Händen unter den Oberschenkeln nach vorn, im nächsten Moment lehnt sie sich mit ausgestreckten Beinen zurück. Dann schlägt sie die Beine übereinander.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>ダイアンは何度も姿勢を変えている。両手を太ももの下に入れて前かがみになったかと思うと、背をもたせて脚を伸ばす。それから脚を組む。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 10 }
+      "source": { "node": "albumdesp", "slot": 11 }
     },
     {
       "id": "x04741",
@@ -62983,7 +63103,7 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她一直往門口張望，根本沒心思看相簿。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie schaut ständig zur Tür und konzentriert sich nicht richtig auf das Album.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>何度もドアを見ていて、アルバムにあまり集中していない。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 11 }
+      "source": { "node": "albumdesp", "slot": 12 }
     },
     {
       "id": "x04742",
@@ -62995,7 +63115,7 @@
       "tw": "<p>黛安：還剩很多頁嗎？我急著想上廁所。</p>",
       "de": "<p>DIANE: Sind es noch viele Seiten? Ich muss furchtbar dringend aufs Klo.</p>",
       "ja": "<p>ダイアン：まだたくさんページがある？　トイレに行きたくてたまらないんだけど。</p>",
-      "source": { "node": "albumdesp", "slot": 12 }
+      "source": { "node": "albumdesp", "slot": 13 }
     },
     {
       "id": "x04743",
@@ -63007,7 +63127,7 @@
       "tw": "<p>黛安：還剩很多頁嗎？時間不早了。</p>",
       "de": "<p>DIANE: Sind es noch viele Seiten? Es wird spät.</p>",
       "ja": "<p>ダイアン：まだたくさんページがある？　もう遅くなってきたし。</p>",
-      "source": { "node": "albumdesp", "slot": 13 }
+      "source": { "node": "albumdesp", "slot": 14 }
     },
     {
       "id": "x04744",
@@ -63019,7 +63139,7 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她在椅子上不停地扭來扭去。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie rutscht unablässig auf ihrem Sitz hin und her.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>座席で絶えず前後に体を動かしている。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 14 }
+      "source": { "node": "albumdesp", "slot": 15 }
     },
     {
       "id": "x04745",
@@ -63031,7 +63151,7 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她換了個姿勢，一條腿搭在另一條腿上，一直晃來晃去。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie wechselt die Sitzposition, schlägt ein Bein über das andere und lässt es hin und her schwingen.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>座り直して脚を組み、上になった脚を前後に揺らしている。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 15 }
+      "source": { "node": "albumdesp", "slot": 16 }
     },
     {
       "id": "x04746",
@@ -63043,19 +63163,19 @@
       "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她把手提包放在腿上，一副隨時準備起身的樣子，就等你把相簿翻完。</span></em></p>",
       "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie hat ihre Handtasche auf dem Schoß, als wollte sie aufstehen, sobald ihr am Ende des Albums seid.</span></em></p>",
       "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>膝にハンドバッグを置いている。アルバムを見終わった瞬間に立ち上がるつもりのようだ。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 16 }
+      "source": { "node": "albumdesp", "slot": 17 }
     },
     {
       "id": "x04747",
       "kind": "story",
-      "en": "<p><em><span style='background: #FFFF00; color: #0000FF'>She is right on the edge of the chair as if anxious to hurry from the room. Her whole body is tense.</span></em></p>",
-      "cn": "<p><em><span style='background: #FFFF00; color: #0000FF'>她坐到了椅子边缘，像是迫不及待想冲出房间。整个人绷得紧紧的。</span></em></p>",
-      "es": "<p><em><span style='background: #FFFF00; color: #0000FF'>Está en el borde mismo de la silla, como ansiosa por salir corriendo de la habitación. Todo su cuerpo está tenso.</span></em></p>",
-      "fr": "<p><em><span style='background: #FFFF00; color: #0000FF'>Elle est au bord de la chaise, comme pressée de quitter la pièce au plus vite. Tout son corps est tendu.</span></em></p>",
-      "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她坐到椅子邊緣，像迫不及待想衝出房間。整個人繃得緊緊的。</span></em></p>",
-      "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie sitzt ganz auf der Stuhlkante, als wolle sie am liebsten aus dem Zimmer eilen. Ihr ganzer Körper ist angespannt.</span></em></p>",
-      "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>今にも部屋を飛び出したそうに、椅子の端に浅く腰かけている。全身がこわばっている。</span></em></p>",
-      "source": { "node": "albumdesp", "slot": 17 }
+      "en": "<p><em><span style='background: #FFFF00; color: #0000FF'>She is right on the edge of the sofa as if anxious to hurry from the room. Her whole body is tense.</span></em></p>",
+      "cn": "<p><em><span style='background: #FFFF00; color: #0000FF'>她坐到了沙发边缘，像是迫不及待想冲出房间。整个人绷得紧紧的。</span></em></p>",
+      "es": "<p><em><span style='background: #FFFF00; color: #0000FF'>Está en el borde mismo del sofá, como ansiosa por salir corriendo de la habitación. Todo su cuerpo está tenso.</span></em></p>",
+      "fr": "<p><em><span style='background: #FFFF00; color: #0000FF'>Elle est au bord du canapé, comme pressée de quitter la pièce au plus vite. Tout son corps est tendu.</span></em></p>",
+      "tw": "<p><em><span style='background: #FFFF00; color: #0000FF'>她坐到沙發邊緣，像迫不及待想衝出房間。整個人繃得緊緊的。</span></em></p>",
+      "de": "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie sitzt ganz auf der Sofakante, als wolle sie am liebsten aus dem Zimmer eilen. Ihr ganzer Körper ist angespannt.</span></em></p>",
+      "ja": "<p><em><span style='background: #FFFF00; color: #0000FF'>今にも部屋を飛び出したそうに、ソファの端に浅く腰かけている。全身がこわばっている。</span></em></p>",
+      "source": { "node": "albumdesp", "slot": 18 }
     },
     {
       "id": "x04748",
@@ -63264,13 +63384,13 @@
     {
       "id": "x05483",
       "kind": "story",
-      "en": "<p>DIANE: I’m busting to go. All that lager – I don’t suppose you’ve got another toilet, have you?</p>",
-      "cn": "<p>黛安：我都快憋炸了。喝了那么多啤酒——你们家不会还有另一个厕所吧？</p>",
-      "es": "<p>DIANE: Tengo unas ganas horribles. Toda esa cerveza... ¿No tendrás otro baño por aquí?</p>",
-      "fr": "<p>DIANE : J’ai une envie folle d’y aller. Toute cette bière… Tu n’aurais pas d’autres toilettes, par hasard ?</p>",
-      "tw": "<p>黛安：我都快憋炸了。喝了那麼多啤酒——你們家不會還有另一間廁所吧？</p>",
-      "de": "<p>DIANE: Ich platze gleich. Das ganze Lagerbier – ihr habt wohl nicht noch eine zweite Toilette, oder?</p>",
-      "ja": "<p>ダイアン：もう限界なの。ラガーをあんなに飲んだから。もう一つトイレがあったりはしないよね？</p>",
+      "en": "<p>DIANE: I’m busting to go. All those drinks – I don’t suppose you’ve got another toilet, have you?</p>",
+      "cn": "<p>黛安：我都快憋炸了。都怪喝了那么多——你们家不会还有另一个厕所吧？</p>",
+      "es": "<p>DIANE: Tengo unas ganas horribles. Todo lo que he bebido... ¿No tendrás otro baño por aquí?</p>",
+      "fr": "<p>DIANE : J’ai une envie folle d’y aller. Tout ce que j’ai bu… Tu n’aurais pas d’autres toilettes, par hasard ?</p>",
+      "tw": "<p>黛安：我都快憋炸了。都怪喝了那麼多——你們家不會還有另一間廁所吧？</p>",
+      "de": "<p>DIANE: Ich platze gleich. All das, was ich getrunken habe – ihr habt wohl nicht noch eine zweite Toilette, oder?</p>",
+      "ja": "<p>ダイアン：もう限界なの。あんなに飲んだから。もう一つトイレがあったりはしないよね？</p>",
       "source": { "node": "admission", "slot": 6 }
     },
     {

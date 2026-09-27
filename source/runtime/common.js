@@ -34,11 +34,12 @@ var leavepub2 = 0;
 var theatretalking = 0;
 var stampstalking = 0;
 var traintalking = 0;
+var picnicPlanned = 0;
+var sofaSatTouched = 0;
 var gourinal = 0;
 var instantcoffee = 0;
 var nicecoffee = 0;
 var leavechloe = 0;
-var triedbathroom = 0;
 var brooch = 0;
 var gobehindtoilet = 0;
 var admitwetting = 0;
@@ -95,11 +96,12 @@ var gameStateVars = [
   "theatretalking",
   "stampstalking",
   "traintalking",
+  "picnicPlanned",
+  "sofaSatTouched",
   "gourinal",
   "instantcoffee",
   "nicecoffee",
   "leavechloe",
-  "triedbathroom",
   "brooch",
   "gobehindtoilet",
   "admitwetting",

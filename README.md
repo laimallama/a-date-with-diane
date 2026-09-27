@@ -24,7 +24,7 @@ Each language folder contains:
 - `transcripts/endings/` and `transcripts/hidden_scenes/` — **climax transcripts**: each file starts at the climax of the story or the starting point of the hidden scene—the same cut as Skip to the good bit. Gallery order, short filenames, leaf title as heading
 - `wiki_*.html` — companion setting and character articles; not playable
 
-There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **31 hidden-scene leaves in every language** (variants inside a group each count as a leaf).
+There are **no** separate click-path guide text files. The Gallery is the walkthrough. It currently lists **15 ending leaves** and **32 hidden-scene leaves in every language** (variants inside a group each count as a leaf).
 
 The game boots on the title screen (no age gate). **Gallery** is available from there: pick an ending or hidden scene to restart with the correct choice highlighted at each step. **Guide: On/Off** (**H**) toggles highlighting. **Skip to the good bit!** (**S**) jumps to the same point the climax transcripts start from. **Back** (**B**) restores full state. **G** / Escape open and close the Gallery. **D** toggles Dark Mode. Bilingual: **L** switches language. **1–9** select choices.
 
@@ -43,8 +43,8 @@ punctuation and markup; no runtime repair or translation fallback is needed.
 
 The new German/Japanese editions use clear placeholders at six game entries and
 three wiki passages per language. Their new bilingual English layers use the same
-six scoped omissions; canonical English and all previously released editions are
-unchanged. [Localization records](maintenance/localization/README.md) document the
+six scoped omissions; other editions retain their existing content scope.
+[Localization records](maintenance/localization/README.md) document the
 exact IDs, review coverage, language conventions and verification limits.
 
 Use Node.js 20 or newer for development:
@@ -60,8 +60,8 @@ node ../ADWD-visual/maintenance/build_visual_edition.js
 Read [`maintenance/AI_HANDOFF.md`](maintenance/AI_HANDOFF.md) for editing conventions,
 source ownership, verification scope, browser checks and visual synchronization.
 [`maintenance/REFACTOR.md`](maintenance/REFACTOR.md) records the source migration and
-its recovery commits. Route definitions generate the classic Gallery's 46 leaves and
-all 322 localized transcripts. `maintenance/aligned_text.json` is a generated
+its recovery commits. Route definitions generate the classic Gallery's 47 leaves and
+all 329 localized transcripts. `maintenance/aligned_text.json` is a generated
 inspection reference with stable text IDs; edit the catalogs, not that reference.
 The seven wiki article documents are maintained in `source/wiki/`; their runtime and
 stylesheet are shared. The released wiki HTML is generated and self-contained.
@@ -93,7 +93,7 @@ node maintenance/export_games.js --check /path/to/new-release-folder
 
 The exporter requires a new destination and refuses to overlap either source checkout.
 It copies all 26 playable HTML editions unchanged. `ADWD/` contains the thirteen text games,
-seven wikis and 322 transcripts. `ADWD-visual/` contains only the thirteen visual games and
+seven wikis and 329 transcripts. `ADWD-visual/` contains only the thirteen visual games and
 318 required image assets; companion references point to ADWD. Each gets an informative
 playing README covering the game, contents, controls and companions. Exports have no
 `.git`, `node_modules`, `source`, maintenance tools, manifests, synchronization receipts
@@ -106,3 +106,11 @@ copy. `source/` is the authoritative editable code and translation catalogs. Kee
 in the authoring repository, not in a folder intended only for playing. To resume work
 from play-only folders, clone both GitHub repositories into sibling development folders,
 then run `npm ci` in ADWD. Do not try to run build commands inside a playable export.
+
+## Continuity and restoration update — 27 September 2026
+
+The approved repairs and restored bridge branch are documented in
+[the implementation record](maintenance/RESTORATION-2026-09-27.md). All seven
+languages, both presentation formats, Guides, transcripts and affected wiki facts
+are synchronized. The classic Gallery now has two adjacent bridge scenes under
+“Under the Bridge,” distinguished by who goes first.

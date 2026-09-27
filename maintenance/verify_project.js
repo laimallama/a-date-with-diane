@@ -180,6 +180,7 @@ if (!routesOnly) {
     ["localization/verify.js"],
     ["verify_text_consistency.js"],
     ["verify_audit_regressions.js"],
+    ["verify_restoration.js"],
   ])
     execFileSync(
       process.execPath,
@@ -200,7 +201,7 @@ for (const lang of langs) {
     const initial = loadGame(file),
       book = leaves(initial.gallery);
     assert.equal(book.filter((x) => x.kind === "endings").length, 15);
-    assert.equal(book.filter((x) => x.kind === "hiddenScenes").length, 31);
+    assert.equal(book.filter((x) => x.kind === "hiddenScenes").length, 32);
     assert(
       initial.context.gameStateVars.includes("despLineIndex"),
       "Text counter must be restored",
@@ -246,6 +247,8 @@ for (const lang of langs) {
         );
         steps++;
       }
+      assert.equal(c.guideActive, false, "Guide ends at the final scene page");
+      assert.equal(c.guideIndex, leaf.tags.length, "All guided choices consumed");
       const digest = fingerprint.digest("hex");
       if (lang === "en" && edition === "standalone") referenceStates.set(leaf.id, digest);
       else

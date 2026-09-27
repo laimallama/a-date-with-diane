@@ -2448,9 +2448,9 @@ const saturdayBathroomLines = [
   {
     node: "gobathroom",
     before:
-      "<p>From where you are standing, you can just see her pee stream. Perhaps it’s the cider, but it looks amazingly golden. But then she pushes the hem of her skirt down towards her knees, so you can no longer see the stream.</p>",
+      "<p>From where you are standing, you can just see her pee stream. It looks amazingly golden. But then she pushes the hem of her skirt down towards her knees, so you can no longer see the stream.</p>",
     after:
-      "<p>From where you are standing, you can just see her pee stream. Perhaps it’s the cider, but it looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream.</p>",
+      "<p>From where you are standing, you can just see her pee stream. It looks amazingly golden. But then she pushes the hem of her dress down towards her knees, so you can no longer see the stream.</p>",
   },
   {
     node: "gobathroom1",
@@ -3435,7 +3435,11 @@ function verifyRepetition(source) {
   let visits = 0,
     seen = 0;
   const expectedBladder = [285, 325, 365, 405, 565, 605, 645, 685, 725, 765, 805];
-  for (const tag of first.slice(0, first.lastIndexOf("sofasat1") + 1)) {
+  const sofaPrefix = first.slice(0, first.lastIndexOf("sofasat1") + 1);
+  // The Gallery now leaves one cycle earlier to keep the porch departure legal.
+  // Retain this regression's eleven-visit coverage using another offered cycle.
+  sofaPrefix.push("decisions", "sofadrink", "sofasat", "sofasat1");
+  for (const tag of sofaPrefix) {
     const before = snapshot(g);
     click(g, tag);
     if (tag !== "sofasat1") continue;
@@ -3555,7 +3559,7 @@ function verifyRepetition(source) {
         proc: 0,
         sofaloop,
         sofaDrinkBoost: 1,
-        sofaDressOpened: 1,
+        sofaDressOpened: 2,
         sofaEveningAsked: repeated,
         pregameCaughtUp: true,
       });

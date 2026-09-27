@@ -44,9 +44,9 @@
     {
       "source": "maintenance/gallery_data.json",
       "target": "source/gallery/ja.json",
-      "sourceHash": "6134bd5e2a0eaeab80f19d3fdcc482a260c42cdea0d1f464d41c5024fbcc6637",
-      "targetHash": "620ded618ba1b109251367d9c8a09d0527cd7f100159c3420f1ff316099ad7ff",
-      "items": 57,
+      "sourceHash": "eac3de37d6bf9294c44c1bb27e4f85164d23cf577826930b379d65dccd9099ea",
+      "targetHash": "442268c188f8e9cb42cca76edcf260c6b403b527779285a181a73b4fa75c2940",
+      "items": 59,
       "meaning": true,
       "naturalness": true,
       "sourceKey": "en"
@@ -54,8 +54,8 @@
     {
       "source": "source/wiki/en.html",
       "target": "source/wiki/ja.html",
-      "sourceHash": "dce4f0e430a154734c3036053f1912da1f12e683fe6bd3906dbb7954b965ba54",
-      "targetHash": "303a493cbf4ea67f187ce2887bbdba3cc0fd03a85ab547e584ab7161f3a95954",
+      "sourceHash": "2dbab4feb155d4c084482bddd06d660ecef037ebd924d975eed31bc5755d58c3",
+      "targetHash": "58131038f5453c086cd615c648e2d700db61a57feb5c5d6c496fc3045ba7bf36",
       "items": 357,
       "meaning": true,
       "naturalness": true,

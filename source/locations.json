@@ -11363,12 +11363,21 @@
     }
   },
   {
+    "id": "x06002",
+    "kind": "choice",
+    "tag": "riverside13b",
+    "source": {
+      "node": "riverside13",
+      "slot": 8
+    }
+  },
+  {
     "id": "x01319",
     "kind": "choice",
     "tag": "luckytrip4",
     "source": {
       "node": "riverside13",
-      "slot": 8
+      "slot": 9
     }
   },
   {
@@ -14975,15 +14984,16 @@
     }
   },
   {
-    "id": "x01734",
-    "kind": "story",
+    "id": "x06004",
+    "kind": "choice",
+    "tag": "pavilion1",
     "source": {
       "node": "pavilion",
       "slot": 13
     }
   },
   {
-    "id": "x04968",
+    "id": "x01734",
     "kind": "story",
     "source": {
       "node": "pavilion",
@@ -14991,11 +15001,19 @@
     }
   },
   {
-    "id": "x01735",
+    "id": "x04968",
     "kind": "story",
     "source": {
       "node": "pavilion",
       "slot": 15
+    }
+  },
+  {
+    "id": "x01735",
+    "kind": "story",
+    "source": {
+      "node": "pavilion",
+      "slot": 16
     }
   },
   {
@@ -15004,7 +15022,7 @@
     "tag": "luckytrip8",
     "source": {
       "node": "pavilion",
-      "slot": 16
+      "slot": 17
     }
   },
   {
@@ -15013,7 +15031,16 @@
     "tag": "pavilion1",
     "source": {
       "node": "pavilion",
-      "slot": 17
+      "slot": 18
+    }
+  },
+  {
+    "id": "x06005",
+    "kind": "choice",
+    "tag": "pavilion1",
+    "source": {
+      "node": "pavilion",
+      "slot": 19
     }
   },
   {
@@ -15021,7 +15048,7 @@
     "kind": "story",
     "source": {
       "node": "pavilion",
-      "slot": 18
+      "slot": 20
     }
   },
   {
@@ -15030,7 +15057,7 @@
     "tag": "pavilion2",
     "source": {
       "node": "pavilion",
-      "slot": 19
+      "slot": 21
     }
   },
   {
@@ -16139,11 +16166,127 @@
     }
   },
   {
+    "id": "x06003",
+    "kind": "choice",
+    "tag": "riversidepath11",
+    "source": {
+      "node": "riversidepath",
+      "slot": 13
+    }
+  },
+  {
     "id": "x01857",
     "kind": "choice",
     "tag": "riversidepath10a",
     "source": {
       "node": "riversidepath",
+      "slot": 14
+    }
+  },
+  {
+    "id": "x06020",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 1
+    }
+  },
+  {
+    "id": "x06021",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 2
+    }
+  },
+  {
+    "id": "x06022",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 3
+    }
+  },
+  {
+    "id": "x06023",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 4
+    }
+  },
+  {
+    "id": "x06024",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 5
+    }
+  },
+  {
+    "id": "x06025",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 6
+    }
+  },
+  {
+    "id": "x06026",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 7
+    }
+  },
+  {
+    "id": "x06027",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 8
+    }
+  },
+  {
+    "id": "x06028",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 9
+    }
+  },
+  {
+    "id": "x06029",
+    "kind": "story",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 10
+    }
+  },
+  {
+    "id": "x06030",
+    "kind": "choice",
+    "tag": "luckytrip3a",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 11
+    }
+  },
+  {
+    "id": "x06031",
+    "kind": "choice",
+    "tag": "riversidepath11",
+    "source": {
+      "node": "riversidepath10",
+      "slot": 12
+    }
+  },
+  {
+    "id": "x06032",
+    "kind": "choice",
+    "tag": "riversidepath11",
+    "source": {
+      "node": "riversidepath10",
       "slot": 13
     }
   },
@@ -16232,44 +16375,12 @@
     }
   },
   {
-    "id": "x05165",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip3",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x01869",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip3",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x01870",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip3",
-      "slot": 4
-    }
-  },
-  {
-    "id": "x01871",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip3",
-      "slot": 5
-    }
-  },
-  {
     "id": "x01872",
     "kind": "choice",
     "tag": "underbridge",
     "source": {
       "node": "luckytrip3",
-      "slot": 6
+      "slot": 2
     }
   },
   {
@@ -16277,7 +16388,7 @@
     "kind": "story",
     "source": {
       "node": "luckytrip3",
-      "slot": 7
+      "slot": 3
     }
   },
   {
@@ -16286,15 +16397,7 @@
     "tag": "gameover",
     "source": {
       "node": "luckytrip3",
-      "slot": 8
-    }
-  },
-  {
-    "id": "x01875",
-    "kind": "story",
-    "source": {
-      "node": "underbridge",
-      "slot": 1
+      "slot": 4
     }
   },
   {
@@ -16302,7 +16405,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 2
+      "slot": 1
     }
   },
   {
@@ -16310,7 +16413,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 3
+      "slot": 2
     }
   },
   {
@@ -16318,7 +16421,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 4
+      "slot": 3
     }
   },
   {
@@ -16326,15 +16429,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 5
-    }
-  },
-  {
-    "id": "x01880",
-    "kind": "story",
-    "source": {
-      "node": "underbridge",
-      "slot": 6
+      "slot": 4
     }
   },
   {
@@ -16342,7 +16437,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 7
+      "slot": 5
     }
   },
   {
@@ -16350,7 +16445,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 8
+      "slot": 6
     }
   },
   {
@@ -16358,7 +16453,7 @@
     "kind": "story",
     "source": {
       "node": "underbridge",
-      "slot": 9
+      "slot": 7
     }
   },
   {
@@ -16367,7 +16462,7 @@
     "tag": "underbridge2",
     "source": {
       "node": "underbridge",
-      "slot": 10
+      "slot": 8
     }
   },
   {
@@ -16395,27 +16490,75 @@
     }
   },
   {
+    "id": "x05165",
+    "kind": "story",
+    "source": {
+      "node": "bridgeVantage",
+      "slot": 1
+    }
+  },
+  {
+    "id": "x01869",
+    "kind": "story",
+    "source": {
+      "node": "bridgeVantage",
+      "slot": 2
+    }
+  },
+  {
+    "id": "x01870",
+    "kind": "story",
+    "source": {
+      "node": "bridgeVantage",
+      "slot": 3
+    }
+  },
+  {
+    "id": "x01871",
+    "kind": "story",
+    "source": {
+      "node": "bridgeVantage",
+      "slot": 4
+    }
+  },
+  {
+    "id": "x01875",
+    "kind": "story",
+    "source": {
+      "node": "bridgeWait",
+      "slot": 1
+    }
+  },
+  {
+    "id": "x01880",
+    "kind": "story",
+    "source": {
+      "node": "bridgeReward",
+      "slot": 1
+    }
+  },
+  {
     "id": "x01888",
     "kind": "story",
     "source": {
-      "node": "underbridge2",
-      "slot": 4
+      "node": "bridgeRetreat",
+      "slot": 1
     }
   },
   {
     "id": "x01889",
     "kind": "story",
     "source": {
-      "node": "underbridge2",
-      "slot": 5
+      "node": "bridgeRetreat",
+      "slot": 2
     }
   },
   {
     "id": "x01890",
     "kind": "story",
     "source": {
-      "node": "underbridge2",
-      "slot": 6
+      "node": "bridgeRetreat",
+      "slot": 3
     }
   },
   {
@@ -16423,8 +16566,139 @@
     "kind": "choice",
     "tag": "underbridge3",
     "source": {
-      "node": "underbridge2",
+      "node": "bridgeRetreat",
+      "slot": 4
+    }
+  },
+  {
+    "id": "x06033",
+    "kind": "story",
+    "source": {
+      "node": "luckytrip3a",
+      "slot": 1
+    }
+  },
+  {
+    "id": "x06034",
+    "kind": "choice",
+    "tag": "underbridgea",
+    "source": {
+      "node": "luckytrip3a",
+      "slot": 2
+    }
+  },
+  {
+    "id": "x06035",
+    "kind": "story",
+    "source": {
+      "node": "luckytrip3a",
+      "slot": 3
+    }
+  },
+  {
+    "id": "x06036",
+    "kind": "choice",
+    "tag": "gameover",
+    "source": {
+      "node": "luckytrip3a",
+      "slot": 4
+    }
+  },
+  {
+    "id": "x06037",
+    "kind": "story",
+    "source": {
+      "node": "underbridgea",
+      "slot": 1
+    }
+  },
+  {
+    "id": "x06038",
+    "kind": "story",
+    "source": {
+      "node": "underbridgea",
+      "slot": 2
+    }
+  },
+  {
+    "id": "x06039",
+    "kind": "story",
+    "source": {
+      "node": "underbridgea",
+      "slot": 3
+    }
+  },
+  {
+    "id": "x06040",
+    "kind": "story",
+    "source": {
+      "node": "underbridgea",
+      "slot": 4
+    }
+  },
+  {
+    "id": "x06041",
+    "kind": "story",
+    "source": {
+      "node": "underbridgea",
+      "slot": 5
+    }
+  },
+  {
+    "id": "x06042",
+    "kind": "story",
+    "source": {
+      "node": "underbridgea",
+      "slot": 6
+    }
+  },
+  {
+    "id": "x06043",
+    "kind": "choice",
+    "tag": "underbridge2a",
+    "source": {
+      "node": "underbridgea",
       "slot": 7
+    }
+  },
+  {
+    "id": "x06044",
+    "kind": "story",
+    "source": {
+      "node": "underbridge2a",
+      "slot": 1
+    }
+  },
+  {
+    "id": "x06045",
+    "kind": "story",
+    "source": {
+      "node": "underbridge2a",
+      "slot": 2
+    }
+  },
+  {
+    "id": "x06046",
+    "kind": "story",
+    "source": {
+      "node": "underbridge2a",
+      "slot": 3
+    }
+  },
+  {
+    "id": "x06047",
+    "kind": "story",
+    "source": {
+      "node": "underbridge2a",
+      "slot": 4
+    }
+  },
+  {
+    "id": "x06048",
+    "kind": "story",
+    "source": {
+      "node": "underbridge2a",
+      "slot": 5
     }
   },
   {
@@ -17399,7 +17673,7 @@
     }
   },
   {
-    "id": "x02001",
+    "id": "x06007",
     "kind": "story",
     "source": {
       "node": "taxihome6",
@@ -17407,7 +17681,7 @@
     }
   },
   {
-    "id": "x02002",
+    "id": "x02001",
     "kind": "story",
     "source": {
       "node": "taxihome6",
@@ -17415,11 +17689,19 @@
     }
   },
   {
-    "id": "x02003",
+    "id": "x02002",
     "kind": "story",
     "source": {
       "node": "taxihome6",
       "slot": 11
+    }
+  },
+  {
+    "id": "x02003",
+    "kind": "story",
+    "source": {
+      "node": "taxihome6",
+      "slot": 12
     }
   },
   {
@@ -17428,7 +17710,7 @@
     "tag": "taxihome7",
     "source": {
       "node": "taxihome6",
-      "slot": 12
+      "slot": 13
     }
   },
   {
@@ -18152,7 +18434,7 @@
     }
   },
   {
-    "id": "x02089",
+    "id": "x02090",
     "kind": "story",
     "source": {
       "node": "scenario5a",
@@ -18160,7 +18442,7 @@
     }
   },
   {
-    "id": "x02090",
+    "id": "x02091",
     "kind": "story",
     "source": {
       "node": "scenario5a",
@@ -18168,7 +18450,7 @@
     }
   },
   {
-    "id": "x02091",
+    "id": "x02092",
     "kind": "story",
     "source": {
       "node": "scenario5a",
@@ -18176,19 +18458,11 @@
     }
   },
   {
-    "id": "x02092",
-    "kind": "story",
-    "source": {
-      "node": "scenario5a",
-      "slot": 4
-    }
-  },
-  {
     "id": "x02093",
     "kind": "story",
     "source": {
       "node": "scenario5a",
-      "slot": 5
+      "slot": 4
     }
   },
   {
@@ -18197,7 +18471,7 @@
     "tag": "scenario5aa",
     "source": {
       "node": "scenario5a",
-      "slot": 6
+      "slot": 5
     }
   },
   {
@@ -19089,7 +19363,7 @@
   {
     "id": "x02196",
     "kind": "choice",
-    "tag": "scenario7a",
+    "tag": "scenario3a",
     "source": {
       "node": "scenario1c",
       "slot": 10
@@ -19367,12 +19641,21 @@
     }
   },
   {
+    "id": "x06006",
+    "kind": "choice",
+    "tag": "scenario6d",
+    "source": {
+      "node": "scenario6c",
+      "slot": 7
+    }
+  },
+  {
     "id": "x02230",
     "kind": "choice",
     "tag": "goupstairs",
     "source": {
       "node": "scenario6c",
-      "slot": 7
+      "slot": 8
     }
   },
   {
@@ -19381,7 +19664,7 @@
     "tag": "luckytrip30",
     "source": {
       "node": "scenario6c",
-      "slot": 8
+      "slot": 9
     }
   },
   {
@@ -20087,31 +20370,6 @@
     "source": {
       "node": "goupstairsloo1",
       "slot": 4
-    }
-  },
-  {
-    "id": "x02317",
-    "kind": "story",
-    "source": {
-      "node": "scenario7a",
-      "slot": 1
-    }
-  },
-  {
-    "id": "x02318",
-    "kind": "story",
-    "source": {
-      "node": "scenario7a",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x02319",
-    "kind": "choice",
-    "tag": "scenario3b",
-    "source": {
-      "node": "scenario7a",
-      "slot": 3
     }
   },
   {
@@ -22199,7 +22457,7 @@
     }
   },
   {
-    "id": "x05245",
+    "id": "x05248",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22207,7 +22465,7 @@
     }
   },
   {
-    "id": "x05246",
+    "id": "x02516",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22215,7 +22473,7 @@
     }
   },
   {
-    "id": "x05247",
+    "id": "x05245",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22223,7 +22481,7 @@
     }
   },
   {
-    "id": "x05248",
+    "id": "x05246",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22231,7 +22489,7 @@
     }
   },
   {
-    "id": "x05249",
+    "id": "x05247",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22239,7 +22497,7 @@
     }
   },
   {
-    "id": "x05250",
+    "id": "x05249",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22247,7 +22505,7 @@
     }
   },
   {
-    "id": "x05251",
+    "id": "x05250",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -22255,7 +22513,7 @@
     }
   },
   {
-    "id": "x02516",
+    "id": "x05251",
     "kind": "story",
     "source": {
       "node": "sofasat1",
@@ -23733,7 +23991,7 @@
     }
   },
   {
-    "id": "x02645",
+    "id": "x06013",
     "kind": "story",
     "source": {
       "node": "sofatoilet4",
@@ -23741,7 +23999,7 @@
     }
   },
   {
-    "id": "x02646",
+    "id": "x02645",
     "kind": "story",
     "source": {
       "node": "sofatoilet4",
@@ -23749,7 +24007,7 @@
     }
   },
   {
-    "id": "x02647",
+    "id": "x02646",
     "kind": "story",
     "source": {
       "node": "sofatoilet4",
@@ -23757,7 +24015,7 @@
     }
   },
   {
-    "id": "x02648",
+    "id": "x02647",
     "kind": "story",
     "source": {
       "node": "sofatoilet4",
@@ -23765,7 +24023,7 @@
     }
   },
   {
-    "id": "x02649",
+    "id": "x02648",
     "kind": "story",
     "source": {
       "node": "sofatoilet4",
@@ -23773,11 +24031,19 @@
     }
   },
   {
-    "id": "x02650",
+    "id": "x02649",
     "kind": "story",
     "source": {
       "node": "sofatoilet4",
       "slot": 7
+    }
+  },
+  {
+    "id": "x02650",
+    "kind": "story",
+    "source": {
+      "node": "sofatoilet4",
+      "slot": 8
     }
   },
   {
@@ -23786,7 +24052,7 @@
     "tag": "nicelydesp1",
     "source": {
       "node": "sofatoilet4",
-      "slot": 8
+      "slot": 9
     }
   },
   {
@@ -23795,7 +24061,7 @@
     "tag": "loungedesp",
     "source": {
       "node": "sofatoilet4",
-      "slot": 9
+      "slot": 10
     }
   },
   {
@@ -24550,7 +24816,7 @@
     }
   },
   {
-    "id": "x02719",
+    "id": "x06010",
     "kind": "story",
     "source": {
       "node": "sofawork",
@@ -24558,7 +24824,7 @@
     }
   },
   {
-    "id": "x02720",
+    "id": "x02719",
     "kind": "story",
     "source": {
       "node": "sofawork",
@@ -24566,7 +24832,7 @@
     }
   },
   {
-    "id": "x02721",
+    "id": "x02720",
     "kind": "story",
     "source": {
       "node": "sofawork",
@@ -24574,11 +24840,19 @@
     }
   },
   {
-    "id": "x02722",
+    "id": "x02721",
     "kind": "story",
     "source": {
       "node": "sofawork",
       "slot": 5
+    }
+  },
+  {
+    "id": "x02722",
+    "kind": "story",
+    "source": {
+      "node": "sofawork",
+      "slot": 6
     }
   },
   {
@@ -24587,7 +24861,7 @@
     "tag": "luckytrip12",
     "source": {
       "node": "sofawork",
-      "slot": 6
+      "slot": 7
     }
   },
   {
@@ -24596,7 +24870,7 @@
     "tag": "toiletgo",
     "source": {
       "node": "sofawork",
-      "slot": 7
+      "slot": 8
     }
   },
   {
@@ -24605,7 +24879,7 @@
     "tag": "sofawork1",
     "source": {
       "node": "sofawork",
-      "slot": 8
+      "slot": 9
     }
   },
   {
@@ -24907,95 +25181,11 @@
     }
   },
   {
-    "id": "x02760",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip18a",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x02761",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip18a",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x02762",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip18a",
-      "slot": 4
-    }
-  },
-  {
-    "id": "x02763",
-    "kind": "choice",
-    "tag": "gameover",
-    "source": {
-      "node": "luckytrip18a",
-      "slot": 5
-    }
-  },
-  {
-    "id": "x02764",
-    "kind": "choice",
-    "tag": "scenario5a",
-    "source": {
-      "node": "luckytrip18a",
-      "slot": 6
-    }
-  },
-  {
     "id": "x02765",
     "kind": "story",
     "source": {
       "node": "luckytrip20a",
       "slot": 1
-    }
-  },
-  {
-    "id": "x02766",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip20a",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x02767",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip20a",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x02768",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip20a",
-      "slot": 4
-    }
-  },
-  {
-    "id": "x02769",
-    "kind": "choice",
-    "tag": "gameover",
-    "source": {
-      "node": "luckytrip20a",
-      "slot": 5
-    }
-  },
-  {
-    "id": "x02770",
-    "kind": "choice",
-    "tag": "scenario5a",
-    "source": {
-      "node": "luckytrip20a",
-      "slot": 6
     }
   },
   {
@@ -25545,56 +25735,6 @@
     "tag": "sofatrains6",
     "source": {
       "node": "luckytrip205a",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x02837",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip206",
-      "slot": 1
-    }
-  },
-  {
-    "id": "x02838",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip206",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x02839",
-    "kind": "choice",
-    "tag": "luckytrip206a",
-    "source": {
-      "node": "luckytrip206",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x02840",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip206a",
-      "slot": 1
-    }
-  },
-  {
-    "id": "x02841",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip206a",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x02842",
-    "kind": "choice",
-    "tag": "sofatrains7",
-    "source": {
-      "node": "luckytrip206a",
       "slot": 3
     }
   },
@@ -27467,7 +27607,7 @@
     }
   },
   {
-    "id": "x03057",
+    "id": "x06015",
     "kind": "story",
     "source": {
       "node": "stampalbum4",
@@ -27475,11 +27615,19 @@
     }
   },
   {
-    "id": "x03058",
+    "id": "x03057",
     "kind": "story",
     "source": {
       "node": "stampalbum4",
       "slot": 10
+    }
+  },
+  {
+    "id": "x03058",
+    "kind": "story",
+    "source": {
+      "node": "stampalbum4",
+      "slot": 11
     }
   },
   {
@@ -27488,7 +27636,7 @@
     "tag": "stampalbum4a",
     "source": {
       "node": "stampalbum4",
-      "slot": 11
+      "slot": 12
     }
   },
   {
@@ -27524,7 +27672,7 @@
     }
   },
   {
-    "id": "x03064",
+    "id": "x06008",
     "kind": "story",
     "source": {
       "node": "sofatrains4",
@@ -27532,7 +27680,7 @@
     }
   },
   {
-    "id": "x03065",
+    "id": "x03064",
     "kind": "story",
     "source": {
       "node": "sofatrains4",
@@ -27540,11 +27688,19 @@
     }
   },
   {
-    "id": "x03066",
+    "id": "x03065",
     "kind": "story",
     "source": {
       "node": "sofatrains4",
       "slot": 7
+    }
+  },
+  {
+    "id": "x03066",
+    "kind": "story",
+    "source": {
+      "node": "sofatrains4",
+      "slot": 8
     }
   },
   {
@@ -27553,7 +27709,7 @@
     "tag": "sofatrains4a",
     "source": {
       "node": "sofatrains4",
-      "slot": 8
+      "slot": 9
     }
   },
   {
@@ -28372,55 +28528,12 @@
     }
   },
   {
-    "id": "x03162",
-    "kind": "story",
-    "source": {
-      "node": "sofatrains6",
-      "slot": 7
-    }
-  },
-  {
-    "id": "x03163",
-    "kind": "story",
-    "source": {
-      "node": "sofatrains6",
-      "slot": 8
-    }
-  },
-  {
-    "id": "x05355",
-    "kind": "choice",
-    "tag": "luckytrip206",
-    "source": {
-      "node": "sofatrains6",
-      "slot": 9
-    }
-  },
-  {
-    "id": "x05356",
-    "kind": "choice",
-    "tag": "toiletgo",
-    "source": {
-      "node": "sofatrains6",
-      "slot": 10
-    }
-  },
-  {
-    "id": "x05357",
-    "kind": "choice",
-    "tag": "toiletgo",
-    "source": {
-      "node": "sofatrains6",
-      "slot": 11
-    }
-  },
-  {
     "id": "x03166",
     "kind": "choice",
     "tag": "sofatrains7",
     "source": {
       "node": "sofatrains6",
-      "slot": 12
+      "slot": 7
     }
   },
   {
@@ -29175,7 +29288,7 @@
     }
   },
   {
-    "id": "x03252",
+    "id": "x03254",
     "kind": "story",
     "source": {
       "node": "luckytrip12a",
@@ -29183,28 +29296,11 @@
     }
   },
   {
-    "id": "x03253",
-    "kind": "choice",
-    "tag": "luckytrip13",
-    "source": {
-      "node": "luckytrip12a",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x03254",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip12a",
-      "slot": 4
-    }
-  },
-  {
     "id": "x03255",
     "kind": "story",
     "source": {
       "node": "luckytrip12a",
-      "slot": 5
+      "slot": 3
     }
   },
   {
@@ -29212,7 +29308,7 @@
     "kind": "story",
     "source": {
       "node": "luckytrip12a",
-      "slot": 6
+      "slot": 4
     }
   },
   {
@@ -29221,7 +29317,7 @@
     "tag": "luckytrip12tues",
     "source": {
       "node": "luckytrip12a",
-      "slot": 7
+      "slot": 5
     }
   },
   {
@@ -29230,7 +29326,7 @@
     "tag": "luckytrip12thurs",
     "source": {
       "node": "luckytrip12a",
-      "slot": 8
+      "slot": 6
     }
   },
   {
@@ -29239,7 +29335,7 @@
     "tag": "luckytrip12sat",
     "source": {
       "node": "luckytrip12a",
-      "slot": 9
+      "slot": 7
     }
   },
   {
@@ -29557,88 +29653,6 @@
     "source": {
       "node": "walkhomeinsist",
       "slot": 2
-    }
-  },
-  {
-    "id": "x03287",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 1
-    }
-  },
-  {
-    "id": "x03288",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 2
-    }
-  },
-  {
-    "id": "x03289",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 3
-    }
-  },
-  {
-    "id": "x03290",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 4
-    }
-  },
-  {
-    "id": "x03291",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 5
-    }
-  },
-  {
-    "id": "x05374",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 6
-    }
-  },
-  {
-    "id": "x05375",
-    "kind": "choice",
-    "tag": "walkhomeX",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 7
-    }
-  },
-  {
-    "id": "x03294",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 8
-    }
-  },
-  {
-    "id": "x03295",
-    "kind": "story",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 9
-    }
-  },
-  {
-    "id": "x03296",
-    "kind": "choice",
-    "tag": "gameover",
-    "source": {
-      "node": "luckytrip13",
-      "slot": 10
     }
   },
   {
@@ -30060,7 +30074,7 @@
     }
   },
   {
-    "id": "x03340",
+    "id": "x06009",
     "kind": "story",
     "source": {
       "node": "breasts2",
@@ -30068,7 +30082,7 @@
     }
   },
   {
-    "id": "x03341",
+    "id": "x03340",
     "kind": "story",
     "source": {
       "node": "breasts2",
@@ -30076,7 +30090,7 @@
     }
   },
   {
-    "id": "x03342",
+    "id": "x03341",
     "kind": "story",
     "source": {
       "node": "breasts2",
@@ -30084,11 +30098,19 @@
     }
   },
   {
-    "id": "x03343",
+    "id": "x03342",
     "kind": "story",
     "source": {
       "node": "breasts2",
       "slot": 4
+    }
+  },
+  {
+    "id": "x03343",
+    "kind": "story",
+    "source": {
+      "node": "breasts2",
+      "slot": 5
     }
   },
   {
@@ -30097,7 +30119,7 @@
     "tag": "walkhomeX",
     "source": {
       "node": "breasts2",
-      "slot": 5
+      "slot": 6
     }
   },
   {
@@ -30105,7 +30127,7 @@
     "kind": "story",
     "source": {
       "node": "breasts2",
-      "slot": 6
+      "slot": 7
     }
   },
   {
@@ -30113,7 +30135,7 @@
     "kind": "story",
     "source": {
       "node": "breasts2",
-      "slot": 7
+      "slot": 8
     }
   },
   {
@@ -30122,7 +30144,7 @@
     "tag": "bottom2",
     "source": {
       "node": "breasts2",
-      "slot": 8
+      "slot": 9
     }
   },
   {
@@ -30159,7 +30181,7 @@
     }
   },
   {
-    "id": "x03352",
+    "id": "x06011",
     "kind": "story",
     "source": {
       "node": "bottom1",
@@ -30167,7 +30189,7 @@
     }
   },
   {
-    "id": "x03353",
+    "id": "x03352",
     "kind": "story",
     "source": {
       "node": "bottom1",
@@ -30175,7 +30197,7 @@
     }
   },
   {
-    "id": "x03354",
+    "id": "x03353",
     "kind": "story",
     "source": {
       "node": "bottom1",
@@ -30183,11 +30205,19 @@
     }
   },
   {
-    "id": "x03584",
+    "id": "x03354",
     "kind": "story",
     "source": {
       "node": "bottom1",
       "slot": 8
+    }
+  },
+  {
+    "id": "x03584",
+    "kind": "story",
+    "source": {
+      "node": "bottom1",
+      "slot": 9
     }
   },
   {
@@ -30196,7 +30226,7 @@
     "tag": "bottom1a",
     "source": {
       "node": "bottom1",
-      "slot": 9
+      "slot": 10
     }
   },
   {
@@ -30205,7 +30235,7 @@
     "tag": "breasts1b",
     "source": {
       "node": "bottom1",
-      "slot": 10
+      "slot": 11
     }
   },
   {
@@ -30214,7 +30244,7 @@
     "tag": "kissher",
     "source": {
       "node": "bottom1",
-      "slot": 11
+      "slot": 12
     }
   },
   {
@@ -30275,11 +30305,19 @@
     }
   },
   {
-    "id": "x03366",
+    "id": "x06012",
     "kind": "story",
     "source": {
       "node": "bottom1a",
       "slot": 8
+    }
+  },
+  {
+    "id": "x03366",
+    "kind": "story",
+    "source": {
+      "node": "bottom1a",
+      "slot": 9
     }
   },
   {
@@ -30288,7 +30326,7 @@
     "tag": "suddenend",
     "source": {
       "node": "bottom1a",
-      "slot": 9
+      "slot": 10
     }
   },
   {
@@ -31184,7 +31222,7 @@
     }
   },
   {
-    "id": "x03476",
+    "id": "x06017",
     "kind": "story",
     "source": {
       "node": "gobathroom",
@@ -31192,7 +31230,7 @@
     }
   },
   {
-    "id": "x03477",
+    "id": "x03476",
     "kind": "story",
     "source": {
       "node": "gobathroom",
@@ -31200,7 +31238,7 @@
     }
   },
   {
-    "id": "x03478",
+    "id": "x03477",
     "kind": "story",
     "source": {
       "node": "gobathroom",
@@ -31208,7 +31246,7 @@
     }
   },
   {
-    "id": "x05574",
+    "id": "x03478",
     "kind": "story",
     "source": {
       "node": "gobathroom",
@@ -31216,11 +31254,19 @@
     }
   },
   {
-    "id": "x03479",
+    "id": "x05574",
     "kind": "story",
     "source": {
       "node": "gobathroom",
       "slot": 8
+    }
+  },
+  {
+    "id": "x03479",
+    "kind": "story",
+    "source": {
+      "node": "gobathroom",
+      "slot": 9
     }
   },
   {
@@ -31229,7 +31275,7 @@
     "tag": "gobathroom1",
     "source": {
       "node": "gobathroom",
-      "slot": 9
+      "slot": 10
     }
   },
   {
@@ -31237,7 +31283,7 @@
     "kind": "story",
     "source": {
       "node": "gobathroom",
-      "slot": 10
+      "slot": 11
     }
   },
   {
@@ -31245,7 +31291,7 @@
     "kind": "story",
     "source": {
       "node": "gobathroom",
-      "slot": 11
+      "slot": 12
     }
   },
   {
@@ -31253,7 +31299,7 @@
     "kind": "story",
     "source": {
       "node": "gobathroom",
-      "slot": 12
+      "slot": 13
     }
   },
   {
@@ -31261,7 +31307,7 @@
     "kind": "story",
     "source": {
       "node": "gobathroom",
-      "slot": 13
+      "slot": 14
     }
   },
   {
@@ -31269,7 +31315,7 @@
     "kind": "story",
     "source": {
       "node": "gobathroom",
-      "slot": 14
+      "slot": 15
     }
   },
   {
@@ -31278,7 +31324,7 @@
     "tag": "gobathroom1",
     "source": {
       "node": "gobathroom",
-      "slot": 15
+      "slot": 16
     }
   },
   {
@@ -33983,12 +34029,21 @@
     }
   },
   {
-    "id": "x03800",
+    "id": "x06000",
     "kind": "choice",
     "tag": "watching2",
     "source": {
       "node": "watching1",
       "slot": 7
+    }
+  },
+  {
+    "id": "x03800",
+    "kind": "choice",
+    "tag": "watching2",
+    "source": {
+      "node": "watching1",
+      "slot": 8
     }
   },
   {
@@ -39947,12 +40002,21 @@
     }
   },
   {
-    "id": "x04464",
+    "id": "x06001",
     "kind": "choice",
     "tag": "gameover",
     "source": {
       "node": "bushome6",
       "slot": 15
+    }
+  },
+  {
+    "id": "x04464",
+    "kind": "choice",
+    "tag": "gameover",
+    "source": {
+      "node": "bushome6",
+      "slot": 16
     }
   },
   {
@@ -40760,7 +40824,7 @@
     }
   },
   {
-    "id": "x04562",
+    "id": "x06014",
     "kind": "story",
     "source": {
       "node": "secondplace",
@@ -40768,11 +40832,19 @@
     }
   },
   {
-    "id": "x04563",
+    "id": "x04562",
     "kind": "story",
     "source": {
       "node": "secondplace",
       "slot": 2
+    }
+  },
+  {
+    "id": "x04563",
+    "kind": "story",
+    "source": {
+      "node": "secondplace",
+      "slot": 3
     }
   },
   {
@@ -40781,7 +40853,7 @@
     "tag": "secondplace1",
     "source": {
       "node": "secondplace",
-      "slot": 3
+      "slot": 4
     }
   },
   {
@@ -42300,7 +42372,7 @@
     }
   },
   {
-    "id": "x04736",
+    "id": "x06016",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42308,7 +42380,7 @@
     }
   },
   {
-    "id": "x04737",
+    "id": "x04736",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42316,7 +42388,7 @@
     }
   },
   {
-    "id": "x04738",
+    "id": "x04737",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42324,7 +42396,7 @@
     }
   },
   {
-    "id": "x04739",
+    "id": "x04738",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42332,7 +42404,7 @@
     }
   },
   {
-    "id": "x04740",
+    "id": "x04739",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42340,7 +42412,7 @@
     }
   },
   {
-    "id": "x04741",
+    "id": "x04740",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42348,7 +42420,7 @@
     }
   },
   {
-    "id": "x04742",
+    "id": "x04741",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42356,7 +42428,7 @@
     }
   },
   {
-    "id": "x04743",
+    "id": "x04742",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42364,7 +42436,7 @@
     }
   },
   {
-    "id": "x04744",
+    "id": "x04743",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42372,7 +42444,7 @@
     }
   },
   {
-    "id": "x04745",
+    "id": "x04744",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42380,7 +42452,7 @@
     }
   },
   {
-    "id": "x04746",
+    "id": "x04745",
     "kind": "story",
     "source": {
       "node": "albumdesp",
@@ -42388,11 +42460,19 @@
     }
   },
   {
-    "id": "x04747",
+    "id": "x04746",
     "kind": "story",
     "source": {
       "node": "albumdesp",
       "slot": 17
+    }
+  },
+  {
+    "id": "x04747",
+    "kind": "story",
+    "source": {
+      "node": "albumdesp",
+      "slot": 18
     }
   },
   {

@@ -14,7 +14,7 @@ const INDEX_LANGS = [
   ...LANGS.filter((lang) => ["de", "ja"].includes(lang)),
 ];
 
-function buildIndex(previous, idRemaps = []) {
+function buildIndex(locations) {
   const files = Object.fromEntries(LANGS.map((lang) => [lang, readSource(lang)]));
   const rows = Object.fromEntries(
     LANGS.map((lang) => [lang, [...files[lang].calls, ...files[lang].variants]]),
@@ -27,119 +27,16 @@ function buildIndex(previous, idRemaps = []) {
       `Text call structure differs in ${lang}; reconcile the source before rebuilding`,
     );
   }
-  const oldRows = previous?.entries || [],
-    used = new Set();
-  const matches = new Array(rows.en.length);
-  const sameKindAndTarget = (old, row) =>
-    (!old.kind || old.kind === row.kind) && (!old.tag || old.tag === row.tag);
-  const sameTranslations = (old, i) =>
-    LANGS.slice(1)
-      .filter((lang) => Object.hasOwn(old, lang))
-      .every((lang) => old[lang] === rows[lang][i].text);
-  // An editor can resolve an ambiguous simultaneous split/reword explicitly.
-  // Guard both locations and every language so stale instructions fail closed.
-  assert(Array.isArray(idRemaps), "ID remaps must be an array");
-  for (const remap of idRemaps) {
-    const old = oldRows.find((row) => row.id === remap.id);
-    assert(old && !used.has(old.id), "Missing or repeated remapped ID: " + remap.id);
-    assert(
-      old.source?.node === remap.from?.node && old.source?.slot === remap.from?.slot,
-      "Stale remap source: " + remap.id,
-    );
-    const i = rows.en.findIndex(
-      (row) => row.source.node === remap.to?.node && row.source.slot === remap.to?.slot,
-    );
-    assert(
-      i >= 0 && !matches[i] && sameKindAndTarget(old, rows.en[i]),
-      "Missing, repeated or incompatible remap destination: " + remap.id,
-    );
-    assert(
-      !old.expressions && LANGS.every((lang) => rows[lang][i].static),
-      "Dynamic calls cannot use literal-only ID remaps: " + remap.id,
-    );
-    for (const lang of LANGS) {
-      assert.equal(
-        old[lang],
-        remap.before?.[lang],
-        "Stale remap before text: " + remap.id + "/" + lang,
-      );
-      assert.equal(
-        rows[lang][i].text,
-        remap.after?.[lang],
-        "Stale remap after text: " + remap.id + "/" + lang,
-      );
-    }
-    matches[i] = old;
-    used.add(old.id);
-  }
-  function matchRemaining(predicate) {
-    rows.en.forEach((row, i) => {
-      if (matches[i]) return;
-      const old = oldRows.find((old) => old.id && !used.has(old.id) && predicate(old, row, i));
-      if (old) {
-        matches[i] = old;
-        used.add(old.id);
-      }
-    });
-  }
-  // Claim surviving occurrences one-to-one across the whole inventory before
-  // allowing new copies to reuse IDs from other nodes. Translations distinguish
-  // repeated English text when its original location has moved or been reworded.
-  matchRemaining(
-    (old, row, i) =>
-      old.source &&
-      key(old) === key(row) &&
-      old.en === row.text &&
-      sameKindAndTarget(old, row) &&
-      sameTranslations(old, i),
-  );
-  matchRemaining(
-    (old, row, i) =>
-      old.source?.node === row.source.node &&
-      old.en === row.text &&
-      sameKindAndTarget(old, row) &&
-      sameTranslations(old, i),
-  );
-  matchRemaining(
-    (old, row) =>
-      old.source && key(old) === key(row) && old.en === row.text && sameKindAndTarget(old, row),
-  );
-  matchRemaining(
-    (old, row) =>
-      old.source?.node === row.source.node && old.en === row.text && sameKindAndTarget(old, row),
-  );
-  matchRemaining(
-    (old, row, i) =>
-      old.source &&
-      key(old) === key(row) &&
-      sameKindAndTarget(old, row) &&
-      sameTranslations(old, i),
-  );
-  matchRemaining(
-    (old, row, i) =>
-      old.source?.node === row.source.node &&
-      sameKindAndTarget(old, row) &&
-      sameTranslations(old, i),
-  );
-  matchRemaining(
-    (old, row, i) => old.en === row.text && sameKindAndTarget(old, row) && sameTranslations(old, i),
-  );
-  matchRemaining((old, row) => old.en === row.text && sameKindAndTarget(old, row));
-  matchRemaining((old, row, i) => sameKindAndTarget(old, row) && sameTranslations(old, i));
-  matchRemaining(
-    (old, row) =>
-      old.source &&
-      key(old) === key(row) &&
-      !rows.en.some(
-        (current) => current.source.node === row.source.node && current.text === old.en,
-      ),
-  );
-  let nextId =
-    Math.max(0, ...oldRows.map((r) => Number((r.id || "").match(/^x(\d+)/)?.[1] || 0))) + 1;
+  const identities = new Map(locations.map((row) => [key(row), row]));
+  assert.equal(identities.size, locations.length, "Repeated source location");
+  assert.equal(new Set(locations.map((row) => row.id)).size, locations.length, "Repeated text ID");
+  assert.equal(rows.en.length, locations.length, "Complete maintained source inventory");
   const entries = rows.en.map((row, i) => {
-    const old = matches[i];
-    const id = old?.id || `x${String(nextId++).padStart(5, "0")}`;
-    used.add(id);
+    const location = identities.get(key(row));
+    assert(location, "Unknown compiled source location: " + key(row));
+    assert.equal(row.tag, location.tag, "Compiled choice target differs: " + location.id);
+    assert.equal(!row.static, !!location.dynamic, "Compiled text kind differs: " + location.id);
+    const id = location.id;
     const entry = { id, kind: row.kind };
     if (row.tag !== undefined) entry.tag = row.tag;
     for (const lang of INDEX_LANGS) entry[lang] = rows[lang][i].text;
@@ -167,11 +64,8 @@ function buildIndex(previous, idRemaps = []) {
 
 function main() {
   const current = fs.readFileSync(FILE, "utf8");
-  const remapArg = process.argv.find((arg) => arg.startsWith("--id-remap="));
-  const idRemaps = remapArg
-    ? JSON.parse(fs.readFileSync(path.resolve(remapArg.slice("--id-remap=".length)), "utf8"))
-    : [];
-  const data = buildIndex(JSON.parse(current), idRemaps);
+  const locations = JSON.parse(fs.readFileSync(path.join(ROOT, "source/locations.json"), "utf8"));
+  const data = buildIndex(locations);
   const output =
     JSON.stringify(data, null, 2).replace(
       /"source": \{\n\s+"node": ("[^"]+"),\n\s+"slot": (\d+)\n\s+\}/g,

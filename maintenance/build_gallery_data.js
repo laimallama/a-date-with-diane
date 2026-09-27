@@ -343,6 +343,17 @@ const EXTRA_HIDDEN = [
 // Group sibling branches (same decision point / same scene family)
 const HIDDEN_GROUPS = [
   {
+    groupId: "bridge",
+    title: {
+      en: "Under the Bridge",
+      cn: "桥底下",
+      tw: "橋底下",
+      es: "Bajo el puente",
+      fr: "Sous le pont",
+    },
+    stems: ["04_thursday_bridge_diane_molly", "04a_thursday_bridge_molly_diane"],
+  },
+  {
     groupId: "portaloo",
     title: {
       en: "Riverside Portaloo",
@@ -454,7 +465,7 @@ const HIDDEN_GROUPS = [
 const HIDDEN_TOP_ORDER = [
   "01_theatre_flashback",
   "portaloo",
-  "04_thursday_bridge_diane_molly",
+  "bridge",
   "molly_towpath",
   "riverside_bushes",
   "08_riverside_towpath_landing",
@@ -624,7 +635,7 @@ function buildDataForLang(ctx, routes, definitions, lang) {
   // 5 prizes + Amanda + Chloe×2 + Day×3 + Lounge×4
   if (endingLeaves !== 15) throw new Error(`Expected 15 ending leaves, got ${endingLeaves}`);
   const expectedHidden =
-    25 + EXTRA_HIDDEN.filter((extra) => !extra.languages || extra.languages.includes(lang)).length;
+    26 + EXTRA_HIDDEN.filter((extra) => !extra.languages || extra.languages.includes(lang)).length;
   if (hiddenLeaves !== expectedHidden) {
     throw new Error(`Expected ${expectedHidden} hidden-scene leaves, got ${hiddenLeaves}`);
   }

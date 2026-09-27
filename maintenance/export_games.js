@@ -53,13 +53,13 @@ function introduction(visual) {
     "|---|---|---|",
     ...rows,
     "",
-    "Bilingual editions let you switch between English and the other language during play. Local text matches its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters. In the new German and Japanese editions, six game-text entries and three wiki passages per language carry explicit omission placeholders. The six corresponding English entries in those new bilingual games also carry placeholders. Existing editions remain unchanged.",
+    "Bilingual editions let you switch between English and the other language during play. Local text matches its standalone edition; Taiwan Mandarin uses local wording, not just converted Simplified Chinese characters. In the new German and Japanese editions, six game-text entries and three wiki passages per language carry explicit omission placeholders. The six corresponding English entries in those new bilingual games also carry placeholders. Other editions retain their existing content scope.",
     "",
     "## What is included",
     "",
     `- ${LANGUAGES.length} standalone languages and ${LANGUAGES.length - 1} bilingual editions.`,
     "- Five main prize endings, consolation endings and hidden scenes, with branches affected by your earlier choices.",
-    "- A Gallery containing 15 ending routes and 31 hidden-scene routes. Expand grouped entries to choose a scene, then follow the highlighted Guide choices.",
+    "- A Gallery containing 15 ending routes and 32 hidden-scene routes. Expand grouped entries to choose a scene, then follow the highlighted Guide choices.",
     "- Back navigation that restores the previous page, choices and game state; guided fast-forward and Skip to the good bit.",
     "- Light and dark themes, responsive layouts and localized interface labels.",
     ...(visual
@@ -68,7 +68,7 @@ function introduction(visual) {
           "- Animated presentation and graphical status meters, synchronized with the text game's state.",
         ]
       : [
-          `- ${LANGUAGES.length * 2 - 1} self-contained game pages, ${LANGUAGES.length} companion wikis and ${LANGUAGES.length * 46} scene transcripts (46 per language).`,
+          `- ${LANGUAGES.length * 2 - 1} self-contained game pages, ${LANGUAGES.length} companion wikis and ${LANGUAGES.length * 47} scene transcripts (47 per language).`,
         ]),
     "",
     "## Controls",

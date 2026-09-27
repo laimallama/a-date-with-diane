@@ -25,7 +25,7 @@ trailing pound sign. Japanese uses a decimal point and the suffix ポンド.
 The new German/Japanese games include the approved six passage placeholders in
 both bilingual layers; all older editions are unchanged.
 
-Gallery retains **15 ending leaves** and **31 hidden-scene leaves**, with the same routes,
+Gallery retains **15 ending leaves** and **32 hidden-scene leaves**, with the same routes,
 ordering and start/end boundaries as the text editions. There is no Variations interface.
 The visual toolbar shortens the Skip command; its behavior is unchanged.
 
@@ -72,7 +72,7 @@ node maintenance/export_games.js /path/to/new-release-folder
 
 This creates two play-only folders. The visual export contains thirteen HTML games, 318 image
 assets and a playing README. The text export holds thirteen text games and the sole copy of
-seven wikis and 322 transcripts. No Git metadata, dependency installation, source/build files
+seven wikis and 329 transcripts. No Git metadata, dependency installation, source/build files
 or duplicated companions are exported. Keep `assets/` beside `outputs/` in the visual folder.
 
 The source checkout retains `visual/`, the builder, two verifiers, asset metadata and

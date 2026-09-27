@@ -49,7 +49,7 @@ for (const edition of EDITIONS) {
   const count = (kind) =>
     gallery[kind].reduce((sum, item) => sum + (item.variants || [item]).length, 0);
   assert.equal(count("endings"), 15);
-  assert.equal(count("hiddenScenes"), 31);
+  assert.equal(count("hiddenScenes"), 32);
   const outputs = fs
     .readdirSync(path.dirname(path.join(ROOT, edition.output)))
     .filter((name) => /^dianedate_visual_.*\.html$/.test(name));
@@ -194,6 +194,24 @@ for (const tag of ["ontoilet2", "fifthplace"])
     null,
     "No lingering clip on " + tag,
   );
+for (const [tag, actor] of [
+  ["underbridge", "diane"],
+  ["underbridge2", "molly"],
+  ["underbridgea", "molly"],
+  ["underbridge2a", "diane"],
+]) {
+  const cast = c.ADWDSceneMap.castFor(tag);
+  assert.equal(c.ADWDSceneMap.locationFor(tag).id, "bridge");
+  assert.equal(cast.primary, "diane");
+  assert.equal(cast.secondary, "molly");
+  assert.deepEqual(
+    Array.from(c.ADWDSceneMap.peeBeat(tag, cast).keys),
+    [actor],
+    "Bridge actor order: " + tag,
+  );
+}
+assert.equal(c.ADWDSceneMap.castFor("luckytrip3a").secondary, "molly");
+assert.equal(c.ADWDSceneMap.peeBeat("underbridge3", c.ADWDSceneMap.castFor("underbridge3")), null);
 execFileSync(process.execPath, [path.join(ROOT, "maintenance/verify_visual_support.js")], {
   stdio: "inherit",
 });

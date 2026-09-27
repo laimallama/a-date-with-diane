@@ -329,7 +329,7 @@
     // Under bridge / foyer / stage door / pub — Diane left, Molly right
     if (
       starts(tag, ["underbridge"]) ||
-      exact(tag, ["luckytrip3"]) ||
+      exact(tag, ["luckytrip3", "luckytrip3a"]) ||
       starts(tag, ["foyerbar", "pubdrink"]) ||
       starts(tag, ["stagedoor"])
     ) {
@@ -452,7 +452,6 @@
         "luckytrip12sat",
         "luckytrip12thurs",
         "luckytrip12tues",
-        "luckytrip13",
         "luckytrip16a1",
         "luckytrip16a2",
         "luckytrip16ba",
@@ -512,7 +511,7 @@
 
     // —— Intentional peeing (on the page it happens) ——
     /* Molly behind the skip: longer fidget / looks around first → pee A */
-    if (exact(tag, ["luckytrip4a"])) {
+    if (exact(tag, ["luckytrip4a", "underbridgea"])) {
       return { mode: "solo", keys: ["molly"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* Molly under the bridge after Diane: shorter, straight into it → pee B */
@@ -522,7 +521,7 @@
     if (exact(tag, ["carpark1", "carparkalone"])) {
       return { mode: "solo", keys: ["debbie"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
-    if (exact(tag, ["underbridge"])) {
+    if (exact(tag, ["underbridge", "underbridge2a"])) {
       return { mode: "solo", keys: ["diane"], clip: "peeA", outcome: "calm", status: "peeing" };
     }
     /* Amanda upstairs bathroom — urgent toilet squat → pee A (not standing B) */

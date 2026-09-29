@@ -2086,7 +2086,7 @@ function eatmeal1b() {
     "<p>VOUS\u202F: Eh bien, je dois admettre que c’était pareil pour moi. Je suis juste allé aux toilettes, et quand je suis revenu, le bus était parti.</p>",
   );
   s("<p>DIANE\u202F: Vraiment\u202F? Tu as trouvé des toilettes à cette heure-là\u202F?</p>");
-  s("<p>VOUS\u202F: Eh bien, je suis allé dans le parking…</p>");
+  s("<p>VOUS\u202F: Eh bien, je me suis soulagé sur le parking…</p>");
   s(
     "<p>DIANE\u202F: Heureusement qu’on ne s’est pas croisés\u202F! Ça aurait été encore plus gênant.</p>",
   );
@@ -2828,7 +2828,7 @@ function theatreask() {
     "<p>Vous êtes dans le hall du théâtre. Diane vous a demandé si elle avait le temps d’aller aux toilettes.</p>",
   );
   s("<p>La soirée commence ici\u202F! Qu’allez-vous répondre\u202F?</p>");
-  c("lethergo", "La laisser partir\u202F?");
+  c("lethergo", "La laisser y aller\u202F?");
   c("stopher", "Essayer de la retenir\u202F?");
   c("gotoo", "Lui dire que vous aussi vous avez envie\u202F?");
   if (luckshots >= 1) c("luckytrip0", "Utiliser un coup de chance\u202F?");
@@ -5844,7 +5844,7 @@ function justclosed3() {
     s(
       "<p>Elle se dirige droit vers la seule cabine. Vous vous dirigez vers l’urinoir. Vous avez envie de faire pipi, alors c’est ce que vous faites. Soudain, vous entendez Diane ressortir de la cabine.</p>",
     );
-    s("<p>DIANE\u202F: Je ne peux pas aller là-dedans. C’est dégoûtant. Quelqu’un a vomi.</p>");
+    s("<p>DIANE\u202F: Je ne peux pas utiliser ces toilettes. C’est dégoûtant. Quelqu’un a vomi.</p>");
     s(
       "<p>Vous faites pipi aussi vite que possible. Diane fait les cent pas. Vous jetez un coup d’œil par-dessus votre épaule. Elle a une main enfoncée dans la poche de sa robe, se tenant manifestement l’entrejambe.</p>",
     );
@@ -6884,7 +6884,7 @@ function underbridgea() {
     "<p>Elle remonte son jean et ferme la braguette, puis avance de quelques pas pour s’éloigner de la grande flaque luisante qu’elle a laissée. Elle reboucle sa ceinture.</p>",
   );
   s(
-    "<p>Vous êtes sur le point de vous éloigner, mais Robert pose doucement une main sur votre bras. «\u202FQuand l’une y va, l’autre suit toujours\u202F», murmure-t-il. Diane se dirige vers le bord du chemin.</p>",
+    "<p>Vous êtes sur le point de vous éloigner, mais Robert pose doucement une main sur votre bras. «\u202FQuand l’une y va, l’autre y va toujours\u202F», murmure-t-il. Diane se dirige vers le bord du chemin.</p>",
   );
   c("underbridge2a", "Vous regardez, osant à peine respirer.");
 }
@@ -8471,7 +8471,7 @@ function hiddencamera() {
   );
   if (blad > 720) {
     s(
-      "<p>Elle est déjà en train de relever sa jupe et son jupon en se précipitant vers les toilettes et en se retournant. Elle n’en peut plus de se retenir et même en tripotant ses collants, elle saute d’un pied sur l’autre. Elle tire d’un seul geste pressé ses collants et sa culotte vers le bas — sans prendre le temps de abaisser la lunette — et s’accroupit à quelques centimètres à peine au-dessus de la cuvette, sans s’asseoir. On voit même le jet qui jaillit d’elle, et sur son visage une expression de pur soulagement.</p>",
+      "<p>Elle est déjà en train de relever sa jupe et son jupon en se précipitant vers les toilettes et en se retournant. Elle n’en peut plus de se retenir et même en tripotant ses collants, elle saute d’un pied sur l’autre. Elle tire d’un seul geste pressé ses collants et sa culotte vers le bas — sans prendre le temps d’abaisser la lunette — et s’accroupit à quelques centimètres à peine au-dessus de la cuvette, sans s’asseoir. On voit même le jet qui jaillit d’elle, et sur son visage une expression de pur soulagement.</p>",
     );
     s(
       "<p>Elle finit par s’installer plus près de la cuvette et on ne voit plus le jet. Puis elle se relève, se sèche soigneusement par-devant, et remonte sa culotte bleu ciel. Vous regardez tous les deux en silence pendant qu’elle remonte et rajuste ses collants, puis relève sa jupe jusqu’à la taille une dernière fois pour rabaisser son jupon pour le remettre en place.</p>",
@@ -9547,8 +9547,8 @@ function sofawork() {
     "<p>DIANE\u202F: Au fait, est-ce que je peux utiliser tes toilettes avant de partir\u202F?</p>",
   );
   s("<p>Qu’est-ce que vous allez faire\u202F?</p>");
-  if (luckshots >= 1) c("luckytrip12", "La laisser partir et tenter un coup de chance\u202F?");
-  c("toiletgo", "Simplement la laisser partir.");
+  if (luckshots >= 1) c("luckytrip12", "La laisser y aller et tenter un coup de chance\u202F?");
+  c("toiletgo", "Simplement la laisser y aller.");
   c("sofawork1", "L’attirer sur vos genoux et l’embrasser\u202F?");
 }
 function sofawork1() {
@@ -9568,7 +9568,7 @@ function sofawork1() {
   s(
     "<p>DIANE\u202F: Écoute, tu me plais et ça ne me dérangerait pas vraiment que tu me regardes, mais… j’ai mes règles. Il y a des choses que je dois faire.</p>",
   );
-  if (luckshots >= 1) c("luckytrip12", "La laisser partir et tenter un coup de chance\u202F?");
+  if (luckshots >= 1) c("luckytrip12", "La laisser y aller et tenter un coup de chance\u202F?");
   c("sofawork2", "Essayer de l’arrêter.");
 }
 function sofawork2() {
@@ -9922,7 +9922,7 @@ function luckytrip204a() {
 function luckytrip205() {
   if (luckshots >= 1) {
     s(
-      "<p>Diane vient tout juste de aller au petit coin. Vous espérez que quelque chose l’empêchera d’y arriver.</p>",
+      "<p>Diane vient tout juste d’aller au petit coin. Vous espérez que quelque chose l’empêchera d’y arriver.</p>",
     );
     spendLuckshot();
     s("<p>Alors vous avez tenté un coup de chance.</p>");
@@ -14306,7 +14306,7 @@ function bushome6() {
     c("peestop1", "Vous vous retenez de toutes vos forces.");
   } else {
     s(
-      "<p>Vous proposez de descendre ici et de la raccompagner chez elle, même s’il ne lui reste que environ deux cents mètres à parcourir.</p>",
+      "<p>Vous proposez de descendre ici et de la raccompagner chez elle, même s’il ne lui reste qu’environ deux cents mètres à parcourir.</p>",
     );
     if (blad < 625) {
       s("<p>DIANE\u202F: Ce serait gentil.</p>");
@@ -14812,7 +14812,7 @@ function story2() {
   s("<p>Vous prenez sa main et la guidez vers le devant de votre pantalon.</p>");
   if (inti < 155) {
     s(
-      "<p>DIANE\u202F: Manifestement oui. Maintenant, à votre tour de tenir votre part du marché. Je peux aller aux toilettes\u202F?</p>",
+      "<p>DIANE\u202F: Manifestement oui. Maintenant, à toi de tenir ta part du marché. Je peux aller aux toilettes\u202F?</p>",
     );
     s(
       "<p>Elle vous donne un baiser, se lève et file aux toilettes. Vous n’avez plus qu’à l’imaginer là-dedans.</p>",
@@ -14851,7 +14851,7 @@ function story4() {
     "<p>Elle vous regarde d’en haut, se penche et vous embrasse sur les lèvres. Puis elle se redresse, un sourire malicieux aux lèvres.</p>",
   );
   s("<p>DIANE\u202F: Maintenant, je peux aller faire pipi\u202F?</p>");
-  c("story5", "Vous la laissez partir.");
+  c("story5", "Vous la laissez aller aux toilettes.");
 }
 function story5() {
   afterpee();
@@ -15564,7 +15564,7 @@ function afterpee() {
 function storytime() {
   if (tiramisu) {
     s(
-      "<p>DIANE\u202F: Bon, quand j’étais à la fac, je montais en ville avec mes amies et on buvait parfois un peu. Ensuite je devais prendre le bus pour rentrer et j’avais souvent envie d’aller aux toilettes à la fin du trajet. Ça n’avait pas trop d’importance car je n’avais qu’un kilomètre à faire à pied. Mais un jour il faisait un froid glacial et ça s’est répercuté direct sur ma vessie — j’avais vraiment une envie pressante. Le problème, c’est que j’avais rencontré un garçon de l’école dans le bus qui bavardait et voulait me raccompagner. Il me plaisait vraiment, mais c’était le plus mauvais moment qui soit. Toute seule, je serais allée dans les buissons, mais je ne pouvais pas avec lui là. J’étais au supplice.</p>",
+      "<p>DIANE\u202F: Bon, quand j’étais à la fac, je montais en ville avec mes amies et on buvait parfois un peu. Ensuite je devais prendre le bus pour rentrer et j’avais souvent envie d’aller aux toilettes à la fin du trajet. Ça n’avait pas trop d’importance car je n’avais qu’huit cents mètres à faire à pied. Mais un jour il faisait un froid glacial et ça s’est répercuté direct sur ma vessie — j’avais vraiment une envie pressante. Le problème, c’est que j’avais rencontré un garçon de l’école dans le bus qui bavardait et voulait me raccompagner. Il me plaisait vraiment, mais c’était le plus mauvais moment qui soit. Toute seule, je serais allée dans les buissons, mais je ne pouvais pas avec lui là. J’étais au supplice.</p>",
     );
   } else if (pannacotta) {
     s(
@@ -15579,7 +15579,7 @@ function storytime() {
     s("<p>VOUS\u202F: Tu as réussi à te retenir\u202F?</p>");
   } else {
     s(
-      "<p>DIANE\u202F: Il y a quelques mois, trois copines et moi sommes parties en enterrement de vie de jeune fille en Hollande. On avait pas mal bu et on rentrait à pied à l’hôtel. On avait toutes envie de faire pipi, mais l’une d’elles était vraiment à bout. On a aperçu des toilettes de l’autre côté de la rue, mais c’était des toilettes pour hommes, avec des urinoirs. Bref, Linda n’en pouvait plus et elle a dit\u202F: «\xA0Ça fera l’affaire\xA0» — elle a écarté sa culotte sur le côté et s’est soulagée dans les urinoirs. On riait comme des folles et les deux autres filles y sont allées aussi. Moi aussi j’avais vraiment très envie à ce stade, mais le problème c’est que je portais un pantalon.</p>",
+      "<p>DIANE\u202F: Il y a quelques mois, trois copines et moi sommes parties en enterrement de vie de jeune fille en Hollande. On avait pas mal bu et on rentrait à pied à l’hôtel. On avait toutes envie de faire pipi, mais l’une d’elles était vraiment à bout. On a aperçu des toilettes de l’autre côté de la rue, mais c’était des toilettes pour hommes, avec des urinoirs. Bref, Linda n’en pouvait plus et elle a dit\u202F: «\xA0Ça fera l’affaire\xA0» — elle a écarté sa culotte sur le côté et s’est soulagée dans les urinoirs. On riait comme des folles et les deux autres filles se sont soulagées aussi. Moi aussi j’avais vraiment très envie à ce stade, mais le problème c’est que je portais un pantalon.</p>",
     );
     s("<p>VOUS\u202F: Pourquoi c’était un problème\u202F?</p>");
   }
@@ -15605,7 +15605,7 @@ function storytime1() {
     );
   } else if (icecream) {
     s(
-      "<p>DIANE\u202F: On est tout juste rentrées à la coloc, mais mon amie cherchait les clés à tâtons et je trépignais dans l’entrée. Je ne pouvais tout simplement plus attendre. C’était comme les chutes du Niagara — dans mon jean aussi. Complètement mouillée. Cela dit, tout le monde était ivre et ça les a fait mourir de rire. Moi j’étais mortifiée — je ne savais pas comment affronter les autres le lendemain matin, mais personne n’en a jamais reparlé.</p>",
+      "<p>DIANE\u202F: On a tout juste réussi à rentrer, mais quelqu’un du groupe cherchait ses clés à tâtons et moi je sautillais dans le hall. Je n’en pouvais vraiment plus. C’était les chutes du Niagara, dans mon jean en plus. Je me suis complètement fait pipi dessus. Cela dit, tout le monde était soûl et ils ont tous trouvé ça hilarant. Mais moi j’étais mortifiée — je ne savais pas comment affronter qui que ce soit le lendemain matin, mais personne n’en a jamais reparlé.</p>",
     );
     s(
       "<p>VOUS\u202F: <em>(en la serrant dans vos bras)</em> Tu t’es vraiment fait pipi dessus\u202F?</p>",
@@ -15615,7 +15615,7 @@ function storytime1() {
     );
   } else {
     s(
-      "<p>DIANE\u202F: Ces urinoirs crasseux en forme de mur — impossible de s’y asseoir. Bref, je pensais pouvoir tenir jusqu’à l’hôtel, mais j’allais bientôt craquer. Les autres riaient, et quand je me suis glissée dans une ruelle pour baisser ma fermeture éclair, l’une d’elles a sorti un appareil photo. Je ne voulais pas me retrouver sur Webshots, alors je me suis retenue — littéralement, j’avais la main dans la poche, si on peut dire. C’est devenu tellement critique que quelques jets ont commencé à couler le long de ma jambe et j’ai dû me cacher derrière un vieux camion.</p>",
+      "<p>DIANE\u202F: Ces urinoirs crasseux en forme de mur — impossible de s’y asseoir. Bref, je pensais pouvoir tenir jusqu’à l’hôtel, mais j’allais bientôt craquer. Les autres riaient, et quand je me suis glissée dans une ruelle pour baisser ma fermeture éclair, l’une d’elles a sorti un appareil photo. Je ne voulais pas me retrouver sur Webshots, alors je me suis retenue — littéralement, j’avais la main dans la poche, si on peut dire. C’est devenu tellement critique que quelques jets ont commencé à couler le long de ma jambe et j’ai dû me soulager derrière un vieux camion.</p>",
     );
     s("<p>VOUS\u202F: Tu t’es fait pipi dessus\u202F?</p>");
     s(

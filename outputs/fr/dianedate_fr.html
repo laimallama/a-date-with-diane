@@ -1756,7 +1756,7 @@ function start1() {
 }
 function info() {
   s(
-    "<p>MARDI\u202F: Diane porte une jupe rouge à pois qui lui arrive aux genoux, avec une ceinture, des bas, un chemisier blanc et une petite veste rouge. En dessous\u202F: un jupon, un porte-jarretelles blanc et une culotte rose à pois bleus sur le devant.</p>",
+    "<p>MARDI\u202F: Diane porte une jupe rouge à pois qui lui arrive aux genoux, avec une ceinture, des bas, un chemisier blanc et une petite veste rouge. En dessous\u202F: un jupon, des jarretelles blanches et une culotte rose à pois bleus sur le devant.</p>",
   );
   s(
     "<p>JEUDI\u202F: Diane porte une élégante jupe noire plissée, avec un chemisier noir et une veste rouge. En dessous\u202F: un jupon, des collants et une culotte bleu ciel.</p>",
@@ -2453,10 +2453,10 @@ function eatmeal5c() {
 }
 function asklootalk() {
   s(
-    "<p><b>Vous êtes fou\u202F?</b> La conversation était peut-être au point mort, mais vous n’aviez aucune raison de lui demander si elle avait envie de faire pipi.</p>",
+    "<p><b>Mais quelle idée\u202F!</b> La conversation était peut-être au point mort, mais ce n’était pas une raison pour lui demander si elle avait envie de faire pipi.</p>",
   );
   s(
-    "<p>Vous êtes peut-être une sorte de pervers. Vous l’imaginez peut-être en train de gigoter sur sa chaise, de se trémousser, de croiser les jambes, trop timide pour vous dire qu’elle a envie d’aller aux toilettes. Vous voulez peut-être même qu’elle soit de plus en plus à bout. Si c’est le cas, honte à vous\u202F!</p>",
+    "<p>Vous êtes peut-être une sorte de pervers. Vous l’imaginez peut-être en train de gigoter sur sa chaise, de se trémousser, de croiser les jambes, trop timide pour vous dire qu’elle a envie d’aller aux toilettes. Vous voulez peut-être même qu’elle ait de plus en plus de mal à se retenir. Si c’est le cas, honte à vous\u202F!</p>",
   );
   s(
     "<p>Heureusement, un fracas soudain à une table voisine fait qu’elle n’a pas entendu. Elle vous demande donc de répéter ce que vous avez dit.</p>",
@@ -3678,7 +3678,7 @@ function act2e() {
       );
       getinti(2);
     } else {
-      s("<p>Diane rit du jeu de son amie.</p>");
+      s("<p>Diane rit en regardant jouer son amie.</p>");
     }
   }
   s("<p>Vous avez vraiment adoré cette scène.</p>");
@@ -3703,7 +3703,7 @@ function act2f() {
       "<p>Diane ramasse son sac à main par terre et fouille dedans pour trouver un mouchoir. Elle regarde autour d’elle.</p>",
     );
   } else {
-    s("<p>DIANE\u202F: Elle était pas géniale, Molly\u202F!</p>");
+    s("<p>DIANE\u202F: Elle était géniale, Molly\u202F!</p>");
   }
   c("act2fa", "Les lumières baissent.");
 }
@@ -8260,7 +8260,7 @@ function offertowalkhome() {
   s("<p>VOUS\u202F: Je te raccompagne\u202F?</p>");
   s("<p>Elle a l’air un peu vexée, comme si vous la mettiez à la porte.</p>");
   s("<p>DIANE\u202F: Non, c’est juste au coin de la rue. On se voit la semaine prochaine.</p>");
-  s("<p>Elle vous fait la bise et disparaît.</p>");
+  s("<p>Elle vous embrasse et disparaît.</p>");
   c("gameover", "Oh là là.");
 }
 function asklooneed() {
@@ -10855,7 +10855,7 @@ function stampalbum6a() {
     s("<p>Elle commence à se rajuster, comme pour se lever.</p>");
     {
       s(
-        "<p>Bon, vous vous êtes bien amusé. Il y a des limites à la plaisanterie. Elle meurt d’envie d’aller aux toilettes mais n’ose pas vous interrompre. Vous n’allez pas lui donner sa chance\u202F?</p>",
+        "<p>Bon, vous vous êtes bien amusé. Il y a des limites à la plaisanterie. Elle meurt d’envie d’aller aux toilettes mais n’ose pas vous interrompre. Vous n’allez pas lui laisser l’occasion d’y aller\u202F?</p>",
       );
       c("givechance", "D’accord, je vais être gentil.");
     }
@@ -12745,7 +12745,7 @@ function sofatalkc() {
   );
   s("<p>DIANE\u202F: Ça fait du bien.</p>");
   s(
-    "<p>Elle arrache un morceau de papier toilette et s’essuie rapidement, puis se lève et enfile sa culotte blanche.</p>",
+    "<p>Elle arrache un morceau de papier toilette et s’essuie rapidement, puis se lève et remonte sa culotte blanche.</p>",
   );
   s(
     "<p>Elle laisse retomber sa robe, en vous souriant. «\xA0Tu as aimé ça\u202F?\xA0», demande-t-elle. Vous lui dites à quel point c’était merveilleux.</p>",
@@ -12766,7 +12766,7 @@ function sofatalk1() {
     s("<p>VOUS\u202F: Ça m’a vraiment excité.</p>");
     s("<p>DIANE\u202F: Quoi, me voir dans cet état\u202F?</p>");
   } else {
-    s("<p>VOUS\u202F: Ça m’a bien excité, que tu aies besoin d’y aller.</p>");
+    s("<p>VOUS\u202F: Ça m’a bien excité, que tu aies dû y aller.</p>");
     s("<p>DIANE\u202F: J’étais tellement gênée. Tu n’étais pas censé regarder.</p>");
     s("<p>VOUS\u202F: Je n’ai pas regardé. Mais il y avait quelque chose, je ne sais pas…</p>");
     s("<p>Vous marquez une pause.</p>");
@@ -15606,7 +15606,7 @@ function storytime() {
       "<p>DIANE\u202F: L’un des pires moments — il y a quelques années, j’étais allée avec ma famille rendre visite à des amis. Il y avait un type un peu plus âgé que moi et il m’impressionnait un peu. Bref, il m’a emmenée dans une autre pièce et m’a appris à jouer aux échecs. Le problème, c’est que j’avais bu du cidre au déjeuner et j’avais une envie folle de faire pipi sans savoir comment lui dire. Je n’arrêtais pas de gigoter et ma jupe ne cessait de remonter — je sentais qu’il me regardait, ce qui n’arrangeait pas les choses.</p>",
     );
     s("<p>VOUS\u202F: Peut-être que ça l’excitait\u202F?</p>");
-    s("<p>DIANE\u202F: Je me le suis parfois demandé. Bref—</p>");
+    s("<p>DIANE\u202F: Je me le suis parfois demandé. Bref —</p>");
   } else if (icecream) {
     s(
       "<p>DIANE\u202F: Quand j’avais dix-huit ans, en première année à la fac, pendant la semaine d’intégration où tout le monde sort boire. Je n’avais pas l’habitude de l’alcool et on avait tous pas mal bu, de la bière aussi. Sur le chemin du retour, j’allais craquer tellement j’avais envie, je ne savais plus quoi faire.</p>",
@@ -15632,7 +15632,7 @@ function storytime1() {
     );
   } else if (pannacotta) {
     s(
-      "<p>DIANE\u202F: Finalement c’est devenu tellement urgent que j’ai lâché d’un coup «\xA0Où sont les toilettes\u202F?\xA0» avant de me précipiter vers la salle de bains. J’y suis tout juste arrivée et j’ai claqué la porte, mais je ne trouvais pas l’interrupteur et il faisait noir comme dans un four. J’étais dans un tel état — je ne sais pas pourquoi je te raconte ça — je ne voyais pas où étaient les toilettes, et—</p>",
+      "<p>DIANE\u202F: Finalement c’est devenu tellement urgent que j’ai lâché d’un coup «\xA0Où sont les toilettes\u202F?\xA0» avant de me précipiter vers la salle de bains. J’y suis tout juste arrivée et j’ai claqué la porte, mais je ne trouvais pas l’interrupteur et il faisait noir comme dans un four. J’étais dans un tel état — je ne sais pas pourquoi je te raconte ça — je ne voyais pas où étaient les toilettes, et —</p>",
     );
     s("<p>Elle passe ses bras autour de vous et vous parle doucement à l’oreille\u202F:</p>");
     s(

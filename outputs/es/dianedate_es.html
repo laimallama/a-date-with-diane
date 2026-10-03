@@ -847,6 +847,7 @@ var backFastTimer = null;
 var HOLD_FF_DELAY_MS = 450;
 var HOLD_FF_INTERVAL_MS = 70;
 var heldActionKey = null;
+var keyboardControlFocus = false;
 var darkMode = false;
 var guideTags = null;
 var guideIndex = 0;
@@ -855,6 +856,7 @@ var guideOn = false;
 var guideHistory = [];
 var climaxSkipUsed = false;
 var galleryReturnFocus = null;
+var galleryReturnKeyboardFocus = false;
 var galleryInertNodes = [];
 var PREGAME_TAGS = [
   "start",
@@ -1024,6 +1026,29 @@ function clearAllHolds() {
   clearBackHold();
   heldActionKey = null;
 }
+if (document.addEventListener) {
+  // Pointer focus must not take Enter away from the Guide. Tab still selects
+  // controls deliberately, including controls inside the Gallery.
+  document.addEventListener(
+    "pointerdown",
+    function () {
+      keyboardControlFocus = false;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+  document.addEventListener(
+    "keydown",
+    function (e) {
+      if (e.key !== "Tab") return;
+      keyboardControlFocus = true;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+}
 function isStoryActionKey(key) {
   return (
     /^[1-9]$/.test(key) ||
@@ -1174,6 +1199,7 @@ function openGallery() {
   clearAllHolds();
   clearChoiceKeyArm();
   galleryReturnFocus = document.activeElement;
+  galleryReturnKeyboardFocus = keyboardControlFocus;
   renderGalleryLists();
   overlay.removeAttribute("inert");
   overlay.classList.add("open");
@@ -1206,13 +1232,17 @@ function closeGallery() {
   galleryInertNodes = [];
   var target = galleryReturnFocus;
   galleryReturnFocus = null;
+  keyboardControlFocus = galleryReturnKeyboardFocus && keyboardControlFocus;
+  galleryReturnKeyboardFocus = false;
   if (
     !target ||
     target === document.body ||
     !document.body.contains(target) ||
     target.offsetParent === null
-  )
+  ) {
+    keyboardControlFocus = false;
     target = document.getElementById("galleryToggle");
+  }
   if (target && typeof target.focus === "function") target.focus();
 }
 function digestionTick() {
@@ -1330,7 +1360,12 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (tag === "a" || (tag === "button" && !e.target.classList.contains("choice"))) {
+      if (
+        tag === "a" ||
+        (tag === "button" &&
+          !e.target.classList.contains("choice") &&
+          (keyboardControlFocus || !(guideActive && guideOn)))
+      ) {
         if (e.repeat) e.preventDefault();
         return;
       }
@@ -1668,7 +1703,7 @@ function start() {
 }
 function start1() {
   s(
-    "<p>Hay cinco finales exitosos distintos, o «resultados ganadores», ordenados por categoría. ¡A ver si los consigues todos!</p>",
+    "<p>Hay cinco finales exitosos distintos, o «resultados ganadores», ordenados de mejor a peor. ¡A ver si los consigues todos!</p>",
   );
   s(
     "<p>También hay algunos finales de consolación, e incluso podrías conseguir una cita con Amanda.</p>",
@@ -2133,7 +2168,7 @@ function eatmeal2b() {
   );
   s("<p>TÚ: ¡Ah! Te vas a ir.</p>");
   s("<p>Pones cara de pena.</p>");
-  s("<p>DIANE: No será hasta dentro de mucho. Y además, apenas me conoces.</p>");
+  s("<p>DIANE: No será hasta dentro de mucho tiempo. Y además, apenas me conoces.</p>");
   s(
     "<p>Rellenas las dos copas de vino, aunque con la sensación de que la conversación no lleva a ningún lado.</p>",
   );
@@ -2790,15 +2825,15 @@ function lethergo() {
   getinti(4);
   if (saturday) {
     s(
-      "<p>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, el vestido subido hasta la cintura, las bragas por las rodillas mientras está sentada, con el tintineo del pis al caer en el inodoro...</p>",
+      "<p>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, el vestido subido hasta la cintura, las bragas por las rodillas mientras está sentada, con el sonido del pis al caer en el inodoro...</p>",
     );
   } else if (tuesday) {
     s(
-      "<p>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, con el tintineo del pis al caer en el inodoro...</p>",
+      "<p>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, con el sonido del pis al caer en el inodoro...</p>",
     );
   } else {
     s(
-      "<p>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, los pantis y las bragas por las rodillas mientras está sentada, con el tintineo del pis al caer en el inodoro...</p>",
+      "<p>Desaparece en el baño de señoras. No puedes hacer otra cosa que imaginártela ahí dentro, la falda subida hasta la cintura, los pantis y las bragas por las rodillas mientras está sentada, con el sonido del pis al caer en el inodoro...</p>",
     );
   }
   s("<p class='notice'><strong>Diane va al baño. Pierdes 5 puntos de timidez.</strong></p>");
@@ -2849,15 +2884,15 @@ function gotoo() {
   getinti(2);
   if (saturday) {
     s(
-      "<p>Ella desaparece en el baño de señoras y tú entras en el de caballeros. Oyes cerrarse de golpe la puerta de una cabina cuando ella entra. No puedes hacer otra cosa que imaginártela al otro lado de la pared, el vestido subido hasta la cintura, las bragas por las rodillas mientras está sentada, con el tintineo del pis al caer en el inodoro...</p>",
+      "<p>Ella desaparece en el baño de señoras y tú entras en el de caballeros. Oyes cerrarse de golpe la puerta de una cabina cuando ella entra. No puedes hacer otra cosa que imaginártela al otro lado de la pared, el vestido subido hasta la cintura, las bragas por las rodillas mientras está sentada, con el sonido del pis al caer en el inodoro...</p>",
     );
   } else if (tuesday) {
     s(
-      "<p>Ella desaparece en el baño de señoras y tú entras en el de caballeros. Oyes cerrarse de golpe la puerta de una cabina cuando ella entra. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, con el tintineo del pis al caer en el inodoro...</p>",
+      "<p>Ella desaparece en el baño de señoras y tú entras en el de caballeros. Oyes cerrarse de golpe la puerta de una cabina cuando ella entra. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, las bragas por las rodillas mientras está sentada, con el sonido del pis al caer en el inodoro...</p>",
     );
   } else {
     s(
-      "<p>Ella desaparece en el baño de señoras y tú entras en el de caballeros. Oyes cerrarse de golpe la puerta de una cabina cuando ella entra. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, los pantis y las bragas por las rodillas mientras está sentada, con el tintineo del pis al caer en el inodoro...</p>",
+      "<p>Ella desaparece en el baño de señoras y tú entras en el de caballeros. Oyes cerrarse de golpe la puerta de una cabina cuando ella entra. No puedes hacer otra cosa que imaginártela al otro lado de la pared, la falda subida hasta la cintura, los pantis y las bragas por las rodillas mientras está sentada, con el sonido del pis al caer en el inodoro...</p>",
     );
   }
   s("<p class='notice'><strong>Los dos vais al baño. Pierdes 6 puntos de timidez.</strong></p>");
@@ -3203,7 +3238,7 @@ function interval1() {
   s("<p>Te gustaría que esperara. ¿Qué podrías decirle?</p>");
   c("askloo", "¿Preguntarle si tiene ganas de hacer pis?");
   c("keepquiet", "¿No decir nada?");
-  c("gotoo1", "¿Decirle que tú tienes que ir?");
+  c("gotoo1", "¿Decirle que necesitas ir al baño?");
   if (luckshots >= 1) c("luckytrip1", "¿Usar un golpe de suerte?");
 }
 function askloo() {
@@ -4363,7 +4398,7 @@ function riverside3aa() {
   mollyproc += 100;
   if (blad > 580) {
     s(
-      "<p>Diane te da las gracias, pero parece poco entusiasmada. Luego dice que va a por azúcar y se acerca a la furgoneta.</p>",
+      "<p>Diane da las gracias, pero parece poco entusiasmada. Luego dice que va a por azúcar y se acerca a la furgoneta.</p>",
     );
     s("<p>MOLLY: Qué raro, yo no creía que tomara azúcar.</p>");
     s(
@@ -4550,7 +4585,7 @@ function riverside6() {
 function luckytrip16() {
   if (luckshots >= 1) {
     s(
-      "<p>Se nota perfectamente que Diane tiene unas ganas enormes de hacer pis. No para de moverse y parece un poco distraída. Crees que en secreto le preguntó a la mujer del bar si había algún baño cerca, pero la mujer aparentemente le dijo que no. Así que la situación es bastante difícil para tu nueva novia, sobre todo estando en compañía.</p>",
+      "<p>Se nota perfectamente que Diane tiene unas ganas enormes de hacer pis. No para de moverse y parece un poco distraída. Crees que en secreto le preguntó a la mujer del puesto de café si había algún baño cerca, pero la mujer aparentemente le dijo que no. Así que la situación es bastante difícil para tu nueva novia, sobre todo estando en compañía.</p>",
     );
     spendLuckshot();
     s(
@@ -4847,7 +4882,7 @@ function musictalka() {
     );
     s("<p>TÚ: Creo que han mejorado eso, ¿no? Mejores baños y esas cosas.</p>");
     s(
-      "<p>DIANE: Para nosotras nunca hay suficientes. En Roskilde acabamos haciendo pis junto a la valla y a Molly la pillaron en un momento muy comprometido. Un tipoejo le hizo una foto y la colgó en internet. A ella no le hizo ninguna gracia, pero a todas nos pareció divertidísimo.</p>",
+      "<p>DIANE: Para nosotras nunca hay suficientes. En Roskilde acabamos haciendo pis junto a la valla y a Molly la pillaron en un momento muy comprometido. Un tipejo le hizo una foto y la colgó en internet. A ella no le hizo ninguna gracia, pero a todas nos pareció divertidísimo.</p>",
     );
     s("<p>Haces una nota mental para buscar eso.</p>");
   } else {
@@ -5066,7 +5101,7 @@ function luckytrip4a() {
     "<p>Molly mira a su alrededor. Entonces, todavía con el cinturón desabrochado, camina unos metros por el camino de sirga hacia ti, hasta donde unos obreros han dejado un pequeño contenedor. Se mete detrás de él, apoyada contra la pared, donde Bruno no puede verla—pero tú sí.</p>",
   );
   s(
-    "<p>Entonces se baja rápidamente la cremallera de los vaqueros y los baja de un tirón junto con las bragas blancas, agachándose enseguida, sin llegar a ponerse del todo en cuclillas. Hay poca luz para ver el chorro, pero puedes ver cómo se forma un charco en el suelo que se aleja de ella. A juzgar por su tamaño, desde luego tenía muchísimas ganas de hacer pis.</p>",
+    "<p>Entonces se baja rápidamente la cremallera de los vaqueros y los baja de un tirón junto con las bragas blancas, agachándose enseguida, sin llegar a ponerse del todo en cuclillas. Hay poca luz para ver el chorro, pero puedes ver cómo se forma un charco que se va extendiendo por el suelo desde donde está ella. A juzgar por su tamaño, desde luego tenía muchísimas ganas de hacer pis.</p>",
   );
   s(
     "<p>Hace pis durante casi un minuto y luego, al incorporarse, se sube las bragas blancas y las ajusta y después se sube los vaqueros y cierra la cremallera. Todavía abrochándose el cinturón, sale de detrás del contenedor y se reúne con Bruno.</p>",
@@ -5193,7 +5228,7 @@ function helpdiane() {
   }
   s("<p>¿Y bien, qué vas a hacer?</p>");
   c("helpdiane1a", "Encontrarle un sitio donde ir.");
-  c("helpdiane2a", "Decirle que tú también necesitas ir.");
+  c("helpdiane2a", "Decirle que tú también necesitas ir al baño.");
   c("helpdiane3a", "Decirle que hay un baño justo más adelante.");
   c("helpdiane4a", "Nada. Espero que se mee encima.");
 }
@@ -5205,7 +5240,7 @@ function helpdiane1a() {
   s("<p>Los otros miran atrás y os responden con un gesto de la mano.</p>");
   s("<p>TÚ: Ves, solo piensan que nos vamos a dar un abrazo. Aguanta un momento.</p>");
   s(
-    "<p>La rodeas con los brazos y observas cómo los otros desaparecen por el camino. Un par de paseadores nocturnos con sus perros pasan en dirección contraria. Puedes notar cómo Diane se mueve nerviosa contra ti.</p>",
+    "<p>La rodeas con los brazos y observas cómo los otros desaparecen por el camino. Un par de paseadores nocturnos con sus perros pasan en dirección contraria. Puedes notar cómo Diane se mueve arriba y abajo contra ti, apurada por las ganas.</p>",
   );
   s("<p>DIANE: <em>(casi en un susurro)</em> ¡Rápido, rápido! Estoy que reviento.</p>");
   c("helpdiane1aa", "No puede estarse quieta.");
@@ -5269,7 +5304,7 @@ function helpdiane2a() {
   );
   s("<p>Miras a tu alrededor. ¿Adónde vais a ir?</p>");
   c("together1", "¿Bajar al camino de sirga?");
-  c("together2", "¿Meterse entre los arbustos?");
+  c("together2", "¿Ir detrás de los arbustos?");
   c("helpdiane3a", "¿Aguantar hasta llegar al baño?");
 }
 function together1() {
@@ -5289,7 +5324,7 @@ function together1() {
   s("<p>DIANE: Sigue bajando tú, yo estaré—</p>");
   s("<p>No termina la frase.</p>");
   s("<p>Bajas unos cuantos escalones más, pero entonces te giras—</p>");
-  c("together1a", "—y mirar.");
+  c("together1a", "—y miras.");
 }
 function together1a() {
   if (saturday) {
@@ -5501,7 +5536,7 @@ function toiletclosed() {
   } else {
     s("<p>Diane mira el aseo.</p>");
     s(
-      "<p>DIANE: Ese sitio tiene una pinta horrible. Menos mal que no tengo ganas urgentes de ir.</p>",
+      "<p>DIANE: Ese sitio tiene una pinta horrible. Menos mal que no me urge ir al baño.</p>",
     );
     c("riverside15", "Sigues caminando.");
   }
@@ -5701,7 +5736,7 @@ function justclosed3() {
 }
 function justclosed4() {
   s(
-    "<p>Por fin el sonido de su pis se apaga y oyes el crujido de la ropa mientras se sube las bragas y se coloca las faldas. La cisterna suena y ella sale. Tú te has ido al urinario: no quieres que sepa que estabas escuchando en la puerta.</p>",
+    "<p>Por fin el sonido de su pis se apaga y oyes el crujido de la ropa mientras se sube las bragas y se arregla la falda y la enagua. La cisterna suena y ella sale. Tú te has ido al urinario: no quieres que sepa que estabas escuchando en la puerta.</p>",
   );
   s("<p>Diane se lava las manos y sale del baño. «Te veo fuera», dice.</p>");
   s(
@@ -5783,10 +5818,10 @@ function toiletopen() {
       );
       s("<p>TÚ: Ya que estamos, aprovecho. Nos vemos en un minuto.</p>");
       s("<p>Os acercáis a los baños; ella va hacia el de señoras, tú al de caballeros.</p>");
-      c("toiletopen1c", "Subís hacia los baños; ella va al de mujeres, tú al de hombres.");
+      c("toiletopen1c", "Os acercáis a los baños; ella va al de mujeres, tú al de hombres.");
     } else {
       s("<p>DIANE: ¡Uf! Está abierto.</p>");
-      c("toiletopen1b", "Ella se separa de ti y corre hacia el baño de mujeres.");
+      c("toiletopen1b", "Ella se separa de ti y se dirige a toda prisa hacia el baño de mujeres.");
     }
   }
 }
@@ -5998,7 +6033,7 @@ function luckytrip5tue1() {
 }
 function luckytrip5tue2() {
   s(
-    "<p>Bastante abatido, sales del baño de caballeros. El día está cayendo y no hay nadie por los alrededores. Te sientes muy solo y muy desanimado.</p>",
+    "<p>Bastante abatido, sales del baño de caballeros. Está anocheciendo y no hay nadie por los alrededores. Te sientes muy solo y muy desanimado.</p>",
   );
   s(
     "<p>El camino está ahora casi desierto. Miras el baño de mujeres. Te adentras en él. No está mejor que el de caballeros, salvo que tiene un espejo algo más decente.</p>",
@@ -6209,7 +6244,7 @@ function morewater() {
     s("<p>Está escandalosamente cara.</p>");
     bottlewater = 1;
     pounds -= 3;
-    s("<p>Le molesta un poco que la dejes sola.</p>");
+    s("<p>Le molesta un poco que te alejes de ella.</p>");
     getinti(-10);
   } else {
     s("<p>No te llega el dinero para otra botella de agua.</p>");
@@ -6230,7 +6265,7 @@ function handupskirt() {
 function pavilion4() {
   s("<p>Le dices a Molly que su personaje te pareció muy gracioso.</p>");
   s(
-    "<p>MOLLY: A todo el mundo le encanta la escena en la que me estoy meando de las ganas. Supongo que todo el mundo conoce la situación: tienes unas ganas locas de hacer pis pero estás en un sitio donde no puedes pedirlo y tienes que mantener el tipo.</p>",
+    "<p>MOLLY: A todo el mundo le encanta la escena en la que me muero de ganas de ir al baño. Supongo que todo el mundo conoce la situación: tienes unas ganas locas de hacer pis pero estás en un sitio donde no puedes pedirlo y tienes que mantener el tipo.</p>",
   );
   s("<p>DIANE: Te he visto así en la vida real. ¿Te acuerdas de Roma?</p>");
   s(
@@ -6336,7 +6371,7 @@ function buywaterpav() {
     bottlewater = 1;
     pounds -= 3;
   } else s("<p>¡No tienes suficiente dinero!</p>");
-  c("pavilion8", "Volver al terraza.");
+  c("pavilion8", "Volver a la terraza.");
 }
 function pavilion8() {
   s("<p>Son casi las 11. El camarero grita «¡Última ronda, por favor!».</p>");
@@ -6614,7 +6649,7 @@ function bridgeRetreat() {
     "<p>Robert te roza el brazo con suavidad y ambos os alejáis de vuestro puesto de observación evitando cualquier movimiento brusco. Solo entonces te das cuenta de que lleva la cámara en la mano. ¡Parece que ha sacado algunas fotos!</p>",
   );
   s(
-    "<p>Los dos subís por el camino en silencio, tan deprisa como podéis, hasta llegar a otro tramo de escaleras. Decidís que probablemente podéis esperar a las chicas allí.</p>",
+    "<p>Los dos avanzáis por el camino en silencio, tan deprisa como podéis, hasta llegar a otro tramo de escaleras. Decidís que probablemente podéis esperar a las chicas allí.</p>",
   );
   s(
     "<p>ROBERT: Si me das tu dirección de correo electrónico, podré enviarte uno o dos recuerdos.</p>",
@@ -6648,7 +6683,7 @@ function underbridgea() {
     "<p>Por fin el ciclista se pierde de vista y Diane, que está vigilando, levanta el pulgar. Molly ya se ha desabrochado el cinturón y se baja rápidamente los vaqueros y las bragas de un tirón. Se pone enseguida en cuclillas, con el trasero a unos treinta centímetros del suelo, y hasta desde donde estás alcanzas a distinguir su chorro de pis brillando en la penumbra.</p>",
   );
   s(
-    "<p>Ves cómo el charco corre entre sus piernas y por el cemento. Hace pis durante casi un minuto; luego se limpia con un pañuelo de papel, se levanta y se sube las bragas blancas.</p>",
+    "<p>Ves cómo el charco se extiende entre sus piernas y por el cemento. Hace pis durante casi un minuto; luego se limpia con un pañuelo de papel, se levanta y se sube las bragas blancas.</p>",
   );
   mollyblad = 0;
   s(
@@ -7673,7 +7708,7 @@ function goupstairs4() {
 }
 function goupstairs5() {
   s(
-    "<p>Amanda está pisando en el sitio delante de la puerta del baño. Tiene la mano firmemente entre las piernas, apretándose sin disimulo.</p>",
+    "<p>Amanda está pisando en el sitio delante de la puerta del baño. Tiene la mano firmemente entre las piernas, apretándose para aguantar.</p>",
   );
   s(
     "<p>Golpea la puerta del baño diciéndole a su amiga «¡Date prisa!». Se da la vuelta y se pone a caminar de un lado a otro.</p>",
@@ -7740,7 +7775,7 @@ function luckytrip31b() {
     "<p>Frente al váter da pasos en el sitio, apurada y flexionando las rodillas, mientras termina de bajar la cremallera de los vaqueros.</p>",
   );
   s(
-    "<p>De un solo movimiento se baja los vaqueros y las bragas y se queda medio agachada sobre el váter. En cuanto se aparta la ropa empieza a mear y, con las prisas, algo salpica sobre el asiento.</p>",
+    "<p>De un solo movimiento se baja los vaqueros y las bragas y se queda medio agachada sobre el váter. En cuanto se aparta la ropa empieza a mear y, con las prisas, parece que algo salpica el asiento.</p>",
   );
   s(
     "<p>Hay una pausa mientras se echa unos centímetros hacia atrás y suelta un chorro constante. Sigue ligeramente en cuclillas sobre el váter pero ahora solo tienes una vista borrosa de su pis.</p>",
@@ -7930,7 +7965,7 @@ function sendbrotheraway() {
 }
 function offertowalkhome() {
   s("<p>TÚ: ¿Te acompaño a casa?</p>");
-  s("<p>Ella pone cara de fastidio, como si la estuvieras echando a casa.</p>");
+  s("<p>Ella pone cara de fastidio, como si la estuvieras mandando a casa.</p>");
   s("<p>DIANE: No, si está aquí a la vuelta de la esquina. Te veo la semana que viene.</p>");
   s("<p>Te da un beso y desaparece.</p>");
   c("gameover", "Vaya.");
@@ -7962,7 +7997,7 @@ function asklooneed() {
   c("asklooneed1", "Ella sigue charlando.");
 }
 function asklooneed1() {
-  s("<p>Tu hermano ha vuelto. Ahora le está enseñando a Diane un álbum de diseños de teatro.</p>");
+  s("<p>Tu hermano ha vuelto. Ahora le está enseñando a Diane un álbum de bocetos de escenografía.</p>");
   s("<p>A ella le parece muy interesante.</p>");
   if (blad < 500) {
     s("<p>Tanto que tú estás empezando a sentirte un poco al margen.</p>");
@@ -7974,7 +8009,7 @@ function asklooneed1() {
     );
   } else {
     s(
-      "<p>Pero se está meando, con las rodillas apretadas y tamborileando. La observas mientras dos o tres veces hace ademán de levantarse de la silla, pero cada vez tu hermano encuentra algo más en el álbum para enseñarle.</p>",
+      "<p>Pero se está meando. Está sentada, golpeando una rodilla contra la otra. La observas mientras dos o tres veces hace ademán de levantarse de la silla, pero cada vez tu hermano encuentra algo más en el álbum para enseñarle.</p>",
     );
   }
   s("<p>La observas.</p>");
@@ -8132,7 +8167,7 @@ function luckytrip11a() {
     );
     s("<p>TÚ: Está detrás de la puerta. El cordón que cuelga.</p>");
     s(
-      "<p>Empiezas a subir las escaleras pero cuando llevas la mitad dice «Ya lo he encontrado» y se enciende la luz del baño. La puerta se cierra y oyes cómo echan el pestillo.</p>",
+      "<p>Empiezas a subir las escaleras, pero cuando llevas la mitad, dice «Ya lo he encontrado» y se enciende la luz del baño. La puerta se cierra y oyes cómo echan el pestillo.</p>",
     );
     s(
       "<p>Subes las escaleras de puntillas. Oyes el susurro de su ropa y luego el sonoro chorreo cuando empieza a hacer pis.</p>",
@@ -8843,7 +8878,7 @@ function sofadesp2() {
 }
 function givechance1() {
   sofaOfferLooDone = 1;
-  s("<p>TÚ: ¿Estás bien? Si quieres el baño, está arriba de las escaleras.</p>");
+  s("<p>TÚ: ¿Estás bien? Si necesitas ir al baño, está justo al subir las escaleras.</p>");
   s("<p>Se sonroja. Le da mucha vergüenza que notes que no puede quedarse quieta.</p>");
   s("<p>Así que intenta quedarse quieta.</p>");
   s("<p>DIANE: Estoy bien, gracias.</p>");
@@ -9132,7 +9167,7 @@ function loungedesp1() {
 }
 function excuseme1() {
   if (riesling) {
-    s("<p>De pronto se incorpora y se pone en pie, sonrojándose un poco.</p>");
+    s("<p>De pronto se inclina hacia delante y se pone en pie, sonrojándose un poco.</p>");
     s("<p>DIANE: Lo siento, ¿dónde está el baño?</p>");
   } else if (merlot) {
     s("<p>De pronto se gira, con las manos en las rodillas.</p>");
@@ -9152,7 +9187,7 @@ function excuseme1() {
       "<p>DIANE: Perdona que te interrumpa, pero tengo que ir un momento al aseo. ¿Dónde está tu baño?</p>",
     );
   } else {
-    s("<p>De pronto se incorpora y se pone en pie, sonrojándose un poco.</p>");
+    s("<p>De pronto se inclina hacia delante y se pone en pie, sonrojándose un poco.</p>");
     s("<p>DIANE: Perdona, pero tengo que ir al baño. ¿Dónde está?</p>");
   }
   s(
@@ -10056,7 +10091,7 @@ function sofatrains3a() {
 }
 function stampalbum4() {
   s(
-    "<p>Le enseñas tus sellos de Liberia. Y algunos de la época de guerra de Libia. Le explicas cuáles son raros y por qué los conseguiste.</p>",
+    "<p>Le enseñas tus sellos de Liberia. Y algunos de Libia emitidos en tiempos de guerra. Le explicas cuáles son raros y por qué los conseguiste.</p>",
   );
   if (blad > 750) {
     s("<p>Diane se sienta hacia delante, con las manos bajo los muslos.</p>");
@@ -10284,7 +10319,7 @@ function stampalbum5a() {
       c("toiletgo", "No me quedan golpes de suerte.");
     }
   } else {
-    s("<p>TÚ: No estás solo siendo amable, ¿verdad?</p>");
+    s("<p>TÚ: No lo haces solo por cortesía, ¿verdad?</p>");
     s("<p>DIANE: No. Me gusta mirar estas cosas.</p>");
     if (blad > 700) {
       s(
@@ -10315,7 +10350,7 @@ function sofatrains5a() {
       c("toiletgo", "No me quedan golpes de suerte.");
     }
   } else {
-    s("<p>TÚ: No estás solo siendo amable, ¿verdad?</p>");
+    s("<p>TÚ: No lo haces solo por cortesía, ¿verdad?</p>");
     s("<p>DIANE: No. Me gusta mirar estas cosas.</p>");
     if (blad > 700) {
       s(
@@ -10860,7 +10895,7 @@ function bottom1() {
         "<p>Puedes notar el fino relieve de una tira del liguero. De verdad lleva medias. Eso te resulta tremendamente excitante.</p>",
       );
     } else {
-      s("<p>Y vuelves a subir la mano, acariciándole el culito de nuevo.</p>");
+      s("<p>Y vuelves a subir la mano, acariciándole el trasero de nuevo.</p>");
     }
     s("<p>¿Qué vas a hacer?</p>");
     if (!standingLegsDone) c("bottom1a", "¿Explorar sus piernas?");
@@ -10908,7 +10943,7 @@ function bottomthurs() {
 }
 function skirtremove1() {
   s(
-    "<p>Tienes un brazo alrededor de Diane y el otro en su culito. Pero se retuerce tanto que temes que vaya a escaparse de tus brazos.</p>",
+    "<p>Tienes un brazo alrededor de Diane y el otro en su trasero. Pero se retuerce tanto que temes que vaya a escaparse de tus brazos.</p>",
   );
   s(
     "<p>Tu mano ya no está bajo su falda. Ella se aleja un poco, pero la mantienes cerca rodeándole la cinturilla de la falda negra plisada. Al deslizar la mano notas una pequeña cremallera lateral.</p>",
@@ -11156,7 +11191,7 @@ function gobathroom() {
       "<p>DIANE: ¿Puedes mirar para otro lado un momento? Es difícil cuando alguien te está mirando.</p>",
     );
     s(
-      "<p>Te giras y al cabo de unos segundos oyes el inconfundible tintineo al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
+      "<p>Te giras y al cabo de unos segundos oyes el inconfundible sonido al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
     );
     if (saturday) {
       s("<p>Ha bajado el dobladillo del vestido hacia las rodillas, cubriéndose con recato.</p>");
@@ -11175,7 +11210,7 @@ function gobathroom() {
       );
     }
     s(
-      "<p>Te mira con una sonrisa tímida al primer tintineo revelador de su pis, pero luego baja la vista y mira al frente como si estuviera concentrada.</p>",
+      "<p>Te mira con una sonrisa tímida en cuanto el sonido de su pis la delata, pero luego baja la vista y mira al frente como si estuviera concentrada.</p>",
     );
     if (saturday) {
       s(
@@ -11784,14 +11819,14 @@ function showover1() {
     c("showover2", "Ella vuelve a reírse.");
   } else if (inti > 130) {
     s(
-      "<p>DIANE: <em>(con una risita nerviosa)</em> Lo siento, es que me estaba meando de las ganas.</p>",
+      "<p>DIANE: <em>(con una risita nerviosa)</em> Lo siento, es que me moría de ganas de ir al baño.</p>",
     );
     s("<p>TÚ: ¿Llegaste a tiempo?</p>");
     s("<p>DIANE: <em>(con otra risita)</em> Qué alivio llegar. Hasta la semana que viene.</p>");
-    c("gameover", "No tienes suficientes puntos de intimidad para seguir adelante.");
+    c("gameover", "No tienes suficientes puntos de intimidad para seguir preguntándole.");
   } else {
     s("<p>DIANE: Bueno, es que era tarde, ¿no?</p>");
-    c("gameover", "No tienes suficientes puntos de intimidad para continuar.");
+    c("gameover", "No tienes suficientes puntos de intimidad para preguntarle más.");
   }
 }
 function showover2() {
@@ -12047,7 +12082,7 @@ function watching5() {
   if (tiramisu) {
     s("<p>Parece que caen unas gotas de lluvia junto a sus pies. ¿Serán imaginaciones tuyas?</p>");
     s(
-      "<p>Las pocas gotitas se han convertido en un pequeño charco. El charco crece y empieza a correr en un hilito por el pavimento.</p>",
+      "<p>Las pocas gotitas se han convertido en un pequeño charco. El charco crece y de él sale un hilillo que corre por el pavimento.</p>",
     );
     s(
       "<p>Chloe aparta la mano de la entrepierna y se cubre la cara, como intentando esconder su vergüenza de sí misma. Tiene las piernas todavía muy apretadas, pero puedes imaginarte el pis corriéndole por los pantis.</p>",
@@ -12070,7 +12105,7 @@ function watching5() {
       "<p>Antes incluso de ponerse en cuclillas, ya le está saliendo un chorro de pis que salpica contra el pavimento. Apenas está a medio agachar, pero ahora se baja un poco más los pantis.</p>",
     );
     s(
-      "<p>Mira nerviosa a su alrededor, ya más agachada. Ya no puedes ver el chorro, pero observas cómo el charco se aleja de ella.</p>",
+      "<p>Mira nerviosa a su alrededor, ya más agachada. Ya no puedes ver el chorro, pero observas cómo el charco se va extendiendo desde donde está ella.</p>",
     );
     s(
       "<p>Por fin termina. Se limpia las piernas y tienes la sensación de que las bragas están muy lejos de estar secas. Pero se las sube, y luego los pantis.</p>",
@@ -12142,7 +12177,7 @@ function sofatalkb() {
       "<p>DIANE: ¿Puedes mirar para otro lado un momento? Es difícil cuando alguien te está mirando.</p>",
     );
     s(
-      "<p>Te giras y al cabo de unos segundos oyes el inconfundible tintineo al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
+      "<p>Te giras y al cabo de unos segundos oyes el inconfundible sonido al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
     );
     s("<p>Ha bajado el dobladillo del vestido hacia las rodillas, cubriéndose con recato.</p>");
     c("sofatalkc", "Observas maravillado.");
@@ -12151,7 +12186,7 @@ function sofatalkb() {
       "<p>Diane tenía unas ganas tremendas, así que, incluso con tu mirada clavada en ella, empieza a mear casi en cuanto se sienta en el váter. Empuja el dobladillo del vestido hacia adelante para guardar algo de pudor, pero tampoco tapa mucho.</p>",
     );
     s(
-      "<p>Te mira con una sonrisa tímida al primer tintineo revelador de su pis, pero luego baja la vista y mira al frente como si estuviera concentrada.</p>",
+      "<p>Te mira con una sonrisa tímida en cuanto el sonido de su pis la delata, pero luego baja la vista y mira al frente como si estuviera concentrada.</p>",
     );
     s(
       "<p>Desde donde estás puedes ver justo el chorro. Tiene un color dorado increíble. Pero entonces ella empuja el dobladillo del vestido hacia las rodillas, así que ya no puedes ver el chorro.</p>",
@@ -12238,7 +12273,7 @@ function sofatalk3() {
 }
 function sofatalk4() {
   s(
-    "<p>Hace una pausa. Luego susurra, «Dame un abrazo,» y dobla las piernas sobre el sofá. Tú le pasas un brazo por encima y le tocas la pierna con la mano libre.</p>",
+    "<p>Hace una pausa. Luego susurra «Dame un abrazo» y dobla las piernas sobre el sofá. Tú le pasas un brazo por encima y le tocas la pierna con la mano libre.</p>",
   );
   s("<p>Está hablando en voz muy baja.</p>");
   storytime1();
@@ -12306,7 +12341,7 @@ function askwait1() {
 }
 function sofasnog2() {
   if (saturday) {
-    s("<p>DIANE: No debo quedarme demasiado tarde. Ha sido un día largo.</p>");
+    s("<p>DIANE: No debo quedarme hasta muy tarde. Ha sido un día largo.</p>");
   } else {
     s("<p>DIANE: No debo quedarme demasiado. Mañana tengo que trabajar.</p>");
   }
@@ -12851,7 +12886,7 @@ function carparka1() {
     afterpee();
     s("<p>Maldices para tus adentros.</p>");
     s(
-      "<p>Volvéis caminando hacia la parada de taxis. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes un ruido. La morena menuda de la cola del autobús está allí, meando. Tiene la minifalda subida hasta la cintura y las bragas negras bajadas hasta las rodillas, mientras un chorro corre por el suelo. Al verte toma aire de golpe, avergonzada e intenta subirse las bragas, pero está meando a pleno chorro y tiene que volver a ponerse en cuclillas.</p>",
+      "<p>Volvéis caminando hacia la parada de taxis. Por el camino pasáis junto a una autocaravana en el aparcamiento. Oyes un ruido. La morena menuda de la cola del autobús está allí, meando. Tiene la minifalda subida hasta la cintura y las bragas negras bajadas hasta las rodillas, mientras un chorro corre por el suelo. Al verte toma aire de golpe, avergonzada, e intenta subirse las bragas, pero está meando a pleno chorro y tiene que volver a ponerse en cuclillas.</p>",
     );
     s("<p>DIANE: Creo que estaba incluso peor que yo. Vamos, no te puedes quedar ahí mirando.</p>");
     c("taxihome1", "Te diriges de vuelta a la parada de taxis.");
@@ -12908,7 +12943,7 @@ function peepround() {
   squat = 1;
   gopee = 1;
   s(
-    "<p>Diane está al otro lado de ella, así que solo la ves en parte mientras se sube la falda, se baja las bragas y se pone en cuclillas. Pero pronto ves un charco de pis corriendo por el suelo, paralelo al que ha creado la morena.</p>",
+    "<p>Diane está al otro lado de ella, así que solo la ves en parte mientras se sube la falda, se baja las bragas y se pone en cuclillas. Pero pronto ves un charco de pis que se extiende por el suelo, paralelo al que ha creado la morena.</p>",
   );
   afterpee();
   s(
@@ -12985,7 +13020,7 @@ function busqueue4() {
       "<p>El problema es que tú también tienes unas ganas enormes de hacer pis. No puedes quedarte quieto. Sigues yendo al tablón de anuncios fingiendo que lees el horario del autobús.</p>",
     );
     s(
-      "<p>Diane no parece muy impresionada. Cree que la estás ignorando, que es exactamente lo que haces.</p>",
+      "<p>Diane no parece muy contenta. Cree que la estás ignorando, que es exactamente lo que haces.</p>",
     );
   } else {
     s("<p>No puedes apartar los ojos de ella.</p>");
@@ -13353,7 +13388,7 @@ function passage2ac() {
       "<p>Tu mano da enseguida con unos pantis enredados con unas bragas mojadas. Asegurándote de que nadie te ve, lo sacas todo.</p>",
     );
     s(
-      "<p>Te acercas a la luz. Las bragas son bastante delicadas, casi un tanga, azul cielo con un estampado de lunares rosas y un lazo rosa en la cintura. Probablemente se las compró expresamente para la cita.</p>",
+      "<p>Te acercas a la luz. Las bragas son bastante delicadas, en realidad un tanga, azul cielo con un estampado de lunares rosas y un lazo rosa en la cintura. Probablemente se las compró expresamente para la cita.</p>",
     );
     s(
       "<p>Están empapadas. Desechas los pantis, pero te guardas las bragas en el bolsillo y decides llevártelas a casa como recuerdo.</p>",
@@ -13426,7 +13461,7 @@ function luckytrip29() {
     spendLuckshot();
     s("<p>Y por suerte todavía tienes un golpe de suerte.</p>");
     s("<p>Lo usas. El portero niega con la cabeza.</p>");
-    c("luckytrip29a", "¿Diane le suplica?");
+    c("luckytrip29a", "¿Le suplicará Diane?");
   } else {
     s("<p>No tienes ningún golpe de suerte que usar.</p>");
     c("gameover", "Qué vergüenza intentar hacer trampa.");
@@ -13857,7 +13892,7 @@ function bathpee1() {
     "<p>Un par de segundos después empieza a manar un chorro de pis entre sus piernas, salpicando en la bañera. El chorro está tan bien formado que casi no puedes creer que esté pasando a través de las bragas, pero así es. Un hilo más fino sigue resbalándole por una pierna. En la bañera fluye alrededor de sus pies, de un amarillo asombroso, casi dorado.</p>",
   );
   s(
-    "<p>Al cabo de medio minuto el chorro se va apagando. Se inclina para abrir el grifo y enjuagar su pis; luego, riéndose, sale de la bañera.</p>",
+    "<p>Al cabo de medio minuto el chorro se va apagando. Se inclina para abrir el grifo y dejar que el agua se lleve el pis; luego, riéndose, sale de la bañera.</p>",
   );
   blad = 0;
   s("<p>Diane se ha meado encima. Por ti. Puedes ver que las bragas están empapadas.</p>");
@@ -13976,7 +14011,7 @@ function lootogether1() {
       "<p>DIANE: ¿Puedes mirar para otro lado un momento? Es difícil cuando alguien te está mirando.</p>",
     );
     s(
-      "<p>Te giras y al cabo de unos segundos oyes el inconfundible tintineo al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
+      "<p>Te giras y al cabo de unos segundos oyes el inconfundible sonido al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
     );
     if (thursday) {
       s(
@@ -14005,10 +14040,10 @@ function ontoilet() {
       "<p>DIANE: ¿Puedes mirar para otro lado un momento? Es difícil cuando alguien te está mirando.</p>",
     );
     s(
-      "<p>Te giras y al cabo de unos segundos oyes el inconfundible tintineo al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
+      "<p>Te giras y al cabo de unos segundos oyes el inconfundible sonido al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
     );
     s(
-      "<p>Desde donde estás de pie puedes ver justo su chorro de pis. Quizá sea la sidra, pero tiene un color dorado asombroso.</p>",
+      "<p>Desde donde estás de pie apenas alcanzas a ver su chorro de pis. Quizá sea la sidra, pero tiene un color dorado asombroso.</p>",
     );
     c("ontoilet1", "Observas maravillado.");
   } else {
@@ -14016,10 +14051,10 @@ function ontoilet() {
       "<p>Diane tenía muchísimas ganas, así que, incluso contigo ahí mirándola boquiabierto, empieza a mear casi en cuanto se sienta en el váter. Empuja el bajo de la falda hacia delante para guardar algo de pudor, pero no tapa gran cosa.</p>",
     );
     s(
-      "<p>Te mira con una sonrisa tímida al primer tintineo revelador de su pis, pero luego baja la vista y mira al frente como si estuviera concentrada.</p>",
+      "<p>Te mira con una sonrisa tímida en cuanto el sonido de su pis la delata, pero luego baja la vista y mira al frente como si estuviera concentrada.</p>",
     );
     s(
-      "<p>Desde donde estás de pie puedes ver justo su chorro de pis. Quizá sea la sidra, pero tiene un color dorado asombroso.</p>",
+      "<p>Desde donde estás de pie apenas alcanzas a ver su chorro de pis. Quizá sea la sidra, pero tiene un color dorado asombroso.</p>",
     );
     c("ontoilet1", "Observas maravillado.");
   }
@@ -14183,7 +14218,7 @@ function story5() {
     "<p><b>Has llevado a Diane a una cita, has disfrutado viéndola aguantar unas ganas enormes de hacer pis y has logrado una gran intimidad con ella, suficiente para que te prometa otra cita.</b></p>",
   );
   s(
-    "<p><b>Y además te ha hecho una paja y te ha compartido una de sus experiencias secretas de retención.</b></p>",
+    "<p><b>Y además te ha hecho una paja mientras te contaba en confianza una ocasión en la que necesitaba hacer pis con mucha urgencia.</b></p>",
   );
   s("<p><b>¡HAS GANADO UN PREMIO DE CONSOLACIÓN!</b></p>");
 }
@@ -14240,7 +14275,7 @@ function sitting_desp() {
     );
   else if (blad < 625)
     s(
-      "<p><em><span style='color: #ff0000'>Diane necesita el baño. De vez en cuando aprieta las piernas en silencio. Parece un poco inquieta e intenta no pensar en las ganas, pero puedes notar que necesita ir al baño porque no para de mover los pies.</span></em></p>",
+      "<p><em><span style='color: #ff0000'>Diane necesita el baño. De vez en cuando aprieta las piernas disimuladamente. Parece un poco inquieta e intenta no pensar en las ganas, pero puedes notar que necesita ir al baño porque no para de mover los pies.</span></em></p>",
     );
   else if (blad < 650)
     s(
@@ -14406,7 +14441,7 @@ function queue_desp() {
     );
   else if (blad < 600)
     s(
-      "<p><em><span style='color: #ff0000'>Está claro que Diane necesita ir al baño. De vez en cuando aprieta las piernas en silencio. Parece estar nerviosa e inquieta y, aunque intenta controlar las ganas, se nota que tiene ganas de ir al baño.</span></em></p>",
+      "<p><em><span style='color: #ff0000'>Está claro que Diane necesita ir al baño. De vez en cuando aprieta las piernas disimuladamente. Parece estar nerviosa e inquieta y, aunque intenta controlar las ganas, se nota que tiene ganas de ir al baño.</span></em></p>",
     );
   else if (blad < 625)
     s(
@@ -14458,7 +14493,7 @@ function queue_desp() {
     );
   else if (blad < 925)
     s(
-      "<p><em><span style='color: #ff0000'>Diane camina en pequeños círculos flexionando brevemente las rodillas a cada vuelta. Te preguntas si ya se le habrán escapado algunos chorritos.</span></em></p>",
+      "<p><em><span style='color: #ff0000'>Diane camina en pequeños círculos flexionando brevemente las rodillas cada vez que cambia de dirección. Te preguntas si ya se le habrán escapado algunos chorritos.</span></em></p>",
     );
   else {
     s(
@@ -14568,7 +14603,7 @@ function molly_desp() {
     );
   else if (mollyblad < 600)
     s(
-      "<p><em><span style='color: #0000FF'>Molly necesita el baño. De vez en cuando aprieta las piernas en silencio. Parece un poco inquieta e intenta no pensar en las ganas, pero se nota que necesita ir porque no para de mover los pies.</span></em></p>",
+      "<p><em><span style='color: #0000FF'>Molly necesita el baño. De vez en cuando aprieta las piernas disimuladamente. Parece un poco inquieta e intenta no pensar en las ganas, pero se nota que necesita ir porque no para de mover los pies.</span></em></p>",
     );
   else if (mollyblad < 650)
     s(
@@ -14660,7 +14695,7 @@ function albumdesp() {
   else if (blad < 725) {
     if (saturday)
       s(
-        "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane está tan inquieta que el vestido no para de subírsele. Entonces la estira de nuevo, usando eso como excusa para cambiar de postura otra vez.</span></em></p>",
+        "<p><em><span style='background: #FFFF00; color: #0000FF'>Diane está tan inquieta que el vestido no para de subírsele. Entonces lo estira de nuevo, usando eso como excusa para cambiar de postura otra vez.</span></em></p>",
       );
     else
       s(
@@ -14669,7 +14704,7 @@ function albumdesp() {
     if (points < 20) {
       s("<p>DIANE: Tengo que ir al baño en un momento.</p>");
     } else {
-      s("<p>DIANE: No debería quedarme muy tarde.</p>");
+      s("<p>DIANE: No debería quedarme hasta muy tarde.</p>");
     }
   } else if (blad < 750)
     s(
@@ -14926,7 +14961,7 @@ function storytime1() {
     s("<p>DIANE: Oh, sí. Completamente. Los vaqueros, las bragas, todo por la pierna...</p>");
   } else {
     s(
-      "<p>DIANE: Era uno de esos urinarios asquerosos adosados a la pared, así que no podía sentarme ni nada. El caso es que pensé que aguantaría hasta llegar al hotel, pero enseguida estaba a punto de reventar; las demás se reían, y cuando me metí en un callejón y empecé a bajar la cremallera de los vaqueros, una sacó una cámara. No quería acabar en Webshots, así que aguanté —literalmente, con la mano en el bolsillo, por así decirlo. Se puso tan mal que empezaron a escapárseme algunos chorros por la pierna y tuve que hacer pis detrás de un camión viejo.</p>",
+      "<p>DIANE: Era uno de esos urinarios asquerosos que son como una pared, así que no podía sentarme ni nada. El caso es que pensé que aguantaría hasta llegar al hotel, pero enseguida estaba a punto de reventar; las demás se reían, y cuando me metí en un callejón y empecé a bajar la cremallera de los vaqueros, una sacó una cámara. No quería acabar en Webshots, así que aguanté —literalmente, con la mano en el bolsillo, por así decirlo. Se puso tan mal que empezaron a escapárseme algunos chorros por la pierna y tuve que hacer pis detrás de un camión viejo.</p>",
     );
     s("<p>TÚ: ¿Te measte encima?</p>");
     s(
@@ -14941,7 +14976,7 @@ function emergency() {
     "<p>Diane de repente te interrumpe y se pone de pie. «Lo siento, tengo que ir al baño. ¿Me puedes decir dónde está?», dice, y sale rápidamente de la habitación.</p>",
   );
   s(
-    "<p>La escuchas subir corriendo las escaleras y entrar en el baño de arriba. Unos segundos después oyes el suave tintineo del pis mientras se alivia. Después tira de la cadena y vuelve a bajar, con una sonrisa entre avergonzada y aliviada.</p>",
+    "<p>La escuchas subir corriendo las escaleras y entrar en el baño de arriba. Unos segundos después oyes el suave sonido del pis mientras se alivia. Después tira de la cadena y vuelve a bajar, con una sonrisa entre avergonzada y aliviada.</p>",
   );
   afterpee();
   s(
@@ -15015,7 +15050,7 @@ function disaster2() {
   c("disaster3", "¿Qué vas a hacer?");
 }
 function disaster3() {
-  s("<p>Por fin Diane da un par de pasos para alejarse del charco.</p>");
+  s("<p>Por fin Diane da un pequeño paso para alejarse del charco.</p>");
   if (saturday) {
     s("<p>Deja caer el vestido y lo coloca en su sitio.</p>");
   } else {
@@ -15148,7 +15183,7 @@ function disaster8a() {
     "<p>Te detienes y la atraes hacia ti. La besas y le dices: «Sé que estás avergonzada y todo eso, pero mira lo que me ha hecho a mí». Y tomas su mano y la posas sobre la parte delantera de tus pantalones.</p>",
   );
   s(
-    "<p>Tienes la polla tan dura que casi se asoma por la cinturilla de los pantalones. Ella no retira la mano.</p>",
+    "<p>Tienes el pene tan duro que casi se asoma por la cinturilla de los pantalones. Ella no retira la mano.</p>",
   );
   c("disaster9", "Le acaricias el pelo.");
 }

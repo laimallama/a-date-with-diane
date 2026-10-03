@@ -847,6 +847,7 @@ var backFastTimer = null;
 var HOLD_FF_DELAY_MS = 450;
 var HOLD_FF_INTERVAL_MS = 70;
 var heldActionKey = null;
+var keyboardControlFocus = false;
 var darkMode = false;
 var guideTags = null;
 var guideIndex = 0;
@@ -855,6 +856,7 @@ var guideOn = false;
 var guideHistory = [];
 var climaxSkipUsed = false;
 var galleryReturnFocus = null;
+var galleryReturnKeyboardFocus = false;
 var galleryInertNodes = [];
 var PREGAME_TAGS = [
   "start",
@@ -1026,6 +1028,29 @@ function clearAllHolds() {
   clearBackHold();
   heldActionKey = null;
 }
+if (document.addEventListener) {
+  // Pointer focus must not take Enter away from the Guide. Tab still selects
+  // controls deliberately, including controls inside the Gallery.
+  document.addEventListener(
+    "pointerdown",
+    function () {
+      keyboardControlFocus = false;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+  document.addEventListener(
+    "keydown",
+    function (e) {
+      if (e.key !== "Tab") return;
+      keyboardControlFocus = true;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+}
 function isStoryActionKey(key) {
   return (
     /^[1-9]$/.test(key) ||
@@ -1176,6 +1201,7 @@ function openGallery() {
   clearAllHolds();
   clearChoiceKeyArm();
   galleryReturnFocus = document.activeElement;
+  galleryReturnKeyboardFocus = keyboardControlFocus;
   renderGalleryLists();
   overlay.removeAttribute("inert");
   overlay.classList.add("open");
@@ -1208,13 +1234,17 @@ function closeGallery() {
   galleryInertNodes = [];
   var target = galleryReturnFocus;
   galleryReturnFocus = null;
+  keyboardControlFocus = galleryReturnKeyboardFocus && keyboardControlFocus;
+  galleryReturnKeyboardFocus = false;
   if (
     !target ||
     target === document.body ||
     !document.body.contains(target) ||
     target.offsetParent === null
-  )
+  ) {
+    keyboardControlFocus = false;
     target = document.getElementById("galleryToggle");
+  }
   if (target && typeof target.focus === "function") target.focus();
 }
 function digestionTick() {
@@ -1332,7 +1362,12 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (tag === "a" || (tag === "button" && !e.target.classList.contains("choice"))) {
+      if (
+        tag === "a" ||
+        (tag === "button" &&
+          !e.target.classList.contains("choice") &&
+          (keyboardControlFocus || !(guideActive && guideOn)))
+      ) {
         if (e.repeat) e.preventDefault();
         return;
       }
@@ -1676,7 +1711,7 @@ function start1() {
     "<p>Außerdem gibt es ein paar Trostpreise, und vielleicht kannst du sogar ein Date mit Amanda ergattern.</p>",
   );
   s(
-    "<p>Die Anzeige für die <strong>Blase</strong> zeigt, wie viel Diane zurückhält. Was sich in ihrem <strong>Bauch</strong> befindet, fließt mit der Zeit langsam in ihre <strong>Blase</strong>. Außerdem hast du <strong>3 Glücksversuche</strong>, die du klug einsetzen solltest, wenn sie dir angeboten werden. Denk daran, dass sie auch Pech bringen können! Am Ende des Abends, wenn ihr mit dem Bus oder Taxi nach Hause gefahren seid, kannst du höchstens noch einen davon einsetzen.</p>",
+    "<p>Die Anzeige für die <strong>Blase</strong> zeigt, wie viel Diane zurückhält. Was sich in ihrem <strong>Bauch</strong> befindet, fließt mit der Zeit langsam in ihre <strong>Blase</strong>. Außerdem hast du <strong>3 Glücksversuche</strong>, die du klug einsetzen solltest, wenn sie dir angeboten werden. Denk daran, dass sie auch Pech bringen können! Sobald ihr für den Heimweg in den Bus oder ins Taxi gestiegen seid, kannst du im restlichen Verlauf des Abends insgesamt höchstens noch einen davon einsetzen.</p>",
   );
   s(
     "<p>Erwarte nicht, schon bei diesem ersten Date mit ihr zu schlafen. Wenn du es geschickt anstellst, könntest du aber durchaus auf deine Kosten kommen. Und vergiss nie: Frauen sind seltsame Wesen.</p>",
@@ -2249,12 +2284,12 @@ function eatmeal3d() {
   getinti(8);
   if (saturday) {
     s(
-      "<p>Der oberste Knopf ihres Kleides ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf die Senke zwischen ihren Brüsten und einen weißen Spitzen-BH.</p>",
+      "<p>Der oberste Knopf ihres Kleides ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf ihr Dekolleté und einen weißen Spitzen-BH.</p>",
     );
     sofaDressOpened = Math.max(sofaDressOpened, 1);
   } else {
     s(
-      "<p>Der oberste Knopf ihrer Bluse ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf die Senke zwischen ihren Brüsten und einen weißen Spitzen-BH.</p>",
+      "<p>Der oberste Knopf ihrer Bluse ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf ihr Dekolleté und einen weißen Spitzen-BH.</p>",
     );
   }
   s("<p>Du füllst eure beiden Weingläser nach.</p>");
@@ -3125,7 +3160,7 @@ function theatre5() {
 function theatre6() {
   s("<p>Das Stück geht weiter. Diane lacht, und du lachst mit.</p>");
   s(
-    "<p>Ein Paar mag das eine, hasst aber das andere. Einige wollen gesellschaftlich aufsteigen, und eine der Frauen fühlt sich vor den Kopf gestoßen und hat sich ins Auto zurückgezogen, um zu schmollen.</p>",
+    "<p>Ein Paar mag ein anderes Paar, hasst aber ein drittes. Einige wollen gesellschaftlich aufsteigen, und eine der Frauen fühlt sich vor den Kopf gestoßen und hat sich ins Auto zurückgezogen, um zu schmollen.</p>",
   );
   s("<p>Unterdessen spielen die Männer weiter Cricket.</p>");
   sitting_desp();
@@ -3447,7 +3482,7 @@ function act2() {
       "<p>Diane scheint zur Damentoilette hinüberzuschauen, als überlege sie etwas. Sie beißt sich auf die Lippe, geht aber mit dir weiter.</p>",
     );
     s(
-      "<p class='notice'><strong>Diane könnte in der Pause einen Toilettenbesuch gebrauchen, ist aber zu schüchtern, es zu erwähnen. Du hast 1 Schüchternheitspunkt gewonnen.</strong></p>",
+      "<p class='notice'><strong>Diane müsste in der Pause eigentlich auf die Toilette, ist aber zu schüchtern, es zu erwähnen. Du hast 1 Schüchternheitspunkt gewonnen.</strong></p>",
     );
     adjpoints(1);
   } else {
@@ -3545,7 +3580,7 @@ function handonthigh2() {
     getinti(-1);
   } else {
     s(
-      "<p>Sie lächelt dich an und lässt deine Hand dort liegen. Nach einer Weile nimmt sie sie und drückt sie leicht.</p>",
+      "<p>Sie lächelt dich an und lässt deine Hand dort liegen. Nach einer Weile nimmt sie deine Hand und drückt sie leicht.</p>",
     );
     getinti(2);
   }
@@ -4445,7 +4480,7 @@ function riverside3aa() {
       "<p>Du siehst, wie Diane der Frau hinter der Theke etwas zuflüstert. Die Frau schüttelt den Kopf. Diane kommt mit einem gezwungenen Lächeln zu euch zurück.</p>",
     );
     s(
-      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier irgendwelche „stillen Örtchen“ gibt. Du hast 5 Schüchternheitspunkte dazugewonnen.</strong></p>",
+      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier ein „stilles Örtchen“ gibt. Du hast 5 Schüchternheitspunkte dazugewonnen.</strong></p>",
     );
     adjpoints(5);
   } else {
@@ -4473,10 +4508,10 @@ function riverside3ab() {
     s(
       "<p>Du siehst, wie Diane der Frau hinter der Theke etwas zuflüstert. Die Frau schüttelt den Kopf. Diane kommt mit einem gezwungenen Lächeln zu euch zurück.</p>",
     );
-    s("<p>Sie scheint dir ein wenig übelzunehmen, dass du den Kaffee gekauft hast.</p>");
+    s("<p>Sie scheint es dir ein wenig übelzunehmen, dass du den Kaffee gekauft hast.</p>");
     getinti(-10);
     s(
-      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier irgendwelche „stillen Örtchen“ gibt. Du hast 8 Schüchternheitspunkte dazugewonnen.</strong></p>",
+      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier ein „stilles Örtchen“ gibt. Du hast 8 Schüchternheitspunkte dazugewonnen.</strong></p>",
     );
     adjpoints(8);
   } else {
@@ -4548,7 +4583,7 @@ function sitonbench() {
     );
   } else if (thursday) {
     s(
-      "<p>Bei diesen Tischbänken ist das Hinsetzen immer etwas umständlich, und Diane muss ihren Rock hochraffen. Dabei bekommst du viel von ihrem Unterrock zu sehen, der hübsch und ziemlich sexy ist, dich aber nicht mehr von ihren Beinen sehen lässt. Du weißt noch immer nicht, ob sie Strümpfe oder eine Strumpfhose trägt. Sie weiß, dass du hingeschaut hast, und lächelt dich an.</p>",
+      "<p>Bei diesen Tischbänken ist das Hinsetzen immer etwas umständlich, und Diane muss ihren Rock hochraffen. Dabei bekommst du viel von ihrem Unterrock zu sehen, der hübsch und ziemlich sexy ist, aber verhindert, dass du mehr von ihren Beinen siehst. Du weißt noch immer nicht, ob sie Strümpfe oder eine Strumpfhose trägt. Sie weiß, dass du hingeschaut hast, und lächelt dich an.</p>",
     );
   }
   s("<p>DIANE: Ist das nicht herrlich, diese Stille? Nur der Fluss ist zu hören.</p>");
@@ -4844,7 +4879,7 @@ function riverside9() {
       "<p>DU: Ich bin ziemlich überrascht, dass sie einen Unterrock trägt. Oder ein Unterkleid? Ich weiß nicht genau, wie man es nennt.</p>",
     );
     s(
-      "<p>ROBERT: Ich glaube, das ist egal. Es wird wohl ein Unterrock sein, der an der Taille sitzt, oder? Glaub mir, ich bin alt genug, um mich noch daran zu erinnern, als Frauen so etwas ständig trugen. Sehr hübsch und feminin.</p>",
+      "<p>ROBERT: Ich glaube, das ist egal. Es wird wohl ein Unterrock sein, der an der Taille sitzt, oder? Glaub mir, ich bin alt genug, um mich noch an die Zeit zu erinnern, als Frauen so etwas ständig trugen. Sehr hübsch und feminin.</p>",
     );
     c("riversidepath", "Ihr geht weiter.");
   } else {
@@ -5123,11 +5158,11 @@ function luckytrip4() {
     s("<p>Bruno steht etwa fünf Yards von Molly entfernt und pinkelt.</p>");
     if (tuesday) {
       s(
-        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Hände stecken in den Jeanstaschen, die Beine sind an den Knien halb übereinandergeschlagen.</p>",
+        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Hände stecken in den Jeanstaschen, die Beine sind an den Knien leicht gekreuzt.</p>",
       );
     } else {
       s(
-        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Beine sind an den Knien halb übereinandergeschlagen.</p>",
+        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Beine sind an den Knien leicht gekreuzt.</p>",
       );
     }
     s(
@@ -5144,7 +5179,7 @@ function luckytrip4a() {
     "<p>Molly geht zur Mauer, ungefähr an die Stelle, an der Bruno gerade stand. Dabei öffnet sie ihren Gürtel.</p>",
   );
   s(
-    "<p>Sie dreht sich um und sieht, dass Bruno sie beobachtet. Sie winkt ab, und du hörst schwach, wie sie „Schau weg!“ ruft. Sie winkt noch einmal. Aber er schaut noch immer zu ihr und scheint zu grinsen.</p>",
+    "<p>Sie dreht sich um und sieht, dass Bruno sie beobachtet. Sie winkt ihn weg, und du hörst schwach, wie sie „Schau weg!“ ruft. Sie winkt noch einmal. Aber er schaut noch immer zu ihr und scheint zu grinsen.</p>",
   );
   s(
     "<p>Molly sieht sich um. Dann geht sie mit noch offenem Gürtel ein paar Yards auf dem Treidelpfad in eure Richtung, zu einem kleinen Schuttcontainer, den Bauarbeiter dort abgestellt haben. Sie geht dahinter, dicht an die Mauer, wo Bruno sie nicht sehen kann – du aber schon.</p>",
@@ -5251,7 +5286,7 @@ function riverside13a() {
       );
     } else {
       s(
-        "<p>Sie steht leicht vornübergebeugt da, ein Bein halb über das andere geschlagen. Du schaust zu den anderen beiden, die vor euch weitergehen. Als du wieder zu Diane blickst, hat sie eine Hand im Schritt, zieht sie aber weg und dreht sich verlegen zur Seite.</p>",
+        "<p>Sie steht leicht vornübergebeugt da, die Beine leicht gekreuzt. Du schaust zu den anderen beiden, die vor euch weitergehen. Als du wieder zu Diane blickst, hat sie eine Hand im Schritt, zieht sie aber weg und dreht sich verlegen zur Seite.</p>",
       );
     }
     s("<p>Du hast ein Date mit ihr. Du musst ihr helfen.</p>");
@@ -5291,7 +5326,7 @@ function helpdiane1a() {
     "<p>DU: Siehst du, sie denken bloß, wir wollen ein bisschen kuscheln. Halt nur noch einen Moment durch.</p>",
   );
   s(
-    "<p>Du legst beide Arme um sie und siehst zu, wie die anderen auf dem Weg verschwinden. Ein paar späte Spaziergänger mit Hunden kommen euch entgegen. Du spürst, wie Diane ungeduldig auf und ab wippt.</p>",
+    "<p>Du legst beide Arme um sie und siehst zu, wie die anderen auf dem Weg verschwinden. Ein paar späte Spaziergänger mit Hunden kommen euch entgegen. Du spürst, wie Diane unruhig auf und ab wippt.</p>",
   );
   s("<p>DIANE: <em>(fast flüsternd)</em> Schnell, schnell! Ich platze gleich.</p>");
   c("helpdiane1aa", "Sie kann nicht stillstehen.");
@@ -5808,7 +5843,7 @@ function justclosed3() {
 }
 function justclosed4() {
   s(
-    "<p>Schließlich verstummt das Plätschern, und du hörst Kleidung rascheln, als sie ihren Slip hochzieht und ihre Röcke zurechtrückt. Die Spülung rauscht, dann kommt sie heraus. Du bist zum Urinal gegangen; sie soll nicht merken, dass du an der Tür gelauscht hast.</p>",
+    "<p>Schließlich verstummt das Plätschern, und du hörst Kleidung rascheln, als sie ihren Slip hochzieht und Rock und Unterrock zurechtrückt. Die Spülung rauscht, dann kommt sie heraus. Du bist zum Urinal gegangen; sie soll nicht merken, dass du an der Tür gelauscht hast.</p>",
   );
   s(
     "<p>Diane wäscht sich die Hände und verlässt dann die Toilette. „Wir sehen uns draußen“, sagt sie.</p>",
@@ -6121,7 +6156,7 @@ function luckytrip5tue1() {
 }
 function luckytrip5tue2() {
   s(
-    "<p>Ziemlich niedergeschlagen verlässt du die Herrentoilette. Der Abend wird dunkler, und niemand ist mehr da. Du fühlst dich sehr einsam und bedrückt.</p>",
+    "<p>Ziemlich niedergeschlagen verlässt du die Herrentoilette. Es wird immer dunkler, und niemand ist mehr da. Du fühlst dich sehr einsam und bedrückt.</p>",
   );
   s(
     "<p>Der Weg ist inzwischen fast menschenleer. Du schaust zur Damentoilette und wagst dich hinein. Sie ist nicht besser als die Herrentoilette, abgesehen von einem etwas besseren Spiegel.</p>",
@@ -6342,7 +6377,7 @@ function morewater() {
     s("<p>Sie ist maßlos überteuert.</p>");
     bottlewater = 1;
     pounds -= 3;
-    s("<p>Sie ist etwas verstimmt, weil du sie allein lässt.</p>");
+    s("<p>Sie ist etwas verstimmt, weil du von ihr weggehst.</p>");
     getinti(-10);
   } else {
     s("<p>Du hast nicht genug Geld für eine weitere Flasche Wasser.</p>");
@@ -6605,7 +6640,7 @@ function riversidepath() {
   digestMolly(30);
   if (blad > 650) {
     s(
-      "<p>Sie kichern, hören aber auf, als ihr näher kommt. Molly grinst, während Diane etwas verlegen wirkt. Sie versucht, unbekümmert auszusehen, schlägt aber ein Bein über das andere. Dann beugt sie sich leicht vor und tut so, als würde sie Schmutz von ihrem Rock bürsten.</p>",
+      "<p>Sie kichern, hören aber auf, als ihr näher kommt. Molly grinst, während Diane etwas verlegen wirkt. Sie versucht, unbekümmert auszusehen, kreuzt aber die Beine. Dann beugt sie sich leicht vor und tut so, als würde sie Schmutz von ihrem Rock bürsten.</p>",
     );
     s(
       "<p>Die beiden stehen neben einer Treppe. Sie führt auf einen Weg hinunter, der einem Treidelpfad ähnelt und direkt am Fluss entlangläuft. Etwa fünfzig Yards weiter führt eine Brücke über den Fluss. Der Treidelpfad verläuft unter der Brücke hindurch, während euer Weg oben auf die Brücke führt.</p>",
@@ -7812,7 +7847,7 @@ function goupstairs1() {
     "goupstairs2",
     "Du möchtest Diane nicht warten lassen und würdest gern sehen, wie Amanda sich schlägt. Also holst du das Buch.",
   );
-  c("goupstairsloo", "Du könntest selbst mal pinkeln. Jetzt hast du die Gelegenheit.");
+  c("goupstairsloo", "Du müsstest selbst mal pinkeln. Jetzt hast du die Gelegenheit.");
 }
 function goupstairs2() {
   s("<p>Du gehst in dein Zimmer und findest das Buch schnell.</p>");
@@ -7841,13 +7876,13 @@ function goupstairs4() {
     "<p>Bella geht ins Bad, während Amanda keucht: „Oh, beeil dich. Ich muss so dringend!“ Dann schließt Bella die Tür. Amanda bleibt draußen, die Qual steht ihr ins Gesicht geschrieben.</p>",
   );
   s(
-    "<p>Sie läuft hin und her und hält sich offen in den Schritt, weil sie glaubt, niemand könne sie sehen.</p>",
+    "<p>Sie läuft hin und her und hält eine Hand an ihren Schritt, ohne es zu verbergen, weil sie glaubt, niemand könne sie sehen.</p>",
   );
   c("goupstairs5", "Dabei hast du einen Logenplatz.");
 }
 function goupstairs5() {
   s(
-    "<p>Amanda tritt vor der Badezimmertür auf der Stelle. Eine Hand hat sie fest zwischen die Beine gepresst; eindeutig hält sie sich damit zurück.</p>",
+    "<p>Amanda tritt vor der Badezimmertür auf der Stelle. Eine Hand hat sie fest zwischen die Beine gepresst, um den Urin zurückzuhalten.</p>",
   );
   s(
     "<p>Sie klopft an die Badezimmertür und ruft ihrer Freundin zu: „Beeil dich!“ Dann wendet sie sich ab und läuft hin und her.</p>",
@@ -8868,7 +8903,7 @@ function sofadrink() {
           "<p>DIANE: Vielleicht diesmal nur Wasser. Ich will es mit dem Wein nicht übertreiben.</p>",
         );
       } else {
-        s("<p>DIANE: Ich glaube, ich bleibe lieber eine Weile bei Wasser.</p>");
+        s("<p>DIANE: Ich glaube, ich steige lieber eine Weile auf Wasser um.</p>");
       }
       s("<p>Du holst ihr ein Glas Wasser.</p>");
       c("sofasat", "Du gehst in die Küche.");
@@ -9145,7 +9180,7 @@ function sofatoilet2() {
       "<p>Dort stellst du fest, dass sie ohne ein Wort nach oben auf die Toilette gegangen ist.</p>",
     );
     s("<p>Ein paar Minuten später kommt sie mit selbstzufriedenem Gesicht zurück.</p>");
-    s("<p>DIANE: Ich dachte, ich gehe lieber. Aber danke für den Wein.</p>");
+    s("<p>DIANE: Ich dachte, ich gehe doch lieber auf die Toilette. Aber danke für den Wein.</p>");
     s("<p>Ihr trinkt den Wein und kuschelt ein wenig. Dann ist es Zeit, nach Hause zu gehen.</p>");
     afterpee();
     c("gameover", "Gute Nacht!");
@@ -9235,7 +9270,7 @@ function nicelydesp2() {
   s("<p>DIANE: Das Auto blieb liegen. Weit und breit war nichts, und es war fast Mitternacht.</p>");
   s("<p>DU: Wie, draußen auf dem Land?</p>");
   s(
-    "<p>DIANE: Nein, in irgendeinem gottverlassenen Vorort, am Rand einer mehrspurigen Straße. Auf dem Land wäre es einfacher gewesen, aus naheliegenden Gründen. Jedenfalls rief ich meine Mutter an, und sie sagte, sie würde uns abholen. Es würde ungefähr eine halbe Stunde dauern. Aber wir hatten natürlich alle getrunken – ich, Jenny und Linda. Außer Jennys Vater natürlich, der fuhr. Er musste beim Auto bleiben, bis der RAC kam.</p>",
+    "<p>DIANE: Nein, in irgendeinem gottverlassenen Vorort, am Rand einer Straße mit Mittelstreifen. Auf dem Land wäre es einfacher gewesen, aus naheliegenden Gründen. Jedenfalls rief ich meine Mutter an, und sie sagte, sie würde uns abholen. Es würde ungefähr eine halbe Stunde dauern. Aber wir hatten natürlich alle getrunken – ich, Jenny und Linda. Außer Jennys Vater natürlich, der fuhr. Er musste beim Auto bleiben, bis der RAC kam.</p>",
   );
   s("<p>DU: Musstet ihr alle drei pinkeln?</p>");
   s(
@@ -11268,7 +11303,7 @@ function skirtremove1b() {
     s("<p>DU: Er müsste bald fertig sein. Ich höre schon das Badewasser ablaufen.</p>");
     s("<p>DIANE: Gott sei Dank.</p>");
     s("<p>Sie scheint nicht an einer Stelle stehen bleiben zu können und läuft umher.</p>");
-    s("<p>Sie geht zum Sofa und setzt sich. Dort wippt sie ungeduldig auf und ab.</p>");
+    s("<p>Sie geht zum Sofa und setzt sich. Dort wippt sie unruhig auf und ab.</p>");
   } else {
     s("<p>Diane tritt von einem Fuß auf den anderen. Sie muss ganz eindeutig pinkeln.</p>");
     s(
@@ -11744,7 +11779,7 @@ function bathroomfree() {
     s("<p>DIANE: Nein, es geht schon, danke.</p>");
     c("walkhomeXa", "Du machst dich zum Gehen bereit.");
   } else {
-    s("<p>DIANE: Eigentlich sollte ich doch gehen. Ich bin gleich wieder da.</p>");
+    s("<p>DIANE: Ich glaube, ich gehe doch noch auf die Toilette. Ich bin gleich wieder da.</p>");
     s("<p>Und sie geht nach oben. Du wünschtest, du hättest nichts gesagt.</p>");
     afterpee();
     c("gameover", "Der Spaß ist vorbei.");
@@ -12340,7 +12375,7 @@ function luckytrip19() {
       "<p>Chloe läuft umher und hält sich ganz offen zwischen den Beinen fest. Sie muss offensichtlich wahnsinnig dringend pinkeln. Plötzlich setzt sie sich auf eine kleine Bank und wiegt sich dort unruhig vor und zurück, immer noch die Hand zwischen den Beinen. Sie steht auf und klingelt wieder, die freie Hand noch immer im Schritt. Sie dreht sich in deine Richtung, überkreuzt plötzlich hastig die Beine, hält sich mit beiden Händen fest und beugt sich vor, als wäre ihr vielleicht ein Schwall entwischt. Nun presst sie die ganze Zeit so fest die Hände in den Schritt, dass ihr Schottenrock vorn teilweise hochgezogen ist.</p>",
     );
     s(
-      "<p>Plötzlich geht sie zur Seite des Hauses, näher zu deinem Standort. Sie schaut sich um und fasst den Rocksaum, als wolle sie sich zum Pinkeln hinhocken.</p>",
+      "<p>Plötzlich geht sie zur Seite des Hauses, näher an dich heran. Sie schaut sich um und fasst den Rocksaum, als wolle sie sich zum Pinkeln hinhocken.</p>",
     );
     s(
       "<p>Sie hört ein Auto die Seitenstraße entlangfahren, schiebt ihren Rock wieder zurecht und geht zurück zur Tür. Sie kann kaum aufrecht gehen.</p>",
@@ -12371,7 +12406,7 @@ function watching4() {
     "<p>Sie tänzelt mit angezogenen Knien, macht dann einen Knicks und presst beide Hände in den Schritt. Du stellst dir vor, wie ein Spritzer Urin ihr Bein hinabrinnt.</p>",
   );
   s(
-    "<p>Sie geht zurück zur Tür und klingelt erneut. Niemand öffnet. Sie presst ein Bein fest über das andere.</p>",
+    "<p>Sie geht zurück zur Tür und klingelt erneut. Niemand öffnet. Sie kreuzt die Beine und presst sie fest zusammen.</p>",
   );
   s(
     "<p>Sie sitzt nach vorn gekrümmt auf der Bank und hüpft auf und ab. Ihre Hand scheint direkt unter ihrem Rock zu sein.</p>",
@@ -12567,7 +12602,7 @@ function sofatalk2() {
   } else {
     s("<p>DU: Musst du jetzt dringend aufs Klo?</p>");
     s(
-      "<p>DIANE: Nicht dringend, aber ich möchte gehen. Dein Bruder ist schon eine ganze Weile im Bad.</p>",
+      "<p>DIANE: Nicht dringend, aber ich müsste schon mal. Dein Bruder ist schon eine ganze Weile im Bad.</p>",
     );
   }
   s("<p>DU: Ich glaube, er wird gerade fertig.</p>");
@@ -12696,7 +12731,7 @@ function sofasnog2() {
     blad += 8;
     getinti(2);
     c("decisions", "Jetzt musst du dich entscheiden.");
-    c("sofapee2", "Versuche, sie mit einem Album oder einem Gesprächsthema abzulenken.");
+    c("sofapee2", "Versuche, sie mit einem Album oder einem Themenwechsel abzulenken.");
   }
 }
 function sofalegs() {
@@ -12831,7 +12866,7 @@ function sofapee() {
   }
   sofaPeeAskedDone = 1;
   s(
-    "<p>Du kuschelst mit Diane. Ihr Kopf liegt auf deiner Schulter. Du hältst einen Arm um sie und mit der anderen Hand ihre Hand.</p>",
+    "<p>Du kuschelst mit Diane. Ihr Kopf liegt auf deiner Schulter. Du hast einen Arm um sie gelegt und hältst mit der anderen Hand ihre Hand.</p>",
   );
   if (blad > 600) {
     s(
@@ -12843,7 +12878,7 @@ function sofapee() {
     );
     s("<p>DIANE: Ich muss aufs Klo, deshalb.</p>");
     s("<p>DU: Ist es so dringend?</p>");
-    s("<p>DIANE: Ich möchte gehen. Aber dein Bruder ist im Bad, glaube ich.</p>");
+    s("<p>DIANE: Ich müsste schon mal. Aber dein Bruder ist im Bad, glaube ich.</p>");
     s("<p>DU: Vielleicht ist er inzwischen draußen.</p>");
     if (blad > 800) {
       s("<p>DIANE: Na, zum Glück.</p>");
@@ -12878,7 +12913,7 @@ function sofapee1() {
     "Vielleicht bitte ich sie, zu warten. Aber zuerst sollte ich ihr noch näherkommen.",
   );
   c("walkhomeX", "Ich begleite sie nach Hause.");
-  c("sofapee2", "Versuche, sie mit einem Album oder einem Gesprächsthema abzulenken.");
+  c("sofapee2", "Versuche, sie mit einem Album oder einem Themenwechsel abzulenken.");
 }
 function sofapee2() {
   s("<p>Was tust du?</p>");
@@ -13052,7 +13087,7 @@ function busqueue3() {
     );
     s("<p>Sie wird rot und schaut verlegen drein.</p>");
     s(
-      "<p>DIANE: Ich glaube nicht, dass ich die Busfahrt durchhalte. Ich hatte fest damit gerechnet, vorher noch gehen zu können, aber nicht damit, dass das Pavilion schon geschlossen ist.</p>",
+      "<p>DIANE: Ich glaube nicht, dass ich die Busfahrt durchhalte. Ich hatte fest damit gerechnet, vorher noch gehen zu können, aber nicht damit, dass der Pavilion schon geschlossen ist.</p>",
     );
     s("<p>Du siehst dich um und überlegst.</p>");
     c("queue1a", "Was soll es sein?");
@@ -13215,7 +13250,7 @@ function carparka1() {
     s("<p>Sie küsst dich.</p>");
     getinti(5);
     s(
-      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Busschlange ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
+      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Warteschlange an der Bushaltestelle ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
     );
     s(
       "<p>DIANE: Ich glaube, bei ihr war es noch dringender als bei mir. Komm – du kannst doch nicht stehen bleiben und zusehen.</p>",
@@ -13236,7 +13271,7 @@ function carparka1() {
     afterpee();
     s("<p>Du fluchst innerlich.</p>");
     s(
-      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst ein Geräusch. Die zierliche Brünette aus der Busschlange ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, schnappt sie beschämt nach Luft und versucht, ihren Slip hochzuziehen. Doch es läuft so stark, dass sie sich wieder hinhocken muss.</p>",
+      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst ein Geräusch. Die zierliche Brünette aus der Warteschlange an der Bushaltestelle ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, schnappt sie beschämt nach Luft und versucht, ihren Slip hochzuziehen. Doch es läuft so stark, dass sie sich wieder hinhocken muss.</p>",
     );
     s(
       "<p>DIANE: Ich glaube, bei ihr war es noch dringender als bei mir. Komm – du kannst doch nicht stehen bleiben und zusehen.</p>",
@@ -13256,7 +13291,7 @@ function carparka2() {
   );
   blad += 10;
   s(
-    "<p>Du schlägst vor, hinter ein Wohnmobil zu gehen. Dann hörst du eilige Schritte näher kommen. Es ist die junge Frau im Minirock, die du in der Busschlange gesehen hast. Ihr Gesicht ist gerötet, und sie wirkt besorgt.</p>",
+    "<p>Du schlägst vor, hinter ein Wohnmobil zu gehen. Dann hörst du eilige Schritte näher kommen. Es ist die junge Frau im Minirock, die du in der Warteschlange an der Bushaltestelle gesehen hast. Ihr Gesicht ist gerötet, und sie wirkt besorgt.</p>",
   );
   s("<p>DIE JUNGE FRAU: <em>(zu Diane)</em> Gibt es dort drüben eine Toilette?</p>");
   s("<p>DIANE: Ja, aber sie ist zu. Ich habe es gerade versucht.</p>");
@@ -13301,7 +13336,7 @@ function peepround() {
   );
   afterpee();
   s(
-    "<p>Nach einer Weile steht die Brünette auf und zieht ihren Slip hoch. Bevor sie ihren kurzen Rock zurechtrückt, tupft sie ihre Beine mit einem Taschentuch ab. Etwas Urin muss ihr entwischt sein. Diane wird gerade fertig, und dein Herz klopft, während du sie dort beobachtest, ihren hübschen kleinen Po knapp über dem Boden. Dann steht auch sie auf, und du huschst schnell wieder hinter das Wohnmobil.</p>",
+    "<p>Nach einer Weile steht die Brünette auf, tupft ihre Beine mit einem Taschentuch ab, zieht dann ihren Slip hoch und rückt ihren kurzen Rock zurecht. Etwas Urin muss ihr entwischt sein. Diane wird gerade fertig, und dein Herz klopft, während du sie dort beobachtest, ihren hübschen kleinen Po knapp über dem Boden. Dann steht auch sie auf, und du huschst schnell wieder hinter das Wohnmobil.</p>",
   );
   c("peepround1", "Du wartest auf die beiden.");
 }
@@ -13396,7 +13431,7 @@ function busqueue5() {
   );
   if (chardonnay) {
     s(
-      "<p>Du selbst platzt fast. Der Anblick der Brünetten hat deinen Harndrang noch verschlimmert. Du hast eine Hand in der Hosentasche und hältst dich heimlich fest.</p>",
+      "<p>Du selbst platzt fast. Der Anblick der Brünetten hat deinen Harndrang noch verschlimmert. Du hast eine Hand in der Hosentasche und hältst dir heimlich den Schritt.</p>",
     );
     s(
       "<p>DU: Diane, ich muss wahnsinnig dringend pinkeln. Ich sollte lieber noch gehen, bevor wir in den Bus steigen. Ich gehe kurz rüber auf den Parkplatz.</p>",
@@ -13420,7 +13455,7 @@ function carpark1() {
   );
   blad += 5;
   s(
-    "<p>Es ist die Brünette aus der Busschlange – offensichtlich konnte sie nicht länger warten.</p>",
+    "<p>Es ist die Brünette aus der Warteschlange an der Bushaltestelle – offensichtlich konnte sie nicht länger warten.</p>",
   );
   s(
     "<p>Sie rafft schon ihren Rock hoch, während sie zwischen den Autos hindurcheilt. Wie du hat sie das Wohnmobil als naheliegenden Sichtschutz entdeckt und stürmt dahinter, fast genau an die Stelle, an der du gerade gepinkelt hast. Du trittst ein oder zwei Schritte weiter in den Schatten, und sie sieht dich nicht. Mit einer Bewegung zieht sie den Slip herunter, hockt sich hin und pinkelt mit voller Kraft. Erleichtert keucht sie auf. Ihr Strahl spritzt auf den Boden. Du bist so nah, dass du sogar den Dampf aus ihrem Urin aufsteigen siehst. Eine gefühlte Minute lang hockt sie dort, bis der Strahl versiegt. Dann keucht sie erneut erleichtert auf, steht langsam auf, nimmt ein Taschentuch heraus und trocknet sich ab. Dabei wischt sie auch über ihren Oberschenkel, als wären ihr vielleicht ein paar Spritzer entwischt.</p>",
@@ -13465,7 +13500,7 @@ function carpark2() {
   }
 }
 function carpark3() {
-  s("<p>Du stehst wieder mit Diane in der Busschlange.</p>");
+  s("<p>Du stehst wieder mit Diane in der Warteschlange an der Bushaltestelle.</p>");
   blad += 10;
   s("<p>DIANE: <em>(flüstert)</em> Ich wette, du hast der jungen Frau beim Pinkeln zugesehen.</p>");
   s("<p>DU: Was? Ähm, also, nein, ich meine, ich habe sie zufällig gesehen.</p>");
@@ -13706,7 +13741,7 @@ function passage2a() {
     "<p>Diane lässt ihren Rock wieder herunterfallen und tut so, als würde sie ihr Handy benutzen. Das Paar grüßt sie mit einem „Hallo“, und sie sagt ebenfalls „Hallo“.</p>",
   );
   s(
-    "<p>Das Paar geht vorbei, und Diane macht ein paar Yards auf die Mülltonnen zu. Doch dann bleibt sie leicht nach vorn gebeugt stehen.</p>",
+    "<p>Das Paar geht vorbei, und Diane geht ein paar Yards auf die Mülltonnen zu. Doch dann bleibt sie leicht nach vorn gebeugt stehen.</p>",
   );
   c("passage2aa", "Sie rührt sich nicht.");
 }
@@ -13769,7 +13804,7 @@ function goupsteps() {
 }
 function search1a() {
   s(
-    "<p>Diane tritt von den Toiletten zurück. Sie geht mal hierhin, mal dorthin, bleibt stehen und schaut über den Parkplatz. In einer Hand hält sie ihre Tasche, die andere steckt tief in ihrer Kleidertasche. Sie hält sich ganz eindeutig fest.</p>",
+    "<p>Diane tritt von den Toiletten zurück. Sie geht mal hierhin, mal dorthin, bleibt stehen und schaut über den Parkplatz. In einer Hand hält sie ihre Tasche, die andere steckt tief in ihrer Kleidertasche. Sie hält sich ganz eindeutig den Schritt.</p>",
   );
   s(
     "<p>Sie eilt hinter ein Auto, und du siehst, wie sie ihr Kleid hochzuraffen beginnt. Doch die Geräusche einer Gruppe näher kommender Betrunkener verscheuchen sie. Sie geht in deine Richtung und ist nur etwa 20 Yards entfernt, als sie plötzlich stehen bleibt und eine Hand in den Schritt presst, diesmal ganz offen und nicht durch die Tasche.</p>",
@@ -13823,12 +13858,12 @@ function search2() {
 function luckytrip29() {
   if (luckshots >= 1) {
     s(
-      "<p>Diane fragt den Türsteher, ob sie trotz der späten Stunde noch hinein und die Damentoilette benutzen darf.</p>",
+      "<p>Diane fragt den Türsteher, ob sie noch hinein und die Damentoilette benutzen darf, obwohl bereits geschlossen ist.</p>",
     );
     spendLuckshot();
     s("<p>Und zum Glück hast du noch einen Glücksversuch.</p>");
     s("<p>Du setzt ihn ein. Der Türsteher schüttelt den Kopf.</p>");
-    c("luckytrip29a", "Diane fleht ihn an?");
+    c("luckytrip29a", "Wird Diane ihn anflehen?");
   } else {
     s("<p>Du hast keinen Glücksversuch mehr übrig.</p>");
     c("gameover", "Schäm dich, dass du schummeln wolltest.");
@@ -13836,7 +13871,7 @@ function luckytrip29() {
 }
 function luckytrip29a() {
   s(
-    "<p>Diane fleht den Türsteher an. Du siehst, wie sie ungeduldig von einem Fuß auf den anderen tritt.</p>",
+    "<p>Diane fleht den Türsteher an. Du siehst, wie sie unruhig von einem Fuß auf den anderen tritt.</p>",
   );
   s(
     "<p>Doch dein Glücksversuch hat gewirkt, und der Türsteher bekommt Mitleid mit ihr. Du wolltest ihr doch helfen, oder?</p>",
@@ -13851,7 +13886,7 @@ function luckytrip29a() {
 function luckytrip28a() {
   s("<p>Du machst weiter, ohne noch einen Glücksversuch einzusetzen.</p>");
   s(
-    "<p>Aber vielleicht ist das auch besser so. Denn der Türsteher hat sie nicht ins Pavilion gelassen.</p>",
+    "<p>Aber vielleicht ist das auch besser so. Denn der Türsteher hat sie nicht in den Pavilion gelassen.</p>",
   );
   s(
     "<p>Sie wendet sich von ihm ab und beißt sich auf die Lippe, weil sie es kaum noch aushält. Sie geht davon und verfällt dann in einen halben Laufschritt.</p>",
@@ -13882,7 +13917,7 @@ function goleft() {
 }
 function goright() {
   s(
-    "<p>Du vermutest, dass sie nach rechts geht, um sich hinter dem Fertigbau zu erleichtern. Sie muss dringend; dort ist es ein paar Yards weiter, aber besser vor Blicken geschützt.</p>",
+    "<p>Du vermutest, dass sie nach rechts geht, um sich hinter dem Fertigbau zu erleichtern. Sie muss dringend; der Platz ist ein paar Yards weiter weg, aber besser vor Blicken geschützt.</p>",
   );
   s(
     "<p>Links oben, ein paar Stufen höher, entdeckst du eine Stelle mit freiem Blick wie von einem Logenplatz.</p>",
@@ -15063,7 +15098,7 @@ function albumdesp() {
     );
   else if (blad < 675)
     s(
-      "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie schlägt die Beine übereinander und stellt sie dann wieder nebeneinander. Sie wirkt unbehaglich.</span></em></p>",
+      "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie schlägt die Beine übereinander und stellt sie dann wieder nebeneinander. Sie scheint sich unwohl zu fühlen.</span></em></p>",
     );
   else if (blad < 687)
     s(
@@ -15661,7 +15696,7 @@ function disaster8ca() {
   s("<p>Du bleibst stehen und siehst dich um. Du greifst in den Container.</p>");
   if (thursday) {
     s(
-      "<p>Deine Hand findet schnell eine Strumpfhose, in die ein nasser Slip verwickelt ist. Der Slip ist sehr knapp, eigentlich ein Tanga, himmelblau mit rosa Punkten und einem rosa Bändchen am Bund. Wahrscheinlich hat sie ihn eigens für euer Date gekauft.</p>",
+      "<p>Deine Hand findet schnell eine Strumpfhose, in die ein nasser Slip verwickelt ist. Der Slip ist sehr knapp, eigentlich ein String, himmelblau mit rosa Punkten und einem rosa Bändchen am Bund. Wahrscheinlich hat sie ihn eigens für euer Date gekauft.</p>",
     );
   } else if (tuesday) {
     s("<p>Deine Hand stößt auf einen rosa Slip.</p>");

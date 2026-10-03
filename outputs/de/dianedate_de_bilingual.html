@@ -876,6 +876,7 @@ var backFastTimer = null;
 var HOLD_FF_DELAY_MS = 450;
 var HOLD_FF_INTERVAL_MS = 70;
 var heldActionKey = null;
+var keyboardControlFocus = false;
 var darkMode = false;
 var guideTags = null;
 var guideIndex = 0;
@@ -884,6 +885,7 @@ var guideOn = false;
 var guideHistory = [];
 var climaxSkipUsed = false;
 var galleryReturnFocus = null;
+var galleryReturnKeyboardFocus = false;
 var galleryInertNodes = [];
 var PREGAME_TAGS = [
   "start",
@@ -1055,6 +1057,29 @@ function clearAllHolds() {
   clearBackHold();
   heldActionKey = null;
 }
+if (document.addEventListener) {
+  // Pointer focus must not take Enter away from the Guide. Tab still selects
+  // controls deliberately, including controls inside the Gallery.
+  document.addEventListener(
+    "pointerdown",
+    function () {
+      keyboardControlFocus = false;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+  document.addEventListener(
+    "keydown",
+    function (e) {
+      if (e.key !== "Tab") return;
+      keyboardControlFocus = true;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+}
 function isStoryActionKey(key) {
   return (
     /^[1-9]$/.test(key) ||
@@ -1205,6 +1230,7 @@ function openGallery() {
   clearAllHolds();
   clearChoiceKeyArm();
   galleryReturnFocus = document.activeElement;
+  galleryReturnKeyboardFocus = keyboardControlFocus;
   renderGalleryLists();
   overlay.removeAttribute("inert");
   overlay.classList.add("open");
@@ -1237,13 +1263,17 @@ function closeGallery() {
   galleryInertNodes = [];
   var target = galleryReturnFocus;
   galleryReturnFocus = null;
+  keyboardControlFocus = galleryReturnKeyboardFocus && keyboardControlFocus;
+  galleryReturnKeyboardFocus = false;
   if (
     !target ||
     target === document.body ||
     !document.body.contains(target) ||
     target.offsetParent === null
-  )
+  ) {
+    keyboardControlFocus = false;
     target = document.getElementById("galleryToggle");
+  }
   if (target && typeof target.focus === "function") target.focus();
 }
 function digestionTick() {
@@ -1421,7 +1451,12 @@ if (document.addEventListener) {
     }
     if (e.key === "Enter") {
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (tag === "a" || (tag === "button" && !e.target.classList.contains("choice"))) {
+      if (
+        tag === "a" ||
+        (tag === "button" &&
+          !e.target.classList.contains("choice") &&
+          (keyboardControlFocus || !(guideActive && guideOn)))
+      ) {
         if (e.repeat) e.preventDefault();
         return;
       }
@@ -1833,7 +1868,7 @@ function start1() {
   );
   sAlt(
     "<p>The <strong>bladder</strong> meter shows how much Diane’s holding. What’s in her <strong>tummy</strong> slowly flows into her <strong>bladder</strong> as time passes. Also, you get <strong>3 luckshots</strong> that you should use wisely when offered, and remember, they can bring bad luck too! Note that you cannot use more than one of these at the end of the evening, once you’ve got the bus or taxi home.</p>",
-    "<p>Die Anzeige für die <strong>Blase</strong> zeigt, wie viel Diane zurückhält. Was sich in ihrem <strong>Bauch</strong> befindet, fließt mit der Zeit langsam in ihre <strong>Blase</strong>. Außerdem hast du <strong>3 Glücksversuche</strong>, die du klug einsetzen solltest, wenn sie dir angeboten werden. Denk daran, dass sie auch Pech bringen können! Am Ende des Abends, wenn ihr mit dem Bus oder Taxi nach Hause gefahren seid, kannst du höchstens noch einen davon einsetzen.</p>",
+    "<p>Die Anzeige für die <strong>Blase</strong> zeigt, wie viel Diane zurückhält. Was sich in ihrem <strong>Bauch</strong> befindet, fließt mit der Zeit langsam in ihre <strong>Blase</strong>. Außerdem hast du <strong>3 Glücksversuche</strong>, die du klug einsetzen solltest, wenn sie dir angeboten werden. Denk daran, dass sie auch Pech bringen können! Sobald ihr für den Heimweg in den Bus oder ins Taxi gestiegen seid, kannst du im restlichen Verlauf des Abends insgesamt höchstens noch einen davon einsetzen.</p>",
   );
   sAlt(
     "<p>Don’t expect to sleep with her on this first date, but you might get some fun if you play your cards right. And never forget: women are funny creatures.</p>",
@@ -2359,7 +2394,7 @@ function buylasagne() {
 function buytort() {
   if (pounds >= 18) {
     sAlt(
-      "<p>You order her tortelloni and your tortelloni.</p>",
+      "<p>You order tortelloni for you both.</p>",
       "<p>Du bestellst für euch beide Tortelloni.</p>",
     );
     tort = 2;
@@ -2448,7 +2483,7 @@ function eatmeal1b() {
 function eatmeal1c() {
   sAlt("<p>YOU: Do you often go to the theatre?</p>", "<p>DU: Gehst du oft ins Theater?</p>");
   sAlt(
-    "<p>DIANE: Yes, I love the theatre, I’ve done some acting myself.</p>",
+    "<p>DIANE: Yes, I love the theatre. I’ve done some acting myself.</p>",
     "<p>DIANE: Ja, ich liebe das Theater. Ich habe selbst schon ein bisschen gespielt.</p>",
   );
   sAlt(
@@ -2549,7 +2584,7 @@ function eatmeal2b() {
 function eatmeal2c() {
   sAlt("<p>YOU: Do you often go to the theatre?</p>", "<p>DU: Gehst du oft ins Theater?</p>");
   sAlt(
-    "<p>DIANE: Yes, I love the theatre, I’ve done some acting myself.</p>",
+    "<p>DIANE: Yes, I love the theatre. I’ve done some acting myself.</p>",
     "<p>DIANE: Ja, ich liebe das Theater. Ich habe selbst schon ein bisschen gespielt.</p>",
   );
   sAlt(
@@ -2676,13 +2711,13 @@ function eatmeal3d() {
   if (saturday) {
     sAlt(
       "<p>The top button of her dress is undone, and as she leans forward, you get a glimpse of the valley between her breasts, and a lacy white bra.</p>",
-      "<p>Der oberste Knopf ihres Kleides ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf die Senke zwischen ihren Brüsten und einen weißen Spitzen-BH.</p>",
+      "<p>Der oberste Knopf ihres Kleides ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf ihr Dekolleté und einen weißen Spitzen-BH.</p>",
     );
     sofaDressOpened = Math.max(sofaDressOpened, 1);
   } else {
     sAlt(
       "<p>The top button of her blouse is undone, and as she leans forward, you get a glimpse of the valley between her breasts, and a lacy white bra.</p>",
-      "<p>Der oberste Knopf ihrer Bluse ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf die Senke zwischen ihren Brüsten und einen weißen Spitzen-BH.</p>",
+      "<p>Der oberste Knopf ihrer Bluse ist offen. Als sie sich vorbeugt, erhaschst du einen Blick auf ihr Dekolleté und einen weißen Spitzen-BH.</p>",
     );
   }
   sAlt("<p>You top up both the wine glasses.</p>", "<p>Du füllst eure beiden Weingläser nach.</p>");
@@ -4017,7 +4052,7 @@ function theatre6() {
   );
   sAlt(
     "<p>One couple likes another but hates another, some have social aspirations, and one of the women, feeling snubbed, has gone off to sulk in the car.</p>",
-    "<p>Ein Paar mag das eine, hasst aber das andere. Einige wollen gesellschaftlich aufsteigen, und eine der Frauen fühlt sich vor den Kopf gestoßen und hat sich ins Auto zurückgezogen, um zu schmollen.</p>",
+    "<p>Ein Paar mag ein anderes Paar, hasst aber ein drittes. Einige wollen gesellschaftlich aufsteigen, und eine der Frauen fühlt sich vor den Kopf gestoßen und hat sich ins Auto zurückgezogen, um zu schmollen.</p>",
   );
   sAlt(
     "<p>Meanwhile the men continue to play cricket.</p>",
@@ -4535,7 +4570,7 @@ function act2() {
     );
     sAlt(
       "<p class='notice'><strong>Diane could do with the loo in the interval but is too shy to mention the fact. You gained 1 shyness point.</strong></p>",
-      "<p class='notice'><strong>Diane könnte in der Pause einen Toilettenbesuch gebrauchen, ist aber zu schüchtern, es zu erwähnen. Du hast 1 Schüchternheitspunkt gewonnen.</strong></p>",
+      "<p class='notice'><strong>Diane müsste in der Pause eigentlich auf die Toilette, ist aber zu schüchtern, es zu erwähnen. Du hast 1 Schüchternheitspunkt gewonnen.</strong></p>",
     );
     adjpoints(1);
   } else {
@@ -4686,7 +4721,7 @@ function handonthigh2() {
   } else {
     sAlt(
       "<p>She smiles at you and lets your hand rest there. After a while she holds your hand and gives it a little squeeze.</p>",
-      "<p>Sie lächelt dich an und lässt deine Hand dort liegen. Nach einer Weile nimmt sie sie und drückt sie leicht.</p>",
+      "<p>Sie lächelt dich an und lässt deine Hand dort liegen. Nach einer Weile nimmt sie deine Hand und drückt sie leicht.</p>",
     );
     getinti(2);
   }
@@ -6024,7 +6059,7 @@ function riverside3aa() {
     );
     sAlt(
       "<p class='notice'><strong>Diane secretly asks the woman whether there are any ‘facilities’, and you gained 5 shyness points.</strong></p>",
-      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier irgendwelche „stillen Örtchen“ gibt. Du hast 5 Schüchternheitspunkte dazugewonnen.</strong></p>",
+      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier ein „stilles Örtchen“ gibt. Du hast 5 Schüchternheitspunkte dazugewonnen.</strong></p>",
     );
     adjpoints(5);
   } else {
@@ -6067,12 +6102,12 @@ function riverside3ab() {
     );
     sAlt(
       "<p>She seems a bit annoyed with you for buying the coffees.</p>",
-      "<p>Sie scheint dir ein wenig übelzunehmen, dass du den Kaffee gekauft hast.</p>",
+      "<p>Sie scheint es dir ein wenig übelzunehmen, dass du den Kaffee gekauft hast.</p>",
     );
     getinti(-10);
     sAlt(
       "<p class='notice'><strong>Diane secretly asks the woman whether there are any ‘facilities’, and you gained 8 shyness points.</strong></p>",
-      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier irgendwelche „stillen Örtchen“ gibt. Du hast 8 Schüchternheitspunkte dazugewonnen.</strong></p>",
+      "<p class='notice'><strong>Diane fragt die Frau heimlich, ob es hier ein „stilles Örtchen“ gibt. Du hast 8 Schüchternheitspunkte dazugewonnen.</strong></p>",
     );
     adjpoints(8);
   } else {
@@ -6165,7 +6200,7 @@ function sitonbench() {
   } else if (thursday) {
     sAlt(
       "<p>Those table-benches are always a bit awkward and Diane has to hitch her skirt up in order to sit down. You get to see lots of her slip, which is lovely and quite sexy, but it does prevent you seeing more of her legs. You still don’t know whether she’s wearing stockings or tights. She knows you were watching her and she smiles at you.</p>",
-      "<p>Bei diesen Tischbänken ist das Hinsetzen immer etwas umständlich, und Diane muss ihren Rock hochraffen. Dabei bekommst du viel von ihrem Unterrock zu sehen, der hübsch und ziemlich sexy ist, dich aber nicht mehr von ihren Beinen sehen lässt. Du weißt noch immer nicht, ob sie Strümpfe oder eine Strumpfhose trägt. Sie weiß, dass du hingeschaut hast, und lächelt dich an.</p>",
+      "<p>Bei diesen Tischbänken ist das Hinsetzen immer etwas umständlich, und Diane muss ihren Rock hochraffen. Dabei bekommst du viel von ihrem Unterrock zu sehen, der hübsch und ziemlich sexy ist, aber verhindert, dass du mehr von ihren Beinen siehst. Du weißt noch immer nicht, ob sie Strümpfe oder eine Strumpfhose trägt. Sie weiß, dass du hingeschaut hast, und lächelt dich an.</p>",
     );
   }
   sAlt(
@@ -6243,7 +6278,7 @@ function riverside6() {
     getinti(5);
   }
   sAlt(
-    "<p>Diane’s skirt has ridden up a bit. You are able to rest your held hands on her leg, just above her knee.</p>",
+    "<p>Diane’s skirt has ridden up a bit. You are able to rest your joined hands on her leg, just above her knee.</p>",
     "<p>Dianes Rock ist ein wenig hochgerutscht. Du kannst eure ineinanderliegenden Hände auf ihr Bein legen, direkt oberhalb des Knies.</p>",
   );
   if (blad > 650) {
@@ -6626,7 +6661,7 @@ function riverside9() {
     );
     sAlt(
       "<p>ROBERT: Don’t think it matters. It’ll be a waist slip, won’t it? Believe me, I’m old enough to remember when girls wore them all the time. Lovely and feminine.</p>",
-      "<p>ROBERT: Ich glaube, das ist egal. Es wird wohl ein Unterrock sein, der an der Taille sitzt, oder? Glaub mir, ich bin alt genug, um mich noch daran zu erinnern, als Frauen so etwas ständig trugen. Sehr hübsch und feminin.</p>",
+      "<p>ROBERT: Ich glaube, das ist egal. Es wird wohl ein Unterrock sein, der an der Taille sitzt, oder? Glaub mir, ich bin alt genug, um mich noch an die Zeit zu erinnern, als Frauen so etwas ständig trugen. Sehr hübsch und feminin.</p>",
     );
     cAlt("riversidepath", "You walk on.", "Ihr geht weiter.");
   } else {
@@ -7053,12 +7088,12 @@ function luckytrip4() {
     if (tuesday) {
       sAlt(
         "<p>Even from where you are, you can see his pee stream arcing against the wall. Molly is politely looking the other way, but from her pose, hands in jeans pockets and legs half crossed at the knee, it looks as if she might want to go too.</p>",
-        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Hände stecken in den Jeanstaschen, die Beine sind an den Knien halb übereinandergeschlagen.</p>",
+        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Hände stecken in den Jeanstaschen, die Beine sind an den Knien leicht gekreuzt.</p>",
       );
     } else {
       sAlt(
         "<p>Even from where you are, you can see his pee stream arcing against the wall. Molly is politely looking the other way, but from her pose, with legs half crossed at the knee, it looks as if she might want to go too.</p>",
-        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Beine sind an den Knien halb übereinandergeschlagen.</p>",
+        "<p>Selbst von hier aus kannst du sehen, wie sein Urinstrahl im Bogen gegen die Mauer spritzt. Molly schaut höflich in die andere Richtung, aber ihrer Haltung nach zu urteilen muss sie wohl auch: Die Beine sind an den Knien leicht gekreuzt.</p>",
       );
     }
     sAlt(
@@ -7079,7 +7114,7 @@ function luckytrip4a() {
   );
   sAlt(
     "<p>She turns round and sees Bruno is watching her. She waves him away and you can hear a faint cry of ‘Look away.’ She waves again. But he is still looking towards her with what seems to be a grin.</p>",
-    "<p>Sie dreht sich um und sieht, dass Bruno sie beobachtet. Sie winkt ab, und du hörst schwach, wie sie „Schau weg!“ ruft. Sie winkt noch einmal. Aber er schaut noch immer zu ihr und scheint zu grinsen.</p>",
+    "<p>Sie dreht sich um und sieht, dass Bruno sie beobachtet. Sie winkt ihn weg, und du hörst schwach, wie sie „Schau weg!“ ruft. Sie winkt noch einmal. Aber er schaut noch immer zu ihr und scheint zu grinsen.</p>",
   );
   sAlt(
     "<p>Molly looks around her. Then, still with her belt unbuckled, she walks a few yards along the towpath towards you, to where some contractors have left a small skip. She goes behind it, up against the wall, where Bruno can’t see her – but you can.</p>",
@@ -7241,7 +7276,7 @@ function riverside13a() {
     } else {
       sAlt(
         "<p>She is standing there, slightly bent forward, one leg half crossed over the other. You look at where the other two are walking on ahead of you. When you glance back, Diane has a hand at her crotch but she takes it away, turning away in embarrassment.</p>",
-        "<p>Sie steht leicht vornübergebeugt da, ein Bein halb über das andere geschlagen. Du schaust zu den anderen beiden, die vor euch weitergehen. Als du wieder zu Diane blickst, hat sie eine Hand im Schritt, zieht sie aber weg und dreht sich verlegen zur Seite.</p>",
+        "<p>Sie steht leicht vornübergebeugt da, die Beine leicht gekreuzt. Du schaust zu den anderen beiden, die vor euch weitergehen. Als du wieder zu Diane blickst, hat sie eine Hand im Schritt, zieht sie aber weg und dreht sich verlegen zur Seite.</p>",
       );
     }
     sAlt(
@@ -7310,7 +7345,7 @@ function helpdiane1a() {
   );
   sAlt(
     "<p>You put both arms round her and watch as the others disappear down the path. A couple of late night dog walkers go past in the other direction. You can feel Diane shifting urgently up and down.</p>",
-    "<p>Du legst beide Arme um sie und siehst zu, wie die anderen auf dem Weg verschwinden. Ein paar späte Spaziergänger mit Hunden kommen euch entgegen. Du spürst, wie Diane ungeduldig auf und ab wippt.</p>",
+    "<p>Du legst beide Arme um sie und siehst zu, wie die anderen auf dem Weg verschwinden. Ein paar späte Spaziergänger mit Hunden kommen euch entgegen. Du spürst, wie Diane unruhig auf und ab wippt.</p>",
   );
   sAlt(
     "<p>DIANE: <em>(almost under her breath)</em> Hurry up, hurry up! I’m bursting.</p>",
@@ -7604,12 +7639,12 @@ function together2() {
   gopee = 1;
   if (saturday) {
     sAlt(
-      "<p>Through the thinness of the bushes you can just make out some of the shape of her squatting form. But when you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Very soon she is giving her bottom a little shake and you stand back. You hear the rustling of her clothing as she pulls up her white knickers and straightens her dress.</p>",
+      "<p>Through the thinness of the bushes you can just make out some of the shape of her squatting form. But when you have finished your own pee, and as you zip up, you take a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Very soon she is giving her bottom a little shake and you stand back. You hear the rustling of her clothing as she pulls up her white knickers and straightens her dress.</p>",
       "<p>Durch das lichte Gebüsch kannst du die Umrisse ihrer hockenden Gestalt gerade noch erahnen. Als du selbst fertig bist und deinen Reißverschluss schließt, gehst du leise ein paar Schritte nach rechts. Nun kannst du ihren nackten Po sehen. Sie hockt so tief, dass er beinahe das hohe Gras berühren muss. Schon bald schüttelt sie ihren Po ein wenig, und du trittst zurück. Du hörst ihre Kleidung rascheln, während sie ihren weißen Slip hochzieht und ihr Kleid zurechtrückt.</p>",
     );
   } else {
     sAlt(
-      "<p>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. When you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Her skirt and petticoat are hitched up around her waist. After a minute or so she stands up and again there is a flash of pink as she pulls up her knickers; she stands there for a few moments adjusting her skirt and slip.</p>",
+      "<p>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. When you have finished your own pee, and as you zip up, you take a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Her skirt and petticoat are hitched up around her waist. After a minute or so she stands up and again there is a flash of pink as she pulls up her knickers; she stands there for a few moments adjusting her skirt and slip.</p>",
       "<p>Durch das lichte Gebüsch siehst du das Weiß ihres Unterrocks, während sie dort hockt. Obwohl du so wenig siehst, oder vielleicht gerade deshalb, findest du das alles ungeheuer erotisch. Als du selbst fertig bist und deinen Reißverschluss schließt, gehst du leise ein paar Schritte nach rechts. Nun kannst du ihren nackten Po sehen. Sie hockt so tief, dass er beinahe das hohe Gras berühren muss. Rock und Unterrock hat sie bis zur Taille hochgerafft. Nach etwa einer Minute steht sie auf. Wieder blitzt Rosa auf, als sie ihren Slip hochzieht; noch einige Augenblicke steht sie da und rückt Rock und Unterrock zurecht.</p>",
     );
   }
@@ -8030,7 +8065,7 @@ function justclosed3() {
 function justclosed4() {
   sAlt(
     "<p>Eventually the sound of her pee dies away and you hear the rustle of clothing as she pulls up her knickers and adjusts her skirts. The toilet flushes and she emerges. You have gone to the urinal – you don’t want her to know you were listening at the door.</p>",
-    "<p>Schließlich verstummt das Plätschern, und du hörst Kleidung rascheln, als sie ihren Slip hochzieht und ihre Röcke zurechtrückt. Die Spülung rauscht, dann kommt sie heraus. Du bist zum Urinal gegangen; sie soll nicht merken, dass du an der Tür gelauscht hast.</p>",
+    "<p>Schließlich verstummt das Plätschern, und du hörst Kleidung rascheln, als sie ihren Slip hochzieht und Rock und Unterrock zurechtrückt. Die Spülung rauscht, dann kommt sie heraus. Du bist zum Urinal gegangen; sie soll nicht merken, dass du an der Tür gelauscht hast.</p>",
   );
   sAlt(
     "<p>Diane washes her hands, then leaves the toilet. ‘I’ll see you outside,’ she says.</p>",
@@ -8476,7 +8511,7 @@ function luckytrip5tue1() {
 function luckytrip5tue2() {
   sAlt(
     "<p>Rather disconsolately, you leave the Gents. The evening is drawing in and there is nobody around. You feel very lonely and gloomy.</p>",
-    "<p>Ziemlich niedergeschlagen verlässt du die Herrentoilette. Der Abend wird dunkler, und niemand ist mehr da. Du fühlst dich sehr einsam und bedrückt.</p>",
+    "<p>Ziemlich niedergeschlagen verlässt du die Herrentoilette. Es wird immer dunkler, und niemand ist mehr da. Du fühlst dich sehr einsam und bedrückt.</p>",
   );
   sAlt(
     "<p>The path is now almost deserted. You look at the Ladies. You venture inside. It’s no better than the Gents, except there is a rather better mirror.</p>",
@@ -8814,7 +8849,7 @@ function morewater() {
     pounds -= 3;
     sAlt(
       "<p>She’s a bit put out at you leaving her.</p>",
-      "<p>Sie ist etwas verstimmt, weil du sie allein lässt.</p>",
+      "<p>Sie ist etwas verstimmt, weil du von ihr weggehst.</p>",
     );
     getinti(-10);
   } else {
@@ -9192,7 +9227,7 @@ function riversidepath() {
   if (blad > 650) {
     sAlt(
       "<p>They are giggling, but this stops as you catch them up. Molly is grinning, but Diane looks a bit sheepish. She is trying to look nonchalant, but crosses one leg over the other, then bends forward slightly, pretending to brush some dirt off her skirt.</p>",
-      "<p>Sie kichern, hören aber auf, als ihr näher kommt. Molly grinst, während Diane etwas verlegen wirkt. Sie versucht, unbekümmert auszusehen, schlägt aber ein Bein über das andere. Dann beugt sie sich leicht vor und tut so, als würde sie Schmutz von ihrem Rock bürsten.</p>",
+      "<p>Sie kichern, hören aber auf, als ihr näher kommt. Molly grinst, während Diane etwas verlegen wirkt. Sie versucht, unbekümmert auszusehen, kreuzt aber die Beine. Dann beugt sie sich leicht vor und tut so, als würde sie Schmutz von ihrem Rock bürsten.</p>",
     );
     sAlt(
       "<p>The girls are standing close to some steps. They lead down onto a path, a bit like a towpath, which runs right beside the river. About fifty yards on is a bridge across the river. The towpath goes underneath the bridge, but the path you are on connects with the bridge itself.</p>",
@@ -10992,7 +11027,7 @@ function goupstairs1() {
   cAlt(
     "goupstairsloo",
     "You could do with a pee yourself, so now’s your chance.",
-    "Du könntest selbst mal pinkeln. Jetzt hast du die Gelegenheit.",
+    "Du müsstest selbst mal pinkeln. Jetzt hast du die Gelegenheit.",
   );
 }
 function goupstairs2() {
@@ -11038,14 +11073,14 @@ function goupstairs4() {
   );
   sAlt(
     "<p>She starts pacing about and, thinking no one can see her, is openly holding her crotch.</p>",
-    "<p>Sie läuft hin und her und hält sich offen in den Schritt, weil sie glaubt, niemand könne sie sehen.</p>",
+    "<p>Sie läuft hin und her und hält eine Hand an ihren Schritt, ohne es zu verbergen, weil sie glaubt, niemand könne sie sehen.</p>",
   );
   cAlt("goupstairs5", "But you’ve got a grandstand view.", "Dabei hast du einen Logenplatz.");
 }
 function goupstairs5() {
   sAlt(
     "<p>Amanda is walking on the spot outside the bathroom door. She has a hand firmly between her legs, clearly holding herself.</p>",
-    "<p>Amanda tritt vor der Badezimmertür auf der Stelle. Eine Hand hat sie fest zwischen die Beine gepresst; eindeutig hält sie sich damit zurück.</p>",
+    "<p>Amanda tritt vor der Badezimmertür auf der Stelle. Eine Hand hat sie fest zwischen die Beine gepresst, um den Urin zurückzuhalten.</p>",
   );
   sAlt(
     "<p>She knocks on the bathroom door, saying, ‘Hurry up!’ to her friend. She turns away from the bathroom and paces about.</p>",
@@ -12530,7 +12565,7 @@ function sofadrink() {
       } else {
         sAlt(
           "<p>DIANE: I think I’d better switch to water for a bit.</p>",
-          "<p>DIANE: Ich glaube, ich bleibe lieber eine Weile bei Wasser.</p>",
+          "<p>DIANE: Ich glaube, ich steige lieber eine Weile auf Wasser um.</p>",
         );
       }
       sAlt("<p>You go to fetch her a glass of water.</p>", "<p>Du holst ihr ein Glas Wasser.</p>");
@@ -12977,7 +13012,7 @@ function sofatoilet2() {
     );
     sAlt(
       "<p>DIANE: I thought I’d go. But thanks for the wine.</p>",
-      "<p>DIANE: Ich dachte, ich gehe lieber. Aber danke für den Wein.</p>",
+      "<p>DIANE: Ich dachte, ich gehe doch lieber auf die Toilette. Aber danke für den Wein.</p>",
     );
     sAlt(
       "<p>You drink the wine, and cuddle a bit, and then it is time for home.</p>",
@@ -13132,7 +13167,7 @@ function nicelydesp2() {
   sAlt("<p>YOU: What, out in the country?</p>", "<p>DU: Wie, draußen auf dem Land?</p>");
   sAlt(
     "<p>DIANE: No, in some god-awful suburb, on the edge of a dual carriageway. The country would have been easier, for obvious reasons. Anyway, I phoned my mum and she said she’d come and fetch us; it would be half an hour or so. But of course, we’d all been drinking – me, Jenny and Linda. Except Jenny’s dad, of course, who was driving. He was going to have to wait with the car until the RAC came out.</p>",
-    "<p>DIANE: Nein, in irgendeinem gottverlassenen Vorort, am Rand einer mehrspurigen Straße. Auf dem Land wäre es einfacher gewesen, aus naheliegenden Gründen. Jedenfalls rief ich meine Mutter an, und sie sagte, sie würde uns abholen. Es würde ungefähr eine halbe Stunde dauern. Aber wir hatten natürlich alle getrunken – ich, Jenny und Linda. Außer Jennys Vater natürlich, der fuhr. Er musste beim Auto bleiben, bis der RAC kam.</p>",
+    "<p>DIANE: Nein, in irgendeinem gottverlassenen Vorort, am Rand einer Straße mit Mittelstreifen. Auf dem Land wäre es einfacher gewesen, aus naheliegenden Gründen. Jedenfalls rief ich meine Mutter an, und sie sagte, sie würde uns abholen. Es würde ungefähr eine halbe Stunde dauern. Aber wir hatten natürlich alle getrunken – ich, Jenny und Linda. Außer Jennys Vater natürlich, der fuhr. Er musste beim Auto bleiben, bis der RAC kam.</p>",
   );
   sAlt("<p>YOU: Did all three of you want a pee?</p>", "<p>DU: Musstet ihr alle drei pinkeln?</p>");
   sAlt(
@@ -16304,7 +16339,7 @@ function skirtremove1a() {
       "<p>Sie will ihren Rock aufheben, hat aber nichts dagegen, dass du ihr zuvorkommst. Du legst ihn über eine Stuhllehne, weit von ihr entfernt. Du betrachtest sie.</p>",
     );
     sAlt(
-      "<p>She looks marvellous. The slip is lacy around the hem and also has a slit to one side, also bordered with lace. Contrasted with her black blouse, it looks really sexy – somehow erotic without revealing anything. Her legs are silhouetted through the thin material.</p>",
+      "<p>She looks marvellous. The slip is lacy around the hem and has a slit to one side, also bordered with lace. Contrasted with her black blouse, it looks really sexy – somehow erotic without revealing anything. Her legs are silhouetted through the thin material.</p>",
       "<p>Sie sieht hinreißend aus. Ihr Unterrock hat einen Spitzenbesatz am Saum und an einer Seite einen Schlitz, der ebenfalls mit Spitze eingefasst ist. Im Kontrast zu ihrer schwarzen Bluse sieht er richtig sexy aus – irgendwie erotisch, ohne etwas zu enthüllen. Durch den dünnen Stoff zeichnen sich ihre Beine ab.</p>",
     );
     cAlt("skirtremove1b", "You move towards her again.", "Du gehst wieder auf sie zu.");
@@ -16335,7 +16370,7 @@ function skirtremove1b() {
     );
     sAlt(
       "<p>She goes over to the sofa, where she sits shifting urgently up and down.</p>",
-      "<p>Sie geht zum Sofa und setzt sich. Dort wippt sie ungeduldig auf und ab.</p>",
+      "<p>Sie geht zum Sofa und setzt sich. Dort wippt sie unruhig auf und ab.</p>",
     );
   } else {
     sAlt(
@@ -16658,12 +16693,12 @@ function gobathroom() {
   } else {
     if (saturday) {
       sAlt(
-        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect some modesty, but it doesn’t conceal much.</p>",
+        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect her modesty, but it doesn’t conceal much.</p>",
         "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Kleides nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
       );
     } else {
       sAlt(
-        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect some modesty, but it doesn’t conceal much.</p>",
+        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect her modesty, but it doesn’t conceal much.</p>",
         "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Rockes nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
       );
     }
@@ -17079,7 +17114,7 @@ function bathroomfree() {
   } else {
     sAlt(
       "<p>DIANE: Actually, I think I will go. I won’t be a moment.</p>",
-      "<p>DIANE: Eigentlich sollte ich doch gehen. Ich bin gleich wieder da.</p>",
+      "<p>DIANE: Ich glaube, ich gehe doch noch auf die Toilette. Ich bin gleich wieder da.</p>",
     );
     sAlt(
       "<p>And she heads upstairs. You wish you hadn’t mentioned it.</p>",
@@ -18055,7 +18090,7 @@ function luckytrip19() {
     );
     sAlt(
       "<p>Suddenly she moves to the side of the building, nearer to where you are standing. She looks around and holds the hem of her skirt as if she is about to have a squat pee.</p>",
-      "<p>Plötzlich geht sie zur Seite des Hauses, näher zu deinem Standort. Sie schaut sich um und fasst den Rocksaum, als wolle sie sich zum Pinkeln hinhocken.</p>",
+      "<p>Plötzlich geht sie zur Seite des Hauses, näher an dich heran. Sie schaut sich um und fasst den Rocksaum, als wolle sie sich zum Pinkeln hinhocken.</p>",
     );
     sAlt(
       "<p>She hears a car going up the side road, pushes her skirt back into place, and goes back to the door. She can hardly walk upright.</p>",
@@ -18109,7 +18144,7 @@ function watching4() {
   );
   sAlt(
     "<p>She goes back to the door. She rings the bell again. Nobody answers. She crosses one leg tightly over the other.</p>",
-    "<p>Sie geht zurück zur Tür und klingelt erneut. Niemand öffnet. Sie presst ein Bein fest über das andere.</p>",
+    "<p>Sie geht zurück zur Tür und klingelt erneut. Niemand öffnet. Sie kreuzt die Beine und presst sie fest zusammen.</p>",
   );
   sAlt(
     "<p>She sits on the bench, hunched forward, bouncing up and down. Her hand looks as if it’s right under her skirt.</p>",
@@ -18298,7 +18333,7 @@ function sofatalkb() {
     cAlt("sofatalkc", "You watch in wonder.", "Du siehst staunend zu.");
   } else {
     sAlt(
-      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect some modesty, but it doesn’t conceal much.</p>",
+      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect her modesty, but it doesn’t conceal much.</p>",
       "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Kleides nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
     );
     sAlt(
@@ -18431,7 +18466,7 @@ function sofatalk2() {
     );
     sAlt(
       "<p>DIANE: Not desperate, but I want to go. Your brother’s been quite a while in the bathroom.</p>",
-      "<p>DIANE: Nicht dringend, aber ich möchte gehen. Dein Bruder ist schon eine ganze Weile im Bad.</p>",
+      "<p>DIANE: Nicht dringend, aber ich müsste schon mal. Dein Bruder ist schon eine ganze Weile im Bad.</p>",
     );
   }
   sAlt("<p>YOU: I think he’s finishing now.</p>", "<p>DU: Ich glaube, er wird gerade fertig.</p>");
@@ -18637,8 +18672,8 @@ function sofasnog2() {
     cAlt("decisions", "Time for decisions on your part.", "Jetzt musst du dich entscheiden.");
     cAlt(
       "sofapee2",
-      "Try to distract her with an album or subject.",
-      "Versuche, sie mit einem Album oder einem Gesprächsthema abzulenken.",
+      "Try to distract her with an album or a change of subject.",
+      "Versuche, sie mit einem Album oder einem Themenwechsel abzulenken.",
     );
   }
 }
@@ -18833,7 +18868,7 @@ function sofapee() {
   sofaPeeAskedDone = 1;
   sAlt(
     "<p>You are snuggled up with Diane. She has her head on your shoulder. You have one hand round her, and are holding her hand with your other.</p>",
-    "<p>Du kuschelst mit Diane. Ihr Kopf liegt auf deiner Schulter. Du hältst einen Arm um sie und mit der anderen Hand ihre Hand.</p>",
+    "<p>Du kuschelst mit Diane. Ihr Kopf liegt auf deiner Schulter. Du hast einen Arm um sie gelegt und hältst mit der anderen Hand ihre Hand.</p>",
   );
   if (blad > 600) {
     sAlt(
@@ -18855,7 +18890,7 @@ function sofapee() {
     sAlt("<p>YOU: Are you desperate?</p>", "<p>DU: Ist es so dringend?</p>");
     sAlt(
       "<p>DIANE: I want to go. But your brother’s in the bathroom, I think.</p>",
-      "<p>DIANE: Ich möchte gehen. Aber dein Bruder ist im Bad, glaube ich.</p>",
+      "<p>DIANE: Ich müsste schon mal. Aber dein Bruder ist im Bad, glaube ich.</p>",
     );
     sAlt("<p>YOU: He might be out by now.</p>", "<p>DU: Vielleicht ist er inzwischen draußen.</p>");
     if (blad > 800) {
@@ -18907,8 +18942,8 @@ function sofapee1() {
   cAlt("walkhomeX", "I’ll walk her home.", "Ich begleite sie nach Hause.");
   cAlt(
     "sofapee2",
-    "Try to distract her with an album or subject.",
-    "Versuche, sie mit einem Album oder einem Gesprächsthema abzulenken.",
+    "Try to distract her with an album or a change of subject.",
+    "Versuche, sie mit einem Album oder einem Themenwechsel abzulenken.",
   );
 }
 function sofapee2() {
@@ -19177,7 +19212,7 @@ function busqueue3() {
     );
     sAlt(
       "<p>DIANE: I don’t think I could last out the bus journey – I was banking on going before we got here but hadn’t reckoned with the Pavilion being closed.</p>",
-      "<p>DIANE: Ich glaube nicht, dass ich die Busfahrt durchhalte. Ich hatte fest damit gerechnet, vorher noch gehen zu können, aber nicht damit, dass das Pavilion schon geschlossen ist.</p>",
+      "<p>DIANE: Ich glaube nicht, dass ich die Busfahrt durchhalte. Ich hatte fest damit gerechnet, vorher noch gehen zu können, aber nicht damit, dass der Pavilion schon geschlossen ist.</p>",
     );
     sAlt("<p>You look around and consider.</p>", "<p>Du siehst dich um und überlegst.</p>");
     cAlt("queue1a", "What is it to be?", "Was soll es sein?");
@@ -19436,7 +19471,7 @@ function carparka1() {
     getinti(5);
     sAlt(
       "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear somebody and look. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she hides her face in embarrassment.</p>",
-      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Busschlange ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
+      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Warteschlange an der Bushaltestelle ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
     );
     sAlt(
       "<p>DIANE: I think she was even worse than me. Come on – you can’t stand and watch.</p>",
@@ -19467,7 +19502,7 @@ function carparka1() {
     sAlt("<p>You curse inwardly.</p>", "<p>Du fluchst innerlich.</p>");
     sAlt(
       "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear a noise. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she gasps with embarrassment and tries to pull up her knickers, but she is in such full flow she has to go back into a squat.</p>",
-      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst ein Geräusch. Die zierliche Brünette aus der Busschlange ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, schnappt sie beschämt nach Luft und versucht, ihren Slip hochzuziehen. Doch es läuft so stark, dass sie sich wieder hinhocken muss.</p>",
+      "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst ein Geräusch. Die zierliche Brünette aus der Warteschlange an der Bushaltestelle ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, schnappt sie beschämt nach Luft und versucht, ihren Slip hochzuziehen. Doch es läuft so stark, dass sie sich wieder hinhocken muss.</p>",
     );
     sAlt(
       "<p>DIANE: I think she was even worse than me. Come on – you can’t stand and watch.</p>",
@@ -19496,7 +19531,7 @@ function carparka2() {
   blad += 10;
   sAlt(
     "<p>You suggest she goes behind a camper van. Then you hear footsteps hurrying towards you. It’s the miniskirted girl you had seen in the bus queue. She’s looking flushed and worried.</p>",
-    "<p>Du schlägst vor, hinter ein Wohnmobil zu gehen. Dann hörst du eilige Schritte näher kommen. Es ist die junge Frau im Minirock, die du in der Busschlange gesehen hast. Ihr Gesicht ist gerötet, und sie wirkt besorgt.</p>",
+    "<p>Du schlägst vor, hinter ein Wohnmobil zu gehen. Dann hörst du eilige Schritte näher kommen. Es ist die junge Frau im Minirock, die du in der Warteschlange an der Bushaltestelle gesehen hast. Ihr Gesicht ist gerötet, und sie wirkt besorgt.</p>",
   );
   sAlt(
     "<p>THE GIRL: <em>(to Diane)</em> Is there a toilet over there?</p>",
@@ -19570,8 +19605,8 @@ function peepround() {
   );
   afterpee();
   sAlt(
-    "<p>After a while the brunette stands up and pulls up her knickers, adjusts her little skirt, giving her legs a dab with a tissue before she does. Some pee must have escaped. Diane is finishing her pee, and your heart is beating as you watch her there, her neat little bottom just above the ground. Then she too stands, and you quickly dodge back behind the camper van.</p>",
-    "<p>Nach einer Weile steht die Brünette auf und zieht ihren Slip hoch. Bevor sie ihren kurzen Rock zurechtrückt, tupft sie ihre Beine mit einem Taschentuch ab. Etwas Urin muss ihr entwischt sein. Diane wird gerade fertig, und dein Herz klopft, während du sie dort beobachtest, ihren hübschen kleinen Po knapp über dem Boden. Dann steht auch sie auf, und du huschst schnell wieder hinter das Wohnmobil.</p>",
+    "<p>After a while the brunette stands up, dabs her legs with a tissue, then pulls up her knickers and adjusts her little skirt. Some pee must have escaped. Diane is finishing her pee, and your heart is beating as you watch her there, her neat little bottom just above the ground. Then she too stands, and you quickly dodge back behind the camper van.</p>",
+    "<p>Nach einer Weile steht die Brünette auf, tupft ihre Beine mit einem Taschentuch ab, zieht dann ihren Slip hoch und rückt ihren kurzen Rock zurecht. Etwas Urin muss ihr entwischt sein. Diane wird gerade fertig, und dein Herz klopft, während du sie dort beobachtest, ihren hübschen kleinen Po knapp über dem Boden. Dann steht auch sie auf, und du huschst schnell wieder hinter das Wohnmobil.</p>",
   );
   cAlt("peepround1", "You wait for them.", "Du wartest auf die beiden.");
 }
@@ -19706,7 +19741,7 @@ function busqueue5() {
   if (chardonnay) {
     sAlt(
       "<p>You are absolutely bursting for a pee yourself. Watching the brunette has made it worse. You have a hand in your pocket, furtively holding yourself.</p>",
-      "<p>Du selbst platzt fast. Der Anblick der Brünetten hat deinen Harndrang noch verschlimmert. Du hast eine Hand in der Hosentasche und hältst dich heimlich fest.</p>",
+      "<p>Du selbst platzt fast. Der Anblick der Brünetten hat deinen Harndrang noch verschlimmert. Du hast eine Hand in der Hosentasche und hältst dir heimlich den Schritt.</p>",
     );
     sAlt(
       "<p>YOU: Diane, I’m dying for a wee. I think I’d better go before we get on the bus. I’ll just pop over to the car park.</p>",
@@ -19740,7 +19775,7 @@ function carpark1() {
   blad += 5;
   sAlt(
     "<p>It is the brunette from the bus queue – clearly she couldn’t wait any longer.</p>",
-    "<p>Es ist die Brünette aus der Busschlange – offensichtlich konnte sie nicht länger warten.</p>",
+    "<p>Es ist die Brünette aus der Warteschlange an der Bushaltestelle – offensichtlich konnte sie nicht länger warten.</p>",
   );
   sAlt(
     "<p>She’s already hitching up her skirt as she hurries between the cars. Like you, she has seen the camper van as the obvious place to go behind and she dashes behind it, to almost exactly the spot where you have just had a pee. You move a step or two further back into the shadows, and she doesn’t see you. With one movement she pulls her knickers down, squats and is peeing furiously. She gasps with relief. Her stream splatters onto the ground below. You are so close you can even see the steam rising from her pee. For what seems like a full minute she squats there, until the stream of pee dies away. Then with another gasp of relief she slowly stands up, takes out a tissue and dries herself, also wiping her thigh as if perhaps a few spurts had escaped.</p>",
@@ -19813,7 +19848,7 @@ function carpark2() {
 function carpark3() {
   sAlt(
     "<p>You are back in the bus queue with Diane.</p>",
-    "<p>Du stehst wieder mit Diane in der Busschlange.</p>",
+    "<p>Du stehst wieder mit Diane in der Warteschlange an der Bushaltestelle.</p>",
   );
   blad += 10;
   sAlt(
@@ -20158,12 +20193,12 @@ function passage2a() {
     "<p>Schritte kommen näher. Ein junges Paar eilt über den Platz in Richtung Stadt.</p>",
   );
   sAlt(
-    "<p>Diane lets her skirt fall back into place. She pretends to be using her mobile phone. The couple say, ‘Hello’ to her and she answers, ‘Hello’ back.</p>",
+    "<p>Diane lets her skirt fall back into place. She pretends to be using her mobile phone. The couple say ‘Hello’ to her and she answers ‘Hello’ back.</p>",
     "<p>Diane lässt ihren Rock wieder herunterfallen und tut so, als würde sie ihr Handy benutzen. Das Paar grüßt sie mit einem „Hallo“, und sie sagt ebenfalls „Hallo“.</p>",
   );
   sAlt(
     "<p>The couple pass by, and Diane moves a couple of yards towards the wheelie-bins. But then she stops, slightly bent forward.</p>",
-    "<p>Das Paar geht vorbei, und Diane macht ein paar Yards auf die Mülltonnen zu. Doch dann bleibt sie leicht nach vorn gebeugt stehen.</p>",
+    "<p>Das Paar geht vorbei, und Diane geht ein paar Yards auf die Mülltonnen zu. Doch dann bleibt sie leicht nach vorn gebeugt stehen.</p>",
   );
   cAlt("passage2aa", "She doesn’t move.", "Sie rührt sich nicht.");
 }
@@ -20264,7 +20299,7 @@ function goupsteps() {
 function search1a() {
   sAlt(
     "<p>Diane steps away from the toilet. She walks this way, then that way, she stands and looks into the car park. She is holding her bag with one hand but the other is deep in her dress pocket. She’s definitely holding herself.</p>",
-    "<p>Diane tritt von den Toiletten zurück. Sie geht mal hierhin, mal dorthin, bleibt stehen und schaut über den Parkplatz. In einer Hand hält sie ihre Tasche, die andere steckt tief in ihrer Kleidertasche. Sie hält sich ganz eindeutig fest.</p>",
+    "<p>Diane tritt von den Toiletten zurück. Sie geht mal hierhin, mal dorthin, bleibt stehen und schaut über den Parkplatz. In einer Hand hält sie ihre Tasche, die andere steckt tief in ihrer Kleidertasche. Sie hält sich ganz eindeutig den Schritt.</p>",
   );
   sAlt(
     "<p>She hurries behind a car and you see her begin to hitch her dress up. But the sound of a group of approaching drunks frightens her away. She walks towards you, is only about 20 yards away, then suddenly stops and shoves a hand to her crotch, not through her pocket this time but openly.</p>",
@@ -20352,7 +20387,7 @@ function luckytrip29() {
   if (luckshots >= 1) {
     sAlt(
       "<p>Diane is asking the bouncer if she can go in to use the Ladies, even though it’s past closing time.</p>",
-      "<p>Diane fragt den Türsteher, ob sie trotz der späten Stunde noch hinein und die Damentoilette benutzen darf.</p>",
+      "<p>Diane fragt den Türsteher, ob sie noch hinein und die Damentoilette benutzen darf, obwohl bereits geschlossen ist.</p>",
     );
     spendLuckshot();
     sAlt(
@@ -20363,7 +20398,7 @@ function luckytrip29() {
       "<p>You play it. The bouncer shakes his head.</p>",
       "<p>Du setzt ihn ein. Der Türsteher schüttelt den Kopf.</p>",
     );
-    cAlt("luckytrip29a", "Diane pleads with him?", "Diane fleht ihn an?");
+    cAlt("luckytrip29a", "Will Diane plead with him?", "Wird Diane ihn anflehen?");
   } else {
     sAlt(
       "<p>You don’t have a luckshot to play.</p>",
@@ -20379,7 +20414,7 @@ function luckytrip29() {
 function luckytrip29a() {
   sAlt(
     "<p>Diane is pleading with the bouncer. You can see her shifting urgently from foot to foot.</p>",
-    "<p>Diane fleht den Türsteher an. Du siehst, wie sie ungeduldig von einem Fuß auf den anderen tritt.</p>",
+    "<p>Diane fleht den Türsteher an. Du siehst, wie sie unruhig von einem Fuß auf den anderen tritt.</p>",
   );
   sAlt(
     "<p>But your luckshot has worked and the bouncer takes pity on her. Well, you did want to help her, didn’t you?</p>",
@@ -20403,7 +20438,7 @@ function luckytrip28a() {
   );
   sAlt(
     "<p>But perhaps it’s just as well. Because the doorman hasn’t let her into the Pavilion.</p>",
-    "<p>Aber vielleicht ist das auch besser so. Denn der Türsteher hat sie nicht ins Pavilion gelassen.</p>",
+    "<p>Aber vielleicht ist das auch besser so. Denn der Türsteher hat sie nicht in den Pavilion gelassen.</p>",
   );
   sAlt(
     "<p>She turns away from him, biting her lip in desperation. She walks away, then breaks into a half-run.</p>",
@@ -20418,7 +20453,7 @@ function luckytrip28a() {
     "<p>Links von dir, seitlich am Hotel, stehen ein paar große Mülltonnen. Vielleicht geht sie dorthin.</p>",
   );
   sAlt(
-    "<p>To the right, to the edge of the car park, is a little Portakabin. Maybe she could pop behind that.</p>",
+    "<p>To the right, at the edge of the car park, is a little Portakabin. Maybe she could pop behind that.</p>",
     "<p>Rechts, am Rand des Parkplatzes, steht ein kleiner Fertigbau. Vielleicht könnte sie dahintergehen.</p>",
   );
   sAlt(
@@ -20442,7 +20477,7 @@ function goleft() {
 function goright() {
   sAlt(
     "<p>You guess that she might head right, and have an urgent pee behind the Portakabin. It’s a few yards further but better hidden.</p>",
-    "<p>Du vermutest, dass sie nach rechts geht, um sich hinter dem Fertigbau zu erleichtern. Sie muss dringend; dort ist es ein paar Yards weiter, aber besser vor Blicken geschützt.</p>",
+    "<p>Du vermutest, dass sie nach rechts geht, um sich hinter dem Fertigbau zu erleichtern. Sie muss dringend; der Platz ist ein paar Yards weiter weg, aber besser vor Blicken geschützt.</p>",
   );
   sAlt(
     "<p>You spot a point, up a few steps to the left, where you’d have a grandstand view.</p>",
@@ -21247,7 +21282,7 @@ function ontoilet() {
     cAlt("ontoilet1", "You watch in wonder.", "Du siehst staunend zu.");
   } else {
     sAlt(
-      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect some modesty, but it doesn’t conceal much.</p>",
+      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect her modesty, but it doesn’t conceal much.</p>",
       "<p>Diane musste wirklich dringend. Obwohl du dastehst und sie anstarrst, beginnt sie deshalb fast sofort zu pinkeln, als sie sich auf die Toilette setzt. Sie schiebt den Saum ihres Rockes nach vorn, um sich wenigstens etwas zu bedecken, aber viel verbirgt er nicht.</p>",
     );
     sAlt(
@@ -22084,7 +22119,7 @@ function albumdesp() {
   else if (blad < 675)
     sAlt(
       "<p><em><span style='background: #FFFF00; color: #0000FF'>She crosses her legs. Then she uncrosses them again. She seems uncomfortable.</span></em></p>",
-      "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie schlägt die Beine übereinander und stellt sie dann wieder nebeneinander. Sie wirkt unbehaglich.</span></em></p>",
+      "<p><em><span style='background: #FFFF00; color: #0000FF'>Sie schlägt die Beine übereinander und stellt sie dann wieder nebeneinander. Sie scheint sich unwohl zu fühlen.</span></em></p>",
     );
   else if (blad < 687)
     sAlt(
@@ -22562,7 +22597,7 @@ function disaster1() {
 }
 function disaster2() {
   sAlt(
-    "<p>The darkness is lit by a street light, and in the half light you can see a puddle beginning to form around her feet, and hear the audible splatter of pee on the pavement.</p>",
+    "<p>The darkness is lit by a street light, and in the half light you can see a puddle beginning to form around her feet, and hear the splatter of pee on the pavement.</p>",
     "<p>Eine Straßenlaterne erhellt das Dunkel. Im Halblicht siehst du, wie sich um ihre Füße eine Pfütze bildet, und hörst deutlich, wie Urin auf den Gehsteig spritzt.</p>",
   );
   if (thursday) {
@@ -22981,7 +23016,7 @@ function disaster8ca() {
   if (thursday) {
     sAlt(
       "<p>Your hand quickly discovers some tights, intertwined with a pair of wet knickers. The knickers are quite flimsy, really a thong, sky-blue with a pattern of pink polka dots, and a pink ribbon at the waist. She probably bought them specially for the date.</p>",
-      "<p>Deine Hand findet schnell eine Strumpfhose, in die ein nasser Slip verwickelt ist. Der Slip ist sehr knapp, eigentlich ein Tanga, himmelblau mit rosa Punkten und einem rosa Bändchen am Bund. Wahrscheinlich hat sie ihn eigens für euer Date gekauft.</p>",
+      "<p>Deine Hand findet schnell eine Strumpfhose, in die ein nasser Slip verwickelt ist. Der Slip ist sehr knapp, eigentlich ein String, himmelblau mit rosa Punkten und einem rosa Bändchen am Bund. Wahrscheinlich hat sie ihn eigens für euer Date gekauft.</p>",
     );
   } else if (tuesday) {
     sAlt(

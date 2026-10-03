@@ -846,6 +846,7 @@ var backFastTimer = null;
 var HOLD_FF_DELAY_MS = 450;
 var HOLD_FF_INTERVAL_MS = 70;
 var heldActionKey = null;
+var keyboardControlFocus = false;
 var darkMode = false;
 var guideTags = null;
 var guideIndex = 0;
@@ -854,6 +855,7 @@ var guideOn = false;
 var guideHistory = [];
 var climaxSkipUsed = false;
 var galleryReturnFocus = null;
+var galleryReturnKeyboardFocus = false;
 var galleryInertNodes = [];
 var PREGAME_TAGS = [
   "start",
@@ -1023,6 +1025,29 @@ function clearAllHolds() {
   clearBackHold();
   heldActionKey = null;
 }
+if (document.addEventListener) {
+  // Pointer focus must not take Enter away from the Guide. Tab still selects
+  // controls deliberately, including controls inside the Gallery.
+  document.addEventListener(
+    "pointerdown",
+    function () {
+      keyboardControlFocus = false;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+  document.addEventListener(
+    "keydown",
+    function (e) {
+      if (e.key !== "Tab") return;
+      keyboardControlFocus = true;
+      clearAllHolds();
+      clearChoiceKeyArm();
+    },
+    true,
+  );
+}
 function isStoryActionKey(key) {
   return (
     /^[1-9]$/.test(key) ||
@@ -1173,6 +1198,7 @@ function openGallery() {
   clearAllHolds();
   clearChoiceKeyArm();
   galleryReturnFocus = document.activeElement;
+  galleryReturnKeyboardFocus = keyboardControlFocus;
   renderGalleryLists();
   overlay.removeAttribute("inert");
   overlay.classList.add("open");
@@ -1205,13 +1231,17 @@ function closeGallery() {
   galleryInertNodes = [];
   var target = galleryReturnFocus;
   galleryReturnFocus = null;
+  keyboardControlFocus = galleryReturnKeyboardFocus && keyboardControlFocus;
+  galleryReturnKeyboardFocus = false;
   if (
     !target ||
     target === document.body ||
     !document.body.contains(target) ||
     target.offsetParent === null
-  )
+  ) {
+    keyboardControlFocus = false;
     target = document.getElementById("galleryToggle");
+  }
   if (target && typeof target.focus === "function") target.focus();
 }
 function digestionTick() {
@@ -1329,7 +1359,12 @@ if (document.addEventListener) {
     if (e.key === "Enter") {
       var tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (tag === "a" || (tag === "button" && !e.target.classList.contains("choice"))) {
+      if (
+        tag === "a" ||
+        (tag === "button" &&
+          !e.target.classList.contains("choice") &&
+          (keyboardControlFocus || !(guideActive && guideOn)))
+      ) {
         if (e.repeat) e.preventDefault();
         return;
       }
@@ -2019,7 +2054,7 @@ function buylasagne() {
 }
 function buytort() {
   if (pounds >= 18) {
-    s("<p>You order her tortelloni and your tortelloni.</p>");
+    s("<p>You order tortelloni for you both.</p>");
     tort = 2;
     pounds -= 18;
   } else s("<p>You don’t have enough money!</p>");
@@ -2076,7 +2111,7 @@ function eatmeal1b() {
 }
 function eatmeal1c() {
   s("<p>YOU: Do you often go to the theatre?</p>");
-  s("<p>DIANE: Yes, I love the theatre, I’ve done some acting myself.</p>");
+  s("<p>DIANE: Yes, I love the theatre. I’ve done some acting myself.</p>");
   s("<p>YOU: Do you know much about this play?</p>");
   s(
     "<p>DIANE: Not much, just that my friend Molly is in it, and I’m really looking forward to seeing her. We once acted in a play together when she was an amateur. I hope we’ll be able to see her for a drink afterwards.</p>",
@@ -2138,7 +2173,7 @@ function eatmeal2b() {
 }
 function eatmeal2c() {
   s("<p>YOU: Do you often go to the theatre?</p>");
-  s("<p>DIANE: Yes, I love the theatre, I’ve done some acting myself.</p>");
+  s("<p>DIANE: Yes, I love the theatre. I’ve done some acting myself.</p>");
   s("<p>YOU: Do you know much about this play?</p>");
   s(
     "<p>DIANE: Not much, just that my friend Molly is in it, and I’m really looking forward to seeing her. We once acted in a play together when she was an amateur. I hope we’ll be able to see her for a drink afterwards.</p>",
@@ -4511,7 +4546,7 @@ function riverside6() {
     getinti(5);
   }
   s(
-    "<p>Diane’s skirt has ridden up a bit. You are able to rest your held hands on her leg, just above her knee.</p>",
+    "<p>Diane’s skirt has ridden up a bit. You are able to rest your joined hands on her leg, just above her knee.</p>",
   );
   if (blad > 650) {
     s("<p>You feel Diane shifting about from time to time. You are tremendously excited.</p>");
@@ -5388,11 +5423,11 @@ function together2() {
   gopee = 1;
   if (saturday) {
     s(
-      "<p>Through the thinness of the bushes you can just make out some of the shape of her squatting form. But when you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Very soon she is giving her bottom a little shake and you stand back. You hear the rustling of her clothing as she pulls up her white knickers and straightens her dress.</p>",
+      "<p>Through the thinness of the bushes you can just make out some of the shape of her squatting form. But when you have finished your own pee, and as you zip up, you take a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Very soon she is giving her bottom a little shake and you stand back. You hear the rustling of her clothing as she pulls up her white knickers and straightens her dress.</p>",
     );
   } else {
     s(
-      "<p>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. When you have finished your own pee, and as you zip up, you make a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Her skirt and petticoat are hitched up around her waist. After a minute or so she stands up and again there is a flash of pink as she pulls up her knickers; she stands there for a few moments adjusting her skirt and slip.</p>",
+      "<p>Through the thinness of the bushes you can see the white of her slip as she squats there. Although (or perhaps because) you can see so little, you are finding it all immensely erotic. When you have finished your own pee, and as you zip up, you take a couple of quiet steps to the right and you can see her naked bottom, squatting low so that it must almost be touching the long grass. Her skirt and petticoat are hitched up around her waist. After a minute or so she stands up and again there is a flash of pink as she pulls up her knickers; she stands there for a few moments adjusting her skirt and slip.</p>",
     );
   }
   s(
@@ -10856,7 +10891,7 @@ function skirtremove1a() {
       "<p>She makes to pick up her skirt but doesn’t mind when you get there first. You drape it across the back of a chair, well away from her. You look at her.</p>",
     );
     s(
-      "<p>She looks marvellous. The slip is lacy around the hem and also has a slit to one side, also bordered with lace. Contrasted with her black blouse, it looks really sexy – somehow erotic without revealing anything. Her legs are silhouetted through the thin material.</p>",
+      "<p>She looks marvellous. The slip is lacy around the hem and has a slit to one side, also bordered with lace. Contrasted with her black blouse, it looks really sexy – somehow erotic without revealing anything. Her legs are silhouetted through the thin material.</p>",
     );
     c("skirtremove1b", "You move towards her again.");
   }
@@ -11076,11 +11111,11 @@ function gobathroom() {
   } else {
     if (saturday) {
       s(
-        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect some modesty, but it doesn’t conceal much.</p>",
+        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect her modesty, but it doesn’t conceal much.</p>",
       );
     } else {
       s(
-        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect some modesty, but it doesn’t conceal much.</p>",
+        "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect her modesty, but it doesn’t conceal much.</p>",
       );
     }
     s(
@@ -12053,7 +12088,7 @@ function sofatalkb() {
     c("sofatalkc", "You watch in wonder.");
   } else {
     s(
-      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect some modesty, but it doesn’t conceal much.</p>",
+      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her dress forward to protect her modesty, but it doesn’t conceal much.</p>",
     );
     s(
       "<p>She looks at you with a shy smile at the first telltale ‘tinkle’ of her pee, but then looks down and ahead as if concentrating.</p>",
@@ -12248,7 +12283,7 @@ function sofasnog2() {
     blad += 8;
     getinti(2);
     c("decisions", "Time for decisions on your part.");
-    c("sofapee2", "Try to distract her with an album or subject.");
+    c("sofapee2", "Try to distract her with an album or a change of subject.");
   }
 }
 function sofalegs() {
@@ -12411,7 +12446,7 @@ function sofapee1() {
   s("<p>But it’s up to you.</p>");
   c("decisions", "Maybe I’ll ask her to wait. But I’d better get more intimate first.");
   c("walkhomeX", "I’ll walk her home.");
-  c("sofapee2", "Try to distract her with an album or subject.");
+  c("sofapee2", "Try to distract her with an album or a change of subject.");
 }
 function sofapee2() {
   s("<p>What will it be?</p>");
@@ -12815,7 +12850,7 @@ function peepround() {
   );
   afterpee();
   s(
-    "<p>After a while the brunette stands up and pulls up her knickers, adjusts her little skirt, giving her legs a dab with a tissue before she does. Some pee must have escaped. Diane is finishing her pee, and your heart is beating as you watch her there, her neat little bottom just above the ground. Then she too stands, and you quickly dodge back behind the camper van.</p>",
+    "<p>After a while the brunette stands up, dabs her legs with a tissue, then pulls up her knickers and adjusts her little skirt. Some pee must have escaped. Diane is finishing her pee, and your heart is beating as you watch her there, her neat little bottom just above the ground. Then she too stands, and you quickly dodge back behind the camper van.</p>",
   );
   c("peepround1", "You wait for them.");
 }
@@ -13196,7 +13231,7 @@ function passage2a() {
     "<p>Footsteps approach. A young couple are walking across the square, hurrying towards the town.</p>",
   );
   s(
-    "<p>Diane lets her skirt fall back into place. She pretends to be using her mobile phone. The couple say, ‘Hello’ to her and she answers, ‘Hello’ back.</p>",
+    "<p>Diane lets her skirt fall back into place. She pretends to be using her mobile phone. The couple say ‘Hello’ to her and she answers ‘Hello’ back.</p>",
   );
   s(
     "<p>The couple pass by, and Diane moves a couple of yards towards the wheelie-bins. But then she stops, slightly bent forward.</p>",
@@ -13319,7 +13354,7 @@ function luckytrip29() {
     spendLuckshot();
     s("<p>And luckily you still have a luckshot.</p>");
     s("<p>You play it. The bouncer shakes his head.</p>");
-    c("luckytrip29a", "Diane pleads with him?");
+    c("luckytrip29a", "Will Diane plead with him?");
   } else {
     s("<p>You don’t have a luckshot to play.</p>");
     c("gameover", "Shame on you for trying to cheat.");
@@ -13352,7 +13387,7 @@ function luckytrip28a() {
     "<p>Over to your left, to the side of the hotel, are some large bins. Maybe she’ll head for them.</p>",
   );
   s(
-    "<p>To the right, to the edge of the car park, is a little Portakabin. Maybe she could pop behind that.</p>",
+    "<p>To the right, at the edge of the car park, is a little Portakabin. Maybe she could pop behind that.</p>",
   );
   s(
     "<p>You should be able to have a view of both, but not at the same time. You have to anticipate and choose one or the other.</p>",
@@ -13884,7 +13919,7 @@ function ontoilet() {
     c("ontoilet1", "You watch in wonder.");
   } else {
     s(
-      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect some modesty, but it doesn’t conceal much.</p>",
+      "<p>Diane really needed to go, so – even with you standing there gawping at her – she starts peeing almost as soon as she sits on the loo. She pushes the hem of her skirt forward to protect her modesty, but it doesn’t conceal much.</p>",
     );
     s(
       "<p>She looks at you with a shy smile at the first telltale ‘tinkle’ of her pee, but then looks down and ahead as if concentrating.</p>",
@@ -14870,7 +14905,7 @@ function disaster1() {
 }
 function disaster2() {
   s(
-    "<p>The darkness is lit by a street light, and in the half light you can see a puddle beginning to form around her feet, and hear the audible splatter of pee on the pavement.</p>",
+    "<p>The darkness is lit by a street light, and in the half light you can see a puddle beginning to form around her feet, and hear the splatter of pee on the pavement.</p>",
   );
   if (thursday) {
     s(

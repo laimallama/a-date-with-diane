@@ -813,6 +813,7 @@ var icecream = 0;
 var gettaxi = 0;
 var steak = 0;
 var undobra = 0;
+var hosieryRemoved = 0;
 var sofaTopicsSeen = 0;
 var sofaEveningAsked = 0;
 var movingtalking = 0;
@@ -875,6 +876,7 @@ var gameStateVars = [
   "gettaxi",
   "steak",
   "undobra",
+  "hosieryRemoved",
   "sofaloop",
   "sofaDrinkBand",
   "sofaDrinkBoost",
@@ -5117,8 +5119,8 @@ function stagedoor2() {
     adjpoints(4);
   } else {
     sAlt(
-      "<p>You stand chatting about the play and how much you enjoyed it. Diane is very relaxed, looking forward to seeing her friend.</p>",
-      "<p>你們站著聊起這齣戲有多好看。黛安很放鬆，期待著見到她的朋友。</p>",
+      "<p>You stand chatting about the play and how much you enjoyed it. Diane is looking forward to seeing her friend.</p>",
+      "<p>你們站著聊起這齣戲有多好看。黛安期待著見到她的朋友。</p>",
     );
     blad += 5;
     standing_desp();
@@ -5591,7 +5593,6 @@ function pubdrink6() {
       "<p>MOLLY: It’s really good beer here, isn’t it?</p>",
       "<p>莫莉：這裡的啤酒真的很好喝，對吧？</p>",
     );
-    leavepub2 = 1;
     cAlt("pubdrink7", "You carry on with your drink.", "你繼續喝著酒。");
   }
 }
@@ -6620,8 +6621,8 @@ function traintalka() {
     "<p>黛安：也許我可以做點三明治，我們一起野餐。</p>",
   );
   sAlt(
-    "<p>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. It is the first time you have kissed her and she lingers over it. You can taste her lips. You kiss again.</p>",
-    "<p>你點頭同意。兩人都停下腳步，對看著。你摟住她，慢慢把她拉近，然後吻了她。這是你第一次吻她，她久久沒有離開。你能嚐到她唇上的滋味。你們又吻了一次。</p>",
+    "<p>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. She lingers over it. You can taste her lips. You kiss again.</p>",
+    "<p>你點頭同意。兩人都停下腳步，對看著。你摟住她，慢慢把她拉近，然後吻了她。她久久沒有離開。你能嚐到她唇上的滋味。你們又吻了一次。</p>",
   );
   getinti(25);
   if (blad > 700) {
@@ -7863,7 +7864,7 @@ function luckytrip5n() {
     cAlt("toiletclosed1", "Oh dear!", "哎呀！");
   } else {
     sAlt("<p>Your luckshot hasn’t worked.</p>", "<p>你的幸運機會沒奏效。</p>");
-    cAlt("toiletopen1b", "The toilet is open.", "廁所開著。");
+    cAlt("toiletopen1c1", "The toilet is open.", "廁所開著。");
   }
 }
 function toiletopen1b() {
@@ -7898,10 +7899,16 @@ function toiletopen1bb() {
   cAlt("goforpee", "No, I won’t spy on her.", "不，我不偷看她。");
 }
 function toiletopen1c1() {
-  sAlt(
-    "<p>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.</p>",
-    "<p>黛安進了女廁。看得出來她已經急得不行，你聽到隔間門砰地關上。你走進男廁。</p>",
-  );
+  if (blad > 550)
+    sAlt(
+      "<p>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.</p>",
+      "<p>黛安進了女廁。看得出來她已經急得不行，你聽到隔間門砰地關上。你走進男廁。</p>",
+    );
+  else
+    sAlt(
+      "<p>Diane has gone into the Ladies. You hear a cubicle door close. You go into the Gents.</p>",
+      "<p>黛安進了女廁。你聽到隔間門關上的聲音，便走進男廁。</p>",
+    );
   sAlt(
     "<p>You’re going to have a pee yourself. But you wish you could watch Diane.</p>",
     "<p>你自己也準備小便。但心裡真希望能看著黛安尿尿。</p>",
@@ -12095,10 +12102,12 @@ function sofadesp1() {
   cAlt("sofadesp2", "She can’t sit still.", "她坐不住了。");
 }
 function sofadesp2() {
-  sAlt(
-    "<p>Diane can’t sit still. She’s clearly dying to go to the toilet, and just looking for a suitable opportunity to ask.</p>",
-    "<p>黛安坐立不安。她明顯已經憋得很急，想去廁所，只是在等一個合適時機開口。</p>",
-  );
+  if (blad > 700)
+    sAlt(
+      "<p>Diane can’t sit still. She’s clearly dying to go to the toilet, and just looking for a suitable opportunity to ask.</p>",
+      "<p>黛安坐立不安。她明顯已經憋得很急，想去廁所，只是在等一個合適時機開口。</p>",
+    );
+  else sitting_desp();
   sAlt(
     "<p>Can you carry on talking about something that won’t give her a chance to interrupt? What will it be?</p>",
     "<p>你能不能一直說個不停，讓她插不上話？說什麼好呢？</p>",
@@ -12117,17 +12126,21 @@ function givechance1() {
     "<p>YOU: Are you OK? If you want the loo, it’s just at the top of the stairs.</p>",
     "<p>你：你還好嗎？要是想上廁所，一上樓就是。</p>",
   );
-  sAlt(
-    "<p>She blushes. She’s really embarrassed that you can tell she can’t sit still.</p>",
-    "<p>她臉紅了。你看得出她坐不住，這讓她很不好意思。</p>",
-  );
-  sAlt("<p>So she tries to sit still.</p>", "<p>於是她努力坐著不動。</p>");
+  if (blad > 600) {
+    sAlt(
+      "<p>She blushes. She’s really embarrassed that you can tell she can’t sit still.</p>",
+      "<p>她臉紅了。你看得出她坐不住，這讓她很不好意思。</p>",
+    );
+    sAlt("<p>So she tries to sit still.</p>", "<p>於是她努力坐著不動。</p>");
+  }
   sAlt("<p>DIANE: I’m fine, thanks.</p>", "<p>黛安：我沒事，謝謝。</p>");
-  sAlt(
-    "<p class='notice'><strong>She’s too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
-    "<p class='notice'><strong>她太不好意思了，不肯承認自己需要上廁所。你獲得了5點害羞值。</strong></p>",
-  );
-  adjpoints(5);
+  if (blad > 600) {
+    sAlt(
+      "<p class='notice'><strong>She’s too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
+      "<p class='notice'><strong>她太不好意思了，不肯承認自己需要上廁所。你獲得了5點害羞值。</strong></p>",
+    );
+    adjpoints(5);
+  }
   cAlt("sofadesp2", "You keep talking.", "你繼續說下去。");
 }
 function sofatoilet() {
@@ -12247,6 +12260,7 @@ function stophergoing3() {
       "<p>你點點頭。她站起身，雙手伸進裙擺把裙子撩起一半，把長筒絲襪褪了下來。</p>",
     );
   }
+  hosieryRemoved = 1;
   sAlt(
     "<p>She moves over and stands in front of you, pulling you towards her. Then she sits back down with you on the sofa.</p>",
     "<p>她走到你面前站著，把你拉向她。接著她又和你一起坐回沙發上。</p>",
@@ -12700,10 +12714,16 @@ function sofawork1() {
     "<p>黛安：我得去一下……都是剛才喝太多了。好了，別這麼壞——</p>",
   );
   sAlt("<p>YOU: Can I come with you?</p>", "<p>你：可以讓我跟你一起去嗎？</p>");
-  sAlt(
-    "<p>DIANE: No, it’s private. I’m dying for a pee. I’ll come back afterwards and we can have a cuddle then.</p>",
-    "<p>黛安：不行，那是私事。我快憋死了。去完我就回來，到時候我們可以抱一抱。</p>",
-  );
+  if (blad > 700)
+    sAlt(
+      "<p>DIANE: No, it’s private. I’m dying for a pee. I’ll come back afterwards and we can have a cuddle then.</p>",
+      "<p>黛安：不行，那是私事。我快憋死了。去完我就回來，到時候我們可以抱一抱。</p>",
+    );
+  else
+    sAlt(
+      "<p>DIANE: No, it’s private. I’ll come back afterwards and we can have a cuddle then.</p>",
+      "<p>黛安：不行，那是私事。去完我就回來，到時候我們可以抱一抱。</p>",
+    );
   sAlt("<p>YOU: Can’t you wait a bit longer?</p>", "<p>你：你就不能再等一下子嗎？</p>");
   sAlt(
     "<p>DIANE: Look, I like you and I wouldn’t mind you watching me really but, well, it’s that time of the month. There are things I need to do.</p>",
@@ -12755,10 +12775,16 @@ function sofastamps() {
       "<p>YOU: The album’s over here, if you want a look.</p>",
       "<p>你：想看的話，集郵冊就在這邊。</p>",
     );
-    sAlt(
-      "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
-      "<p>她跟著你走到書櫃旁，好像蠻樂意走動一下。你找集郵冊的時候，她不停地換腳站著，彎下腰，雙手撐在膝蓋上。</p>",
-    );
+    if (blad > 600)
+      sAlt(
+        "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
+        "<p>她跟著你走到書櫃旁，好像蠻樂意走動一下。你找集郵冊的時候，她不停地換腳站著，彎下腰，雙手撐在膝蓋上。</p>",
+      );
+    else
+      sAlt(
+        "<p>She follows you across the room to the bookcase.</p>",
+        "<p>她跟著你走到房間另一頭的書櫃前。</p>",
+      );
     sAlt("<p>DIANE: Actually, where’s the – </p>", "<p>黛安：對了，廁所在——</p>");
     sAlt("<p>YOU: Here it is!</p>", "<p>你：找到了！</p>");
     sAlt(
@@ -13097,10 +13123,16 @@ function luckytrip203a() {
 }
 function luckytrip204() {
   if (luckshots >= 1) {
-    sAlt(
-      "<p>Diane has left the room. She’s clearly dying for a wee. Wouldn’t it be great if something stopped her?</p>",
-      "<p>黛安已經離開房間了。看得出她尿急得不行。要是有什麼能攔住她就好了。</p>",
-    );
+    if (blad > 700)
+      sAlt(
+        "<p>Diane has left the room. She’s clearly dying for a wee. Wouldn’t it be great if something stopped her?</p>",
+        "<p>黛安已經離開房間了。看得出她尿急得不行。要是有什麼能攔住她就好了。</p>",
+      );
+    else
+      sAlt(
+        "<p>Diane has left the room. Wouldn’t it be great if something stopped her?</p>",
+        "<p>黛安已經離開房間了。要是有什麼能攔住她就好了。</p>",
+      );
     spendLuckshot();
     sAlt("<p>So you’ve played a luckshot.</p>", "<p>所以你用了一次幸運機會。</p>");
     cAlt("luckytrip204a", "Wait and see.", "先看看情況。");
@@ -13196,10 +13228,16 @@ function sofatrains() {
       "<p>YOU: The album’s over here, if you want a look.</p>",
       "<p>你：想看的話，相簿就在這邊。</p>",
     );
-    sAlt(
-      "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
-      "<p>她跟著你走到書櫃旁，好像蠻樂意活動一下。你找相簿時，她不停地把重心從一腳換到另一腳，彎下腰，雙手撐在膝蓋上。</p>",
-    );
+    if (blad > 600)
+      sAlt(
+        "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
+        "<p>她跟著你走到書櫃旁，好像蠻樂意活動一下。你找相簿時，她不停地把重心從一腳換到另一腳，彎下腰，雙手撐在膝蓋上。</p>",
+      );
+    else
+      sAlt(
+        "<p>She follows you across the room to the bookcase.</p>",
+        "<p>她跟著你走到房間另一頭的書櫃前。</p>",
+      );
     sAlt("<p>DIANE: Actually, where’s the – </p>", "<p>黛安：對了，廁所在——</p>");
     sAlt("<p>YOU: Here it is!</p>", "<p>你：找到了！</p>");
     sAlt(
@@ -14455,7 +14493,7 @@ function stampalbum6a() {
       "<p>She starts tidying herself, as if to get up.</p>",
       "<p>她開始整理儀容，像是準備起身。</p>",
     );
-    {
+    if (blad > 700) {
       sAlt(
         "<p>Look, you’ve had your fun. A joke’s a joke. She’s dying for the loo but doesn’t like to interrupt you. Aren’t you going to give her a chance?</p>",
         "<p>好了，你也玩得差不多了。玩笑歸玩笑，她憋得很急，想上廁所，卻不好意思打斷你。你就不打算放她一馬嗎？</p>",
@@ -15962,10 +16000,16 @@ function sofasnog1() {
       "<p>DIANE: Don’t get too comfortable. I must be going home in a minute.</p>",
       "<p>黛安：別坐得太舒服，我一會兒就得回家了。</p>",
     );
-    sAlt(
-      "<p>You sit for a few minutes chatting. Then she gets up to go home.</p>",
-      "<p>你們聊了一會兒，接著她站起身準備回家。</p>",
-    );
+    if (blad > 830)
+      sAlt(
+        "<p>She cuts the conversation short and gets up to go home.</p>",
+        "<p>她沒再多聊，便起身準備回家。</p>",
+      );
+    else
+      sAlt(
+        "<p>You sit for a few minutes chatting. Then she gets up to go home.</p>",
+        "<p>你們聊了一會兒，接著她站起身準備回家。</p>",
+      );
     cAlt("walkhomeX", "You get ready to walk her home.", "你準備好送她回家了。");
   } else {
     sAlt(
@@ -15983,6 +16027,19 @@ function sofasnog1() {
   }
 }
 function walkhomeX() {
+  if (hosieryRemoved) {
+    if (thursday)
+      sAlt(
+        "<p>Before you leave, Diane puts her tights back on.</p>",
+        "<p>出門前，黛安重新穿上褲襪。</p>",
+      );
+    else
+      sAlt(
+        "<p>Before you leave, Diane puts her stockings back on.</p>",
+        "<p>出門前，黛安重新穿上長筒絲襪。</p>",
+      );
+    hosieryRemoved = 0;
+  }
   if (blad < 300) {
     walkhomeXa();
     return;
@@ -17623,10 +17680,7 @@ function sofapee() {
       afterpee();
       cAlt("gameover", "Goodnight.", "晚安。");
     } else if (blad > 600) {
-      sAlt(
-        "<p>DIANE: It’s not urgent. I’ll wait a minute.</p>",
-        "<p>黛安：還不算急。我再等一會兒。</p>",
-      );
+      sAlt("<p>DIANE: I can wait a minute.</p>", "<p>黛安：我還能再等一下。</p>");
       cAlt("sofapee1", "You like the sound of that.", "聽起來不錯。");
     } else {
       sAlt("<p>DIANE: I’m OK, thanks.</p>", "<p>黛安：我沒事，謝謝。</p>");
@@ -17641,18 +17695,15 @@ function sofapee() {
   );
   if (blad > 600) {
     sAlt(
-      "<p>She is very relaxed, but a little bit fidgety. She crosses her legs, occasionally squirms on the sofa.</p>",
-      "<p>她整個人很放鬆，但有點坐立不安。她交叉著雙腿，偶爾在沙發上扭動身子。</p>",
+      "<p>She seems at ease with you, but keeps fidgeting. She crosses her legs, occasionally squirms on the sofa.</p>",
+      "<p>她和你在一起很自在，卻一直坐不住。她交叉著雙腿，偶爾在沙發上扭動身子。</p>",
     );
     sAlt("<p>YOU: Diane, you keep shifting about.</p>", "<p>你：黛安，你一直動來動去的耶。</p>");
     sAlt(
       "<p>She blushes and stops fidgeting. Then, looking up at you with a little grin – </p>",
       "<p>她臉紅了，停止了扭動。接著，她抬起頭看著你，嘴角帶著一絲俏皮的笑——</p>",
     );
-    sAlt(
-      "<p>DIANE: I want to go to the loo, that’s why.</p>",
-      "<p>黛安：因為我想上廁所啊。</p>",
-    );
+    sAlt("<p>DIANE: I want to go to the loo, that’s why.</p>", "<p>黛安：因為我想上廁所啊。</p>");
     sAlt("<p>YOU: Are you desperate?</p>", "<p>你：你憋得很難受嗎？</p>");
     sAlt(
       "<p>DIANE: I want to go. But your brother’s in the bathroom, I think.</p>",
@@ -17668,10 +17719,7 @@ function sofapee() {
       afterpee();
       cAlt("gameover", "Goodnight.", "晚安。");
     } else {
-      sAlt(
-        "<p>DIANE: It’s not urgent. I’ll wait a minute.</p>",
-        "<p>黛安：還不算急。我再等一會兒。</p>",
-      );
+      sAlt("<p>DIANE: I can wait a minute.</p>", "<p>黛安：我還能再等一下。</p>");
       cAlt("sofapee1", "You like the sound of that.", "聽起來不錯。");
     }
   } else {
@@ -19599,20 +19647,26 @@ function nicelydesp6() {
       "<p>She looks for a second at the shower, but then moves towards the toilet.</p>",
       "<p>她朝淋浴處看了一眼，不過接著走向了馬桶。</p>",
     );
-    sAlt(
-      "<p>DIANE: I don’t want to ruin my stockings. I’ll sit on the loo and do it.</p>",
-      "<p>黛安：我不想弄壞絲襪。我就坐在馬桶上尿好了。</p>",
-    );
+    if (hosieryRemoved)
+      sAlt("<p>DIANE: I’ll sit on the loo and do it.</p>", "<p>黛安：我就坐在馬桶上尿好了。</p>");
+    else
+      sAlt(
+        "<p>DIANE: I don’t want to ruin my stockings. I’ll sit on the loo and do it.</p>",
+        "<p>黛安：我不想弄壞絲襪。我就坐在馬桶上尿好了。</p>",
+      );
     cAlt("nicelydesp7", "She sits on the toilet.", "她坐上馬桶。");
   } else if (thursday) {
-    sAlt(
-      "<p>DIANE: At least let me take my tights off.</p>",
-      "<p>黛安：至少讓我先把褲襪脫掉。</p>",
-    );
-    sAlt(
-      "<p>She hitches her skirt up at the back and peels down her tights, throwing them in the corner. After the dark tights her legs are amazing.</p>",
-      "<p>她撩起身後的裙擺，把褲襪褪下來扔到角落。脫掉深色褲襪之後，她的雙腿漂亮極了。</p>",
-    );
+    if (!hosieryRemoved) {
+      sAlt(
+        "<p>DIANE: At least let me take my tights off.</p>",
+        "<p>黛安：至少讓我先把褲襪脫掉。</p>",
+      );
+      sAlt(
+        "<p>She hitches her skirt up at the back and peels down her tights, throwing them in the corner. After the dark tights her legs are amazing.</p>",
+        "<p>她撩起身後的裙擺，把褲襪褪下來扔到角落。脫掉深色褲襪之後，她的雙腿漂亮極了。</p>",
+      );
+      hosieryRemoved = 1;
+    }
     cAlt("nicelydesp7", "She sits on the toilet.", "她坐上馬桶。");
   } else if (saturday) {
     sAlt(
@@ -19800,10 +19854,15 @@ function lootogether() {
   cAlt("lootogether1", "She goes over to the toilet.", "她走向馬桶。");
 }
 function lootogether1() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     sAlt(
       "<p>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.</p>",
       "<p>她就站在你面前，手伸到裙子下摸索了片刻，接著將褲襪和內褲一並褪下，坐上了馬桶。她把褲襪往下扯了一點點，拉到將近膝蓋的位置，天藍色的內褲就搭在褲襪上面。</p>",
+    );
+  } else if (thursday) {
+    sAlt(
+      "<p>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her sky-blue knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees.</p>",
+      "<p>她就站在你面前，手伸到裙子下摸索了片刻，接著將天藍色的內褲褪下，坐上了馬桶。她把內褲又往下扯了一點，拉到將近膝蓋的位置。</p>",
     );
   } else if (tuesday) {
     sAlt(
@@ -19829,7 +19888,7 @@ function lootogether1() {
       "<p>You turn away and after a few seconds you hear the unmistakable tinkle as she begins to pee. You turn back towards her.</p>",
       "<p>你轉過身去，過了幾秒鐘聽到那再明顯不過的水聲——她開始尿了。你轉回頭看向她。</p>",
     );
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>Because she’s pushed the hem of her skirt down, you can’t see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, ‘Almost finished,’ but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. ‘I really needed that,’ she says and, standing up, pulls up her knickers and then her tights.</p>",
         "<p>裙擺遮住了視線，什麼都看不見，但她尿得正急，水聲實在妙不可言。過了一會兒，聲音漸漸減弱，她輕聲說「快好了」，可接著又尿了一小陣，最後尿流漸漸變細，水聲才停了下來。整個過程大概足足持續了一分鐘。她抽了一張衛生紙，伸手擦拭。「我真是憋壞了，」她說著站起身，依次拉上內褲和褲襪。</p>",
@@ -19930,7 +19989,7 @@ function ontoilet1() {
         "<p>她抽了一張衛生紙，俐落地擦拭乾淨，接著站起身，拉上白色的內褲。</p>",
       );
     }
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>She then starts to pull up her tights, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was.</p>",
         "<p>她開始往上拉褲襪，但還沒拉完，你已經將她攬入懷中，吻著她的嘴唇、臉頰和頸項，告訴她這一切有多美妙。</p>",
@@ -19943,7 +20002,7 @@ function ontoilet1() {
     }
     cAlt("ontoilet2", "You embrace.", "你們相擁在一起。");
   } else {
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>She realises you are watching, blushes slightly and pushes the hem of her skirt further towards her knees. You cannot see the stream anymore, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, ‘Almost finished,’ but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. ‘I really needed that,’ she says and, standing up, pulls up her knickers and then her tights.</p>",
         "<p>她察覺到你在看，微微紅了臉，將裙擺往膝蓋方向推了過去。你已經看不見尿流，但她尿得正急，水聲實在妙不可言。過了一會兒，聲音漸漸減弱，她輕聲說「快好了」，可接著又尿了一小陣，最後尿流漸漸變細，水聲才停了下來。整個過程大概足足持續了一分鐘。她抽了一張衛生紙，伸手擦拭。「我真是憋壞了，」她說著站起身，依次拉上內褲和褲襪。</p>",
@@ -19990,7 +20049,7 @@ function fifthplace() {
   sAlt("<p><b>YOU HAVE WON 5TH PRIZE!</b></p>", "<p><b>你獲得了五等獎！</b></p>");
 }
 function lootogether2() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     sAlt(
       "<p>She ushers you out of the toilet while she washes her hands and straightens her tights. Then she comes out to join you in the hall.</p>",
       "<p>她請你先出廁所，自己在裡面洗手、整理褲襪，然後出來與你在玄關會合。</p>",

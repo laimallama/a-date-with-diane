@@ -823,6 +823,7 @@ var icecream = 0;
 var gettaxi = 0;
 var steak = 0;
 var undobra = 0;
+var hosieryRemoved = 0;
 var sofaTopicsSeen = 0;
 var sofaEveningAsked = 0;
 var movingtalking = 0;
@@ -885,6 +886,7 @@ var gameStateVars = [
   "gettaxi",
   "steak",
   "undobra",
+  "hosieryRemoved",
   "sofaloop",
   "sofaDrinkBand",
   "sofaDrinkBoost",
@@ -5324,8 +5326,8 @@ function stagedoor2() {
     adjpoints(4);
   } else {
     sAlt(
-      "<p>You stand chatting about the play and how much you enjoyed it. Diane is very relaxed, looking forward to seeing her friend.</p>",
-      "<p>芝居がどれほど楽しかったか、立ったまま話している。ダイアンはすっかりくつろいだ様子で、友達に会うのを楽しみにしている。</p>",
+      "<p>You stand chatting about the play and how much you enjoyed it. Diane is looking forward to seeing her friend.</p>",
+      "<p>芝居がどれほど楽しかったか、立ったまま話している。ダイアンは友達に会うのを楽しみにしている。</p>",
     );
     blad += 5;
     standing_desp();
@@ -5800,7 +5802,6 @@ function pubdrink6() {
       "<p>MOLLY: It’s really good beer here, isn’t it?</p>",
       "<p>モリー：ここのビール、本当においしいわね。</p>",
     );
-    leavepub2 = 1;
     cAlt("pubdrink7", "You carry on with your drink.", "そのまま飲み続ける。");
   }
 }
@@ -6865,15 +6866,15 @@ function traintalka() {
     "<p>ダイアン：サンドイッチを作っていくから、ピクニックにしてもいいわね。</p>",
   );
   sAlt(
-    "<p>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. It is the first time you have kissed her and she lingers over it. You can taste her lips. You kiss again.</p>",
-    "<p>賛成してうなずく。二人とも足を止め、見つめ合う。彼女に腕を回し、ゆっくりと引き寄せてキスをする。こちらからキスをするのは初めてだ。彼女はそのまま、しばらく唇を離さない。その唇の味がする。もう一度キスをする。</p>",
+    "<p>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. She lingers over it. You can taste her lips. You kiss again.</p>",
+    "<p>賛成してうなずく。二人とも足を止め、見つめ合う。彼女に腕を回し、ゆっくりと引き寄せてキスをする。彼女はそのまま、しばらく唇を離さない。その唇の味がする。もう一度キスをする。</p>",
   );
   getinti(25);
   if (blad > 700) {
     if (points < 20) {
       sAlt(
         "<p>DIANE: Come on! I’m dying to spend a penny!</p>",
-        "<p>ダイアン：さあ、行きましょう！\u3000トイレに行きたくてたまらないの！</p>",
+        "<p>ダイアン：さあ、行きましょう！　トイレに行きたくてたまらないの！</p>",
       );
     } else {
       sAlt("<p>DIANE: Come on!</p>", "<p>ダイアン：さあ、行きましょう！</p>");
@@ -8141,7 +8142,7 @@ function luckytrip5n() {
     cAlt("toiletclosed1", "Oh dear!", "困った！");
   } else {
     sAlt("<p>Your luckshot hasn’t worked.</p>", "<p>運試しはうまくいかなかった。</p>");
-    cAlt("toiletopen1b", "The toilet is open.", "トイレは開いている。");
+    cAlt("toiletopen1c1", "The toilet is open.", "トイレは開いている。");
   }
 }
 function toiletopen1b() {
@@ -8176,10 +8177,16 @@ function toiletopen1bb() {
   cAlt("goforpee", "No, I won’t spy on her.", "いいえ、のぞきはしない。");
 }
 function toiletopen1c1() {
-  sAlt(
-    "<p>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.</p>",
-    "<p>ダイアンは女性用トイレに入った。相当我慢していたのがわかる。個室の扉が勢いよく閉まる音が聞こえ、あなたは男性用トイレに入る。</p>",
-  );
+  if (blad > 550)
+    sAlt(
+      "<p>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.</p>",
+      "<p>ダイアンは女性用トイレに入った。相当我慢していたのがわかる。個室の扉が勢いよく閉まる音が聞こえ、あなたは男性用トイレに入る。</p>",
+    );
+  else
+    sAlt(
+      "<p>Diane has gone into the Ladies. You hear a cubicle door close. You go into the Gents.</p>",
+      "<p>ダイアンは女性用トイレに入った。個室の扉が閉まる音が聞こえる。あなたは男性用トイレに入る。</p>",
+    );
   sAlt(
     "<p>You’re going to have a pee yourself. But you wish you could watch Diane.</p>",
     "<p>自分も用を足そうとしている。だが、ダイアンの姿を見られたらと思う。</p>",
@@ -12597,13 +12604,15 @@ function sofadesp1() {
   cAlt("sofadesp2", "She can’t sit still.", "彼女はじっと座っていられない。");
 }
 function sofadesp2() {
-  sAlt(
-    "<p>Diane can’t sit still. She’s clearly dying to go to the toilet, and just looking for a suitable opportunity to ask.</p>",
-    "<p>ダイアンはじっと座っていられない。明らかにトイレに行きたくてたまらず、言い出すきっかけをうかがっている。</p>",
-  );
+  if (blad > 700)
+    sAlt(
+      "<p>Diane can’t sit still. She’s clearly dying to go to the toilet, and just looking for a suitable opportunity to ask.</p>",
+      "<p>ダイアンはじっと座っていられない。明らかにトイレに行きたくてたまらず、言い出すきっかけをうかがっている。</p>",
+    );
+  else sitting_desp();
   sAlt(
     "<p>Can you carry on talking about something that won’t give her a chance to interrupt? What will it be?</p>",
-    "<p>彼女に口を挟む隙を与えず、話し続けられるだろうか？\u3000何の話をしよう？</p>",
+    "<p>彼女に口を挟む隙を与えず、話し続けられるだろうか？　何の話をしよう？</p>",
   );
   cAlt("sofatheatre", "Talk about the theatre?", "芝居の話？");
   cAlt("sofastamps", "Talk about stamps?", "切手の話？");
@@ -12617,19 +12626,23 @@ function givechance1() {
   sofaOfferLooDone = 1;
   sAlt(
     "<p>YOU: Are you OK? If you want the loo, it’s just at the top of the stairs.</p>",
-    "<p>あなた：大丈夫？\u3000トイレに行きたければ、階段を上がってすぐだよ。</p>",
+    "<p>あなた：大丈夫？　トイレに行きたければ、階段を上がってすぐだよ。</p>",
   );
-  sAlt(
-    "<p>She blushes. She’s really embarrassed that you can tell she can’t sit still.</p>",
-    "<p>彼女は赤くなる。じっとしていられないのを見抜かれて、とても恥ずかしがっている。</p>",
-  );
-  sAlt("<p>So she tries to sit still.</p>", "<p>それで、じっと座っていようとする。</p>");
+  if (blad > 600) {
+    sAlt(
+      "<p>She blushes. She’s really embarrassed that you can tell she can’t sit still.</p>",
+      "<p>彼女は赤くなる。じっとしていられないのを見抜かれて、とても恥ずかしがっている。</p>",
+    );
+    sAlt("<p>So she tries to sit still.</p>", "<p>それで、じっと座っていようとする。</p>");
+  }
   sAlt("<p>DIANE: I’m fine, thanks.</p>", "<p>ダイアン：大丈夫、ありがとう。</p>");
-  sAlt(
-    "<p class='notice'><strong>She’s too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
-    "<p class='notice'><strong>彼女は恥ずかしくて、トイレに行きたいと言えません。恥じらいが5ポイント上がりました。</strong></p>",
-  );
-  adjpoints(5);
+  if (blad > 600) {
+    sAlt(
+      "<p class='notice'><strong>She’s too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
+      "<p class='notice'><strong>彼女は恥ずかしくて、トイレに行きたいと言えません。恥じらいが5ポイント上がりました。</strong></p>",
+    );
+    adjpoints(5);
+  }
   cAlt("sofadesp2", "You keep talking.", "話し続ける。");
 }
 function sofatoilet() {
@@ -12758,6 +12771,7 @@ function stophergoing3() {
       "<p>うなずくと、彼女は立ち上がり、スカートの下に手を入れる。裾を少したくし上げて、ストッキングを下ろしていく。</p>",
     );
   }
+  hosieryRemoved = 1;
   sAlt(
     "<p>She moves over and stands in front of you, pulling you towards her. Then she sits back down with you on the sofa.</p>",
     "<p>彼女は目の前に来て立つと、あなたを自分の方に引き寄せる。それから、また一緒にソファに座る。</p>",
@@ -13252,7 +13266,7 @@ function sofawork1() {
   );
   sAlt(
     "<p>DIANE: Heh! Let me go, I want to go to the loo.</p>",
-    "<p>ダイアン：ちょっと！\u3000離してよ。トイレに行きたいの。</p>",
+    "<p>ダイアン：ちょっと！　離してよ。トイレに行きたいの。</p>",
   );
   sAlt("<p>YOU: Are you desperate?</p>", "<p>あなた：そんなに我慢してるの？</p>");
   sAlt(
@@ -13260,10 +13274,16 @@ function sofawork1() {
     "<p>ダイアン：行きたいの。あんなに飲んだから。ねえ、意地悪しないで――</p>",
   );
   sAlt("<p>YOU: Can I come with you?</p>", "<p>あなた：一緒に行ってもいい？</p>");
-  sAlt(
-    "<p>DIANE: No, it’s private. I’m dying for a pee. I’ll come back afterwards and we can have a cuddle then.</p>",
-    "<p>ダイアン：だめ。一人にして。おしっこに行きたくてたまらないの。あとで戻ってくるから、そのときまたくっついていようよ。</p>",
-  );
+  if (blad > 700)
+    sAlt(
+      "<p>DIANE: No, it’s private. I’m dying for a pee. I’ll come back afterwards and we can have a cuddle then.</p>",
+      "<p>ダイアン：だめ。一人にして。おしっこに行きたくてたまらないの。あとで戻ってくるから、そのときまたくっついていようよ。</p>",
+    );
+  else
+    sAlt(
+      "<p>DIANE: No, it’s private. I’ll come back afterwards and we can have a cuddle then.</p>",
+      "<p>ダイアン：だめ。一人にして。あとで戻ってくるから、そのときまたくっついていようよ。</p>",
+    );
   sAlt("<p>YOU: Can’t you wait a bit longer?</p>", "<p>あなた：もう少し待てない？</p>");
   sAlt(
     "<p>DIANE: Look, I like you and I wouldn’t mind you watching me really but, well, it’s that time of the month. There are things I need to do.</p>",
@@ -13318,10 +13338,16 @@ function sofastamps() {
       "<p>YOU: The album’s over here, if you want a look.</p>",
       "<p>あなた：見たければ、アルバムはこっちにあるよ。</p>",
     );
-    sAlt(
-      "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
-      "<p>彼女は部屋を横切って本棚へ向かうあなたについてくる。動けるのがありがたいようだ。アルバムを探している間、彼女は左右の足に交互に体重をかける。それから前かがみになり、両手を膝に置く。</p>",
-    );
+    if (blad > 600)
+      sAlt(
+        "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
+        "<p>彼女は部屋を横切って本棚へ向かうあなたについてくる。動けるのがありがたいようだ。アルバムを探している間、彼女は左右の足に交互に体重をかける。それから前かがみになり、両手を膝に置く。</p>",
+      );
+    else
+      sAlt(
+        "<p>She follows you across the room to the bookcase.</p>",
+        "<p>彼女は部屋の向こうの本棚までついてくる。</p>",
+      );
     sAlt("<p>DIANE: Actually, where’s the – </p>", "<p>ダイアン：あの、どこにあるの――</p>");
     sAlt("<p>YOU: Here it is!</p>", "<p>あなた：あった！</p>");
     sAlt(
@@ -13664,10 +13690,16 @@ function luckytrip203a() {
 }
 function luckytrip204() {
   if (luckshots >= 1) {
-    sAlt(
-      "<p>Diane has left the room. She’s clearly dying for a wee. Wouldn’t it be great if something stopped her?</p>",
-      "<p>ダイアンは部屋を出た。明らかにおしっこに行きたくてたまらない。何かに邪魔されたら、最高なのに。</p>",
-    );
+    if (blad > 700)
+      sAlt(
+        "<p>Diane has left the room. She’s clearly dying for a wee. Wouldn’t it be great if something stopped her?</p>",
+        "<p>ダイアンは部屋を出た。明らかにおしっこに行きたくてたまらない。何かに邪魔されたら、最高なのに。</p>",
+      );
+    else
+      sAlt(
+        "<p>Diane has left the room. Wouldn’t it be great if something stopped her?</p>",
+        "<p>ダイアンは部屋を出た。何かに邪魔されたら、最高なのに。</p>",
+      );
     spendLuckshot();
     sAlt("<p>So you’ve played a luckshot.</p>", "<p>そこで、運試しを使った。</p>");
     cAlt("luckytrip204a", "Wait and see.", "どうなるか待ってみる。");
@@ -13766,10 +13798,16 @@ function sofatrains() {
       "<p>YOU: The album’s over here, if you want a look.</p>",
       "<p>あなた：見たければ、アルバムはこっちにあるよ。</p>",
     );
-    sAlt(
-      "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
-      "<p>彼女は部屋を横切って本棚へ向かうあなたについてくる。動けるのがありがたいようだ。アルバムを探している間、彼女は左右の足に交互に体重をかける。それから前かがみになり、両手を膝に置く。</p>",
-    );
+    if (blad > 600)
+      sAlt(
+        "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
+        "<p>彼女は部屋を横切って本棚へ向かうあなたについてくる。動けるのがありがたいようだ。アルバムを探している間、彼女は左右の足に交互に体重をかける。それから前かがみになり、両手を膝に置く。</p>",
+      );
+    else
+      sAlt(
+        "<p>She follows you across the room to the bookcase.</p>",
+        "<p>彼女は部屋の向こうの本棚までついてくる。</p>",
+      );
     sAlt("<p>DIANE: Actually, where’s the – </p>", "<p>ダイアン：あの、どこにあるの――</p>");
     sAlt("<p>YOU: Here it is!</p>", "<p>あなた：あった！</p>");
     sAlt(
@@ -15080,7 +15118,7 @@ function stampalbum6a() {
       "<p>She starts tidying herself, as if to get up.</p>",
       "<p>彼女は立ち上がるつもりなのか、身なりを整え始める。</p>",
     );
-    {
+    if (blad > 700) {
       sAlt(
         "<p>Look, you’ve had your fun. A joke’s a joke. She’s dying for the loo but doesn’t like to interrupt you. Aren’t you going to give her a chance?</p>",
         "<p>ねえ、もう十分楽しんだだろう。冗談もほどほどに。彼女はトイレに行きたくてたまらないが、話を遮りたくないのだ。そろそろ行かせてあげたらどうだ？</p>",
@@ -16640,10 +16678,16 @@ function sofasnog1() {
       "<p>DIANE: Don’t get too comfortable. I must be going home in a minute.</p>",
       "<p>ダイアン：あまりくつろがないでね。もうすぐ帰らなきゃ。</p>",
     );
-    sAlt(
-      "<p>You sit for a few minutes chatting. Then she gets up to go home.</p>",
-      "<p>数分間座っておしゃべりをする。それから、彼女は帰ろうと立ち上がる。</p>",
-    );
+    if (blad > 830)
+      sAlt(
+        "<p>She cuts the conversation short and gets up to go home.</p>",
+        "<p>彼女は話を早めに切り上げ、帰ろうと立ち上がる。</p>",
+      );
+    else
+      sAlt(
+        "<p>You sit for a few minutes chatting. Then she gets up to go home.</p>",
+        "<p>数分間座っておしゃべりをする。それから、彼女は帰ろうと立ち上がる。</p>",
+      );
     cAlt("walkhomeX", "You get ready to walk her home.", "彼女を家まで送る支度をする。");
   } else {
     sAlt(
@@ -16661,6 +16705,19 @@ function sofasnog1() {
   }
 }
 function walkhomeX() {
+  if (hosieryRemoved) {
+    if (thursday)
+      sAlt(
+        "<p>Before you leave, Diane puts her tights back on.</p>",
+        "<p>出かける前に、ダイアンはタイツをはき直す。</p>",
+      );
+    else
+      sAlt(
+        "<p>Before you leave, Diane puts her stockings back on.</p>",
+        "<p>出かける前に、ダイアンはストッキングをはき直す。</p>",
+      );
+    hosieryRemoved = 0;
+  }
   if (blad < 300) {
     walkhomeXa();
     return;
@@ -18381,10 +18438,7 @@ function sofapee() {
       afterpee();
       cAlt("gameover", "Goodnight.", "おやすみ。");
     } else if (blad > 600) {
-      sAlt(
-        "<p>DIANE: It’s not urgent. I’ll wait a minute.</p>",
-        "<p>ダイアン：急ぐほどじゃないから。もう少し待つね。</p>",
-      );
+      sAlt("<p>DIANE: I can wait a minute.</p>", "<p>ダイアン：もう少しなら待てるよ。</p>");
       cAlt("sofapee1", "You like the sound of that.", "それはうれしい。");
     } else {
       sAlt("<p>DIANE: I’m OK, thanks.</p>", "<p>ダイアン：大丈夫。ありがとう。</p>");
@@ -18399,8 +18453,8 @@ function sofapee() {
   );
   if (blad > 600) {
     sAlt(
-      "<p>She is very relaxed, but a little bit fidgety. She crosses her legs, occasionally squirms on the sofa.</p>",
-      "<p>彼女はすっかりくつろいでいるが、少しそわそわしている。脚を組み、時々ソファの上で身じろぎする。</p>",
+      "<p>She seems at ease with you, but keeps fidgeting. She crosses her legs, occasionally squirms on the sofa.</p>",
+      "<p>あなたには気を許しているようだが、そわそわしている。脚を組み、時々ソファの上で身じろぎする。</p>",
     );
     sAlt(
       "<p>YOU: Diane, you keep shifting about.</p>",
@@ -18429,10 +18483,7 @@ function sofapee() {
       afterpee();
       cAlt("gameover", "Goodnight.", "おやすみ。");
     } else {
-      sAlt(
-        "<p>DIANE: It’s not urgent. I’ll wait a minute.</p>",
-        "<p>ダイアン：急ぐほどじゃないから。もう少し待つね。</p>",
-      );
+      sAlt("<p>DIANE: I can wait a minute.</p>", "<p>ダイアン：もう少しなら待てるよ。</p>");
       cAlt("sofapee1", "You like the sound of that.", "それはうれしい。");
     }
   } else {
@@ -20438,20 +20489,26 @@ function nicelydesp6() {
       "<p>She looks for a second at the shower, but then moves towards the toilet.</p>",
       "<p>一瞬シャワーの方を見るが、それから便器へ向かう。</p>",
     );
-    sAlt(
-      "<p>DIANE: I don’t want to ruin my stockings. I’ll sit on the loo and do it.</p>",
-      "<p>ダイアン：ストッキングを駄目にしたくないから。便器に座ってするね。</p>",
-    );
+    if (hosieryRemoved)
+      sAlt("<p>DIANE: I’ll sit on the loo and do it.</p>", "<p>ダイアン：便器に座ってするね。</p>");
+    else
+      sAlt(
+        "<p>DIANE: I don’t want to ruin my stockings. I’ll sit on the loo and do it.</p>",
+        "<p>ダイアン：ストッキングを駄目にしたくないから。便器に座ってするね。</p>",
+      );
     cAlt("nicelydesp7", "She sits on the toilet.", "彼女は便器に座る。");
   } else if (thursday) {
-    sAlt(
-      "<p>DIANE: At least let me take my tights off.</p>",
-      "<p>ダイアン：せめてタイツは脱がせて。</p>",
-    );
-    sAlt(
-      "<p>She hitches her skirt up at the back and peels down her tights, throwing them in the corner. After the dark tights her legs are amazing.</p>",
-      "<p>後ろからスカートをたくし上げ、タイツを脱いで隅へ放る。暗い色のタイツの後だけに、素肌の脚が見違えるほど美しい。</p>",
-    );
+    if (!hosieryRemoved) {
+      sAlt(
+        "<p>DIANE: At least let me take my tights off.</p>",
+        "<p>ダイアン：せめてタイツは脱がせて。</p>",
+      );
+      sAlt(
+        "<p>She hitches her skirt up at the back and peels down her tights, throwing them in the corner. After the dark tights her legs are amazing.</p>",
+        "<p>後ろからスカートをたくし上げ、タイツを脱いで隅へ放る。暗い色のタイツの後だけに、素肌の脚が見違えるほど美しい。</p>",
+      );
+      hosieryRemoved = 1;
+    }
     cAlt("nicelydesp7", "She sits on the toilet.", "彼女は便器に座る。");
   } else if (saturday) {
     sAlt(
@@ -20642,10 +20699,15 @@ function lootogether() {
   cAlt("lootogether1", "She goes over to the toilet.", "彼女は便器へ向かう。");
 }
 function lootogether1() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     sAlt(
       "<p>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.</p>",
       "<p>すぐ目の前で、スカートの下へ手を入れる。少し手間取ってからタイツとショーツを下ろし、便器に座る。タイツをもう少し下げて膝の近くまで下ろす。空色のショーツはそのすぐ上にある。</p>",
+    );
+  } else if (thursday) {
+    sAlt(
+      "<p>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her sky-blue knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees.</p>",
+      "<p>すぐ目の前で、スカートの下へ手を入れる。少し手間取ってから空色のショーツを下ろし、便器に座る。ショーツをもう少し下げて膝の近くまで下ろす。</p>",
     );
   } else if (tuesday) {
     sAlt(
@@ -20671,7 +20733,7 @@ function lootogether1() {
       "<p>You turn away and after a few seconds you hear the unmistakable tinkle as she begins to pee. You turn back towards her.</p>",
       "<p>目をそらすと、数秒後、おしっこが出始めたとはっきり分かる水音が聞こえる。彼女の方へ向き直る。</p>",
     );
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>Because she’s pushed the hem of her skirt down, you can’t see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, ‘Almost finished,’ but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. ‘I really needed that,’ she says and, standing up, pulls up her knickers and then her tights.</p>",
         "<p>裾を下ろしているので見えないが、今や勢いを増したおしっこの水音が素晴らしい。しばらくすると弱まり、「もう少しで終わる」とつぶやく。それからもう少し出て、最後は細い流れとなり、静かになる。丸一分は続いたはずだ。彼女はトイレットペーパーを切り取り、手を下へ伸ばして拭く。「本当に我慢してたの」と言って立ち上がり、ショーツを引き上げ、それからタイツも上げる。</p>",
@@ -20775,7 +20837,7 @@ function ontoilet1() {
         "<p>彼女はペーパーを切り取り、さっと拭いてから立ち上がり、白いショーツを引き上げる。</p>",
       );
     }
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>She then starts to pull up her tights, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was.</p>",
         "<p>タイツを引き上げ始めるが、上げ終わらないうちにあなたの腕の中にいる。唇にも、顔にも、首にもキスをして、どれほど素晴らしかったかを伝える。</p>",
@@ -20788,7 +20850,7 @@ function ontoilet1() {
     }
     cAlt("ontoilet2", "You embrace.", "抱き合う。");
   } else {
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>She realises you are watching, blushes slightly and pushes the hem of her skirt further towards her knees. You cannot see the stream anymore, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, ‘Almost finished,’ but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. ‘I really needed that,’ she says and, standing up, pulls up her knickers and then her tights.</p>",
         "<p>見られていると気づいた彼女は少し赤くなり、裾をさらに膝の方へ下ろす。尿の流れはもう見えないが、今や勢いを増した水音が素晴らしい。しばらくすると弱まり、「もう少しで終わる」とつぶやく。それからもう少し出て、最後は細い流れとなり、静かになる。丸一分は続いたはずだ。彼女はトイレットペーパーを切り取り、手を下へ伸ばして拭く。「本当にすっきりした」と言って立ち上がり、ショーツを引き上げ、それからタイツも上げる。</p>",
@@ -20835,7 +20897,7 @@ function fifthplace() {
   sAlt("<p><b>YOU HAVE WON 5TH PRIZE!</b></p>", "<p><b>5等賞を獲得しました！</b></p>");
 }
 function lootogether2() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     sAlt(
       "<p>She ushers you out of the toilet while she washes her hands and straightens her tights. Then she comes out to join you in the hall.</p>",
       "<p>彼女はあなたをトイレの外へ送り出し、手を洗ってタイツを整える。それから出てきて、玄関ホールであなたと合流する。</p>",

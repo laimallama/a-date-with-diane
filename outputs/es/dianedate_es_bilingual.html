@@ -784,6 +784,7 @@ var icecream = 0;
 var gettaxi = 0;
 var steak = 0;
 var undobra = 0;
+var hosieryRemoved = 0;
 var sofaTopicsSeen = 0;
 var sofaEveningAsked = 0;
 var movingtalking = 0;
@@ -846,6 +847,7 @@ var gameStateVars = [
   "gettaxi",
   "steak",
   "undobra",
+  "hosieryRemoved",
   "sofaloop",
   "sofaDrinkBand",
   "sofaDrinkBoost",
@@ -5327,8 +5329,8 @@ function stagedoor2() {
     adjpoints(4);
   } else {
     sAlt(
-      "<p>You stand chatting about the play and how much you enjoyed it. Diane is very relaxed, looking forward to seeing her friend.</p>",
-      "<p>Os quedáis charlando sobre la obra y lo mucho que os ha gustado. Diane está muy tranquila, con ganas de ver a su amiga.</p>",
+      "<p>You stand chatting about the play and how much you enjoyed it. Diane is looking forward to seeing her friend.</p>",
+      "<p>Os quedáis charlando sobre la obra y lo mucho que os ha gustado. Diane tiene ganas de ver a su amiga.</p>",
     );
     blad += 5;
     standing_desp();
@@ -5818,7 +5820,6 @@ function pubdrink6() {
       "<p>MOLLY: It’s really good beer here, isn’t it?</p>",
       "<p>MOLLY: La cerveza aquí es realmente buena, ¿verdad?</p>",
     );
-    leavepub2 = 1;
     cAlt("pubdrink7", "You carry on with your drink.", "Sigues con tu copa.");
   }
 }
@@ -6893,8 +6894,8 @@ function traintalka() {
     "<p>DIANE: Podría preparar unos sándwiches y podríamos hacer un picnic.</p>",
   );
   sAlt(
-    "<p>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. It is the first time you have kissed her and she lingers over it. You can taste her lips. You kiss again.</p>",
-    "<p>Asientes. Los dos os detenéis y os miráis. La rodeas con el brazo, la atraes lentamente hacia ti y la besas. Es la primera vez que la besas y ella se recrea en el momento. Puedes saborear sus labios. Os besáis de nuevo.</p>",
+    "<p>You nod agreement. You both stop and look at each other. You put your arm round her, draw her slowly towards you and kiss her. She lingers over it. You can taste her lips. You kiss again.</p>",
+    "<p>Asientes. Los dos os detenéis y os miráis. La rodeas con el brazo, la atraes lentamente hacia ti y la besas. Ella se recrea en el momento. Puedes saborear sus labios. Os besáis de nuevo.</p>",
   );
   getinti(25);
   if (blad > 700) {
@@ -8178,7 +8179,7 @@ function luckytrip5n() {
     cAlt("toiletclosed1", "Oh dear!", "¡Ay, no!");
   } else {
     sAlt("<p>Your luckshot hasn’t worked.</p>", "<p>El golpe de suerte no ha funcionado.</p>");
-    cAlt("toiletopen1b", "The toilet is open.", "El baño está abierto.");
+    cAlt("toiletopen1c1", "The toilet is open.", "El baño está abierto.");
   }
 }
 function toiletopen1b() {
@@ -8217,10 +8218,16 @@ function toiletopen1bb() {
   cAlt("goforpee", "No, I won’t spy on her.", "No, no la espiaré.");
 }
 function toiletopen1c1() {
-  sAlt(
-    "<p>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.</p>",
-    "<p>Diane ha entrado al baño de mujeres. Se nota que le urge muchísimo, y oyes cómo da un portazo en una cabina. Tú entras en el de caballeros.</p>",
-  );
+  if (blad > 550)
+    sAlt(
+      "<p>Diane has gone into the Ladies. You can tell she really needs to go, and you hear the door of a cubicle slam shut. You go into the Gents.</p>",
+      "<p>Diane ha entrado al baño de mujeres. Se nota que le urge muchísimo, y oyes cómo da un portazo en una cabina. Tú entras en el de caballeros.</p>",
+    );
+  else
+    sAlt(
+      "<p>Diane has gone into the Ladies. You hear a cubicle door close. You go into the Gents.</p>",
+      "<p>Diane ha entrado al baño de mujeres. Oyes cerrarse la puerta de una cabina. Tú entras en el de caballeros.</p>",
+    );
   sAlt(
     "<p>You’re going to have a pee yourself. But you wish you could watch Diane.</p>",
     "<p>Tú también vas a hacer pis. Pero te mueres de ganas de ver a Diane.</p>",
@@ -12697,10 +12704,12 @@ function sofadesp1() {
   cAlt("sofadesp2", "She can’t sit still.", "No puede estarse quieta.");
 }
 function sofadesp2() {
-  sAlt(
-    "<p>Diane can’t sit still. She’s clearly dying to go to the toilet, and just looking for a suitable opportunity to ask.</p>",
-    "<p>Diane no puede quedarse quieta. Está claramente muerta de ganas de ir al baño, y solo busca el momento oportuno para pedirlo.</p>",
-  );
+  if (blad > 700)
+    sAlt(
+      "<p>Diane can’t sit still. She’s clearly dying to go to the toilet, and just looking for a suitable opportunity to ask.</p>",
+      "<p>Diane no puede quedarse quieta. Está claramente muerta de ganas de ir al baño, y solo busca el momento oportuno para pedirlo.</p>",
+    );
+  else sitting_desp();
   sAlt(
     "<p>Can you carry on talking about something that won’t give her a chance to interrupt? What will it be?</p>",
     "<p>¿Puedes seguir hablando de algo que no le dé oportunidad de interrumpirte? ¿De qué hablarás?</p>",
@@ -12719,17 +12728,21 @@ function givechance1() {
     "<p>YOU: Are you OK? If you want the loo, it’s just at the top of the stairs.</p>",
     "<p>TÚ: ¿Estás bien? Si necesitas ir al baño, está justo al subir las escaleras.</p>",
   );
-  sAlt(
-    "<p>She blushes. She’s really embarrassed that you can tell she can’t sit still.</p>",
-    "<p>Se sonroja. Le da mucha vergüenza que notes que no puede quedarse quieta.</p>",
-  );
-  sAlt("<p>So she tries to sit still.</p>", "<p>Así que intenta quedarse quieta.</p>");
+  if (blad > 600) {
+    sAlt(
+      "<p>She blushes. She’s really embarrassed that you can tell she can’t sit still.</p>",
+      "<p>Se sonroja. Le da mucha vergüenza que notes que no puede quedarse quieta.</p>",
+    );
+    sAlt("<p>So she tries to sit still.</p>", "<p>Así que intenta quedarse quieta.</p>");
+  }
   sAlt("<p>DIANE: I’m fine, thanks.</p>", "<p>DIANE: Estoy bien, gracias.</p>");
-  sAlt(
-    "<p class='notice'><strong>She’s too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
-    "<p class='notice'><strong>Está demasiado avergonzada para admitir que necesita el baño. Ganas 5 puntos de timidez.</strong></p>",
-  );
-  adjpoints(5);
+  if (blad > 600) {
+    sAlt(
+      "<p class='notice'><strong>She’s too embarrassed to admit she needs the loo. You gained 5 shyness points.</strong></p>",
+      "<p class='notice'><strong>Está demasiado avergonzada para admitir que necesita el baño. Ganas 5 puntos de timidez.</strong></p>",
+    );
+    adjpoints(5);
+  }
   cAlt("sofadesp2", "You keep talking.", "Sigues hablando.");
 }
 function sofatoilet() {
@@ -12858,6 +12871,7 @@ function stophergoing3() {
       "<p>Asientes. Se pone de pie, mete las manos bajo la falda, se la sube a medias y se baja las medias.</p>",
     );
   }
+  hosieryRemoved = 1;
   sAlt(
     "<p>She moves over and stands in front of you, pulling you towards her. Then she sits back down with you on the sofa.</p>",
     "<p>Se acerca y se queda de pie delante de ti, atrayéndote hacia ella. Luego vuelve a sentarse contigo en el sofá.</p>",
@@ -13352,10 +13366,16 @@ function sofawork1() {
     "<p>DIANE: Quiero ir. Es por todo lo que he bebido. Venga, no seas malo—</p>",
   );
   sAlt("<p>YOU: Can I come with you?</p>", "<p>TÚ: ¿Puedo ir contigo?</p>");
-  sAlt(
-    "<p>DIANE: No, it’s private. I’m dying for a pee. I’ll come back afterwards and we can have a cuddle then.</p>",
-    "<p>DIANE: No, eso es privado. Me estoy meando. Vuelvo enseguida y luego nos damos un abrazo.</p>",
-  );
+  if (blad > 700)
+    sAlt(
+      "<p>DIANE: No, it’s private. I’m dying for a pee. I’ll come back afterwards and we can have a cuddle then.</p>",
+      "<p>DIANE: No, eso es privado. Me estoy meando. Vuelvo enseguida y luego nos damos un abrazo.</p>",
+    );
+  else
+    sAlt(
+      "<p>DIANE: No, it’s private. I’ll come back afterwards and we can have a cuddle then.</p>",
+      "<p>DIANE: No, eso es privado. Vuelvo enseguida y luego nos damos un abrazo.</p>",
+    );
   sAlt("<p>YOU: Can’t you wait a bit longer?</p>", "<p>TÚ: ¿No puedes aguantar un poco más?</p>");
   sAlt(
     "<p>DIANE: Look, I like you and I wouldn’t mind you watching me really but, well, it’s that time of the month. There are things I need to do.</p>",
@@ -13414,10 +13434,16 @@ function sofastamps() {
       "<p>YOU: The album’s over here, if you want a look.</p>",
       "<p>TÚ: El álbum está aquí, si quieres echarle un vistazo.</p>",
     );
-    sAlt(
-      "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
-      "<p>Te sigue por la habitación hasta la estantería. Parece contenta de poder moverse. Se balancea de un pie al otro mientras buscas el álbum. Se inclina hacia delante, con las manos sobre las rodillas.</p>",
-    );
+    if (blad > 600)
+      sAlt(
+        "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
+        "<p>Te sigue por la habitación hasta la estantería. Parece contenta de poder moverse. Se balancea de un pie al otro mientras buscas el álbum. Se inclina hacia delante, con las manos sobre las rodillas.</p>",
+      );
+    else
+      sAlt(
+        "<p>She follows you across the room to the bookcase.</p>",
+        "<p>Te sigue hasta la estantería, al otro lado de la habitación.</p>",
+      );
     sAlt("<p>DIANE: Actually, where’s the – </p>", "<p>DIANE: Por cierto, ¿dónde está el—?</p>");
     sAlt("<p>YOU: Here it is!</p>", "<p>TÚ: ¡Aquí está!</p>");
     sAlt(
@@ -13762,10 +13788,16 @@ function luckytrip203a() {
 }
 function luckytrip204() {
   if (luckshots >= 1) {
-    sAlt(
-      "<p>Diane has left the room. She’s clearly dying for a wee. Wouldn’t it be great if something stopped her?</p>",
-      "<p>Diane ha salido de la habitación. Está claro que se está meando. ¿No sería genial que algo la detuviera?</p>",
-    );
+    if (blad > 700)
+      sAlt(
+        "<p>Diane has left the room. She’s clearly dying for a wee. Wouldn’t it be great if something stopped her?</p>",
+        "<p>Diane ha salido de la habitación. Está claro que se está meando. ¿No sería genial que algo la detuviera?</p>",
+      );
+    else
+      sAlt(
+        "<p>Diane has left the room. Wouldn’t it be great if something stopped her?</p>",
+        "<p>Diane ha salido de la habitación. ¿No sería genial que algo la detuviera?</p>",
+      );
     spendLuckshot();
     sAlt("<p>So you’ve played a luckshot.</p>", "<p>Así que has jugado un golpe de suerte.</p>");
     cAlt("luckytrip204a", "Wait and see.", "Esperar y ver qué pasa.");
@@ -13864,10 +13896,16 @@ function sofatrains() {
       "<p>YOU: The album’s over here, if you want a look.</p>",
       "<p>TÚ: El álbum está aquí, si quieres echarle un vistazo.</p>",
     );
-    sAlt(
-      "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
-      "<p>Te sigue por la habitación hasta la estantería. Parece contenta de poder moverse. Se balancea de un pie al otro mientras buscas el álbum. Se inclina hacia delante, con las manos sobre las rodillas.</p>",
-    );
+    if (blad > 600)
+      sAlt(
+        "<p>She follows you across the room to the bookcase. She seems glad to move about. She shifts from one foot to the other as you look for the album. She bends forward, her hands on her knees.</p>",
+        "<p>Te sigue por la habitación hasta la estantería. Parece contenta de poder moverse. Se balancea de un pie al otro mientras buscas el álbum. Se inclina hacia delante, con las manos sobre las rodillas.</p>",
+      );
+    else
+      sAlt(
+        "<p>She follows you across the room to the bookcase.</p>",
+        "<p>Te sigue hasta la estantería, al otro lado de la habitación.</p>",
+      );
     sAlt("<p>DIANE: Actually, where’s the – </p>", "<p>DIANE: Por cierto, ¿dónde está el—?</p>");
     sAlt("<p>YOU: Here it is!</p>", "<p>TÚ: ¡Aquí está!</p>");
     sAlt(
@@ -15212,7 +15250,7 @@ function stampalbum6a() {
       "<p>She starts tidying herself, as if to get up.</p>",
       "<p>Empieza a arreglarse, como si fuera a levantarse.</p>",
     );
-    {
+    if (blad > 700) {
       sAlt(
         "<p>Look, you’ve had your fun. A joke’s a joke. She’s dying for the loo but doesn’t like to interrupt you. Aren’t you going to give her a chance?</p>",
         "<p>Mira, ya te has divertido bastante. Las bromas tienen un límite. Ella está que se mea y no quiere interrumpirte. ¿No vas a darle ocasión de ir?</p>",
@@ -16772,10 +16810,16 @@ function sofasnog1() {
       "<p>DIANE: Don’t get too comfortable. I must be going home in a minute.</p>",
       "<p>DIANE: No te pongas demasiado cómodo. Tengo que irme a casa en un momento.</p>",
     );
-    sAlt(
-      "<p>You sit for a few minutes chatting. Then she gets up to go home.</p>",
-      "<p>Os sentáis un rato a charlar. Luego ella se levanta para irse a casa.</p>",
-    );
+    if (blad > 830)
+      sAlt(
+        "<p>She cuts the conversation short and gets up to go home.</p>",
+        "<p>Ella acorta la conversación y se levanta para volver a casa.</p>",
+      );
+    else
+      sAlt(
+        "<p>You sit for a few minutes chatting. Then she gets up to go home.</p>",
+        "<p>Os sentáis un rato a charlar. Luego ella se levanta para irse a casa.</p>",
+      );
     cAlt("walkhomeX", "You get ready to walk her home.", "Te preparas para acompañarla a casa.");
   } else {
     sAlt(
@@ -16793,6 +16837,19 @@ function sofasnog1() {
   }
 }
 function walkhomeX() {
+  if (hosieryRemoved) {
+    if (thursday)
+      sAlt(
+        "<p>Before you leave, Diane puts her tights back on.</p>",
+        "<p>Antes de salir, Diane vuelve a ponerse los pantis.</p>",
+      );
+    else
+      sAlt(
+        "<p>Before you leave, Diane puts her stockings back on.</p>",
+        "<p>Antes de salir, Diane vuelve a ponerse las medias.</p>",
+      );
+    hosieryRemoved = 0;
+  }
   if (blad < 300) {
     walkhomeXa();
     return;
@@ -18544,10 +18601,7 @@ function sofapee() {
       afterpee();
       cAlt("gameover", "Goodnight.", "Buenas noches.");
     } else if (blad > 600) {
-      sAlt(
-        "<p>DIANE: It’s not urgent. I’ll wait a minute.</p>",
-        "<p>DIANE: No es urgente. Esperaré un momento.</p>",
-      );
+      sAlt("<p>DIANE: I can wait a minute.</p>", "<p>DIANE: Puedo esperar un momento.</p>");
       cAlt("sofapee1", "You like the sound of that.", "Te gusta lo que escuchas.");
     } else {
       sAlt("<p>DIANE: I’m OK, thanks.</p>", "<p>DIANE: Estoy bien, gracias.</p>");
@@ -18562,8 +18616,8 @@ function sofapee() {
   );
   if (blad > 600) {
     sAlt(
-      "<p>She is very relaxed, but a little bit fidgety. She crosses her legs, occasionally squirms on the sofa.</p>",
-      "<p>Está muy relajada, pero un poco inquieta. Cruza las piernas y de vez en cuando se retuerce en el sofá.</p>",
+      "<p>She seems at ease with you, but keeps fidgeting. She crosses her legs, occasionally squirms on the sofa.</p>",
+      "<p>Se siente a gusto contigo, pero no deja de moverse. Cruza las piernas y de vez en cuando se retuerce en el sofá.</p>",
     );
     sAlt("<p>YOU: Diane, you keep shifting about.</p>", "<p>TÚ: Diane, no paras de moverte.</p>");
     sAlt(
@@ -18589,10 +18643,7 @@ function sofapee() {
       afterpee();
       cAlt("gameover", "Goodnight.", "Buenas noches.");
     } else {
-      sAlt(
-        "<p>DIANE: It’s not urgent. I’ll wait a minute.</p>",
-        "<p>DIANE: No es urgente. Esperaré un momento.</p>",
-      );
+      sAlt("<p>DIANE: I can wait a minute.</p>", "<p>DIANE: Puedo esperar un momento.</p>");
       cAlt("sofapee1", "You like the sound of that.", "Te gusta lo que escuchas.");
     }
   } else {
@@ -20674,20 +20725,29 @@ function nicelydesp6() {
       "<p>She looks for a second at the shower, but then moves towards the toilet.</p>",
       "<p>Echa un vistazo a la ducha un momento, pero luego se dirige hacia el váter.</p>",
     );
-    sAlt(
-      "<p>DIANE: I don’t want to ruin my stockings. I’ll sit on the loo and do it.</p>",
-      "<p>DIANE: No quiero estropearme las medias. Me sentaré en el váter y lo haré ahí.</p>",
-    );
+    if (hosieryRemoved)
+      sAlt(
+        "<p>DIANE: I’ll sit on the loo and do it.</p>",
+        "<p>DIANE: Me sentaré en el váter y lo haré ahí.</p>",
+      );
+    else
+      sAlt(
+        "<p>DIANE: I don’t want to ruin my stockings. I’ll sit on the loo and do it.</p>",
+        "<p>DIANE: No quiero estropearme las medias. Me sentaré en el váter y lo haré ahí.</p>",
+      );
     cAlt("nicelydesp7", "She sits on the toilet.", "Ella se sienta en el váter.");
   } else if (thursday) {
-    sAlt(
-      "<p>DIANE: At least let me take my tights off.</p>",
-      "<p>DIANE: Al menos déjame quitarme los pantis.</p>",
-    );
-    sAlt(
-      "<p>She hitches her skirt up at the back and peels down her tights, throwing them in the corner. After the dark tights her legs are amazing.</p>",
-      "<p>Se sube la falda por detrás y se baja los pantis, tirándolos al rincón. Sin los pantis oscuros, sus piernas son increíbles.</p>",
-    );
+    if (!hosieryRemoved) {
+      sAlt(
+        "<p>DIANE: At least let me take my tights off.</p>",
+        "<p>DIANE: Al menos déjame quitarme los pantis.</p>",
+      );
+      sAlt(
+        "<p>She hitches her skirt up at the back and peels down her tights, throwing them in the corner. After the dark tights her legs are amazing.</p>",
+        "<p>Se sube la falda por detrás y se baja los pantis, tirándolos al rincón. Sin los pantis oscuros, sus piernas son increíbles.</p>",
+      );
+      hosieryRemoved = 1;
+    }
     cAlt("nicelydesp7", "She sits on the toilet.", "Ella se sienta en el váter.");
   } else if (saturday) {
     sAlt(
@@ -20884,10 +20944,15 @@ function lootogether() {
   cAlt("lootogether1", "She goes over to the toilet.", "Ella se acerca al váter.");
 }
 function lootogether1() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     sAlt(
       "<p>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her tights and knickers, then sits on the toilet. She pushes her tights a bit further down until they are almost at her knees, her sky-blue knickers just above them.</p>",
       "<p>De pie justo delante de ti, mete la mano bajo la falda, busca un momento, luego se baja los pantis y las bragas y se sienta en el váter. Se baja un poco más los pantis hasta que casi le llegan a las rodillas, con las bragas azul cielo justo por encima.</p>",
+    );
+  } else if (thursday) {
+    sAlt(
+      "<p>Standing right in front of you, she reaches up under her skirt, fumbles for a second, then pulls down her sky-blue knickers, then sits on the toilet. She pushes her knickers a bit further down until they are almost at her knees.</p>",
+      "<p>De pie justo delante de ti, mete la mano bajo la falda, busca un momento, luego se baja las bragas azul cielo y se sienta en el váter. Se baja un poco más las bragas hasta que casi le llegan a las rodillas.</p>",
     );
   } else if (tuesday) {
     sAlt(
@@ -20913,7 +20978,7 @@ function lootogether1() {
       "<p>You turn away and after a few seconds you hear the unmistakable tinkle as she begins to pee. You turn back towards her.</p>",
       "<p>Te giras y al cabo de unos segundos oyes el inconfundible sonido al empezar ella a hacer pis. Te vuelves hacia ella.</p>",
     );
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>Because she’s pushed the hem of her skirt down, you can’t see it, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, ‘Almost finished,’ but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. ‘I really needed that,’ she says and, standing up, pulls up her knickers and then her tights.</p>",
         "<p>Como se ha bajado el dobladillo de la falda, no puedes verlo, pero el sonido de su chorro de pis a plena potencia es maravilloso. Al rato se va reduciendo y ella murmura «Ya casi», pero luego hay un poco más antes de que todo acabe en silencio. Debe de haber durado un minuto entero. Arranca un trozo de papel higiénico, baja la mano y se limpia. «Lo necesitaba de verdad», dice y, poniéndose de pie, se sube las bragas y luego los pantis.</p>",
@@ -21017,7 +21082,7 @@ function ontoilet1() {
         "<p>Arranca un trozo de papel, se limpia rápidamente y se pone de pie para subirse las bragas blancas.</p>",
       );
     }
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>She then starts to pull up her tights, but long before she has finished, she is in your arms as you kiss her mouth, her face, her neck. You tell her how wonderful it was.</p>",
         "<p>Luego empieza a subirse los pantis, pero antes de terminar ya está entre tus brazos mientras la besas en la boca, en la cara, en el cuello. Le dices lo maravilloso que ha sido.</p>",
@@ -21030,7 +21095,7 @@ function ontoilet1() {
     }
     cAlt("ontoilet2", "You embrace.", "Os abrazáis.");
   } else {
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       sAlt(
         "<p>She realises you are watching, blushes slightly and pushes the hem of her skirt further towards her knees. You cannot see the stream anymore, but the sound of her pee stream now at full force is marvellous. After a while it lessens and she murmurs, ‘Almost finished,’ but then there is a bit more before it trickles into silence. It must have lasted a full minute. She pulls off a piece of toilet tissue, reaches down and wipes herself. ‘I really needed that,’ she says and, standing up, pulls up her knickers and then her tights.</p>",
         "<p>Se da cuenta de que la estás mirando, se ruboriza ligeramente y baja el dobladillo de la falda hacia las rodillas. Ya no puedes ver el chorro, pero el sonido de su pis a plena fuerza es maravilloso. Al cabo de un momento disminuye y ella murmura «Ya casi he terminado», aunque luego hay un poco más antes de que todo se apague en silencio. Debe de haber durado un minuto entero. Coge un trozo de papel higiénico, baja la mano y se limpia. «Lo necesitaba de verdad», dice y, levantándose, se sube las bragas y luego los pantis.</p>",
@@ -21077,7 +21142,7 @@ function fifthplace() {
   sAlt("<p><b>YOU HAVE WON 5TH PRIZE!</b></p>", "<p><b>¡HAS GANADO EL 5.º PREMIO!</b></p>");
 }
 function lootogether2() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     sAlt(
       "<p>She ushers you out of the toilet while she washes her hands and straightens her tights. Then she comes out to join you in the hall.</p>",
       "<p>Te hace salir del baño mientras ella se lava las manos y se arregla los pantis. Luego sale a reunirse contigo en el recibidor.</p>",

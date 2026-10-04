@@ -755,6 +755,7 @@ var icecream = 0;
 var gettaxi = 0;
 var steak = 0;
 var undobra = 0;
+var hosieryRemoved = 0;
 var sofaTopicsSeen = 0;
 var sofaEveningAsked = 0;
 var movingtalking = 0;
@@ -817,6 +818,7 @@ var gameStateVars = [
   "gettaxi",
   "steak",
   "undobra",
+  "hosieryRemoved",
   "sofaloop",
   "sofaDrinkBand",
   "sofaDrinkBoost",
@@ -4007,7 +4009,7 @@ function stagedoor2() {
     adjpoints(4);
   } else {
     s(
-      "<p>Ihr steht da und redet darüber, wie gut euch das Stück gefallen hat. Diane ist ganz entspannt und freut sich darauf, ihre Freundin zu sehen.</p>",
+      "<p>Ihr steht da und redet darüber, wie gut euch das Stück gefallen hat. Diane freut sich darauf, ihre Freundin zu sehen.</p>",
     );
     blad += 5;
     standing_desp();
@@ -4351,7 +4353,6 @@ function pubdrink6() {
   } else {
     s("<p>Molly trinkt Pints. Du fragst dich, ob du auch sie noch herumzappeln sehen wirst.</p>");
     s("<p>MOLLY: Das Bier hier ist wirklich gut, oder?</p>");
-    leavepub2 = 1;
     c("pubdrink7", "Du trinkst weiter.");
   }
 }
@@ -5067,7 +5068,7 @@ function traintalka() {
   s("<p>Sie drückt deine Hand und sieht dich an.</p>");
   s("<p>DIANE: Vielleicht könnte ich ein paar Sandwiches machen, dann könnten wir picknicken.</p>");
   s(
-    "<p>Du nickst zustimmend. Ihr bleibt beide stehen und schaut euch an. Du legst den Arm um sie, ziehst sie langsam zu dir und küsst sie. Zum ersten Mal küsst du sie, und sie lässt sich Zeit damit. Du schmeckst ihre Lippen. Ihr küsst euch noch einmal.</p>",
+    "<p>Du nickst zustimmend. Ihr bleibt beide stehen und schaut euch an. Du legst den Arm um sie, ziehst sie langsam zu dir und küsst sie. Sie lässt sich Zeit damit. Du schmeckst ihre Lippen. Ihr küsst euch noch einmal.</p>",
   );
   getinti(25);
   if (blad > 700) {
@@ -5971,7 +5972,7 @@ function luckytrip5n() {
     c("toiletclosed1", "Oje!");
   } else {
     s("<p>Dein Glücksversuch hat nicht funktioniert.</p>");
-    c("toiletopen1b", "Die Toilette ist offen.");
+    c("toiletopen1c1", "Die Toilette ist offen.");
   }
 }
 function toiletopen1b() {
@@ -5997,9 +5998,14 @@ function toiletopen1bb() {
   c("goforpee", "Nein, ich werde sie nicht heimlich beobachten.");
 }
 function toiletopen1c1() {
-  s(
-    "<p>Diane ist in die Damentoilette gegangen. Du merkst, dass sie dringend muss, und hörst eine Kabinentür zuschlagen. Du gehst in die Herrentoilette.</p>",
-  );
+  if (blad > 550)
+    s(
+      "<p>Diane ist in die Damentoilette gegangen. Du merkst, dass sie dringend muss, und hörst eine Kabinentür zuschlagen. Du gehst in die Herrentoilette.</p>",
+    );
+  else
+    s(
+      "<p>Diane ist in die Damentoilette gegangen. Du hörst, wie eine Kabinentür geschlossen wird. Du gehst in die Herrentoilette.</p>",
+    );
   s("<p>Du willst selbst pinkeln. Aber du würdest Diane gern zuschauen.</p>");
   s("<p>Lohnt es sich, einen Glücksversuch zu riskieren?</p>");
   if (luckshots >= 1) c("luckytrip5c", "Ja, ich setze einen Glücksversuch ein.");
@@ -9067,9 +9073,11 @@ function sofadesp1() {
   c("sofadesp2", "Sie kann nicht still sitzen.");
 }
 function sofadesp2() {
-  s(
-    "<p>Diane kann nicht still sitzen. Ganz offensichtlich muss sie dringend auf die Toilette und wartet nur auf eine passende Gelegenheit, zu fragen.</p>",
-  );
+  if (blad > 700)
+    s(
+      "<p>Diane kann nicht still sitzen. Ganz offensichtlich muss sie dringend auf die Toilette und wartet nur auf eine passende Gelegenheit, zu fragen.</p>",
+    );
+  else sitting_desp();
   s(
     "<p>Kannst du das Gespräch so weiterführen, dass sie keine Gelegenheit hat, dich zu unterbrechen? Worüber willst du reden?</p>",
   );
@@ -9086,15 +9094,19 @@ function givechance1() {
   s(
     "<p>DU: Alles in Ordnung? Falls du auf die Toilette musst, die ist gleich oben an der Treppe.</p>",
   );
-  s(
-    "<p>Sie wird rot. Es ist ihr sehr peinlich, dass du merkst, wie schwer ihr das Stillsitzen fällt.</p>",
-  );
-  s("<p>Also versucht sie, still zu sitzen.</p>");
+  if (blad > 600) {
+    s(
+      "<p>Sie wird rot. Es ist ihr sehr peinlich, dass du merkst, wie schwer ihr das Stillsitzen fällt.</p>",
+    );
+    s("<p>Also versucht sie, still zu sitzen.</p>");
+  }
   s("<p>DIANE: Es geht mir gut, danke.</p>");
-  s(
-    "<p class='notice'><strong>Sie schämt sich zu sehr, um zuzugeben, dass sie auf die Toilette muss. Du hast 5 Schüchternheitspunkte dazugewonnen.</strong></p>",
-  );
-  adjpoints(5);
+  if (blad > 600) {
+    s(
+      "<p class='notice'><strong>Sie schämt sich zu sehr, um zuzugeben, dass sie auf die Toilette muss. Du hast 5 Schüchternheitspunkte dazugewonnen.</strong></p>",
+    );
+    adjpoints(5);
+  }
   c("sofadesp2", "Du redest weiter.");
 }
 function sofatoilet() {
@@ -9165,6 +9177,7 @@ function stophergoing3() {
       "<p>Du nickst. Sie steht auf, schiebt die Hände unter ihren Rock, rafft ihn etwas hoch und streift ihre Strümpfe herunter.</p>",
     );
   }
+  hosieryRemoved = 1;
   s(
     "<p>Sie stellt sich vor dich und zieht dich zu sich. Dann setzt sie sich mit dir wieder aufs Sofa.</p>",
   );
@@ -9453,9 +9466,11 @@ function sofawork1() {
     "<p>DIANE: Ich muss eben. Das kommt davon, dass ich so viel getrunken habe. Komm schon, sei nicht so gemein – </p>",
   );
   s("<p>DU: Darf ich mitkommen?</p>");
-  s(
-    "<p>DIANE: Nein, das ist privat. Ich muss wahnsinnig dringend pinkeln. Ich komme danach wieder, dann können wir kuscheln.</p>",
-  );
+  if (blad > 700)
+    s(
+      "<p>DIANE: Nein, das ist privat. Ich muss wahnsinnig dringend pinkeln. Ich komme danach wieder, dann können wir kuscheln.</p>",
+    );
+  else s("<p>DIANE: Nein, das ist privat. Ich komme danach wieder, dann können wir kuscheln.</p>");
   s("<p>DU: Kannst du nicht noch ein bisschen warten?</p>");
   s(
     "<p>DIANE: Hör mal, ich mag dich, und eigentlich würde es mir nichts ausmachen, wenn du zusiehst, aber, na ja, ich habe gerade meine Tage. Ich muss da noch etwas erledigen.</p>",
@@ -9488,9 +9503,11 @@ function sofastamps() {
     }
   } else {
     s("<p>DU: Das Album ist hier drüben, falls du mal reinschauen möchtest.</p>");
-    s(
-      "<p>Sie folgt dir quer durchs Zimmer zum Bücherregal. Offenbar ist sie froh, sich bewegen zu können. Während du nach dem Album suchst, tritt sie von einem Fuß auf den anderen. Sie beugt sich vor und stützt die Hände auf die Knie.</p>",
-    );
+    if (blad > 600)
+      s(
+        "<p>Sie folgt dir quer durchs Zimmer zum Bücherregal. Offenbar ist sie froh, sich bewegen zu können. Während du nach dem Album suchst, tritt sie von einem Fuß auf den anderen. Sie beugt sich vor und stützt die Hände auf die Knie.</p>",
+      );
+    else s("<p>Sie folgt dir quer durchs Zimmer zum Bücherregal.</p>");
     s("<p>DIANE: Sag mal, wo ist eigentlich die – </p>");
     s("<p>DU: Hier ist es!</p>");
     s(
@@ -9777,9 +9794,14 @@ function luckytrip203a() {
 }
 function luckytrip204() {
   if (luckshots >= 1) {
-    s(
-      "<p>Diane hat das Zimmer verlassen. Sie muss offensichtlich dringend pinkeln. Wäre es nicht herrlich, wenn etwas sie daran hinderte?</p>",
-    );
+    if (blad > 700)
+      s(
+        "<p>Diane hat das Zimmer verlassen. Sie muss offensichtlich dringend pinkeln. Wäre es nicht herrlich, wenn etwas sie daran hinderte?</p>",
+      );
+    else
+      s(
+        "<p>Diane hat das Zimmer verlassen. Wäre es nicht herrlich, wenn etwas sie daran hinderte?</p>",
+      );
     spendLuckshot();
     s("<p>Also hast du einen Glücksversuch eingesetzt.</p>");
     c("luckytrip204a", "Abwarten.");
@@ -9853,9 +9875,11 @@ function sofatrains() {
     }
   } else {
     s("<p>DU: Das Album ist hier drüben, falls du mal reinschauen möchtest.</p>");
-    s(
-      "<p>Sie folgt dir quer durchs Zimmer zum Bücherregal. Offenbar ist sie froh, sich bewegen zu können. Während du nach dem Album suchst, tritt sie von einem Fuß auf den anderen. Sie beugt sich vor und stützt die Hände auf die Knie.</p>",
-    );
+    if (blad > 600)
+      s(
+        "<p>Sie folgt dir quer durchs Zimmer zum Bücherregal. Offenbar ist sie froh, sich bewegen zu können. Während du nach dem Album suchst, tritt sie von einem Fuß auf den anderen. Sie beugt sich vor und stützt die Hände auf die Knie.</p>",
+      );
+    else s("<p>Sie folgt dir quer durchs Zimmer zum Bücherregal.</p>");
     s("<p>DIANE: Sag mal, wo ist eigentlich die – </p>");
     s("<p>DU: Hier ist es!</p>");
     s(
@@ -10720,7 +10744,7 @@ function stampalbum6a() {
     s("<p>DU: Das war alles!</p>");
     s("<p>DIANE: Das war wirklich interessant.</p>");
     s("<p>Sie beginnt, ihre Kleidung zurechtzurücken, als wolle sie aufstehen.</p>");
-    {
+    if (blad > 700) {
       s(
         "<p>Hör mal, du hast deinen Spaß gehabt. Ein Scherz muss auch mal ein Ende haben. Sie muss dringend aufs Klo, möchte dich aber nicht unterbrechen. Willst du ihr nicht eine Gelegenheit geben?</p>",
       );
@@ -11744,9 +11768,11 @@ function sofasnog1() {
   s("<p>Während ihr auf dem Sofa sitzt, legst du deinen Arm um sie.</p>");
   if (inti < 130) {
     s("<p>DIANE: Mach es dir nicht zu gemütlich. Ich muss gleich nach Hause.</p>");
-    s(
-      "<p>Ihr sitzt ein paar Minuten da und plaudert. Dann steht sie auf, um nach Hause zu gehen.</p>",
-    );
+    if (blad > 830) s("<p>Sie kürzt das Gespräch ab und steht auf, um nach Hause zu gehen.</p>");
+    else
+      s(
+        "<p>Ihr sitzt ein paar Minuten da und plaudert. Dann steht sie auf, um nach Hause zu gehen.</p>",
+      );
     c("walkhomeX", "Du machst dich bereit, sie nach Hause zu begleiten.");
   } else {
     s("<p>Sie lehnt sich an dich, den Kopf auf deiner Schulter.</p>");
@@ -11760,6 +11786,11 @@ function sofasnog1() {
   }
 }
 function walkhomeX() {
+  if (hosieryRemoved) {
+    if (thursday) s("<p>Bevor ihr geht, zieht Diane ihre Strumpfhose wieder an.</p>");
+    else s("<p>Bevor ihr geht, zieht Diane ihre Strümpfe wieder an.</p>");
+    hosieryRemoved = 0;
+  }
   if (blad < 300) {
     walkhomeXa();
     return;
@@ -12856,7 +12887,7 @@ function sofapee() {
       afterpee();
       c("gameover", "Gute Nacht.");
     } else if (blad > 600) {
-      s("<p>DIANE: Es ist nicht dringend. Ich warte noch einen Moment.</p>");
+      s("<p>DIANE: Ich kann noch einen Moment warten.</p>");
       c("sofapee1", "Das hörst du gern.");
     } else {
       s("<p>DIANE: Es geht schon, danke.</p>");
@@ -12870,7 +12901,7 @@ function sofapee() {
   );
   if (blad > 600) {
     s(
-      "<p>Sie ist sehr entspannt, aber ein wenig unruhig. Sie überkreuzt die Beine und rutscht gelegentlich auf dem Sofa hin und her.</p>",
+      "<p>Sie scheint sich bei dir wohlzufühlen, wirkt dabei aber unruhig. Sie überkreuzt die Beine und rutscht gelegentlich auf dem Sofa hin und her.</p>",
     );
     s("<p>DU: Diane, du rutschst die ganze Zeit herum.</p>");
     s(
@@ -12888,7 +12919,7 @@ function sofapee() {
       afterpee();
       c("gameover", "Gute Nacht.");
     } else {
-      s("<p>DIANE: Es ist nicht dringend. Ich warte noch einen Moment.</p>");
+      s("<p>DIANE: Ich kann noch einen Moment warten.</p>");
       c("sofapee1", "Das hörst du gern.");
     }
   } else {
@@ -14258,13 +14289,17 @@ function nicelydesp6() {
   );
   if (tuesday) {
     s("<p>Sie schaut kurz zur Dusche, geht dann aber auf die Toilette zu.</p>");
-    s("<p>DIANE: Ich will meine Strümpfe nicht ruinieren. Ich setze mich dafür aufs Klo.</p>");
+    if (hosieryRemoved) s("<p>DIANE: Ich setze mich dafür aufs Klo.</p>");
+    else s("<p>DIANE: Ich will meine Strümpfe nicht ruinieren. Ich setze mich dafür aufs Klo.</p>");
     c("nicelydesp7", "Sie setzt sich auf die Toilette.");
   } else if (thursday) {
-    s("<p>DIANE: Lass mich wenigstens die Strumpfhose ausziehen.</p>");
-    s(
-      "<p>Sie rafft ihren Rock hinten hoch, streift die Strumpfhose herunter und wirft sie in die Ecke. Nach der dunklen Strumpfhose wirken ihre nackten Beine hinreißend.</p>",
-    );
+    if (!hosieryRemoved) {
+      s("<p>DIANE: Lass mich wenigstens die Strumpfhose ausziehen.</p>");
+      s(
+        "<p>Sie rafft ihren Rock hinten hoch, streift die Strumpfhose herunter und wirft sie in die Ecke. Nach der dunklen Strumpfhose wirken ihre nackten Beine hinreißend.</p>",
+      );
+      hosieryRemoved = 1;
+    }
     c("nicelydesp7", "Sie setzt sich auf die Toilette.");
   } else if (saturday) {
     s(
@@ -14398,9 +14433,13 @@ function lootogether() {
   c("lootogether1", "Sie geht zur Toilette.");
 }
 function lootogether1() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     s(
       "<p>Direkt vor dir stehend greift sie unter ihren Rock, nestelt einen Moment, zieht dann Strumpfhose und Slip herunter und setzt sich auf die Toilette. Sie schiebt die Strumpfhose noch etwas weiter hinunter bis fast zu den Knien. Ihr himmelblauer Slip sitzt knapp darüber.</p>",
+    );
+  } else if (thursday) {
+    s(
+      "<p>Direkt vor dir stehend greift sie unter ihren Rock, nestelt einen Moment, zieht dann ihren himmelblauen Slip herunter und setzt sich auf die Toilette. Sie schiebt den Slip noch etwas weiter hinunter bis fast zu den Knien.</p>",
     );
   } else if (tuesday) {
     s(
@@ -14419,7 +14458,7 @@ function lootogether1() {
     s(
       "<p>Du wendest dich ab, und nach ein paar Sekunden hörst du das unverkennbare Plätschern, als sie zu pinkeln beginnt. Du drehst dich wieder zu ihr um.</p>",
     );
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       s(
         "<p>Da sie ihren Rocksaum heruntergeschoben hat, kannst du nichts sehen, aber das Geräusch ihres nun mit voller Kraft fließenden Urins ist herrlich. Nach einer Weile wird es leiser, und sie murmelt: „Gleich fertig.“ Doch dann kommt noch etwas nach, bevor das Plätschern langsam verstummt. Es muss eine volle Minute gedauert haben. Sie reißt ein Stück Toilettenpapier ab, greift nach unten und wischt sich ab. „Das war wirklich nötig“, sagt sie, steht auf und zieht ihren Slip und dann ihre Strumpfhose hoch.</p>",
       );
@@ -14495,7 +14534,7 @@ function ontoilet1() {
         "<p>Sie reißt ein Stück Toilettenpapier ab, wischt sich rasch ab, steht auf und zieht ihren weißen Slip hoch.</p>",
       );
     }
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       s(
         "<p>Dann beginnt sie, ihre Strumpfhose hochzuziehen, doch lange bevor sie fertig ist, liegt sie schon in deinen Armen. Du küsst ihren Mund, ihr Gesicht, ihren Hals und sagst ihr, wie wunderbar es war.</p>",
       );
@@ -14506,7 +14545,7 @@ function ontoilet1() {
     }
     c("ontoilet2", "Ihr umarmt euch.");
   } else {
-    if (thursday) {
+    if (thursday && !hosieryRemoved) {
       s(
         "<p>Sie merkt, dass du zusiehst, wird leicht rot und schiebt den Rocksaum weiter zu den Knien hinunter. Den Strahl kannst du nicht mehr sehen, aber das Geräusch ihres nun mit voller Kraft fließenden Urins ist herrlich. Nach einer Weile wird es leiser, und sie murmelt: „Gleich fertig.“ Doch dann kommt noch etwas nach, bevor das Plätschern langsam verstummt. Es muss eine volle Minute gedauert haben. Sie reißt ein Stück Toilettenpapier ab, greift nach unten und wischt sich ab. „Das war wirklich nötig“, sagt sie, steht auf und zieht ihren Slip und dann ihre Strumpfhose hoch.</p>",
       );
@@ -14541,7 +14580,7 @@ function fifthplace() {
   s("<p><b>DU HAST DEN 5. PREIS GEWONNEN!</b></p>");
 }
 function lootogether2() {
-  if (thursday) {
+  if (thursday && !hosieryRemoved) {
     s(
       "<p>Sie schickt dich aus dem Bad, während sie sich die Hände wäscht und ihre Strumpfhose richtet. Dann kommt sie zu dir in den Flur.</p>",
     );

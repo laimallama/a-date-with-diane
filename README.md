@@ -30,8 +30,8 @@ Each text game is a self-contained HTML file. All editions have on-screen contro
 
 - Thirteen text games, covering seven standalone languages and six bilingual editions.
 - Five main prize endings, consolation endings and hidden scenes, with branches affected by earlier choices.
-- A Gallery containing 15 ending routes and 32 hidden-scene routes in every edition.
-- Seven companion wikis and 329 transcripts, also serving as references for the visual editions.
+- A Gallery containing 20 ending routes and 36 hidden-scene routes in every edition.
+- Seven companion wikis and 392 transcripts, also serving as references for the visual editions.
 
 Each language folder contains `wiki_<language>.html`, a reference to the setting and characters. Its `transcripts/endings/` and `transcripts/hidden_scenes/` folders follow Gallery order and titles. Ending transcripts begin at the climax reached by Skip to the good bit; hidden-scene transcripts begin at the scene's starting point. The Gallery supplies the walkthroughs.
 

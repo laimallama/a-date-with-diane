@@ -29,7 +29,7 @@ Each text game is a self-contained HTML file. All editions have on-screen contro
 ## What is included
 
 - Thirteen text games, covering seven standalone languages and six bilingual editions.
-- Five main prize endings, consolation endings and hidden scenes, with branches affected by earlier choices.
+- Five ranked prizes, plus consolation endings and hidden scenes, with branches affected by earlier choices.
 - A Gallery containing 20 ending routes and 36 hidden-scene routes in every edition.
 - Seven companion wikis and 392 transcripts, also serving as references for the visual editions.
 
@@ -52,4 +52,4 @@ The Gallery is available from the title screen. Choose an entry to start its rou
 
 Skip is available once per newly started ending Guide. Going back can take you before the skipped point, but does not make Skip available again. Turning the Guide off removes Skip and stops fast-forward. The in-game Notes explain the controls in each language.
 
-Dark mode persists across refreshes in the same tab. A new tab starts in light mode. Back restores the previous page, choices and game state within the current session; it is not a persistent save.
+The theme setting is saved for the current tab session and survives refreshes when browser storage is available. Back restores the previous page, choices and game state within the current session; it is not a persistent save.

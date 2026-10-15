@@ -798,6 +798,8 @@ var tiramisu = 0;
 var pannacotta = 0;
 var icecream = 0;
 var gettaxi = 0;
+var taxiQueueSeen = 0;
+var debbieCarParkSeen = 0;
 var steak = 0;
 var undobra = 0;
 var hosieryRemoved = 0;
@@ -861,6 +863,8 @@ var gameStateVars = [
   "pannacotta",
   "icecream",
   "gettaxi",
+  "taxiQueueSeen",
+  "debbieCarParkSeen",
   "steak",
   "undobra",
   "hosieryRemoved",
@@ -9914,17 +9918,28 @@ function taxihome() {
 }
 function taxihome1() {
   if (saturday) {
+    if (taxiQueueSeen) {
+      sAlt(
+        "<p>Back at the taxi rank, you join the queue again.</p>",
+        "<p>De retour à la station de taxis, vous refaites la queue.</p>",
+      );
+      queue_desp();
+      cAlt("taxihome3", "You carry on waiting.", "Vous continuez à attendre.");
+      return;
+    }
+    taxiQueueSeen = 1;
     sAlt(
       "<p>There’s quite a queue for the taxis, with Saturday night revellers on their way home, or heading for the clubs. You join the queue.</p>",
       "<p>Il y a pas mal de monde dans la file des taxis, avec les noctambules du samedi soir qui rentrent chez eux ou filent vers les clubs. Vous faites la queue.</p>",
     );
-    sAlt(
-      "<p>One or two of the girls are fidgeting about, clearly anxious to be home for at least one good reason. Just ahead of you is a petite girl in a miniskirt who just can’t stand still.</p>",
-      "<p>Une ou deux filles s’agitent, manifestement pressées de rentrer — et pour au moins une bonne raison. Juste devant vous se trouve une jeune femme toute menue en minijupe qui n’arrive vraiment pas à tenir en place.</p>",
-    );
+    if (!debbieCarParkSeen)
+      sAlt(
+        "<p>One or two of the girls are fidgeting about, clearly anxious to be home for at least one good reason. The petite girl in the miniskirt has come over from the bus stop with her boyfriend. They are just ahead of you, and she can’t stand still.</p>",
+        "<p>Une ou deux filles s’agitent, manifestement pressées de rentrer — et pour au moins une bonne raison. La jeune femme toute menue en minijupe est venue de l’arrêt de bus avec son petit ami. Ils sont juste devant vous, et elle n’arrive vraiment pas à tenir en place.</p>",
+      );
     queue_desp();
-    sAlt("<p>You chat while you wait.</p>", "<p>Vous bavardez en attendant.</p>");
-    cAlt("taxihome2", "You wait.", "Vous attendez.");
+    if (blad < 625) cAlt("taxihome2", "You chat while you wait.", "Vous bavardez en attendant.");
+    else cAlt("taxihome2", "You carry on waiting.", "Vous continuez d’attendre.");
   } else {
     sAlt(
       "<p>There’s no real queue and you get a taxi almost straight away. You give the taxi driver your address; Diane only lives a couple of streets from you and you can drop her off en route if she wants.</p>",
@@ -9938,10 +9953,11 @@ function taxihome2() {
     "<p>You are still four or five from the front of the queue.</p>",
     "<p>Vous êtes encore à quatre ou cinq personnes de la tête de la file.</p>",
   );
-  sAlt(
-    "<p>The girl in the miniskirt keeps crossing her legs and doing little ‘mini curtseys’. You can’t take your eyes off her. You hear her mutter to her boyfriend, ‘Why didn’t you let me go to the toilet before we left? I’m busting to go.’</p>",
-    "<p>La fille en minijupe n’arrête pas de croiser les jambes et d’esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d’elle. Vous l’entendez marmonner à son petit ami\u202F: «\xA0Pourquoi tu ne m’as pas laissée aller aux toilettes avant qu’on parte\u202F? J’en peux vraiment plus.\xA0»</p>",
-  );
+  if (!debbieCarParkSeen)
+    sAlt(
+      "<p>The girl in the miniskirt keeps crossing her legs and doing little ‘mini curtseys’. You can’t take your eyes off her. You hear her mutter to her boyfriend, ‘Why didn’t you let me go to the toilet before we left? I’m busting to go.’</p>",
+      "<p>La fille en minijupe n’arrête pas de croiser les jambes et d’esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d’elle. Vous l’entendez marmonner à son petit ami\u202F: «\xA0Pourquoi tu ne m’as pas laissée aller aux toilettes avant qu’on parte\u202F? J’en peux vraiment plus.\xA0»</p>",
+    );
   if (blad > 700) {
     sAlt(
       "<p>Diane seems a bit distracted and keeps looking around. You ask if she’s OK.</p>",
@@ -9992,14 +10008,21 @@ function taxihome2a() {
   cAlt("taxihome3", "You carry on waiting.", "Vous continuez d’attendre.");
 }
 function taxihome3() {
-  sAlt(
-    "<p>You are quite near the front of the queue. The girl in the miniskirt is not at all happy. ‘It’s all right for you,’ she mutters to her boyfriend, ‘but one day I’m going to wet my pants, all because of your silly games.’</p>",
-    "<p>Vous êtes maintenant assez près de la tête de la file. La fille en minijupe n’est pas contente du tout. «\xA0C’est facile pour toi, marmonne-t-elle à son petit ami, mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes petits jeux idiots.\xA0»</p>",
-  );
-  sAlt(
-    "<p>The girl gets into a taxi with her friend. You wonder whether she’ll make it home.</p>",
-    "<p>La fille monte dans un taxi avec son petit ami. Vous vous demandez si elle tiendra jusqu’à la maison.</p>",
-  );
+  if (debbieCarParkSeen) {
+    sAlt(
+      "<p>At last, you are nearly at the front of the queue.</p>",
+      "<p>Vous êtes enfin presque en tête de file.</p>",
+    );
+  } else {
+    sAlt(
+      "<p>You are quite near the front of the queue. The girl in the miniskirt is not at all happy. ‘It’s all right for you,’ she mutters to her boyfriend, ‘but one day I’m going to wet my pants, all because of your silly games.’</p>",
+      "<p>Vous êtes maintenant assez près de la tête de la file. La fille en minijupe n’est pas contente du tout. «\xA0C’est facile pour toi, marmonne-t-elle à son petit ami, mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes petits jeux idiots.\xA0»</p>",
+    );
+    sAlt(
+      "<p>The girl gets into a taxi with her boyfriend. You wonder whether she’ll make it home.</p>",
+      "<p>La fille monte dans un taxi avec son petit ami. Vous vous demandez si elle tiendra jusqu’à la maison.</p>",
+    );
+  }
   queue_desp();
   cAlt("taxihome4", "You are at the front of the queue.", "Vous êtes en tête de la file.");
 }
@@ -10211,8 +10234,8 @@ function taxiupskirt() {
   }
   if (tuesday) {
     sAlt(
-      "<p>You get a nice flash of her lacy slip. It encourages you to explore more of her legs, and you still wonder if she is wearing stockings.</p>",
-      "<p>Vous avez un bel aperçu de son jupon en dentelle. Ça vous donne envie d’explorer ses jambes plus avant, et vous vous demandez toujours si elle porte des bas.</p>",
+      "<p>You get a nice flash of her lacy slip. It encourages you to explore more of her legs.</p>",
+      "<p>Vous avez un bel aperçu de son jupon en dentelle. Ça vous donne envie d’explorer ses jambes plus avant.</p>",
     );
   } else if (thursday) {
     sAlt(
@@ -19831,6 +19854,7 @@ function carparka1() {
       "<p>You return the kiss. You reach round and feel her bum, pulling her close to you.</p>",
       "<p>Vous lui rendez son baiser. Vous passez la main dans son dos pour lui attraper les fesses, la serrant contre vous.</p>",
     );
+    debbieCarParkSeen = 1;
     sAlt(
       "<p>You hear footsteps hurrying towards you. It is the brunette from the bus stop. She stops when she sees you, and speaks quietly to Diane: ‘Is the toilet still open?’ Diane says it is and the brunette mutters, ‘Thank God for that,’ and hurries away. You visualise her urgency when she gets there, perhaps some spurts of pee escaping even before she gets to the cubicle, the struggle to get her knickers down in time...</p>",
       "<p>Vous entendez des pas pressés dans votre direction. C’est la brune de l’arrêt de bus. Elle s’arrête en vous voyant et dit discrètement à Diane\u202F: «\xA0Les toilettes sont encore ouvertes\u202F?\xA0» Diane répond que oui, et la brune marmonne «\xA0Dieu merci\xA0» avant de repartir en hâte. Vous vous imaginez son état quand elle y arrive — peut-être quelques petites giclées de pipi qui s’échappent avant même qu’elle atteigne la cabine, la lutte pour faire descendre sa culotte à temps…</p>",
@@ -19860,6 +19884,7 @@ function carparka1() {
     );
     sAlt("<p>She gives you a kiss.</p>", "<p>Elle vous donne un baiser.</p>");
     getinti(5);
+    debbieCarParkSeen = 1;
     sAlt(
       "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear somebody and look. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she hides her face in embarrassment.</p>",
       "<p>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu’un et vous regardez. La petite brune de la file d’attente est là, en train de faire pipi. Sa minijupe est retroussée autour de la taille, sa culotte noire autour des genoux, tandis qu’un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.</p>",
@@ -19898,6 +19923,7 @@ function carparka1() {
     getinti(5);
     afterpee();
     sAlt("<p>You curse inwardly.</p>", "<p>Vous ragez intérieurement.</p>");
+    debbieCarParkSeen = 1;
     sAlt(
       "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear a noise. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she gasps with embarrassment and tries to pull up her knickers, but she is in such full flow she has to go back into a squat.</p>",
       "<p>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez un bruit. La petite brune de la file d’attente est là, en train de faire pipi. Sa minijupe est retroussée autour de la taille, sa culotte noire autour des genoux, tandis qu’un jet coule sur le sol. Quand elle vous voit, elle pousse un petit cri, toute gênée, et tente de remonter sa culotte, mais le flot est trop fort pour qu’elle puisse s’arrêter\u202F; elle doit se remettre accroupie.</p>",
@@ -19931,6 +19957,7 @@ function carparka2() {
     "<p>Vous regardez autour de vous. Elle pourrait peut-être se soulager derrière l’une des voitures du parking.</p>",
   );
   blad += 10;
+  debbieCarParkSeen = 1;
   sAlt(
     "<p>You suggest she goes behind a camper van. Then you hear footsteps hurrying towards you. It’s the miniskirted girl you had seen in the bus queue. She’s looking flushed and worried.</p>",
     "<p>Vous lui suggérez d’aller se cacher derrière un camping-car. C’est alors que vous entendez des pas pressés dans votre direction. C’est la fille en minijupe que vous aviez vue dans la file d’attente du bus. Elle a le visage rouge et l’air inquiet.</p>",
@@ -19957,7 +19984,7 @@ function carparka2() {
   );
   sAlt(
     "<p>THE GIRL: Anything. Another minute I’ll be wetting myself.</p>",
-    "<p>LA FILLE : Peu importe. Encore une minute et je vais me faire pipi dessus.</p>",
+    "<p>LA FILLE\u202F: Peu importe. Encore une minute et je vais me faire pipi dessus.</p>",
   );
   sAlt(
     "<p>She shoves a hand to her crotch, bites her lip and turns away. They move away together.</p>",
@@ -20037,10 +20064,16 @@ function peepround1() {
     "<p>They join you again. They don’t seem to know you were watching.</p>",
     "<p>Elles vous rejoignent. Elles ne semblent pas savoir que vous les regardiez.</p>",
   );
-  sAlt(
-    "<p>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop.</p>",
-    "<p>Diane prend votre main. Vous retournez tous les trois vers la route. La brune vous quitte et se dirige vers son arrêt de bus.</p>",
-  );
+  if (taxiQueueSeen)
+    sAlt(
+      "<p>Diane takes your hand. The three of you walk back to the road. The brunette leaves you to find her boyfriend.</p>",
+      "<p>Diane vous prend la main. Vous regagnez tous les trois la route. La brune vous quitte pour aller retrouver son petit ami.</p>",
+    );
+  else
+    sAlt(
+      "<p>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop.</p>",
+      "<p>Diane prend votre main. Vous retournez tous les trois vers la route. La brune vous quitte et se dirige vers son arrêt de bus.</p>",
+    );
   cAlt("taxihome1", "You head for the taxi rank.", "Vous vous dirigez vers la station de taxis.");
 }
 function gentleman() {

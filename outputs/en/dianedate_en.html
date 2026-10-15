@@ -768,6 +768,8 @@ var tiramisu = 0;
 var pannacotta = 0;
 var icecream = 0;
 var gettaxi = 0;
+var taxiQueueSeen = 0;
+var debbieCarParkSeen = 0;
 var steak = 0;
 var undobra = 0;
 var hosieryRemoved = 0;
@@ -831,6 +833,8 @@ var gameStateVars = [
   "pannacotta",
   "icecream",
   "gettaxi",
+  "taxiQueueSeen",
+  "debbieCarParkSeen",
   "steak",
   "undobra",
   "hosieryRemoved",
@@ -6819,15 +6823,23 @@ function taxihome() {
 }
 function taxihome1() {
   if (saturday) {
+    if (taxiQueueSeen) {
+      s("<p>Back at the taxi rank, you join the queue again.</p>");
+      queue_desp();
+      c("taxihome3", "You carry on waiting.");
+      return;
+    }
+    taxiQueueSeen = 1;
     s(
       "<p>There’s quite a queue for the taxis, with Saturday night revellers on their way home, or heading for the clubs. You join the queue.</p>",
     );
-    s(
-      "<p>One or two of the girls are fidgeting about, clearly anxious to be home for at least one good reason. Just ahead of you is a petite girl in a miniskirt who just can’t stand still.</p>",
-    );
+    if (!debbieCarParkSeen)
+      s(
+        "<p>One or two of the girls are fidgeting about, clearly anxious to be home for at least one good reason. The petite girl in the miniskirt has come over from the bus stop with her boyfriend. They are just ahead of you, and she can’t stand still.</p>",
+      );
     queue_desp();
-    s("<p>You chat while you wait.</p>");
-    c("taxihome2", "You wait.");
+    if (blad < 625) c("taxihome2", "You chat while you wait.");
+    else c("taxihome2", "You carry on waiting.");
   } else {
     s(
       "<p>There’s no real queue and you get a taxi almost straight away. You give the taxi driver your address; Diane only lives a couple of streets from you and you can drop her off en route if she wants.</p>",
@@ -6837,9 +6849,10 @@ function taxihome1() {
 }
 function taxihome2() {
   s("<p>You are still four or five from the front of the queue.</p>");
-  s(
-    "<p>The girl in the miniskirt keeps crossing her legs and doing little ‘mini curtseys’. You can’t take your eyes off her. You hear her mutter to her boyfriend, ‘Why didn’t you let me go to the toilet before we left? I’m busting to go.’</p>",
-  );
+  if (!debbieCarParkSeen)
+    s(
+      "<p>The girl in the miniskirt keeps crossing her legs and doing little ‘mini curtseys’. You can’t take your eyes off her. You hear her mutter to her boyfriend, ‘Why didn’t you let me go to the toilet before we left? I’m busting to go.’</p>",
+    );
   if (blad > 700) {
     s("<p>Diane seems a bit distracted and keeps looking around. You ask if she’s OK.</p>");
     s("<p>DIANE: Mmm.</p>");
@@ -6870,10 +6883,16 @@ function taxihome2a() {
   c("taxihome3", "You carry on waiting.");
 }
 function taxihome3() {
-  s(
-    "<p>You are quite near the front of the queue. The girl in the miniskirt is not at all happy. ‘It’s all right for you,’ she mutters to her boyfriend, ‘but one day I’m going to wet my pants, all because of your silly games.’</p>",
-  );
-  s("<p>The girl gets into a taxi with her friend. You wonder whether she’ll make it home.</p>");
+  if (debbieCarParkSeen) {
+    s("<p>At last, you are nearly at the front of the queue.</p>");
+  } else {
+    s(
+      "<p>You are quite near the front of the queue. The girl in the miniskirt is not at all happy. ‘It’s all right for you,’ she mutters to her boyfriend, ‘but one day I’m going to wet my pants, all because of your silly games.’</p>",
+    );
+    s(
+      "<p>The girl gets into a taxi with her boyfriend. You wonder whether she’ll make it home.</p>",
+    );
+  }
   queue_desp();
   c("taxihome4", "You are at the front of the queue.");
 }
@@ -6998,7 +7017,7 @@ function taxiupskirt() {
   }
   if (tuesday) {
     s(
-      "<p>You get a nice flash of her lacy slip. It encourages you to explore more of her legs, and you still wonder if she is wearing stockings.</p>",
+      "<p>You get a nice flash of her lacy slip. It encourages you to explore more of her legs.</p>",
     );
   } else if (thursday) {
     s(
@@ -12793,6 +12812,7 @@ function carparka1() {
     s("<p>She gives you a kiss.</p>");
     getinti(5);
     s("<p>You return the kiss. You reach round and feel her bum, pulling her close to you.</p>");
+    debbieCarParkSeen = 1;
     s(
       "<p>You hear footsteps hurrying towards you. It is the brunette from the bus stop. She stops when she sees you, and speaks quietly to Diane: ‘Is the toilet still open?’ Diane says it is and the brunette mutters, ‘Thank God for that,’ and hurries away. You visualise her urgency when she gets there, perhaps some spurts of pee escaping even before she gets to the cubicle, the struggle to get her knickers down in time...</p>",
     );
@@ -12807,6 +12827,7 @@ function carparka1() {
     s("<p>DIANE: That’s better. Now I can enjoy the journey home. Thank you.</p>");
     s("<p>She gives you a kiss.</p>");
     getinti(5);
+    debbieCarParkSeen = 1;
     s(
       "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear somebody and look. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she hides her face in embarrassment.</p>",
     );
@@ -12826,6 +12847,7 @@ function carparka1() {
     getinti(5);
     afterpee();
     s("<p>You curse inwardly.</p>");
+    debbieCarParkSeen = 1;
     s(
       "<p>You walk back towards the taxi rank. On the way you pass a camper van in the car park. You hear a noise. The petite brunette from the bus queue is there, having a pee. Her miniskirt is around her waist, her black knickers round her knees, while a stream is running across the ground. When she sees you, she gasps with embarrassment and tries to pull up her knickers, but she is in such full flow she has to go back into a squat.</p>",
     );
@@ -12842,6 +12864,7 @@ function carparka1() {
 function carparka2() {
   s("<p>You look around. Maybe she could just go behind one of the cars in the car park.</p>");
   blad += 10;
+  debbieCarParkSeen = 1;
   s(
     "<p>You suggest she goes behind a camper van. Then you hear footsteps hurrying towards you. It’s the miniskirted girl you had seen in the bus queue. She’s looking flushed and worried.</p>",
   );
@@ -12898,9 +12921,14 @@ function peepround1() {
   );
   blad += 10;
   s("<p>They join you again. They don’t seem to know you were watching.</p>");
-  s(
-    "<p>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop.</p>",
-  );
+  if (taxiQueueSeen)
+    s(
+      "<p>Diane takes your hand. The three of you walk back to the road. The brunette leaves you to find her boyfriend.</p>",
+    );
+  else
+    s(
+      "<p>Diane takes your hand. The three of you walk back to the road. The brunette leaves you and heads for her bus stop.</p>",
+    );
   c("taxihome1", "You head for the taxi rank.");
 }
 function gentleman() {

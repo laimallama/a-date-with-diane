@@ -769,6 +769,8 @@ var tiramisu = 0;
 var pannacotta = 0;
 var icecream = 0;
 var gettaxi = 0;
+var taxiQueueSeen = 0;
+var debbieCarParkSeen = 0;
 var steak = 0;
 var undobra = 0;
 var hosieryRemoved = 0;
@@ -832,6 +834,8 @@ var gameStateVars = [
   "pannacotta",
   "icecream",
   "gettaxi",
+  "taxiQueueSeen",
+  "debbieCarParkSeen",
   "steak",
   "undobra",
   "hosieryRemoved",
@@ -6995,15 +6999,23 @@ function taxihome() {
 }
 function taxihome1() {
   if (saturday) {
+    if (taxiQueueSeen) {
+      s("<p>Zurück am Taxistand stellt ihr euch wieder an.</p>");
+      queue_desp();
+      c("taxihome3", "Ihr wartet weiter.");
+      return;
+    }
+    taxiQueueSeen = 1;
     s(
       "<p>Am Taxistand steht eine ziemlich lange Schlange. Es ist Samstagabend, und die Feiernden wollen nach Hause oder weiter in die Clubs. Ihr stellt euch an.</p>",
     );
-    s(
-      "<p>Ein, zwei der jungen Frauen zappeln herum und wollen offensichtlich aus mindestens einem guten Grund nach Hause. Direkt vor euch steht eine zierliche junge Frau im Minirock, die einfach nicht stillstehen kann.</p>",
-    );
+    if (!debbieCarParkSeen)
+      s(
+        "<p>Ein, zwei der jungen Frauen zappeln herum und wollen offensichtlich aus mindestens einem guten Grund nach Hause. Die zierliche junge Frau im Minirock ist mit ihrem Freund von der Bushaltestelle herübergekommen. Sie stehen direkt vor euch, und sie kann einfach nicht stillstehen.</p>",
+      );
     queue_desp();
-    s("<p>Ihr plaudert beim Warten.</p>");
-    c("taxihome2", "Ihr wartet.");
+    if (blad < 625) c("taxihome2", "Ihr plaudert beim Warten.");
+    else c("taxihome2", "Ihr wartet weiter.");
   } else {
     s(
       "<p>Es gibt kaum eine Schlange, und ihr bekommt fast sofort ein Taxi. Du nennst dem Fahrer deine Adresse. Diane wohnt nur ein paar Straßen weiter, und ihr könnt sie unterwegs absetzen, wenn sie möchte.</p>",
@@ -7013,9 +7025,10 @@ function taxihome1() {
 }
 function taxihome2() {
   s("<p>Es stehen noch vier oder fünf Leute vor euch.</p>");
-  s(
-    "<p>Die junge Frau im Minirock kreuzt ständig die Beine und macht kleine Knickse. Du kannst die Augen nicht von ihr lassen. Du hörst sie ihrem Freund zumurmeln: „Warum hast du mich nicht auf die Toilette gehen lassen, bevor wir los sind? Ich platze gleich.“</p>",
-  );
+  if (!debbieCarParkSeen)
+    s(
+      "<p>Die junge Frau im Minirock kreuzt ständig die Beine und macht kleine Knickse. Du kannst die Augen nicht von ihr lassen. Du hörst sie ihrem Freund zumurmeln: „Warum hast du mich nicht auf die Toilette gehen lassen, bevor wir los sind? Ich platze gleich.“</p>",
+    );
   if (blad > 700) {
     s(
       "<p>Diane wirkt etwas abgelenkt und sieht sich immer wieder um. Du fragst, ob alles in Ordnung ist.</p>",
@@ -7050,12 +7063,16 @@ function taxihome2a() {
   c("taxihome3", "Ihr wartet weiter.");
 }
 function taxihome3() {
-  s(
-    "<p>Ihr seid fast vorn in der Schlange. Die junge Frau im Minirock ist alles andere als glücklich. „Du hast gut reden“, murmelt sie ihrem Freund zu. „Irgendwann mache ich mir noch in die Hose, nur wegen deiner blöden Spielchen.“</p>",
-  );
-  s(
-    "<p>Die junge Frau steigt mit ihrem Freund in ein Taxi. Du fragst dich, ob sie es bis nach Hause schafft.</p>",
-  );
+  if (debbieCarParkSeen) {
+    s("<p>Endlich seid ihr fast vorn in der Schlange.</p>");
+  } else {
+    s(
+      "<p>Ihr seid fast vorn in der Schlange. Die junge Frau im Minirock ist alles andere als glücklich. „Du hast gut reden“, murmelt sie ihrem Freund zu. „Irgendwann mache ich mir noch in die Hose, nur wegen deiner blöden Spielchen.“</p>",
+    );
+    s(
+      "<p>Die junge Frau steigt mit ihrem Freund in ein Taxi. Du fragst dich, ob sie es bis nach Hause schafft.</p>",
+    );
+  }
   queue_desp();
   c("taxihome4", "Ihr seid jetzt vorn in der Schlange.");
 }
@@ -7191,7 +7208,7 @@ function taxiupskirt() {
   }
   if (tuesday) {
     s(
-      "<p>Ihr Spitzenunterrock blitzt hübsch hervor. Das ermutigt dich, ihre Beine weiter zu erkunden. Noch immer fragst du dich, ob sie Strümpfe trägt.</p>",
+      "<p>Ihr Spitzenunterrock blitzt hübsch hervor. Das ermutigt dich, ihre Beine weiter zu erkunden.</p>",
     );
   } else if (thursday) {
     s(
@@ -13276,6 +13293,7 @@ function carparka1() {
     s(
       "<p>Du erwiderst den Kuss. Du greifst um sie herum, fühlst ihren Po und ziehst sie nah an dich.</p>",
     );
+    debbieCarParkSeen = 1;
     s(
       "<p>Du hörst eilige Schritte näher kommen. Es ist die Brünette von der Bushaltestelle. Als sie euch sieht, bleibt sie stehen und fragt Diane leise: „Ist die Toilette noch offen?“ Diane bejaht es, und die Brünette murmelt: „Gott sei Dank“, und eilt davon. Du stellst dir vor, wie dringend sie bei ihrer Ankunft muss, wie ihr vielleicht schon ein paar Spritzer entweichen, bevor sie die Kabine erreicht, und wie sie versucht, ihren Slip rechtzeitig herunterzubekommen …</p>",
     );
@@ -13290,6 +13308,7 @@ function carparka1() {
     s("<p>DIANE: So ist es besser. Jetzt kann ich die Heimfahrt genießen. Danke.</p>");
     s("<p>Sie küsst dich.</p>");
     getinti(5);
+    debbieCarParkSeen = 1;
     s(
       "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst jemanden und schaust hin. Die zierliche Brünette aus der Warteschlange an der Bushaltestelle ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, verbirgt sie beschämt ihr Gesicht.</p>",
     );
@@ -13311,6 +13330,7 @@ function carparka1() {
     getinti(5);
     afterpee();
     s("<p>Du fluchst innerlich.</p>");
+    debbieCarParkSeen = 1;
     s(
       "<p>Ihr geht zurück in Richtung Taxistand. Unterwegs kommt ihr auf dem Parkplatz an einem Wohnmobil vorbei. Du hörst ein Geräusch. Die zierliche Brünette aus der Warteschlange an der Bushaltestelle ist dort und pinkelt. Ihr Minirock ist bis zur Taille hochgeschoben, ihr schwarzer Slip hängt an den Knien, und ein Rinnsal fließt über den Boden. Als sie euch sieht, schnappt sie beschämt nach Luft und versucht, ihren Slip hochzuziehen. Doch es läuft so stark, dass sie sich wieder hinhocken muss.</p>",
     );
@@ -13331,6 +13351,7 @@ function carparka2() {
     "<p>Du siehst dich um. Vielleicht könnte sie einfach hinter eines der Autos auf dem Parkplatz gehen.</p>",
   );
   blad += 10;
+  debbieCarParkSeen = 1;
   s(
     "<p>Du schlägst vor, hinter ein Wohnmobil zu gehen. Dann hörst du eilige Schritte näher kommen. Es ist die junge Frau im Minirock, die du in der Warteschlange an der Bushaltestelle gesehen hast. Ihr Gesicht ist gerötet, und sie wirkt besorgt.</p>",
   );
@@ -13387,9 +13408,14 @@ function peepround1() {
   );
   blad += 10;
   s("<p>Sie kommen zu dir zurück. Sie scheinen nicht zu wissen, dass du zugesehen hast.</p>");
-  s(
-    "<p>Diane nimmt deine Hand. Zu dritt geht ihr zurück zur Straße. Die Brünette verabschiedet sich und geht zu ihrer Bushaltestelle.</p>",
-  );
+  if (taxiQueueSeen)
+    s(
+      "<p>Diane nimmt deine Hand. Ihr drei geht zurück zur Straße. Die Brünette verabschiedet sich von euch und geht ihren Freund suchen.</p>",
+    );
+  else
+    s(
+      "<p>Diane nimmt deine Hand. Zu dritt geht ihr zurück zur Straße. Die Brünette verabschiedet sich und geht zu ihrer Bushaltestelle.</p>",
+    );
   c("taxihome1", "Ihr geht zum Taxistand.");
 }
 function gentleman() {

@@ -769,6 +769,8 @@ var tiramisu = 0;
 var pannacotta = 0;
 var icecream = 0;
 var gettaxi = 0;
+var taxiQueueSeen = 0;
+var debbieCarParkSeen = 0;
 var steak = 0;
 var undobra = 0;
 var hosieryRemoved = 0;
@@ -832,6 +834,8 @@ var gameStateVars = [
   "pannacotta",
   "icecream",
   "gettaxi",
+  "taxiQueueSeen",
+  "debbieCarParkSeen",
   "steak",
   "undobra",
   "hosieryRemoved",
@@ -7081,15 +7085,23 @@ function taxihome() {
 }
 function taxihome1() {
   if (saturday) {
+    if (taxiQueueSeen) {
+      s("<p>De retour à la station de taxis, vous refaites la queue.</p>");
+      queue_desp();
+      c("taxihome3", "Vous continuez à attendre.");
+      return;
+    }
+    taxiQueueSeen = 1;
     s(
       "<p>Il y a pas mal de monde dans la file des taxis, avec les noctambules du samedi soir qui rentrent chez eux ou filent vers les clubs. Vous faites la queue.</p>",
     );
-    s(
-      "<p>Une ou deux filles s’agitent, manifestement pressées de rentrer — et pour au moins une bonne raison. Juste devant vous se trouve une jeune femme toute menue en minijupe qui n’arrive vraiment pas à tenir en place.</p>",
-    );
+    if (!debbieCarParkSeen)
+      s(
+        "<p>Une ou deux filles s’agitent, manifestement pressées de rentrer — et pour au moins une bonne raison. La jeune femme toute menue en minijupe est venue de l’arrêt de bus avec son petit ami. Ils sont juste devant vous, et elle n’arrive vraiment pas à tenir en place.</p>",
+      );
     queue_desp();
-    s("<p>Vous bavardez en attendant.</p>");
-    c("taxihome2", "Vous attendez.");
+    if (blad < 625) c("taxihome2", "Vous bavardez en attendant.");
+    else c("taxihome2", "Vous continuez d’attendre.");
   } else {
     s(
       "<p>Il n’y a pratiquement pas de queue et vous obtenez un taxi presque tout de suite. Vous donnez votre adresse au chauffeur\u202F; Diane n’habite qu’à deux rues de chez vous et vous pouvez la déposer en chemin si elle le souhaite.</p>",
@@ -7099,9 +7111,10 @@ function taxihome1() {
 }
 function taxihome2() {
   s("<p>Vous êtes encore à quatre ou cinq personnes de la tête de la file.</p>");
-  s(
-    "<p>La fille en minijupe n’arrête pas de croiser les jambes et d’esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d’elle. Vous l’entendez marmonner à son petit ami\u202F: «\xA0Pourquoi tu ne m’as pas laissée aller aux toilettes avant qu’on parte\u202F? J’en peux vraiment plus.\xA0»</p>",
-  );
+  if (!debbieCarParkSeen)
+    s(
+      "<p>La fille en minijupe n’arrête pas de croiser les jambes et d’esquisser de petites révérences. Vous ne pouvez pas détacher les yeux d’elle. Vous l’entendez marmonner à son petit ami\u202F: «\xA0Pourquoi tu ne m’as pas laissée aller aux toilettes avant qu’on parte\u202F? J’en peux vraiment plus.\xA0»</p>",
+    );
   if (blad > 700) {
     s(
       "<p>Diane semble un peu distraite et ne cesse de regarder autour d’elle. Vous lui demandez si ça va.</p>",
@@ -7138,12 +7151,16 @@ function taxihome2a() {
   c("taxihome3", "Vous continuez d’attendre.");
 }
 function taxihome3() {
-  s(
-    "<p>Vous êtes maintenant assez près de la tête de la file. La fille en minijupe n’est pas contente du tout. «\xA0C’est facile pour toi, marmonne-t-elle à son petit ami, mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes petits jeux idiots.\xA0»</p>",
-  );
-  s(
-    "<p>La fille monte dans un taxi avec son petit ami. Vous vous demandez si elle tiendra jusqu’à la maison.</p>",
-  );
+  if (debbieCarParkSeen) {
+    s("<p>Vous êtes enfin presque en tête de file.</p>");
+  } else {
+    s(
+      "<p>Vous êtes maintenant assez près de la tête de la file. La fille en minijupe n’est pas contente du tout. «\xA0C’est facile pour toi, marmonne-t-elle à son petit ami, mais un de ces jours je vais me faire pipi dessus, et tout ça à cause de tes petits jeux idiots.\xA0»</p>",
+    );
+    s(
+      "<p>La fille monte dans un taxi avec son petit ami. Vous vous demandez si elle tiendra jusqu’à la maison.</p>",
+    );
+  }
   queue_desp();
   c("taxihome4", "Vous êtes en tête de la file.");
 }
@@ -7277,7 +7294,7 @@ function taxiupskirt() {
   }
   if (tuesday) {
     s(
-      "<p>Vous avez un bel aperçu de son jupon en dentelle. Ça vous donne envie d’explorer ses jambes plus avant, et vous vous demandez toujours si elle porte des bas.</p>",
+      "<p>Vous avez un bel aperçu de son jupon en dentelle. Ça vous donne envie d’explorer ses jambes plus avant.</p>",
     );
   } else if (thursday) {
     s(
@@ -13489,6 +13506,7 @@ function carparka1() {
     s(
       "<p>Vous lui rendez son baiser. Vous passez la main dans son dos pour lui attraper les fesses, la serrant contre vous.</p>",
     );
+    debbieCarParkSeen = 1;
     s(
       "<p>Vous entendez des pas pressés dans votre direction. C’est la brune de l’arrêt de bus. Elle s’arrête en vous voyant et dit discrètement à Diane\u202F: «\xA0Les toilettes sont encore ouvertes\u202F?\xA0» Diane répond que oui, et la brune marmonne «\xA0Dieu merci\xA0» avant de repartir en hâte. Vous vous imaginez son état quand elle y arrive — peut-être quelques petites giclées de pipi qui s’échappent avant même qu’elle atteigne la cabine, la lutte pour faire descendre sa culotte à temps…</p>",
     );
@@ -13505,6 +13523,7 @@ function carparka1() {
     );
     s("<p>Elle vous donne un baiser.</p>");
     getinti(5);
+    debbieCarParkSeen = 1;
     s(
       "<p>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez quelqu’un et vous regardez. La petite brune de la file d’attente est là, en train de faire pipi. Sa minijupe est retroussée autour de la taille, sa culotte noire autour des genoux, tandis qu’un jet coule sur le sol. Quand elle vous voit, elle cache son visage de honte.</p>",
     );
@@ -13528,6 +13547,7 @@ function carparka1() {
     getinti(5);
     afterpee();
     s("<p>Vous ragez intérieurement.</p>");
+    debbieCarParkSeen = 1;
     s(
       "<p>Vous revenez vers la station de taxis. En chemin, vous passez devant un camping-car dans le parking. Vous entendez un bruit. La petite brune de la file d’attente est là, en train de faire pipi. Sa minijupe est retroussée autour de la taille, sa culotte noire autour des genoux, tandis qu’un jet coule sur le sol. Quand elle vous voit, elle pousse un petit cri, toute gênée, et tente de remonter sa culotte, mais le flot est trop fort pour qu’elle puisse s’arrêter\u202F; elle doit se remettre accroupie.</p>",
     );
@@ -13550,6 +13570,7 @@ function carparka2() {
     "<p>Vous regardez autour de vous. Elle pourrait peut-être se soulager derrière l’une des voitures du parking.</p>",
   );
   blad += 10;
+  debbieCarParkSeen = 1;
   s(
     "<p>Vous lui suggérez d’aller se cacher derrière un camping-car. C’est alors que vous entendez des pas pressés dans votre direction. C’est la fille en minijupe que vous aviez vue dans la file d’attente du bus. Elle a le visage rouge et l’air inquiet.</p>",
   );
@@ -13560,7 +13581,7 @@ function carparka2() {
   s(
     "<p>DIANE\u202F: Moi aussi j’ai besoin d’y aller. On pourrait peut-être se glisser derrière ce camping-car. Mon copain montera la garde.</p>",
   );
-  s("<p>LA FILLE : Peu importe. Encore une minute et je vais me faire pipi dessus.</p>");
+  s("<p>LA FILLE\u202F: Peu importe. Encore une minute et je vais me faire pipi dessus.</p>");
   s(
     "<p>Elle plaque une main sur son entrejambe, se mord la lèvre et se détourne. Elles s’éloignent ensemble.</p>",
   );
@@ -13606,9 +13627,14 @@ function peepround1() {
   );
   blad += 10;
   s("<p>Elles vous rejoignent. Elles ne semblent pas savoir que vous les regardiez.</p>");
-  s(
-    "<p>Diane prend votre main. Vous retournez tous les trois vers la route. La brune vous quitte et se dirige vers son arrêt de bus.</p>",
-  );
+  if (taxiQueueSeen)
+    s(
+      "<p>Diane vous prend la main. Vous regagnez tous les trois la route. La brune vous quitte pour aller retrouver son petit ami.</p>",
+    );
+  else
+    s(
+      "<p>Diane prend votre main. Vous retournez tous les trois vers la route. La brune vous quitte et se dirige vers son arrêt de bus.</p>",
+    );
   c("taxihome1", "Vous vous dirigez vers la station de taxis.");
 }
 function gentleman() {

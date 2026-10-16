@@ -956,13 +956,18 @@ function prefersReducedMotion() {
   }
 }
 function focusStory() {
+  // Language changes inside the Gallery retain its current keyboard selection.
+  var overlay = document.getElementById("galleryOverlay");
+  if (overlay && overlay.classList.contains("open")) return;
   // A completed control action returns Enter to the story. Tab can still
   // deliberately select any control for its next activation.
   keyboardControlFocus = false;
   var box = document.getElementById("box");
   if (box && typeof box.focus === "function") {
     box.setAttribute("tabindex", "-1");
-    box.focus({ preventScroll: true });
+    box.focus({
+      preventScroll: true,
+    });
   }
 }
 function presentScreen() {
@@ -1116,6 +1121,8 @@ function isStoryActionKey(key) {
     key === "G" ||
     key === "l" ||
     key === "L" ||
+    key === "d" ||
+    key === "D" ||
     key === "Escape"
   );
 }
@@ -1128,12 +1135,17 @@ function canSkipToClimax() {
   return !!(guideActive && guideOn && !climaxSkipUsed && climaxIndex > guideIndex);
 }
 function toggleGuideDisplay() {
+  clearEnterHold();
+  clearBackHold();
+  clearChoiceKeyArm();
   guideOn = !guideOn;
-  if (!guideOn) clearAllHolds();
   syncGuideDisplay();
   focusStory();
 }
 function toggleTheme() {
+  clearEnterHold();
+  clearBackHold();
+  clearChoiceKeyArm();
   darkMode = !darkMode;
   document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   try {
@@ -1358,6 +1370,7 @@ function statusGroup(html) {
 var currentLanguage = "alt";
 var renderBuffers = null;
 function setLanguage(lang) {
+  var previousLanguage = currentLanguage;
   currentLanguage = lang === "en" ? "en" : "alt";
   document.documentElement.setAttribute("lang", currentLanguage === "en" ? "en" : "es");
   document.body.classList.toggle("lang-en", currentLanguage === "en");
@@ -1377,8 +1390,12 @@ function setLanguage(lang) {
           ? "Modo oscuro: Activado"
           : "Modo oscuro: Desactivado";
   if (typeof syncGuideDisplay === "function") syncGuideDisplay();
+  if (currentLanguage !== previousLanguage) syncGalleryTitles();
 }
 function toggleLanguage() {
+  clearEnterHold();
+  clearBackHold();
+  clearChoiceKeyArm();
   setLanguage(currentLanguage === "en" ? "alt" : "en");
   focusStory();
 }
@@ -1531,6 +1548,7 @@ if (document.addEventListener) {
       return;
     }
     if (e.key === "d" || e.key === "D") {
+      if (!claimStoryActionKey(e.key)) return;
       e.preventDefault();
       toggleTheme();
       return;
@@ -1658,6 +1676,26 @@ function applyGuideHighlight() {
       return;
     }
   }
+}
+function syncGalleryTitles() {
+  // Update text in place: rebuilding the lists would collapse groups and replace
+  // focused buttons. Include hidden variants so opening a group is always current.
+  ["endings", "hiddenScenes"].forEach(function (kind) {
+    var list = document.getElementById(
+      kind === "endings" ? "galleryEndings" : "galleryHiddenScenes",
+    );
+    if (!list) return;
+    var titles = list.querySelectorAll(".gallery-title");
+    if (!titles.length) return;
+    var index = 0;
+    GALLERY_DATA[kind].forEach(function (item) {
+      titles[index++].textContent = galleryEntryTitle(item);
+      (item.variants || []).forEach(function (variant, vi) {
+        titles[index++].textContent =
+          String.fromCharCode(97 + vi) + ". " + galleryEntryTitle(variant);
+      });
+    });
+  });
 }
 function galleryEntryTitle(item) {
   return currentLanguage === "en" ? item.title : item.titleAlt || item.title;

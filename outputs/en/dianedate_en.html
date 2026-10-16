@@ -926,13 +926,18 @@ function prefersReducedMotion() {
   }
 }
 function focusStory() {
+  // Language changes inside the Gallery retain its current keyboard selection.
+  var overlay = document.getElementById("galleryOverlay");
+  if (overlay && overlay.classList.contains("open")) return;
   // A completed control action returns Enter to the story. Tab can still
   // deliberately select any control for its next activation.
   keyboardControlFocus = false;
   var box = document.getElementById("box");
   if (box && typeof box.focus === "function") {
     box.setAttribute("tabindex", "-1");
-    box.focus({ preventScroll: true });
+    box.focus({
+      preventScroll: true,
+    });
   }
 }
 function presentScreen() {
@@ -1086,6 +1091,8 @@ function isStoryActionKey(key) {
     key === "G" ||
     key === "l" ||
     key === "L" ||
+    key === "d" ||
+    key === "D" ||
     key === "Escape"
   );
 }
@@ -1098,12 +1105,17 @@ function canSkipToClimax() {
   return !!(guideActive && guideOn && !climaxSkipUsed && climaxIndex > guideIndex);
 }
 function toggleGuideDisplay() {
+  clearEnterHold();
+  clearBackHold();
+  clearChoiceKeyArm();
   guideOn = !guideOn;
-  if (!guideOn) clearAllHolds();
   syncGuideDisplay();
   focusStory();
 }
 function toggleTheme() {
+  clearEnterHold();
+  clearBackHold();
+  clearChoiceKeyArm();
   darkMode = !darkMode;
   document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   try {
@@ -1440,6 +1452,7 @@ if (document.addEventListener) {
       return;
     }
     if (e.key === "d" || e.key === "D") {
+      if (!claimStoryActionKey(e.key)) return;
       e.preventDefault();
       toggleTheme();
       return;

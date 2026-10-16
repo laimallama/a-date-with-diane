@@ -699,7 +699,8 @@ button:focus,
 }
 
 /* The reading area receives focus after actions but is not a control. */
-#box:focus {
+#box:focus,
+#galleryOverlay:focus {
   outline: none;
 }
 
@@ -928,10 +929,22 @@ function prefersReducedMotion() {
     return false;
   }
 }
-function focusStory() {
-  // Language changes inside the Gallery retain its current keyboard selection.
+function focusGallery() {
+  // Opening the modal or using a pointer must not preselect an action button.
+  keyboardControlFocus = false;
   var overlay = document.getElementById("galleryOverlay");
-  if (overlay && overlay.classList.contains("open")) return;
+  if (overlay && typeof overlay.focus === "function")
+    overlay.focus({
+      preventScroll: true,
+    });
+}
+function focusStory() {
+  // Retain only deliberate Tab selection while the Gallery is open.
+  var overlay = document.getElementById("galleryOverlay");
+  if (overlay && overlay.classList.contains("open")) {
+    if (!keyboardControlFocus || !overlay.contains(document.activeElement)) focusGallery();
+    return;
+  }
   // A completed control action returns Enter to the story. Tab can still
   // deliberately select any control for its next activation.
   keyboardControlFocus = false;
@@ -1197,7 +1210,7 @@ function toggleGalleryGroup(btn) {
   }
   // Pointer clicks should not leave a selected-looking group button.
   // Retain deliberate Tab focus so keyboard users can browse the group.
-  if (!keyboardControlFocus && document.activeElement === btn) btn.blur();
+  if (!keyboardControlFocus) focusGallery();
 }
 function renderGalleryLists() {
   var endingsHtml = GALLERY_DATA.endings
@@ -1230,6 +1243,7 @@ function trapGalleryFocus(e, overlay) {
   var active = document.activeElement;
   if (
     !overlay.contains(active) ||
+    active === overlay ||
     (e.shiftKey && active === first) ||
     (!e.shiftKey && active === last)
   ) {
@@ -1257,8 +1271,7 @@ function openGallery() {
     });
     node.setAttribute("inert", "");
   }
-  var first = overlay.querySelector("button");
-  if (first && typeof first.focus === "function") first.focus();
+  focusGallery();
 }
 function closeGallery() {
   var overlay = document.getElementById("galleryOverlay");

@@ -14882,11 +14882,11 @@ function stampalbum1a() {
     if (homeBathroomKnown) {
       sAlt(
         "<p>DIANE: Actually, before we get too involved with the book, I’ll just pop to the bathroom.</p>",
-        "<p>DIANE : Au fait, avant qu’on se plonge trop dans l’album, je vais faire un saut aux toilettes.</p>",
+        "<p>DIANE\u202F: Au fait, avant qu’on se plonge trop dans l’album, je vais faire un saut aux toilettes.</p>",
       );
       sAlt(
         "<p>She says she won’t be a minute and leaves the room. Your brother has been in the bathroom, but he must have finished by now. Is it still worth playing a luckshot?</p>",
-        "<p>Elle dit qu’elle revient tout de suite et quitte la pièce. Ton frère était dans la salle de bains, mais il doit avoir fini maintenant. Cela vaut-il encore la peine de tenter un coup de chance ?</p>",
+        "<p>Elle dit qu’elle revient tout de suite et quitte la pièce. Votre frère était dans la salle de bains, mais il doit avoir fini maintenant. Cela vaut-il encore la peine de tenter un coup de chance\u202F?</p>",
       );
     } else {
       sAlt(
@@ -18081,7 +18081,7 @@ function walkhome1() {
     if (homeBathroomKnown)
       sAlt(
         "<p>She turns to you, red with embarrassment, and gasps, “I must use your toilet.” Then she hurries back into the house.</p>",
-        "<p>Elle se tourne vers toi, rouge de gêne, et souffle : « Il faut que j’aille aux toilettes. » Puis elle rentre précipitamment dans la maison.</p>",
+        "<p>Elle se tourne vers vous, rouge de gêne, et souffle\u202F: «\xA0Il faut que j’aille aux toilettes.\xA0» Puis elle rentre précipitamment dans la maison.</p>",
       );
     else
       sAlt(
@@ -22714,7 +22714,7 @@ function sitting_desp() {
   } else if (blad < 930) {
     sAlt(
       '<p><em><span style="color: #ff0000">Diane is absolutely desperate. She clenches her hands, her expression pained, struggling not to wet herself.</span></em></p>',
-      '<p><em><span style="color: #ff0000">Diane est absolument désespérée. Elle serre les poings, le visage crispé de douleur, et lutte pour ne pas se faire dessus.</span></em></p>',
+      '<p><em><span style="color: #ff0000">Diane n’en peut plus. Elle serre les poings, le visage crispé de douleur, et lutte pour ne pas se faire dessus.</span></em></p>',
     );
   } else {
     sAlt(
@@ -24383,7 +24383,7 @@ function walktogether() {
     "<p>Vous marchez main dans la main. Au bout d’un moment, vous vous arrêtez pour l’embrasser. Il fait plus sombre ici et il n’y a personne.</p>",
   );
   standing_desp();
-  sAlt("<p>What will it be?</p>", "<p>Qu’est-ce que ce sera\u202F?</p>");
+  sAlt("<p>What will it be?</p>", "<p>Que faites-vous\u202F?</p>");
   cAlt("walktogether1", "Kiss her?", "L’embrasser\u202F?");
   cAlt("walkbottom1", "Fondle her bottom?", "Lui caresser les fesses\u202F?");
   cAlt("walkbreasts1", "Fondle her breasts?", "Lui caresser les seins\u202F?");
@@ -24844,7 +24844,7 @@ function hideaway8() {
       "<p>Diane a fait pipi en cachette après vous avoir envoyé chercher ses gants.</p>",
     );
   }
-  sAlt("<p>What’s it to be?</p>", "<p>Qu’est-ce que ce sera\u202F?</p>");
+  sAlt("<p>What’s it to be?</p>", "<p>Que faites-vous\u202F?</p>");
   cAlt(
     "hideaway9a",
     "I’m a gentleman. I’ll not say anything.",
@@ -25420,7 +25420,7 @@ function luckytrip81i() {
 }
 function taxifind() {
   sAlt("<p>You’re getting a taxi home.</p>", "<p>Vous allez rentrer en taxi.</p>");
-  sAlt("<p>What’s it to be?</p>", "<p>Qu’est-ce que ce sera\u202F?</p>");
+  sAlt("<p>What’s it to be?</p>", "<p>Que faites-vous\u202F?</p>");
   cAlt("taxihome1", "Go straight to the taxi rank.", "Aller directement à la station de taxis.");
   cAlt("minicab", "A minicab will be cheaper.", "Un taxi sur réservation coûtera moins cher.");
 }
@@ -25465,7 +25465,7 @@ function taxihome4h() {
     "<p>It feels very cosy in the taxi.</p>",
     "<p>Vous vous sentez bien, tous les deux dans le taxi.</p>",
   );
-  sAlt("<p>What will it be?</p>", "<p>Qu’est-ce que ce sera\u202F?</p>");
+  sAlt("<p>What will it be?</p>", "<p>Que faites-vous\u202F?</p>");
   cAlt("taxiholdhand", "Hold her hand?", "Lui prendre la main\u202F?");
   cAlt("taxihome5", "Explore her breasts?", "Explorer sa poitrine\u202F?");
   cAlt("taxihome5e", "Explore her legs?", "Explorer ses jambes\u202F?");
@@ -25733,7 +25733,7 @@ function luckshot15c() {
 function luckshot15g() {
   sAlt(
     "<p>Suddenly she is out of view. You peer through the taxi window but can’t see her through the bushes.</p>",
-    "<p>Soudain, elle disparaît de votre vue. Vous scrutez la vitre du taxi, mais les buissons vous empêchent de la voir.</p>",
+    "<p>Soudain, elle disparaît de votre vue. Vous scrutez l’extérieur à travers la vitre du taxi, mais les buissons vous empêchent de la voir.</p>",
   );
   sAlt(
     "<p>Maybe she has gone round the back of the house.</p>",
@@ -25869,7 +25869,7 @@ function passage2bb() {
 function bushome4a() {
   sAlt(
     "<p>You look out of the window. There are still several miles to go.</p>",
-    "<p>Vous regardez par la fenêtre. Il reste encore plusieurs kilomètres.</p>",
+    "<p>Vous regardez par la fenêtre. Il reste encore plusieurs miles.</p>",
   );
   cAlt("bushome4b", "You’re hanging on.", "Vous tenez bon.");
 }
@@ -26040,7 +26040,7 @@ function rememberbrooch3() {
 function rememberbrooch4() {
   sAlt(
     "<p>You embrace, your hands exploring each other. After a while you pause, and smile at each other.</p>",
-    "<p>Vous vous étreignez, vos mains se découvrant mutuellement. Au bout d’un moment, vous marquez une pause et vous vous souriez.</p>",
+    "<p>Vous vous étreignez, chacun explorant le corps de l’autre avec les mains. Au bout d’un moment, vous marquez une pause et vous vous souriez.</p>",
   );
   sAlt(
     "<p>DIANE: We didn’t really get a chance to say goodnight properly before.</p>",
@@ -26235,7 +26235,7 @@ function unseen_desp() {
     if (saturday) {
       sAlt(
         "<p><em>Diane is absolutely desperate. She is walking on the spot, with one hand under her dress, holding herself.</em></p>",
-        "<p><em>Diane est absolument désespérée. Elle piétine sur place, une main sous sa robe pour se retenir.</em></p>",
+        "<p><em>Diane est absolument à bout. Elle piétine sur place, une main sous sa robe pour se retenir.</em></p>",
       );
     } else {
       sAlt(

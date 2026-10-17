@@ -7595,7 +7595,7 @@ function helpdiane1a() {
   if (riverSeparated) {
     sAlt(
       "<p>You put both arms round her and wait as a couple of late-night dog walkers pass. You can feel Diane shifting urgently up and down.</p>",
-      "<p>Du nimmst sie in beide Arme und wartest, während zwei späte Hundespaziergänger vorbeigehen. Du spürst, wie Diane vor Dringlichkeit auf und ab wippt.</p>",
+      "<p>Du nimmst sie in beide Arme und wartest, während zwei Leute vorbeigehen, die noch so spät ihre Hunde ausführen. Du spürst, wie Diane auf und ab wippt, weil sie so dringend muss.</p>",
     );
   } else {
     sAlt(
@@ -22302,12 +22302,12 @@ function sitting_desp() {
   } else if (blad < 910) {
     sAlt(
       '<p><em><span style="color: #ff0000">Diane is desperate to pee! She squeezes her legs tightly together, a hand between them, bouncing on her seat.</span></em></p>',
-      '<p><em><span style="color: #ff0000">Diane muss verzweifelt dringend pinkeln! Sie presst die Beine fest zusammen, eine Hand dazwischen, und wippt auf ihrem Sitz.</span></em></p>',
+      '<p><em><span style="color: #ff0000">Diane muss furchtbar dringend pinkeln! Sie presst die Beine fest zusammen, eine Hand dazwischen, und wippt auf ihrem Sitz.</span></em></p>',
     );
   } else if (blad < 930) {
     sAlt(
       '<p><em><span style="color: #ff0000">Diane is absolutely desperate. She clenches her hands, her expression pained, struggling not to wet herself.</span></em></p>',
-      '<p><em><span style="color: #ff0000">Diane ist völlig verzweifelt. Sie ballt die Hände, das Gesicht schmerzverzerrt, und kämpft darum, sich nicht nass zu machen.</span></em></p>',
+      '<p><em><span style="color: #ff0000">Diane muss so dringend, dass sie es kaum noch aushält. Sie ballt die Hände, das Gesicht schmerzverzerrt, und kämpft darum, sich nicht nass zu machen.</span></em></p>',
     );
   } else {
     sAlt(
@@ -23857,7 +23857,7 @@ function luckytrip16dbb() {
 function luckytrip16dbc() {
   sAlt(
     "<p>You come back with your coffee. Diane is standing up.</p>",
-    "<p>Du kommst mit deinem Kaffee zurück. Diane steht aufrecht da.</p>",
+    "<p>Du kommst mit deinem Kaffee zurück. Diane ist inzwischen aufgestanden.</p>",
   );
   sAlt(
     "<p>DIANE: Excuse me a moment. I’ve just seen a little Portaloo over there. I won’t be a minute.</p>",
@@ -23970,8 +23970,8 @@ function walktogether() {
   standing_desp();
   sAlt("<p>What will it be?</p>", "<p>Was soll es sein?</p>");
   cAlt("walktogether1", "Kiss her?", "Sie küssen?");
-  cAlt("walkbottom1", "Fondle her bottom?", "Streichle ihren Po.");
-  cAlt("walkbreasts1", "Fondle her breasts?", "Streichle ihre Brüste.");
+  cAlt("walkbottom1", "Fondle her bottom?", "Ihren Po streicheln?");
+  cAlt("walkbreasts1", "Fondle her breasts?", "Ihre Brüste streicheln?");
 }
 function walktogether1() {
   sAlt(
@@ -24034,7 +24034,7 @@ function walkbottom1() {
   if (blad > 650) {
     sAlt(
       "<p><em>Even as you embrace you can feel her shifting about, her thighs clenching urgently.</em></p>",
-      "<p><em>Selbst während ihr euch umarmt, spürst du, wie sie sich bewegt und die Oberschenkel dringend zusammenpresst.</em></p>",
+      "<p><em>Selbst während ihr euch umarmt, spürst du, wie sie sich unruhig bewegt und die Oberschenkel zusammenpresst, weil sie so dringend muss.</em></p>",
     );
     sAlt(
       "<p>She breaks away and says you need to be moving on.</p>",
@@ -24540,7 +24540,7 @@ function luckytrip5p() {
     cAlt("luckytrip5x", "Let’s see what happens!", "Mal sehen, was passiert!");
   } else {
     sAlt("<p>You don’t have any luckshots.</p>", "<p>Du hast keine Glücksversuche mehr.</p>");
-    cAlt("toiletopen1c1", "You carry on.", "Ihr geht weiter.");
+    cAlt("toiletopen1c1", "You carry on.", "Weiter.");
   }
 }
 function luckytrip5x() {
@@ -25043,8 +25043,8 @@ function taxihome4h() {
   sAlt("<p>It feels very cosy in the taxi.</p>", "<p>Im Taxi ist es richtig gemütlich.</p>");
   sAlt("<p>What will it be?</p>", "<p>Was soll es sein?</p>");
   cAlt("taxiholdhand", "Hold her hand?", "Ihre Hand halten?");
-  cAlt("taxihome5", "Explore her breasts?", "Erkunde ihre Brüste.");
-  cAlt("taxihome5e", "Explore her legs?", "Erkunde ihre Beine.");
+  cAlt("taxihome5", "Explore her breasts?", "Ihre Brüste erkunden?");
+  cAlt("taxihome5e", "Explore her legs?", "Ihre Beine erkunden?");
 }
 function taxihome5e() {
   taxiHandHeld = 0;
@@ -25110,7 +25110,7 @@ function taxihome5f() {
 }
 function taxihome5b() {
   if (!brooch || broochGiven) {
-    cAlt("taxihome5d", "You carry on.", "Ihr geht weiter.");
+    cAlt("taxihome5d", "You carry on.", "Weiter.");
     return;
   }
   sAlt("<p>You hand her the brooch.</p>", "<p>Du gibst ihr die Brosche.</p>");
@@ -25446,7 +25446,7 @@ function passage2bb() {
 function bushome4a() {
   sAlt(
     "<p>You look out of the window. There are still several miles to go.</p>",
-    "<p>Du schaust aus dem Fenster. Es sind noch mehrere Kilometer.</p>",
+    "<p>Du schaust aus dem Fenster. Es sind noch mehrere Meilen.</p>",
   );
   cAlt("bushome4b", "You’re hanging on.", "Du hältst durch.");
 }
@@ -25489,7 +25489,7 @@ function bushome4c() {
 }
 function bushome5a() {
   if (!brooch || broochGiven) {
-    cAlt("bushome6", "You carry on.", "Ihr geht weiter.");
+    cAlt("bushome6", "You carry on.", "Weiter.");
     return;
   }
   sAlt("<p>You hand her the brooch.</p>", "<p>Du gibst ihr die Brosche.</p>");
@@ -25546,7 +25546,7 @@ function rememberbrooch1() {
 }
 function rememberbrooch2() {
   if (!brooch || broochGiven) {
-    cAlt("gameover", "You carry on.", "Ihr geht weiter.");
+    cAlt("gameover", "You carry on.", "Weiter.");
     return;
   }
   storyLocation = 1;
@@ -25779,7 +25779,7 @@ function unseen_desp() {
   else if (blad < 800)
     sAlt(
       "<p><em>Diane is desperate to pee. She is walking on the spot and keeps looking around as if to find somewhere to go.</em></p>",
-      "<p><em>Diane muss verzweifelt dringend pinkeln. Sie tritt auf der Stelle und sieht sich ständig um, als suche sie nach einem Platz dafür.</em></p>",
+      "<p><em>Diane muss furchtbar dringend pinkeln. Sie tritt auf der Stelle und sieht sich ständig um, als suche sie nach einem Platz dafür.</em></p>",
     );
   else if (blad < 820)
     sAlt(
@@ -25800,12 +25800,12 @@ function unseen_desp() {
     if (saturday) {
       sAlt(
         "<p><em>Diane is absolutely desperate. She is walking on the spot, with one hand under her dress, holding herself.</em></p>",
-        "<p><em>Diane ist völlig verzweifelt. Sie tritt auf der Stelle und hält sich mit einer Hand unter dem Kleid fest.</em></p>",
+        "<p><em>Diane hält es kaum noch aus. Sie tritt auf der Stelle und hält sich mit einer Hand unter dem Kleid fest.</em></p>",
       );
     } else {
       sAlt(
         "<p><em>Diane is absolutely desperate. She is walking on the spot, with one hand under her skirt, holding herself.</em></p>",
-        "<p><em>Diane ist völlig verzweifelt. Sie tritt auf der Stelle und hält sich mit einer Hand unter dem Rock im Schritt fest.</em></p>",
+        "<p><em>Diane hält es kaum noch aus. Sie tritt auf der Stelle und hält sich mit einer Hand unter dem Rock im Schritt fest.</em></p>",
       );
     }
   } else if (blad < 900)
@@ -26143,7 +26143,7 @@ function settleSoloTaxiFare() {
   if (taxiFareSettled) return true;
   sAlt(
     "<p>The taxi takes you the rest of the way home. The fare is £20.</p>",
-    "<p>Das Taxi bringt dich den Rest des Weges nach Hause. Die Fahrt kostet £20.</p>",
+    "<p>Das Taxi bringt dich den Rest des Weges nach Hause. Die Fahrt kostet 20\xA0£.</p>",
   );
   if (pounds < 20) {
     sAlt(
@@ -26204,12 +26204,12 @@ function stayrestaurant() {
     "<p>There’s time for another drink. What will it be?</p>",
     "<p>Für ein weiteres Getränk ist noch Zeit. Was darf’s sein?</p>",
   );
-  if (pounds >= 8) cAlt("shortcutSchnapps", "A schnapps (£8).", "Ein Schnaps (£8).");
+  if (pounds >= 8) cAlt("shortcutSchnapps", "A schnapps (£8).", "Ein Schnaps (8\xA0£).");
   if (pounds >= 4)
     cAlt(
       "shortcutLager",
       "A lager (£4). She isn’t very keen, but I’m thinking ahead!",
-      "Ein Lagerbier (£4). Sie mag es nicht besonders, aber ich denke voraus!",
+      "Ein Lagerbier (4\xA0£). Sie mag es nicht besonders, aber ich denke voraus!",
     );
   cAlt(
     "leaverestaurant",
@@ -26297,7 +26297,7 @@ function helpline() {
   sAlt("<p>QUESTION: Have you any tips?</p>", "<p>FRAGE: Hast du ein paar Tipps?</p>");
   sAlt(
     "<p>ANSWER: For many of the prize endings, you need to get Diane back to your house. That usually means at least 100 intimacy points. A taxi can help, but the fare is £20, so keep an eye on your money.</p>",
-    "<p>ANTWORT: Für viele der Preis-Enden musst du Diane mit zu dir nach Hause bringen. Dafür brauchst du normalerweise mindestens 100 Intimitätspunkte. Ein Taxi kann helfen, aber die Fahrt kostet £20. Behalte also dein Geld im Auge.</p>",
+    "<p>ANTWORT: Für viele der Preis-Enden musst du Diane mit zu dir nach Hause bringen. Dafür brauchst du normalerweise mindestens 100 Intimitätspunkte. Ein Taxi kann helfen, aber die Fahrt kostet 20\xA0£. Behalte also dein Geld im Auge.</p>",
   );
   sAlt(
     "<p>QUESTION: How many variations are there?</p>",

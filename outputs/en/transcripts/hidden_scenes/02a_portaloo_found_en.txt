@@ -40,7 +40,7 @@ She gets up and walks with you towards the Portaloo.
 
 DIANE: I'm glad you suggested this. I'm dying to go. Have been ever since we began the walk, really.
 
-You gained 15 intimacy points.
+You gained 25 intimacy points.
 
 YOU: Really?
 

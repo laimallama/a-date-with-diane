@@ -1,4 +1,4 @@
-Enden im Freien – Du und der Taxifahrer beobachtet Diane
+Enden im Freien: Du und der Taxifahrer beobachtet Diane
 
 Das Taxi nähert sich eurem Wohnviertel. Zuerst kommt ihr an ihrem Haus vorbei, aber deines ist nur ein paar Straßen weiter.
 
@@ -16,7 +16,7 @@ Einen Moment lang siehst du, wie sie bei der Suche nach ihrem Schlüssel von ein
 
 Das Taxi fährt an. Durch die Heckscheibe siehst du, wie sie zur Haustür geht.
 
-Sie versucht, den Schlüssel ins Schloss zu stecken, kann aber nicht still stehen.
+Sie versucht, den Schlüssel ins Schloss zu stecken, kann aber nicht stillstehen.
 
 Sie steht erst auf einem Bein, dann auf dem anderen. Sie hat Schwierigkeiten mit dem Schlüssel.
 
@@ -60,9 +60,9 @@ Sie klingelt. Niemand antwortet.
 
 Sie läuft hin und her. Dann setzt sie sich auf die Türstufe und sucht in ihrer Handtasche.
 
-Sie holt einen anderen Schlüssel heraus und versucht es wieder – doch sofort weicht sie zurück und presst eine Hand in den Schritt.
+Sie holt einen anderen Schlüssel heraus und versucht es wieder – doch sie bricht sofort ab und presst eine Hand in den Schritt.
 
-Aufgeregt läuft sie einen kleinen Kreis, hält sich die ganze Zeit fest und versucht dann wieder, die Tür aufzuschließen.
+Aufgeregt läuft sie einen kleinen Kreis, hält sich die ganze Zeit den Schritt zu und versucht dann wieder, die Tür aufzuschließen.
 
 Wieder wendet sie sich von der Tür ab und hält den Rocksaum fest, als wolle sie ihn hochziehen. Dann verschwindet sie aus dem Blickfeld, offenbar auf dem Weg hinter das Haus.
 
@@ -72,7 +72,7 @@ Doch nach wenigen Sekunden ist sie wieder da. Sie kann nicht stillstehen, versuc
 
 Sie hat dich nicht gesehen. Im Taxi ist es dunkel, aber du kannst sie im Licht vor dem Haus erkennen.
 
-Sie tänzelt mit angezogenen Knien, macht dann einen Knicks und presst beide Hände in den Schritt. Du stellst dir vor, wie ein Spritzer Urin ihr Bein hinabrinnt.
+Sie tänzelt und zieht dabei die Knie hoch, macht dann einen Knicks und presst beide Hände in den Schritt. Du stellst dir vor, wie ein Spritzer Urin ihr Bein hinabrinnt.
 
 Sie geht zurück zur Tür, probiert erneut den Schlüssel und schlägt ein Bein fest über das andere.
 
@@ -80,7 +80,7 @@ Sie setzt sich auf die oberste Stufe, beugt sich vor und wippt auf und ab. Ihre 
 
 Sie steht auf, läuft hin und her und trippelt dann in einem kleinen Kreis.
 
-(Und dann…)
+(Und dann …)
 
 Plötzlich bleibt sie stehen, beugt sich leicht vor und sieht sich ängstlich um.
 

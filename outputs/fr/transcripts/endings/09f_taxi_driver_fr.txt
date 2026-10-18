@@ -1,4 +1,4 @@
-Fins en extérieur — Vous et le chauffeur de taxi regardez Diane
+Fins en extérieur : Vous et le chauffeur de taxi regardez Diane
 
 Le taxi approche de chez vous. Il passera d’abord devant chez elle, mais vous n’habitez qu’à deux rues de là.
 
@@ -12,7 +12,7 @@ Le taxi s’arrête. Diane vous embrasse et sort.
 
 Un instant, vous la voyez passer d’un pied sur l’autre en cherchant sa clé, puis le taxi avance et la porte disparaît de votre champ de vision.
 
-(C’était une belle soirée, mais —)
+(C’était une belle soirée, mais…)
 
 Le taxi démarre. Vous l’apercevez par la vitre arrière, marchant vers sa porte d’entrée.
 
@@ -54,15 +54,15 @@ Diane a ramassé ses clés et essaie de nouveau d’ouvrir. Incapable de tenir e
 
 Elle se détourne de la porte pour examiner la clé à la lumière, tout en se tenant l’entrejambe.
 
-Elle fait un petit tour sur elle-même, une main fermement plaquée à l’entrejambe, puis essaie encore la clé.
+Elle fait quelques pas en cercle, une main fermement plaquée à l’entrejambe, puis essaie encore la clé.
 
 Elle sonne. Personne ne répond.
 
 Elle fait les cent pas, puis s’assied sur le perron pour fouiller dans son sac.
 
-Elle sort une autre clé et essaie encore la serrure, mais s’écarte aussitôt en plaquant une main à son entrejambe.
+Elle sort une autre clé et essaie encore la serrure, mais s’interrompt aussitôt et plaque une main sur son entrejambe.
 
-Elle fait un petit tour agité, sans cesser de se tenir, puis essaie à nouveau la serrure.
+Elle fait quelques pas nerveux en cercle, sans cesser de se tenir, puis essaie à nouveau la serrure.
 
 Elle s’écarte encore de la porte, tenant l’ourlet de sa jupe comme pour la relever, puis disparaît de votre vue, apparemment vers l’arrière de la maison.
 
@@ -94,7 +94,7 @@ Une main reste à son entrejambe, tandis que l’autre lui couvre le visage, com
 
 Ses jambes luisent au clair de lune.
 
-Elle finit enfin. Diane s’éloigne lentement de la flaque, sort un mouchoir en papier et commence à s’essuyer les jambes.
+Enfin, elle a terminé. Diane s’éloigne lentement de la flaque, sort un mouchoir en papier et commence à s’essuyer les jambes.
 
 Elle s’assied un instant sur la plus haute marche, comme pour reprendre ses esprits. Puis elle retourne à la porte. Cette fois, elle réussit à l’ouvrir et entre lentement.
 
@@ -102,7 +102,7 @@ Elle s’assied un instant sur la plus haute marche, comme pour reprendre ses es
 
 « Ouf ! » dit le chauffeur. Aucun de vous ne parle jusqu’à ce qu’il redémarre.
 
-« Dans ce métier, j’en vois, des filles qui n’en peuvent plus, dit-il. Mais celle-là, c’était l’un des plus beaux spectacles. »
+« Dans ce métier, j’en vois, des filles qui n’en peuvent plus, dit-il. Mais ça, c’était l’un des plus beaux spectacles. »
 
 « Je crois que cette course sera gratuite », dit-il, avant de vous ramener chez vous.
 
@@ -110,7 +110,7 @@ Elle s’assied un instant sur la plus haute marche, comme pour reprendre ses es
 
 FÉLICITATIONS !
 
-Vous avez emmené Diane en rendez-vous et apprécié de la voir se retenir jusqu’à n’en plus pouvoir.
+Vous avez invité Diane à sortir et apprécié de la voir se retenir jusqu’à n’en plus pouvoir.
 
 Et vous l’avez vue se faire dessus sur le pas de sa porte.
 

@@ -10,7 +10,7 @@ Diane n’a qu’une idée en tête : rentrer chez elle. Elle semble incapable
 
 Vous voyez bien qu’elle a une envie terrible. Mais vous préférez ne rien dire.
 
-(Vous essayez de maintenir la conversation.)
+(Vous essayez d’entretenir la conversation.)
 
 Diane ne répond plus que par monosyllabes. Elle avance à pas pressés, légèrement penchée en avant. Elle ne vous tient plus la main.
 
@@ -24,7 +24,7 @@ Elle se trouve près d’une benne, chargée de vieilles briques. En deux pas, e
 
 (Vous vous dépêchez de la rattraper.)
 
-En quelques pas, vous l’avez rattrapée. Mais vous vous arrêtez, à quatre ou cinq mètres derrière elle.
+En quelques pas, vous l’avez presque rattrapée. Mais vous vous arrêtez, à quatre ou cinq mètres derrière elle.
 
 Diane est là, derrière la benne, le dos tourné vers vous. Mais il n’y a aucun doute possible sur ce qui se passe.
 
@@ -32,7 +32,7 @@ La pauvre n’en pouvait plus de se retenir.
 
 (Vous regardez, émerveillé.)
 
-L’obscurité est éclairée par un réverbère, et dans la pénombre, vous voyez une flaque commencer à se former autour de ses pieds, et vous entendez le clapotis sonore du pipi sur le trottoir.
+Dans la pénombre, à la lueur d’un réverbère, vous voyez une flaque commencer à se former autour de ses pieds et vous entendez le clapotis sonore du pipi sur le trottoir.
 
 Elle est légèrement penchée en avant, les jambes un peu écartées, une main sur la cuisse, l’autre apparemment sous sa robe par devant. Vous supposez qu’elle écarte sa culotte sur le côté, tandis qu’un jet de pipi tombe entre ses jambes et éclabousse le trottoir.
 
@@ -122,11 +122,11 @@ DIANE : Je sais. J’ai essayé plusieurs fois d’en parler mais à chaque fo
 
 DIANE : (avec un petit rire) Au moins, je suis contente de ne pas avoir mis de collants.
 
-Elle esquisse un sourire en coin à cette idée.
+Elle tente un petit sourire à cette idée.
 
 (Vous continuez à marcher.)
 
-Vous êtes devant sa porte. Et —
+Vous êtes devant sa porte. Et…
 
 DIANE : Tu veux entrer ?
 

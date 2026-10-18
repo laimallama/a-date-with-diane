@@ -1,4 +1,4 @@
-Das Badezimmer zu Hause – Diane eilt vor dem Abschied nach oben
+Das Badezimmer zu Hause: Diane eilt vor dem Abschied nach oben
 
 Ihr geht zur Haustür.
 
@@ -14,7 +14,7 @@ Du stehst mit Diane an deiner Haustür, um ihr gute Nacht zu sagen. Ihr habt ein
 
 Aber –
 
-Sie muss wirklich dringend aufs Klo. Sie kann nicht still stehen und wirkt etwas zögerlich, als sie zur Haustür geht. Sie scheint wenig begeistert davon, dass du sie nach Hause begleiten willst, und sagt immer wieder: „Ich muss los!“
+Sie muss wirklich dringend aufs Klo. Sie kann nicht stillstehen und wirkt etwas zögerlich, als sie zur Haustür geht. Sie scheint wenig begeistert davon, dass du sie nach Hause begleiten willst, und sagt immer wieder: „Ich muss los!“
 
 Was tust du?
 
@@ -22,7 +22,7 @@ Was tust du?
 
 Ihr steht an der Haustür.
 
-Diane kann nicht still stehen. Sie tritt praktisch auf der Stelle.
+Diane kann nicht stillstehen. Sie tritt praktisch auf der Stelle.
 
 Aber sie sagt nichts.
 
@@ -34,7 +34,7 @@ DIANE: Du brauchst wirklich nicht –
 
 DU: Doch, ich muss dich nach Hause bringen. Ich bin gleich so weit.
 
-Während du dich fertig machst, geht sie im kleinen Vorbau auf und ab. Ihre Hände sind seitlich zu Fäusten geballt. Sie beißt sich auf die Lippe.
+Während du dich fertig machst, geht sie im kleinen Vorbau auf und ab. Sie hält die Hände seitlich am Körper zu Fäusten geballt. Sie beißt sich auf die Lippe.
 
 Plötzlich macht sie einen kleinen Knicks und überkreuzt hastig die Beine.
 

@@ -9630,7 +9630,7 @@ function pavilion8() {
     );
     sAlt(
       "<p>BRUNO: There are some interesting beers here. They’ve got a Riddles Ambernectar. I’d quite like to try it. Molly?</p>",
-      "<p>BRUNO\u202F: Il y a des bières intéressantes ici. Ils ont une Riddles Ambernectar. J’aurais bien envie de goûter ça. Molly\u202F?</p>",
+      "<p>BRUNO\u202F: Il y a des bières intéressantes ici. Ils ont une Riddles Nectar ambré. J’aurais bien envie de goûter ça. Molly\u202F?</p>",
     );
     sAlt(
       "<p>MOLLY: I’d like to try it. Just a quick half, perhaps?</p>",
@@ -9638,7 +9638,7 @@ function pavilion8() {
     );
     sAlt(
       "<p>Bruno goes up to the bar and gets four halves of Riddles Ambernectar. It’s a lovely golden beer. You all like it.</p>",
-      "<p>Bruno se dirige vers le comptoir et commande quatre demi-pintes de Riddles Ambernectar. C’est une belle bière dorée. Vous l’appréciez tous.</p>",
+      "<p>Bruno se dirige vers le comptoir et commande quatre demi-pintes de Riddles Nectar ambré. C’est une belle bière dorée. Vous l’appréciez tous.</p>",
     );
     mollyproc += 100;
     mollyblad += 30;
@@ -22441,7 +22441,9 @@ function story() {
     "<p>Elle marque une pause, comme si elle remontait le fil des années. Puis…</p>",
   );
   storytime();
-  sAlt("<p>YOU: What happened?</p>", "<p>VOUS\u202F: Qu’est-ce qui s’est passé\u202F?</p>");
+  if (tiramisu || pannacotta) {
+    sAlt("<p>YOU: What happened?</p>", "<p>VOUS\u202F: Qu’est-ce qui s’est passé\u202F?</p>");
+  }
   cAlt("story1", "She pauses.", "Elle s’arrête.");
 }
 function story1() {

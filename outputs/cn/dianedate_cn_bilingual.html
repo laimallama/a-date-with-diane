@@ -5887,7 +5887,7 @@ function pubdrink8() {
     );
     sAlt(
       "<p>BRUNO: There are some interesting beers here. They’ve got a Leakstons Puddlemaker. I’d quite like to try it. Molly?</p>",
-      "<p>布鲁诺：这里有些挺有意思的啤酒。他们有利克斯顿水花啤酒，我挺想试试。莫莉呢？</p>",
+      "<p>布鲁诺：这里有些挺有意思的啤酒。他们有漏克斯顿水花啤酒，我挺想试试。莫莉呢？</p>",
     );
     leavepub2 = 1;
     sAlt(
@@ -5896,7 +5896,7 @@ function pubdrink8() {
     );
     sAlt(
       "<p>Bruno goes up to the bar and gets four halves of Leakstons Puddlemaker. It’s a lovely golden beer. You all like it.</p>",
-      "<p>布鲁诺走到吧台，给大家各买了半品脱利克斯顿水花啤酒。那是一款漂亮的金色啤酒，大家都很喜欢。</p>",
+      "<p>布鲁诺走到吧台，给大家各买了半品脱漏克斯顿水花啤酒。那是一款漂亮的金色啤酒，大家都很喜欢。</p>",
     );
     mollyproc += 70;
     mollyblad += 30;
@@ -8990,7 +8990,7 @@ function pavilion8() {
     );
     sAlt(
       "<p>BRUNO: There are some interesting beers here. They’ve got a Riddles Ambernectar. I’d quite like to try it. Molly?</p>",
-      "<p>布鲁诺：这里有些很有意思的啤酒。他们有里德尔斯琥珀花蜜啤酒，我很想尝尝。莫莉，你呢？</p>",
+      "<p>布鲁诺：这里有些很有意思的啤酒。他们有里德尔斯琥珀甘露啤酒，我很想尝尝。莫莉，你呢？</p>",
     );
     sAlt(
       "<p>MOLLY: I’d like to try it. Just a quick half, perhaps?</p>",
@@ -8998,7 +8998,7 @@ function pavilion8() {
     );
     sAlt(
       "<p>Bruno goes up to the bar and gets four halves of Riddles Ambernectar. It’s a lovely golden beer. You all like it.</p>",
-      "<p>布鲁诺走到吧台，给大家各点了半品脱里德尔斯琥珀花蜜啤酒。那是一款色泽迷人的金黄色啤酒，大家都很喜欢。</p>",
+      "<p>布鲁诺走到吧台，给大家各点了半品脱里德尔斯琥珀甘露啤酒。那是一款色泽迷人的金黄色啤酒，大家都很喜欢。</p>",
     );
     mollyproc += 100;
     mollyblad += 30;
@@ -20606,7 +20606,9 @@ function story() {
     "<p>她停顿了一下，像是在追忆往昔岁月。然后——</p>",
   );
   storytime();
-  sAlt("<p>YOU: What happened?</p>", "<p>你：后来发生了什么？</p>");
+  if (tiramisu || pannacotta) {
+    sAlt("<p>YOU: What happened?</p>", "<p>你：后来发生了什么？</p>");
+  }
   cAlt("story1", "She pauses.", "她停顿了一下。");
 }
 function story1() {

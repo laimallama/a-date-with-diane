@@ -6813,11 +6813,11 @@ function pavilion8() {
       "<p>Bruno ist ein großer Real-Ale-Freund und hat schon die verlockende Reihe von Zapfhähnen an der Theke gemustert.</p>",
     );
     s(
-      "<p>BRUNO: Die haben hier ein paar interessante Biere. Sogar ein Riddles Ambernectar. Das würde ich gern probieren. Molly?</p>",
+      "<p>BRUNO: Die haben hier ein paar interessante Biere. Sogar ein Riddles Bernsteinnektar. Das würde ich gern probieren. Molly?</p>",
     );
     s("<p>MOLLY: Das würde ich auch gern probieren. Vielleicht noch schnell ein halbes Pint?</p>");
     s(
-      "<p>Bruno geht an die Theke und holt vier halbe Pints Riddles Ambernectar. Ein herrliches, goldgelbes Bier. Es schmeckt euch allen.</p>",
+      "<p>Bruno geht an die Theke und holt vier halbe Pints Riddles Bernsteinnektar. Ein herrliches, goldgelbes Bier. Es schmeckt euch allen.</p>",
     );
     mollyproc += 100;
     mollyblad += 30;
@@ -15007,7 +15007,9 @@ function story() {
   );
   s("<p>Sie hält inne, als denke sie an vergangene Jahre zurück. Dann – </p>");
   storytime();
-  s("<p>DU: Was ist passiert?</p>");
+  if (tiramisu || pannacotta) {
+    s("<p>DU: Was ist passiert?</p>");
+  }
   c("story1", "Sie hält inne.");
 }
 function story1() {

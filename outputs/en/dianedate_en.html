@@ -14449,7 +14449,9 @@ function story() {
   );
   s("<p>She pauses, as if thinking back through the years. Then – </p>");
   storytime();
-  s("<p>YOU: What happened?</p>");
+  if (tiramisu || pannacotta) {
+    s("<p>YOU: What happened?</p>");
+  }
   c("story1", "She pauses.");
 }
 function story1() {

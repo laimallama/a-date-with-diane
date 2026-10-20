@@ -6665,11 +6665,11 @@ function pavilion8() {
       "<p>Bruno es un gran aficionado a la cerveza real ale y lleva un rato mirando la tentadora hilera de grifos de la barra.</p>",
     );
     s(
-      "<p>BRUNO: Aquí tienen cervezas interesantes. Tienen una Riddles Ambernectar. Me apetecería bastante probarla. ¿Molly?</p>",
+      "<p>BRUNO: Aquí tienen cervezas interesantes. Tienen una Riddles Néctar de Ámbar. Me apetecería bastante probarla. ¿Molly?</p>",
     );
     s("<p>MOLLY: Me apetece probarla. ¿Una media pinta rápida, quizá?</p>");
     s(
-      "<p>Bruno se acerca a la barra y pide cuatro medias pintas de Riddles Ambernectar. Es una cerveza dorada deliciosa. A todos os gusta.</p>",
+      "<p>Bruno se acerca a la barra y pide cuatro medias pintas de Riddles Néctar de Ámbar. Es una cerveza dorada deliciosa. A todos os gusta.</p>",
     );
     mollyproc += 100;
     mollyblad += 30;
@@ -14573,7 +14573,9 @@ function story() {
   );
   s("<p>Hace una pausa, como si estuviera recordando algo de hace años. Luego…</p>");
   storytime();
-  s("<p>TÚ: ¿Qué pasó?</p>");
+  if (tiramisu || pannacotta) {
+    s("<p>TÚ: ¿Qué pasó?</p>");
+  }
   c("story1", "Ella hace una pausa.");
 }
 function story1() {

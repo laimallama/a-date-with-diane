@@ -9443,7 +9443,7 @@ function pavilion8() {
     );
     sAlt(
       "<p>BRUNO: There are some interesting beers here. They’ve got a Riddles Ambernectar. I’d quite like to try it. Molly?</p>",
-      "<p>BRUNO: Die haben hier ein paar interessante Biere. Sogar ein Riddles Ambernectar. Das würde ich gern probieren. Molly?</p>",
+      "<p>BRUNO: Die haben hier ein paar interessante Biere. Sogar ein Riddles Bernsteinnektar. Das würde ich gern probieren. Molly?</p>",
     );
     sAlt(
       "<p>MOLLY: I’d like to try it. Just a quick half, perhaps?</p>",
@@ -9451,7 +9451,7 @@ function pavilion8() {
     );
     sAlt(
       "<p>Bruno goes up to the bar and gets four halves of Riddles Ambernectar. It’s a lovely golden beer. You all like it.</p>",
-      "<p>Bruno geht an die Theke und holt vier halbe Pints Riddles Ambernectar. Ein herrliches, goldgelbes Bier. Es schmeckt euch allen.</p>",
+      "<p>Bruno geht an die Theke und holt vier halbe Pints Riddles Bernsteinnektar. Ein herrliches, goldgelbes Bier. Es schmeckt euch allen.</p>",
     );
     mollyproc += 100;
     mollyblad += 30;
@@ -22022,7 +22022,9 @@ function story() {
     "<p>Sie hält inne, als denke sie an vergangene Jahre zurück. Dann – </p>",
   );
   storytime();
-  sAlt("<p>YOU: What happened?</p>", "<p>DU: Was ist passiert?</p>");
+  if (tiramisu || pannacotta) {
+    sAlt("<p>YOU: What happened?</p>", "<p>DU: Was ist passiert?</p>");
+  }
   cAlt("story1", "She pauses.", "Sie hält inne.");
 }
 function story1() {

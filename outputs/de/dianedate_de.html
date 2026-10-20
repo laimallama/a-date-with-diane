@@ -1423,6 +1423,13 @@ if (document.addEventListener) {
       }
       return;
     }
+    if (e.key === "d" || e.key === "D") {
+      if (e.repeat) return;
+      if (!claimStoryActionKey(e.key)) return;
+      e.preventDefault();
+      toggleTheme();
+      return;
+    }
     if (galleryOpen) {
       if (e.key === "Enter" && e.repeat) e.preventDefault();
       trapGalleryFocus(e, overlay);
@@ -1493,12 +1500,6 @@ if (document.addEventListener) {
     if (e.key === "s" || e.key === "S") {
       if (!claimStoryActionKey(e.key)) return;
       if (canSkipToClimax()) skipToClimax();
-      return;
-    }
-    if (e.key === "d" || e.key === "D") {
-      if (!claimStoryActionKey(e.key)) return;
-      e.preventDefault();
-      toggleTheme();
       return;
     }
     if (/^[1-9]$/.test(e.key)) {

@@ -240,7 +240,7 @@ ol.wiki-articles li a {
 ol.wiki-articles li a::before {
   content: counter(wiki-art, decimal-leading-zero);
   flex: 0 0 2.2rem;
-  color: var(--ink);
+  color: inherit;
   font-size: 1rem;
   font-variant-numeric: tabular-nums;
 }
@@ -334,6 +334,15 @@ ol.wiki-articles li a:focus-visible {
 
 button:focus {
   outline: none;
+}
+
+/* Match the playable editions' visible keyboard focus, including the theme button. */
+button:focus-visible,
+button[class]:focus-visible,
+a[href]:focus-visible,
+ol.wiki-articles li a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
     </style>
   </head>
